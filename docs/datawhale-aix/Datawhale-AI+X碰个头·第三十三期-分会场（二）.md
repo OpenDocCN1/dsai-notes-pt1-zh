@@ -1,5 +1,5 @@
 
-# Datawhale AI+X碰个头：33：模型前沿与递归自我改进🤖
+# Datawhale AI+X碰个头：33-2：模型前沿与递归自我改进🤖
 
 
 ![](img/30fb8b7ebe1c464392b096cfd07addf7_1.png)
