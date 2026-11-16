@@ -225,6 +225,7 @@
 +   [IBM 项目经理的生成式人工智能笔记](docs/ibm-pjmgr-genai/README.md)
 +   [七月在线公开课笔记](docs/julyedu/README.md)
 +   [七月在线机器学习量化交易笔记](docs/julyedu-quant/README.md)
++   [Kaggle Writeups](docs/kaggle-writeups/README.md)
 +   [Lex Fridman 视频笔记](docs/lex-fridman/README.md)
 +   [零基础 Python 量化交易入门笔记](docs/lingjichu-quant/README.md)
 +   [大模型 Agent 论文翻译](docs/llm-agent/README.md)
