@@ -1,4 +1,5 @@
 +   [Datawhale AI+X 视频笔记](README.md)
++   [Datawhale-AI+X碰个头：01：课程概述与嘉宾介绍📡](Datawhale-AI+X碰个头-第三十四期.md)
 +   [Datawhale-AI+X碰个头：33-1](Datawhale-AI+X碰个头·第三十三期-主会场（一）-共享屏幕.md)
 +   [Datawhale-AI+X碰个头：33-3：课程概述 🎓](Datawhale-AI+X碰个头·第三十三期-分会场（三）.md)
 +   [Datawhale AI+X碰个头：33-2：模型前沿与递归自我改进🤖](Datawhale-AI+X碰个头·第三十三期-分会场（二）.md)
