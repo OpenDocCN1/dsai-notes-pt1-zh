@@ -28,29 +28,29 @@
 
 以下代码片段展示了使用 LlamaIndex 创建索引的核心步骤：
 
-```python
-# 伪代码示例：创建索引
-from llama_index import VectorStoreIndex, ServiceContext
-from llama_index.llms import OpenAI
-from llama_index.embeddings import OpenAIEmbedding
 
 ![](img/e98287d86d42360d152cab5b26f1e122_11.png)
 
-# 定义服务上下文，指定LLM和嵌入模型
-service_context = ServiceContext.from_defaults(
-    llm=OpenAI(model="gpt-3.5-turbo"),
-    embed_model=OpenAIEmbedding(model="text-embedding-ada-002")
-)
 
 ![](img/e98287d86d42360d152cab5b26f1e122_13.png)
 
 ![](img/e98287d86d42360d152cab5b26f1e122_15.png)
 
-# 从文档创建向量存储索引
-index = VectorStoreIndex.from_documents(documents, service_context=service_context)
 
 ![](img/e98287d86d42360d152cab5b26f1e122_17.png)
 
+```python
+# 伪代码示例：创建索引
+from llama_index import VectorStoreIndex, ServiceContext
+from llama_index.llms import OpenAI
+from llama_index.embeddings import OpenAIEmbedding
+# 定义服务上下文，指定LLM和嵌入模型
+service_context = ServiceContext.from_defaults(
+    llm=OpenAI(model="gpt-3.5-turbo"),
+    embed_model=OpenAIEmbedding(model="text-embedding-ada-002")
+)
+# 从文档创建向量存储索引
+index = VectorStoreIndex.from_documents(documents, service_context=service_context)
 # 获取查询引擎
 query_engine = index.as_query_engine()
 ```

@@ -50,13 +50,13 @@
 
 ![](img/4a9906896b6c7764f88ffcf625efa72b_21.png)
 
-```python
-from sklearn.ensemble import RandomForestClassifier
 
 ![](img/4a9906896b6c7764f88ffcf625efa72b_22.png)
 
 ![](img/4a9906896b6c7764f88ffcf625efa72b_24.png)
 
+```python
+from sklearn.ensemble import RandomForestClassifier
 # 初始化随机森林分类器
 rf = RandomForestClassifier(
     n_estimators=1,          # 初始树数量设为1，后续会更新
@@ -83,8 +83,6 @@ oob_error_list = []
 
 接着，我们循环遍历一系列不同的树数量（例如从15到400），观察误差的变化。
 
-```python
-tree_numbers = [15, 20, 30, 40, 50, 75, 100, 150, 200, 250, 300, 350, 400]
 
 ![](img/4a9906896b6c7764f88ffcf625efa72b_32.png)
 
@@ -94,6 +92,8 @@ tree_numbers = [15, 20, 30, 40, 50, 75, 100, 150, 200, 250, 300, 350, 400]
 
 ![](img/4a9906896b6c7764f88ffcf625efa72b_35.png)
 
+```python
+tree_numbers = [15, 20, 30, 40, 50, 75, 100, 150, 200, 250, 300, 350, 400]
 for n_trees in tree_numbers:
     # 更新模型参数，仅改变树的数量
     rf.set_params(n_estimators=n_trees)
@@ -181,13 +181,6 @@ et = ExtraTreesClassifier(
 
 后续的循环、拟合、误差计算和结果存储步骤与随机森林完全一致。
 
-```python
-et_oob_list = []
-for n_trees in tree_numbers:
-    et.set_params(n_estimators=n_trees)
-    et.fit(X_train, y_train)
-    oob_error = 1 - et.oob_score_
-    et_oob_list.append(pd.Series({'n_trees': n_trees, 'oob_error': oob_error}))
 
 ![](img/4a9906896b6c7764f88ffcf625efa72b_64.png)
 
@@ -195,6 +188,13 @@ for n_trees in tree_numbers:
 
 ![](img/4a9906896b6c7764f88ffcf625efa72b_66.png)
 
+```python
+et_oob_list = []
+for n_trees in tree_numbers:
+    et.set_params(n_estimators=n_trees)
+    et.fit(X_train, y_train)
+    oob_error = 1 - et.oob_score_
+    et_oob_list.append(pd.Series({'n_trees': n_trees, 'oob_error': oob_error}))
 et_oob_df = pd.concat(et_oob_list, axis=1).T.set_index('n_trees')
 ```
 

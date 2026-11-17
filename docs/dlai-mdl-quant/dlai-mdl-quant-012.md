@@ -50,11 +50,11 @@ print(result_quantized[0]['generated_text'])
 接下来，我们尝试量化其他模态的模型，以目标检测模型DETR为例。工作流程与之前类似。
 
 首先，从Hugging Face加载DETR模型及其处理器：
-```python
-from transformers import DetrImageProcessor, DetrForObjectDetection
 
 ![](img/3f5d352cffeac5691f3ecded0f33239c_1.png)
 
+```python
+from transformers import DetrImageProcessor, DetrForObjectDetection
 processor = DetrImageProcessor.from_pretrained("facebook/detr-resnet-50")
 model = DetrForObjectDetection.from_pretrained("facebook/detr-resnet-50")
 ```

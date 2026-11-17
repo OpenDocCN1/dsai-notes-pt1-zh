@@ -59,13 +59,13 @@
 
 ![](img/0261bd026f3889d4796489012635cb1b_16.png)
 
+
+![](img/0261bd026f3889d4796489012635cb1b_18.png)
+
 ```python
 # 假设 text 变量包含了所有文章的文本
 text_chunks = split_text_into_chunks(text) # 分割文本
 embeddings = cohere_client.embed(texts=text_chunks) # 生成嵌入向量
-
-![](img/0261bd026f3889d4796489012635cb1b_18.png)
-
 # 构建向量索引
 import annoy
 index = annoy.AnnoyIndex(embeddings.shape[1], 'angular')

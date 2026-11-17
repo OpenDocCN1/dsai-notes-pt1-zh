@@ -60,11 +60,11 @@ test1()
 
 ![](img/42ec8d95ef063808263a0071816112a2_10.png)
 
-```python
-x = 10  # 全局变量 x
 
 ![](img/42ec8d95ef063808263a0071816112a2_11.png)
 
+```python
+x = 10  # 全局变量 x
 def test2():
     x = 50  # 函数作用域内的新变量 x，与全局变量同名但不同
     print("函数作用域 x:", x)
@@ -111,13 +111,13 @@ print("全局 x:", x)
 
 ![](img/42ec8d95ef063808263a0071816112a2_13.png)
 
+
+![](img/42ec8d95ef063808263a0071816112a2_14.png)
+
 ```python
 def cat():
     z = 3  # 只在 cat 函数中存在
     print("猫的 z:", z)
-
-![](img/42ec8d95ef063808263a0071816112a2_14.png)
-
 def dog():
     # print(z)  # 如果取消注释，会报错！无法访问 cat 函数中的 z
     z = 5  # dog 函数自己的 z

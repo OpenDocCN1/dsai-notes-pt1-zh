@@ -193,6 +193,11 @@ with movies.batch.dynamic() as batch:
 
 现在，是时候进入有趣的部分了，你可以在数据上运行一些查询。让我们搜索一些关于可爱宠物的电影。这个查询与你之前运行的非常相似，但是，因为我们使用的是多向量空间，集合配置了两个不同的向量，你需要指定要搜索哪个向量空间。对于这个查询，你希望跨 `text_vector` 空间进行搜索。
 
+
+![](img/c6ad1ac84c9117fdb1467145b6182a48_23.png)
+
+![](img/c6ad1ac84c9117fdb1467145b6182a48_24.png)
+
 ```python
 # 在文本向量空间搜索
 response = movies.query.near_text(
@@ -200,11 +205,6 @@ response = movies.query.near_text(
     limit=3,
     target_vector="text_vector"
 )
-
-![](img/c6ad1ac84c9117fdb1467145b6182a48_23.png)
-
-![](img/c6ad1ac84c9117fdb1467145b6182a48_24.png)
-
 for obj in response.objects:
     print(f"Title: {obj.properties['title']}")
     print(f"Overview: {obj.properties['overview']}")

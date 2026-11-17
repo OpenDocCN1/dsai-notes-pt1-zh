@@ -112,13 +112,13 @@ print(result)
 
 ![](img/76e4d5c6ce0415e3386ff82242e7b14d_33.png)
 
-```python
-from utils import llama_chat
 
 ![](img/76e4d5c6ce0415e3386ff82242e7b14d_35.png)
 
 ![](img/76e4d5c6ce0415e3386ff82242e7b14d_36.png)
 
+```python
+from utils import llama_chat
 # 初始化对话历史列表
 dialogue_history = []
 ```

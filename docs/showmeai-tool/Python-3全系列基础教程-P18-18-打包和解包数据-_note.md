@@ -54,12 +54,12 @@ pack(1, 2, 3)
 
 ![](img/240c632cd8b2d72f9a74459a74dca582_8.png)
 
-```python
-def unpack(a, b, c):
-    print(a, b, c)
 
 ![](img/240c632cd8b2d72f9a74459a74dca582_9.png)
 
+```python
+def unpack(a, b, c):
+    print(a, b, c)
 numbers = [1, 2, 3]
 unpack(*numbers)  # 等价于 unpack(1, 2, 3)
 ```

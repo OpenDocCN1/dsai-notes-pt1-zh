@@ -357,19 +357,19 @@ SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_secret_jwt
 
 让我们复制这个新的身份验证处理程序并将其添加到我们的应用程序中。我们所有的授权处理程序可以保持不变。
 
+
+![](img/a050bffbbf0dc283984972667d5c932c_18.png)
+
+
+![](img/a050bffbbf0dc283984972667d5c932c_19.png)
+
 ```python
 # security/authentication_prod.py (更新后的身份验证)
 import os
 from supabase import create_client, Client
 from langgraph_sdk import Auth
 from fastapi import HTTPException
-
-![](img/a050bffbbf0dc283984972667d5c932c_18.png)
-
 auth = Auth()
-
-![](img/a050bffbbf0dc283984972667d5c932c_19.png)
-
 # 从环境变量加载 Supabase 配置
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")

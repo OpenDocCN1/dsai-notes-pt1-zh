@@ -30,25 +30,25 @@
 
 ![](img/81dfc390d09341e49f913b53cfbdf04e_7.png)
 
-```
-[net]
-# 超参数
 
 ![](img/81dfc390d09341e49f913b53cfbdf04e_9.png)
 
-[convolutional]
-# 第一个卷积层
 
 ![](img/81dfc390d09341e49f913b53cfbdf04e_11.png)
 
+
+![](img/81dfc390d09341e49f913b53cfbdf04e_13.png)
+
+```
+[net]
+# 超参数
+[convolutional]
+# 第一个卷积层
 [convolutional]
 # 第二个卷积层
 
 [shortcut]
 # 残差连接层
-
-![](img/81dfc390d09341e49f913b53cfbdf04e_13.png)
-
 [yolo]
 # YOLO输出层
 ```

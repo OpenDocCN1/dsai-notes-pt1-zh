@@ -274,12 +274,6 @@ Bagging通过样本扰动增加了基学习器之间的多样性，从而降低�
 ![](img/b9eae516af5cdb175d1e0993413e8b35_155.png)
 
 以下是核心代码步骤：
-```python
-# 1. 导入库与数据
-import pandas as pd
-from sklearn import preprocessing
-from sklearn.tree import DecisionTreeClassifier, export_graphviz
-data = pd.read_csv(‘decision_tree.csv‘)
 
 ![](img/b9eae516af5cdb175d1e0993413e8b35_157.png)
 
@@ -295,15 +289,9 @@ data = pd.read_csv(‘decision_tree.csv‘)
 
 ![](img/b9eae516af5cdb175d1e0993413e8b35_169.png)
 
-# 2. 准备特征X和标签y
-feature_names = [‘workclass‘, ‘education‘, ‘marital-status‘, ...]
-X = data[feature_names]
-y = data[‘income‘]
 
 ![](img/b9eae516af5cdb175d1e0993413e8b35_171.png)
 
-# 3. 特征工程：将类别特征转换为数值（如独热编码）
-# ... (使用preprocessing进行处理)
 
 ![](img/b9eae516af5cdb175d1e0993413e8b35_173.png)
 
@@ -319,9 +307,6 @@ y = data[‘income‘]
 
 ![](img/b9eae516af5cdb175d1e0993413e8b35_185.png)
 
-# 4. 构建并训练决策树模型
-clf = DecisionTreeClassifier(criterion=‘entropy‘, max_depth=4)
-clf.fit(X_train, y_train)
 
 ![](img/b9eae516af5cdb175d1e0993413e8b35_187.png)
 
@@ -339,6 +324,21 @@ clf.fit(X_train, y_train)
 
 ![](img/b9eae516af5cdb175d1e0993413e8b35_201.png)
 
+```python
+# 1. 导入库与数据
+import pandas as pd
+from sklearn import preprocessing
+from sklearn.tree import DecisionTreeClassifier, export_graphviz
+data = pd.read_csv(‘decision_tree.csv‘)
+# 2. 准备特征X和标签y
+feature_names = [‘workclass‘, ‘education‘, ‘marital-status‘, ...]
+X = data[feature_names]
+y = data[‘income‘]
+# 3. 特征工程：将类别特征转换为数值（如独热编码）
+# ... (使用preprocessing进行处理)
+# 4. 构建并训练决策树模型
+clf = DecisionTreeClassifier(criterion=‘entropy‘, max_depth=4)
+clf.fit(X_train, y_train)
 # 5. 可视化决策树
 export_graphviz(clf, out_file=‘tree.dot‘, feature_names=feature_names, class_names=[‘<=50K‘, ‘>50K‘], filled=True)
 ```
@@ -380,12 +380,6 @@ export_graphviz(clf, out_file=‘tree.dot‘, feature_names=feature_names, class
 ![](img/b9eae516af5cdb175d1e0993413e8b35_233.png)
 
 以下是核心代码步骤：
-```python
-# 1. 导入库与数据
-from sklearn.datasets import load_boston
-from sklearn.ensemble import RandomForestRegressor
-boston = load_boston()
-X, y = boston.data, boston.target
 
 ![](img/b9eae516af5cdb175d1e0993413e8b35_235.png)
 
@@ -399,11 +393,6 @@ X, y = boston.data, boston.target
 
 ![](img/b9eae516af5cdb175d1e0993413e8b35_245.png)
 
-# 2. 构建并训练随机森林回归模型
-# n_estimators: 森林中树的数量
-# max_features: 寻找最佳分割时考虑的特征数（可设为特征总数的百分比，如0.6）
-regr = RandomForestRegressor(n_estimators=15, max_features=0.6, random_state=0)
-regr.fit(X, y)
 
 ![](img/b9eae516af5cdb175d1e0993413e8b35_247.png)
 
@@ -413,6 +402,17 @@ regr.fit(X, y)
 
 ![](img/b9eae516af5cdb175d1e0993413e8b35_253.png)
 
+```python
+# 1. 导入库与数据
+from sklearn.datasets import load_boston
+from sklearn.ensemble import RandomForestRegressor
+boston = load_boston()
+X, y = boston.data, boston.target
+# 2. 构建并训练随机森林回归模型
+# n_estimators: 森林中树的数量
+# max_features: 寻找最佳分割时考虑的特征数（可设为特征总数的百分比，如0.6）
+regr = RandomForestRegressor(n_estimators=15, max_features=0.6, random_state=0)
+regr.fit(X, y)
 # 3. 进行预测
 print(regr.predict(X[:5]))
 ```

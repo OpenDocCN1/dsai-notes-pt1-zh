@@ -133,6 +133,15 @@ import math
 
 ![](img/103e9e9dd39e50654b9cc4718059d53e_58.png)
 
+
+![](img/103e9e9dd39e50654b9cc4718059d53e_60.png)
+
+![](img/103e9e9dd39e50654b9cc4718059d53e_61.png)
+
+![](img/103e9e9dd39e50654b9cc4718059d53e_62.png)
+
+![](img/103e9e9dd39e50654b9cc4718059d53e_63.png)
+
 ```python
 from scipy.stats import binom
 
@@ -143,15 +152,6 @@ k_observed = 57  # 观察到的成功次数
 
 # 计算P值：P(X >= 57) = 1 - P(X <= 56)
 p_value = 1 - binom.cdf(k_observed - 1, n, p)
-
-![](img/103e9e9dd39e50654b9cc4718059d53e_60.png)
-
-![](img/103e9e9dd39e50654b9cc4718059d53e_61.png)
-
-![](img/103e9e9dd39e50654b9cc4718059d53e_62.png)
-
-![](img/103e9e9dd39e50654b9cc4718059d53e_63.png)
-
 # 将P值格式化为百分比字符串输出
 p_value_percent = str(round(p_value * 100, 1)) + '%'
 print(f"获得57次或更多正确预测的概率（P值）是：{p_value_percent}")

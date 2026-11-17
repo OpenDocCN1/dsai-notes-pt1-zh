@@ -112,8 +112,9 @@ df.head()
 
 我们将使用感叹号。如果你以前从未写过 Markdown 代码，网上有一些很好的指南教你如何写 Markdown 代码，但基本上，任何你可以写的 Markdown 代码，你都可以写在 Jupyter 单元格中。所以我们想导入我们之前上传的图片。
 
-```
 ![Framework](img/framework.png)
+
+```
 ```
 
 你可以用任何图片这样做，所以这在这个文件文件夹里。我们只是在这里写，你可以用你自己的图片做这个。基本上，这是 Markdown 代码，意思是“将这个图片导入到 Notebook 中”。如果我们按 `Shift + Enter`。

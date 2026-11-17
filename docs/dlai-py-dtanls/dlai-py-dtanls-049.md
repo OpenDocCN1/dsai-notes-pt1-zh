@@ -72,21 +72,21 @@ plt.show()
 
 让我们将这些改进应用到图表上：
 
-```python
-# 绘制分组柱状图
-ax = unstacked_data.plot(kind='bar')
 
 ![](img/873b8f79611fdf2c939aef0914fb938e_14.png)
 
-# 设置图表标题和坐标轴标签
-plt.title('各州不同信用等级的平均贷款金额')
-plt.xlabel('州')
-plt.ylabel('平均贷款金额')
 
 ![](img/873b8f79611fdf2c939aef0914fb938e_15.png)
 
 ![](img/873b8f79611fdf2c939aef0914fb938e_16.png)
 
+```python
+# 绘制分组柱状图
+ax = unstacked_data.plot(kind='bar')
+# 设置图表标题和坐标轴标签
+plt.title('各州不同信用等级的平均贷款金额')
+plt.xlabel('州')
+plt.ylabel('平均贷款金额')
 # 旋转X轴刻度标签为水平
 plt.xticks(rotation=0)
 

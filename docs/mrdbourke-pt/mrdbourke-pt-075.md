@@ -64,8 +64,6 @@
 
 ![](img/5fe613290c0a54bf9b620caa134f356f_37.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/5fe613290c0a54bf9b620caa134f356f_39.png)
 
@@ -75,6 +73,8 @@ import matplotlib.pyplot as plt
 
 ![](img/5fe613290c0a54bf9b620caa134f356f_44.png)
 
+```python
+import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(9, 9))
 rows, cols = 3, 3
 ```

@@ -80,18 +80,18 @@ model.fit(X_train_scaled, y_train)
 
 对应的核心代码如下：
 
+
+![](img/940afed0167512727db64930c1b1db57_14.png)
+
+
+![](img/940afed0167512727db64930c1b1db57_15.png)
+
 ```python
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 import seaborn as sns
 import matplotlib.pyplot as plt
-
-![](img/940afed0167512727db64930c1b1db57_14.png)
-
 y_pred = model.predict(X_test_scaled)
 print(f"模型准确率: {accuracy_score(y_test, y_pred):.2f}")
-
-![](img/940afed0167512727db64930c1b1db57_15.png)
-
 cm = confusion_matrix(y_test, y_pred)
 ```
 

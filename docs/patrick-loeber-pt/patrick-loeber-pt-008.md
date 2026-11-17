@@ -30,17 +30,17 @@ from sklearn.model_selection import train_test_split
 
 ![](img/0afed1d607ee8c3661079d47e79c3f72_5.png)
 
+
+![](img/0afed1d607ee8c3661079d47e79c3f72_7.png)
+
+![](img/0afed1d607ee8c3661079d47e79c3f72_9.png)
+
 ```python
 # 1. 加载数据
 b = datasets.load_breast_cancer()
 X, y = b.data, b.target
 n_samples, n_features = X.shape
 print(f'样本数: {n_samples}, 特征数: {n_features}')
-
-![](img/0afed1d607ee8c3661079d47e79c3f72_7.png)
-
-![](img/0afed1d607ee8c3661079d47e79c3f72_9.png)
-
 # 2. 分割数据
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1234)
 

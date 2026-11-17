@@ -60,11 +60,11 @@ client.set_default_model("gpt-4o-mini")
 *   对于 `human` 部分，我输入了“我的名字是 Sarah”，但你可以将其更改为你自己的名字，或者包含关于你自己的额外信息。
 *   对于 `persona` 部分，我们告诉智能体：“你是一个乐于助人的助手，喜欢使用表情符号。” 这将定义智能体的个性，但由于它在记忆部分，所以仍然是可编辑的。
 
-```python
-from lettra import ChatMemory
 
 ![](img/1b266b8ec6c1f0837cc686c1a4fdb81e_4.png)
 
+```python
+from lettra import ChatMemory
 agent_state = client.create_agent(
     agent_name="simple_agent",
     memory=ChatMemory(

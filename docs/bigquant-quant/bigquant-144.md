@@ -60,12 +60,12 @@ plt.show()
 
 ![](img/2077da5de348682fa498e4e0a5082629_13.png)
 
-```python
-# 存储不同K值下的轮廓系数
-scores = []
 
 ![](img/2077da5de348682fa498e4e0a5082629_15.png)
 
+```python
+# 存储不同K值下的轮廓系数
+scores = []
 # 尝试不同的K值
 for k in range(2, 8):
     # 声明算法

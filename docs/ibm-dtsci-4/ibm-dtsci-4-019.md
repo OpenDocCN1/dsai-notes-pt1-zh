@@ -231,15 +231,15 @@ spanish_translation = translation_response['translations'][0]['translation']
 ![](img/298a7750b53a3d2577154a20054b7145_36.png)
 
 你还可以进行反向翻译或翻译成其他语言。
+
+![](img/298a7750b53a3d2577154a20054b7145_36.png)
+
 ```python
 # 将西班牙语翻译回英语
 translation_back = translator.translate(
     text=spanish_translation,
     model_id='es-en'
 ).get_result()
-
-![](img/298a7750b53a3d2577154a20054b7145_36.png)
-
 # 将原始英文翻译成法语
 french_translation = translator.translate(
     text=recognized_text,

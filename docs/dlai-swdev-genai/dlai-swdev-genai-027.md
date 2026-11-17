@@ -16,26 +16,26 @@
 
 如果你在像CoLab这样的共享环境中运行它，需要稍作修改以使用线程。像Jupyter或CoLab这样的笔记环境，总是会先执行完当前单元格的代码，再继续下一个。因此，如果你想启动一个我们将要调用的API服务器，它确实需要在一个单独的线程中运行，这样你才能继续笔记本的其他部分。在生产环境中你可能不会这样做，但对于在笔记本中学习的目的来说，这完全没问题。
 
+
+![](img/a49eb25623255ef23a1fb3ddbef7b42c_2.png)
+
+![](img/a49eb25623255ef23a1fb3ddbef7b42c_3.png)
+
+
+![](img/a49eb25623255ef23a1fb3ddbef7b42c_5.png)
+
 ```python
 # 示例Flask应用代码
 from flask import Flask
 import threading
 
 app = Flask(__name__)
-
-![](img/a49eb25623255ef23a1fb3ddbef7b42c_2.png)
-
-![](img/a49eb25623255ef23a1fb3ddbef7b42c_3.png)
-
 @app.route('/api/greet/<name>')
 def greet(name):
     return f"Hello, {name}!"
 
 def run_app():
     app.run(host='0.0.0.0', port=5000, debug=False, use_reloader=False)
-
-![](img/a49eb25623255ef23a1fb3ddbef7b42c_5.png)
-
 if __name__ == '__main__':
     # 在单独的线程中运行，适用于笔记本环境
     thread = threading.Thread(target=run_app)

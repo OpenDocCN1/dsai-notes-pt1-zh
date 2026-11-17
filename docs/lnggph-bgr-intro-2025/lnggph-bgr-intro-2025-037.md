@@ -172,14 +172,14 @@ def off_topic_response(state):
 
 ![](img/c79b52a1e1a42d9a9580a3d886615211_24.png)
 
+
+![](img/c79b52a1e1a42d9a9580a3d886615211_26.png)
+
 ```python
 from langgraph.graph import StateGraph, END
 
 # 创建图构建器
 workflow = StateGraph(YourStateSchema) # 使用您定义的状态模式
-
-![](img/c79b52a1e1a42d9a9580a3d886615211_26.png)
-
 # 添加节点
 workflow.add_node("topic_decision", topic_decision_node)
 workflow.add_node("retrieve", retrieve)

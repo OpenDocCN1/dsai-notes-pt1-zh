@@ -79,32 +79,32 @@
 
 ![](img/30d35882e289d43893c899049d3014fe_31.png)
 
-```python
-# 导入自定义工具模块
-from utils import process_records, connectToDatabase, setupVectorSearchIndex
 
 ![](img/30d35882e289d43893c899049d3014fe_33.png)
 
-# 加载并处理数据集
-data_points = process_records(loaded_dataset)  # 返回符合数据模型的Python列表
 
 ![](img/30d35882e289d43893c899049d3014fe_35.png)
 
 ![](img/30d35882e289d43893c899049d3014fe_37.png)
 
-# 连接数据库
-db, collection = connectToDatabase()
 
 ![](img/30d35882e289d43893c899049d3014fe_39.png)
 
-# 清空集合（为实验做准备）
-delete_result = collection.delete_many({})
-print(f"已删除 {delete_result.deleted_count} 个文档。")
 
 ![](img/30d35882e289d43893c899049d3014fe_41.png)
 
 ![](img/30d35882e289d43893c899049d3014fe_43.png)
 
+```python
+# 导入自定义工具模块
+from utils import process_records, connectToDatabase, setupVectorSearchIndex
+# 加载并处理数据集
+data_points = process_records(loaded_dataset)  # 返回符合数据模型的Python列表
+# 连接数据库
+db, collection = connectToDatabase()
+# 清空集合（为实验做准备）
+delete_result = collection.delete_many({})
+print(f"已删除 {delete_result.deleted_count} 个文档。")
 # 将数据插入集合
 collection.insert_many(data_points)
 print("数据摄入完成。")
@@ -169,6 +169,9 @@ def vector_search(user_query, db, collection, index_name):
 
 ![](img/30d35882e289d43893c899049d3014fe_55.png)
 
+
+![](img/30d35882e289d43893c899049d3014fe_57.png)
+
 ```python
 # 定义过滤路径和条件
 search_path = "address.country"
@@ -176,9 +179,6 @@ filter_criteria = {
     search_path: "United States",
     "accommodates": {"$gt": 1, "$lt": 5}
 }
-
-![](img/30d35882e289d43893c899049d3014fe_57.png)
-
 # 创建额外的匹配阶段（后过滤）
 additional_stage = {"$match": filter_criteria}
 
@@ -223,13 +223,16 @@ postfilter_results = vector_search_with_postfilter(user_query, db, collection, i
 
 ![](img/30d35882e289d43893c899049d3014fe_63.png)
 
+
+![](img/30d35882e289d43893c899049d3014fe_65.png)
+
+
+![](img/30d35882e289d43893c899049d3014fe_67.png)
+
 ```python
 # 首先，创建一个新的支持过滤的向量搜索索引（可选）
 filtered_index_name = “vector_index_with_filter”
 # ... 创建索引的代码 ...
-
-![](img/30d35882e289d43893c899049d3014fe_65.png)
-
 # 定义带前过滤的向量搜索函数
 def vector_search_with_prefilter(user_query, db, collection, index_name):
     query_embedding = get_embedding(user_query)
@@ -252,9 +255,6 @@ def vector_search_with_prefilter(user_query, db, collection, index_name):
     ]
     results = list(collection.aggregate(pipeline))
     return results
-
-![](img/30d35882e289d43893c899049d3014fe_67.png)
-
 # 执行带前过滤的查询
 prefilter_results = vector_search_with_prefilter(user_query, db, collection, filtered_index_name)
 ```

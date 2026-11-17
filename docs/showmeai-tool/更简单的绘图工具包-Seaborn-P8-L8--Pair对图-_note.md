@@ -14,11 +14,11 @@
 
 ![](img/4a9e49a89e73c905344cc66b813032a6_1.png)
 
-```python
-import seaborn as sns
 
 ![](img/4a9e49a89e73c905344cc66b813032a6_2.png)
 
+```python
+import seaborn as sns
 # 加载数据集
 cash_df = sns.load_dataset('car_crashes')
 ```

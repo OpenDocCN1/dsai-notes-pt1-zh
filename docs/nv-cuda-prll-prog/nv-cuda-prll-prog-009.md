@@ -156,10 +156,6 @@ myKernel<<<grid, block>>>(...); // 启动内核
 ![](img/3026efa599658b0243d3bfd2c79f4da7_87.png)
 
 **代码描述：**
-```c
-// 主机端代码
-int size = 1024; // 运行时决定的大小
-myKernel<<<grid, block, size * sizeof(float)>>>(...);
 
 ![](img/3026efa599658b0243d3bfd2c79f4da7_89.png)
 
@@ -169,6 +165,10 @@ myKernel<<<grid, block, size * sizeof(float)>>>(...);
 
 ![](img/3026efa599658b0243d3bfd2c79f4da7_95.png)
 
+```c
+// 主机端代码
+int size = 1024; // 运行时决定的大小
+myKernel<<<grid, block, size * sizeof(float)>>>(...);
 // 设备端（内核）代码
 __global__ void myKernel(...) {
     extern __shared__ float s_data[]; // 动态共享内存数组

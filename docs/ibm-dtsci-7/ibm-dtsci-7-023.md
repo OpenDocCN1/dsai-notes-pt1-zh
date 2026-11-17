@@ -117,8 +117,6 @@ pivot_table = grouped_data.pivot(index='drive-wheels', columns='body-style')
 
 ![](img/f08b98c2b04dd15e26907c35301a5d15_46.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/f08b98c2b04dd15e26907c35301a5d15_48.png)
 
@@ -126,6 +124,8 @@ import matplotlib.pyplot as plt
 
 ![](img/f08b98c2b04dd15e26907c35301a5d15_51.png)
 
+```python
+import matplotlib.pyplot as plt
 # 绘制热力图
 plt.pcolor(pivot_table, cmap='RdBu')
 plt.colorbar()

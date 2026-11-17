@@ -45,14 +45,14 @@ print(model_0.state_dict())
 
 首先，我们导入必要的库并创建一个目录来存放模型文件。
 
-```python
-import torch
-from pathlib import Path
 
 ![](img/4bb9a684af45d5545c32738efb135f92_9.png)
 
 ![](img/4bb9a684af45d5545c32738efb135f92_11.png)
 
+```python
+import torch
+from pathlib import Path
 # 1. 创建模型保存目录
 MODEL_PATH = Path("models")
 MODEL_PATH.mkdir(parents=True, exist_ok=True)

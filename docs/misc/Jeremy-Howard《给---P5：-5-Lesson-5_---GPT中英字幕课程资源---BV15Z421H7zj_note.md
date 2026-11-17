@@ -265,9 +265,6 @@ preds = (x_norm * coeffs).sum(axis=1)
 
 ![](img/82ab127558454f398f75c3d75e236e71_152.png)
 
-```python
-def calc_preds(coeffs, x): return (x @ coeffs).view(-1, 1)
-def calc_loss(coeffs, x, y): return torch.abs(calc_preds(coeffs, x) - y).mean()
 
 ![](img/82ab127558454f398f75c3d75e236e71_154.png)
 
@@ -279,16 +276,6 @@ def calc_loss(coeffs, x, y): return torch.abs(calc_preds(coeffs, x) - y).mean()
 
 ![](img/82ab127558454f398f75c3d75e236e71_162.png)
 
-def train_model(epochs=30, lr=0.01):
-    torch.manual_seed(42)
-    coeffs = (torch.rand(x.shape[1], 1) - 0.5).requires_grad_()
-    for i in range(epochs): 
-        loss = calc_loss(coeffs, x_norm, y)
-        loss.backward()
-        coeffs.data -= lr * coeffs.grad.data
-        coeffs.grad.zero_()
-        print(f"Epoch {i}: loss={loss.item():.4f}")
-    return coeffs
 
 ![](img/82ab127558454f398f75c3d75e236e71_164.png)
 
@@ -300,6 +287,19 @@ def train_model(epochs=30, lr=0.01):
 
 ![](img/82ab127558454f398f75c3d75e236e71_171.png)
 
+```python
+def calc_preds(coeffs, x): return (x @ coeffs).view(-1, 1)
+def calc_loss(coeffs, x, y): return torch.abs(calc_preds(coeffs, x) - y).mean()
+def train_model(epochs=30, lr=0.01):
+    torch.manual_seed(42)
+    coeffs = (torch.rand(x.shape[1], 1) - 0.5).requires_grad_()
+    for i in range(epochs): 
+        loss = calc_loss(coeffs, x_norm, y)
+        loss.backward()
+        coeffs.data -= lr * coeffs.grad.data
+        coeffs.grad.zero_()
+        print(f"Epoch {i}: loss={loss.item():.4f}")
+    return coeffs
 coeffs = train_model()
 ```
 
@@ -342,10 +342,6 @@ coeffs = train_model()
 
 ![](img/82ab127558454f398f75c3d75e236e71_202.png)
 
-```python
-# 查看系数
-for col, coeff in zip(indep_cols, coeffs[:,0]):
-    print(f"{col:15} {coeff.item():.4f}")
 
 ![](img/82ab127558454f398f75c3d75e236e71_204.png)
 
@@ -353,6 +349,10 @@ for col, coeff in zip(indep_cols, coeffs[:,0]):
 
 ![](img/82ab127558454f398f75c3d75e236e71_208.png)
 
+```python
+# 查看系数
+for col, coeff in zip(indep_cols, coeffs[:,0]):
+    print(f"{col:15} {coeff.item():.4f}")
 # 计算准确率
 preds = calc_preds(coeffs, x_norm)
 acc = ((preds > 0.5).float() == y).float().mean()
@@ -403,6 +403,18 @@ coeffs = train_model(lr=2)
 
 ![](img/82ab127558454f398f75c3d75e236e71_234.png)
 
+
+![](img/82ab127558454f398f75c3d75e236e71_236.png)
+
+
+![](img/82ab127558454f398f75c3d75e236e71_238.png)
+
+![](img/82ab127558454f398f75c3d75e236e71_240.png)
+
+![](img/82ab127558454f398f75c3d75e236e71_242.png)
+
+![](img/82ab127558454f398f75c3d75e236e71_244.png)
+
 ```python
 def init_coeffs(n_hidden=20):
     # 第一层系数矩阵：输入特征数 x 隐藏层神经元数
@@ -420,22 +432,10 @@ def calc_preds(coeffs, x):
     # 第二层线性变换 + 常数项 + Sigmoid激活
     res = torch.sigmoid(res @ l2 + const)
     return res
-
-![](img/82ab127558454f398f75c3d75e236e71_236.png)
-
 def update_coeffs(coeffs, lr):
     for layer in coeffs:
         layer.data -= lr * layer.grad.data
         layer.grad.zero_()
-
-![](img/82ab127558454f398f75c3d75e236e71_238.png)
-
-![](img/82ab127558454f398f75c3d75e236e71_240.png)
-
-![](img/82ab127558454f398f75c3d75e236e71_242.png)
-
-![](img/82ab127558454f398f75c3d75e236e71_244.png)
-
 # 训练过程与线性模型类似，但需要更新所有层的系数
 ```
 
@@ -465,15 +465,15 @@ def update_coeffs(coeffs, lr):
 
 ![](img/82ab127558454f398f75c3d75e236e71_265.png)
 
+
+![](img/82ab127558454f398f75c3d75e236e71_267.png)
+
 ```python
 def init_coeffs(hidden_layers=[10, 10]):
     sz = [x.shape[1]] + hidden_layers + [1]
     layers = [((torch.rand(sz[i], sz[i+1])-0.5)/sz[i+1]).requires_grad_() for i in range(len(sz)-1)]
     consts = [torch.rand(1)[0].requires_grad_() for _ in range(len(sz)-1)]
     return layers, consts
-
-![](img/82ab127558454f398f75c3d75e236e71_267.png)
-
 def calc_preds(coeffs, x):
     layers, consts = coeffs
     res = x
@@ -579,11 +579,6 @@ learn.fit(10, lr=0.03)
 
 ![](img/82ab127558454f398f75c3d75e236e71_325.png)
 
-```python
-def ensemble():
-    learn = tabular_learner(dls, layers=[10,10])
-    with learn.no_logging(): learn.fit(10, lr=0.03)
-    return learn.get_preds(dl=test_dl)[0]
 
 ![](img/82ab127558454f398f75c3d75e236e71_327.png)
 
@@ -591,6 +586,11 @@ def ensemble():
 
 ![](img/82ab127558454f398f75c3d75e236e71_331.png)
 
+```python
+def ensemble():
+    learn = tabular_learner(dls, layers=[10,10])
+    with learn.no_logging(): learn.fit(10, lr=0.03)
+    return learn.get_preds(dl=test_dl)[0]
 preds = torch.stack([ensemble() for _ in range(5)])
 avg_preds = preds.mean(dim=0)
 ```
@@ -643,11 +643,6 @@ avg_preds = preds.mean(dim=0)
 
 ![](img/82ab127558454f398f75c3d75e236e71_368.png)
 
-```python
-def _side_score(side, y):
-    tot = side.sum()
-    if tot <= 1: return 0
-    return y[side].std() * tot
 
 ![](img/82ab127558454f398f75c3d75e236e71_370.png)
 
@@ -657,12 +652,17 @@ def _side_score(side, y):
 
 ![](img/82ab127558454f398f75c3d75e236e71_376.png)
 
-def score(col, y, split):
-    lhs = col <= split
-    return (_side_score(lhs, y) + _side_score(~lhs, y)) / len(y)
 
 ![](img/82ab127558454f398f75c3d75e236e71_378.png)
 
+```python
+def _side_score(side, y):
+    tot = side.sum()
+    if tot <= 1: return 0
+    return y[side].std() * tot
+def score(col, y, split):
+    lhs = col <= split
+    return (_side_score(lhs, y) + _side_score(~lhs, y)) / len(y)
 # 对于连续特征“年龄”，尝试所有唯一值作为分割点
 scores = torch.tensor([score(df['Age'], y, split) for split in df['Age'].unique()])
 best_idx = scores.argmin()

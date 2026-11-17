@@ -172,6 +172,11 @@ return response
 ![](img/ef1ed3f9de92bfce3386f590b5b0c195_40.png)
 
 **Flask API 示例**：
+
+![](img/ef1ed3f9de92bfce3386f590b5b0c195_42.png)
+
+![](img/ef1ed3f9de92bfce3386f590b5b0c195_44.png)
+
 ```python
 from flask import Flask, request
 from your_qa_pipeline import qa_pipeline
@@ -183,11 +188,6 @@ def answer_question():
     user_text = request.args.get('text', '')
     answer = qa_pipeline(user_text) # 调用整合好的问答流程
     return answer
-
-![](img/ef1ed3f9de92bfce3386f590b5b0c195_42.png)
-
-![](img/ef1ed3f9de92bfce3386f590b5b0c195_44.png)
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 ```

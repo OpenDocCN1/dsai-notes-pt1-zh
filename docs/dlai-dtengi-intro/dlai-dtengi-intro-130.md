@@ -32,14 +32,17 @@
 
 ![](img/798a86a1fe55a3c91c6730e39ed106d6_2.png)
 
+
+![](img/798a86a1fe55a3c91c6730e39ed106d6_3.png)
+
+
+![](img/798a86a1fe55a3c91c6730e39ed106d6_5.png)
+
 ```python
 # 示例：在Airflow中定义一个简单的DAG
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime
-
-![](img/798a86a1fe55a3c91c6730e39ed106d6_3.png)
-
 def my_task_function():
     # 你的任务逻辑在这里
     print("任务执行中...")
@@ -51,9 +54,6 @@ dag = DAG(
     start_date=datetime(2023, 1, 1),
     catchup=False
 )
-
-![](img/798a86a1fe55a3c91c6730e39ed106d6_5.png)
-
 # 定义任务
 task = PythonOperator(
     task_id='my_task',
@@ -74,11 +74,11 @@ task = PythonOperator(
 
 以下是你可以如何在Airflow中定义一个名为“传感器”的任务，用于监听文件上传事件：
 
-```python
-from airflow.providers.amazon.aws.sensors.s3 import S3KeySensor
 
 ![](img/798a86a1fe55a3c91c6730e39ed106d6_7.png)
 
+```python
+from airflow.providers.amazon.aws.sensors.s3 import S3KeySensor
 wait_for_file = S3KeySensor(
     task_id='wait_for_my_file',
     bucket_key='s3://my-bucket/myfile.csv',

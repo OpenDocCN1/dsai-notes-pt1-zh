@@ -59,6 +59,11 @@ DEVICE = 'cuda'  # 使用GPU进行训练以加速
 
 ![](img/9c4892e9e384b9d2e37d1f9132f981f4_15.png)
 
+
+![](img/9c4892e9e384b9d2e37d1f9132f981f4_17.png)
+
+![](img/9c4892e9e384b9d2e37d1f9132f981f4_19.png)
+
 ```python
 # 训练集转换
 train_transform = transforms.Compose([
@@ -67,11 +72,6 @@ train_transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
 ])
-
-![](img/9c4892e9e384b9d2e37d1f9132f981f4_17.png)
-
-![](img/9c4892e9e384b9d2e37d1f9132f981f4_19.png)
-
 # 测试集转换
 test_transform = transforms.Compose([
     transforms.Resize((70, 70)),

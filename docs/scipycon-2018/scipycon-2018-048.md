@@ -26,11 +26,11 @@ plt.show()
 
 灰度图像是一个二维矩阵。对于彩色图像，我们需要不同的层来表示不同的颜色，通常是红、绿、蓝（RGB）三个通道。
 
-```python
-from skimage import data
 
 ![](img/5f6eab589fce803a1ae2363679a6a5aa_7.png)
 
+```python
+from skimage import data
 # 加载灰度图像
 coins = data.coins()
 print(f"类型: {type(coins)}")
@@ -96,14 +96,14 @@ print(f"找到 {len(ic)} 张图像")
 
 首先，我们在一维信号上理解这个概念。
 
+
+![](img/5f6eab589fce803a1ae2363679a6a5aa_9.png)
+
 ```python
 # 创建一个阶跃信号并添加噪声
 signal = np.zeros(100)
 signal[50:] = 1
 noisy_signal = signal + 0.1 * np.random.randn(100)
-
-![](img/5f6eab589fce803a1ae2363679a6a5aa_9.png)
-
 # 使用简单移动平均进行平滑
 mean_kernel_3 = np.full(3, 1/3)
 smoothed_3 = np.convolve(noisy_signal, mean_kernel_3, mode='valid')
@@ -113,11 +113,11 @@ NumPy 的 `convolve` 函数在边界处可能产生不理想的效果。SciPy �
 
 ![](img/5f6eab589fce803a1ae2363679a6a5aa_11.png)
 
-```python
-from scipy import ndimage
 
 ![](img/5f6eab589fce803a1ae2363679a6a5aa_13.png)
 
+```python
+from scipy import ndimage
 # 使用 'reflect' 模式处理边界
 smoothed_reflect = ndimage.convolve(noisy_signal, mean_kernel_3, mode='reflect')
 ```
@@ -169,12 +169,12 @@ edges_sobel = filters.sobel(pixelated_camera)
 
 ![](img/5f6eab589fce803a1ae2363679a6a5aa_20.png)
 
-```python
-from skimage.filters import median
-from skimage.morphology import disk
 
 ![](img/5f6eab589fce803a1ae2363679a6a5aa_22.png)
 
+```python
+from skimage.filters import median
+from skimage.morphology import disk
 # 应用中值过滤器
 filtered_median = median(pixelated_camera, disk(5))
 ```
@@ -256,12 +256,12 @@ segmentation = random_walker(gray_astronaut, labels, beta=400)
 
 对于无监督分割，SLIC 算法使用 K-means 将图像分割成外观相似的超像素区域。
 
-```python
-from skimage.segmentation import slic
-from skimage.color import label2rgb
 
 ![](img/5f6eab589fce803a1ae2363679a6a5aa_39.png)
 
+```python
+from skimage.segmentation import slic
+from skimage.color import label2rgb
 # 应用 SLIC
 segments_slic = slic(astronaut, n_segments=100, compactness=10)
 segments_color = label2rgb(segments_slic, astronaut, kind='avg')

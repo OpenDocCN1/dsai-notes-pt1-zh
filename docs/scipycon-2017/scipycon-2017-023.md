@@ -152,12 +152,12 @@ result = total.compute()
 
 ![](img/2e0f3d0fda67c161aca31c77d327c239_9.png)
 
-```python
-import pandas as pd
-import glob
 
 ![](img/2e0f3d0fda67c161aca31c77d327c239_11.png)
 
+```python
+import pandas as pd
+import glob
 files = glob.glob('nyc_flights/*.csv')
 sums = {}
 counts = {}
@@ -178,11 +178,14 @@ mean_delay = {origin: sums[origin]/counts[origin] for origin in sums}
 1.  `delayed` 对象支持大多数运算符和方法调用。例如，如果 `df` 是一个 `delayed` 对象（代表一个未来的 Pandas DataFrame），那么 `df.groupby(...)` 会自动返回一个新的 `delayed` 对象。
 2.  `dask.compute` 函数可以同时计算多个 `delayed` 对象，并自动合并共享子任务，避免重复计算。
 
-```python
-from dask import compute
 
 ![](img/2e0f3d0fda67c161aca31c77d327c239_13.png)
 
+
+![](img/2e0f3d0fda67c161aca31c77d327c239_15.png)
+
+```python
+from dask import compute
 delayed_results = []
 for f in files:
     # 延迟读取 CSV
@@ -190,9 +193,6 @@ for f in files:
     # 延迟执行分组聚合
     grouped = df.groupby('origin')['dep_delay'].agg(['sum', 'count'])
     delayed_results.append(grouped)
-
-![](img/2e0f3d0fda67c161aca31c77d327c239_15.png)
-
 # 同时计算所有中间结果
 computed_results = compute(*delayed_results)
 
@@ -436,20 +436,20 @@ result = df.groupby('origin')['dep_delay'].mean().compute()
 
 除了高级集合（DataFrame, Array, Bag），分布式客户端还提供了底层的 **Futures** API，它类似于 Python 标准库的 `concurrent.futures`，但运行在集群上。这允许动态地、异步地构建和提交任务。
 
-```python
-from dask.distributed import Client
-client = Client()
 
 ![](img/2e0f3d0fda67c161aca31c77d327c239_29.png)
 
-def inc(x):
-    time.sleep(1)
-    return x + 1
 
 ![](img/2e0f3d0fda67c161aca31c77d327c239_31.png)
 
 ![](img/2e0f3d0fda67c161aca31c77d327c239_33.png)
 
+```python
+from dask.distributed import Client
+client = Client()
+def inc(x):
+    time.sleep(1)
+    return x + 1
 # 提交单个任务，立即返回一个 Future 对象（不阻塞）
 future_x = client.submit(inc, 1)
 # 可以继续做其他事情...

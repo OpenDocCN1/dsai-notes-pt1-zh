@@ -179,9 +179,6 @@ product_db = {
 
 **2. 创建辅助函数**
 我们需要辅助函数来按名称查找单个产品，或按类别查找所有产品。
-```python
-def get_product_by_name(name):
-    return product_db.get(name, None)
 
 ![](img/c7d46395cc0be78d2486d5b8c95f8618_81.png)
 
@@ -189,6 +186,9 @@ def get_product_by_name(name):
 
 ![](img/c7d46395cc0be78d2486d5b8c95f8618_85.png)
 
+```python
+def get_product_by_name(name):
+    return product_db.get(name, None)
 def get_products_by_category(category):
     return [product for product in product_db.values() if product[“category”] == category]
 ```
@@ -275,23 +275,23 @@ messages = [
 ![](img/c7d46395cc0be78d2486d5b8c95f8618_108.png)
 
 **模型最终回答示例：**
-```
-当然！我很乐意为您介绍。
 
 ![](img/c7d46395cc0be78d2486d5b8c95f8618_110.png)
 
-关于 SmartX ProPhone：这是一款高端智能手机，拥有6.1英寸显示屏、128GB存储空间和12MP双摄像头。它支持5G网络，并配备快速充电技术。
 
 ![](img/c7d46395cc0be78d2486d5b8c95f8618_112.png)
 
 ![](img/c7d46395cc0be78d2486d5b8c95f8618_114.png)
 
-关于 FotoSnap DSLR Camera：这款数码单反相机具有24.2MP传感器、1080p视频录制功能，并附带一个18-55mm镜头套件。非常适合摄影爱好者。
-
-关于我们的电视：我们提供多种电视，例如 CineView 4K TV（55英寸4K显示屏）、CineView 8K TV（高端8K分辨率）以及 CineView OLED TV（色彩鲜艳的OLED屏）。您对哪种特性更感兴趣，比如屏幕尺寸、分辨率或智能功能？
 
 ![](img/c7d46395cc0be78d2486d5b8c95f8618_116.png)
 
+```
+当然！我很乐意为您介绍。
+关于 SmartX ProPhone：这是一款高端智能手机，拥有6.1英寸显示屏、128GB存储空间和12MP双摄像头。它支持5G网络，并配备快速充电技术。
+关于 FotoSnap DSLR Camera：这款数码单反相机具有24.2MP传感器、1080p视频录制功能，并附带一个18-55mm镜头套件。非常适合摄影爱好者。
+
+关于我们的电视：我们提供多种电视，例如 CineView 4K TV（55英寸4K显示屏）、CineView 8K TV（高端8K分辨率）以及 CineView OLED TV（色彩鲜艳的OLED屏）。您对哪种特性更感兴趣，比如屏幕尺寸、分辨率或智能功能？
 有什么其他问题我可以帮您解答吗？
 ```
 模型利用了提供的产品信息，给出了具体、相关的回答，并提出了后续问题。

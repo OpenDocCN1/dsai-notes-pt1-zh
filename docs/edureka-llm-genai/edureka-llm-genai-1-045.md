@@ -20,6 +20,12 @@ TensorFlow中的`Sequential`类代表了最简单的神经网络模型形式，�
 
 以下是添加层的基本语法示例：
 
+
+![](img/4bd8a893f4e646cc673bb75126bb6eee_4.png)
+
+
+![](img/4bd8a893f4e646cc673bb75126bb6eee_6.png)
+
 ```python
 import tensorflow as tf
 from tensorflow.keras import layers
@@ -29,17 +35,11 @@ input_shape = (10,)
 
 # 第一部分 创建一个顺序模型
 model = tf.keras.Sequential()
-
-![](img/4bd8a893f4e646cc673bb75126bb6eee_4.png)
-
 # 第一部分 添加第一层：具有64个神经元（单元）的全连接层，使用ReLU激活函数，并指定输入形状
 model.add(layers.Dense(64, activation='relu', input_shape=input_shape))
 
 # 第一部分 添加第二层：具有32个神经元的全连接层，使用ReLU激活函数
 model.add(layers.Dense(32, activation='relu'))
-
-![](img/4bd8a893f4e646cc673bb75126bb6eee_6.png)
-
 # 第一部分 添加第三层：具有1个神经元的全连接层，使用Sigmoid激活函数，常用于二元分类任务
 model.add(layers.Dense(1, activation='sigmoid'))
 ```

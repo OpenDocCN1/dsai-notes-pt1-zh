@@ -144,19 +144,19 @@ best_split_for_males = find_best_split(male_data, ‘survived’)
 ![](img/7383febe20d317edb4f4d72ed5e239c6_107.png)
 
 以下是构建并可视化一棵决策树的关键步骤：
+
+![](img/7383febe20d317edb4f4d72ed5e239c6_109.png)
+
+
+![](img/7383febe20d317edb4f4d72ed5e239c6_111.png)
+
 ```python
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import tree
 import matplotlib.pyplot as plt
-
-![](img/7383febe20d317edb4f4d72ed5e239c6_109.png)
-
 # 创建决策树分类器，限制最多4个叶节点
 m = DecisionTreeClassifier(max_leaf_nodes=4)
 m.fit(X, y) # X是特征，y是标签
-
-![](img/7383febe20d317edb4f4d72ed5e239c6_111.png)
-
 # 绘制决策树
 plt.figure(figsize=(12,8))
 tree.plot_tree(m, feature_names=X.columns, filled=True)

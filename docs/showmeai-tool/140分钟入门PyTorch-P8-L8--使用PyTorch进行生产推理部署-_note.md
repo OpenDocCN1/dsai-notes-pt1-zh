@@ -178,10 +178,10 @@ torchserve --start --ncs --model-store model_store --models densenet161.mar
 ```
 
 **步骤4：进行推理**
-```bash
-# 下载示例图片
 curl -O https://raw.githubusercontent.com/pytorch/serve/master/docs/images/kitten_small.jpg
 
+```bash
+# 下载示例图片
 # 调用预测API
 curl http://localhost:8080/predictions/densenet161 -T kitten_small.jpg
 ```

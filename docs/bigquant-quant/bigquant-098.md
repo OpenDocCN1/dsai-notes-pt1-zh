@@ -58,6 +58,9 @@ import numpy as np
 
 ![](img/622ea3d283652e712f90ad26b25fccac_29.png)
 
+
+![](img/622ea3d283652e712f90ad26b25fccac_31.png)
+
 ```python
 # 创建一个简单的二维数据
 a = np.array([[1, 3]])
@@ -66,9 +69,6 @@ a = np.array([[1, 3]])
 poly_interact = PolynomialFeatures(degree=2, interaction_only=True)
 result_interact = poly_interact.fit_transform(a)
 print(“interaction_only=True 的结果：”, result_interact)
-
-![](img/622ea3d283652e712f90ad26b25fccac_31.png)
-
 # 实例化PolynomialFeatures，设置degree=2, interaction_only=False
 poly_full = PolynomialFeatures(degree=2, interaction_only=False)
 result_full = poly_full.fit_transform(a)
@@ -95,15 +95,15 @@ print(“interaction_only=False 的结果：”, result_full)
 
 ![](img/622ea3d283652e712f90ad26b25fccac_35.png)
 
+
+![](img/622ea3d283652e712f90ad26b25fccac_37.png)
+
 ```python
 # 创建训练数据
 np.random.seed(42)
 m = 100
 X = 6 * np.random.rand(m, 1) - 2
 y = 0.5 * X**2 + X + 2 + np.random.randn(m, 1)
-
-![](img/622ea3d283652e712f90ad26b25fccac_37.png)
-
 # 创建用于绘制预测曲线的测试数据
 X_test = np.linspace(-2, 12, 300).reshape(-1, 1)
 ```
@@ -165,13 +165,13 @@ y_predict = model.predict(X_test_poly)
 
 ![](img/622ea3d283652e712f90ad26b25fccac_59.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/622ea3d283652e712f90ad26b25fccac_61.png)
 
 ![](img/622ea3d283652e712f90ad26b25fccac_63.png)
 
+```python
+import matplotlib.pyplot as plt
 plt.scatter(X, y, label=“原始数据”)
 plt.plot(X_test, y_predict, ‘r-‘, label=“多项式回归拟合线”)
 plt.xlabel(“X”)
@@ -202,14 +202,17 @@ plt.show()
 
 我们可以通过修改`PolynomialFeatures`的`degree`参数，来探索不同多项式次数下的拟合情况。
 
-```python
-degrees = [1, 2, 3, 5, 10]
-plt.figure(figsize=(15, 3))
 
 ![](img/622ea3d283652e712f90ad26b25fccac_79.png)
 
 ![](img/622ea3d283652e712f90ad26b25fccac_81.png)
 
+
+![](img/622ea3d283652e712f90ad26b25fccac_83.png)
+
+```python
+degrees = [1, 2, 3, 5, 10]
+plt.figure(figsize=(15, 3))
 for i, degree in enumerate(degrees):
     poly = PolynomialFeatures(degree=degree)
     X_poly = poly.fit_transform(X)
@@ -224,9 +227,6 @@ for i, degree in enumerate(degrees):
     plt.plot(X_test, y_predict, ‘r-‘)
     plt.title(f“Degree = {degree}”)
     plt.axis([-2, 12, -5, 30])
-
-![](img/622ea3d283652e712f90ad26b25fccac_83.png)
-
 plt.tight_layout()
 plt.show()
 ```

@@ -67,11 +67,11 @@ r2 = r2_score(test_df[target_column], y_pred)
 
 在 `Scikit-learn` 中，使用 `mean_absolute_error` 函数进行计算。
 
-```python
-from sklearn.metrics import mean_absolute_error
 
 ![](img/816ece20f67a7bafdafc76312ab6259f_6.png)
 
+```python
+from sklearn.metrics import mean_absolute_error
 mae = mean_absolute_error(test_df[target_column], y_pred)
 ```
 

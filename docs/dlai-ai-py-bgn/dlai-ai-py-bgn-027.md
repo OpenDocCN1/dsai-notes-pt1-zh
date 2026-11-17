@@ -51,15 +51,15 @@ sydney_restaurants = read_csv_file('Sydney.csv')
 
 ![](img/50ba23651961fb2281c83afab37bdd15_11.png)
 
+
+![](img/50ba23651961fb2281c83afab37bdd15_13.png)
+
 ```python
 city = itinerary[6]['city']
 country = itinerary[6]['country']
 arrival = itinerary[6]['arrival']
 departure = itinerary[6]['departure']
 restaurants = sydney_restaurants
-
-![](img/50ba23651961fb2281c83afab37bdd15_13.png)
-
 prompt = f"""
 请为{city}, {country}的旅行创建一份详细行程。
 访问时间：从{arrival}到{departure}。

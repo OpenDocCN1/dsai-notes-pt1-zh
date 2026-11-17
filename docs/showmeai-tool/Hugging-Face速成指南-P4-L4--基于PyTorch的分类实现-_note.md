@@ -20,13 +20,13 @@
 
 进行推理时，我们需要禁用梯度跟踪以节省内存和计算资源。在PyTorch中，这通过`torch.no_grad()`上下文管理器实现。
 
-```python
-import torch
 
 ![](img/6f843910cc38c033063518b8167635a3_7.png)
 
 ![](img/6f843910cc38c033063518b8167635a3_8.png)
 
+```python
+import torch
 with torch.no_grad():
     # 模型推理代码将放在这里
     pass
@@ -57,20 +57,20 @@ outputs = model(**batch)
 
 ![](img/6f843910cc38c033063518b8167635a3_15.png)
 
-```python
-# 应用softmax获取概率
-import torch.nn.functional as F
-predictions = F.softmax(outputs.logits, dim=1)
 
 ![](img/6f843910cc38c033063518b8167635a3_16.png)
 
 ![](img/6f843910cc38c033063518b8167635a3_17.png)
 
-# 获取预测的标签ID
-predicted_label_ids = torch.argmax(predictions, dim=1)
 
 ![](img/6f843910cc38c033063518b8167635a3_18.png)
 
+```python
+# 应用softmax获取概率
+import torch.nn.functional as F
+predictions = F.softmax(outputs.logits, dim=1)
+# 获取预测的标签ID
+predicted_label_ids = torch.argmax(predictions, dim=1)
 # 将标签ID转换为可读名称
 labels = [model.config.id2label[label_id] for label_id in predicted_label_ids.tolist()]
 ```

@@ -119,20 +119,20 @@ print(example_node.get_content(metadata_mode="all"))
 
 与上次不同的是，我们可以尝试通过元数据过滤器查询这个RAG管道，以展示元数据过滤的工作原理。
 
-```python
-# 构建向量索引
-index = VectorStoreIndex(nodes)
-query_engine = index.as_query_engine()
 
 ![](img/0fc32ebdde7f72bc9c2eb1b3565e2978_11.png)
 
-# 使用元数据过滤器进行查询
-from llama_index.core.vector_stores import MetadataFilter, MetadataFilters
 
 ![](img/0fc32ebdde7f72bc9c2eb1b3565e2978_12.png)
 
 ![](img/0fc32ebdde7f72bc9c2eb1b3565e2978_13.png)
 
+```python
+# 构建向量索引
+index = VectorStoreIndex(nodes)
+query_engine = index.as_query_engine()
+# 使用元数据过滤器进行查询
+from llama_index.core.vector_stores import MetadataFilter, MetadataFilters
 filters = MetadataFilters(filters=[MetadataFilter(key="page_label", value="2")])
 response = query_engine.query("MetaGBT的一些高级成果是什么？", filters=filters)
 print(response)

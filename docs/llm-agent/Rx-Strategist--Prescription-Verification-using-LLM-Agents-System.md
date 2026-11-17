@@ -404,14 +404,14 @@ Prescription:
 
 <svg class="ltx_picture" height="16.6" id="A0.SS3.SSS1.p2.pic1" overflow="visible" version="1.1" width="600"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,16.6) matrix(1 0 0 -1 0 0) translate(0,15.22)"><g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 15.22 -15.22)"><foreignobject height="0" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="0">```
 {"losartan": {    "dosage": {        "Pediatric Patients": {            "Hypertension": {                "Oral": "Children >6 years of age.. ."            }        },        "Adults": {            "Hypertension": {                "Losartan Therapy": "Oral\nManufacturer recommends initial dosage of 50 mg..."            },            "Prevention of Cardiovascular Morbidity and Mortality": {                "Oral": "Initially, 50 mg once daily..."            },            "Diabetic Nephropathy": {                "Oral": "Initially, 50 mg once daily..."            },            "Heart Failure [off-label]": {                "Oral": "Initially, 25-50 mg once daily ..."            }        }    }},"esomeprazole": {    "dosage": {        "Pediatric Patients": {            "GERD": {                "GERD Without Erosive Esophagitis": "Oral\nChildren 1-11 years of age..."            }        },        "Adults": {            "GERD": {                "GERD Without Erosive Esophagitis": "Oral\n20 mg once daily ..."            },            "Duodenal Ulcer": {                "Helicobacter pylori Infection and Duodenal Ulcer": "Oral\nTriple therapy:..."            },            "NSAIA-associated Ulcers": {                "Prevention of Gastric Ulcers": "Oral\n20 or 40 mg once daily;..."            }        }    }},...}
+
+![请参见标题说明](img/1722867b194bb1bab060884b13764072.png)
+
 ```</foreignobject></g></g></svg>
 
 ### -D 处方示例
 
 一个名为“24th”的处方示例在图[7](https://arxiv.org/html/2409.03440v1#A0.F7 "Figure 7 ‣ -D Prescription Sample ‣ Rx Strategist: Prescription Verification using LLM Agents System")中展示。
-
-![请参见标题说明](img/1722867b194bb1bab060884b13764072.png)
-
 图 7：标为第五的处方示例，包含一些重要信息，如诊断、剂量和活性成分。
 
 ### -E 剂量知识图谱结构

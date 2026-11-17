@@ -86,6 +86,33 @@
 
 ![](img/5149affbe02aaa27d202cb5dce5b7d13_52.png)
 
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_54.png)
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_56.png)
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_58.png)
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_60.png)
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_62.png)
+
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_64.png)
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_66.png)
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_68.png)
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_70.png)
+
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_72.png)
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_74.png)
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_76.png)
+
 ```python
 import torch
 import torch.nn.functional as F
@@ -103,42 +130,15 @@ b2 = torch.zeros(1)               # 第二层偏置
 # 线性层函数
 def lin(x, w, b):
     return x @ w + b
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_54.png)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_56.png)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_58.png)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_60.png)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_62.png)
-
 # ReLU激活函数
 def relu(x):
     return x.clamp_min(0.)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_64.png)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_66.png)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_68.png)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_70.png)
-
 # 模型前向传播 (简化版，单输出)
 def model(xb):
     l1 = lin(xb, w1, b1)  # 第一层线性变换
     l2 = relu(l1)         # ReLU激活
     l3 = lin(l2, w2, b2)  # 第二层线性变换
     return l3
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_72.png)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_74.png)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_76.png)
-
 # 计算均方误差损失 (MSE)
 def mse(preds, targets):
     # 处理广播问题：确保preds是向量而非列向量
@@ -212,12 +212,6 @@ def mse(preds, targets):
 
 我们将为每个操作（线性层、ReLU、MSE损失）实现其反向传播函数，计算并存储梯度。
 
-```python
-def mse_grad(preds, targets):
-    # MSE损失 L = mean((preds - targets)^2)
-    # dL/d(preds) = 2 * (preds - targets) / n
-    diff = preds.squeeze() - targets.float()
-    return 2. * diff.unsqueeze(-1) / preds.shape[0]  # 梯度形状需与preds匹配
 
 ![](img/5149affbe02aaa27d202cb5dce5b7d13_115.png)
 
@@ -227,6 +221,19 @@ def mse_grad(preds, targets):
 
 ![](img/5149affbe02aaa27d202cb5dce5b7d13_120.png)
 
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_122.png)
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_124.png)
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_126.png)
+
+```python
+def mse_grad(preds, targets):
+    # MSE损失 L = mean((preds - targets)^2)
+    # dL/d(preds) = 2 * (preds - targets) / n
+    diff = preds.squeeze() - targets.float()
+    return 2. * diff.unsqueeze(-1) / preds.shape[0]  # 梯度形状需与preds匹配
 def lin_grad(input, output, weight, bias, output_grad):
     # 线性层 output = input @ weight + bias
     # dL/d(input) = output_grad @ weight.T
@@ -236,13 +243,6 @@ def lin_grad(input, output, weight, bias, output_grad):
     weight_grad = input.T @ output_grad
     bias_grad = output_grad.sum(0)
     return input_grad, weight_grad, bias_grad
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_122.png)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_124.png)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_126.png)
-
 def relu_grad(input, output_grad):
     # ReLU层 output = max(0, input)
     # d(output)/d(input) = 1 if input > 0 else 0
@@ -268,12 +268,6 @@ def relu_grad(input, output_grad):
 
 ![](img/5149affbe02aaa27d202cb5dce5b7d13_142.png)
 
-```python
-# 前向传播
-l1 = lin(xb, w1, b1)
-l2 = relu(l1)
-l3 = lin(l2, w2, b2)
-loss = mse(l3, yb)
 
 ![](img/5149affbe02aaa27d202cb5dce5b7d13_144.png)
 
@@ -283,6 +277,12 @@ loss = mse(l3, yb)
 
 ![](img/5149affbe02aaa27d202cb5dce5b7d13_150.png)
 
+```python
+# 前向传播
+l1 = lin(xb, w1, b1)
+l2 = relu(l1)
+l3 = lin(l2, w2, b2)
+loss = mse(l3, yb)
 # 反向传播
 l3_grad = mse_grad(l3, yb)          # 计算损失层梯度
 l2_grad, w2_grad, b2_grad = lin_grad(l2, l3, w2, b2, l3_grad) # 计算第二层梯度
@@ -320,6 +320,19 @@ _, w1_grad, b1_grad = lin_grad(xb, l1, w1, b1, l1_grad) # 计算第一层梯度
 
 ![](img/5149affbe02aaa27d202cb5dce5b7d13_168.png)
 
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_170.png)
+
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_172.png)
+
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_174.png)
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_176.png)
+
+![](img/5149affbe02aaa27d202cb5dce5b7d13_178.png)
+
 ```python
 class Module:
     def __call__(self, *args):
@@ -329,18 +342,12 @@ class Module:
 
     def forward(self): raise NotImplementedError
     def backward(self): raise NotImplementedError
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_170.png)
-
 class Relu(Module):
     def forward(self, inp):
         return inp.clamp_min(0.)
     def backward(self):
         inp, = self.args
         self.inp_grad = (self.out > 0).float() * self.out_grad
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_172.png)
-
 class Lin(Module):
     def __init__(self, w, b):
         self.w, self.b = w, b
@@ -351,13 +358,6 @@ class Lin(Module):
         self.inp_grad = self.out_grad @ self.w.T
         self.w.grad = inp.T @ self.out_grad
         self.b.grad = self.out_grad.sum(0)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_174.png)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_176.png)
-
-![](img/5149affbe02aaa27d202cb5dce5b7d13_178.png)
-
 class Mse(Module):
     def forward(self, inp, targ):
         diff = inp.squeeze() - targ.float()
@@ -490,10 +490,6 @@ def cross_entropy_loss(preds, targets):
 
 ![](img/5149affbe02aaa27d202cb5dce5b7d13_247.png)
 
-```python
-lr = 0.1  # 学习率
-epochs = 20
-bs = 64   # 批量大小
 
 ![](img/5149affbe02aaa27d202cb5dce5b7d13_249.png)
 
@@ -507,6 +503,10 @@ bs = 64   # 批量大小
 
 ![](img/5149affbe02aaa27d202cb5dce5b7d13_259.png)
 
+```python
+lr = 0.1  # 学习率
+epochs = 20
+bs = 64   # 批量大小
 for epoch in range(epochs):
     for i in range(0, n, bs):
         # 1. 获取小批量数据

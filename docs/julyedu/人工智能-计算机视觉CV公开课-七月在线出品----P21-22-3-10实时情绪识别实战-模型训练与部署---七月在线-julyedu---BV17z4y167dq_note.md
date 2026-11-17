@@ -167,6 +167,11 @@ print(x.grad) # 查看梯度值
 
 同时，需要定义 `transforms` 来进行数据转换和增强，例如调整尺寸、转为灰度图、随机翻转、旋转等，这有助于提升模型的泛化能力。
 
+
+![](img/887311f6d331738932b5bf21cc1e6160_26.png)
+
+![](img/887311f6d331738932b5bf21cc1e6160_28.png)
+
 ```python
 from torchvision import datasets, transforms
 
@@ -176,11 +181,6 @@ transform = transforms.Compose([
     transforms.RandomHorizontalFlip(),
     transforms.ToTensor(),
 ])
-
-![](img/887311f6d331738932b5bf21cc1e6160_26.png)
-
-![](img/887311f6d331738932b5bf21cc1e6160_28.png)
-
 # 使用ImageFolder加载数据集
 train_dataset = datasets.ImageFolder(root='path/to/train_data', transform=transform)
 
@@ -207,10 +207,6 @@ train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=32, shuffle
 ![](img/887311f6d331738932b5bf21cc1e6160_34.png)
 
 训练循环的代码与之前的线性回归示例结构类似，但使用了更便捷的优化器：
-```python
-model = EmotionCNN() # 实例化模型
-criterion = nn.CrossEntropyLoss() # 定义损失函数（分类任务常用交叉熵损失）
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001) # 定义优化器
 
 ![](img/887311f6d331738932b5bf21cc1e6160_35.png)
 
@@ -218,6 +214,10 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.001) # 定义优化器
 
 ![](img/887311f6d331738932b5bf21cc1e6160_37.png)
 
+```python
+model = EmotionCNN() # 实例化模型
+criterion = nn.CrossEntropyLoss() # 定义损失函数（分类任务常用交叉熵损失）
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001) # 定义优化器
 for epoch in range(num_epochs):
     for images, labels in train_loader:
         # 前向传播

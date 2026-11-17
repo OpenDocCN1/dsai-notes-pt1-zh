@@ -133,19 +133,11 @@ connection = dbapi.connect(database='mydb', user='username', password='password'
 ![](img/cee83dcc3041190bb74656c2362058a4_42.png)
 
 **代码示例**：完整流程
-```python
-# 1. 导入模块
-import ibm_db
-
-# 2. 建立连接
-conn = ibm_db.connect("DATABASE=mydb;HOSTNAME=myhost;PORT=port;PROTOCOL=TCPIP;UID=username;PWD=password;", "", "")
 
 ![](img/cee83dcc3041190bb74656c2362058a4_44.png)
 
 ![](img/cee83dcc3041190bb74656c2362058a4_45.png)
 
-# 3. 创建游标（在DB2的ibm_db中，通常直接执行SQL）
-stmt = ibm_db.exec_immediate(conn, "SELECT * FROM employees")
 
 ![](img/cee83dcc3041190bb74656c2362058a4_46.png)
 
@@ -153,6 +145,14 @@ stmt = ibm_db.exec_immediate(conn, "SELECT * FROM employees")
 
 ![](img/cee83dcc3041190bb74656c2362058a4_48.png)
 
+```python
+# 1. 导入模块
+import ibm_db
+
+# 2. 建立连接
+conn = ibm_db.connect("DATABASE=mydb;HOSTNAME=myhost;PORT=port;PROTOCOL=TCPIP;UID=username;PWD=password;", "", "")
+# 3. 创建游标（在DB2的ibm_db中，通常直接执行SQL）
+stmt = ibm_db.exec_immediate(conn, "SELECT * FROM employees")
 # 4. 获取结果
 row = ibm_db.fetch_assoc(stmt)
 while row:

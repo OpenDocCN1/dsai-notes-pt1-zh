@@ -92,19 +92,19 @@ print(data[998])
 我们不能直接将原始的`instruction`、`input`、`output`格式输入给LLM。研究发现，在训练过程中，需要以特定的格式向LLM提供提示词才能达到最佳效果。最常用的格式之一是**斯坦福Alpaca模型使用的格式**。
 
 Alpaca提示词格式如下：
-```
-Below is an instruction that describes a task. Write a response that appropriately completes the request.
 
 ![](img/8439fe0f3efcc1bf6ca464804ba9b72f_2.png)
 
+
+![](img/8439fe0f3efcc1bf6ca464804ba9b72f_4.png)
+
+```
+Below is an instruction that describes a task. Write a response that appropriately completes the request.
 ### Instruction:
 {instruction}
 
 ### Input:
 {input}
-
-![](img/8439fe0f3efcc1bf6ca464804ba9b72f_4.png)
-
 ### Response:
 {output}
 ```

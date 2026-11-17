@@ -76,6 +76,9 @@ import cohere
 
 ![](img/709df9db9d27a239246c862b7eaac697_8.png)
 
+
+![](img/709df9db9d27a239246c862b7eaac697_10.png)
+
 ```python
 # 示例查询
 query = "加拿大的首都是什么？"
@@ -85,9 +88,6 @@ initial_results = keyword_search(query, client, n_results=500)
 
 # 2. 应用重新排名
 reranked_results = rerank(query, initial_results)
-
-![](img/709df9db9d27a239246c862b7eaac697_10.png)
-
 # 3. 打印重新排名后的前10个结果
 print_results(reranked_results[:10])
 ```

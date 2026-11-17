@@ -24,12 +24,12 @@
 
 ChatGPT返回了以下代码。它编写了一个名为`add_two_numbers`的函数，完全符合要求，并且还包含了一个如何使用该函数的示例。
 
-```python
-def add_two_numbers(a, b):
-    return a + b
 
 ![](img/d2d934c3d7b1e2a9dd6a461dac35b059_7.png)
 
+```python
+def add_two_numbers(a, b):
+    return a + b
 # 示例用法
 result = add_two_numbers(5, 3)
 print(result)  # 输出：8
@@ -189,11 +189,11 @@ try {
 
 结果如下。如你所见，模型编写了一个完整的Flask应用，其中包含一个将两个整数相乘的端点，并包含了错误处理，例如检查输入是否存在以及确保它们是整数。
 
-```python
-from flask import Flask, request, jsonify
 
 ![](img/d2d934c3d7b1e2a9dd6a461dac35b059_19.png)
 
+```python
+from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 @app.route('/multiply', methods=['GET'])
@@ -283,11 +283,11 @@ def calculate_average(numbers):
 
 ChatGPT为我生成的输出如下。该函数按我的要求接收半径作为输入，还包含了对非数字输入的错误处理，并且整个函数都有清晰的注释。
 
-```python
-import math
 
 ![](img/d2d934c3d7b1e2a9dd6a461dac35b059_27.png)
 
+```python
+import math
 def calculate_circle_area(radius):
     """
     计算给定半径的圆的面积。

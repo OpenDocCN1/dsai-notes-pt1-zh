@@ -93,17 +93,17 @@ def generate_text(prompt, model=None, temperature=0.0):
 
 ![](img/915f4e03e9426f118b05e783568bb8c3_38.png)
 
+
+![](img/915f4e03e9426f118b05e783568bb8c3_40.png)
+
+![](img/915f4e03e9426f118b05e783568bb8c3_42.png)
+
 ```python
 prompt_template = """
 请解释以下Swift代码是如何工作的。请提供大量细节，并尽可能清晰地说明。
 
 {code_block}
 """
-
-![](img/915f4e03e9426f118b05e783568bb8c3_40.png)
-
-![](img/915f4e03e9426f118b05e783568bb8c3_42.png)
-
 # 将我们的复杂Swift代码填入模板
 code_explanation_prompt = prompt_template.format(code_block=complex_swift_code)
 ```
@@ -139,17 +139,17 @@ print(explanation)
 
 我们从一个新的提示模板开始，要求模型为代码编写技术文档。
 
-```python
-documentation_prompt_template = """
-请为以下代码编写技术文档。要求文档易于非Swift开发者理解，并以Markdown格式输出。
 
 ![](img/915f4e03e9426f118b05e783568bb8c3_58.png)
 
-{code_block}
-"""
 
 ![](img/915f4e03e9426f118b05e783568bb8c3_60.png)
 
+```python
+documentation_prompt_template = """
+请为以下代码编写技术文档。要求文档易于非Swift开发者理解，并以Markdown格式输出。
+{code_block}
+"""
 doc_prompt = documentation_prompt_template.format(code_block=complex_swift_code)
 ```
 

@@ -59,6 +59,14 @@ learning_rate = 0.001 # 学习率
 
 我们将使用PyTorch内置的`torchvision.datasets`来下载和加载MNIST数据集，并使用`DataLoader`来创建可迭代的数据加载器。
 
+
+![](img/4f9b5a50cb66458551d079eafb4a5a3c_19.png)
+
+![](img/4f9b5a50cb66458551d079eafb4a5a3c_20.png)
+
+
+![](img/4f9b5a50cb66458551d079eafb4a5a3c_22.png)
+
 ```python
 # 加载训练数据集
 train_dataset = datasets.MNIST(root='./data',
@@ -70,18 +78,10 @@ train_dataset = datasets.MNIST(root='./data',
 test_dataset = datasets.MNIST(root='./data',
                               train=False,
                               transform=transforms.ToTensor())
-
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_19.png)
-
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_20.png)
-
 # 创建数据加载器
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
                                            batch_size=batch_size,
                                            shuffle=True)
-
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_22.png)
-
 test_loader = torch.utils.data.DataLoader(dataset=test_dataset,
                                           batch_size=batch_size,
                                           shuffle=False)
@@ -97,13 +97,13 @@ test_loader = torch.utils.data.DataLoader(dataset=test_dataset,
 
 ![](img/4f9b5a50cb66458551d079eafb4a5a3c_27.png)
 
+
+![](img/4f9b5a50cb66458551d079eafb4a5a3c_29.png)
+
 ```python
 # 获取一个批次的样本
 examples = iter(train_loader)
 samples, labels = examples.next()
-
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_29.png)
-
 # 打印样本和标签的形状
 print(samples.shape)  # 应为 [100, 1, 28, 28]
 print(labels.shape)   # 应为 [100]
@@ -127,6 +127,11 @@ plt.show()
 
 ![](img/4f9b5a50cb66458551d079eafb4a5a3c_35.png)
 
+
+![](img/4f9b5a50cb66458551d079eafb4a5a3c_37.png)
+
+![](img/4f9b5a50cb66458551d079eafb4a5a3c_39.png)
+
 ```python
 class NeuralNet(nn.Module):
     def __init__(self, input_size, hidden_size, num_classes):
@@ -145,11 +150,6 @@ class NeuralNet(nn.Module):
         out = self.l2(out)
         # 注意：这里不应用Softmax，因为交叉熵损失函数会内部处理
         return out
-
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_37.png)
-
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_39.png)
-
 # 实例化模型
 model = NeuralNet(input_size, hidden_size, num_classes).to(device)
 ```

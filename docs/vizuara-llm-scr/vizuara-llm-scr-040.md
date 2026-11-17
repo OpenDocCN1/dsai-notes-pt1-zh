@@ -43,12 +43,12 @@
 这样，我们就拥有了一个包含完整信息（指令、输入、标准输出、模型响应）的文件，为后续的自动化评估做好了准备。
 
 **重要提示**：完成此步骤后，请务必保存微调后的模型权重，以便后续使用，避免重复进行耗时的微调过程。保存和加载模型的代码如下：
-```python
-# 保存模型
-torch.save(model.state_dict(), 'gpt2_medium_355m_sft.pth')
 
 ![](img/7673a7a755f8a58d169488e111a4ca67_2.png)
 
+```python
+# 保存模型
+torch.save(model.state_dict(), 'gpt2_medium_355m_sft.pth')
 # 在未来会话中加载模型
 model.load_state_dict(torch.load('gpt2_medium_355m_sft.pth'))
 ```

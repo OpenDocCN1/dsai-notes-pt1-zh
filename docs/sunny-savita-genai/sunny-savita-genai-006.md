@@ -133,6 +133,9 @@ print(response)
 
 ![](img/516ee568224bfeaf40e9992379310143_9.png)
 
+
+![](img/516ee568224bfeaf40e9992379310143_11.png)
+
 ```python
 # basic_qa.py
 from llama_index import VectorStoreIndex, SimpleDirectoryReader
@@ -149,9 +152,6 @@ documents = SimpleDirectoryReader('data').load_data()
 # 创建索引和查询引擎
 index = VectorStoreIndex.from_documents(documents)
 query_engine = index.as_query_engine()
-
-![](img/516ee568224bfeaf40e9992379310143_11.png)
-
 # 进行查询
 response = query_engine.query("LlamaIndex是什么？")
 print(response)

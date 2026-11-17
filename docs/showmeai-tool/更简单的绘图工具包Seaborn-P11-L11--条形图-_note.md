@@ -9,15 +9,15 @@
 假设我们要分析不同性别（男/女）与消费总账单之间的关系。我们可以使用`seaborn.barplot`函数来实现。
 
 以下是绘制基础条形图的代码示例：
+
+![](img/a061d5edff4ad08bf4f5732b742b97fe_1.png)
+
 ```python
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 # 加载示例数据集
 tips = sns.load_dataset('tips')
-
-![](img/a061d5edff4ad08bf4f5732b742b97fe_1.png)
-
 # 绘制条形图
 sns.barplot(x='sex', y='total_bill', data=tips)
 plt.show()

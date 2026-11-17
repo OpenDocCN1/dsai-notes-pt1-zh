@@ -137,8 +137,6 @@ print(z)
 
 ![](img/ce15de5c0e72402ae730d998c8173ef4_68.png)
 
-```python
-import numpy as np
 
 ![](img/ce15de5c0e72402ae730d998c8173ef4_70.png)
 
@@ -146,12 +144,6 @@ import numpy as np
 
 ![](img/ce15de5c0e72402ae730d998c8173ef4_72.png)
 
-# 1. 获取用户输入
-shape_str = input(“请输入数组的形状（例如 3,4）: “)
-
-# 2. 处理输入字符串，分割出行数和列数
-shape_list = shape_str.split(‘,’)
-print(shape_list)  # 例如输入”3,4″，则输出 [‘3’, ‘4’]
 
 ![](img/ce15de5c0e72402ae730d998c8173ef4_74.png)
 
@@ -159,9 +151,6 @@ print(shape_list)  # 例如输入”3,4″，则输出 [‘3’, ‘4’]
 
 ![](img/ce15de5c0e72402ae730d998c8173ef4_76.png)
 
-# 3. 将字符串转换为整数，并获取行数和列数
-rows = int(shape_list[0])
-cols = int(shape_list[1])
 
 ![](img/ce15de5c0e72402ae730d998c8173ef4_78.png)
 
@@ -169,17 +158,11 @@ cols = int(shape_list[1])
 
 ![](img/ce15de5c0e72402ae730d998c8173ef4_81.png)
 
-# 4. 创建一个全零数组作为基础
-arr = np.zeros((rows, cols), dtype=int)
 
 ![](img/ce15de5c0e72402ae730d998c8173ef4_83.png)
 
 ![](img/ce15de5c0e72402ae730d998c8173ef4_84.png)
 
-# 5. 使用循环计算每个元素的值（行号 * 列号）
-for i in range(rows):          # i 代表行索引（行号）
-    for j in range(cols):      # j 代表列索引（列号）
-        arr[i, j] = i * j
 
 ![](img/ce15de5c0e72402ae730d998c8173ef4_86.png)
 
@@ -187,6 +170,23 @@ for i in range(rows):          # i 代表行索引（行号）
 
 ![](img/ce15de5c0e72402ae730d998c8173ef4_89.png)
 
+```python
+import numpy as np
+# 1. 获取用户输入
+shape_str = input(“请输入数组的形状（例如 3,4）: “)
+
+# 2. 处理输入字符串，分割出行数和列数
+shape_list = shape_str.split(‘,’)
+print(shape_list)  # 例如输入”3,4″，则输出 [‘3’, ‘4’]
+# 3. 将字符串转换为整数，并获取行数和列数
+rows = int(shape_list[0])
+cols = int(shape_list[1])
+# 4. 创建一个全零数组作为基础
+arr = np.zeros((rows, cols), dtype=int)
+# 5. 使用循环计算每个元素的值（行号 * 列号）
+for i in range(rows):          # i 代表行索引（行号）
+    for j in range(cols):      # j 代表列索引（列号）
+        arr[i, j] = i * j
 # 6. 打印最终结果
 print(arr)
 ```

@@ -67,6 +67,15 @@
 
 ![](img/b60995bb61e5fa08965d3f1e136792f4_22.png)
 
+
+![](img/b60995bb61e5fa08965d3f1e136792f4_24.png)
+
+
+![](img/b60995bb61e5fa08965d3f1e136792f4_26.png)
+
+
+![](img/b60995bb61e5fa08965d3f1e136792f4_28.png)
+
 ```python
 import cv2
 import numpy as np
@@ -79,20 +88,11 @@ dft_input = np.float32(img)
 
 # 3. 执行傅里叶变换
 dft_output = cv2.dft(dft_input, flags=cv2.DFT_COMPLEX_OUTPUT)
-
-![](img/b60995bb61e5fa08965d3f1e136792f4_24.png)
-
 # 4. 将频谱的低频部分移动到中心
 dft_shift = np.fft.fftshift(dft_output)
-
-![](img/b60995bb61e5fa08965d3f1e136792f4_26.png)
-
 # 5. 计算幅度谱（实部real和虚部imag）
 real, imag = cv2.split(dft_shift)
 magnitude_spectrum = 20 * np.log(cv2.magnitude(real, imag))
-
-![](img/b60995bb61e5fa08965d3f1e136792f4_28.png)
-
 # 6. 将幅度谱值缩放到0-255范围以便显示
 magnitude_spectrum_normalized = cv2.normalize(magnitude_spectrum, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
 ```

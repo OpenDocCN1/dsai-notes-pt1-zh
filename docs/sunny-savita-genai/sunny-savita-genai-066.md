@@ -54,12 +54,6 @@ def call_model(state):
 
 接下来，我们使用 `StateGraph` 来构建图。我们指定状态的结构为 `MessageState`，它包含一个 `messages` 键，其值是消息列表。
 
-```python
-# 定义图，并指定状态结构
-graph_builder = StateGraph(MessageState)
-
-# 添加节点，节点名为“chatbot”，其功能是call_model函数
-graph_builder.add_node("chatbot", call_model)
 
 ![](img/88159b28d72a1a82222a19d82ff5de9b_9.png)
 
@@ -69,14 +63,20 @@ graph_builder.add_node("chatbot", call_model)
 
 ![](img/88159b28d72a1a82222a19d82ff5de9b_12.png)
 
+
+![](img/88159b28d72a1a82222a19d82ff5de9b_14.png)
+
+```python
+# 定义图，并指定状态结构
+graph_builder = StateGraph(MessageState)
+
+# 添加节点，节点名为“chatbot”，其功能是call_model函数
+graph_builder.add_node("chatbot", call_model)
 # 设置入口点：整个图的对话从“chatbot”节点开始
 graph_builder.set_entry_point("chatbot")
 
 # 设置出口点：“chatbot”节点执行完毕后，对话结束
 graph_builder.add_edge("chatbot", END)
-
-![](img/88159b28d72a1a82222a19d82ff5de9b_14.png)
-
 # 编译图，生成可执行的对象
 graph = graph_builder.compile()
 ```

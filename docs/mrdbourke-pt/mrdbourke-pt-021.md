@@ -28,13 +28,13 @@ print(x)
 
 以下是寻找张量最小值和最大值的两种常用方法。
 
+
+![](img/08261f4927797c6c010709ce87b97336_1.png)
+
 ```python
 # 方法一：使用 torch 模块函数
 min_value = torch.min(x)
 max_value = torch.max(x)
-
-![](img/08261f4927797c6c010709ce87b97336_1.png)
-
 # 方法二：使用张量的对象方法
 min_value_alt = x.min()
 max_value_alt = x.max()

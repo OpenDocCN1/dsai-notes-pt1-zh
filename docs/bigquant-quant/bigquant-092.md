@@ -47,26 +47,26 @@
 
 以下是使用Scikit-learn库实现弹性网络回归的示例代码：
 
-```python
-# 导入必要的库
-from sklearn.linear_model import ElasticNet
-from sklearn.datasets import make_regression
 
 ![](img/28d6ff78b159dea9b298e6a3a1484304_12.png)
 
-# 生成模拟回归数据集
-X, y = make_regression(n_features=10, random_state=0)
 
 ![](img/28d6ff78b159dea9b298e6a3a1484304_14.png)
 
 ![](img/28d6ff78b159dea9b298e6a3a1484304_16.png)
 
-# 创建弹性网络回归模型实例
-# alpha：正则化强度；l1_ratio：L1正则化的混合比例（即公式中的ρ）
-model = ElasticNet(alpha=0.5, l1_ratio=0.4, random_state=0)
 
 ![](img/28d6ff78b159dea9b298e6a3a1484304_18.png)
 
+```python
+# 导入必要的库
+from sklearn.linear_model import ElasticNet
+from sklearn.datasets import make_regression
+# 生成模拟回归数据集
+X, y = make_regression(n_features=10, random_state=0)
+# 创建弹性网络回归模型实例
+# alpha：正则化强度；l1_ratio：L1正则化的混合比例（即公式中的ρ）
+model = ElasticNet(alpha=0.5, l1_ratio=0.4, random_state=0)
 # 训练模型
 model.fit(X, y)
 

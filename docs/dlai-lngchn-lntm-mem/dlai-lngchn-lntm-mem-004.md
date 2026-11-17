@@ -25,14 +25,14 @@
 ![](img/d107fa768e67d52e0c22404bae03a686_12.png)
 
 以下是初始设置代码，与上一课相同：
+
+![](img/d107fa768e67d52e0c22404bae03a686_14.png)
+
 ```python
 # 加载环境变量
 import os
 from dotenv import load_dotenv
 load_dotenv()
-
-![](img/d107fa768e67d52e0c22404bae03a686_14.png)
-
 # 定义配置文件和提示词
 profile = {...}
 prompt_instructions = "..."
@@ -45,13 +45,13 @@ example_email = "..."
 首先，我们需要正确设置长期记忆存储。在本课中，我们将使用一个内存中的存储。
 
 以下是导入和初始化内存存储的代码：
-```python
-from langgraph.checkpoint.memory import MemorySaver
 
 ![](img/d107fa768e67d52e0c22404bae03a686_18.png)
 
 ![](img/d107fa768e67d52e0c22404bae03a686_20.png)
 
+```python
+from langgraph.checkpoint.memory import MemorySaver
 # 初始化存储，传入嵌入模型用于索引记忆
 store = MemorySaver()
 ```
@@ -66,20 +66,20 @@ store = MemorySaver()
 接下来，我们从 `langmem` 导入两个函数来创建记忆管理工具。`langmem` 是构建在 LangGraph 之上的一个用于处理记忆的封装库。
 
 以下是导入和创建工具的代码：
-```python
-from langmem import create_manage_memory_tool, create_search_memory_tool
 
 ![](img/d107fa768e67d52e0c22404bae03a686_28.png)
 
 ![](img/d107fa768e67d52e0c22404bae03a686_30.png)
 
-# 定义工具操作的命名空间
-namespace = ["email_assistant", "{langgraph_user_id}", "collection"]
 
 ![](img/d107fa768e67d52e0c22404bae03a686_32.png)
 
 ![](img/d107fa768e67d52e0c22404bae03a686_34.png)
 
+```python
+from langmem import create_manage_memory_tool, create_search_memory_tool
+# 定义工具操作的命名空间
+namespace = ["email_assistant", "{langgraph_user_id}", "collection"]
 # 创建管理记忆和搜索记忆的工具
 manage_memory_tool = create_manage_memory_tool(namespace)
 search_memory_tool = create_search_memory_tool(namespace)
@@ -129,6 +129,16 @@ search_memory_tool = create_search_memory_tool(namespace)
 ![](img/d107fa768e67d52e0c22404bae03a686_56.png)
 
 以下是更新后的智能体构建代码：
+
+![](img/d107fa768e67d52e0c22404bae03a686_58.png)
+
+![](img/d107fa768e67d52e0c22404bae03a686_60.png)
+
+![](img/d107fa768e67d52e0c22404bae03a686_61.png)
+
+
+![](img/d107fa768e67d52e0c22404bae03a686_63.png)
+
 ```python
 # 修改系统提示词以包含新工具
 agent_system_prompt = """
@@ -137,20 +147,10 @@ agent_system_prompt = """
 你可以使用 `search_memory` 工具来回忆之前存储的信息。
 {原有的提示词部分}
 """
-
-![](img/d107fa768e67d52e0c22404bae03a686_58.png)
-
-![](img/d107fa768e67d52e0c22404bae03a686_60.png)
-
-![](img/d107fa768e67d52e0c22404bae03a686_61.png)
-
 # 创建提示词函数
 def create_prompt(messages):
     # 将系统提示词添加到消息列表前
     ...
-
-![](img/d107fa768e67d52e0c22404bae03a686_63.png)
-
 # 构建智能体
 from langchain.agents import create_react_agent
 
@@ -206,9 +206,6 @@ result = response_agent.invoke({"messages": [("human", "Who is Jim?")]}, config)
 ![](img/d107fa768e67d52e0c22404bae03a686_83.png)
 
 以下是关键集成代码：
-```python
-# 创建状态和路由节点（与之前相同）
-...
 
 ![](img/d107fa768e67d52e0c22404bae03a686_85.png)
 
@@ -216,14 +213,17 @@ result = response_agent.invoke({"messages": [("human", "Who is Jim?")]}, config)
 
 ![](img/d107fa768e67d52e0c22404bae03a686_88.png)
 
-# 创建邮件助手，传入存储
-email_agent = ... # 使用 response_agent
-email_agent.compile(store=store)
 
 ![](img/d107fa768e67d52e0c22404bae03a686_90.png)
 
 ![](img/d107fa768e67d52e0c22404bae03a686_92.png)
 
+```python
+# 创建状态和路由节点（与之前相同）
+...
+# 创建邮件助手，传入存储
+email_agent = ... # 使用 response_agent
+email_agent.compile(store=store)
 # 调用邮件助手时，记得传入配置
 example_email_input = {...}
 result = email_agent.invoke(example_email_input, config)

@@ -109,13 +109,9 @@
 
 以下是使用Seaborn库创建这些图的示例代码：
 
-```python
-import seaborn as sns
 
 ![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_40.png)
 
-# 创建直方图
-sns.displot(data, bins=20)
 
 ![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_41.png)
 
@@ -123,6 +119,10 @@ sns.displot(data, bins=20)
 
 ![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_43.png)
 
+```python
+import seaborn as sns
+# 创建直方图
+sns.displot(data, bins=20)
 # 创建箱线图
 sns.boxplot(data)
 ```
@@ -135,6 +135,9 @@ sns.boxplot(data)
 
 ![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_47.png)
 
+
+![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_49.png)
+
 ```python
 import numpy as np
 
@@ -142,9 +145,6 @@ import numpy as np
 Q25 = np.percentile(data, 25)
 Q50 = np.percentile(data, 50)  # 中位数
 Q75 = np.percentile(data, 75)
-
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_49.png)
-
 # 计算四分位距
 IQR = Q75 - Q25
 

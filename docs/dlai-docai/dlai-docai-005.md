@@ -99,15 +99,15 @@ for line in result[0]:
 
 定义好函数后，我们现在指定该函数是智能体可用的工具。其余部分将与第1课相同，注意我们使用 `gpt-3.5-turbo` 作为我们的LLM。
 
+
+![](img/5ec87d4aeb173b68365a886cd54090d8_9.png)
+
 ```python
 # 定义OCR工具函数
 def ocr_tool(image_path):
     result = ocr.ocr(image_path, cls=True)
     # ... 处理并返回结果 ...
     return processed_data
-
-![](img/5ec87d4aeb173b68365a886cd54090d8_9.png)
-
 # 设置智能体，将ocr_tool作为可用工具
 # ... 智能体设置代码 ...
 ```

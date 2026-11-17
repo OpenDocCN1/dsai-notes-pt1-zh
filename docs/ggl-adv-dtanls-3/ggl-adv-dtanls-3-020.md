@@ -89,11 +89,11 @@ top_missing = df_joined[['latitude', 'longitude', 'number_of_strikes_x']].groupb
 
 为了高效绘制包含数十万个点的地图，我们使用Plotly Express库。我们创建一个地理散点图，点的大小代表闪电次数。
 
-```python
-import plotly.express as px
 
 ![](img/2be2cc643333a4cb7befe0d5c0557c59_2.png)
 
+```python
+import plotly.express as px
 fig = px.scatter_geo(top_missing[top_missing['number_of_strikes_x'] > 300],
                      lat='latitude',
                      lon='longitude',

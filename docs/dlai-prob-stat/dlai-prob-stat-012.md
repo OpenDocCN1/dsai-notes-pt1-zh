@@ -36,6 +36,9 @@
 4.  **健康且检测为阴性（真阴性）**：健康者共999,900人，检测正确率为99%，因此这组人数为 `999,900 * 0.99 = 989,901` 人。
 
 我们可以用以下伪代码来概括这个分类过程：
+
+![](img/b1a607826e22909701094ab2d38e6747_4.png)
+
 ```python
 total_population = 1_000_000
 disease_prevalence = 0.0001 # 万分之一
@@ -46,9 +49,6 @@ healthy_count = total_population - sick_count # 999,900
 
 true_positive = sick_count * test_accuracy # 99
 false_negative = sick_count * (1 - test_accuracy) # 1
-
-![](img/b1a607826e22909701094ab2d38e6747_4.png)
-
 false_positive = healthy_count * (1 - test_accuracy) # 9,999
 true_negative = healthy_count * test_accuracy # 989,901
 ```

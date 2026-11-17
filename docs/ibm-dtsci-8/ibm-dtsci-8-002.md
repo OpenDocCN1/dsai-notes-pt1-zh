@@ -224,14 +224,14 @@ Matplotlib的脚本层本质上是Matplotlib的Pyplot接口，它自动化了定
 
 ![](img/152b6e411a354a7b52bcf07a5f13d533_92.png)
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
 
 ![](img/152b6e411a354a7b52bcf07a5f13d533_94.png)
 
 ![](img/152b6e411a354a7b52bcf07a5f13d533_95.png)
 
+```python
+import matplotlib.pyplot as plt
+import numpy as np
 x = np.random.randn(10000)
 plt.hist(x, 100)
 plt.title('Normal distribution with $\mu=0, \sigma=1$')

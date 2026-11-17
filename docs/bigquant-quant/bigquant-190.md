@@ -45,21 +45,21 @@
 
 ![](img/6792066ce4d2e331049c0a3d37ff1978_20.png)
 
-```python
-# 定义裂分条件
-cond = x_train[:, 0] <= 3.142
 
 ![](img/6792066ce4d2e331049c0a3d37ff1978_22.png)
 
-# 获取左侧分支的数据
-y_left = y_train[cond].ravel()  # 使用.ravel()或.reshape(-1)将数据展平为一维数组
-# 获取右侧分支的数据 (取反操作 ~cond)
-y_right = y_train[~cond].ravel()
 
 ![](img/6792066ce4d2e331049c0a3d37ff1978_24.png)
 
 ![](img/6792066ce4d2e331049c0a3d37ff1978_26.png)
 
+```python
+# 定义裂分条件
+cond = x_train[:, 0] <= 3.142
+# 获取左侧分支的数据
+y_left = y_train[cond].ravel()  # 使用.ravel()或.reshape(-1)将数据展平为一维数组
+# 获取右侧分支的数据 (取反操作 ~cond)
+y_right = y_train[~cond].ravel()
 # 计算左侧分支的MSE
 mse_left = ((y_left - y_left.mean()) ** 2).mean()
 print(“左侧分支MSE:”, mse_left)

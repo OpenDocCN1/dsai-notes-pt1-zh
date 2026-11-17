@@ -60,12 +60,6 @@
 
 ![](img/51916725d59d753def6378c75a4f0fc6_28.png)
 
-```python
-# 假设 X4 是我们的数据框，包含‘Neighborhood’和‘OverallQual’等列
-import pandas as pd
-
-# 按‘Neighborhood’分组，并计算‘OverallQual’的组内均值
-group_means = X4.groupby('Neighborhood')['OverallQual'].transform('mean')
 
 ![](img/51916725d59d753def6378c75a4f0fc6_30.png)
 
@@ -75,8 +69,6 @@ group_means = X4.groupby('Neighborhood')['OverallQual'].transform('mean')
 
 ![](img/51916725d59d753def6378c75a4f0fc6_34.png)
 
-# 计算‘OverallQual’的组内标准差
-group_stds = X4.groupby('Neighborhood')['OverallQual'].transform('std')
 
 ![](img/51916725d59d753def6378c75a4f0fc6_35.png)
 
@@ -84,11 +76,19 @@ group_stds = X4.groupby('Neighborhood')['OverallQual'].transform('std')
 
 ![](img/51916725d59d753def6378c75a4f0fc6_39.png)
 
-# 计算每个‘OverallQual’值相对于其社区均值的偏差
-deviation_feature = (X4['OverallQual'] - group_means) / group_stds
 
 ![](img/51916725d59d753def6378c75a4f0fc6_41.png)
 
+```python
+# 假设 X4 是我们的数据框，包含‘Neighborhood’和‘OverallQual’等列
+import pandas as pd
+
+# 按‘Neighborhood’分组，并计算‘OverallQual’的组内均值
+group_means = X4.groupby('Neighborhood')['OverallQual'].transform('mean')
+# 计算‘OverallQual’的组内标准差
+group_stds = X4.groupby('Neighborhood')['OverallQual'].transform('std')
+# 计算每个‘OverallQual’值相对于其社区均值的偏差
+deviation_feature = (X4['OverallQual'] - group_means) / group_stds
 # 将偏差作为一个新列添加到数据框中
 X4['OverallQual_Neighborhood_Deviation'] = deviation_feature
 ```
@@ -152,26 +152,16 @@ X4['OverallQual_Neighborhood_Deviation'] = deviation_feature
 
 ![](img/51916725d59d753def6378c75a4f0fc6_72.png)
 
-```python
-from sklearn.preprocessing import PolynomialFeatures
-
-# 1. 实例化多项式特征对象，指定次数为2
-poly = PolynomialFeatures(degree=2)
 
 ![](img/51916725d59d753def6378c75a4f0fc6_74.png)
 
 ![](img/51916725d59d753def6378c75a4f0fc6_75.png)
 
-# 2. 指定要使用的特征（例如‘LotArea’和‘OverallQual’），并拟合
-features_to_poly = X5[['LotArea', 'OverallQual']]
-poly.fit(features_to_poly)
 
 ![](img/51916725d59d753def6378c75a4f0fc6_76.png)
 
 ![](img/51916725d59d753def6378c75a4f0fc6_78.png)
 
-# 3. 转换数据，生成多项式特征
-X_poly = poly.transform(features_to_poly)
 
 ![](img/51916725d59d753def6378c75a4f0fc6_80.png)
 
@@ -179,6 +169,16 @@ X_poly = poly.transform(features_to_poly)
 
 ![](img/51916725d59d753def6378c75a4f0fc6_83.png)
 
+```python
+from sklearn.preprocessing import PolynomialFeatures
+
+# 1. 实例化多项式特征对象，指定次数为2
+poly = PolynomialFeatures(degree=2)
+# 2. 指定要使用的特征（例如‘LotArea’和‘OverallQual’），并拟合
+features_to_poly = X5[['LotArea', 'OverallQual']]
+poly.fit(features_to_poly)
+# 3. 转换数据，生成多项式特征
+X_poly = poly.transform(features_to_poly)
 # 4. 获取生成的特征名称以便理解
 feature_names = poly.get_feature_names_out(input_features=['LotArea', 'OverallQual'])
 print(feature_names)

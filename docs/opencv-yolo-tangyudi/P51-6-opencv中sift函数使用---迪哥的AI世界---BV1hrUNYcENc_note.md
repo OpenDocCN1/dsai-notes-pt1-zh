@@ -50,11 +50,11 @@ print(cv2.__version__)  # 应输出 3.4.1.15
 
 ![](img/4f435cee67df54d36f2bcf296e1318d7_9.png)
 
-```python
-import cv2
 
 ![](img/4f435cee67df54d36f2bcf296e1318d7_11.png)
 
+```python
+import cv2
 # 读取图像
 img = cv2.imread('lena.jpg')
 # 转换为灰度图

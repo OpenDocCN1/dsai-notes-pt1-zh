@@ -65,14 +65,14 @@ ggplot(anscombe, aes(x = x, y = y)) +
 
 以下是生成趣味形状图表的代码：
 
+
+![](img/e24121790795e6b94fc223c131dfee46_2.png)
+
 ```r
 # 安装并加载包
 # install.packages(“datasauRus”)
 library(datasauRus)
 library(ggplot2)
-
-![](img/e24121790795e6b94fc223c131dfee46_2.png)
-
 # 绘制恐龙形状的数据点
 ggplot(datasaurus_dozen, aes(x = x, y = y, colour = dataset)) +
   geom_point() +

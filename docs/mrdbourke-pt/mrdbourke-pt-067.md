@@ -18,11 +18,11 @@
 
 以下是检查 GPU 是否可用的方法：
 
-```python
-import torch
 
 ![](img/dc0cec88e0cd515c9dd232f919294ae6_5.png)
 
+```python
+import torch
 # 检查 CUDA（GPU）是否可用
 torch.cuda.is_available()
 ```

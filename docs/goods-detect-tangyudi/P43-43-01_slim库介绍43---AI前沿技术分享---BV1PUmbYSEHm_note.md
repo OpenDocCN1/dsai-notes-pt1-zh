@@ -93,12 +93,15 @@ Slim库读取数据的流程清晰且分为两个主要步骤。以下是这两�
 *   `num_classes`: 数据的类别总数。
 
 以下是一个简化的代码框架：
-```python
-import tensorflow as tf
-import tensorflow.contrib.slim as slim
 
 ![](img/8409ea6aaf3ddf4d1e231ae05270bf2d_29.png)
 
+
+![](img/8409ea6aaf3ddf4d1e231ae05270bf2d_31.png)
+
+```python
+import tensorflow as tf
+import tensorflow.contrib.slim as slim
 # 1. 定义解码器
 keys_to_features = {
     'image/encoded': tf.FixedLenFeature((), tf.string, default_value=''),
@@ -123,9 +126,6 @@ dataset = slim.dataset.Dataset(
     num_classes=20,   # 你的类别总数
     items_to_descriptions={'image': 'A color image.', 'bbox': 'A list of bounding boxes.'}
 )
-
-![](img/8409ea6aaf3ddf4d1e231ae05270bf2d_31.png)
-
 # 3. 创建Provider并获取数据
 provider = slim.dataset_data_provider.DatasetDataProvider(dataset)
 [image, bbox, label] = provider.get(['image', 'bbox', 'label'])

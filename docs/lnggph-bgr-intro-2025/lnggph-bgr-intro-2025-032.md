@@ -22,13 +22,18 @@ return Command(goto="next_node_name", update={"key": "updated_value"})
 
 以下是该示例的完整代码和分步解析：
 
+
+![](img/a063f34edb8e7af3116f32daad8a75ba_1.png)
+
+
+![](img/a063f34edb8e7af3116f32daad8a75ba_3.png)
+
+![](img/a063f34edb8e7af3116f32daad8a75ba_4.png)
+
 ```python
 from langgraph.graph import StateGraph, END
 from langgraph.checkpoint import MemorySaver
 from langgraph.types import Command
-
-![](img/a063f34edb8e7af3116f32daad8a75ba_1.png)
-
 # 1. 定义状态结构
 class State(dict):
     x: str
@@ -43,11 +48,6 @@ def node_b(state: State):
     print("执行 Node B")
     # 更新状态，并指定下一个节点为 node_c
     return Command(goto="node_c", update={"x": state["x"] + "B"})
-
-![](img/a063f34edb8e7af3116f32daad8a75ba_3.png)
-
-![](img/a063f34edb8e7af3116f32daad8a75ba_4.png)
-
 def node_c(state: State):
     print("执行 Node C")
     # 更新状态，并指定流程结束

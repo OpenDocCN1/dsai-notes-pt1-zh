@@ -58,11 +58,11 @@
 
 ![](img/322cf34391c48c9a232ef1d5a2591d69_12.png)
 
-```python
-import torch
 
 ![](img/322cf34391c48c9a232ef1d5a2591d69_14.png)
 
+```python
+import torch
 def get_q_scale_and_zero_point(tensor, dtype=torch.int8):
     """
     计算给定张量的量化缩放因子和零点。
@@ -106,16 +106,16 @@ def get_q_scale_and_zero_point(tensor, dtype=torch.int8):
 
 ![](img/322cf34391c48c9a232ef1d5a2591d69_18.png)
 
-```python
-def linear_quantize_with_scale_and_zero_point(tensor, scale, zero_point, dtype=torch.int8):
-    """使用给定的缩放因子和零点进行线性量化"""
-    quantized_tensor = torch.round(tensor / scale + zero_point).to(dtype)
-    return quantized_tensor
 
 ![](img/322cf34391c48c9a232ef1d5a2591d69_20.png)
 
 ![](img/322cf34391c48c9a232ef1d5a2591d69_22.png)
 
+```python
+def linear_quantize_with_scale_and_zero_point(tensor, scale, zero_point, dtype=torch.int8):
+    """使用给定的缩放因子和零点进行线性量化"""
+    quantized_tensor = torch.round(tensor / scale + zero_point).to(dtype)
+    return quantized_tensor
 def linear_dequantize(quantized_tensor, scale, zero_point):
     """线性反量化"""
     dequantized_tensor = scale * (quantized_tensor.float() - zero_point)

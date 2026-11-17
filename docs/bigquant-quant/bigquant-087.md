@@ -72,24 +72,24 @@
 
 ![](img/3e13f9ead1251c970b9bef1a0bbe393a_33.png)
 
-```python
-# 一维数据
-data_1d = np.random.randint(0, 10, size=10)
 
 ![](img/3e13f9ead1251c970b9bef1a0bbe393a_35.png)
 
 ![](img/3e13f9ead1251c970b9bef1a0bbe393a_37.png)
 
-# 二维数据
-data_2d = np.random.randint(0, 10, size=(5, 3))
 
 ![](img/3e13f9ead1251c970b9bef1a0bbe393a_39.png)
 
-# 三维数据
-data_3d = np.random.randint(0, 10, size=(3, 4, 5))
 
 ![](img/3e13f9ead1251c970b9bef1a0bbe393a_41.png)
 
+```python
+# 一维数据
+data_1d = np.random.randint(0, 10, size=10)
+# 二维数据
+data_2d = np.random.randint(0, 10, size=(5, 3))
+# 三维数据
+data_3d = np.random.randint(0, 10, size=(3, 4, 5))
 # 更高维数据（六维）
 data_6d = np.random.randint(0, 10, size=(6, 7, 8, 5, 4, 3))
 ```

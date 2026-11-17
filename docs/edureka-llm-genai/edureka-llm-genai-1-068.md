@@ -99,14 +99,14 @@ model = keras.Sequential([
 
 模型构建完成后，我们需要编译它。这里使用Adam优化器、稀疏分类交叉熵损失函数，并以准确率作为评估指标。随后，在训练数据上对模型进行5个轮次的训练，并在测试集上进行验证。
 
+
+![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_20.png)
+
 ```python
 # 第一部分 编译模型
 model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
-
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_20.png)
-
 # 第一部分 训练模型
 history = model.fit(train_images, train_labels, epochs=5,
                     validation_data=(test_images, test_labels))

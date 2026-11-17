@@ -92,6 +92,9 @@
 
 ### 1. 导入库与准备数据
 
+
+![](img/78941bbc71f6f2d99d0fc885a32ab707_3.png)
+
 ```python
 import torch
 import torch.nn as nn
@@ -99,9 +102,6 @@ import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
-
-![](img/78941bbc71f6f2d99d0fc885a32ab707_3.png)
-
 # 数据转换：将图像转换为Tensor
 transform = transforms.Compose([transforms.ToTensor()])
 train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)

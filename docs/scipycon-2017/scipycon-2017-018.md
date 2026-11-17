@@ -304,9 +304,6 @@ print("Mean CV accuracy:", scores.mean())
 
 ![](img/92aed0107e5ed9540c8a768811cdbac0_143.png)
 
-```python
-from sklearn.model_selection import GridSearchCV
-from sklearn.neighbors import KNeighborsClassifier
 
 ![](img/92aed0107e5ed9540c8a768811cdbac0_145.png)
 
@@ -320,6 +317,9 @@ from sklearn.neighbors import KNeighborsClassifier
 
 ![](img/92aed0107e5ed9540c8a768811cdbac0_154.png)
 
+```python
+from sklearn.model_selection import GridSearchCV
+from sklearn.neighbors import KNeighborsClassifier
 param_grid = {'n_neighbors': [1, 3, 5, 10, 50]}
 grid_search = GridSearchCV(KNeighborsClassifier(), param_grid, cv=5)
 grid_search.fit(X_train, y_train)

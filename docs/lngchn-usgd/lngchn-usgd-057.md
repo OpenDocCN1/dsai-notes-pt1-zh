@@ -153,22 +153,22 @@ supervisor = create_supervisor(
 
 下面是一个简短的示例：
 
-```python
-# 示例：定义更多工具和团队（伪代码）
-weather_tools = [PrecipitationTool(), TemperatureTool()]
-math_team = [create_react_agent(...), create_react_agent(...)] # 两个数学智能体
-weather_team = [create_react_agent(...), create_react_agent(...)] # 两个天气智能体
 
 ![](img/d6aed3aedacd70b52822b46022a646a5_13.png)
 
-# 为每个团队创建监督者
-math_supervisor = create_supervisor(model=llm, agents=math_team, name="math_team_lead")
-weather_supervisor = create_supervisor(model=llm, agents=weather_team, name="weather_team_lead")
 
 ![](img/d6aed3aedacd70b52822b46022a646a5_14.png)
 
 ![](img/d6aed3aedacd70b52822b46022a646a5_15.png)
 
+```python
+# 示例：定义更多工具和团队（伪代码）
+weather_tools = [PrecipitationTool(), TemperatureTool()]
+math_team = [create_react_agent(...), create_react_agent(...)] # 两个数学智能体
+weather_team = [create_react_agent(...), create_react_agent(...)] # 两个天气智能体
+# 为每个团队创建监督者
+math_supervisor = create_supervisor(model=llm, agents=math_team, name="math_team_lead")
+weather_supervisor = create_supervisor(model=llm, agents=weather_team, name="weather_team_lead")
 # 创建顶层的“CEO”监督者，管理两个团队监督者
 ceo_supervisor = create_supervisor(model=llm, agents=[math_supervisor, weather_supervisor], name="ceo")
 ```

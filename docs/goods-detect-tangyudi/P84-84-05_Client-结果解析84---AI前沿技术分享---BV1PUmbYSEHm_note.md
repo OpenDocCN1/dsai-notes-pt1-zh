@@ -56,6 +56,12 @@
 
 以下是加载图片并调用模型服务的完整代码示例：
 
+
+![](img/bad8cb6e16cdbfe46a5973582bf98030_3.png)
+
+
+![](img/bad8cb6e16cdbfe46a5973582bf98030_5.png)
+
 ```python
 import tensorflow as tf
 
@@ -66,16 +72,10 @@ server_url = 'http://localhost:8501/v1/models/your_model:predict'
 image_path = '../web_code/images/commodity/example.jpg'  # 请替换为你的图片路径
 with open(image_path, 'rb') as f:
     image_data = f.read()
-
-![](img/bad8cb6e16cdbfe46a5973582bf98030_3.png)
-
 # 3. 构建请求数据
 request_data = {
     'instances': [{'input_image': image_data}]
 }
-
-![](img/bad8cb6e16cdbfe46a5973582bf98030_5.png)
-
 # 4. 发送请求（假设使用requests库）
 import requests
 response = requests.post(server_url, json=request_data)

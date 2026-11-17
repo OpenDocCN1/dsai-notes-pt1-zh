@@ -96,10 +96,6 @@ stats.binom.ppf(0.95, 100, 0.5) + 1
 ![](img/9971ad9aa29e3c02756fef2ccc84002f_47.png)
 
 我们使用以下代码绘制这两条曲线：
-```python
-import numpy as np
-import scipy.stats as stats
-import matplotlib.pyplot as plt
 
 ![](img/9971ad9aa29e3c02756fef2ccc84002f_49.png)
 
@@ -107,18 +103,9 @@ import matplotlib.pyplot as plt
 
 ![](img/9971ad9aa29e3c02756fef2ccc84002f_51.png)
 
-# 定义参数
-n = 100 # 试验次数
-p1 = 0.5 # 假设A的准确率
-p2 = 0.6 # 假设B的准确率
-mu1 = n * p1 # 假设A的均值
-mu2 = n * p2 # 假设B的均值
-sigma = np.sqrt(n * p1 * (1-p1)) # 标准差（使用零假设的p计算）
 
 ![](img/9971ad9aa29e3c02756fef2ccc84002f_53.png)
 
-# 生成X轴数据点
-x = np.linspace(1, 100, 200)
 
 ![](img/9971ad9aa29e3c02756fef2ccc84002f_55.png)
 
@@ -128,9 +115,6 @@ x = np.linspace(1, 100, 200)
 
 ![](img/9971ad9aa29e3c02756fef2ccc84002f_58.png)
 
-# 计算两个正态分布的概率密度函数（PDF）
-y1 = stats.norm.pdf(x, mu1, sigma)
-y2 = stats.norm.pdf(x, mu2, sigma)
 
 ![](img/9971ad9aa29e3c02756fef2ccc84002f_60.png)
 
@@ -138,6 +122,22 @@ y2 = stats.norm.pdf(x, mu2, sigma)
 
 ![](img/9971ad9aa29e3c02756fef2ccc84002f_64.png)
 
+```python
+import numpy as np
+import scipy.stats as stats
+import matplotlib.pyplot as plt
+# 定义参数
+n = 100 # 试验次数
+p1 = 0.5 # 假设A的准确率
+p2 = 0.6 # 假设B的准确率
+mu1 = n * p1 # 假设A的均值
+mu2 = n * p2 # 假设B的均值
+sigma = np.sqrt(n * p1 * (1-p1)) # 标准差（使用零假设的p计算）
+# 生成X轴数据点
+x = np.linspace(1, 100, 200)
+# 计算两个正态分布的概率密度函数（PDF）
+y1 = stats.norm.pdf(x, mu1, sigma)
+y2 = stats.norm.pdf(x, mu2, sigma)
 # 绘图
 plt.plot(x, y1, label='H₀: p=0.5 (No Power)')
 plt.plot(x, y2, label='H₁: p=0.6 (Has Power)')
@@ -263,23 +263,23 @@ beta_strict = stats.binom.cdf(cutoff_strict, 100, 0.6)
 ![](img/9971ad9aa29e3c02756fef2ccc84002f_120.png)
 
 以下是增加样本量后的代码示意：
-```python
-n_large = 1000
-mu1_large = n_large * 0.5
-mu2_large = n_large * 0.6
-sigma_large = np.sqrt(n_large * 0.5 * 0.5)
 
 ![](img/9971ad9aa29e3c02756fef2ccc84002f_122.png)
 
 ![](img/9971ad9aa29e3c02756fef2ccc84002f_124.png)
 
+
+![](img/9971ad9aa29e3c02756fef2ccc84002f_126.png)
+
+```python
+n_large = 1000
+mu1_large = n_large * 0.5
+mu2_large = n_large * 0.6
+sigma_large = np.sqrt(n_large * 0.5 * 0.5)
 # 重新计算决策边界（保持第一类错误为5%）
 cutoff_large = stats.binom.ppf(0.95, n_large, 0.5) + 1
 # 计算对应的第二类错误
 beta_large = stats.binom.cdf(cutoff_large, n_large, 0.6)
-
-![](img/9971ad9aa29e3c02756fef2ccc84002f_126.png)
-
 print(f“大样本下，决策边界为：{cutoff_large}”)
 print(f“大样本下，第二类错误概率为：{beta_large:.4f}”)
 ```

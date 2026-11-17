@@ -202,15 +202,15 @@ svc = SVC(kernel=‘rbf‘)
 
 接下来，我们使用 `Nystroem` 进行核近似变换，然后用 `SGDClassifier` 进行快速线性分类。
 
+
+![](img/9023075bb37309c656e1bbb703ef6d08_73.png)
+
 ```python
 from sklearn.kernel_approximation import Nystroem
 from sklearn.linear_model import SGDClassifier
 
 nystroem = Nystroem(kernel=‘rbf‘)
 sgd = SGDClassifier()
-
-![](img/9023075bb37309c656e1bbb703ef6d08_73.png)
-
 # 先将数据变换到高维空间
 X_transformed = nystroem.fit_transform(X)
 # 计时训练线性分类器

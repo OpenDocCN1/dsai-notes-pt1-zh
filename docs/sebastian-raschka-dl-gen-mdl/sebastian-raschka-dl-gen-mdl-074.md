@@ -68,11 +68,11 @@
 
 ![](img/06a87baecea14e030355e6a836274912_10.png)
 
-```python
-import torchvision.transforms as transforms
 
 ![](img/06a87baecea14e030355e6a836274912_12.png)
 
+```python
+import torchvision.transforms as transforms
 training_transforms = transforms.Compose([
     transforms.Resize((32, 32)),          # 1. 调整大小
     transforms.RandomCrop((28, 28)),      # 2. 随机裁剪
@@ -109,11 +109,11 @@ test_transforms = transforms.Compose([
 
 创建数据集时，将对应的转换管道传入即可。
 
-```python
-from torchvision import datasets
 
 ![](img/06a87baecea14e030355e6a836274912_14.png)
 
+```python
+from torchvision import datasets
 train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=training_transforms)
 test_dataset = datasets.MNIST(root='./data', train=False, download=True, transform=test_transforms)
 # 验证集也应使用 test_transforms

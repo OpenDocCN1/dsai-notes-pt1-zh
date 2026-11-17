@@ -10,16 +10,16 @@
 
 首先，我们需要导入必要的库并加载音频文件。我们将使用三首风格迥异的音乐：一首德彪西的管弦乐作品、一首红辣椒乐队的歌曲以及一首艾灵顿公爵的爵士乐。
 
-```python
-import librosa
-import librosa.display
-import matplotlib.pyplot as plt
-import numpy as np
 
 ![](img/29e74a766bda69812908c49e36510eae_4.png)
 
 ![](img/29e74a766bda69812908c49e36510eae_5.png)
 
+```python
+import librosa
+import librosa.display
+import matplotlib.pyplot as plt
+import numpy as np
 # 加载音频文件
 debussy_path = ‘audio/debussy.wav’
 redhot_path = ‘audio/redhot.wav’
@@ -49,15 +49,15 @@ HOP_LENGTH = 512
 
 ![](img/29e74a766bda69812908c49e36510eae_10.png)
 
+
+![](img/29e74a766bda69812908c49e36510eae_12.png)
+
 ```python
 # 为德彪西作品计算频谱质心
 spectral_centroid_debussy = librosa.feature.spectral_centroid(y=debussy,
                                                               sr=sr_debussy,
                                                               n_fft=FRAME_SIZE,
                                                               hop_length=HOP_LENGTH)
-
-![](img/29e74a766bda69812908c49e36510eae_12.png)
-
 # 为红辣椒乐队歌曲计算频谱质心
 spectral_centroid_redhot = librosa.feature.spectral_centroid(y=redhot,
                                                              sr=sr_redhot,
@@ -94,6 +94,15 @@ sc_duke = spectral_centroid_duke[0]
 
 以下是创建可视化图表的代码：
 
+
+![](img/29e74a766bda69812908c49e36510eae_20.png)
+
+![](img/29e74a766bda69812908c49e36510eae_21.png)
+
+![](img/29e74a766bda69812908c49e36510eae_23.png)
+
+![](img/29e74a766bda69812908c49e36510eae_25.png)
+
 ```python
 # 计算时间轴
 frames = range(len(sc_debussy))
@@ -105,15 +114,6 @@ plt.figure(figsize=(25, 10))
 plt.plot(t, sc_debussy, color=‘b’, label=‘Debussy (Orchestral)’)
 plt.plot(t, sc_redhot, color=‘r’, label=‘Red Hot Chili Peppers (Rock)’)
 plt.plot(t, sc_duke, color=‘y’, label=‘Duke Ellington (Jazz)’)
-
-![](img/29e74a766bda69812908c49e36510eae_20.png)
-
-![](img/29e74a766bda69812908c49e36510eae_21.png)
-
-![](img/29e74a766bda69812908c49e36510eae_23.png)
-
-![](img/29e74a766bda69812908c49e36510eae_25.png)
-
 plt.xlabel(‘Time (seconds)’)
 plt.ylabel(‘Spectral Centroid (Hz)’)
 plt.legend()
@@ -134,6 +134,15 @@ plt.show()
 
 ![](img/29e74a766bda69812908c49e36510eae_31.png)
 
+
+![](img/29e74a766bda69812908c49e36510eae_33.png)
+
+![](img/29e74a766bda69812908c49e36510eae_34.png)
+
+![](img/29e74a766bda69812908c49e36510eae_36.png)
+
+![](img/29e74a766bda69812908c49e36510eae_38.png)
+
 ```python
 # 为三首音乐计算频谱带宽
 spectral_bandwidth_debussy = librosa.feature.spectral_bandwidth(y=debussy,
@@ -148,15 +157,6 @@ spectral_bandwidth_duke = librosa.feature.spectral_bandwidth(y=duke,
                                                              sr=sr_duke,
                                                              n_fft=FRAME_SIZE,
                                                              hop_length=HOP_LENGTH)
-
-![](img/29e74a766bda69812908c49e36510eae_33.png)
-
-![](img/29e74a766bda69812908c49e36510eae_34.png)
-
-![](img/29e74a766bda69812908c49e36510eae_36.png)
-
-![](img/29e74a766bda69812908c49e36510eae_38.png)
-
 # 获取一维时间序列数据
 bw_debussy = spectral_bandwidth_debussy[0]
 bw_redhot = spectral_bandwidth_redhot[0]
@@ -177,20 +177,20 @@ bw_duke = spectral_bandwidth_duke[0]
 
 以下是绘制频谱带宽图表的代码：
 
-```python
-# 使用相同的时间轴（因为帧数相同）
-plt.figure(figsize=(25, 10))
 
 ![](img/29e74a766bda69812908c49e36510eae_46.png)
 
 ![](img/29e74a766bda69812908c49e36510eae_47.png)
 
-plt.plot(t, bw_debussy, color=‘b’, label=‘Debussy (Orchestral)’)
-plt.plot(t, bw_redhot, color=‘r’, label=‘Red Hot Chili Peppers (Rock)’)
-plt.plot(t, bw_duke, color=‘y’, label=‘Duke Ellington (Jazz)’)
 
 ![](img/29e74a766bda69812908c49e36510eae_49.png)
 
+```python
+# 使用相同的时间轴（因为帧数相同）
+plt.figure(figsize=(25, 10))
+plt.plot(t, bw_debussy, color=‘b’, label=‘Debussy (Orchestral)’)
+plt.plot(t, bw_redhot, color=‘r’, label=‘Red Hot Chili Peppers (Rock)’)
+plt.plot(t, bw_duke, color=‘y’, label=‘Duke Ellington (Jazz)’)
 plt.xlabel(‘Time (seconds)’)
 plt.ylabel(‘Spectral Bandwidth (Hz)’)
 plt.legend()

@@ -109,11 +109,6 @@ print(f"准确率: {accuracy:.2f}")
 
 ![](img/da6d91f8cbc62e748f3c3e7a23911ee0_7.png)
 
-```python
-from sklearn.linear_model import LinearRegression
-# 生成合成数据
-X = np.linspace(0, 10, 100).reshape(-1, 1)
-y = np.sin(X).ravel() + X.ravel() * 0.5 + np.random.randn(100) * 0.5
 
 ![](img/da6d91f8cbc62e748f3c3e7a23911ee0_9.png)
 
@@ -121,6 +116,11 @@ y = np.sin(X).ravel() + X.ravel() * 0.5 + np.random.randn(100) * 0.5
 
 ![](img/da6d91f8cbc62e748f3c3e7a23911ee0_13.png)
 
+```python
+from sklearn.linear_model import LinearRegression
+# 生成合成数据
+X = np.linspace(0, 10, 100).reshape(-1, 1)
+y = np.sin(X).ravel() + X.ravel() * 0.5 + np.random.randn(100) * 0.5
 reg = LinearRegression()
 reg.fit(X_train, y_train)
 y_pred = reg.predict(X_test)

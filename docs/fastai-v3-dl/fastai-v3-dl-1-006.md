@@ -133,8 +133,6 @@ find_best_split(females, 'Survived')
 ![](img/31da51d8b2f299b859df5d61d2cb319e_97.png)
 
 以下是创建和可视化决策树的代码：
-```python
-from sklearn.tree import DecisionTreeClassifier
 
 ![](img/31da51d8b2f299b859df5d61d2cb319e_99.png)
 
@@ -144,12 +142,14 @@ from sklearn.tree import DecisionTreeClassifier
 
 ![](img/31da51d8b2f299b859df5d61d2cb319e_105.png)
 
-# 创建一个最多有4个叶节点的决策树
-m = DecisionTreeClassifier(max_leaf_nodes=4)
-m.fit(X, y)
 
 ![](img/31da51d8b2f299b859df5d61d2cb319e_107.png)
 
+```python
+from sklearn.tree import DecisionTreeClassifier
+# 创建一个最多有4个叶节点的决策树
+m = DecisionTreeClassifier(max_leaf_nodes=4)
+m.fit(X, y)
 # 绘制决策树
 draw_tree(m, X, y)
 ```
@@ -227,12 +227,6 @@ draw_tree(m, X, y)
 ![](img/31da51d8b2f299b859df5d61d2cb319e_149.png)
 
 以下是手动实现随机森林核心逻辑的简化代码：
-```python
-def get_tree(train_data):
-    # 随机抽取部分数据
-    idxs = np.random.choice(len(train_data), int(len(train_data)*0.75))
-    # 训练一棵决策树
-    return DecisionTreeClassifier().fit(X.iloc[idxs], y.iloc[idxs])
 
 ![](img/31da51d8b2f299b859df5d61d2cb319e_151.png)
 
@@ -242,13 +236,19 @@ def get_tree(train_data):
 
 ![](img/31da51d8b2f299b859df5d61d2cb319e_156.png)
 
-# 创建100棵树
-trees = [get_tree(df) for _ in range(100)]
 
 ![](img/31da51d8b2f299b859df5d61d2cb319e_158.png)
 
 ![](img/31da51d8b2f299b859df5d61d2cb319e_159.png)
 
+```python
+def get_tree(train_data):
+    # 随机抽取部分数据
+    idxs = np.random.choice(len(train_data), int(len(train_data)*0.75))
+    # 训练一棵决策树
+    return DecisionTreeClassifier().fit(X.iloc[idxs], y.iloc[idxs])
+# 创建100棵树
+trees = [get_tree(df) for _ in range(100)]
 # 对预测结果取平均
 preds = np.stack([t.predict(X_val) for t in trees])
 mean_preds = preds.mean(axis=0)

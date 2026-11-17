@@ -96,16 +96,16 @@ Z = torch.tensor([[1.0, 2.0, 3.0],
 
 ![](img/d7633ffbd2ad795f213c96187346d24b_43.png)
 
-```python
-def softmax(z):
-    # 减去最大值以提高数值稳定性
-    exp_z = torch.exp(z - torch.max(z, dim=1, keepdim=True)[0])
-    return exp_z / torch.sum(exp_z, dim=1, keepdim=True)
 
 ![](img/d7633ffbd2ad795f213c96187346d24b_45.png)
 
 ![](img/d7633ffbd2ad795f213c96187346d24b_47.png)
 
+```python
+def softmax(z):
+    # 减去最大值以提高数值稳定性
+    exp_z = torch.exp(z - torch.max(z, dim=1, keepdim=True)[0])
+    return exp_z / torch.sum(exp_z, dim=1, keepdim=True)
 activations = softmax(Z)
 ```
 
@@ -219,19 +219,9 @@ PyTorch提供了 `nn.CrossEntropyLoss`。**重要提示**：该函数期望接�
 
 ![](img/d7633ffbd2ad795f213c96187346d24b_106.png)
 
-```python
-import torch.nn as nn
-
-# 方法1：使用 nn.NLLLoss (需要手动log-softmax输入)
-log_softmax_activations = torch.log(activations)
-criterion_nll = nn.NLLLoss(reduction='none')
-loss_nll = criterion_nll(log_softmax_activations, class_labels)
 
 ![](img/d7633ffbd2ad795f213c96187346d24b_108.png)
 
-# 方法2：使用 nn.CrossEntropyLoss (推荐，输入为logits)
-criterion_ce = nn.CrossEntropyLoss(reduction='none')
-loss_ce = criterion_ce(Z, class_labels)
 
 ![](img/d7633ffbd2ad795f213c96187346d24b_109.png)
 
@@ -239,6 +229,16 @@ loss_ce = criterion_ce(Z, class_labels)
 
 ![](img/d7633ffbd2ad795f213c96187346d24b_112.png)
 
+```python
+import torch.nn as nn
+
+# 方法1：使用 nn.NLLLoss (需要手动log-softmax输入)
+log_softmax_activations = torch.log(activations)
+criterion_nll = nn.NLLLoss(reduction='none')
+loss_nll = criterion_nll(log_softmax_activations, class_labels)
+# 方法2：使用 nn.CrossEntropyLoss (推荐，输入为logits)
+criterion_ce = nn.CrossEntropyLoss(reduction='none')
+loss_ce = criterion_ce(Z, class_labels)
 # 验证结果一致性
 print(torch.allclose(loss_per_sample, loss_nll))  # 应返回 True
 print(torch.allclose(loss_per_sample, loss_ce))   # 应返回 True

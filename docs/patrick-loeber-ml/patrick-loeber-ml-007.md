@@ -127,6 +127,18 @@ class SVM:
 
 ![](img/a6c1f9c27063d9d7fda1d014334f91ad_9.png)
 
+
+![](img/a6c1f9c27063d9d7fda1d014334f91ad_11.png)
+
+
+![](img/a6c1f9c27063d9d7fda1d014334f91ad_13.png)
+
+
+![](img/a6c1f9c27063d9d7fda1d014334f91ad_15.png)
+
+
+![](img/a6c1f9c27063d9d7fda1d014334f91ad_17.png)
+
 ```python
 # 导入SVM类 (假设代码保存在 svm.py)
 from svm import SVM
@@ -137,29 +149,17 @@ from sklearn import datasets
 # 生成数据
 X, y = datasets.make_blobs(n_samples=50, n_features=2, centers=2, cluster_std=1.05, random_state=40)
 y = np.where(y == 0, -1, 1) # 确保标签为-1和1
-
-![](img/a6c1f9c27063d9d7fda1d014334f91ad_11.png)
-
 # 划分训练集
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=123)
 
 # 训练模型
 clf = SVM()
 clf.fit(X_train, y_train)
-
-![](img/a6c1f9c27063d9d7fda1d014334f91ad_13.png)
-
 # 进行预测
 predictions = clf.predict(X_test)
-
-![](img/a6c1f9c27063d9d7fda1d014334f91ad_15.png)
-
 # 计算准确率
 accuracy = np.sum(predictions == y_test) / len(y_test)
 print(f"SVM 分类准确率: {accuracy}")
-
-![](img/a6c1f9c27063d9d7fda1d014334f91ad_17.png)
-
 # （可选）可视化决策边界
 def visualize_svm():
     ...

@@ -118,9 +118,6 @@ y_test = data.iloc[test_idx]['residual sugar']
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_67.png)
 
-```python
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.model_selection import GridSearchCV
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_69.png)
 
@@ -130,10 +127,6 @@ from sklearn.model_selection import GridSearchCV
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_73.png)
 
-# 创建回归器并拟合，以查看最大深度
-dt_temp = DecisionTreeRegressor(random_state=42)
-dt_temp.fit(X_train, y_train)
-max_depth_unpruned = dt_temp.tree_.max_depth
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_75.png)
 
@@ -143,11 +136,6 @@ max_depth_unpruned = dt_temp.tree_.max_depth
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_79.png)
 
-# 定义参数网格
-param_grid = {
-    'max_depth': range(1, max_depth_unpruned+1, 2),
-    'max_features': ['sqrt', 'log2', None]
-}
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_80.png)
 
@@ -157,13 +145,6 @@ param_grid = {
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_85.png)
 
-# 创建网格搜索对象，使用负均方误差作为评分
-grid_search = GridSearchCV(estimator=DecisionTreeRegressor(random_state=42),
-                           param_grid=param_grid,
-                           scoring='neg_mean_squared_error',
-                           cv=5,
-                           n_jobs=-1)
-grid_search.fit(X_train, y_train)
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_87.png)
 
@@ -171,6 +152,25 @@ grid_search.fit(X_train, y_train)
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_89.png)
 
+```python
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.model_selection import GridSearchCV
+# 创建回归器并拟合，以查看最大深度
+dt_temp = DecisionTreeRegressor(random_state=42)
+dt_temp.fit(X_train, y_train)
+max_depth_unpruned = dt_temp.tree_.max_depth
+# 定义参数网格
+param_grid = {
+    'max_depth': range(1, max_depth_unpruned+1, 2),
+    'max_features': ['sqrt', 'log2', None]
+}
+# 创建网格搜索对象，使用负均方误差作为评分
+grid_search = GridSearchCV(estimator=DecisionTreeRegressor(random_state=42),
+                           param_grid=param_grid,
+                           scoring='neg_mean_squared_error',
+                           cv=5,
+                           n_jobs=-1)
+grid_search.fit(X_train, y_train)
 best_estimator = grid_search.best_estimator_
 print(f"最佳模型节点数: {best_estimator.tree_.node_count}")
 print(f"最佳模型最大深度: {best_estimator.tree_.max_depth}")
@@ -220,9 +220,6 @@ print(f"最佳模型最大深度: {best_estimator.tree_.max_depth}")
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_115.png)
 
-```python
-from sklearn.metrics import mean_squared_error
-import pandas as pd
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_117.png)
 
@@ -232,9 +229,6 @@ import pandas as pd
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_121.png)
 
-# 进行预测
-y_train_pred = grid_search.predict(X_train)
-y_test_pred = grid_search.predict(X_test)
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_123.png)
 
@@ -242,14 +236,20 @@ y_test_pred = grid_search.predict(X_test)
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_125.png)
 
-# 计算均方误差
-mse_train = mean_squared_error(y_train, y_train_pred)
-mse_test = mean_squared_error(y_test, y_test_pred)
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_126.png)
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_128.png)
 
+```python
+from sklearn.metrics import mean_squared_error
+import pandas as pd
+# 进行预测
+y_train_pred = grid_search.predict(X_train)
+y_test_pred = grid_search.predict(X_test)
+# 计算均方误差
+mse_train = mean_squared_error(y_train, y_train_pred)
+mse_test = mean_squared_error(y_test, y_test_pred)
 # 将结果放入DataFrame
 mse_results = pd.DataFrame({'MSE': [mse_train, mse_test]},
                            index=['Train', 'Test']).T
@@ -294,9 +294,6 @@ print(mse_results)
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_151.png)
 
-```python
-import matplotlib.pyplot as plt
-import pandas as pd
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_153.png)
 
@@ -306,8 +303,6 @@ import pandas as pd
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_156.png)
 
-# 创建图形
-fig, ax = plt.subplots(figsize=(8, 8))
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_157.png)
 
@@ -317,9 +312,6 @@ fig, ax = plt.subplots(figsize=(8, 8))
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_162.png)
 
-# 将实际值和预测值放入DataFrame并绘图
-results_df = pd.DataFrame({'Actual': y_test, 'Predicted': y_test_pred})
-results_df.plot(kind='scatter', x='Actual', y='Predicted', ax=ax, marker='o', linestyle='')
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_163.png)
 
@@ -327,11 +319,6 @@ results_df.plot(kind='scatter', x='Actual', y='Predicted', ax=ax, marker='o', li
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_167.png)
 
-# 设置坐标轴标签和范围
-ax.set_xlabel('Actual Residual Sugar')
-ax.set_ylabel('Predicted Residual Sugar')
-ax.set_xlim([y_test.min(), y_test.max()])
-ax.set_ylim([y_test_pred.min(), y_test_pred.max()])
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_169.png)
 
@@ -339,8 +326,6 @@ ax.set_ylim([y_test_pred.min(), y_test_pred.max()])
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_172.png)
 
-# 添加对角线参考线
-ax.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=2)
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_174.png)
 
@@ -348,6 +333,21 @@ ax.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=2)
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_176.png)
 
+```python
+import matplotlib.pyplot as plt
+import pandas as pd
+# 创建图形
+fig, ax = plt.subplots(figsize=(8, 8))
+# 将实际值和预测值放入DataFrame并绘图
+results_df = pd.DataFrame({'Actual': y_test, 'Predicted': y_test_pred})
+results_df.plot(kind='scatter', x='Actual', y='Predicted', ax=ax, marker='o', linestyle='')
+# 设置坐标轴标签和范围
+ax.set_xlabel('Actual Residual Sugar')
+ax.set_ylabel('Predicted Residual Sugar')
+ax.set_xlim([y_test.min(), y_test.max()])
+ax.set_ylim([y_test_pred.min(), y_test_pred.max()])
+# 添加对角线参考线
+ax.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=2)
 plt.show()
 ```
 
@@ -417,11 +417,6 @@ plt.show()
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_218.png)
 
-```python
-from sklearn.tree import export_graphviz
-import pydotplus
-from IPython.display import Image
-from io import StringIO
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_219.png)
 
@@ -429,8 +424,6 @@ from io import StringIO
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_223.png)
 
-# 1. 创建一个StringIO对象
-dot_data = StringIO()
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_225.png)
 
@@ -442,6 +435,25 @@ dot_data = StringIO()
 
 ![](img/93f83eff173f0af9c4c615eee22f1dfa_232.png)
 
+
+![](img/93f83eff173f0af9c4c615eee22f1dfa_234.png)
+
+![](img/93f83eff173f0af9c4c615eee22f1dfa_236.png)
+
+
+![](img/93f83eff173f0af9c4c615eee22f1dfa_238.png)
+
+![](img/93f83eff173f0af9c4c615eee22f1dfa_239.png)
+
+![](img/93f83eff173f0af9c4c615eee22f1dfa_240.png)
+
+```python
+from sklearn.tree import export_graphviz
+import pydotplus
+from IPython.display import Image
+from io import StringIO
+# 1. 创建一个StringIO对象
+dot_data = StringIO()
 # 2. 导出决策树到dot_data
 # 假设 `dt_model` 是您训练好的决策树模型（例如 best_estimator）
 # 假设 `feature_columns` 是特征名称列表
@@ -450,20 +462,8 @@ export_graphviz(dt_model, out_file=dot_data,
                 feature_names=feature_columns,
                 class_names=['Low Sugar', 'High Sugar'], # 对于分类问题
                 special_characters=True)
-
-![](img/93f83eff173f0af9c4c615eee22f1dfa_234.png)
-
-![](img/93f83eff173f0af9c4c615eee22f1dfa_236.png)
-
 # 3. 使用pydotplus生成图形
 graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
-
-![](img/93f83eff173f0af9c4c615eee22f1dfa_238.png)
-
-![](img/93f83eff173f0af9c4c615eee22f1dfa_239.png)
-
-![](img/93f83eff173f0af9c4c615eee22f1dfa_240.png)
-
 # 4. 保存并显示图形
 graph.write_png('decision_tree.png')
 Image(filename='decision_tree.png')

@@ -123,20 +123,20 @@ dspy.configure(lm=lm)
 
 我们使用之前定义的`SentimentSignature`，并创建一个`dspy.Predict`模块。
 
+
+![](img/8cc4d2faa230049c956fc6475e007f78_12.png)
+
+
+![](img/8cc4d2faa230049c956fc6475e007f78_14.png)
+
 ```python
 # 定义签名
 class SentimentSignature(dspy.Signature):
     """分析给定文本的情感倾向。"""
     text: str = dspy.InputField(desc="待分析的文本")
     sentiment: int = dspy.OutputField(desc="情感分数，范围0-10", gt=0, lt=10)
-
-![](img/8cc4d2faa230049c956fc6475e007f78_12.png)
-
 # 创建模块
 classifier = dspy.Predict(SentimentSignature)
-
-![](img/8cc4d2faa230049c956fc6475e007f78_14.png)
-
 # 调用模块
 result = classifier(text="这部电影真是太精彩了！")
 print(result.sentiment) # 输出情感分数

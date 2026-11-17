@@ -118,14 +118,14 @@ train_tfms = T.Compose([
 
 ![](img/8fc58659c06d04b164d91129ad13660a_9.png)
 
+
+![](img/8fc58659c06d04b164d91129ad13660a_11.png)
+
 ```python
 def conv(ni, nf, ks=3, stride=1, act=True):
     layers = [nn.Conv2d(ni, nf, ks, stride=stride, padding=ks//2)]
     if act: layers.append(nn.ReLU())
     return nn.Sequential(*layers)
-
-![](img/8fc58659c06d04b164d91129ad13660a_11.png)
-
 class ResBlock(nn.Module):
     def __init__(self, ni, nf, stride=1):
         super().__init__()
@@ -178,6 +178,11 @@ class PreActResBlock(nn.Module):
 
 以下是U-Net的关键组件：
 
+
+![](img/8fc58659c06d04b164d91129ad13660a_13.png)
+
+![](img/8fc58659c06d04b164d91129ad13660a_15.png)
+
 ```python
 class UNet(nn.Module):
     def __init__(self, n_channels=3, n_filters=16):
@@ -196,11 +201,6 @@ class UNet(nn.Module):
             UpBlock(n_filters*2, n_filters),
         ])
         self.final = conv(n_filters, n_channels, act=False) # 输出3通道图像
-
-![](img/8fc58659c06d04b164d91129ad13660a_13.png)
-
-![](img/8fc58659c06d04b164d91129ad13660a_15.png)
-
 class UpBlock(nn.Module):
     def __init__(self, ni, nf):
         super().__init__()

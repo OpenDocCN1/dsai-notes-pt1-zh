@@ -52,12 +52,12 @@ RAG架构通常包含数据分块、嵌入、相似性搜索和最终生成等�
 
 以下是使用LangChain框架的简化概念代码：
 
-```python
-from langchain.retrievers import MergerRetriever
-from langchain.retrievers import BM25Retriever, VectorStoreRetriever
 
 ![](img/310fdb31932b51ddb4380e29273e9b2f_10.png)
 
+```python
+from langchain.retrievers import MergerRetriever
+from langchain.retrievers import BM25Retriever, VectorStoreRetriever
 # 假设我们已经初始化了不同的检索器
 vector_retriever = VectorStoreRetriever(vectorstore=your_vectorstore)
 bm25_retriever = BM25Retriever.from_texts(texts=your_texts)
@@ -82,13 +82,13 @@ lotr = MergerRetriever(retrievers=[vector_retriever, bm25_retriever])
 
 以下是应用长上下文重排序的概念步骤：
 
-```python
-from langchain.retrievers import LongContextReorder
 
 ![](img/310fdb31932b51ddb4380e29273e9b2f_12.png)
 
 ![](img/310fdb31932b51ddb4380e29273e9b2f_13.png)
 
+```python
+from langchain.retrievers import LongContextReorder
 reorder = LongContextReorder()
 reordered_docs = reorder.transform_documents(retrieved_docs)
 ```

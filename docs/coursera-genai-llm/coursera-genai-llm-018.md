@@ -62,11 +62,11 @@ enhanced_prompt = f"基于以下信息回答问题：\n{context}\n\n问题：{us
 
 最后，我们将这个增强后的提示词输入给一个文本生成模型，让它基于检索到的真实信息生成最终的回答。
 
-```python
-from transformers import pipeline
 
 ![](img/e0f9b3ae39b8c8d4de898f881362c5f0_1.png)
 
+```python
+from transformers import pipeline
 # 加载文本生成管道
 generator = pipeline('text-generation', model='gpt2')
 # 使用增强提示生成回答

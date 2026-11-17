@@ -111,6 +111,9 @@ llm = HuggingFacePipeline.from_model_id(
 
 假设我们有一个名为`document.pdf`的PDF文件。
 
+
+![](img/8675932c2fa72482cde7edf1876b5c9a_13.png)
+
 ```python
 # 1. 加载并处理PDF文档
 from langchain.document_loaders import PyPDFLoader
@@ -130,9 +133,6 @@ vectorstore = Weaviate.from_documents(
     embedding=embedding_model,
     index_name="MyDocumentIndex" # 指定Weaviate中的索引名
 )
-
-![](img/8675932c2fa72482cde7edf1876b5c9a_13.png)
-
 # 4. 基于向量存储创建检索器
 retriever = vectorstore.as_retriever(search_kwargs={"k": 3}) # 检索最相关的3个块
 

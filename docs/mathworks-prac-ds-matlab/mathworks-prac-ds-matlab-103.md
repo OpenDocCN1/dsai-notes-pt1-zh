@@ -28,6 +28,9 @@
 
 ![](img/1246604ca4b9c9491c0fe8be29d1e89e_9.png)
 
+
+![](img/1246604ca4b9c9491c0fe8be29d1e89e_11.png)
+
 ```matlab
 % 为可重复性设置随机数生成器种子
 rng('default');
@@ -38,9 +41,6 @@ c = cvpartition(height(data), 'Holdout', 0.2);
 % 获取测试集索引并提取数据
 testIdx = test(c);
 testData = data(testIdx, :);
-
-![](img/1246604ca4b9c9491c0fe8be29d1e89e_11.png)
-
 % 获取训练集索引并提取数据
 trainIdx = training(c);
 trainData = data(trainIdx, :);

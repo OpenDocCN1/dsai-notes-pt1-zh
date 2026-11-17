@@ -38,14 +38,14 @@ print(income_2023)
 
 如果你复制使用这个数字的单元格，可以将所有 `830696` 的实例替换为 `income_2023`。
 
+
+![](img/88d491cbd478ff675145a72800ca397b_3.png)
+
 ```python
 # 替换前
 profit_2023 = 830696 - 794398
 print(profit_2023)
 print(830696)
-
-![](img/88d491cbd478ff675145a72800ca397b_3.png)
-
 # 替换后
 profit_2023 = income_2023 - 794398
 print(profit_2023)

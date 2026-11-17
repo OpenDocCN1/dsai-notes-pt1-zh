@@ -59,6 +59,17 @@ dataset = dataset_factory.get_dataset(dataset_name, train_or_test, dataset_dir)
 
 ![](img/4debdb016aa3f74e69e6d4d4e76e5346_22.png)
 
+
+![](img/4debdb016aa3f74e69e6d4d4e76e5346_24.png)
+
+
+![](img/4debdb016aa3f74e69e6d4d4e76e5346_26.png)
+
+![](img/4debdb016aa3f74e69e6d4d4e76e5346_28.png)
+
+
+![](img/4debdb016aa3f74e69e6d4d4e76e5346_30.png)
+
 ```python
 # 1. 从网络工厂获取网络类
 model_name = flags.model_name  # 例如：'SSD_VGG'
@@ -66,21 +77,10 @@ ssd_class = nets_factory.get_network(model_name)
 
 # 2. 获取网络的默认参数
 ssd_params = ssd_class.default_params
-
-![](img/4debdb016aa3f74e69e6d4d4e76e5346_24.png)
-
 # 3. 使用默认参数初始化网络实例
 ssd_net = ssd_class(ssd_params)
-
-![](img/4debdb016aa3f74e69e6d4d4e76e5346_26.png)
-
-![](img/4debdb016aa3f74e69e6d4d4e76e5346_28.png)
-
 # 4. 从网络参数中获取输入图片的形状
 ssd_shape = ssd_net.params.image_shape  # 例如：(300, 300)
-
-![](img/4debdb016aa3f74e69e6d4d4e76e5346_30.png)
-
 # 5. 调用网络的锚框生成函数，获取所有默认候选框
 ssd_anchors = ssd_net.anchors(ssd_shape)
 ```

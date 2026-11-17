@@ -78,6 +78,9 @@ img_merged = cv2.merge([b, g, r])
 
 ![](img/b434732bbec1c58769800ae8a75bb9b5_17.png)
 
+
+![](img/b434732bbec1c58769800ae8a75bb9b5_19.png)
+
 ```python
 # 仅保留红色通道
 img_r = img.copy()
@@ -89,9 +92,6 @@ img_r[:, :, 1] = 0  # 将G通道置零
 img_g = img.copy()
 img_g[:, :, 0] = 0  # 将B通道置零
 img_g[:, :, 2] = 0  # 将R通道置零
-
-![](img/b434732bbec1c58769800ae8a75bb9b5_19.png)
-
 # 仅保留蓝色通道
 img_b = img.copy()
 img_b[:, :, 1] = 0  # 将G通道置零

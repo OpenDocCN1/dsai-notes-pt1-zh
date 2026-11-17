@@ -83,12 +83,12 @@ def standardize(data_series):
 
 ![](img/f653e40ba7ee8bdf29df8cf9a53f6886_13.png)
 
-```python
-from sklearn.preprocessing import StandardScaler
-import pandas as pd
 
 ![](img/f653e40ba7ee8bdf29df8cf9a53f6886_15.png)
 
+```python
+from sklearn.preprocessing import StandardScaler
+import pandas as pd
 # 假设 df 是你的DataFrame
 scaler = StandardScaler()
 # 拟合数据并转换

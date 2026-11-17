@@ -167,6 +167,9 @@ for epoch in range(num_epochs):
 
 ![](img/af8c39e3bd1d4ae804615df3eeef3050_19.png)
 
+
+![](img/af8c39e3bd1d4ae804615df3eeef3050_21.png)
+
 ```python
 import matplotlib.pyplot as plt
 
@@ -181,9 +184,6 @@ with torch.no_grad():
     grid_tensor = torch.tensor(np.c_[xx.ravel(), yy.ravel()], dtype=torch.float32)
     Z = model(grid_tensor)
     Z = (Z > 0.5).numpy().reshape(xx.shape)  # 将概率转换为类别（0或1）
-
-![](img/af8c39e3bd1d4ae804615df3eeef3050_21.png)
-
 # 绘制背景和散点
 plt.contourf(xx, yy, Z, alpha=0.3, cmap='coolwarm')
 plt.scatter(group1[:, 0], group1[:, 1], color='purple', label='Group 1 (Purple)')

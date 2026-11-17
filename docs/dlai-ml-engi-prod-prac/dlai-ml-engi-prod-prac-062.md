@@ -108,6 +108,9 @@ selected_features = target_corr[1:22].index.tolist()  # 排除目标变量自身
 
 以下是使用卡方检验进行单变量特征选择的代码示例：
 
+
+![](img/60cbcfab27d17dea9a1cbf310312f8ac_6.png)
+
 ```python
 from sklearn.feature_selection import SelectKBest, chi2
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
@@ -126,9 +129,6 @@ X_test_scaled = scaler.transform(X_test)
 
 # 初始化选择器，使用卡方检验选择最好的20个特征
 selector = SelectKBest(score_func=chi2, k=20)
-
-![](img/60cbcfab27d17dea9a1cbf310312f8ac_6.png)
-
 # 在训练集上拟合并转换
 X_train_selected = selector.fit_transform(X_train_scaled, y_train)
 X_test_selected = selector.transform(X_test_scaled)

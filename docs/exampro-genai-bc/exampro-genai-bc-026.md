@@ -24,13 +24,13 @@ OPEA是一个开源项目集合，旨在为企业提供构建生成式AI工作�
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_5.png)
 
+
+![](img/59451dcf14943cb7b0e883332bf11af5_7.png)
+
 ```bash
 # 更新包索引并安装依赖包
 sudo apt-get update
 sudo apt-get install ca-certificates curl
-
-![](img/59451dcf14943cb7b0e883332bf11af5_7.png)
-
 # 添加Docker官方GPG密钥
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
@@ -61,13 +61,13 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_16.png)
 
+
+![](img/59451dcf14943cb7b0e883332bf11af5_18.png)
+
 ```bash
 # 将当前用户添加到docker组
 sudo usermod -aG docker $USER
 newgrp docker
-
-![](img/59451dcf14943cb7b0e883332bf11af5_18.png)
-
 # 验证Docker安装是否成功
 docker run hello-world
 ```
@@ -116,6 +116,13 @@ OPEA的组件以微服务形式提供。我们将使用其`ollama`组件，该�
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_48.png)
 
+
+![](img/59451dcf14943cb7b0e883332bf11af5_50.png)
+
+![](img/59451dcf14943cb7b0e883332bf11af5_52.png)
+
+![](img/59451dcf14943cb7b0e883332bf11af5_53.png)
+
 ```yaml
 version: '3.8'
 services:
@@ -131,13 +138,6 @@ services:
     networks:
       - bridge-net
     restart: unless-stopped
-
-![](img/59451dcf14943cb7b0e883332bf11af5_50.png)
-
-![](img/59451dcf14943cb7b0e883332bf11af5_52.png)
-
-![](img/59451dcf14943cb7b0e883332bf11af5_53.png)
-
 networks:
   bridge-net:
     driver: bridge
@@ -162,9 +162,6 @@ networks:
 
 以下是设置环境变量并启动服务的命令：
 
-```bash
-# 获取宿主机的IP地址（在WSL/Linux环境下）
-export HOST_IP=$(hostname -I | awk '{print $1}')
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_65.png)
 
@@ -172,9 +169,6 @@ export HOST_IP=$(hostname -I | awk '{print $1}')
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_69.png)
 
-# 设置其他环境变量
-export NO_PROXY=localhost
-export LLM_MODEL_ID=llama3.2:1b
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_71.png)
 
@@ -182,6 +176,12 @@ export LLM_MODEL_ID=llama3.2:1b
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_75.png)
 
+```bash
+# 获取宿主机的IP地址（在WSL/Linux环境下）
+export HOST_IP=$(hostname -I | awk '{print $1}')
+# 设置其他环境变量
+export NO_PROXY=localhost
+export LLM_MODEL_ID=llama3.2:1b
 # 进入包含docker-compose.yaml文件的目录
 cd /path/to/your/opa-comps-folder
 

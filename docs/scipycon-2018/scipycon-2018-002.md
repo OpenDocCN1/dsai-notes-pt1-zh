@@ -91,14 +91,17 @@ bqplot 的强大之处在于其组件化架构。图形语法中的核心概念�
 
 这意味着你可以像搭积木一样自定义图表。例如，创建一个共享 Y 轴比例尺但拥有不同 X 轴比例尺的复合图表：
 
-```python
-import bqplot as bq
-import numpy as np
 
 ![](img/a25c05f31ef83315f47ebfedbfe70933_18.png)
 
 ![](img/a25c05f31ef83315f47ebfedbfe70933_20.png)
 
+
+![](img/a25c05f31ef83315f47ebfedbfe70933_22.png)
+
+```python
+import bqplot as bq
+import numpy as np
 # 创建比例尺
 x_scale1 = bq.LinearScale()
 x_scale2 = bq.LogScale() # 不同的X轴比例尺
@@ -108,9 +111,6 @@ y_scale = bq.LinearScale() # 共享的Y轴比例尺
 ax_x1 = bq.Axis(scale=x_scale1, label='线性X轴')
 ax_x2 = bq.Axis(scale=x_scale2, label='对数X轴', side='top')
 ax_y = bq.Axis(scale=y_scale, orientation='vertical', label='共享Y轴')
-
-![](img/a25c05f31ef83315f47ebfedbfe70933_22.png)
-
 # 创建标记（数据）
 line1 = bq.Lines(x=np.arange(10), y=np.random.randn(10), scales={'x': x_scale1, 'y': y_scale})
 line2 = bq.Lines(x=np.arange(1, 100), y=np.random.randn(99)*100, scales={'x': x_scale2, 'y': y_scale})

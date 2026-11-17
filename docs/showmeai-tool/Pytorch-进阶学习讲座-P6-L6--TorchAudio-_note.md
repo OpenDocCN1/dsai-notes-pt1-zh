@@ -59,6 +59,9 @@ spectrogram = spectrogram_transform(waveform)
 
 以下是一个组合变换的示例：
 
+
+![](img/d47b4dd266be755b011d1bea67152b4b_11.png)
+
 ```python
 from torch import nn
 
@@ -70,9 +73,6 @@ augmentation_pipeline = nn.Sequential(
     T.TimeMasking(time_mask_param=80),       # 随机时间掩蔽
     T.AmplitudeToDB()         # 将幅度转换为分贝
 )
-
-![](img/d47b4dd266be755b011d1bea67152b4b_11.png)
-
 # 对频谱图应用增强
 augmented_spectrogram = augmentation_pipeline(spectrogram)
 ```

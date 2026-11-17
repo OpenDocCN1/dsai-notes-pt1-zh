@@ -55,9 +55,6 @@
 
 ![](img/2a3df8b485a890f6aeea02b32796c9af_27.png)
 
-```cuda
-// 在内核函数中声明一个共享内存数组
-__shared__ float shared_array[1024];
 
 ![](img/2a3df8b485a890f6aeea02b32796c9af_29.png)
 
@@ -75,6 +72,9 @@ __shared__ float shared_array[1024];
 
 ![](img/2a3df8b485a890f6aeea02b32796c9af_41.png)
 
+```cuda
+// 在内核函数中声明一个共享内存数组
+__shared__ float shared_array[1024];
 // 在内核函数中声明一个共享内存变量
 __shared__ unsigned int shared_variable;
 ```

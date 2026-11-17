@@ -19,11 +19,11 @@
 
 以下是Softmax在NumPy中的实现代码：
 
-```python
-import numpy as np
 
 ![](img/e7ecf0933f8ff6fd629229f5815a80cb_3.png)
 
+```python
+import numpy as np
 def softmax(x):
     return np.exp(x) / np.sum(np.exp(x), axis=0)
 
@@ -59,6 +59,9 @@ print(outputs)
 
 ![](img/e7ecf0933f8ff6fd629229f5815a80cb_7.png)
 
+
+![](img/e7ecf0933f8ff6fd629229f5815a80cb_9.png)
+
 ```python
 def cross_entropy(y_true, y_pred):
     # y_true 是独热编码
@@ -71,9 +74,6 @@ y_true_good = np.array([1, 0, 0])
 y_pred_good = np.array([0.7, 0.2, 0.1])
 # 一个差的预测：类别0的概率很低
 y_pred_bad = np.array([0.1, 0.3, 0.6])
-
-![](img/e7ecf0933f8ff6fd629229f5815a80cb_9.png)
-
 loss_good = cross_entropy(y_true_good, y_pred_good)
 loss_bad = cross_entropy(y_true_good, y_pred_bad)
 print(f‘好的预测损失：{loss_good}‘)

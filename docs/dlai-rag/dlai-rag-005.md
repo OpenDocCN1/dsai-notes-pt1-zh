@@ -84,12 +84,12 @@
 
 ![](img/ff77f08407187b7ecc2136b4f00a3280_22.png)
 
-```python
-# 1. 用户原始提问
-prompt = “为什么温哥华的酒店这个周末这么贵？”
 
 ![](img/ff77f08407187b7ecc2136b4f00a3280_24.png)
 
+```python
+# 1. 用户原始提问
+prompt = “为什么温哥华的酒店这个周末这么贵？”
 # 2. 直接询问LLM（无RAG）
 direct_response = generate(prompt)
 print(“直接LLM回答：”, direct_response) # 可能不准确或过时

@@ -36,10 +36,6 @@ signal, sr = librosa.load(audio_path, sr=None) # sr=None 保持原始采样率
 
 在Librosa中，我们可以使用一个实用函数来生成梅尔滤波器组，而无需手动实现所有步骤。
 
-```python
-# 定义参数
-frame_size = 2048
-n_mels = 10
 
 ![](img/ee9105527e3fdfb9472f7eeda67c2563_3.png)
 
@@ -47,6 +43,10 @@ n_mels = 10
 
 ![](img/ee9105527e3fdfb9472f7eeda67c2563_5.png)
 
+```python
+# 定义参数
+frame_size = 2048
+n_mels = 10
 # 生成梅尔滤波器组
 mel_filter_banks = librosa.filters.mel(sr=sr, n_fft=frame_size, n_mels=n_mels)
 

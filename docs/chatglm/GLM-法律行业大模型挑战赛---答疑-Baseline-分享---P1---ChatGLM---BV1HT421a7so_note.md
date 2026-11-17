@@ -72,10 +72,6 @@
 ### API调用与测评指标
 
 **API调用示例（已封禁，仅作格式参考）：**
-```python
-# 假设的API调用代码结构
-import requests
-import json
 
 ![](img/29ac4df9eec97854db7ec5d276e81b63_22.png)
 
@@ -89,14 +85,18 @@ import json
 
 ![](img/29ac4df9eec97854db7ec5d276e81b63_32.png)
 
-url = "https://api.example.com/getLegalRep"
-headers = {"Authorization": "Bearer YOUR_API_KEY"}
-data = {"company_name": "瑞丰光电"}
 
 ![](img/29ac4df9eec97854db7ec5d276e81b63_34.png)
 
 ![](img/29ac4df9eec97854db7ec5d276e81b63_36.png)
 
+```python
+# 假设的API调用代码结构
+import requests
+import json
+url = "https://api.example.com/getLegalRep"
+headers = {"Authorization": "Bearer YOUR_API_KEY"}
+data = {"company_name": "瑞丰光电"}
 response = requests.post(url, headers=headers, json=data)
 result = response.json()
 print(result) # 输出：{"legal_representative": "蔡瑞雄"}

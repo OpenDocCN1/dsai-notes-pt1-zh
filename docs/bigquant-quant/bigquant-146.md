@@ -104,19 +104,19 @@ print(main_colors)
 
 ![](img/d9e4f8aa6ec1379d27e28b10ab87817e_9.png)
 
-```python
-# 设置画布大小
-plt.figure(figsize=(8, 4))
 
 ![](img/d9e4f8aa6ec1379d27e28b10ab87817e_11.png)
 
+
+![](img/d9e4f8aa6ec1379d27e28b10ab87817e_13.png)
+
+```python
+# 设置画布大小
+plt.figure(figsize=(8, 4))
 # 显示原始图片
 plt.subplot(1, 2, 1)
 plt.imshow(image)
 plt.title('Original Image')
-
-![](img/d9e4f8aa6ec1379d27e28b10ab87817e_13.png)
-
 # 显示压缩后的图片
 plt.subplot(1, 2, 2)
 plt.imshow(image_compressed)

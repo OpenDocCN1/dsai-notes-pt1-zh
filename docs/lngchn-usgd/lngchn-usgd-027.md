@@ -159,6 +159,17 @@ print(result["output"])
 现在，我们使用LangGraph来构建一个具有更明确流程的智能体。我们将定义一个图，其中包含检索、评估、条件路由等节点。
 
 以下是构建LangGraph智能体的示例框架：
+
+![](img/cc85488e51056542343dac6b8aa4b85a_2.png)
+
+
+![](img/cc85488e51056542343dac6b8aa4b85a_4.png)
+
+![](img/cc85488e51056542343dac6b8aa4b85a_5.png)
+
+
+![](img/cc85488e51056542343dac6b8aa4b85a_7.png)
+
 ```python
 from langgraph.graph import StateGraph, END
 from typing import TypedDict
@@ -184,9 +195,6 @@ def grade_node(state: AgentState):
     # 调用评估工具
     score = grade_documents(state["question"], state["documents"])
     return {"graded_docs": score}
-
-![](img/cc85488e51056542343dac6b8aa4b85a_2.png)
-
 def route_after_grade(state: AgentState):
     # 让LLM决策：如果文档相关性高，去生成答案；否则去搜索
     # 这里简化表示，实际会调用LLM进行判断
@@ -205,19 +213,11 @@ def generate_node(state: AgentState):
     context = combine(state["documents"], state.get("search_results"))
     answer = generate_answer(context, state["question"])
     return {"final_answer": answer}
-
-![](img/cc85488e51056542343dac6b8aa4b85a_4.png)
-
-![](img/cc85488e51056542343dac6b8aa4b85a_5.png)
-
 # 4. 添加节点和条件边
 graph_builder.add_node("retrieve", retrieve_node)
 graph_builder.add_node("grade", grade_node)
 graph_builder.add_node("search", search_node)
 graph_builder.add_node("generate", generate_node)
-
-![](img/cc85488e51056542343dac6b8aa4b85a_7.png)
-
 graph_builder.set_entry_point("retrieve")
 graph_builder.add_edge("retrieve", "grade")
 graph_builder.add_conditional_edges("grade", route_after_grade, {"generate": "generate", "search": "search"})

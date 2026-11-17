@@ -171,27 +171,27 @@ class LinearRegression:
 
 ![](img/ce4667748848c4687cace578f8ebabf6_30.png)
 
-```python
-# 1. 生成示例数据
-from sklearn.model_selection import train_test_split
-from sklearn.datasets import make_regression
-import matplotlib.pyplot as plt
 
 ![](img/ce4667748848c4687cace578f8ebabf6_32.png)
 
 ![](img/ce4667748848c4687cace578f8ebabf6_33.png)
 
-X, y = make_regression(n_samples=100, n_features=1, noise=20, random_state=42)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 ![](img/ce4667748848c4687cace578f8ebabf6_35.png)
 
-# 2. 训练模型
-regressor = LinearRegression(learning_rate=0.1, n_iters=1000)
-regressor.fit(X_train, y_train)
 
 ![](img/ce4667748848c4687cace578f8ebabf6_36.png)
 
+```python
+# 1. 生成示例数据
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import make_regression
+import matplotlib.pyplot as plt
+X, y = make_regression(n_samples=100, n_features=1, noise=20, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# 2. 训练模型
+regressor = LinearRegression(learning_rate=0.1, n_iters=1000)
+regressor.fit(X_train, y_train)
 # 3. 进行预测
 predictions = regressor.predict(X_test)
 

@@ -109,6 +109,11 @@
 
 ![](img/0a1504e4d52443086f49c2f919757e43_68.png)
 
+
+![](img/0a1504e4d52443086f49c2f919757e43_70.png)
+
+![](img/0a1504e4d52443086f49c2f919757e43_72.png)
+
 ```python
 # 示例代码：导入必要的库并设置环境变量（如OpenAI API Key）
 import os
@@ -116,11 +121,6 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 # ... 其他导入
-
-![](img/0a1504e4d52443086f49c2f919757e43_70.png)
-
-![](img/0a1504e4d52443086f49c2f919757e43_72.png)
-
 # 假设 docs 是已经加载好的文档列表
 ```
 
@@ -152,25 +152,25 @@ print(f"共创建了 {len(splits)} 个文本块。")
 
 ![](img/0a1504e4d52443086f49c2f919757e43_90.png)
 
-```python
-# 初始化嵌入模型
-embeddings = OpenAIEmbeddings()
 
 ![](img/0a1504e4d52443086f49c2f919757e43_92.png)
 
 ![](img/0a1504e4d52443086f49c2f919757e43_94.png)
 
+
+![](img/0a1504e4d52443086f49c2f919757e43_95.png)
+
+![](img/0a1504e4d52443086f49c2f919757e43_97.png)
+
+```python
+# 初始化嵌入模型
+embeddings = OpenAIEmbeddings()
 # 初始化向量数据库（这里使用轻量级的Chroma），并将文本块和嵌入存入
 persist_directory = ‘./docs_chroma‘ # 指定持久化目录
 # 确保目录为空
 if os.path.exists(persist_directory):
     import shutil
     shutil.rmtree(persist_directory)
-
-![](img/0a1504e4d52443086f49c2f919757e43_95.png)
-
-![](img/0a1504e4d52443086f49c2f919757e43_97.png)
-
 vectorstore = Chroma.from_documents(
     documents=splits,
     embedding=embeddings,

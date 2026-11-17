@@ -14,6 +14,16 @@
 
 ![](img/35a07fd586cd2f636786b511769dd024_1.png)
 
+
+![](img/35a07fd586cd2f636786b511769dd024_3.png)
+
+![](img/35a07fd586cd2f636786b511769dd024_4.png)
+
+![](img/35a07fd586cd2f636786b511769dd024_6.png)
+
+
+![](img/35a07fd586cd2f636786b511769dd024_7.png)
+
 ```dockerfile
 # 使用官方 Python 镜像
 FROM python:3.11-slim
@@ -24,18 +34,8 @@ WORKDIR /app
 # 复制依赖文件并安装
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-
-![](img/35a07fd586cd2f636786b511769dd024_3.png)
-
-![](img/35a07fd586cd2f636786b511769dd024_4.png)
-
-![](img/35a07fd586cd2f636786b511769dd024_6.png)
-
 # 复制应用代码
 COPY . .
-
-![](img/35a07fd586cd2f636786b511769dd024_7.png)
-
 # 暴露端口
 EXPOSE 8000
 

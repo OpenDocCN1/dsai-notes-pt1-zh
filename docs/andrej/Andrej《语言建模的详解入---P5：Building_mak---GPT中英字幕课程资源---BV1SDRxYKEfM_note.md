@@ -329,6 +329,9 @@ class Sequential:
 ![](img/c2c4c553adf638a00076095ae2876499_215.png)
 
 经过这些重构，我们的模型定义和前向传播变得非常简洁：
+
+![](img/c2c4c553adf638a00076095ae2876499_217.png)
+
 ```python
 model = Sequential([
     Embedding(vocab_size, n_embd),
@@ -336,9 +339,6 @@ model = Sequential([
     Linear(n_embd * block_size, n_hidden), BatchNorm1d(n_hidden), Tanh(),
     Linear(n_hidden, vocab_size)
 ])
-
-![](img/c2c4c553adf638a00076095ae2876499_217.png)
-
 logits = model.forward(xb)
 loss = F.cross_entropy(logits, yb)
 ```

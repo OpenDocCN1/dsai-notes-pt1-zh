@@ -168,6 +168,9 @@ print(model_1)
 
 接下来，我们可以进行一个前向传播测试，以确保模型工作正常。
 
+
+![](img/4993a5005eee8f00d1f2691c1fe178b8_2.png)
+
 ```python
 # 进行一次虚拟前向传播以验证模型
 # 获取一个批次的图像
@@ -180,9 +183,6 @@ single_image = images[0].unsqueeze(dim=0).to(device)
 model_1.eval()
 with torch.inference_mode():
     pred = model_1(single_image)
-
-![](img/4993a5005eee8f00d1f2691c1fe178b8_2.png)
-
 print(pred)
 ```
 

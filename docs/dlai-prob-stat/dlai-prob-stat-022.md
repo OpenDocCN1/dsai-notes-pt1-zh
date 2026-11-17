@@ -52,13 +52,13 @@
 
 在代码中，我们可以用一个简单的函数来描述一次伯努利试验：
 
-```python
-import random
 
 ![](img/36796e9436623a74c96fb17757a6e772_12.png)
 
 ![](img/36796e9436623a74c96fb17757a6e772_13.png)
 
+```python
+import random
 def bernoulli_trial(p):
     """
     执行一次伯努利试验。

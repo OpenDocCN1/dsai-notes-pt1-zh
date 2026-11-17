@@ -37,13 +37,13 @@
 
 首先，我们需要定义状态的“蓝图”，即规定状态对象应包含哪些属性及其数据类型。我们使用`TypedDict`来实现。
 
-```python
-from typing import TypedDict
 
 ![](img/7a12b0fcfd9eaf164ea74d37281f76c0_12.png)
 
 ![](img/7a12b0fcfd9eaf164ea74d37281f76c0_13.png)
 
+```python
+from typing import TypedDict
 class SimpleState(TypedDict):
     count: int
 ```
@@ -64,13 +64,13 @@ def increment(state: SimpleState) -> SimpleState:
 
 **条件判断节点（Should Continue Node）**
 这个节点根据`count`的值决定图的下一步走向。
-```python
-from langgraph.graph import END
 
 ![](img/7a12b0fcfd9eaf164ea74d37281f76c0_15.png)
 
 ![](img/7a12b0fcfd9eaf164ea74d37281f76c0_16.png)
 
+```python
+from langgraph.graph import END
 def should_continue(state: SimpleState) -> str:
     # 如果count小于5，则继续循环；否则结束
     if state["count"] < 5:
@@ -87,16 +87,19 @@ def should_continue(state: SimpleState) -> str:
 
 定义了节点后，我们将它们组装成一个完整的图。
 
-```python
-from langgraph.graph import StateGraph
-
-# 1. 初始化StateGraph，并传入我们定义的状态蓝图
-graph = StateGraph(SimpleState)
 
 ![](img/7a12b0fcfd9eaf164ea74d37281f76c0_21.png)
 
 ![](img/7a12b0fcfd9eaf164ea74d37281f76c0_22.png)
 
+
+![](img/7a12b0fcfd9eaf164ea74d37281f76c0_24.png)
+
+```python
+from langgraph.graph import StateGraph
+
+# 1. 初始化StateGraph，并传入我们定义的状态蓝图
+graph = StateGraph(SimpleState)
 # 2. 添加节点
 graph.add_node("increment", increment)
 graph.add_node("should_continue", should_continue)
@@ -115,9 +118,6 @@ graph.add_conditional_edges(
 
 # 4. 设置入口点
 graph.set_entry_point("increment")
-
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_24.png)
-
 # 5. 编译图
 app = graph.compile()
 ```
@@ -128,14 +128,14 @@ app = graph.compile()
 
 最后，我们使用初始状态来运行这个图。
 
-```python
-# 定义初始状态
-initial_state = SimpleState(count=0)
 
 ![](img/7a12b0fcfd9eaf164ea74d37281f76c0_27.png)
 
 ![](img/7a12b0fcfd9eaf164ea74d37281f76c0_28.png)
 
+```python
+# 定义初始状态
+initial_state = SimpleState(count=0)
 # 调用图
 result = app.invoke(initial_state)
 print(result) # 输出：{'count': 5}

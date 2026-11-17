@@ -149,9 +149,6 @@ X_train, X_test, y_train, y_test = train_test_split(X_normalized, y_categorical,
 
 ![](img/81fc1a612f9d5feb62c4a52e702b9797_44.png)
 
-```python
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout
 
 ![](img/81fc1a612f9d5feb62c4a52e702b9797_46.png)
 
@@ -161,6 +158,9 @@ from tensorflow.keras.layers import Dense, Dropout
 
 ![](img/81fc1a612f9d5feb62c4a52e702b9797_51.png)
 
+```python
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
 model = Sequential([
     Dense(100, activation='relu', input_shape=(4,)), # 输入层（4个特征）和第一个隐藏层（100个神经元）
     Dropout(0.2), # 随机丢弃20%的神经元连接

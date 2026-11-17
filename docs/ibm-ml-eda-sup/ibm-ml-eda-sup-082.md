@@ -86,20 +86,20 @@ train, test = train_test_split(data, test_size=0.3, random_state=42)
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_31.png)
 
-```python
-# 识别数值特征
-numeric_feats = data.dtypes[data.dtypes != 'object'].index
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_33.png)
 
-# 计算偏度
-skewed_feats = data[numeric_feats].apply(lambda x: x.skew())
-skewed_feats = skewed_feats[skewed_feats > 0.75]
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_35.png)
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_36.png)
 
+```python
+# 识别数值特征
+numeric_feats = data.dtypes[data.dtypes != 'object'].index
+# 计算偏度
+skewed_feats = data[numeric_feats].apply(lambda x: x.skew())
+skewed_feats = skewed_feats[skewed_feats > 0.75]
 # 对偏态特征进行对数变换
 for feat in skewed_feats.index:
     if feat != 'SalePrice': # 不对目标变量进行变换
@@ -133,9 +133,6 @@ for feat in skewed_feats.index:
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_53.png)
 
-```python
-# 分离特征和目标变量
-feature_cols = [col for col in train.columns if col != 'SalePrice']
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_55.png)
 
@@ -143,6 +140,9 @@ feature_cols = [col for col in train.columns if col != 'SalePrice']
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_59.png)
 
+```python
+# 分离特征和目标变量
+feature_cols = [col for col in train.columns if col != 'SalePrice']
 X_train = train[feature_cols]
 y_train = train['SalePrice']
 X_test = test[feature_cols]
@@ -173,13 +173,13 @@ y_test = test['SalePrice']
 
 为了评估模型，我们将使用均方根误差（RMSE）。RMSE是预测值与真实值之间差异的度量，其单位与目标变量相同，便于解释。
 
-```python
-from sklearn.metrics import mean_squared_error
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_73.png)
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_75.png)
 
+```python
+from sklearn.metrics import mean_squared_error
 def rmse(y_true, y_pred):
     return np.sqrt(mean_squared_error(y_true, y_pred))
 ```
@@ -200,17 +200,17 @@ def rmse(y_true, y_pred):
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_82.png)
 
-```python
-from sklearn.linear_model import LinearRegression
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_84.png)
 
-# 创建并训练模型
-lr_model = LinearRegression()
-lr_model.fit(X_train, y_train)
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_86.png)
 
+```python
+from sklearn.linear_model import LinearRegression
+# 创建并训练模型
+lr_model = LinearRegression()
+lr_model.fit(X_train, y_train)
 # 在测试集上进行预测
 y_pred = lr_model.predict(X_test)
 
@@ -229,11 +229,11 @@ print(f"线性回归模型的RMSE为: {lr_rmse:.4f}")
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_92.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/7de10170a1cb9354da6e6b8158b2a582_94.png)
 
+```python
+import matplotlib.pyplot as plt
 plt.figure(figsize=(6, 6))
 plt.scatter(y_test, y_pred, alpha=0.5)
 plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2)

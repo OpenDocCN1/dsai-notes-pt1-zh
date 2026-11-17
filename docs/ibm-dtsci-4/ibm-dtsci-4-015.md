@@ -76,15 +76,15 @@ unique_years = df['released'].unique()
 
 ![](img/ee5d10cc85db3f503005f0c2c2121297_22.png)
 
-```python
-# 步骤分解
-condition = df['released'] > 1979
-DF1 = df[condition]
 
 ![](img/ee5d10cc85db3f503005f0c2c2121297_23.png)
 
 ![](img/ee5d10cc85db3f503005f0c2c2121297_24.png)
 
+```python
+# 步骤分解
+condition = df['released'] > 1979
+DF1 = df[condition]
 # 或一行代码完成
 DF1 = df[df['released'] > 1979]
 ```

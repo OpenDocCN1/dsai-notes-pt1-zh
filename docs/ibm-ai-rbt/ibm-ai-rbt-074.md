@@ -166,6 +166,9 @@ c = add_one(10)
 
 你可以使用 `help` 命令在函数上显示文档，如下所示：
 
+
+![](img/3e4ef8a1321e6c93b0f0a23a230797dc_31.png)
+
 ```python
 def add_one(a):
     """
@@ -173,9 +176,6 @@ def add_one(a):
     """
     b = a + 1
     return b
-
-![](img/3e4ef8a1321e6c93b0f0a23a230797dc_31.png)
-
 help(add_one)
 ```
 

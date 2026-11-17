@@ -53,14 +53,14 @@ PolyBlocks是一个基于MLIR构建的编译器引擎。其目标是构建一个
 
 它的编程模型非常直接。例如，对于PyTorch，可以将其注册为一个后端：
 
+
+![](img/9d247fe59b06542b8c86ce18da9a50b4_3.png)
+
 ```python
 @torch.jit.script
 def my_function(x):
     # ... PyTorch code ...
     return result
-
-![](img/9d247fe59b06542b8c86ce18da9a50b4_3.png)
-
 # 或者使用 torch.compile
 optimized_model = torch.compile(my_model, backend='polyblocks')
 ```

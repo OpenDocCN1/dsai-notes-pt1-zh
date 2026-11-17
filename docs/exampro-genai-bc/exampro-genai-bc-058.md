@@ -84,10 +84,6 @@ Claude生成的项目主要包含以下文件：
 ![](img/662fdb928117e4b69ba6216531620bc3_40.png)
 
 调整后的核心路径引用如下：
-```html
-<!-- 修正前 -->
-<script src="js/config.js"></script>
-<script src="js/scenes/Boot.js"></script>
 
 ![](img/662fdb928117e4b69ba6216531620bc3_42.png)
 
@@ -101,6 +97,10 @@ Claude生成的项目主要包含以下文件：
 
 ![](img/662fdb928117e4b69ba6216531620bc3_52.png)
 
+```html
+<!-- 修正前 -->
+<script src="js/config.js"></script>
+<script src="js/scenes/Boot.js"></script>
 <!-- 修正后 -->
 <script src="config.js"></script>
 <script src="scenes/Boot.js"></script>

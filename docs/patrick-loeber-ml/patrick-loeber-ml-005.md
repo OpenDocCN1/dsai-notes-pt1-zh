@@ -130,15 +130,15 @@ def _pdf(self, class_idx, x):
     *   将两者相加，得到该类别对于样本 `x` 的对数后验概率得分。
     *   比较所有类别的得分，选择得分最高的类别作为预测结果。
 
-```python
-def predict(self, X):
-    # 对每个样本调用 _predict_single 进行预测
-    return np.array([self._predict_single(x) for x in X])
 
 ![](img/60c3d484bbfe549071d2828f382d66b0_11.png)
 
 ![](img/60c3d484bbfe549071d2828f382d66b0_13.png)
 
+```python
+def predict(self, X):
+    # 对每个样本调用 _predict_single 进行预测
+    return np.array([self._predict_single(x) for x in X])
 def _predict_single(self, x):
     posteriors = [] # 存储每个类别的后验概率得分
 
@@ -164,6 +164,14 @@ def _predict_single(self, x):
 
 我们将使用 `scikit-learn` 库中的 `make_classification` 函数生成一个简单的数据集，并将其分为训练集和测试集。
 
+
+![](img/60c3d484bbfe549071d2828f382d66b0_19.png)
+
+![](img/60c3d484bbfe549071d2828f382d66b0_21.png)
+
+
+![](img/60c3d484bbfe549071d2828f382d66b0_23.png)
+
 ```python
 # 测试代码示例
 from sklearn.datasets import make_classification
@@ -172,18 +180,10 @@ from sklearn.model_selection import train_test_split
 # 生成数据集：1000个样本，10个特征，2个类别
 X, y = make_classification(n_samples=1000, n_features=10, n_classes=2, random_state=42)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-![](img/60c3d484bbfe549071d2828f382d66b0_19.png)
-
-![](img/60c3d484bbfe549071d2828f382d66b0_21.png)
-
 # 使用我们实现的分类器
 model = NaiveBayes()
 model.fit(X_train, y_train)    # 训练模型
 predictions = model.predict(X_test) # 进行预测
-
-![](img/60c3d484bbfe549071d2828f382d66b0_23.png)
-
 # 计算准确率
 accuracy = np.sum(predictions == y_test) / len(y_test)
 print(f"朴素贝叶斯分类器准确率: {accuracy:.2f}")

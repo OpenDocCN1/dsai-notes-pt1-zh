@@ -109,13 +109,13 @@ print(“稠密向量维度：”, dense_vector.shape)
 
 ![](img/6a1ce69c6956fd8e6c2fe9856b38033e_9.png)
 
-```python
-from tqdm.auto import tqdm
 
 ![](img/6a1ce69c6956fd8e6c2fe9856b38033e_10.png)
 
 ![](img/6a1ce69c6956fd8e6c2fe9856b38033e_11.png)
 
+```python
+from tqdm.auto import tqdm
 batch_size = 200
 
 for i in tqdm(range(0, len(fashion), batch_size)):

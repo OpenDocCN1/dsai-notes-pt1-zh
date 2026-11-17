@@ -133,6 +133,11 @@ torch.save(model.state_dict(), 'mnist_ffn.pth')
 
 ![](img/04aa32dd29565ddb6ddf93fb7c63abd3_22.png)
 
+
+![](img/04aa32dd29565ddb6ddf93fb7c63abd3_24.png)
+
+![](img/04aa32dd29565ddb6ddf93fb7c63abd3_25.png)
+
 ```python
 import torch
 import torch.nn as nn
@@ -153,11 +158,6 @@ class NeuralNet(nn.Module):
         out = self.relu(out)
         out = self.fc2(out)
         return out
-
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_24.png)
-
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_25.png)
-
 # 超参数
 input_size = 784  # 28x28 像素
 hidden_size = 500

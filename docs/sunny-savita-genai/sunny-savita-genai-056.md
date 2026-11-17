@@ -46,12 +46,12 @@
 
 以下是具体的安装和配置代码：
 
-```python
-# 安装必要的Python库
-!pip install langchain langchain-community
 
 ![](img/13f8bf9858e6ca56584a3b5fa4519679_7.png)
 
+```python
+# 安装必要的Python库
+!pip install langchain langchain-community
 # 配置环境变量（示例，请替换为你的实际信息）
 import os
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
@@ -146,6 +146,9 @@ print(memory.buffer)
 
 以下是 `ConversationSummaryBufferMemory` 的使用方法：
 
+
+![](img/13f8bf9858e6ca56584a3b5fa4519679_13.png)
+
 ```python
 from langchain.memory import ConversationSummaryBufferMemory
 
@@ -171,9 +174,6 @@ for i in range(10):
     print(f"\n用户: {user_input}")
     response = conversation_with_buffer.predict(input=user_input)
     print(f"AI: {response}")
-
-![](img/13f8bf9858e6ca56584a3b5fa4519679_13.png)
-
 # 4. 查看最终的记忆状态
 # 此时，buffer_memory.buffer 里包含的是“最近原始对话 + 早期摘要”的混合体。
 print("\n--- 最终混合记忆 ---")

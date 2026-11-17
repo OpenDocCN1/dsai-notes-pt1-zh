@@ -48,11 +48,11 @@ from threading import Thread
 
 ![](img/2e359917ca32b442a304f3b180fb0a47_20.png)
 
-```python
-import time
 
 ![](img/2e359917ca32b442a304f3b180fb0a47_22.png)
 
+```python
+import time
 def f1():
     print("Hi from F1")
     time.sleep(5)
@@ -104,16 +104,16 @@ t1.join()
 1.  使用循环创建多个`Thread`对象。
 2.  通过`args`参数向目标函数传递数据。
 
-```python
-def f1(arg):
-    print("Hi from F1 with argument " + str(arg))
-    time.sleep(5)
-    print("Hi F1 woke up with argument " + str(arg))
 
 ![](img/2e359917ca32b442a304f3b180fb0a47_32.png)
 
 ![](img/2e359917ca32b442a304f3b180fb0a47_33.png)
 
+```python
+def f1(arg):
+    print("Hi from F1 with argument " + str(arg))
+    time.sleep(5)
+    print("Hi F1 woke up with argument " + str(arg))
 for i in range(10):
     t = Thread(target=f1, args=(i,))
     t.start()

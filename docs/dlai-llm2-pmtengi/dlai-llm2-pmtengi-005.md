@@ -103,6 +103,9 @@ print(response)
 
 让我们提供额外的示例：
 
+
+![](img/d440f2f9cd8b3099ca8829fba9c46fcc_3.png)
+
 ```python
 prompt = """
 消息：嗨，爸爸，你参加钢琴演奏会迟到了20分钟。
@@ -110,9 +113,6 @@ prompt = """
 
 消息：等不及今晚吃披萨了。
 情感：积极
-
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_3.png)
-
 消息：嗨，Andrew，谢谢你关于笛卡尔的演讲。
 情感：
 """
@@ -255,32 +255,32 @@ print(response)
 
 让我们用代码来实现：
 
-```python
-email_text = """
-亲爱的朋友，
 
 ![](img/d440f2f9cd8b3099ca8829fba9c46fcc_31.png)
 
-希望你这周过得愉快。我一直在思考Llama模型以及它们如何改变我们构建AI应用的方式。提示工程的力量令人惊叹——它允许开发者在几分钟或几小时内构建原型，而无需训练数据集。
 
 ![](img/d440f2f9cd8b3099ca8829fba9c46fcc_32.png)
 
 ![](img/d440f2f9cd8b3099ca8829fba9c46fcc_33.png)
 
-我们DeepLearning.AI团队的一名成员一直在尝试微调一个模型，使其听起来像他们自己，他们觉得这很有趣。
 
 ![](img/d440f2f9cd8b3099ca8829fba9c46fcc_35.png)
 
 ![](img/d440f2f9cd8b3099ca8829fba9c46fcc_36.png)
 
-祝好，
-Andrew
-"""
 
 ![](img/d440f2f9cd8b3099ca8829fba9c46fcc_37.png)
 
 ![](img/d440f2f9cd8b3099ca8829fba9c46fcc_39.png)
 
+```python
+email_text = """
+亲爱的朋友，
+希望你这周过得愉快。我一直在思考Llama模型以及它们如何改变我们构建AI应用的方式。提示工程的力量令人惊叹——它允许开发者在几分钟或几小时内构建原型，而无需训练数据集。
+我们DeepLearning.AI团队的一名成员一直在尝试微调一个模型，使其听起来像他们自己，他们觉得这很有趣。
+祝好，
+Andrew
+"""
 prompt = f"总结以下电子邮件，提取关键点。作者具体对Llama模型说了什么？\n\n{email_text}"
 response = Llama(prompt)
 print(response)

@@ -91,17 +91,9 @@
 ![](img/f9e2c6667d5af10141e954c4440f0c1d_50.png)
 
 **代码示例（情感分类任务）**：
-```
-传统代码（软件1.0）：
-def sentiment_analysis(text):
-    # 编写规则或使用传统ML库进行分析
-    ...
 
 ![](img/f9e2c6667d5af10141e954c4440f0c1d_52.png)
 
-神经网络（软件2.0）：
-# 训练一个情感分类神经网络模型
-model.train(training_data)
 
 ![](img/f9e2c6667d5af10141e954c4440f0c1d_54.png)
 
@@ -109,6 +101,14 @@ model.train(training_data)
 
 ![](img/f9e2c6667d5af10141e954c4440f0c1d_57.png)
 
+```
+传统代码（软件1.0）：
+def sentiment_analysis(text):
+    # 编写规则或使用传统ML库进行分析
+    ...
+神经网络（软件2.0）：
+# 训练一个情感分类神经网络模型
+model.train(training_data)
 提示工程（软件3.0）：
 “判断以下文本的情感是积极、消极还是中立：
 文本：‘这部电影太精彩了！’

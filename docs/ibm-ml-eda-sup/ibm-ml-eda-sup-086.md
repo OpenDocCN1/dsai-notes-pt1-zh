@@ -132,13 +132,13 @@ Scikit-learn提供了`StandardScaler`类来方便地进行标准化。
 
 ![](img/2bfd6be60b4fc6c9f1dcc4b575b617d0_60.png)
 
-```python
-from sklearn.preprocessing import StandardScaler
 
 ![](img/2bfd6be60b4fc6c9f1dcc4b575b617d0_61.png)
 
 ![](img/2bfd6be60b4fc6c9f1dcc4b575b617d0_63.png)
 
+```python
+from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 ```
@@ -183,13 +183,6 @@ X_scaled = scaler.fit_transform(X)
 
 ![](img/2bfd6be60b4fc6c9f1dcc4b575b617d0_83.png)
 
-```python
-# 将DataFrame转换为NumPy数组
-X_array = X.values
-
-# 手动计算均值和标准差（沿列方向，即axis=0）
-mean = X_array.mean(axis=0)
-std = X_array.std(axis=0)
 
 ![](img/2bfd6be60b4fc6c9f1dcc4b575b617d0_85.png)
 
@@ -199,6 +192,13 @@ std = X_array.std(axis=0)
 
 ![](img/2bfd6be60b4fc6c9f1dcc4b575b617d0_88.png)
 
+```python
+# 将DataFrame转换为NumPy数组
+X_array = X.values
+
+# 手动计算均值和标准差（沿列方向，即axis=0）
+mean = X_array.mean(axis=0)
+std = X_array.std(axis=0)
 # 执行标准化
 X_manual_scaled = (X_array - mean) / std
 ```

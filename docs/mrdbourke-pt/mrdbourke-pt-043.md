@@ -10,13 +10,13 @@
 
 我们将使用线性回归公式 `y = weight * x + bias` 来生成数据。在代码中，我们这样实现：
 
-```python
-import torch
 
 ![](img/4acc302fbcceef1ffa19c1a519918aae_1.png)
 
 ![](img/4acc302fbcceef1ffa19c1a519918aae_3.png)
 
+```python
+import torch
 # 设置真实的权重和偏置
 weight = 0.7
 bias = 0.3
@@ -177,6 +177,11 @@ plot_predictions(train_data=X_train.cpu(),
 
 以下是保存和加载模型的步骤：
 
+
+![](img/4acc302fbcceef1ffa19c1a519918aae_9.png)
+
+![](img/4acc302fbcceef1ffa19c1a519918aae_10.png)
+
 ```python
 from pathlib import Path
 
@@ -204,11 +209,6 @@ loaded_model_1.to(device)
 loaded_model_1.eval()
 with torch.inference_mode():
     loaded_model_1_preds = loaded_model_1(X_test)
-
-![](img/4acc302fbcceef1ffa19c1a519918aae_9.png)
-
-![](img/4acc302fbcceef1ffa19c1a519918aae_10.png)
-
 # 检查预测是否相同
 print(y_preds == loaded_model_1_preds)
 ```

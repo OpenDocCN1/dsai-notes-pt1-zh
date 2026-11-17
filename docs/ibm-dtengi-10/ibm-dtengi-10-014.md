@@ -160,14 +160,14 @@ db.students.count({ "last_name": "Doe" })
 现在我们将执行替换操作。让我们检索一个学生记录并对文档进行一些更改。
 
 我们创建一个新字段来标识哪些学生是在校生或仅在线学习。我们还将用校园邮箱更新电子邮件。完成所有更改后，我们将调用`replaceOne`函数。
+
+![](img/44b68190fe0f1ba52229a427e9fb3133_59.png)
+
 ```javascript
 // 首先，检索并修改文档
 let student = db.students.findOne({ "last_name": "Doe" });
 student.student_type = "on_campus";
 student.email = "john.doe@campus.edu";
-
-![](img/44b68190fe0f1ba52229a427e9fb3133_59.png)
-
 // 然后替换文档
 db.students.replaceOne({ "last_name": "Doe" }, student)
 ```

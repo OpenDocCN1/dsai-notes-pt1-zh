@@ -28,10 +28,6 @@
 
 ![](img/a2005aee8b790bf2f86eafe6547573fe_16.png)
 
-```python
-# 设置OpenAI API密钥
-import os
-os.environ["OPENAI_API_KEY"] = "your-api-key-here"
 
 ![](img/a2005aee8b790bf2f86eafe6547573fe_18.png)
 
@@ -39,6 +35,10 @@ os.environ["OPENAI_API_KEY"] = "your-api-key-here"
 
 ![](img/a2005aee8b790bf2f86eafe6547573fe_22.png)
 
+```python
+# 设置OpenAI API密钥
+import os
+os.environ["OPENAI_API_KEY"] = "your-api-key-here"
 # 导入TruLens类并设置Tru对象
 from trulens_eval import Tru
 tru = Tru()
@@ -53,12 +53,6 @@ tru.reset_database() # 重置数据库，用于记录应用程序的提示、响
 
 ![](img/a2005aee8b790bf2f86eafe6547573fe_27.png)
 
-```python
-from trulens_eval.tru_llama import TruLlama
-from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
-
-# 使用TruLens阅读器加载文档
-documents = SimpleDirectoryReader("./data").load_data()
 
 ![](img/a2005aee8b790bf2f86eafe6547573fe_29.png)
 
@@ -66,6 +60,12 @@ documents = SimpleDirectoryReader("./data").load_data()
 
 ![](img/a2005aee8b790bf2f86eafe6547573fe_33.png)
 
+```python
+from trulens_eval.tru_llama import TruLlama
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
+
+# 使用TruLens阅读器加载文档
+documents = SimpleDirectoryReader("./data").load_data()
 # 将所有内容合并为一个大文档，而不是默认的每页一个文档
 from llama_index.core.node_parser import SimpleNodeParser
 parser = SimpleNodeParser.from_defaults(chunk_size=512)
@@ -76,6 +76,9 @@ nodes = parser.get_nodes_from_documents(documents)
 
 ![](img/a2005aee8b790bf2f86eafe6547573fe_35.png)
 
+
+![](img/a2005aee8b790bf2f86eafe6547573fe_37.png)
+
 ```python
 from llama_index.core import Settings
 from llama_index.llms.openai import OpenAI
@@ -84,9 +87,6 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 # 配置LLM和嵌入模型
 Settings.llm = OpenAI(temperature=0.1, model="gpt-3.5-turbo")
 Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
-
-![](img/a2005aee8b790bf2f86eafe6547573fe_37.png)
-
 # 创建索引和查询引擎
 from llama_index.core import VectorStoreIndex
 index = VectorStoreIndex(nodes)
@@ -128,13 +128,13 @@ tru.run_dashboard() # 从笔记本内部启动仪表板
 
 ![](img/a2005aee8b790bf2f86eafe6547573fe_53.png)
 
+
+![](img/a2005aee8b790bf2f86eafe6547573fe_55.png)
+
 ```python
 from trulens_eval import Feedback, Select
 from trulens_eval.feedback import Groundedness
 from trulens_eval.feedback.provider.openai import OpenAI as OpenAIProvider
-
-![](img/a2005aee8b790bf2f86eafe6547573fe_55.png)
-
 # 初始化反馈提供者
 provider = OpenAIProvider(model_engine="gpt-3.5-turbo")
 ```
@@ -320,21 +320,21 @@ print(eval_questions)
 
 ![](img/a2005aee8b790bf2f86eafe6547573fe_146.png)
 
-```python
-from trulens_eval.tru_llama import TruLlama
-from trulens_eval import FeedbackMode
 
 ![](img/a2005aee8b790bf2f86eafe6547573fe_148.png)
 
-# 创建TruLlama记录器对象
-tru_recorder = TruLlama(query_engine,
-                        app_id='App1',
-                        feedbacks=[f_answer_relevance, f_context_relevance, f_groundedness])
 
 ![](img/a2005aee8b790bf2f86eafe6547573fe_150.png)
 
 ![](img/a2005aee8b790bf2f86eafe6547573fe_152.png)
 
+```python
+from trulens_eval.tru_llama import TruLlama
+from trulens_eval import FeedbackMode
+# 创建TruLlama记录器对象
+tru_recorder = TruLlama(query_engine,
+                        app_id='App1',
+                        feedbacks=[f_answer_relevance, f_context_relevance, f_groundedness])
 # 对每个评估问题运行评估
 for question in eval_questions:
     with tru_recorder as recording:

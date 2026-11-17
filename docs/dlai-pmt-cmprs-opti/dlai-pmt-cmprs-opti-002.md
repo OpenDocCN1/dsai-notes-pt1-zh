@@ -253,6 +253,12 @@ print(df.head())
 
 ![](img/7123cecf9341a47c17accb2610c5b124_94.png)
 
+
+![](img/7123cecf9341a47c17accb2610c5b124_96.png)
+
+
+![](img/7123cecf9341a47c17accb2610c5b124_98.png)
+
 ```python
 # 定义数据模型
 class Host(BaseModel):
@@ -264,9 +270,6 @@ class Host(BaseModel):
 class Location(BaseModel):
     type: str = "Point"
     coordinates: list[float]
-
-![](img/7123cecf9341a47c17accb2610c5b124_96.png)
-
 class Address(BaseModel):
     street: str
     suburb: str
@@ -325,9 +328,6 @@ class Listing(BaseModel):
     review_scores: dict
     reviews: list[Review]
     text_embeddings: list[float]
-
-![](img/7123cecf9341a47c17accb2610c5b124_98.png)
-
 # 将数据转换为Listing对象列表
 records = df.to_dict('records')
 listings = [Listing(**record).dict() for record in records]
@@ -342,19 +342,19 @@ print(listings[0])  # 查看第一个房源
 
 ![](img/7123cecf9341a47c17accb2610c5b124_104.png)
 
+
+![](img/7123cecf9341a47c17accb2610c5b124_106.png)
+
+
+![](img/7123cecf9341a47c17accb2610c5b124_108.png)
+
 ```python
 # 设置数据库和集合名称
 DATABASE_NAME = "airbnb_dataset"
 COLLECTION_NAME = "listings_reviews"
-
-![](img/7123cecf9341a47c17accb2610c5b124_106.png)
-
 def get_mongo_client(mongo_uri):
     """创建并返回MongoDB客户端"""
     return MongoClient(mongo_uri, appname="rag-course")
-
-![](img/7123cecf9341a47c17accb2610c5b124_108.png)
-
 # 从环境变量获取URI并连接
 MONGO_URI = os.getenv("MONGODB_URI")
 client = get_mongo_client(MONGO_URI)
@@ -381,6 +381,9 @@ print(f"插入了 {len(result.inserted_ids)} 个文档")
 
 ![](img/7123cecf9341a47c17accb2610c5b124_114.png)
 
+
+![](img/7123cecf9341a47c17accb2610c5b124_116.png)
+
 ```python
 # 定义向量搜索索引
 text_embedding_field_name = "text_embeddings"
@@ -399,9 +402,6 @@ vector_search_model = SearchIndexModel(
     },
     name=vector_search_index_name_text,
 )
-
-![](img/7123cecf9341a47c17accb2610c5b124_116.png)
-
 # 创建索引
 collection.create_search_index(vector_search_model)
 print("向量搜索索引创建成功。等待索引初始化...")
@@ -418,12 +418,12 @@ time.sleep(60)  # 等待索引就绪
 
 ![](img/7123cecf9341a47c17accb2610c5b124_123.png)
 
-```python
-# 初始化OpenAI客户端
-openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 ![](img/7123cecf9341a47c17accb2610c5b124_125.png)
 
+```python
+# 初始化OpenAI客户端
+openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 def get_embedding(text):
     """使用OpenAI生成文本嵌入"""
     if not isinstance(text, str):
@@ -473,6 +473,9 @@ def vector_search(query, db, collection, vector_index_name="vector_index_text"):
 
 #### 9. 处理用户查询与RAG集成
 
+
+![](img/7123cecf9341a47c17accb2610c5b124_131.png)
+
 ```python
 # 定义搜索结果模型
 class SearchResultItem(BaseModel):
@@ -482,9 +485,6 @@ class SearchResultItem(BaseModel):
     summary: str | None
     price: float
     property_type: str
-
-![](img/7123cecf9341a47c17accb2610c5b124_131.png)
-
 def handle_user_query(query, db, collection):
     """处理用户查询：RAG全流程"""
     # 1. 向量搜索获取相关知识

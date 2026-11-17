@@ -16,11 +16,11 @@
 
 为了演示这一点，我们先创建一个没有任何坐标轴的空白图形。
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/5f2ab3c17c0f8a480827c5087baec5a2_7.png)
 
+```python
+import matplotlib.pyplot as plt
 fig = plt.figure()  # 创建一个空白图形
 plt.show()
 ```
@@ -104,11 +104,11 @@ print(type(ax))
 
 以下代码创建了一个2行3列（共6个位置）的网格布局，并在第2个位置（索引2）创建一个坐标轴。
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/5f2ab3c17c0f8a480827c5087baec5a2_30.png)
 
+```python
+import matplotlib.pyplot as plt
 fig = plt.figure()
 # 在2行3列的网格中，于索引2的位置创建坐标轴
 ax1 = fig.add_subplot(2, 3, 2)
@@ -122,15 +122,18 @@ plt.show()
 
 ![](img/5f2ab3c17c0f8a480827c5087baec5a2_32.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/5f2ab3c17c0f8a480827c5087baec5a2_34.png)
 
-fig = plt.figure()
 
 ![](img/5f2ab3c17c0f8a480827c5087baec5a2_36.png)
 
+
+![](img/5f2ab3c17c0f8a480827c5087baec5a2_38.png)
+
+```python
+import matplotlib.pyplot as plt
+fig = plt.figure()
 # 第一个图：单图
 ax1 = fig.add_subplot(111)
 ax1.plot([0, 1], [0, 1], label='Main Plot')
@@ -138,9 +141,6 @@ ax1.plot([0, 1], [0, 1], label='Main Plot')
 # 第二个图：添加到新的网格布局中（2行3列，索引3）
 ax2 = fig.add_subplot(2, 3, 3)
 ax2.plot([0, 1, 2], [2, 1, 2], label='Subplot 2')
-
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_38.png)
-
 plt.legend()
 plt.tight_layout() # 调整布局，防止标签重叠
 plt.show()

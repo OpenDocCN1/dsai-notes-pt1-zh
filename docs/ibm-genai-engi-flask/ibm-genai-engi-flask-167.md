@@ -86,11 +86,11 @@ LangChain 提供了专门设计用于加载 JSON 文件的 `JSONLoader` 类。�
 
 ![](img/a8dde27b13f24c346cd1be5aeb2f6091_14.png)
 
-```python
-from langchain.document_loaders import CSVLoader
 
 ![](img/a8dde27b13f24c346cd1be5aeb2f6091_15.png)
 
+```python
+from langchain.document_loaders import CSVLoader
 loader = CSVLoader("example.csv")
 documents = loader.load()
 ```

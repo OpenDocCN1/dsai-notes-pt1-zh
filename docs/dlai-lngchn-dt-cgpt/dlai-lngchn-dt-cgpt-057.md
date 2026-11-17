@@ -60,6 +60,9 @@ client = Client("huggingface-projects/llama-2-7b-chat")
 
 首先，我们创建一个简单的函数来向模型发送提示并获取回复。这还不是“聊天”，因为模型没有记忆，无法理解对话的上下文。
 
+
+![](img/c5085f6fba93a29cffdf7a5983252bef_24.png)
+
 ```python
 def generate_response(prompt, max_tokens=256):
     """
@@ -74,9 +77,6 @@ def generate_response(prompt, max_tokens=256):
     )
     # 假设返回结果是字典，包含生成的文本
     return result['generated_text'][:max_tokens]
-
-![](img/c5085f6fba93a29cffdf7a5983252bef_24.png)
-
 # 测试函数
 question = "马特发明或发现了什么？"
 answer = generate_response(question, max_tokens=256)
@@ -146,6 +146,9 @@ demo.launch()
 
 ![](img/c5085f6fba93a29cffdf7a5983252bef_44.png)
 
+
+![](img/c5085f6fba93a29cffdf7a5983252bef_46.png)
+
 ```python
 def format_chat_prompt(message, chat_history, system_message=""):
     """
@@ -160,9 +163,6 @@ def format_chat_prompt(message, chat_history, system_message=""):
         prompt += f"\n用户：{user_msg}\n助手：{assistant_msg}"
     prompt += f"\n用户：{message}\n助手："
     return prompt
-
-![](img/c5085f6fba93a29cffdf7a5983252bef_46.png)
-
 # 更新响应函数，使用格式化后的提示
 def respond_with_history(message, chat_history):
     formatted_prompt = format_chat_prompt(message, chat_history)
@@ -239,6 +239,11 @@ def generate_response_with_stop(prompt, max_new_tokens=124, stop_sequence="\n用
 
 ![](img/c5085f6fba93a29cffdf7a5983252bef_70.png)
 
+
+![](img/c5085f6fba93a29cffdf7a5983252bef_72.png)
+
+![](img/c5085f6fba93a29cffdf7a5983252bef_74.png)
+
 ```python
 def format_chat_prompt_advanced(message, chat_history, system_message="你是一个有帮助的助手。"):
     """增强版提示格式化函数，包含系统消息。"""
@@ -247,11 +252,6 @@ def format_chat_prompt_advanced(message, chat_history, system_message="你是一
         prompt += f"用户：{user_msg}\n助手：{assistant_msg}\n"
     prompt += f"用户：{message}\n助手："
     return prompt
-
-![](img/c5085f6fba93a29cffdf7a5983252bef_72.png)
-
-![](img/c5085f6fba93a29cffdf7a5983252bef_74.png)
-
 def respond_stream(message, chat_history, system_message, temperature=0.7):
     """实现流式响应的函数。"""
     formatted_prompt = format_chat_prompt_advanced(message, chat_history, system_message)

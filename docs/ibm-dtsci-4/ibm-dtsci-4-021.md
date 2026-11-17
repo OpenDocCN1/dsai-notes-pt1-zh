@@ -56,27 +56,27 @@ r = requests.get('https://www.ibm.com')
 
 我们可以通过响应对象的属性来检查请求的状态和详细信息。以下是检查状态码和响应头的方法。
 
-```python
-# 打印状态码，200表示成功
-print(r.status_code)
 
 ![](img/12e1d1f0a25977ea3013e2b2d8ba3645_16.png)
 
-# 打印响应头部（返回一个字典）
-print(r.headers)
-
-# 获取特定的头部信息，例如日期
-print(r.headers['date'])
 
 ![](img/12e1d1f0a25977ea3013e2b2d8ba3645_18.png)
 
 ![](img/12e1d1f0a25977ea3013e2b2d8ba3645_19.png)
 
-# 获取内容类型
-print(r.headers['Content-Type'])
 
 ![](img/12e1d1f0a25977ea3013e2b2d8ba3645_20.png)
 
+```python
+# 打印状态码，200表示成功
+print(r.status_code)
+# 打印响应头部（返回一个字典）
+print(r.headers)
+
+# 获取特定的头部信息，例如日期
+print(r.headers['date'])
+# 获取内容类型
+print(r.headers['Content-Type'])
 # 检查响应编码
 print(r.encoding)
 ```
@@ -126,19 +126,19 @@ GET请求常用于从API检索数据，我们可以通过查询字符串（Query
 
 ![](img/12e1d1f0a25977ea3013e2b2d8ba3645_34.png)
 
-```python
-# 定义基础URL
-url_get = 'http://httpbin.org/get'
 
 ![](img/12e1d1f0a25977ea3013e2b2d8ba3645_35.png)
 
 ![](img/12e1d1f0a25977ea3013e2b2d8ba3645_36.png)
 
-# 创建查询参数字典
-payload = {'name': 'Joseph', 'ID': '123'}
 
 ![](img/12e1d1f0a25977ea3013e2b2d8ba3645_38.png)
 
+```python
+# 定义基础URL
+url_get = 'http://httpbin.org/get'
+# 创建查询参数字典
+payload = {'name': 'Joseph', 'ID': '123'}
 # 发送带参数的GET请求
 r = requests.get(url_get, params=payload)
 ```
@@ -149,27 +149,27 @@ r = requests.get(url_get, params=payload)
 
 ![](img/12e1d1f0a25977ea3013e2b2d8ba3645_41.png)
 
-```python
-# 打印最终生成的URL，可以看到参数已被附加
-print(r.url)
 
 ![](img/12e1d1f0a25977ea3013e2b2d8ba3645_42.png)
 
 ![](img/12e1d1f0a25977ea3013e2b2d8ba3645_43.png)
 
+
+![](img/12e1d1f0a25977ea3013e2b2d8ba3645_45.png)
+
+
+![](img/12e1d1f0a25977ea3013e2b2d8ba3645_46.png)
+
+```python
+# 打印最终生成的URL，可以看到参数已被附加
+print(r.url)
 # GET请求没有请求体，所以此项为None
 print(r.request.body)
 
 # 打印状态码
 print(r.status_code)
-
-![](img/12e1d1f0a25977ea3013e2b2d8ba3645_45.png)
-
 # 查看响应文本
 print(r.text)
-
-![](img/12e1d1f0a25977ea3013e2b2d8ba3645_46.png)
-
 # 由于响应是JSON格式，我们可以将其解析为Python字典
 print(r.json())
 # 在返回的字典中，'args'键下包含了我们发送的查询参数
@@ -235,6 +235,9 @@ r_post = requests.post(url_post, data=payload_post)
 
 ![](img/12e1d1f0a25977ea3013e2b2d8ba3645_61.png)
 
+
+![](img/12e1d1f0a25977ea3013e2b2d8ba3645_63.png)
+
 ```python
 # 比较URL
 print("GET URL:", r.url)      # 包含参数
@@ -243,9 +246,6 @@ print("POST URL:", r_post.url) # 不包含参数
 # 比较请求体
 print("GET 请求体:", r.request.body)   # 为 None
 print("POST 请求体:", r_post.request.body) # 包含数据（字节形式）
-
-![](img/12e1d1f0a25977ea3013e2b2d8ba3645_63.png)
-
 # 从POST响应中获取我们发送的数据
 print(r_post.json()['form'])
 ```

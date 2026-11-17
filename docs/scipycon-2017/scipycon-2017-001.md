@@ -59,14 +59,14 @@ df.info()
 
 ![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_15.png)
 
-```python
-# 方法一：方括号
-country_df = df['country']
 
 ![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_17.png)
 
 ![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_19.png)
 
+```python
+# 方法一：方括号
+country_df = df['country']
 # 方法二：点号表示法（仅适用于无空格列名）
 country_df = df.country
 ```

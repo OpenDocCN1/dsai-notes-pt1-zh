@@ -135,6 +135,9 @@ data['token_count'] = data['message_tokens'].apply(len)
 
 然后，绘制单词数和标记数的直方图。
 
+
+![](img/3169f4d67216520fe7446eea96072ae7_35.png)
+
 ```python
 plt.figure(figsize=(12, 5))
 plt.subplot(1, 2, 1)
@@ -142,9 +145,6 @@ plt.hist(data['word_count'], bins=30, edgecolor='black')
 plt.title('Distribution of Word Counts')
 plt.xlabel('Number of Words')
 plt.ylabel('Frequency')
-
-![](img/3169f4d67216520fe7446eea96072ae7_35.png)
-
 plt.subplot(1, 2, 2)
 plt.hist(data['token_count'], bins=30, edgecolor='black', color='orange')
 plt.title('Distribution of Token Counts')
@@ -211,11 +211,11 @@ print(single_token_messages[['original_message', 'message_tokens']].head())
 
 运行下一个单元格，将此技术应用于完整的数据集。
 
-```python
-from sklearn.feature_extraction.text import CountVectorizer
 
 ![](img/3169f4d67216520fe7446eea96072ae7_53.png)
 
+```python
+from sklearn.feature_extraction.text import CountVectorizer
 vectorizer = CountVectorizer()
 X = vectorizer.fit_transform(data['message_tokens'].apply(lambda x: ' '.join(x)))
 ```
@@ -252,11 +252,11 @@ print(top_20)
 
 ![](img/3169f4d67216520fe7446eea96072ae7_61.png)
 
-```python
-from wordcloud import WordCloud
 
 ![](img/3169f4d67216520fe7446eea96072ae7_62.png)
 
+```python
+from wordcloud import WordCloud
 # 示例：为特定类别生成词云
 category_text = ' '.join(data[data['category'] == 'your_category']['message_tokens'].apply(lambda x: ' '.join(x)))
 wordcloud = WordCloud(width=800, height=400, background_color='white').generate(category_text)

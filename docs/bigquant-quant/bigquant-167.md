@@ -71,14 +71,14 @@ print(X[:5])
 
 ![](img/d729489211926cf67d328807e4bb3ee9_24.png)
 
+
+![](img/d729489211926cf67d328807e4bb3ee9_26.png)
+
 ```python
 # 3. 创建NMF模型并进行降维
 # n_components 指定降维后的特征数（k值）
 # max_iter 指定最大迭代次数以逼近最优解
 nmf = NMF(n_components=2, max_iter=1000, init=‘nndsvda’)
-
-![](img/d729489211926cf67d328807e4bb3ee9_26.png)
-
 # 拟合模型并转换数据，得到系数矩阵 W
 W = nmf.fit_transform(X)
 print(“\n降维后的数据 W (前5行)：”)
@@ -95,16 +95,16 @@ print(f“降维后数据形状：{W.shape}”) # 输出：(150, 2)
 
 根据NMF公式 **V ≈ W · H**，我们得到了 **W**，那么对应的基矩阵 **H** 在哪里呢？
 
-```python
-# 5. 获取基矩阵 H
-H = nmf.components_
-print(“\n基矩阵 H：”)
-print(H)
 
 ![](img/d729489211926cf67d328807e4bb3ee9_28.png)
 
 ![](img/d729489211926cf67d328807e4bb3ee9_30.png)
 
+```python
+# 5. 获取基矩阵 H
+H = nmf.components_
+print(“\n基矩阵 H：”)
+print(H)
 # 6. 验证 V ≈ W · H 的关系
 # 计算 W 和 H 的乘积，近似还原原始数据 X
 X_reconstructed = np.dot(W, H)

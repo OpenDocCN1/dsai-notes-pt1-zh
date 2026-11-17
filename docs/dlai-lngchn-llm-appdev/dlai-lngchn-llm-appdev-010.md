@@ -101,12 +101,12 @@ from langchain.document_loaders.blob_loaders.youtube_audio import YoutubeAudioLo
 
 ![](img/45fbcc5f08d4b53978152b089a1da51e_24.png)
 
-```python
-url = "https://www.youtube.com/watch?v=example_video_id"
-save_dir = "tmp/youtube_audio"  # 指定保存音频文件的目录
 
 ![](img/45fbcc5f08d4b53978152b089a1da51e_26.png)
 
+```python
+url = "https://www.youtube.com/watch?v=example_video_id"
+save_dir = "tmp/youtube_audio"  # 指定保存音频文件的目录
 loader = GenericLoader(
     YoutubeAudioLoader([url], save_dir),
     OpenAIWhisperParser()
@@ -174,11 +174,11 @@ Notion是一个非常流行的个人和公司数据存储工具。许多人希�
 
 ![](img/45fbcc5f08d4b53978152b089a1da51e_46.png)
 
-```python
-from langchain.document_loaders import NotionDirectoryLoader
 
 ![](img/45fbcc5f08d4b53978152b089a1da51e_48.png)
 
+```python
+from langchain.document_loaders import NotionDirectoryLoader
 loader = NotionDirectoryLoader("path/to/notion/export/directory")
 docs = loader.load()
 ```

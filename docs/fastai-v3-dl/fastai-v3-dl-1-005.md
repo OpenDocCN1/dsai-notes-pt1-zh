@@ -88,10 +88,6 @@ df = pd.get_dummies(df, columns=['Sex', 'Embarked', 'Pclass'])
 
 ![](img/eec0150d9060fac6cc17d75a9fe5d165_21.png)
 
-```python
-# 定义自变量（特征）和因变量（标签）
-indep_vars = ['Age', 'SibSp', 'Parch', 'LogFare'] + [col for col in df.columns if col.startswith(('Sex_', 'Embarked_', 'Pclass_'))]
-dep_var = 'Survived'
 
 ![](img/eec0150d9060fac6cc17d75a9fe5d165_23.png)
 
@@ -103,6 +99,10 @@ dep_var = 'Survived'
 
 ![](img/eec0150d9060fac6cc17d75a9fe5d165_31.png)
 
+```python
+# 定义自变量（特征）和因变量（标签）
+indep_vars = ['Age', 'SibSp', 'Parch', 'LogFare'] + [col for col in df.columns if col.startswith(('Sex_', 'Embarked_', 'Pclass_'))]
+dep_var = 'Survived'
 # 转换为PyTorch张量
 indep = torch.tensor(df[indep_vars].values, dtype=torch.float)
 dep = torch.tensor(df[dep_var].values, dtype=torch.float)
@@ -189,6 +189,11 @@ def one_epoch(coefs, lr):
 
 接下来，我们将数据划分为训练集和验证集，并开始训练模型。
 
+
+![](img/eec0150d9060fac6cc17d75a9fe5d165_58.png)
+
+![](img/eec0150d9060fac6cc17d75a9fe5d165_60.png)
+
 ```python
 from fastai.data.transforms import RandomSplitter
 # 划分训练集和验证集
@@ -203,11 +208,6 @@ def train_model(epochs=30, lr=0.01):
     for i in range(epochs):
         one_epoch(coefs, lr)
     return coefs
-
-![](img/eec0150d9060fac6cc17d75a9fe5d165_58.png)
-
-![](img/eec0150d9060fac6cc17d75a9fe5d165_60.png)
-
 coefs = train_model()
 ```
 
@@ -306,6 +306,11 @@ def init_coefs(n_hidden=20):
 
 接下来，定义神经网络的前向传播过程。
 
+
+![](img/eec0150d9060fac6cc17d75a9fe5d165_86.png)
+
+![](img/eec0150d9060fac6cc17d75a9fe5d165_88.png)
+
 ```python
 def calc_preds_nn(coefs, indep):
     l1, l2, const = coefs
@@ -315,11 +320,6 @@ def calc_preds_nn(coefs, indep):
     # 第二层：线性变换 + Sigmoid激活
     res = res @ l2 + const
     return torch.sigmoid(res).squeeze() # 压缩维度以匹配标签形状
-
-![](img/eec0150d9060fac6cc17d75a9fe5d165_86.png)
-
-![](img/eec0150d9060fac6cc17d75a9fe5d165_88.png)
-
 def calc_loss_nn(coefs, indep, dep):
     preds = calc_preds_nn(coefs, indep)
     return torch.abs(preds - dep).mean()

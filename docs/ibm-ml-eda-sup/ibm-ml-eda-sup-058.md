@@ -96,19 +96,19 @@ lr = LinearRegression()
 
 ![](img/dd2cad16dc77b1c7c8a964d9d61594a9_45.png)
 
-```python
-# 重新加载波士顿房价数据集，确保数据干净
-boston_df = ... # 假设数据已加载
 
 ![](img/dd2cad16dc77b1c7c8a964d9d61594a9_46.png)
 
 ![](img/dd2cad16dc77b1c7c8a964d9d61594a9_48.png)
 
-# 设置目标变量y为‘MEDV’（房价中位数）
-y = boston_df['MEDV']
 
 ![](img/dd2cad16dc77b1c7c8a964d9d61594a9_50.png)
 
+```python
+# 重新加载波士顿房价数据集，确保数据干净
+boston_df = ... # 假设数据已加载
+# 设置目标变量y为‘MEDV’（房价中位数）
+y = boston_df['MEDV']
 # 设置特征X为数据集中除‘MEDV’外的所有列
 X = boston_df.drop('MEDV', axis=1)
 ```
@@ -138,14 +138,14 @@ X = boston_df.drop('MEDV', axis=1)
 
 ![](img/dd2cad16dc77b1c7c8a964d9d61594a9_64.png)
 
-```python
-# 创建多项式特征转换器，设置degree=2，并排除偏置项（常数项）
-pf = PolynomialFeatures(degree=2, include_bias=False)
 
 ![](img/dd2cad16dc77b1c7c8a964d9d61594a9_66.png)
 
 ![](img/dd2cad16dc77b1c7c8a964d9d61594a9_67.png)
 
+```python
+# 创建多项式特征转换器，设置degree=2，并排除偏置项（常数项）
+pf = PolynomialFeatures(degree=2, include_bias=False)
 # 将原始特征X转换为包含二次项和交互项的新特征矩阵
 X_pf = pf.fit_transform(X)
 ```
@@ -210,14 +210,9 @@ X_train, X_test, y_train, y_test = train_test_split(X_pf, y, test_size=0.3, rand
 
 ![](img/dd2cad16dc77b1c7c8a964d9d61594a9_94.png)
 
-```python
-# 初始化标准化器
-scaler = StandardScaler()
 
 ![](img/dd2cad16dc77b1c7c8a964d9d61594a9_96.png)
 
-# 在训练集上拟合标准化器，并转换训练数据
-X_train_s = scaler.fit_transform(X_train)
 
 ![](img/dd2cad16dc77b1c7c8a964d9d61594a9_98.png)
 
@@ -225,6 +220,11 @@ X_train_s = scaler.fit_transform(X_train)
 
 ![](img/dd2cad16dc77b1c7c8a964d9d61594a9_101.png)
 
+```python
+# 初始化标准化器
+scaler = StandardScaler()
+# 在训练集上拟合标准化器，并转换训练数据
+X_train_s = scaler.fit_transform(X_train)
 # 使用训练集拟合的标准化器转换测试集数据
 X_test_s = scaler.transform(X_test)
 ```

@@ -37,12 +37,12 @@
 
 ![](img/950b01b82fc0fefb02fba9ebc2e77c0a_11.png)
 
-```python
-import socket
-from threading import Thread
 
 ![](img/950b01b82fc0fefb02fba9ebc2e77c0a_13.png)
 
+```python
+import socket
+from threading import Thread
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(('localhost', 9999))
 ```
@@ -77,13 +77,13 @@ def send_data():
 
 最后，我们启动线程并运行主程序。
 
+
+![](img/950b01b82fc0fefb02fba9ebc2e77c0a_24.png)
+
 ```python
 # 创建并启动接收线程
 t = Thread(target=receive_data)
 t.start()
-
-![](img/950b01b82fc0fefb02fba9ebc2e77c0a_24.png)
-
 # 在主线程中运行发送函数
 send_data()
 ```
@@ -100,21 +100,21 @@ send_data()
 
 首先，服务器需要绑定端口并监听连接。
 
-```python
-import socket
-from threading import Thread
 
 ![](img/950b01b82fc0fefb02fba9ebc2e77c0a_30.png)
 
 ![](img/950b01b82fc0fefb02fba9ebc2e77c0a_31.png)
 
+
+![](img/950b01b82fc0fefb02fba9ebc2e77c0a_33.png)
+
+```python
+import socket
+from threading import Thread
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(('localhost', 9999))
 server.listen()
 print("服务器正在监听...")
-
-![](img/950b01b82fc0fefb02fba9ebc2e77c0a_33.png)
-
 conn, addr = server.accept()
 print(f"接收到来自 {addr} 的客户端连接")
 ```

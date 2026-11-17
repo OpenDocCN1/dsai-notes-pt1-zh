@@ -18,12 +18,12 @@
 
 ![](img/bcb0861715520176234141b6640fa014_6.png)
 
-```python
-def square(number):
-    return number ** 2
 
 ![](img/bcb0861715520176234141b6640fa014_7.png)
 
+```python
+def square(number):
+    return number ** 2
 def doubler(number):
     return number * 2
 ```

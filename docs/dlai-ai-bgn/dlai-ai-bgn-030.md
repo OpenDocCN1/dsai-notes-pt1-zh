@@ -97,21 +97,21 @@ proteins = ["Chicken", "Beef", "Tofu", "Salmon"]
 
 然后，我们从每个列表中随机抽取指定数量的食材：
 
-```python
-from random import sample
 
 ![](img/b879da940b47054bbb462790ca8245ff_16.png)
 
 ![](img/b879da940b47054bbb462790ca8245ff_17.png)
 
-random_spices = sample(spices, 2)
-random_vegetables = sample(vegetables, 2)
-random_protein = sample(proteins, 1)
 
 ![](img/b879da940b47054bbb462790ca8245ff_19.png)
 
 ![](img/b879da940b47054bbb462790ca8245ff_21.png)
 
+```python
+from random import sample
+random_spices = sample(spices, 2)
+random_vegetables = sample(vegetables, 2)
+random_protein = sample(proteins, 1)
 print(random_spices)
 print(random_vegetables)
 print(random_protein)

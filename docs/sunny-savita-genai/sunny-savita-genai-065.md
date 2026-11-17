@@ -51,6 +51,9 @@ llm = HuggingFaceHub(repo_id="google/flan-t5-large", model_kwargs={"temperature"
 
 ![](img/90bbb204826beef1fa00c80f93d23b0e_8.png)
 
+
+![](img/90bbb204826beef1fa00c80f93d23b0e_10.png)
+
 ```python
 # 1. 加载数据
 loader = TextLoader("./data/llama3.txt")
@@ -59,9 +62,6 @@ documents = loader.load()
 # 2. 分割文本
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 texts = text_splitter.split_documents(documents)
-
-![](img/90bbb204826beef1fa00c80f93d23b0e_10.png)
-
 # 3. 创建向量存储
 db = Chroma.from_documents(texts, embeddings)
 
@@ -86,12 +86,12 @@ for doc in docs:
 
 首先，我们定义图的状态。在这个简单示例中，状态主要包含用户的输入消息和模型生成的响应。
 
-```python
-from typing import TypedDict, List, Annotated
-import operator
 
 ![](img/90bbb204826beef1fa00c80f93d23b0e_14.png)
 
+```python
+from typing import TypedDict, List, Annotated
+import operator
 class AgentState(TypedDict):
     messages: Annotated[List[str], operator.add]
     response: str

@@ -49,14 +49,14 @@ with open(‘imagenet_classes.txt’) as f:
 
 现在，让我们处理一张猫的图像，并查看模型的预测结果。
 
+
+![](img/2fb9bd9df95d3221c8b5a298fc267de0_7.png)
+
 ```python
 # 加载并预处理图像
 from PIL import Image
 img = Image.open(‘cat.jpg’)
 transformed_img = transform(img).unsqueeze(0)  # 添加批次维度
-
-![](img/2fb9bd9df95d3221c8b5a298fc267de0_7.png)
-
 # 获取模型预测
 output = model(transformed_img)
 _, predicted_idx = torch.max(output, 1)

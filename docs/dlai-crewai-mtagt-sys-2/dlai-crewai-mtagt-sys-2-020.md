@@ -95,12 +95,12 @@ Box公司开发了一个MCP服务器，将其部分功能提供给智能体使�
 这意味着你的智能体现在可以自动接入这些集成，并在执行过程中自动利用Box所暴露的那些操作和功能。例如，从文件中提取特定功能是Box暴露的功能之一，智能体可以利用它来提取信息以构建最终报告。
 
 **代码示例**：
-```python
-# 导入MCP服务器适配器
-from crewai_tools import mcp
 
 ![](img/45447aeefd621bfd4408cdb2fe9572b2_8.png)
 
+```python
+# 导入MCP服务器适配器
+from crewai_tools import mcp
 # 设置服务器属性（URL，传输层）
 server_config = {
     “url”: “your_mcp_server_url”,

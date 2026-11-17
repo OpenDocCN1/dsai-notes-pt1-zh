@@ -57,9 +57,6 @@
 
 ![](img/e7932f5ef0eac2c4ad991634ab7c4295_19.png)
 
-```python
-from datasets import load_dataset
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 ![](img/e7932f5ef0eac2c4ad991634ab7c4295_20.png)
 
@@ -69,6 +66,9 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 ![](img/e7932f5ef0eac2c4ad991634ab7c4295_23.png)
 
+```python
+from datasets import load_dataset
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 # 加载 dialogsum 数据集
 dataset = load_dataset("dialogsum")
 ```
@@ -186,9 +186,6 @@ Summary:
 ```
 
 **模板 2:**
-```
-Dialogue:
-{对话内容}
 
 ![](img/e7932f5ef0eac2c4ad991634ab7c4295_51.png)
 
@@ -198,6 +195,9 @@ Dialogue:
 
 ![](img/e7932f5ef0eac2c4ad991634ab7c4295_54.png)
 
+```
+Dialogue:
+{对话内容}
 What was going on?
 ```
 
@@ -270,8 +270,6 @@ What was going on?
 
 ![](img/e7932f5ef0eac2c4ad991634ab7c4295_73.png)
 
-```python
-from transformers import GenerationConfig
 
 ![](img/e7932f5ef0eac2c4ad991634ab7c4295_74.png)
 
@@ -279,6 +277,8 @@ from transformers import GenerationConfig
 
 ![](img/e7932f5ef0eac2c4ad991634ab7c4295_76.png)
 
+```python
+from transformers import GenerationConfig
 # 高温度，更具创造性
 generation_config = GenerationConfig(max_new_tokens=50, temperature=1.5)
 # 低温度，更确定和保守

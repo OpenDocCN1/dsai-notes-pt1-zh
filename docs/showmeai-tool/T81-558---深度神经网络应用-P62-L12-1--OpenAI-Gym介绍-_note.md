@@ -25,16 +25,16 @@ OpenAI Gym是一个基准平台，让你可以在Python中评估你的强化学�
 
 以下是一个简单的代码示例，展示了如何启动一个环境：
 
-```python
-import gym
-
-# 创建‘CartPole-v1’环境
-env = gym.make(‘CartPole-v1’)
 
 ![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_6.png)
 
 ![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_7.png)
 
+```python
+import gym
+
+# 创建‘CartPole-v1’环境
+env = gym.make(‘CartPole-v1’)
 # 重置环境，获得初始状态
 initial_state = env.reset()
 

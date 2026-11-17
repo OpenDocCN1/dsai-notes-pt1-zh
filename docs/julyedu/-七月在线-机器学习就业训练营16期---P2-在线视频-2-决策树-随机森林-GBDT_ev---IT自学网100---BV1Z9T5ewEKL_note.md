@@ -260,10 +260,6 @@ Bagging通过降低对噪声样本和异常数据的敏感性来提高模型的�
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_143.png)
 
-```python
-import pandas as pd
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.tree import DecisionTreeClassifier, plot_tree
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_145.png)
 
@@ -273,22 +269,11 @@ from sklearn.tree import DecisionTreeClassifier, plot_tree
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_151.png)
 
-# 1. 加载数据
-data = pd.read_csv('adult.csv')
-features = data[['workclass', 'education', 'marital-status', ...]] # 特征列
-labels = data['income'] # 标签列
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_153.png)
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_155.png)
 
-# 2. 特征处理（将类别特征转为数值，例如独热编码）
-encoder = OneHotEncoder()
-features_encoded = encoder.fit_transform(features)
-
-# 3. 构建并训练决策树模型
-model = DecisionTreeClassifier(criterion='entropy', max_depth=4)
-model.fit(features_encoded, labels)
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_157.png)
 
@@ -304,6 +289,21 @@ model.fit(features_encoded, labels)
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_169.png)
 
+```python
+import pandas as pd
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.tree import DecisionTreeClassifier, plot_tree
+# 1. 加载数据
+data = pd.read_csv('adult.csv')
+features = data[['workclass', 'education', 'marital-status', ...]] # 特征列
+labels = data['income'] # 标签列
+# 2. 特征处理（将类别特征转为数值，例如独热编码）
+encoder = OneHotEncoder()
+features_encoded = encoder.fit_transform(features)
+
+# 3. 构建并训练决策树模型
+model = DecisionTreeClassifier(criterion='entropy', max_depth=4)
+model.fit(features_encoded, labels)
 # 4. 可视化决策树
 plot_tree(model, filled=True)
 ```
@@ -346,9 +346,6 @@ plot_tree(model, filled=True)
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_203.png)
 
-```python
-from sklearn.datasets import load_boston
-from sklearn.ensemble import RandomForestRegressor
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_205.png)
 
@@ -362,9 +359,6 @@ from sklearn.ensemble import RandomForestRegressor
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_215.png)
 
-# 1. 加载数据
-boston = load_boston()
-X, y = boston.data, boston.target
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_217.png)
 
@@ -380,11 +374,6 @@ X, y = boston.data, boston.target
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_229.png)
 
-# 2. 构建并训练随机森林回归模型
-# n_estimators: 森林中树的数量
-# max_features: 每棵树考虑的最大特征数（可以是整数、浮点数或‘auto’等）
-model = RandomForestRegressor(n_estimators=15, max_features=0.6)
-model.fit(X, y)
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_231.png)
 
@@ -396,6 +385,17 @@ model.fit(X, y)
 
 ![](img/0d7cf4716f2a9fe62be8bbb35cdaa65d_239.png)
 
+```python
+from sklearn.datasets import load_boston
+from sklearn.ensemble import RandomForestRegressor
+# 1. 加载数据
+boston = load_boston()
+X, y = boston.data, boston.target
+# 2. 构建并训练随机森林回归模型
+# n_estimators: 森林中树的数量
+# max_features: 每棵树考虑的最大特征数（可以是整数、浮点数或‘auto’等）
+model = RandomForestRegressor(n_estimators=15, max_features=0.6)
+model.fit(X, y)
 # 3. 进行预测
 predictions = model.predict(X[:5])
 print(predictions)

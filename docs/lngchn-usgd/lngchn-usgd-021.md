@@ -238,6 +238,19 @@ search_tool = TavilySearchResults(max_results=2)
 
 ![](img/442408c9b7f45e8c326836ae513300da_88.png)
 
+
+![](img/442408c9b7f45e8c326836ae513300da_90.png)
+
+![](img/442408c9b7f45e8c326836ae513300da_91.png)
+
+![](img/442408c9b7f45e8c326836ae513300da_92.png)
+
+![](img/442408c9b7f45e8c326836ae513300da_93.png)
+
+![](img/442408c9b7f45e8c326836ae513300da_94.png)
+
+![](img/442408c9b7f45e8c326836ae513300da_95.png)
+
 ```python
 # 定义图状态结构
 class GraphState(TypedDict):
@@ -258,19 +271,6 @@ def generate_answer(state: GraphState):
     documents = state[“documents“]
     generation = rag_chain.invoke({“question“: question, “documents“: documents})
     return {“generation“: generation}
-
-![](img/442408c9b7f45e8c326836ae513300da_90.png)
-
-![](img/442408c9b7f45e8c326836ae513300da_91.png)
-
-![](img/442408c9b7f45e8c326836ae513300da_92.png)
-
-![](img/442408c9b7f45e8c326836ae513300da_93.png)
-
-![](img/442408c9b7f45e8c326836ae513300da_94.png)
-
-![](img/442408c9b7f45e8c326836ae513300da_95.png)
-
 # 评估节点函数
 def grade_documents(state: GraphState):
     question = state[“question“]

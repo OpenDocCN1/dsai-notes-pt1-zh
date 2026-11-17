@@ -262,13 +262,13 @@ np.linspace(-2, 2, num=5) # 结果为 [-2., -1., 0., 1., 2.]
 如果我们将参数 `num` 改为 `9`，我们会在从 `-2` 到 `2` 的区间内得到 `9` 个均匀间隔的数字。结果是后续样本之间的差是 `0.5`，而不是之前的 `1`。
 
 我们可以使用函数 `linspace` 从区间 `0` 到 `2π` 生成 `100` 个均匀间隔的样本。我们可以使用NumPy函数 `sin` 将数组 `x` 映射到新数组 `y`。我们可以导入库 `pyplot` 作为 `plt` 来帮助我们绘制函数。由于我们使用的是Jupyter笔记本，我们使用命令 `%matplotlib inline` 来显示绘图。以下命令绘制一个图形。第一个输入对应于水平轴或x轴的值。第二个输入对应于垂直轴或y轴的值。
+
+![](img/08fc78bb14007605d1a2a0bf4d8091e6_79.png)
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
-
-![](img/08fc78bb14007605d1a2a0bf4d8091e6_79.png)
-
 x = np.linspace(0, 2*np.pi, num=100)
 y = np.sin(x)
 plt.plot(x, y)

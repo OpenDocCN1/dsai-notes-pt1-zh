@@ -12,13 +12,13 @@
 
 首先，要使用 PySpark，我们需要创建一个 Spark 会话。这是所有 PySpark 操作的起点。
 
-```python
-from pyspark.sql import SparkSession
 
 ![](img/064c89eed1f0032152a18a66a64a8949_6.png)
 
 ![](img/064c89eed1f0032152a18a66a64a8949_7.png)
 
+```python
+from pyspark.sql import SparkSession
 sp = SparkSession.builder.appName("DataFrame_Practice").getOrCreate()
 ```
 

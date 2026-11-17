@@ -151,12 +151,12 @@ while result:
 
 ![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_35.png)
 
-```python
-import pandas as pd
-import ibm_db_dbi
 
 ![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_37.png)
 
+```python
+import pandas as pd
+import ibm_db_dbi
 # 将ibm_db连接转换为符合DBI-2.0标准的连接
 pconn = ibm_db_dbi.Connection(conn)
 

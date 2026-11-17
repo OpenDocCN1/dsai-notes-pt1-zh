@@ -85,12 +85,12 @@ dataframe.dropna(subset=[“price”], axis=0, inplace=True)
 2.  然后使用 `replace()` 或 `fillna()` 方法进行替换。
 
 使用 `fillna()` 的代码示例：
-```python
-# 计算“normalized-losses”列的平均值（自动忽略NaN）
-mean_value = dataframe[“normalized-losses”].mean()
 
 ![](img/87a1cadfe5c4fb82274e928e0813c034_9.png)
 
+```python
+# 计算“normalized-losses”列的平均值（自动忽略NaN）
+mean_value = dataframe[“normalized-losses”].mean()
 # 用平均值填充该列的缺失值
 dataframe[“normalized-losses”].fillna(mean_value, inplace=True)
 ```

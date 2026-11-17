@@ -44,6 +44,13 @@
 
 在项目根目录下创建一个 `app` 文件夹，并在其中创建 `main.py` 文件。
 
+
+![](img/a4f608f66d892f12b3640cd5547c24da_9.png)
+
+![](img/a4f608f66d892f12b3640cd5547c24da_10.png)
+
+![](img/a4f608f66d892f12b3640cd5547c24da_11.png)
+
 ```python
 # app/main.py
 from flask import Flask, request, jsonify
@@ -54,13 +61,6 @@ app = Flask(__name__)
 def predict():
     # 这是一个临时的响应，后续将替换为真正的预测逻辑
     return jsonify({'results': 1})
-
-![](img/a4f608f66d892f12b3640cd5547c24da_9.png)
-
-![](img/a4f608f66d892f12b3640cd5547c24da_10.png)
-
-![](img/a4f608f66d892f12b3640cd5547c24da_11.png)
-
 if __name__ == '__main__':
     app.run(debug=True)
 ```
@@ -131,13 +131,6 @@ if __name__ == '__main__':
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_32.png)
 
-```python
-# app/torch_utils.py
-import torch
-import torch.nn as nn
-import torchvision.transforms as transforms
-from PIL import Image
-import io
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_34.png)
 
@@ -145,6 +138,27 @@ import io
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_36.png)
 
+
+![](img/a4f608f66d892f12b3640cd5547c24da_37.png)
+
+
+![](img/a4f608f66d892f12b3640cd5547c24da_39.png)
+
+
+![](img/a4f608f66d892f12b3640cd5547c24da_41.png)
+
+![](img/a4f608f66d892f12b3640cd5547c24da_43.png)
+
+
+![](img/a4f608f66d892f12b3640cd5547c24da_45.png)
+
+```python
+# app/torch_utils.py
+import torch
+import torch.nn as nn
+import torchvision.transforms as transforms
+from PIL import Image
+import io
 # 1. 定义模型结构（需与训练时一致）
 class NeuralNet(nn.Module):
     def __init__(self, input_size, hidden_size, num_classes):
@@ -158,16 +172,10 @@ class NeuralNet(nn.Module):
         out = self.relu(out)
         out = self.fc2(out)
         return out
-
-![](img/a4f608f66d892f12b3640cd5547c24da_37.png)
-
 # 超参数
 input_size = 784 # 28x28
 hidden_size = 500
 num_classes = 10
-
-![](img/a4f608f66d892f12b3640cd5547c24da_39.png)
-
 # 2. 加载模型
 def load_model(model_path='app/mnist_ffn.pth'):
     model = NeuralNet(input_size, hidden_size, num_classes)
@@ -177,11 +185,6 @@ def load_model(model_path='app/mnist_ffn.pth'):
     return model
 
 model = load_model()
-
-![](img/a4f608f66d892f12b3640cd5547c24da_41.png)
-
-![](img/a4f608f66d892f12b3640cd5547c24da_43.png)
-
 # 3. 图像预处理函数
 def transform_image(image_bytes):
     """
@@ -195,9 +198,6 @@ def transform_image(image_bytes):
     ])
     image = Image.open(io.BytesIO(image_bytes))
     return transform(image).unsqueeze(0) # 增加一个批次维度
-
-![](img/a4f608f66d892f12b3640cd5547c24da_45.png)
-
 # 4. 预测函数
 def get_prediction(image_tensor):
     """
@@ -266,12 +266,12 @@ if __name__ == '__main__':
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_51.png)
 
-```python
-# test.py
-import requests
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_53.png)
 
+```python
+# test.py
+import requests
 # 使用本地图片文件进行测试
 with open('7.png', 'rb') as f:
     img_bytes = f.read()
@@ -357,26 +357,26 @@ print(response.json())
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_67.png)
 
-```python
-# test_heroku.py
-import requests
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_69.png)
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_70.png)
 
-# 使用 Heroku 应用地址
-app_url = 'https://flask-pytorch-tutorial.herokuapp.com'
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_71.png)
 
-with open('my_digit_8.png', 'rb') as f:
-    img_bytes = f.read()
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_73.png)
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_74.png)
 
+```python
+# test_heroku.py
+import requests
+# 使用 Heroku 应用地址
+app_url = 'https://flask-pytorch-tutorial.herokuapp.com'
+with open('my_digit_8.png', 'rb') as f:
+    img_bytes = f.read()
 response = requests.post(f'{app_url}/predict',
                          files={'file': ('my_digit_8.png', img_bytes, 'image/png')})
 print('Online App Response:', response.json())

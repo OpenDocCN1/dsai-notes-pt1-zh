@@ -18,6 +18,8 @@
 2.  如果不存在，则从指定URL下载。
 3.  将图像保存到本地路径。
 
+    image_url = "https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/04-pizza-dad.jpg"
+
 ```python
 import requests
 from pathlib import Path
@@ -28,7 +30,6 @@ custom_image_path = Path("data/04-pizza-dad.jpg")
 # 如果图像不存在，则下载
 if not custom_image_path.is_file():
     # 图像的原始URL
-    image_url = "https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/04-pizza-dad.jpg"
     # 下载图像
     with open(custom_image_path, "wb") as f:
         request = requests.get(image_url)

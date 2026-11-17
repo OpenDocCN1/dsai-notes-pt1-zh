@@ -47,20 +47,20 @@
 ![](img/3f9a062d201ae3d8166c2e3d753f7e8b_18.png)
 
 首先，我们初始化文档存储和各个组件。
+
+![](img/3f9a062d201ae3d8166c2e3d753f7e8b_20.png)
+
+
+![](img/3f9a062d201ae3d8166c2e3d753f7e8b_22.png)
+
 ```python
 # 初始化内存文档存储
 document_store = InMemoryDocumentStore()
 
 # 初始化用于获取URL内容的组件
 fetcher = LinkContentFetcher()
-
-![](img/3f9a062d201ae3d8166c2e3d753f7e8b_20.png)
-
 # 初始化将HTML转换为Haystack文档格式的组件
 converter = HTMLToDocument()
-
-![](img/3f9a062d201ae3d8166c2e3d753f7e8b_22.png)
-
 # 初始化Cohere文档嵌入器
 embedder = CohereDocumentEmbedder(model=“embed-english-v3.0”)
 
@@ -84,6 +84,9 @@ indexing_pipeline.connect(“embedder”, “writer”)
 ```
 
 现在，我们可以运行这个索引管道，将指定URL的内容获取、转换、嵌入并存入文档库。
+
+![](img/3f9a062d201ae3d8166c2e3d753f7e8b_24.png)
+
 ```python
 # 定义要索引的URL列表
 urls = [
@@ -92,9 +95,6 @@ urls = [
     “https://haystack.deepset.ai/integrations/jina”,
     “https://haystack.deepset.ai/integrations/nvidia”
 ]
-
-![](img/3f9a062d201ae3d8166c2e3d753f7e8b_24.png)
-
 # 运行管道，输入是URLs
 indexing_pipeline.run({“fetcher”: {“urls”: urls}})
 ```
@@ -130,6 +130,9 @@ Haystack使用Jinja2模板语言来构建提示，这非常灵活，允许我们
 以下是构建RAG管道的代码：
 
 首先，初始化管道所需的各个组件。
+
+![](img/3f9a062d201ae3d8166c2e3d753f7e8b_34.png)
+
 ```python
 # 初始化查询嵌入器（使用与文档嵌入相同的Cohere模型）
 query_embedder = CohereTextEmbedder(model=“embed-english-v3.0”)
@@ -145,9 +148,6 @@ prompt_builder = PromptBuilder(template=“””根据提供的上下文回答�
 {% endfor %}
 问题：{{ query }}
 答案：”””)
-
-![](img/3f9a062d201ae3d8166c2e3d753f7e8b_34.png)
-
 # 初始化生成器（这里使用OpenAI的GPT-3.5）
 generator = OpenAIGenerator(model=“gpt-3.5-turbo”)
 ```
@@ -174,23 +174,23 @@ rag_pipeline.connect(“prompt_builder”, “generator”)
 ![](img/3f9a062d201ae3d8166c2e3d753f7e8b_38.png)
 
 现在，我们可以运行这个RAG管道进行问答了。
-```python
-# 定义问题
-question = “我如何使用Cohere与Haystack一起？”
 
 ![](img/3f9a062d201ae3d8166c2e3d753f7e8b_40.png)
 
+
+![](img/3f9a062d201ae3d8166c2e3d753f7e8b_42.png)
+
+![](img/3f9a062d201ae3d8166c2e3d753f7e8b_44.png)
+
+```python
+# 定义问题
+question = “我如何使用Cohere与Haystack一起？”
 # 运行管道
 result = rag_pipeline.run({
     “query_embedder”: {“text”: question},
     “prompt_builder”: {“query”: question},
     “retriever”: {“top_k”: 1}  # 仅检索最相关的1个文档
 })
-
-![](img/3f9a062d201ae3d8166c2e3d753f7e8b_42.png)
-
-![](img/3f9a062d201ae3d8166c2e3d753f7e8b_44.png)
-
 # 打印生成的答案
 print(result[“generator”][“replies”][0])
 ```
@@ -228,14 +228,14 @@ URL {{ loop.index }}: {{ document.meta[‘url’] }}
 ![](img/3f9a062d201ae3d8166c2e3d753f7e8b_50.png)
 
 使用新模板构建和运行管道的代码与之前类似，只需更新`PromptBuilder`的模板，并在运行时提供额外的`language`参数。
+
+![](img/3f9a062d201ae3d8166c2e3d753f7e8b_52.png)
+
 ```python
 # 使用新模板初始化提示构建器
 custom_prompt_builder = PromptBuilder(template=“””你是一个有帮助的助手... [上述模板内容] ...”””)
 
 # ... (将custom_prompt_builder加入管道并连接，过程同上)
-
-![](img/3f9a062d201ae3d8166c2e3d753f7e8b_52.png)
-
 # 运行定制后的管道
 result = rag_pipeline.run({
     “query_embedder”: {“text”: question},

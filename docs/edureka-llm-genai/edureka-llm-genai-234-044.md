@@ -20,11 +20,11 @@
 
 ![](img/a07934e321a2e6dea43864e4f1fd407c_7.png)
 
-```python
-import openai
 
 ![](img/a07934e321a2e6dea43864e4f1fd407c_8.png)
 
+```python
+import openai
 openai.api_key = '你的API密钥'
 
 response = openai.ChatCompletion.create(

@@ -80,13 +80,13 @@ def to_markdown(text):
 2.  使用该密钥配置`genai`模块。
 3.  选择一个模型进行初始化，例如`gemini-1.5-flash`。
 
+
+![](img/b73ec43354818ef51294bff8b60f2c7c_12.png)
+
 ```python
 # 从Secrets中获取API密钥
 from google.colab import userdata
 api_key = userdata.get('GOOGLE_API_KEY')
-
-![](img/b73ec43354818ef51294bff8b60f2c7c_12.png)
-
 # 配置genai库
 genai.configure(api_key=api_key)
 

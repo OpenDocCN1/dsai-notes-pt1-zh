@@ -53,6 +53,9 @@ pip install -r requirements.txt
 4.  将向量和元数据存入Pinecone向量数据库。
 
 关键代码示例如下：
+
+![](img/9b23dccec9e05a177a5d337929f2a266_5.png)
+
 ```python
 from haystack import Pipeline
 from haystack.components.writers import DocumentWriter
@@ -67,9 +70,6 @@ ingestion_pipeline = Pipeline()
 ingestion_pipeline.add_component("splitter", TextDocumentSplitter())
 ingestion_pipeline.add_component("embedder", MistralDocumentEmbedder())
 ingestion_pipeline.add_component("writer", DocumentWriter(document_store))
-
-![](img/9b23dccec9e05a177a5d337929f2a266_5.png)
-
 # 3. 连接管道组件
 ingestion_pipeline.connect("splitter.documents", "embedder.documents")
 ingestion_pipeline.connect("embedder.documents", "writer.documents")

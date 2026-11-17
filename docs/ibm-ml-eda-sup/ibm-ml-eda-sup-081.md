@@ -139,9 +139,6 @@ y_real = np.sin(2 * np.pi * x_real)
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_79.png)
 
-```python
-sns.set_style(‘whitegrid’)
-sns.set_palette(‘deep’)
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_81.png)
 
@@ -149,6 +146,9 @@ sns.set_palette(‘deep’)
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_84.png)
 
+```python
+sns.set_style(‘whitegrid’)
+sns.set_palette(‘deep’)
 ax = data.plot(x=‘x’, y=‘y’, linestyle=‘’, marker=‘o’, label=‘Data’)
 ax.plot(x_real, y_real, linestyle=‘--’, label=‘Real Function’)
 ax.legend()
@@ -215,9 +215,6 @@ plt.show()
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_119.png)
 
-```python
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_120.png)
 
@@ -229,6 +226,9 @@ from sklearn.linear_model import LinearRegression
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_126.png)
 
+```python
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
 degree = 20
 poly = PolynomialFeatures(degree=degree)
 lr = LinearRegression()
@@ -256,9 +256,6 @@ lr = LinearRegression()
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_140.png)
 
-```python
-X_data = data[[‘x’]]  # 使用双括号以保持DataFrame结构
-y_data = data[‘y’]
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_142.png)
 
@@ -272,6 +269,9 @@ y_data = data[‘y’]
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_148.png)
 
+```python
+X_data = data[[‘x’]]  # 使用双括号以保持DataFrame结构
+y_data = data[‘y’]
 X_poly = poly.fit_transform(X_data)  # 将特征转换为20次多项式
 lr.fit(X_poly, y_data)               # 在多项式特征上拟合线性回归模型
 y_pred = lr.predict(X_poly)          # 对训练数据进行预测
@@ -386,11 +386,6 @@ from sklearn.linear_model import Ridge, Lasso
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_212.png)
 
-```python
-# 岭回归，正则化强度 alpha=0.001
-ridge = Ridge(alpha=0.001)
-ridge.fit(X_poly, y_data)
-y_pred_ridge = ridge.predict(X_poly)
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_214.png)
 
@@ -400,6 +395,11 @@ y_pred_ridge = ridge.predict(X_poly)
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_220.png)
 
+```python
+# 岭回归，正则化强度 alpha=0.001
+ridge = Ridge(alpha=0.001)
+ridge.fit(X_poly, y_data)
+y_pred_ridge = ridge.predict(X_poly)
 # Lasso回归，正则化强度 alpha=0.0001
 lasso = Lasso(alpha=0.0001)
 lasso.fit(X_poly, y_data)
@@ -491,11 +491,6 @@ plt.show()
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_265.png)
 
-```python
-coeff_df = pd.DataFrame()
-coeff_df[‘Linear’] = lr.coef_.ravel()
-coeff_df[‘Ridge’] = ridge.coef_.ravel()
-coeff_df[‘Lasso’] = lasso.coef_.ravel()
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_267.png)
 
@@ -503,6 +498,11 @@ coeff_df[‘Lasso’] = lasso.coef_.ravel()
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_271.png)
 
+```python
+coeff_df = pd.DataFrame()
+coeff_df[‘Linear’] = lr.coef_.ravel()
+coeff_df[‘Ridge’] = ridge.coef_.ravel()
+coeff_df[‘Lasso’] = lasso.coef_.ravel()
 coeff_df_abs = coeff_df.applymap(abs)
 print(coeff_df_abs.describe())
 ```
@@ -537,8 +537,6 @@ print(coeff_df_abs.describe())
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_289.png)
 
-```python
-fig, ax1 = plt.subplots(figsize=(12, 6))
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_291.png)
 
@@ -550,25 +548,11 @@ fig, ax1 = plt.subplots(figsize=(12, 6))
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_298.png)
 
-colors = sns.color_palette()
-# 在第一个Y轴上绘制线性回归的系数（数值很大）
-ax1.plot(lr.coef_, color=colors[0], marker=‘o’, label=‘Linear Regression Coef’)
-ax1.set_ylabel(‘Linear Regression Coefficients’, color=colors[0])
-ax1.tick_params(axis=‘y’, labelcolor=colors[0])
-ax1.set_ylim([-2e14, 2e14])
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_300.png)
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_302.png)
 
-# 创建第二个共享X轴的Y轴
-ax2 = ax1.twinx()
-# 在第二个Y轴上绘制岭回归和Lasso的系数（数值较小）
-ax2.plot(ridge.coef_, color=colors[1], marker=‘s’, label=‘Ridge Regression Coef’)
-ax2.plot(lasso.coef_, color=colors[2], marker=‘d’, label=‘Lasso Regression Coef’)
-ax2.set_ylabel(‘Ridge & Lasso Coefficients’, color=‘black’)
-ax2.tick_params(axis=‘y’)
-ax2.set_ylim([-25, 25])
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_304.png)
 
@@ -578,10 +562,6 @@ ax2.set_ylim([-25, 25])
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_308.png)
 
-# 合并图例
-lines_1, labels_1 = ax1.get_legend_handles_labels()
-lines_2, labels_2 = ax2.get_legend_handles_labels()
-ax2.legend(lines_1 + lines_2, labels_1 + labels_2, loc=‘upper right’)
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_309.png)
 
@@ -591,6 +571,26 @@ ax2.legend(lines_1 + lines_2, labels_1 + labels_2, loc=‘upper right’)
 
 ![](img/b2ac712cb25f0490f3a7935794d0e97c_313.png)
 
+```python
+fig, ax1 = plt.subplots(figsize=(12, 6))
+colors = sns.color_palette()
+# 在第一个Y轴上绘制线性回归的系数（数值很大）
+ax1.plot(lr.coef_, color=colors[0], marker=‘o’, label=‘Linear Regression Coef’)
+ax1.set_ylabel(‘Linear Regression Coefficients’, color=colors[0])
+ax1.tick_params(axis=‘y’, labelcolor=colors[0])
+ax1.set_ylim([-2e14, 2e14])
+# 创建第二个共享X轴的Y轴
+ax2 = ax1.twinx()
+# 在第二个Y轴上绘制岭回归和Lasso的系数（数值较小）
+ax2.plot(ridge.coef_, color=colors[1], marker=‘s’, label=‘Ridge Regression Coef’)
+ax2.plot(lasso.coef_, color=colors[2], marker=‘d’, label=‘Lasso Regression Coef’)
+ax2.set_ylabel(‘Ridge & Lasso Coefficients’, color=‘black’)
+ax2.tick_params(axis=‘y’)
+ax2.set_ylim([-25, 25])
+# 合并图例
+lines_1, labels_1 = ax1.get_legend_handles_labels()
+lines_2, labels_2 = ax2.get_legend_handles_labels()
+ax2.legend(lines_1 + lines_2, labels_1 + labels_2, loc=‘upper right’)
 plt.xlabel(‘Coefficient Index’)
 plt.title(‘Comparison of Model Coefficients (with and without regularization)’)
 plt.show()

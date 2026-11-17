@@ -162,11 +162,11 @@ widgets
 
 ![](img/50cf40af465c168c6dc587452399a62b_5.png)
 
-```python
-from holoviews.streams import Params, RangeXY
 
 ![](img/50cf40af465c168c6dc587452399a62b_7.png)
 
+```python
+from holoviews.streams import Params, RangeXY
 # 将参数和视图范围定义为流
 param_stream = Params(explorer.param, ['alpha', 'column', 'cmap', 'passengers'])
 range_stream = RangeXY(source=overlay) # 捕获图表的可视范围

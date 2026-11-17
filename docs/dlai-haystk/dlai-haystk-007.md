@@ -20,15 +20,15 @@
 
 首先，我们需要设置环境并导入必要的库。这包括抑制警告、加载环境变量以及导入Haystack和OpenAI相关的组件。
 
+
+![](img/a5ec60c37eb8c27d65a943f44fc9882d_7.png)
+
 ```python
 import warnings
 warnings.filterwarnings('ignore')
 import os
 from dotenv import load_dotenv
 load_dotenv()
-
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_7.png)
-
 from haystack import Pipeline
 from haystack.components.builders import ChatPromptBuilder
 from haystack.components.generators import OpenAIChatGenerator
@@ -49,6 +49,9 @@ from haystack.experimental.components.function_call import OpenAIFunctionCaller
 
 我们将创建一个标准的RAG管道，但为了演示，这里使用一些预设的“虚假”文档数据。
 
+
+![](img/a5ec60c37eb8c27d65a943f44fc9882d_13.png)
+
 ```python
 # 假设的文档数据
 documents = [
@@ -58,9 +61,6 @@ documents = [
     "丽莎住在马德里。",
     "约翰住在伦敦。"
 ]
-
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_13.png)
-
 # 创建一个简单的RAG管道（此处为概念演示，非完整代码）
 # 通常包含文档存储、检索器和生成器
 def create_rag_pipeline():
@@ -298,18 +298,21 @@ while True:
 
 为了使聊天代理更易于使用，我们可以使用Gradio快速创建一个Web界面。
 
-```python
-import gradio as gr
 
 ![](img/a5ec60c37eb8c27d65a943f44fc9882d_41.png)
 
-# 重用之前的消息列表和管道
-demo_messages = [ChatMessage.from_system("如果需要，请将用户问题分解为更简单的问题。不要对要插入函数的值进行假设。")]
 
 ![](img/a5ec60c37eb8c27d65a943f44fc9882d_43.png)
 
 ![](img/a5ec60c37eb8c27d65a943f44fc9882d_45.png)
 
+
+![](img/a5ec60c37eb8c27d65a943f44fc9882d_47.png)
+
+```python
+import gradio as gr
+# 重用之前的消息列表和管道
+demo_messages = [ChatMessage.from_system("如果需要，请将用户问题分解为更简单的问题。不要对要插入函数的值进行假设。")]
 def chat_function(message, history):
     """Gradio聊天函数"""
     demo_messages.append(ChatMessage.from_user(message))
@@ -327,9 +330,6 @@ demo = gr.ChatInterface(
     title="Haystack 智能聊天代理",
     examples=["马克住在哪里？", "那里的天气怎么样？", "他今天适合穿什么衣服？"]
 )
-
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_47.png)
-
 # 启动应用
 if __name__ == "__main__":
     demo.launch()

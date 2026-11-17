@@ -154,13 +154,13 @@ def pack_weights(unpacked_tensor, num_bits):
 
 ![](img/8718d8bd0cd512d09dbd6b4e95db5806_18.png)
 
+
+![](img/8718d8bd0cd512d09dbd6b4e95db5806_19.png)
+
 ```python
 # 创建一个示例张量，包含四个2比特值：1, 0, 3, 2
 # 注意：在2比特表示中，这些值本身应小于4。
 unpacked = torch.tensor([1, 0, 3, 2], dtype=torch.uint8)
-
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_19.png)
-
 # 调用打包函数
 packed = pack_weights(unpacked, num_bits=2)
 print(f"打包后的值: {packed.item()}")  # 预期输出: 177

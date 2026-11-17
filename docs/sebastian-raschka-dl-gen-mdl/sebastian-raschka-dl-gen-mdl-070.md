@@ -105,11 +105,6 @@ CSV文件通常包含`file_name`和`label`两列，分别对应图片文件名�
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_36.png)
 
-```python
-import torch
-from torch.utils.data import Dataset
-from PIL import Image
-import pandas as pd
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_38.png)
 
@@ -117,6 +112,11 @@ import pandas as pd
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_40.png)
 
+```python
+import torch
+from torch.utils.data import Dataset
+from PIL import Image
+import pandas as pd
 class MyDataset(Dataset):
     """自定义数据集类，用于加载图片和标签。"""
 
@@ -173,11 +173,11 @@ class MyDataset(Dataset):
 
 首先，我们需要定义一个简单的图像变换。这里我们使用`torchvision.transforms.ToTensor()`，它可以将PIL图像转换为PyTorch Tensor，并自动将像素值从[0, 255]范围归一化到[0.0, 1.0]范围。
 
-```python
-from torchvision import transforms
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_42.png)
 
+```python
+from torchvision import transforms
 # 定义图像变换：仅转换为Tensor（包含归一化）
 transform = transforms.Compose([
     transforms.ToTensor()
@@ -192,8 +192,6 @@ transform = transforms.Compose([
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_47.png)
 
-```python
-from torch.utils.data import DataLoader
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_49.png)
 
@@ -201,10 +199,6 @@ from torch.utils.data import DataLoader
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_53.png)
 
-# 创建Dataset实例
-train_dataset = MyDataset(csv_path='./mnist_train.csv',
-                          img_dir='./mnist_train',
-                          transform=transform)
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_55.png)
 
@@ -216,17 +210,11 @@ train_dataset = MyDataset(csv_path='./mnist_train.csv',
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_62.png)
 
-valid_dataset = MyDataset(csv_path='./mnist_valid.csv',
-                          img_dir='./mnist_valid',
-                          transform=transform)
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_64.png)
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_66.png)
 
-test_dataset = MyDataset(csv_path='./mnist_test.csv',
-                         img_dir='./mnist_test',
-                         transform=transform)
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_68.png)
 
@@ -236,20 +224,9 @@ test_dataset = MyDataset(csv_path='./mnist_test.csv',
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_73.png)
 
-# 创建DataLoader实例
-batch_size = 32
-train_loader = DataLoader(dataset=train_dataset,
-                          batch_size=batch_size,
-                          shuffle=True,   # 训练时打乱数据
-                          num_workers=0,  # 用于数据加载的子进程数，0表示仅用主进程
-                          drop_last=True) # 丢弃最后一个不完整的batch
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_75.png)
 
-valid_loader = DataLoader(dataset=valid_dataset,
-                          batch_size=batch_size,
-                          shuffle=False,
-                          num_workers=0)
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_77.png)
 
@@ -257,6 +234,29 @@ valid_loader = DataLoader(dataset=valid_dataset,
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_81.png)
 
+```python
+from torch.utils.data import DataLoader
+# 创建Dataset实例
+train_dataset = MyDataset(csv_path='./mnist_train.csv',
+                          img_dir='./mnist_train',
+                          transform=transform)
+valid_dataset = MyDataset(csv_path='./mnist_valid.csv',
+                          img_dir='./mnist_valid',
+                          transform=transform)
+test_dataset = MyDataset(csv_path='./mnist_test.csv',
+                         img_dir='./mnist_test',
+                         transform=transform)
+# 创建DataLoader实例
+batch_size = 32
+train_loader = DataLoader(dataset=train_dataset,
+                          batch_size=batch_size,
+                          shuffle=True,   # 训练时打乱数据
+                          num_workers=0,  # 用于数据加载的子进程数，0表示仅用主进程
+                          drop_last=True) # 丢弃最后一个不完整的batch
+valid_loader = DataLoader(dataset=valid_dataset,
+                          batch_size=batch_size,
+                          shuffle=False,
+                          num_workers=0)
 test_loader = DataLoader(dataset=test_dataset,
                          batch_size=batch_size,
                          shuffle=False,
@@ -336,28 +336,14 @@ for epoch in range(2): # 2个epoch
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_113.png)
 
-```python
-# 导入模块和辅助函数
-import torch
-from dataloader_utils import get_dataloaders
-from model import MultilayerPerceptron
-from train import train_model
-from eval import compute_accuracy
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_115.png)
 
-# 设置超参数和随机种子以确保可复现性
-RANDOM_SEED = 123
-BATCH_SIZE = 32
-NUM_EPOCHS = 10
-torch.manual_seed(RANDOM_SEED)
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_117.png)
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_119.png)
 
-# 获取数据加载器
-train_loader, valid_loader, test_loader = get_dataloaders(batch_size=BATCH_SIZE)
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_121.png)
 
@@ -367,10 +353,6 @@ train_loader, valid_loader, test_loader = get_dataloaders(batch_size=BATCH_SIZE)
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_125.png)
 
-# 初始化模型、损失函数和优化器
-model = MultilayerPerceptron(input_size=784, hidden_size=50, output_size=10)
-loss_fn = torch.nn.CrossEntropyLoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_127.png)
 
@@ -380,6 +362,27 @@ optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_132.png)
 
+
+![](img/c68c8e32db85801c06d8ca2cb577037a_134.png)
+
+```python
+# 导入模块和辅助函数
+import torch
+from dataloader_utils import get_dataloaders
+from model import MultilayerPerceptron
+from train import train_model
+from eval import compute_accuracy
+# 设置超参数和随机种子以确保可复现性
+RANDOM_SEED = 123
+BATCH_SIZE = 32
+NUM_EPOCHS = 10
+torch.manual_seed(RANDOM_SEED)
+# 获取数据加载器
+train_loader, valid_loader, test_loader = get_dataloaders(batch_size=BATCH_SIZE)
+# 初始化模型、损失函数和优化器
+model = MultilayerPerceptron(input_size=784, hidden_size=50, output_size=10)
+loss_fn = torch.nn.CrossEntropyLoss()
+optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
 # 训练模型
 train_losses, valid_losses, train_accs, valid_accs = train_model(
     model=model,
@@ -389,9 +392,6 @@ train_losses, valid_losses, train_accs, valid_accs = train_model(
     optimizer=optimizer,
     num_epochs=NUM_EPOCHS
 )
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_134.png)
-
 # 在测试集上评估最终模型性能
 test_acc = compute_accuracy(model, test_loader)
 print(f"\nFinal Test Accuracy: {test_acc:.2f}%")
@@ -405,9 +405,6 @@ print(f"\nFinal Test Accuracy: {test_acc:.2f}%")
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_140.png)
 
-```python
-# model.py
-import torch.nn as nn
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_142.png)
 
@@ -415,6 +412,9 @@ import torch.nn as nn
 
 ![](img/c68c8e32db85801c06d8ca2cb577037a_146.png)
 
+```python
+# model.py
+import torch.nn as nn
 class MultilayerPerceptron(nn.Module):
     def __init__(self, input_size, hidden_size, output_size):
         super().__init__()

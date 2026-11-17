@@ -106,11 +106,11 @@ PyTorch 包含一系列适用于多种任务的常用损失函数。
 
 以下单元展示了如何创建损失函数，生成一些虚拟的输出和期望值，并计算损失。
 
-```python
-import torch.nn as nn
 
 ![](img/d2a30d88c79ae4d29aec4acb430b984f_7.png)
 
+```python
+import torch.nn as nn
 # 创建损失函数
 loss_fn = nn.CrossEntropyLoss()
 

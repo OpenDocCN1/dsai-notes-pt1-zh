@@ -102,13 +102,13 @@ print(response)
 
 ![](img/c108a1a802fa35f3869e421ada174fb8_29.png)
 
+
+![](img/c108a1a802fa35f3869e421ada174fb8_31.png)
+
 ```python
 # 没有上下文
 messages = [{"role": "user", "content": "我的名字是什么？"}]
 # 模型无法回答
-
-![](img/c108a1a802fa35f3869e421ada174fb8_31.png)
-
 # 有上下文
 messages = [
     {"role": "system", "content": "你是一个友好的聊天机器人。"},

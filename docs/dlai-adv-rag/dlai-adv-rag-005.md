@@ -56,12 +56,12 @@
 
 以下是定义节点解析器的一个示例。我们创建了一个具有小块大小的解析器来演示。
 
-```python
-# 示例：定义层次结构节点解析器
-from llama_index.node_parser import HierarchicalNodeParser
 
 ![](img/c023682d06c152d46f90e15c85ce2f07_19.png)
 
+```python
+# 示例：定义层次结构节点解析器
+from llama_index.node_parser import HierarchicalNodeParser
 # 定义递减的块大小，例如 2048, 512, 128
 chunk_sizes = [2048, 512, 128]
 node_parser = HierarchicalNodeParser(chunk_sizes=chunk_sizes)
@@ -93,12 +93,12 @@ node_parser = HierarchicalNodeParser(chunk_sizes=chunk_sizes)
 
 ![](img/c023682d06c152d46f90e15c85ce2f07_29.png)
 
-```python
-from llama_index import VectorStoreIndex, ServiceContext, StorageContext
-from llama_index.vector_stores import SimpleVectorStore
 
 ![](img/c023682d06c152d46f90e15c85ce2f07_31.png)
 
+```python
+from llama_index import VectorStoreIndex, ServiceContext, StorageContext
+from llama_index.vector_stores import SimpleVectorStore
 # 定义存储上下文
 storage_context = StorageContext.from_defaults()
 # 将所有节点添加到内存文档存储中

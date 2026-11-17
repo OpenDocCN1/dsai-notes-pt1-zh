@@ -56,15 +56,15 @@ print(f"NumPy计算的点积结果: {numpy_dot}")
 
 ![](img/521085ebfdbded71f981b5b94b9ec242_8.png)
 
+
+![](img/521085ebfdbded71f981b5b94b9ec242_10.png)
+
 ```python
 import torch
 
 # 创建两个浮点型张量（PyTorch dot方法要求浮点类型）
 x_torch = torch.tensor([2., 5., 1.])
 y_torch = torch.tensor([0., 1., 2.])
-
-![](img/521085ebfdbded71f981b5b94b9ec242_10.png)
-
 # 使用PyTorch的dot方法
 torch_dot = torch.dot(x_torch, y_torch)
 print(f"PyTorch计算的点积结果: {torch_dot}")
@@ -82,11 +82,11 @@ TensorFlow的计算方式略有不同，通常需要两步操作：
 
 ![](img/521085ebfdbded71f981b5b94b9ec242_14.png)
 
-```python
-import tensorflow as tf
 
 ![](img/521085ebfdbded71f981b5b94b9ec242_15.png)
 
+```python
+import tensorflow as tf
 # 定义两个向量
 x_tf = tf.constant([2, 5, 1])
 y_tf = tf.constant([0, 1, 2])

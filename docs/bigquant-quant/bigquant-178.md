@@ -60,6 +60,18 @@ print(f"模型准确率: {score}")
 
 以下是可视化决策树的步骤：
 
+
+![](img/0e74722d391d4fec70481c614bf0f3a0_1.png)
+
+![](img/0e74722d391d4fec70481c614bf0f3a0_3.png)
+
+![](img/0e74722d391d4fec70481c614bf0f3a0_5.png)
+
+
+![](img/0e74722d391d4fec70481c614bf0f3a0_7.png)
+
+![](img/0e74722d391d4fec70481c614bf0f3a0_9.png)
+
 ```python
 import matplotlib.pyplot as plt
 from sklearn import tree
@@ -70,24 +82,12 @@ plt.figure(figsize=(12, 16))
 
 # 获取特征名称
 feature_names = X.columns.tolist()
-
-![](img/0e74722d391d4fec70481c614bf0f3a0_1.png)
-
-![](img/0e74722d391d4fec70481c614bf0f3a0_3.png)
-
-![](img/0e74722d391d4fec70481c614bf0f3a0_5.png)
-
 # 绘制决策树
 tree.plot_tree(model,
                filled=True,          # 填充颜色
                feature_names=feature_names)
 plt.title("决策树结构")
 plt.show()
-
-![](img/0e74722d391d4fec70481c614bf0f3a0_7.png)
-
-![](img/0e74722d391d4fec70481c614bf0f3a0_9.png)
-
 # 保存决策树图片
 plt.savefig('./决策树.png', dpi=100)
 ```

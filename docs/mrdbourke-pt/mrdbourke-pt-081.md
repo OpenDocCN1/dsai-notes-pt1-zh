@@ -58,26 +58,26 @@ train_dataloader = DataLoader(dataset=train_data,
 4.  **是否打乱数据**：对于训练数据，我们通常设置`shuffle=True`，以防止模型学习到数据中的任何顺序。对于测试数据，我们设置`shuffle=False`，以确保评估结果的一致性。
 
 以下是具体的实现代码：
-```python
-import os
-from torch.utils.data import DataLoader
 
 ![](img/255bbae857c3c7b4f016bf873cf0c331_22.png)
 
-BATCH_SIZE = 1
-NUM_WORKERS = 1
 
 ![](img/255bbae857c3c7b4f016bf873cf0c331_24.png)
 
-train_dataloader = DataLoader(dataset=train_data,
-                              batch_size=BATCH_SIZE,
-                              num_workers=NUM_WORKERS,
-                              shuffle=True)
 
 ![](img/255bbae857c3c7b4f016bf873cf0c331_26.png)
 
 ![](img/255bbae857c3c7b4f016bf873cf0c331_28.png)
 
+```python
+import os
+from torch.utils.data import DataLoader
+BATCH_SIZE = 1
+NUM_WORKERS = 1
+train_dataloader = DataLoader(dataset=train_data,
+                              batch_size=BATCH_SIZE,
+                              num_workers=NUM_WORKERS,
+                              shuffle=True)
 test_dataloader = DataLoader(dataset=test_data,
                              batch_size=BATCH_SIZE,
                              num_workers=NUM_WORKERS,

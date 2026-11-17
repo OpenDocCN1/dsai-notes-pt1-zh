@@ -57,12 +57,12 @@ KNN算法的核心在于“距离”计算和“多数投票”。对于一个�
 首先，我们定义一个 `KNN` 类。它的初始化方法接收一个参数 `k`，代表要考虑的最近邻居的数量。
 
 **代码：**
-```python
-import numpy as np
-from collections import Counter
 
 ![](img/18709b1a7a901c92fa55f04d914d9d3d_16.png)
 
+```python
+import numpy as np
+from collections import Counter
 class KNN:
     def __init__(self, k=3):
         self.k = k

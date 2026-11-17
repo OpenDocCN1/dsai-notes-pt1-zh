@@ -242,12 +242,12 @@ result = differential_evolution(rosenbrock, bounds)
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_75.png)
 
-```python
-from mystic import fmin
-from mystic.models import rosenbrock
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_77.png)
 
+```python
+from mystic import fmin
+from mystic.models import rosenbrock
 result = fmin(rosenbrock, [0, 0, 0], retall=True)
 # retall=True 返回所有迭代的解向量，便于分析轨迹
 ```
@@ -259,8 +259,6 @@ result = fmin(rosenbrock, [0, 0, 0], retall=True)
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_81.png)
 
-```python
-from mystic.monitors import VerboseLoggingMonitor
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_83.png)
 
@@ -268,6 +266,8 @@ from mystic.monitors import VerboseLoggingMonitor
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_86.png)
 
+```python
+from mystic.monitors import VerboseLoggingMonitor
 monitor = VerboseLoggingMonitor(1, 1) # 每1次迭代打印/记录
 result = fmin(rosenbrock, [0,0,0], itermon=monitor)
 ```
@@ -285,10 +285,6 @@ result = fmin(rosenbrock, [0,0,0], itermon=monitor)
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_94.png)
 
-```python
-from mystic.solvers import DifferentialEvolutionSolver
-from mystic.termination import VTR, ChangeOverGeneration
-from mystic.monitors import VerboseMonitor
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_96.png)
 
@@ -296,9 +292,6 @@ from mystic.monitors import VerboseMonitor
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_100.png)
 
-solver = DifferentialEvolutionSolver(ndim=9, npop=90) # 9维问题，90个个体
-solver.SetRandomInitialPoints(min=[-100]*9, max=[100]*9)
-solver.SetEvaluationLimits(generations=2000)
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_102.png)
 
@@ -308,14 +301,21 @@ solver.SetEvaluationLimits(generations=2000)
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_105.png)
 
-# 设置复合终止条件：达到目标值或长时间无改进
-term = VTR(1e-8) | (ChangeOverGeneration() & VTR(0.0))
-solver.SetTermination(term)
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_107.png)
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_109.png)
 
+```python
+from mystic.solvers import DifferentialEvolutionSolver
+from mystic.termination import VTR, ChangeOverGeneration
+from mystic.monitors import VerboseMonitor
+solver = DifferentialEvolutionSolver(ndim=9, npop=90) # 9维问题，90个个体
+solver.SetRandomInitialPoints(min=[-100]*9, max=[100]*9)
+solver.SetEvaluationLimits(generations=2000)
+# 设置复合终止条件：达到目标值或长时间无改进
+term = VTR(1e-8) | (ChangeOverGeneration() & VTR(0.0))
+solver.SetTermination(term)
 solver.Solve(rosenbrock)
 solution = solver.bestSolution
 ```
@@ -354,12 +354,12 @@ solver.SetSampledInitialPoints(dist)
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_126.png)
 
-```python
-# 概念性示例：使用 mystic 的约束
-from mystic.constraints import *
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_128.png)
 
+```python
+# 概念性示例：使用 mystic 的约束
+from mystic.constraints import *
 # 定义约束函数
 def constraints(x):
     x[0] = x[1]**2  # 例如，一个非线性等式约束

@@ -102,6 +102,9 @@ test_loader = DataLoader(test_dataset, batch_size=batch_size, collate_fn=collate
 *   类似地，模型包含一个用于掩码语言建模的线性层，它预测输入序列中被掩码的词元。该层以Transformer编码器的输出为基础，在整个词汇表上进行预测。期望的输出形状是 `[序列长度, 批大小, 词汇表大小]`。
 *   `forward` 方法定义了BERT模型的前向传播过程。它以BERT输入（输入词元和片段标签）作为输入，并返回NSP和MLM的预测结果。
 
+
+![](img/d6c171688578398e616b04e923a38405_20.png)
+
 ```python
 import torch.nn as nn
 import torch
@@ -117,9 +120,6 @@ class BertEmbedding(nn.Module):
         pos_ids = torch.arange(token_ids.size(1), device=token_ids.device).unsqueeze(0)
         embeddings = self.token_embedding(token_ids) + self.segment_embedding(segment_ids) + self.position_embedding(pos_ids)
         return embeddings
-
-![](img/d6c171688578398e616b04e923a38405_20.png)
-
 class BertModel(nn.Module):
     def __init__(self, vocab_size, d_model, n_layers, n_heads, dropout):
         super().__init__()
@@ -272,6 +272,11 @@ for epoch in range(num_epochs):
 
 调用 `predict_mlm` 函数，传入一个示例句子、BERT模型和分词器。打印预测的句子，其中掩码词元被预测的词元替换。
 
+
+![](img/d6c171688578398e616b04e923a38405_36.png)
+
+![](img/d6c171688578398e616b04e923a38405_37.png)
+
 ```python
 # 假设我们有一个简单的分词器（此处为示意，实际使用Hugging Face的BertTokenizer）
 class SimpleTokenizer:
@@ -305,11 +310,6 @@ def predict_nsp(sent1, sent2, model, tokenizer):
 # 示例使用
 result = predict_nsp(“今天天气很好”, “我们出去散步吧”, model, tokenizer)
 print(f“NSP预测: {result}“)
-
-![](img/d6c171688578398e616b04e923a38405_36.png)
-
-![](img/d6c171688578398e616b04e923a38405_37.png)
-
 def predict_mlm(sentence, model, tokenizer):
     # 假设句子中有一个 `[MASK]` 词元
     inputs = tokenizer.encode_plus(sentence, return_tensors=‘pt’)

@@ -151,13 +151,6 @@ class SpamDataset(Dataset):
 
 在开始微调之前，我们需要加载基础模型。我们将复用第5章的代码，加载OpenAI发布的最小GPT-2模型（124M参数）的权重。
 
-```python
-from previous_chapters import GPTModel, download_and_load_gpt2
-
-model_config = GPTConfig()
-model = GPTModel(model_config)
-model_size = sum(p.numel() for p in model.parameters())
-print(f"Model size: {model_size:,} parameters")
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_50.png)
 
@@ -165,6 +158,13 @@ print(f"Model size: {model_size:,} parameters")
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_53.png)
 
+```python
+from previous_chapters import GPTModel, download_and_load_gpt2
+
+model_config = GPTConfig()
+model = GPTModel(model_config)
+model_size = sum(p.numel() for p in model.parameters())
+print(f"Model size: {model_size:,} parameters")
 # 下载并加载预训练权重
 model = download_and_load_gpt2(model, model_config, model_size)
 ```
@@ -342,6 +342,16 @@ model = download_and_load_gpt2(model, model_config, model_size)
 
 我们使用AdamW优化器，并设置适当的学习率和权重衰减（weight decay）来防止过拟合。
 
+
+![](img/a21651512054bcc1fc26be3f4331c4ce_118.png)
+
+![](img/a21651512054bcc1fc26be3f4331c4ce_119.png)
+
+
+![](img/a21651512054bcc1fc26be3f4331c4ce_121.png)
+
+![](img/a21651512054bcc1fc26be3f4331c4ce_122.png)
+
 ```python
 import time
 start_time = time.time()
@@ -350,11 +360,6 @@ train_losses, val_losses = [], []
 train_accs, val_accs = [], []
 
 optimizer = torch.optim.AdamW(model.parameters(), lr=5e-5, weight_decay=0.1)
-
-![](img/a21651512054bcc1fc26be3f4331c4ce_118.png)
-
-![](img/a21651512054bcc1fc26be3f4331c4ce_119.png)
-
 for epoch in range(num_epochs):
     model.train()
     for batch_idx, (input_batch, target_batch) in enumerate(train_loader):
@@ -367,11 +372,6 @@ for epoch in range(num_epochs):
     train_accs.append(train_acc)
     val_accs.append(val_acc)
     print(f"Epoch {epoch+1}: Train Acc {train_acc:.3f}, Val Acc {val_acc:.3f}")
-
-![](img/a21651512054bcc1fc26be3f4331c4ce_121.png)
-
-![](img/a21651512054bcc1fc26be3f4331c4ce_122.png)
-
 end_time = time.time()
 execution_time_minutes = (end_time - start_time) / 60
 print(f"Training completed in {execution_time_minutes:.2f} minutes.")

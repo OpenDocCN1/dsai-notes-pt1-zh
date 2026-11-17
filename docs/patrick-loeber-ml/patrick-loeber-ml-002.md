@@ -161,12 +161,12 @@ predictions = regressor.predict(X_test)
 
 为了评估模型性能，我们实现均方误差函数。
 
-```python
-def mse(y_true, y_pred):
-    return np.mean((y_true - y_pred) ** 2)
 
 ![](img/489ee87a38bd1f44914c15f7c7b73e61_22.png)
 
+```python
+def mse(y_true, y_pred):
+    return np.mean((y_true - y_pred) ** 2)
 mse_value = mse(y_test, predictions)
 print(f"模型的均方误差为: {mse_value}")
 ```

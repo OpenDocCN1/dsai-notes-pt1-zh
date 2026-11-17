@@ -44,17 +44,17 @@
 
 核心代码如下：
 
+
+![](img/0128a42e91deab58818d75b8cb1d077c_18.png)
+
+![](img/0128a42e91deab58818d75b8cb1d077c_20.png)
+
 ```python
 import cv2
 
 # 读取图像并转换为灰度图
 img = cv2.imread('lena.png')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-![](img/0128a42e91deab58818d75b8cb1d077c_18.png)
-
-![](img/0128a42e91deab58818d75b8cb1d077c_20.png)
-
 # 应用Canny边缘检测
 # 参数：输入图像，最小阈值(minVal)，最大阈值(maxVal)
 edges1 = cv2.Canny(gray, 80, 150)  # 阈值设置较高

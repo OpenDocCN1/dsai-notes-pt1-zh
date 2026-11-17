@@ -30,20 +30,25 @@
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_14.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_16.png)
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_17.png)
 
-# 创建一个图形和坐标轴对象
-fig, ax = plt.subplots()
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_19.png)
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_21.png)
 
+
+![](img/5cc8b75f5bc60a543043d138a7852ff9_23.png)
+
+![](img/5cc8b75f5bc60a543043d138a7852ff9_24.png)
+
+```python
+import matplotlib.pyplot as plt
+# 创建一个图形和坐标轴对象
+fig, ax = plt.subplots()
 # 在坐标轴上绘制‘petal_length’列的直方图，并指定箱数为25
 ax.hist(data['petal_length'], bins=25)
 
@@ -51,11 +56,6 @@ ax.hist(data['petal_length'], bins=25)
 ax.set_xlabel('花瓣长度 (厘米)')
 ax.set_ylabel('频数')
 ax.set_title('花瓣长度分布直方图')
-
-![](img/5cc8b75f5bc60a543043d138a7852ff9_23.png)
-
-![](img/5cc8b75f5bc60a543043d138a7852ff9_24.png)
-
 # 显示图形
 plt.show()
 ```
@@ -82,9 +82,6 @@ plt.show()
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_34.png)
 
-```python
-# 直接使用Pandas Series的绘图方法
-data['petal_length'].plot.hist(bins=25)
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_35.png)
 
@@ -92,15 +89,18 @@ data['petal_length'].plot.hist(bins=25)
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_37.png)
 
-# 获取当前坐标轴并设置标签
-plt.gca().set_xlabel('花瓣长度 (厘米)')
-plt.gca().set_ylabel('频数')
-plt.gca().set_title('花瓣长度分布直方图')
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_39.png)
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_40.png)
 
+```python
+# 直接使用Pandas Series的绘图方法
+data['petal_length'].plot.hist(bins=25)
+# 获取当前坐标轴并设置标签
+plt.gca().set_xlabel('花瓣长度 (厘米)')
+plt.gca().set_ylabel('频数')
+plt.gca().set_title('花瓣长度分布直方图')
 plt.show()
 ```
 
@@ -126,14 +126,14 @@ plt.show()
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_51.png)
 
-```python
-# 使用Pandas对整个DataFrame绘图，绘制所有数值列的直方图
-data.plot.hist(alpha=0.5, bins=25)
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_53.png)
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_54.png)
 
+```python
+# 使用Pandas对整个DataFrame绘图，绘制所有数值列的直方图
+data.plot.hist(alpha=0.5, bins=25)
 # 设置X轴标签
 plt.gca().set_xlabel('尺寸 (厘米)')
 plt.show()
@@ -173,12 +173,6 @@ plt.show()
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_74.png)
 
-```python
-# 调整图形大小以获得更好的显示效果
-plt.figure(figsize=(8, 8))
-
-# 为DataFrame中的每个数值列创建单独的直方图子图
-axes_list = data.hist(bins=25, grid=False)
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_76.png)
 
@@ -186,13 +180,22 @@ axes_list = data.hist(bins=25, grid=False)
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_78.png)
 
-# 将返回的坐标轴对象数组展平为一维列表
-axes_flat = axes_list.flatten()
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_80.png)
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_82.png)
 
+
+![](img/5cc8b75f5bc60a543043d138a7852ff9_84.png)
+
+```python
+# 调整图形大小以获得更好的显示效果
+plt.figure(figsize=(8, 8))
+
+# 为DataFrame中的每个数值列创建单独的直方图子图
+axes_list = data.hist(bins=25, grid=False)
+# 将返回的坐标轴对象数组展平为一维列表
+axes_flat = axes_list.flatten()
 # 遍历每个坐标轴，为其设置合适的标签
 for ax in axes_flat:
     # 如果坐标轴位于最后一行，设置X轴标签
@@ -201,9 +204,6 @@ for ax in axes_flat:
     # 如果坐标轴位于第一列，设置Y轴标签
     if ax.is_first_col():
         ax.set_ylabel('频数')
-
-![](img/5cc8b75f5bc60a543043d138a7852ff9_84.png)
-
 plt.tight_layout() # 自动调整子图参数，使之填充整个图像区域
 plt.show()
 ```
@@ -232,9 +232,6 @@ plt.show()
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_96.png)
 
-```python
-# 调整图形大小
-plt.figure(figsize=(10, 6))
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_98.png)
 
@@ -242,11 +239,14 @@ plt.figure(figsize=(10, 6))
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_101.png)
 
-# 按‘species’列分组，为其他数值列创建箱线图
-data.boxplot(by='species')
 
 ![](img/5cc8b75f5bc60a543043d138a7852ff9_103.png)
 
+```python
+# 调整图形大小
+plt.figure(figsize=(10, 6))
+# 按‘species’列分组，为其他数值列创建箱线图
+data.boxplot(by='species')
 plt.suptitle('') # 可选：移除自动生成的标题
 plt.tight_layout()
 plt.show()

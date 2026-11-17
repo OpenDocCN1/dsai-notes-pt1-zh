@@ -57,22 +57,22 @@ OpenCV库为我们封装了上述复杂的计算过程。我们只需要提供�
 
 以下是实现的关键步骤代码示例：
 
-```python
-import cv2
-import numpy as np
 
 ![](img/5ce5ab0485d6218df12a27f7d23832cb_1.png)
 
-# 假设我们已经获得了源点 src_points 和目标点 dst_points
-# 它们都是包含4个(x,y)坐标的NumPy数组，形状为(4,2)
-
-# 计算透视变换矩阵 M
-M = cv2.getPerspectiveTransform(src_points, dst_points)
 
 ![](img/5ce5ab0485d6218df12a27f7d23832cb_3.png)
 
 ![](img/5ce5ab0485d6218df12a27f7d23832cb_5.png)
 
+```python
+import cv2
+import numpy as np
+# 假设我们已经获得了源点 src_points 和目标点 dst_points
+# 它们都是包含4个(x,y)坐标的NumPy数组，形状为(4,2)
+
+# 计算透视变换矩阵 M
+M = cv2.getPerspectiveTransform(src_points, dst_points)
 # 对原始图像应用透视变换
 # image 是输入的原始图像
 # (width, height) 是输出图像的期望尺寸

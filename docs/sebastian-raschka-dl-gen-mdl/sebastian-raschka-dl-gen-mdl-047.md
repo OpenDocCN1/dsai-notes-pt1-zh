@@ -22,13 +22,13 @@ PyTorch提供了两种主要方式来构建神经网络：面向对象API和函�
 
 以下是一个多层感知机的定义模板：
 
-```python
-import torch.nn as nn
 
 ![](img/f5611abe2064980326175518c90144a8_10.png)
 
 ![](img/f5611abe2064980326175518c90144a8_11.png)
 
+```python
+import torch.nn as nn
 class MultilayerPerceptron(nn.Module):
     def __init__(self):
         super().__init__()
@@ -59,19 +59,19 @@ class MultilayerPerceptron(nn.Module):
 
 创建模型实例后，我们通常需要设置优化器，并可以选择将模型移至GPU以加速计算。
 
+
+![](img/f5611abe2064980326175518c90144a8_18.png)
+
+
+![](img/f5611abe2064980326175518c90144a8_20.png)
+
 ```python
 import torch
 
 # 设置随机种子以确保结果可复现
 torch.manual_seed(123)
-
-![](img/f5611abe2064980326175518c90144a8_18.png)
-
 # 实例化模型
 model = MultilayerPerceptron()
-
-![](img/f5611abe2064980326175518c90144a8_20.png)
-
 # 将模型移至GPU（如果可用）
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 model = model.to(device)

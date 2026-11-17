@@ -104,6 +104,12 @@ print(person.name)  # 输出：Brian Karen
 
 以下是调用模块中函数的示例：
 
+
+![](img/3e6f761117a86a8e81490aa8130d99a9_11.png)
+
+
+![](img/3e6f761117a86a8e81490aa8130d99a9_12.png)
+
 ```python
 # 1. 调用问候函数
 person.greet()  # 输出：Hello Brian Karen
@@ -111,14 +117,8 @@ person.greet()  # 输出：Hello Brian Karen
 # 2. 修改模块中的name变量
 person.name = “Brian“
 person.greet()  # 输出：Hello Brian
-
-![](img/3e6f761117a86a8e81490aa8130d99a9_11.png)
-
 # 3. 调用函数将当前name写入文件
 person.write_to_file(“test.txt“)
-
-![](img/3e6f761117a86a8e81490aa8130d99a9_12.png)
-
 # 4. 再次修改name变量
 person.name = “Tammy“
 person.greet()  # 输出：Hello Tammy

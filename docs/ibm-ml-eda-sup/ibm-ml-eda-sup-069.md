@@ -129,20 +129,20 @@ scores.append(score)
 ![](img/195ec22cbacf9fa0cc96b582f6eb3531_53.png)
 
 以下是创建并拟合管道的代码：
-```python
-from sklearn.pipeline import Pipeline
 
 ![](img/195ec22cbacf9fa0cc96b582f6eb3531_55.png)
 
 ![](img/195ec22cbacf9fa0cc96b582f6eb3531_57.png)
 
-s = StandardScaler()
-lr = LinearRegression()
 
 ![](img/195ec22cbacf9fa0cc96b582f6eb3531_59.png)
 
 ![](img/195ec22cbacf9fa0cc96b582f6eb3531_60.png)
 
+```python
+from sklearn.pipeline import Pipeline
+s = StandardScaler()
+lr = LinearRegression()
 estimator = Pipeline([('scale', s), ('lr', lr)])
 estimator.fit(X_train, y_train)
 ```
@@ -185,8 +185,6 @@ predictions = estimator.predict(X_test)
 ![](img/195ec22cbacf9fa0cc96b582f6eb3531_79.png)
 
 以下是使用`cross_val_predict`的代码：
-```python
-from sklearn.model_selection import cross_val_predict
 
 ![](img/195ec22cbacf9fa0cc96b582f6eb3531_81.png)
 
@@ -194,6 +192,8 @@ from sklearn.model_selection import cross_val_predict
 
 ![](img/195ec22cbacf9fa0cc96b582f6eb3531_84.png)
 
+```python
+from sklearn.model_selection import cross_val_predict
 kf = KFold(n_splits=3, shuffle=True)
 predictions = cross_val_predict(estimator, X, y, cv=kf)
 ```

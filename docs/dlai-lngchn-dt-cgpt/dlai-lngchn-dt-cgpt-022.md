@@ -83,11 +83,11 @@ combined_document = "\n".join([doc.text for doc in documents])
 
 以下是节点解析器的工作示例：
 
-```python
-from llama_index.node_parser import SentenceWindowNodeParser
 
 ![](img/4a1fc26221d3b2f04bf8ca6e27e0a318_38.png)
 
+```python
+from llama_index.node_parser import SentenceWindowNodeParser
 node_parser = SentenceWindowNodeParser.from_defaults(
     window_size=3,
     window_metadata_key="window",
@@ -170,11 +170,11 @@ postproc = MetadataReplacementPostProcessor(
 
 接下来，添加句子变换重排序器。它获取查询和检索到的节点，并使用专门为重新排序任务设计的模型（如 `BAAI/bge-reranker-base`）按相关性对节点进行重新排序。通常，你会设置一个较大的初始相似度 `top_k`，然后让重排序器筛选出较小的 `top_n` 结果集。
 
-```python
-from llama_index.postprocessor import SentenceTransformerRerank
 
 ![](img/4a1fc26221d3b2f04bf8ca6e27e0a318_60.png)
 
+```python
+from llama_index.postprocessor import SentenceTransformerRerank
 rerank = SentenceTransformerRerank(
     model="BAAI/bge-reranker-base", top_n=2
 )
@@ -223,13 +223,13 @@ print(response)
 
 以下是将构建索引和获取查询引擎的功能整合在一起的示例函数：
 
+
+![](img/4a1fc26221d3b2f04bf8ca6e27e0a318_82.png)
+
 ```python
 def build_sentence_window_index(documents, llm, embed_model, save_dir):
     # ... 构建索引的代码 ...
     return index
-
-![](img/4a1fc26221d3b2f04bf8ca6e27e0a318_82.png)
-
 def get_sentence_window_query_engine(index, similarity_top_k=6, rerank_top_n=2):
     # ... 配置查询引擎的代码 ...
     return query_engine
@@ -273,14 +273,14 @@ eval_questions = load_eval_questions() # 你的问题列表
 
 ![](img/4a1fc26221d3b2f04bf8ca6e27e0a318_102.png)
 
-```python
-from trulens_eval import Tru, Feedback, TruLlama
-from trulens_eval.feedback import Groundedness, Relevance
 
 ![](img/4a1fc26221d3b2f04bf8ca6e27e0a318_104.png)
 
 ![](img/4a1fc26221d3b2f04bf8ca6e27e0a318_106.png)
 
+```python
+from trulens_eval import Tru, Feedback, TruLlama
+from trulens_eval.feedback import Groundedness, Relevance
 tru = Tru()
 # 定义反馈函数
 f_context_relevance = Feedback(Relevance.context_relevance).on_input_output()

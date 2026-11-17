@@ -103,12 +103,12 @@ roc_auc = roc_auc_score(y_test, y_prob[:, 1]) # 使用正类别的概率
 
 ![](img/948fc221e177c644495ee292d487c778_35.png)
 
-```python
-from sklearn.metrics import confusion_matrix
-import seaborn as sns
 
 ![](img/948fc221e177c644495ee292d487c778_36.png)
 
+```python
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
 cm = confusion_matrix(y_test, y_pred)
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
             xticklabels=['Not Churn', 'Churn'],
@@ -130,15 +130,18 @@ plt.show()
 
 ![](img/948fc221e177c644495ee292d487c778_43.png)
 
-```python
-from sklearn.metrics import roc_curve, precision_recall_curve
 
 ![](img/948fc221e177c644495ee292d487c778_45.png)
 
-fig, axes = plt.subplots(1, 2, figsize=(12, 5))
 
 ![](img/948fc221e177c644495ee292d487c778_47.png)
 
+
+![](img/948fc221e177c644495ee292d487c778_49.png)
+
+```python
+from sklearn.metrics import roc_curve, precision_recall_curve
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
 # 绘制ROC曲线
 fpr, tpr, _ = roc_curve(y_test, y_prob[:, 1])
 axes[0].plot(fpr, tpr, color='darkorange', lw=2)
@@ -146,9 +149,6 @@ axes[0].plot([0, 1], [0, 1], color='navy', lw=1, linestyle='--')
 axes[0].set_xlabel('False Positive Rate')
 axes[0].set_ylabel('True Positive Rate')
 axes[0].set_title('ROC Curve')
-
-![](img/948fc221e177c644495ee292d487c778_49.png)
-
 # 绘制精确率-召回率曲线
 precision_vals, recall_vals, _ = precision_recall_curve(y_test, y_prob[:, 1])
 axes[1].plot(recall_vals, precision_vals, color='green', lw=2)

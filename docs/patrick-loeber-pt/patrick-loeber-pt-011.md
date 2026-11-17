@@ -33,14 +33,14 @@ $$
 以下是Softmax在NumPy和PyTorch中的实现方式。
 
 **NumPy实现：**
+
+![](img/f10ac23b85d8d2980bb6af4fbf0bf790_5.png)
+
 ```python
 import numpy as np
 
 def softmax(x):
     return np.exp(x) / np.sum(np.exp(x), axis=0)
-
-![](img/f10ac23b85d8d2980bb6af4fbf0bf790_5.png)
-
 # 示例
 logits = np.array([2.0, 1.0, 0.1])
 probs = softmax(logits)
@@ -143,11 +143,11 @@ PyTorch的交叉熵损失也支持批量计算。只需确保输入张量的形�
 
 以下是PyTorch中多分类网络的示例代码框架：
 
-```python
-import torch.nn as nn
 
 ![](img/f10ac23b85d8d2980bb6af4fbf0bf790_13.png)
 
+```python
+import torch.nn as nn
 class NeuralNet(nn.Module):
     def __init__(self, input_size, hidden_size, num_classes):
         super(NeuralNet, self).__init__()

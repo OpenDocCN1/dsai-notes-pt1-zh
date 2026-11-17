@@ -150,12 +150,12 @@ X_train, X_test, y_train, y_test = train_test_split(X_data, y_data, test_size=0.
 
 ![](img/d79d849ec97d084397afbe8a45e9d208_47.png)
 
-```python
-from sklearn.model_selection import cross_val_score
-from sklearn.linear_model import LinearRegression
 
 ![](img/d79d849ec97d084397afbe8a45e9d208_49.png)
 
+```python
+from sklearn.model_selection import cross_val_score
+from sklearn.linear_model import LinearRegression
 lr = LinearRegression()
 scores = cross_val_score(lr, X_data, y_data, cv=3)
 ```

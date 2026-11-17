@@ -60,6 +60,13 @@ print("模型加载完毕。")
 
 然后，我们设置采样过程所需的超参数。这包括总时间步数、图像尺寸以及 DDPM 算法中用于控制噪声添加和移除的缩放系数（由噪声调度表定义）。
 
+
+![](img/9a75ada4473cacc9d609a51652223f60_14.png)
+
+![](img/9a75ada4473cacc9d609a51652223f60_15.png)
+
+![](img/9a75ada4473cacc9d609a51652223f60_16.png)
+
 ```python
 # 定义超参数
 T = 500  # 总时间步数
@@ -75,13 +82,6 @@ def get_noise_schedule(T, beta1, beta2):
     sqrt_alphas_cumprod = torch.sqrt(alphas_cumprod)
     sqrt_one_minus_alphas_cumprod = torch.sqrt(1. - alphas_cumprod)
     return sqrt_alphas_cumprod, sqrt_one_minus_alphas_cumprod
-
-![](img/9a75ada4473cacc9d609a51652223f60_14.png)
-
-![](img/9a75ada4473cacc9d609a51652223f60_15.png)
-
-![](img/9a75ada4473cacc9d609a51652223f60_16.png)
-
 sqrt_alphas_cumprod, sqrt_one_minus_alphas_cumprod = get_noise_schedule(T, beta1, beta2)
 ```
 
@@ -127,13 +127,16 @@ def denoise_add_noise(x, t, pred_noise, z=None):
 
 ![](img/9a75ada4473cacc9d609a51652223f60_28.png)
 
+
+![](img/9a75ada4473cacc9d609a51652223f60_30.png)
+
+
+![](img/9a75ada4473cacc9d609a51652223f60_32.png)
+
 ```python
 # 加载预训练好的模型权重
 model.load_state_dict(torch.load('pretrained_model.pth'))
 model.eval()
-
-![](img/9a75ada4473cacc9d609a51652223f60_30.png)
-
 # 开始采样
 sample = torch.randn(1, 3, img_size, img_size)  # 生成初始随机噪声
 for t in reversed(range(T)):  # 从T到1反向循环
@@ -141,9 +144,6 @@ for t in reversed(range(T)):  # 从T到1反向循环
     with torch.no_grad():
         pred_noise = model(sample, t_tensor)  # 模型预测噪声
     sample = denoise_add_noise(sample, t_tensor, pred_noise)  # 去噪并添加新噪声
-
-![](img/9a75ada4473cacc9d609a51652223f60_32.png)
-
 # 最终得到的sample即为生成的图像
 final_image = sample
 ```

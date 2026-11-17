@@ -39,11 +39,11 @@
 
 我们将使用NumPy创建一个包含简单数值的新矩阵。
 
-```python
-import numpy as np
 
 ![](img/c949f74e630c88b2965de6d337777eb3_3.png)
 
+```python
+import numpy as np
 # 创建一个2x2矩阵
 X = np.array([[1, 2],
               [3, 4]])

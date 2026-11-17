@@ -19,22 +19,22 @@
 
 ![](img/b8418aa79da0ae78f68f3ff7489fbcfe_4.png)
 
-```python
-import numpy as np
 
 ![](img/b8418aa79da0ae78f68f3ff7489fbcfe_6.png)
 
 ![](img/b8418aa79da0ae78f68f3ff7489fbcfe_7.png)
 
-# 定义一个矩阵 A
-A = np.array([[25, 2, 3],
-              [4, 4, 6],
-              [7, 8, 9]])
 
 ![](img/b8418aa79da0ae78f68f3ff7489fbcfe_9.png)
 
 ![](img/b8418aa79da0ae78f68f3ff7489fbcfe_10.png)
 
+```python
+import numpy as np
+# 定义一个矩阵 A
+A = np.array([[25, 2, 3],
+              [4, 4, 6],
+              [7, 8, 9]])
 # 手动计算迹：主对角线元素之和
 trace_manual = A[0, 0] + A[1, 1] + A[2, 2]  # 25 + 4 + 9 = 38
 

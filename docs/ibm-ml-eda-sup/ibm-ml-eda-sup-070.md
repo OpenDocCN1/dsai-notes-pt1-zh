@@ -152,13 +152,6 @@
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_79.png)
 
-```python
-import numpy as np
-from sklearn.linear_model import Lasso
-from sklearn.preprocessing import PolynomialFeatures, StandardScaler
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import cross_val_predict
-from sklearn.metrics import r2_score
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_81.png)
 
@@ -166,8 +159,6 @@ from sklearn.metrics import r2_score
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_83.png)
 
-# 1. 定义超参数候选值（等比数列）
-alphas = np.geomspace(1e-9, 1, num=10)
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_85.png)
 
@@ -175,9 +166,6 @@ alphas = np.geomspace(1e-9, 1, num=10)
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_88.png)
 
-# 2. 初始化列表用于存储结果
-scores = []
-coefficients = []
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_90.png)
 
@@ -185,6 +173,18 @@ coefficients = []
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_92.png)
 
+```python
+import numpy as np
+from sklearn.linear_model import Lasso
+from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import cross_val_predict
+from sklearn.metrics import r2_score
+# 1. 定义超参数候选值（等比数列）
+alphas = np.geomspace(1e-9, 1, num=10)
+# 2. 初始化列表用于存储结果
+scores = []
+coefficients = []
 # 3. 遍历每个alpha值进行交叉验证
 for alpha in alphas:
     # 创建Lasso模型实例，设置最大迭代次数以确保收敛
@@ -281,28 +281,28 @@ for alpha in alphas:
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_132.png)
 
-```python
-# 1. 初始化多项式特征转换器（这里设置度为2，即包含特征自身及两两交互项和平方项）
-poly = PolynomialFeatures(degree=2)
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_134.png)
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_136.png)
 
-# 2. 定义超参数候选值
-alphas = np.geomspace(0.001, 1, num=10)
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_138.png)
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_140.png)
 
-# 3. 初始化列表用于存储结果
-scores_poly = []
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_142.png)
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_143.png)
 
+```python
+# 1. 初始化多项式特征转换器（这里设置度为2，即包含特征自身及两两交互项和平方项）
+poly = PolynomialFeatures(degree=2)
+# 2. 定义超参数候选值
+alphas = np.geomspace(0.001, 1, num=10)
+# 3. 初始化列表用于存储结果
+scores_poly = []
 # 4. 遍历每个alpha值
 for alpha in alphas:
     # 创建Lasso模型实例
@@ -365,11 +365,6 @@ for alpha in alphas:
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_166.png)
 
-```python
-# 使用找到的最佳alpha值构建最终模型管道
-best_estimator = Pipeline([("poly", PolynomialFeatures(degree=2)),
-                           ("scaler", StandardScaler()),
-                           ("lasso", Lasso(alpha=0.01, max_iter=100000))])
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_168.png)
 
@@ -377,16 +372,11 @@ best_estimator = Pipeline([("poly", PolynomialFeatures(degree=2)),
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_171.png)
 
-# 在整个训练集上拟合模型
-best_estimator.fit(X, y)
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_172.png)
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_173.png)
 
-# 查看模型在训练集上的R²分数（注意：这是在同一数据集上训练和评分，通常应使用保留测试集）
-final_score = best_estimator.score(X, y)
-print(f"模型在训练集上的R²分数为: {final_score}")
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_175.png)
 
@@ -396,6 +386,16 @@ print(f"模型在训练集上的R²分数为: {final_score}")
 
 ![](img/c8a7bdd9cbfec409cc42a6afdd8bab32_178.png)
 
+```python
+# 使用找到的最佳alpha值构建最终模型管道
+best_estimator = Pipeline([("poly", PolynomialFeatures(degree=2)),
+                           ("scaler", StandardScaler()),
+                           ("lasso", Lasso(alpha=0.01, max_iter=100000))])
+# 在整个训练集上拟合模型
+best_estimator.fit(X, y)
+# 查看模型在训练集上的R²分数（注意：这是在同一数据集上训练和评分，通常应使用保留测试集）
+final_score = best_estimator.score(X, y)
+print(f"模型在训练集上的R²分数为: {final_score}")
 # 查看最终模型的系数，由于使用了Lasso回归和alpha项，许多特征的系数被缩减为0
 final_coefficients = best_estimator.named_steps['lasso'].coef_
 print("非零系数的数量:", np.sum(final_coefficients != 0))

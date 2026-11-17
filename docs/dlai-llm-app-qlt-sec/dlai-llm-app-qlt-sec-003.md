@@ -126,14 +126,14 @@ low_bert_score_examples = annotated_chats[annotated_chats['response.bert_score']
 
 ### 代码实现
 
+
+![](img/678034c4b665b668d781c2b8d40b54b2_3.png)
+
 ```python
 from sentence_transformers import SentenceTransformer, util
 
 # 加载预训练模型
 model = SentenceTransformer('all-MiniLM-L6-v2')
-
-![](img/678034c4b665b668d781c2b8d40b54b2_3.png)
-
 @ylog.metrics.register_metric(name="response_self_similarity")
 def response_self_similarity(text):
     """

@@ -243,14 +243,14 @@ show_masks_on_image(resized_image, final_masks)
 
 ![](img/8e34e23f06a2b146c002fceeb1a87144_37.png)
 
+
+![](img/8e34e23f06a2b146c002fceeb1a87144_39.png)
+
 ```python
 # 查看第一个掩码的原始二进制格式
 binary_mask = masks[0].cpu().numpy()  # 假设masks是张量列表
 print("二进制掩码形状:", binary_mask.shape)
 print("唯一值:", np.unique(binary_mask))
-
-![](img/8e34e23f06a2b146c002fceeb1a87144_39.png)
-
 # 使用matplotlib可视化二进制掩码
 import matplotlib.pyplot as plt
 plt.imshow(binary_mask, cmap='gray')

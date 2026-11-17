@@ -59,17 +59,17 @@ full_document = "\n\n".join([doc.text for doc in documents])
 
 以下是定义层次节点解析器的步骤：
 
-```python
-from llama_index.node_parser import HierarchicalNodeParser
 
 ![](img/cad3624e9a8b61b04aa6255157bba696_21.png)
 
-# 定义块大小序列（尺寸递减）
-chunk_sizes = [2048, 512, 128]  # 父块 -> 中间块 -> 叶节点块
-node_parser = HierarchicalNodeParser.from_defaults(chunk_sizes=chunk_sizes)
 
 ![](img/cad3624e9a8b61b04aa6255157bba696_23.png)
 
+```python
+from llama_index.node_parser import HierarchicalNodeParser
+# 定义块大小序列（尺寸递减）
+chunk_sizes = [2048, 512, 128]  # 父块 -> 中间块 -> 叶节点块
+node_parser = HierarchicalNodeParser.from_defaults(chunk_sizes=chunk_sizes)
 # 从文档中获取所有节点（包括叶节点、中间节点和父节点）
 all_nodes = node_parser.get_nodes_from_documents([full_document])
 
@@ -93,26 +93,26 @@ print(leaf_nodes[30].text)  # 文本内容较短，块大小为128个标记
 
 接下来，我们需要构建索引。关键点在于，我们只在叶节点上构建向量索引，而所有节点（包括父节点和中间节点）都存储在一个文档存储中。
 
+
+![](img/cad3624e9a8b61b04aa6255157bba696_33.png)
+
+
+![](img/cad3624e9a8b61b04aa6255157bba696_35.png)
+
+
+![](img/cad3624e9a8b61b04aa6255157bba696_37.png)
+
 ```python
 from llama_index import VectorStoreIndex, ServiceContext, StorageContext
 from llama_index.llms import OpenAI
 from llama_index.embeddings import OpenAIEmbedding
-
-![](img/cad3624e9a8b61b04aa6255157bba696_33.png)
-
 # 定义LLM和嵌入模型
 llm = OpenAI(model="gpt-3.5-turbo")
 embed_model = OpenAIEmbedding(model="text-embedding-ada-002")
 service_context = ServiceContext.from_defaults(llm=llm, embed_model=embed_model, node_parser=node_parser)
-
-![](img/cad3624e9a8b61b04aa6255157bba696_35.png)
-
 # 创建存储上下文，用于存放所有节点
 storage_context = StorageContext.from_defaults()
 storage_context.docstore.add_documents(all_nodes)
-
-![](img/cad3624e9a8b61b04aa6255157bba696_37.png)
-
 # 创建向量索引，但只对叶节点进行嵌入和索引
 auto_merge_index = VectorStoreIndex(
     nodes=leaf_nodes,  # 仅传入叶节点
@@ -130,15 +130,24 @@ auto_merge_index.storage_context.persist(persist_dir="./auto_merge_index")
 
 ![](img/cad3624e9a8b61b04aa6255157bba696_39.png)
 
-```python
-from llama_index.retrievers import AutoMergingRetriever
-from llama_index.postprocessor import SentenceTransformerRerank
-from llama_index.query_engine import RetrieverQueryEngine
 
 ![](img/cad3624e9a8b61b04aa6255157bba696_41.png)
 
 ![](img/cad3624e9a8b61b04aa6255157bba696_43.png)
 
+
+![](img/cad3624e9a8b61b04aa6255157bba696_45.png)
+
+
+![](img/cad3624e9a8b61b04aa6255157bba696_47.png)
+
+
+![](img/cad3624e9a8b61b04aa6255157bba696_49.png)
+
+```python
+from llama_index.retrievers import AutoMergingRetriever
+from llama_index.postprocessor import SentenceTransformerRerank
+from llama_index.query_engine import RetrieverQueryEngine
 # 创建自动合并检索器
 base_retriever = auto_merge_index.as_retriever(similarity_top_k=12)  # 为叶节点设置较大的top_k
 auto_merging_retriever = AutoMergingRetriever(
@@ -146,22 +155,13 @@ auto_merging_retriever = AutoMergingRetriever(
     auto_merge_index.storage_context,
     verbose=True
 )
-
-![](img/cad3624e9a8b61b04aa6255157bba696_45.png)
-
 # 创建重排序器，对合并后的结果进行精炼
 rerank = SentenceTransformerRerank(top_n=6)  # 将结果重新排序并限制为前6个
-
-![](img/cad3624e9a8b61b04aa6255157bba696_47.png)
-
 # 组合成最终的查询引擎
 query_engine = RetrieverQueryEngine.from_args(
     auto_merging_retriever,
     node_postprocessors=[rerank]
 )
-
-![](img/cad3624e9a8b61b04aa6255157bba696_49.png)
-
 # 进行查询测试
 response = query_engine.query(“网络在AI职业生涯中有多重要？”)
 print(response)
@@ -193,21 +193,21 @@ print(response)
 
 ![](img/cad3624e9a8b61b04aa6255157bba696_67.png)
 
-```python
-# 创建两层结构的索引（叶节点512标记，父节点2048标记）
-chunk_sizes_2_layer = [2048, 512]
-# 创建三层结构的索引（叶节点128标记，父节点512标记，祖父节点2048标记）
-chunk_sizes_3_layer = [2048, 512, 128]
 
 ![](img/cad3624e9a8b61b04aa6255157bba696_69.png)
 
-# 为每种结构构建索引和查询引擎（代码类似上文，此处省略）
-# ...
 
 ![](img/cad3624e9a8b61b04aa6255157bba696_71.png)
 
 ![](img/cad3624e9a8b61b04aa6255157bba696_73.png)
 
+```python
+# 创建两层结构的索引（叶节点512标记，父节点2048标记）
+chunk_sizes_2_layer = [2048, 512]
+# 创建三层结构的索引（叶节点128标记，父节点512标记，祖父节点2048标记）
+chunk_sizes_3_layer = [2048, 512, 128]
+# 为每种结构构建索引和查询引擎（代码类似上文，此处省略）
+# ...
 # 使用TruLens进行评估
 from trulens_eval import Tru, Feedback, Select
 from trulens_eval.feedback import Groundedness

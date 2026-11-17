@@ -79,15 +79,18 @@ prompt = “生成一个函数，输出胰岛素所涉及所有分子的SMILES I
 
 让我们看看如何将这一原则应用于实践。在下面的示例中，我们使用XML标签来构建一个客户服务助手的提示：
 
-```xml
-<instructions>
-你是一个客户服务助手。请遵循<policy>中概述的政策来回答用户查询。
-</instructions>
 
 ![](img/d14a45cbdcfce33e56b8e7e28510c768_20.png)
 
 ![](img/d14a45cbdcfce33e56b8e7e28510c768_22.png)
 
+
+![](img/d14a45cbdcfce33e56b8e7e28510c768_24.png)
+
+```xml
+<instructions>
+你是一个客户服务助手。请遵循<policy>中概述的政策来回答用户查询。
+</instructions>
 <policy>
 允许的操作：
 - 处理产品信息和订单状态查询。
@@ -97,9 +100,6 @@ prompt = “生成一个函数，输出胰岛素所涉及所有分子的SMILES I
 合规性：
 - 不得撰写或评论创意内容（如诗歌、代码）。
 </policy>
-
-![](img/d14a45cbdcfce33e56b8e7e28510c768_24.png)
-
 <user_query>
 用户说：“我收到的产品不符合预期，我想退货。”
 </user_query>

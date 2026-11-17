@@ -48,12 +48,12 @@ load_dotenv()
 
 接下来，初始化 DeepSeek 语言模型。我们将创建一个辅助函数来清理模型输出中的“思考”过程标记。
 
-```python
-# 初始化模型
-model = ChatDeepSeek(model="deepseek-chat", api_key=os.getenv("DEEPSEEK_API_KEY"))
 
 ![](img/2d18e966c4b2fd78c97e2b6317a659a8_5.png)
 
+```python
+# 初始化模型
+model = ChatDeepSeek(model="deepseek-chat", api_key=os.getenv("DEEPSEEK_API_KEY"))
 # 清理模型输出文本的函数
 def clean_text(text: str) -> str:
     """移除响应中的 think 标签。"""
@@ -66,6 +66,11 @@ print(clean_text(test_response.content))
 
 然后，初始化两个工具：网络搜索工具和 Python 代码执行工具。我们需要将 PythonREPL 包装成一个 LangChain 工具。
 
+
+![](img/2d18e966c4b2fd78c97e2b6317a659a8_7.png)
+
+![](img/2d18e966c4b2fd78c97e2b6317a659a8_8.png)
+
 ```python
 # 初始化 Tavily 搜索工具
 search_tool = TavilySearchResults(max_results=2, tavily_api_key=os.getenv("TAVILY_API_KEY"))
@@ -74,11 +79,6 @@ search_tool = TavilySearchResults(max_results=2, tavily_api_key=os.getenv("TAVIL
 python_repl = PythonREPL()
 
 from langchain.tools import tool
-
-![](img/2d18e966c4b2fd78c97e2b6317a659a8_7.png)
-
-![](img/2d18e966c4b2fd78c97e2b6317a659a8_8.png)
-
 @tool
 def python_tool(code: Annotated[str, "The Python code to execute."]) -> str:
     """执行 Python 代码并返回结果。请确保以 markdown 格式返回。"""

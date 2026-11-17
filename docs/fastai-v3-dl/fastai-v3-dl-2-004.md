@@ -219,6 +219,11 @@ class Matrix:
 在深度学习中，我们常用多进程进行数据增强。如果使用 `fork()` 创建子进程，子进程会复制父进程的整个内存空间，包括RNG的**内部状态**。这会导致所有子进程产生完全相同的“随机”序列，破坏了随机性。
 
 **示例**：
+
+![](img/4b27de97c639517bbc05138a8df1e36a_13.png)
+
+![](img/4b27de97c639517bbc05138a8df1e36a_15.png)
+
 ```python
 import os, time
 def get_random():
@@ -226,11 +231,6 @@ def get_random():
     global state
     state = (state * 1103515245 + 12345) & 0x7fffffff
     return state
-
-![](img/4b27de97c639517bbc05138a8df1e36a_13.png)
-
-![](img/4b27de97c639517bbc05138a8df1e36a_15.png)
-
 state = int(time.time() * 1000) # 初始化种子
 if os.fork() == 0:
     # 子进程

@@ -17,11 +17,11 @@
 首先，我们需要准备两个数据集用于绘制直方图。我们将使用NumPy生成两个正态分布的数据集。
 
 以下是生成数据的代码示例：
-```python
-import numpy as np
 
 ![](img/b18704c93c2971127f9f44ea97e70b2f_7.png)
 
+```python
+import numpy as np
 # 生成第一个正态分布数据集，均值为5，标准差为1
 dist1 = np.random.normal(5, 1, 1000)
 # 生成第二个正态分布数据集，均值为7，标准差为1.5
@@ -78,6 +78,12 @@ plt.show()
 为了清晰地区分两个直方图，我们需要为它们添加标签并显示图例。
 
 以下是添加图例的完整代码示例：
+
+![](img/b18704c93c2971127f9f44ea97e70b2f_14.png)
+
+
+![](img/b18704c93c2971127f9f44ea97e70b2f_16.png)
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -88,15 +94,9 @@ dist2 = np.random.normal(7, 1.5, 1000)
 
 # 创建图表和坐标系
 fig, ax = plt.subplots()
-
-![](img/b18704c93c2971127f9f44ea97e70b2f_14.png)
-
 # 绘制两个带标签和透明度的直方图
 ax.hist(dist1, alpha=0.7, label=‘Dist 1’)
 ax.hist(dist2, alpha=0.7, label=‘Dist 2’)
-
-![](img/b18704c93c2971127f9f44ea97e70b2f_16.png)
-
 # 添加图例
 ax.legend()
 

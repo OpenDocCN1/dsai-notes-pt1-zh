@@ -58,8 +58,6 @@ LDA的计算涉及两个关键矩阵：**类内散度矩阵**和**类间散度�
 
 现在，让我们将上述步骤转化为代码。我们将创建一个名为 `LDA` 的类。
 
-```python
-import numpy as np
 
 ![](img/faeb28a57738673a94ef1f8bb6ce968d_13.png)
 
@@ -69,6 +67,8 @@ import numpy as np
 
 ![](img/faeb28a57738673a94ef1f8bb6ce968d_16.png)
 
+```python
+import numpy as np
 class LDA:
     def __init__(self, n_components):
         self.n_components = n_components

@@ -18,11 +18,11 @@
 
 以下是设置L1损失函数的代码：
 
-```python
-import torch.nn as nn
 
 ![](img/40af8424a5ecd2697055f24d8b2e2c76_4.png)
 
+```python
+import torch.nn as nn
 loss_fn = nn.L1Loss()
 ```
 

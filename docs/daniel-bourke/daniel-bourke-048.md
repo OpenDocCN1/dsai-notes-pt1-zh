@@ -28,13 +28,13 @@
 
 在代码中，我们可以这样设置损失函数：
 
-```python
-import torch.nn as nn
 
 ![](img/167c45768dc22cba7c867c4bcb50003c_6.png)
 
 ![](img/167c45768dc22cba7c867c4bcb50003c_7.png)
 
+```python
+import torch.nn as nn
 # 设置损失函数为平均绝对误差 (L1Loss)
 loss_fn = nn.L1Loss()
 ```

@@ -107,15 +107,15 @@ FAISS是由Facebook AI Research开发的一个库，专门用于高效搜索大�
 
 ![](img/08721cafaed0d6406a9cf7f286e26533_11.png)
 
+
+![](img/08721cafaed0d6406a9cf7f286e26533_13.png)
+
 ```python
 import faiss
 import numpy as np
 
 # 将嵌入转换为numpy数组
 context_embeddings_np = context_embeddings.cpu().numpy().astype('float32')
-
-![](img/08721cafaed0d6406a9cf7f286e26533_13.png)
-
 # 获取嵌入维度
 d = context_embeddings_np.shape[1]
 

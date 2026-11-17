@@ -124,12 +124,17 @@ df[‘M2‘] = df[‘AAPL‘].rolling(window=long_window).mean()
 
 ![](img/2f1fc1b6237382725e397af031dcf7fd_53.png)
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
 
 ![](img/2f1fc1b6237382725e397af031dcf7fd_55.png)
 
+
+![](img/2f1fc1b6237382725e397af031dcf7fd_57.png)
+
+![](img/2f1fc1b6237382725e397af031dcf7fd_59.png)
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
 # 生成交易信号
 df[‘position‘] = np.where(df[‘M1‘] > df[‘M2‘], 1, -1)
 
@@ -147,11 +152,6 @@ ax2 = ax1.twinx()
 ax2.plot(df[‘position‘], label=‘Signal (1/-1)‘, color=‘purple‘, linestyle=‘--‘)
 ax2.set_ylabel(‘Signal‘)
 ax2.legend(loc=‘upper right‘)
-
-![](img/2f1fc1b6237382725e397af031dcf7fd_57.png)
-
-![](img/2f1fc1b6237382725e397af031dcf7fd_59.png)
-
 plt.title(‘AAPL Stock Price with Moving Averages and Trading Signal‘)
 plt.show()
 ```

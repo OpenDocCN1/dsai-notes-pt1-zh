@@ -210,29 +210,29 @@ Cartopy 的设计目的是为你重新投影数据。在大多数情况下，当
 
 ### 代码示例
 
-```python
-import numpy as np
 
 ![](img/a2125e5807c33e5fa6e0bfb7e9611076_30.png)
 
 ![](img/a2125e5807c33e5fa6e0bfb7e9611076_32.png)
 
-# 定义两个城市的坐标
-london_lon, london_lat = -0.1275, 51.5072
-new_york_lon, new_york_lat = -74.0059, 40.7128
 
 ![](img/a2125e5807c33e5fa6e0bfb7e9611076_34.png)
 
 ![](img/a2125e5807c33e5fa6e0bfb7e9611076_36.png)
 
+
+![](img/a2125e5807c33e5fa6e0bfb7e9611076_38.png)
+
+```python
+import numpy as np
+# 定义两个城市的坐标
+london_lon, london_lat = -0.1275, 51.5072
+new_york_lon, new_york_lat = -74.0059, 40.7128
 # 创建地图
 proj = ccrs.PlateCarree()
 fig = plt.figure()
 ax = plt.axes(projection=proj)
 ax.coastlines()
-
-![](img/a2125e5807c33e5fa6e0bfb7e9611076_38.png)
-
 # 绘制恒向线（在 PlateCarree 投影中的直线）
 ax.plot([london_lon, new_york_lon], [london_lat, new_york_lat],
          transform=ccrs.PlateCarree(), label='Rhumb Line', color='blue')
@@ -304,6 +304,11 @@ proj = HighResStereographic(central_longitude=center_lon, central_latitude=cente
 
 我们已知他途经的主要城市及其坐标。目标是绘制一条连接这些城市的大圆路线。
 
+
+![](img/a2125e5807c33e5fa6e0bfb7e9611076_42.png)
+
+![](img/a2125e5807c33e5fa6e0bfb7e9611076_44.png)
+
 ```python
 # 城市坐标字典
 places = {
@@ -316,11 +321,6 @@ places = {
     'San Francisco': (-122.4194, 37.7749),
     'New York': (-74.0059, 40.7128),
 }
-
-![](img/a2125e5807c33e5fa6e0bfb7e9611076_42.png)
-
-![](img/a2125e5807c33e5fa6e0bfb7e9611076_44.png)
-
 # 提取经纬度列表
 route = ['London', 'Suez', 'Bombay', 'Calcutta', 'Hong Kong', 'Yokohama', 'San Francisco', 'New York']
 lons = [places[city][0] for city in route]
@@ -362,16 +362,19 @@ plt.show()
 2.  **地理配准工具**：我们使用了一个简单的交互式脚本（`image_geolocator.py`），允许用户拖动、缩放图片，使其与 Cartopy 绘制的底图对齐。对齐过程中，脚本会实时输出图片在当前投影（罗宾逊投影）坐标系中的范围（`[xmin, xmax, ymin, ymax]`）。
 3.  **加载并显示图片**：获得范围后，我们可以使用 `imshow` 并指定 `transform` 参数来正确显示图片。
 
-```python
-import matplotlib.image as mpimg
-
-# 之前通过地理配准工具获得的范围（单位：罗宾逊投影坐标）
-extent = [-169.5, 191.5, -75.0, 91.0]  # xmin, xmax, ymin, ymax
 
 ![](img/a2125e5807c33e5fa6e0bfb7e9611076_46.png)
 
 ![](img/a2125e5807c33e5fa6e0bfb7e9611076_48.png)
 
+
+![](img/a2125e5807c33e5fa6e0bfb7e9611076_50.png)
+
+```python
+import matplotlib.image as mpimg
+
+# 之前通过地理配准工具获得的范围（单位：罗宾逊投影坐标）
+extent = [-169.5, 191.5, -75.0, 91.0]  # xmin, xmax, ymin, ymax
 # 创建罗宾逊投影地图（中央子午线偏移与图片一致）
 proj = ccrs.Robinson(central_longitude=11.25)
 fig = plt.figure()
@@ -384,9 +387,6 @@ img = mpimg.imread('path/to/wiki_route_image.png')
 
 # 显示图片，关键是指定其坐标系统（transform）和范围（extent）
 ax.imshow(img, extent=extent, transform=proj, origin='upper', alpha=0.7)
-
-![](img/a2125e5807c33e5fa6e0bfb7e9611076_50.png)
-
 plt.show()
 ```
 

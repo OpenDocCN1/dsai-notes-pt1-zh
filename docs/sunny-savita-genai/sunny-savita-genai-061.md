@@ -41,14 +41,14 @@
 
 首先，回顾一下我们已有的工具设置代码框架：
 
-```python
-# 示例结构：初始化工具
-from langchain.tools import WikipediaQueryRun, YouTubeSearchTool
 
 ![](img/f3109b2f1d9db23aa7c5e6caacadb3f6_3.png)
 
 ![](img/f3109b2f1d9db23aa7c5e6caacadb3f6_4.png)
 
+```python
+# 示例结构：初始化工具
+from langchain.tools import WikipediaQueryRun, YouTubeSearchTool
 # 1. 维基百科工具
 wikipedia_tool = WikipediaQueryRun(...)
 # 2. YouTube工具
@@ -144,13 +144,13 @@ print(response["output"])
 
 代码结构如下：
 
-```python
-from langchain.agents import create_self_ask_with_search_agent
 
 ![](img/f3109b2f1d9db23aa7c5e6caacadb3f6_21.png)
 
 ![](img/f3109b2f1d9db23aa7c5e6caacadb3f6_22.png)
 
+```python
+from langchain.agents import create_self_ask_with_search_agent
 # 创建Self-Ask智能体，需要指定一个搜索工具作为核心工具
 search_agent = create_self_ask_with_search_agent(
     llm=your_llm，

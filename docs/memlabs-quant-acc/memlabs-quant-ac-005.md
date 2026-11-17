@@ -191,6 +191,16 @@ print(“Bias:”, model.bias)
     *   **转换为简单收益**：`np.exp(total_log_return) - 1`
     *   **夏普比率（风险调整后收益）**：`(mean_return / std_return) * sqrt(annualization_factor)`
 
+
+![](img/a0374242350ae5312c830fc289d6ee72_5.png)
+
+
+![](img/a0374242350ae5312c830fc289d6ee72_7.png)
+
+![](img/a0374242350ae5312c830fc289d6ee72_9.png)
+
+![](img/a0374242350ae5312c830fc289d6ee72_10.png)
+
 ```python
 # 1. 样本外预测
 X_test = torch.tensor(test_df[[‘lag_1’]].values, dtype=torch.float32)
@@ -201,22 +211,12 @@ with torch.no_grad():
 test_df[‘prediction’] = test_predictions
 test_df[‘signal’] = np.sign(test_df[‘prediction’]) # 交易信号
 test_df[‘trade_return’] = test_df[‘signal’] * test_df[‘target’] # 交易收益
-
-![](img/a0374242350ae5312c830fc289d6ee72_5.png)
-
 # 4. 计算关键指标
 win_rate = (test_df[‘signal’] == np.sign(test_df[‘target’])).mean()
 expected_value = test_df[‘trade_return’].mean()
 has_edge = expected_value > 0
 total_log_return = test_df[‘trade_return’].sum()
 total_simple_return = np.exp(total_log_return) - 1
-
-![](img/a0374242350ae5312c830fc289d6ee72_7.png)
-
-![](img/a0374242350ae5312c830fc289d6ee72_9.png)
-
-![](img/a0374242350ae5312c830fc289d6ee72_10.png)
-
 print(f“胜率: {win_rate:.2%}”)
 print(f“期望值: {expected_value:.6f}”)
 print(f“是否存在统计优势: {has_edge}”)

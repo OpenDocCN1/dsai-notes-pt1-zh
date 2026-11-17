@@ -147,12 +147,12 @@ for task in tasks:
 
 ![](img/51349d7703ea583ad3404480ff30c761_29.png)
 
-```python
-# 创建一个空列表来存放稍后完成的任务
-tasks_for_later = []
 
 ![](img/51349d7703ea583ad3404480ff30c761_31.png)
 
+```python
+# 创建一个空列表来存放稍后完成的任务
+tasks_for_later = []
 for task in tasks:
     if task["time_to_complete"] <= 5:
         task_to_do = task["description"]

@@ -73,9 +73,6 @@ pandas中有许多数据类型。“object”可以是字母或单词，“int64
 
 以下是数据类型检查和转换的代码示例：
 
-```python
-# 检查数据类型
-print(df.dtypes)
 
 ![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_23.png)
 
@@ -83,6 +80,9 @@ print(df.dtypes)
 
 ![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_25.png)
 
+```python
+# 检查数据类型
+print(df.dtypes)
 # 转换数据类型
 df['price'] = df['price'].astype('int')
 ```

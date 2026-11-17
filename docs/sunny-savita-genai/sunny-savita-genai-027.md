@@ -10,14 +10,14 @@
 ## 数据提取回顾
 在上一节中，我们使用 `unstructured` 等库从PDF文档中提取了多种类型的数据元素。以下是提取过程的核心代码片段：
 
-```python
-# 示例：使用unstructured库提取文档元素
-from unstructured.partition.pdf import partition_pdf
 
 ![](img/77377e848bf47cf452450d67b3f01fda_4.png)
 
 ![](img/77377e848bf47cf452450d67b3f01fda_5.png)
 
+```python
+# 示例：使用unstructured库提取文档元素
+from unstructured.partition.pdf import partition_pdf
 # 提取PDF中的元素
 elements = partition_pdf("document.pdf", strategy="hi_res")
 # elements 包含标题、叙述文本、列表项、图像等元素

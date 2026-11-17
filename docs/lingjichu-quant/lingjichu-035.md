@@ -28,6 +28,20 @@
 
 ![](img/7c8eee4db736472276534d54fe52bb71_17.png)
 
+
+![](img/7c8eee4db736472276534d54fe52bb71_19.png)
+
+![](img/7c8eee4db736472276534d54fe52bb71_21.png)
+
+![](img/7c8eee4db736472276534d54fe52bb71_23.png)
+
+
+![](img/7c8eee4db736472276534d54fe52bb71_25.png)
+
+![](img/7c8eee4db736472276534d54fe52bb71_27.png)
+
+![](img/7c8eee4db736472276534d54fe52bb71_29.png)
+
 ```python
 def filter_suspended_stocks(stock_list):
     """
@@ -39,13 +53,6 @@ def filter_suspended_stocks(stock_list):
         if not is_suspended(stock):  # 假设 is_suspended 是判断停牌的API
             filtered_list.append(stock)
     return filtered_list
-
-![](img/7c8eee4db736472276534d54fe52bb71_19.png)
-
-![](img/7c8eee4db736472276534d54fe52bb71_21.png)
-
-![](img/7c8eee4db736472276534d54fe52bb71_23.png)
-
 def filter_st_stocks(stock_list):
     """
     过滤ST/*ST股票。
@@ -56,13 +63,6 @@ def filter_st_stocks(stock_list):
         if not is_st(stock):  # 假设 is_st 是判断ST/*ST的API
             filtered_list.append(stock)
     return filtered_list
-
-![](img/7c8eee4db736472276534d54fe52bb71_25.png)
-
-![](img/7c8eee4db736472276534d54fe52bb71_27.png)
-
-![](img/7c8eee4db736472276534d54fe52bb71_29.png)
-
 def filter_new_stocks(stock_list, min_days=180):
     """
     过滤上市时间过短的新股。
@@ -114,14 +114,14 @@ filtered_stocks = filter_new_stocks(filtered_stocks, min_days=180)
 
 ![](img/7c8eee4db736472276534d54fe52bb71_51.png)
 
-```python
-# 导入必要的库，假设 get_fundamentals 是查询财务数据的函数
-from some_api import get_fundamentals
 
 ![](img/7c8eee4db736472276534d54fe52bb71_53.png)
 
 ![](img/7c8eee4db736472276534d54fe52bb71_55.png)
 
+```python
+# 导入必要的库，假设 get_fundamentals 是查询财务数据的函数
+from some_api import get_fundamentals
 # 构建查询语句，获取市净率(pb_ratio)和市值(market_cap)
 query = get_fundamentals(
     query(
@@ -139,14 +139,14 @@ query = get_fundamentals(
 
 查询返回的数据通常是横向排列的（每行是一个指标，每列是一只股票）。为了便于后续分析，我们通常需要将其转置，使每行代表一只股票，每列代表一个指标，并处理可能存在的空值。
 
-```python
-# 转置数据框，使行对应股票，列对应指标
-transposed_data = query.T
 
 ![](img/7c8eee4db736472276534d54fe52bb71_61.png)
 
 ![](img/7c8eee4db736472276534d54fe52bb71_63.png)
 
+```python
+# 转置数据框，使行对应股票，列对应指标
+transposed_data = query.T
 # 删除包含空值的行（简单处理）
 cleaned_data = transposed_data.dropna()
 ```

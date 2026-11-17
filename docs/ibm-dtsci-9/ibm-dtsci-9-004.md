@@ -90,17 +90,30 @@ Scikit-learn是Python编程语言的免费机器学习库。它包含了大多�
 
 ![](img/edbd0652a54fdac6ef5fd08bb9100e54_46.png)
 
+
+![](img/edbd0652a54fdac6ef5fd08bb9100e54_48.png)
+
+![](img/edbd0652a54fdac6ef5fd08bb9100e54_49.png)
+
+
+![](img/edbd0652a54fdac6ef5fd08bb9100e54_51.png)
+
+![](img/edbd0652a54fdac6ef5fd08bb9100e54_52.png)
+
+
+![](img/edbd0652a54fdac6ef5fd08bb9100e54_53.png)
+
+![](img/edbd0652a54fdac6ef5fd08bb9100e54_55.png)
+
+
+![](img/edbd0652a54fdac6ef5fd08bb9100e54_57.png)
+
 ```python
 # 导入必要的模块
 from sklearn import svm
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix
-
-![](img/edbd0652a54fdac6ef5fd08bb9100e54_48.png)
-
-![](img/edbd0652a54fdac6ef5fd08bb9100e54_49.png)
-
 # 1. 数据预处理：标准化
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
@@ -111,23 +124,10 @@ X_test_scaled = scaler.transform(X_test)
 
 # 3. 设置算法（估计器）
 clf = svm.SVC(gamma=0.001, C=100.)
-
-![](img/edbd0652a54fdac6ef5fd08bb9100e54_51.png)
-
-![](img/edbd0652a54fdac6ef5fd08bb9100e54_52.png)
-
 # 4. 使用训练集训练模型
 clf.fit(X_train_scaled, y_train)
-
-![](img/edbd0652a54fdac6ef5fd08bb9100e54_53.png)
-
-![](img/edbd0652a54fdac6ef5fd08bb9100e54_55.png)
-
 # 5. 使用测试集进行预测
 predictions = clf.predict(X_test_scaled)
-
-![](img/edbd0652a54fdac6ef5fd08bb9100e54_57.png)
-
 # 6. 评估模型准确性（例如使用混淆矩阵）
 cm = confusion_matrix(y_test, predictions)
 ```

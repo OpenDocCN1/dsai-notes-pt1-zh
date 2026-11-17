@@ -144,16 +144,19 @@
 
 ![](img/9c7137ad90b607fd953911d6b88c55f8_26.png)
 
-```python
-# 示例：使用 Python SDK 创建助手（伪代码示意）
-from langgraph_sdk import Client
 
 ![](img/9c7137ad90b607fd953911d6b88c55f8_28.png)
 
-client = Client()
 
 ![](img/9c7137ad90b607fd953911d6b88c55f8_30.png)
 
+
+![](img/9c7137ad90b607fd953911d6b88c55f8_32.png)
+
+```python
+# 示例：使用 Python SDK 创建助手（伪代码示意）
+from langgraph_sdk import Client
+client = Client()
 # 为特定图创建新助手
 new_assistant = client.assistants.create(
     graph_id="your_graph_id",
@@ -164,9 +167,6 @@ new_assistant = client.assistants.create(
         "tools": ["tool_a", "tool_b"]
     }
 )
-
-![](img/9c7137ad90b607fd953911d6b88c55f8_32.png)
-
 # 创建该助手的新版本
 new_version = client.assistants.versions.create(
     assistant_id=new_assistant.id,

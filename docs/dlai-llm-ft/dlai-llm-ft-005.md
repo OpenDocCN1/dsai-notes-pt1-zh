@@ -94,16 +94,16 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 ![](img/f3f068b1d071ba200429dfe4484c2710_24.png)
 
-```python
-# 对单条文本进行标记化
-text = "Hi, how are you?"
-encoded_text = tokenizer(text)
-print("编码后的ID:", encoded_text['input_ids'])
 
 ![](img/f3f068b1d071ba200429dfe4484c2710_26.png)
 
 ![](img/f3f068b1d071ba200429dfe4484c2710_28.png)
 
+```python
+# 对单条文本进行标记化
+text = "Hi, how are you?"
+encoded_text = tokenizer(text)
+print("编码后的ID:", encoded_text['input_ids'])
 # 将标记ID解码回文本
 decoded_text = tokenizer.decode(encoded_text['input_ids'])
 print("解码后的文本:", decoded_text)
@@ -164,14 +164,14 @@ print("处理后的批量数据:", processed_batch)
 
 ![](img/f3f068b1d071ba200429dfe4484c2710_49.png)
 
+
+![](img/f3f068b1d071ba200429dfe4484c2710_51.png)
+
 ```python
 def prepare_prompt(example):
     """将问答对组合成提示格式。"""
     prompt = f"### Question: {example['question']}\n ### Answer: {example['answer']}"
     return {"prompt": prompt}
-
-![](img/f3f068b1d071ba200429dfe4484c2710_51.png)
-
 # 假设 `dataset` 是加载好的数据集
 dataset = dataset.map(prepare_prompt)
 ```
@@ -181,6 +181,9 @@ dataset = dataset.map(prepare_prompt)
 ![](img/f3f068b1d071ba200429dfe4484c2710_53.png)
 
 ![](img/f3f068b1d071ba200429dfe4484c2710_55.png)
+
+
+![](img/f3f068b1d071ba200429dfe4484c2710_57.png)
 
 ```python
 def tokenize_function(examples):
@@ -193,9 +196,6 @@ def tokenize_function(examples):
         max_length=512
     )
     return tokenized_inputs
-
-![](img/f3f068b1d071ba200429dfe4484c2710_57.png)
-
 # 应用标记化函数
 tokenized_dataset = dataset.map(tokenize_function, batched=True)
 ```
@@ -204,14 +204,14 @@ tokenized_dataset = dataset.map(tokenize_function, batched=True)
 
 ![](img/f3f068b1d071ba200429dfe4484c2710_59.png)
 
+
+![](img/f3f068b1d071ba200429dfe4484c2710_61.png)
+
 ```python
 # 划分数据集
 split_dataset = tokenized_dataset.train_test_split(test_size=0.1, shuffle=True)
 train_dataset = split_dataset["train"]
 test_dataset = split_dataset["test"]
-
-![](img/f3f068b1d071ba200429dfe4484c2710_61.png)
-
 print(f"训练集大小: {len(train_dataset)}")
 print(f"测试集大小: {len(test_dataset)}")
 ```

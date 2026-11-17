@@ -26,12 +26,12 @@
 
 ![](img/7fa687d432e52faf3c8af2fb5cde9289_10.png)
 
-```python
-import pandas as pd
-import numpy as np
 
 ![](img/7fa687d432e52faf3c8af2fb5cde9289_12.png)
 
+```python
+import pandas as pd
+import numpy as np
 # 创建示例数据
 np.random.seed(42)
 data = pd.DataFrame({
@@ -51,11 +51,11 @@ test_data = data.iloc[4:]
 
 ![](img/7fa687d432e52faf3c8af2fb5cde9289_16.png)
 
-```python
-from sklearn.linear_model import LogisticRegression
 
 ![](img/7fa687d432e52faf3c8af2fb5cde9289_17.png)
 
+```python
+from sklearn.linear_model import LogisticRegression
 # 初始化模型
 lr = LogisticRegression()
 # 使用训练数据拟合模型
@@ -197,17 +197,17 @@ print(f"真阳性(TP): {TP}")
 
 ![](img/7fa687d432e52faf3c8af2fb5cde9289_51.png)
 
-```python
-from sklearn.metrics import precision_score, recall_score, f1_score
 
 ![](img/7fa687d432e52faf3c8af2fb5cde9289_53.png)
 
-precision = precision_score(actuals, predictions)
-recall = recall_score(actuals, predictions)
-f1 = f1_score(actuals, predictions)
 
 ![](img/7fa687d432e52faf3c8af2fb5cde9289_55.png)
 
+```python
+from sklearn.metrics import precision_score, recall_score, f1_score
+precision = precision_score(actuals, predictions)
+recall = recall_score(actuals, predictions)
+f1 = f1_score(actuals, predictions)
 print(f"精确率: {precision:.2f}")
 print(f"召回率: {recall:.2f}")
 print(f"F1分数: {f1:.2f}")

@@ -82,11 +82,11 @@ print(embeddings_2d.shape)  # 输出应为 (7, 2)
 
 现在，每个句子对应一个二维坐标点，我们可以将其绘制在散点图上。
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/138d9d8caf2da03cd169121d8d42c018_13.png)
 
+```python
+import matplotlib.pyplot as plt
 plt.figure(figsize=(8, 6))
 plt.scatter(embeddings_2d[:, 0], embeddings_2d[:, 1])
 

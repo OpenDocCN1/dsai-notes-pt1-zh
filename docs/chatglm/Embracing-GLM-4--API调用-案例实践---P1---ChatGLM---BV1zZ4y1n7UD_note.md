@@ -201,6 +201,8 @@ response = client.chat.completions.create(
 
 **1. 视觉模型 GLM-4V**
 GLM-4V是强大的图文理解模型，定价为 **0.1元/千Tokens**（图片有固定Token消耗）。调用方式与语言模型类似，只需在消息中传入图片。
+                {"type": "image_url", "image_url": {"url": "https://example.com/image.jpg"}}
+
 ```python
 response = client.chat.completions.create(
     model="glm-4v",
@@ -209,7 +211,6 @@ response = client.chat.completions.create(
             "role": "user",
             "content": [
                 {"type": "text", "text": "描述这张图片"},
-                {"type": "image_url", "image_url": {"url": "https://example.com/image.jpg"}}
             ]
         }
     ]

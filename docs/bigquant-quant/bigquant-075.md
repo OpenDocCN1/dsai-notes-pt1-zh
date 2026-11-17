@@ -42,6 +42,9 @@
 
 ![](img/202154136ad71ac7bca403571354579b_11.png)
 
+
+![](img/202154136ad71ac7bca403571354579b_13.png)
+
 ```python
 # 假设我们创建包含噪声的多元一次方程数据
 # X 是特征矩阵，y 是目标值
@@ -49,9 +52,6 @@ import numpy as np
 np.random.seed(42)
 num_samples = 100
 num_features = 18
-
-![](img/202154136ad71ac7bca403571354579b_13.png)
-
 # 生成真实的系数和截距
 true_theta = np.random.randn(num_features + 1)  # +1 是截距项
 # 生成特征数据 X

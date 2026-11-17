@@ -109,6 +109,9 @@ digit_resized = cv2.resize(digit_roi, (57, 88))
 
 ![](img/ca6bf3fe5991d814a5bf46a3cba6493d_35.png)
 
+
+![](img/ca6bf3fe5991d814a5bf46a3cba6493d_37.png)
+
 ```python
 # 伪代码示例：模板匹配并找出最佳匹配
 method = cv2.TM_CCOEFF
@@ -117,9 +120,6 @@ for digit in template_digits:
     result = cv2.matchTemplate(digit_resized, digit, method)
     _, max_val, _, _ = cv2.minMaxLoc(result)
     scores.append(max_val)
-
-![](img/ca6bf3fe5991d814a5bf46a3cba6493d_37.png)
-
 recognized_digit = scores.index(max(scores))
 ```
 

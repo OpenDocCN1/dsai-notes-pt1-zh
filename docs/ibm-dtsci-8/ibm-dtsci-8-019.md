@@ -75,17 +75,17 @@ fig.show()
 
 使用Plotly Express，整个折线图可以通过单个命令创建。可视化自动具有交互性。Plotly Express使可视化易于创建和修改。
 
-```python
-import plotly.express as px
-import numpy as np
 
 ![](img/c689dea2dab2818a9d9ed056c2786517_18.png)
 
-x = np.arange(10)
-y = np.random.randn(10)
 
 ![](img/c689dea2dab2818a9d9ed056c2786517_20.png)
 
+```python
+import plotly.express as px
+import numpy as np
+x = np.arange(10)
+y = np.random.randn(10)
 fig = px.line(x=x, y=y, title='使用Plotly Express创建的折线图')
 fig.update_layout(xaxis_title='X轴', yaxis_title='Y轴')
 fig.show()

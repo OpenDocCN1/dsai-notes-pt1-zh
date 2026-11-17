@@ -53,15 +53,15 @@ def update_output(input_value):
 
 ![](img/8682796af6627c119f9768e6f053fc61_12.png)
 
+
+![](img/8682796af6627c119f9768e6f053fc61_13.png)
+
 ```python
 import pandas as pd
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
-
-![](img/8682796af6627c119f9768e6f053fc61_13.png)
-
 # 将航空公司数据读入Pandas DataFrame
 df = pd.read_csv(‘airline_data.csv‘)
 ```

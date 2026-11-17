@@ -188,12 +188,12 @@ import my_project
 
 你可以导入包中的函数，例如使用以下Python代码：
 
-```python
-from my_project.module1 import square, doubler
-from my_project.module2 import mean
 
 ![](img/9d798d535d72184a6afde660cd860bdd_55.png)
 
+```python
+from my_project.module1 import square, doubler
+from my_project.module2 import mean
 print("4^2 =", square(4))
 print("2*4 =", doubler(4))
 print("(2+1+3)/3 =", mean([2, 1, 3]))

@@ -112,12 +112,12 @@ print(result) # 输出：执行搜索：LangChain
 2.  **定义函数**：使用`@tool`装饰器，并传入参数模式。
 3.  **实现逻辑**：在函数内部调用Open-Meteo API获取天气预报，并解析出当前温度。
 
-```python
-import requests
-from pydantic import BaseModel, Field
 
 ![](img/bd93b405d9fe77708626d3f42d90cbf8_9.png)
 
+```python
+import requests
+from pydantic import BaseModel, Field
 class OpenMeteoInput(BaseModel):
     latitude: float = Field(description=”地点的纬度”)
     longitude: float = Field(description=”地点的经度”)
@@ -184,9 +184,6 @@ print(result) # 输出类似：当前温度是 22.9°C
 
 ![](img/bd93b405d9fe77708626d3f42d90cbf8_13.png)
 
-```python
-import wikipedia
-from pydantic import BaseModel, Field
 
 ![](img/bd93b405d9fe77708626d3f42d90cbf8_14.png)
 
@@ -194,6 +191,9 @@ from pydantic import BaseModel, Field
 
 ![](img/bd93b405d9fe77708626d3f42d90cbf8_16.png)
 
+```python
+import wikipedia
+from pydantic import BaseModel, Field
 class WikipediaInput(BaseModel):
     query: str = Field(description=”用于搜索维基百科的查询词”)
 
@@ -467,6 +467,9 @@ full_chain = prompt | model_with_tools | OpenAIFunctionsAgentOutputParser() | ro
 
 ![](img/bd93b405d9fe77708626d3f42d90cbf8_24.png)
 
+
+![](img/bd93b405d9fe77708626d3f42d90cbf8_26.png)
+
 ```python
 # 示例1：询问天气
 response = full_chain.invoke({“input”: “What is the weather in San Francisco right now?”})
@@ -475,9 +478,6 @@ print(response) # 输出：当前温度是 22.9°C
 # 示例2：询问LangChain
 response = full_chain.invoke({“input”: “What is LangChain?”})
 print(response[:200]) # 输出维基百科搜索结果的摘要（前200个字符）
-
-![](img/bd93b405d9fe77708626d3f42d90cbf8_26.png)
-
 # 示例3：简单问候
 response = full_chain.invoke({“input”: “hi”})
 print(response) # 输出：Hello! How can I assist you today?

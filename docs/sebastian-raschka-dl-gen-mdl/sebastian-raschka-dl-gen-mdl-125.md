@@ -16,15 +16,15 @@
 
 ![](img/75fa3cc0c5748df52ac0ee6a57c7b411_7.png)
 
-```python
-import torch
-import torchvision
-import torchvision.transforms as transforms
 
 ![](img/75fa3cc0c5748df52ac0ee6a57c7b411_8.png)
 
 ![](img/75fa3cc0c5748df52ac0ee6a57c7b411_9.png)
 
+```python
+import torch
+import torchvision
+import torchvision.transforms as transforms
 # 定义标准化参数
 normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])

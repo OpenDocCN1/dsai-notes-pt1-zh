@@ -10,12 +10,12 @@
 
 ![](img/77d641e47cdae93cdad4881dd7e907b0_3.png)
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
 
 ![](img/77d641e47cdae93cdad4881dd7e907b0_5.png)
 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
 # 创建 x 数据：从 -3 到 3 的整数数组
 x = np.array([-3, -2, -1, 0, 1, 2, 3])
 # 创建 y 数据：x 的平方
@@ -150,15 +150,15 @@ plt.show()
 
 ![](img/77d641e47cdae93cdad4881dd7e907b0_49.png)
 
-```python
-# 生成从-5到5，间隔为0.01的1000个数据点
-x_dense = np.arange(-5, 5, 0.01)
-y_dense = x_dense ** 2
 
 ![](img/77d641e47cdae93cdad4881dd7e907b0_51.png)
 
 ![](img/77d641e47cdae93cdad4881dd7e907b0_53.png)
 
+```python
+# 生成从-5到5，间隔为0.01的1000个数据点
+x_dense = np.arange(-5, 5, 0.01)
+y_dense = x_dense ** 2
 fig, ax = plt.subplots()
 ax.plot(x_dense, y_dense)
 plt.show()
@@ -180,12 +180,12 @@ plt.show()
 
 ![](img/77d641e47cdae93cdad4881dd7e907b0_64.png)
 
-```python
-# 创建一个阻尼振荡的函数
-y_osc = np.exp(-x_dense) * np.sin(10 * x_dense)
 
 ![](img/77d641e47cdae93cdad4881dd7e907b0_66.png)
 
+```python
+# 创建一个阻尼振荡的函数
+y_osc = np.exp(-x_dense) * np.sin(10 * x_dense)
 fig, ax = plt.subplots()
 ax.plot(x_dense, y_osc)
 plt.show()

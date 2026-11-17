@@ -12,6 +12,9 @@
 
 核心操作是为 `scatter` 函数的 `s` 和 `c` 参数传入数组。`s` 控制点的大小，`c` 控制点的颜色。
 
+
+![](img/d86e49401e66c8069ae22741c8abda23_5.png)
+
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
@@ -19,9 +22,6 @@ import numpy as np
 # 生成示例数据
 x = np.arange(10)
 y = x
-
-![](img/d86e49401e66c8069ae22741c8abda23_5.png)
-
 # 为每个点生成大小和颜色数组
 sizes = x * 10 + 0.1  # 确保所有大小为正值
 colors = y  # 使用y值作为颜色映射的输入
@@ -49,12 +49,12 @@ plt.show()
 
 例如，如果直接使用 `x`（可能包含0）来计算大小，效果可能不理想。一个常见的做法是给数组加上一个小的正数偏移量。
 
-```python
-# 不推荐：x可能包含0，导致某些点大小为0
-sizes_bad = x * 10
 
 ![](img/d86e49401e66c8069ae22741c8abda23_13.png)
 
+```python
+# 不推荐：x可能包含0，导致某些点大小为0
+sizes_bad = x * 10
 # 推荐：确保所有大小值为正
 sizes_good = x * 10 + 0.1
 ```

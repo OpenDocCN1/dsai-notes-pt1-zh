@@ -95,14 +95,14 @@
 
 ![](img/8f503079fd2a193cb8f8fea934be2a34_34.png)
 
-```python
-# 安装必要的包
-!pip install langchain anthropic scikit-learn
 
 ![](img/8f503079fd2a193cb8f8fea934be2a34_36.png)
 
 ![](img/8f503079fd2a193cb8f8fea934be2a34_37.png)
 
+```python
+# 安装必要的包
+!pip install langchain anthropic scikit-learn
 # 设置环境变量（例如 LangSmith 密钥）
 import os
 os.environ["LANGSMITH_API_KEY"] = "your_api_key_here"
@@ -131,6 +131,11 @@ print(f"已加载 {len(documents)} 个文档。")
 ![](img/8f503079fd2a193cb8f8fea934be2a34_40.png)
 
 以下是构建递归摘要树的核心函数：
+
+
+![](img/8f503079fd2a193cb8f8fea934be2a34_42.png)
+
+![](img/8f503079fd2a193cb8f8fea934be2a34_43.png)
 
 ```python
 from langchain.embeddings import OpenAIEmbeddings
@@ -189,11 +194,6 @@ def build_raptor_tree(docs, level=0, max_level=3, num_clusters=3):
     if isinstance(next_level_docs, list):
         all_nodes.extend(next_level_docs)
     return all_nodes
-
-![](img/8f503079fd2a193cb8f8fea934be2a34_42.png)
-
-![](img/8f503079fd2a193cb8f8fea934be2a34_43.png)
-
 # 构建 RAPTOR 树
 all_index_nodes = build_raptor_tree(documents, max_level=2, num_clusters=3)
 print(f"RAPTOR 树构建完成，共生成 {len(all_index_nodes)} 个节点（包括原始文档和各级摘要）。")
@@ -205,13 +205,13 @@ print(f"RAPTOR 树构建完成，共生成 {len(all_index_nodes)} 个节点（�
 
 构建好包含所有节点（原始文档和摘要）的列表后，我们将它们全部向量化并存入向量数据库。
 
-```python
-from langchain.vectorstores import Chroma
 
 ![](img/8f503079fd2a193cb8f8fea934be2a34_47.png)
 
 ![](img/8f503079fd2a193cb8f8fea934be2a34_48.png)
 
+```python
+from langchain.vectorstores import Chroma
 # 为所有节点生成向量并创建向量存储
 embeddings = OpenAIEmbeddings()
 texts = [node.page_content for node in all_index_nodes]
@@ -229,6 +229,9 @@ print("向量数据库创建完成。")
 
 ![](img/8f503079fd2a193cb8f8fea934be2a34_53.png)
 
+
+![](img/8f503079fd2a193cb8f8fea934be2a34_55.png)
+
 ```python
 from langchain.chains import RetrievalQA
 
@@ -238,9 +241,6 @@ qa_chain = RetrievalQA.from_chain_type(
     chain_type="stuff",
     retriever=vectorstore.as_retriever(search_kwargs={"k": 4}) # 检索 top-4 个节点
 )
-
-![](img/8f503079fd2a193cb8f8fea934be2a34_55.png)
-
 # 进行提问
 question = "LangChain 表达式语言中，如何定义一个链？"
 result = qa_chain.run(question)

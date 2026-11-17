@@ -151,18 +151,18 @@
 
 ![](img/b46c7ab563229c69723d79f17ee24102_33.png)
 
-```python
-from datasets import load_dataset
 
 ![](img/b46c7ab563229c69723d79f17ee24102_35.png)
 
 ![](img/b46c7ab563229c69723d79f17ee24102_37.png)
 
-# 加载预训练数据集 Pile，使用流式模式
-pretrain_dataset = load_dataset("monology/pile-uncopyrighted", split="train", streaming=True)
 
 ![](img/b46c7ab563229c69723d79f17ee24102_39.png)
 
+```python
+from datasets import load_dataset
+# 加载预训练数据集 Pile，使用流式模式
+pretrain_dataset = load_dataset("monology/pile-uncopyrighted", split="train", streaming=True)
 # 查看前几个数据样本
 for i, example in enumerate(pretrain_dataset):
     if i < 5:
@@ -179,25 +179,25 @@ for i, example in enumerate(pretrain_dataset):
 
 ![](img/b46c7ab563229c69723d79f17ee24102_43.png)
 
-```python
-import json
 
 ![](img/b46c7ab563229c69723d79f17ee24102_45.png)
 
-# 加载微调数据集
-with open("lamini_docs.json", "r") as f:
-    finetune_data = json.load(f)
 
 ![](img/b46c7ab563229c69723d79f17ee24102_47.png)
 
+
+![](img/b46c7ab563229c69723d79f17ee24102_49.png)
+
+```python
+import json
+# 加载微调数据集
+with open("lamini_docs.json", "r") as f:
+    finetune_data = json.load(f)
 # 查看数据结构
 print("示例问答对：")
 print(f"问题：{finetune_data[0]['question']}")
 print(f"答案：{finetune_data[0]['answer']}")
 print("---")
-
-![](img/b46c7ab563229c69723d79f17ee24102_49.png)
-
 # 一种简单的数据准备方法：将问题和答案连接起来
 simple_prompt = f"{finetune_data[0]['question']} {finetune_data[0]['answer']}"
 print("串联后的文本：")
@@ -213,19 +213,19 @@ print(simple_prompt)
 
 ![](img/b46c7ab563229c69723d79f17ee24102_55.png)
 
+
+![](img/b46c7ab563229c69723d79f17ee24102_57.png)
+
+
+![](img/b46c7ab563229c69723d79f17ee24102_59.png)
+
 ```python
 # 使用提示模板格式化数据
 prompt_template = """### 问题：
 {question}
-
-![](img/b46c7ab563229c69723d79f17ee24102_57.png)
-
 ### 答案：
 {answer}
 """
-
-![](img/b46c7ab563229c69723d79f17ee24102_59.png)
-
 formatted_prompt = prompt_template.format(question=finetune_data[0]['question'], answer=finetune_data[0]['answer'])
 print("使用模板格式化后的文本：")
 print(formatted_prompt)
@@ -240,6 +240,9 @@ print(formatted_prompt)
 
 ![](img/b46c7ab563229c69723d79f17ee24102_65.png)
 
+
+![](img/b46c7ab563229c69723d79f17ee24102_67.png)
+
 ```python
 # 将格式化后的数据写入 JSON Lines 文件
 formatted_data = []
@@ -248,9 +251,6 @@ for item in finetune_data:
         "text": prompt_template.format(question=item['question'], answer=item['answer'])
     }
     formatted_data.append(formatted_item)
-
-![](img/b46c7ab563229c69723d79f17ee24102_67.png)
-
 with open("formatted_finetune_data.jsonl", "w") as f:
     for item in formatted_data:
         f.write(json.dumps(item) + "\n")

@@ -60,11 +60,11 @@ def get_completion(endpoint, input_text):
 3.  使用 `gr.Interface` 创建界面，指定输入和输出类型。
 4.  启动应用。
 
-```python
-import gradio as gr
 
 ![](img/e1d675e240e79e482a51a953f2c48add_17.png)
 
+```python
+import gradio as gr
 def summarize(input_text):
     # 调用摘要模型的 API 端点
     summary = get_completion("SUMMARY_ENDPOINT", input_text)
@@ -167,25 +167,25 @@ entities = get_completion("NER_ENDPOINT", input_text)
 *   **隐藏标记按钮**：通过 `allow_flagging=“never”` 隐藏默认的标记反馈按钮。
 *   **提供示例**：在界面中添加示例文本，帮助用户快速理解应用用法。
 
+
+![](img/e1d675e240e79e482a51a953f2c48add_55.png)
+
+
+![](img/e1d675e240e79e482a51a953f2c48add_57.png)
+
+![](img/e1d675e240e79e482a51a953f2c48add_58.png)
+
 ```python
 def ner(input_text):
     # 调用 NER 模型的 API 端点
     entities = get_completion("NER_ENDPOINT", input_text)
     # 返回原始文本和实体列表，供 HighlightedText 组件渲染
     return input_text, entities
-
-![](img/e1d675e240e79e482a51a953f2c48add_55.png)
-
 # 示例文本
 examples = [
     ["Andrew is building a course for the Hugging Face team in Paris."],
     ["My name is Polly and I work at Hugging Face in Vienna."]
 ]
-
-![](img/e1d675e240e79e482a51a953f2c48add_57.png)
-
-![](img/e1d675e240e79e482a51a953f2c48add_58.png)
-
 demo = gr.Interface(
     fn=ner,
     inputs=gr.Textbox(label="输入文本", placeholder="在此输入包含人名、地名、机构名的句子..."),

@@ -33,6 +33,11 @@
 现在，我们将前两个练习用代码（例如使用NumPy库）重新实现一遍。当然，你也可以使用任何你喜欢的其他库。
 
 以下是使用Python和NumPy进行验证的示例代码框架：
+
+![](img/0255e16b2844d171cc3877df7accb2a3_5.png)
+
+![](img/0255e16b2844d171cc3877df7accb2a3_7.png)
+
 ```python
 import numpy as np
 
@@ -44,11 +49,6 @@ for i in range(3):
     for j in range(i+1, 3):
         dot_product = np.dot(I3[:, i], I3[:, j])
         print(f"列 {i} 与列 {j} 的点积为：{dot_product}")
-
-![](img/0255e16b2844d171cc3877df7accb2a3_5.png)
-
-![](img/0255e16b2844d171cc3877df7accb2a3_7.png)
-
 # 练习2：验证列向量的单位范数
 for i in range(3):
     norm = np.linalg.norm(I3[:, i])

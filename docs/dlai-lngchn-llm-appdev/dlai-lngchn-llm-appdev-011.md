@@ -66,15 +66,15 @@ LangChain中有多种类型的文本分割器，它们在以下几个维度上�
 
 ![](img/ebe398bb25bacc9df35d89337a0c9403_27.png)
 
-```python
-# 设置环境（例如OpenAI API密钥）
-import os
-os.environ[‘OPENAI_API_KEY‘] = ‘your-api-key-here‘
 
 ![](img/ebe398bb25bacc9df35d89337a0c9403_29.png)
 
 ![](img/ebe398bb25bacc9df35d89337a0c9403_31.png)
 
+```python
+# 设置环境（例如OpenAI API密钥）
+import os
+os.environ[‘OPENAI_API_KEY‘] = ‘your-api-key-here‘
 # 导入分割器
 from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter
 ```
@@ -87,13 +87,13 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTex
 
 ![](img/ebe398bb25bacc9df35d89337a0c9403_37.png)
 
+
+![](img/ebe398bb25bacc9df35d89337a0c9403_39.png)
+
 ```python
 # 初始化分割器
 chunk_size = 26
 chunk_overlap = 4
-
-![](img/ebe398bb25bacc9df35d89337a0c9403_39.png)
-
 r_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
 c_splitter = CharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
 ```
@@ -161,13 +161,13 @@ print(c_splitter.split_text(text3))
 
 ![](img/ebe398bb25bacc9df35d89337a0c9403_57.png)
 
+
+![](img/ebe398bb25bacc9df35d89337a0c9403_59.png)
+
 ```python
 some_text = “““
 ... (此处是一段约500字符的文本，包含多个段落) ...
 “““
-
-![](img/ebe398bb25bacc9df35d89337a0c9403_59.png)
-
 print(len(some_text)) # 大约500
 ```
 
@@ -217,27 +217,27 @@ r_splitter = RecursiveCharacterTextSplitter(
 
 ![](img/ebe398bb25bacc9df35d89337a0c9403_73.png)
 
+
+![](img/ebe398bb25bacc9df35d89337a0c9403_75.png)
+
+
+![](img/ebe398bb25bacc9df35d89337a0c9403_77.png)
+
+
+![](img/ebe398bb25bacc9df35d89337a0c9403_79.png)
+
 ```python
 from langchain.document_loaders import PyPDFLoader
 loader = PyPDFLoader(“docs/cs229_lectures/MachineLearning-Lecture01.pdf“)
 pages = loader.load()
-
-![](img/ebe398bb25bacc9df35d89337a0c9403_75.png)
-
 # 定义文本分割器
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=1000,
     chunk_overlap=150,
     length_function=len, # 默认就是len，此处显式说明是按字符数计算
 )
-
-![](img/ebe398bb25bacc9df35d89337a0c9403_77.png)
-
 # 分割文档
 docs = text_splitter.split_documents(pages) # 传入文档列表
-
-![](img/ebe398bb25bacc9df35d89337a0c9403_79.png)
-
 print(f“原始页面数: {len(pages)}“)
 print(f“分割后的文档数: {len(docs)}“)
 # 可以看到创建了更多的文档，因为进行了分割。
@@ -271,16 +271,16 @@ print(docs[1].page_content) # 查看分割后第二个块的内容
 
 ![](img/ebe398bb25bacc9df35d89337a0c9403_91.png)
 
-```python
-from langchain.text_splitter import TokenTextSplitter
 
 ![](img/ebe398bb25bacc9df35d89337a0c9403_93.png)
 
-# 初始化令牌文本分割器，块大小为1，重叠为0，这会将文本拆分为单独的令牌列表。
-token_splitter = TokenTextSplitter(chunk_size=1, chunk_overlap=0)
 
 ![](img/ebe398bb25bacc9df35d89337a0c9403_95.png)
 
+```python
+from langchain.text_splitter import TokenTextSplitter
+# 初始化令牌文本分割器，块大小为1，重叠为0，这会将文本拆分为单独的令牌列表。
+token_splitter = TokenTextSplitter(chunk_size=1, chunk_overlap=0)
 text = “foo bar bazzy foo“
 print(token_splitter.split_text(text))
 # 输出可能是: [‘foo‘, ‘ bar‘, ‘ baz‘, ‘zy‘, ‘ foo‘]
@@ -311,11 +311,17 @@ print(token_docs[0].metadata) # 查看元数据
 ![](img/ebe398bb25bacc9df35d89337a0c9403_101.png)
 
 首先看一个玩具示例：
-```python
-from langchain.text_splitter import MarkdownHeaderTextSplitter
 
 ![](img/ebe398bb25bacc9df35d89337a0c9403_103.png)
 
+
+![](img/ebe398bb25bacc9df35d89337a0c9403_105.png)
+
+
+![](img/ebe398bb25bacc9df35d89337a0c9403_107.png)
+
+```python
+from langchain.text_splitter import MarkdownHeaderTextSplitter
 markdown_document = “““
 # Title
 ## Chapter 1
@@ -325,9 +331,6 @@ Hi, I‘m Lance.
 ### Section 2.1
 Hi, I‘m Harry.
 “““
-
-![](img/ebe398bb25bacc9df35d89337a0c9403_105.png)
-
 headers_to_split_on = [
     (“#“, “Header 1“),
     (“##“, “Header 2“),
@@ -336,9 +339,6 @@ headers_to_split_on = [
 
 markdown_splitter = MarkdownHeaderTextSplitter(headers_to_split_on=headers_to_split_on)
 md_header_splits = markdown_splitter.split_text(markdown_document)
-
-![](img/ebe398bb25bacc9df35d89337a0c9403_107.png)
-
 print(md_header_splits[0])
 # 输出内容包含 “Hi, I‘m Jim. Hi, I‘m Joe.“，其元数据为 {‘Header 1‘: ‘Title‘, ‘Header 2‘: ‘Chapter 1‘}
 print(md_header_splits[2])
@@ -350,15 +350,15 @@ print(md_header_splits[2])
 ![](img/ebe398bb25bacc9df35d89337a0c9403_111.png)
 
 现在，让我们在一个真实世界的Markdown文档上尝试（使用之前加载Confluence目录的示例）：
+
+![](img/ebe398bb25bacc9df35d89337a0c9403_113.png)
+
 ```python
 from langchain.document_loaders import ConfluenceLoader
 # ... 加载Confluence文档 ...
 
 markdown_splitter = MarkdownHeaderTextSplitter(headers_to_split_on=[(“#“, “Header 1“), (“##“, “Header 2“)])
 md_header_splits = markdown_splitter.split_documents(confluence_docs)
-
-![](img/ebe398bb25bacc9df35d89337a0c9403_113.png)
-
 # 查看分割后的块及其丰富的元数据
 for split in md_header_splits[:2]:
     print(split.page_content[:100])

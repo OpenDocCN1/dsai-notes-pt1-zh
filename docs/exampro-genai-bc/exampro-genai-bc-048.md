@@ -151,22 +151,22 @@
 
 ### 核心代码结构
 
-```python
-# 1. 定义期望的JSON数据结构（使用Pydantic）
-from pydantic import BaseModel
-from typing import List, Optional
 
 ![](img/ba67ee11b6c89d338b61c535e79a7abc_47.png)
 
-class Question(BaseModel):
-    question: str
-    options: List[str]
-    correct_answer: str
 
 ![](img/ba67ee11b6c89d338b61c535e79a7abc_49.png)
 
 ![](img/ba67ee11b6c89d338b61c535e79a7abc_51.png)
 
+```python
+# 1. 定义期望的JSON数据结构（使用Pydantic）
+from pydantic import BaseModel
+from typing import List, Optional
+class Question(BaseModel):
+    question: str
+    options: List[str]
+    correct_answer: str
 class Quiz(BaseModel):
     questions: List[Question]  # 包装成列表以生成多个问题
 

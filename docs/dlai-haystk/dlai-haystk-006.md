@@ -48,6 +48,15 @@ class EntityValidator:
 
 为了让LLM能够根据上下文（首次尝试或反思后）接收不同的指令，我们需要创建一个动态的提示模板。我们将使用Jinja2模板的 `if-else` 语句来实现。
 
+
+![](img/932376b7d8a4ac5307efc7301474eb89_12.png)
+
+
+![](img/932376b7d8a4ac5307efc7301474eb89_14.png)
+
+
+![](img/932376b7d8a4ac5307efc7301474eb89_16.png)
+
 ```python
 from haystack.components.builders import PromptBuilder
 
@@ -56,9 +65,6 @@ template = """
 你之前从以下文本中提取了实体：
 文本：{{ text }}
 你提取的实体：{{ entities_to_validate }}
-
-![](img/932376b7d8a4ac5307efc7301474eb89_12.png)
-
 请反思并改进你的答案。考虑以下几点：
 - 确保提取了所有要求类型的实体（人物、地点、日期）。
 - 如果某个类别没有实体，请返回空列表。
@@ -74,15 +80,9 @@ template = """
 - 实体类型：人物、地点、日期。
 - 格式：以键值对形式呈现，例如 {"人物": [...], "地点": [...], "日期": [...]}。
 - 如果某个类别没有实体，请返回空列表。
-
-![](img/932376b7d8a4ac5307efc7301474eb89_14.png)
-
 提取的实体：
 {% endif %}
 """
-
-![](img/932376b7d8a4ac5307efc7301474eb89_16.png)
-
 prompt_builder = PromptBuilder(template=template)
 ```
 
@@ -96,6 +96,9 @@ prompt_builder = PromptBuilder(template=template)
 
 ![](img/932376b7d8a4ac5307efc7301474eb89_18.png)
 
+
+![](img/932376b7d8a4ac5307efc7301474eb89_20.png)
+
 ```python
 from haystack import Pipeline
 from haystack.components.generators import OpenAIGenerator
@@ -104,9 +107,6 @@ from haystack.components.generators import OpenAIGenerator
 prompt_builder = PromptBuilder(template=template)
 llm = OpenAIGenerator(model="gpt-3.5-turbo") # 使用OpenAI生成器
 validator = EntityValidator()
-
-![](img/932376b7d8a4ac5307efc7301474eb89_20.png)
-
 # 2. 创建管道并设置循环
 pipeline = Pipeline(max_loops_allowed=10) # 限制最大循环次数为10
 
@@ -146,6 +146,9 @@ pipeline.connect("validator.entities_to_validate", "prompt_builder.entities_to_v
 
 ![](img/932376b7d8a4ac5307efc7301474eb89_26.png)
 
+
+![](img/932376b7d8a4ac5307efc7301474eb89_28.png)
+
 ```python
 text_1 = “””
 伊斯坦布尔是土耳其最大的城市，横跨欧亚大陆。它历史上被称为拜占庭和君士坦丁堡。该市人口超过1500万。苏丹艾哈迈德清真寺和圣索菲亚大教堂是其主要地标。
@@ -158,9 +161,6 @@ result = pipeline.run({
         "entities_to_validate": None # 初始运行时为None
     }
 })
-
-![](img/932376b7d8a4ac5307efc7301474eb89_28.png)
-
 # 打印最终结果
 print(f"\033[92m最终实体：{result['validator']['entities']}\033[0m")
 ```
@@ -169,13 +169,13 @@ print(f"\033[92m最终实体：{result['validator']['entities']}\033[0m")
 
 **示例 2：会议记录**
 
+
+![](img/932376b7d8a4ac5307efc7301474eb89_32.png)
+
 ```python
 text_2 = “””
 项目启动会议于2023年10月26日举行。与会者包括张三（项目经理）、李四（首席开发员）和王五（UI设计师）。会议在北京的办公室进行。讨论了项目使用React和Python进行开发。
 “””
-
-![](img/932376b7d8a4ac5307efc7301474eb89_32.png)
-
 result = pipeline.run({
     "prompt_builder": {
         "text": text_2,

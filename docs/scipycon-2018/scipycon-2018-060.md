@@ -194,6 +194,9 @@ wide_df_again = long_df.pivot(index='name',
 ![](img/fc2814f20c7c152bcee4cf74b4a103f6_11.png)
 
 **代码示例**：
+
+![](img/fc2814f20c7c152bcee4cf74b4a103f6_13.png)
+
 ```python
 import dask.dataframe as dd
 
@@ -204,9 +207,6 @@ df_dask = dd.read_csv('gs://bucket/flights/*.csv')
 result = (df_dask[df_dask.cancelled == 0]
            .groupby('origin')['dep_delay']
            .mean())
-
-![](img/fc2814f20c7c152bcee4cf74b4a103f6_13.png)
-
 # 触发实际计算
 average_delays = result.compute()
 ```

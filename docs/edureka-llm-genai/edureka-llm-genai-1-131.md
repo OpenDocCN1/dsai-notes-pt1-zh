@@ -60,11 +60,11 @@
 4.  拟合并转换数据：`X = vectorizer.fit_transform(documents)`。这一步会学习词汇表并生成词频矩阵。
 5.  将矩阵转换为数组并打印，同时打印出对应的特征名称（即词汇表）。
 
-```python
-from sklearn.feature_extraction.text import CountVectorizer
 
 ![](img/22858c44e53fb9a3da29f1d398ba8689_3.png)
 
+```python
+from sklearn.feature_extraction.text import CountVectorizer
 # 第一部分 定义文档
 documents = [
     "this is the first document",

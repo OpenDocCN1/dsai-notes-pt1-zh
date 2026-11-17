@@ -67,6 +67,12 @@ user_proxy = UserProxyAgent(
 
 现在，我们来看一个简化的论文总结智能体组的实现示例。
 
+
+![](img/41608c5074b850396cbf0cbe986380b9_3.png)
+
+
+![](img/41608c5074b850396cbf0cbe986380b9_4.png)
+
 ```python
 import autogen
 
@@ -90,18 +96,12 @@ summarizer = autogen.AssistantAgent(
     system_message="你是一个总结专家，负责将研究助理提取的信息整理成结构清晰、语言简洁的摘要。",
     llm_config={"config_list": config_list},
 )
-
-![](img/41608c5074b850396cbf0cbe986380b9_3.png)
-
 user_proxy = autogen.UserProxyAgent(
     name="User_Proxy",
     human_input_mode="TERMINATE", # 在任务结束时请求人类输入
     max_consecutive_auto_reply=2,
     code_execution_config=False,
 )
-
-![](img/41608c5074b850396cbf0cbe986380b9_4.png)
-
 # 3. 注册智能体之间的对话
 groupchat = autogen.GroupChat(
     agents=[user_proxy, research_assistant, summarizer],

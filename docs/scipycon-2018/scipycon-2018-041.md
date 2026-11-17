@@ -112,16 +112,16 @@ if __name__ == "__main__":
 ```
 
 **使用 CIS Interface 改造后的代码：**
-```python
-# photosynthesis.py (使用 CIS Interface)
-import sys
-# 1. 导入 CIS Interface API
-from cis_interface import CisInput, CisOutput
 
 ![](img/e6a1e43a2961f7e25970f062060afd22_15.png)
 
 ![](img/e6a1e43a2961f7e25970f062060afd22_17.png)
 
+```python
+# photosynthesis.py (使用 CIS Interface)
+import sys
+# 1. 导入 CIS Interface API
+from cis_interface import CisInput, CisOutput
 def calculate_photosynthesis(temp, co2, light):
     return temp * co2 * light
 

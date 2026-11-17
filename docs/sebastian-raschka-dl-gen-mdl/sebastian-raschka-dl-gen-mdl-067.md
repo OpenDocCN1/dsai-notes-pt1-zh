@@ -147,20 +147,20 @@ python train_model.py settings.yaml ./results
 
 ![](img/8c65b67232366af54983a150245b345c_11.png)
 
-```python
-# 在Jupyter Notebook的一个单元格中
-import sys
-sys.path.append(‘.’) # 确保可以导入当前目录下的模块
 
 ![](img/8c65b67232366af54983a150245b345c_13.png)
 
-from helper import data_loader, set_deterministic, compute_accuracy
-import yaml
 
 ![](img/8c65b67232366af54983a150245b345c_14.png)
 
 ![](img/8c65b67232366af54983a150245b345c_16.png)
 
+```python
+# 在Jupyter Notebook的一个单元格中
+import sys
+sys.path.append(‘.’) # 确保可以导入当前目录下的模块
+from helper import data_loader, set_deterministic, compute_accuracy
+import yaml
 # 加载设置（替代从命令行读取）
 with open(‘settings.yaml’, ‘r’) as f:
     settings = yaml.safe_load(f)

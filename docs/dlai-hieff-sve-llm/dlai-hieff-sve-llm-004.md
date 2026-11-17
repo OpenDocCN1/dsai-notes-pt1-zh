@@ -56,14 +56,14 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 
 ![](img/cee304a1d6b13e25aa897c4cfbcdffea_9.png)
 
-```python
-QUEUE_SIZE = 32
-BATCH_SIZE = 8
 
 ![](img/cee304a1d6b13e25aa897c4cfbcdffea_11.png)
 
 ![](img/cee304a1d6b13e25aa897c4cfbcdffea_12.png)
 
+```python
+QUEUE_SIZE = 32
+BATCH_SIZE = 8
 request_queue = []
 for i in range(QUEUE_SIZE):
     prompt = "The quick brown fox jumped over the"
@@ -85,12 +85,12 @@ batches = [request_queue[i:i+BATCH_SIZE] for i in range(0, len(request_queue), B
 
 然后，我们运行同步批处理并记录总耗时。这个过程会比较慢，因为批次中即使只有一个请求需要生成100个词元，其他所有请求也必须等待它完成。
 
-```python
-import time
-from tqdm import tqdm
 
 ![](img/cee304a1d6b13e25aa897c4cfbcdffea_14.png)
 
+```python
+import time
+from tqdm import tqdm
 start_time = time.time()
 for batch in tqdm(batches):
     prompts = [item[0] for item in batch]

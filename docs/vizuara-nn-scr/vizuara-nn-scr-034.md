@@ -8,11 +8,11 @@
 
 1. **导入数据集**：首先，我们需要导入加利福尼亚住房数据集。
 
-```python
-import pandas as pd
 
 ![](img/4b5f3386de7f0d0ffda24867ea89a741_0.png)
 
+```python
+import pandas as pd
 data = pd.read_csv('california_housing.csv')
 ```
 

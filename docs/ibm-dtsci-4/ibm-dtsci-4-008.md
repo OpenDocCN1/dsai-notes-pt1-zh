@@ -109,13 +109,13 @@ for循环用于执行已知次数的重复任务，而**while循环**则用于�
 
 ![](img/2ce9083df959cdcda740730592b0f74a_9.png)
 
+
+![](img/2ce9083df959cdcda740730592b0f74a_10.png)
+
 ```python
 squares = ['orange', 'orange', 'purple', 'blue']
 new_squares = []
 i = 0
-
-![](img/2ce9083df959cdcda740730592b0f74a_10.png)
-
 while i < len(squares) and squares[i] == 'orange':
     new_squares.append(squares[i])
     i = i + 1

@@ -197,15 +197,15 @@ print(“Detected outlier indices:“, outliers)
 4.  创建并训练随机森林分类器。
 5.  在测试集上进行预测并计算准确率。
 
-```python
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score
-from sklearn.model_selection import train_test_split
 
 ![](img/1b2a72fa69ebbfce1d8a3163d8d8850a_4.png)
 
 ![](img/1b2a72fa69ebbfce1d8a3163d8d8850a_5.png)
 
+```python
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
 # 定义特征和标签
 X = embeddings_array
 Y = df[‘category‘].values  # 假设df是包含类别的DataFrame

@@ -121,11 +121,11 @@ with tf.gfile.FastGFile(image_filename, 'rb') as f:
 
 ![](img/6aaa25960e8f12f4d7ede28718c8df15_73.png)
 
-```python
-import xml.etree.ElementTree as ET
 
 ![](img/6aaa25960e8f12f4d7ede28718c8df15_75.png)
 
+```python
+import xml.etree.ElementTree as ET
 xml_filename = f'{dataset_dir}/Annotations/{image_name}.xml'
 tree = ET.parse(xml_filename)
 root = tree.getroot()

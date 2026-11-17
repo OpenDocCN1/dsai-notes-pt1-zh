@@ -58,16 +58,16 @@ print("维度:", np.ndim(x))
 
 ![](img/db1bfafa2f8831d2e1d408ad67930dfc_14.png)
 
-```python
-# 创建整数数组
-a = np.array([1, 2, 3])
-# 创建浮点数数组
-b = np.array([1.1, 2.5, 6.3])
 
 ![](img/db1bfafa2f8831d2e1d408ad67930dfc_16.png)
 
 ![](img/db1bfafa2f8831d2e1d408ad67930dfc_17.png)
 
+```python
+# 创建整数数组
+a = np.array([1, 2, 3])
+# 创建浮点数数组
+b = np.array([1.1, 2.5, 6.3])
 print("数组 a:", a)
 print("数组 b:", b)
 print("a 的数据类型:", a.dtype)
@@ -94,16 +94,16 @@ print("a 的维度 (使用属性):", a.ndim)
 
 以下是创建二维数组的方法：
 
-```python
-# 创建一个二维数组（矩阵）
-A = np.array([[1, 2, 3],
-              [4, 5, 6],
-              [7, 8, 9]])
 
 ![](img/db1bfafa2f8831d2e1d408ad67930dfc_23.png)
 
 ![](img/db1bfafa2f8831d2e1d408ad67930dfc_25.png)
 
+```python
+# 创建一个二维数组（矩阵）
+A = np.array([[1, 2, 3],
+              [4, 5, 6],
+              [7, 8, 9]])
 print("二维数组 A:")
 print(A)
 print("A 的维度:", A.ndim)
@@ -115,14 +115,14 @@ print("A 的维度:", A.ndim)
 
 那么，我们能否创建三维数组呢？答案是肯定的。三维数组可以理解为“列表的列表的列表”。
 
+
+![](img/db1bfafa2f8831d2e1d408ad67930dfc_29.png)
+
 ```python
 # 创建一个三维数组
 A_3d = np.array([[[1, 2], [3, 4]],
                  [[5, 6], [7, 8]],
                  [[9, 10], [11, 12]]])
-
-![](img/db1bfafa2f8831d2e1d408ad67930dfc_29.png)
-
 print("三维数组 A_3d:")
 print(A_3d)
 print("A_3d 的维度:", A_3d.ndim)

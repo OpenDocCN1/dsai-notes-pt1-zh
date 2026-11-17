@@ -66,17 +66,17 @@ print(‘检测结果形状：‘, dst.shape) # 例如 (512, 512)
 
 以下是筛选并标记角点的过程：
 
-```python
-# 将检测结果进行膨胀，使角点标记更明显（非必需步骤）
-dst = cv2.dilate(dst, None)
 
 ![](img/4ef91cda3fdf110b4fe2e83841019d1d_5.png)
 
-# 设定一个阈值（例如最大值的1%），筛选角点
-img[dst > 0.01 * dst.max()] = [0, 0, 255] # 将角点位置标记为红色（BGR格式）
 
 ![](img/4ef91cda3fdf110b4fe2e83841019d1d_7.png)
 
+```python
+# 将检测结果进行膨胀，使角点标记更明显（非必需步骤）
+dst = cv2.dilate(dst, None)
+# 设定一个阈值（例如最大值的1%），筛选角点
+img[dst > 0.01 * dst.max()] = [0, 0, 255] # 将角点位置标记为红色（BGR格式）
 # 显示结果
 cv2.imshow(‘Harris Corners‘, img)
 cv2.waitKey(0)
@@ -91,12 +91,12 @@ cv2.destroyAllWindows()
 
 如果觉得检测到的角点过多或过少，可以调整阈值比例。例如，将阈值提高到最大值的10%或50%：
 
-```python
-# 使用更严格的阈值（10%）
-img[dst > 0.1 * dst.max()] = [0, 0, 255]
 
 ![](img/4ef91cda3fdf110b4fe2e83841019d1d_11.png)
 
+```python
+# 使用更严格的阈值（10%）
+img[dst > 0.1 * dst.max()] = [0, 0, 255]
 # 使用非常严格的阈值（50%）
 img[dst > 0.5 * dst.max()] = [0, 0, 255]
 ```

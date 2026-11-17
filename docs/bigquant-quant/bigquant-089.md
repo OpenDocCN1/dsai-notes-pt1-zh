@@ -35,37 +35,37 @@ L2正则化项的方程（当 α=1 时）为：
 
 这个方程描述了一个圆形。我们可以通过Python代码来绘制它：
 
+
+![](img/d83d16e28e742187a9ea13001498e080_15.png)
+
+
+![](img/d83d16e28e742187a9ea13001498e080_17.png)
+
+![](img/d83d16e28e742187a9ea13001498e080_19.png)
+
+
+![](img/d83d16e28e742187a9ea13001498e080_21.png)
+
+![](img/d83d16e28e742187a9ea13001498e080_23.png)
+
+
+![](img/d83d16e28e742187a9ea13001498e080_25.png)
+
+![](img/d83d16e28e742187a9ea13001498e080_27.png)
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
 
 # 设置图形为正方形，确保圆不被拉伸
 plt.figure(figsize=(4, 4))
-
-![](img/d83d16e28e742187a9ea13001498e080_15.png)
-
 # 定义x的取值范围
 x = np.linspace(-1, 1, 100)
-
-![](img/d83d16e28e742187a9ea13001498e080_17.png)
-
-![](img/d83d16e28e742187a9ea13001498e080_19.png)
-
 # 根据方程 y = ±√(1 - x²) 计算y值
 def f(x):
     return (1 - x**2)**0.5
-
-![](img/d83d16e28e742187a9ea13001498e080_21.png)
-
-![](img/d83d16e28e742187a9ea13001498e080_23.png)
-
 y1 = f(x)  # 上半圆
 y2 = -f(x) # 下半圆
-
-![](img/d83d16e28e742187a9ea13001498e080_25.png)
-
-![](img/d83d16e28e742187a9ea13001498e080_27.png)
-
 # 绘制圆形
 plt.plot(x, y1, color=‘k’)
 plt.plot(x, y2, color=‘k’)

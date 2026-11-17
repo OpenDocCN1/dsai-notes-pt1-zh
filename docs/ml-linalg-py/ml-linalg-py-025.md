@@ -24,6 +24,9 @@ A = [[a, b, c],
 
 以下是使用NumPy创建和验证对称矩阵的代码示例：
 
+
+![](img/5dee9f19719bc70da3e193cf67eac29d_3.png)
+
 ```python
 import numpy as np
 
@@ -34,9 +37,6 @@ symmetric_matrix = np.array([[1, 7, 3],
 
 print("对称矩阵 A:")
 print(symmetric_matrix)
-
-![](img/5dee9f19719bc70da3e193cf67eac29d_3.png)
-
 # 计算其转置
 transpose_of_A = symmetric_matrix.T
 print("\nA 的转置 A^T:")

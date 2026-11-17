@@ -39,8 +39,6 @@
 
 ![](img/e814b3da0bf06c15c82fcf1959bf4df5_11.png)
 
-```python
-from fastai.vision.all import *
 
 ![](img/e814b3da0bf06c15c82fcf1959bf4df5_13.png)
 
@@ -50,15 +48,20 @@ from fastai.vision.all import *
 
 ![](img/e814b3da0bf06c15c82fcf1959bf4df5_19.png)
 
+
+![](img/e814b3da0bf06c15c82fcf1959bf4df5_21.png)
+
+
+![](img/e814b3da0bf06c15c82fcf1959bf4df5_23.png)
+
+```python
+from fastai.vision.all import *
 # 下载鸟类和森林图片
 path = Path('bird_or_not')
 bird_urls = search_images_ddg('bird photo', max_images=200)
 forest_urls = search_images_ddg('forest photo', max_images=200)
 download_images(path/'birds', urls=bird_urls)
 download_images(path/'forests', urls=forest_urls)
-
-![](img/e814b3da0bf06c15c82fcf1959bf4df5_21.png)
-
 # 创建DataBlock
 dls = DataBlock(
     blocks=(ImageBlock, CategoryBlock),
@@ -67,9 +70,6 @@ dls = DataBlock(
     get_y=parent_label,
     item_tfms=Resize(192)
 ).dataloaders(path)
-
-![](img/e814b3da0bf06c15c82fcf1959bf4df5_23.png)
-
 # 训练模型
 learn = vision_learner(dls, resnet18, metrics=error_rate)
 learn.fine_tune(3)

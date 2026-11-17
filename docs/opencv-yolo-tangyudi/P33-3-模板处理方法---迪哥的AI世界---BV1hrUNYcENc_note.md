@@ -102,11 +102,11 @@ def sort_contours(contours):
 4.  **调整大小**：将抠出的图像调整到一个统一、合适的大小。
 5.  **存入字典**：将数字索引 `i` 作为键，调整大小后的图像作为值，存入字典。
 
-```python
-digits = {}  # 初始化模板字典
 
 ![](img/0cd5d45eeeba1d40859642f0ad9218c1_41.png)
 
+```python
+digits = {}  # 初始化模板字典
 for (i, c) in enumerate(sorted_contours):
     (x, y, w, h) = cv2.boundingRect(c)  # 获取外接矩形
     roi = ref[y:y + h, x:x + w]  # 抠出数字区域

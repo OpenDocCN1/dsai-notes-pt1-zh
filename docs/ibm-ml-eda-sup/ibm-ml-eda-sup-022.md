@@ -252,11 +252,6 @@ custom_agg = data.groupby('species').agg([np.mean, np.median, np.prod])
 
 ![](img/32459848e4cc7a7ac8fcd4405b0d10a8_127.png)
 
-```python
-# 首先，为所有数值列（排除‘species’）创建默认字典：均值和**中位数**
-agg_dict = {col: ['mean', 'median'] for col in data.columns if col != 'species'}
-# 然后，修改特定列的聚合方式，例如将‘petal_length’改为只求‘max’
-agg_dict['petal_length'] = 'max'
 
 ![](img/32459848e4cc7a7ac8fcd4405b0d10a8_129.png)
 
@@ -266,6 +261,11 @@ agg_dict['petal_length'] = 'max'
 
 ![](img/32459848e4cc7a7ac8fcd4405b0d10a8_133.png)
 
+```python
+# 首先，为所有数值列（排除‘species’）创建默认字典：均值和**中位数**
+agg_dict = {col: ['mean', 'median'] for col in data.columns if col != 'species'}
+# 然后，修改特定列的聚合方式，例如将‘petal_length’改为只求‘max’
+agg_dict['petal_length'] = 'max'
 # 应用自定义的聚合字典
 final_custom_table = data.groupby('species').agg(agg_dict)
 ```

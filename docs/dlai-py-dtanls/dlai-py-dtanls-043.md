@@ -27,11 +27,11 @@
 
 在Python的Pandas库中，我们可以通过`pivot_table`方法快速实现类似的功能，其逻辑与电子表格中的数据透视表非常相似。
 
-```python
-import pandas as pd
 
 ![](img/15fd1847f77fb905ee0c4d119bbf871c_4.png)
 
+```python
+import pandas as pd
 # 假设df是你的DataFrame
 pivot_result = df.pivot_table(
     index='number_of_children',   # 对应行

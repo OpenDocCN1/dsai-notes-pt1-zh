@@ -20,6 +20,8 @@
 
 以下是实现此功能的代码：
 
+    image_url = "https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/04-pizza-dad.jpeg"
+    
 ```python
 import requests
 
@@ -29,8 +31,6 @@ custom_image_path = data_path / "04-pizza-dad.jpeg"
 # 如果图像不存在，则下载
 if not custom_image_path.is_file():
     # 原始图像 URL
-    image_url = "https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/04-pizza-dad.jpeg"
-    
     # 打开文件以二进制写入模式
     with open(custom_image_path, "wb") as f:
         # 从 URL 下载图像内容

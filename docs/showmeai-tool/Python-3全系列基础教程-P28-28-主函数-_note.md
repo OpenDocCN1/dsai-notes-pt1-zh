@@ -35,12 +35,12 @@ print(f"文件名：{__file__}")
 
 首先，我们创建一个简单的测试函数和一个主函数。
 
-```python
-def test_function():
-    print("这是一个测试函数。")
 
 ![](img/ca405b00e88392924cbea41dd591ee0c_8.png)
 
+```python
+def test_function():
+    print("这是一个测试函数。")
 def main():
     print("这是主函数。")
     test_function()

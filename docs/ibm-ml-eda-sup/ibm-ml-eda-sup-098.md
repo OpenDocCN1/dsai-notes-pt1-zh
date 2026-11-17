@@ -22,15 +22,15 @@
 
 以下是导入库和设置目录的代码：
 
+
+![](img/44b9d00c4609e8d52e8498aeed0bcf81_10.png)
+
 ```python
 import pandas as pd
 import numpy as np
 import os
 from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
-
-![](img/44b9d00c4609e8d52e8498aeed0bcf81_10.png)
-
 # 更改工作目录到 'data' 文件夹
 os.chdir('./data')
 ```

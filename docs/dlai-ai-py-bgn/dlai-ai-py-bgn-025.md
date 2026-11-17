@@ -30,11 +30,11 @@
 
 以下是加载数据的代码：
 
-```python
-import csv
 
 ![](img/124a331f8fefe0be80ebf55d56a98d80_5.png)
 
+```python
+import csv
 itinerary = []
 with open('itinerary.csv', mode='r') as file:
     csv_reader = csv.DictReader(file)
@@ -88,6 +88,9 @@ display_table(filtered_data)
 
 我们将从行程中检索第一个目的地（例如，美国纽约市），然后使用AI语言模型为其生成详细的每日活动安排。
 
+
+![](img/124a331f8fefe0be80ebf55d56a98d80_14.png)
+
 ```python
 # 获取第一个目的地
 trip_stop = itinerary[0]
@@ -98,9 +101,6 @@ departure = trip_stop[‘departure’]
 
 # 构建提示词
 prompt = f”I’ll visit {city}, {country} from {arrival} to {departure}. Please create a detailed daily itinerary.”
-
-![](img/124a331f8fefe0be80ebf55d56a98d80_14.png)
-
 # 调用AI模型并获取响应
 response = get_completion(prompt)
 print(response)

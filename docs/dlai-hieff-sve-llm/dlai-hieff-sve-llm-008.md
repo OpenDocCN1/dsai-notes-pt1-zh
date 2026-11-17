@@ -68,11 +68,11 @@ print(f"总耗时: {end_time - start_time:.2f} 秒")
 
 我们将调用`generate_stream`端点，逐个令牌地接收响应，并记录每个令牌的生成延迟。
 
-```python
-from lorax.types import Response
 
 ![](img/4ebc1b232250840d5203a0299863d802_8.png)
 
+```python
+from lorax.types import Response
 durations = []
 prompt = "What is deep learning?"
 max_new_tokens = 32
@@ -116,13 +116,13 @@ print(f"解码吞吐量: {throughput_tokens_per_sec:.1f} 令牌/秒")
 
 首先，定义一个工具函数，用不同颜色打印文本以区分不同请求的输出。
 
+
+![](img/4ebc1b232250840d5203a0299863d802_19.png)
+
 ```python
 def format_text(text, color_code):
     """用指定颜色格式化文本。"""
     return f"\033[{color_code}m{text}\033[0m"
-
-![](img/4ebc1b232250840d5203a0299863d802_19.png)
-
 # 颜色代码：31=红，32=绿，34=蓝
 colors = [31, 32, 34]
 ```
@@ -130,6 +130,9 @@ colors = [31, 32, 34]
 ![](img/4ebc1b232250840d5203a0299863d802_21.png)
 
 接下来，我们使用异步客户端并发地发送三个请求。
+
+
+![](img/4ebc1b232250840d5203a0299863d802_23.png)
 
 ```python
 async def run_async_request(prompt, max_new_tokens, color_idx):
@@ -147,9 +150,6 @@ async def run_async_request(prompt, max_new_tokens, color_idx):
     total_duration = end_time - start_time
     # 注意：在异步流中精确计算首令牌延迟和吞吐量更复杂，此处简化
     print(f"\n[颜色 {color_code}] 请求完成，总耗时: {total_duration:.2f}秒")
-
-![](img/4ebc1b232250840d5203a0299863d802_23.png)
-
 async def main():
     prompts = [
         ("What is deep learning?", 100),  # 长请求
@@ -210,12 +210,15 @@ run_with_adapter(prompt, adapter_id)
 ```
 
 **2. 新闻摘要任务**
-```python
-prompt_template = """
-You are given a news article below. Please summarize it.
 
 ![](img/4ebc1b232250840d5203a0299863d802_29.png)
 
+
+![](img/4ebc1b232250840d5203a0299863d802_31.png)
+
+```python
+prompt_template = """
+You are given a news article below. Please summarize it.
 Article: {article}
 
 Produce the summary.
@@ -223,15 +226,15 @@ Produce the summary.
 article = "Former Vice President Walter Mondale was released..."
 prompt = prompt_template.format(article=article)
 adapter_id = "predibase/cnn" # 在CNN数据集上微调的摘要适配器
-
-![](img/4ebc1b232250840d5203a0299863d802_31.png)
-
 run_with_adapter(prompt, adapter_id)
 ```
 
 ![](img/4ebc1b232250840d5203a0299863d802_32.png)
 
 **3. 命名实体识别任务**
+
+![](img/4ebc1b232250840d5203a0299863d802_34.png)
+
 ```python
 prompt_template = """
 Extract named entities from the following text. Output a JSON with 'person', 'organization', 'location', 'misc' lists.
@@ -241,9 +244,6 @@ Text: {text}
 text = "Only France and Britain backed Fischer's proposal."
 prompt = prompt_template.format(text=text)
 adapter_id = "predibase/conllpp" # 在CoNLL-2003数据集上微调的NER适配器
-
-![](img/4ebc1b232250840d5203a0299863d802_34.png)
-
 run_with_adapter(prompt, adapter_id)
 ```
 
@@ -267,6 +267,9 @@ run_with_adapter(prompt, adapter_id)
 
 更强大的是，Lorax可以同时对多个不同的适配器请求进行连续批处理。我们将并发运行上述三个任务。
 
+
+![](img/4ebc1b232250840d5203a0299863d802_46.png)
+
 ```python
 async def run_async_with_adapter(prompt, adapter_id, color_idx):
     """异步运行带适配器的生成请求。"""
@@ -275,9 +278,6 @@ async def run_async_with_adapter(prompt, adapter_id, color_idx):
         if response.token.text not in ['<s>', '</s>']:
             colored_text = format_text(response.token.text, color_code)
             print(colored_text, end='', flush=True)
-
-![](img/4ebc1b232250840d5203a0299863d802_46.png)
-
 async def main_multi_adapter():
     # 定义三个任务：句子补全、摘要、NER
     tasks_config = [
@@ -311,9 +311,6 @@ asyncio.run(main_multi_adapter())
 
 首先，使用Pydantic定义期望的输出模式。
 
-```python
-from pydantic import BaseModel
-from typing import List
 
 ![](img/4ebc1b232250840d5203a0299863d802_52.png)
 
@@ -321,6 +318,9 @@ from typing import List
 
 ![](img/4ebc1b232250840d5203a0299863d802_55.png)
 
+```python
+from pydantic import BaseModel
+from typing import List
 class NEROutput(BaseModel):
     person: List[str]
     organization: List[str]
@@ -336,21 +336,21 @@ print(json_schema)
 
 ![](img/4ebc1b232250840d5203a0299863d802_57.png)
 
-```python
-text = "Only France and Britain backed Fischer's proposal."
-prompt = f"Extract named entities from: {text}"
 
 ![](img/4ebc1b232250840d5203a0299863d802_59.png)
 
+
+![](img/4ebc1b232250840d5203a0299863d802_61.png)
+
+```python
+text = "Only France and Britain backed Fischer's proposal."
+prompt = f"Extract named entities from: {text}"
 # 使用基础模型 + 结构化生成（无微调）
 response = client.generate(
     prompt,
     max_new_tokens=128,
     response_format={"type": "json_object", "schema": json_schema}
 )
-
-![](img/4ebc1b232250840d5203a0299863d802_61.png)
-
 try:
     output_dict = json.loads(response.generated_text)
     print("结构化输出:", output_dict)
@@ -364,6 +364,11 @@ except json.JSONDecodeError:
 
 为了同时获得正确的格式和内容，我们需要**结合微调**。
 
+
+![](img/4ebc1b232250840d5203a0299863d802_65.png)
+
+![](img/4ebc1b232250840d5203a0299863d802_66.png)
+
 ```python
 # 使用微调后的NER适配器 + 结构化生成
 response = client.generate(
@@ -372,11 +377,6 @@ response = client.generate(
     adapter_id="predibase/conllpp", # 使用微调过的适配器
     response_format={"type": "json_object", "schema": json_schema}
 )
-
-![](img/4ebc1b232250840d5203a0299863d802_65.png)
-
-![](img/4ebc1b232250840d5203a0299863d802_66.png)
-
 try:
     output_dict = json.loads(response.generated_text)
     print("结合微调的结构化输出:", output_dict)

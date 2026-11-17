@@ -190,14 +190,14 @@ first_cell = rows[0].td
 
 ![](img/0fc8b290f2b7446a518df44881497f79_45.png)
 
-```python
-import requests
-from bs4 import BeautifulSoup
 
 ![](img/0fc8b290f2b7446a518df44881497f79_46.png)
 
 ![](img/0fc8b290f2b7446a518df44881497f79_47.png)
 
+```python
+import requests
+from bs4 import BeautifulSoup
 url = ‘https://example.com‘
 response = requests.get(url)
 page = response.text

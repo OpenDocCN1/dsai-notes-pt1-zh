@@ -69,20 +69,20 @@ scores = np.linspace(start=1, stop=300, num=300)
 ![](img/2b12eb5ee2b3e9dd27470ac4645da31d_26.png)
 
 以下是打分的核心代码：
-```python
-import numpy as np
-import pandas as pd
 
 ![](img/2b12eb5ee2b3e9dd27470ac4645da31d_28.png)
 
+
+![](img/2b12eb5ee2b3e9dd27470ac4645da31d_30.png)
+
+```python
+import numpy as np
+import pandas as pd
 # 为“越高越好”因子打分
 for factor in up_df.columns:
     up_df.sort_values(by=factor, ascending=False, inplace=True)
     # 生成分数并赋值：第一名300分，最后一名1分
     up_df[factor] = np.linspace(300, 1, len(up_df))
-
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_30.png)
-
 # 为“越低越好”因子打分
 for factor in down_df.columns:
     down_df.sort_values(by=factor, ascending=True, inplace=True) # 升序排列，最小值排第一

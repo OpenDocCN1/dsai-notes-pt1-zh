@@ -42,6 +42,9 @@
 然后，你可以将其与另一个显示你所调查学生的类似条形图进行比较。这将帮助你轻松识别样本中存在的任何不一致之处。
 
 **代码示例（概念性描述）：**
+
+![](img/ac9d906eec4a2e545bf610dbd21b02d5_2.png)
+
 ```python
 # 假设我们有以下数据
 import matplotlib.pyplot as plt
@@ -49,9 +52,6 @@ import matplotlib.pyplot as plt
 # 总体数据：班级所有学生的性别分布
 total_genders = [‘Male‘， ‘Female‘， ‘Non-binary‘]
 total_counts = [25， 20， 5]
-
-![](img/ac9d906eec4a2e545bf610dbd21b02d5_2.png)
-
 # 样本数据：调查中学生的性别分布
 sample_genders = [‘Female‘]
 sample_counts = [10]

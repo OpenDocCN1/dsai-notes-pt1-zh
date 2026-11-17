@@ -67,13 +67,13 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 ![](img/04be87adea703493c4bb301f9c54bbfa_18.png)
 
+
+![](img/04be87adea703493c4bb301f9c54bbfa_20.png)
+
 ```python
 text = "Hi, how are you?"
 encoded_text = tokenizer(text)
 print("编码后的ID:", encoded_text['input_ids'])
-
-![](img/04be87adea703493c4bb301f9c54bbfa_20.png)
-
 decoded_text = tokenizer.decode(encoded_text['input_ids'])
 print("解码后的文本:", decoded_text)
 ```
@@ -108,13 +108,13 @@ print("填充后的批次编码:", batch_encodings['input_ids'])
 
 ![](img/04be87adea703493c4bb301f9c54bbfa_36.png)
 
+
+![](img/04be87adea703493c4bb301f9c54bbfa_38.png)
+
 ```python
 # 从右侧截断到最大长度3
 truncated_encoding = tokenizer(texts, truncation=True, max_length=3)
 print("截断后的编码:", truncated_encoding['input_ids'])
-
-![](img/04be87adea703493c4bb301f9c54bbfa_38.png)
-
 # 可以指定从左侧截断
 truncated_left_encoding = tokenizer(texts, truncation=True, max_length=3, truncation_side='left')
 ```
@@ -141,26 +141,32 @@ full_encoding = tokenizer(texts, padding=True, truncation=True, max_length=10)
 
 ![](img/04be87adea703493c4bb301f9c54bbfa_49.png)
 
-```python
-# 加载数据集 (示例)
-from datasets import load_dataset
-dataset = load_dataset('your-dataset-name')
 
 ![](img/04be87adea703493c4bb301f9c54bbfa_51.png)
 
-# 定义一个格式化函数，将问答对拼接成提示
-def format_instruction(example):
-    example['text'] = f"### Question:\n{example['question']}\n\n### Answer:\n{example['answer']}"
-    return example
 
 ![](img/04be87adea703493c4bb301f9c54bbfa_53.png)
 
-dataset = dataset.map(format_instruction)
 
 ![](img/04be87adea703493c4bb301f9c54bbfa_55.png)
 
 ![](img/04be87adea703493c4bb301f9c54bbfa_57.png)
 
+
+![](img/04be87adea703493c4bb301f9c54bbfa_59.png)
+
+
+![](img/04be87adea703493c4bb301f9c54bbfa_61.png)
+
+```python
+# 加载数据集 (示例)
+from datasets import load_dataset
+dataset = load_dataset('your-dataset-name')
+# 定义一个格式化函数，将问答对拼接成提示
+def format_instruction(example):
+    example['text'] = f"### Question:\n{example['question']}\n\n### Answer:\n{example['answer']}"
+    return example
+dataset = dataset.map(format_instruction)
 # 定义一个分词函数
 def tokenize_function(examples):
     # 确定批次中的最大长度或模型最大长度
@@ -178,16 +184,10 @@ def tokenize_function(examples):
 
 # 对整个数据集应用分词函数
 tokenized_dataset = dataset.map(tokenize_function, batched=True, remove_columns=dataset["train"].column_names)
-
-![](img/04be87adea703493c4bb301f9c54bbfa_59.png)
-
 # 分割数据集
 split_dataset = tokenized_dataset["train"].train_test_split(test_size=0.1, shuffle=True, seed=42)
 train_dataset = split_dataset["train"]
 eval_dataset = split_dataset["test"]
-
-![](img/04be87adea703493c4bb301f9c54bbfa_61.png)
-
 print(f"训练集大小: {len(train_dataset)}")
 print(f"评估集大小: {len(eval_dataset)}")
 ```

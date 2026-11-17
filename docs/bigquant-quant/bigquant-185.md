@@ -73,13 +73,13 @@ model.fit(X_train, y_train)
 
 现在模型已经训练好，本节中我们来看看它的预测准确度如何。我们将使用测试集进行预测，并计算模型的准确率得分。
 
+
+![](img/65c768ea420a3ba19e6ece194a54dbe3_10.png)
+
 ```python
 # 在测试集上评估模型
 score = model.score(X_test, y_test)
 print(“测试数据得分：”, score)
-
-![](img/65c768ea420a3ba19e6ece194a54dbe3_10.png)
-
 # 进行预测
 y_pred = model.predict(X_test)
 print(“算法预测结果：”, y_pred)

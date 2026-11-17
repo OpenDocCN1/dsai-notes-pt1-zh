@@ -57,8 +57,6 @@ Gradio 的使命是赋予 Python 开发者“超能力”，让他们能够轻�
 ![](img/914f1ea15ae1afa17c468c0b5de2b22c_14.png)
 
 **示例代码**：一个简单的 Gradio 应用结构
-```python
-import gradio as gr
 
 ![](img/914f1ea15ae1afa17c468c0b5de2b22c_16.png)
 
@@ -72,6 +70,8 @@ import gradio as gr
 
 ![](img/914f1ea15ae1afa17c468c0b5de2b22c_22.png)
 
+```python
+import gradio as gr
 def generate_image(prompt, steps):
     # 你的模型推理代码
     return image
@@ -262,19 +262,19 @@ image = client.predict(prompt=“A group of penguins on an ice floe...”, ...)
 对于更高级或需要结构化输出的用例，你可以在本地运行模型，并通过 Gradio 暴露为 API。
 
 **示例：使用 `llama-cpp-python` 和 `outlines` 库构建一个笑话评判器**
-```python
-import outlines
-from llama_cpp import Llama
 
 ![](img/914f1ea15ae1afa17c468c0b5de2b22c_61.png)
 
 ![](img/914f1ea15ae1afa17c468c0b5de2b22c_62.png)
 
-model = Llama(model_path=“./mixtral-8x7b-instruct.gguf”)
-generator = outlines.generate.choice(model, [“funny”, “not funny”])
 
 ![](img/914f1ea15ae1afa17c468c0b5de2b22c_64.png)
 
+```python
+import outlines
+from llama_cpp import Llama
+model = Llama(model_path=“./mixtral-8x7b-instruct.gguf”)
+generator = outlines.generate.choice(model, [“funny”, “not funny”])
 def judge_joke(joke_text):
     system_msg = “Analyze if this joke is funny.”
     full_prompt = f“{system_msg}\n\nJoke: {joke_text}”

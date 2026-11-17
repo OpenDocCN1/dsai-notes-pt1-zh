@@ -44,34 +44,34 @@
 
 ![](img/426c0a1024b6b593483549862e3a6ab6_21.png)
 
-```python
-import pandas as pd
 
 ![](img/426c0a1024b6b593483549862e3a6ab6_23.png)
 
 ![](img/426c0a1024b6b593483549862e3a6ab6_25.png)
 
-# 假设‘close’是包含每日收盘价的Pandas Series
-close_prices = df['close']
 
 ![](img/426c0a1024b6b593483549862e3a6ab6_27.png)
 
 ![](img/426c0a1024b6b593483549862e3a6ab6_29.png)
 
-# 1. 计算累积最大值
-cumulative_max = close_prices.cummax()
 
 ![](img/426c0a1024b6b593483549862e3a6ab6_31.png)
 
 ![](img/426c0a1024b6b593483549862e3a6ab6_33.png)
 
-# 2. & 3. 计算每日回撤比率
-daily_drawdown = (cumulative_max - close_prices) / cumulative_max
 
 ![](img/426c0a1024b6b593483549862e3a6ab6_35.png)
 
 ![](img/426c0a1024b6b593483549862e3a6ab6_37.png)
 
+```python
+import pandas as pd
+# 假设‘close’是包含每日收盘价的Pandas Series
+close_prices = df['close']
+# 1. 计算累积最大值
+cumulative_max = close_prices.cummax()
+# 2. & 3. 计算每日回撤比率
+daily_drawdown = (cumulative_max - close_prices) / cumulative_max
 # 4. 找出最大回撤
 max_drawdown = daily_drawdown.max()
 print(f"最大回撤为：{max_drawdown:.2%}")

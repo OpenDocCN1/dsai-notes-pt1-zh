@@ -12,6 +12,12 @@
 
 首先，我们需要导入必要的库并加载LFW人脸数据集。这个数据集包含了大量的人脸图像，我们将使用它来训练一个分类模型。
 
+
+![](img/ee33ac7aea342325c94d5cdf4488c967_6.png)
+
+
+![](img/ee33ac7aea342325c94d5cdf4488c967_8.png)
+
 ```python
 # 导入必要的库
 from sklearn.datasets import fetch_lfw_people
@@ -21,17 +27,11 @@ from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split, GridSearchCV
 import numpy as np
 import time
-
-![](img/ee33ac7aea342325c94d5cdf4488c967_6.png)
-
 # 加载LFW数据集
 lfw_people = fetch_lfw_people(min_faces_per_person=70, resize=0.4)
 X = lfw_people.data
 y = lfw_people.target
 target_names = lfw_people.target_names
-
-![](img/ee33ac7aea342325c94d5cdf4488c967_8.png)
-
 # 查看数据形状
 print(f"数据集形状: {X.shape}")
 print(f"目标类别数: {len(target_names)}")
@@ -106,21 +106,21 @@ X_train, X_test, y_train, y_test = train_test_split(X_pca, y, test_size=0.25, ra
 
 接下来，我们初始化一个SVM分类器并进行训练。这里我们暂时使用默认参数。
 
-```python
-# 初始化SVM分类器（使用默认参数C=1.0）
-svc = SVC()
 
 ![](img/ee33ac7aea342325c94d5cdf4488c967_34.png)
 
+
+![](img/ee33ac7aea342325c94d5cdf4488c967_36.png)
+
+```python
+# 初始化SVM分类器（使用默认参数C=1.0）
+svc = SVC()
 # 记录训练时间并训练模型
 %time svc.fit(X_train, y_train)
 
 # 评估模型在训练集和测试集上的表现
 train_score = svc.score(X_train, y_train)
 test_score = svc.score(X_test, y_test)
-
-![](img/ee33ac7aea342325c94d5cdf4488c967_36.png)
-
 print(f"训练数据得分: {train_score:.3f}")
 print(f"测试数据得分: {test_score:.3f}")
 ```
@@ -164,6 +164,16 @@ for C_value in [0.1, 1, 10, 100]:
 *   **`kernel`**: 核函数类型，如线性（`linear`）、多项式（`poly`）、径向基（`rbf`）。
 *   **`tol`**: 优化算法的停止容差。
 
+
+![](img/ee33ac7aea342325c94d5cdf4488c967_44.png)
+
+![](img/ee33ac7aea342325c94d5cdf4488c967_46.png)
+
+
+![](img/ee33ac7aea342325c94d5cdf4488c967_48.png)
+
+![](img/ee33ac7aea342325c94d5cdf4488c967_50.png)
+
 ```python
 # 定义参数网格
 param_grid = {
@@ -171,21 +181,11 @@ param_grid = {
     'kernel': ['rbf', 'poly', 'linear'],
     'tol': [1e-3, 1e-4]
 }
-
-![](img/ee33ac7aea342325c94d5cdf4488c967_44.png)
-
-![](img/ee33ac7aea342325c94d5cdf4488c967_46.png)
-
 # 初始化网格搜索对象
 grid_search = GridSearchCV(SVC(), param_grid, cv=5, n_jobs=-1)
 
 # 执行网格搜索（此步骤可能耗时较长）
 %time grid_search.fit(X_pca, y)
-
-![](img/ee33ac7aea342325c94d5cdf4488c967_48.png)
-
-![](img/ee33ac7aea342325c94d5cdf4488c967_50.png)
-
 # 输出最佳参数和最佳得分
 print("最佳参数组合:", grid_search.best_params_)
 print("交叉验证最佳得分:", grid_search.best_score_)

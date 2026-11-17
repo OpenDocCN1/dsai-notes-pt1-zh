@@ -145,13 +145,13 @@ def calculate_time_numpy():
 ![](img/5b411cec3b5349ef62c69524f2488cff_45.png)
 
 以下是执行对比的示例代码：
+
+![](img/5b411cec3b5349ef62c69524f2488cff_47.png)
+
 ```python
 # 单次调用对比
 print("NumPy 时间:", calculate_time_numpy())
 print("Python 列表时间:", calculate_time_python())
-
-![](img/5b411cec3b5349ef62c69524f2488cff_47.png)
-
 print("\n--- 循环测试10次 ---")
 # 循环测试，取平均值更可靠
 for i in range(10):

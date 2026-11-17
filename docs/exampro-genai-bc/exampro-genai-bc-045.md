@@ -62,12 +62,12 @@ LLM_ENDPOINT_PORT=9000 docker-compose up
 
 ![](img/dce2f3656509ffb41b42e3850720452e_32.png)
 
-```bash
-# 拉取模型（如果尚未下载）
-curl -X POST http://localhost:9000/api/tags -H "Content-Type: application/json" -d '{"name": "llama3:21b"}'
 
 ![](img/dce2f3656509ffb41b42e3850720452e_34.png)
 
+```bash
+# 拉取模型（如果尚未下载）
+curl -X POST http://localhost:9000/api/tags -H "Content-Type: application/json" -d '{"name": "llama3:21b"}'
 # 测试模型生成能力（使用非流式调用）
 curl -X POST http://localhost:9000/api/chat/completions \
   -H "Content-Type: application/json" \

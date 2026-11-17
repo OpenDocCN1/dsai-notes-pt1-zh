@@ -35,21 +35,21 @@ result = chain.invoke({“context”: retrieved_docs, “question”: user_quest
 我们将延续之前章节的代码，首先构建一个检索器，然后专注于生成部分。
 
 以下是构建检索器的步骤（快速回顾）：
+
+![](img/1a7346eb214dc21f852698eaf4ae46eb_2.png)
+
+
+![](img/1a7346eb214dc21f852698eaf4ae46eb_4.png)
+
 ```python
 # 加载文档
 from langchain.document_loaders import TextLoader
 loader = TextLoader(“state_of_the_union.txt”)
 documents = loader.load()
-
-![](img/1a7346eb214dc21f852698eaf4ae46eb_2.png)
-
 # 分割文档
 from langchain.text_splitter import CharacterTextSplitter
 text_splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 docs = text_splitter.split_documents(documents)
-
-![](img/1a7346eb214dc21f852698eaf4ae46eb_4.png)
-
 # 嵌入并存储到向量索引
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
@@ -89,14 +89,14 @@ chain = prompt | llm
 
 现在，我们可以手动传入检索到的文档和问题来调用这个链：
 
+
+![](img/1a7346eb214dc21f852698eaf4ae46eb_6.png)
+
 ```python
 # 假设我们有一个问题和检索到的文档
 question = “总统在国情咨文中主要谈了哪些内容？”
 retrieved_docs = retriever.get_relevant_documents(question) # 检索相关文档
 context = “\n\n”.join([doc.page_content for doc in retrieved_docs]) # 合并文档内容
-
-![](img/1a7346eb214dc21f852698eaf4ae46eb_6.png)
-
 # 调用链
 response = chain.invoke({“context”: context, “question”: question})
 print(response.content)

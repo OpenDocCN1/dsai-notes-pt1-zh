@@ -106,15 +106,20 @@ def keyword_search(query,
 
 ![](img/4eeb55102e82188c1843c2f5102db022_14.png)
 
-```python
-# 执行搜索
-query = "what is the most viewed televised event"
-search_results = keyword_search(query)
 
 ![](img/4eeb55102e82188c1843c2f5102db022_16.png)
 
 ![](img/4eeb55102e82188c1843c2f5102db022_17.png)
 
+
+![](img/4eeb55102e82188c1843c2f5102db022_18.png)
+
+![](img/4eeb55102e82188c1843c2f5102db022_20.png)
+
+```python
+# 执行搜索
+query = "what is the most viewed televised event"
+search_results = keyword_search(query)
 # 定义一个函数来美观地打印结果
 def print_results(results):
     for i, item in enumerate(results['data']['Get']['Articles']):
@@ -122,11 +127,6 @@ def print_results(results):
         print(f"标题: {item['title']}")
         print(f"URL: {item['url']}")
         print(f"内容摘要: {item['text'][:200]}...") # 只打印前200个字符
-
-![](img/4eeb55102e82188c1843c2f5102db022_18.png)
-
-![](img/4eeb55102e82188c1843c2f5102db022_20.png)
-
 # 打印结果
 print_results(search_results)
 ```

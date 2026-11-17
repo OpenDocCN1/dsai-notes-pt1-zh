@@ -147,16 +147,16 @@ class MulTransform:
 
 ![](img/6d807e3e238aab5bca2f58cef0a9eb81_42.png)
 
-```python
-composed = torchvision.transforms.Compose([
-    ToTensor(),
-    MulTransform(factor=2)
-])
 
 ![](img/6d807e3e238aab5bca2f58cef0a9eb81_44.png)
 
 ![](img/6d807e3e238aab5bca2f58cef0a9eb81_46.png)
 
+```python
+composed = torchvision.transforms.Compose([
+    ToTensor(),
+    MulTransform(factor=2)
+])
 dataset = WineDataset(transform=composed)
 first_data = dataset[0]
 features, labels = first_data

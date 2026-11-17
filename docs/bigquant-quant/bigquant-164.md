@@ -47,13 +47,13 @@
 
 ![](img/c4bb2c8976a51a295bd71a1e1fcebe15_8.png)
 
-```python
-import numpy as np
 
 ![](img/c4bb2c8976a51a295bd71a1e1fcebe15_10.png)
 
 ![](img/c4bb2c8976a51a295bd71a1e1fcebe15_12.png)
 
+```python
+import numpy as np
 # 创建一个3行5列的随机整数矩阵
 X = np.random.randint(0, 10, size=(3, 5))
 print("原始矩阵 X:")
@@ -64,11 +64,11 @@ print(X)
 
 接下来，我们使用SciPy库中的`linalg.svd`函数进行奇异值分解。
 
-```python
-from scipy import linalg
 
 ![](img/c4bb2c8976a51a295bd71a1e1fcebe15_16.png)
 
+```python
+from scipy import linalg
 # 进行奇异值分解，full_matrices=False会返回紧凑形式的分解
 U, Sigma, Vt = linalg.svd(X, full_matrices=False)
 
@@ -86,19 +86,19 @@ print(Vt)
 
 为了验证分解的有效性，我们可以用分解出的三个矩阵来近似重构原始矩阵 **X**。由于 **Sigma** 是向量，我们需要先将其转换为对角矩阵。
 
-```python
-# 将奇异值向量Sigma转换为对角矩阵
-Sigma_matrix = np.eye(3) * Sigma  # 创建一个3x3的对角矩阵，对角线元素为Sigma
 
 ![](img/c4bb2c8976a51a295bd71a1e1fcebe15_18.png)
 
-# 使用 U, Sigma_matrix, Vt 重构矩阵
-X_reconstructed = U.dot(Sigma_matrix).dot(Vt)
 
 ![](img/c4bb2c8976a51a295bd71a1e1fcebe15_20.png)
 
 ![](img/c4bb2c8976a51a295bd71a1e1fcebe15_22.png)
 
+```python
+# 将奇异值向量Sigma转换为对角矩阵
+Sigma_matrix = np.eye(3) * Sigma  # 创建一个3x3的对角矩阵，对角线元素为Sigma
+# 使用 U, Sigma_matrix, Vt 重构矩阵
+X_reconstructed = U.dot(Sigma_matrix).dot(Vt)
 print("\n使用SVD重构的矩阵 X_reconstructed:")
 print(X_reconstructed)
 print("\n原始矩阵 X (用于对比):")

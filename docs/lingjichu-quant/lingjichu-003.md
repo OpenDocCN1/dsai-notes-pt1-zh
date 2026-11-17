@@ -87,6 +87,14 @@ plt.show()
 
 除了收盘价，我们还可以同时可视化多个指标，例如交易量（`Volume`）和每日价格变化（`daily_change`）。
 
+
+![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_5.png)
+
+
+![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_7.png)
+
+![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_9.png)
+
 ```python
 # 绘制交易量和每日价格变化
 fig, ax1 = plt.subplots(figsize=(12, 6))
@@ -96,19 +104,11 @@ ax1.plot(data['DS'], data['daily_change'], color='red', linewidth=2, label='Dail
 ax1.set_xlabel('Date')
 ax1.set_ylabel('Daily Change', color='red')
 ax1.tick_params(axis='y', labelcolor='red')
-
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_5.png)
-
 # 创建第二个Y轴，绘制交易量
 ax2 = ax1.twinx()
 ax2.plot(data['DS'], data['Volume'], color='blue', linewidth=2, label='Volume')
 ax2.set_ylabel('Volume', color='blue')
 ax2.tick_params(axis='y', labelcolor='blue')
-
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_7.png)
-
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_9.png)
-
 plt.title('Microsoft Stock: Daily Change and Volume')
 plt.show()
 ```
@@ -125,6 +125,11 @@ plt.show()
 
 为了增加趣味性，我们可以模拟一个简单的投资场景：假设在某个起始日期买入股票，在终止日期卖出，计算收益情况。
 
+
+![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_17.png)
+
+![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_19.png)
+
 ```python
 def calculate_profit(data, start_date, end_date, shares=100):
     # 筛选指定日期范围内的数据
@@ -138,11 +143,6 @@ def calculate_profit(data, start_date, end_date, shares=100):
     # 计算总收益
     profit = (sell_price - buy_price) * shares
     return profit
-
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_17.png)
-
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_19.png)
-
 # 示例：计算从1986年到2018年的收益
 profit = calculate_profit(data, start_date, end_date, shares=100)
 print(f"总收益: ${profit:.2f}")

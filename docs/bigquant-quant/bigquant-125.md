@@ -41,6 +41,9 @@ plt.show()
 
 ![](img/d06c46983d74ae82d42052a80cfdc608_6.png)
 
+
+![](img/d06c46983d74ae82d42052a80cfdc608_8.png)
+
 ```python
 # 创建SVR模型，指定核函数为线性
 svr_linear = SVR(kernel=‘linear’)
@@ -48,9 +51,6 @@ svr_linear = SVR(kernel=‘linear’)
 svr_linear.fit(x, y.ravel())
 # 使用模型进行预测
 y_pred_linear = svr_linear.predict(x)
-
-![](img/d06c46983d74ae82d42052a80cfdc608_8.png)
-
 # 可视化结果
 plt.scatter(x, y, label=‘Original Data’)
 plt.plot(x, y_pred_linear, color=‘red’, label=‘Linear Kernel Prediction’)
@@ -67,14 +67,14 @@ plt.show()
 
 ![](img/d06c46983d74ae82d42052a80cfdc608_10.png)
 
+
+![](img/d06c46983d74ae82d42052a80cfdc608_12.png)
+
 ```python
 # 创建SVR模型，指定核函数为多项式，默认阶数为3
 svr_poly = SVR(kernel=‘poly’, degree=3)
 svr_poly.fit(x, y.ravel())
 y_pred_poly = svr_poly.predict(x)
-
-![](img/d06c46983d74ae82d42052a80cfdc608_12.png)
-
 # 可视化结果
 plt.scatter(x, y, label=‘Original Data’)
 plt.plot(x, y_pred_poly, color=‘green’, label=‘Polynomial Kernel (degree=3)’)
@@ -99,14 +99,14 @@ plt.show()
 
 ![](img/d06c46983d74ae82d42052a80cfdc608_21.png)
 
+
+![](img/d06c46983d74ae82d42052a80cfdc608_23.png)
+
 ```python
 # 创建SVR模型，指定核函数为RBF（高斯核）
 svr_rbf = SVR(kernel=‘rbf’)
 svr_rbf.fit(x, y.ravel())
 y_pred_rbf = svr_rbf.predict(x)
-
-![](img/d06c46983d74ae82d42052a80cfdc608_23.png)
-
 # 可视化结果
 plt.scatter(x, y, label=‘Original Data’)
 plt.plot(x, y_pred_rbf, color=‘orange’, label=‘RBF Kernel Prediction’)
@@ -122,6 +122,11 @@ plt.show()
 
 为了进一步验证，我们可以增加数据的复杂度，例如生成两个周期的正弦波：
 
+
+![](img/d06c46983d74ae82d42052a80cfdc608_29.png)
+
+![](img/d06c46983d74ae82d42052a80cfdc608_31.png)
+
 ```python
 # 创建更复杂的数据（两个正弦波周期）
 x_complex = np.linspace(0, 4 * np.pi, 100).reshape(-1, 1)
@@ -131,11 +136,6 @@ y_complex = np.sin(x_complex).ravel()
 svr_rbf_complex = SVR(kernel=‘rbf’)
 svr_rbf_complex.fit(x_complex, y_complex)
 y_pred_rbf_complex = svr_rbf_complex.predict(x_complex)
-
-![](img/d06c46983d74ae82d42052a80cfdc608_29.png)
-
-![](img/d06c46983d74ae82d42052a80cfdc608_31.png)
-
 # 可视化结果
 plt.scatter(x_complex, y_complex, label=‘Original Complex Data’)
 plt.plot(x_complex, y_pred_rbf_complex, color=‘purple’, label=‘RBF Kernel Fit’)

@@ -121,8 +121,6 @@ GET请求常用于从服务器检索数据，我们可以在URL中添加查询�
 
 在Python中，我们可以使用字典来构建查询参数，并将其传递给`get`方法的`params`参数：
 
-```python
-import requests
 
 ![](img/321dfcc24456f2c479328def63705ddb_34.png)
 
@@ -130,11 +128,13 @@ import requests
 
 ![](img/321dfcc24456f2c479328def63705ddb_36.png)
 
-url_get = 'https://httpbin.org/get'
-payload = {'name': 'Joseph', 'id': '123'}
 
 ![](img/321dfcc24456f2c479328def63705ddb_38.png)
 
+```python
+import requests
+url_get = 'https://httpbin.org/get'
+payload = {'name': 'Joseph', 'id': '123'}
 r = requests.get(url_get, params=payload)
 ```
 

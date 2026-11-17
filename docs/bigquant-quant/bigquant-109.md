@@ -12,15 +12,15 @@
 
 首先，我们需要导入必要的库并加载数据集。
 
+
+![](img/cbc7f812383caa57f361446599d188c9_4.png)
+
 ```python
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-
-![](img/cbc7f812383caa57f361446599d188c9_4.png)
-
 # 加载鸢尾花数据集
 X, y = datasets.load_iris(return_X_y=True)
 ```
@@ -47,12 +47,12 @@ X, y = datasets.load_iris(return_X_y=True)
 
 ![](img/cbc7f812383caa57f361446599d188c9_16.png)
 
-```python
-# 拆分数据集，80%用于训练，20%用于测试
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1024)
 
 ![](img/cbc7f812383caa57f361446599d188c9_18.png)
 
+```python
+# 拆分数据集，80%用于训练，20%用于测试
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1024)
 # 查看数据形状
 print(f"训练集特征形状: {X_train.shape}")
 print(f"测试集特征形状: {X_test.shape}")
@@ -115,13 +115,13 @@ print("预测标签 (前10个):", y_pred[:10])
 
 ![](img/cbc7f812383caa57f361446599d188c9_36.png)
 
+
+![](img/cbc7f812383caa57f361446599d188c9_38.png)
+
 ```python
 # 方法1：使用模型自带的score方法
 accuracy_model = model.score(X_test, y_test)
 print(f"模型score方法准确率: {accuracy_model}")
-
-![](img/cbc7f812383caa57f361446599d188c9_38.png)
-
 # 方法2：使用accuracy_score函数
 accuracy_metric = accuracy_score(y_test, y_pred)
 print(f"accuracy_score函数准确率: {accuracy_metric}")
@@ -161,15 +161,15 @@ print(f"手动计算准确率: {accuracy_manual}")
 
 ![](img/cbc7f812383caa57f361446599d188c9_57.png)
 
+
+![](img/cbc7f812383caa57f361446599d188c9_59.png)
+
 ```python
 # 获取测试集样本属于每个类别的概率
 y_proba = model.predict_proba(X_test)
 
 # 设置numpy打印格式，避免科学计数法
 np.set_printoptions(suppress=True)
-
-![](img/cbc7f812383caa57f361446599d188c9_59.png)
-
 # 查看前10个样本的概率
 print("前10个样本的预测概率:\n", y_proba[:10])
 print("\n前10个样本的预测类别:", y_pred[:10])

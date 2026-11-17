@@ -93,12 +93,6 @@ print("第10个文本块示例：", final_chunks[9])
 
 ![](img/8b331ca963d66463a460481a09fad4b2_4.png)
 
-```python
-import chromadb
-from chromadb.utils import embedding_functions
-
-# 创建Sentence Transformers嵌入函数
-sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")
 
 ![](img/8b331ca963d66463a460481a09fad4b2_6.png)
 
@@ -106,6 +100,12 @@ sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFuncti
 
 ![](img/8b331ca963d66463a460481a09fad4b2_8.png)
 
+```python
+import chromadb
+from chromadb.utils import embedding_functions
+
+# 创建Sentence Transformers嵌入函数
+sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")
 # 演示嵌入函数如何工作：将第10个文本块转换为向量
 sample_embedding = sentence_transformer_ef([final_chunks[9]])
 print(f"嵌入向量维度：{len(sample_embedding[0])}")

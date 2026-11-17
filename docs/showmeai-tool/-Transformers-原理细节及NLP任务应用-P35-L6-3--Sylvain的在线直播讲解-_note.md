@@ -195,6 +195,11 @@ model_loaded = AutoModel.from_pretrained(“./my_saved_model/“)
 
 使用 `AutoTokenizer` 是最佳实践，它会自动匹配模型对应的分词器。
 
+
+![](img/0e882caa799deede0a88d67b58737bfe_43.png)
+
+![](img/0e882caa799deede0a88d67b58737bfe_44.png)
+
 ```python
 from transformers import AutoTokenizer
 tokenizer = AutoTokenizer.from_pretrained(“bert-base-uncased”)
@@ -202,11 +207,6 @@ tokenizer = AutoTokenizer.from_pretrained(“bert-base-uncased”)
 # 查看分词结果
 tokens = tokenizer.tokenize(“Hello, world!”)
 print(tokens) # [‘hello’, ‘,’, ‘world’, ‘!’]
-
-![](img/0e882caa799deede0a88d67b58737bfe_43.png)
-
-![](img/0e882caa799deede0a88d67b58737bfe_44.png)
-
 # 将 token 转换为 ID
 ids = tokenizer.convert_tokens_to_ids(tokens)
 print(ids)

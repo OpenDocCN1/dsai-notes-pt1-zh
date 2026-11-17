@@ -192,11 +192,11 @@ Write code to calculate the runtime of a Python function call.
 
 我们设置n=40（计算第40个斐波那契数），然后分别用递归函数和高效函数进行计算并计时。
 
-```python
-import time
 
 ![](img/87d42f4432de4586d46bd987e4492e44_11.png)
 
+```python
+import time
 # 测试递归函数
 start = time.time()
 result_slow = fibonacci(40) # 假设这是递归函数

@@ -74,12 +74,12 @@
 ![](img/6e3001af190788e3cb6b7360a96fccf7_30.png)
 
 **代码示例（概念）**：
-```python
-# 对于分类任务
-num_features_for_classification = sqrt(total_features)
 
 ![](img/6e3001af190788e3cb6b7360a96fccf7_32.png)
 
+```python
+# 对于分类任务
+num_features_for_classification = sqrt(total_features)
 # 对于回归任务
 num_features_for_regression = total_features / 3
 ```
@@ -219,10 +219,6 @@ model = RandomForestRegressor(n_estimators=50)
 
 **极端随机树的语法**：
 步骤与随机森林完全相同，只是导入的类不同。
-```python
-from sklearn.ensemble import ExtraTreesClassifier # 用于分类
-# 或
-from sklearn.ensemble import ExtraTreesRegressor # 用于回归
 
 ![](img/6e3001af190788e3cb6b7360a96fccf7_84.png)
 
@@ -230,6 +226,10 @@ from sklearn.ensemble import ExtraTreesRegressor # 用于回归
 
 ![](img/6e3001af190788e3cb6b7360a96fccf7_86.png)
 
+```python
+from sklearn.ensemble import ExtraTreesClassifier # 用于分类
+# 或
+from sklearn.ensemble import ExtraTreesRegressor # 用于回归
 model = ExtraTreesClassifier(n_estimators=50)
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)

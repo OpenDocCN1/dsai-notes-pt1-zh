@@ -60,11 +60,11 @@ data = response.json()
 
 一种解决方案是向LLM询问替代方案。现在它告诉我一个名为 `httpx` 的库。
 
-```python
-import httpx
 
 ![](img/3e031061108ef27be2c304c9fdc423cc_13.png)
 
+```python
+import httpx
 async with httpx.AsyncClient() as client:
     response = await client.get('https://api.example.com/data')
     data = response.json()

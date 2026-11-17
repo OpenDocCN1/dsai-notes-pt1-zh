@@ -50,15 +50,15 @@ data_input = {
 
 **排序**的目的是在我们倾向的因子方向上优选股票。我们认为市盈率和市净率较低的股票更具投资价值，因此对过滤后的数据，按市盈率和市净率进行**升序**排列。
 
+
+![](img/b4432b010a5e31cc1b0d2ff6d217600e_13.png)
+
 ```python
 # 示例：数据处理步骤（伪代码）
 # 1. 数据过滤
 filtered_df = raw_df[(raw_df[‘pb_ratio‘] < 1.5) &
                      (raw_df[‘pe_ratio‘] < 15) &
                      (raw_df[‘volume‘] > 0)]
-
-![](img/b4432b010a5e31cc1b0d2ff6d217600e_13.png)
-
 # 2. 排序
 sorted_df = filtered_df.sort_values(by=[‘pe_ratio‘, ‘pb_ratio‘], ascending=True)
 ```

@@ -135,8 +135,6 @@ LSTM通过三个门来控制信息的流动：
 
 ### 2. 定义LSTM模型
 使用PyTorch定义模型需要继承`nn.Module`类，并实现`__init__`和`forward`方法。
-```python
-import torch.nn as nn
 
 ![](img/8bce5c766dfd00fb1a67f9c62f08dfd4_20.png)
 
@@ -148,6 +146,8 @@ import torch.nn as nn
 
 ![](img/8bce5c766dfd00fb1a67f9c62f08dfd4_28.png)
 
+```python
+import torch.nn as nn
 class LSTMModel(nn.Module):
     def __init__(self, vocab_size, embed_size, hidden_size, num_layers):
         super(LSTMModel, self).__init__()

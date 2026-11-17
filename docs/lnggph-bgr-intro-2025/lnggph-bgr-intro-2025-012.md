@@ -81,14 +81,14 @@ actor_agent_prompt = ChatPromptTemplate.from_messages([
 ![](img/bd656c5a557f7bbc8d2da4be0b7a9140_23.png)
 
 以下是定义 `AnswerQuestion` 数据模型的代码：
-```python
-from pydantic import BaseModel, Field
-from typing import List
 
 ![](img/bd656c5a557f7bbc8d2da4be0b7a9140_25.png)
 
 ![](img/bd656c5a557f7bbc8d2da4be0b7a9140_26.png)
 
+```python
+from pydantic import BaseModel, Field
+from typing import List
 class Reflection(BaseModel):
     missing: str = Field(description="Critique of what is missing or could be improved.")
     superfluous: str = Field(description="Critique of what is excessive, redundant, or not needed.")
@@ -113,6 +113,9 @@ class AnswerQuestion(BaseModel):
 现在，我们将各个组件组合起来，构建完整的响应器处理链。
 
 以下是构建响应器链的完整代码：
+
+![](img/bd656c5a557f7bbc8d2da4be0b7a9140_34.png)
+
 ```python
 from datetime import datetime
 from langchain_openai import ChatOpenAI
@@ -130,9 +133,6 @@ responder_prompt_template = actor_agent_prompt.partial(
 
 # 3. 创建Pydantic解析器
 pydantic_parser = PydanticToolsParser(tools=[AnswerQuestion])
-
-![](img/bd656c5a557f7bbc8d2da4be0b7a9140_34.png)
-
 # 4. 构建处理链
 first_responder_chain = (
     responder_prompt_template

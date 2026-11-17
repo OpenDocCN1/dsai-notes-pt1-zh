@@ -124,27 +124,27 @@ plt.show()
 
 以下是实现多元线性回归的代码：
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
 
 ![](img/737b71341ec83c572026f78f9eb9fe9d_17.png)
 
+
+![](img/737b71341ec83c572026f78f9eb9fe9d_19.png)
+
+
+![](img/737b71341ec83c572026f78f9eb9fe9d_21.png)
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
 # 1. 创建二元数据
 np.random.seed(42)
 x1 = np.random.randint(-150, 150, 100)  # 特征1
 x2 = np.random.randint(0, 300, 100)     # 特征2
 w1_true, w2_true = 2.0, 3.0             # 真实系数
-
-![](img/737b71341ec83c572026f78f9eb9fe9d_19.png)
-
 # 2. 根据方程计算目标值并添加噪声
 y_true = w1_true * x1 + w2_true * x2
 noise = np.random.randn(100) * 20       # 添加噪声
 y = y_true + noise
-
-![](img/737b71341ec83c572026f78f9eb9fe9d_21.png)
-
 # 3. 重新构造特征矩阵X，包含一列全1（对应截距，但本例模型无截距）
 # 为了通用性，这里仍添加截距项，方程变为 y = w0 + w1*x1 + w2*x2
 X = np.c_[np.ones(100), x1, x2]

@@ -99,6 +99,16 @@ t-SNE的核心改进是在**低维空间**中使用**学生t分布**（自由度
 
 现在，让我们简要看一下如何在`scikit-learn`中使用t-SNE。
 
+
+![](img/3826a2434b2a1bbd5e32990908bca988_19.png)
+
+
+![](img/3826a2434b2a1bbd5e32990908bca988_21.png)
+
+![](img/3826a2434b2a1bbd5e32990908bca988_22.png)
+
+![](img/3826a2434b2a1bbd5e32990908bca988_23.png)
+
 ```python
 from sklearn.manifold import TSNE
 from sklearn.datasets import load_digits
@@ -108,9 +118,6 @@ import matplotlib.pyplot as plt
 digits = load_digits()
 X = digits.data
 y = digits.target
-
-![](img/3826a2434b2a1bbd5e32990908bca988_19.png)
-
 # 创建t-SNE模型
 tsne = TSNE(
     n_components=2,      # 目标维度
@@ -124,13 +131,6 @@ tsne = TSNE(
 
 # 执行降维
 X_embedded = tsne.fit_transform(X)
-
-![](img/3826a2434b2a1bbd5e32990908bca988_21.png)
-
-![](img/3826a2434b2a1bbd5e32990908bca988_22.png)
-
-![](img/3826a2434b2a1bbd5e32990908bca988_23.png)
-
 # 可视化
 plt.scatter(X_embedded[:, 0], X_embedded[:, 1], c=y, cmap='Spectral', s=5)
 plt.colorbar()

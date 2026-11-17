@@ -196,11 +196,11 @@ def query_resume(query: str) -> str:
 
 然后，使用 `FunctionTool.from_defaults` 方法将这个函数转换为代理可用的工具。
 
-```python
-from llama_index.core.tools import FunctionTool
 
 ![](img/725831658f122b151a7f425149a61914_24.png)
 
+```python
+from llama_index.core.tools import FunctionTool
 # 将函数转换为工具
 rag_tool = FunctionTool.from_defaults(fn=query_resume)
 ```
@@ -245,6 +245,9 @@ print(response)
 
 以下是工作流类的定义。
 
+
+![](img/725831658f122b151a7f425149a61914_34.png)
+
 ```python
 from llama_index.core.workflow import (
     StartEvent, StopEvent, step, Context
@@ -255,9 +258,6 @@ from pathlib import Path
 class QueryEvent:
     def __init__(self, question: str):
         self.question = question
-
-![](img/725831658f122b151a7f425149a61914_34.png)
-
 # 定义RAG工作流类
 class RAGWorkflow:
     def __init__(self, storage_dir: str = "./storage"):

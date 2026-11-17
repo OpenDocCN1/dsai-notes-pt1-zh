@@ -62,14 +62,14 @@ Lasso回归与普通线性回归的核心区别在于其**成本函数**。Lasso
 
 首先，我们导入必要的库并创建多项式特征。
 
+
+![](img/c5e77473cf60ceaa1a7e178c880358cb_26.png)
+
 ```python
 # 导入Lasso模型和多项式特征生成器
 from sklearn.linear_model import Lasso
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.preprocessing import StandardScaler
-
-![](img/c5e77473cf60ceaa1a7e178c880358cb_26.png)
-
 # 初始化多项式特征对象，设置度为2，不包含偏置项（截距）
 poly = PolynomialFeatures(degree=2, include_bias=False)
 ```
@@ -86,9 +86,6 @@ poly = PolynomialFeatures(degree=2, include_bias=False)
 
 ![](img/c5e77473cf60ceaa1a7e178c880358cb_33.png)
 
-```python
-# 对原始特征X生成多项式特征
-X_poly = poly.fit_transform(X)
 
 ![](img/c5e77473cf60ceaa1a7e178c880358cb_34.png)
 
@@ -96,6 +93,9 @@ X_poly = poly.fit_transform(X)
 
 ![](img/c5e77473cf60ceaa1a7e178c880358cb_36.png)
 
+```python
+# 对原始特征X生成多项式特征
+X_poly = poly.fit_transform(X)
 # 初始化标准化器并对多项式特征进行标准化
 scaler = StandardScaler()
 X_poly_scaled = scaler.fit_transform(X_poly)
@@ -118,15 +118,15 @@ X_poly_scaled = scaler.fit_transform(X_poly)
 
 ![](img/c5e77473cf60ceaa1a7e178c880358cb_45.png)
 
-```python
-# 使用默认alpha值（1.0）初始化Lasso模型
-lasso_default = Lasso()
-lasso_default.fit(X_poly_scaled, y)
 
 ![](img/c5e77473cf60ceaa1a7e178c880358cb_47.png)
 
 ![](img/c5e77473cf60ceaa1a7e178c880358cb_48.png)
 
+```python
+# 使用默认alpha值（1.0）初始化Lasso模型
+lasso_default = Lasso()
+lasso_default.fit(X_poly_scaled, y)
 # 查看模型系数
 coefficients = lasso_default.coef_
 ```
@@ -202,33 +202,33 @@ r2_train = r2_score(y, y_pred_train)
 
 为了评估泛化能力，我们必须使用训练-测试集分割。
 
-```python
-from sklearn.model_selection import train_test_split
 
 ![](img/c5e77473cf60ceaa1a7e178c880358cb_74.png)
 
-# 注意：这里使用未标准化的多项式特征进行分割
-X_train, X_test, y_train, y_test = train_test_split(X_poly, y, test_size=0.3, random_state=42)
 
 ![](img/c5e77473cf60ceaa1a7e178c880358cb_76.png)
 
 ![](img/c5e77473cf60ceaa1a7e178c880358cb_78.png)
 
-# 仅在训练集上拟合标准化器，并转换训练集和测试集
-scaler_train = StandardScaler()
-X_train_scaled = scaler_train.fit_transform(X_train)
-X_test_scaled = scaler_train.transform(X_test) # 使用训练集的参数转换测试集
 
 ![](img/c5e77473cf60ceaa1a7e178c880358cb_80.png)
 
-# 在标准化后的训练集上训练Lasso模型
-lasso_for_test = Lasso(alpha=1.0) # 使用强正则化
-lasso_for_test.fit(X_train_scaled, y_train)
 
 ![](img/c5e77473cf60ceaa1a7e178c880358cb_82.png)
 
 ![](img/c5e77473cf60ceaa1a7e178c880358cb_84.png)
 
+```python
+from sklearn.model_selection import train_test_split
+# 注意：这里使用未标准化的多项式特征进行分割
+X_train, X_test, y_train, y_test = train_test_split(X_poly, y, test_size=0.3, random_state=42)
+# 仅在训练集上拟合标准化器，并转换训练集和测试集
+scaler_train = StandardScaler()
+X_train_scaled = scaler_train.fit_transform(X_train)
+X_test_scaled = scaler_train.transform(X_test) # 使用训练集的参数转换测试集
+# 在标准化后的训练集上训练Lasso模型
+lasso_for_test = Lasso(alpha=1.0) # 使用强正则化
+lasso_for_test.fit(X_train_scaled, y_train)
 # 在测试集上进行预测并计算R²分数
 y_pred_test = lasso_for_test.predict(X_test_scaled)
 r2_test_alpha1 = r2_score(y_test, y_pred_test)

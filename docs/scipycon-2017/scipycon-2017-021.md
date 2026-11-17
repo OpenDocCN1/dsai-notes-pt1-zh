@@ -141,18 +141,11 @@ trajectory_scatter
 
 ![](img/e8f896ce5e8eb9365dbe25b3a1671f94_46.png)
 
-```python
-import numpy as np
 
 ![](img/e8f896ce5e8eb9365dbe25b3a1671f94_48.png)
 
 ![](img/e8f896ce5e8eb9365dbe25b3a1671f94_50.png)
 
-# 创建一个二维数组（例如，正弦余弦组合的图案）
-x = np.linspace(0, 10, 200)
-y = np.linspace(0, 10, 200)
-X, Y = np.meshgrid(x, y)
-array_data = np.sin(X) * np.cos(Y)
 
 ![](img/e8f896ce5e8eb9365dbe25b3a1671f94_52.png)
 
@@ -160,6 +153,13 @@ array_data = np.sin(X) * np.cos(Y)
 
 ![](img/e8f896ce5e8eb9365dbe25b3a1671f94_56.png)
 
+```python
+import numpy as np
+# 创建一个二维数组（例如，正弦余弦组合的图案）
+x = np.linspace(0, 10, 200)
+y = np.linspace(0, 10, 200)
+X, Y = np.meshgrid(x, y)
+array_data = np.sin(X) * np.cos(Y)
 # 创建 Image 元素
 simple_image = hv.Image(array_data)
 simple_image
@@ -253,12 +253,6 @@ gdp_growth_labeled
 
 `+` 运算符将元素排列在**不同的子图**中，创建一个布局。
 
-```python
-# 创建同一个数据的不同视图
-curve_view = hv.Curve(trajectory_curve)
-scatter_view = hv.Scatter(trajectory_curve)
-area_view = hv.Area(trajectory_curve)
-spikes_view = hv.Spikes(trajectory_curve)
 
 ![](img/e8f896ce5e8eb9365dbe25b3a1671f94_92.png)
 
@@ -266,6 +260,12 @@ spikes_view = hv.Spikes(trajectory_curve)
 
 ![](img/e8f896ce5e8eb9365dbe25b3a1671f94_96.png)
 
+```python
+# 创建同一个数据的不同视图
+curve_view = hv.Curve(trajectory_curve)
+scatter_view = hv.Scatter(trajectory_curve)
+area_view = hv.Area(trajectory_curve)
+spikes_view = hv.Spikes(trajectory_curve)
 # 使用 + 创建布局
 layout = curve_view + scatter_view + area_view + spikes_view
 layout

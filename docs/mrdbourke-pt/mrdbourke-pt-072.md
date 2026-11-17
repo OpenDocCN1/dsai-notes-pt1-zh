@@ -132,13 +132,13 @@ print(f"最大池化后张量形状: {maxpool_tensor.shape}")
 
 首先，我们创建一个与FashionMNIST数据集图像形状（1, 28, 28）相同的虚拟张量，并尝试让其通过我们的 `model_2`。
 
+
+![](img/d79ec12cd82ce038fb6b6a27b6d6d892_6.png)
+
 ```python
 # 创建一个与FashionMNIST图像形状相同的随机张量
 random_image_tensor = torch.randn(size=(1, 1, 28, 28)).to(device)  # 假设device已定义
 print(f"随机图像张量形状: {random_image_tensor.shape}")
-
-![](img/d79ec12cd82ce038fb6b6a27b6d6d892_6.png)
-
 # 尝试通过模型
 try:
     output = model_2(random_image_tensor)

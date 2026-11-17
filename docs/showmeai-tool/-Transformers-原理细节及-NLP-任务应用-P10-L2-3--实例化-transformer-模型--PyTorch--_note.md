@@ -53,11 +53,11 @@ config = AutoConfig.from_pretrained("bert-base-uncased")
 
 我们也可以直接使用特定模型的配置类，这在需要精确控制模型架构时非常有用。
 
-```python
-from transformers import BertConfig
 
 ![](img/7dece41ebc4d4b6ddd794ae114ab4936_6.png)
 
+```python
+from transformers import BertConfig
 config = BertConfig.from_pretrained("bert-base-uncased")
 ```
 

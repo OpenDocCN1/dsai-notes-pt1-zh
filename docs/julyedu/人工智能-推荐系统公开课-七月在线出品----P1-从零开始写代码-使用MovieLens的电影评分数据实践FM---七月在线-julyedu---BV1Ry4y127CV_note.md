@@ -132,8 +132,6 @@ def load_data(filepath):
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_88.png)
 
-```python
-import numpy as np
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_90.png)
 
@@ -143,11 +141,6 @@ import numpy as np
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_96.png)
 
-M = 6000
-N = 3000
-K = 5
-reg = 0.01  # 正则化系数
-step = 0.001  # 梯度下降步长
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_98.png)
 
@@ -157,6 +150,13 @@ step = 0.001  # 梯度下降步长
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_104.png)
 
+```python
+import numpy as np
+M = 6000
+N = 3000
+K = 5
+reg = 0.01  # 正则化系数
+step = 0.001  # 梯度下降步长
 # 初始化参数矩阵
 U = np.random.randn(M, K)
 V = np.random.randn(N, K)
@@ -371,13 +371,6 @@ def train_one_epoch(data):
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_258.png)
 
-```python
-def make_predictions(data):
-    """为给定数据集生成预测列表"""
-    preds = []
-    for i, j, r in data:
-        preds.append(predict(i, j))
-    return preds
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_260.png)
 
@@ -391,6 +384,13 @@ def make_predictions(data):
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_269.png)
 
+```python
+def make_predictions(data):
+    """为给定数据集生成预测列表"""
+    preds = []
+    for i, j, r in data:
+        preds.append(predict(i, j))
+    return preds
 def rmse(data, predictions):
     """计算真实评分和预测评分之间的RMSE"""
     total_error = 0.0
@@ -422,11 +422,6 @@ def rmse(data, predictions):
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_287.png)
 
-```python
-# 假设 data 是加载的全部数据
-split_idx = 800000
-train_data = data[:split_idx]
-test_data = data[split_idx:]
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_289.png)
 
@@ -438,11 +433,6 @@ test_data = data[split_idx:]
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_296.png)
 
-# 训练前，计算初始RMSE
-init_train_preds = make_predictions(train_data)
-init_test_preds = make_predictions(test_data)
-print(f"初始训练集RMSE: {rmse(train_data, init_train_preds):.4f}")
-print(f"初始测试集RMSE: {rmse(test_data, init_test_preds):.4f}")
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_298.png)
 
@@ -456,6 +446,16 @@ print(f"初始测试集RMSE: {rmse(test_data, init_test_preds):.4f}")
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_308.png)
 
+```python
+# 假设 data 是加载的全部数据
+split_idx = 800000
+train_data = data[:split_idx]
+test_data = data[split_idx:]
+# 训练前，计算初始RMSE
+init_train_preds = make_predictions(train_data)
+init_test_preds = make_predictions(test_data)
+print(f"初始训练集RMSE: {rmse(train_data, init_train_preds):.4f}")
+print(f"初始测试集RMSE: {rmse(test_data, init_test_preds):.4f}")
 # 进行多轮训练
 num_epochs = 10
 for epoch in range(num_epochs):

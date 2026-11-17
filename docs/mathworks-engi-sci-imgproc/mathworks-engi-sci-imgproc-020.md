@@ -90,6 +90,9 @@ K均值聚类使用点之间的距离作为相似性度量，将颜色坐标数�
 ![](img/f87a20428373ba2335fbe358c4def066_8.png)
 
 以下是创建饱和度掩码并应用的代码：
+
+![](img/f87a20428373ba2335fbe358c4def066_10.png)
+
 ```matlab
 % 假设 hsvImage 是之前转换好的HSV图像
 saturationMask = hsvImage(:, :, 2) > 0.75;
@@ -98,9 +101,6 @@ saturationMask = hsvImage(:, :, 2) > 0.75;
 filteredHsvImage = hsvImage;
 % 将掩码应用到所有三个颜色坐标平面
 filteredHsvImage(repmat(~saturationMask, [1, 1, 3])) = 0;
-
-![](img/f87a20428373ba2335fbe358c4def066_10.png)
-
 % 为了视觉检查结果，转换为RGB显示
 filteredRgbImage = hsv2rgb(filteredHsvImage);
 imshow(filteredRgbImage);

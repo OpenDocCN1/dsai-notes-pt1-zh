@@ -148,13 +148,6 @@ tool_node = ToolNode(tools)
 
 ![](img/7013576fa2a5e986d25b24ae1a53158a_25.png)
 
-```python
-# 1. 创建图
-workflow = StateGraph(State)
-
-# 2. 添加节点
-workflow.add_node(“chatbot”, chatbot_node)
-workflow.add_node(“tools”, tool_node)
 
 ![](img/7013576fa2a5e986d25b24ae1a53158a_27.png)
 
@@ -162,6 +155,13 @@ workflow.add_node(“tools”, tool_node)
 
 ![](img/7013576fa2a5e986d25b24ae1a53158a_29.png)
 
+```python
+# 1. 创建图
+workflow = StateGraph(State)
+
+# 2. 添加节点
+workflow.add_node(“chatbot”, chatbot_node)
+workflow.add_node(“tools”, tool_node)
 # 3. 设置入口点
 workflow.set_entry_point(“chatbot”)
 

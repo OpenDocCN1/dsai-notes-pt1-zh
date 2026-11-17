@@ -20,13 +20,13 @@
 
 首先，我们需要从 Keras 中加载一个预训练模型。Keras 提供了许多流行的模型，例如 VGG16。
 
-```python
-from tensorflow.keras.applications import VGG16
 
 ![](img/61fab98aab26950654922e0fb57a2416_2.png)
 
 ![](img/61fab98aab26950654922e0fb57a2416_3.png)
 
+```python
+from tensorflow.keras.applications import VGG16
 base_model = VGG16(weights='imagenet')
 base_model.summary()
 ```

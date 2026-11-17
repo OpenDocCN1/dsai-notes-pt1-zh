@@ -135,9 +135,6 @@ print(data)
 
 读取此类文件的第一步是导入 `xml.etree.ElementTree` 库。通过导入这个库，我们可以使用 `ElementTree` 属性来解析XML文件。然后我们添加列标题并将它们分配给数据框。
 
-```python
-import xml.etree.ElementTree as ET
-import pandas as pd
 
 ![](img/3694168a4f31e31a6990ca815878b938_43.png)
 
@@ -145,13 +142,21 @@ import pandas as pd
 
 ![](img/3694168a4f31e31a6990ca815878b938_45.png)
 
-tree = ET.parse('file_example.xml')
-root = tree.getroot()
 
 ![](img/3694168a4f31e31a6990ca815878b938_46.png)
 
 ![](img/3694168a4f31e31a6990ca815878b938_47.png)
 
+
+![](img/3694168a4f31e31a6990ca815878b938_49.png)
+
+![](img/3694168a4f31e31a6990ca815878b938_50.png)
+
+```python
+import xml.etree.ElementTree as ET
+import pandas as pd
+tree = ET.parse('file_example.xml')
+root = tree.getroot()
 # 定义列标题
 columns = ['Column1', 'Column2', 'Column3']
 data = []
@@ -164,11 +169,6 @@ for elem in root.findall('.//record'):  # 根据实际XML结构调整路径
         cell = elem.find(col).text if elem.find(col) is not None else ''
         row.append(cell)
     data.append(row)
-
-![](img/3694168a4f31e31a6990ca815878b938_49.png)
-
-![](img/3694168a4f31e31a6990ca815878b938_50.png)
-
 df = pd.DataFrame(data, columns=columns)
 print(df)
 ```

@@ -41,14 +41,14 @@
 ![](img/29d25fab179f1a27cdc81b3dd462951c_11.png)
 
 示例代码框架如下：
+
+![](img/29d25fab179f1a27cdc81b3dd462951c_13.png)
+
 ```python
 from sklearn.tree import DecisionTreeClassifier
 
 # 假设 X 是特征数据，y 是标签数据
 # 如果数据集中 y 是最后一列，可能需要切片：X = data[:, :-1]
-
-![](img/29d25fab179f1a27cdc81b3dd462951c_13.png)
-
 model = DecisionTreeClassifier(criterion='gini') # 指定使用基尼系数
 model.fit(X, y)
 ```

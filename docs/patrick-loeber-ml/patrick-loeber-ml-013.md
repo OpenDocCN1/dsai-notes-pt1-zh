@@ -201,6 +201,16 @@ class AdaBoost:
 
 ![](img/e6a06206a1c19326735b069db61beb0f_7.png)
 
+
+![](img/e6a06206a1c19326735b069db61beb0f_9.png)
+
+![](img/e6a06206a1c19326735b069db61beb0f_10.png)
+
+
+![](img/e6a06206a1c19326735b069db61beb0f_12.png)
+
+![](img/e6a06206a1c19326735b069db61beb0f_13.png)
+
 ```python
 # test_adaboost.py
 from sklearn import datasets
@@ -214,11 +224,6 @@ X, y = bc.data, bc.target
 
 # 2. 将标签从 (0, 1) 转换为 (-1, 1)，这是AdaBoost的要求
 y[y == 0] = -1
-
-![](img/e6a06206a1c19326735b069db61beb0f_9.png)
-
-![](img/e6a06206a1c19326735b069db61beb0f_10.png)
-
 # 3. 划分训练集和测试集
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
@@ -229,11 +234,6 @@ clf.fit(X_train, y_train)
 # 5. 进行预测并计算准确率
 y_pred = clf.predict(X_test)
 acc = accuracy_score(y_test, y_pred)
-
-![](img/e6a06206a1c19326735b069db61beb0f_12.png)
-
-![](img/e6a06206a1c19326735b069db61beb0f_13.png)
-
 print(f"AdaBoost 分类准确率: {acc:.3f}")
 ```
 运行此脚本，你可能会看到类似 `AdaBoost 分类准确率: 0.947` 的输出，这表明我们的实现是有效的。

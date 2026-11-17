@@ -31,19 +31,19 @@ plt.show()
 
 ![](img/ba4f2bfdbb4eb6c9346c88ace128100c_7.png)
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
 
 ![](img/ba4f2bfdbb4eb6c9346c88ace128100c_9.png)
 
+
+![](img/ba4f2bfdbb4eb6c9346c88ace128100c_11.png)
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
 # 创建数据
 x = np.linspace(-10, 10, 100)
 y_parabola = x**2
 y_damped = np.exp(-0.1 * x) * np.sin(x)
-
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_11.png)
-
 fig, ax = plt.subplots()
 # 绘制第一个图形：抛物线
 ax.plot(x, y_parabola)
@@ -126,23 +126,23 @@ plt.show()
 
 ![](img/ba4f2bfdbb4eb6c9346c88ace128100c_43.png)
 
-```python
-fig, ax = plt.subplots()
 
 ![](img/ba4f2bfdbb4eb6c9346c88ace128100c_45.png)
 
-# 绘制健康患者的数据
-healthy = df[df['target'] == 0]
-ax.scatter(healthy['trestbps'], healthy['chol'], label='Healthy')
 
 ![](img/ba4f2bfdbb4eb6c9346c88ace128100c_47.png)
 
-# 绘制心脏病患者的数据
-disease = df[df['target'] == 1]
-ax.scatter(disease['trestbps'], disease['chol'], label='Heart Disease')
 
 ![](img/ba4f2bfdbb4eb6c9346c88ace128100c_49.png)
 
+```python
+fig, ax = plt.subplots()
+# 绘制健康患者的数据
+healthy = df[df['target'] == 0]
+ax.scatter(healthy['trestbps'], healthy['chol'], label='Healthy')
+# 绘制心脏病患者的数据
+disease = df[df['target'] == 1]
+ax.scatter(disease['trestbps'], disease['chol'], label='Heart Disease')
 ax.set_xlabel('Resting Blood Pressure')
 ax.set_ylabel('Cholesterol')
 ax.legend()
@@ -176,23 +176,23 @@ Matplotlib 会自动为两个系列分配不同的颜色。
 
 ![](img/ba4f2bfdbb4eb6c9346c88ace128100c_60.png)
 
-```python
-fig, ax = plt.subplots()
 
 ![](img/ba4f2bfdbb4eb6c9346c88ace128100c_62.png)
 
-# 标签映射字典
-label_map = {0: 'Healthy', 1: 'Heart Disease'}
 
 ![](img/ba4f2bfdbb4eb6c9346c88ace128100c_64.png)
 
+
+![](img/ba4f2bfdbb4eb6c9346c88ace128100c_66.png)
+
+```python
+fig, ax = plt.subplots()
+# 标签映射字典
+label_map = {0: 'Healthy', 1: 'Heart Disease'}
 # 循环遍历每个唯一的类别值
 for target_value in df['target'].unique():
     subset = df[df['target'] == target_value]
     ax.scatter(subset['trestbps'], subset['chol'], label=label_map[target_value])
-
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_66.png)
-
 ax.set_xlabel('Resting Blood Pressure')
 ax.set_ylabel('Cholesterol')
 ax.legend()
@@ -224,22 +224,22 @@ plt.show()
 
 ![](img/ba4f2bfdbb4eb6c9346c88ace128100c_76.png)
 
-```python
-fig, ax = plt.subplots()
 
 ![](img/ba4f2bfdbb4eb6c9346c88ace128100c_78.png)
 
+
+![](img/ba4f2bfdbb4eb6c9346c88ace128100c_80.png)
+
+![](img/ba4f2bfdbb4eb6c9346c88ace128100c_81.png)
+
+```python
+fig, ax = plt.subplots()
 # 绘制所有点为浅灰色
 ax.scatter(df['trestbps'], df['chol'], c='lightgrey', label='All Data')
 
 # 突出显示第一个数据点（索引为0）
 highlight_point = df.iloc[0]
 ax.scatter(highlight_point['trestbps'], highlight_point['chol'], c='red', s=100, label='Highlighted Point')
-
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_80.png)
-
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_81.png)
-
 ax.set_xlabel('Resting Blood Pressure')
 ax.set_ylabel('Cholesterol')
 ax.legend()
@@ -279,22 +279,22 @@ plt.show()
 3.  使用 `ax.bar()` 绘制柱状图。
 4.  为两个系列添加标签和图例。
 
+
+![](img/ba4f2bfdbb4eb6c9346c88ace128100c_98.png)
+
+
+![](img/ba4f2bfdbb4eb6c9346c88ace128100c_100.png)
+
 ```python
 # 假设已按年龄分组并计算了均值
 age_grouped = df.groupby('age').mean()
 
 fig, ax = plt.subplots()
-
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_98.png)
-
 # 绘制折线图：年龄 vs 平均胆固醇
 ax.plot(age_grouped.index, age_grouped['chol'], label='Avg Cholesterol', marker='o')
 
 # 绘制柱状图：年龄 vs 平均静息血压
 ax.bar(age_grouped.index, age_grouped['trestbps'], label='Avg Resting BP', alpha=0.5, width=0.8)
-
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_100.png)
-
 ax.set_xlabel('Age')
 ax.set_ylabel('Value')
 ax.legend()

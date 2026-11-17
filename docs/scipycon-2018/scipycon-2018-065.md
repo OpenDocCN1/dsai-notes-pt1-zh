@@ -230,12 +230,12 @@ sphinx-quickstart
    contributing
 ```
 Sphinx 最强大的功能是自动生成 API 文档。创建一个 `api.rst` 文件，并使用 `autofunction` 指令：
-```
-API 参考
-========
 
 ![](img/ae9b964cad0e2ad658805ae80041e533_51.png)
 
+```
+API 参考
+========
 .. autofunction:: hugs.calc.get_wind_speed
 ```
 为了让 Sphinx 更好地解析 NumPy 风格的文档字符串，需要在 `conf.py` 文件的 `extensions` 列表中添加 `’sphinx.ext.napoleon’`。

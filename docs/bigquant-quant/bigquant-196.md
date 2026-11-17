@@ -41,13 +41,16 @@ y = wine.target
 2.  创建极限森林分类器。
 3.  进行多次训练以获取平均得分，确保结果稳定。
 
+
+![](img/66cdcfd79f5050256109a3af0591a822_9.png)
+
+
+![](img/66cdcfd79f5050256109a3af0591a822_11.png)
+
 ```python
 # 初始化总得分
 total_score = 0
 n_trials = 100
-
-![](img/66cdcfd79f5050256109a3af0591a822_9.png)
-
 for i in range(n_trials):
     # 分割数据
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
@@ -58,9 +61,6 @@ for i in range(n_trials):
 
     # 累计得分
     total_score += clf_et.score(X_test, y_test)
-
-![](img/66cdcfd79f5050256109a3af0591a822_11.png)
-
 # 计算平均得分
 average_score_et = total_score / n_trials
 print(f"极限森林的平均得分是：{average_score_et}")
@@ -80,28 +80,28 @@ print(f"极限森林的平均得分是：{average_score_et}")
 
 ![](img/66cdcfd79f5050256109a3af0591a822_17.png)
 
-```python
-from sklearn.tree import export_graphviz
-import graphviz
 
 ![](img/66cdcfd79f5050256109a3af0591a822_19.png)
 
-# 1. 可视化第一棵树（未限制深度）
-dot_data = export_graphviz(clf_et.estimators_[0], filled=True, rounded=True)
-graph = graphviz.Source(dot_data)
-graph.render("et_tree_0")  # 保存为文件
-graph  # 在Jupyter Notebook中显示
 
 ![](img/66cdcfd79f5050256109a3af0591a822_21.png)
 
-# 2. 创建深度限制为3的极限森林模型
-clf_et_limited = ExtraTreesClassifier(n_estimators=100, max_depth=3)
-clf_et_limited.fit(X_train, y_train)
 
 ![](img/66cdcfd79f5050256109a3af0591a822_23.png)
 
 ![](img/66cdcfd79f5050256109a3af0591a822_25.png)
 
+```python
+from sklearn.tree import export_graphviz
+import graphviz
+# 1. 可视化第一棵树（未限制深度）
+dot_data = export_graphviz(clf_et.estimators_[0], filled=True, rounded=True)
+graph = graphviz.Source(dot_data)
+graph.render("et_tree_0")  # 保存为文件
+graph  # 在Jupyter Notebook中显示
+# 2. 创建深度限制为3的极限森林模型
+clf_et_limited = ExtraTreesClassifier(n_estimators=100, max_depth=3)
+clf_et_limited.fit(X_train, y_train)
 # 可视化深度受限后的第一棵树
 dot_data_limited = export_graphviz(clf_et_limited.estimators_[0], filled=True, rounded=True)
 graph_limited = graphviz.Source(dot_data_limited)

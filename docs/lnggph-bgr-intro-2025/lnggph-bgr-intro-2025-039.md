@@ -68,12 +68,12 @@
 
 ![](img/6b3084f1f6e267d7e6580fd84e9afae1_9.png)
 
-```python
-# 提示词模板示例
-template = """请基于以下上下文和聊天历史回答问题，尤其要考虑最新的问题：
 
 ![](img/6b3084f1f6e267d7e6580fd84e9afae1_11.png)
 
+```python
+# 提示词模板示例
+template = """请基于以下上下文和聊天历史回答问题，尤其要考虑最新的问题：
 聊天历史：
 {history}
 
@@ -393,23 +393,29 @@ def off_topic_response(state: AgentState):
 
 我们已经定义了所有节点，现在需要将它们组装成图，并添加检查点（Checkpointer）以支持多轮对话的记忆功能。
 
-```python
-from langgraph.checkpoint.sqlite import SqliteSaver
 
 ![](img/6b3084f1f6e267d7e6580fd84e9afae1_50.png)
 
-# 初始化检查点存储器
-memory = SqliteSaver.from_conn_string(“:memory:”) # 示例中使用内存数据库
 
 ![](img/6b3084f1f6e267d7e6580fd84e9afae1_51.png)
 
 ![](img/6b3084f1f6e267d7e6580fd84e9afae1_52.png)
 
-# 创建状态图
-workflow = StateGraph(AgentState)
 
 ![](img/6b3084f1f6e267d7e6580fd84e9afae1_54.png)
 
+
+![](img/6b3084f1f6e267d7e6580fd84e9afae1_55.png)
+
+
+![](img/6b3084f1f6e267d7e6580fd84e9afae1_57.png)
+
+```python
+from langgraph.checkpoint.sqlite import SqliteSaver
+# 初始化检查点存储器
+memory = SqliteSaver.from_conn_string(“:memory:”) # 示例中使用内存数据库
+# 创建状态图
+workflow = StateGraph(AgentState)
 # 添加所有节点
 workflow.add_node(“question_rewriter”, question_rewriter)
 workflow.add_node(“classifier”, classifier)
@@ -419,9 +425,6 @@ workflow.add_node(“refine_question”, refine_question)
 workflow.add_node(“generate_answer”, generate_answer)
 workflow.add_node(“cannot_answer”, cannot_answer)
 workflow.add_node(“off_topic_response”, off_topic_response)
-
-![](img/6b3084f1f6e267d7e6580fd84e9afae1_55.png)
-
 # 设置入口点
 workflow.set_entry_point(“question_rewriter”)
 
@@ -449,9 +452,6 @@ workflow.add_edge(“refine_question”, “retrieve”) # 精炼问题后回到
 workflow.add_edge(“generate_answer”, END)
 workflow.add_edge(“cannot_answer”, END)
 workflow.add_edge(“off_topic_response”, END)
-
-![](img/6b3084f1f6e267d7e6580fd84e9afae1_57.png)
-
 # 编译图，并传入检查点存储器
 app = workflow.compile(checkpointer=memory)
 ```

@@ -86,15 +86,15 @@ def get_embeddings(articles):
 
 以下是准备和插入数据的主要循环逻辑：
 
+
+![](img/b5af4cc71a6feac4286ee55a49056fa9_8.png)
+
 ```python
 # 分批读取数据并上传嵌入
 chunk_size = 400
 max_rows = 20000
 prep = []
 chunk_num = 0
-
-![](img/b5af4cc71a6feac4286ee55a49056fa9_8.png)
-
 with tqdm(total=max_rows) as pbar:
     for chunk in pd.read_csv('all-the-news-3.csv', chunksize=chunk_size, nrows=max_rows):
         titles = chunk['title'].tolist()

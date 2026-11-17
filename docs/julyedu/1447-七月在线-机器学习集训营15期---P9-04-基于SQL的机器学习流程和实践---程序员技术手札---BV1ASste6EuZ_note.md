@@ -267,9 +267,6 @@ print(f"测试集准确率: {accuracy}")
 
 ![](img/a865a7c748e69aa4281094bc45320c08_71.png)
 
-```python
-from pyspark.ml.feature import VectorAssembler, StringIndexer
-from pyspark.ml.classification import RandomForestClassifier
 
 ![](img/a865a7c748e69aa4281094bc45320c08_73.png)
 
@@ -281,9 +278,6 @@ from pyspark.ml.classification import RandomForestClassifier
 
 ![](img/a865a7c748e69aa4281094bc45320c08_81.png)
 
-# 1. 读取并选择特征列
-df = spark.read.csv("titanic.csv", header=True, inferSchema=True)
-df = df.select("Survived", "Pclass", "Sex", "Age", "Fare")
 
 ![](img/a865a7c748e69aa4281094bc45320c08_83.png)
 
@@ -291,9 +285,6 @@ df = df.select("Survived", "Pclass", "Sex", "Age", "Fare")
 
 ![](img/a865a7c748e69aa4281094bc45320c08_87.png)
 
-# 2. 处理缺失值并转换类型
-df = df.dropna()
-df = df.withColumn("Age", df["Age"].cast("float"))
 
 ![](img/a865a7c748e69aa4281094bc45320c08_89.png)
 
@@ -301,6 +292,15 @@ df = df.withColumn("Age", df["Age"].cast("float"))
 
 ![](img/a865a7c748e69aa4281094bc45320c08_93.png)
 
+```python
+from pyspark.ml.feature import VectorAssembler, StringIndexer
+from pyspark.ml.classification import RandomForestClassifier
+# 1. 读取并选择特征列
+df = spark.read.csv("titanic.csv", header=True, inferSchema=True)
+df = df.select("Survived", "Pclass", "Sex", "Age", "Fare")
+# 2. 处理缺失值并转换类型
+df = df.dropna()
+df = df.withColumn("Age", df["Age"].cast("float"))
 # 3. 对“Sex”列进行标签编码
 indexer = StringIndexer(inputCol="Sex", outputCol="SexIndex")
 df_indexed = indexer.fit(df).transform(df)

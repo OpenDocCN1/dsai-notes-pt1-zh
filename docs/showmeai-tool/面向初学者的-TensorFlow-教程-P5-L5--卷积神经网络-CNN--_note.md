@@ -52,6 +52,9 @@
 
 首先，我们需要导入必要的库并加载 CIFAR-10 数据集。
 
+
+![](img/f02af098f9ad70406fc18680eac4bd94_7.png)
+
 ```python
 import tensorflow as tf
 from tensorflow import keras
@@ -60,9 +63,6 @@ import matplotlib.pyplot as plt
 
 # 加载 CIFAR-10 数据集
 (train_images, train_labels), (test_images, test_labels) = keras.datasets.cifar10.load_data()
-
-![](img/f02af098f9ad70406fc18680eac4bd94_7.png)
-
 # 归一化数据到 0-1 范围
 train_images = train_images / 255.0
 test_images = test_images / 255.0

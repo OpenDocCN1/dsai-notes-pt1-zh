@@ -40,11 +40,11 @@
 
 ![](img/4ba50848b59d2d47a40fa555c91d6d99_3.png)
 
-```python
-import numpy as np
 
 ![](img/4ba50848b59d2d47a40fa555c91d6d99_5.png)
 
+```python
+import numpy as np
 class LogisticRegression:
     def __init__(self, learning_rate=0.001, n_iters=1000):
         self.lr = learning_rate
@@ -109,18 +109,18 @@ class LogisticRegression:
 
 为了验证我们的实现，我们使用著名的威斯康星州乳腺癌数据集进行测试。以下是测试脚本：
 
-```python
-from sklearn.model_selection import train_test_split
-from sklearn import datasets
 
 ![](img/4ba50848b59d2d47a40fa555c91d6d99_23.png)
 
-bc = datasets.load_breast_cancer()
-X, y = bc.data, bc.target
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1234)
 
 ![](img/4ba50848b59d2d47a40fa555c91d6d99_25.png)
 
+```python
+from sklearn.model_selection import train_test_split
+from sklearn import datasets
+bc = datasets.load_breast_cancer()
+X, y = bc.data, bc.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1234)
 regressor = LogisticRegression(learning_rate=0.0001, n_iters=1000)
 regressor.fit(X_train, y_train)
 predictions = regressor.predict(X_test)

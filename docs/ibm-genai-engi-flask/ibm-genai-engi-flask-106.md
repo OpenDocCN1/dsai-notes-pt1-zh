@@ -59,11 +59,11 @@
 在PyTorch中，首先导入交叉熵损失模块，然后定义一个文本分类模型，接着创建一个交叉熵损失对象。
 
 **代码示例：**
-```python
-import torch.nn as nn
 
 ![](img/a02ee10df661eb3ed7f62d57db402657_6.png)
 
+```python
+import torch.nn as nn
 # 定义模型（此处为示例，需根据实际架构定义）
 model = TextClassificationModel(...)
 # 定义损失函数

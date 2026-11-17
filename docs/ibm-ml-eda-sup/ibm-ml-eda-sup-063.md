@@ -170,12 +170,12 @@ for col in cat_OHC_columns:
 
 ![](img/3d38103bacdc97251250451abc8c3395_77.png)
 
-```python
-# 错误：一维数组
-one_dim = data['neighborhood']  # 形状: (1379,)
 
 ![](img/3d38103bacdc97251250451abc8c3395_79.png)
 
+```python
+# 错误：一维数组
+one_dim = data['neighborhood']  # 形状: (1379,)
 # 正确：二维DataFrame
 two_dim = data[['neighborhood']] # 形状: (1379, 1)
 ```
@@ -211,10 +211,6 @@ two_dim = data[['neighborhood']] # 形状: (1379, 1)
 
 ![](img/3d38103bacdc97251250451abc8c3395_98.png)
 
-```python
-# 查看稀疏矩阵（节省内存，但不易读）
-print(new_sparse)
-# 输出类似: (0, 4) 1.0  (1, 24) 1.0 ... 表示在第0行第4列是1，第1行第24列是1...
 
 ![](img/3d38103bacdc97251250451abc8c3395_100.png)
 
@@ -222,6 +218,10 @@ print(new_sparse)
 
 ![](img/3d38103bacdc97251250451abc8c3395_104.png)
 
+```python
+# 查看稀疏矩阵（节省内存，但不易读）
+print(new_sparse)
+# 输出类似: (0, 4) 1.0  (1, 24) 1.0 ... 表示在第0行第4列是1，第1行第24列是1...
 # 转换为密集数组（易读，但消耗内存）
 print(new_sparse.toarray())
 # 输出一个完整的 1379行 x 25列 的数组，大部分是0

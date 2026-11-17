@@ -345,15 +345,6 @@ def evaluate(model, iterator, criterion):
 
 现在，我们可以初始化模型并开始训练。
 
-```python
-# 超参数
-EMBED_SIZE = 256
-HIDDEN_SIZE = 512
-ENCODER_HID_DIM = HIDDEN_SIZE * 2 # 因为是双向
-DROPOUT = 0.2
-CLIP = 1.0
-LEARNING_RATE = 0.001
-N_EPOCHS = 10
 
 ![](img/7ca84620974cefb70e6f3332d9f1ff93_62.png)
 
@@ -363,6 +354,15 @@ N_EPOCHS = 10
 
 ![](img/7ca84620974cefb70e6f3332d9f1ff93_68.png)
 
+```python
+# 超参数
+EMBED_SIZE = 256
+HIDDEN_SIZE = 512
+ENCODER_HID_DIM = HIDDEN_SIZE * 2 # 因为是双向
+DROPOUT = 0.2
+CLIP = 1.0
+LEARNING_RATE = 0.001
+N_EPOCHS = 10
 # 初始化模型
 encoder = Encoder(len(en_vocab), EMBED_SIZE, HIDDEN_SIZE, DROPOUT)
 decoder = Decoder(len(cn_vocab), EMBED_SIZE, HIDDEN_SIZE, ENCODER_HID_DIM, DROPOUT)

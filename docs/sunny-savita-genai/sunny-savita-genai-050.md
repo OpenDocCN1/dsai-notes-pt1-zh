@@ -47,12 +47,12 @@
 在开始实现之前，我们需要设置编程环境并导入必要的库。
 
 以下是需要安装和导入的核心库：
-```python
-# 安装必要的包
-# pip install google-generativeai langchain-community chromadb
 
 ![](img/c5c46b7334c847ea25864231cf90fe5f_15.png)
 
+```python
+# 安装必要的包
+# pip install google-generativeai langchain-community chromadb
 # 导入库
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 import warnings

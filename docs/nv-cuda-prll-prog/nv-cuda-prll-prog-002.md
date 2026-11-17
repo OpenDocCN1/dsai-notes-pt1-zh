@@ -39,18 +39,18 @@ for (int i = 0; i < 100; i++) {
 
 ![](img/79f6aa2eef992bc8530785c087c51019_18.png)
 
-```c
-#include <stdio.h>
 
 ![](img/79f6aa2eef992bc8530785c087c51019_20.png)
 
+
+![](img/79f6aa2eef992bc8530785c087c51019_22.png)
+
+```c
+#include <stdio.h>
 __global__ void square(int *a) {
     int tid = threadIdx.x;
     a[tid] = tid * tid;
 }
-
-![](img/79f6aa2eef992bc8530785c087c51019_22.png)
-
 int main() {
     int n = 100;
     int a[n];
@@ -114,19 +114,19 @@ int main() {
 
 ![](img/79f6aa2eef992bc8530785c087c51019_45.png)
 
-```c
-char *msg = "Hello World"; // 在CPU内存中
 
 ![](img/79f6aa2eef992bc8530785c087c51019_47.png)
 
 ![](img/79f6aa2eef992bc8530785c087c51019_49.png)
 
-__global__ void hello() {
-    printf("%s\n", msg); // 错误！GPU内核无法直接访问CPU内存
-}
 
 ![](img/79f6aa2eef992bc8530785c087c51019_51.png)
 
+```c
+char *msg = "Hello World"; // 在CPU内存中
+__global__ void hello() {
+    printf("%s\n", msg); // 错误！GPU内核无法直接访问CPU内存
+}
 int main() {
     hello<<<1, 32>>>();
     cudaDeviceSynchronize();
@@ -148,13 +148,13 @@ int main() {
 
 ![](img/79f6aa2eef992bc8530785c087c51019_61.png)
 
-```c
-#define MSG "Hello World" // 预处理器指令，在编译前进行文本替换
 
 ![](img/79f6aa2eef992bc8530785c087c51019_63.png)
 
 ![](img/79f6aa2eef992bc8530785c087c51019_65.png)
 
+```c
+#define MSG "Hello World" // 预处理器指令，在编译前进行文本替换
 __global__ void hello() {
     printf("%s\n", MSG); // 正确！编译前MSG已被替换为字符串字面量
 }

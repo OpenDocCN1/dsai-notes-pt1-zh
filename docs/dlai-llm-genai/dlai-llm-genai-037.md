@@ -31,6 +31,9 @@
 
 我们将加载在Lab2中训练好的模型作为本次实验的起点。同时，我们需要准备一个用于评估毒性的数据集。
 
+
+![](img/4ab64c442d92181c84467f2a25f13a61_3.png)
+
 ```python
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, AutoModelForSequenceClassification
 from peft import LoraConfig, get_peft_model
@@ -48,9 +51,6 @@ def print_trainable_parameters(model):
     trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     all_params = sum(p.numel() for p in model.parameters())
     print(f”可训练参数: {trainable_params} | 全部参数: {all_params} | 占比: {100 * trainable_params / all_params:.2f}%”)
-
-![](img/4ab64c442d92181c84467f2a25f13a61_3.png)
-
 print_trainable_parameters(model) # 输出例如：1.4%
 ```
 

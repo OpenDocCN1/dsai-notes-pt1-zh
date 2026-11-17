@@ -195,15 +195,15 @@ Iris实现的核心是**对称堆**的概念，这是一种分区全局地址空
 ![](img/6651019c42b2811f2ce4d85f264eba3a_72.png)
 
 **1. 初始化**
-```python
-import torch.distributed as dist
-dist.init_process_group(...) # 使用torch.distributed初始化
-iris_instance = iris.Iris(...) # 构造Iris实例，创建对称堆
 
 ![](img/6651019c42b2811f2ce4d85f264eba3a_74.png)
 
 ![](img/6651019c42b2811f2ce4d85f264eba3a_75.png)
 
+```python
+import torch.distributed as dist
+dist.init_process_group(...) # 使用torch.distributed初始化
+iris_instance = iris.Iris(...) # 构造Iris实例，创建对称堆
 # 从对称堆中分配张量（返回的是普通的PyTorch张量）
 input_tensor = iris.full(...)
 flag_tensor = iris.zeros(...)

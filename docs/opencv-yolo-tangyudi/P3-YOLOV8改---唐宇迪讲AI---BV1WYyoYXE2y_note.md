@@ -124,15 +124,15 @@ YOLOv8要求将数据集的路径和类别信息写在一个YAML配置文件中�
 
 以下是一个数据配置文件的示例模板：
 
+
+![](img/f68c3161425b818723113f4fd656a721_5.png)
+
 ```yaml
 # 数据集配置文件示例：data_custom.yaml
 path: /home/user/datasets/my_custom_data  # 数据集根目录
 train: images/train  # 训练集图像路径（相对于path）
 val: images/val      # 验证集图像路径（相对于path）
 test: images/test    # 测试集图像路径（可选）
-
-![](img/f68c3161425b818723113f4fd656a721_5.png)
-
 # 类别名称列表
 names:
   0: person
@@ -149,14 +149,14 @@ names:
 
 以下是训练代码示例：
 
+
+![](img/f68c3161425b818723113f4fd656a721_7.png)
+
 ```python
 from ultralytics import YOLO
 
 # 1. 加载一个预训练模型（YOLOv8提供了不同尺寸的模型，如n, s, m, l, x）
 model = YOLO('yolov8n.pt')  # 这里加载最小的 yolov8n 模型
-
-![](img/f68c3161425b818723113f4fd656a721_7.png)
-
 # 2. 使用自定义数据训练模型
 results = model.train(
     data='path/to/your/data_custom.yaml',  # 上一步准备的数据配置文件路径
@@ -179,6 +179,9 @@ results = model.train(
 
 以下是推理代码示例：
 
+
+![](img/f68c3161425b818723113f4fd656a721_13.png)
+
 ```python
 from ultralytics import YOLO
 
@@ -188,9 +191,6 @@ model = YOLO('runs/detect/my_custom_model/weights/best.pt')
 # 对图像进行推理
 results = model('path/to/your/test_image.jpg')
 # 结果会自动保存，并可视化显示检测框
-
-![](img/f68c3161425b818723113f4fd656a721_13.png)
-
 # 对视频进行推理
 results = model('path/to/your/test_video.mp4', save=True)
 ```

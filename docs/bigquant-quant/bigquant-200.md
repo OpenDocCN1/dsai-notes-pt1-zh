@@ -65,12 +65,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 ![](img/a6dcb1d93d7ec76615a1faa572f97f0f_3.png)
 
-```python
-# 创建GBDT分类器实例
-gbdt_model = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
 
 ![](img/a6dcb1d93d7ec76615a1faa572f97f0f_5.png)
 
+```python
+# 创建GBDT分类器实例
+gbdt_model = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
 # 在训练集上训练模型
 gbdt_model.fit(X_train, y_train)
 ```
@@ -88,14 +88,14 @@ gbdt_model.fit(X_train, y_train)
 **Accuracy = (正确预测数) / (总预测数)**
 
 以下是预测和计算准确率的代码：
-```python
-# 对测试集进行预测
-y_pred = gbdt_model.predict(X_test)
 
 ![](img/a6dcb1d93d7ec76615a1faa572f97f0f_9.png)
 
 ![](img/a6dcb1d93d7ec76615a1faa572f97f0f_10.png)
 
+```python
+# 对测试集进行预测
+y_pred = gbdt_model.predict(X_test)
 # 计算准确率
 accuracy = accuracy_score(y_test, y_pred)
 print(f"模型在测试集上的准确率为：{accuracy:.4f}")
@@ -119,26 +119,26 @@ print(f"模型在测试集上的准确率为：{accuracy:.4f}")
 
 ![](img/a6dcb1d93d7ec76615a1faa572f97f0f_16.png)
 
-```python
-from sklearn.model_selection import GridSearchCV
 
 ![](img/a6dcb1d93d7ec76615a1faa572f97f0f_18.png)
 
+
+![](img/a6dcb1d93d7ec76615a1faa572f97f0f_20.png)
+
+
+![](img/a6dcb1d93d7ec76615a1faa572f97f0f_22.png)
+
+```python
+from sklearn.model_selection import GridSearchCV
 # 定义参数网格
 param_grid = {
     'n_estimators': [50, 100, 200],
     'learning_rate': [0.01, 0.1, 0.2],
     'max_depth': [3, 4, 5]
 }
-
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_20.png)
-
 # 创建网格搜索对象
 grid_search = GridSearchCV(estimator=gbdt_model, param_grid=param_grid, cv=5, scoring='accuracy')
 grid_search.fit(X_train, y_train)
-
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_22.png)
-
 # 输出最佳参数
 print("最佳参数组合：", grid_search.best_params_)
 print("最佳交叉验证分数：", grid_search.best_score_)

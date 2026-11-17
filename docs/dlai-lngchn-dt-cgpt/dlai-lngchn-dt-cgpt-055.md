@@ -63,11 +63,11 @@ def generate_image(prompt):
 2.  **定义界面函数**：创建一个函数，接收文本提示作为输入，调用我们的`generate_image`函数，并返回生成的图像。
 3.  **创建界面**：使用Gradio的`Interface`类，将函数、输入组件和输出组件绑定在一起。
 
-```python
-import gradio as gr
 
 ![](img/c90c3c06d1e295caeb58f6aac3221f81_18.png)
 
+```python
+import gradio as gr
 def generate_image_from_prompt(prompt):
     image = generate_image(prompt) # 调用之前定义的函数
     return image

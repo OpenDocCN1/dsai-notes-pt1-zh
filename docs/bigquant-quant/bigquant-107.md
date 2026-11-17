@@ -37,6 +37,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 数据准备完成后，我们可以使用Scikit-learn库训练逻辑回归模型并进行预测。
 
+
+![](img/07465c6c17bb6326d2c3449821a8ac53_9.png)
+
 ```python
 # 创建并训练逻辑回归模型
 model = LogisticRegression()
@@ -47,9 +50,6 @@ y_predict = model.predict(X_test)
 
 # 获取预测的概率值
 y_proba = model.predict_proba(X_test)
-
-![](img/07465c6c17bb6326d2c3449821a8ac53_9.png)
-
 print(“预测结果：”, y_predict)
 print(“\n预测概率：\n”, y_proba)
 print(“\n真实类别：”, y_test)

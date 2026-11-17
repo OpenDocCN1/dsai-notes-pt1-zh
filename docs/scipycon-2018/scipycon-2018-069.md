@@ -199,13 +199,13 @@ display(button)
 
 **Flexbox布局**：通过设置 `display=‘flex‘`、`flex_flow=‘row‘`（或 `’column‘`）以及 `justify_content`、`align_items` 等属性，可以创建灵活、自适应的布局。例如，让一组按钮按比例分配剩余空间：
 
-```python
-from ipywidgets import HBox, Button, Layout
 
 ![](img/59dafc9a2f71919fbadbe94b446a0594_7.png)
 
 ![](img/59dafc9a2f71919fbadbe94b446a0594_9.png)
 
+```python
+from ipywidgets import HBox, Button, Layout
 # 按钮1占1份，按钮2占3份，按钮3占1份
 layout = Layout(display=‘flex‘, flex_flow=‘row‘, justify_content=‘space-between‘)
 buttons = [Button(layout=Layout(flex=‘1‘)), Button(layout=Layout(flex=‘3‘)), Button(layout=Layout(flex=‘1‘))]
@@ -298,12 +298,12 @@ Jupyter小部件不仅限于内置的基础控件，其真正的力量在于丰�
 
 ![](img/59dafc9a2f71919fbadbe94b446a0594_19.png)
 
-```python
-import bqplot.pyplot as plt
-import numpy as np
 
 ![](img/59dafc9a2f71919fbadbe94b446a0594_21.png)
 
+```python
+import bqplot.pyplot as plt
+import numpy as np
 x = np.linspace(-10, 10, 100)
 y = np.sin(x)
 fig = plt.figure(title=‘交互式正弦波‘)

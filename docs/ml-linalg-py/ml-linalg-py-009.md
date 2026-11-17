@@ -40,11 +40,11 @@
 
 现在，让我们通过一个简单的Python代码示例来验证这些概念。
 
-```python
-import numpy as np
 
 ![](img/77b581a012c780899d815f2a04feac50_1.png)
 
+```python
+import numpy as np
 # 定义基向量 i 和 j
 i = np.array([1, 0])
 j = np.array([0, 1])

@@ -62,6 +62,11 @@
 
 以下是构建分类模型的代码结构，它与我们构建回归模型的代码非常相似。
 
+
+![](img/a16fc5c839fb7c5ece5985cef8ef069c_13.png)
+
+![](img/a16fc5c839fb7c5ece5985cef8ef069c_14.png)
+
 ```python
 # 导入必要的库
 from tensorflow import keras
@@ -82,11 +87,6 @@ model.compile(optimizer='adam',
 
 # 训练模型
 model.fit(X_train, y_train_categorical, epochs=50)
-
-![](img/a16fc5c839fb7c5ece5985cef8ef069c_13.png)
-
-![](img/a16fc5c839fb7c5ece5985cef8ef069c_14.png)
-
 # 进行预测
 predictions = model.predict(X_test)
 ```

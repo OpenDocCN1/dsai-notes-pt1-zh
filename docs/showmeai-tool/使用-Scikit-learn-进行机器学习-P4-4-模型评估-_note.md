@@ -103,11 +103,11 @@ score, permutation_scores, pvalue = permutation_test_score(model, X, y)
 
 ![](img/685f8a9a43bae69c2b04fb232b54014c_35.png)
 
-```python
-from sklearn.model_selection import cross_val_score
 
 ![](img/685f8a9a43bae69c2b04fb232b54014c_37.png)
 
+```python
+from sklearn.model_selection import cross_val_score
 # cv=5 表示使用 5 折交叉验证
 scores = cross_val_score(model, X, y, cv=5)
 mean_score = scores.mean()  # 平均得分

@@ -31,15 +31,15 @@
 初始化客户端后，我们的设置就完成了。
 
 以下是初始化步骤的代码示例：
-```python
-# 导入Landing AI相关库
-from landingai_ade import AdeClient, ParseResponse, ExtractResponse
-import os
 
 ![](img/a9e1707fd9a9854f8195cb7dd87a39b8_7.png)
 
 ![](img/a9e1707fd9a9854f8195cb7dd87a39b8_8.png)
 
+```python
+# 导入Landing AI相关库
+from landingai_ade import AdeClient, ParseResponse, ExtractResponse
+import os
 # 从环境变量加载API密钥
 api_key = os.environ.get(“LANDINGAI_API_KEY”)
 # 初始化客户端

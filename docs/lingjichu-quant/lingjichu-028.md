@@ -76,6 +76,14 @@ def winsorize_by_percentile(series, low_percentile, high_percentile):
 ![](img/c6ce69e40f6c428748d069f83415dbeb_19.png)
 
 以下是调用函数和绘制对比图的示例代码：
+
+![](img/c6ce69e40f6c428748d069f83415dbeb_21.png)
+
+![](img/c6ce69e40f6c428748d069f83415dbeb_23.png)
+
+
+![](img/c6ce69e40f6c428748d069f83415dbeb_25.png)
+
 ```python
 # 假设`data`是一个DataFrame，`column_name`是我们要处理的列名
 column_to_process = 'D'  # 示例列名
@@ -84,16 +92,8 @@ high_p = 0.75 # 上分位数，如75%
 
 # 调用函数处理数据
 processed_data = winsorize_by_percentile(data[column_to_process], low_p, high_p)
-
-![](img/c6ce69e40f6c428748d069f83415dbeb_21.png)
-
-![](img/c6ce69e40f6c428748d069f83415dbeb_23.png)
-
 # 可视化原始数据与处理后的数据
 import matplotlib.pyplot as plt
-
-![](img/c6ce69e40f6c428748d069f83415dbeb_25.png)
-
 plt.figure(figsize=(10, 6))
 # 绘制处理后的数据（放在底层，用蓝色表示）
 plt.plot(processed_data.index, processed_data.values, label='Winsorized Data', alpha=0.7)

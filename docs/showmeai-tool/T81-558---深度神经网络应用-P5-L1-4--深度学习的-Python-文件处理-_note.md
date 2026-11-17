@@ -45,12 +45,13 @@ print(df.head())
 
 以下是从 URL 加载一张 JPEG 图像的示例：
 
+
+response = requests.get("https://.../image.jpg") # 替换为实际图片URL
+
 ```python
 from PIL import Image
 import requests
 from io import BytesIO
-
-response = requests.get("https://.../image.jpg") # 替换为实际图片URL
 img = Image.open(BytesIO(response.content))
 img.show()
 ```

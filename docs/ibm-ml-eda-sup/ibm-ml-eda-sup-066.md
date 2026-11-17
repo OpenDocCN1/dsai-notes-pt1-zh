@@ -70,8 +70,6 @@
 
 ![](img/14ccea59bfed89581b1ac27dbcb9e41c_28.png)
 
-```python
-from sklearn.preprocessing import PolynomialFeatures
 
 ![](img/14ccea59bfed89581b1ac27dbcb9e41c_29.png)
 
@@ -79,6 +77,8 @@ from sklearn.preprocessing import PolynomialFeatures
 
 ![](img/14ccea59bfed89581b1ac27dbcb9e41c_32.png)
 
+```python
+from sklearn.preprocessing import PolynomialFeatures
 # 创建多项式特征转换器，设置多项式阶数为2
 poly_feat = PolynomialFeatures(degree=2)
 # 拟合并转换数据

@@ -72,6 +72,9 @@ local_llm = Ollama(model="mistral:instruct")
 
 以下是构建索引的代码：
 
+
+![](img/c87b71a05c8f57040b45402accf7f213_10.png)
+
 ```python
 from langchain_community.document_loaders import WebBaseLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -81,9 +84,6 @@ from langchain_community.vectorstores import Chroma
 # 1. 加载文档
 loader = WebBaseLoader("https://lilianweng.github.io/posts/2023-06-23-agent/")
 data = loader.load()
-
-![](img/c87b71a05c8f57040b45402accf7f213_10.png)
-
 # 2. 分割文本
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=0)
 all_splits = text_splitter.split_documents(data)

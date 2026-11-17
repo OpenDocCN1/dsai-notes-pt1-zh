@@ -175,19 +175,11 @@ optimizer = torch.optim.SGD(params=model_4.parameters(),
 
 以下是实现代码：
 
-```python
-# 将模型设置为评估模式并进行前向传播（推理）
-model_4.eval()
-with torch.inference_mode():
-    y_logits = model_4(X_blob_test.to(device))
 
 ![](img/cdaa01b6e36e8c0484c4831c7000c266_31.png)
 
 ![](img/cdaa01b6e36e8c0484c4831c7000c266_32.png)
 
-# 1. 使用 Softmax 将 logits 转换为预测概率
-y_pred_probs = torch.softmax(y_logits, dim=1)
-print(f"前5个样本的预测概率:\n{y_pred_probs[:5]}")
 
 ![](img/cdaa01b6e36e8c0484c4831c7000c266_34.png)
 
@@ -195,6 +187,14 @@ print(f"前5个样本的预测概率:\n{y_pred_probs[:5]}")
 
 ![](img/cdaa01b6e36e8c0484c4831c7000c266_36.png)
 
+```python
+# 将模型设置为评估模式并进行前向传播（推理）
+model_4.eval()
+with torch.inference_mode():
+    y_logits = model_4(X_blob_test.to(device))
+# 1. 使用 Softmax 将 logits 转换为预测概率
+y_pred_probs = torch.softmax(y_logits, dim=1)
+print(f"前5个样本的预测概率:\n{y_pred_probs[:5]}")
 # 2. 使用 argmax 从概率中获取预测标签
 y_preds = torch.argmax(y_pred_probs, dim=1)
 print(f"前5个样本的预测标签:\n{y_preds[:5]}")

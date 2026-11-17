@@ -100,11 +100,11 @@ model_bison = 'models/text-bison-001'
 
 我们将从 `google.api_core` 导入 `retry` 库，它可以帮助我们在调用失败时自动重试。
 
-```python
-from google.api_core import retry
 
 ![](img/791ac583ad27125a297cf4469ba9b698_20.png)
 
+```python
+from google.api_core import retry
 @retry.Retry()
 def generate_text(prompt, model=model_bison, temperature=0.0):
     """

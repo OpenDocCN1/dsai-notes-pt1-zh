@@ -84,6 +84,11 @@ print(arr2d)
 **2. 使用NumPy内置函数快速创建**
 NumPy提供了多种快速创建特殊数组的函数。
 
+
+![](img/a79305cd5f95cc3ad6cdf604ba8828e8_7.png)
+
+![](img/a79305cd5f95cc3ad6cdf604ba8828e8_8.png)
+
 ```python
 # 生成指定形状的随机数组
 arr_random = np.random.rand(2, 5)  # 2行5列，元素在[0,1)区间均匀分布
@@ -92,11 +97,6 @@ print(arr_random)
 # 生成序列数组，类似range
 arr_range = np.arange(10)  # 生成0到9的数组
 print(arr_range)
-
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_7.png)
-
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_8.png)
-
 # 生成线性间隔数组
 arr_linspace = np.linspace(1, 10, 100)  # 在1到10之间生成100个等间隔的数
 print(arr_linspace)
@@ -164,13 +164,6 @@ print(arr[5:])       # 输出：[5 6 7 8 9]
 
 对于多维数组，使用逗号`,`分隔不同维度的索引。
 
-```python
-arr_2d = np.arange(15).reshape(3, 5) # 将0-14重组成3行5列
-print(arr_2d)
-# 输出：
-# [[ 0  1  2  3  4]
-#  [ 5  6  7  8  9]
-#  [10 11 12 13 14]]
 
 ![](img/a79305cd5f95cc3ad6cdf604ba8828e8_18.png)
 
@@ -178,6 +171,13 @@ print(arr_2d)
 
 ![](img/a79305cd5f95cc3ad6cdf604ba8828e8_20.png)
 
+```python
+arr_2d = np.arange(15).reshape(3, 5) # 将0-14重组成3行5列
+print(arr_2d)
+# 输出：
+# [[ 0  1  2  3  4]
+#  [ 5  6  7  8  9]
+#  [10 11 12 13 14]]
 # 访问单个元素：第1行，第2列（索引从0开始）
 print(arr_2d[1, 2])  # 输出：7
 
@@ -248,13 +248,13 @@ print(arr.shape)           # 输出：(30,) 原数组未变
 **2. `resize`方法或直接修改`shape`属性**
 直接修改数组的`shape`属性或使用`resize`方法会**改变原数组**。
 
+
+![](img/a79305cd5f95cc3ad6cdf604ba8828e8_26.png)
+
 ```python
 arr = np.arange(30)
 arr.shape = (5, 6)  # 直接修改shape属性
 print(arr.shape)    # 输出：(5, 6)
-
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_26.png)
-
 # 或者使用resize
 arr = np.arange(30)
 arr.resize((5, 6))
@@ -334,21 +334,9 @@ print(np.sin(arr))  # 输出：[0.0000000e+00 1.0000000e+00 1.2246468e-16]
 
 ![](img/a79305cd5f95cc3ad6cdf604ba8828e8_43.png)
 
-```python
-arr = np.arange(15).reshape(3, 5)
-print(arr)
-# 输出：
-# [[ 0  1  2  3  4]
-#  [ 5  6  7  8  9]
-#  [10 11 12 13 14]]
 
 ![](img/a79305cd5f95cc3ad6cdf604ba8828e8_45.png)
 
-# 全局求和
-print(np.sum(arr))          # 输出：105
-
-# 沿轴0求和（跨行，即每列求和）
-print(np.sum(arr, axis=0))  # 输出：[15 18 21 24 27]
 
 ![](img/a79305cd5f95cc3ad6cdf604ba8828e8_47.png)
 
@@ -356,11 +344,23 @@ print(np.sum(arr, axis=0))  # 输出：[15 18 21 24 27]
 
 ![](img/a79305cd5f95cc3ad6cdf604ba8828e8_49.png)
 
-# 沿轴1求和（跨列，即每行求和）
-print(np.sum(arr, axis=1))  # 输出：[10 35 60]
 
 ![](img/a79305cd5f95cc3ad6cdf604ba8828e8_51.png)
 
+```python
+arr = np.arange(15).reshape(3, 5)
+print(arr)
+# 输出：
+# [[ 0  1  2  3  4]
+#  [ 5  6  7  8  9]
+#  [10 11 12 13 14]]
+# 全局求和
+print(np.sum(arr))          # 输出：105
+
+# 沿轴0求和（跨行，即每列求和）
+print(np.sum(arr, axis=0))  # 输出：[15 18 21 24 27]
+# 沿轴1求和（跨列，即每行求和）
+print(np.sum(arr, axis=1))  # 输出：[10 35 60]
 # 求最大值
 print(np.max(arr))           # 输出：14
 print(np.max(arr, axis=0))   # 输出：[10 11 12 13 14]
@@ -388,6 +388,11 @@ Softmax的公式为：
 3.  计算所有指数值的和。
 4.  将每个指数值除以总和，得到概率。
 
+
+![](img/a79305cd5f95cc3ad6cdf604ba8828e8_59.png)
+
+![](img/a79305cd5f95cc3ad6cdf604ba8828e8_60.png)
+
 ```python
 def softmax(x):
     # 防止数值溢出，进行稳定性处理：减去最大值
@@ -400,11 +405,6 @@ probabilities = softmax(x)
 print(“输入:”, x)
 print(“Softmax概率:”, probabilities)
 print(“概率和:”, np.sum(probabilities))  # 应非常接近1.0
-
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_59.png)
-
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_60.png)
-
 # 也可以处理二维数组（如多分类问题中每个样本的得分）
 scores = np.random.randn(3, 5)  # 3个样本，5个类别得分
 probs = softmax(scores)         # 对每一行（axis=1）计算softmax

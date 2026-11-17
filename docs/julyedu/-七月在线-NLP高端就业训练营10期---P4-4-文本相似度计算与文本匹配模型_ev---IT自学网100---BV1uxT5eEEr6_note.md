@@ -158,14 +158,14 @@ ESIM模型主要包含四层：
 
 ![](img/398942c983e0a079b7cef9fb3e214f65_54.png)
 
-```python
-import torch
-import torch.nn as nn
 
 ![](img/398942c983e0a079b7cef9fb3e214f65_56.png)
 
 ![](img/398942c983e0a079b7cef9fb3e214f65_58.png)
 
+```python
+import torch
+import torch.nn as nn
 class ESIM(nn.Module):
     def __init__(self, vocab_size, embedding_size, hidden_size):
         super(ESIM, self).__init__()

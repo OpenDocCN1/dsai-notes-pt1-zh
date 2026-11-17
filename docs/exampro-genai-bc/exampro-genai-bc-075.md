@@ -63,9 +63,6 @@ Whisper模型有不同的大小，性能与资源消耗各异。我们将使用`
 ![](img/6dc2d2b929dadb59921c8c2b37a474ba_34.png)
 
 核心步骤是创建语音识别管道并指定模型。
-```python
-from transformers import pipeline
-import torch
 
 ![](img/6dc2d2b929dadb59921c8c2b37a474ba_36.png)
 
@@ -73,6 +70,9 @@ import torch
 
 ![](img/6dc2d2b929dadb59921c8c2b37a474ba_39.png)
 
+```python
+from transformers import pipeline
+import torch
 # 检查并设置设备
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 print(f"Using device: {device}")

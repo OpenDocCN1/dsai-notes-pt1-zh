@@ -28,21 +28,21 @@
 
 ![](img/98c1e29d78c0232f82d3f9c26bb9d961_12.png)
 
-```python
-# 保存模型的状态字典
-torch.save(model.state_dict(), 'model.pt')
 
 ![](img/98c1e29d78c0232f82d3f9c26bb9d961_14.png)
 
 ![](img/98c1e29d78c0232f82d3f9c26bb9d961_16.png)
 
-# 保存优化器的状态字典
-torch.save(optimizer.state_dict(), 'optimizer.pt')
 
 ![](img/98c1e29d78c0232f82d3f9c26bb9d961_18.png)
 
 ![](img/98c1e29d78c0232f82d3f9c26bb9d961_20.png)
 
+```python
+# 保存模型的状态字典
+torch.save(model.state_dict(), 'model.pt')
+# 保存优化器的状态字典
+torch.save(optimizer.state_dict(), 'optimizer.pt')
 # 保存调度器的状态字典
 torch.save(scheduler.state_dict(), 'scheduler.pt')
 ```
@@ -63,15 +63,15 @@ torch.save(scheduler.state_dict(), 'scheduler.pt')
 
 ![](img/98c1e29d78c0232f82d3f9c26bb9d961_28.png)
 
+
+![](img/98c1e29d78c0232f82d3f9c26bb9d961_30.png)
+
 ```python
 # 1. 初始化模型结构（必须与保存的模型结构相同）
 model = YourModelClass()
 
 # 2. 加载模型的状态字典
 model.load_state_dict(torch.load('model.pt'))
-
-![](img/98c1e29d78c0232f82d3f9c26bb9d961_30.png)
-
 # 3. （可选）加载优化器和调度器状态，以继续训练
 optimizer.load_state_dict(torch.load('optimizer.pt'))
 scheduler.load_state_dict(torch.load('scheduler.pt'))

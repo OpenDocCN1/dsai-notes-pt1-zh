@@ -97,11 +97,11 @@ model_1 = FashionMNISTModelV1(
 
 以下是相关代码：
 
-```python
-from helper_functions import accuracy_fn
 
 ![](img/b376b8404c22a90513be761d4472f390_28.png)
 
+```python
+from helper_functions import accuracy_fn
 loss_fn = nn.CrossEntropyLoss()
 optimizer = torch.optim.SGD(params=model_1.parameters(), lr=0.1)
 ```

@@ -8,11 +8,11 @@
 
 首先，我们需要读取一张图像并展示其原始样貌。以下是读取和展示图像的代码。
 
-```python
-import cv2
 
 ![](img/dcd8ded87636bfc199509b8174605224_2.png)
 
+```python
+import cv2
 # 读取图像
 img = cv2.imread('antimage.jpg')
 # 展示图像
@@ -131,6 +131,9 @@ cv2.destroyAllWindows()
 
 以下是计算拉普拉斯金字塔第一层的代码示例。
 
+
+![](img/dcd8ded87636bfc199509b8174605224_22.png)
+
 ```python
 # 生成高斯金字塔的下采样层（第一层）
 gaussian_down = cv2.pyrDown(img)
@@ -138,9 +141,6 @@ gaussian_down = cv2.pyrDown(img)
 gaussian_up = cv2.pyrUp(gaussian_down)
 # 计算拉普拉斯金字塔第一层：原始图像 - 上采样结果
 laplacian_layer = cv2.subtract(img, gaussian_up)
-
-![](img/dcd8ded87636bfc199509b8174605224_22.png)
-
 # 展示结果
 cv2.imshow('Laplacian Pyramid Layer', laplacian_layer)
 cv2.waitKey(0)

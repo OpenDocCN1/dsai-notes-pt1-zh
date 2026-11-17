@@ -119,14 +119,14 @@ print(cm)
 
 ![](img/c5a28d261316d48ae10768633c59d107_35.png)
 
-```python
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 ![](img/c5a28d261316d48ae10768633c59d107_37.png)
 
 ![](img/c5a28d261316d48ae10768633c59d107_38.png)
 
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
 fig, ax = plt.subplots(figsize=(12, 12))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=ax,
             xticklabels=['Not Churn', 'Churn'],

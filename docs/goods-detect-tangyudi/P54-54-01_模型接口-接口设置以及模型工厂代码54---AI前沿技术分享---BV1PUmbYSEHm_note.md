@@ -70,12 +70,12 @@
 
 ![](img/9139acd7b9e68d9f4864079e4060474e_27.png)
 
-```python
-# nets_factory.py
-from nets.nets_model.ssd_vgg300 import SSDNet
 
 ![](img/9139acd7b9e68d9f4864079e4060474e_29.png)
 
+```python
+# nets_factory.py
+from nets.nets_model.ssd_vgg300 import SSDNet
 def get_network(network_name):
     """
     根据网络名称获取对应的网络模型类。

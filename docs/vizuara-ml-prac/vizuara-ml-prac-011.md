@@ -42,6 +42,12 @@
 
 首先，导入必要的库并准备一个简单的二维数据集用于演示。
 
+
+![](img/87751c612a7e4a4690867461ac54380a_3.png)
+
+
+![](img/87751c612a7e4a4690867461ac54380a_5.png)
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -59,15 +65,9 @@ neg_labels = -1 * np.ones(20)
 pos_centroid = [6, 6]
 pos_data = np.random.randn(20, 2) + pos_centroid
 pos_labels = np.ones(20)
-
-![](img/87751c612a7e4a4690867461ac54380a_3.png)
-
 # 合并数据和标签
 X = np.vstack((neg_data, pos_data))
 y = np.hstack((neg_labels, pos_labels))
-
-![](img/87751c612a7e4a4690867461ac54380a_5.png)
-
 # 可视化数据
 plt.figure(figsize=(8, 6))
 plt.scatter(neg_data[:, 0], neg_data[:, 1], color='red', label='Negative Class (y=-1)', alpha=0.7)
@@ -166,6 +166,9 @@ plt.show()
 
 最后，我们将学习到的决策边界可视化，看看感知机是如何划分数据的。
 
+
+![](img/87751c612a7e4a4690867461ac54380a_7.png)
+
 ```python
 # 定义一个函数来根据theta和theta_0计算决策边界
 def plot_decision_boundary(theta, theta_0, X, y):
@@ -203,9 +206,6 @@ def plot_decision_boundary(theta, theta_0, X, y):
     plt.grid(True, alpha=0.3)
     plt.axis('equal')
     plt.show()
-
-![](img/87751c612a7e4a4690867461ac54380a_7.png)
-
 # 绘制最终决策边界
 plot_decision_boundary(theta, theta_0, X, y)
 ```

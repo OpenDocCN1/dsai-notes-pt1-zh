@@ -188,6 +188,9 @@ index.save('interstellar_index.ann')
 
 现在，我们可以定义一个搜索函数，它接受一个查询，并返回最相关的文本块。
 
+
+![](img/18d2321a55b6af9786231ba4a7dfd8a4_30.png)
+
 ```python
 def search(query, top_k=3):
     # 获取查询的嵌入向量
@@ -197,9 +200,6 @@ def search(query, top_k=3):
     # 返回对应的文本块和距离
     results = [(chunks_with_context[i], dist) for i, dist in zip(indices, distances)]
     return results
-
-![](img/18d2321a55b6af9786231ba4a7dfd8a4_30.png)
-
 # 示例查询
 results = search("这部电影赚了多少钱？")
 for text, distance in results:

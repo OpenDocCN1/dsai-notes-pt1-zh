@@ -152,12 +152,12 @@ def worker(ps, iterations=100):
 
 ![](img/65cf908ff79a7cb89fefe959346009b4_7.png)
 
-```python
-# 创建参数服务器
-ps = ParameterServer.remote(10)
 
 ![](img/65cf908ff79a7cb89fefe959346009b4_9.png)
 
+```python
+# 创建参数服务器
+ps = ParameterServer.remote(10)
 # 启动两个工作进程
 worker_tasks = [worker.remote(ps) for _ in range(2)]
 ```

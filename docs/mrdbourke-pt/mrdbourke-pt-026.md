@@ -40,17 +40,17 @@ print(random_tensor)
 
 首先，我们创建两个没有设置种子的随机张量，并比较它们：
 
+
+![](img/a2ed02bf7b4c7b9fae9b05e5fae0b329_2.png)
+
+![](img/a2ed02bf7b4c7b9fae9b05e5fae0b329_3.png)
+
 ```python
 import torch
 
 # 创建两个随机张量
 random_tensor_A = torch.rand(3, 4)
 random_tensor_B = torch.rand(3, 4)
-
-![](img/a2ed02bf7b4c7b9fae9b05e5fae0b329_2.png)
-
-![](img/a2ed02bf7b4c7b9fae9b05e5fae0b329_3.png)
-
 print(“随机张量 A:”, random_tensor_A)
 print(“随机张量 B:”, random_tensor_B)
 print(“A 和 B 是否相等？:”, random_tensor_A == random_tensor_B)

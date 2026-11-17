@@ -134,6 +134,9 @@ retriever.docstore.add({
 
 ![](img/89f08715ad322807d0e0acad61e8a757_12.png)
 
+
+![](img/89f08715ad322807d0e0acad61e8a757_14.png)
+
 ```python
 # 用户查询
 query = "请解释文档中的主要研究方法"
@@ -147,9 +150,6 @@ for summary in similar_summaries:
     doc_id = summary.metadata['doc_id']
     raw_doc = retriever.docstore.get(doc_id)
     raw_documents.append(raw_doc)
-
-![](img/89f08715ad322807d0e0acad61e8a757_14.png)
-
 # 将原始数据传递给LLM生成答案
 context = "\n".join([str(doc) for doc in raw_documents])
 answer = llm.generate(f"基于以下上下文回答问题：{context}\n问题：{query}")

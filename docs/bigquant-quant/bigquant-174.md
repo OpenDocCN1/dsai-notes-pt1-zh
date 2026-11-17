@@ -95,10 +95,6 @@ plt.show()
 
 ![](img/59405528524733872b71504340c60ba4_43.png)
 
-```python
-# 使用K-Means聚类
-kmeans = KMeans(n_clusters=3)
-y_kmeans = kmeans.fit_predict(X)
 
 ![](img/59405528524733872b71504340c60ba4_45.png)
 
@@ -106,6 +102,10 @@ y_kmeans = kmeans.fit_predict(X)
 
 ![](img/59405528524733872b71504340c60ba4_49.png)
 
+```python
+# 使用K-Means聚类
+kmeans = KMeans(n_clusters=3)
+y_kmeans = kmeans.fit_predict(X)
 # 绘制K-Means聚类结果
 plt.figure(figsize=(6, 6))
 plt.scatter(X[:, 0], X[:, 1], c=y_kmeans)
@@ -145,15 +145,15 @@ plt.show()
 
 ![](img/59405528524733872b71504340c60ba4_73.png)
 
-```python
-# 使用高斯混合模型聚类
-gmm = GaussianMixture(n_components=3)
-y_gmm = gmm.fit_predict(X)
 
 ![](img/59405528524733872b71504340c60ba4_75.png)
 
 ![](img/59405528524733872b71504340c60ba4_77.png)
 
+```python
+# 使用高斯混合模型聚类
+gmm = GaussianMixture(n_components=3)
+y_gmm = gmm.fit_predict(X)
 # 绘制GMM聚类结果
 plt.figure(figsize=(6, 6))
 plt.scatter(X[:, 0], X[:, 1], c=y_gmm)
@@ -177,34 +177,19 @@ plt.show()
 
 ![](img/59405528524733872b71504340c60ba4_87.png)
 
-```python
-# 创建对比图
-plt.figure(figsize=(12, 4))
 
 ![](img/59405528524733872b71504340c60ba4_89.png)
 
 ![](img/59405528524733872b71504340c60ba4_91.png)
 
-# 子图1：原始数据
-plt.subplot(1, 3, 1)
-plt.scatter(X[:, 0], X[:, 1], c=y)
-plt.title(‘原始数据‘, pad=20)
 
 ![](img/59405528524733872b71504340c60ba4_93.png)
 
-# 子图2：K-Means结果
-plt.subplot(1, 3, 2)
-plt.scatter(X[:, 0], X[:, 1], c=y_kmeans)
-plt.title(‘K-Means聚类‘, pad=20)
 
 ![](img/59405528524733872b71504340c60ba4_95.png)
 
 ![](img/59405528524733872b71504340c60ba4_97.png)
 
-# 子图3：GMM结果
-plt.subplot(1, 3, 3)
-plt.scatter(X[:, 0], X[:, 1], c=y_gmm)
-plt.title(‘GMM聚类‘, pad=20)
 
 ![](img/59405528524733872b71504340c60ba4_99.png)
 
@@ -212,6 +197,21 @@ plt.title(‘GMM聚类‘, pad=20)
 
 ![](img/59405528524733872b71504340c60ba4_103.png)
 
+```python
+# 创建对比图
+plt.figure(figsize=(12, 4))
+# 子图1：原始数据
+plt.subplot(1, 3, 1)
+plt.scatter(X[:, 0], X[:, 1], c=y)
+plt.title(‘原始数据‘, pad=20)
+# 子图2：K-Means结果
+plt.subplot(1, 3, 2)
+plt.scatter(X[:, 0], X[:, 1], c=y_kmeans)
+plt.title(‘K-Means聚类‘, pad=20)
+# 子图3：GMM结果
+plt.subplot(1, 3, 3)
+plt.scatter(X[:, 0], X[:, 1], c=y_gmm)
+plt.title(‘GMM聚类‘, pad=20)
 plt.tight_layout()
 plt.show()
 ```

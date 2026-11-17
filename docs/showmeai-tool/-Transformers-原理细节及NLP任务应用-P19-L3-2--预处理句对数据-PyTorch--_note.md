@@ -56,12 +56,12 @@ print(encoded_input.keys()) # 输出: dict_keys([‘input_ids’, ‘token_type_
 
 以下是批量处理的示例：
 
-```python
-sentences_a = [“Sentence A1”, “Sentence A2”]
-sentences_b = [“Sentence B1”, “Sentence B2”]
 
 ![](img/6c5fec0939d8ec492c6e56dd82094de9_5.png)
 
+```python
+sentences_a = [“Sentence A1”, “Sentence A2”]
+sentences_b = [“Sentence B1”, “Sentence B2”]
 batch_encoded = tokenizer(sentences_a, sentences_b, padding=True, return_tensors=“pt”)
 ```
 

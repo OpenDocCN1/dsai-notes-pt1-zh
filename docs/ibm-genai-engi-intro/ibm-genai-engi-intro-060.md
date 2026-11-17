@@ -143,11 +143,6 @@ print(“继续。”)
 
 以下是使用逻辑运算符的示例：
 
-```python
-# 使用 or 运算符
-album_year = 1990
-if (album_year < 1980) or (album_year > 1989):
-    print(“这张专辑制作于70年代或90年代。”)
 
 ![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_18.png)
 
@@ -155,6 +150,11 @@ if (album_year < 1980) or (album_year > 1989):
 
 ![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_20.png)
 
+```python
+# 使用 or 运算符
+album_year = 1990
+if (album_year < 1980) or (album_year > 1989):
+    print(“这张专辑制作于70年代或90年代。”)
 # 使用 and 运算符
 album_year = 1983
 if (album_year > 1979) and (album_year < 1990):

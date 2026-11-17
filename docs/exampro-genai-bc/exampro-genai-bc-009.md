@@ -45,6 +45,19 @@ OpenAI提供了官方的提示工程指南。其中一些核心策略包括：
 
 ![](img/85a12d86fbe8a068e33e0eeae55ccb73_15.png)
 
+
+![](img/85a12d86fbe8a068e33e0eeae55ccb73_17.png)
+
+![](img/85a12d86fbe8a068e33e0eeae55ccb73_19.png)
+
+
+![](img/85a12d86fbe8a068e33e0eeae55ccb73_21.png)
+
+![](img/85a12d86fbe8a068e33e0eeae55ccb73_22.png)
+
+
+![](img/85a12d86fbe8a068e33e0eeae55ccb73_24.png)
+
 ```markdown
 # Japanese Language Teacher
 ## Language Level: Beginner
@@ -55,18 +68,8 @@ When presented with an English sentence:
 1.  Provide a vocabulary table containing only the necessary Japanese words from the sentence, in their dictionary form. Do not include particles (e.g., wa, ga, o, ni) in this table.
 2.  Provide the sentence structure in English, using placeholders like [Subject], [Object], [Verb]. Do not fill in the Japanese words.
 3.  Provide considerations or clues that focus on the grammar points needed (e.g., particle usage, verb tense). Do not give away the answer.
-
-![](img/85a12d86fbe8a068e33e0eeae55ccb73_17.png)
-
-![](img/85a12d86fbe8a068e33e0eeae55ccb73_19.png)
-
 ## Example
 **English Sentence:** "The cat sleeps on the sofa."
-
-![](img/85a12d86fbe8a068e33e0eeae55ccb73_21.png)
-
-![](img/85a12d86fbe8a068e33e0eeae55ccb73_22.png)
-
 **Your Response:**
 ### Vocabulary
 | English | Japanese (Dictionary Form) |
@@ -77,9 +80,6 @@ When presented with an English sentence:
 
 ### Sentence Structure
 [Subject] wa [Location] de [Verb].
-
-![](img/85a12d86fbe8a068e33e0eeae55ccb73_24.png)
-
 ### Cues and Considerations
 *   The subject "cat" will be marked by the particle `wa`.
 *   The location "on the sofa" requires the particle `de`.

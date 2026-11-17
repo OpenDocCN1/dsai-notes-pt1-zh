@@ -17,13 +17,13 @@
 要使用托管内存，您只需使用 `cudaMallocManaged` 函数来分配内存，而不是分别使用 `malloc`（主机）和 `cudaMalloc`（设备）。
 
 以下是分配托管内存的基本代码示例：
+
+![](img/163d4829ac6bf48680a5870cc82ae046_2.png)
+
 ```c
 // 分配托管内存
 int *data;
 cudaMallocManaged(&data, N * sizeof(int));
-
-![](img/163d4829ac6bf48680a5870cc82ae046_2.png)
-
 // 现在，`data` 指针既可以在主机代码中使用，也可以在设备内核中使用
 // ... 在主机上初始化数据 ...
 // ... 启动内核处理 `data` ...

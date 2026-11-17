@@ -21,6 +21,9 @@
 
 ![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_3.png)
 
+
+![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_5.png)
+
 ```python
 import torch
 import torch.nn as nn
@@ -36,9 +39,6 @@ x = torch.from_numpy(x_numpy.astype(np.float32))
 y = torch.from_numpy(y_numpy.astype(np.float32))
 # 将 y 重塑为列向量 (n_samples, 1)
 y = y.view(y.shape[0], 1)
-
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_5.png)
-
 # 获取样本数和特征数
 n_samples, n_features = x.shape
 ```

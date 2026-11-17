@@ -42,14 +42,14 @@ MAD法的核心在于计算一个名为“中位数绝对偏差”的值，并�
 
 ![](img/ed1021ba447461ad6845f7f999448e96_16.png)
 
-```python
-import pandas as pd
-import numpy as np
 
 ![](img/ed1021ba447461ad6845f7f999448e96_18.png)
 
 ![](img/ed1021ba447461ad6845f7f999448e96_20.png)
 
+```python
+import pandas as pd
+import numpy as np
 def mad_filter(series, n=1.4826):
     """
     使用MAD法对序列进行去极值处理。

@@ -46,6 +46,12 @@
 ### 工具定义
 在 `graph.py` 中，我们首先定义了四个与记忆管理相关的工具函数：
 
+
+![](img/d5068f90420c60bc51f1ba4e337c13af_3.png)
+
+
+![](img/d5068f90420c60bc51f1ba4e337c13af_5.png)
+
 ```python
 # 工具函数示例结构
 @tool_node
@@ -57,16 +63,10 @@ def save_recall_memory(state):
 def search_memory(state):
     # 将查询文本向量化，在Pinecone中搜索相似记忆，并返回结果
     pass
-
-![](img/d5068f90420c60bc51f1ba4e337c13af_3.png)
-
 @tool_node
 def fetch_core_memories(state):
     # 直接从数据库（如Redis）中获取当前用户的所有核心记忆
     pass
-
-![](img/d5068f90420c60bc51f1ba4e337c13af_5.png)
-
 @tool_node
 def store_core_memory(state):
     # 存储或更新用户的某条核心记忆

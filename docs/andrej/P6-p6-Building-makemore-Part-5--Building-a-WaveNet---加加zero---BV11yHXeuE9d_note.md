@@ -199,12 +199,6 @@ losses = torch.tensor(losses).view(-1, 1000).mean(1)
 
 ![](img/c9be2506944533fbac16b5c8db99ea71_175.png)
 
-```python
-class Embedding:
-    def __init__(self, num_embeddings, embedding_dim):
-        self.weight = torch.randn((num_embeddings, embedding_dim))
-    def __call__(self, idx):
-        return self.weight[idx]
 
 ![](img/c9be2506944533fbac16b5c8db99ea71_177.png)
 
@@ -224,6 +218,12 @@ class Embedding:
 
 ![](img/c9be2506944533fbac16b5c8db99ea71_193.png)
 
+```python
+class Embedding:
+    def __init__(self, num_embeddings, embedding_dim):
+        self.weight = torch.randn((num_embeddings, embedding_dim))
+    def __call__(self, idx):
+        return self.weight[idx]
 class Flatten:
     def __call__(self, x):
         return x.view(x.shape[0], -1)

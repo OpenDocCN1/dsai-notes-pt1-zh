@@ -50,14 +50,14 @@
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_26.png)
 
-```python
-import torch
-import numpy as np
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_28.png)
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_29.png)
 
+```python
+import torch
+import numpy as np
 class LogisticRegression:
     def __init__(self, num_features):
         self.weights = torch.zeros(1, num_features)  # 初始化权重为零
@@ -157,11 +157,6 @@ def train(model, x_train, y_train, epochs, learning_rate):
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_47.png)
 
-```python
-# 准备数据（示例，需替换为实际数据）
-# X_train, y_train, X_test, y_test = load_your_data()
-X_train_t = torch.tensor(X_train, dtype=torch.float32)
-y_train_t = torch.tensor(y_train, dtype=torch.float32).view(-1, 1)
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_49.png)
 
@@ -171,16 +166,9 @@ y_train_t = torch.tensor(y_train, dtype=torch.float32).view(-1, 1)
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_55.png)
 
-# 初始化模型
-num_features = X_train.shape[1]
-model1 = LogisticRegression(num_features)
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_57.png)
 
-# 训练模型
-epochs = 30
-lr = 0.1
-loss_history = train(model1, X_train_t, y_train_t, epochs, lr)
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_59.png)
 
@@ -192,9 +180,6 @@ loss_history = train(model1, X_train_t, y_train_t, epochs, lr)
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_66.png)
 
-# 查看最终参数
-print(‘Weights:‘, model1.weights)
-print(‘Bias:‘, model1.bias)
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_68.png)
 
@@ -202,6 +187,21 @@ print(‘Bias:‘, model1.bias)
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_70.png)
 
+```python
+# 准备数据（示例，需替换为实际数据）
+# X_train, y_train, X_test, y_test = load_your_data()
+X_train_t = torch.tensor(X_train, dtype=torch.float32)
+y_train_t = torch.tensor(y_train, dtype=torch.float32).view(-1, 1)
+# 初始化模型
+num_features = X_train.shape[1]
+model1 = LogisticRegression(num_features)
+# 训练模型
+epochs = 30
+lr = 0.1
+loss_history = train(model1, X_train_t, y_train_t, epochs, lr)
+# 查看最终参数
+print(‘Weights:‘, model1.weights)
+print(‘Bias:‘, model1.bias)
 # 在测试集上评估
 X_test_t = torch.tensor(X_test, dtype=torch.float32)
 y_test_t = torch.tensor(y_test, dtype=torch.float32).view(-1, 1)
@@ -241,8 +241,6 @@ print(f‘Test Accuracy: {test_acc:.2f}‘)
 
 PyTorch的`torch.nn`模块提供了构建神经网络所需的所有基础组件。
 
-```python
-import torch.nn as nn
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_88.png)
 
@@ -252,6 +250,8 @@ import torch.nn as nn
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_92.png)
 
+```python
+import torch.nn as nn
 class LogisticRegressionPyTorch(nn.Module):
     def __init__(self, num_features):
         super(LogisticRegressionPyTorch, self).__init__()
@@ -317,16 +317,11 @@ def train_pytorch(model, x_train, y_train, epochs, learning_rate):
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_107.png)
 
-```python
-# 初始化PyTorch模型
-model2 = LogisticRegressionPyTorch(num_features)
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_109.png)
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_111.png)
 
-# 训练模型
-train_pytorch(model2, X_train_t, y_train_t, epochs, lr)
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_113.png)
 
@@ -334,14 +329,19 @@ train_pytorch(model2, X_train_t, y_train_t, epochs, lr)
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_117.png)
 
+
+![](img/54ee9d1a5027fa4bec5b5df80ebc8872_118.png)
+
+```python
+# 初始化PyTorch模型
+model2 = LogisticRegressionPyTorch(num_features)
+# 训练模型
+train_pytorch(model2, X_train_t, y_train_t, epochs, lr)
 # 查看并比较参数
 print(‘PyTorch Model Weights:‘, model2.linear.weight.data)
 print(‘PyTorch Model Bias:‘, model2.linear.bias.data)
 print(‘Manual Model Weights:‘, model1.weights)
 print(‘Manual Model Bias:‘, model1.bias)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_118.png)
-
 # 测试精度应该相同
 with torch.no_grad():
     test_probs = model2(X_test_t)

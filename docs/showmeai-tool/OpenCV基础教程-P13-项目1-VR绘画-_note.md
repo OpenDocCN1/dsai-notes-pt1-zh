@@ -26,12 +26,15 @@
 
 ![](img/97368d43feac0c0e171afdc6ab7e7dfc_5.png)
 
-```python
-import cv2
-import numpy as np
 
 ![](img/97368d43feac0c0e171afdc6ab7e7dfc_7.png)
 
+
+![](img/97368d43feac0c0e171afdc6ab7e7dfc_9.png)
+
+```python
+import cv2
+import numpy as np
 # 初始化摄像头，参数‘1’通常代表外接摄像头，如果是内置摄像头可尝试‘0’
 cap = cv2.VideoCapture(1)
 # 设置帧的宽度和高度
@@ -39,9 +42,6 @@ cap.set(3, 640)  # 参数3对应宽度
 cap.set(4, 480)  # 参数4对应高度
 # 设置亮度（可选）
 cap.set(10, 150) # 参数10对应亮度
-
-![](img/97368d43feac0c0e171afdc6ab7e7dfc_9.png)
-
 while True:
     # 读取一帧图像
     success, img = cap.read()

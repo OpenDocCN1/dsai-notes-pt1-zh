@@ -99,11 +99,14 @@ def tokenize_and_tag(english_sentences, chinese_sentences):
 3.  将`UNK`标记的ID设为0。
 4.  使用构建好的词汇表，将分词后的句子序列转换为对应的数字ID序列。
 
-```python
-from collections import Counter
 
 ![](img/9b594c5107da277a61b695c7585e4c96_28.png)
 
+
+![](img/9b594c5107da277a61b695c7585e4c96_30.png)
+
+```python
+from collections import Counter
 def build_dictionary(tokenized_sentences, max_words=50000):
     word_counts = Counter()
     for sentence in tokenized_sentences:
@@ -116,9 +119,6 @@ def build_dictionary(tokenized_sentences, max_words=50000):
     for idx, (word, _) in enumerate(most_common_words):
         word_to_id[word] = idx + 1  # ID从1开始
     return word_to_id, len(most_common_words)
-
-![](img/9b594c5107da277a61b695c7585e4c96_30.png)
-
 def encode_sentences(tokenized_sentences, word_to_id):
     encoded = []
     for sentence in tokenized_sentences:

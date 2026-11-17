@@ -23,21 +23,21 @@ MongoClient是一个帮助您与MongoDB交互的类。要使用它，我们首�
 
 这个过程可以用以下代码概括：
 
-```python
-from pymongo import MongoClient
-
-# 创建MongoClient实例，连接到本地MongoDB服务器
-client = MongoClient('mongodb://localhost:27017/')
 
 ![](img/7603e49e2ca8e75f35e37ac602741823_7.png)
 
-# 获取‘campus_management’数据库对象
-db = client['campus_management']
 
 ![](img/7603e49e2ca8e75f35e37ac602741823_8.png)
 
 ![](img/7603e49e2ca8e75f35e37ac602741823_9.png)
 
+```python
+from pymongo import MongoClient
+
+# 创建MongoClient实例，连接到本地MongoDB服务器
+client = MongoClient('mongodb://localhost:27017/')
+# 获取‘campus_management’数据库对象
+db = client['campus_management']
 # 获取‘students’集合对象
 students_collection = db['students']
 ```
@@ -184,6 +184,9 @@ print(f"姓氏为Doe的学生数量: {count}")
 
 ![](img/7603e49e2ca8e75f35e37ac602741823_45.png)
 
+
+![](img/7603e49e2ca8e75f35e37ac602741823_47.png)
+
 ```python
 # 1. 检索一个学生文档
 student_to_update = students_collection.find_one({"last_name": "Doe"})
@@ -191,9 +194,6 @@ student_to_update = students_collection.find_one({"last_name": "Doe"})
 # 2. 修改文档（添加新字段，更新邮箱）
 student_to_update["on_campus"] = True
 student_to_update["email"] = "john.doe@campus.edu"
-
-![](img/7603e49e2ca8e75f35e37ac602741823_47.png)
-
 # 3. 替换文档
 result = students_collection.replace_one({"last_name": "Doe"}, student_to_update)
 print(f"匹配到的文档数: {result.matched_count}, 修改的文档数: {result.modified_count}")

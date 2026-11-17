@@ -147,15 +147,9 @@ model = AutoModel.from_pretrained("THUDM/chatglm-6b", trust_remote_code=True).ha
 
 **2. 加载与拆分文档**
 使用`DocumentLoader`加载文件，并用`TextSplitter`进行拆分。
-```python
-from langchain.document_loaders import UnstructuredFileLoader
-from langchain.text_splitter import CharacterTextSplitter
 
 ![](img/9e6ab9221bbd27ed8b9032e28e354e9b_40.png)
 
-# 加载文档
-loader = UnstructuredFileLoader("test.txt")
-documents = loader.load()
 
 ![](img/9e6ab9221bbd27ed8b9032e28e354e9b_42.png)
 
@@ -169,6 +163,12 @@ documents = loader.load()
 
 ![](img/9e6ab9221bbd27ed8b9032e28e354e9b_52.png)
 
+```python
+from langchain.document_loaders import UnstructuredFileLoader
+from langchain.text_splitter import CharacterTextSplitter
+# 加载文档
+loader = UnstructuredFileLoader("test.txt")
+documents = loader.load()
 # 拆分文本
 text_splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=200)
 split_docs = text_splitter.split_documents(documents)

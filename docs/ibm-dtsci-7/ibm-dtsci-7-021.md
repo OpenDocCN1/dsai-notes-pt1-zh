@@ -90,12 +90,12 @@ print(correlation_matrix)
 其中，xi和yi是单个样本点，x̄和ȳ是样本均值。
 
 为了更直观地解读庞大的相关系数矩阵，我们可以使用**热力图（Heatmap）**进行可视化。热力图使用颜色深浅来代表相关系数的大小，使得强相关和弱相关的变量对一目了然。我们可以使用Seaborn库来绘制：
-```python
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 ![](img/32e8835271a54932e3a95afa82dbb07c_10.png)
 
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
 # 计算相关性矩阵
 corr = df.corr()
 # 绘制热力图

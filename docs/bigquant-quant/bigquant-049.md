@@ -75,20 +75,20 @@ print("手动计算值是否等于 y_new:", np.allclose(y_manual, y_new))
 
 以下是修改 `X` 的代码：
 
+
+![](img/4ec4a4d5c90903744b97e783869f2ab8_1.png)
+
+
+![](img/4ec4a4d5c90903744b97e783869f2ab8_3.png)
+
 ```python
 import numpy as np
 
 # 假设原始 X 是 (m, n) 的矩阵
 # 创建一个形状为 (m, 1) 且值全为1的列
 ones_column = np.ones((X.shape[0], 1))
-
-![](img/4ec4a4d5c90903744b97e783869f2ab8_1.png)
-
 # 将这一列拼接到原始 X 的右侧（沿 axis=1 方向连接）
 X_modified = np.concatenate([X, ones_column], axis=1)
-
-![](img/4ec4a4d5c90903744b97e783869f2ab8_3.png)
-
 # 显示修改后的 X 和新的 y
 print("修改后的 X (最后一列为1):\n", X_modified)
 print("新的目标值 y:\n", y_new)

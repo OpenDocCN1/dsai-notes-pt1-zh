@@ -98,15 +98,15 @@ print(w) # 输出: [8. 6.]
 ![](img/dd7bad330f6accd722d4d03f1981eb72_21.png)
 
 以下是求解三元一次方程的完整代码：
+
+![](img/dd7bad330f6accd722d4d03f1981eb72_23.png)
+
 ```python
 # 构建系数矩阵 X 和目标值向量 y
 X = np.array([[1, -1, 1],
               [2, 1, -1],
               [3, -2, 6]])
 y = np.array([180, 83, 256])
-
-![](img/dd7bad330f6accd722d4d03f1981eb72_23.png)
-
 # 使用正规方程公式求解
 w = np.linalg.inv(X.T.dot(X)).dot(X.T).dot(y)
 print(w) # 输出解向量 [x, y, z]

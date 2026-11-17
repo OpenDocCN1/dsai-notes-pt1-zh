@@ -155,8 +155,6 @@
 
 ![](img/bb412fc545e07a2acf0d9da61331c993_73.png)
 
-```rust
-use wasm_bindgen::prelude::*;
 
 ![](img/bb412fc545e07a2acf0d9da61331c993_75.png)
 
@@ -164,6 +162,8 @@ use wasm_bindgen::prelude::*;
 
 ![](img/bb412fc545e07a2acf0d9da61331c993_79.png)
 
+```rust
+use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
 pub fn normalize_and_colormap(data: &[f64], min: f64, max: f64, cmap: &str) -> Vec<u8> {
     // ... 实现归一化和色彩映射逻辑 ...

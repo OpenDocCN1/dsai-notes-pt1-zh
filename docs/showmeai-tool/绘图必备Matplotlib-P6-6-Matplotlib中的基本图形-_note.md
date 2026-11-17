@@ -22,13 +22,13 @@
 
 ![](img/459a65c80f9f13fc0f4dccf9dd01c356_9.png)
 
-```python
-import pandas as pd
 
 ![](img/459a65c80f9f13fc0f4dccf9dd01c356_11.png)
 
 ![](img/459a65c80f9f13fc0f4dccf9dd01c356_13.png)
 
+```python
+import pandas as pd
 # 加载心脏病数据集
 df = pd.read_csv('heart_disease_uci.csv')
 ```
@@ -99,11 +99,11 @@ y = df['chol'].values
 
 ![](img/459a65c80f9f13fc0f4dccf9dd01c356_38.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/459a65c80f9f13fc0f4dccf9dd01c356_40.png)
 
+```python
+import matplotlib.pyplot as plt
 fig, ax = plt.subplots()
 ax.scatter(x, y)  # 调用scatter方法绘制散点图
 plt.show()
@@ -123,20 +123,20 @@ plt.show()
 
 ![](img/459a65c80f9f13fc0f4dccf9dd01c356_48.png)
 
-```python
-# 按年龄分组并计算平均值
-df_grouped_by_age = df.groupby('age').mean()
 
 ![](img/459a65c80f9f13fc0f4dccf9dd01c356_50.png)
 
-# 准备聚合后的数据
-x_avg = df_grouped_by_age.index
-y_avg = df_grouped_by_age['chol'].values
 
 ![](img/459a65c80f9f13fc0f4dccf9dd01c356_52.png)
 
 ![](img/459a65c80f9f13fc0f4dccf9dd01c356_54.png)
 
+```python
+# 按年龄分组并计算平均值
+df_grouped_by_age = df.groupby('age').mean()
+# 准备聚合后的数据
+x_avg = df_grouped_by_age.index
+y_avg = df_grouped_by_age['chol'].values
 # 绘制平均值的散点图
 fig, ax = plt.subplots()
 ax.scatter(x_avg, y_avg)
@@ -211,14 +211,14 @@ plt.show()
 
 直方图只需要一个变量。我们调用`hist`方法。
 
-```python
-# 准备年龄数据
-ages = df['age'].values
 
 ![](img/459a65c80f9f13fc0f4dccf9dd01c356_79.png)
 
 ![](img/459a65c80f9f13fc0f4dccf9dd01c356_80.png)
 
+```python
+# 准备年龄数据
+ages = df['age'].values
 fig, ax = plt.subplots()
 ax.hist(ages, bins=20)  # 调用hist方法绘制直方图，bins参数指定箱子数量
 plt.show()

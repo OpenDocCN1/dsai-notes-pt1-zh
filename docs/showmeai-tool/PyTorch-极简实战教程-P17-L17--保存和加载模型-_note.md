@@ -45,9 +45,6 @@
 3.  **设置模式**：加载后，调用 `model.eval()` 将模型设置为评估模式。
 
 **示例代码**：
-```python
-# 保存整个模型
-torch.save(model, ‘model.pth’)
 
 ![](img/d077e5bf8acaccfa2f2d408a7bb4ae8d_18.png)
 
@@ -55,6 +52,9 @@ torch.save(model, ‘model.pth’)
 
 ![](img/d077e5bf8acaccfa2f2d408a7bb4ae8d_21.png)
 
+```python
+# 保存整个模型
+torch.save(model, ‘model.pth’)
 # 加载整个模型
 model = torch.load(‘model.pth’)
 model.eval()
@@ -90,9 +90,6 @@ model.eval()
 3.  **设置模式**：调用 `model.eval()`。
 
 **示例代码**：
-```python
-# 保存模型的状态字典（参数）
-torch.save(model.state_dict(), ‘model_state_dict.pth’)
 
 ![](img/d077e5bf8acaccfa2f2d408a7bb4ae8d_35.png)
 
@@ -102,6 +99,9 @@ torch.save(model.state_dict(), ‘model_state_dict.pth’)
 
 ![](img/d077e5bf8acaccfa2f2d408a7bb4ae8d_38.png)
 
+```python
+# 保存模型的状态字典（参数）
+torch.save(model.state_dict(), ‘model_state_dict.pth’)
 # 加载模型的状态字典
 # 1. 重新创建模型结构
 loaded_model = ModelClass(input_features=6)
@@ -126,6 +126,11 @@ loaded_model.eval()
 ![](img/d077e5bf8acaccfa2f2d408a7bb4ae8d_45.png)
 
 **示例代码**：
+
+![](img/d077e5bf8acaccfa2f2d408a7bb4ae8d_47.png)
+
+![](img/d077e5bf8acaccfa2f2d408a7bb4ae8d_49.png)
+
 ```python
 # 定义检查点内容
 checkpoint = {
@@ -135,11 +140,6 @@ checkpoint = {
     ‘loss’: loss,
     # … 可以保存其他任何信息
 }
-
-![](img/d077e5bf8acaccfa2f2d408a7bb4ae8d_47.png)
-
-![](img/d077e5bf8acaccfa2f2d408a7bb4ae8d_49.png)
-
 # 保存检查点
 torch.save(checkpoint, ‘checkpoint.pth’)
 ```
@@ -155,16 +155,9 @@ torch.save(checkpoint, ‘checkpoint.pth’)
 ![](img/d077e5bf8acaccfa2f2d408a7bb4ae8d_56.png)
 
 **示例代码**：
-```python
-# 加载检查点
-checkpoint = torch.load(‘checkpoint.pth’)
 
 ![](img/d077e5bf8acaccfa2f2d408a7bb4ae8d_58.png)
 
-# 恢复模型
-model = ModelClass(input_features=6)
-model.load_state_dict(checkpoint[‘model_state_dict’])
-model.eval() # 或 model.train()，取决于你是否要继续训练
 
 ![](img/d077e5bf8acaccfa2f2d408a7bb4ae8d_60.png)
 
@@ -172,6 +165,13 @@ model.eval() # 或 model.train()，取决于你是否要继续训练
 
 ![](img/d077e5bf8acaccfa2f2d408a7bb4ae8d_62.png)
 
+```python
+# 加载检查点
+checkpoint = torch.load(‘checkpoint.pth’)
+# 恢复模型
+model = ModelClass(input_features=6)
+model.load_state_dict(checkpoint[‘model_state_dict’])
+model.eval() # 或 model.train()，取决于你是否要继续训练
 # 恢复优化器
 optimizer = torch.optim.SGD(model.parameters(), lr=0) # 学习率会被覆盖
 optimizer.load_state_dict(checkpoint[‘optimizer_state_dict’])

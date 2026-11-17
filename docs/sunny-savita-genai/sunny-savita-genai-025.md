@@ -83,11 +83,11 @@ print(f“视频已下载至: {video_path}”)
 1.  **提取关键帧**：使用`moviepy`或`OpenCV`以固定间隔从视频中截取图像。
 2.  **生成转录文本**：使用`whisper`模型处理视频的音频轨道，生成完整的文字记录。
 
-```python
-import whisper
 
 ![](img/ffecfd79a4dbb72e71fbc0e15e5ea21d_8.png)
 
+```python
+import whisper
 def extract_frames(video_path, interval=10):
     “””
     按时间间隔从视频中提取帧（图像）

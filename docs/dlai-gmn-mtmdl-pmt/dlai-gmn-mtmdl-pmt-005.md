@@ -21,20 +21,20 @@
 
 以下是初始化步骤的核心代码：
 
-```python
-# 导入必要的库
-from google.cloud import aiplatform
-from vertexai.generative_models import GenerativeModel, Image
 
 ![](img/7c8add2d806e43a672ac5290cd15edab_4.png)
 
 ![](img/7c8add2d806e43a672ac5290cd15edab_5.png)
 
-# 初始化SDK，需要提供凭证、区域和项目ID
-aiplatform.init(project=“your-project-id”, location=“us-central1”)
 
 ![](img/7c8add2d806e43a672ac5290cd15edab_7.png)
 
+```python
+# 导入必要的库
+from google.cloud import aiplatform
+from vertexai.generative_models import GenerativeModel, Image
+# 初始化SDK，需要提供凭证、区域和项目ID
+aiplatform.init(project=“your-project-id”, location=“us-central1”)
 # 导入我们将要使用的多模态模型
 model = GenerativeModel(“gemini-1.0-pro-vision-001”)
 ```

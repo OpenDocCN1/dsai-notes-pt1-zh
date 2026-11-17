@@ -207,6 +207,11 @@ player_black.initiate_chat(
 
 我们可以修改关于这些玩家智能体的定义。现在我们可以更改这条消息，说在走了一步棋之后，闲聊一下让游戏变得有趣。这是我们添加的一个额外指令。对`player_black`也做同样的操作。我们将需要重复关于工具使用的注册，以及那个聊天。
 
+
+![](img/8aaa8cc480962a8e98e354e7fc6e3106_20.png)
+
+![](img/8aaa8cc480962a8e98e354e7fc6e3106_21.png)
+
 ```python
 player_white = ConversableAgent(
     name="player_white",
@@ -214,11 +219,6 @@ player_white = ConversableAgent(
     After a move is made, chat to make the game fun.""",
     llm_config={"config_list": [{"model": "gpt-4", "api_key": os.environ.get("OPENAI_API_KEY")}]},
 )
-
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_20.png)
-
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_21.png)
-
 player_black = ConversableAgent(
     name="player_black",
     system_message="""You are a chess player and you play as black. First call get_legal_moves to get a list of legal moves, then call make_move to make a move.

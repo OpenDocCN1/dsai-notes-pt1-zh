@@ -166,11 +166,11 @@ with open(page) as f:
 
 学习页面是应用中最简单的部分，主要用于展示平假名或片假名的图表。
 
-```python
-import streamlit as st
 
 ![](img/ec42aceaa5cce0b1e0b76ba332614b50_61.png)
 
+```python
+import streamlit as st
 st.title("🎌 学习假名")
 st.subheader("选择你要学习的假名表")
 
@@ -210,6 +210,32 @@ st.caption("祝你学习顺利！")
 2.  **绘图画布**：使用`streamlit-drawable-canvas`库提供绘图功能，让用户能够绘制假名。
 3.  **OCR识别与验证**：将用户绘制的图像传递给`manga-ocr`模型进行识别，并将识别结果与目标字符进行比对。
 
+
+![](img/ec42aceaa5cce0b1e0b76ba332614b50_71.png)
+
+![](img/ec42aceaa5cce0b1e0b76ba332614b50_72.png)
+
+
+![](img/ec42aceaa5cce0b1e0b76ba332614b50_74.png)
+
+![](img/ec42aceaa5cce0b1e0b76ba332614b50_76.png)
+
+
+![](img/ec42aceaa5cce0b1e0b76ba332614b50_78.png)
+
+![](img/ec42aceaa5cce0b1e0b76ba332614b50_79.png)
+
+![](img/ec42aceaa5cce0b1e0b76ba332614b50_80.png)
+
+![](img/ec42aceaa5cce0b1e0b76ba332614b50_82.png)
+
+
+![](img/ec42aceaa5cce0b1e0b76ba332614b50_84.png)
+
+![](img/ec42aceaa5cce0b1e0b76ba332614b50_86.png)
+
+![](img/ec42aceaa5cce0b1e0b76ba332614b50_87.png)
+
 ```python
 import streamlit as st
 from streamlit_drawable_canvas import st_canvas
@@ -221,11 +247,6 @@ from transformers import MangaOcr
 @st.cache_resource
 def load_ocr_model():
     return MangaOcr()
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_71.png)
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_72.png)
-
 model = load_ocr_model()
 
 # 页面标题和模式选择
@@ -234,32 +255,11 @@ mode = st.radio("选择假名表", ["平假名", "片假名"])
 
 # 假名字典（字符->罗马音）
 kana_dict = {"あ": "a", "い": "i", "ア": "a", "イ": "i"} # 示例字典
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_74.png)
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_76.png)
-
 # 随机选择一个目标字符
 if 'target_kana' not in st.session_state or st.button("换一个字"):
     # 从对应模式的字典中随机选择
     st.session_state.target_kana = random.choice(list(kana_dict.keys()))
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_78.png)
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_79.png)
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_80.png)
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_82.png)
-
 st.subheader(f"请写出字符: {st.session_state.target_kana}")
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_84.png)
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_86.png)
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_87.png)
-
 # 绘图画布
 canvas_result = st_canvas(
     fill_color="rgba(255, 255, 255, 0)",
@@ -468,20 +468,20 @@ class KanaAppStack(Stack):
 
 ![](img/ec42aceaa5cce0b1e0b76ba332614b50_104.png)
 
+
+![](img/ec42aceaa5cce0b1e0b76ba332614b50_106.png)
+
+
+![](img/ec42aceaa5cce0b1e0b76ba332614b50_108.png)
+
 ```bash
 # 首次部署前，在目标AWS账户和区域引导CDK环境
 cdk bootstrap
 
 # 合成CloudFormation模板
 cdk synth
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_106.png)
-
 # 部署应用到AWS
 cdk deploy
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_108.png)
-
 # 部署完成后，销毁所有资源以避免产生费用
 cdk destroy
 ```

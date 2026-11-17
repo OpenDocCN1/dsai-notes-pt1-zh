@@ -58,12 +58,12 @@ similarity_1_3 = np.dot(vec1, vec3)
 现在回到真实示例。我们需要为所有PDF文本块创建嵌入，并将它们存储到向量存储中。本节课我们使用Chroma，因为它轻量且支持内存存储，易于上手。LangChain集成了超过30种向量存储，Chroma是其中之一。
 
 以下是创建和保存向量存储的步骤：
-```python
-# 创建并持久化向量存储
-from langchain.vectorstores import Chroma
 
 ![](img/da0d6f0c6aa59e2544613bcd771d300a_5.png)
 
+```python
+# 创建并持久化向量存储
+from langchain.vectorstores import Chroma
 persist_directory = ‘./docs/chroma‘
 # 确保目录干净（示例中为演示而清理）
 vectorstore = Chroma.from_documents(

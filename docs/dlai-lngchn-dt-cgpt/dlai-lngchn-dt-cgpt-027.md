@@ -81,10 +81,6 @@ from langchain.memory import ConversationBufferMemory, ConversationBufferWindowM
 
 ![](img/c86c51310bd0360f0802bd988e1cb8c6_53.png)
 
-```python
-llm = OpenAI(temperature=0)
-memory = ConversationBufferMemory()
-conversation = ConversationChain(llm=llm, memory=memory, verbose=True)
 
 ![](img/c86c51310bd0360f0802bd988e1cb8c6_55.png)
 
@@ -92,16 +88,11 @@ conversation = ConversationChain(llm=llm, memory=memory, verbose=True)
 
 ![](img/c86c51310bd0360f0802bd988e1cb8c6_59.png)
 
-# 开始对话
-response = conversation.predict(input="嗨，我的名字是安德鲁。")
-print(response) # 输出：你好，安德鲁！很高兴见到你。
 
 ![](img/c86c51310bd0360f0802bd988e1cb8c6_61.png)
 
 ![](img/c86c51310bd0360f0802bd988e1cb8c6_63.png)
 
-response = conversation.predict(input="1加1等于几？")
-print(response) # 输出：1加1等于2。
 
 ![](img/c86c51310bd0360f0802bd988e1cb8c6_65.png)
 
@@ -109,6 +100,15 @@ print(response) # 输出：1加1等于2。
 
 ![](img/c86c51310bd0360f0802bd988e1cb8c6_69.png)
 
+```python
+llm = OpenAI(temperature=0)
+memory = ConversationBufferMemory()
+conversation = ConversationChain(llm=llm, memory=memory, verbose=True)
+# 开始对话
+response = conversation.predict(input="嗨，我的名字是安德鲁。")
+print(response) # 输出：你好，安德鲁！很高兴见到你。
+response = conversation.predict(input="1加1等于几？")
+print(response) # 输出：1加1等于2。
 response = conversation.predict(input="你知道我的名字吗？")
 print(response) # 输出：你的名字是安德鲁，正如你之前提到的。
 ```
@@ -165,9 +165,6 @@ print(memory.load_memory_variables({})) # 以字典形式加载记忆变量
 
 ![](img/c86c51310bd0360f0802bd988e1cb8c6_107.png)
 
-```python
-memory = ConversationBufferWindowMemory(k=1) # 只记住最近一轮对话（一次用户输入和一次AI回复）
-conversation = ConversationChain(llm=llm, memory=memory, verbose=True)
 
 ![](img/c86c51310bd0360f0802bd988e1cb8c6_109.png)
 
@@ -175,9 +172,6 @@ conversation = ConversationChain(llm=llm, memory=memory, verbose=True)
 
 ![](img/c86c51310bd0360f0802bd988e1cb8c6_113.png)
 
-# 模拟对话
-memory.save_context({"input": "嗨"}, {"output": "怎么了？"})
-memory.save_context({"input": "没什么，就挂着"}, {"output": "酷"})
 
 ![](img/c86c51310bd0360f0802bd988e1cb8c6_115.png)
 
@@ -185,6 +179,12 @@ memory.save_context({"input": "没什么，就挂着"}, {"output": "酷"})
 
 ![](img/c86c51310bd0360f0802bd988e1cb8c6_118.png)
 
+```python
+memory = ConversationBufferWindowMemory(k=1) # 只记住最近一轮对话（一次用户输入和一次AI回复）
+conversation = ConversationChain(llm=llm, memory=memory, verbose=True)
+# 模拟对话
+memory.save_context({"input": "嗨"}, {"output": "怎么了？"})
+memory.save_context({"input": "没什么，就挂着"}, {"output": "酷"})
 print(memory.load_memory_variables({}))
 # 因为k=1，只输出最近的交换：
 # {'history': 'Human: 没什么，就挂着\nAI: 酷'}

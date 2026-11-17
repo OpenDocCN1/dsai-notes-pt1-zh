@@ -51,6 +51,9 @@
 
 ![](img/bcca482a01f99c576c1e01aed4002387_19.png)
 
+
+![](img/bcca482a01f99c576c1e01aed4002387_21.png)
+
 ```python
 from sklearn.model_selection import train_test_split
 from sklearn import svm
@@ -59,9 +62,6 @@ import numpy as np
 # 假设 X, y 是准备好的特征和标签数据（5000个样本）
 # 初始化SVM分类器，这里使用默认的RBF核
 clf = svm.SVC()
-
-![](img/bcca482a01f99c576c1e01aed4002387_21.png)
-
 # 进行100次实验
 n_trials = 100
 accuracies = []

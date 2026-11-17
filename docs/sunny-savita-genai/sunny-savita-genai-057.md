@@ -40,6 +40,9 @@ LCEL的基础是所有组件都实现了 `Runnable` 接口。这意味着任何�
 
 以下是一个使用LCEL构建简单问答链的代码示例：
 
+
+![](img/72644b5079df4e01d48bb18e2f7d70cf_7.png)
+
 ```python
 from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
@@ -50,9 +53,6 @@ prompt = ChatPromptTemplate.from_template("请用一句话回答：{question}")
 
 # 2. 初始化大语言模型
 model = ChatOpenAI(model="gpt-3.5-turbo")
-
-![](img/72644b5079df4e01d48bb18e2f7d70cf_7.png)
-
 # 3. 定义输出解析器（这里简单地将输出转换为字符串）
 output_parser = StrOutputParser()
 
@@ -102,11 +102,11 @@ print(response)
 LCEL链天然支持异步调用和流式输出，这能极大提升应用的响应速度和用户体验。
 
 **异步调用**可以提高处理多个并发请求的效率：
-```python
-import asyncio
 
 ![](img/72644b5079df4e01d48bb18e2f7d70cf_11.png)
 
+```python
+import asyncio
 async def async_invoke():
     response = await chain.ainvoke({"question": "异步调用的优势是什么？"})
     print(response)

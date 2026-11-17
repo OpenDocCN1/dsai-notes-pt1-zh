@@ -150,15 +150,15 @@ kernel void vec_add(__global const float* a,
 ![](img/6ae83480be5553072b13ec1e6a5e6ada_10.png)
 
 **简化代码流程**：
+
+![](img/6ae83480be5553072b13ec1e6a5e6ada_12.png)
+
 ```c
 // 1. 获取平台和设备ID
 cl_platform_id platform;
 cl_device_id device;
 clGetPlatformIDs(1, &platform, NULL);
 clGetDeviceIDs(platform, CL_DEVICE_TYPE_GPU, 1, &device, NULL);
-
-![](img/6ae83480be5553072b13ec1e6a5e6ada_12.png)
-
 // 2. 创建上下文和命令队列
 cl_context context = clCreateContext(NULL, 1, &device, NULL, NULL, NULL);
 cl_command_queue queue = clCreateCommandQueue(context, device, 0, NULL);

@@ -110,6 +110,9 @@ pos_embeddings = position_embedding(positions) # 形状: (5, 768)
 ![](img/74fd058a8f902b7e13b8c2a1e66b9d15_13.png)
 
 **代码描述：**
+
+![](img/74fd058a8f902b7e13b8c2a1e66b9d15_15.png)
+
 ```python
 import torch
 
@@ -129,9 +132,6 @@ def binary_positional_encoding(positions, d_model):
         # 计算每个维度的二进制位
         encoding[:, i] = (positions >> i) & 1
     return encoding
-
-![](img/74fd058a8f902b7e13b8c2a1e66b9d15_15.png)
-
 # 示例：为位置 [0, 1, 2, 3, 4, 5] 生成3维二进制编码
 positions = torch.tensor([0, 1, 2, 3, 4, 5])
 d_model = 3

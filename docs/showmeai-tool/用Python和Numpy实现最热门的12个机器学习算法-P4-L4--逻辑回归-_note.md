@@ -134,22 +134,22 @@ Sigmoid函数的公式如下：
 
 以下是测试脚本：
 
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_21.png)
+
+
+![](img/3f1d65b66ad21ed37aeb062cde34291d_23.png)
+
 ```python
 # 导入测试所需库
 from sklearn.model_selection import train_test_split
 from sklearn import datasets
-
-![](img/3f1d65b66ad21ed37aeb062cde34291d_21.png)
-
 # 加载数据
 bc = datasets.load_breast_cancer()
 X, y = bc.data, bc.target
 
 # 划分训练集和测试集
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1234)
-
-![](img/3f1d65b66ad21ed37aeb062cde34291d_23.png)
-
 # 创建并训练模型
 model = LogisticRegression(lr=0.0001, n_iters=1000)
 model.fit(X_train, y_train)

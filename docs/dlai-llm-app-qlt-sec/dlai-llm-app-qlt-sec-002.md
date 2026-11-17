@@ -30,12 +30,12 @@ print(chats.head())
 
 ![](img/54bcd02b89e9efb5f56167fe92fbf95a_6.png)
 
-```python
-import whylogs as why
-from langkit import llm_schema
 
 ![](img/54bcd02b89e9efb5f56167fe92fbf95a_8.png)
 
+```python
+import whylogs as why
+from langkit import llm_schema
 # 使用LLM模式记录数据
 profile = why.log(chats, name="LLM_chats_dataset", schema=llm_schema).profile()
 ```

@@ -16,20 +16,20 @@
 
 以下是创建文件夹结构的代码示例：
 
+
+![](img/7956a7f6b5a10c99728c67c08635cf0e_2.png)
+
+
+![](img/7956a7f6b5a10c99728c67c08635cf0e_4.png)
+
 ```python
 import os
 import shutil
 import random
-
-![](img/7956a7f6b5a10c99728c67c08635cf0e_2.png)
-
 # 设置基础路径和角色名称
 base_dir = ‘./lego_star_wars_images‘
 character_names = [‘yoda‘, ‘luke_skywalker‘, ‘r2d2‘, ‘mace_windu‘, ‘general_grievous‘]
 random.seed(42) # 确保可重复性
-
-![](img/7956a7f6b5a10c99728c67c08635cf0e_4.png)
-
 # 创建训练、验证、测试文件夹
 for split in [‘train‘, ‘val‘, ‘test‘]:
     for name in character_names:

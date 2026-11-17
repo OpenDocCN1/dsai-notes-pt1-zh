@@ -123,6 +123,11 @@ function getMessageHistory(sessionId) {
 
 现在，让我们设置一个简单的服务器，并创建一个处理程序来调用我们的链并返回流式响应。
 
+
+![](img/d7ddd2e0b23b404117a2a13486b3039f_11.png)
+
+![](img/d7ddd2e0b23b404117a2a13486b3039f_12.png)
+
 ```javascript
 import { serve } from "http/server"; // Deno 示例，其他框架类似
 
@@ -143,11 +148,6 @@ const handler = async (request) => {
     headers: { "Content-Type": "text/plain; charset=utf-8" },
   });
 };
-
-![](img/d7ddd2e0b23b404117a2a13486b3039f_11.png)
-
-![](img/d7ddd2e0b23b404117a2a13486b3039f_12.png)
-
 // 启动服务器
 serve(handler, { port });
 console.log(`Server live on http://localhost:${port}`);
@@ -177,6 +177,12 @@ console.log(`Server live on http://localhost:${port}`);
 
 以下是测试第一个问题的示例代码：
 
+
+![](img/d7ddd2e0b23b404117a2a13486b3039f_19.png)
+
+
+![](img/d7ddd2e0b23b404117a2a13486b3039f_21.png)
+
 ```javascript
 // 辅助函数：消费流式响应
 async function readStream(reader) {
@@ -186,9 +192,6 @@ async function readStream(reader) {
     console.log(new TextDecoder().decode(value)); // 解码并打印字节块
   }
 }
-
-![](img/d7ddd2e0b23b404117a2a13486b3039f_19.png)
-
 // 发起请求
 const response = await fetch(`http://localhost:${port}`, {
   method: "POST",
@@ -198,9 +201,6 @@ const response = await fetch(`http://localhost:${port}`, {
     sessionId: "session_001", // 用户A的会话ID
   }),
 });
-
-![](img/d7ddd2e0b23b404117a2a13486b3039f_21.png)
-
 const reader = response.body.getReader();
 await readStream(reader);
 ```

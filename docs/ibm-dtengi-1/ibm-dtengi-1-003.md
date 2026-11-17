@@ -59,22 +59,22 @@ show collections
 3.  计算所有智能手机的平均屏幕尺寸。
 
 以下是此任务涉及的关键查询示例：
+
+![](img/b36ed5d37496646be6ab69a16931b9f6_11.png)
+
+
+![](img/b36ed5d37496646be6ab69a16931b9f6_12.png)
+
+![](img/b36ed5d37496646be6ab69a16931b9f6_13.png)
+
 ```javascript
 // 查找前5个文档
 db.electronics.find().limit(5)
 
 // 统计笔记本电脑的数量
 db.electronics.countDocuments({ type: "laptop" })
-
-![](img/b36ed5d37496646be6ab69a16931b9f6_11.png)
-
 // 统计屏幕尺寸为6英寸的智能手机数量
 db.electronics.countDocuments({ type: "smartphone", screen_size: 6 })
-
-![](img/b36ed5d37496646be6ab69a16931b9f6_12.png)
-
-![](img/b36ed5d37496646be6ab69a16931b9f6_13.png)
-
 // 计算智能手机的平均屏幕尺寸
 db.electronics.aggregate([
   { $match: { type: "smartphone" } },

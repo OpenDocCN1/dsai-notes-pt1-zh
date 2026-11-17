@@ -51,12 +51,12 @@ plt.show()
 
 ![](img/f56152b23dc3171d5aaac4a13b4c8748_9.png)
 
-```python
-# 设置切割等级的显示顺序
-cut_order = ['Fair', 'Good', 'Very Good', 'Premium', 'Ideal']
 
 ![](img/f56152b23dc3171d5aaac4a13b4c8748_11.png)
 
+```python
+# 设置切割等级的显示顺序
+cut_order = ['Fair', 'Good', 'Very Good', 'Premium', 'Ideal']
 # 绘制箱线图
 sns.boxplot(data=df, x='price', y='cut', order=cut_order, palette='Blues_r')
 plt.show()
@@ -90,12 +90,12 @@ good_prices = df[df['cut'] == 'Good']['price']
 
 ![](img/f56152b23dc3171d5aaac4a13b4c8748_16.png)
 
-```python
-# 执行双样本t检验
-test_results = stats.ttest_ind(very_good_prices, good_prices)
 
 ![](img/f56152b23dc3171d5aaac4a13b4c8748_18.png)
 
+```python
+# 执行双样本t检验
+test_results = stats.ttest_ind(very_good_prices, good_prices)
 # 输出检验结果
 print(test_results)
 ```

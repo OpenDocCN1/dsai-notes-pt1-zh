@@ -41,6 +41,11 @@ IDF的计算公式为：
 
 ![](img/b88ac1418bb1dd4486f344863b616131_3.png)
 
+
+![](img/b88ac1418bb1dd4486f344863b616131_5.png)
+
+![](img/b88ac1418bb1dd4486f344863b616131_6.png)
+
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -49,11 +54,6 @@ documents = [
     "The car is driven on the road.",
     "The truck is driven on the highway."
 ]
-
-![](img/b88ac1418bb1dd4486f344863b616131_5.png)
-
-![](img/b88ac1418bb1dd4486f344863b616131_6.png)
-
 # 第一部分 实例化TF-IDF向量化器
 vectorizer = TfidfVectorizer()
 

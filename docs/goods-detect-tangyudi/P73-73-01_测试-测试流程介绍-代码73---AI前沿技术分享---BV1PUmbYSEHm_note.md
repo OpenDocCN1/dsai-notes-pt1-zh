@@ -98,12 +98,12 @@ test/
 
 首先，我们需要导入所有必需的 Python 模块。为了能调用项目其他目录下的处理模块，我们需要将上级目录添加到系统路径中。
 
-```python
-import sys
-sys.path.append('../')  # 添加上级目录到路径，以便调用项目模块
 
 ![](img/c29eafed08b5e9ee1345407ca2fb2599_45.png)
 
+```python
+import sys
+sys.path.append('../')  # 添加上级目录到路径，以便调用项目模块
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
@@ -150,17 +150,17 @@ image_input = tf.placeholder(tf.uint8, shape=(None, None, None, 3))
 
 接下来，我们需要对输入的图片进行预处理，使其符合模型输入要求（例如，缩放到 300x300 像素）。
 
+
+![](img/c29eafed08b5e9ee1345407ca2fb2599_57.png)
+
+![](img/c29eafed08b5e9ee1345407ca2fb2599_59.png)
+
 ```python
 # 获取预处理函数工厂
 preprocessing_fn = preprocessing_factory.get_preprocessing(
     'ssd_vgg_300',  # 模型名称
     is_training=False  # 测试阶段，非训练
 )
-
-![](img/c29eafed08b5e9ee1345407ca2fb2599_57.png)
-
-![](img/c29eafed08b5e9ee1345407ca2fb2599_59.png)
-
 # 定义网络输入形状
 net_shape = (300, 300)  # SSD300 模型的输入尺寸
 
@@ -245,22 +245,22 @@ with tf.contrib.slim.arg_scope(network_fn.arg_scope(data_format='NHWC')):
 
 ![](img/c29eafed08b5e9ee1345407ca2fb2599_75.png)
 
+
+![](img/c29eafed08b5e9ee1345407ca2fb2599_77.png)
+
+
+![](img/c29eafed08b5e9ee1345407ca2fb2599_79.png)
+
 ```python
 # 注意：此处为逻辑示意，具体实现需调用项目中的后处理函数
 # 1. 解码：将 localizations 和 anchor 信息结合，得到图像上的绝对坐标。
 # 2. 筛选：根据 predictions 的置信度进行阈值筛选。
 # 3. NMS：对筛选后的框进行非极大值抑制。
 # 4. 缩放：将框的坐标从网络输入尺寸(300x300)缩放到原始图片尺寸。
-
-![](img/c29eafed08b5e9ee1345407ca2fb2599_77.png)
-
 # 假设我们有一个后处理函数 `postprocess`
 final_boxes, final_scores, final_labels = postprocess(
     predictions, localizations, bbox_img, original_image_shape
 )
-
-![](img/c29eafed08b5e9ee1345407ca2fb2599_79.png)
-
 # 使用 visualization.py 中的函数显示结果
 visualization.plt_bboxes(original_image, final_boxes, final_labels, final_scores)
 ```

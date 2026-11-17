@@ -76,6 +76,9 @@ x_test_norm = mms.transform(x_test)
 
 操作步骤与最大值最小值归一化类似：
 
+
+![](img/20bfdbe5d9e4d674202678d0b49c3ca4_1.png)
+
 ```python
 from sklearn.preprocessing import StandardScaler
 
@@ -85,9 +88,6 @@ scaler = StandardScaler()
 # 2. 拟合并转换训练数据
 x_train_norm_z = scaler.fit_transform(x_train)
 y_train_norm_z = scaler.fit_transform(y_train[['target']]) # 同样处理目标值
-
-![](img/20bfdbe5d9e4d674202678d0b49c3ca4_1.png)
-
 # 3. 转换测试数据
 x_test_norm_z = scaler.transform(x_test)
 ```

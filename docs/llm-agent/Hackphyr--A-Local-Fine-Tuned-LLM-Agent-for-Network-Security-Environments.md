@@ -142,6 +142,12 @@ konwn_services:{172.18.0.72:
 known_data:{
     172.18.0.55: { Data(owner=’User1’, id=’DatabaseData’)}}>
 
+
+![参见说明](img/05f7dd185ca208fb35d0ecd57cfa80e1.png)
+
+
+![参见说明文字](img/9f888d882025ab9a0e8945a4dc4c2b72.png)
+
 ```</foreignobject></g></g></svg>
 
 ##### 目标
@@ -167,9 +173,6 @@ known_data:{
 每个行动的检测概率不同，随机防御者上的所有参数都是可配置的。
 
 ## 5 LLM代理设计
-
-![参见说明](img/05f7dd185ca208fb35d0ecd57cfa80e1.png)
-
 图1：LLM代理组件
 
 用于所有实验的LLM代理在[[10](https://arxiv.org/html/2409.11276v1#bib.bib10)]中进行了介绍。作为本项工作的一个部分，我们重新使用了该代理的提示和结构，直接将本工作中介绍的微调LLM与[[10](https://arxiv.org/html/2409.11276v1#bib.bib10)]中介绍的商业预训练模型的结果进行了对比。
@@ -189,9 +192,6 @@ known_data:{
 该代理使用 ReAct 框架进行规划和选择下一步动作。ReAct 框架将推理作为过程的第一步，行动作为第二步。基于当前环境状态 $s_{t}$，代理请求 LLM 分析状态中的对象（IP、网络、服务、数据），并推理可以对每个对象采取的行动。在第二步，代理使用 LLM 的响应和记忆元素来决定并提出一个合适的行动 $a_{t}$。为了生成有效的行动，代理还会提供行动示例（上下文学习）。记忆机制将反馈纳入内在奖励。代理根据状态 $s_{t+1}$ 是否与 $s_{t}$ 不同来评估每个行动是“有帮助”还是“没有帮助”。由于环境是确定性的，且没有任何行动能将对象从状态中移除，如果某个行动能帮助代理发现更多对象并达到新状态，则该行动被认为是“有帮助”的。
 
 ## 6 监督微调方法论
-
-![参见说明文字](img/9f888d882025ab9a0e8945a4dc4c2b72.png)
-
 图 2：监督微调方法论
 
 本研究通过几个步骤进行（图 [2](https://arxiv.org/html/2409.11276v1#S6.F2 "Figure 2 ‣ 6 Supervised Fine-tuning Methodology ‣ Hackphyr: A Local Fine-Tuned LLM Agent for Network Security Environments")）。该过程的第一步是识别基础模型的弱点并创建用于监督微调的数据集。数据集创建的详细信息在第 [6.1](https://arxiv.org/html/2409.11276v1#S6.SS1 "6.1 Dataset Creation ‣ 6 Supervised Fine-tuning Methodology ‣ Hackphyr: A Local Fine-Tuned LLM Agent for Network Security Environments") 节中展示。使用的基础模型是 Zephyr-7b-$\beta$ [[15](https://arxiv.org/html/2409.11276v1#bib.bib15)]，这是一个基于 Mistral-7B-v0.1 [[36](https://arxiv.org/html/2409.11276v1#bib.bib36)] 的指令调优模型。选择 Zephyr 模型的原因有多个：首先，已经经过指令调优的模型不需要再花费时间和精力进行指令调优。其次，该模型具有较好的生成有效 JSON 字符串的能力，第三，在我们的初步实验中，它显示出具备足够的网络和安全背景知识。最后，我们决定选择一个具有七十亿个参数的开源模型，以便可以使用一张 GPU 进行微调，从而以最低的成本复现我们的结果。本文遵循的方法论足够通用，可以应用于其他类似强度的模型。
@@ -229,6 +229,42 @@ Provide 20 questions and answers that test the student’s
 ability to generate valid and well-formatted actions in the
 current status.
 
+
+![参考说明](img/0717fad0c9095e8000dff3b67a39d446.png)
+
+
+![参见标题说明](img/32bff79cc30dc6d868ec445d0694eb8a.png)
+
+
+![请参见说明](img/a5c30792bb1f5931b92ebc1dc4c29ef1.png)
+
+
+![参见说明文字](img/fa370429ba780372d3e157ab68e1df0d.png)
+
+
+![参见说明文字](img/035ba4261cb20cd99b2a3303d5aff2fe.png)
+
+
+![参考标题](img/aa80a0d7968449c8f19d605fc57b727a.png)
+
+
+![参考标题](img/287844a719465a465e33c18b6c2c1707.png)
+
+
+![参见图注](img/9e9cf1e240cd622aa73acdcffc2527e1.png)
+
+
+![参见图注](img/af33731301729781a063f19c40211472.png)
+
+
+![参见说明](img/4aad488b78c8522ffc51e60f66a888dc.png)
+
+
+![参见说明](img/4a1336cb5ef3c33cf8af7aa9c9b2423e.png)
+
+
+![参见说明](img/d506059ec8f4d3d990b66e55f593d4bd.png)
+
 ```</foreignobject></g></g></svg>
 
 一个生成的问题和答案示例可以在附录[A.2](https://arxiv.org/html/2409.11276v1#A1.SS2 "A.2 第二部分 ‣ 附录A 数据集示例 ‣ Hackphyr: 一种本地微调的LLM代理用于网络安全环境")中找到。
@@ -258,9 +294,6 @@ current status.
     LoRA $\alpha$：4、8、16 和 32
 
 其余的超参数根据HuggingFace对齐手册设置为默认值[[38](https://arxiv.org/html/2409.11276v1#bib.bib38)]。
-
-![参考说明](img/0717fad0c9095e8000dff3b67a39d446.png)
-
 图3：按模型显示的胜率（%）置信区间。蓝色区域表示期望的效应大小。
 
 每个代理的表现，基于胜率及150轮对局的置信区间（CI），如图[3](https://arxiv.org/html/2409.11276v1#S6.F3 "图3 ‣ 6.2 超参数调优 ‣ 6 监督微调方法 ‣ Hackphyr: 面向网络安全环境的本地微调LLM代理")所示。150轮的对局数是基于效能分析选定的，显著性水平为$\alpha=0.05$，效能为$1-\beta=0.8$，目标效应大小介于85%和95%之间。使用置信区间的目的是关注那些区间不重叠的模型。
@@ -290,9 +323,6 @@ current status.
 ### 7.1 场景描述
 
 前两个数据外泄场景（分别称为小型场景和完整版场景）如图[4](https://arxiv.org/html/2409.11276v1#S7.F4 "Figure 4 ‣ 7.1 Scenario Descriptions ‣ 7 Experiment Design ‣ Hackphyr: A Local Fine-Tuned LLM Agent for Network Security Environments")所示。这两个场景共享相同的网络拓扑：两个子网，一个包含客户端，另一个包含服务器，它们通过路由器连接。小型场景与完整版场景的区别仅在于客户端子网中只有一个客户端。
-
-![参见标题说明](img/32bff79cc30dc6d868ec445d0694eb8a.png)
-
 图4：小型和完整版网络场景[[10](https://arxiv.org/html/2409.11276v1#bib.bib10)]。小型场景只有一个客户端在客户端子网中，而完整版场景则有五个客户端。
 
 攻击者从客户端机器中的一个节点开始，扮演一个已在网络中获得立足点的攻击者。攻击者还控制着一台互联网上的机器，命令与控制（C&C）服务器便托管在该机器上。
@@ -300,9 +330,6 @@ current status.
 两种场景都需要至少五个步骤才能将数据外泄。然而，考虑到每个场景中的IP地址和目标都在变化，解决方案远非简单，这也对大语言模型（LLM）和传统的强化学习（RL）代理提出了挑战。两种场景的更详细描述请参见[[10](https://arxiv.org/html/2409.11276v1#bib.bib10)]。
 
 第三个情境（称为三网情境）由虚构的小型中型企业内部的三个不同子网组成（见图[5](https://arxiv.org/html/2409.11276v1#S7.F5 "图 5 ‣ 7.1 情境描述 ‣ 7 实验设计 ‣ Hackphyr：一种针对网络安全环境的本地微调大语言模型代理")）。客户端子网包含客户端主机（如个人电脑等）。第一个服务器子网（子网 A）包含一些客户端可以立即访问的服务器，第二个服务器子网（子网 B）包含两台仅能由子网 A 访问的服务器。防火墙规则防止客户端直接访问子网 B 中的服务器。攻击者的目标是将子网 B 中一台服务器的数据泄露到互联网的 C&C 服务器。攻击者首先在客户端子网中建立立足点，并必须先控制子网 A 中的一台服务器。然后，他们需要对 B 网络进行扫描，发现并利用服务器，获取控制权。一旦控制了正确的服务器并发现数据，就可以将数据泄露到 C&C 服务器。
-
-![请参见说明](img/a5c30792bb1f5931b92ebc1dc4c29ef1.png)
-
 图 5：三子网情境拓扑。客户端仅能直接访问子网 A。目标是通过首先获取子网 A 的立足点，泄露子网 B 的数据。
 
 三网情境比前两个情境需要多出至少三步才能解决。这个情境要求更高，主要用于测试大语言模型的极限。如同前两个情境一样，每次实验中的 IP 地址都会随机化，情境会在有和没有阈值的随机防御者下进行测试；然而，在此情境中，目标是固定的。
@@ -414,13 +441,7 @@ current status.
 其中$\tau_{j}$表示集合中的第$j$条轨迹，$N$是轨迹的总数。
 
 在这种背景下，目标是分析轨迹集$\mathcal{T}$，以理解智能体在整个情节中的理性与行为的正确性。我们进行了图形分析，以了解智能体采取的行动之间的转变，从而帮助检测无效或不正确的行动转移模式。
-
-![参见说明文字](img/fa370429ba780372d3e157ab68e1df0d.png)
-
 (a) 转移矩阵
-
-![参见说明文字](img/035ba4261cb20cd99b2a3303d5aff2fe.png)
-
 (b) 关键行动转移
 
 图6：GPT-4的行动转移
@@ -440,13 +461,7 @@ current status.
 缺乏向无效动作的外向转移表明，基于 GPT-4 的代理从任何其他动作生成无效动作的概率较低。然而，当无效动作发生时，它总是与 ExfiltrateData 动作相关联。这种模式可能是由于 ExfiltrateData 是最复杂的动作，具有最多的参数。此外，每当生成无效动作时，代理的下一个动作始终是 ExfiltrateData，这表明两者之间有很强的相关性。
 
 基于 GPT-4 的代理展示了一个系统化的侦察、服务发现、利用、数据查找和数据外泄的行为模式，与 MITRE ATT&CK 框架中类似的攻击者战术和技术高度匹配¹¹1https://attack.mitre.org/matrices/enterprise/。
-
-![参考标题](img/aa80a0d7968449c8f19d605fc57b727a.png)
-
 (a) 转移矩阵
-
-![参考标题](img/287844a719465a465e33c18b6c2c1707.png)
-
 (b) 关键动作转移
 
 图 7：Hackphyr 动作转移
@@ -456,13 +471,7 @@ current status.
 另一个可以观察到的与基于GPT-4的智能体的不同之处是从开始阶段到无效动作的过渡。一旦智能体生成了一个无效动作，最可能的过渡是到另一个无效动作（概率为0.55）。初始环境状态信息对于Hackphyr智能体来说可能更难以理解。此外，启动阶段缺乏短期记忆信息也可能导致过渡到无效动作。
 
 最后，图[8](https://arxiv.org/html/2409.11276v1#S9.F8 "Figure 8 ‣ 9 Behavioral Analysis ‣ Hackphyr: A Local Fine-Tuned LLM Agent for Network Security Environments")展示了使用基础Zephyr-7b-$\beta$模型时智能体的行为。过渡矩阵（图[8(a)](https://arxiv.org/html/2409.11276v1#S9.F8.sf1 "In Figure 8 ‣ 9 Behavioral Analysis ‣ Hackphyr: A Local Fine-Tuned LLM Agent for Network Security Environments")）显示了GPT-4与Hackphyr之间在动作过渡分布上的明显差异。主要差异在于，从任何其他可能的动作到无效动作的过渡概率较高。此外，似乎智能体倾向于过渡到FindServices动作，无论之前的动作是什么。
-
-![参见图注](img/9e9cf1e240cd622aa73acdcffc2527e1.png)
-
 (a) 过渡矩阵
-
-![参见图注](img/af33731301729781a063f19c40211472.png)
-
 (b) 关键动作过渡
 
 图8：Zephyr-7b-$\beta$ 动作过渡
@@ -494,9 +503,6 @@ current status.
 首先，我们分析了在使用不同数据集部分时代理所采取动作的有效性。动作被分为良好、有效和无效三类：良好动作是代理执行的动作，会增加当前状态；有效动作是指在当前状态下适当且可接受的动作，有助于维持系统完整性或为将来的有利动作做好准备，但不会立即改变状态；而无效动作是在当前状态下不允许的，代理应该尽量避免，以防止错误和低效。
 
 图 [9](https://arxiv.org/html/2409.11276v1#S10.F9 "Figure 9 ‣ 10 Dataset Ablation Study ‣ Hackphyr: A Local Fine-Tuned LLM Agent for Network Security Environments") 展示了每个智能体在完整场景中（有无防守者）经过 150 回合后所采取的每种行动的百分比。此外，我们还提供了使用基础 Zephyr-7b-$\beta$ 模型（未经过任何微调过程）的智能体的结果。
-
-![参见说明](img/4aad488b78c8522ffc51e60f66a888dc.png)
-
 图 9：通过使用不同数据集部分进行训练的智能体所采取的良好、有效和无效行动的百分比。
 
 在没有随机防守者的场景中，数据集 UV 并未显示出良好行动的明显增加（7%）；然而，无效行动的数量从 44% 大幅减少至 18%。数据集 UG 显示良好行动数量有显著增加（40%），无效行动减少至 10%。最后，在数据集 VG 中，良好行动略低于数据集 UV（35%），但无效行动数量减少至 4%。
@@ -506,13 +512,7 @@ current status.
 在两种场景（有随机防守者和没有随机防守者）中，数据集不同部分所提供的好处是显而易见的。特别是，使用 UG 和 VG 数据集训练的智能体表现最佳，良好行动数量大幅增加。在数据集 UV 的情况下，尽管无效行动数量减少，但良好行动数量依然较低。
 
 能够采取有效行动是智能体能够与环境交互的必要条件。然而，这可能还不足以解决问题。为了说明智能体的表现，图 [10](https://arxiv.org/html/2409.11276v1#S10.F10 "Figure 10 ‣ 10 Dataset Ablation Study ‣ Hackphyr: A Local Fine-Tuned LLM Agent for Network Security Environments") 展示了使用不同数据集的模型在每回合平均回报和平均步骤数方面的结果，以及在 150 回合中的胜率。每个指标中表现最佳的模型以蓝色突出显示。请注意，回报和胜率的较高值较好，而步骤数的较低值较佳。
-
-![参见说明](img/4a1336cb5ef3c33cf8af7aa9c9b2423e.png)
-
 (a) 无随机防守者
-
-![参见说明](img/d506059ec8f4d3d990b66e55f593d4bd.png)
-
 (b) 有随机防守者
 
 图10：在大规模场景中，比较有无随机防御者的去除代理。

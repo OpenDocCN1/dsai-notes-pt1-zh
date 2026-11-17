@@ -30,9 +30,6 @@
 
 ![](img/007b8363c10bed4060cf86172290b0d8_17.png)
 
-```python
-import tensorflow as tf
-import tensorflow_datasets as tfds
 
 ![](img/007b8363c10bed4060cf86172290b0d8_19.png)
 
@@ -40,14 +37,22 @@ import tensorflow_datasets as tfds
 
 ![](img/007b8363c10bed4060cf86172290b0d8_21.png)
 
+
+![](img/007b8363c10bed4060cf86172290b0d8_23.png)
+
+
+![](img/007b8363c10bed4060cf86172290b0d8_25.png)
+
+![](img/007b8363c10bed4060cf86172290b0d8_27.png)
+
+```python
+import tensorflow as tf
+import tensorflow_datasets as tfds
 # 加载CIFAR-10数据集
 (train_ds, test_ds), ds_info = tfds.load('cifar10',
                                           split=['train', 'test'],
                                           as_supervised=True,
                                           with_info=True)
-
-![](img/007b8363c10bed4060cf86172290b0d8_23.png)
-
 # 归一化函数
 def normalize_img(image, label):
     return tf.cast(image, tf.float32) / 255., label
@@ -58,11 +63,6 @@ train_ds = train_ds.cache()
 train_ds = train_ds.shuffle(ds_info.splits['train'].num_examples)
 train_ds = train_ds.batch(128)
 train_ds = train_ds.prefetch(tf.data.AUTOTUNE)
-
-![](img/007b8363c10bed4060cf86172290b0d8_25.png)
-
-![](img/007b8363c10bed4060cf86172290b0d8_27.png)
-
 # 准备测试集
 test_ds = test_ds.map(normalize_img, num_parallel_calls=tf.data.AUTOTUNE)
 test_ds = test_ds.batch(128)
@@ -72,6 +72,11 @@ test_ds = test_ds.prefetch(tf.data.AUTOTUNE)
 接下来，我们定义一个简单的卷积神经网络模型作为本课的基础模型。
 
 ![](img/007b8363c10bed4060cf86172290b0d8_29.png)
+
+
+![](img/007b8363c10bed4060cf86172290b0d8_31.png)
+
+![](img/007b8363c10bed4060cf86172290b0d8_32.png)
 
 ```python
 model = tf.keras.Sequential([
@@ -83,11 +88,6 @@ model = tf.keras.Sequential([
     tf.keras.layers.Dense(128, activation='relu'),
     tf.keras.layers.Dense(10)
 ])
-
-![](img/007b8363c10bed4060cf86172290b0d8_31.png)
-
-![](img/007b8363c10bed4060cf86172290b0d8_32.png)
-
 model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])

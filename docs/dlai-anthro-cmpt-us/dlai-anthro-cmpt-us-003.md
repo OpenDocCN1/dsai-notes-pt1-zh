@@ -302,6 +302,11 @@ print(response.content[0].text)
 
 这里有一个你可以运行的函数来演示这一点。
 
+
+![](img/e0b00ce3fbe3d08ecf73e3ff7dfcad38_12.png)
+
+![](img/e0b00ce3fbe3d08ecf73e3ff7dfcad38_13.png)
+
 ```python
 def generate_planet_name(temperature):
     response = client.messages.create(
@@ -316,11 +321,6 @@ def generate_planet_name(temperature):
 
 for i in range(3):
     print(f"温度 0， 尝试 {i+1}: {generate_planet_name(0)}")
-
-![](img/e0b00ce3fbe3d08ecf73e3ff7dfcad38_12.png)
-
-![](img/e0b00ce3fbe3d08ecf73e3ff7dfcad38_13.png)
-
 for i in range(3):
     print(f"温度 1， 尝试 {i+1}: {generate_planet_name(1)}")
 ```

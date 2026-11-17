@@ -18,13 +18,13 @@
 
 例如，以下两种写法是等价的。第一种写法中，GET方法是隐式指定的；第二种写法则明确指定了GET方法。
 
+
+![](img/12ec7c84b9c4c88e2f3be98f9d6e9d83_4.png)
+
 ```python
 @app.route('/')
 def home():
     return 'Home Page'
-
-![](img/12ec7c84b9c4c88e2f3be98f9d6e9d83_4.png)
-
 @app.route('/', methods=['GET'])
 def home_explicit():
     return 'Home Page'

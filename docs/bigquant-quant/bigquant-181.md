@@ -62,19 +62,19 @@ print(f"未划分时的信息熵: {entropy_initial:.3f}")
 4.  分别计算左右两部分子集的信息熵。
 5.  计算划分后的整体信息熵，它是左右两部分信息熵的加权和。
 
+
+![](img/70227e6d1683742e21a6ac5ff0278b91_11.png)
+
+
+![](img/70227e6d1683742e21a6ac5ff0278b91_13.png)
+
 ```python
 # 获取‘日志密度’列数据
 log_density = x['日志密度']
 # 获取唯一值并排序
 unique_vals = np.sort(log_density.unique())
-
-![](img/70227e6d1683742e21a6ac5ff0278b91_11.png)
-
 # 初始化一个列表用于存储每个分割点对应的信息熵
 entropies = []
-
-![](img/70227e6d1683742e21a6ac5ff0278b91_13.png)
-
 # 遍历所有可能的分割点（相邻值的中点）
 for i in range(len(unique_vals) - 1):
     split_point = (unique_vals[i] + unique_vals[i+1]) / 2.0  # 计算分割点，如0.5

@@ -70,12 +70,12 @@
 
 再次以雅可比函数为例。现在你不需要从旧的代码中复制粘贴，可以直接从`torch.autograd.functional`导入。
 
-```python
-import torch
-from torch.autograd.functional import jacobian
 
 ![](img/ae640e7b46aaf17bba8e02172f49117e_14.png)
 
+```python
+import torch
+from torch.autograd.functional import jacobian
 def my_func(x):
     return x ** 2
 

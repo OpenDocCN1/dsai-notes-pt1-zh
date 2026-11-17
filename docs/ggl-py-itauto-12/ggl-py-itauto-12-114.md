@@ -68,11 +68,11 @@ print(anonymized_log)
 
 为此，我们回到之前调整人名顺序的代码，并使用 `sub` 来创建新字符串。
 
-```python
-import re
 
 ![](img/353efb39553321c559a47107c2ccbea7_2.png)
 
+```python
+import re
 name = "Lovelace, Ada"
 # 使用捕获组匹配“姓, 名”的格式
 swapped_name = re.sub(r'(\w+), (\w+)', r'\2 \1', name)

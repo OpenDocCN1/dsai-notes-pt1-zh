@@ -67,16 +67,16 @@ $$
 
 ![](img/3960f332b271b484790eabfb9cc0c60b_26.png)
 
-```python
-# 计算预测值
-y_pred = model.predict(X_test)
-# 定义真实值
-y_true = y_test
 
 ![](img/3960f332b271b484790eabfb9cc0c60b_28.png)
 
 ![](img/3960f332b271b484790eabfb9cc0c60b_30.png)
 
+```python
+# 计算预测值
+y_pred = model.predict(X_test)
+# 定义真实值
+y_true = y_test
 # 手动计算 R²
 u = ((y_true - y_pred) ** 2).sum()
 v = ((y_true - y_true.mean()) ** 2).sum()
@@ -133,13 +133,13 @@ print(train_score)  # 这个分数通常高于测试集得分
 除了R²，另一个常用指标是**均方误差**。在Scikit-learn中，我们可以从`metrics`模块导入它。
 
 以下是导入和使用MSE的代码：
-```python
-from sklearn.metrics import mean_squared_error
 
 ![](img/3960f332b271b484790eabfb9cc0c60b_58.png)
 
 ![](img/3960f332b271b484790eabfb9cc0c60b_60.png)
 
+```python
+from sklearn.metrics import mean_squared_error
 # 计算测试集上的均方误差
 mse_test = mean_squared_error(y_true, y_pred)
 print(mse_test)  # 输出例如 26.69

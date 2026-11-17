@@ -223,6 +223,9 @@ SVM的优化目标等价于最小化以下合页损失函数（Hinge Loss）：
 
 ![](img/84dbf7e5a5677a449df30629ed5e81fd_9.png)
 
+
+![](img/84dbf7e5a5677a449df30629ed5e81fd_11.png)
+
 ```python
 # 1. 读取数据，分词
 import jieba
@@ -244,9 +247,6 @@ X_test = vectorizer.transform(test_texts)        # 测试集文本列表
 from sklearn.svm import SVC
 svm_model = SVC(kernel='linear', C=1.0)  # 线性核，惩罚参数C=1
 svm_model.fit(X_train, y_train)
-
-![](img/84dbf7e5a5677a449df30629ed5e81fd_11.png)
-
 # 4. 预测与评估
 from sklearn.metrics import accuracy_score
 y_pred = svm_model.predict(X_test)

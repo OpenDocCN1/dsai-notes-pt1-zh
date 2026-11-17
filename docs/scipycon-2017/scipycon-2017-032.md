@@ -55,6 +55,13 @@ if __name__ == '__main__':
 
 将其转换为 Sacred 项目只需添加三行代码：
 
+
+![](img/e3150373a72ef181a87e224959684e8d_1.png)
+
+![](img/e3150373a72ef181a87e224959684e8d_2.png)
+
+![](img/e3150373a72ef181a87e224959684e8d_4.png)
+
 ```python
 from sacred import Experiment  # 1. 导入 Experiment
 ex = Experiment()             # 2. 实例化实验
@@ -63,13 +70,6 @@ ex = Experiment()             # 2. 实例化实验
 def my_main():
     # 你的研究代码
     print("Running experiment...")
-
-![](img/e3150373a72ef181a87e224959684e8d_1.png)
-
-![](img/e3150373a72ef181a87e224959684e8d_2.png)
-
-![](img/e3150373a72ef181a87e224959684e8d_4.png)
-
 if __name__ == '__main__':
     ex.run_command_line()     # 改为使用 Sacred 的命令行运行器
 ```

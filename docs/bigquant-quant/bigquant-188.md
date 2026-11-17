@@ -108,11 +108,6 @@ plt.show()
 
 ![](img/19687cd5b1ad49ce5fa5ee2f5fe0e402_14.png)
 
-```python
-# 决策树回归，设置最大深度为3
-model_dt = DecisionTreeRegressor(max_depth=3)
-model_dt.fit(x_train, y_train)
-y_predict_dt = model_dt.predict(x_test)
 
 ![](img/19687cd5b1ad49ce5fa5ee2f5fe0e402_16.png)
 
@@ -120,6 +115,11 @@ y_predict_dt = model_dt.predict(x_test)
 
 ![](img/19687cd5b1ad49ce5fa5ee2f5fe0e402_20.png)
 
+```python
+# 决策树回归，设置最大深度为3
+model_dt = DecisionTreeRegressor(max_depth=3)
+model_dt.fit(x_train, y_train)
+y_predict_dt = model_dt.predict(x_test)
 plt.figure(figsize=(4, 4))
 plt.scatter(y_predict_dt[:, 0], y_predict_dt[:, 1])
 plt.axis('equal')
@@ -165,17 +165,17 @@ graph
 
 ![](img/19687cd5b1ad49ce5fa5ee2f5fe0e402_34.png)
 
+
+![](img/19687cd5b1ad49ce5fa5ee2f5fe0e402_36.png)
+
+![](img/19687cd5b1ad49ce5fa5ee2f5fe0e402_38.png)
+
 ```python
 # 深度为4的树
 model_dt_4 = DecisionTreeRegressor(max_depth=4)
 model_dt_4.fit(x_train, y_train)
 y_predict_dt_4 = model_dt_4.predict(x_test)
 # ... 可视化代码
-
-![](img/19687cd5b1ad49ce5fa5ee2f5fe0e402_36.png)
-
-![](img/19687cd5b1ad49ce5fa5ee2f5fe0e402_38.png)
-
 # 不限制深度（完全生长）
 model_dt_full = DecisionTreeRegressor()
 model_dt_full.fit(x_train, y_train)

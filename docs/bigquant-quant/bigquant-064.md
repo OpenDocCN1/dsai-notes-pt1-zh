@@ -63,16 +63,16 @@ precision = 0.001
 
 我们需要一个起始点。在不知道答案的情况下，通常随机初始化参数 `x`。同时，我们记录上一次的参数值 `last_x`，用于判断收敛。
 
-```python
-# 随机初始化参数 x
-x = np.random.randint(0, 12, size=1)[0]
-# 初始化上一次的参数值，使其与当前x不同
-last_x = x + 0.1
 
 ![](img/922a7774ceccca432dfb33603c4791d6_19.png)
 
 ![](img/922a7774ceccca432dfb33603c4791d6_21.png)
 
+```python
+# 随机初始化参数 x
+x = np.random.randint(0, 12, size=1)[0]
+# 初始化上一次的参数值，使其与当前x不同
+last_x = x + 0.1
 print(f"随机初始化的 x 值为: {x}")
 ```
 

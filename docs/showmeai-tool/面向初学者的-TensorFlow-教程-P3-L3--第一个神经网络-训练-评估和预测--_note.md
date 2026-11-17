@@ -91,6 +91,9 @@ plt.show()
 
 ![](img/3f9d346b7c507e285fe99bf4d69f54ed_14.png)
 
+
+![](img/3f9d346b7c507e285fe99bf4d69f54ed_15.png)
+
 ```python
 # 使用 Sequential API 构建模型
 model = keras.Sequential([
@@ -98,9 +101,6 @@ model = keras.Sequential([
     keras.layers.Dense(128, activation='relu'), # 隐藏层，128个神经元，ReLU激活
     keras.layers.Dense(10) # 输出层，10个神经元
 ])
-
-![](img/3f9d346b7c507e285fe99bf4d69f54ed_15.png)
-
 # 打印模型结构摘要
 model.summary()
 ```
@@ -177,15 +177,15 @@ print(f"测试集准确率: {test_acc:.4f}")
 
 ![](img/3f9d346b7c507e285fe99bf4d69f54ed_21.png)
 
+
+![](img/3f9d346b7c507e285fe99bf4d69f54ed_22.png)
+
 ```python
 # 创建一个包含原始模型和Softmax层的新模型
 probability_model = keras.Sequential([
     model,
     keras.layers.Softmax()
 ])
-
-![](img/3f9d346b7c507e285fe99bf4d69f54ed_22.png)
-
 # 对测试集进行预测
 predictions = probability_model.predict(x_test, batch_size=batch_size)
 # 获取第一个测试样本的预测概率和类别

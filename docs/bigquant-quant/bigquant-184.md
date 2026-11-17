@@ -84,6 +84,9 @@ graph
 
 以下是实现上述逻辑的完整代码：
 
+
+![](img/9ef235191df0367e8f0707659ab7f92d_7.png)
+
 ```python
 import numpy as np
 
@@ -141,9 +144,6 @@ for col in X.columns:
             lowest_impurity = total_impurity
             best_feature = col
             best_split = split_val
-
-![](img/9ef235191df0367e8f0707659ab7f92d_7.png)
-
 print(f“使用‘{criterion}‘作为标准：“)
 print(f“最佳分裂特征：{best_feature}“)
 print(f“最佳分裂点：{best_split}“)

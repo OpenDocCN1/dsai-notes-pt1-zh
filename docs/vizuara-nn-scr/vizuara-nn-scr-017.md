@@ -34,15 +34,15 @@ ReLU激活函数的反向传播过程相对简单。当输入值 \( x \) 大于0
 以下是一个ReLU激活函数的反向传播实例：
 
 **代码：**
+
+![](img/2f586caeff31110451b305d348bd0739_2.png)
+
 ```python
 def relu_derivative(z):
     if z > 0:
         return 1
     else:
         return 0
-
-![](img/2f586caeff31110451b305d348bd0739_2.png)
-
 # 假设输入值z为-2
 z = -2
 # 计算梯度

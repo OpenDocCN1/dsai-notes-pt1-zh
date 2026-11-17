@@ -47,6 +47,11 @@
 
 ![](img/4d13edbd47db261637678d5c7b6a739c_15.png)
 
+
+![](img/4d13edbd47db261637678d5c7b6a739c_17.png)
+
+![](img/4d13edbd47db261637678d5c7b6a739c_19.png)
+
 ```python
 # 设置 vLLM 引擎参数
 from vllm import LLM, SamplingParams
@@ -58,11 +63,6 @@ llm = LLM(
     max_model_len=8192,  # 最大模型长度，防止显存溢出
     stop_token_ids=[1511329, 1511336, 1511338]  # 设置停止符 ID
 )
-
-![](img/4d13edbd47db261637678d5c7b6a739c_17.png)
-
-![](img/4d13edbd47db261637678d5c7b6a739c_19.png)
-
 # 启用 Flash Attention 2 (需在 BF16/FP16 下)
 # llm = LLM(..., enforce_eager=True, ...) # 通常无需手动设置
 ```

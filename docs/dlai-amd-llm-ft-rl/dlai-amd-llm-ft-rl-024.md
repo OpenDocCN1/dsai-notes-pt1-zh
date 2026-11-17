@@ -50,12 +50,12 @@
 
 以下是代码实现的样子。你可能会使用用于生成嵌入的 `sentence-transformers` 库，并从 `scikit-learn` 导入 `KMeans`。
 
-```python
-from sentence_transformers import SentenceTransformer
-from sklearn.cluster import KMeans
 
 ![](img/ee4031104cfe8dd52d03b8711e4e2140_7.png)
 
+```python
+from sentence_transformers import SentenceTransformer
+from sklearn.cluster import KMeans
 # 初始化模型
 model = SentenceTransformer('all-MiniLM-L6-v2')
 # 你的文本列表

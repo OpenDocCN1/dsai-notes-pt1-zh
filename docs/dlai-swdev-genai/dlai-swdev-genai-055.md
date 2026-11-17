@@ -39,11 +39,12 @@
 
 ![](img/47839e7f2c5fabe6c58904d50ab34384_5.png)
 
+    {"url": "https://example.com/image1.png"},
+    {"url": "https://example.com/image2.png"}
+
 ```json
 {
   "data": [
-    {"url": "https://example.com/image1.png"},
-    {"url": "https://example.com/image2.png"}
   ]
 }
 ```

@@ -113,19 +113,11 @@ for i, doc in enumerate(retrieved_docs):
 
 接下来，我们将查询和检索到的结果一起可视化，观察它们在嵌入空间中的位置关系。
 
-```python
-# 获取查询的嵌入向量
-query_embedding = sentence_transformer_ef([query])
-# 获取检索结果的嵌入向量
-retrieved_embeddings = results['embeddings'][0]
 
 ![](img/d202476bf94e3ff4d82c5183d7d9d0a1_13.png)
 
 ![](img/d202476bf94e3ff4d82c5183d7d9d0a1_14.png)
 
-# 投影查询和检索结果的嵌入向量
-projected_query = project_embeddings(query_embedding, umap_transform)
-projected_retrieved = project_embeddings(retrieved_embeddings, umap_transform)
 
 ![](img/d202476bf94e3ff4d82c5183d7d9d0a1_15.png)
 
@@ -135,6 +127,14 @@ projected_retrieved = project_embeddings(retrieved_embeddings, umap_transform)
 
 ![](img/d202476bf94e3ff4d82c5183d7d9d0a1_18.png)
 
+```python
+# 获取查询的嵌入向量
+query_embedding = sentence_transformer_ef([query])
+# 获取检索结果的嵌入向量
+retrieved_embeddings = results['embeddings'][0]
+# 投影查询和检索结果的嵌入向量
+projected_query = project_embeddings(query_embedding, umap_transform)
+projected_retrieved = project_embeddings(retrieved_embeddings, umap_transform)
 # 可视化
 plt.figure(figsize=(10, 8))
 # 绘制所有数据点（灰色）

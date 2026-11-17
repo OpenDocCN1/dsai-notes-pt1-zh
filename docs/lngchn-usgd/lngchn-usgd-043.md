@@ -102,6 +102,9 @@ def play_audio(state):
 
 在 LangGraph 中，我们可以轻松地将已部署的远程图作为子图嵌入，无需重新定义其内部复杂的节点和边。这样做的好处是，我们可以直接利用部署时已配置好的功能，例如内置的长期记忆存储（基于 PostgreSQL）。
 
+
+![](img/c731c17557fa196fbf3f547045f11e2c_3.png)
+
 ```python
 from langgraph.graph import StateGraph, END
 
@@ -119,9 +122,6 @@ workflow.add_node("speak_response", play_audio)
 workflow.add_edge("record_audio", "process_with_agent")
 workflow.add_edge("process_with_agent", "speak_response")
 workflow.add_edge("speak_response", END)
-
-![](img/c731c17557fa196fbf3f547045f11e2c_3.png)
-
 # 编译图
 app = workflow.compile()
 ```

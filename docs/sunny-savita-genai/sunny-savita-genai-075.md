@@ -71,6 +71,9 @@ cursor = connection.cursor()
 
 以下是创建这些表的 SQL 语句：
 
+
+![](img/bb36f20b5ec766396dbbb190ba1d1eef_15.png)
+
 ```sql
 -- 创建员工表
 CREATE TABLE employees (
@@ -81,9 +84,6 @@ CREATE TABLE employees (
     hire_date TEXT,
     salary REAL
 );
-
-![](img/bb36f20b5ec766396dbbb190ba1d1eef_15.png)
-
 -- 创建客户表
 CREATE TABLE customers (
     customer_id INTEGER PRIMARY KEY,

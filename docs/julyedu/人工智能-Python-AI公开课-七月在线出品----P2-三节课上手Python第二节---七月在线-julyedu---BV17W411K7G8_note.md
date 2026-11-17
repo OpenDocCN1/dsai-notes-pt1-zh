@@ -120,17 +120,17 @@ print(result)  # 输出：11
 
 以下是实现该数列的函数：
 
+
+![](img/fe835b0a2aa000823ea87911b98d27ef_63.png)
+
+![](img/fe835b0a2aa000823ea87911b98d27ef_64.png)
+
 ```python
 def fib(num):
     l1 = [0, 1]  # 初始化数列前两项
     for i in range(num - 2):  # 循环生成后续项
         l1.append(sum(l1[-2:]))  # 将最后两项的和追加到列表
     return l1
-
-![](img/fe835b0a2aa000823ea87911b98d27ef_63.png)
-
-![](img/fe835b0a2aa000823ea87911b98d27ef_64.png)
-
 # 调用函数，生成前8个斐波那契数
 print(fib(8))  # 输出：[0, 1, 1, 2, 3, 5, 8, 13]
 ```
@@ -244,19 +244,19 @@ class Student:
 
 ### 使用类创建对象
 
+
+![](img/fe835b0a2aa000823ea87911b98d27ef_82.png)
+
+
+![](img/fe835b0a2aa000823ea87911b98d27ef_84.png)
+
 ```python
 # 创建两个学生对象
 david = Student("David", 33, "Male")
 jack = Student("Jack", 23, "Male")
-
-![](img/fe835b0a2aa000823ea87911b98d27ef_82.png)
-
 # 调用实例方法：David参加考试
 print(david.exam(80))  # Score added. Current total: 80
 print(david.exam(90))  # Score added. Current total: 170
-
-![](img/fe835b0a2aa000823ea87911b98d27ef_84.png)
-
 # 查询David的分数
 print(david.check_score())  # 170
 

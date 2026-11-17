@@ -84,9 +84,6 @@ print(B)
 ![](img/ab557db63f251a2a42013a561581d840_32.png)
 
 **示例：神经网络模块交互**
-```lua
--- 加载神经网络库
-require ‘nn’
 
 ![](img/ab557db63f251a2a42013a561581d840_34.png)
 
@@ -94,16 +91,19 @@ require ‘nn’
 
 ![](img/ab557db63f251a2a42013a561581d840_38.png)
 
--- 创建一个简单的卷积层
-convLayer = nn.SpatialConvolutionMM(3, 3, 3, 3, 1, 1)
-
--- 创建一个随机图像张量（假设为3通道，16x16像素）
-image = torch.rand(3, 16, 16)
 
 ![](img/ab557db63f251a2a42013a561581d840_40.png)
 
 ![](img/ab557db63f251a2a42013a561581d840_42.png)
 
+```lua
+-- 加载神经网络库
+require ‘nn’
+-- 创建一个简单的卷积层
+convLayer = nn.SpatialConvolutionMM(3, 3, 3, 3, 1, 1)
+
+-- 创建一个随机图像张量（假设为3通道，16x16像素）
+image = torch.rand(3, 16, 16)
 -- 执行前向传播计算
 imageB = convLayer:forward(image)
 print(imageB)
@@ -210,8 +210,6 @@ Torch在学术界和工业界也被广泛使用。其主要维护者和贡献者
 ![](img/ab557db63f251a2a42013a561581d840_69.png)
 
 **示例：TensorFlow的符号计算风格（对比）**
-```python
-import tensorflow as tf
 
 ![](img/ab557db63f251a2a42013a561581d840_71.png)
 
@@ -221,10 +219,6 @@ import tensorflow as tf
 
 ![](img/ab557db63f251a2a42013a561581d840_76.png)
 
-# 定义符号（占位符）
-x = tf.placeholder(tf.float32, shape=[None, 784])
-W = tf.Variable(tf.zeros([784, 10]))
-b = tf.Variable(tf.zeros([10]))
 
 ![](img/ab557db63f251a2a42013a561581d840_78.png)
 
@@ -234,8 +228,6 @@ b = tf.Variable(tf.zeros([10]))
 
 ![](img/ab557db63f251a2a42013a561581d840_84.png)
 
-# 定义计算图
-y = tf.nn.softmax(tf.matmul(x, W) + b)
 
 ![](img/ab557db63f251a2a42013a561581d840_85.png)
 
@@ -243,6 +235,14 @@ y = tf.nn.softmax(tf.matmul(x, W) + b)
 
 ![](img/ab557db63f251a2a42013a561581d840_89.png)
 
+```python
+import tensorflow as tf
+# 定义符号（占位符）
+x = tf.placeholder(tf.float32, shape=[None, 784])
+W = tf.Variable(tf.zeros([784, 10]))
+b = tf.Variable(tf.zeros([10]))
+# 定义计算图
+y = tf.nn.softmax(tf.matmul(x, W) + b)
 # ... 之后需要创建会话(Session)来运行这个计算图
 ```
 这种“先定义，后执行”的符号计算理念，与Torch“定义即执行”的方式不同。

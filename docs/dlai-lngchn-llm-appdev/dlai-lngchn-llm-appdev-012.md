@@ -67,14 +67,14 @@
 
 ![](img/351fb93d60a6130df964b235d2de5e90_36.png)
 
-```python
-# 示例：加载文档并分割
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 ![](img/351fb93d60a6130df964b235d2de5e90_38.png)
 
 ![](img/351fb93d60a6130df964b235d2de5e90_40.png)
 
+```python
+# 示例：加载文档并分割
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 # ... 加载 documents ...
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 splits = text_splitter.split_documents(documents)
@@ -120,15 +120,23 @@ print(f"创建了 {len(splits)} 个文本块。")
 
 ![](img/351fb93d60a6130df964b235d2de5e90_64.png)
 
-```python
-# 示例：创建和比较嵌入
-from langchain.embeddings import OpenAIEmbeddings
-import numpy as np
 
 ![](img/351fb93d60a6130df964b235d2de5e90_66.png)
 
 ![](img/351fb93d60a6130df964b235d2de5e90_68.png)
 
+
+![](img/351fb93d60a6130df964b235d2de5e90_70.png)
+
+![](img/351fb93d60a6130df964b235d2de5e90_72.png)
+
+
+![](img/351fb93d60a6130df964b235d2de5e90_74.png)
+
+```python
+# 示例：创建和比较嵌入
+from langchain.embeddings import OpenAIEmbeddings
+import numpy as np
 embeddings = OpenAIEmbeddings()
 sentences = [
     “我爱我的宠物狗。”,
@@ -136,17 +144,9 @@ sentences = [
     “今天天气晴朗，我开车去上班。”
 ]
 vecs = [embeddings.embed_query(s) for s in sentences]
-
-![](img/351fb93d60a6130df964b235d2de5e90_70.png)
-
-![](img/351fb93d60a6130df964b235d2de5e90_72.png)
-
 # 使用点积计算相似度
 def dot_product(vec_a, vec_b):
     return np.dot(vec_a, vec_b)
-
-![](img/351fb93d60a6130df964b235d2de5e90_74.png)
-
 # 比较相似度
 print(f"句子1与句子2的相似度: {dot_product(vecs[0], vecs[1]):.2f}")
 print(f"句子1与句子3的相似度: {dot_product(vecs[0], vecs[2]):.2f}")
@@ -180,23 +180,23 @@ print(f"句子1与句子3的相似度: {dot_product(vecs[0], vecs[2]):.2f}")
 
 ![](img/351fb93d60a6130df964b235d2de5e90_92.png)
 
-```python
-# 示例：创建并保存向量数据库
-from langchain.vectorstores import Chroma
 
 ![](img/351fb93d60a6130df964b235d2de5e90_94.png)
 
 ![](img/351fb93d60a6130df964b235d2de5e90_95.png)
 
-persist_directory = ‘./docs/chroma/‘
-# 确保目录为空
-import shutil
-shutil.rmtree(persist_directory, ignore_errors=True)
 
 ![](img/351fb93d60a6130df964b235d2de5e90_97.png)
 
 ![](img/351fb93d60a6130df964b235d2de5e90_99.png)
 
+```python
+# 示例：创建并保存向量数据库
+from langchain.vectorstores import Chroma
+persist_directory = ‘./docs/chroma/‘
+# 确保目录为空
+import shutil
+shutil.rmtree(persist_directory, ignore_errors=True)
 # 创建向量存储
 vectordb = Chroma.from_documents(
     documents=splits,

@@ -295,17 +295,17 @@ for batch_inputs, batch_targets in dataloader:
 
 以下是创建和使用嵌入层的示例：
 
+
+![](img/2de79e0e6398319d8a3800828cfb4f57_2.png)
+
+![](img/2de79e0e6398319d8a3800828cfb4f57_4.png)
+
 ```python
 import torch.nn as nn
 
 # 假设词汇表大小和向量维度（以GPT-2为例）
 vocab_size = 50257  # GPT-2词汇表大小
 embedding_dim = 256 # 嵌入向量维度
-
-![](img/2de79e0e6398319d8a3800828cfb4f57_2.png)
-
-![](img/2de79e0e6398319d8a3800828cfb4f57_4.png)
-
 # 创建嵌入层
 token_embedding_layer = nn.Embedding(vocab_size, embedding_dim)
 print(f"嵌入层权重矩阵形状: {token_embedding_layer.weight.shape}") # (50257, 256)

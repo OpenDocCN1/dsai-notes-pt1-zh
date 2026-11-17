@@ -157,28 +157,28 @@ class MulTransform:
 
 ![](img/57a6f303b8d13bb7d856025a14ce5b5e_54.png)
 
-```python
-import torchvision.transforms as transforms
 
 ![](img/57a6f303b8d13bb7d856025a14ce5b5e_56.png)
 
 ![](img/57a6f303b8d13bb7d856025a14ce5b5e_58.png)
 
-# 组合变换：先转换为Tensor，然后乘以因子2
-composed = transforms.Compose([ToTensor(),
-                               MulTransform(factor=2)])
 
 ![](img/57a6f303b8d13bb7d856025a14ce5b5e_60.png)
 
 ![](img/57a6f303b8d13bb7d856025a14ce5b5e_61.png)
 
-# 创建应用了组合变换的数据集
-dataset = WineDataset(transform=composed)
 
 ![](img/57a6f303b8d13bb7d856025a14ce5b5e_63.png)
 
 ![](img/57a6f303b8d13bb7d856025a14ce5b5e_65.png)
 
+```python
+import torchvision.transforms as transforms
+# 组合变换：先转换为Tensor，然后乘以因子2
+composed = transforms.Compose([ToTensor(),
+                               MulTransform(factor=2)])
+# 创建应用了组合变换的数据集
+dataset = WineDataset(transform=composed)
 # 获取一个样本并检查
 first_data = dataset[0]
 features, label = first_data

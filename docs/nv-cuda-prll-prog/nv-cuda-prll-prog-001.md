@@ -40,6 +40,9 @@ gcc hello_world.c -o hello_world
 
 现在，我们来看一个在GPU上运行的“Hello World”程序。它与CPU版本有三个关键区别。
 
+
+![](img/84d8c0d6900c565dc28757b2f2d2785e_5.png)
+
 ```c
 #include <stdio.h>
 #include <cuda_runtime.h> // 区别1：包含CUDA头文件
@@ -48,9 +51,6 @@ gcc hello_world.c -o hello_world
 __global__ void d_kernel() {
     printf("Hello World\n");
 }
-
-![](img/84d8c0d6900c565dc28757b2f2d2785e_5.png)
-
 int main() {
     // 区别3：使用特殊语法启动内核，<<<1, 1>>> 表示用1个线程块，每个块1个线程
     d_kernel<<<1, 1>>>();
@@ -233,14 +233,14 @@ int main() {
 
 目标是让线程i计算并打印 i * i。我们需要一种方法让每个线程知道自己独特的索引（ID）。
 
+
+![](img/84d8c0d6900c565dc28757b2f2d2785e_45.png)
+
 ```c
 __global__ void square_kernel() {
     int tid = threadIdx.x; // 获取当前线程在线程块内的索引（0到ThreadsPerBlock-1）
     printf(“Square of %d is %d\n”, tid, tid * tid);
 }
-
-![](img/84d8c0d6900c565dc28757b2f2d2785e_45.png)
-
 int main() {
     int n = 100;
     // 启动1个线程块，包含100个线程

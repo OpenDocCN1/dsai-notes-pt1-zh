@@ -36,15 +36,15 @@ Pandas库实际上就是一组软件组件，其中许多甚至不是用Python�
 2.  调用`head`方法时，DataFrame与API通信，显示数据的前几行。
 3.  调用`mean`方法时，API会计算平均值并返回结果。
 
+
+![](img/f75816e32539b63ac59bf25994edd58d_11.png)
+
 ```python
 import pandas as pd
 
 # 1. 创建数据字典并实例化DataFrame
 data = {'列A': [1, 2, 3], '列B': [4, 5, 6]}
 df = pd.DataFrame(data)  # 这是一个API实例
-
-![](img/f75816e32539b63ac59bf25994edd58d_11.png)
-
 # 2. 使用head方法
 print(df.head())
 
@@ -102,13 +102,13 @@ REST代表**表征状态转移**。在REST API中，你的程序被称为**客�
 
 ![](img/f75816e32539b63ac59bf25994edd58d_22.png)
 
+
+![](img/f75816e32539b63ac59bf25994edd58d_23.png)
+
 ```python
 # 示例代码结构
 from pycoingecko import CoinGeckoAPI
 import pandas as pd
-
-![](img/f75816e32539b63ac59bf25994edd58d_23.png)
-
 # 1. 创建客户端实例
 cg = CoinGeckoAPI()
 

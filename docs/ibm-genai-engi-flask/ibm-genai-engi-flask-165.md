@@ -74,13 +74,13 @@
 
 ![](img/7a7ad43f945debd628915c63b05c9622_16.png)
 
-```python
-from langchain.memory import ChatMessageHistory
 
 ![](img/7a7ad43f945debd628915c63b05c9622_18.png)
 
 ![](img/7a7ad43f945debd628915c63b05c9622_19.png)
 
+```python
+from langchain.memory import ChatMessageHistory
 history = ChatMessageHistory()
 # 添加AI消息
 history.add_ai_message(“你好！我是AI助手。”)
@@ -105,12 +105,12 @@ history.add_user_message(“法国的首都是什么？”)
 
 让我们看一个创建Pandas DataFrame代理的例子，它允许用户用自然语言查询和可视化数据：
 
-```python
-from langchain.agents import create_pandas_dataframe_agent
-import pandas as pd
 
 ![](img/7a7ad43f945debd628915c63b05c9622_26.png)
 
+```python
+from langchain.agents import create_pandas_dataframe_agent
+import pandas as pd
 # 假设df是一个Pandas DataFrame
 df = pd.read_csv(‘data.csv’)
 # 创建代理

@@ -58,6 +58,9 @@ from utils import run_agent, start_main_span, tools
 
 接下来，我们循环遍历这些问题，并使用导入的 `start_main_span` 方法让代理处理每个问题，同时将过程追踪到 Phoenix。
 
+
+![](img/8d8727614c7311c847e4bea86138feb3_5.png)
+
 ```python
 questions = [
     "What was the most popular product for Sw?",
@@ -67,9 +70,6 @@ questions = [
     "Which product has the highest profit margin?",
     "Compare sales from the last two quarters."
 ]
-
-![](img/8d8727614c7311c847e4bea86138feb3_5.png)
-
 # 循环处理每个问题并追踪
 for question in questions:
     start_main_span(question)

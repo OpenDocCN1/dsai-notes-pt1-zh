@@ -178,9 +178,6 @@
 
 ![](img/5f94026aeaa256766103d6bad461c9a7_125.png)
 
-```python
-# 示例代码：加载未微调的Llama 2模型
-from llama import BasicModelRunner
 
 ![](img/5f94026aeaa256766103d6bad461c9a7_127.png)
 
@@ -188,6 +185,9 @@ from llama import BasicModelRunner
 
 ![](img/5f94026aeaa256766103d6bad461c9a7_131.png)
 
+```python
+# 示例代码：加载未微调的Llama 2模型
+from llama import BasicModelRunner
 unfine_tuned_model = BasicModelRunner("meta-llama/Llama-2-7b")
 # 向模型提问
 response = unfine_tuned_model("告诉我如何训练我的狗坐下")

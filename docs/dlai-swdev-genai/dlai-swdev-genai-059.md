@@ -55,11 +55,11 @@ SQLAlchemy安装完成后，你就可以设置一个示例SQLite数据库了。S
 
 以下是导入必要库并创建连接到SQLite数据库引擎的代码：
 
-```python
-from sqlalchemy import create_engine
 
 ![](img/9e9996941a40fdfbbfec8800eb0ba679_9.png)
 
+```python
+from sqlalchemy import create_engine
 # 创建一个连接到SQLite数据库的引擎
 engine = create_engine('sqlite:///ecommerce.db', echo=True)
 ```

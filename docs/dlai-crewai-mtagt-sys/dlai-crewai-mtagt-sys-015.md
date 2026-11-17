@@ -18,12 +18,12 @@
 
 以下是初始设置的代码框架：
 
-```python
-from crewai import Agent, Task, Crew
-from crewai.process import Process
 
 ![](img/fdddacce10a1834d4ab590dc79b82ca3_4.png)
 
+```python
+from crewai import Agent, Task, Crew
+from crewai.process import Process
 # 配置 LLM 和工具（此处为示例，需替换为你的 API 密钥）
 from langchain_openai import ChatOpenAI
 from crewai_tools import SerperDevTool, ScrapeWebsiteTool

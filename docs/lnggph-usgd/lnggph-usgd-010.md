@@ -14,11 +14,6 @@ LangGraph 提供了一个检查点机制，可以在每次执行时保存图的�
 
 以下是设置环境和创建智能体的核心代码：
 
-```python
-# 设置 API 密钥
-import os
-os.environ["OPENAI_API_KEY"] = "your-openai-key"
-os.environ["TAVILY_API_KEY"] = "your-tavily-key"
 
 ![](img/e17288511ae078adb97e7126c3048823_3.png)
 
@@ -26,6 +21,11 @@ os.environ["TAVILY_API_KEY"] = "your-tavily-key"
 
 ![](img/e17288511ae078adb97e7126c3048823_5.png)
 
+```python
+# 设置 API 密钥
+import os
+os.environ["OPENAI_API_KEY"] = "your-openai-key"
+os.environ["TAVILY_API_KEY"] = "your-tavily-key"
 # 创建 Tavily 搜索工具
 from langchain_community.tools.tavily_search import TavilySearchResults
 search_tool = TavilySearchResults(max_results=2)
@@ -44,6 +44,25 @@ model_with_tools = model.bind_tools([search_tool])
 
 接下来，我们定义智能体节点和工具调用节点，并将它们连接成一个图。
 
+
+![](img/e17288511ae078adb97e7126c3048823_7.png)
+
+![](img/e17288511ae078adb97e7126c3048823_8.png)
+
+
+![](img/e17288511ae078adb97e7126c3048823_9.png)
+
+![](img/e17288511ae078adb97e7126c3048823_10.png)
+
+![](img/e17288511ae078adb97e7126c3048823_11.png)
+
+
+![](img/e17288511ae078adb97e7126c3048823_12.png)
+
+![](img/e17288511ae078adb97e7126c3048823_13.png)
+
+![](img/e17288511ae078adb97e7126c3048823_14.png)
+
 ```python
 from langgraph.graph import MessageGraph, END
 
@@ -52,11 +71,6 @@ def agent_node(state):
     messages = state["messages"]
     response = model_with_tools.invoke(messages)
     return {"messages": [response]}
-
-![](img/e17288511ae078adb97e7126c3048823_7.png)
-
-![](img/e17288511ae078adb97e7126c3048823_8.png)
-
 # 定义工具调用节点
 def tool_node(state):
     messages = state["messages"]
@@ -67,13 +81,6 @@ def tool_node(state):
     for result in results:
         response_messages.append(ToolMessage(content=str(result), tool_call_id=tool_calls[0]['id']))
     return {"messages": response_messages}
-
-![](img/e17288511ae078adb97e7126c3048823_9.png)
-
-![](img/e17288511ae078adb97e7126c3048823_10.png)
-
-![](img/e17288511ae078adb97e7126c3048823_11.png)
-
 # 定义路由逻辑
 def should_continue(state):
     messages = state["messages"]
@@ -81,13 +88,6 @@ def should_continue(state):
     if last_message.tool_calls:
         return "tools"
     return END
-
-![](img/e17288511ae078adb97e7126c3048823_12.png)
-
-![](img/e17288511ae078adb97e7126c3048823_13.png)
-
-![](img/e17288511ae078adb97e7126c3048823_14.png)
-
 # 构建图
 graph = MessageGraph()
 graph.add_node("agent", agent_node)
@@ -103,11 +103,11 @@ graph.add_edge("tools", "agent")
 
 这是本节课的核心。我们将通过添加一个 SQLite 检查点器来实现持久化。
 
-```python
-from langgraph.checkpoint.sqlite import SqliteSaver
 
 ![](img/e17288511ae078adb97e7126c3048823_17.png)
 
+```python
+from langgraph.checkpoint.sqlite import SqliteSaver
 # 创建内存中的 SQLite 检查点器
 memory = SqliteSaver.from_conn_string(":memory:")
 
@@ -125,17 +125,17 @@ app = graph.compile(checkpointer=memory)
 
 以下是调用智能体的示例：
 
+
+![](img/e17288511ae078adb97e7126c3048823_21.png)
+
+![](img/e17288511ae078adb97e7126c3048823_22.png)
+
 ```python
 # 第一次交互，线程 ID 为 2
 config = {"configurable": {"thread_id": "2"}}
 inputs = {"messages": [("human", "Hi, I'm Bob.")]}
 result = app.invoke(inputs, config=config)
 print(result["messages"][-1].content)  # 输出: Hello Bob. How may I assist you?
-
-![](img/e17288511ae078adb97e7126c3048823_21.png)
-
-![](img/e17288511ae078adb97e7126c3048823_22.png)
-
 # 第二次交互，使用相同的线程 ID，智能体记得名字
 inputs = {"messages": [("human", "What is my name?")]}
 result = app.invoke(inputs, config=config)

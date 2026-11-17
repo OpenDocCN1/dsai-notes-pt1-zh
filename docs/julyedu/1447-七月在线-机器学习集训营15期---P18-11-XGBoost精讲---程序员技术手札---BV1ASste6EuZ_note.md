@@ -223,6 +223,19 @@ $$ Gain = \frac{1}{2} \left[ \frac{G_L^2}{H_L + \lambda} + \frac{G_R^2}{H_R + \l
 
 以下是一个简单的二分类示例代码框架：
 
+
+![](img/4461d05e218e8fd47973912ad5a92706_75.png)
+
+![](img/4461d05e218e8fd47973912ad5a92706_77.png)
+
+
+![](img/4461d05e218e8fd47973912ad5a92706_79.png)
+
+
+![](img/4461d05e218e8fd47973912ad5a92706_81.png)
+
+![](img/4461d05e218e8fd47973912ad5a92706_83.png)
+
 ```python
 import xgboost as xgb
 from sklearn.model_selection import train_test_split
@@ -250,26 +263,13 @@ params = {
     'alpha': 0,
     'seed': 42
 }
-
-![](img/4461d05e218e8fd47973912ad5a92706_75.png)
-
-![](img/4461d05e218e8fd47973912ad5a92706_77.png)
-
 # 训练模型
 num_rounds = 100
 bst = xgb.train(params, dtrain, num_rounds, evals=[(dtest, 'test')], early_stopping_rounds=10)
-
-![](img/4461d05e218e8fd47973912ad5a92706_79.png)
-
 # 预测（输出概率）
 y_pred_proba = bst.predict(dtest)
 # 将概率转换为类别
 y_pred = (y_pred_proba > 0.5).astype(int)
-
-![](img/4461d05e218e8fd47973912ad5a92706_81.png)
-
-![](img/4461d05e218e8fd47973912ad5a92706_83.png)
-
 # 评估准确率
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy:.4f}")

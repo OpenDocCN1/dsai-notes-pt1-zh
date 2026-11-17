@@ -55,14 +55,14 @@ generation_model = TextGenerationModel.from_pretrained("text-bison@001")
 
 让我们从一个开放式的生成任务开始。我们将定义一个提示词，然后查看模型的响应。
 
-```python
-# 定义一个开放式提示词
-prompt = "I'm a high school student. Recommend me a programming activity to improve my skills."
 
 ![](img/b6bb6f7e963b6187aa8856db0edfac9e_9.png)
 
 ![](img/b6bb6f7e963b6187aa8856db0edfac9e_10.png)
 
+```python
+# 定义一个开放式提示词
+prompt = "I'm a high school student. Recommend me a programming activity to improve my skills."
 # 调用模型生成文本
 response = generation_model.predict(prompt=prompt)
 print(response.text)

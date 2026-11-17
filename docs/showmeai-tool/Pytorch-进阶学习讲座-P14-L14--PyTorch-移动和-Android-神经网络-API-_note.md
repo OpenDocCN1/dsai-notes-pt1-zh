@@ -54,6 +54,9 @@
 
 ![](img/2143cfd2c52c8c795e5af20d99916e1d_11.png)
 
+
+![](img/2143cfd2c52c8c795e5af20d99916e1d_13.png)
+
 ```python
 import torch
 import torch.utils.mobile_optimizer as mobile_optimizer
@@ -63,9 +66,6 @@ model = torch.jit.load(‘your_model.pt’)
 
 # 创建一个输入变量以匹配输入形状
 example_input = torch.rand(1, 3, 224, 224) # 示例输入
-
-![](img/2143cfd2c52c8c795e5af20d99916e1d_13.png)
-
 # 将布局设置为 NCHW（注意：原文为 N HWC，但 PyTorch 常用 NCHW，此处根据上下文调整）
 # 实际上，NNAPI 可能偏好 NHWC，具体需参考文档。这里展示转换流程。
 optimized_model = mobile_optimizer.optimize_for_mobile(model, backend=‘nnapi’)

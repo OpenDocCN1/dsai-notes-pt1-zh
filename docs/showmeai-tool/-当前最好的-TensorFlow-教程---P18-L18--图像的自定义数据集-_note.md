@@ -26,13 +26,13 @@
 
 首先，我们导入必要的库并设置基本参数。
 
+
+![](img/5a48387aad10b0cf4a2d2bc3dacad647_7.png)
+
 ```python
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
-
-![](img/5a48387aad10b0cf4a2d2bc3dacad647_7.png)
-
 # 设置参数
 image_height = 28
 image_width = 28
@@ -77,6 +77,9 @@ ds_validation = tf.keras.utils.image_dataset_from_directory(
 
 创建数据集后，我们可以方便地应用数据增强并训练模型。
 
+
+![](img/5a48387aad10b0cf4a2d2bc3dacad647_11.png)
+
 ```python
 # 定义一个简单的数据增强函数
 def augment(image, label):
@@ -97,9 +100,6 @@ model = keras.Sequential([
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
-
-![](img/5a48387aad10b0cf4a2d2bc3dacad647_11.png)
-
 # 训练模型
 model.fit(ds_train, validation_data=ds_validation, epochs=10)
 ```
@@ -163,13 +163,13 @@ validation_generator = validation_datagen.flow_from_directory(
 
 使用生成器进行训练时，需要手动计算每个epoch的步数（steps_per_epoch）。
 
+
+![](img/5a48387aad10b0cf4a2d2bc3dacad647_15.png)
+
 ```python
 # 计算每个epoch的步数
 steps_per_epoch = train_generator.samples // batch_size
 validation_steps = validation_generator.samples // batch_size
-
-![](img/5a48387aad10b0cf4a2d2bc3dacad647_15.png)
-
 # 使用fit方法训练模型
 model.fit(
     train_generator,
@@ -211,6 +211,9 @@ labels = df['label'].tolist()
 
 然后，使用 `tf.data.Dataset.from_tensor_slices` 创建数据集，并定义一个函数来读取和预处理图像。
 
+
+![](img/5a48387aad10b0cf4a2d2bc3dacad647_20.png)
+
 ```python
 # 创建TensorFlow数据集
 ds = tf.data.Dataset.from_tensor_slices((file_paths, labels))
@@ -222,9 +225,6 @@ def read_and_preprocess(image_path, label):
     image = tf.image.resize(image, [image_height, image_width])
     image = tf.cast(image, tf.float32) / 255.0  # 归一化
     return image, label
-
-![](img/5a48387aad10b0cf4a2d2bc3dacad647_20.png)
-
 # 应用函数并批处理数据
 ds_train = ds.map(read_and_preprocess).batch(batch_size)
 ```

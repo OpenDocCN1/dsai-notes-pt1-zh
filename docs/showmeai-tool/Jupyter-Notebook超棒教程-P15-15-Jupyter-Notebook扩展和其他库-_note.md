@@ -47,14 +47,14 @@ jupyter nbconvert --to html my_notebook.ipynb
 
 ![](img/fada9b10c7f63ddff8bee1e0b3c83e54_5.png)
 
+
+![](img/fada9b10c7f63ddff8bee1e0b3c83e54_7.png)
+
 ```python
 import nbformat as nbf
 
 # 创建一个新的笔记本对象
 nb = nbf.v4.new_notebook()
-
-![](img/fada9b10c7f63ddff8bee1e0b3c83e54_7.png)
-
 # 添加一个Markdown单元格
 text_cell = nbf.v4.new_markdown_cell("## 这是自动生成的标题")
 # 添加一个代码单元格
@@ -85,12 +85,12 @@ with open('generated_notebook.ipynb', 'w') as f:
 
 ![](img/fada9b10c7f63ddff8bee1e0b3c83e54_11.png)
 
-```bash
-# 基本命令格式
-papermill input_notebook.ipynb output_notebook.ipynb -p parameter_name value
 
 ![](img/fada9b10c7f63ddff8bee1e0b3c83e54_12.png)
 
+```bash
+# 基本命令格式
+papermill input_notebook.ipynb output_notebook.ipynb -p parameter_name value
 # 示例：传入参数 alpha 的值为 0.5
 papermill model_experiment.ipynb results/experiment_alpha_0.5.ipynb -p alpha 0.5
 ```

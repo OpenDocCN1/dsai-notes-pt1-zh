@@ -82,12 +82,12 @@ AI利用初始示例来正确执行新的翻译任务。
 
 以下是一个应用LangChain提示模板的代码片段：
 
-```python
-# 首先，从langchain_core.prompts导入PromptTemplate
-from langchain_core.prompts import PromptTemplate
 
 ![](img/7f7e8ae028573b22a5a84112be3dec4f_1.png)
 
+```python
+# 首先，从langchain_core.prompts导入PromptTemplate
+from langchain_core.prompts import PromptTemplate
 # 定义一个笑话提示模板
 joke_template = PromptTemplate.from_template("Tell me a {adjective} joke about {content}.")
 

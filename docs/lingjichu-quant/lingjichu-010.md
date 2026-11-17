@@ -46,21 +46,21 @@
 
 以下是构建回归方程的核心代码步骤：
 
-```python
-# 假设 df 是包含‘X’和‘Y’两列数据的DataFrame
-# 1. 清理数据中的空值
-df.dropna(inplace=True)
 
 ![](img/e5867d217fe158a260656201e5c0eba3_23.png)
 
 ![](img/e5867d217fe158a260656201e5c0eba3_25.png)
 
-# 2. 提取自变量X和因变量Y
-x_data = df[‘X’].values
-y_data = df[‘Y’].values
 
 ![](img/e5867d217fe158a260656201e5c0eba3_27.png)
 
+```python
+# 假设 df 是包含‘X’和‘Y’两列数据的DataFrame
+# 1. 清理数据中的空值
+df.dropna(inplace=True)
+# 2. 提取自变量X和因变量Y
+x_data = df[‘X’].values
+y_data = df[‘Y’].values
 # 3. 使用polyfit计算回归系数 (k, b)
 coefficients = np.polyfit(x_data, y_data, deg=1)
 k, b = coefficients
@@ -89,32 +89,32 @@ k, b = coefficients
 
 ![](img/e5867d217fe158a260656201e5c0eba3_39.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/e5867d217fe158a260656201e5c0eba3_41.png)
 
 ![](img/e5867d217fe158a260656201e5c0eba3_43.png)
 
-# 1. 绘制原始数据散点图
-plt.scatter(x_data, y_data, s=16, label=‘原始数据’)
 
 ![](img/e5867d217fe158a260656201e5c0eba3_45.png)
 
 ![](img/e5867d217fe158a260656201e5c0eba3_47.png)
 
-# 2. 计算回归线对应的Y值
-y_pred = k * x_data + b  # 利用求得的k和b计算预测值
 
 ![](img/e5867d217fe158a260656201e5c0eba3_49.png)
 
 ![](img/e5867d217fe158a260656201e5c0eba3_51.png)
 
-# 3. 在同一图中绘制回归线
-plt.plot(x_data, y_pred, color=‘red’, label=‘回归线’)
 
 ![](img/e5867d217fe158a260656201e5c0eba3_53.png)
 
+```python
+import matplotlib.pyplot as plt
+# 1. 绘制原始数据散点图
+plt.scatter(x_data, y_data, s=16, label=‘原始数据’)
+# 2. 计算回归线对应的Y值
+y_pred = k * x_data + b  # 利用求得的k和b计算预测值
+# 3. 在同一图中绘制回归线
+plt.plot(x_data, y_pred, color=‘red’, label=‘回归线’)
 plt.legend()
 plt.show()
 ```
@@ -163,21 +163,21 @@ print(correlation_matrix)
 
 ![](img/e5867d217fe158a260656201e5c0eba3_71.png)
 
-```python
-# 设置滚动窗口的大小，例如250个交易日
-window_size = 250
 
 ![](img/e5867d217fe158a260656201e5c0eba3_73.png)
 
 ![](img/e5867d217fe158a260656201e5c0eba3_75.png)
 
-# 计算指标X相对于指标Y的滚动相关系数
-rolling_corr = df[‘X’].rolling(window=window_size).corr(df[‘Y’])
 
 ![](img/e5867d217fe158a260656201e5c0eba3_77.png)
 
 ![](img/e5867d217fe158a260656201e5c0eba3_79.png)
 
+```python
+# 设置滚动窗口的大小，例如250个交易日
+window_size = 250
+# 计算指标X相对于指标Y的滚动相关系数
+rolling_corr = df[‘X’].rolling(window=window_size).corr(df[‘Y’])
 # 绘制滚动相关系数随时间的变化图
 rolling_corr.plot(figsize=(11, 6))
 plt.title(‘滚动相关系数变化图 (窗口大小={})’.format(window_size))

@@ -147,17 +147,17 @@ TensorFlow Hub是一个预训练模型的仓库，提供了更多样化的模型
 2.  **复制模型URL**。
 3.  **在代码中加载模型**：使用 `hub.KerasLayer` 加载模型。
 
+
+![](img/e49a5edbd4e401e53208da1309187c97_11.png)
+
+![](img/e49a5edbd4e401e53208da1309187c97_13.png)
+
 ```python
 import tensorflow as tf
 import tensorflow_hub as hub
 
 # 1. 指定模型URL
 model_url = “https://tfhub.dev/google/imagenet/inception_v3/feature_vector/4"
-
-![](img/e49a5edbd4e401e53208da1309187c97_11.png)
-
-![](img/e49a5edbd4e401e53208da1309187c97_13.png)
-
 # 2. 将Hub模型包装为一个Keras层
 base_model = hub.KerasLayer(model_url, input_shape=(299, 299, 3))
 

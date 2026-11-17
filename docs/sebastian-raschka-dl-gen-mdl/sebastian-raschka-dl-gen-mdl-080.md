@@ -69,6 +69,11 @@ class MultilayerPerceptron(nn.Module):
 
 在PyTorch中使用Dropout时，一个至关重要的步骤是正确切换模型的模式。这通过 `model.train()` 和 `model.eval()` 方法实现。
 
+
+![](img/98f8cf9813ad07874e8d0dd60e872dce_8.png)
+
+![](img/98f8cf9813ad07874e8d0dd60e872dce_9.png)
+
 ```python
 model = MultilayerPerceptron(...)
 criterion = nn.CrossEntropyLoss()
@@ -83,11 +88,6 @@ for epoch in range(num_epochs):
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-
-![](img/98f8cf9813ad07874e8d0dd60e872dce_8.png)
-
-![](img/98f8cf9813ad07874e8d0dd60e872dce_9.png)
-
 # 评估/测试阶段
 model.eval()  # 设置为评估模式
 with torch.no_grad():  # 同时关闭梯度计算以节省内存和计算

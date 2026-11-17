@@ -12,12 +12,12 @@
 
 以下是绘制IC时间序列图的核心代码：
 
-```python
-# 导入绘图工具
-from alphalens import plotting
 
 ![](img/edced50195d12f4a1c48973a466a87a7_3.png)
 
+```python
+# 导入绘图工具
+from alphalens import plotting
 # 绘制IC时间序列图
 plotting.plot_ic_ts(ic_data)
 ```

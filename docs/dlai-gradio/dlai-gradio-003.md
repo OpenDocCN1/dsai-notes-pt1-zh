@@ -21,11 +21,11 @@ os.environ[‘HF_API_KEY’] = ‘your_huggingface_api_key_here’
 
 接下来，我们定义一个辅助函数 `get_completion` 来调用图像描述模型的API端点。这个端点对应的是Salesforce Blip图像描述模型。
 
-```python
-import requests
 
 ![](img/16a006e618fc43b1e8a2d38184a69788_4.png)
 
+```python
+import requests
 def get_completion(inputs, parameters=None, ENDPOINT_URL=‘https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-base’):
     headers = {
         “Authorization”: f”Bearer {os.environ[‘HF_API_KEY’]}”
@@ -43,8 +43,9 @@ def get_completion(inputs, parameters=None, ENDPOINT_URL=‘https://api-inferenc
 
 现在，让我们用一个示例图片URL来测试这个函数。
 
-```python
 image_url = “https://example.com/dog_in_santa_hat.jpg”
+
+```python
 result = get_completion(image_url)
 print(result)
 ```

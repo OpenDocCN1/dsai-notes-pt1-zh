@@ -51,6 +51,9 @@
 
 用Python代码可以近似表示如下：
 
+
+![](img/2379257567e6199a7dc980d3d01af2eb_9.png)
+
 ```python
 import numpy as np
 
@@ -58,9 +61,6 @@ import numpy as np
 # 假设 annual_risk_free_rate 是年化无风险收益率，例如 0.05
 daily_risk_free = annual_risk_free_rate / 250
 excess_returns = daily_returns - daily_risk_free
-
-![](img/2379257567e6199a7dc980d3d01af2eb_9.png)
-
 # 计算年化夏普比率
 sharpe_ratio = np.mean(excess_returns) / np.std(excess_returns) * np.sqrt(250)
 ```

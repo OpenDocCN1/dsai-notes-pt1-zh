@@ -93,11 +93,11 @@ print(your_file_content)
 
 读取文件内容后，你可以利用大型语言模型（AI）对其进行处理。例如，你可以创建一个提示来总结文本。
 
-```python
-prompt = f”””请用两句话总结以下文本内容：
 
 ![](img/f42f08166d4e274eaa81a417f1ee2277_15.png)
 
+```python
+prompt = f”””请用两句话总结以下文本内容：
 {your_file_content}
 “””
 print_response(prompt)

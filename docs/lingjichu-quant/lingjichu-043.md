@@ -30,13 +30,13 @@
 
 对应的关键代码如下：
 
+
+![](img/cebada88ae8cbabe0f5244a53b3e9b2c_7.png)
+
 ```python
 # 假设 df 是当前的DataFrame，其中包含‘date’列和多列股票指标数据
 # 首先，将‘date’列设置为索引
 df.set_index('date', inplace=True)
-
-![](img/cebada88ae8cbabe0f5244a53b3e9b2c_7.png)
-
 # 然后，将DataFrame从“宽格式”转换为“长格式”，并为股票代码创建第二层索引
 # stack() 方法可以实现此功能
 formatted_data = df.stack()

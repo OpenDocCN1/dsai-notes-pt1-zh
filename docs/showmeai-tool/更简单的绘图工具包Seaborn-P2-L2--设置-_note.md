@@ -39,12 +39,12 @@ import seaborn as sns
 ![](img/1f5782138b1dd6d829937e1517a2eda6_5.png)
 
 以下是可选的配置命令：
-```python
-# 使Matplotlib图形内嵌显示在Notebook中
-%matplotlib inline
 
 ![](img/1f5782138b1dd6d829937e1517a2eda6_6.png)
 
+```python
+# 使Matplotlib图形内嵌显示在Notebook中
+%matplotlib inline
 # 启用自动重载模块功能（方便开发时修改代码后无需重启内核）
 %load_ext autoreload
 %autoreload 2

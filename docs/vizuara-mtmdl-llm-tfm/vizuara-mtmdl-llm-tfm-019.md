@@ -133,6 +133,21 @@
 
 ![](img/edbe8ac55858e949bcfeafd4a78bbd19_63.png)
 
+
+![](img/edbe8ac55858e949bcfeafd4a78bbd19_65.png)
+
+![](img/edbe8ac55858e949bcfeafd4a78bbd19_66.png)
+
+
+![](img/edbe8ac55858e949bcfeafd4a78bbd19_68.png)
+
+
+![](img/edbe8ac55858e949bcfeafd4a78bbd19_70.png)
+
+![](img/edbe8ac55858e949bcfeafd4a78bbd19_71.png)
+
+![](img/edbe8ac55858e949bcfeafd4a78bbd19_72.png)
+
 ```python
 import torch
 import torch.nn.functional as F
@@ -142,31 +157,16 @@ seq_len = 5
 # 1. 计算原始注意力分数 (S)
 # S shape: [seq_len, seq_len]
 S = ... # 通过 Q @ K.T 计算得出
-
-![](img/edbe8ac55858e949bcfeafd4a78bbd19_65.png)
-
-![](img/edbe8ac55858e949bcfeafd4a78bbd19_66.png)
-
 # 2. 创建因果掩码 (M)
 # 使用 torch.triu 生成上三角矩阵，对角线偏移为1，即主对角线为0，上三角部分为1
 mask = torch.triu(torch.ones(seq_len, seq_len), diagonal=1).bool()
 # 将 mask 中为 True（即上三角）的位置设置为一个非常大的负数（如 -1e9）
 causal_mask = torch.where(mask, torch.tensor(-1e9), torch.tensor(0.0))
-
-![](img/edbe8ac55858e949bcfeafd4a78bbd19_68.png)
-
 # 3. 应用掩码
 S_masked = S + causal_mask
 
 # 4. 计算注意力权重
 attention_weights = F.softmax(S_masked, dim=-1)
-
-![](img/edbe8ac55858e949bcfeafd4a78bbd19_70.png)
-
-![](img/edbe8ac55858e949bcfeafd4a78bbd19_71.png)
-
-![](img/edbe8ac55858e949bcfeafd4a78bbd19_72.png)
-
 # 5. 计算输出
 context_vectors = attention_weights @ V
 ```

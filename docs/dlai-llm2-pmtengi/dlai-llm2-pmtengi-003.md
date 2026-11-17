@@ -220,14 +220,14 @@ print(response)
 
 如果你像与人聊天一样与Llama模型聊天，你可能会问一个后续问题或提出请求。让我们看看如果你要求它在生日贺卡中添加一个细节会发生什么。
 
+
+![](img/5045634236313b5cfa5a9a0696241d3e_29.png)
+
 ```python
 # 首先获取初始响应
 prompt1 = "Help me write a birthday card for my friend Andrew. He likes pandas."
 response1 = llama(prompt1)
 print(response1)
-
-![](img/5045634236313b5cfa5a9a0696241d3e_29.png)
-
 # 然后问后续问题
 prompt2 = "Oh, he also likes teaching. Can you rewrite it to include that?"
 response2 = llama(prompt2)

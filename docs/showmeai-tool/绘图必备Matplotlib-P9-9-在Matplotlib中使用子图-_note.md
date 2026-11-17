@@ -99,20 +99,9 @@ age_group = df.groupby('age').mean()
 
 ![](img/558551509e8aea69421f10f8e194eb25_53.png)
 
-```python
-# 子图1：条形图 (平均静息血压)
-axs[0, 0].bar(age_group.index, age_group['trestbps'])
-axs[0, 0].set_xlabel('Age')
-axs[0, 0].set_ylabel('Average Resting BP')
-axs[0, 0].set_title('Average Resting Blood Pressure by Age')
 
 ![](img/558551509e8aea69421f10f8e194eb25_55.png)
 
-# 子图2：折线图 (平均胆固醇)
-axs[0, 1].plot(age_group.index, age_group['chol'])
-axs[0, 1].set_xlabel('Age')
-axs[0, 1].set_ylabel('Average Cholesterol')
-axs[0, 1].set_title('Average Cholesterol by Age')
 
 ![](img/558551509e8aea69421f10f8e194eb25_56.png)
 
@@ -120,14 +109,25 @@ axs[0, 1].set_title('Average Cholesterol by Age')
 
 ![](img/558551509e8aea69421f10f8e194eb25_58.png)
 
+
+![](img/558551509e8aea69421f10f8e194eb25_60.png)
+
+```python
+# 子图1：条形图 (平均静息血压)
+axs[0, 0].bar(age_group.index, age_group['trestbps'])
+axs[0, 0].set_xlabel('Age')
+axs[0, 0].set_ylabel('Average Resting BP')
+axs[0, 0].set_title('Average Resting Blood Pressure by Age')
+# 子图2：折线图 (平均胆固醇)
+axs[0, 1].plot(age_group.index, age_group['chol'])
+axs[0, 1].set_xlabel('Age')
+axs[0, 1].set_ylabel('Average Cholesterol')
+axs[0, 1].set_title('Average Cholesterol by Age')
 # 子图3：散点图 (最大心率 vs ST段抑制)
 axs[1, 0].scatter(df['thalach'], df['oldpeak'])
 axs[1, 0].set_xlabel('Max Heart Rate Achieved')
 axs[1, 0].set_ylabel('ST Depression Induced by Exercise')
 axs[1, 0].set_title('Max HR vs. ST Depression')
-
-![](img/558551509e8aea69421f10f8e194eb25_60.png)
-
 # 子图4：条形图 (平均ST段抑制)
 axs[1, 1].bar(age_group.index, age_group['oldpeak'])
 axs[1, 1].set_xlabel('Age')

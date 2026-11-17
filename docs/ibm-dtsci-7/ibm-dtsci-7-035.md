@@ -150,11 +150,11 @@ print(X_poly.shape)  # 查看新特征的维度
 
 
 
-```python
-from sklearn.preprocessing import StandardScaler
 
 ![](img/c971fac86ce34a1f98bce910525d00e3_38.png)
 
+```python
+from sklearn.preprocessing import StandardScaler
 # 创建标准化对象
 scale = StandardScaler()
 # 拟合数据（计算均值和标准差）
@@ -199,32 +199,32 @@ X_scale = scale.transform(X)
 
 ![](img/c971fac86ce34a1f98bce910525d00e3_49.png)
 
+
+![](img/c971fac86ce34a1f98bce910525d00e3_51.png)
+
+
+![](img/c971fac86ce34a1f98bce910525d00e3_53.png)
+
+
+![](img/c971fac86ce34a1f98bce910525d00e3_55.png)
+
+![](img/c971fac86ce34a1f98bce910525d00e3_56.png)
+
 ```python
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, PolynomialFeatures
 from sklearn.linear_model import LinearRegression
-
-![](img/c971fac86ce34a1f98bce910525d00e3_51.png)
-
 # 创建步骤列表
 steps = [
     ('scale', StandardScaler()),
     ('poly', PolynomialFeatures(degree=2)),
     ('model', LinearRegression())
 ]
-
-![](img/c971fac86ce34a1f98bce910525d00e3_53.png)
-
 # 创建流水线对象
 pipe = Pipeline(steps)
 
 # 训练流水线
 pipe.fit(X_train, y_train)
-
-![](img/c971fac86ce34a1f98bce910525d00e3_55.png)
-
-![](img/c971fac86ce34a1f98bce910525d00e3_56.png)
-
 # 进行预测
 y_pred = pipe.predict(X_test)
 ```

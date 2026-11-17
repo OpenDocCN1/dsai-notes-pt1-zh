@@ -56,10 +56,6 @@ MakeMore是一个字符级语言模型。如其名所示，它的核心功能是
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_40.png)
 
-```python
-# 打开并读取数据集
-with open('names.txt', 'r') as f:
-    words = f.read().splitlines()
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_42.png)
 
@@ -71,6 +67,10 @@ with open('names.txt', 'r') as f:
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_50.png)
 
+```python
+# 打开并读取数据集
+with open('names.txt', 'r') as f:
+    words = f.read().splitlines()
 # 查看前10个单词
 print(words[:10])
 ```
@@ -201,8 +201,6 @@ itos = {i:s for s,i in stoi.items()} # 索引到字符的反向映射
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_138.png)
 
-```python
-import torch
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_140.png)
 
@@ -212,6 +210,8 @@ import torch
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_146.png)
 
+```python
+import torch
 N = torch.zeros((27, 27), dtype=torch.int32)
 ```
 
@@ -302,8 +302,6 @@ P /= P.sum(dim=1, keepdim=True) # 按行归一化
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_197.png)
 
-```python
-g = torch.Generator().manual_seed(2147483647) # 设置随机种子以保证结果可复现
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_199.png)
 
@@ -317,6 +315,8 @@ g = torch.Generator().manual_seed(2147483647) # 设置随机种子以保证结�
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_209.png)
 
+```python
+g = torch.Generator().manual_seed(2147483647) # 设置随机种子以保证结果可复现
 for _ in range(5): # 生成5个名字
     out = []
     ix = 0 # 从开始标记开始
@@ -388,9 +388,6 @@ for _ in range(5): # 生成5个名字
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_257.png)
 
-```python
-log_likelihood = 0.0
-n = 0
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_259.png)
 
@@ -404,15 +401,6 @@ n = 0
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_269.png)
 
-for w in words[:3]: # 这里先用前3个单词示例
-    chs = ['.'] + list(w) + ['.']
-    for ch1, ch2 in zip(chs, chs[1:]):
-        ix1 = stoi[ch1]
-        ix2 = stoi[ch2]
-        prob = P[ix1, ix2]
-        logprob = torch.log(prob)
-        log_likelihood += logprob
-        n += 1
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_271.png)
 
@@ -422,6 +410,18 @@ for w in words[:3]: # 这里先用前3个单词示例
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_277.png)
 
+```python
+log_likelihood = 0.0
+n = 0
+for w in words[:3]: # 这里先用前3个单词示例
+    chs = ['.'] + list(w) + ['.']
+    for ch1, ch2 in zip(chs, chs[1:]):
+        ix1 = stoi[ch1]
+        ix2 = stoi[ch2]
+        prob = P[ix1, ix2]
+        logprob = torch.log(prob)
+        log_likelihood += logprob
+        n += 1
 nll = -log_likelihood # 负对数似然
 print(f"负对数似然: {nll}")
 print(f"平均负对数似然（损失）: {nll/n}")
@@ -535,15 +535,6 @@ print(f"平均负对数似然（损失）: {nll/n}")
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_368.png)
 
-```python
-xs, ys = [], []
-for w in words:
-    chs = ['.'] + list(w) + ['.']
-    for ch1, ch2 in zip(chs, chs[1:]):
-        ix1 = stoi[ch1]
-        ix2 = stoi[ch2]
-        xs.append(ix1)
-        ys.append(ix2)
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_370.png)
 
@@ -557,6 +548,15 @@ for w in words:
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_379.png)
 
+```python
+xs, ys = [], []
+for w in words:
+    chs = ['.'] + list(w) + ['.']
+    for ch1, ch2 in zip(chs, chs[1:]):
+        ix1 = stoi[ch1]
+        ix2 = stoi[ch2]
+        xs.append(ix1)
+        ys.append(ix2)
 xs = torch.tensor(xs)
 ys = torch.tensor(ys)
 num = xs.nelement()
@@ -597,8 +597,6 @@ print(f"训练样本数量: {num}")
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_409.png)
 
-```python
-import torch.nn.functional as F
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_411.png)
 
@@ -614,8 +612,6 @@ import torch.nn.functional as F
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_423.png)
 
-g = torch.Generator().manual_seed(2147483647)
-W = torch.randn((27, 27), generator=g, requires_grad=True) # 初始化权重，并告知PyTorch需要计算梯度
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_425.png)
 
@@ -625,6 +621,10 @@ W = torch.randn((27, 27), generator=g, requires_grad=True) # 初始化权重，�
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_431.png)
 
+```python
+import torch.nn.functional as F
+g = torch.Generator().manual_seed(2147483647)
+W = torch.randn((27, 27), generator=g, requires_grad=True) # 初始化权重，并告知PyTorch需要计算梯度
 # 前向传播
 xenc = F.one_hot(xs, num_classes=27).float() # 独热编码
 logits = xenc @ W # 线性层，等价于 W[xs]
@@ -674,6 +674,11 @@ print(f"初始损失: {loss.item()}")
 
 ![](img/9b0f3ae8b78024dba93e80534d70c09b_463.png)
 
+
+![](img/9b0f3ae8b78024dba93e80534d70c09b_465.png)
+
+![](img/9b0f3ae8b78024dba93e80534d70c09b_467.png)
+
 ```python
 # 梯度下降优化
 for k in range(100):
@@ -690,11 +695,6 @@ for k in range(100):
 
     # 更新参数
     W.data += -50 * W.grad # 学习率为50
-
-![](img/9b0f3ae8b78024dba93e80534d70c09b_465.png)
-
-![](img/9b0f3ae8b78024dba93e80534d70c09b_467.png)
-
 print(f"优化后损失: {loss.item()}")
 ```
 

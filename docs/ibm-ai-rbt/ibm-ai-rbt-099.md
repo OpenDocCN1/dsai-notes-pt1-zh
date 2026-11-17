@@ -110,6 +110,15 @@ pip install flask
 
 让我们看一个示例Web应用，它服务于根API端点（`/`）的`GET`请求，并返回字符串“Hello World”作为响应。
 
+
+![](img/dd95a412911bb50ce266649daeb5fd9f_29.png)
+
+![](img/dd95a412911bb50ce266649daeb5fd9f_30.png)
+
+![](img/dd95a412911bb50ce266649daeb5fd9f_31.png)
+
+![](img/dd95a412911bb50ce266649daeb5fd9f_32.png)
+
 ```python
 # 从flask包中导入Flask模块
 from flask import Flask
@@ -124,15 +133,6 @@ app = Flask("my_first_application")
 def hello():
     # 当访问定义的API端点时，将调用hello方法。它不接受参数，并返回字符串“Hello World”
     return 'Hello World!'
-
-![](img/dd95a412911bb50ce266649daeb5fd9f_29.png)
-
-![](img/dd95a412911bb50ce266649daeb5fd9f_30.png)
-
-![](img/dd95a412911bb50ce266649daeb5fd9f_31.png)
-
-![](img/dd95a412911bb50ce266649daeb5fd9f_32.png)
-
 # 如果__name__属性被设置为‘__main__’，则运行Web应用
 # 默认情况下，除非显式更改，否则__name__被设置为‘__main__’
 if __name__ == '__main__':

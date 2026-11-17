@@ -34,20 +34,21 @@ BridgeTower模型由英特尔实验室与微软研究院合作开发，其架构
 
 ![](img/0276e21496c66e503153f36caf4ca655_10.png)
 
+        “image_url”: “https://example.com/motorcycle1.jpg”,
+        “image_url”: “https://example.com/motorcycle2.jpg”,
+        “image_url”: “https://example.com/cat1.jpg”,
+
 ```python
 examples = [
     {
-        “image_url”: “https://example.com/motorcycle1.jpg”,
         “caption”: “A red motorcycle on the street.”,
         “path”: “./data/motorcycle1.jpg”
     },
     {
-        “image_url”: “https://example.com/motorcycle2.jpg”,
         “caption”: “A black motorcycle parked.”,
         “path”: “./data/motorcycle2.jpg”
     },
     {
-        “image_url”: “https://example.com/cat1.jpg”,
         “caption”: “A cute cat sleeping.”,
         “path”: “./data/cat1.jpg”
     }

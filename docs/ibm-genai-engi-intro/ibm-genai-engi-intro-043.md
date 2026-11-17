@@ -51,10 +51,6 @@
 
 ![](img/72185c4623cc377877f7563d07362b8a_13.png)
 
-```python
-def greet_person(name):
-    message = f"Hello, 数据科学与人工智能笔记（一）! Welcome."
-    return message
 
 ![](img/72185c4623cc377877f7563d07362b8a_14.png)
 
@@ -62,6 +58,10 @@ def greet_person(name):
 
 ![](img/72185c4623cc377877f7563d07362b8a_16.png)
 
+```python
+def greet_person(name):
+    message = f"Hello, 数据科学与人工智能笔记（一）! Welcome."
+    return message
 # 示例用法
 print(greet_person("Alice"))
 ```

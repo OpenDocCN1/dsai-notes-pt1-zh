@@ -32,11 +32,11 @@
 
 在NumPy中，转置操作非常简单。我们使用 `.T` 属性。
 
-```python
-import numpy as np
 
 ![](img/98fb997d2e187ab750ef1d7f1604446f_1.png)
 
+```python
+import numpy as np
 # 创建一个矩阵
 X = np.array([[1, 2, 3],
               [4, 5, 6]])
@@ -56,6 +56,9 @@ print("形状:", X_transposed.shape)
 
 PyTorch 与 NumPy 一样简单，同样使用 `.T` 属性。
 
+
+![](img/98fb997d2e187ab750ef1d7f1604446f_3.png)
+
 ```python
 import torch
 
@@ -64,9 +67,6 @@ X_torch = torch.tensor([[1, 2, 3],
                         [4, 5, 6]])
 print("原始张量:")
 print(X_torch)
-
-![](img/98fb997d2e187ab750ef1d7f1604446f_3.png)
-
 # 进行转置
 X_torch_transposed = X_torch.T
 print("\n转置后的张量:")

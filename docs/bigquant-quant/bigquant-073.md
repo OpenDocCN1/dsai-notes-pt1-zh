@@ -24,20 +24,20 @@
 
 ![](img/b6790dfc3d186d698f70b853cffd8de2_15.png)
 
-```python
-import numpy as np
 
 ![](img/b6790dfc3d186d698f70b853cffd8de2_17.png)
 
+
+![](img/b6790dfc3d186d698f70b853cffd8de2_19.png)
+
+```python
+import numpy as np
 # 生成特征数据 X：100个样本，8个特征
 X = np.random.randint(1, 10, size=(100, 8))
 
 # 生成真实的权重 w（8行1列）和偏置 b
 w = np.random.randint(1, 10, size=(8, 1))
 b = np.random.randint(1, 10, size=(1,))
-
-![](img/b6790dfc3d186d698f70b853cffd8de2_19.png)
-
 # 根据方程 y = X·w + b + 噪声 生成目标值 y
 noise = np.random.randn(100, 1) * 0.1
 y = X.dot(w) + b + noise
@@ -85,12 +85,12 @@ def learning_rate_schedule(t):
 
 ![](img/b6790dfc3d186d698f70b853cffd8de2_31.png)
 
-```python
-# 设置迭代次数
-n_iterations = 10000
 
 ![](img/b6790dfc3d186d698f70b853cffd8de2_33.png)
 
+```python
+# 设置迭代次数
+n_iterations = 10000
 for iteration in range(n_iterations):
     # 使用当前参数theta计算预测值
     y_predict = X_with_bias.dot(theta)

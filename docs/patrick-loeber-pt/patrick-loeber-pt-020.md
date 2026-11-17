@@ -37,14 +37,14 @@ RNN的特殊之处在于它处理向量序列。在本例中，我们采用“�
 
 由于我们采用“多对一”架构进行最终分类，需要在RNN层后添加一个全连接层（线性层）。该层的输入维度是`hidden_size`，输出维度是`num_classes`。
 
-```python
-import torch
-import torch.nn as nn
 
 ![](img/bff8cef36ea0f83882ae721618efcda8_8.png)
 
 ![](img/bff8cef36ea0f83882ae721618efcda8_9.png)
 
+```python
+import torch
+import torch.nn as nn
 class RNN(nn.Module):
     def __init__(self, input_size, hidden_size, num_layers, num_classes):
         super(RNN, self).__init__()

@@ -42,12 +42,6 @@ tool_input = agent_action.tool_input  # 获取工具输入参数
 ![](img/09a62e9689e195ba91a03ac440492a92_8.png)
 
 这个过程的核心代码如下：
-```python
-def find_tool(tool_name, available_tools):
-    for tool in available_tools:
-        if tool.name == tool_name:  # 假设工具对象有 .name 属性
-            return tool
-    return None  # 如果没有找到匹配的工具
 
 ![](img/09a62e9689e195ba91a03ac440492a92_9.png)
 
@@ -57,6 +51,12 @@ def find_tool(tool_name, available_tools):
 
 ![](img/09a62e9689e195ba91a03ac440492a92_12.png)
 
+```python
+def find_tool(tool_name, available_tools):
+    for tool in available_tools:
+        if tool.name == tool_name:  # 假设工具对象有 .name 属性
+            return tool
+    return None  # 如果没有找到匹配的工具
 target_tool = find_tool(tool_name, available_tools)
 ```
 这样，`target_tool` 变量就指向了我们真正需要调用的那个函数（例如 `get_time` 或 `search`）。

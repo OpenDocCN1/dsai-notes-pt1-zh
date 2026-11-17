@@ -20,12 +20,6 @@
 
 首先，我们需要导入必要的模块并初始化图。
 
-```python
-from typing import List
-from langchain_core.messages import BaseMessage, ToolMessage
-from langgraph.graph import MessageGraph
-from chains import first_responder_chain, revise_chain
-from tools import execute_tools
 
 ![](img/6ec8cfaed4bfc60515f9abaf128befef_3.png)
 
@@ -33,6 +27,12 @@ from tools import execute_tools
 
 ![](img/6ec8cfaed4bfc60515f9abaf128befef_5.png)
 
+```python
+from typing import List
+from langchain_core.messages import BaseMessage, ToolMessage
+from langgraph.graph import MessageGraph
+from chains import first_responder_chain, revise_chain
+from tools import execute_tools
 # 初始化图
 graph = MessageGraph()
 ```

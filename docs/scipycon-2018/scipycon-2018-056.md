@@ -824,15 +824,9 @@ print(scores.mean(), scores.std())
 
 ![](img/a165a3dbdfe2a42de38b6b11de2edad6_622.png)
 
-```python
-from sklearn.model_selection import GridSearchCV
-from sklearn.svm import SVC
 
 ![](img/a165a3dbdfe2a42de38b6b11de2edad6_624.png)
 
-param_grid = {'C': [0.1, 1, 10, 100], 'gamma': [0.001, 0.01, 0.1, 1]}
-grid_search = GridSearchCV(SVC(), param_grid, cv=5)
-grid_search.fit(X_train, y_train)
 
 ![](img/a165a3dbdfe2a42de38b6b11de2edad6_626.png)
 
@@ -842,8 +836,6 @@ grid_search.fit(X_train, y_train)
 
 ![](img/a165a3dbdfe2a42de38b6b11de2edad6_632.png)
 
-print("Best parameters:", grid_search.best_params_)
-print("Best cross-validation score:", grid_search.best_score_)
 
 ![](img/a165a3dbdfe2a42de38b6b11de2edad6_634.png)
 
@@ -851,6 +843,14 @@ print("Best cross-validation score:", grid_search.best_score_)
 
 ![](img/a165a3dbdfe2a42de38b6b11de2edad6_638.png)
 
+```python
+from sklearn.model_selection import GridSearchCV
+from sklearn.svm import SVC
+param_grid = {'C': [0.1, 1, 10, 100], 'gamma': [0.001, 0.01, 0.1, 1]}
+grid_search = GridSearchCV(SVC(), param_grid, cv=5)
+grid_search.fit(X_train, y_train)
+print("Best parameters:", grid_search.best_params_)
+print("Best cross-validation score:", grid_search.best_score_)
 best_model = grid_search.best_estimator_ # 获取最优模型
 ```
 **随机搜索 (RandomizedSearchCV)**：当超参数组合太多时，网格搜索计算代价高。随机搜索从指定的分布中随机采样超参数组合进行尝试，通常能以更少的尝试次数找到近似最优解。

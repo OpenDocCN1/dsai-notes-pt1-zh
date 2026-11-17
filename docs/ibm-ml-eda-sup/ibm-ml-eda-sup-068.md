@@ -79,9 +79,6 @@ from sklearn.pipeline import Pipeline
 
 ![](img/29f79d9ce2580b5b47cbeffbe75c489f_39.png)
 
-```python
-with open(‘boston_housing.pkl‘, ‘rb‘) as f:
-    boston_dict = pickle.load(f)
 
 ![](img/29f79d9ce2580b5b47cbeffbe75c489f_41.png)
 
@@ -89,6 +86,9 @@ with open(‘boston_housing.pkl‘, ‘rb‘) as f:
 
 ![](img/29f79d9ce2580b5b47cbeffbe75c489f_44.png)
 
+```python
+with open(‘boston_housing.pkl‘, ‘rb‘) as f:
+    boston_dict = pickle.load(f)
 boston_data = boston_dict[‘dataframe‘]
 boston_description = boston_dict[‘description‘]
 ```

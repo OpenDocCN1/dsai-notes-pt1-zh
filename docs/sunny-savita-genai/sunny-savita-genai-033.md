@@ -25,11 +25,11 @@
 
 以下是加载文档的核心代码示例：
 
-```python
-from langchain.document_loaders import DirectoryLoader
 
 ![](img/1e7df0da2176aa129d89a01602c7f622_1.png)
 
+```python
+from langchain.document_loaders import DirectoryLoader
 # 指定包含文档的目录路径
 directory_path = "./your_documents_folder"
 
@@ -95,6 +95,9 @@ vectorstore = Cassandra.from_documents(
 
 以下是创建问答链的代码：
 
+
+![](img/1e7df0da2176aa129d89a01602c7f622_5.png)
+
 ```python
 from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
@@ -112,9 +115,6 @@ qa_chain = RetrievalQA.from_chain_type(
     retriever=retriever,
     return_source_documents=True  # 可选：返回源文档用于参考
 )
-
-![](img/1e7df0da2176aa129d89a01602c7f622_5.png)
-
 # 使用链进行提问
 question = "你的问题是什么？"
 result = qa_chain({"query": question})

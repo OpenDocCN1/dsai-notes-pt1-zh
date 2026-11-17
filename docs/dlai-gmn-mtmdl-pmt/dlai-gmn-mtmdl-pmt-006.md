@@ -17,12 +17,12 @@
 
 ![](img/eb8418e6f6da5b93d59d345525bbe8c7_4.png)
 
-```python
-# 导入必要的库并初始化Gemini SDK
-import google.generativeai as genai
 
 ![](img/eb8418e6f6da5b93d59d345525bbe8c7_5.png)
 
+```python
+# 导入必要的库并初始化Gemini SDK
+import google.generativeai as genai
 # 配置API密钥和区域
 genai.configure(api_key='YOUR_API_KEY', transport='rest')
 

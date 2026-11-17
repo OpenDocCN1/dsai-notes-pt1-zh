@@ -81,12 +81,12 @@ writer.add_graph(model, example_data.reshape(-1, 28*28))
 
 ![](img/ee3dacee23dcf8b95d479be89b099b38_18.png)
 
-```python
-running_loss = 0.0
-running_correct = 0
 
 ![](img/ee3dacee23dcf8b95d479be89b099b38_20.png)
 
+```python
+running_loss = 0.0
+running_correct = 0
 for epoch in range(num_epochs):
     for i, (images, labels) in enumerate(train_loader):
         # ... 前向传播、计算损失、反向传播、优化器步骤 ...

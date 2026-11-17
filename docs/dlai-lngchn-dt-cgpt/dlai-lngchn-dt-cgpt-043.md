@@ -50,14 +50,14 @@ classification_result = json.loads(response)
 ![](img/f127704f790cc37f2df36332b01dc3fd_2.png)
 
 以下是完整的系统消息示例：
+
+![](img/f127704f790cc37f2df36332b01dc3fd_4.png)
+
 ```
 你将被提供客户服务查询。
 客户服务查询将用 ### 这些标签字符分隔。
 将每个查询分类为主要类别和次要类别。
 然后以JSON格式提供输出，键为“主要”和“次要”。
-
-![](img/f127704f790cc37f2df36332b01dc3fd_4.png)
-
 主要类别列表：
 - 账单
 - 技术支持

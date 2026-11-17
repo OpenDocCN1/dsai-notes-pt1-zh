@@ -45,11 +45,11 @@ memory = ConversationBufferMemory(
 
 现在，让我们创建一个新类型的链：**对话检索链**。
 
-```python
-from langchain.chains import ConversationalRetrievalChain
 
 ![](img/460d4f013c8fde0d0c3445255dee57b7_6.png)
 
+```python
+from langchain.chains import ConversationalRetrievalChain
 # 创建对话检索链
 qa = ConversationalRetrievalChain.from_llm(
     llm,  # 语言模型

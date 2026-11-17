@@ -165,12 +165,12 @@ print(data_types)
 
 以下是按季节和购买物品分组并统计出现次数的代码：
 
-```python
-# 第二三四部分 按季节和物品分组，统计购买次数
-popular_items_by_season = df.groupby(['season', 'item_purchased']).size().reset_index(name='count')
 
 ![](img/19551fbead4605cec90f3bc34a33fd84_31.png)
 
+```python
+# 第二三四部分 按季节和物品分组，统计购买次数
+popular_items_by_season = df.groupby(['season', 'item_purchased']).size().reset_index(name='count')
 # 第二三四部分 找出每个季节最受欢迎的物品
 most_popular_by_season = popular_items_by_season.loc[popular_items_by_season.groupby('season')['count'].idxmax()]
 print(most_popular_by_season)

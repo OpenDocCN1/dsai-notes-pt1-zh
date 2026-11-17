@@ -64,14 +64,14 @@ hello:
 
 让我们为一个打印“Hello”32次的简单CUDA程序编写Makefile。我们希望它能自动完成编译、运行和清理。
 
-```
-hello:
-    nvcc hello.cu -o hello
 
 ![](img/f7ca11280ba862f9bab5cb100f28be19_29.png)
 
 ![](img/f7ca11280ba862f9bab5cb100f28be19_31.png)
 
+```
+hello:
+    nvcc hello.cu -o hello
 run: hello
     ./hello
 
@@ -114,15 +114,15 @@ clean: run
 
 ![](img/f7ca11280ba862f9bab5cb100f28be19_55.png)
 
-```
-FILE1 = hello
-FILE2 = run
-FILE3 = clean
 
 ![](img/f7ca11280ba862f9bab5cb100f28be19_57.png)
 
 ![](img/f7ca11280ba862f9bab5cb100f28be19_59.png)
 
+```
+FILE1 = hello
+FILE2 = run
+FILE3 = clean
 $(FILE1):
     nvcc hello.cu -o hello
 
@@ -143,29 +143,29 @@ $(FILE3): $(FILE2)
 
 `all` 目标常用于指定默认要构建的一系列目标。
 
+
+![](img/f7ca11280ba862f9bab5cb100f28be19_65.png)
+
+![](img/f7ca11280ba862f9bab5cb100f28be19_67.png)
+
+
+![](img/f7ca11280ba862f9bab5cb100f28be19_69.png)
+
+
+![](img/f7ca11280ba862f9bab5cb100f28be19_71.png)
+
 ```
 all: hello1 hello2 hello3
 
 hello1:
     nvcc hello1.cu -o hello1
     ./hello1
-
-![](img/f7ca11280ba862f9bab5cb100f28be19_65.png)
-
-![](img/f7ca11280ba862f9bab5cb100f28be19_67.png)
-
 hello2:
     nvcc hello2.cu -o hello2
     ./hello2
-
-![](img/f7ca11280ba862f9bab5cb100f28be19_69.png)
-
 hello3:
     nvcc hello3.cu -o hello3
     ./hello3
-
-![](img/f7ca11280ba862f9bab5cb100f28be19_71.png)
-
 clean:
     rm hello1 hello2 hello3
 ```
@@ -211,6 +211,11 @@ run_tests:
 
 假设我们有一个CUDA程序 `vertex_removal.cu`，需要对 `test_bench.zip` 中的多个图文件（`t1.mtx` 到 `t10.mtx`）进行测试。
 
+
+![](img/f7ca11280ba862f9bab5cb100f28be19_84.png)
+
+![](img/f7ca11280ba862f9bab5cb100f28be19_86.png)
+
 ```
 all: vertex_removal
     unzip -o examples/test_cases/test_bench.zip -d .
@@ -224,11 +229,6 @@ all: vertex_removal
 
 vertex_removal:
     nvcc vertex_removal.cu -o vertex_removal
-
-![](img/f7ca11280ba862f9bab5cb100f28be19_84.png)
-
-![](img/f7ca11280ba862f9bab5cb100f28be19_86.png)
-
 clean:
     rm -f vertex_removal *.txt
 ```

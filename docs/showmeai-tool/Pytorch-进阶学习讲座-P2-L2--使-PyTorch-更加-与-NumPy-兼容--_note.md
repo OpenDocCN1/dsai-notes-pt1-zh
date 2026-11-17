@@ -18,14 +18,14 @@ NumPy 是一个流行的用于处理数组（在 PyTorch 中称为张量）的 P
 
 以下是两个代码片段的对比，展示了它们的相似性与差异：
 
+
+![](img/34c6afcf80c3f94fb9e6fa9f06c8c00d_5.png)
+
 ```python
 # NumPy 示例
 import numpy as np
 a = np.array([1, 2, 3])
 b = np.exp(a)
-
-![](img/34c6afcf80c3f94fb9e6fa9f06c8c00d_5.png)
-
 # PyTorch 示例
 import torch
 a = torch.tensor([1, 2, 3])

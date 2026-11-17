@@ -95,6 +95,12 @@ plt.show()
 2.  创建模型并训练。
 3.  获取模型参数（多个特征的系数和截距）。
 
+
+![](img/062874503bf923233087cc361ab28ade_19.png)
+
+
+![](img/062874503bf923233087cc361ab28ade_21.png)
+
 ```python
 # 导入库
 import numpy as np
@@ -105,15 +111,9 @@ warnings.filterwarnings('ignore')  # 忽略警告信息
 # 准备数据：两个特征
 X = np.array([[1, 1], [1, 2], [2, 2], [2, 3]])
 y = np.dot(X, np.array([1, 2])) + 3  # 假设真实关系为 y = 1*x1 + 2*x2 + 3
-
-![](img/062874503bf923233087cc361ab28ade_19.png)
-
 # 创建模型并训练
 model = LinearRegression()
 model.fit(X, y)
-
-![](img/062874503bf923233087cc361ab28ade_21.png)
-
 # 获取系数和截距
 coefficients = model.coef_  # 系数，对应每个特征
 intercept = model.intercept_  # 截距

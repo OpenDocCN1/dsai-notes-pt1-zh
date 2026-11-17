@@ -28,14 +28,14 @@
 
 以下是一个示例，展示了它的工作原理。图中每个方块代表一个通道。假设我们有一个具有三个通道的随机输入张量。在应用空间Dropout后，你可以看到其中两个通道被完全置零。这就是空间Dropout的工作方式，它并不复杂。
 
-```python
-# PyTorch 示例
-import torch.nn as nn
 
 ![](img/4ceb31a97506defbb042444ee3ef7d16_7.png)
 
 ![](img/4ceb31a97506defbb042444ee3ef7d16_8.png)
 
+```python
+# PyTorch 示例
+import torch.nn as nn
 # 定义一个空间Dropout层，丢弃概率为0.5
 spatial_dropout = nn.Dropout2d(p=0.5)
 ```

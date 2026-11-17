@@ -138,14 +138,14 @@ learn.export('model.pkl')
 
 ![](img/ee7b9a2faf685413bc8869fb66d9d516_34.png)
 
-```python
-from fastai.vision.all import *
-import gradio as gr
 
 ![](img/ee7b9a2faf685413bc8869fb66d9d516_36.png)
 
 ![](img/ee7b9a2faf685413bc8869fb66d9d516_38.png)
 
+```python
+from fastai.vision.all import *
+import gradio as gr
 # 1. 加载导出的模型
 learn = load_learner('model.pkl')
 

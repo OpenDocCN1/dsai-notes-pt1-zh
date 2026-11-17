@@ -122,6 +122,11 @@ class Perceptron:
 
 为了验证实现是否正确，我们可以使用一个简单的数据集进行测试。以下是测试步骤：
 
+
+![](img/47427fb8775e23c1bec39e64630a9c33_14.png)
+
+![](img/47427fb8775e23c1bec39e64630a9c33_15.png)
+
 ```python
 # 1. 生成模拟数据
 from sklearn.model_selection import train_test_split
@@ -131,11 +136,6 @@ X, y = make_blobs(n_samples=200, centers=2, n_features=2, random_state=42)
 # 将标签转换为0和1
 y = np.where(y == 0, 0, 1)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-![](img/47427fb8775e23c1bec39e64630a9c33_14.png)
-
-![](img/47427fb8775e23c1bec39e64630a9c33_15.png)
-
 # 2. 训练模型
 perceptron = Perceptron(learning_rate=0.01, n_iters=1000)
 perceptron.fit(X_train, y_train)

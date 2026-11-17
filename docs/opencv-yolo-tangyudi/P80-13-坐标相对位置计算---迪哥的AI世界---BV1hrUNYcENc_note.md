@@ -36,13 +36,13 @@
 
 接下来，我们通过代码来具体理解上述匹配过程。代码的核心是遍历所有真实框，并为每个真实框找到最匹配的候选框规格。
 
+
+![](img/74aff7e9ed97b2f8f6c57bc4a72c183b_14.png)
+
 ```python
 # 假设 `anchors` 是三种候选框的尺寸，`gt_boxes` 是所有真实框的坐标
 # 计算每个候选框与每个真实框的IOU
 ious = compute_iou(anchors, gt_boxes) # 返回形状为 [3, num_gts] 的矩阵
-
-![](img/74aff7e9ed97b2f8f6c57bc4a72c183b_14.png)
-
 # 找出每个真实框对应的最佳候选框及其IOU
 best_ious, best_n = ious.max(dim=0) # best_n 记录了最佳候选框的索引 (0, 1, 2)
 ```

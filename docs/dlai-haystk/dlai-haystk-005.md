@@ -59,14 +59,14 @@ rag_prompt_template = PromptTemplate(
 
 然后，我们初始化管道并添加组件：基于关键字的BM25检索器、提示构建器以及使用GPT-3的生成器。
 
+
+![](img/df2d29d845a86b3065b7116302337cd7_13.png)
+
 ```python
 rag_pipeline = Pipeline()
 retriever = BM25Retriever(document_store=document_store)
 prompt_builder = PromptNode(model_name_or_path="gpt-3.5-turbo", default_prompt_template=rag_prompt_template)
 generator = PromptNode(model_name_or_path="gpt-3.5-turbo")
-
-![](img/df2d29d845a86b3065b7116302337cd7_13.png)
-
 rag_pipeline.add_node(component=retriever, name="Retriever", inputs=["Query"])
 rag_pipeline.add_node(component=prompt_builder, name="PromptBuilder", inputs=["Retriever"])
 rag_pipeline.add_node(component=generator, name="Generator", inputs=["PromptBuilder"])
@@ -122,15 +122,15 @@ else:
 
 ![](img/df2d29d845a86b3065b7116302337cd7_25.png)
 
+
+![](img/df2d29d845a86b3065b7116302337cd7_27.png)
+
 ```python
 from haystack.nodes import RouteCondition
 
 def contains_no_answer(reply):
     # 检查回复中是否包含“无答案”，忽略大小写
     return "无答案" in reply.lower()
-
-![](img/df2d29d845a86b3065b7116302337cd7_27.png)
-
 route_web = RouteCondition(
     condition=contains_no_answer,
     output="query",
@@ -196,15 +196,15 @@ web_prompt_template = PromptTemplate(
 
 现在，我们构建完整的、包含回退机制的分支管道。我们将创建一个新管道，它整合了基础的RAG管道和网络搜索分支。
 
-```python
-from haystack.nodes import WebRetriever # 假设使用WebRetriever，实际可能是SerperDevWebSearch
 
 ![](img/df2d29d845a86b3065b7116302337cd7_45.png)
 
-full_pipeline = Pipeline()
 
 ![](img/df2d29d845a86b3065b7116302337cd7_47.png)
 
+```python
+from haystack.nodes import WebRetriever # 假设使用WebRetriever，实际可能是SerperDevWebSearch
+full_pipeline = Pipeline()
 # 添加基础RAG组件
 full_pipeline.add_node(component=retriever, name="Retriever", inputs=["Query"])
 full_pipeline.add_node(component=prompt_builder, name="PromptBuilder", inputs=["Retriever"])

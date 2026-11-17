@@ -192,15 +192,15 @@ X_train, X_test, y_train, y_test = train_test_split(X_data, y_data, test_size=0.
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_85.png)
 
-```python
-feature_cols_ohc = [x for x in data_ohc.columns if x != y_col]
-X_data_ohc = data_ohc[feature_cols_ohc]
-y_data_ohc = data_ohc[y_col]
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_87.png)
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_89.png)
 
+```python
+feature_cols_ohc = [x for x in data_ohc.columns if x != y_col]
+X_data_ohc = data_ohc[feature_cols_ohc]
+y_data_ohc = data_ohc[y_col]
 X_train_ohc, X_test_ohc, y_train_ohc, y_test_ohc = train_test_split(X_data_ohc, y_data_ohc, test_size=0.3, random_state=42)
 ```
 
@@ -277,21 +277,14 @@ error_df = []
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_120.png)
 
-```python
-# 1. 训练模型
-lr.fit(X_train, y_train)
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_122.png)
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_123.png)
 
-# 2. 在训练集上预测
-y_train_pred = lr.predict(X_train)
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_124.png)
 
-# 3. 在测试集上预测
-y_test_pred = lr.predict(X_test)
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_126.png)
 
@@ -299,6 +292,13 @@ y_test_pred = lr.predict(X_test)
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_128.png)
 
+```python
+# 1. 训练模型
+lr.fit(X_train, y_train)
+# 2. 在训练集上预测
+y_train_pred = lr.predict(X_train)
+# 3. 在测试集上预测
+y_test_pred = lr.predict(X_test)
 # 4. 计算并存储误差
 error_df.append(pd.Series({'train': mean_squared_error(y_train, y_train_pred),
                            'test': mean_squared_error(y_test, y_test_pred)},
@@ -319,26 +319,26 @@ error_df.append(pd.Series({'train': mean_squared_error(y_train, y_train_pred),
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_136.png)
 
-```python
-# 1. 训练模型
-lr.fit(X_train_ohc, y_train_ohc)
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_138.png)
 
-# 2. 在训练集上预测
-y_train_pred_ohc = lr.predict(X_train_ohc)
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_139.png)
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_141.png)
 
-# 3. 在测试集上预测
-y_test_pred_ohc = lr.predict(X_test_ohc)
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_143.png)
 
 ![](img/788a54d5e2caf7951b0d074f24ad1c8f_144.png)
 
+```python
+# 1. 训练模型
+lr.fit(X_train_ohc, y_train_ohc)
+# 2. 在训练集上预测
+y_train_pred_ohc = lr.predict(X_train_ohc)
+# 3. 在测试集上预测
+y_test_pred_ohc = lr.predict(X_test_ohc)
 # 4. 计算并存储误差
 error_df.append(pd.Series({'train': mean_squared_error(y_train_ohc, y_train_pred_ohc),
                            'test': mean_squared_error(y_test_ohc, y_test_pred_ohc)},

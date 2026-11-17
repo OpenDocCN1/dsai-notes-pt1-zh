@@ -40,16 +40,16 @@ data = datasets.fetch_lfw_people(min_faces_per_person=70, resize=1)
 
 ![](img/868817e6c632361c8c08d03017c3124f_3.png)
 
-```python
-# 提取数据、标签和原始图片
-X = data['data']        # 特征数据（二维数组，已展平）
-y = data['target']      # 目标标签（每个人对应的编号）
-faces = data['images']  # 原始图片数据（三维数组）
 
 ![](img/868817e6c632361c8c08d03017c3124f_5.png)
 
 ![](img/868817e6c632361c8c08d03017c3124f_7.png)
 
+```python
+# 提取数据、标签和原始图片
+X = data['data']        # 特征数据（二维数组，已展平）
+y = data['target']      # 目标标签（每个人对应的编号）
+faces = data['images']  # 原始图片数据（三维数组）
 # 查看数据形状
 print(f"X shape: {X.shape}")
 print(f"y shape: {y.shape}")
@@ -75,12 +75,17 @@ print(f"faces shape: {faces.shape}")
 
 以下是随机显示一张人脸图片并查看其对应人名的代码：
 
-```python
-# 随机选择一个索引
-index = np.random.randint(0, 1288)
 
 ![](img/868817e6c632361c8c08d03017c3124f_15.png)
 
+
+![](img/868817e6c632361c8c08d03017c3124f_17.png)
+
+![](img/868817e6c632361c8c08d03017c3124f_19.png)
+
+```python
+# 随机选择一个索引
+index = np.random.randint(0, 1288)
 # 获取对应的人脸图片
 face = faces[index]
 
@@ -88,11 +93,6 @@ face = faces[index]
 plt.imshow(face, cmap='gray')
 plt.axis('off')
 plt.show()
-
-![](img/868817e6c632361c8c08d03017c3124f_17.png)
-
-![](img/868817e6c632361c8c08d03017c3124f_19.png)
-
 # 获取该图片对应的人名
 target_names = data['target_names']
 person_name = target_names[y[index]]

@@ -25,9 +25,6 @@ llm = ChatOpenAI(temperature=0)
 
 接下来，我们定义智能体的状态。这部分也与之前相同，用于跟踪对话和中间步骤。
 
-```python
-from typing import TypedDict, List, Annotated
-import operator
 
 ![](img/7960b4fb015719505bdeb58299a03615_3.png)
 
@@ -35,6 +32,9 @@ import operator
 
 ![](img/7960b4fb015719505bdeb58299a03615_5.png)
 
+```python
+from typing import TypedDict, List, Annotated
+import operator
 class AgentState(TypedDict):
     messages: Annotated[List[BaseMessage], operator.add]
     intermediate_steps: Annotated[List[tuple[AgentAction, str]], operator.add]

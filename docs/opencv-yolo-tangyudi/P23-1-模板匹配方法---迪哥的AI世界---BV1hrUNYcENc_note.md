@@ -70,11 +70,11 @@ OpenCV 提供了多种匹配方法，不同方法对“最佳匹配”的定义�
 
 ![](img/036488676268557681777ffb9b8c9df0_29.png)
 
-```python
-import cv2
 
 ![](img/036488676268557681777ffb9b8c9df0_31.png)
 
+```python
+import cv2
 # 读取原始图像和模板图像，并转为灰度图
 img = cv2.imread(‘lena.jpg‘, 0)
 template = cv2.imread(‘lena_face.jpg‘, 0)
@@ -166,6 +166,11 @@ min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
 
 ![](img/036488676268557681777ffb9b8c9df0_77.png)
 
+
+![](img/036488676268557681777ffb9b8c9df0_79.png)
+
+![](img/036488676268557681777ffb9b8c9df0_81.png)
+
 ```python
 # 获取模板尺寸
 h, w = template.shape[:2]
@@ -173,11 +178,6 @@ h, w = template.shape[:2]
 # 对于 TM_SQDIFF_NORMED 方法，使用最小值位置
 top_left = min_loc
 bottom_right = (top_left[0] + w, top_left[1] + h)
-
-![](img/036488676268557681777ffb9b8c9df0_79.png)
-
-![](img/036488676268557681777ffb9b8c9df0_81.png)
-
 # 在原始图像上绘制红色矩形框
 cv2.rectangle(img, top_left, bottom_right, (0, 0, 255), 2)
 cv2.imshow(‘Matched Image‘, img)

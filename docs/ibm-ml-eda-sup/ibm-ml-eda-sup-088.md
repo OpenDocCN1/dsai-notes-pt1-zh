@@ -64,16 +64,11 @@
 
 ![](img/176e1a59db003165d346401f94420beb_29.png)
 
-```python
-# 初始化Lasso回归模型，alpha=0.001
-lasso_001 = Lasso(alpha=0.001, max_iter=100000)
 
 ![](img/176e1a59db003165d346401f94420beb_31.png)
 
 ![](img/176e1a59db003165d346401f94420beb_33.png)
 
-# 使用训练集拟合标准化器，并转换训练数据
-X_train_s = s.fit_transform(X_train)
 
 ![](img/176e1a59db003165d346401f94420beb_35.png)
 
@@ -81,23 +76,28 @@ X_train_s = s.fit_transform(X_train)
 
 ![](img/176e1a59db003165d346401f94420beb_38.png)
 
-# 使用标准化后的训练数据拟合Lasso模型
-lasso_001.fit(X_train_s, y_train)
 
 ![](img/176e1a59db003165d346401f94420beb_40.png)
 
-# 使用拟合好的标准化器转换测试数据（注意：不是fit_transform）
-X_test_s = s.transform(X_test)
 
 ![](img/176e1a59db003165d346401f94420beb_42.png)
 
 ![](img/176e1a59db003165d346401f94420beb_43.png)
 
-# 使用训练好的模型进行预测
-y_pred_lasso = lasso_001.predict(X_test_s)
 
 ![](img/176e1a59db003165d346401f94420beb_45.png)
 
+```python
+# 初始化Lasso回归模型，alpha=0.001
+lasso_001 = Lasso(alpha=0.001, max_iter=100000)
+# 使用训练集拟合标准化器，并转换训练数据
+X_train_s = s.fit_transform(X_train)
+# 使用标准化后的训练数据拟合Lasso模型
+lasso_001.fit(X_train_s, y_train)
+# 使用拟合好的标准化器转换测试数据（注意：不是fit_transform）
+X_test_s = s.transform(X_test)
+# 使用训练好的模型进行预测
+y_pred_lasso = lasso_001.predict(X_test_s)
 # 计算并输出模型在测试集上的R²分数
 r2_lasso = r2_score(y_test, y_pred_lasso)
 print(f"Lasso R² Score: {r2_lasso}")
@@ -129,9 +129,6 @@ print(f"Lasso R² Score: {r2_lasso}")
 
 ![](img/176e1a59db003165d346401f94420beb_59.png)
 
-```python
-# 初始化线性回归模型
-lr = LinearRegression()
 
 ![](img/176e1a59db003165d346401f94420beb_61.png)
 
@@ -139,18 +136,21 @@ lr = LinearRegression()
 
 ![](img/176e1a59db003165d346401f94420beb_64.png)
 
-# 使用相同的标准化训练数据拟合线性回归模型
-lr.fit(X_train_s, y_train)
 
 ![](img/176e1a59db003165d346401f94420beb_66.png)
 
-# 使用相同的标准化测试数据进行预测
-y_pred_lr = lr.predict(X_test_s)
 
 ![](img/176e1a59db003165d346401f94420beb_68.png)
 
 ![](img/176e1a59db003165d346401f94420beb_70.png)
 
+```python
+# 初始化线性回归模型
+lr = LinearRegression()
+# 使用相同的标准化训练数据拟合线性回归模型
+lr.fit(X_train_s, y_train)
+# 使用相同的标准化测试数据进行预测
+y_pred_lr = lr.predict(X_test_s)
 # 计算并输出线性回归的R²分数
 r2_lr = r2_score(y_test, y_pred_lr)
 print(f"Linear Regression R² Score: {r2_lr}")
@@ -172,27 +172,27 @@ print(f"Linear Regression R² Score: {r2_lr}")
 
 ![](img/176e1a59db003165d346401f94420beb_80.png)
 
-```python
-# 计算Lasso模型系数的总绝对值和
-lasso_coeff_sum = np.abs(lasso_001.coef_).sum()
-print(f"Sum of absolute Lasso coefficients: {lasso_coeff_sum}")
 
 ![](img/176e1a59db003165d346401f94420beb_82.png)
 
-# 计算Lasso模型中非零系数的数量
-lasso_non_zero = np.sum(lasso_001.coef_ != 0)
-print(f"Number of non-zero Lasso coefficients: {lasso_non_zero}")
 
 ![](img/176e1a59db003165d346401f94420beb_84.png)
 
 ![](img/176e1a59db003165d346401f94420beb_85.png)
 
-# 计算线性回归模型系数的总绝对值和
-lr_coeff_sum = np.abs(lr.coef_).sum()
-print(f"Sum of absolute Linear Regression coefficients: {lr_coeff_sum}")
 
 ![](img/176e1a59db003165d346401f94420beb_86.png)
 
+```python
+# 计算Lasso模型系数的总绝对值和
+lasso_coeff_sum = np.abs(lasso_001.coef_).sum()
+print(f"Sum of absolute Lasso coefficients: {lasso_coeff_sum}")
+# 计算Lasso模型中非零系数的数量
+lasso_non_zero = np.sum(lasso_001.coef_ != 0)
+print(f"Number of non-zero Lasso coefficients: {lasso_non_zero}")
+# 计算线性回归模型系数的总绝对值和
+lr_coeff_sum = np.abs(lr.coef_).sum()
+print(f"Sum of absolute Linear Regression coefficients: {lr_coeff_sum}")
 # 计算线性回归模型中非零系数的数量（通常全部非零）
 lr_non_zero = np.sum(lr.coef_ != 0)
 print(f"Number of non-zero Linear Regression coefficients: {lr_non_zero}")
@@ -267,14 +267,9 @@ Lasso和岭回归的正则化形式相似。为了更全面地理解，我们快
 
 ![](img/176e1a59db003165d346401f94420beb_115.png)
 
-```python
-# 导入岭回归
-from sklearn.linear_model import Ridge
 
 ![](img/176e1a59db003165d346401f94420beb_116.png)
 
-# 初始化岭回归模型
-ridge_001 = Ridge(alpha=0.001)
 
 ![](img/176e1a59db003165d346401f94420beb_118.png)
 
@@ -282,13 +277,6 @@ ridge_001 = Ridge(alpha=0.001)
 
 ![](img/176e1a59db003165d346401f94420beb_120.png)
 
-# 使用相同的标准化数据拟合模型
-ridge_001.fit(X_train_s, y_train)
-
-# 进行预测并计算R²分数
-y_pred_ridge = ridge_001.predict(X_test_s)
-r2_ridge = r2_score(y_test, y_pred_ridge)
-print(f"Ridge R² Score: {r2_ridge}")
 
 ![](img/176e1a59db003165d346401f94420beb_122.png)
 
@@ -296,12 +284,24 @@ print(f"Ridge R² Score: {r2_ridge}")
 
 ![](img/176e1a59db003165d346401f94420beb_124.png)
 
-# 比较系数
-ridge_coeff_sum = np.abs(ridge_001.coef_).sum()
-ridge_non_zero = np.sum(ridge_001.coef_ != 0)
 
 ![](img/176e1a59db003165d346401f94420beb_125.png)
 
+```python
+# 导入岭回归
+from sklearn.linear_model import Ridge
+# 初始化岭回归模型
+ridge_001 = Ridge(alpha=0.001)
+# 使用相同的标准化数据拟合模型
+ridge_001.fit(X_train_s, y_train)
+
+# 进行预测并计算R²分数
+y_pred_ridge = ridge_001.predict(X_test_s)
+r2_ridge = r2_score(y_test, y_pred_ridge)
+print(f"Ridge R² Score: {r2_ridge}")
+# 比较系数
+ridge_coeff_sum = np.abs(ridge_001.coef_).sum()
+ridge_non_zero = np.sum(ridge_001.coef_ != 0)
 print(f"Sum of absolute Ridge coefficients: {ridge_coeff_sum}")
 print(f"Number of non-zero Ridge coefficients: {ridge_non_zero}")
 ```

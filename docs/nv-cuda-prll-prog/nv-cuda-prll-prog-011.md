@@ -238,11 +238,6 @@
 
 考虑以下两个线程（T1和T2）的代码片段，其中 `flag` 是一个初始值未知的共享变量，`S1` 和 `S2` 代表两个临界区（例如，更新共享变量的操作）。
 
-```c
-// 线程 T1
-while(flag); // 循环等待，直到 flag 为 0
-S1;          // 临界区
-flag = 1;
 
 ![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_124.png)
 
@@ -252,6 +247,11 @@ flag = 1;
 
 ![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_130.png)
 
+```c
+// 线程 T1
+while(flag); // 循环等待，直到 flag 为 0
+S1;          // 临界区
+flag = 1;
 // 线程 T2
 while(!flag); // 循环等待，直到 flag 为 1
 S2;           // 临界区

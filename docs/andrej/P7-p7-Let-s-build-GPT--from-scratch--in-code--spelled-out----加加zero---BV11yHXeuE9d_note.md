@@ -144,11 +144,11 @@ print('目标示例:\n', yb)
 ### 3.1 模型定义
 Bigram 模型本质上是一个查找表，其中每个字符都直接预测下一个字符的分布。
 
-```python
-import torch.nn as nn
 
 ![](img/d489e9697e4ec525091637b9ac0b6163_31.png)
 
+```python
+import torch.nn as nn
 class BigramLanguageModel(nn.Module):
     def __init__(self, vocab_size):
         super().__init__()

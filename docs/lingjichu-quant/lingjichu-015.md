@@ -36,18 +36,18 @@
 
 首先，导入必要的工具包并加载数据。
 
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
 
 ![](img/408b0bc9f726fb5f6dfe5ac253075ce7_17.png)
 
-# 设置中文字体，方便后续图表显示
-plt.rcParams['font.sans-serif'] = ['SimHei']
-plt.rcParams['axes.unicode_minus'] = False
 
 ![](img/408b0bc9f726fb5f6dfe5ac253075ce7_19.png)
 
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+# 设置中文字体，方便后续图表显示
+plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
 # 读取数据，假设第一列是日期
 data = pd.read_csv('your_stock_data.csv', index_col=0)
 # 查看数据前几行
@@ -61,13 +61,24 @@ print(data.head())
 1.  **计算累积净值曲线**：计算每个时间点的资产净值相对于期初净值的比值。
 2.  **计算最终收益率**：取期末的净值比值，并减去1，得到最终的回测收益率。
 
+
+![](img/408b0bc9f726fb5f6dfe5ac253075ce7_21.png)
+
+
+![](img/408b0bc9f726fb5f6dfe5ac253075ce7_23.png)
+
+
+![](img/408b0bc9f726fb5f6dfe5ac253075ce7_25.png)
+
+![](img/408b0bc9f726fb5f6dfe5ac253075ce7_27.png)
+
+
+![](img/408b0bc9f726fb5f6dfe5ac253075ce7_29.png)
+
 ```python
 # 步骤1：计算每个时间点相对于期初的净值比
 # 假设我们使用‘close’列作为净值
 net_value_ratio = data['close'] / data['close'].iloc[0]
-
-![](img/408b0bc9f726fb5f6dfe5ac253075ce7_21.png)
-
 # 可视化净值增长曲线
 net_value_ratio.plot(figsize=(10, 6))
 plt.title('策略净值增长曲线 (相对于期初)')
@@ -75,23 +86,12 @@ plt.ylabel('净值比率')
 plt.xlabel('日期')
 plt.grid(True)
 plt.show()
-
-![](img/408b0bc9f726fb5f6dfe5ac253075ce7_23.png)
-
 # 步骤2：计算最终的回测收益率
 final_return = net_value_ratio.iloc[-1] - 1
-
-![](img/408b0bc9f726fb5f6dfe5ac253075ce7_25.png)
-
-![](img/408b0bc9f726fb5f6dfe5ac253075ce7_27.png)
-
 # 将结果整理成DataFrame以便查看
 result_df = pd.DataFrame({
     ‘回测收益率’: [final_return]
 }, index=[‘最终结果’])
-
-![](img/408b0bc9f726fb5f6dfe5ac253075ce7_29.png)
-
 print(result_df)
 ```
 

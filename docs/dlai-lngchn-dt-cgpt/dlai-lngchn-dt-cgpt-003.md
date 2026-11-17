@@ -53,11 +53,11 @@
 ![](img/76b2048aef9885655cbfa3bb7b8819d6_19.png)
 
 **代码示例：加载预训练数据集（如 The Pile）**
-```python
-from datasets import load_dataset
 
 ![](img/76b2048aef9885655cbfa3bb7b8819d6_21.png)
 
+```python
+from datasets import load_dataset
 # 加载 The Pile 数据集，这是一个大型预训练数据集
 dataset = load_dataset("EleutherAI/the_pile", split="train", streaming=True)
 
@@ -81,20 +81,20 @@ for sample in itertools.islice(dataset, 5):
 ![](img/76b2048aef9885655cbfa3bb7b8819d6_25.png)
 
 **代码示例：加载和格式化微调数据集**
+
+![](img/76b2048aef9885655cbfa3bb7b8819d6_27.png)
+
+
+![](img/76b2048aef9885655cbfa3bb7b8819d6_29.png)
+
 ```python
 import json
 
 # 假设我们有一个包含问答对的JSON文件
 with open('lamini_docs.json', 'r') as f:
     data = json.load(f)
-
-![](img/76b2048aef9885655cbfa3bb7b8819d6_27.png)
-
 # 数据格式示例：{"question": "...", "answer": "..."}
 print(data[0])
-
-![](img/76b2048aef9885655cbfa3bb7b8819d6_29.png)
-
 # 将问答对拼接成一段文本（一种简单的格式化方式）
 formatted_example = f"Question: {data[0]['question']}\nAnswer: {data[0]['answer']}"
 print(formatted_example)
@@ -110,17 +110,17 @@ print(formatted_example)
 ![](img/76b2048aef9885655cbfa3bb7b8819d6_33.png)
 
 **代码示例：使用提示模板格式化数据**
-```python
-prompt_template = """### Question:
-{question}
 
 ![](img/76b2048aef9885655cbfa3bb7b8819d6_35.png)
 
-### Answer:
-{answer}"""
 
 ![](img/76b2048aef9885655cbfa3bb7b8819d6_37.png)
 
+```python
+prompt_template = """### Question:
+{question}
+### Answer:
+{answer}"""
 # 应用模板
 formatted_with_template = prompt_template.format(question=data[0]['question'], answer=data[0]['answer'])
 print(formatted_with_template)

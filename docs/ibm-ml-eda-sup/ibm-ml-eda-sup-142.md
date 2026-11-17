@@ -87,28 +87,28 @@ print(data.dtypes.value_counts())
 
 以下是检查数据是否已缩放的步骤代码：
 
-```python
-# 1. 创建布尔序列，标识哪些列是浮点型
-is_float = data.dtypes == ‘float’
 
 ![](img/cccfcad3f6a6d2852b5e37be1c2feccd_35.png)
 
-# 2. 选取所有浮点数列，并计算每列的最大值
-max_vals = data.loc[:, is_float].max()
 
 ![](img/cccfcad3f6a6d2852b5e37be1c2feccd_37.png)
 
-# 3. 检查所有最大值是否都等于1
-all_max_one = (max_vals == 1).all()
 
 ![](img/cccfcad3f6a6d2852b5e37be1c2feccd_39.png)
 
-# 4. 同样检查最小值是否都等于-1
-min_vals = data.loc[:, is_float].min()
-all_min_neg_one = (min_vals == -1).all()
 
 ![](img/cccfcad3f6a6d2852b5e37be1c2feccd_41.png)
 
+```python
+# 1. 创建布尔序列，标识哪些列是浮点型
+is_float = data.dtypes == ‘float’
+# 2. 选取所有浮点数列，并计算每列的最大值
+max_vals = data.loc[:, is_float].max()
+# 3. 检查所有最大值是否都等于1
+all_max_one = (max_vals == 1).all()
+# 4. 同样检查最小值是否都等于-1
+min_vals = data.loc[:, is_float].min()
+all_min_neg_one = (min_vals == -1).all()
 print(all_max_one, all_min_neg_one)
 ```
 
@@ -146,12 +146,12 @@ print(all_max_one, all_min_neg_one)
 
 ![](img/cccfcad3f6a6d2852b5e37be1c2feccd_57.png)
 
-```python
-# 初始化标签编码器
-le = LabelEncoder()
 
 ![](img/cccfcad3f6a6d2852b5e37be1c2feccd_59.png)
 
+```python
+# 初始化标签编码器
+le = LabelEncoder()
 # 对‘activity’列进行拟合和转换，并替换原数据
 data[‘activity’] = le.fit_transform(data[‘activity’])
 
@@ -197,23 +197,23 @@ print(data[‘activity’].value_counts())
 
 ![](img/cccfcad3f6a6d2852b5e37be1c2feccd_77.png)
 
-```python
-# 定义特征列（排除目标列‘activity’）
-feature_columns = [x for x in data.columns if x != ‘activity’]
 
 ![](img/cccfcad3f6a6d2852b5e37be1c2feccd_78.png)
 
-# 设置特征（X）和目标（y）
-X = data[feature_columns]
-y = data[‘activity’]
 
 ![](img/cccfcad3f6a6d2852b5e37be1c2feccd_80.png)
 
-# 划分训练集和测试集
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
 ![](img/cccfcad3f6a6d2852b5e37be1c2feccd_82.png)
 
+```python
+# 定义特征列（排除目标列‘activity’）
+feature_columns = [x for x in data.columns if x != ‘activity’]
+# 设置特征（X）和目标（y）
+X = data[feature_columns]
+y = data[‘activity’]
+# 划分训练集和测试集
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 # 查看划分后的形状
 print(X_train.shape, X_test.shape)
 ```

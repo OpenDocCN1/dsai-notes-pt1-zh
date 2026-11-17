@@ -22,13 +22,13 @@ warnings.filterwarnings('ignore')
 
 接下来，获取Pinecone的API密钥并初始化索引。以下是标准操作流程：
 
+
+![](img/d8cb4c41592ad1f3c220eb9489c56c79_4.png)
+
 ```python
 import os
 from deeplearningai_utils import get_pinecone_api_key
 import pinecone
-
-![](img/d8cb4c41592ad1f3c220eb9489c56c79_4.png)
-
 # 获取API密钥
 api_key = get_pinecone_api_key()
 # 初始化Pinecone
@@ -173,18 +173,18 @@ print("Data inserted into Pinecone.")
 
 数据插入后，我们可以进行查询。我们选取一条已知的正常日志条目作为查询向量。
 
+
+![](img/d8cb4c41592ad1f3c220eb9489c56c79_19.png)
+
+
+![](img/d8cb4c41592ad1f3c220eb9489c56c79_21.png)
+
 ```python
 # 选择一条已知的正常日志（例如第一条）
 good_log_line = samples[0]
 print(f"Querying with good log line: {good_log_line}")
-
-![](img/d8cb4c41592ad1f3c220eb9489c56c79_19.png)
-
 # 生成这条日志的嵌入向量
 query_embedding = model.encode([good_log_line], convert_to_tensor=True).tolist()[0]
-
-![](img/d8cb4c41592ad1f3c220eb9489c56c79_21.png)
-
 # 在Pinecone中查询最相似的100条记录
 query_results = index.query(vector=query_embedding, top_k=100, include_metadata=True)
 ```

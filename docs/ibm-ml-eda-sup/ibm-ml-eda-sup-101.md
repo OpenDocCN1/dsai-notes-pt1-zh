@@ -124,10 +124,6 @@ KNN算法依赖于距离度量来计算数据点之间的相似性。常用的�
 
 ![](img/f86aea66ad78a24992da917b992e31a2_59.png)
 
-```python
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
 
 ![](img/f86aea66ad78a24992da917b992e31a2_61.png)
 
@@ -135,15 +131,9 @@ from sklearn.model_selection import train_test_split
 
 ![](img/f86aea66ad78a24992da917b992e31a2_63.png)
 
-# 假设X是特征数据，y是标签
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 ![](img/f86aea66ad78a24992da917b992e31a2_65.png)
 
-# 特征缩放
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
 
 ![](img/f86aea66ad78a24992da917b992e31a2_66.png)
 
@@ -151,11 +141,6 @@ X_test_scaled = scaler.transform(X_test)
 
 ![](img/f86aea66ad78a24992da917b992e31a2_69.png)
 
-# 创建KNN分类器，设置K=3
-knn = KNeighborsClassifier(n_neighbors=3)
-
-# 训练模型
-knn.fit(X_train_scaled, y_train)
 
 ![](img/f86aea66ad78a24992da917b992e31a2_71.png)
 
@@ -165,6 +150,21 @@ knn.fit(X_train_scaled, y_train)
 
 ![](img/f86aea66ad78a24992da917b992e31a2_74.png)
 
+```python
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+# 假设X是特征数据，y是标签
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# 特征缩放
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+# 创建KNN分类器，设置K=3
+knn = KNeighborsClassifier(n_neighbors=3)
+
+# 训练模型
+knn.fit(X_train_scaled, y_train)
 # 预测
 predictions = knn.predict(X_test_scaled)
 ```

@@ -85,11 +85,6 @@ rms_duke = rms_duke[0]
 
 ![](img/b3729772e16d0e187e40453400f2ad8b_20.png)
 
-```python
-frames = range(len(rms_debussy))
-t = librosa.frames_to_time(frames, hop_length=HOP_LENGTH)
-
-plt.figure(figsize=(15, 17))
 
 ![](img/b3729772e16d0e187e40453400f2ad8b_22.png)
 
@@ -99,6 +94,19 @@ plt.figure(figsize=(15, 17))
 
 ![](img/b3729772e16d0e187e40453400f2ad8b_25.png)
 
+
+![](img/b3729772e16d0e187e40453400f2ad8b_27.png)
+
+
+![](img/b3729772e16d0e187e40453400f2ad8b_29.png)
+
+![](img/b3729772e16d0e187e40453400f2ad8b_31.png)
+
+```python
+frames = range(len(rms_debussy))
+t = librosa.frames_to_time(frames, hop_length=HOP_LENGTH)
+
+plt.figure(figsize=(15, 17))
 # 绘制德彪西的波形和RMS
 ax = plt.subplot(3, 1, 1)
 librosa.display.waveshow(debussy, alpha=0.5)
@@ -110,19 +118,11 @@ plt.subplot(3, 1, 2)
 librosa.display.waveshow(redhot, alpha=0.5)
 plt.plot(t, rms_redhot, color=‘r’)
 plt.title(‘Red Hot Chili Peppers’)
-
-![](img/b3729772e16d0e187e40453400f2ad8b_27.png)
-
 # 绘制艾灵顿公爵的波形和RMS
 plt.subplot(3, 1, 3)
 librosa.display.waveshow(duke, alpha=0.5)
 plt.plot(t, rms_duke, color=‘r’)
 plt.title(‘Duke Ellington’)
-
-![](img/b3729772e16d0e187e40453400f2ad8b_29.png)
-
-![](img/b3729772e16d0e187e40453400f2ad8b_31.png)
-
 plt.show()
 ```
 
@@ -177,39 +177,39 @@ rms_duke_manual = rms_manual(duke, FRAME_LENGTH, HOP_LENGTH)
 
 我们将自定义函数的结果（黄色）与 `librosa` 的结果（红色）绘制在同一张图上进行对比。
 
-```python
-plt.figure(figsize=(15, 17))
 
 ![](img/b3729772e16d0e187e40453400f2ad8b_47.png)
 
-ax = plt.subplot(3, 1, 1)
-librosa.display.waveshow(debussy, alpha=0.5)
-plt.plot(t, rms_debussy, color=‘r’)
-plt.plot(t, rms_debussy_manual, color=‘y’)
-plt.title(‘Debussy’)
 
 ![](img/b3729772e16d0e187e40453400f2ad8b_49.png)
 
 ![](img/b3729772e16d0e187e40453400f2ad8b_50.png)
 
-plt.subplot(3, 1, 2)
-librosa.display.waveshow(redhot, alpha=0.5)
-plt.plot(t, rms_redhot, color=‘r’)
-plt.plot(t, rms_redhot_manual, color=‘y’)
-plt.title(‘Red Hot Chili Peppers’)
 
 ![](img/b3729772e16d0e187e40453400f2ad8b_52.png)
 
-plt.subplot(3, 1, 3)
-librosa.display.waveshow(duke, alpha=0.5)
-plt.plot(t, rms_duke, color=‘r’)
-plt.plot(t, rms_duke_manual, color=‘y’)
-plt.title(‘Duke Ellington’)
 
 ![](img/b3729772e16d0e187e40453400f2ad8b_54.png)
 
 ![](img/b3729772e16d0e187e40453400f2ad8b_56.png)
 
+```python
+plt.figure(figsize=(15, 17))
+ax = plt.subplot(3, 1, 1)
+librosa.display.waveshow(debussy, alpha=0.5)
+plt.plot(t, rms_debussy, color=‘r’)
+plt.plot(t, rms_debussy_manual, color=‘y’)
+plt.title(‘Debussy’)
+plt.subplot(3, 1, 2)
+librosa.display.waveshow(redhot, alpha=0.5)
+plt.plot(t, rms_redhot, color=‘r’)
+plt.plot(t, rms_redhot_manual, color=‘y’)
+plt.title(‘Red Hot Chili Peppers’)
+plt.subplot(3, 1, 3)
+librosa.display.waveshow(duke, alpha=0.5)
+plt.plot(t, rms_duke, color=‘r’)
+plt.plot(t, rms_duke_manual, color=‘y’)
+plt.title(‘Duke Ellington’)
 plt.show()
 ```
 
@@ -231,12 +231,12 @@ zcr_duke = librosa.feature.zero_crossing_rate(duke, frame_length=FRAME_LENGTH, h
 
 `librosa` 返回的过零率是归一化的值（除以帧长）。为了在同一图中比较三首音乐，我们进行可视化。
 
-```python
-frames = range(len(zcr_debussy))
-t = librosa.frames_to_time(frames, hop_length=HOP_LENGTH)
 
 ![](img/b3729772e16d0e187e40453400f2ad8b_59.png)
 
+```python
+frames = range(len(zcr_debussy))
+t = librosa.frames_to_time(frames, hop_length=HOP_LENGTH)
 plt.figure(figsize=(10, 5))
 plt.plot(t, zcr_debussy, color=‘y’, label=‘Debussy’)
 plt.plot(t, zcr_redhot, color=‘r’, label=‘Red Hot Chili Peppers’)
@@ -282,12 +282,12 @@ zcr_duke_abs = zcr_duke * FRAME_LENGTH
 
 ![](img/b3729772e16d0e187e40453400f2ad8b_78.png)
 
-```python
-voice_path = ‘audio/voice.wav’
-noise_path = ‘audio/noise.wav’
 
 ![](img/b3729772e16d0e187e40453400f2ad8b_80.png)
 
+```python
+voice_path = ‘audio/voice.wav’
+noise_path = ‘audio/noise.wav’
 voice, _ = librosa.load(voice_path, duration=15)
 noise, _ = librosa.load(noise_path, duration=15)
 ```

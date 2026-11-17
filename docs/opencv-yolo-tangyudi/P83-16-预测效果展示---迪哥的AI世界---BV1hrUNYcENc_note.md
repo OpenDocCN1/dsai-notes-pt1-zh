@@ -79,13 +79,13 @@ model.eval()  # 设置为评估模式
 
 ![](img/076f1f1acc2a15b26fe091e37291845e_29.png)
 
+
+![](img/076f1f1acc2a15b26fe091e37291845e_31.png)
+
 ```python
 # 创建数据加载器
 dataset = ImageFolder(image_folder, transform=preprocess_transform)
 dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=False)
-
-![](img/076f1f1acc2a15b26fe091e37291845e_31.png)
-
 # 加载类别名称映射
 names = load_classes(names_path)  # 例如：{0: 'person', 1: 'bicycle', ...}
 ```

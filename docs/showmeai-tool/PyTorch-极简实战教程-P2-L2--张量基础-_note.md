@@ -38,19 +38,19 @@ import torch
 
 ![](img/90c2a152a218100453276638b7fdbc56_13.png)
 
+
+![](img/90c2a152a218100453276638b7fdbc56_15.png)
+
+
+![](img/90c2a152a218100453276638b7fdbc56_17.png)
+
 ```python
 # 创建一个标量（0维张量）
 x = torch.empty(1)
 print(x)
-
-![](img/90c2a152a218100453276638b7fdbc56_15.png)
-
 # 创建一个包含三个元素的1维向量
 x = torch.empty(3)
 print(x)
-
-![](img/90c2a152a218100453276638b7fdbc56_17.png)
-
 # 创建一个2x3的2维矩阵
 x = torch.empty(2, 3)
 print(x)
@@ -87,15 +87,15 @@ print(x)
 
 ![](img/90c2a152a218100453276638b7fdbc56_28.png)
 
-```python
-# 创建一个2x2的全零张量
-x = torch.zeros(2, 2)
-print(x)
 
 ![](img/90c2a152a218100453276638b7fdbc56_29.png)
 
 ![](img/90c2a152a218100453276638b7fdbc56_30.png)
 
+```python
+# 创建一个2x2的全零张量
+x = torch.zeros(2, 2)
+print(x)
 # 创建一个2x2的全一张量
 x = torch.ones(2, 2)
 print(x)
@@ -193,15 +193,15 @@ print(y)
 
 ![](img/90c2a152a218100453276638b7fdbc56_65.png)
 
-```python
-# 逐元素加法
-z = x + y
-print(z)
 
 ![](img/90c2a152a218100453276638b7fdbc56_67.png)
 
 ![](img/90c2a152a218100453276638b7fdbc56_68.png)
 
+```python
+# 逐元素加法
+z = x + y
+print(z)
 # 使用torch.add函数实现相同功能
 z = torch.add(x, y)
 print(z)
@@ -229,13 +229,13 @@ print(y)  # y已被修改
 
 ![](img/90c2a152a218100453276638b7fdbc56_75.png)
 
+
+![](img/90c2a152a218100453276638b7fdbc56_77.png)
+
 ```python
 # 逐元素减法
 z = x - y
 print(z)
-
-![](img/90c2a152a218100453276638b7fdbc56_77.png)
-
 # 使用torch.sub函数
 z = torch.sub(x, y)
 print(z)
@@ -247,21 +247,21 @@ print(z)
 
 ![](img/90c2a152a218100453276638b7fdbc56_81.png)
 
-```python
-# 逐元素乘法
-z = x * y
-print(z)
 
 ![](img/90c2a152a218100453276638b7fdbc56_82.png)
 
 ![](img/90c2a152a218100453276638b7fdbc56_83.png)
 
-# 使用torch.mul函数
-z = torch.mul(x, y)
-print(z)
 
 ![](img/90c2a152a218100453276638b7fdbc56_85.png)
 
+```python
+# 逐元素乘法
+z = x * y
+print(z)
+# 使用torch.mul函数
+z = torch.mul(x, y)
+print(z)
 # 就地乘法
 y.mul_(x)
 print(y)
@@ -273,13 +273,13 @@ print(y)
 
 ![](img/90c2a152a218100453276638b7fdbc56_89.png)
 
+
+![](img/90c2a152a218100453276638b7fdbc56_90.png)
+
 ```python
 # 逐元素除法
 z = x / y
 print(z)
-
-![](img/90c2a152a218100453276638b7fdbc56_90.png)
-
 # 使用torch.div函数
 z = torch.div(x, y)
 print(z)
@@ -299,6 +299,14 @@ print(z)
 
 ![](img/90c2a152a218100453276638b7fdbc56_98.png)
 
+
+![](img/90c2a152a218100453276638b7fdbc56_100.png)
+
+
+![](img/90c2a152a218100453276638b7fdbc56_101.png)
+
+![](img/90c2a152a218100453276638b7fdbc56_102.png)
+
 ```python
 # 创建一个5x3的张量
 x = torch.rand(5, 3)
@@ -309,16 +317,8 @@ print(x[:, 0])
 
 # 获取第二行的所有列
 print(x[1, :])
-
-![](img/90c2a152a218100453276638b7fdbc56_100.png)
-
 # 获取特定位置的元素（例如第1行第1列，注意索引从0开始）
 print(x[1, 1])
-
-![](img/90c2a152a218100453276638b7fdbc56_101.png)
-
-![](img/90c2a152a218100453276638b7fdbc56_102.png)
-
 # 如果张量只有一个元素，可以使用.item()获取其Python数值
 scalar_tensor = torch.tensor([3.1415])
 print(scalar_tensor.item())
@@ -338,30 +338,30 @@ print(scalar_tensor.item())
 
 ![](img/90c2a152a218100453276638b7fdbc56_109.png)
 
-```python
-# 创建一个4x4的张量
-x = torch.rand(4, 4)
-print(x)
-print(x.size())
 
 ![](img/90c2a152a218100453276638b7fdbc56_111.png)
 
 ![](img/90c2a152a218100453276638b7fdbc56_112.png)
 
+
+![](img/90c2a152a218100453276638b7fdbc56_113.png)
+
+
+![](img/90c2a152a218100453276638b7fdbc56_115.png)
+
+```python
+# 创建一个4x4的张量
+x = torch.rand(4, 4)
+print(x)
+print(x.size())
 # 重塑为一维向量（16个元素）
 y = x.view(16)
 print(y)
 print(y.size())
-
-![](img/90c2a152a218100453276638b7fdbc56_113.png)
-
 # 重塑为2x8的矩阵
 y = x.view(2, 8)
 print(y)
 print(y.size())
-
-![](img/90c2a152a218100453276638b7fdbc56_115.png)
-
 # 使用-1让PyTorch自动计算某一维度的大小
 # 例如，将4x4重塑为2x?，PyTorch会自动计算出?为8
 y = x.view(2, -1)
@@ -397,13 +397,13 @@ import numpy as np
 
 ![](img/90c2a152a218100453276638b7fdbc56_128.png)
 
+
+![](img/90c2a152a218100453276638b7fdbc56_130.png)
+
 ```python
 # 创建一个PyTorch张量
 a = torch.ones(5)
 print(a)
-
-![](img/90c2a152a218100453276638b7fdbc56_130.png)
-
 # 转换为NumPy数组
 b = a.numpy()
 print(b)
@@ -466,20 +466,20 @@ print(b)  # 张量也随之改变
 
 ![](img/90c2a152a218100453276638b7fdbc56_147.png)
 
-```python
-# 检查CUDA是否可用
-print(torch.cuda.is_available())
 
 ![](img/90c2a152a218100453276638b7fdbc56_148.png)
 
 ![](img/90c2a152a218100453276638b7fdbc56_149.png)
 
-# 如果可用，指定设备
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(device)
 
 ![](img/90c2a152a218100453276638b7fdbc56_151.png)
 
+```python
+# 检查CUDA是否可用
+print(torch.cuda.is_available())
+# 如果可用，指定设备
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(device)
 # 在GPU上创建张量
 if torch.cuda.is_available():
     x = torch.ones(5, device=device)  # 直接在GPU上创建

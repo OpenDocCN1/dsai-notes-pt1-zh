@@ -47,13 +47,13 @@
 
 以下是定义状态和助手节点的核心代码：
 
+
+![](img/bab8f4efc680b0f5c981812ec5db2db6_15.png)
+
 ```python
 # 定义状态
 class State(TypedDict):
     messages: Annotated[list, add_messages]  # 聊天消息列表
-
-![](img/bab8f4efc680b0f5c981812ec5db2db6_15.png)
-
 # 定义助手节点
 def assistant(state: State):
     # 提示词和LLM配置

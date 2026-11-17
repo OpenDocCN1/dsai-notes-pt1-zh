@@ -83,14 +83,14 @@ x = layers.Dense(64, activation='relu')(x)
 
 现在，我们从共享的特征 `x` 中分出两个独立的输出层，分别预测第一个和第二个数字。
 
-```python
-# 第一个数字的输出分支
-digit1_output = layers.Dense(10, activation='softmax', name='digit1')(x)
 
 ![](img/2b04a13feb7a7ead68512f94b99b8884_4.png)
 
 ![](img/2b04a13feb7a7ead68512f94b99b8884_5.png)
 
+```python
+# 第一个数字的输出分支
+digit1_output = layers.Dense(10, activation='softmax', name='digit1')(x)
 # 第二个数字的输出分支
 digit2_output = layers.Dense(10, activation='softmax', name='digit2')(x)
 ```

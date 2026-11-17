@@ -72,10 +72,6 @@ MMR的核心思想是：在保证与查询相关性的同时，最大化返回�
 
 ![](img/1251636ef68b09989c270ce30b4b171d_44.png)
 
-```python
-# 假设 `vectordb` 是一个已初始化的向量数据库
-# 基础相似性搜索（可能返回重复信息）
-docs_similarity = vectordb.similarity_search(“关于MATLAB的内容”, k=2)
 
 ![](img/1251636ef68b09989c270ce30b4b171d_46.png)
 
@@ -83,6 +79,10 @@ docs_similarity = vectordb.similarity_search(“关于MATLAB的内容”, k=2)
 
 ![](img/1251636ef68b09989c270ce30b4b171d_50.png)
 
+```python
+# 假设 `vectordb` 是一个已初始化的向量数据库
+# 基础相似性搜索（可能返回重复信息）
+docs_similarity = vectordb.similarity_search(“关于MATLAB的内容”, k=2)
 # 使用MMR进行检索
 docs_mmr = vectordb.max_marginal_relevance_search(“关于MATLAB的内容”, k=2, fetch_k=3)
 ```
@@ -126,15 +126,27 @@ docs_mmr = vectordb.max_marginal_relevance_search(“关于MATLAB的内容”, k
 
 ![](img/1251636ef68b09989c270ce30b4b171d_76.png)
 
-```python
-from langchain.llms import OpenAI
-from langchain.retrievers.self_query.base import SelfQueryRetriever
-from langchain.chains.query_constructor.base import AttributeInfo
 
 ![](img/1251636ef68b09989c270ce30b4b171d_78.png)
 
 ![](img/1251636ef68b09989c270ce30b4b171d_80.png)
 
+
+![](img/1251636ef68b09989c270ce30b4b171d_82.png)
+
+![](img/1251636ef68b09989c270ce30b4b171d_84.png)
+
+![](img/1251636ef68b09989c270ce30b4b171d_86.png)
+
+
+![](img/1251636ef68b09989c270ce30b4b171d_88.png)
+
+![](img/1251636ef68b09989c270ce30b4b171d_90.png)
+
+```python
+from langchain.llms import OpenAI
+from langchain.retrievers.self_query.base import SelfQueryRetriever
+from langchain.chains.query_constructor.base import AttributeInfo
 # 1. 定义元数据字段信息
 metadata_field_info = [
     AttributeInfo(
@@ -149,13 +161,6 @@ metadata_field_info = [
     ),
 ]
 document_content_description = “机器学习讲座的笔记” # 对整个文档内容的描述
-
-![](img/1251636ef68b09989c270ce30b4b171d_82.png)
-
-![](img/1251636ef68b09989c270ce30b4b171d_84.png)
-
-![](img/1251636ef68b09989c270ce30b4b171d_86.png)
-
 # 2. 初始化LLM和检索器
 llm = OpenAI(temperature=0)
 retriever = SelfQueryRetriever.from_llm(
@@ -165,11 +170,6 @@ retriever = SelfQueryRetriever.from_llm(
     metadata_field_info,
     verbose=True # 设为True以查看LLM的推理过程
 )
-
-![](img/1251636ef68b09989c270ce30b4b171d_88.png)
-
-![](img/1251636ef68b09989c270ce30b4b171d_90.png)
-
 # 3. 进行查询
 docs = retriever.get_relevant_documents(“在第三讲中他们说了什么关于回归的内容？”)
 ```
@@ -211,34 +211,34 @@ docs = retriever.get_relevant_documents(“在第三讲中他们说了什么关�
 
 ![](img/1251636ef68b09989c270ce30b4b171d_116.png)
 
-```python
-from langchain.retrievers import ContextualCompressionRetriever
-from langchain.retrievers.document_compressors import LLMChainExtractor
-from langchain.llms import OpenAI
 
 ![](img/1251636ef68b09989c270ce30b4b171d_118.png)
 
 ![](img/1251636ef68b09989c270ce30b4b171d_120.png)
 
-# 1. 初始化一个用于提取的LLM和压缩器
-llm = OpenAI(temperature=0)
-compressor = LLMChainExtractor.from_llm(llm)
 
 ![](img/1251636ef68b09989c270ce30b4b171d_122.png)
 
 ![](img/1251636ef68b09989c270ce30b4b171d_124.png)
 
+
+![](img/1251636ef68b09989c270ce30b4b171d_126.png)
+
+![](img/1251636ef68b09989c270ce30b4b171d_128.png)
+
+```python
+from langchain.retrievers import ContextualCompressionRetriever
+from langchain.retrievers.document_compressors import LLMChainExtractor
+from langchain.llms import OpenAI
+# 1. 初始化一个用于提取的LLM和压缩器
+llm = OpenAI(temperature=0)
+compressor = LLMChainExtractor.from_llm(llm)
 # 2. 创建上下文压缩检索器，它包装了基础的向量数据库检索器
 base_retriever = vectordb.as_retriever(search_type=“mmr”) # 可以结合MMR使用
 compression_retriever = ContextualCompressionRetriever(
     base_compressor=compressor,
     base_retriever=base_retriever
 )
-
-![](img/1251636ef68b09989c270ce30b4b171d_126.png)
-
-![](img/1251636ef68b09989c270ce30b4b171d_128.png)
-
 # 3. 进行查询
 compressed_docs = compression_retriever.get_relevant_documents(“他们对MATLAB说了什么？”)
 ```
@@ -272,13 +272,13 @@ compressed_docs = compression_retriever.get_relevant_documents(“他们对MATLA
 
 ![](img/1251636ef68b09989c270ce30b4b171d_146.png)
 
-```python
-from langchain.retrievers import SVMRetriever, TFIDFRetriever
 
 ![](img/1251636ef68b09989c270ce30b4b171d_148.png)
 
 ![](img/1251636ef68b09989c270ce30b4b171d_150.png)
 
+```python
+from langchain.retrievers import SVMRetriever, TFIDFRetriever
 # 创建SVM检索器（需要传入文本嵌入模型）
 svm_retriever = SVMRetriever.from_texts(texts, embeddings)
 # 创建TF-IDF检索器

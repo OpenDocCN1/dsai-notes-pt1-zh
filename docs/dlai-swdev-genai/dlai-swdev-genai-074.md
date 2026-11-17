@@ -33,11 +33,11 @@ GPT指出，要实现此模式，你需要：
 
 以下是定义策略接口的代码：
 
-```python
-from abc import ABC, abstractmethod
 
 ![](img/0aaafba63de843f040ec649fb0318187_5.png)
 
+```python
+from abc import ABC, abstractmethod
 class GradingStrategy(ABC):
     @abstractmethod
     def assign_grade(self, company):

@@ -80,21 +80,11 @@
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_40.png)
 
-```python
-import pandas as pd
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import PolynomialFeatures, OneHotEncoder
-from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_42.png)
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_43.png)
 
-# 假设 df 是已加载并清理好的数据框
-# 特征列包括 ‘Wave Period‘, ‘Water Temperature‘, ‘Beach Name‘ 等
-# 目标列是 ‘Wave Height‘
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_45.png)
 
@@ -102,6 +92,16 @@ from sklearn.pipeline import Pipeline
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_47.png)
 
+```python
+import pandas as pd
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import PolynomialFeatures, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+# 假设 df 是已加载并清理好的数据框
+# 特征列包括 ‘Wave Period‘, ‘Water Temperature‘, ‘Beach Name‘ 等
+# 目标列是 ‘Wave Height‘
 # 分割数据
 train_df, test_df = train_test_split(df, test_size=0.25, random_state=42)
 print(f"训练集大小: {len(train_df)}， 测试集大小: {len(test_df)}")
@@ -127,17 +127,9 @@ print(f"训练集大小: {len(train_df)}， 测试集大小: {len(test_df)}")
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_61.png)
 
-```python
-# 定义特征和目标
-features = [‘Wave Period‘]
-X_train = train_df[features]
-y_train = train_df[‘Wave Height‘]
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_63.png)
 
-# 创建并训练模型
-model1 = LinearRegression()
-model1.fit(X_train, y_train)
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_65.png)
 
@@ -145,14 +137,22 @@ model1.fit(X_train, y_train)
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_68.png)
 
+
+![](img/6759ee1a4176e478df5915cb285d57a7_70.png)
+
+```python
+# 定义特征和目标
+features = [‘Wave Period‘]
+X_train = train_df[features]
+y_train = train_df[‘Wave Height‘]
+# 创建并训练模型
+model1 = LinearRegression()
+model1.fit(X_train, y_train)
 # 在测试集上评估
 X_test = test_df[features]
 y_test = test_df[‘Wave Height‘]
 score1 = model1.score(X_test, y_test)
 print(f"模型1测试集R²分数: {score1:.4f}")
-
-![](img/6759ee1a4176e478df5915cb285d57a7_70.png)
-
 # 使用交叉验证获得更稳健的评估
 cv_scores1 = cross_val_score(model1, X_train, y_train, cv=5)
 print(f"模型1交叉验证平均R²分数: {cv_scores1.mean():.4f}")
@@ -207,15 +207,15 @@ demo_df[‘Period_cubed‘] = demo_df[‘Wave Period‘] ** 3
 
 更优雅的方式是使用 `Pipeline` 将特征转换和模型训练结合在一起：
 
+
+![](img/6759ee1a4176e478df5915cb285d57a7_96.png)
+
 ```python
 # 使用管道构建多项式回归模型
 model2 = Pipeline([
     (‘poly‘, PolynomialFeatures(degree=2, include_bias=False)), # 转换为二次多项式特征
     (‘lr‘, LinearRegression()) # 应用线性回归
 ])
-
-![](img/6759ee1a4176e478df5915cb285d57a7_96.png)
-
 model2.fit(X_train, y_train)
 score2 = model2.score(X_test, y_test)
 cv_scores2 = cross_val_score(model2, X_train, y_train, cv=5)
@@ -255,10 +255,6 @@ print(f"模型2交叉验证平均R²分数: {cv_scores2.mean():.4f}")
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_113.png)
 
-```python
-# 使用管道构建基于海滩的模型
-features_cat = [‘Beach Name‘]
-X_train_cat = train_df[features_cat]
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_115.png)
 
@@ -266,10 +262,6 @@ X_train_cat = train_df[features_cat]
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_117.png)
 
-model3 = Pipeline([
-    (‘onehot‘, OneHotEncoder()), # 对海滩名称进行独热编码
-    (‘lr‘, LinearRegression())
-])
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_119.png)
 
@@ -277,12 +269,20 @@ model3 = Pipeline([
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_123.png)
 
-model3.fit(X_train_cat, y_train)
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_125.png)
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_127.png)
 
+```python
+# 使用管道构建基于海滩的模型
+features_cat = [‘Beach Name‘]
+X_train_cat = train_df[features_cat]
+model3 = Pipeline([
+    (‘onehot‘, OneHotEncoder()), # 对海滩名称进行独热编码
+    (‘lr‘, LinearRegression())
+])
+model3.fit(X_train_cat, y_train)
 X_test_cat = test_df[features_cat]
 score3 = model3.score(X_test_cat, y_test)
 cv_scores3 = cross_val_score(model3, X_train_cat, y_train, cv=5)
@@ -312,40 +312,40 @@ print(f"模型3交叉验证平均R²分数: {cv_scores3.mean():.4f}")
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_140.png)
 
+
+![](img/6759ee1a4176e478df5915cb285d57a7_142.png)
+
+
+![](img/6759ee1a4176e478df5915cb285d57a7_144.png)
+
+![](img/6759ee1a4176e478df5915cb285d57a7_146.png)
+
+
+![](img/6759ee1a4176e478df5915cb285d57a7_147.png)
+
+![](img/6759ee1a4176e478df5915cb285d57a7_149.png)
+
+
+![](img/6759ee1a4176e478df5915cb285d57a7_151.png)
+
+![](img/6759ee1a4176e478df5915cb285d57a7_153.png)
+
 ```python
 # 定义要使用的特征
 features_combined = [‘Beach Name‘, ‘Wave Period‘]
 X_train_combined = train_df[features_combined]
-
-![](img/6759ee1a4176e478df5915cb285d57a7_142.png)
-
 # 创建列转换器，指定不同列应用的转换
 preprocessor = ColumnTransformer(
     transformers=[
         (‘beach‘, OneHotEncoder(), [‘Beach Name‘]), # 对‘Beach Name‘列进行独热编码
         (‘period‘, PolynomialFeatures(degree=2, include_bias=False), [‘Wave Period‘]) # 对‘Wave Period‘列进行多项式扩展
     ])
-
-![](img/6759ee1a4176e478df5915cb285d57a7_144.png)
-
-![](img/6759ee1a4176e478df5915cb285d57a7_146.png)
-
 # 构建完整的管道
 model4 = Pipeline([
     (‘preprocessor‘, preprocessor), # 第一步：应用列转换器
     (‘regressor‘, LinearRegression()) # 第二步：线性回归
 ])
-
-![](img/6759ee1a4176e478df5915cb285d57a7_147.png)
-
-![](img/6759ee1a4176e478df5915cb285d57a7_149.png)
-
 model4.fit(X_train_combined, y_train)
-
-![](img/6759ee1a4176e478df5915cb285d57a7_151.png)
-
-![](img/6759ee1a4176e478df5915cb285d57a7_153.png)
-
 X_test_combined = test_df[features_combined]
 score4 = model4.score(X_test_combined, y_test)
 cv_scores4 = cross_val_score(model4, X_train_combined, y_train, cv=5)
@@ -375,9 +375,6 @@ print(f"模型4交叉验证平均R²分数: {cv_scores4.mean():.4f}")
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_167.png)
 
-```python
-models = [‘模型1: 周期线性‘, ‘模型2: 周期多项式‘, ‘模型3: 海滩‘, ‘模型4: 海滩+周期多项式‘]
-cv_means = [cv_scores1.mean(), cv_scores2.mean(), cv_scores3.mean(), cv_scores4.mean()]
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_168.png)
 
@@ -385,6 +382,9 @@ cv_means = [cv_scores1.mean(), cv_scores2.mean(), cv_scores3.mean(), cv_scores4.
 
 ![](img/6759ee1a4176e478df5915cb285d57a7_171.png)
 
+```python
+models = [‘模型1: 周期线性‘, ‘模型2: 周期多项式‘, ‘模型3: 海滩‘, ‘模型4: 海滩+周期多项式‘]
+cv_means = [cv_scores1.mean(), cv_scores2.mean(), cv_scores3.mean(), cv_scores4.mean()]
 for name, score in zip(models, cv_means):
     print(f"{name}: 平均CV R² = {score:.3f}")
 ```

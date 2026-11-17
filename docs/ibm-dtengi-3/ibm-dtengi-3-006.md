@@ -75,15 +75,15 @@ PEP 8还建议使用空行来分隔代码中的函数和类。
 
 ![](img/3229a2ab7bdbc020d7a161a3392cb8bf_26.png)
 
+
+![](img/3229a2ab7bdbc020d7a161a3392cb8bf_28.png)
+
 ```python
 # 不遵循PEP 8的示例：函数和类之间没有空行
 def function1():
     pass
 class UserClass:
     pass
-
-![](img/3229a2ab7bdbc020d7a161a3392cb8bf_28.png)
-
 # 遵循PEP 8的示例：函数和类之间有空行
 def function1():
     pass
@@ -133,24 +133,24 @@ class UserClass:
 
 ![](img/3229a2ab7bdbc020d7a161a3392cb8bf_42.png)
 
+
+![](img/3229a2ab7bdbc020d7a161a3392cb8bf_44.png)
+
+
+![](img/3229a2ab7bdbc020d7a161a3392cb8bf_45.png)
+
 ```python
 # 未使用函数，代码重复
 if a > b:
     c = a
 else:
     c = b
-
-![](img/3229a2ab7bdbc020d7a161a3392cb8bf_44.png)
-
 # 使用函数，提高复用性
 def get_max_value(x, y):
     if x > y:
         return x
     else:
         return y
-
-![](img/3229a2ab7bdbc020d7a161a3392cb8bf_45.png)
-
 c = get_max_value(a, b)  # 调用函数
 ```
 

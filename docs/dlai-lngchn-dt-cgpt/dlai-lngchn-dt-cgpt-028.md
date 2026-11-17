@@ -81,26 +81,16 @@
 ![](img/6979b54d544ad51cba7b8167af30399e_48.png)
 
 **核心代码示例**：
-```python
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
-from langchain.chains import LLMChain
 
 ![](img/6979b54d544ad51cba7b8167af30399e_50.png)
 
 ![](img/6979b54d544ad51cba7b8167af30399e_52.png)
 
-# 1. 初始化模型
-llm = ChatOpenAI(temperature=0.9)
 
 ![](img/6979b54d544ad51cba7b8167af30399e_54.png)
 
 ![](img/6979b54d544ad51cba7b8167af30399e_56.png)
 
-# 2. 初始化提示模板
-prompt = ChatPromptTemplate.from_template(
-    “为生产 {product} 的公司起一个最佳名称是什么？”
-)
 
 ![](img/6979b54d544ad51cba7b8167af30399e_58.png)
 
@@ -108,6 +98,16 @@ prompt = ChatPromptTemplate.from_template(
 
 ![](img/6979b54d544ad51cba7b8167af30399e_62.png)
 
+```python
+from langchain.chat_models import ChatOpenAI
+from langchain.prompts import ChatPromptTemplate
+from langchain.chains import LLMChain
+# 1. 初始化模型
+llm = ChatOpenAI(temperature=0.9)
+# 2. 初始化提示模板
+prompt = ChatPromptTemplate.from_template(
+    “为生产 {product} 的公司起一个最佳名称是什么？”
+)
 # 3. 组合成链
 chain = LLMChain(llm=llm, prompt=prompt)
 ```
@@ -167,22 +167,22 @@ chain = LLMChain(llm=llm, prompt=prompt)
 ![](img/6979b54d544ad51cba7b8167af30399e_98.png)
 
 **核心代码示例**：
-```python
-from langchain.chains import SimpleSequentialChain
 
 ![](img/6979b54d544ad51cba7b8167af30399e_100.png)
 
 ![](img/6979b54d544ad51cba7b8167af30399e_102.png)
 
-# 创建第一个链 (生成公司名)
-chain_one = LLMChain(llm=llm, prompt=company_prompt)
-# 创建第二个链 (生成公司描述)
-chain_two = LLMChain(llm=llm, prompt=description_prompt)
 
 ![](img/6979b54d544ad51cba7b8167af30399e_104.png)
 
 ![](img/6979b54d544ad51cba7b8167af30399e_106.png)
 
+```python
+from langchain.chains import SimpleSequentialChain
+# 创建第一个链 (生成公司名)
+chain_one = LLMChain(llm=llm, prompt=company_prompt)
+# 创建第二个链 (生成公司描述)
+chain_two = LLMChain(llm=llm, prompt=description_prompt)
 # 组合成顺序链
 overall_chain = SimpleSequentialChain(chains=[chain_one, chain_two], verbose=True)
 ```
@@ -230,13 +230,18 @@ overall_chain = SimpleSequentialChain(chains=[chain_one, chain_two], verbose=Tru
 ![](img/6979b54d544ad51cba7b8167af30399e_132.png)
 
 **核心代码示例（部分）**：
-```python
-from langchain.chains import SequentialChain
 
 ![](img/6979b54d544ad51cba7b8167af30399e_134.png)
 
 ![](img/6979b54d544ad51cba7b8167af30399e_136.png)
 
+
+![](img/6979b54d544ad51cba7b8167af30399e_138.png)
+
+![](img/6979b54d544ad51cba7b8167af30399e_140.png)
+
+```python
+from langchain.chains import SequentialChain
 # 链1：翻译
 translation_chain = LLMChain(llm=llm, prompt=translation_prompt, output_key=“english_review”)
 # 链2：总结
@@ -245,11 +250,6 @@ summary_chain = LLMChain(llm=llm, prompt=summary_prompt, output_key=“summary�
 language_chain = LLMChain(llm=llm, prompt=language_prompt, output_key=“language”)
 # 链4：生成回复
 response_chain = LLMChain(llm=llm, prompt=response_prompt, output_key=“followup_message”)
-
-![](img/6979b54d544ad51cba7b8167af30399e_138.png)
-
-![](img/6979b54d544ad51cba7b8167af30399e_140.png)
-
 # 组合成通用顺序链
 overall_chain = SequentialChain(
     chains=[translation_chain, summary_chain, language_chain, response_chain],
@@ -308,48 +308,48 @@ overall_chain = SequentialChain(
 ![](img/6979b54d544ad51cba7b8167af30399e_170.png)
 
 **核心代码示例（关键部分）**：
-```python
-from langchain.chains.router import MultiPromptChain
-from langchain.chains.router.llm_router import LLMRouterChain, RouterOutputParser
-from langchain.prompts import PromptTemplate
 
 ![](img/6979b54d544ad51cba7b8167af30399e_172.png)
 
 ![](img/6979b54d544ad51cba7b8167af30399e_174.png)
 
+
+![](img/6979b54d544ad51cba7b8167af30399e_176.png)
+
+
+![](img/6979b54d544ad51cba7b8167af30399e_178.png)
+
+![](img/6979b54d544ad51cba7b8167af30399e_180.png)
+
+
+![](img/6979b54d544ad51cba7b8167af30399e_182.png)
+
+![](img/6979b54d544ad51cba7b8167af30399e_184.png)
+
+
+![](img/6979b54d544ad51cba7b8167af30399e_186.png)
+
+```python
+from langchain.chains.router import MultiPromptChain
+from langchain.chains.router.llm_router import LLMRouterChain, RouterOutputParser
+from langchain.prompts import PromptTemplate
 # 1. 定义不同主题的提示信息
 destinations = [
     {“name”: “physics”, “description”: “适用于回答物理问题”, “prompt”: physics_prompt},
     # ... 其他主题
 ]
-
-![](img/6979b54d544ad51cba7b8167af30399e_176.png)
-
 # 2. 创建目的地链
 destination_chains = {}
 for d in destinations:
     prompt = d[“prompt”]
     chain = LLMChain(llm=llm, prompt=prompt)
     destination_chains[d[“name”]] = chain
-
-![](img/6979b54d544ad51cba7b8167af30399e_178.png)
-
-![](img/6979b54d544ad51cba7b8167af30399e_180.png)
-
 # 3. 创建默认链
 default_chain = LLMChain(llm=llm, prompt=default_prompt)
-
-![](img/6979b54d544ad51cba7b8167af30399e_182.png)
-
-![](img/6979b54d544ad51cba7b8167af30399e_184.png)
-
 # 4. 构建路由器模板和链
 router_template = “““根据用户问题，将其路由到最合适的提示模板...““”
 router_prompt = PromptTemplate.from_template(router_template)
 router_chain = LLMRouterChain.from_llm(llm, router_prompt, output_parser=RouterOutputParser())
-
-![](img/6979b54d544ad51cba7b8167af30399e_186.png)
-
 # 5. 组合成最终的多提示链
 chain = MultiPromptChain(
     router_chain=router_chain,

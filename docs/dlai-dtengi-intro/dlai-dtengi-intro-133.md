@@ -60,6 +60,9 @@ with DAG(
 
 ![](img/6cdb079a437cbd64bfeeb0ac76a73e35_4.png)
 
+
+![](img/6cdb079a437cbd64bfeeb0ac76a73e35_6.png)
+
 ```python
 from airflow.operators.python import PythonOperator
 
@@ -82,9 +85,6 @@ transform_task = PythonOperator(
     task_id='transform',
     python_callable=transform_data
 )
-
-![](img/6cdb079a437cbd64bfeeb0ac76a73e35_6.png)
-
 load_task = PythonOperator(
     task_id='load',
     python_callable=load_data

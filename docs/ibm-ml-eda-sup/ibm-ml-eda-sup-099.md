@@ -86,8 +86,6 @@
 
 ![](img/916255a354808a4764b2e500da6f91ce_50.png)
 
-```python
-from sklearn.model_selection import StratifiedShuffleSplit
 
 ![](img/916255a354808a4764b2e500da6f91ce_52.png)
 
@@ -99,8 +97,6 @@ from sklearn.model_selection import StratifiedShuffleSplit
 
 ![](img/916255a354808a4764b2e500da6f91ce_57.png)
 
-# 创建分层抽样拆分器
-sss = StratifiedShuffleSplit(n_splits=1, test_size=0.3, random_state=42)
 
 ![](img/916255a354808a4764b2e500da6f91ce_59.png)
 
@@ -108,6 +104,10 @@ sss = StratifiedShuffleSplit(n_splits=1, test_size=0.3, random_state=42)
 
 ![](img/916255a354808a4764b2e500da6f91ce_61.png)
 
+```python
+from sklearn.model_selection import StratifiedShuffleSplit
+# 创建分层抽样拆分器
+sss = StratifiedShuffleSplit(n_splits=1, test_size=0.3, random_state=42)
 # 生成训练和测试索引
 for train_index, test_index in sss.split(X, y):
     X_train, X_test = X.iloc[train_index], X.iloc[test_index]
@@ -195,13 +195,13 @@ print(y_test.value_counts(normalize=True))
 
 ![](img/916255a354808a4764b2e500da6f91ce_104.png)
 
-```python
-from sklearn.linear_model import LogisticRegression
 
 ![](img/916255a354808a4764b2e500da6f91ce_106.png)
 
 ![](img/916255a354808a4764b2e500da6f91ce_107.png)
 
+```python
+from sklearn.linear_model import LogisticRegression
 # 拟合无正则化的逻辑回归模型
 lr = LogisticRegression(solver='liblinear').fit(X_train, y_train)
 ```
@@ -234,8 +234,6 @@ lr = LogisticRegression(solver='liblinear').fit(X_train, y_train)
 
 ![](img/916255a354808a4764b2e500da6f91ce_121.png)
 
-```python
-from sklearn.linear_model import LogisticRegressionCV
 
 ![](img/916255a354808a4764b2e500da6f91ce_122.png)
 
@@ -243,8 +241,6 @@ from sklearn.linear_model import LogisticRegressionCV
 
 ![](img/916255a354808a4764b2e500da6f91ce_124.png)
 
-# 拟合带L1正则化的逻辑回归模型（交叉验证选择最佳C值）
-lr_l1 = LogisticRegressionCV(Cs=10, cv=4, penalty='l1', solver='liblinear').fit(X_train, y_train)
 
 ![](img/916255a354808a4764b2e500da6f91ce_126.png)
 
@@ -260,6 +256,10 @@ lr_l1 = LogisticRegressionCV(Cs=10, cv=4, penalty='l1', solver='liblinear').fit(
 
 ![](img/916255a354808a4764b2e500da6f91ce_132.png)
 
+```python
+from sklearn.linear_model import LogisticRegressionCV
+# 拟合带L1正则化的逻辑回归模型（交叉验证选择最佳C值）
+lr_l1 = LogisticRegressionCV(Cs=10, cv=4, penalty='l1', solver='liblinear').fit(X_train, y_train)
 # 拟合带L2正则化的逻辑回归模型
 lr_l2 = LogisticRegressionCV(Cs=10, cv=4, penalty='l2', solver='liblinear').fit(X_train, y_train)
 ```
@@ -345,8 +345,6 @@ lr_l2 = LogisticRegressionCV(Cs=10, cv=4, penalty='l2', solver='liblinear').fit(
 
 ![](img/916255a354808a4764b2e500da6f91ce_174.png)
 
-```python
-import pandas as pd
 
 ![](img/916255a354808a4764b2e500da6f91ce_176.png)
 
@@ -354,22 +352,11 @@ import pandas as pd
 
 ![](img/916255a354808a4764b2e500da6f91ce_179.png)
 
-coefficients = []
-coef_labels = ['LR', 'L1', 'L2']
-coef_models = [lr, lr_l1, lr_l2]
 
 ![](img/916255a354808a4764b2e500da6f91ce_181.png)
 
 ![](img/916255a354808a4764b2e500da6f91ce_182.png)
 
-for label, model in zip(coef_labels, coef_models):
-    # 获取模型系数
-    coef_values = model.coef_
-    # 创建多层列索引
-    multi_index = pd.MultiIndex.from_product([[label], range(coef_values.shape[0])], names=['model', 'class'])
-    # 将系数转换为DataFrame并转置，使每个类别为一列
-    coef_df = pd.DataFrame(coef_values.T, columns=multi_index)
-    coefficients.append(coef_df)
 
 ![](img/916255a354808a4764b2e500da6f91ce_183.png)
 
@@ -385,6 +372,19 @@ for label, model in zip(coef_labels, coef_models):
 
 ![](img/916255a354808a4764b2e500da6f91ce_190.png)
 
+```python
+import pandas as pd
+coefficients = []
+coef_labels = ['LR', 'L1', 'L2']
+coef_models = [lr, lr_l1, lr_l2]
+for label, model in zip(coef_labels, coef_models):
+    # 获取模型系数
+    coef_values = model.coef_
+    # 创建多层列索引
+    multi_index = pd.MultiIndex.from_product([[label], range(coef_values.shape[0])], names=['model', 'class'])
+    # 将系数转换为DataFrame并转置，使每个类别为一列
+    coef_df = pd.DataFrame(coef_values.T, columns=multi_index)
+    coefficients.append(coef_df)
 # 沿列方向拼接所有系数
 all_coefficients = pd.concat(coefficients, axis=1)
 ```
@@ -415,8 +415,6 @@ all_coefficients = pd.concat(coefficients, axis=1)
 
 ![](img/916255a354808a4764b2e500da6f91ce_207.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/916255a354808a4764b2e500da6f91ce_209.png)
 
@@ -428,8 +426,6 @@ import matplotlib.pyplot as plt
 
 ![](img/916255a354808a4764b2e500da6f91ce_215.png)
 
-fig, axes = plt.subplots(nrows=3, ncols=2, figsize=(12, 10))
-axes = axes.flatten()  # 将轴数组展平为一维，便于循环
 
 ![](img/916255a354808a4764b2e500da6f91ce_217.png)
 
@@ -439,6 +435,19 @@ axes = axes.flatten()  # 将轴数组展平为一维，便于循环
 
 ![](img/916255a354808a4764b2e500da6f91ce_220.png)
 
+
+![](img/916255a354808a4764b2e500da6f91ce_222.png)
+
+![](img/916255a354808a4764b2e500da6f91ce_224.png)
+
+![](img/916255a354808a4764b2e500da6f91ce_226.png)
+
+![](img/916255a354808a4764b2e500da6f91ce_227.png)
+
+```python
+import matplotlib.pyplot as plt
+fig, axes = plt.subplots(nrows=3, ncols=2, figsize=(12, 10))
+axes = axes.flatten()  # 将轴数组展平为一维，便于循环
 for i, ax in enumerate(axes):
     # 为每个子图选择对应类别（0-5）在所有模型下的系数
     coef_data = all_coefficients.xs(i, level=1, axis=1)
@@ -450,15 +459,6 @@ for i, ax in enumerate(axes):
     if i == 0:
         ax.legend(loc=4)
     ax.set_title(f'Coefficients for Class {i} vs Rest')
-
-![](img/916255a354808a4764b2e500da6f91ce_222.png)
-
-![](img/916255a354808a4764b2e500da6f91ce_224.png)
-
-![](img/916255a354808a4764b2e500da6f91ce_226.png)
-
-![](img/916255a354808a4764b2e500da6f91ce_227.png)
-
 plt.tight_layout()
 plt.show()
 ```

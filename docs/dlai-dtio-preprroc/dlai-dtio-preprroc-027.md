@@ -65,11 +65,11 @@ https://api.fda.gov/food/enforcement.json?search=distribution_pattern:nationwide
 
 如果你想获取五个结果，可以在基础端点后添加 `?limit=5`：
 
-```python
-import requests
 
 ![](img/c9fd1a7a6a31675e64119486d2638619_7.png)
 
+```python
+import requests
 url = “https://api.fda.gov/food/enforcement.json?limit=5”
 response = requests.get(url)
 data = response.json()

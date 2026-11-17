@@ -9,11 +9,11 @@
 
 在模块1中，你已经见过`Sequential`的用法。它非常便捷，但PyTorch中更常见且灵活的模式是使用`nn.Module`来创建自定义模型。以下代码实现的功能与`Sequential`版本完全相同，但提供了更多控制权。
 
-```python
-import torch.nn as nn
 
 ![](img/644b5b157fba1443d1e94777dcc396bc_1.png)
 
+```python
+import torch.nn as nn
 class CustomModel(nn.Module):
     def __init__(self):
         super().__init__()

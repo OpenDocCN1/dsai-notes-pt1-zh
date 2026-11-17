@@ -216,15 +216,21 @@ for obj in response.objects:
 2.  使用UMAP将向量从1400维降至2维。
 3.  使用散点图绘制降维后的向量，相似内容会聚集在一起。
 
-```python
-import pandas as pd
-import umap
-import plotly.express as px
 
 ![](img/0909184594c1cab49f74de44e0dbd5e0_5.png)
 
 ![](img/0909184594c1cab49f74de44e0dbd5e0_6.png)
 
+
+![](img/0909184594c1cab49f74de44e0dbd5e0_8.png)
+
+
+![](img/0909184594c1cab49f74de44e0dbd5e0_10.png)
+
+```python
+import pandas as pd
+import umap
+import plotly.express as px
 # 1. 获取所有对象的向量和元数据
 all_objects = animals.iterator(include_vector=True)
 embeddings = []
@@ -232,9 +238,6 @@ labels = []
 for obj in all_objects:
     embeddings.append(obj.vector['default'])
     labels.append(obj.properties['media_type'])
-
-![](img/0909184594c1cab49f74de44e0dbd5e0_8.png)
-
 # 2. 使用UMAP降维
 reducer = umap.UMAP(n_components=2, random_state=42)
 embeddings_2d = reducer.fit_transform(embeddings)
@@ -242,9 +245,6 @@ embeddings_2d = reducer.fit_transform(embeddings)
 # 3. 创建DataFrame并绘图
 df = pd.DataFrame(embeddings_2d, columns=['x', 'y'])
 df['media_type'] = labels
-
-![](img/0909184594c1cab49f74de44e0dbd5e0_10.png)
-
 fig = px.scatter(df, x='x', y='y', color='media_type',
                  title='多模态向量空间可视化 (UMAP降维)')
 fig.show()

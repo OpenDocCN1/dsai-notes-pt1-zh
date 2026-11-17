@@ -83,11 +83,11 @@
 
 让我展示一下自定义工具的样子。这是一个构建自定义工具的示例代码：
 
-```python
-from crewai_tools import tool
 
 ![](img/e3a216053a88a19a15e3a94aa10fb071_13.png)
 
+```python
+from crewai_tools import tool
 @tool("获取天气")
 def get_weather(city: str) -> str:
     """

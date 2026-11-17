@@ -66,12 +66,12 @@
 ![](img/663685fc9be55e006de7cce1f6541c52_23.png)
 
 **核心代码示例**：
-```python
-import socket
-import threading
 
 ![](img/663685fc9be55e006de7cce1f6541c52_24.png)
 
+```python
+import socket
+import threading
 def receive_data(client_socket):
     while True:
         data = client_socket.recv(1024)

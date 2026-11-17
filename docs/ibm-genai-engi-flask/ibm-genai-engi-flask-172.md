@@ -65,14 +65,14 @@ demo.launch()
 就像`gr.Textbox`用于创建文本字段一样，`gr.Number`用于创建数字字段。你可以将`gr.Number`和`gr.Textbox`作为输入列表传递。同样地，如果你想添加更多输入，可以在这里的输入列表中添加。
 
 以下是处理文本和数字输入的示例代码：
+
+![](img/2aec33c869d450f8d3ef5bfadd816682_5.png)
+
 ```python
 import gradio as gr
 
 def combine_text_and_number(text, number):
     return f"Text: {text}, Number: {number}"
-
-![](img/2aec33c869d450f8d3ef5bfadd816682_5.png)
-
 demo = gr.Interface(
     fn=combine_text_and_number,
     inputs=[gr.Textbox(label="Enter text"), gr.Number(label="Enter a number")],
@@ -100,11 +100,11 @@ demo.launch()
 
 接着，你定义`count_files`函数来计算用户上传的文件数量。
 
-```python
-import gradio as gr
 
 ![](img/2aec33c869d450f8d3ef5bfadd816682_11.png)
 
+```python
+import gradio as gr
 def count_files(files):
     return len(files)
 

@@ -82,21 +82,21 @@ print(matplotlib.get_backend())
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_37.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_39.png)
 
-# 创建 Figure
-fig = plt.figure()
-
-# 创建 Axes
-ax = fig.add_subplot(111)
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_41.png)
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_43.png)
 
+```python
+import matplotlib.pyplot as plt
+# 创建 Figure
+fig = plt.figure()
+
+# 创建 Axes
+ax = fig.add_subplot(111)
 # 显示图形
 plt.show()
 ```
@@ -113,24 +113,9 @@ Matplotlib 提供了多种绘图函数，其中最常用的是 `plot` 和 `scatt
 
 以下是使用 `plot` 和 `scatter` 的示例：
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-# 创建数据
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_47.png)
 
-# 创建 Figure 和 Axes
-fig, ax = plt.subplots()
-
-# 绘制线图
-ax.plot(x, y, color='blue', linewidth=2)
-
-# 绘制散点图
-ax.scatter(x, y, color='red', marker='o')
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_49.png)
 
@@ -144,9 +129,6 @@ ax.scatter(x, y, color='red', marker='o')
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_57.png)
 
-# 设置坐标轴范围
-ax.set_xlim(0, 10)
-ax.set_ylim(-1, 1)
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_59.png)
 
@@ -160,6 +142,24 @@ ax.set_ylim(-1, 1)
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_69.png)
 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 创建数据
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+# 创建 Figure 和 Axes
+fig, ax = plt.subplots()
+
+# 绘制线图
+ax.plot(x, y, color='blue', linewidth=2)
+
+# 绘制散点图
+ax.scatter(x, y, color='red', marker='o')
+# 设置坐标轴范围
+ax.set_xlim(0, 10)
+ax.set_ylim(-1, 1)
 # 显示图形
 plt.show()
 ```
@@ -204,9 +204,6 @@ Matplotlib 支持在单个 Figure 中创建多个子图。你可以使用 `subpl
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_96.png)
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_98.png)
 
@@ -216,6 +213,19 @@ import matplotlib.pyplot as plt
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_104.png)
 
+
+![](img/e4958744496fcbb23b7c948eb7b9c702_106.png)
+
+![](img/e4958744496fcbb23b7c948eb7b9c702_107.png)
+
+![](img/e4958744496fcbb23b7c948eb7b9c702_109.png)
+
+
+![](img/e4958744496fcbb23b7c948eb7b9c702_111.png)
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
 # 创建 2x2 的子图网格
 fig, axes = plt.subplots(2, 2)
 
@@ -228,18 +238,8 @@ axes[0, 1].set_title('Subplot 2')
 
 axes[1, 0].bar(range(5), np.random.rand(5))
 axes[1, 0].set_title('Subplot 3')
-
-![](img/e4958744496fcbb23b7c948eb7b9c702_106.png)
-
-![](img/e4958744496fcbb23b7c948eb7b9c702_107.png)
-
-![](img/e4958744496fcbb23b7c948eb7b9c702_109.png)
-
 axes[1, 1].hist(np.random.randn(100), bins=20)
 axes[1, 1].set_title('Subplot 4')
-
-![](img/e4958744496fcbb23b7c948eb7b9c702_111.png)
-
 # 调整布局
 plt.tight_layout()
 plt.show()
@@ -267,21 +267,21 @@ plt.show()
 
 以下是颜色、标记和线型的示例：
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_125.png)
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_127.png)
 
-# 创建数据
-x = [1, 2, 3, 4, 5]
-y = [1, 4, 9, 16, 25]
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_129.png)
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_131.png)
 
+```python
+import matplotlib.pyplot as plt
+# 创建数据
+x = [1, 2, 3, 4, 5]
+y = [1, 4, 9, 16, 25]
 # 绘制带有不同颜色、标记和线型的图形
 plt.plot(x, y, color='red', marker='o', linestyle='--', linewidth=2, label='Data')
 plt.xlabel('X Axis')
@@ -325,12 +325,6 @@ plt.show()
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_153.png)
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-# 创建数据
-data = np.random.rand(10, 10)
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_155.png)
 
@@ -340,6 +334,12 @@ data = np.random.rand(10, 10)
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_161.png)
 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 创建数据
+data = np.random.rand(10, 10)
 # 绘制热图
 plt.imshow(data, cmap='viridis')
 plt.colorbar()
@@ -376,11 +376,6 @@ Matplotlib 支持使用 LaTeX 语法渲染数学文本。你可以通过 `rcPara
 
 以下是使用数学文本的示例：
 
-```python
-import matplotlib.pyplot as plt
-
-# 启用 LaTeX 渲染
-plt.rcParams['text.usetex'] = True
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_183.png)
 
@@ -388,6 +383,11 @@ plt.rcParams['text.usetex'] = True
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_185.png)
 
+```python
+import matplotlib.pyplot as plt
+
+# 启用 LaTeX 渲染
+plt.rcParams['text.usetex'] = True
 # 绘制图形并添加数学文本
 plt.plot([1, 2, 3], [1, 4, 9])
 plt.xlabel(r'$x$')
@@ -461,9 +461,6 @@ plt.show()
 
 以下是属性循环的示例：
 
-```python
-import matplotlib.pyplot as plt
-from cycler import cycler
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_217.png)
 
@@ -471,9 +468,6 @@ from cycler import cycler
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_221.png)
 
-# 自定义属性循环
-custom_cycler = cycler(color=['r', 'g', 'b']) * cycler(linestyle=['-', '--', ':'])
-plt.rcParams['axes.prop_cycle'] = custom_cycler
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_223.png)
 
@@ -485,12 +479,18 @@ plt.rcParams['axes.prop_cycle'] = custom_cycler
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_231.png)
 
-# 绘制多个图形
-for i in range(5):
-    plt.plot([i, i+1, i+2], label=f'Line {i+1}')
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_233.png)
 
+```python
+import matplotlib.pyplot as plt
+from cycler import cycler
+# 自定义属性循环
+custom_cycler = cycler(color=['r', 'g', 'b']) * cycler(linestyle=['-', '--', ':'])
+plt.rcParams['axes.prop_cycle'] = custom_cycler
+# 绘制多个图形
+for i in range(5):
+    plt.plot([i, i+1, i+2], label=f'Line {i+1}')
 plt.legend()
 plt.show()
 ```
@@ -503,8 +503,6 @@ plt.show()
 
 以下是操作艺术家对象的示例：
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_235.png)
 
@@ -516,9 +514,6 @@ import matplotlib.pyplot as plt
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_243.png)
 
-# 创建图形
-fig, ax = plt.subplots()
-line, = ax.plot([1, 2, 3], [1, 4, 9])
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_245.png)
 
@@ -526,10 +521,6 @@ line, = ax.plot([1, 2, 3], [1, 4, 9])
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_249.png)
 
-# 修改线条属性
-line.set_color('red')
-line.set_linewidth(3)
-line.set_linestyle('--')
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_251.png)
 
@@ -537,6 +528,15 @@ line.set_linestyle('--')
 
 ![](img/e4958744496fcbb23b7c948eb7b9c702_254.png)
 
+```python
+import matplotlib.pyplot as plt
+# 创建图形
+fig, ax = plt.subplots()
+line, = ax.plot([1, 2, 3], [1, 4, 9])
+# 修改线条属性
+line.set_color('red')
+line.set_linewidth(3)
+line.set_linestyle('--')
 plt.show()
 ```
 

@@ -171,19 +171,9 @@ def plot_stock_prices(data_dict, save_path="stock_prices_plot.png"):
 
 ![](img/8f7948a90b9ff08caa70aca88ac40ec3_28.png)
 
-```python
-# 更新执行器配置，包含用户定义的函数
-executor_with_funcs = LocalCommandLineCodeExecutor(
-    timeout=60,
-    work_dir="coding",
-    functions=[get_stock_prices, plot_stock_prices]
-)
 
 ![](img/8f7948a90b9ff08caa70aca88ac40ec3_29.png)
 
-# 获取格式化后的函数提示，并将其添加到助手智能体的系统消息中
-func_prompt = executor_with_funcs.format_functions_for_prompt([get_stock_prices, plot_stock_prices])
-new_system_message = code_writer_agent.system_message + "\n\n" + func_prompt
 
 ![](img/8f7948a90b9ff08caa70aca88ac40ec3_31.png)
 
@@ -193,6 +183,16 @@ new_system_message = code_writer_agent.system_message + "\n\n" + func_prompt
 
 ![](img/8f7948a90b9ff08caa70aca88ac40ec3_35.png)
 
+```python
+# 更新执行器配置，包含用户定义的函数
+executor_with_funcs = LocalCommandLineCodeExecutor(
+    timeout=60,
+    work_dir="coding",
+    functions=[get_stock_prices, plot_stock_prices]
+)
+# 获取格式化后的函数提示，并将其添加到助手智能体的系统消息中
+func_prompt = executor_with_funcs.format_functions_for_prompt([get_stock_prices, plot_stock_prices])
+new_system_message = code_writer_agent.system_message + "\n\n" + func_prompt
 # 使用新的系统消息重新创建代码编写器智能体
 code_writer_agent_with_funcs = AssistantAgent(
     name="code_writer_agent_with_funcs",

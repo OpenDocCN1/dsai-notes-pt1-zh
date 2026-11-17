@@ -20,12 +20,12 @@
 
 在开始绘制线条之前，我们首先需要创建一个基础的图表作为画布。我们将使用一个简单的散点图作为示例。
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
 
 ![](img/7a379eaa3c65d47a09c81a755a8d562e_5.png)
 
+```python
+import matplotlib.pyplot as plt
+import numpy as np
 # 创建数据
 x = np.linspace(-10, 10, 100)
 y = x**2

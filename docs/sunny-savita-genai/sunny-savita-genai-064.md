@@ -12,14 +12,14 @@
 
 首先，我们需要导入必要的模块并创建一些基础函数。以下是两个简单的函数，它们将作为我们图中的节点。
 
-```python
-def function_one(input_str):
-    return input_str + " concatenated with a string."
 
 ![](img/9cac1e7dcd7c4eb95567b56a821b710d_3.png)
 
 ![](img/9cac1e7dcd7c4eb95567b56a821b710d_4.png)
 
+```python
+def function_one(input_str):
+    return input_str + " concatenated with a string."
 def function_two(input_str):
     return input_str + " concatenated with the is string."
 ```
@@ -28,13 +28,13 @@ def function_two(input_str):
 
 LangGraph 提供了两种主要的图类：`Graph` 和 `StateGraph`。我们将从基础的 `Graph` 类开始。
 
-```python
-from langgraph.graph import Graph
 
 ![](img/9cac1e7dcd7c4eb95567b56a821b710d_6.png)
 
 ![](img/9cac1e7dcd7c4eb95567b56a821b710d_7.png)
 
+```python
+from langgraph.graph import Graph
 # 创建一个图对象，并命名为 workflow_1
 workflow_1 = Graph()
 ```

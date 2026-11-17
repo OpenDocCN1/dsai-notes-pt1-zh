@@ -52,12 +52,12 @@ model.eval()
 
 ![](img/c885dfe548f252ed653964b1bd0374b3_9.png)
 
-```python
-# 仅保存模型的状态字典（包含参数）
-torch.save(model.state_dict(), ‘model_state_dict.pth’)
 
 ![](img/c885dfe548f252ed653964b1bd0374b3_11.png)
 
+```python
+# 仅保存模型的状态字典（包含参数）
+torch.save(model.state_dict(), ‘model_state_dict.pth’)
 # 加载时，需要先创建模型结构，再加载参数
 loaded_model = ModelClass() # 先实例化模型结构
 loaded_model.load_state_dict(torch.load(‘model_state_dict.pth’))
@@ -80,12 +80,12 @@ loaded_model.eval()
 
 ![](img/c885dfe548f252ed653964b1bd0374b3_16.png)
 
-```python
-import torch
-import torch.nn as nn
 
 ![](img/c885dfe548f252ed653964b1bd0374b3_18.png)
 
+```python
+import torch
+import torch.nn as nn
 class SimpleModel(nn.Module):
     def __init__(self, input_size):
         super(SimpleModel, self).__init__()
@@ -177,35 +177,40 @@ for param in loaded_model.parameters():
 
 ![](img/c885dfe548f252ed653964b1bd0374b3_38.png)
 
+
+![](img/c885dfe548f252ed653964b1bd0374b3_40.png)
+
+
+![](img/c885dfe548f252ed653964b1bd0374b3_41.png)
+
+![](img/c885dfe548f252ed653964b1bd0374b3_43.png)
+
+
+![](img/c885dfe548f252ed653964b1bd0374b3_45.png)
+
+
+![](img/c885dfe548f252ed653964b1bd0374b3_47.png)
+
+
+![](img/c885dfe548f252ed653964b1bd0374b3_49.png)
+
+![](img/c885dfe548f252ed653964b1bd0374b3_50.png)
+
 ```python
 # 假设我们有一些训练组件
 learning_rate = 0.001
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 epoch = 90
-
-![](img/c885dfe548f252ed653964b1bd0374b3_40.png)
-
 # 创建一个检查点字典
 checkpoint = {
     ‘epoch’: epoch,
     ‘model_state_dict’: model.state_dict(),
     ‘optimizer_state_dict’: optimizer.state_dict(),
 }
-
-![](img/c885dfe548f252ed653964b1bd0374b3_41.png)
-
-![](img/c885dfe548f252ed653964b1bd0374b3_43.png)
-
 # 保存检查点
 torch.save(checkpoint, ‘checkpoint.pth’)
-
-![](img/c885dfe548f252ed653964b1bd0374b3_45.png)
-
 # --- 加载检查点 ---
 loaded_checkpoint = torch.load(‘checkpoint.pth’)
-
-![](img/c885dfe548f252ed653964b1bd0374b3_47.png)
-
 # 提取信息
 epoch = loaded_checkpoint[‘epoch’]
 
@@ -216,11 +221,6 @@ loaded_optimizer = torch.optim.SGD(loaded_model.parameters(), lr=0) # 学习率�
 # 加载状态
 loaded_model.load_state_dict(loaded_checkpoint[‘model_state_dict’])
 loaded_optimizer.load_state_dict(loaded_checkpoint[‘optimizer_state_dict’])
-
-![](img/c885dfe548f252ed653964b1bd0374b3_49.png)
-
-![](img/c885dfe548f252ed653964b1bd0374b3_50.png)
-
 # 验证优化器状态（例如学习率）已正确加载
 print(loaded_optimizer.state_dict())
 ```
@@ -281,12 +281,12 @@ loaded_model.to(device) # 将模型送到GPU
 
 **3. 在CPU上保存，在GPU上加载**
 
-```python
-# 保存（在CPU上，默认）
-torch.save(model.state_dict(), ‘model_cpu.pth’)
 
 ![](img/c885dfe548f252ed653964b1bd0374b3_63.png)
 
+```python
+# 保存（在CPU上，默认）
+torch.save(model.state_dict(), ‘model_cpu.pth’)
 # 加载（到GPU上）
 device = torch.device(‘cuda’)
 loaded_model = SimpleModel(6)

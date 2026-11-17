@@ -113,16 +113,16 @@ os.environ[“TAVILY_API_KEY”] = “your-tavily-api-key”
 
 我们将索引几篇来自 LangChain 的博客文章（主题包括智能体、提示工程、对抗性测试）。以下是创建向量数据库的步骤：
 
-```python
-from langchain_community.document_loaders import WebBaseLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import SKLearnVectorStore
-from langchain_openai import OpenAIEmbeddings
 
 ![](img/b4a524dad6217cb8930d33cfb95458ad_26.png)
 
 ![](img/b4a524dad6217cb8930d33cfb95458ad_27.png)
 
+```python
+from langchain_community.document_loaders import WebBaseLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.vectorstores import SKLearnVectorStore
+from langchain_openai import OpenAIEmbeddings
 # 1. 加载文档
 urls = [
     “https://blog.langchain.com/agents-overview/”,
@@ -214,6 +214,11 @@ llm = ChatLlama(model=“llama3.1”)
 
 **构建基础的 RAG 链：**
 这是一个简单的问答链，基于检索到的文档生成答案。
+
+![](img/b4a524dad6217cb8930d33cfb95458ad_46.png)
+
+![](img/b4a524dad6217cb8930d33cfb95458ad_47.png)
+
 ```python
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -226,11 +231,6 @@ rag_prompt = ChatPromptTemplate.from_template(“””
 问题：{question}
 答案：
 “””)
-
-![](img/b4a524dad6217cb8930d33cfb95458ad_46.png)
-
-![](img/b4a524dad6217cb8930d33cfb95458ad_47.png)
-
 # 构建 RAG 链
 rag_chain = rag_prompt | llm | StrOutputParser()
 ```
@@ -296,12 +296,12 @@ grader = grader_prompt | llm.with_structured_output(GradeDocuments)
 ![](img/b4a524dad6217cb8930d33cfb95458ad_59.png)
 
 首先，定义智能体运行过程中需要维护的状态：
-```python
-from typing import TypedDict, List, Annotated
-import operator
 
 ![](img/b4a524dad6217cb8930d33cfb95458ad_60.png)
 
+```python
+from typing import TypedDict, List, Annotated
+import operator
 class GraphState(TypedDict):
     question: str # 用户问题
     generation: str # 最终生成的答案
@@ -430,6 +430,18 @@ def generate(state: GraphState):
 
 **5. 定义控制流图：**
 最后，我们将所有节点连接起来，定义完整的工作流。
+
+![](img/b4a524dad6217cb8930d33cfb95458ad_77.png)
+
+![](img/b4a524dad6217cb8930d33cfb95458ad_78.png)
+
+
+![](img/b4a524dad6217cb8930d33cfb95458ad_79.png)
+
+![](img/b4a524dad6217cb8930d33cfb95458ad_80.png)
+
+![](img/b4a524dad6217cb8930d33cfb95458ad_81.png)
+
 ```python
 from langgraph.graph import StateGraph, END
 
@@ -444,11 +456,6 @@ workflow.add_node(“generate”, generate)
 
 # 设置入口点
 workflow.set_entry_point(“retrieve”)
-
-![](img/b4a524dad6217cb8930d33cfb95458ad_77.png)
-
-![](img/b4a524dad6217cb8930d33cfb95458ad_78.png)
-
 # 添加边（定义执行路径）
 workflow.add_edge(“retrieve”, “grade_documents”)
 # 根据评估结果决定路径
@@ -463,13 +470,6 @@ workflow.add_conditional_edges(
 )
 workflow.add_edge(“web_search”, “generate”) # 搜索完后生成
 workflow.add_edge(“generate”, END) # 生成后结束
-
-![](img/b4a524dad6217cb8930d33cfb95458ad_79.png)
-
-![](img/b4a524dad6217cb8930d33cfb95458ad_80.png)
-
-![](img/b4a524dad6217cb8930d33cfb95458ad_81.png)
-
 # 编译图
 app = workflow.compile()
 ```

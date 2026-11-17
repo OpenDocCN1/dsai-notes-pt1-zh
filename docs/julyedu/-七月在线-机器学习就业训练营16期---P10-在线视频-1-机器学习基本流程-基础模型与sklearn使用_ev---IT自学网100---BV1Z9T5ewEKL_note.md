@@ -139,9 +139,6 @@ print(f"模型准确率：{accuracy:.2f}")
 ### 示例2：构建Pipeline简化流程
 对于包含多个步骤的流程，可以使用`Pipeline`将其串联，使代码更简洁，并防止数据泄露。
 
-```python
-from sklearn.pipeline import make_pipeline
-from sklearn.ensemble import RandomForestClassifier
 
 ![](img/d2e2c38a4b28a44b2fb37652665e0c84_21.png)
 
@@ -149,6 +146,9 @@ from sklearn.ensemble import RandomForestClassifier
 
 ![](img/d2e2c38a4b28a44b2fb37652665e0c84_25.png)
 
+```python
+from sklearn.pipeline import make_pipeline
+from sklearn.ensemble import RandomForestClassifier
 # 创建一个管道：先标准化，再使用随机森林分类
 pipeline = make_pipeline(StandardScaler(),
                          RandomForestClassifier(n_estimators=100, random_state=42))

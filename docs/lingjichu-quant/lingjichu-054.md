@@ -149,17 +149,17 @@ plt.show()
 
 ![](img/5beaa0df89479d7116195959743cad45_53.png)
 
+
+![](img/5beaa0df89479d7116195959743cad45_55.png)
+
+![](img/5beaa0df89479d7116195959743cad45_57.png)
+
 ```python
 # 假设‘returns’是股票的实际日收益率列
 data['strategy_returns'] = data['signal'] * data['returns']
 # 计算累计收益
 data['cumulative_returns'] = (1 + data['returns']).cumprod()
 data['cumulative_strategy_returns'] = (1 + data['strategy_returns']).cumprod()
-
-![](img/5beaa0df89479d7116195959743cad45_55.png)
-
-![](img/5beaa0df89479d7116195959743cad45_57.png)
-
 # 打印最终收益对比
 print(f"基准累计收益: {data['cumulative_returns'].iloc[-1]:.4f}")
 print(f"聚类策略累计收益: {data['cumulative_strategy_returns'].iloc[-1]:.4f}")

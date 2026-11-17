@@ -59,17 +59,17 @@ g.map(plt.scatter)
 
 ![](img/fac7241cd51289d163c52ef517203e4f_12.png)
 
-```python
-# 创建一个PairGrid对象
-g = sns.PairGrid(iris, hue='species')
 
 ![](img/fac7241cd51289d163c52ef517203e4f_13.png)
 
-# 在对角线位置绘制直方图
-g.map_diag(plt.hist)
 
 ![](img/fac7241cd51289d163c52ef517203e4f_14.png)
 
+```python
+# 创建一个PairGrid对象
+g = sns.PairGrid(iris, hue='species')
+# 在对角线位置绘制直方图
+g.map_diag(plt.hist)
 # 在非对角线位置（上三角和下三角）绘制散点图
 g.map_offdiag(plt.scatter)
 ```
@@ -116,6 +116,9 @@ g.map_lower(sns.kdeplot)
 
 以下示例展示了如何创建一个只包含`sepal_length`（萼片长度）、`sepal_width`（萼片宽度）、`petal_length`（花瓣长度）和`petal_width`（花瓣宽度）这四个变量的自定义网格。
 
+
+![](img/fac7241cd51289d163c52ef517203e4f_25.png)
+
 ```python
 # 定义要使用的变量
 vars = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
@@ -125,9 +128,6 @@ g = sns.PairGrid(iris, hue='species', x_vars=vars, y_vars=vars)
 
 # 在整个网格上绘制散点图
 g.map(plt.scatter)
-
-![](img/fac7241cd51289d163c52ef517203e4f_25.png)
-
 # 添加图例
 g.add_legend()
 ```

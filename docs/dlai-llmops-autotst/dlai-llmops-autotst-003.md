@@ -123,12 +123,6 @@ def eval_expected_words(response, expected_words):
 2.  `test_assistant.py`：包含我们定义的评估函数（如 `eval_expected_words`）和具体的测试用例。
 
 测试用例示例：
-```python
-# test_assistant.py 中的测试用例
-def test_science_quiz():
-    response = assistant_chain.run(category="science", ...)
-    expected = ["引力", "细胞"]
-    assert eval_expected_words(response, expected) == True
 
 ![](img/7316d081545fb41c2d114cbc32cf45f3_7.png)
 
@@ -142,6 +136,12 @@ def test_science_quiz():
 
 ![](img/7316d081545fb41c2d114cbc32cf45f3_12.png)
 
+```python
+# test_assistant.py 中的测试用例
+def test_science_quiz():
+    response = assistant_chain.run(category="science", ...)
+    expected = ["引力", "细胞"]
+    assert eval_expected_words(response, expected) == True
 def test_refusal_for_unknown_topic():
     response = assistant_chain.run(category="history", ...) # 'history' 不在数据中
     expected = ["抱歉"]

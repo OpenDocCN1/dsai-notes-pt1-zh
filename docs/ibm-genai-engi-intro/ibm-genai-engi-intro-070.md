@@ -61,12 +61,12 @@ A = np.array(A)
 ![](img/6ac597160bcfcb93f958aa869dac9b94_19.png)
 
 考虑数组 `A`：
-```python
-# 访问第二行，第三列的元素（索引从0开始）
-element = A[1, 2]  # 值为 23
 
 ![](img/6ac597160bcfcb93f958aa869dac9b94_21.png)
 
+```python
+# 访问第二行，第三列的元素（索引从0开始）
+element = A[1, 2]  # 值为 23
 # 访问第一行，第一列的元素
 element = A[0, 0]  # 值为 11
 ```

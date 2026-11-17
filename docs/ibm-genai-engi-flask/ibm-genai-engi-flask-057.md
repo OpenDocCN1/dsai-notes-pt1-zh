@@ -58,12 +58,12 @@ import numpy as np
 
 接着，创建岭回归模型对象和参数网格字典。
 
-```python
-# 创建模型对象
-ridge = Ridge()
 
 ![](img/20a9351cd1663fe7c973f60aea457440_11.png)
 
+```python
+# 创建模型对象
+ridge = Ridge()
 # 定义参数网格
 parameters = {'alpha': [0.1, 1.0, 10.0]}
 ```
@@ -102,13 +102,13 @@ parameters = {'alpha': [0.1, 1.0, 10.0], 'normalize': [True, False]}
 
 创建和运行网格搜索的代码与之前类似，只是参数网格字典包含了更多维度的组合。输出结果将包含所有不同参数组合的得分。
 
+
+![](img/20a9351cd1663fe7c973f60aea457440_17.png)
+
 ```python
 # 代码类似，但参数网格更复杂
 grid = GridSearchCV(ridge, parameters, cv=5)
 grid.fit(X_train, y_train)
-
-![](img/20a9351cd1663fe7c973f60aea457440_17.png)
-
 # 找到最佳参数组合
 best_combo = grid.best_params_
 # 查看所有参数组合的详细结果

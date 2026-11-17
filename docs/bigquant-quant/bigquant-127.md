@@ -65,6 +65,11 @@ model.fit(X, y)
 
 ![](img/02b5e314afafa7c30d4b02422a77139f_13.png)
 
+
+![](img/02b5e314afafa7c30d4b02422a77139f_15.png)
+
+![](img/02b5e314afafa7c30d4b02422a77139f_17.png)
+
 ```python
 # 在x和y轴上分别生成一系列点
 x1 = np.linspace(-3, 3, 200)  # 生成200个点
@@ -72,11 +77,6 @@ x2 = np.linspace(-3, 3, 180)  # 生成180个点
 
 # 使用meshgrid生成网格坐标矩阵
 X1, X2 = np.meshgrid(x1, x2)
-
-![](img/02b5e314afafa7c30d4b02422a77139f_15.png)
-
-![](img/02b5e314afafa7c30d4b02422a77139f_17.png)
-
 # 将网格矩阵展平并合并，形成测试数据集
 X_test = np.column_stack([X1.ravel(), X2.ravel()])
 ```
@@ -148,20 +148,11 @@ plt.show()
 
 ![](img/02b5e314afafa7c30d4b02422a77139f_43.png)
 
-```python
-# 创建3D图形
-fig = plt.figure(figsize=(12, 9))
-ax = fig.add_subplot(111, projection='3d')
 
 ![](img/02b5e314afafa7c30d4b02422a77139f_45.png)
 
 ![](img/02b5e314afafa7c30d4b02422a77139f_47.png)
 
-# 绘制决策函数曲面
-surf = ax.plot_surface(X1, X2, D, cmap='coolwarm', alpha=0.8, linewidth=0)
-
-# 绘制原始数据点，在3D空间中的高度即为其决策函数值
-ax.scatter(X[:, 0], X[:, 1], model.decision_function(X), c=y, depthshade=True, s=30, edgecolors='k')
 
 ![](img/02b5e314afafa7c30d4b02422a77139f_49.png)
 
@@ -171,6 +162,15 @@ ax.scatter(X[:, 0], X[:, 1], model.decision_function(X), c=y, depthshade=True, s
 
 ![](img/02b5e314afafa7c30d4b02422a77139f_55.png)
 
+```python
+# 创建3D图形
+fig = plt.figure(figsize=(12, 9))
+ax = fig.add_subplot(111, projection='3d')
+# 绘制决策函数曲面
+surf = ax.plot_surface(X1, X2, D, cmap='coolwarm', alpha=0.8, linewidth=0)
+
+# 绘制原始数据点，在3D空间中的高度即为其决策函数值
+ax.scatter(X[:, 0], X[:, 1], model.decision_function(X), c=y, depthshade=True, s=30, edgecolors='k')
 ax.set_xlabel('X1')
 ax.set_ylabel('X2')
 ax.set_zlabel('Decision Function')

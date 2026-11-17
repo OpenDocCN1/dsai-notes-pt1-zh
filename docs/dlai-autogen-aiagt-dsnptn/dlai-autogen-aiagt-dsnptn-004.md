@@ -28,13 +28,13 @@
 
 我们可以导入AutoGen库，并构建一个基于大语言模型的助手智能体作为作者。
 
-```python
-import autogen
 
 ![](img/5cd2f4163b96b4ce9d4a7307f8b01399_12.png)
 
 ![](img/5cd2f4163b96b4ce9d4a7307f8b01399_13.png)
 
+```python
+import autogen
 # 构建作者智能体
 writer = autogen.AssistantAgent(
     name="Writer",

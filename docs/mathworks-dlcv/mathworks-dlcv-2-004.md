@@ -77,15 +77,15 @@
 
 ![](img/320b8cfe2967c4bee1a985454b854722_33.png)
 
+
+![](img/320b8cfe2967c4bee1a985454b854722_35.png)
+
 ```matlab
 % 创建图像数据存储
 imds = imageDatastore('training_images', 'IncludeSubfolders', true, 'LabelSource', 'foldernames');
 
 % 按标签分割数据存储（80%训练，20%验证）
 [imdsTrain, imdsValidation] = splitEachLabel(imds, 0.8, 'randomized');
-
-![](img/320b8cfe2967c4bee1a985454b854722_35.png)
-
 % 创建增强的图像数据存储，调整图像大小
 inputSize = [224 224];
 augimdsTrain = augmentedImageDatastore(inputSize, imdsTrain);

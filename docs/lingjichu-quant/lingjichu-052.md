@@ -47,6 +47,14 @@ def get_holdings(context):
 
 ![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_5.png)
 
+
+![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_7.png)
+
+![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_9.png)
+
+
+![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_11.png)
+
 ```python
 # 首先，执行卖出操作
 for stock in to_sell:
@@ -58,18 +66,10 @@ for stock in to_sell:
 # 检查是否有股票需要买入
 if len(to_buy) == 0:
     return  # 如果没有，则直接返回
-
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_7.png)
-
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_9.png)
-
 # 计算可用于投资的现金总额
 total_cash = context.portfolio.cash
 # 计算平均每只计划买入的股票应分配的资金
 average_cash = total_cash / len(to_buy)
-
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_11.png)
-
 for stock in to_buy:
     # 使用 order_target_value 函数，以目标价值的方式买入股票
     # 此处按平均资金分配买入

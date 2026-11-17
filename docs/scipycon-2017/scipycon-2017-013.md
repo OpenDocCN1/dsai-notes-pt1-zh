@@ -251,15 +251,15 @@ result = even_rdd.collect()
 
 以下是使用 Spark 的解决方案：
 
+
+![](img/65aeecd524e5cd3d380f19e805c9b706_28.png)
+
 ```python
 from pyspark import SparkContext
 sc = SparkContext()
 
 file_names = sc.parallelize(glob.glob('data/*.h5'))
 series_rdd = file_names.map(lambda fn: (fn, pd.read_hdf(fn)['close']))
-
-![](img/65aeecd524e5cd3d380f19e805c9b706_28.png)
-
 # 生成所有股票对（笛卡尔积），并过滤掉自相关的对
 pairs_rdd = series_rdd.cartesian(series_rdd) \
                       .filter(lambda x: x[0][0] != x[1][0])

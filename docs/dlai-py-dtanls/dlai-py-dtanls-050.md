@@ -61,6 +61,13 @@ plt.show()
 *   **为Y轴添加网格线**：便于读取数值。
 *   **修改图例标题**：使其更规范（如首字母大写）。
 
+
+![](img/5b2cede5d53e85a68058fd3dd34f72b0_8.png)
+
+![](img/5b2cede5d53e85a68058fd3dd34f72b0_9.png)
+
+![](img/5b2cede5d53e85a68058fd3dd34f72b0_10.png)
+
 ```python
 # 美化堆叠柱状图
 ax = stack_data.plot(kind='bar', stacked=True, color=['#1f77b4', '#ff7f0e', '#2ca02c'])
@@ -69,13 +76,6 @@ ax = stack_data.plot(kind='bar', stacked=True, color=['#1f77b4', '#ff7f0e', '#2c
 ax.set_title('贷款总额构成（按信用等级与房屋所有权）')
 ax.set_xlabel('信用等级 (Grade)')
 ax.set_ylabel('贷款总额 (Loan Amount)')
-
-![](img/5b2cede5d53e85a68058fd3dd34f72b0_8.png)
-
-![](img/5b2cede5d53e85a68058fd3dd34f72b0_9.png)
-
-![](img/5b2cede5d53e85a68058fd3dd34f72b0_10.png)
-
 # 调整X轴标签
 ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
 

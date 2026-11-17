@@ -93,15 +93,15 @@ def py_fact(n):
 
 ![](img/b8d9e1d8490d7c84cfc812d37b0318c6_13.png)
 
+
+![](img/b8d9e1d8490d7c84cfc812d37b0318c6_15.png)
+
 ```python
 %%cython
 def cy_fact(n):
     if n <= 1:
         return 1
     return n * cy_fact(n-1)
-
-![](img/b8d9e1d8490d7c84cfc812d37b0318c6_15.png)
-
 %timeit cy_fact(20)
 # 输出示例：1.25 µs ± 4.37 ns per loop
 ```
@@ -147,14 +147,6 @@ cpdef double cp_fact(double n):
 **迭代 vs 递归：**
 Python对递归优化不佳。将递归改为迭代通常能进一步提升性能。
 
-```python
-%%cython
-cpdef double cp_fact_loop(int n):
-    cdef double r = 1
-    cdef int i
-    for i in range(2, n+1):
-        r *= i
-    return r
 
 ![](img/b8d9e1d8490d7c84cfc812d37b0318c6_21.png)
 
@@ -164,6 +156,14 @@ cpdef double cp_fact_loop(int n):
 
 ![](img/b8d9e1d8490d7c84cfc812d37b0318c6_26.png)
 
+```python
+%%cython
+cpdef double cp_fact_loop(int n):
+    cdef double r = 1
+    cdef int i
+    for i in range(2, n+1):
+        r *= i
+    return r
 %timeit cp_fact_loop(20)
 # 输出示例：65 ns ± 0.091 ns per loop
 ```
@@ -466,15 +466,15 @@ def entropy_numpy(p):
 
 **2. 初级Cython版本（提升有限）：**
 仅编译和简单声明。
-```python
-%%cython
-import numpy as np
-cimport numpy as cnp
 
 ![](img/b8d9e1d8490d7c84cfc812d37b0318c6_141.png)
 
 ![](img/b8d9e1d8490d7c84cfc812d37b0318c6_143.png)
 
+```python
+%%cython
+import numpy as np
+cimport numpy as cnp
 def entropy_cy_v0(cnp.ndarray p):
     return -np.sum(p * np.log(p)) # 仍调用Python的np.sum和np.log
 ```
@@ -500,12 +500,19 @@ def entropy_cy_v1(cnp.ndarray[double, ndim=1] p):
 
 **4. 优化版本2（使用内存视图，更通用）：**
 内存视图语法更简洁，且不限于NumPy数组。
-```python
-%%cython
-from libc.math cimport log
 
 ![](img/b8d9e1d8490d7c84cfc812d37b0318c6_145.png)
 
+
+![](img/b8d9e1d8490d7c84cfc812d37b0318c6_147.png)
+
+![](img/b8d9e1d8490d7c84cfc812d37b0318c6_149.png)
+
+![](img/b8d9e1d8490d7c84cfc812d37b0318c6_151.png)
+
+```python
+%%cython
+from libc.math cimport log
 def entropy_cy_v2(double[:] p_view):
     cdef double total = 0.0
     cdef Py_ssize_t i
@@ -515,13 +522,6 @@ def entropy_cy_v2(double[:] p_view):
         if p_view[i] > 0:
             total += p_view[i] * log(p_view[i])
     return -total
-
-![](img/b8d9e1d8490d7c84cfc812d37b0318c6_147.png)
-
-![](img/b8d9e1d8490d7c84cfc812d37b0318c6_149.png)
-
-![](img/b8d9e1d8490d7c84cfc812d37b0318c6_151.png)
-
 # 调用时可以直接传递NumPy数组
 import numpy as np
 arr = np.random.rand(1000)

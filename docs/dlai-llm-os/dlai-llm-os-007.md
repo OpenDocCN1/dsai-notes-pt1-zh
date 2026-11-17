@@ -126,6 +126,11 @@ eval_agent = client.create_agent(
 
 ![](img/ff2ff475f2532bc4bb67f0537feba1ea_5.png)
 
+
+![](img/ff2ff475f2532bc4bb67f0537feba1ea_7.png)
+
+![](img/ff2ff475f2532bc4bb67f0537feba1ea_8.png)
+
 ```python
 def email_candidate(candidate_name, email_body):
     # 模拟发送邮件，实际只是打印
@@ -135,11 +140,6 @@ def email_candidate(candidate_name, email_body):
 
 # 创建邮件工具
 email_tool = client.create_tool(email_candidate)
-
-![](img/ff2ff475f2532bc4bb67f0537feba1ea_7.png)
-
-![](img/ff2ff475f2532bc4bb67f0537feba1ea_8.png)
-
 # 定义外联专员的角色和邮件模板
 outreach_persona = """
 你是一名外联专员。你负责向评估通过的候选人发送个性化的外联邮件。
@@ -233,6 +233,9 @@ print(response)
 1.  **搜索候选人数据库**：模拟从数据库分页获取候选人名单（例如：Tony Stark, Spongebob Squarepants, Galtung Vang）。
 2.  **考虑候选人**：这个工具会创建一个Let客户端，并向评估专员发送消息，触发其对指定候选人的评估流程。
 
+
+![](img/ff2ff475f2532bc4bb67f0537feba1ea_16.png)
+
 ```python
 # 模拟的候选人数据库
 candidate_database = {
@@ -241,9 +244,6 @@ candidate_database = {
     2: ["Galtung Vang"],
     3: [] # 空页表示结束
 }
-
-![](img/ff2ff475f2532bc4bb67f0537feba1ea_16.png)
-
 def search_candidate_db(page_number):
     return candidate_database.get(page_number, [])
 

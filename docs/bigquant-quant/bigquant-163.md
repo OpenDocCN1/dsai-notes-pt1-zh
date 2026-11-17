@@ -20,12 +20,12 @@
 
 ![](img/40987d330529cbbb9d45a3b7425969ac_6.png)
 
-```python
-from sklearn import datasets
-import numpy as np
 
 ![](img/40987d330529cbbb9d45a3b7425969ac_8.png)
 
+```python
+from sklearn import datasets
+import numpy as np
 # 加载鸢尾花数据
 X, y = datasets.load_iris(return_X_y=True)
 # 数据去中心化
@@ -80,6 +80,9 @@ print("特征向量 (eigenvectors):\n", eigenvectors)
 
 ![](img/40987d330529cbbb9d45a3b7425969ac_22.png)
 
+
+![](img/40987d330529cbbb9d45a3b7425969ac_24.png)
+
 ```python
 # 验证公式 A·v = λ·v
 # 取第一个特征值和对应的特征向量
@@ -90,9 +93,6 @@ v_0 = eigenvectors[:, 0]
 left_side = B.dot(v_0)
 # 计算 λ_0 · v_0
 right_side = lambda_0 * v_0
-
-![](img/40987d330529cbbb9d45a3b7425969ac_24.png)
-
 print("B · v_0:\n", left_side)
 print("λ_0 · v_0:\n", right_side)
 # 检查两者是否相等（在浮点数精度允许范围内）
@@ -132,22 +132,22 @@ print("是否相等？", np.allclose(left_side, right_side))
 
 ![](img/40987d330529cbbb9d45a3b7425969ac_38.png)
 
-```python
-# 1. 构建对角矩阵 Λ
-Lambda = np.diag(eigenvalues)
 
 ![](img/40987d330529cbbb9d45a3b7425969ac_40.png)
 
 ![](img/40987d330529cbbb9d45a3b7425969ac_42.png)
 
+
+![](img/40987d330529cbbb9d45a3b7425969ac_44.png)
+
+```python
+# 1. 构建对角矩阵 Λ
+Lambda = np.diag(eigenvalues)
 # 2. 计算特征向量矩阵的逆
 P_inv = np.linalg.inv(eigenvectors)
 
 # 3. 根据公式 A = P · Λ · P⁻¹ 重构矩阵
 reconstructed_B = eigenvectors.dot(Lambda).dot(P_inv)
-
-![](img/40987d330529cbbb9d45a3b7425969ac_44.png)
-
 print("原始矩阵 B:\n", B)
 print("\n重构后的矩阵:\n", reconstructed_B)
 print("\n重构是否成功？", np.allclose(B, reconstructed_B))

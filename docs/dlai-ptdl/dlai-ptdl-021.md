@@ -191,13 +191,18 @@ def visualize_augmentations(dataset, idx, num_samples=8):
 
 以下是向数据集添加统计跟踪的示例：
 
-```python
-import time
 
 ![](img/d203482ec61795850eeef69de2086ad3_12.png)
 
 ![](img/d203482ec61795850eeef69de2086ad3_13.png)
 
+
+![](img/d203482ec61795850eeef69de2086ad3_14.png)
+
+![](img/d203482ec61795850eeef69de2086ad3_15.png)
+
+```python
+import time
 class MonitoredFlowerDataset(RobustFlowerDataset):
     def __init__(self, file_paths, labels, transform=None):
         super().__init__(file_paths, labels, transform)
@@ -239,11 +244,6 @@ class MonitoredFlowerDataset(RobustFlowerDataset):
             'error_log': self.error_log
         }
         return stats
-
-![](img/d203482ec61795850eeef69de2086ad3_14.png)
-
-![](img/d203482ec61795850eeef69de2086ad3_15.png)
-
 # 在每个epoch后调用 dataset.get_stats() 并打印或记录结果。
 ```
 

@@ -113,15 +113,20 @@ class SVM:
 
 ![](img/0c2f47f3d7d980a73cb14308e5d73802_15.png)
 
+
+![](img/0c2f47f3d7d980a73cb14308e5d73802_17.png)
+
+
+![](img/0c2f47f3d7d980a73cb14308e5d73802_19.png)
+
+![](img/0c2f47f3d7d980a73cb14308e5d73802_21.png)
+
 ```python
 # 测试脚本示例 (svm_test.py)
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn import datasets
 from svm import SVM  # 假设SVM类保存在svm.py文件中
-
-![](img/0c2f47f3d7d980a73cb14308e5d73802_17.png)
-
 def visualize_svm():
     X, y = datasets.make_blobs(n_samples=50, n_features=2, centers=2, cluster_std=1.05, random_state=40)
     y = np.where(y == 0, -1, 1)
@@ -132,11 +137,6 @@ def visualize_svm():
     # 可视化代码（略）
     # 可绘制数据点、决策超平面及支持向量平面
     print("Training complete.")
-
-![](img/0c2f47f3d7d980a73cb14308e5d73802_19.png)
-
-![](img/0c2f47f3d7d980a73cb14308e5d73802_21.png)
-
 if __name__ == "__main__":
     visualize_svm()
 ```

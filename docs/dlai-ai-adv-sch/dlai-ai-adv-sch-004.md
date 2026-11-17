@@ -120,17 +120,9 @@ def augment_query_multiple(query, model="gpt-3.5-turbo"):
 
 以下是执行多查询检索的步骤：
 
-```python
-# 1. 构建查询数组：原始查询 + 生成的扩展查询
-all_queries = [original_query] + augmented_queries
 
 ![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_10.png)
 
-# 2. Chroma支持批量查询，获取所有查询的结果
-results = collection.query(
-    query_texts=all_queries,
-    n_results=5
-)
 
 ![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_12.png)
 
@@ -138,6 +130,14 @@ results = collection.query(
 
 ![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_14.png)
 
+```python
+# 1. 构建查询数组：原始查询 + 生成的扩展查询
+all_queries = [original_query] + augmented_queries
+# 2. Chroma支持批量查询，获取所有查询的结果
+results = collection.query(
+    query_texts=all_queries,
+    n_results=5
+)
 # 3. 由于不同查询可能返回相同文档，需要进行去重
 unique_documents = remove_duplicates(results['documents'])
 ```

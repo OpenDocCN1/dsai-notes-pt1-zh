@@ -29,11 +29,11 @@
 
 以下是计算熵的代码实现：
 
-```python
-import numpy as np
 
 ![](img/84741cb53cd03bf1f8d55692e7a39444_14.png)
 
+```python
+import numpy as np
 def entropy(y):
     hist = np.bincount(y)
     ps = hist / len(y)

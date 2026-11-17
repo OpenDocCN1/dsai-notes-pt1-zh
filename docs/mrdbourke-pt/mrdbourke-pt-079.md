@@ -139,19 +139,19 @@ img.show() # 这会使用系统默认图片查看器打开图片
 
 ![](img/ea614de8b1273567bde9b0e2ab747c26_33.png)
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
 
 ![](img/ea614de8b1273567bde9b0e2ab747c26_35.png)
 
-# 将PIL图像转换为NumPy数组
-img_as_array = np.asarray(img)
 
 ![](img/ea614de8b1273567bde9b0e2ab747c26_36.png)
 
 ![](img/ea614de8b1273567bde9b0e2ab747c26_37.png)
 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+# 将PIL图像转换为NumPy数组
+img_as_array = np.asarray(img)
 # 使用Matplotlib绘制图像
 plt.figure(figsize=(10, 7))
 plt.imshow(img_as_array)

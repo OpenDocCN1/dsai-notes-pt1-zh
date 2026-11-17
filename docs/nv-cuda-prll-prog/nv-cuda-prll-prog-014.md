@@ -163,14 +163,21 @@ int atomicCAS(int* address, int compare, int val);
 ![](img/b570460d95f5d51d21e4c35ea3a489a9_102.png)
 
 以下是使用 `atomicCAS` 在GPU上实现一个能正确处理线程束（Warp）内同步的锁的示例：
-```c
-// 假设 lock_var 初始化为 0
-__shared__ int lock_var;
 
 ![](img/b570460d95f5d51d21e4c35ea3a489a9_104.png)
 
 ![](img/b570460d95f5d51d21e4c35ea3a489a9_106.png)
 
+
+![](img/b570460d95f5d51d21e4c35ea3a489a9_108.png)
+
+![](img/b570460d95f5d51d21e4c35ea3a489a9_110.png)
+
+![](img/b570460d95f5d51d21e4c35ea3a489a9_112.png)
+
+```c
+// 假设 lock_var 初始化为 0
+__shared__ int lock_var;
 // 尝试获取锁
 int old;
 do {
@@ -179,13 +186,6 @@ do {
 
 // 临界区代码
 // ...
-
-![](img/b570460d95f5d51d21e4c35ea3a489a9_108.png)
-
-![](img/b570460d95f5d51d21e4c35ea3a489a9_110.png)
-
-![](img/b570460d95f5d51d21e4c35ea3a489a9_112.png)
-
 // 释放锁
 lock_var = 0;
 ```
@@ -216,12 +216,12 @@ lock_var = 0;
 ![](img/b570460d95f5d51d21e4c35ea3a489a9_128.png)
 
 使用 `atomicCAS` 可以轻松实现：
-```c
-// 假设 single_flag 初始化为 0
-__shared__ int single_flag;
 
 ![](img/b570460d95f5d51d21e4c35ea3a489a9_130.png)
 
+```c
+// 假设 single_flag 初始化为 0
+__shared__ int single_flag;
 int old = atomicCAS(&single_flag, 0, 1); // 尝试将标志从0设为1
 if (old == 0) {
     // 只有一个线程会成功进入此区域

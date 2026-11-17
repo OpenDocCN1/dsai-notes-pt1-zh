@@ -28,17 +28,17 @@
 
 ![](img/817174280d909f0224e01af2e91bb7b6_3.png)
 
-```python
-# 假设 tokenizer 和 model 已经加载
-save_directory = “./saved”
 
 ![](img/817174280d909f0224e01af2e91bb7b6_4.png)
 
-# 保存分词器
-tokenizer.save_pretrained(save_directory)
 
 ![](img/817174280d909f0224e01af2e91bb7b6_5.png)
 
+```python
+# 假设 tokenizer 和 model 已经加载
+save_directory = “./saved”
+# 保存分词器
+tokenizer.save_pretrained(save_directory)
 # 保存模型
 model.save_pretrained(save_directory)
 ```
@@ -70,18 +70,18 @@ model.save_pretrained(save_directory)
 
 这个过程可以用代码清晰地表示：
 
+
+![](img/817174280d909f0224e01af2e91bb7b6_10.png)
+
+
+![](img/817174280d909f0224e01af2e91bb7b6_11.png)
+
 ```python
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 save_directory = “./saved”
-
-![](img/817174280d909f0224e01af2e91bb7b6_10.png)
-
 # 加载分词器
 tokenizer = AutoTokenizer.from_pretrained(save_directory)
-
-![](img/817174280d909f0224e01af2e91bb7b6_11.png)
-
 # 加载模型
 model = AutoModelForSequenceClassification.from_pretrained(save_directory)
 ```

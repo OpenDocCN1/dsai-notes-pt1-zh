@@ -124,6 +124,9 @@ print(samples.shape, labels.shape) # 输出: torch.Size([100, 1, 28, 28]) torch.
 
 ![](img/ee06be2433f88c7e880533bc41c954a0_37.png)
 
+
+![](img/ee06be2433f88c7e880533bc41c954a0_39.png)
+
 ```python
 class NeuralNet(nn.Module):
     def __init__(self, input_size, hidden_size, num_classes):
@@ -137,9 +140,6 @@ class NeuralNet(nn.Module):
         out = self.relu(out)
         out = self.l2(out)
         return out
-
-![](img/ee06be2433f88c7e880533bc41c954a0_39.png)
-
 model = NeuralNet(input_size, hidden_size, num_classes).to(device)
 ```
 

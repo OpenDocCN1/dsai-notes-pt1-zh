@@ -67,20 +67,20 @@ XGBoost 的实现细节相当复杂，这就是为什么许多从业者会使用
 3.  使用 `.fit()` 方法在训练数据上训练模型。
 4.  使用训练好的模型进行预测。
 
+
+![](img/b7c17112408685d851fc68b3b24fff94_5.png)
+
+
+![](img/b7c17112408685d851fc68b3b24fff94_7.png)
+
 ```python
 # 1. 导入库
 from xgboost import XGBClassifier
 
 # 2. 初始化模型
 model = XGBClassifier()
-
-![](img/b7c17112408685d851fc68b3b24fff94_5.png)
-
 # 3. 训练模型
 model.fit(X_train, y_train)
-
-![](img/b7c17112408685d851fc68b3b24fff94_7.png)
-
 # 4. 进行预测
 predictions = model.predict(X_test)
 ```

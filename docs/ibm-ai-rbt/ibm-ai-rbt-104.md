@@ -20,11 +20,6 @@
 
 以下是调用外部API的一个具体示例：
 
-```python
-import flask
-import requests
-
-app = flask.Flask(__name__)
 
 ![](img/dff7d4f53b7a4f050e60939ae8862dd2_6.png)
 
@@ -32,6 +27,11 @@ app = flask.Flask(__name__)
 
 ![](img/dff7d4f53b7a4f050e60939ae8862dd2_8.png)
 
+```python
+import flask
+import requests
+
+app = flask.Flask(__name__)
 @app.route(‘/author‘)
 def get_author():
     # 使用requests库请求Open Library API，搜索作者Michael Crichton的信息
@@ -144,13 +144,13 @@ def get_book_by_isbn(isbn):
 
 以下是一个使用UUID的示例。你可以创建一个端点，通过特定的UUID来获取网络信息：
 
-```python
-import uuid
 
 ![](img/dff7d4f53b7a4f050e60939ae8862dd2_34.png)
 
 ![](img/dff7d4f53b7a4f050e60939ae8862dd2_35.png)
 
+```python
+import uuid
 @app.route(‘/network/<uuid:network_id>‘)
 def get_network_info(network_id):
     # 此路由期望一个UUID类型的变量network_id

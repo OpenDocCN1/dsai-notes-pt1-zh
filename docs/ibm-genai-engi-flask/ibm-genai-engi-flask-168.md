@@ -87,12 +87,12 @@ chunks = splitter.split_text(your_text)
 
 以下是分割 Python 代码的示例。虽然它基于递归字符文本分割器，但当应用于代码分割器时，您需要在调用 `RecursiveCharacterTextSplitter` 类后添加 `from_language`，并在其中指定您要分割的语言。
 
-```python
-# 示例代码：使用代码文本分割器（以Python为例）
-from langchain.text_splitter import RecursiveCharacterTextSplitter, Language
 
 ![](img/3ecc769afe3582dff902ec70f8192455_9.png)
 
+```python
+# 示例代码：使用代码文本分割器（以Python为例）
+from langchain.text_splitter import RecursiveCharacterTextSplitter, Language
 splitter = RecursiveCharacterTextSplitter.from_language(
     language=Language.PYTHON,
     chunk_size=200,
@@ -113,12 +113,12 @@ chunks = splitter.split_text(your_python_code)
 
 以下是实现按标题分割 Markdown 文件的代码。
 
-```python
-# 示例代码：使用Markdown标题文本分割器
-from langchain.text_splitter import MarkdownHeaderTextSplitter
 
 ![](img/3ecc769afe3582dff902ec70f8192455_14.png)
 
+```python
+# 示例代码：使用Markdown标题文本分割器
+from langchain.text_splitter import MarkdownHeaderTextSplitter
 headers_to_split_on = [
     ("#", "Header 1"),
     ("##", "Header 2"),

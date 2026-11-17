@@ -107,13 +107,13 @@ MMR背后的想法是：我们发送一个查询，然后我们最初得到一�
 
 ![](img/d616ba48c25503a419d35bb2fb15cd3e_62.png)
 
+
+![](img/d616ba48c25503a419d35bb2fb15cd3e_64.png)
+
 ```python
 # 伪代码示例
 from langchain.retrievers.self_query.base import SelfQueryRetriever
 from langchain.chains.query_constructor.base import AttributeInfo
-
-![](img/d616ba48c25503a419d35bb2fb15cd3e_64.png)
-
 # 1. 定义元数据字段及其描述
 metadata_field_info = [
     AttributeInfo(name="year", description="电影上映的年份", type="integer"),
@@ -205,13 +205,13 @@ docs = retriever.get_relevant_documents("1980年拍的关于外星人的电影�
 
 ![](img/d616ba48c25503a419d35bb2fb15cd3e_110.png)
 
+
+![](img/d616ba48c25503a419d35bb2fb15cd3e_112.png)
+
 ```python
 # 伪代码：对比相似性搜索和MMR
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
-
-![](img/d616ba48c25503a419d35bb2fb15cd3e_112.png)
-
 # 初始化检索器
 vectorstore = Chroma(...)
 # 1. 标准相似性搜索
@@ -254,14 +254,14 @@ docs = self_query_retriever.get_relevant_documents(question)
 
 ![](img/d616ba48c25503a419d35bb2fb15cd3e_130.png)
 
-```python
-from langchain.retrievers import ContextualCompressionRetriever
-from langchain.retrievers.document_compressors import LLMChainExtractor
 
 ![](img/d616ba48c25503a419d35bb2fb15cd3e_132.png)
 
 ![](img/d616ba48c25503a419d35bb2fb15cd3e_134.png)
 
+```python
+from langchain.retrievers import ContextualCompressionRetriever
+from langchain.retrievers.document_compressors import LLMChainExtractor
 # 创建基础检索器（使用MMR）
 base_retriever = vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": 5, "fetch_k": 10})
 # 创建压缩器
@@ -292,13 +292,13 @@ compressed_docs = compression_retriever.get_relevant_documents("他们怎么说M
 
 ![](img/d616ba48c25503a419d35bb2fb15cd3e_146.png)
 
-```python
-from langchain.retrievers import SVMRetriever, TFIDFRetriever
 
 ![](img/d616ba48c25503a419d35bb2fb15cd3e_148.png)
 
 ![](img/d616ba48c25503a419d35bb2fb15cd3e_150.png)
 
+```python
+from langchain.retrievers import SVMRetriever, TFIDFRetriever
 # SVM 检索器（需要嵌入）
 svm_retriever = SVMRetriever.from_texts(texts, embeddings)
 # TF-IDF 检索器

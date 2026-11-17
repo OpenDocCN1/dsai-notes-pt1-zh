@@ -26,6 +26,13 @@
 
 以下是创建和可视化数据集的步骤：
 
+
+![](img/f1c4c1677dab72d0c1c1147d6bab0081_6.png)
+
+![](img/f1c4c1677dab72d0c1c1147d6bab0081_7.png)
+
+![](img/f1c4c1677dab72d0c1c1147d6bab0081_9.png)
+
 ```python
 import torch
 from sklearn.datasets import make_circles
@@ -45,13 +52,6 @@ plt.show()
 # 3. 转换为张量并划分训练/测试集
 X = torch.from_numpy(X).type(torch.float)
 y = torch.from_numpy(y).type(torch.float)
-
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_6.png)
-
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_7.png)
-
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_9.png)
-
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 ```
 

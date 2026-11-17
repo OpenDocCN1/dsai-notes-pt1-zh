@@ -60,19 +60,19 @@ email = client_info_list[1]
 
 ![](img/d3c168c1116475ebd86ae574fc315e33_16.png)
 
-```python
-import sqlite3
 
 ![](img/d3c168c1116475ebd86ae574fc315e33_18.png)
 
 ![](img/d3c168c1116475ebd86ae574fc315e33_20.png)
 
-# 连接到数据库（如果不存在则创建）
-connection = sqlite3.connect('chat.db')
-cursor = connection.cursor()
 
 ![](img/d3c168c1116475ebd86ae574fc315e33_22.png)
 
+```python
+import sqlite3
+# 连接到数据库（如果不存在则创建）
+connection = sqlite3.connect('chat.db')
+cursor = connection.cursor()
 # 创建clients表
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS clients (

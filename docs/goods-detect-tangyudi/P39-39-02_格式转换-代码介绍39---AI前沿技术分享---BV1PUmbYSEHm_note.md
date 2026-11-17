@@ -95,19 +95,19 @@
 
 首先，代码会检查输入的数据集目录是否存在，并获取所有 XML 标注文件的列表。
 
-```python
-import os
-import glob
 
 ![](img/bc7191b073671f697e9ed4554b3bb7ab_31.png)
 
+
+![](img/bc7191b073671f697e9ed4554b3bb7ab_33.png)
+
+```python
+import os
+import glob
 # 假设 dataset_dir 是传入的数据集路径（例如 ‘./VOC2007/ImageSets/Main/test’ 的上级目录）
 annotation_dir = os.path.join(dataset_dir, ‘Annotations’)
 if not os.path.isdir(annotation_dir):
     raise ValueError(“Annotation directory does not exist.”)
-
-![](img/bc7191b073671f697e9ed4554b3bb7ab_33.png)
-
 # 获取所有 XML 文件路径并排序，确保与图片顺序对应
 annotation_files = sorted(glob.glob(os.path.join(annotation_dir, ‘*.xml’)))
 ```
@@ -118,11 +118,11 @@ annotation_files = sorted(glob.glob(os.path.join(annotation_dir, ‘*.xml’)))
 
 接着，代码进入主循环，遍历排序后的 XML 文件列表。
 
-```python
-import tensorflow as tf
 
 ![](img/bc7191b073671f697e9ed4554b3bb7ab_37.png)
 
+```python
+import tensorflow as tf
 samples_per_file = 200  # 每个 TFRecord 文件的样本数
 file_index = 0
 sample_count = 0

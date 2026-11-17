@@ -16,6 +16,9 @@
 
 我们将从一个计算密集型的示例开始。以下代码用于找出一个范围内的所有质数并计算它们的总和。
 
+
+![](img/2672a8a803504c654dcaf6bae9c76f0c_4.png)
+
 ```python
 def is_prime(n):
     if n < 2:
@@ -31,9 +34,6 @@ def sum_of_primes_naive(limit):
         if is_prime(number):
             total += number
     return total
-
-![](img/2672a8a803504c654dcaf6bae9c76f0c_4.png)
-
 result = sum_of_primes_naive(100000)
 print(result) # 输出约4.54亿
 ```
@@ -75,11 +75,11 @@ print(f"Execution time: {execution_time} seconds")
 
 以下是使用`cProfile`进行分析的代码：
 
-```python
-import cProfile
 
 ![](img/2672a8a803504c654dcaf6bae9c76f0c_16.png)
 
+```python
+import cProfile
 cProfile.run('sum_of_primes_naive(100000)')
 ```
 

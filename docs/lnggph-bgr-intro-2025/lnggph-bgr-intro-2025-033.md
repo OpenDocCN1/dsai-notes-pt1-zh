@@ -43,14 +43,14 @@
 现在，让我们通过一个简单的例子来看看如何具体实现中断。我们将使用之前提到的A->B->(C/D)结构。
 
 以下是实现代码的关键部分：
-```python
-# 导入必要模块，包括中断方法
-from langgraph.types import interrupt
 
 ![](img/2ca1053d68b09d1570d2825fe5775056_10.png)
 
 ![](img/2ca1053d68b09d1570d2825fe5775056_11.png)
 
+```python
+# 导入必要模块，包括中断方法
+from langgraph.types import interrupt
 # 定义节点B的函数
 def node_b(state):
     # ... 执行节点B的其他逻辑 ...

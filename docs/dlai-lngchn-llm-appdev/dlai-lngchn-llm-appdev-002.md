@@ -18,12 +18,12 @@
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_8.png)
 
-```python
-import os
-import openai
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_10.png)
 
+```python
+import os
+import openai
 # 加载你的OpenAI API密钥
 openai.api_key = os.getenv("OPENAI_API_KEY")
 ```
@@ -56,6 +56,9 @@ pip install openai
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_26.png)
 
+
+![](img/f5b781dc791e91ed41bc97e6c7e7e36f_28.png)
+
 ```python
 def get_completion(prompt, model="gpt-3.5-turbo"):
     messages = [{"role": "user", "content": prompt}]
@@ -65,9 +68,6 @@ def get_completion(prompt, model="gpt-3.5-turbo"):
         temperature=0,
     )
     return response.choices[0].message["content"]
-
-![](img/f5b781dc791e91ed41bc97e6c7e7e36f_28.png)
-
 # 示例调用
 prompt = "1加1是什么？"
 response = get_completion(prompt)
@@ -113,20 +113,20 @@ print(response)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_52.png)
 
-```python
-style = "美式英语，语气冷静且尊重"
-text = "Arrr, I be fuming that me blender lid flew off and splattered me kitchen walls with smoothie! And to make matters worse, the warranty don't cover the cost of cleaning up me kitchen! I need yer help right now, matey!"
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_54.png)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_56.png)
 
-prompt = f"""将以下文本翻译成 {style}：
-{text}
-"""
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_58.png)
 
+```python
+style = "美式英语，语气冷静且尊重"
+text = "Arrr, I be fuming that me blender lid flew off and splattered me kitchen walls with smoothie! And to make matters worse, the warranty don't cover the cost of cleaning up me kitchen! I need yer help right now, matey!"
+prompt = f"""将以下文本翻译成 {style}：
+{text}
+"""
 response = get_completion(prompt)
 print(response)
 ```
@@ -162,14 +162,14 @@ LangChain提供了`ChatOpenAI`类来抽象化对ChatGPT API的调用，以及`Ch
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_75.png)
 
-```python
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_77.png)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_78.png)
 
+```python
+from langchain.chat_models import ChatOpenAI
+from langchain.prompts import ChatPromptTemplate
 # 创建ChatOpenAI实例，设置temperature=0使输出更确定
 chat = ChatOpenAI(temperature=0)
 ```
@@ -199,23 +199,23 @@ prompt_template = ChatPromptTemplate.from_template(template_string)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_90.png)
 
-```python
-# 场景一：将客户邮件翻译成美式英语
-customer_style = "美式英语，语气冷静且尊重"
-customer_email = "Arrr, I be fuming that me blender lid flew off and splattered me kitchen walls with smoothie! And to make matters worse, the warranty don't cover the cost of cleaning up me kitchen! I need yer help right now, matey!"
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_92.png)
 
-# 生成消息列表（LangChain的标准格式）
-customer_messages = prompt_template.format_messages(
-    style=customer_style,
-    text=customer_email
-)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_94.png)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_96.png)
 
+```python
+# 场景一：将客户邮件翻译成美式英语
+customer_style = "美式英语，语气冷静且尊重"
+customer_email = "Arrr, I be fuming that me blender lid flew off and splattered me kitchen walls with smoothie! And to make matters worse, the warranty don't cover the cost of cleaning up me kitchen! I need yer help right now, matey!"
+# 生成消息列表（LangChain的标准格式）
+customer_messages = prompt_template.format_messages(
+    style=customer_style,
+    text=customer_email
+)
 # 调用模型
 customer_response = chat(customer_messages)
 print(customer_response.content)
@@ -227,20 +227,20 @@ print(customer_response.content)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_100.png)
 
+
+![](img/f5b781dc791e91ed41bc97e6c7e7e36f_102.png)
+
+
+![](img/f5b781dc791e91ed41bc97e6c7e7e36f_104.png)
+
 ```python
 # 场景二：将客服回复翻译成海盗英语
 service_reply = """您好，根据保修条款，因您使用叉子戳搅拌机盖导致损坏，清理费用不在保修范围内。很抱歉带来不便。"""
 service_style_pirate = "英语海盗风格，语气礼貌"
-
-![](img/f5b781dc791e91ed41bc97e6c7e7e36f_102.png)
-
 service_messages = prompt_template.format_messages(
     style=service_style_pirate,
     text=service_reply
 )
-
-![](img/f5b781dc791e91ed41bc97e6c7e7e36f_104.png)
-
 service_response = chat(service_messages)
 print(service_response.content)
 ```
@@ -344,13 +344,18 @@ LangChain的`StructuredOutputParser`可以帮我们解决这个问题。它允�
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_146.png)
 
-```python
-from langchain.output_parsers import ResponseSchema, StructuredOutputParser
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_148.png)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_150.png)
 
+
+![](img/f5b781dc791e91ed41bc97e6c7e7e36f_152.png)
+
+![](img/f5b781dc791e91ed41bc97e6c7e7e36f_154.png)
+
+```python
+from langchain.output_parsers import ResponseSchema, StructuredOutputParser
 # 定义每个字段的模式
 gift_schema = ResponseSchema(
     name="gift",
@@ -364,11 +369,6 @@ price_value_schema = ResponseSchema(
     name="price_value",
     description="评论中关于产品价值的描述，例如'物超所值'、'价格合理'、'太贵了'等。"
 )
-
-![](img/f5b781dc791e91ed41bc97e6c7e7e36f_152.png)
-
-![](img/f5b781dc791e91ed41bc97e6c7e7e36f_154.png)
-
 # 将模式放入列表
 response_schemas = [gift_schema, delivery_days_schema, price_value_schema]
 ```
@@ -383,50 +383,50 @@ response_schemas = [gift_schema, delivery_days_schema, price_value_schema]
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_161.png)
 
-```python
-# 创建输出解析器
-output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_163.png)
 
-# 获取解析器提供的格式指令
-format_instructions = output_parser.get_format_instructions()
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_165.png)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_167.png)
 
-# 创建包含格式指令的新提示模板
-review_template_with_format = """\
-针对由三个反引号分隔的文本，请提取以下信息：
-{format_instructions}
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_169.png)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_171.png)
 
-文本: ```{text}```
-"""
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_173.png)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_175.png)
 
-# 注意：提示中包含了{format_instructions}占位符
-prompt = ChatPromptTemplate.from_template(template=review_template_with_format)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_177.png)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_179.png)
 
+
+![](img/f5b781dc791e91ed41bc97e6c7e7e36f_181.png)
+
+```python
+# 创建输出解析器
+output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
+# 获取解析器提供的格式指令
+format_instructions = output_parser.get_format_instructions()
+# 创建包含格式指令的新提示模板
+review_template_with_format = """\
+针对由三个反引号分隔的文本，请提取以下信息：
+{format_instructions}
+文本: ```{text}```
+"""
+# 注意：提示中包含了{format_instructions}占位符
+prompt = ChatPromptTemplate.from_template(template=review_template_with_format)
 # 生成最终消息
 messages = prompt.format_messages(
     text=product_review,
     format_instructions=format_instructions
 )
-
-![](img/f5b781dc791e91ed41bc97e6c7e7e36f_181.png)
-
 # 调用模型
 response = chat(messages)
 ```
@@ -441,23 +441,23 @@ response = chat(messages)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_188.png)
 
-```python
-# 解析输出
-output_dict = output_parser.parse(response.content)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_190.png)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_192.png)
 
-# 现在output_dict是一个真正的Python字典
-print(type(output_dict))  # <class 'dict'>
-print(output_dict)
-# 输出可能为：{'gift': True, 'delivery_days': 2, 'price_value': '未明确提及'}
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_194.png)
 
 ![](img/f5b781dc791e91ed41bc97e6c7e7e36f_196.png)
 
+```python
+# 解析输出
+output_dict = output_parser.parse(response.content)
+# 现在output_dict是一个真正的Python字典
+print(type(output_dict))  # <class 'dict'>
+print(output_dict)
+# 输出可能为：{'gift': True, 'delivery_days': 2, 'price_value': '未明确提及'}
 # 我们可以像操作普通字典一样访问数据
 print(f"是否为礼物: {output_dict['gift']}")
 print(f"送达天数: {output_dict['delivery_days']}")

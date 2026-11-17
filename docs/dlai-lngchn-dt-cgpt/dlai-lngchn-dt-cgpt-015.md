@@ -91,6 +91,9 @@ print(response)
 
 ![](img/a32ab69211f39eadd0da37920a2e5c99_41.png)
 
+
+![](img/a32ab69211f39eadd0da37920a2e5c99_43.png)
+
 ```python
 user_messages = [
     "La performance du système est plus lente que d'habitude.",  # 法语
@@ -99,9 +102,6 @@ user_messages = [
     "Mój klawisz Ctrl jest zepsuty",                             # 波兰语
     "我的屏幕在闪烁"                                               # 中文
 ]
-
-![](img/a32ab69211f39eadd0da37920a2e5c99_43.png)
-
 for issue in user_messages:
     prompt = f"告诉我这是什么语言，然后将其翻译成英语和韩语：```{issue}```"
     lang = get_completion(prompt)
@@ -164,6 +164,14 @@ ChatGPT非常擅长在不同格式之间进行转换，例如将Python字典转�
 
 ![](img/a32ab69211f39eadd0da37920a2e5c99_72.png)
 
+
+![](img/a32ab69211f39eadd0da37920a2e5c99_74.png)
+
+![](img/a32ab69211f39eadd0da37920a2e5c99_76.png)
+
+
+![](img/a32ab69211f39eadd0da37920a2e5c99_78.png)
+
 ```python
 data = {
     "employees": [
@@ -172,19 +180,11 @@ data = {
         {"name": "Bob Johnson", "email": "bob@example.com"}
     ]
 }
-
-![](img/a32ab69211f39eadd0da37920a2e5c99_74.png)
-
-![](img/a32ab69211f39eadd0da37920a2e5c99_76.png)
-
 prompt = f"""将以下Python字典转换为带列标题和标题的HTML表格：
 {data}
 """
 response = get_completion(prompt)
 print(response)
-
-![](img/a32ab69211f39eadd0da37920a2e5c99_78.png)
-
 # 使用IPython的Display函数来渲染HTML
 from IPython.display import display, HTML
 display(HTML(response))
@@ -214,6 +214,11 @@ display(HTML(response))
 
 ![](img/a32ab69211f39eadd0da37920a2e5c99_93.png)
 
+
+![](img/a32ab69211f39eadd0da37920a2e5c99_95.png)
+
+![](img/a32ab69211f39eadd0da37920a2e5c99_97.png)
+
 ```python
 sentences = [
     "The girl with the black and white puppies have a ball.",  # 主谓不一致
@@ -221,11 +226,6 @@ sentences = [
     "Its going to be a long day. Do you think is going to rain?", # 拼写错误
     "Their goes my freedom. There going to bring they’re suitcases." # 多个错误
 ]
-
-![](img/a32ab69211f39eadd0da37920a2e5c99_95.png)
-
-![](img/a32ab69211f39eadd0da37920a2e5c99_97.png)
-
 for sentence in sentences:
     prompt = f"""校对并更正以下文本。如果未发现错误，请说“未发现错误”：
     ```{sentence}```
@@ -233,18 +233,18 @@ for sentence in sentences:
     response = get_completion(prompt)
     print(f"原始: {sentence}")
     print(f"更正后: {response}\n")
-```
 
 ![](img/a32ab69211f39eadd0da37920a2e5c99_99.png)
 
 ![](img/a32ab69211f39eadd0da37920a2e5c99_101.png)
 
-我们还可以对更长的文本（如产品评论）进行校对和语气增强：
 
 ![](img/a32ab69211f39eadd0da37920a2e5c99_103.png)
 
 ![](img/a32ab69211f39eadd0da37920a2e5c99_105.png)
 
+```
+我们还可以对更长的文本（如产品评论）进行校对和语气增强：
 ```python
 review = """我需要为我的生日给女儿买一个毛绒熊猫玩具。\
 她很喜欢，走到哪都带着。就是有点贵，\

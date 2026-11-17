@@ -186,12 +186,12 @@ def should_continue(state: AgentState) -> str:
 
 ![](img/b9aa3130604dcbcb03d9630d24407b8d_18.png)
 
-```python
-# 初始化图
-workflow = StateGraph(AgentState)
 
 ![](img/b9aa3130604dcbcb03d9630d24407b8d_20.png)
 
+```python
+# 初始化图
+workflow = StateGraph(AgentState)
 # 添加所有节点
 workflow.add_node(“plan”, planning_node)
 workflow.add_node(“research_plan”, research_plan_node)

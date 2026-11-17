@@ -14,13 +14,13 @@
 
 首先，我们回顾一下基本步骤：导入必要的模块，并将数据集读取到变量`DF`中。
 
+
+![](img/3b41e080d680beeaef132a8675e9baf1_5.png)
+
 ```python
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-
-![](img/3b41e080d680beeaef132a8675e9baf1_5.png)
-
 # 假设DF是已读取的包含股票数据的DataFrame
 ```
 
@@ -116,14 +116,14 @@ x_vals_jan = jan_2020_data.index.day
 
 ![](img/3b41e080d680beeaef132a8675e9baf1_19.png)
 
-```python
-sns.lineplot(x=x_vals_feb, y=feb_2020_data.values, color=‘red‘, linestyle=‘--‘, linewidth=2, label=‘February‘)
-sns.lineplot(x=x_vals_jan, y=jan_2020_data.values, color=‘black‘, linewidth=2, label=‘January‘)
 
 ![](img/3b41e080d680beeaef132a8675e9baf1_21.png)
 
 ![](img/3b41e080d680beeaef132a8675e9baf1_22.png)
 
+```python
+sns.lineplot(x=x_vals_feb, y=feb_2020_data.values, color=‘red‘, linestyle=‘--‘, linewidth=2, label=‘February‘)
+sns.lineplot(x=x_vals_jan, y=jan_2020_data.values, color=‘black‘, linewidth=2, label=‘January‘)
 plt.xlabel(‘Day of Month‘)
 plt.ylabel(‘Adjusted Close Price ($)‘)
 plt.title(‘Apple Stock Price: January and February 2020‘, fontsize=14)
@@ -161,14 +161,14 @@ plt.show()
 
 ![](img/3b41e080d680beeaef132a8675e9baf1_28.png)
 
+
+![](img/3b41e080d680beeaef132a8675e9baf1_29.png)
+
 ```python
 # 使用label参数为每条线指定标签
 sns.lineplot(x=x_vals_feb, y=feb_2020_data.values, color=‘red‘, linestyle=‘--‘, linewidth=2, label=‘Feb‘)
 sns.lineplot(x=x_vals_jan, y=jan_2020_data.values, color=‘black‘, linewidth=2, label=‘Jan‘)
 sns.lineplot(x=x_vals_mar, y=mar_2020_data.values, color=‘darkgray‘, linewidth=2, label=‘Mar‘)
-
-![](img/3b41e080d680beeaef132a8675e9baf1_29.png)
-
 plt.xlabel(‘Day of Month‘)
 plt.ylabel(‘Adjusted Close Price ($)‘)
 plt.title(‘Apple Stock Price: Q1 2020‘, fontsize=14)

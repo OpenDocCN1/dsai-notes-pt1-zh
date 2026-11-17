@@ -51,38 +51,38 @@ perimeter = cv2.arcLength(cnt, True)  # 计算周长
 
 ![](img/8fe87be69dd7f94e92a5044796fecb8f_15.png)
 
+
+![](img/8fe87be69dd7f94e92a5044796fecb8f_17.png)
+
+
+![](img/8fe87be69dd7f94e92a5044796fecb8f_19.png)
+
+![](img/8fe87be69dd7f94e92a5044796fecb8f_21.png)
+
+
+![](img/8fe87be69dd7f94e92a5044796fecb8f_23.png)
+
+![](img/8fe87be69dd7f94e92a5044796fecb8f_25.png)
+
+
+![](img/8fe87be69dd7f94e92a5044796fecb8f_27.png)
+
+![](img/8fe87be69dd7f94e92a5044796fecb8f_29.png)
+
 ```python
 import cv2
 
 # 1. 读取图像并转为灰度图
 img = cv2.imread('shape.png')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-![](img/8fe87be69dd7f94e92a5044796fecb8f_17.png)
-
 # 2. 二值化处理
 ret, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
-
-![](img/8fe87be69dd7f94e92a5044796fecb8f_19.png)
-
-![](img/8fe87be69dd7f94e92a5044796fecb8f_21.png)
-
 # 3. 查找轮廓
 contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-
-![](img/8fe87be69dd7f94e92a5044796fecb8f_23.png)
-
-![](img/8fe87be69dd7f94e92a5044796fecb8f_25.png)
-
 # 4. 提取一个轮廓并进行近似
 cnt = contours[0]  # 以第一个轮廓为例
 epsilon = 0.01 * cv2.arcLength(cnt, True)  # 设置阈值为周长的 1%
 approx = cv2.approxPolyDP(cnt, epsilon, True)  # 进行轮廓近似
-
-![](img/8fe87be69dd7f94e92a5044796fecb8f_27.png)
-
-![](img/8fe87be69dd7f94e92a5044796fecb8f_29.png)
-
 # 5. 绘制近似后的轮廓
 # 注意：approx 本身也是一个轮廓，需要重新绘制
 img_approx = img.copy()
@@ -126,14 +126,14 @@ cv2.waitKey(0)
 
 ![](img/8fe87be69dd7f94e92a5044796fecb8f_49.png)
 
+
+![](img/8fe87be69dd7f94e92a5044796fecb8f_51.png)
+
 ```python
 # 计算并绘制外接矩形
 cnt = contours[0]
 x, y, w, h = cv2.boundingRect(cnt)
 cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)  # 用绿色绘制
-
-![](img/8fe87be69dd7f94e92a5044796fecb8f_51.png)
-
 # 计算并绘制外接圆
 (x, y), radius = cv2.minEnclosingCircle(cnt)
 center = (int(x), int(y))

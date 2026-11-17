@@ -52,15 +52,15 @@ print(data.shape)
 
 ![](img/eaeaf4ad726c9b2e0b9997653405989f_5.png)
 
+
+![](img/eaeaf4ad726c9b2e0b9997653405989f_7.png)
+
 ```python
 num_samples, num_features = data.shape
 num_features -= 1  # 减去标签列
 
 X = data[:, :num_features]  # 所有行，前 num_features 列
 y = data[:, num_features]   # 所有行，最后一列
-
-![](img/eaeaf4ad726c9b2e0b9997653405989f_7.png)
-
 print(X.shape, y.shape)
 ```
 

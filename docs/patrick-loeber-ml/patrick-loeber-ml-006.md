@@ -129,19 +129,24 @@ class Perceptron:
 
 ![](img/e09199f446a4dd628a8febad29061362_7.png)
 
+
+![](img/e09199f446a4dd628a8febad29061362_9.png)
+
+
+![](img/e09199f446a4dd628a8febad29061362_11.png)
+
+
+![](img/e09199f446a4dd628a8febad29061362_13.png)
+
+![](img/e09199f446a4dd628a8febad29061362_14.png)
+
 ```python
 # 测试代码示例
 from sklearn.model_selection import train_test_split
 from sklearn import datasets
 import matplotlib.pyplot as plt
-
-![](img/e09199f446a4dd628a8febad29061362_9.png)
-
 def accuracy(y_true, y_pred):
     return np.sum(y_true == y_pred) / len(y_true)
-
-![](img/e09199f446a4dd628a8febad29061362_11.png)
-
 # 生成数据集
 X, y = datasets.make_blobs(n_samples=150, n_features=2, centers=2, cluster_std=1.05, random_state=2)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=123)
@@ -153,11 +158,6 @@ predictions = p.predict(X_test)
 
 # 评估
 print(f"感知机分类准确率: {accuracy(y_test, predictions):.2f}")
-
-![](img/e09199f446a4dd628a8febad29061362_13.png)
-
-![](img/e09199f446a4dd628a8febad29061362_14.png)
-
 # 可视化决策边界
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1)

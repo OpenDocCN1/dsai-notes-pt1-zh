@@ -16,11 +16,11 @@
 
 ![](img/3ff7beb031a24989fc152622b2092ecc_4.png)
 
-```python
-from langchain.chat_models import ChatOpenAI
 
 ![](img/3ff7beb031a24989fc152622b2092ecc_6.png)
 
+```python
+from langchain.chat_models import ChatOpenAI
 llm = ChatOpenAI(temperature=0)
 ```
 
@@ -46,13 +46,13 @@ llm = ChatOpenAI(temperature=0)
 
 ![](img/3ff7beb031a24989fc152622b2092ecc_20.png)
 
-```python
-from langchain.agents import load_tools
 
 ![](img/3ff7beb031a24989fc152622b2092ecc_22.png)
 
 ![](img/3ff7beb031a24989fc152622b2092ecc_24.png)
 
+```python
+from langchain.agents import load_tools
 tools = load_tools(["llm-math", "wikipedia"], llm=llm)
 ```
 
@@ -77,13 +77,13 @@ tools = load_tools(["llm-math", "wikipedia"], llm=llm)
 
 ![](img/3ff7beb031a24989fc152622b2092ecc_36.png)
 
-```python
-from langchain.agents import initialize_agent
 
 ![](img/3ff7beb031a24989fc152622b2092ecc_38.png)
 
 ![](img/3ff7beb031a24989fc152622b2092ecc_40.png)
 
+```python
+from langchain.agents import initialize_agent
 agent = initialize_agent(
     tools,
     llm,
@@ -199,12 +199,12 @@ python_agent.run(question)
 
 ![](img/3ff7beb031a24989fc152622b2092ecc_84.png)
 
-```python
-import langchain
-langchain.debug = True
 
 ![](img/3ff7beb031a24989fc152622b2092ecc_85.png)
 
+```python
+import langchain
+langchain.debug = True
 # 再次运行代理
 agent.run("一个简单的问题")
 ```
@@ -243,12 +243,12 @@ agent.run("一个简单的问题")
 
 首先，导入工具装饰器并定义函数：
 
-```python
-from langchain.tools import tool
-from datetime import datetime
 
 ![](img/3ff7beb031a24989fc152622b2092ecc_103.png)
 
+```python
+from langchain.tools import tool
+from datetime import datetime
 @tool
 def time(text: str) -> str:
     """
@@ -274,6 +274,11 @@ def time(text: str) -> str:
 
 ![](img/3ff7beb031a24989fc152622b2092ecc_115.png)
 
+
+![](img/3ff7beb031a24989fc152622b2092ecc_117.png)
+
+![](img/3ff7beb031a24989fc152622b2092ecc_119.png)
+
 ```python
 custom_tools = [time] + tools # 将自定义工具与之前加载的工具合并
 custom_agent = initialize_agent(
@@ -282,11 +287,6 @@ custom_agent = initialize_agent(
     agent="chat-zero-shot-react-description",
     verbose=True
 )
-
-![](img/3ff7beb031a24989fc152622b2092ecc_117.png)
-
-![](img/3ff7beb031a24989fc152622b2092ecc_119.png)
-
 # 现在可以询问日期了
 custom_agent.run("今天的日期是什么？")
 ```

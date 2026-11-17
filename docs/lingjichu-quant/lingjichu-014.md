@@ -78,11 +78,11 @@ for sma1, sma2 in product(sma1_range, sma2_range):
 
 ![](img/3829f24c07679475a675cd229b786283_36.png)
 
-```python
-import pandas as pd
 
 ![](img/3829f24c07679475a675cd229b786283_38.png)
 
+```python
+import pandas as pd
 # 加载苹果公司股价数据
 data = pd.read_csv('apple_stock_price.csv')
 ```
@@ -137,6 +137,11 @@ data.loc[data['SMA1'] < data['SMA2'], 'position'] = -1
 
 ![](img/3829f24c07679475a675cd229b786283_54.png)
 
+
+![](img/3829f24c07679475a675cd229b786283_56.png)
+
+![](img/3829f24c07679475a675cd229b786283_58.png)
+
 ```python
 # 计算策略的每日收益
 data['strategy'] = data['position'].shift(1) * data['returns']
@@ -144,11 +149,6 @@ data['strategy'] = data['position'].shift(1) * data['returns']
 # 计算累积收益
 cumulative_returns = (data['returns'] + 1).cumprod()
 cumulative_strategy = (data['strategy'] + 1).cumprod()
-
-![](img/3829f24c07679475a675cd229b786283_56.png)
-
-![](img/3829f24c07679475a675cd229b786283_58.png)
-
 # 计算策略相对于基准的超额收益
 outperformance = cumulative_strategy.iloc[-1] - cumulative_returns.iloc[-1]
 ```
@@ -182,6 +182,9 @@ results = pd.DataFrame()
 
 在每次循环中，将当前参数组合及其对应的策略表现添加到结果表格中。
 
+
+![](img/3829f24c07679475a675cd229b786283_76.png)
+
 ```python
 # 在循环内部，构建当前参数组合的结果行
 result_row = pd.DataFrame({
@@ -191,9 +194,6 @@ result_row = pd.DataFrame({
     'Cumulative_Strategy': [cumulative_strategy.iloc[-1]],
     'Outperformance': [outperformance]
 })
-
-![](img/3829f24c07679475a675cd229b786283_76.png)
-
 # 将当前结果行追加到总结果表格中，忽略索引以保持整洁
 results = pd.concat([results, result_row], ignore_index=True)
 ```

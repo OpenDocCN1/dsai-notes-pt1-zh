@@ -41,16 +41,11 @@
 
 ![](img/35cc1e9dc02965cd00cdb1de63891075_22.png)
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
 
 ![](img/35cc1e9dc02965cd00cdb1de63891075_24.png)
 
 ![](img/35cc1e9dc02965cd00cdb1de63891075_26.png)
 
-# 假设已有函数 f(x) 和其导数 df(x) 的定义
-# 学习率 lr 和初始 x 也已定义
 
 ![](img/35cc1e9dc02965cd00cdb1de63891075_28.png)
 
@@ -58,8 +53,6 @@ import matplotlib.pyplot as plt
 
 ![](img/35cc1e9dc02965cd00cdb1de63891075_32.png)
 
-x_ = [x]  # 记录初始x值
-count = 0
 
 ![](img/35cc1e9dc02965cd00cdb1de63891075_34.png)
 
@@ -67,6 +60,16 @@ count = 0
 
 ![](img/35cc1e9dc02965cd00cdb1de63891075_38.png)
 
+
+![](img/35cc1e9dc02965cd00cdb1de63891075_40.png)
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+# 假设已有函数 f(x) 和其导数 df(x) 的定义
+# 学习率 lr 和初始 x 也已定义
+x_ = [x]  # 记录初始x值
+count = 0
 while True:
     grad = df(x)
     new_x = x - lr * grad
@@ -77,9 +80,6 @@ while True:
     x = new_x
     x_.append(x)  # 记录更新后的x值
     count += 1
-
-![](img/35cc1e9dc02965cd00cdb1de63891075_40.png)
-
 x_ = np.array(x_)  # 转换为NumPy数组以便计算
 print(f"梯度下降的次数: {count}")
 ```
@@ -118,12 +118,6 @@ print(f"梯度下降的次数: {count}")
 
 以下是完整的绘图代码：
 
-```python
-# 绘制函数曲线
-x1 = np.linspace(0, 11.5, 100)
-y1 = f(x1)
-plt.figure(figsize=(12, 9))
-plt.plot(x1, y1)
 
 ![](img/35cc1e9dc02965cd00cdb1de63891075_64.png)
 
@@ -131,6 +125,12 @@ plt.plot(x1, y1)
 
 ![](img/35cc1e9dc02965cd00cdb1de63891075_68.png)
 
+```python
+# 绘制函数曲线
+x1 = np.linspace(0, 11.5, 100)
+y1 = f(x1)
+plt.figure(figsize=(12, 9))
+plt.plot(x1, y1)
 # 绘制梯度下降的每一步
 plt.scatter(x_, f(x_), color='red', s=30)  # s 参数控制点的大小
 plt.show()

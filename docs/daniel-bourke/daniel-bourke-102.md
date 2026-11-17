@@ -61,6 +61,9 @@ plt.show()
 
 以下是创建4x4网格，展示16张随机训练图像的步骤：
 
+
+![](img/253d733f7e7247d864f4b308d98d6e20_7.png)
+
 ```python
 # 设置随机种子以确保结果可复现
 torch.manual_seed(42)
@@ -71,9 +74,6 @@ cols = 4
 
 # 创建画布
 fig = plt.figure(figsize=(9, 9))
-
-![](img/253d733f7e7247d864f4b308d98d6e20_7.png)
-
 # 循环创建16个子图
 for i in range(1, rows * cols + 1):
     # 生成一个随机索引

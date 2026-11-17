@@ -56,14 +56,14 @@
 **何时使用**：过滤法适合作为高效的初始步骤，快速过滤数据，特别是在算法运行时间是瓶颈时。由于这些方法独立于模型，因此选出的特征可用于任何机器学习模型或其他特征选择方法。
 
 **代码示例**：
+
+![](img/a3f121365a3a90df06a21c4c10a4e455_16.png)
+
 ```python
 # 单变量过滤：选择K个最佳特征（基于互信息）
 from sklearn.feature_selection import SelectKBest, mutual_info_regression
 selector = SelectKBest(score_func=mutual_info_regression, k=10)
 X_new = selector.fit_transform(X, y)
-
-![](img/a3f121365a3a90df06a21c4c10a4e455_16.png)
-
 # 多变量过滤：基于皮尔逊相关系数移除高相关特征
 import pandas as pd
 corr_matrix = X.corr().abs()

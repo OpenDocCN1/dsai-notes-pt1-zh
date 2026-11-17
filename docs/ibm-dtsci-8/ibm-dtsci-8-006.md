@@ -60,17 +60,17 @@ df_canada.sort_values(by='Total', ascending=False)
 
 由于Matplotlib默认将数据框的索引绘制在横轴上，而当前数据框的索引是国家名称，因此我们需要对数据框进行转置。以下是准备数据框的步骤：
 
+
+![](img/b331c8faccf258c4cf1d52e617a90b64_22.png)
+
+![](img/b331c8faccf258c4cf1d52e617a90b64_23.png)
+
 ```python
 # 创建包含前五个国家的新数据框
 df_top_five = df_canada.head(5)
 
 # 选择1980年至2013年的列，排除Total列
 df_top_five = df_top_five.loc[:, '1980':'2013']
-
-![](img/b331c8faccf258c4cf1d52e617a90b64_22.png)
-
-![](img/b331c8faccf258c4cf1d52e617a90b64_23.png)
-
 # 转置数据框
 df_top_five = df_top_five.transpose()
 ```
@@ -93,27 +93,27 @@ df_top_five = df_top_five.transpose()
 
 ![](img/b331c8faccf258c4cf1d52e617a90b64_34.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/b331c8faccf258c4cf1d52e617a90b64_35.png)
 
 ![](img/b331c8faccf258c4cf1d52e617a90b64_37.png)
 
-# 生成面积图
-df_top_five.plot(kind='area')
 
 ![](img/b331c8faccf258c4cf1d52e617a90b64_39.png)
 
 ![](img/b331c8faccf258c4cf1d52e617a90b64_40.png)
 
+
+![](img/b331c8faccf258c4cf1d52e617a90b64_42.png)
+
+```python
+import matplotlib.pyplot as plt
+# 生成面积图
+df_top_five.plot(kind='area')
 # 添加标题和轴标签
 plt.title('Immigration Trend of Top 5 Countries to Canada (1980-2013)')
 plt.xlabel('Year')
 plt.ylabel('Number of Immigrants')
-
-![](img/b331c8faccf258c4cf1d52e617a90b64_42.png)
-
 # 显示图表
 plt.show()
 ```

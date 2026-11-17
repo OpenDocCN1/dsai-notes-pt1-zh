@@ -126,11 +126,11 @@ ax.set_xlabel('X 标签', fontsize=15, color='blue')
 
 `rcParams` 是一个字典，用于配置Matplotlib的全局默认参数。你可以通过修改它来一次性设置字体家族、粗细、大小等。
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/6d255ba3717898e872615ce27e7f7478_31.png)
 
+```python
+import matplotlib.pyplot as plt
 # 定义一个字体参数字典
 font_settings = {
     'font.family': 'monospace', # 字体家族

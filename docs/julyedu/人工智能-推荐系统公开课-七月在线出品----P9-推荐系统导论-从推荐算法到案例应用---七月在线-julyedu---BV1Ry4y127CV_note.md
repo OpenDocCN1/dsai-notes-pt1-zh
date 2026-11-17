@@ -214,14 +214,6 @@ min_{P,Q} Σ_{(u,i)∈已知评分} (r_{ui} - p_u · q_i^T)^2 + λ(||p_u||^2 + |
 
 这个示例演示了如何计算用户相似度并做出推荐。
 
-```python
-# 计算用户相似度（以欧氏距离为例）
-def euclidean_distance(rating1, rating2):
-    distance = 0
-    for key in rating1:
-        if key in rating2:
-            distance += (rating1[key] - rating2[key]) ** 2
-    return distance ** 0.5
 
 ![](img/460d2baf695d4ca0cb3814830da81f59_8.png)
 
@@ -233,6 +225,14 @@ def euclidean_distance(rating1, rating2):
 
 ![](img/460d2baf695d4ca0cb3814830da81f59_15.png)
 
+```python
+# 计算用户相似度（以欧氏距离为例）
+def euclidean_distance(rating1, rating2):
+    distance = 0
+    for key in rating1:
+        if key in rating2:
+            distance += (rating1[key] - rating2[key]) ** 2
+    return distance ** 0.5
 # 寻找最近邻用户
 def find_nearest_neighbor(username, users):
     distances = []

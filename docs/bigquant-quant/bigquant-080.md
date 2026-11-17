@@ -75,13 +75,13 @@ print(“原始数据 x:\n”, x)
 
 ![](img/67dcafb3498c3eb506d1735f5cc95170_16.png)
 
+
+![](img/67dcafb3498c3eb506d1735f5cc95170_18.png)
+
 ```python
 # 计算每一列（每个特征）的均值，axis=0表示按列计算
 mean_val = np.mean(x, axis=0)
 print(“均值 mean_val:\n”, mean_val)
-
-![](img/67dcafb3498c3eb506d1735f5cc95170_18.png)
-
 # 计算每一列（每个特征）的标准差
 std_val = np.std(x, axis=0)
 print(“标准差 std_val:\n”, std_val)
@@ -93,12 +93,12 @@ print(“Z-Score归一化结果 norm:\n”, norm)
 
 最后，我们验证标准化后的数据是否均值为0，标准差为1。
 
-```python
-# 验证归一化后数据的均值（应接近0）
-print(“归一化后数据的均值:\n”, np.mean(norm, axis=0))
 
 ![](img/67dcafb3498c3eb506d1735f5cc95170_20.png)
 
+```python
+# 验证归一化后数据的均值（应接近0）
+print(“归一化后数据的均值:\n”, np.mean(norm, axis=0))
 # 验证归一化后数据的标准差（应接近1）
 print(“归一化后数据的标准差:\n”, np.std(norm, axis=0))
 ```
@@ -115,16 +115,16 @@ print(“归一化后数据的标准差:\n”, np.std(norm, axis=0))
 
 **方式一：分步进行（拟合和转换）**
 
-```python
-from sklearn.preprocessing import StandardScaler
 
 ![](img/67dcafb3498c3eb506d1735f5cc95170_24.png)
 
-# 创建StandardScaler对象
-scaler = StandardScaler()
 
 ![](img/67dcafb3498c3eb506d1735f5cc95170_26.png)
 
+```python
+from sklearn.preprocessing import StandardScaler
+# 创建StandardScaler对象
+scaler = StandardScaler()
 # 第一步：拟合数据，计算均值和标准差
 scaler.fit(x)
 

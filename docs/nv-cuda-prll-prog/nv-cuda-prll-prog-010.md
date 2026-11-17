@@ -312,6 +312,9 @@ __global__ void myKernel(int* result) {
 ### 简单示例
 
 以下代码展示了常量内存的完整使用流程：
+
+![](img/fe6f14585acd6e9a70d02305c3769a23_161.png)
+
 ```cuda
 // 1. 声明常量内存变量
 __constant__ unsigned int myConst;
@@ -321,9 +324,6 @@ __global__ void constantKernel(unsigned int* data) {
     int tid = threadIdx.x;
     data[tid] = myConst; // 所有线程都将自己的输出设置为常量值
 }
-
-![](img/fe6f14585acd6e9a70d02305c3769a23_161.png)
-
 int main() {
     unsigned int h_val = 10;
     unsigned int* d_data;

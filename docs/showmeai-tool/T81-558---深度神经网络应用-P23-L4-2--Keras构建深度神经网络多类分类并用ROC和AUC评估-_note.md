@@ -86,6 +86,11 @@ ROC曲线下的面积称为**AUC**。AUC值越接近1.0，表示模型性能越�
 
 ![](img/0c3de78b0d0924709e45c8de93aa7c5d_32.png)
 
+
+![](img/0c3de78b0d0924709e45c8de93aa7c5d_34.png)
+
+![](img/0c3de78b0d0924709e45c8de93aa7c5d_35.png)
+
 ```python
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
@@ -94,11 +99,6 @@ model = Sequential()
 model.add(Dense(20, input_dim=X_train.shape[1], activation='relu'))
 model.add(Dense(10, activation='relu'))
 model.add(Dense(1, activation='sigmoid')) # 二分类，使用单个Sigmoid神经元
-
-![](img/0c3de78b0d0924709e45c8de93aa7c5d_34.png)
-
-![](img/0c3de78b0d0924709e45c8de93aa7c5d_35.png)
-
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 # 注意：损失函数使用‘binary_crossentropy’
 ```
@@ -151,18 +151,9 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 
 ![](img/0c3de78b0d0924709e45c8de93aa7c5d_55.png)
 
-```python
-from tensorflow.keras.utils import to_categorical
 
 ![](img/0c3de78b0d0924709e45c8de93aa7c5d_57.png)
 
-# 假设有3个类别，将标签转换为one-hot编码
-y_train_onehot = to_categorical(y_train, num_classes=3)
-
-model = Sequential()
-model.add(Dense(20, input_dim=X_train.shape[1], activation='relu'))
-model.add(Dense(10, activation='relu'))
-model.add(Dense(3, activation='softmax')) # 输出层神经元数等于类别数
 
 ![](img/0c3de78b0d0924709e45c8de93aa7c5d_59.png)
 
@@ -170,6 +161,15 @@ model.add(Dense(3, activation='softmax')) # 输出层神经元数等于类别数
 
 ![](img/0c3de78b0d0924709e45c8de93aa7c5d_61.png)
 
+```python
+from tensorflow.keras.utils import to_categorical
+# 假设有3个类别，将标签转换为one-hot编码
+y_train_onehot = to_categorical(y_train, num_classes=3)
+
+model = Sequential()
+model.add(Dense(20, input_dim=X_train.shape[1], activation='relu'))
+model.add(Dense(10, activation='relu'))
+model.add(Dense(3, activation='softmax')) # 输出层神经元数等于类别数
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 # 注意：损失函数使用‘categorical_crossentropy’
 ```

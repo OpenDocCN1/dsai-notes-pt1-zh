@@ -93,14 +93,14 @@ summarizer = pipeline(
 
 ![](img/bf51082d585dfed0df66acc4f7301ae0_5.png)
 
+
+![](img/bf51082d585dfed0df66acc4f7301ae0_6.png)
+
 ```python
 # 定义长文本
 long_text = """
 Paris is the capital and most populous city of France. It is located on the Seine River in the north of the country. Known as the ‘City of Light’, Paris is famous for its art, culture, and history. Major landmarks include the Eiffel Tower, the Louvre Museum (home to the Mona Lisa), and the Notre-Dame Cathedral. The city is also a global center for fashion, gastronomy, and luxury goods. Paris hosts numerous international organizations such as UNESCO. With its charming streets, cafes, and vibrant cultural life, it remains one of the world's top tourist destinations.
 """
-
-![](img/bf51082d585dfed0df66acc4f7301ae0_6.png)
-
 # 执行摘要生成
 summary = summarizer(long_text, max_length=100, min_length=10)[0]['summary_text']
 

@@ -78,6 +78,9 @@ llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro-latest")
 2.  分割文本。
 3.  生成嵌入并存入向量数据库。
 
+
+![](img/2046f66a286980505ac67a79d97c5eb7_8.png)
+
 ```python
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -86,9 +89,6 @@ from langchain_community.vectorstores import Chroma
 # 1. 加载文档（示例：从文本文件加载）
 loader = TextLoader("your_knowledge_base.txt")
 documents = loader.load()
-
-![](img/2046f66a286980505ac67a79d97c5eb7_8.png)
-
 # 2. 分割文本
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 chunks = text_splitter.split_documents(documents)
@@ -106,10 +106,6 @@ retriever = vectorstore.as_retriever(search_kwargs={"k": 4}) # 检索最相关�
 
 现在，构建基础的RAG链。这个链将检索到的上下文与问题组合，然后交给LLM。
 
-```python
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.runnables import RunnablePassthrough
-from langchain_core.output_parsers import StrOutputParser
 
 ![](img/2046f66a286980505ac67a79d97c5eb7_10.png)
 
@@ -117,15 +113,19 @@ from langchain_core.output_parsers import StrOutputParser
 
 ![](img/2046f66a286980505ac67a79d97c5eb7_12.png)
 
+
+![](img/2046f66a286980505ac67a79d97c5eb7_13.png)
+
+```python
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.runnables import RunnablePassthrough
+from langchain_core.output_parsers import StrOutputParser
 # 定义提示模板
 template = """请根据以下上下文来回答问题。如果你不知道答案，就说你不知道。
 上下文：{context}
 问题：{question}
 请提供有用的答案："""
 prompt = ChatPromptTemplate.from_template(template)
-
-![](img/2046f66a286980505ac67a79d97c5eb7_13.png)
-
 # 构建RAG链
 rag_chain = (
     {"context": retriever, "question": RunnablePassthrough()}
@@ -154,6 +154,14 @@ memory = ConversationBufferMemory(memory_key="chat_history", return_messages=Tru
 
 现在，我们需要创建一个新的链，将记忆、检索和生成步骤结合起来。这比基础链更复杂一些，因为需要动态地将历史对话和当前问题组合成一个新的、包含上下文的问题（有时称为“历史感知查询”），然后用这个新问题去检索，最后生成答案。
 
+
+![](img/2046f66a286980505ac67a79d97c5eb7_17.png)
+
+![](img/2046f66a286980505ac67a79d97c5eb7_18.png)
+
+
+![](img/2046f66a286980505ac67a79d97c5eb7_19.png)
+
 ```python
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -165,11 +173,6 @@ history_aware_prompt = ChatPromptTemplate.from_messages([
     ("human", "{input}")
 ])
 history_aware_retriever = create_history_aware_retriever(llm, retriever, history_aware_prompt)
-
-![](img/2046f66a286980505ac67a79d97c5eb7_17.png)
-
-![](img/2046f66a286980505ac67a79d97c5eb7_18.png)
-
 # 然后，创建一个处理检索结果的链。
 # 这个链负责将检索到的文档、历史对话和当前问题组合起来，交给LLM生成最终答案。
 qa_prompt = ChatPromptTemplate.from_messages([
@@ -177,14 +180,14 @@ qa_prompt = ChatPromptTemplate.from_messages([
     ("human", "{input}")
 ])
 question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
-
-![](img/2046f66a286980505ac67a79d97c5eb7_19.png)
-
 # 最后，将历史感知检索器和问答链组合成完整的检索链。
 rag_chain_with_memory = create_retrieval_chain(history_aware_retriever, question_answer_chain)
 ```
 
 现在，我们有了一个具备记忆功能的RAG链。但是，要使用它，我们需要手动管理记忆的输入和输出。更优雅的方式是将其封装成一个可交互的对话流程。
+
+
+![](img/2046f66a286980505ac67a79d97c5eb7_21.png)
 
 ```python
 from langchain.chains import ConversationalRetrievalChain
@@ -200,9 +203,6 @@ conversational_rag_chain = ConversationalRetrievalChain.from_llm(
 # 现在可以进行多轮对话了
 result1 = conversational_rag_chain.invoke({"question": "生成式AI能做什么？"})
 print("AI:", result1['answer'])
-
-![](img/2046f66a286980505ac67a79d97c5eb7_21.png)
-
 result2 = conversational_rag_chain.invoke({"question": "它和我刚才问的有什么区别？"}) # AI会记得上一轮对话
 print("AI:", result2['answer'])
 ```

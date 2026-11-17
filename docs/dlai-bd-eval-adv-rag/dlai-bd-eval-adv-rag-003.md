@@ -114,11 +114,11 @@ provider = TruOpenAI(model_engine="gpt-3.5-turbo")
 
 ![](img/582ab0ef8bd1dc8860717ce406d29269_12.png)
 
-```python
-from trulens_eval import Feedback
 
 ![](img/582ab0ef8bd1dc8860717ce406d29269_14.png)
 
+```python
+from trulens_eval import Feedback
 # 定义答案相关性反馈函数
 f_answer_relevance = Feedback(
     provider.relevance_with_cot_reasoning,

@@ -52,6 +52,9 @@
 
 让我们通过代码来看看递归特征消除的具体实现。以下示例使用 `scikit-learn` 库中的 `RFECV`（带交叉验证的递归特征消除）。
 
+
+![](img/f35c45c39677c9820ca8511a359bbd6d_2.png)
+
 ```python
 # 导入必要的库
 from sklearn.datasets import make_classification
@@ -72,9 +75,6 @@ X_test_scaled = scaler.transform(X_test)
 
 # 3. 选择基础模型（此处使用能提供特征重要性的随机森林）
 model = RandomForestClassifier(n_estimators=100, random_state=42, criterion='entropy')
-
-![](img/f35c45c39677c9820ca8511a359bbd6d_2.png)
-
 # 4. 创建递归特征消除器，使用交叉验证自动选择最佳特征数量
 rfecv = RFECV(estimator=model, step=1, cv=5, scoring='accuracy')
 rfecv.fit(X_train_scaled, y_train)

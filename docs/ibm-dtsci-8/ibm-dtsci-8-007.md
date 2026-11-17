@@ -62,13 +62,13 @@
 4. 显示图表。
 
 **代码示例**：
-```python
-import matplotlib.pyplot as plt
 
 ![](img/3b33735a004139c9dafb3e26f17710ea_34.png)
 
 ![](img/3b33735a004139c9dafb3e26f17710ea_35.png)
 
+```python
+import matplotlib.pyplot as plt
 # 假设df_canada是包含2013年移民数据的数据框
 df_canada['2013'].plot(kind='hist')
 plt.title('2013年移民到加拿大的分布')
@@ -106,14 +106,9 @@ plt.show()
 ![](img/3b33735a004139c9dafb3e26f17710ea_53.png)
 
 **代码示例**：
-```python
-import matplotlib.pyplot as plt
-import numpy as np
 
 ![](img/3b33735a004139c9dafb3e26f17710ea_55.png)
 
-# 计算频率和箱边界
-count, bin_edges = np.histogram(df_canada['2013'])
 
 ![](img/3b33735a004139c9dafb3e26f17710ea_57.png)
 
@@ -121,6 +116,11 @@ count, bin_edges = np.histogram(df_canada['2013'])
 
 ![](img/3b33735a004139c9dafb3e26f17710ea_60.png)
 
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+# 计算频率和箱边界
+count, bin_edges = np.histogram(df_canada['2013'])
 # 绘制直方图
 df_canada['2013'].plot(kind='hist', xticks=bin_edges)
 plt.title('2013年移民到加拿大的分布（优化后）')

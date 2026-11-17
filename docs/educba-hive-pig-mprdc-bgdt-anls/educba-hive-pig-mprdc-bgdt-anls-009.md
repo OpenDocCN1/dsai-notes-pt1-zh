@@ -54,15 +54,15 @@ REGISTER /path/to/piggybank.jar;
 
 ![](img/2907167cd7dffa1e0e4084ae866607de_7.png)
 
-```pig
--- 关系 S1: 加载XML文件
--- 使用 XMLLoader，并指定父标签为 ‘book‘
-S1 = LOAD ‘/input/books_data.xml‘ USING org.apache.pig.piggybank.storage.XMLLoader(‘book‘) AS (content:chararray);
 
 ![](img/2907167cd7dffa1e0e4084ae866607de_9.png)
 
 ![](img/2907167cd7dffa1e0e4084ae866607de_10.png)
 
+```pig
+-- 关系 S1: 加载XML文件
+-- 使用 XMLLoader，并指定父标签为 ‘book‘
+S1 = LOAD ‘/input/books_data.xml‘ USING org.apache.pig.piggybank.storage.XMLLoader(‘book‘) AS (content:chararray);
 -- 关系 S2: 使用正则表达式提取各个字段
 -- 注意：Pig中没有string类型，使用chararray代替
 S2 = FOREACH S1 GENERATE

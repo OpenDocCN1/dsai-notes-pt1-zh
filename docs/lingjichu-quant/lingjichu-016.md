@@ -71,14 +71,14 @@
 
 ![](img/9c000ebf92a8a4bc8a5b383b196ce8f5_34.png)
 
+
+![](img/9c000ebf92a8a4bc8a5b383b196ce8f5_36.png)
+
 ```python
 # 假设 total_return 是计算好的总收益率
 total_return = 0.5  # 例如，总收益为50%
 N = 730  # 回测总交易日
 trading_days_per_year = 250
-
-![](img/9c000ebf92a8a4bc8a5b383b196ce8f5_36.png)
-
 # 计算年化收益率
 annualized_return = (1 + total_return) ** (trading_days_per_year / N) - 1
 print(f"年化收益率: {annualized_return:.2%}")

@@ -172,6 +172,11 @@ model.compile(
 
 以下是使用Keras回调函数实现学习率调度的示例：
 
+
+![](img/4cdf97d14f14dc14644fa7a1d76bd151_10.png)
+
+![](img/4cdf97d14f14dc14644fa7a1d76bd151_11.png)
+
 ```python
 from tensorflow.keras.callbacks import LearningRateScheduler, ModelCheckpoint
 
@@ -184,11 +189,6 @@ def lr_schedule(epoch):
         return initial_lr * 0.1
     else:
         return initial_lr * 0.01
-
-![](img/4cdf97d14f14dc14644fa7a1d76bd151_10.png)
-
-![](img/4cdf97d14f14dc14644fa7a1d76bd151_11.png)
-
 lr_scheduler = LearningRateScheduler(lr_schedule)
 checkpoint = ModelCheckpoint('best_model.h5', monitor='val_loss', save_best_only=True)
 

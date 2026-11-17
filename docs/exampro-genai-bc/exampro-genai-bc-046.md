@@ -275,6 +275,11 @@ CMD [“python”, “simple_mega.py”]
 ### 创建Docker Compose文件
 Docker Compose可以方便地定义和运行多容器应用。对于我们的简单服务，一个服务就够了。
 
+
+![](img/c57003f3305470f786e79a4fac5d3c6a_45.png)
+
+![](img/c57003f3305470f786e79a4fac5d3c6a_46.png)
+
 ```yaml
 # docker-compose.yml
 version: ‘3.8’
@@ -287,11 +292,6 @@ services:
     # 可以在这里定义网络，如果需要连接其他容器（如数据库、LLM服务）
     # networks:
     #   - my-network
-
-![](img/c57003f3305470f786e79a4fac5d3c6a_45.png)
-
-![](img/c57003f3305470f786e79a4fac5d3c6a_46.png)
-
 # 可选：定义自定义网络
 # networks:
 #   my-network:

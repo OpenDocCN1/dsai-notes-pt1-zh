@@ -52,20 +52,20 @@
 
 ![](img/62921b8df7b04b637583e4e75fb09cc9_14.png)
 
+
+![](img/62921b8df7b04b637583e4e75fb09cc9_16.png)
+
+
+![](img/62921b8df7b04b637583e4e75fb09cc9_18.png)
+
 ```python
 # 导入必要的库
 from sklearn.metrics import adjusted_rand_score
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import numpy as np
-
-![](img/62921b8df7b04b637583e4e75fb09cc9_16.png)
-
 # 假设 X 是特征数据，y_true 是真实的类别标签
 # X, y_true = load_your_data()
-
-![](img/62921b8df7b04b637583e4e75fb09cc9_18.png)
-
 scores = [] # 用于存储不同K值下的调整兰德系数
 
 # 尝试不同的K值（从2到6）

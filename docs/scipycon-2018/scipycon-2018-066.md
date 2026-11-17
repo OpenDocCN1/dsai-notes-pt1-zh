@@ -201,13 +201,13 @@ def count_risk_categories_by_month(data, month, year):
 我们的代码逻辑已经完成，现在为其创建一个方便使用的命令行界面。我们将使用 Python 内置的 `argparse` 模块。
 
 创建一个新文件 `cli.py`：
+
+![](img/38c4208e4cfbd47fd4633efddcefabf0_3.png)
+
 ```python
 # cli.py
 import argparse
 import analyze
-
-![](img/38c4208e4cfbd47fd4633efddcefabf0_3.png)
-
 def main(args=None):
     parser = argparse.ArgumentParser(description='分析餐厅检查数据，统计指定月份的风险类别。')
     parser.add_argument('filepath', help='数据文件路径')

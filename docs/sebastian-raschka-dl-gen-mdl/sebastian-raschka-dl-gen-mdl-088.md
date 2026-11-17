@@ -52,13 +52,16 @@ def reset_parameters(self):
 
 ![](img/ec790c4d7216cc3c93104322c85c0e8d_12.png)
 
+
+![](img/ec790c4d7216cc3c93104322c85c0e8d_14.png)
+
+
+![](img/ec790c4d7216cc3c93104322c85c0e8d_16.png)
+
 ```python
 import torch
 import torch.nn as nn
 import torch.nn.init as init
-
-![](img/ec790c4d7216cc3c93104322c85c0e8d_14.png)
-
 # 1. 定义一个简单的MLP模型
 class SimpleMLP(nn.Module):
     def __init__(self, input_size=784, hidden_size=256, output_size=10):
@@ -74,9 +77,6 @@ class SimpleMLP(nn.Module):
 
 # 2. 实例化模型
 model = SimpleMLP()
-
-![](img/ec790c4d7216cc3c93104322c85c0e8d_16.png)
-
 # 3. 遍历模型模块并应用自定义初始化
 for m in model.modules():
     if isinstance(m, nn.Linear):

@@ -83,9 +83,6 @@
 
 ![](img/7673f0d251cab1e2f08841720a99420f_14.png)
 
-```python
-contain_true_mean = 0
-num_simulations = 100
 
 ![](img/7673f0d251cab1e2f08841720a99420f_15.png)
 
@@ -93,6 +90,12 @@ num_simulations = 100
 
 ![](img/7673f0d251cab1e2f08841720a99420f_19.png)
 
+
+![](img/7673f0d251cab1e2f08841720a99420f_21.png)
+
+```python
+contain_true_mean = 0
+num_simulations = 100
 for _ in range(num_simulations):
     # 1. 生成新样本
     sample = np.random.uniform(low=0, high=0.1, size=n)
@@ -108,9 +111,6 @@ for _ in range(num_simulations):
     # 3. 检查是否包含0.05
     if ci_low <= 0.05 <= ci_high:
         contain_true_mean += 1
-
-![](img/7673f0d251cab1e2f08841720a99420f_21.png)
-
 print(f"{contain_true_mean}个区间包含了真实均值0.05。")
 print(f"{num_simulations - contain_true_mean}个区间没有包含真实均值0.05。")
 ```

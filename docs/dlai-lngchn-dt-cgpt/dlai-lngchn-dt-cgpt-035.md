@@ -96,12 +96,12 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTex
 ![](img/998abcc69f89944611c944f1c443e931_45.png)
 
 初始化分割器，设置较小的块大小和重叠以便观察：
-```python
-chunk_size = 26
-chunk_overlap = 4
 
 ![](img/998abcc69f89944611c944f1c443e931_47.png)
 
+```python
+chunk_size = 26
+chunk_overlap = 4
 r_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
 c_splitter = CharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap, separator=' ')
 ```
@@ -148,12 +148,12 @@ c_splitter = CharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_ov
 ![](img/998abcc69f89944611c944f1c443e931_71.png)
 
 定义分割器：
-```python
-# 字符分割器，按空格分割
-c_splitter = CharacterTextSplitter(chunk_size=450, chunk_overlap=0, separator=' ')
 
 ![](img/998abcc69f89944611c944f1c443e931_73.png)
 
+```python
+# 字符分割器，按空格分割
+c_splitter = CharacterTextSplitter(chunk_size=450, chunk_overlap=0, separator=' ')
 # 递归字符分割器，使用默认分隔符列表：["\n\n", "\n", " ", ""]
 r_splitter = RecursiveCharacterTextSplitter(
     chunk_size=450,
@@ -188,13 +188,6 @@ r_splitter = RecursiveCharacterTextSplitter(
 
 ![](img/998abcc69f89944611c944f1c443e931_83.png)
 
-```python
-# 假设 `pages` 是已加载的PDF文档列表
-text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000,
-    chunk_overlap=200,
-    length_function=len, # 使用字符数计算长度
-)
 
 ![](img/998abcc69f89944611c944f1c443e931_85.png)
 
@@ -202,6 +195,13 @@ text_splitter = RecursiveCharacterTextSplitter(
 
 ![](img/998abcc69f89944611c944f1c443e931_89.png)
 
+```python
+# 假设 `pages` 是已加载的PDF文档列表
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1000,
+    chunk_overlap=200,
+    length_function=len, # 使用字符数计算长度
+)
 docs = text_splitter.split_documents(pages) # 输入是Document对象列表
 ```
 分割后，我们会得到比原始页面数量更多的文档片段。每个新片段都继承了原始页面的元数据（如来源和页码）。
@@ -248,11 +248,19 @@ split_docs = token_splitter.split_documents(pages)
 ![](img/998abcc69f89944611c944f1c443e931_101.png)
 
 **示例：**
-```python
-from langchain.text_splitter import MarkdownHeaderTextSplitter
 
 ![](img/998abcc69f89944611c944f1c443e931_103.png)
 
+
+![](img/998abcc69f89944611c944f1c443e931_105.png)
+
+
+![](img/998abcc69f89944611c944f1c443e931_107.png)
+
+![](img/998abcc69f89944611c944f1c443e931_109.png)
+
+```python
+from langchain.text_splitter import MarkdownHeaderTextSplitter
 markdown_document = “””
 # Title
 ## Chapter 1
@@ -263,19 +271,11 @@ Hi, this is Lance.
 ## Chapter 2
 Hi, this is Molly.
 “””
-
-![](img/998abcc69f89944611c944f1c443e931_105.png)
-
 headers_to_split_on = [
     (“#”, “Header 1”),
     (“##”, “Header 2”),
     (“###”, “Header 3”),
 ]
-
-![](img/998abcc69f89944611c944f1c443e931_107.png)
-
-![](img/998abcc69f89944611c944f1c443e931_109.png)
-
 splitter = MarkdownHeaderTextSplitter(headers_to_split_on=headers_to_split_on)
 splits = splitter.split_text(markdown_document)
 ```

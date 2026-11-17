@@ -128,6 +128,9 @@ class State(TypedDict):
 
 ![](img/7c23c7670874b091038e923eda0ab14e_7.png)
 
+
+![](img/7c23c7670874b091038e923eda0ab14e_9.png)
+
 ```python
 from langgraph.graph import StateGraph, END
 
@@ -163,9 +166,6 @@ def should_continue(state: State):
         return "tools"
     else:
         return END
-
-![](img/7c23c7670874b091038e923eda0ab14e_9.png)
-
 # 添加条件边
 graph_builder.add_conditional_edges(
     "assistant",

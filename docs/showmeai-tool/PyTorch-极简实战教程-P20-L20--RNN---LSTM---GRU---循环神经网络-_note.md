@@ -31,14 +31,14 @@ learning_rate = 0.001 # 学习率
 
 上一节我们介绍了超参数，本节中我们来看看如何用这些参数构建模型。
 
-```python
-import torch
-import torch.nn as nn
 
 ![](img/4923e3db142c0d58fa13de82f2b481db_3.png)
 
 ![](img/4923e3db142c0d58fa13de82f2b481db_4.png)
 
+```python
+import torch
+import torch.nn as nn
 class RNN(nn.Module):
     def __init__(self, input_size, hidden_size, num_layers, num_classes):
         super(RNN, self).__init__()
@@ -94,13 +94,13 @@ images = images.reshape(-1, sequence_length, input_size).to(device)
 
 以下是训练循环的关键步骤：
 
+
+![](img/4923e3db142c0d58fa13de82f2b481db_12.png)
+
 ```python
 model = RNN(input_size, hidden_size, num_layers, num_classes).to(device)
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
-
-![](img/4923e3db142c0d58fa13de82f2b481db_12.png)
-
 for epoch in range(num_epochs):
     for batch_idx, (images, labels) in enumerate(train_loader):
         # 调整输入形状

@@ -202,9 +202,6 @@ TextCNN使用多种不同大小的卷积核提取文本特征，然后通过池�
 
 ![](img/4a91a162bd37b85e8f70afa9e73bd282_68.png)
 
-```python
-import torch
-import torch.nn as nn
 
 ![](img/4a91a162bd37b85e8f70afa9e73bd282_70.png)
 
@@ -214,6 +211,9 @@ import torch.nn as nn
 
 ![](img/4a91a162bd37b85e8f70afa9e73bd282_76.png)
 
+```python
+import torch
+import torch.nn as nn
 class TextCNN(nn.Module):
     def __init__(self, vocab_size, embedding_dim):
         super(TextCNN, self).__init__()

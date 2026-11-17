@@ -72,6 +72,11 @@ m的值不是学习得到的，而是为每个注意力头预先设定好的几�
 ![](img/a1d0a4368887e652ea5d119b0ac5dac6_11.png)
 
 **代码描述**（概念性伪代码）：
+
+![](img/a1d0a4368887e652ea5d119b0ac5dac6_13.png)
+
+![](img/a1d0a4368887e652ea5d119b0ac5dac6_14.png)
+
 ```python
 # 假设 Q, K 已经计算得到，形状为 [batch, heads, seq_len, dim]
 # 计算标准点积注意力分数
@@ -85,11 +90,6 @@ positions = torch.arange(seq_len).unsqueeze(0) - torch.arange(seq_len).unsqueeze
 bias_matrix = m * positions # m 是对应注意力头的负斜率标量
 # 将偏置加到注意力分数上
 scores = scores + bias_matrix
-
-![](img/a1d0a4368887e652ea5d119b0ac5dac6_13.png)
-
-![](img/a1d0a4368887e652ea5d119b0ac5dac6_14.png)
-
 # 后续进行mask（如因果mask）和softmax操作
 attention_weights = F.softmax(scores, dim=-1)
 ```

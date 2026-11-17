@@ -107,14 +107,14 @@ optimizer.step()
 
 ![](img/3d86121ce03106f4a2678b2c89ee9927_29.png)
 
-```python
-# 设置训练轮数（epoch）
-epochs = 100
 
 ![](img/3d86121ce03106f4a2678b2c89ee9927_31.png)
 
 ![](img/3d86121ce03106f4a2678b2c89ee9927_33.png)
 
+```python
+# 设置训练轮数（epoch）
+epochs = 100
 for epoch in range(epochs):
     # 1. 将模型设置为训练模式
     model0.train()

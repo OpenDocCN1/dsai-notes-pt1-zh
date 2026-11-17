@@ -48,6 +48,11 @@
 
 首先，我们导入必要的库，并检查是否有可用的GPU支持。
 
+
+![](img/bdf3154fd8a3cad04eb6fed3d8610645_5.png)
+
+![](img/bdf3154fd8a3cad04eb6fed3d8610645_6.png)
+
 ```python
 import torch
 import torch.nn as nn
@@ -56,27 +61,22 @@ import torchvision
 import torchvision.transforms as transforms
 import matplotlib.pyplot as plt
 import numpy as np
-
-![](img/bdf3154fd8a3cad04eb6fed3d8610645_5.png)
-
-![](img/bdf3154fd8a3cad04eb6fed3d8610645_6.png)
-
 # 检查GPU
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 ```
 
 接着，我们定义超参数并加载CIFAR-10数据集。该数据集在PyTorch中可直接获取。
 
-```python
-# 超参数
-num_epochs = 4
-batch_size = 4
-learning_rate = 0.001
 
 ![](img/bdf3154fd8a3cad04eb6fed3d8610645_8.png)
 
 ![](img/bdf3154fd8a3cad04eb6fed3d8610645_9.png)
 
+```python
+# 超参数
+num_epochs = 4
+batch_size = 4
+learning_rate = 0.001
 # 图像转换：转换为张量并标准化
 transform = transforms.Compose(
     [transforms.ToTensor(),

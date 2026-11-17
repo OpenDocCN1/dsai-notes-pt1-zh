@@ -62,14 +62,14 @@
 
 首先，我们定义一个词元嵌入层。这是一个查找表，将词元ID映射为指定维度的向量。
 
-```python
-import torch
-import torch.nn as nn
 
 ![](img/b20911e3115e141ab167fc6447569a06_2.png)
 
 ![](img/b20911e3115e141ab167fc6447569a06_3.png)
 
+```python
+import torch
+import torch.nn as nn
 # 定义参数
 vocab_size = 50257  # 词汇表大小，类似GPT-2
 output_dim = 256    # 嵌入向量维度

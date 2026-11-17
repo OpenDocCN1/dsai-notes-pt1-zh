@@ -99,12 +99,17 @@ for scaler_label, scaler in scalers.items():
 
 ![](img/6c6c9712aa8f5f0b442e947ef07ffc2a_36.png)
 
-```python
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 ![](img/6c6c9712aa8f5f0b442e947ef07ffc2a_38.png)
 
+
+![](img/6c6c9712aa8f5f0b442e947ef07ffc2a_40.png)
+
+![](img/6c6c9712aa8f5f0b442e947ef07ffc2a_41.png)
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
 # 设置图形样式
 sns.set_context('talk')
 sns.set_style('whitegrid')
@@ -116,11 +121,6 @@ ax.scatter(y_test, y_pred, alpha=0.5)  # alpha设置透明度
 ax.set_xlabel('Actual Values')
 ax.set_ylabel('Predicted Values')
 ax.set_title('Actual vs. Predicted Values (Test Set)')
-
-![](img/6c6c9712aa8f5f0b442e947ef07ffc2a_40.png)
-
-![](img/6c6c9712aa8f5f0b442e947ef07ffc2a_41.png)
-
 # 添加理想预测线（y=x）
 lims = [min(ax.get_xlim()+ax.get_ylim()), max(ax.get_xlim()+ax.get_ylim())]
 ax.plot(lims, lims, 'k--', alpha=0.75, zorder=0)

@@ -104,8 +104,6 @@ CSV（逗号分隔值）是一种常见的表格数据存储格式。第一行�
 
 ![](img/fbb3308f34a1be765ffecc93c9c97c62_24.png)
 
-```python
-files = ["Cape Town.txt", "Istanbul.txt", "New York.txt", "Paris.txt", "Rio de Janeiro.txt", "Sydney.txt", "Tokyo.txt"]
 
 ![](img/fbb3308f34a1be765ffecc93c9c97c62_25.png)
 
@@ -113,6 +111,8 @@ files = ["Cape Town.txt", "Istanbul.txt", "New York.txt", "Paris.txt", "Rio de J
 
 ![](img/fbb3308f34a1be765ffecc93c9c97c62_27.png)
 
+```python
+files = ["Cape Town.txt", "Istanbul.txt", "New York.txt", "Paris.txt", "Rio de Janeiro.txt", "Sydney.txt", "Tokyo.txt"]
 for file in files:
     journal = read_journal(file)
     response = get_completion(prompt_extract)

@@ -75,15 +75,15 @@ input_ids2 = [101, 2009, 2001, 9999, 102]        # 长度为5
 2.  使用正确的 `pad_token_id` 进行填充。
 3.  生成对应的注意力掩码。
 
+
+![](img/c40f36051c2a9fefe3706b138b5c4937_1.png)
+
 ```python
 import tensorflow as tf
 from transformers import AutoTokenizer
 
 tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
 sentences = ["I love this movie.", "It was terrible."]
-
-![](img/c40f36051c2a9fefe3706b138b5c4937_1.png)
-
 # 自动批处理，包含填充和掩码
 batch_encoding = tokenizer(sentences, padding=True, truncation=True, return_tensors="tf")
 print(batch_encoding["input_ids"])

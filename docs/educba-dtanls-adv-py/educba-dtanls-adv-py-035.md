@@ -50,25 +50,16 @@ NumPy数组不包含对Python对象的引用，而是直接存储数值本身。
 
 ![](img/c37408bbc5730d68ebadffe663143d5e_26.png)
 
-```python
-import numpy as np
-import sys
 
 ![](img/c37408bbc5730d68ebadffe663143d5e_28.png)
 
 ![](img/c37408bbc5730d68ebadffe663143d5e_29.png)
 
-# 创建一个Python列表
-py_list = [24, 1257, 57, 100, 200, 300]
-print(f"Python列表: {py_list}")
 
 ![](img/c37408bbc5730d68ebadffe663143d5e_31.png)
 
 ![](img/c37408bbc5730d68ebadffe663143d5e_33.png)
 
-# 计算Python列表的内存占用
-size_of_list = sys.getsizeof(py_list)
-print(f"Python列表的内存占用: {size_of_list} 字节")
 
 ![](img/c37408bbc5730d68ebadffe663143d5e_35.png)
 
@@ -76,14 +67,23 @@ print(f"Python列表的内存占用: {size_of_list} 字节")
 
 ![](img/c37408bbc5730d68ebadffe663143d5e_38.png)
 
-# 将列表转换为NumPy数组
-np_array = np.array(py_list)
-print(f"NumPy数组: {np_array}")
 
 ![](img/c37408bbc5730d68ebadffe663143d5e_40.png)
 
 ![](img/c37408bbc5730d68ebadffe663143d5e_42.png)
 
+```python
+import numpy as np
+import sys
+# 创建一个Python列表
+py_list = [24, 1257, 57, 100, 200, 300]
+print(f"Python列表: {py_list}")
+# 计算Python列表的内存占用
+size_of_list = sys.getsizeof(py_list)
+print(f"Python列表的内存占用: {size_of_list} 字节")
+# 将列表转换为NumPy数组
+np_array = np.array(py_list)
+print(f"NumPy数组: {np_array}")
 # 计算NumPy数组的内存占用
 size_of_np_array = np_array.nbytes
 print(f"NumPy数组的内存占用: {size_of_np_array} 字节")
@@ -135,14 +135,29 @@ print(f"NumPy数组的内存占用: {size_of_np_array} 字节")
 
 ![](img/c37408bbc5730d68ebadffe663143d5e_63.png)
 
-```python
-import numpy as np
-import time
 
 ![](img/c37408bbc5730d68ebadffe663143d5e_65.png)
 
 ![](img/c37408bbc5730d68ebadffe663143d5e_66.png)
 
+
+![](img/c37408bbc5730d68ebadffe663143d5e_68.png)
+
+![](img/c37408bbc5730d68ebadffe663143d5e_69.png)
+
+
+![](img/c37408bbc5730d68ebadffe663143d5e_71.png)
+
+![](img/c37408bbc5730d68ebadffe663143d5e_73.png)
+
+
+![](img/c37408bbc5730d68ebadffe663143d5e_75.png)
+
+![](img/c37408bbc5730d68ebadffe663143d5e_77.png)
+
+```python
+import numpy as np
+import time
 def calculate_time_python_list(size=1000000):
     """使用Python列表和循环进行计算"""
     x = list(range(size))
@@ -153,11 +168,6 @@ def calculate_time_python_list(size=1000000):
         z.append(x[i] + y[i])
     end_time = time.time()
     return end_time - start_time
-
-![](img/c37408bbc5730d68ebadffe663143d5e_68.png)
-
-![](img/c37408bbc5730d68ebadffe663143d5e_69.png)
-
 def calculate_time_numpy_array(size=1000000):
     """使用NumPy数组进行向量化计算"""
     x = np.arange(size)
@@ -166,19 +176,9 @@ def calculate_time_numpy_array(size=1000000):
     z = x + y  # 向量化操作，无需循环
     end_time = time.time()
     return end_time - start_time
-
-![](img/c37408bbc5730d68ebadffe663143d5e_71.png)
-
-![](img/c37408bbc5730d68ebadffe663143d5e_73.png)
-
 # 执行时间对比
 py_time = calculate_time_python_list(1000000)
 np_time = calculate_time_numpy_array(1000000)
-
-![](img/c37408bbc5730d68ebadffe663143d5e_75.png)
-
-![](img/c37408bbc5730d68ebadffe663143d5e_77.png)
-
 print(f"Python列表计算耗时: {py_time:.4f} 秒")
 print(f"NumPy数组计算耗时: {np_time:.4f} 秒")
 print(f"NumPy比Python列表快 {py_time / np_time:.1f} 倍")

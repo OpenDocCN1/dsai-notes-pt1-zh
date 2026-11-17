@@ -108,17 +108,17 @@ Microsoft PowerPoint（.pptx）文件的提取过程与HTML在幕后非常相似
 ![](img/1c22c1081a53aaba8d6211ac14f4b214_5.png)
 
 预处理过程与HTML类似：
+
+![](img/1c22c1081a53aaba8d6211ac14f4b214_7.png)
+
+![](img/1c22c1081a53aaba8d6211ac14f4b214_9.png)
+
 ```python
 # 1. 指定文件名
 pptx_filename = "openai_deck.pptx"
 
 # 2. 使用partition_pptx函数进行分区
 pptx_elements = partition_pptx(filename=pptx_filename)
-
-![](img/1c22c1081a53aaba8d6211ac14f4b214_7.png)
-
-![](img/1c22c1081a53aaba8d6211ac14f4b214_9.png)
-
 # 3. 转换为字典并序列化为JSON
 pptx_dicts = [el.to_dict() for el in pptx_elements]
 

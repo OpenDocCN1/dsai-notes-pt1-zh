@@ -138,9 +138,6 @@ GPT-2是一个仅包含解码器的Transformer。与原始Transformer论文相�
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_98.png)
 
-```python
-import torch
-import torch.nn as nn
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_100.png)
 
@@ -152,6 +149,9 @@ import torch.nn as nn
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_106.png)
 
+```python
+import torch
+import torch.nn as nn
 class GPT(nn.Module):
     def __init__(self, config):
         super().__init__()

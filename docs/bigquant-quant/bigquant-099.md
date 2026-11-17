@@ -45,6 +45,13 @@
 
 首先，我们需要导入必要的库并加载数据。
 
+
+![](img/1a1daf512e65c3ed0f94ef9289bcacaa_18.png)
+
+![](img/1a1daf512e65c3ed0f94ef9289bcacaa_20.png)
+
+![](img/1a1daf512e65c3ed0f94ef9289bcacaa_22.png)
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -54,13 +61,6 @@ from sklearn.linear_model import LinearRegression
 # 定义年份和销售额数据
 x = np.array([2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019])
 y = np.array([0.5, 9.36, 52, 191, 350, 571, 912, 1207, 1682, 2135, 2684])
-
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_18.png)
-
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_20.png)
-
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_22.png)
-
 # 绘制原始数据散点图
 plt.scatter(x, y)
 plt.title('Tmall Double 11 Sales (2009-2019)')

@@ -53,6 +53,9 @@ PyTorch在 `torch.optim.lr_scheduler` 模块中提供了多种学习率调度器
 1.  **初始化调度器**：在定义优化器之后，用优化器和其他参数初始化调度器。
 2.  **在训练循环中更新**：在每个epoch结束后调用调度器的 `.step()` 方法。
 
+
+![](img/e7a62680671b2910b2da284e9a413656_12.png)
+
 ```python
 import torch.optim as optim
 import torch.optim.lr_scheduler as lr_scheduler
@@ -63,9 +66,6 @@ optimizer = optim.SGD(model.parameters(), lr=0.1)
 
 # 2. 初始化调度器
 scheduler = lr_scheduler.ExponentialLR(optimizer, gamma=0.9) # gamma是衰减因子
-
-![](img/e7a62680671b2910b2da284e9a413656_12.png)
-
 # 训练循环
 for epoch in range(num_epochs):
     # 训练一个epoch...
@@ -98,6 +98,13 @@ for epoch in range(num_epochs):
 
 ![](img/e7a62680671b2910b2da284e9a413656_19.png)
 
+
+![](img/e7a62680671b2910b2da284e9a413656_21.png)
+
+![](img/e7a62680671b2910b2da284e9a413656_23.png)
+
+![](img/e7a62680671b2910b2da284e9a413656_25.png)
+
 ```python
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 
@@ -110,13 +117,6 @@ scheduler = ReduceLROnPlateau(optimizer,
                               factor=0.1,        # 学习率衰减因子
                               patience=3,        # 容忍性能不提升的epoch数
                               verbose=True)      # 打印衰减信息
-
-![](img/e7a62680671b2910b2da284e9a413656_21.png)
-
-![](img/e7a62680671b2910b2da284e9a413656_23.png)
-
-![](img/e7a62680671b2910b2da284e9a413656_25.png)
-
 # 在训练循环中
 for epoch in range(num_epochs):
     train_loss, train_acc = train_epoch(...)

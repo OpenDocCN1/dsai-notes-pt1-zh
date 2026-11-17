@@ -54,10 +54,6 @@ SpaceX API的端点（或URL）以 `api.spacexdata.com/v4/` 开头。存在不�
 
 ![](img/3f5f28ef22546752b3cab203b6f61e74_21.png)
 
-```python
-import requests
-import pandas as pd
-from pandas import json_normalize
 
 ![](img/3f5f28ef22546752b3cab203b6f61e74_22.png)
 
@@ -65,13 +61,17 @@ from pandas import json_normalize
 
 ![](img/3f5f28ef22546752b3cab203b6f61e74_24.png)
 
+
+![](img/3f5f28ef22546752b3cab203b6f61e74_26.png)
+
+```python
+import requests
+import pandas as pd
+from pandas import json_normalize
 # 发起GET请求
 url = "https://api.spacexdata.com/v4/launches/past"
 response = requests.get(url)
 data = response.json()
-
-![](img/3f5f28ef22546752b3cab203b6f61e74_26.png)
-
 # 将JSON数据转换为DataFrame
 df = json_normalize(data)
 ```

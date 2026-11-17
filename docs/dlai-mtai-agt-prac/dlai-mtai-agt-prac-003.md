@@ -94,6 +94,9 @@ allocation_task = Task(
 
 为了获得可被外部系统使用的输出，我们使用Pydantic模型来定义数据结构。
 
+
+![](img/a07ba3279deca837b31c3fe2420ffb1e_5.png)
+
 ```python
 from pydantic import BaseModel
 from typing import List
@@ -106,9 +109,6 @@ class TaskEstimate(BaseModel):
 class Milestone(BaseModel):
     name: str
     tasks: List[str]
-
-![](img/a07ba3279deca837b31c3fe2420ffb1e_5.png)
-
 class ProjectPlan(BaseModel):
     tasks: List[TaskEstimate]
     milestones: List[Milestone]
@@ -126,13 +126,6 @@ class ProjectPlan(BaseModel):
 
 ![](img/a07ba3279deca837b31c3fe2420ffb1e_10.png)
 
-```python
-# 创建团队
-crew = Crew(
-    agents=[project_planner_agent, estimation_analyst_agent, allocation_strategist_agent],
-    tasks=[breakdown_task, estimation_task, allocation_task],
-    verbose=2 # 启用详细日志以观察执行过程
-)
 
 ![](img/a07ba3279deca837b31c3fe2420ffb1e_12.png)
 
@@ -140,6 +133,13 @@ crew = Crew(
 
 ![](img/a07ba3279deca837b31c3fe2420ffb1e_14.png)
 
+```python
+# 创建团队
+crew = Crew(
+    agents=[project_planner_agent, estimation_analyst_agent, allocation_strategist_agent],
+    tasks=[breakdown_task, estimation_task, allocation_task],
+    verbose=2 # 启用详细日志以观察执行过程
+)
 # 定义项目输入
 inputs = {
     "project_type": "网站开发",
@@ -176,6 +176,9 @@ result = crew.kickoff(inputs=inputs)
 
 执行完成后，我们可以查看结构化的输出结果，并计算本次运行的大致成本。
 
+
+![](img/a07ba3279deca837b31c3fe2420ffb1e_22.png)
+
 ```python
 # 查看原始输出（ProjectPlan对象）
 print(result)
@@ -184,9 +187,6 @@ print(result)
 import pandas as pd
 tasks_df = pd.DataFrame([t.dict() for t in result.tasks])
 print(tasks_df)
-
-![](img/a07ba3279deca837b31c3fe2420ffb1e_22.png)
-
 # 查看里程碑
 milestones_df = pd.DataFrame([m.dict() for m in result.milestones])
 print(milestones_df)

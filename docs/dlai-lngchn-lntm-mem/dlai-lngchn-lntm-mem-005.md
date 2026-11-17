@@ -32,22 +32,22 @@
 
 ![](img/e62126eba5260231f249d573a77d218a_11.png)
 
+
+![](img/e62126eba5260231f249d573a77d218a_13.png)
+
+
+![](img/e62126eba5260231f249d573a77d218a_15.png)
+
 ```python
 # 加载环境变量
 import os
 from dotenv import load_dotenv
 load_dotenv()
-
-![](img/e62126eba5260231f249d573a77d218a_13.png)
-
 # 定义用户配置
 profile = {
     "name": "John",
     "role": "Developer Advocate"
 }
-
-![](img/e62126eba5260231f249d573a77d218a_15.png)
-
 # 定义提示词指令
 instructions = "You are a helpful email assistant. Triage incoming emails and decide whether to respond or ignore."
 
@@ -68,12 +68,12 @@ example_email = {
 
 在定义分类逻辑之前，我们先来讨论少样本示例。首先，我们需要定义长期记忆存储，这与我们在第3课中使用的方法相同。
 
-```python
-from langchain.vectorstores import LanceDB
-import lancedb
 
 ![](img/e62126eba5260231f249d573a77d218a_19.png)
 
+```python
+from langchain.vectorstores import LanceDB
+import lancedb
 # 初始化 LanceDB 连接
 db = lancedb.connect("./.lancedb")
 # 创建或获取一个用于存储示例的集合（表）
@@ -105,11 +105,11 @@ example_data = {
 
 现在，我们可以将这个示例存入长期记忆存储。我们需要指定一个命名空间，例如 `email_assistant`，并传入一个唯一ID和数据。
 
-```python
-import uuid
 
 ![](img/e62126eba5260231f249d573a77d218a_27.png)
 
+```python
+import uuid
 # 将示例存入记忆存储
 namespace = "email_assistant"
 example_id = str(uuid.uuid4())
@@ -181,6 +181,12 @@ def format_examples(examples):
 
 ![](img/e62126eba5260231f249d573a77d218a_32.png)
 
+
+![](img/e62126eba5260231f249d573a77d218a_34.png)
+
+
+![](img/e62126eba5260231f249d573a77d218a_35.png)
+
 ```python
 # 定义一个查询邮件（与存储的示例相似但不完全相同）
 query_email = {
@@ -190,18 +196,12 @@ query_email = {
     "body": "Hi John, can we meet next week to discuss?"
 }
 query_text = str(query_email)
-
-![](img/e62126eba5260231f249d573a77d218a_34.png)
-
 # 在指定命名空间中进行相似性搜索
 results = store.similarity_search(
     query=query_text,
     filter={"namespace": namespace},
     k=1  # 限制返回最相似的1个结果
 )
-
-![](img/e62126eba5260231f249d573a77d218a_35.png)
-
 # 假设 results 是 Document 对象列表，我们需要提取其内容
 # 这里简化处理，假设内容就是存储的字符串，我们需要eval回字典
 retrieved_examples = []
@@ -254,21 +254,21 @@ triage_system_prompt_template = """
 
 接下来，导入路由步骤所需的各种组件。这与之前类似：初始化聊天模型、定义输出模式、将其附加到模型以生成结构化信息，然后导入分类用户提示词。系统提示词我们已经定义好了，无需再导入。
 
-```python
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
-from langchain.schema.output_parser import StrOutputParser
-from langchain.schema.runnable import RunnablePassthrough
 
 ![](img/e62126eba5260231f249d573a77d218a_46.png)
 
 ![](img/e62126eba5260231f249d573a77d218a_47.png)
 
-# 初始化聊天模型
-llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
 
 ![](img/e62126eba5260231f249d573a77d218a_49.png)
 
+```python
+from langchain.chat_models import ChatOpenAI
+from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
+from langchain.schema.output_parser import StrOutputParser
+from langchain.schema.runnable import RunnablePassthrough
+# 初始化聊天模型
+llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
 # 定义输出结构（这里简化，只输出字符串标签）
 # 在实际中，你可能使用Pydantic来定义更复杂的结构
 
@@ -358,17 +358,17 @@ def new_triage_router_node(state, config, store):
 
 ![](img/e62126eba5260231f249d573a77d218a_58.png)
 
+
+![](img/e62126eba5260231f249d573a77d218a_60.png)
+
+![](img/e62126eba5260231f249d573a77d218a_61.png)
+
 ```python
 # 创建工具（此处省略具体工具定义，假设已存在）
 # tools = [manage_memory_tool, search_memory_tool, ...]
 
 # 创建响应智能体
 response_agent = create_response_agent(llm, tools)
-
-![](img/e62126eba5260231f249d573a77d218a_60.png)
-
-![](img/e62126eba5260231f249d573a77d218a_61.png)
-
 # 定义配置
 config = {"langgraph_user_id": "harrison"}
 ```

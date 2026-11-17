@@ -135,16 +135,16 @@ index.storage_context.persist(persist_dir=“./sentence_index”)
 
 查询引擎负责处理用户查询。我们需要添加一个**后处理器**，用于在检索后，将节点文本替换为完整的上下文窗口。
 
-```python
-from llama_index.core.postprocessor import MetadataReplacementPostProcessor
-
-# 定义元数据替换后处理器
-postproc = MetadataReplacementPostProcessor(target_metadata_key=“window”)
 
 ![](img/b7090f6ba35657c8baf6c44047933359_59.png)
 
 ![](img/b7090f6ba35657c8baf6c44047933359_61.png)
 
+```python
+from llama_index.core.postprocessor import MetadataReplacementPostProcessor
+
+# 定义元数据替换后处理器
+postproc = MetadataReplacementPostProcessor(target_metadata_key=“window”)
 # 从索引创建查询引擎，并添加后处理器
 query_engine = index.as_query_engine(node_postprocessors=[postproc])
 ```
@@ -157,16 +157,16 @@ query_engine = index.as_query_engine(node_postprocessors=[postproc])
 
 为了进一步提升效果，可以添加一个**重排序器（Reranker）**。它会对初步检索到的多个节点（例如top_k=6）进行重新评分和排序，返回最相关的少数几个（例如top_n=2），从而过滤掉噪音。
 
-```python
-from llama_index.core.postprocessor import SentenceTransformerRerank
 
 ![](img/b7090f6ba35657c8baf6c44047933359_67.png)
 
-# 定义重排序器
-rerank = SentenceTransformerRerank(model=“BAAI/bge-reranker-base”, top_n=2)
 
 ![](img/b7090f6ba35657c8baf6c44047933359_69.png)
 
+```python
+from llama_index.core.postprocessor import SentenceTransformerRerank
+# 定义重排序器
+rerank = SentenceTransformerRerank(model=“BAAI/bge-reranker-base”, top_n=2)
 # 将重排序器也加入查询引擎
 query_engine = index.as_query_engine(
     node_postprocessors=[postproc, rerank],

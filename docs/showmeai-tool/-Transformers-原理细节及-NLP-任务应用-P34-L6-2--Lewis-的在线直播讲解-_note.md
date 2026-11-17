@@ -117,11 +117,11 @@ Transformers 库提供了 `AutoTokenizer` 来自动加载与模型匹配的分�
 
 ![](img/40873acb06abf924ac4a43fae802679a_29.png)
 
-```python
-from transformers import AutoTokenizer
 
 ![](img/40873acb06abf924ac4a43fae802679a_31.png)
 
+```python
+from transformers import AutoTokenizer
 tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
 ```
 

@@ -21,6 +21,9 @@ CUDA流是CUDA中用于管理操作执行顺序的抽象。以下是关于CUDA�
 
 理解了流的基本语义后，我们来看一个具体的代码示例，它展示了如何创建流并实现计算与拷贝的重叠。
 
+
+![](img/4bfc3307933eb52ba61dd372c6495da3_5.png)
+
 ```cpp
 // 创建两个CUDA流
 cudaStream_t stream1, stream2;
@@ -29,9 +32,6 @@ cudaStreamCreate(&stream2);
 
 // 在流1上异步拷贝数据到设备
 cudaMemcpyAsync(dst, src, size, cudaMemcpyHostToDevice, stream1);
-
-![](img/4bfc3307933eb52ba61dd372c6495da3_5.png)
-
 // 在流2上启动一个内核
 myKernel<<<grid, block, 0, stream2>>>(...);
 

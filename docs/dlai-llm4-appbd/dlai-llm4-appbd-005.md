@@ -115,8 +115,9 @@ raw_prompt_llama33_sys = processor_llama33.apply_chat_template(message_with_syst
 
 让我们加载并显示一张在前几节课中见过的图片。
 
-```python
 image_url = "https://example.com/path/to/your/image.jpg" # 替换为实际图片URL
+
+```python
 image = Image.open(requests.get(image_url, stream=True).raw)
 display(image)
 ```

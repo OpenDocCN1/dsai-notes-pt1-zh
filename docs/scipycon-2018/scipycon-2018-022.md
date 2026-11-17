@@ -44,6 +44,12 @@
 
 以下是使用该框架进行多目标优化的简化代码示例：
 
+
+![](img/0e1e4015c0a74da27531697298ba6f06_1.png)
+
+
+![](img/0e1e4015c0a74da27531697298ba6f06_3.png)
+
 ```python
 # 伪代码示例
 from deepchem.models import GAN
@@ -52,14 +58,8 @@ import rewards # 用户定义的性质计算函数
 # 定义生成器和判别器
 generator = RNNGenerator(...)
 discriminator = RNNDiscriminator(...)
-
-![](img/0e1e4015c0a74da27531697298ba6f06_1.png)
-
 # 创建GAN模型
 gan = GAN(generator, discriminator, ...)
-
-![](img/0e1e4015c0a74da27531697298ba6f06_3.png)
-
 # 定义优化目标（奖励函数）
 reward_functions = [rewards.lipinski, rewards.synthesizability, rewards.QED]
 

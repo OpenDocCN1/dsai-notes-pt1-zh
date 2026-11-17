@@ -176,19 +176,19 @@ face_masks = face_results[0].masks.data
 
 现在，我们利用生成的掩码来模糊原始图像中的人脸。方法是：先创建整个图像的模糊版本，然后仅将掩码覆盖区域替换为模糊图像。
 
+
+![](img/8a9d39936fc7785e3f54151c1707dfc4_26.png)
+
+
+![](img/8a9d39936fc7785e3f54151c1707dfc4_28.png)
+
 ```python
 from PIL import ImageFilter
 
 # 创建图像的模糊版本
 blurred_image = new_image_resized.filter(ImageFilter.GaussianBlur(radius=15))
-
-![](img/8a9d39936fc7785e3f54151c1707dfc4_26.png)
-
 # 将多个掩码合并为一个综合掩码
 combined_mask = combine_masks(face_masks)
-
-![](img/8a9d39936fc7785e3f54151c1707dfc4_28.png)
-
 # 使用掩码，将原图中对应区域替换为模糊图像
 final_image = apply_mask_to_image(new_image_resized, blurred_image, combined_mask)
 ```

@@ -120,30 +120,30 @@ vector_store.persist()
 
 ![](img/9d12d1216ef1d202a58cbe891bbd4c75_8.png)
 
+
+![](img/9d12d1216ef1d202a58cbe891bbd4c75_10.png)
+
+
+![](img/9d12d1216ef1d202a58cbe891bbd4c75_12.png)
+
+![](img/9d12d1216ef1d202a58cbe891bbd4c75_14.png)
+
+
+![](img/9d12d1216ef1d202a58cbe891bbd4c75_16.png)
+
 ```python
 # ... 其他导入 ...
 from langchain_community.vectorstores import Chroma
 from langchain_nomic.embeddings import NomicEmbeddings
 from langchain.tools.retriever import create_retriever_tool
-
-![](img/9d12d1216ef1d202a58cbe891bbd4c75_10.png)
-
 # 1. 初始化与之前相同的嵌入模型和向量库
 embeddings = NomicEmbeddings(model="nomic-embed-text-v1.5")
 vector_store = Chroma(
     embedding_function=embeddings,
     persist_directory="./chroma_db"
 )
-
-![](img/9d12d1216ef1d202a58cbe891bbd4c75_12.png)
-
-![](img/9d12d1216ef1d202a58cbe891bbd4c75_14.png)
-
 # 2. 从向量库创建检索器
 retriever = vector_store.as_retriever()
-
-![](img/9d12d1216ef1d202a58cbe891bbd4c75_16.png)
-
 # 3. 将检索器包装成一个 LangChain 工具
 retrieval_tool = create_retriever_tool(
     retriever,

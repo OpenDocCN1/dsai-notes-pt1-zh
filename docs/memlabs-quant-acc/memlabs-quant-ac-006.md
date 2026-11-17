@@ -108,15 +108,15 @@ for epoch in range(epochs):
 
 ![](img/c6237729f481becbaf919661fb72b37d_5.png)
 
+
+![](img/c6237729f481becbaf919661fb72b37d_7.png)
+
 ```python
 # 在测试集上预测
 with torch.no_grad():
     test_logits = model(X_test_tensor).squeeze()
     probabilities = torch.sigmoid(test_logits)
     predictions = (probabilities >= 0.5).float()
-
-![](img/c6237729f481becbaf919661fb72b37d_7.png)
-
 # 计算准确率
 accuracy = (predictions == torch.tensor(y_test, dtype=torch.float32)).float().mean()
 print(f'测试集方向准确率: {accuracy.item():.2%}')
@@ -185,20 +185,20 @@ print(f'年化夏普比率: {sharpe_ratio:.2f}')
 
 ![](img/c6237729f481becbaf919661fb72b37d_11.png)
 
-```python
-from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve
 
 ![](img/c6237729f481becbaf919661fb72b37d_13.png)
 
-# 计算混淆矩阵
-tn, fp, fn, tp = confusion_matrix(y_test, predictions.numpy()).ravel()
-print(f"真负例(TN): {tn}, 假正例(FP): {fp}")
-print(f"假负例(FN): {fn}, 真正例(TP): {tp}")
 
 ![](img/c6237729f481becbaf919661fb72b37d_15.png)
 
 ![](img/c6237729f481becbaf919661fb72b37d_17.png)
 
+```python
+from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve
+# 计算混淆矩阵
+tn, fp, fn, tp = confusion_matrix(y_test, predictions.numpy()).ravel()
+print(f"真负例(TN): {tn}, 假正例(FP): {fp}")
+print(f"假负例(FN): {fn}, 真正例(TP): {tp}")
 # 计算查准率和查全率
 precision = tp / (tp + fp) if (tp + fp) > 0 else 0
 recall = tp / (tp + fn) if (tp + fn) > 0 else 0

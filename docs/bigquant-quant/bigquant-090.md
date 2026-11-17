@@ -74,21 +74,21 @@ print("真实截距 b:", b)
 
 以下是使用SGDRegressor并启用L2惩罚项的训练过程：
 
-```python
-from sklearn.linear_model import SGDRegressor
 
 ![](img/2cc972680a49e7dcef5e22af9f105253_10.png)
 
-# 创建SGD回归模型，并设置惩罚项为L2正则化，正则化强度alpha同样设为1.0
-sgd_model = SGDRegressor(penalty='l2', alpha=1.0, max_iter=1000, tol=1e-3)
 
 ![](img/2cc972680a49e7dcef5e22af9f105253_12.png)
 
-# SGDRegressor要求目标y是一维数组，因此需要将y展平
-sgd_model.fit(X, y.ravel())
 
 ![](img/2cc972680a49e7dcef5e22af9f105253_14.png)
 
+```python
+from sklearn.linear_model import SGDRegressor
+# 创建SGD回归模型，并设置惩罚项为L2正则化，正则化强度alpha同样设为1.0
+sgd_model = SGDRegressor(penalty='l2', alpha=1.0, max_iter=1000, tol=1e-3)
+# SGDRegressor要求目标y是一维数组，因此需要将y展平
+sgd_model.fit(X, y.ravel())
 print("SGD回归系数 (coef_):", sgd_model.coef_)
 print("SGD回归截距 (intercept_):", sgd_model.intercept_)
 ```
@@ -103,11 +103,11 @@ print("SGD回归截距 (intercept_):", sgd_model.intercept_)
 
 最后，我们使用不包含任何正则化的普通线性回归作为基线模型。
 
-```python
-from sklearn.linear_model import LinearRegression
 
 ![](img/2cc972680a49e7dcef5e22af9f105253_21.png)
 
+```python
+from sklearn.linear_model import LinearRegression
 # 创建普通线性回归模型
 linear_model = LinearRegression()
 linear_model.fit(X, y)

@@ -169,12 +169,12 @@ result_engagement = customer_proxy_agent.initiate_chat(
 
 ![](img/abff030e4df082e1bcf6cf40b10f6141_11.png)
 
-```python
-# 检查第一段对话的总结信息
-print("客户个人信息总结:", summary_info)
 
 ![](img/abff030e4df082e1bcf6cf40b10f6141_13.png)
 
+```python
+# 检查第一段对话的总结信息
+print("客户个人信息总结:", summary_info)
 # 检查第二段对话的总结信息
 summary_topic = result_topic.summary(method="reflection")
 print("客户兴趣总结:", summary_topic)

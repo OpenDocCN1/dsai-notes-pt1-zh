@@ -205,14 +205,14 @@ PG Admin 是一个基于 Web 的可视化工具，可用于操作 PostgreSQL。�
 
 以下是相关命令示例：
 
-```bash
-# 备份整个数据库到 SQL 文件
-pg_dump my_database > my_database_backup.sql
 
 ![](img/2b9443a85cbed2e43566333a54ca9c91_38.png)
 
 ![](img/2b9443a85cbed2e43566333a54ca9c91_39.png)
 
+```bash
+# 备份整个数据库到 SQL 文件
+pg_dump my_database > my_database_backup.sql
 # 备份到自定义格式的压缩归档文件
 pg_dump -Fc my_database > my_database_backup.dump
 ```

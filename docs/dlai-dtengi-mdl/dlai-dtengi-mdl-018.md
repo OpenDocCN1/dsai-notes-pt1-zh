@@ -74,8 +74,6 @@ X_train_scaled_df = pd.DataFrame(scaled_features, index=X_train.index, columns=n
 
 以下是使用`OneHotEncoder`对分类型特征进行独热编码的步骤：
 
-```python
-from sklearn.preprocessing import OneHotEncoder
 
 ![](img/54b9d0f6979da2d05132e094051b573b_12.png)
 
@@ -83,6 +81,11 @@ from sklearn.preprocessing import OneHotEncoder
 
 ![](img/54b9d0f6979da2d05132e094051b573b_14.png)
 
+
+![](img/54b9d0f6979da2d05132e094051b573b_16.png)
+
+```python
+from sklearn.preprocessing import OneHotEncoder
 # 1. 指定分类型列
 categorical_columns = ['subscription_type', 'contract_length']
 
@@ -94,9 +97,6 @@ encoder = OneHotEncoder()
 
 # 4. 在训练数据上拟合encoder（检查唯一值并准备输出列标签）
 encoder.fit(X_train_categorical)
-
-![](img/54b9d0f6979da2d05132e094051b573b_16.png)
-
 # 5. 使用拟合好的encoder转换训练数据
 encoded_matrix = encoder.transform(X_train_categorical)
 

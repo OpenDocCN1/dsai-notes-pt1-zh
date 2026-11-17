@@ -24,12 +24,12 @@ LangChain支持多种语言模型，例如来自IBM、OpenAI、Google和Meta的�
 
 以下是一个使用基于Mistral 8x7B Instruct模型创建LLM的代码示例：
 
-```python
-# 确保已导入必要的依赖项，例如来自IBM Watson Machine Learning包的genai和model_inference
-from ibm_watson_machine_learning.foundation_models import Model
 
 ![](img/c22bd89607e337e4aabdf8dca21087fa_6.png)
 
+```python
+# 确保已导入必要的依赖项，例如来自IBM Watson Machine Learning包的genai和model_inference
+from ibm_watson_machine_learning.foundation_models import Model
 # 通过调整tokens和temperature等参数来自定义模型
 model = Model(
     model_id="mistralai/mistral-8x7b-instruct-v0.1",
@@ -57,12 +57,12 @@ print(response)
 
 ![](img/c22bd89607e337e4aabdf8dca21087fa_8.png)
 
-```python
-from ibm_watson_machine_learning.foundation_models import Model
-from langchain_ibm import WatsonxLLM
 
 ![](img/c22bd89607e337e4aabdf8dca21087fa_9.png)
 
+```python
+from ibm_watson_machine_learning.foundation_models import Model
+from langchain_ibm import WatsonxLLM
 # 创建基础语言模型
 base_model = Model(model_id="...", params={...})
 # 转换为LangChain可用的聊天模型
@@ -179,6 +179,9 @@ LangChain提供了一个输出解析器库，支持多种数据格式，包括JS
 
 ![](img/c22bd89607e337e4aabdf8dca21087fa_20.png)
 
+
+![](img/c22bd89607e337e4aabdf8dca21087fa_22.png)
+
 ```python
 from langchain.output_parsers import CommaSeparatedListOutputParser
 from langchain.prompts import PromptTemplate
@@ -187,9 +190,6 @@ from langchain.prompts import PromptTemplate
 output_parser = CommaSeparatedListOutputParser()
 # 获取格式指令，用于告诉模型如何格式化输出
 format_instructions = output_parser.get_format_instructions()
-
-![](img/c22bd89607e337e4aabdf8dca21087fa_22.png)
-
 # 创建提示模板，包含格式指令
 prompt = PromptTemplate(
     template="列出三种{subject}。\n{format_instructions}",

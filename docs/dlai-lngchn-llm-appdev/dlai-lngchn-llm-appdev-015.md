@@ -18,13 +18,13 @@
 
 ![](img/50b76bf8c477b208a834e72d4141c649_6.png)
 
+
+![](img/50b76bf8c477b208a834e72d4141c649_8.png)
+
 ```python
 # 加载环境变量
 from dotenv import load_dotenv
 load_dotenv()
-
-![](img/50b76bf8c477b208a834e72d4141c649_8.png)
-
 # 可选：打开LangSmith平台以观察内部过程
 import os
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
@@ -36,14 +36,14 @@ os.environ["LANGCHAIN_TRACING_V2"] = "true"
 
 ![](img/50b76bf8c477b208a834e72d4141c649_12.png)
 
-```python
-from langchain.vectorstores import Chroma
-from langchain.embeddings import OpenAIEmbeddings
 
 ![](img/50b76bf8c477b208a834e72d4141c649_14.png)
 
 ![](img/50b76bf8c477b208a834e72d4141c649_16.png)
 
+```python
+from langchain.vectorstores import Chroma
+from langchain.embeddings import OpenAIEmbeddings
 # 加载向量存储
 embeddings = OpenAIEmbeddings()
 vectorstore = Chroma(persist_directory="./chroma_db", embedding_function=embeddings)
@@ -93,11 +93,11 @@ llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
 
 ![](img/50b76bf8c477b208a834e72d4141c649_32.png)
 
-```python
-from langchain.memory import ConversationBufferMemory
 
 ![](img/50b76bf8c477b208a834e72d4141c649_34.png)
 
+```python
+from langchain.memory import ConversationBufferMemory
 # 初始化会话缓冲内存
 memory = ConversationBufferMemory(
     memory_key="chat_history",  # 与提示模板中的输入变量对齐
@@ -125,11 +125,11 @@ memory = ConversationBufferMemory(
 
 ![](img/50b76bf8c477b208a834e72d4141c649_44.png)
 
-```python
-from langchain.chains import ConversationalRetrievalChain
 
 ![](img/50b76bf8c477b208a834e72d4141c649_46.png)
 
+```python
+from langchain.chains import ConversationalRetrievalChain
 # 创建会话检索链
 qa_chain = ConversationalRetrievalChain.from_llm(
     llm=llm,

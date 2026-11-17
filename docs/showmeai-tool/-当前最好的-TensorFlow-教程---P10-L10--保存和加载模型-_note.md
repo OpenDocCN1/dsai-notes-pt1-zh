@@ -75,21 +75,21 @@ model3 = MyModel()
 
 训练模型后，使用 `model.save_weights()` 方法将权重保存到指定目录。
 
+
+![](img/7bff5e62ed405731be5e5da8c2b7bfb9_4.png)
+
+
+![](img/7bff5e62ed405731be5e5da8c2b7bfb9_5.png)
+
 ```python
 # 编译并训练模型
 model1.compile(optimizer='adam',
                loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
                metrics=['accuracy'])
 model1.fit(x_train, y_train, epochs=1)
-
-![](img/7bff5e62ed405731be5e5da8c2b7bfb9_4.png)
-
 # 评估模型
 test_loss, test_acc = model1.evaluate(x_test, y_test, verbose=2)
 print(f'\n初始测试准确率：{test_acc}')
-
-![](img/7bff5e62ed405731be5e5da8c2b7bfb9_5.png)
-
 # 保存模型权重
 model1.save_weights('./save_weights/my_model_weights')
 ```

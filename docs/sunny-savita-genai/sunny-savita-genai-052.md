@@ -101,22 +101,22 @@ print(response.content)
 ![](img/f9b7a486c329673c9db0abda9d74a5e2_15.png)
 
 首先，从`langchain.memory`导入记忆模块，并初始化一个对话缓冲区。
-```python
-from langchain.memory import ConversationBufferMemory
 
 ![](img/f9b7a486c329673c9db0abda9d74a5e2_17.png)
 
+```python
+from langchain.memory import ConversationBufferMemory
 memory = ConversationBufferMemory()
 ```
 
 接着，使用模型和记忆对象创建一条对话链。
-```python
-from langchain.chains import ConversationChain
 
 ![](img/f9b7a486c329673c9db0abda9d74a5e2_19.png)
 
 ![](img/f9b7a486c329673c9db0abda9d74a5e2_20.png)
 
+```python
+from langchain.chains import ConversationChain
 conversation = ConversationChain(
     llm=llm,
     memory=memory,

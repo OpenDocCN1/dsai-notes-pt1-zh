@@ -99,17 +99,17 @@ class CommodityTfrecord(Dataset):
 2.  定义一个 `namedtuple` 来指定数据集参数的字段（即属性名）。
 3.  为商品数据集创建具体的参数实例，并填充对应的值。
 
-```python
-# 在 dataset_config.py 中
-from collections import namedtuple
 
 ![](img/114e77440eefccefc5f38fd7674e454b_32.png)
 
-# 1. 定义参数结构
-DatasetParams = namedtuple('DatasetParams', ['fpattern', 'num_classes', 'split_to_size', 'item_to_description'])
 
 ![](img/114e77440eefccefc5f38fd7674e454b_34.png)
 
+```python
+# 在 dataset_config.py 中
+from collections import namedtuple
+# 1. 定义参数结构
+DatasetParams = namedtuple('DatasetParams', ['fpattern', 'num_classes', 'split_to_size', 'item_to_description'])
 # 2. 为商品数据集创建配置实例
 cm_2018 = DatasetParams(
     fpattern='commodity_2018_%s_*.tfrecord',  # 文件匹配模式

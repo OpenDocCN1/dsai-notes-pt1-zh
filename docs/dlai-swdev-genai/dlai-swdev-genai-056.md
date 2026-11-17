@@ -53,11 +53,11 @@ payload = config['payload']
 
 这段代码在调用端点时使用了URL、请求头和有效负载。
 
-```python
-import requests
 
 ![](img/19d73215d04b81b4814b8fb228a66ae3_3.png)
 
+```python
+import requests
 response = requests.post(url, headers=headers, json=payload)
 ```
 

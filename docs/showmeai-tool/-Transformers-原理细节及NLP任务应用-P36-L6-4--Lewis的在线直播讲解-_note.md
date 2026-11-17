@@ -135,14 +135,11 @@ print({k: v.shape for k, v in batch.items()})
 
 首先，我们定义训练参数和模型。
 
-```python
-from transformers import AutoModelForSequenceClassification, TrainingArguments
 
 ![](img/a1136557282a500704797139dc43d7b8_16.png)
 
 ![](img/a1136557282a500704797139dc43d7b8_17.png)
 
-model = AutoModelForSequenceClassification.from_pretrained(checkpoint, num_labels=2)
 
 ![](img/a1136557282a500704797139dc43d7b8_19.png)
 
@@ -150,6 +147,9 @@ model = AutoModelForSequenceClassification.from_pretrained(checkpoint, num_label
 
 ![](img/a1136557282a500704797139dc43d7b8_22.png)
 
+```python
+from transformers import AutoModelForSequenceClassification, TrainingArguments
+model = AutoModelForSequenceClassification.from_pretrained(checkpoint, num_labels=2)
 training_args = TrainingArguments(
     output_dir="./test_trainer",  # 模型和日志输出目录
     evaluation_strategy="epoch",   # 每个 epoch 结束后进行评估
@@ -246,9 +246,6 @@ eval_dataloader = DataLoader(
 
 接下来是标准的训练循环代码：
 
-```python
-import torch
-from transformers import AdamW, get_scheduler
 
 ![](img/a1136557282a500704797139dc43d7b8_33.png)
 
@@ -256,6 +253,19 @@ from transformers import AdamW, get_scheduler
 
 ![](img/a1136557282a500704797139dc43d7b8_36.png)
 
+
+![](img/a1136557282a500704797139dc43d7b8_38.png)
+
+![](img/a1136557282a500704797139dc43d7b8_40.png)
+
+
+![](img/a1136557282a500704797139dc43d7b8_42.png)
+
+![](img/a1136557282a500704797139dc43d7b8_44.png)
+
+```python
+import torch
+from transformers import AdamW, get_scheduler
 optimizer = AdamW(model.parameters(), lr=5e-5)
 num_epochs = 3
 num_training_steps = num_epochs * len(train_dataloader)
@@ -265,18 +275,8 @@ lr_scheduler = get_scheduler(
     num_warmup_steps=0,
     num_training_steps=num_training_steps,
 )
-
-![](img/a1136557282a500704797139dc43d7b8_38.png)
-
-![](img/a1136557282a500704797139dc43d7b8_40.png)
-
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 model.to(device)
-
-![](img/a1136557282a500704797139dc43d7b8_42.png)
-
-![](img/a1136557282a500704797139dc43d7b8_44.png)
-
 model.train()
 for epoch in range(num_epochs):
     for batch in train_dataloader:

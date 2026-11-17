@@ -85,6 +85,11 @@ print(response)
 
 ![](img/5722d1aa5b33c2f2c4d999002a9835c0_24.png)
 
+
+![](img/5722d1aa5b33c2f2c4d999002a9835c0_26.png)
+
+![](img/5722d1aa5b33c2f2c4d999002a9835c0_28.png)
+
 ```python
 try:
     # 按分隔符分割字符串，并获取最后一项
@@ -92,11 +97,6 @@ try:
 except Exception as e:
     # 优雅地处理错误，例如模型输出未按预期格式
     final_response = "抱歉，我正在遇到麻烦，请尝试问另一个问题。"
-
-![](img/5722d1aa5b33c2f2c4d999002a9835c0_26.png)
-
-![](img/5722d1aa5b33c2f2c4d999002a9835c0_28.png)
-
 print(final_response)
 ```
 

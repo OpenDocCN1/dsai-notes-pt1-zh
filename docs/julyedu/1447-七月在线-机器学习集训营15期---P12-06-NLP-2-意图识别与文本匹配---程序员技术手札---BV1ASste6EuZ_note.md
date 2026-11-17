@@ -233,13 +233,13 @@ TextCNN是处理短文本分类的高效模型。其核心思想是使用**多�
 
 以下是使用PyTorch实现TextCNN的关键代码片段：
 
+
+![](img/68efa51e068fee303461772d91f58c31_96.png)
+
 ```python
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-![](img/68efa51e068fee303461772d91f58c31_96.png)
-
 class TextCNN(nn.Module):
     def __init__(self, vocab_size, embed_size, num_classes, kernel_sizes=[3,4,5], num_filters=100):
         super(TextCNN, self).__init__()

@@ -52,6 +52,11 @@ torch.manual_seed(1)
 *   将图像尺寸从28x28**调整**为32x32以匹配LeNet-5的原始输入。
 *   对像素值进行**归一化**，使其均值为0，范围在[-1, 1]之间。
 
+
+![](img/e56dd1c8776a1e4867060fd3484f8f26_11.png)
+
+![](img/e56dd1c8776a1e4867060fd3484f8f26_12.png)
+
 ```python
 # 定义数据转换
 transform = transforms.Compose([
@@ -59,11 +64,6 @@ transform = transforms.Compose([
     transforms.ToTensor(),            # 转换为张量
     transforms.Normalize((0.5,), (0.5,)) # 归一化到[-1, 1]
 ])
-
-![](img/e56dd1c8776a1e4867060fd3484f8f26_11.png)
-
-![](img/e56dd1c8776a1e4867060fd3484f8f26_12.png)
-
 # 加载训练和测试数据集
 train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
 test_dataset = datasets.MNIST(root='./data', train=False, download=True, transform=transform)
@@ -163,12 +163,12 @@ print(f‘Using device: {device}’)
 
 ![](img/e56dd1c8776a1e4867060fd3484f8f26_29.png)
 
-```python
-# 定义损失函数
-criterion = nn.CrossEntropyLoss()
 
 ![](img/e56dd1c8776a1e4867060fd3484f8f26_31.png)
 
+```python
+# 定义损失函数
+criterion = nn.CrossEntropyLoss()
 # 定义优化器（带动量的SGD）
 optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 
@@ -246,6 +246,17 @@ def train_model(model, train_loader, criterion, optimizer, scheduler, num_epochs
 
 训练完成后，我们可以在测试集上评估模型性能，并可视化一些预测结果以进行定性检查。
 
+
+![](img/e56dd1c8776a1e4867060fd3484f8f26_49.png)
+
+![](img/e56dd1c8776a1e4867060fd3484f8f26_51.png)
+
+
+![](img/e56dd1c8776a1e4867060fd3484f8f26_53.png)
+
+
+![](img/e56dd1c8776a1e4867060fd3484f8f26_55.png)
+
 ```python
 # 评估模型
 model.eval()  # 将模型设置为评估模式
@@ -258,16 +269,8 @@ with torch.no_grad():  # 评估时不计算梯度
         _, predicted = outputs.max(1)
         total += labels.size(0)
         correct += predicted.eq(labels).sum().item()
-
-![](img/e56dd1c8776a1e4867060fd3484f8f26_49.png)
-
-![](img/e56dd1c8776a1e4867060fd3484f8f26_51.png)
-
 test_acc = 100. * correct / total
 print(f‘Test Accuracy: {test_acc:.2f}%’)
-
-![](img/e56dd1c8776a1e4867060fd3484f8f26_53.png)
-
 # 显示一些预测示例
 def show_examples(model, data_loader, num_examples=10):
     model.eval()
@@ -281,9 +284,6 @@ def show_examples(model, data_loader, num_examples=10):
 
     for i in range(num_examples):
         print(f‘Predicted: {preds[i].item()}, True: {labels[i].item()}’)
-
-![](img/e56dd1c8776a1e4867060fd3484f8f26_55.png)
-
 show_examples(model, test_loader)
 ```
 

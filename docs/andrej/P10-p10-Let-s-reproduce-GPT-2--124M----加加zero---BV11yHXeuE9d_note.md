@@ -412,6 +412,9 @@ class DataLoaderLite:
 
 我们使用 AdamW 优化器，并遵循 GPT-3 论文中的设置：使用余弦衰减学习率调度，并带有预热阶段。
 
+
+![](img/fffe638cf84a8d1e020ce63d0efeee6e_171.png)
+
 ```python
 def configure_optimizers(model, weight_decay, learning_rate, device_type):
     # 将参数分为需要权重衰减和不需要的两组
@@ -433,9 +436,6 @@ def configure_optimizers(model, weight_decay, learning_rate, device_type):
     use_fused = fused_available and device_type == ‘cuda’
     optimizer = torch.optim.AdamW(optim_groups, lr=learning_rate, betas=(0.9, 0.95), eps=1e-8, fused=use_fused)
     return optimizer
-
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_171.png)
-
 def get_lr(it, warmup_iters, learning_rate, lr_decay_iters, min_lr):
     # 1) 线性预热
     if it < warmup_iters:
@@ -519,6 +519,12 @@ for micro_step in range(gradient_accumulation_steps):
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_197.png)
 
+
+![](img/fffe638cf84a8d1e020ce63d0efeee6e_199.png)
+
+
+![](img/fffe638cf84a8d1e020ce63d0efeee6e_201.png)
+
 ```python
 import torch.distributed as dist
 from torch.nn.parallel import DistributedDataParallel as DDP
@@ -531,16 +537,10 @@ world_size = dist.get_world_size()
 # 根据排名设置当前进程使用的 GPU
 torch.cuda.set_device(rank)
 device = f’cuda:{rank}‘
-
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_199.png)
-
 # 包装模型
 model = GPT(config)
 model.to(device)
 model = DDP(model, device_ids=[rank])
-
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_201.png)
-
 # 在训练循环中，确保每个进程处理数据的不同部分
 # 梯度会在反向传播时在所有进程间自动同步平均
 ```

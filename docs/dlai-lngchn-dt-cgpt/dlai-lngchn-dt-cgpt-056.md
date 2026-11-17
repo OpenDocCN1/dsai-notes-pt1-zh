@@ -134,15 +134,18 @@ game_demo.launch()
 
 在这个版本中，我们创建一个单一的函数，它包含字幕生成和图像生成两个步骤，然后以更简洁的方式呈现游戏，用户只需上传一次图片。
 
+
+![](img/18c628c40b9269206bc98a6c30d5cf19_18.png)
+
+
+![](img/18c628c40b9269206bc98a6c30d5cf19_20.png)
+
 ```python
 def caption_and_generate(image):
     """一体化函数：接受图像，生成字幕后立即根据字幕生成新图像。"""
     caption = captioner(image)
     new_image = generate_image_from_text(caption)
     return caption, new_image
-
-![](img/18c628c40b9269206bc98a6c30d5cf19_18.png)
-
 with gr.Blocks() as concise_demo:
     gr.Markdown("## 图文互生游戏 - 简洁版")
     image_input = gr.Image(label="上传一张图片", type="filepath")
@@ -152,9 +155,6 @@ with gr.Blocks() as concise_demo:
         output_image = gr.Image(label="根据字幕生成的新图像")
 
     action_button.click(fn=caption_and_generate, inputs=image_input, outputs=[output_caption, output_image])
-
-![](img/18c628c40b9269206bc98a6c30d5cf19_20.png)
-
 concise_demo.launch()
 ```
 

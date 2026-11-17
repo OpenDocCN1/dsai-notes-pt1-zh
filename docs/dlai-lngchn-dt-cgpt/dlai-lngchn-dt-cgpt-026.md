@@ -18,21 +18,21 @@
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_10.png)
 
-```python
-import os
-import openai
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_12.png)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_14.png)
 
-# 加载OpenAI API密钥
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_16.png)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_18.png)
 
+```python
+import os
+import openai
+# 加载OpenAI API密钥
+openai.api_key = os.getenv("OPENAI_API_KEY")
 # 辅助函数：调用GPT-3.5模型
 def get_completion(prompt, model="gpt-3.5-turbo"):
     messages = [{"role": "user", "content": prompt}]
@@ -81,29 +81,29 @@ def get_completion(prompt, model="gpt-3.5-turbo"):
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_44.png)
 
-```python
-customer_email = """
-Arrr, I be fuming that me blender lid flew off and splattered me kitchen walls with smoothie! And things be gettin' worse: warranty not be coverin' the cost o' cleanin' me kitchen. I needs yer help right now, matey!
-"""
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_46.png)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_48.png)
 
-style = "American English in a calm and respectful tone"
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_50.png)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_52.png)
 
-prompt = f"""Translate the text that is delimited by triple backticks into a style that is {style}.
-text: ```{customer_email}```
-"""
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_54.png)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_56.png)
 
+```python
+customer_email = """
+Arrr, I be fuming that me blender lid flew off and splattered me kitchen walls with smoothie! And things be gettin' worse: warranty not be coverin' the cost o' cleanin' me kitchen. I needs yer help right now, matey!
+"""
+style = "American English in a calm and respectful tone"
+prompt = f"""Translate the text that is delimited by triple backticks into a style that is {style}.
+text: ```{customer_email}```
+"""
 response = get_completion(prompt)
 print(response)
 ```
@@ -143,28 +143,28 @@ print(response)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_78.png)
 
-```python
-from langchain.chat_models import ChatOpenAI
-from langchain import PromptTemplate
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_80.png)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_82.png)
 
-# 初始化ChatOpenAI模型，设置temperature=0使输出更确定
-chat = ChatOpenAI(temperature=0.0)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_84.png)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_86.png)
 
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_88.png)
+
+```python
+from langchain.chat_models import ChatOpenAI
+from langchain import PromptTemplate
+# 初始化ChatOpenAI模型，设置temperature=0使输出更确定
+chat = ChatOpenAI(temperature=0.0)
 # 定义可复用的提示模板字符串
 template_string = """Translate the text that is delimited by triple backticks into a style that is {style}.
 text: ```{text}```
 """
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_88.png)
-
 # 创建提示模板对象
 prompt_template = PromptTemplate.from_template(template_string)
 ```
@@ -179,27 +179,27 @@ prompt_template = PromptTemplate.from_template(template_string)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_96.png)
 
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_98.png)
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_100.png)
+
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_102.png)
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_104.png)
+
 ```python
 # 定义翻译风格和客户邮件
 customer_style = "American English in a calm and respectful tone"
 customer_email = """
 Arrr, I be fuming that me blender lid flew off and splattered me kitchen walls with smoothie! And things be gettin' worse: warranty not be coverin' the cost o' cleanin' me kitchen. I needs yer help right now, matey!
 """
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_98.png)
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_100.png)
-
 # 使用模板生成具体的提示消息
 customer_messages = prompt_template.format_messages(
     style=customer_style,
     text=customer_email
 )
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_102.png)
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_104.png)
-
 # 将提示传递给模型并获取响应
 customer_response = chat(customer_messages)
 print(customer_response.content)
@@ -211,28 +211,28 @@ print(customer_response.content)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_108.png)
 
-```python
-service_reply = """Hey there customer, the warranty does not cover cleaning expenses for your kitchen because it's your fault that you misused the blender by using a fork to remove the lid. Sorry about that!"""
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_110.png)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_112.png)
 
-service_style_pirate = "English Pirate in a calm and respectful tone"
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_114.png)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_116.png)
 
-service_messages = prompt_template.format_messages(
-    style=service_style_pirate,
-    text=service_reply
-)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_118.png)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_120.png)
 
+```python
+service_reply = """Hey there customer, the warranty does not cover cleaning expenses for your kitchen because it's your fault that you misused the blender by using a fork to remove the lid. Sorry about that!"""
+service_style_pirate = "English Pirate in a calm and respectful tone"
+service_messages = prompt_template.format_messages(
+    style=service_style_pirate,
+    text=service_reply
+)
 service_response = chat(service_messages)
 print(service_response.content)
 ```
@@ -279,34 +279,34 @@ review = """This leaf blower is pretty amazing. It has four settings: candle blo
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_140.png)
 
-```python
-template = """For the following text, extract the following information:
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_142.png)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_144.png)
 
-gift: Was the item purchased as a gift for someone else? Answer True if yes, False if not or unknown.
-
-delivery_days: How many days did it take for the product to arrive? If this information is not found, output -1.
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_146.png)
 
-price_value: Extract any sentences about the value or price, and output them as a comma separated Python list.
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_148.png)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_150.png)
 
-Format the output as a JSON object with "gift", "delivery_days" and "price_value" as the keys.
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_152.png)
 
-text: {text}
-"""
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_154.png)
 
+```python
+template = """For the following text, extract the following information:
+gift: Was the item purchased as a gift for someone else? Answer True if yes, False if not or unknown.
+
+delivery_days: How many days did it take for the product to arrive? If this information is not found, output -1.
+price_value: Extract any sentences about the value or price, and output them as a comma separated Python list.
+Format the output as a JSON object with "gift", "delivery_days" and "price_value" as the keys.
+text: {text}
+"""
 prompt_template = PromptTemplate.from_template(template)
 messages = prompt_template.format_messages(text=review)
 response = chat(messages)
@@ -329,13 +329,56 @@ print(response.content)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_165.png)
 
-```python
-from langchain.output_parsers import ResponseSchema, StructuredOutputParser
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_167.png)
 
 ![](img/33b34f27f891ee6bcb7f740a22b7da9c_169.png)
 
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_171.png)
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_173.png)
+
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_175.png)
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_177.png)
+
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_179.png)
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_181.png)
+
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_183.png)
+
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_185.png)
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_186.png)
+
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_188.png)
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_190.png)
+
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_192.png)
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_194.png)
+
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_196.png)
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_198.png)
+
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_199.png)
+
+![](img/33b34f27f891ee6bcb7f740a22b7da9c_201.png)
+
+```python
+from langchain.output_parsers import ResponseSchema, StructuredOutputParser
 # 1. 定义期望输出的模式（Schema）
 gift_schema = ResponseSchema(
     name="gift",
@@ -350,70 +393,27 @@ price_value_schema = ResponseSchema(
     description="Extract any sentences about the value or price, and output them as a comma separated Python list."
 )
 response_schemas = [gift_schema, delivery_days_schema, price_value_schema]
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_171.png)
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_173.png)
-
 # 2. 创建输出解析器
 output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_175.png)
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_177.png)
-
 # 3. 获取解析器生成的格式指令，并将其加入到提示模板中
 format_instructions = output_parser.get_format_instructions()
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_179.png)
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_181.png)
-
 # 4. 更新提示模板，包含格式指令
 template_with_format = """For the following text, extract the following information:
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_183.png)
-
 {format_instructions}
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_185.png)
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_186.png)
-
 text: {text}
 """
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_188.png)
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_190.png)
-
 prompt = PromptTemplate(
     template=template_with_format,
     input_variables=["text"],
     partial_variables={"format_instructions": format_instructions}
 )
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_192.png)
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_194.png)
-
 # 5. 生成提示并调用模型
 messages = prompt.format_messages(text=review)
 response = chat(messages)
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_196.png)
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_198.png)
-
 # 6. 使用解析器将模型输出转换为字典
 output_dict = output_parser.parse(response.content)
 print(output_dict)
 print(type(output_dict))  # 输出应为 <class 'dict'>
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_199.png)
-
-![](img/33b34f27f891ee6bcb7f740a22b7da9c_201.png)
-
 # 7. 现在可以方便地访问字典中的值
 print(output_dict.get('gift'))  # 例如：True
 print(output_dict.get('delivery_days'))  # 例如：2

@@ -48,13 +48,13 @@ def query_langchain_docs(query: str):
 
 在 LangChain 中，这非常简单：
 
-```python
-from langchain.tools import tool
 
 ![](img/601c2bc4bbeef37a82ba143e4a414aac_6.png)
 
 ![](img/601c2bc4bbeef37a82ba143e4a414aac_7.png)
 
+```python
+from langchain.tools import tool
 @tool
 def langchain_query_tool(query: str) -> str:
     """一个用于查询 LangChain 文档的工具。"""
@@ -83,6 +83,9 @@ MCP 采用客户端-服务器架构。宿主应用（如 Cursor）是客户端�
 
 以下是服务器脚本 `langchain_mcp.py` 的核心内容：
 
+
+![](img/601c2bc4bbeef37a82ba143e4a414aac_9.png)
+
 ```python
 # 导入 MCP SDK
 from mcp import Client, Server
@@ -99,9 +102,6 @@ def langchain_query_tool(query: str) -> str:
     # 这里复用我们第一步编写的核心检索逻辑
     docs = query_langchain_docs(query)
     return docs
-
-![](img/601c2bc4bbeef37a82ba143e4a414aac_9.png)
-
 # 3. （可选）注册一个资源，例如直接提供完整的文档文本文件
 @app.resource("langchain://docs")
 def get_full_docs() -> str:

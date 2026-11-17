@@ -67,14 +67,14 @@ data = response.json()
 
 ![](img/a0b9f7247bb2d093c66c4f5cc2fb4460_7.png)
 
+
+![](img/a0b9f7247bb2d093c66c4f5cc2fb4460_9.png)
+
 ```python
 # 假设这是从AI聊天机器人获得的代码，用于解析数据
 temperature = data['main']['temp']
 description = data['weather'][0]['description']
 wind_speed = data['wind']['speed']
-
-![](img/a0b9f7247bb2d093c66c4f5cc2fb4460_9.png)
-
 print(f"温度: {temperature}°C")
 print(f"天气状况: {description}")
 print(f"风速: {wind_speed} m/s")

@@ -157,13 +157,13 @@ X_encoded = encoder.fit_transform(df[categorical_cols])
 
 现在，我们可以为泰坦尼克数据集构建一个完整的预处理流程：
 
+
+![](img/aa8670be32dc76d9016afd0802c2c687_37.png)
+
 ```python
 from sklearn.compose import make_column_transformer
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
-
-![](img/aa8670be32dc76d9016afd0802c2c687_37.png)
-
 numeric_features = [‘Age‘, ‘Fare‘]
 categorical_features = [‘Sex‘, ‘Embarked‘, ‘Pclass‘]
 

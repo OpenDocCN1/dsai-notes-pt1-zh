@@ -66,11 +66,11 @@
 5.  **超参数调优**：可以使用交叉验证等方法来调整`n_estimators`等参数，这是机器学习优化中的常见步骤。
 
 **代码示例核心结构**：
-```python
-from sklearn.ensemble import BaggingClassifier
 
 ![](img/e474f4da36d135bdde872d3d2d00feda_17.png)
 
+```python
+from sklearn.ensemble import BaggingClassifier
 # 初始化Bagging分类器，设置树的数量为50
 bc = BaggingClassifier(n_estimators=50)
 # 在训练数据上拟合模型

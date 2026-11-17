@@ -85,12 +85,6 @@ ChatGPT可能会生成类似以下的Python代码（以著名的Iris数据集为
 
 ![](img/cc65f1696fe6bd6d4c3293d39dcb4613_26.png)
 
-```python
-# 第二三四部分 示例代码片段：加载数据并创建散点图矩阵
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.datasets import load_iris
 
 ![](img/cc65f1696fe6bd6d4c3293d39dcb4613_27.png)
 
@@ -98,6 +92,12 @@ from sklearn.datasets import load_iris
 
 ![](img/cc65f1696fe6bd6d4c3293d39dcb4613_29.png)
 
+```python
+# 第二三四部分 示例代码片段：加载数据并创建散点图矩阵
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
 # 第二三四部分 加载数据
 iris = load_iris()
 df = pd.DataFrame(iris.data, columns=iris.feature_names)

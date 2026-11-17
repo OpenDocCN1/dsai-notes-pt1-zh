@@ -138,14 +138,14 @@ learn.fit_one_cycle(5, 5e-3)
 
 ![](img/0539167fb0dcc583b90aa030aa04a1fa_19.png)
 
-```python
-# 在PyTorch中，添加Dropout层非常简单
-self.drop = nn.Dropout(p=0.5) # 以50%的概率丢弃激活值
 
 ![](img/0539167fb0dcc583b90aa030aa04a1fa_21.png)
 
 ![](img/0539167fb0dcc583b90aa030aa04a1fa_23.png)
 
+```python
+# 在PyTorch中，添加Dropout层非常简单
+self.drop = nn.Dropout(p=0.5) # 以50%的概率丢弃激活值
 def forward(self, x):
     x = self.layer1(x)
     x = self.drop(x) # 应用Dropout

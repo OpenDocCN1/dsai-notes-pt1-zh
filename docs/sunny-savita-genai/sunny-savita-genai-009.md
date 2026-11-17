@@ -14,11 +14,11 @@
 *   **`temperature`**：控制输出的随机性和创造性。取值范围是 `0` 到 `2`。值越接近 `0`，输出越确定和直接；值越接近 `2`，输出越随机和富有创造性。
 *   **`top_k`** 与 **`top_p`**：这两个参数影响模型如何从词汇表中选择下一个令牌。`top_p` 是一个介于 `0` 到 `1` 之间的概率值，用于控制候选词的概率累积范围。
 
-```python
-import google.generativeai as genai
 
 ![](img/f0b06307f1a5d649bd60908526383c6a_1.png)
 
+```python
+import google.generativeai as genai
 # 配置API密钥
 genai.configure(api_key="YOUR_API_KEY")
 

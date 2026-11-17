@@ -90,6 +90,9 @@ Softmax回归的出现，正是为了更直接、更均衡地处理多分类问�
 
 理解了原理之后，我们现在回到代码中，亲手实现一个Softmax函数。
 
+
+![](img/083c442aaf93ed60c949ce875a57ac65_20.png)
+
 ```python
 import numpy as np
 
@@ -100,9 +103,6 @@ def softmax(z):
     sum_exp_z = exp_z.sum()
     # 每个类别的概率 = 其指数值 / 指数值总和
     return exp_z / sum_exp_z
-
-![](img/083c442aaf93ed60c949ce875a57ac65_20.png)
-
 # 定义原始数据
 z = np.array([3, 1, -3])
 # 调用softmax函数

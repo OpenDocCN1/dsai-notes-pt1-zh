@@ -46,10 +46,6 @@ import re
 
 ![](img/da8ee5de7a086ab699eec08ed957b1f1_29.png)
 
-```python
-test_string = "123 abc ABC 456 abc"
-pattern = re.compile(r'abc')
-matches = pattern.finditer(test_string)
 
 ![](img/da8ee5de7a086ab699eec08ed957b1f1_31.png)
 
@@ -65,6 +61,10 @@ matches = pattern.finditer(test_string)
 
 ![](img/da8ee5de7a086ab699eec08ed957b1f1_39.png)
 
+```python
+test_string = "123 abc ABC 456 abc"
+pattern = re.compile(r'abc')
+matches = pattern.finditer(test_string)
 for match in matches:
     print(match)
 ```
@@ -398,12 +398,6 @@ for match in matches:
 
 ![](img/da8ee5de7a086ab699eec08ed957b1f1_236.png)
 
-```python
-# 分割示例
-text = "apple,banana,orange,grape"
-pattern = re.compile(r',')
-result = pattern.split(text)
-print(result)  # 输出: ['apple', 'banana', 'orange', 'grape']
 
 ![](img/da8ee5de7a086ab699eec08ed957b1f1_237.png)
 
@@ -411,6 +405,12 @@ print(result)  # 输出: ['apple', 'banana', 'orange', 'grape']
 
 ![](img/da8ee5de7a086ab699eec08ed957b1f1_241.png)
 
+```python
+# 分割示例
+text = "apple,banana,orange,grape"
+pattern = re.compile(r',')
+result = pattern.split(text)
+print(result)  # 输出: ['apple', 'banana', 'orange', 'grape']
 # 替换示例
 text = "Hello world! The world is big."
 pattern = re.compile(r'world')

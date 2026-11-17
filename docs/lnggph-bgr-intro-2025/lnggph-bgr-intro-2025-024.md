@@ -88,12 +88,12 @@ def should_continue(state: AgentState) -> str:
 
 现在，我们将这个条件逻辑添加到图中。
 
-```python
-# 设置推理节点为入口点
-workflow.set_entry_point(REASON_NODE)
 
 ![](img/ceec77458f324f848615f4bc8002352e_15.png)
 
+```python
+# 设置推理节点为入口点
+workflow.set_entry_point(REASON_NODE)
 # 在推理节点后添加条件边
 workflow.add_conditional_edges(
     REASON_NODE,

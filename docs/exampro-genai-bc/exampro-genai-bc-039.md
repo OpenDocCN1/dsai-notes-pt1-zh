@@ -229,14 +229,14 @@ prompt_template = """
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_115.png)
 
+
+![](img/f725e4b8fde0f83a900447c51f2d804c_117.png)
+
 ```python
 # 伪代码：初始化向量存储并插入数据
 from backend.vector_store import VectorStore
 vector_store = VectorStore()
 vector_store.add_questions(section="section_2", questions=parsed_questions_list)
-
-![](img/f725e4b8fde0f83a900447c51f2d804c_117.png)
-
 # 伪代码：进行相似性搜索
 similar_questions = vector_store.search_similar_questions(
     query="关于餐厅点餐的对话",

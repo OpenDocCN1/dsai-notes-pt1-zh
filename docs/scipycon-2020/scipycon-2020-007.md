@@ -107,12 +107,12 @@
 **定义模型**
 模型可以通过简单的Python类来定义。在 `__init__` 方法中加载模型，在 `__call__` 方法中定义请求处理逻辑。Ray Serve暴露了类似Flask的请求接口，易于理解和使用。
 
-```python
-import ray
-from ray import serve
 
 ![](img/1b12c1882c71e327ab8d0fdc7a793171_3.png)
 
+```python
+import ray
+from ray import serve
 @serve.deployment
 class MyModel:
     def __init__(self):

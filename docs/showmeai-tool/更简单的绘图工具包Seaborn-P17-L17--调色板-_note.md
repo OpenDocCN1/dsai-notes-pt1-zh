@@ -27,14 +27,14 @@ sns.set(style="talk")
 ![](img/ffdad37982e1a7198018b6acc1d66d7c_4.png)
 
 以下是创建条形图的代码：
-```python
-# 加载数据集
-tips = sns.load_dataset("tips")
 
 ![](img/ffdad37982e1a7198018b6acc1d66d7c_5.png)
 
 ![](img/ffdad37982e1a7198018b6acc1d66d7c_6.png)
 
+```python
+# 加载数据集
+tips = sns.load_dataset("tips")
 # 创建条形图
 sns.barplot(x="day", y="total_bill", hue="sex", data=tips)
 plt.show()

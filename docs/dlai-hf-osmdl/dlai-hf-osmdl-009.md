@@ -79,10 +79,10 @@ od_pipe = pipeline("object-detection", model="facebook/detr-resnet-50")
 
 ![](img/904b131b94f40a51c0dfe9cff001e295_18.png)
 
-```python
-# 加载示例图片（这里假设通过 helper 函数从URL加载）
 image = load_image_from_url("https://example.com/your_image.jpg")
 
+```python
+# 加载示例图片（这里假设通过 helper 函数从URL加载）
 # 进行预测
 predictions = od_pipe(image)
 
@@ -115,6 +115,9 @@ result_image.show()
 
 ![](img/904b131b94f40a51c0dfe9cff001e295_25.png)
 
+
+![](img/904b131b94f40a51c0dfe9cff001e295_27.png)
+
 ```python
 import gradio as gr
 
@@ -132,9 +135,6 @@ demo = gr.Interface(
     outputs=gr.Image(type="pil"),
     title="目标检测演示"
 )
-
-![](img/904b131b94f40a51c0dfe9cff001e295_27.png)
-
 # 启动应用，并生成可分享的链接
 demo.launch(share=True)
 ```

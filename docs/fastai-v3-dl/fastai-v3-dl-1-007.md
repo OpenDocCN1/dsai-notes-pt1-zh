@@ -111,16 +111,16 @@ dblock = DataBlock(
 
 ![](img/9790e5fe5cae4197004209600cae6f7e_39.png)
 
-```python
-def disease_loss(preds, targs):
-    disease_preds = preds[:, :10]  # 前10列为疾病预测
-    disease_targs = targs[0]       # 第一个目标是疾病标签
-    return F.cross_entropy(disease_preds, disease_targs)
 
 ![](img/9790e5fe5cae4197004209600cae6f7e_41.png)
 
 ![](img/9790e5fe5cae4197004209600cae6f7e_43.png)
 
+```python
+def disease_loss(preds, targs):
+    disease_preds = preds[:, :10]  # 前10列为疾病预测
+    disease_targs = targs[0]       # 第一个目标是疾病标签
+    return F.cross_entropy(disease_preds, disease_targs)
 def variety_loss(preds, targs):
     variety_preds = preds[:, 10:]  # 后10列为品种预测
     variety_targs = targs[1]       # 第二个目标是品种标签

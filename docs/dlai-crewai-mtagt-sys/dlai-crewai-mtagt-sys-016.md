@@ -49,6 +49,11 @@ os.environ["OPENAI_MODEL_NAME"] = "gpt-4-turbo"
 
 让我们创建这些工具并查看简历文件。
 
+
+![](img/21e20c9e15fb7f73e3acf247dbc2600b_4.png)
+
+![](img/21e20c9e15fb7f73e3acf247dbc2600b_5.png)
+
 ```python
 from crewai_tools import (
     SerperDevTool,
@@ -56,11 +61,6 @@ from crewai_tools import (
     FileReadTool,
     MDXSearchTool
 )
-
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_4.png)
-
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_5.png)
-
 # 实例化工具
 search_tool = SerperDevTool()
 scrape_tool = ScrapeWebsiteTool()

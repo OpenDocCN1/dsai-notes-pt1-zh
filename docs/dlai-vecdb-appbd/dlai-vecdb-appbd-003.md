@@ -186,6 +186,9 @@ print("\n---\n".join(context_texts))
 
 以下是构建提示的步骤：
 
+
+![](img/5c4d6b14ac8318338d2d3339b85c5e23_6.png)
+
 ```python
 # 构建提示工程
 prompt_start = "Answer the question based on the context below.\n\nContext:\n"
@@ -196,9 +199,6 @@ context = "\n\n---\n\n".join(context_texts)
 
 # 组合成完整的提示
 prompt = prompt_start + context + prompt_end
-
-![](img/5c4d6b14ac8318338d2d3339b85c5e23_6.png)
-
 print("\n--- 发送给 OpenAI 的完整提示 ---\n")
 print(prompt)
 ```

@@ -30,22 +30,22 @@
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_18.png)
 
-```python
-# 加载环境变量
-import os
-from dotenv import load_dotenv
-load_dotenv()
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_20.png)
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_22.png)
 
-# 加载向量数据库
-from langchain.vectorstores import Chroma
-from langchain.embeddings import OpenAIEmbeddings
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_24.png)
 
+```python
+# 加载环境变量
+import os
+from dotenv import load_dotenv
+load_dotenv()
+# 加载向量数据库
+from langchain.vectorstores import Chroma
+from langchain.embeddings import OpenAIEmbeddings
 persist_directory = ‘你的数据库路径’
 embedding = OpenAIEmbeddings()
 vectordb = Chroma(persist_directory=persist_directory, embedding_function=embedding)
@@ -82,27 +82,27 @@ print(len(docs))
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_42.png)
 
-```python
-from langchain.chat_models import ChatOpenAI
-from langchain.chains import RetrievalQA
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_44.png)
 
-# 初始化语言模型
-llm = ChatOpenAI(model_name=“gpt-3.5-turbo”, temperature=0)
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_46.png)
 
-# 创建检索问答链
-qa_chain = RetrievalQA.from_chain_type(
-    llm=llm,
-    retriever=vectordb.as_retriever()
-)
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_48.png)
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_50.png)
 
+```python
+from langchain.chat_models import ChatOpenAI
+from langchain.chains import RetrievalQA
+# 初始化语言模型
+llm = ChatOpenAI(model_name=“gpt-3.5-turbo”, temperature=0)
+# 创建检索问答链
+qa_chain = RetrievalQA.from_chain_type(
+    llm=llm,
+    retriever=vectordb.as_retriever()
+)
 # 进行提问
 result = qa_chain.run(“本课程的主要主题是什么”)
 print(result)
@@ -124,26 +124,29 @@ print(result)
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_60.png)
 
-```python
-from langchain.prompts import PromptTemplate
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_62.png)
 
-template = “”“使用以下上下文片段来回答问题。如果你不知道答案，就说不知道，不要编造答案。
-上下文：{context}
-问题：{question}
-有帮助的答案：”“”
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_64.png)
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_66.png)
 
+```python
+from langchain.prompts import PromptTemplate
+template = “”“使用以下上下文片段来回答问题。如果你不知道答案，就说不知道，不要编造答案。
+上下文：{context}
+问题：{question}
+有帮助的答案：”“”
 QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
 ```
 
 我们可以创建一个新的问答链，并指定使用自定义的提示模板和返回源文档。
 
 ![](img/8fdba8c04f845e8d78897dbf4b174b32_68.png)
+
+
+![](img/8fdba8c04f845e8d78897dbf4b174b32_70.png)
 
 ```python
 qa_chain_new = RetrievalQA.from_chain_type(
@@ -152,9 +155,6 @@ qa_chain_new = RetrievalQA.from_chain_type(
     return_source_documents=True,
     chain_type_kwargs={“prompt”: QA_CHAIN_PROMPT}
 )
-
-![](img/8fdba8c04f845e8d78897dbf4b174b32_70.png)
-
 result = qa_chain_new({“query”: “概率是课程主题吗？”})
 print(result[“result”])
 print(result[“source_documents”])

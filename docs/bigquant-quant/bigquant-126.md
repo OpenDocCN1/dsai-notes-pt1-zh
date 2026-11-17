@@ -149,14 +149,14 @@ plt.show()
 
 在代码中，我们可以通过`coef0`参数来调整拟合效果。
 
+
+![](img/e5852ce41176b046343c1b115ebda7a6_27.png)
+
 ```python
 # 调整多项式核函数的coef0参数
 svr_poly_tuned = SVR(kernel='poly', coef0=200)
 svr_poly_tuned.fit(x_reshaped, y)
 y_pred_poly_tuned = svr_poly_tuned.predict(x_test)
-
-![](img/e5852ce41176b046343c1b115ebda7a6_27.png)
-
 plt.scatter(x, y, color='red', label='Actual Data')
 plt.plot(x_test.ravel(), y_pred_poly_tuned, color='purple', label='Tuned Poly SVR')
 plt.legend()

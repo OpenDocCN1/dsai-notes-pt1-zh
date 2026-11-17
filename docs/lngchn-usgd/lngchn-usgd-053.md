@@ -83,6 +83,9 @@ response = llm.invoke(prompt)
 
 ![](img/0821e9c80cf81537dd89b7d758b16268_8.png)
 
+
+![](img/0821e9c80cf81537dd89b7d758b16268_10.png)
+
 ```python
 from pydantic import BaseModel
 from langchain_core.prompts import ChatPromptTemplate
@@ -92,9 +95,6 @@ class ReportSchema(BaseModel):
     causes: list[str]
     mitigations: list[str]
     summary: str
-
-![](img/0821e9c80cf81537dd89b7d758b16268_10.png)
-
 structured_llm = llm.with_structured_outputs(ReportSchema)
 result = structured_llm.invoke(prompt)  # result 将是一个 ReportSchema 对象
 ```
@@ -109,6 +109,9 @@ result = structured_llm.invoke(prompt)  # result 将是一个 ReportSchema 对�
 
 ![](img/0821e9c80cf81537dd89b7d758b16268_15.png)
 
+
+![](img/0821e9c80cf81537dd89b7d758b16268_17.png)
+
 ```python
 from langchain_core.tools import tool
 
@@ -116,9 +119,6 @@ from langchain_core.tools import tool
 def multiply(a: int, b: int) -> int:
     """Multiply two numbers."""
     return a * b
-
-![](img/0821e9c80cf81537dd89b7d758b16268_17.png)
-
 llm_with_tools = llm.bind_tools([multiply])
 response = llm_with_tools.invoke("计算 123 乘以 456 是多少？")
 # 模型可能会决定调用 multiply 工具

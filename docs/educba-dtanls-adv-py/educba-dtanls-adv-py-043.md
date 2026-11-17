@@ -39,9 +39,6 @@
 
 ![](img/4ed4c4dd5f66754dc2525157071572be_20.png)
 
-```python
-# 获取用户输入，例如：“3,4”
-user_input = input(“Enter the shape of the array (rows,columns): “)
 
 ![](img/4ed4c4dd5f66754dc2525157071572be_22.png)
 
@@ -49,11 +46,14 @@ user_input = input(“Enter the shape of the array (rows,columns): “)
 
 ![](img/4ed4c4dd5f66754dc2525157071572be_25.png)
 
-# 将输入字符串按逗号分割并转换为整数列表
-row, column = [int(element) for element in user_input.split(‘,’)]
 
 ![](img/4ed4c4dd5f66754dc2525157071572be_27.png)
 
+```python
+# 获取用户输入，例如：“3,4”
+user_input = input(“Enter the shape of the array (rows,columns): “)
+# 将输入字符串按逗号分割并转换为整数列表
+row, column = [int(element) for element in user_input.split(‘,’)]
 print(f“Row: {row}, Column: {column}”)
 ```
 
@@ -71,11 +71,11 @@ print(f“Row: {row}, Column: {column}”)
 
 ![](img/4ed4c4dd5f66754dc2525157071572be_33.png)
 
-```python
-import numpy as np
 
 ![](img/4ed4c4dd5f66754dc2525157071572be_35.png)
 
+```python
+import numpy as np
 # 根据用户输入的行和列，创建一个全为1的整数数组
 initial_array = np.ones((row, column), dtype=int)
 print(“Initial array of ones:”)
@@ -102,15 +102,15 @@ print(initial_array)
 
 ![](img/4ed4c4dd5f66754dc2525157071572be_47.png)
 
+
+![](img/4ed4c4dd5f66754dc2525157071572be_49.png)
+
 ```python
 # 遍历数组的每一行和每一列
 for i in range(row):
     for j in range(column):
         # 将数组在(i, j)位置的值设置为行索引i乘以列索引j
         initial_array[i, j] = i * j
-
-![](img/4ed4c4dd5f66754dc2525157071572be_49.png)
-
 print(“Final array (row_index * column_index):”)
 print(initial_array)
 ```

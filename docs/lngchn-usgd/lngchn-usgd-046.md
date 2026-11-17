@@ -54,6 +54,9 @@
 
 以下是在新笔记本中开始构建的代码，首先使用 Arcade API 抓取推文：
 
+
+![](img/7fd8676e395c953d698afa90d09ff95a_9.png)
+
 ```python
 import os
 from arcade import ArcadeClient
@@ -65,9 +68,6 @@ os.environ[“ARCADE_API_KEY”] = “your_api_key_here”
 client = ArcadeClient(api_key=os.environ[“ARCADE_API_KEY”])
 user_id = “your_email@example.com”  # Arcade API 身份验证所需的用户标识
 client.authenticate(user_id=user_id)
-
-![](img/7fd8676e395c953d698afa90d09ff95a_9.png)
-
 def get_user_tweets(client, username, user_id, tool_name=“search_recent_tweets_by_username”):
     “””
     获取指定用户名过去七天的推文。

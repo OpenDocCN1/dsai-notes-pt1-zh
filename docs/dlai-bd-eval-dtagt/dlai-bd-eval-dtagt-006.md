@@ -131,12 +131,12 @@ consistency_result = logical_consistency_feedback.run(trace=full_execution_trace
 
 以下是注册代理并添加GPA评估的代码：
 
-```python
-# 构建代理图
-app = create_data_agent_graph()
 
 ![](img/234228cc40cc6c20e15a8007d86d942f_1.png)
 
+```python
+# 构建代理图
+app = create_data_agent_graph()
 # 使用TruLens注册代理，并添加评估项
 tru_app = Tru(
     app,

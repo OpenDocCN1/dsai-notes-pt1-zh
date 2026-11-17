@@ -20,12 +20,12 @@
 
 我们将把它设置为评估模式，并开启推理模式。
 
-```python
-# 将模型设置为评估模式
-model_3.eval()
 
 ![](img/f491fec182993468d2f3c1697b1189ca_4.png)
 
+```python
+# 将模型设置为评估模式
+model_3.eval()
 # 开启推理模式进行预测
 with torch.inference_mode():
     y_preds = torch.round(torch.sigmoid(model_3(X_test))).squeeze()

@@ -212,13 +212,13 @@ print(filtered)
 
 以下是过滤股票数据的代码：
 
+
+![](img/45eb811e7f17537cdccd963cfaeb5893_2.png)
+
 ```python
 def filter_func(group):
     # 判断该年份的平均收盘价是否大于100
     return group['Close'].mean() > 100
-
-![](img/45eb811e7f17537cdccd963cfaeb5893_2.png)
-
 filtered_df = nvda_df.groupby('Year').filter(filter_func)
 print(filtered_df['Year'].unique())  # 打印出哪些年份被保留了
 ```

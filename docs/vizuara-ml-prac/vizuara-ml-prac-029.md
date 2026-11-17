@@ -39,14 +39,14 @@ model = Sequential([
 
 另一方面，如果我们想用PyTorch做同样的事情，实现看起来像这样。
 
-```python
-import torch
-import torch.nn as nn
 
 ![](img/7e8fa5bcd9f2ccf07071057a77f66ecd_8.png)
 
 ![](img/7e8fa5bcd9f2ccf07071057a77f66ecd_10.png)
 
+```python
+import torch
+import torch.nn as nn
 class SimpleNN(nn.Module):
     def __init__(self):
         super(SimpleNN, self).__init__()

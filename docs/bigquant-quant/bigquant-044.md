@@ -60,9 +60,6 @@
 
 ![](img/aef17a858b016fc7b3ca8e54794d5817_3.png)
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
 
 ![](img/aef17a858b016fc7b3ca8e54794d5817_5.png)
 
@@ -70,15 +67,18 @@ import matplotlib.pyplot as plt
 
 ![](img/aef17a858b016fc7b3ca8e54794d5817_9.png)
 
+
+![](img/aef17a858b016fc7b3ca8e54794d5817_11.png)
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
 # 创建一次函数（线性）的图像
 x_linear = np.linspace(0, 10, 50)
 y_linear = 0.8 * x_linear - 5
 plt.plot(x_linear, y_linear, color='red')
 plt.title('Linear Function: y = 0.8x - 5')
 plt.show()
-
-![](img/aef17a858b016fc7b3ca8e54794d5817_11.png)
-
 # 创建二次函数（非线性）的图像
 x_curve = np.linspace(0, 10, 50)
 y_curve = x_curve**2 + 4*x_curve - 15  # x**2 表示x的平方

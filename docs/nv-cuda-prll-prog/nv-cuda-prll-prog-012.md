@@ -139,11 +139,6 @@ flag = true;
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_83.png)
 
-```c
-// 线程 T1 的代码
-while(!flag);
-S1;
-flag = false;
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_85.png)
 
@@ -157,6 +152,11 @@ flag = false;
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_95.png)
 
+```c
+// 线程 T1 的代码
+while(!flag);
+S1;
+flag = false;
 // 线程 T2 的代码
 while(flag);
 S2;
@@ -259,21 +259,21 @@ void unlock(int tid) {
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_138.png)
 
-```c
-volatile int victim;
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_140.png)
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_142.png)
 
+
+![](img/849f9634ffa9fef9cf255d58f370c34c_144.png)
+
+```c
+volatile int victim;
 void lock(int tid) {
     int me = tid;
     victim = me; // 主动“牺牲”自己，让对方优先
     while(victim == me); // 如果自己仍然是“牺牲者”，则等待
 }
-
-![](img/849f9634ffa9fef9cf255d58f370c34c_144.png)
-
 void unlock(int tid) {
     // 解锁操作简单，无需修改 victim
     // victim 的值会在下一次 lock 竞争时被覆盖
@@ -304,12 +304,12 @@ Peterson算法巧妙地结合了**声明意向** (`flag[]`) 和**礼貌谦让** 
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_156.png)
 
-```c
-volatile bool flag[2] = {false, false};
-volatile int victim;
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_158.png)
 
+```c
+volatile bool flag[2] = {false, false};
+volatile int victim;
 void lock(int tid) {
     int me = tid;
     int other = 1 - me;

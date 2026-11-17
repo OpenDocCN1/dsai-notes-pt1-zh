@@ -128,10 +128,6 @@
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_47.png)
 
-```python
-import streamlit as st
-import requests
-import logging
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_49.png)
 
@@ -141,6 +137,27 @@ import logging
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_55.png)
 
+
+![](img/8bf79ee38a3d52c6191c4671faccca1d_57.png)
+
+![](img/8bf79ee38a3d52c6191c4671faccca1d_59.png)
+
+
+![](img/8bf79ee38a3d52c6191c4671faccca1d_61.png)
+
+
+![](img/8bf79ee38a3d52c6191c4671faccca1d_63.png)
+
+![](img/8bf79ee38a3d52c6191c4671faccca1d_65.png)
+
+![](img/8bf79ee38a3d52c6191c4671faccca1d_67.png)
+
+![](img/8bf79ee38a3d52c6191c4671faccca1d_69.png)
+
+```python
+import streamlit as st
+import requests
+import logging
 # 配置日志记录，便于调试
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -150,11 +167,6 @@ class AppState:
     INITIAL = "initial"
     PRACTICE = "practice"
     REVIEW = "review"
-
-![](img/8bf79ee38a3d52c6191c4671faccca1d_57.png)
-
-![](img/8bf79ee38a3d52c6191c4671faccca1d_59.png)
-
 # 初始化会话状态
 if 'app_state' not in st.session_state:
     st.session_state.app_state = AppState.INITIAL
@@ -162,9 +174,6 @@ if 'vocabulary' not in st.session_state:
     st.session_state.vocabulary = []
 if 'current_sentence' not in st.session_state:
     st.session_state.current_sentence = ""
-
-![](img/8bf79ee38a3d52c6191c4671faccca1d_61.png)
-
 def load_vocabulary():
     """从后端API加载单词数据"""
     # 从Streamlit查询参数中获取group_id
@@ -194,15 +203,6 @@ def load_vocabulary():
     except Exception as e:
         st.error(f"请求发生错误：{e}")
         logger.exception("加载词汇时发生异常")
-
-![](img/8bf79ee38a3d52c6191c4671faccca1d_63.png)
-
-![](img/8bf79ee38a3d52c6191c4671faccca1d_65.png)
-
-![](img/8bf79ee38a3d52c6191c4671faccca1d_67.png)
-
-![](img/8bf79ee38a3d52c6191c4671faccca1d_69.png)
-
 # 根据应用状态渲染不同界面
 if st.session_state.app_state == AppState.INITIAL:
     st.title("书写练习")

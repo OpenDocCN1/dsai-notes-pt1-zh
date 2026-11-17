@@ -26,14 +26,14 @@
 
 ![](img/7c0d341d6c688b90f85860afb32ff55b_7.png)
 
-```python
-# 假设输入是一个token，其隐藏维度为H
-x = token_input  # 形状: [H]
 
 ![](img/7c0d341d6c688b90f85860afb32ff55b_9.png)
 
 ![](img/7c0d341d6c688b90f85860afb32ff55b_11.png)
 
+```python
+# 假设输入是一个token，其隐藏维度为H
+x = token_input  # 形状: [H]
 # 1. 层归一化
 x_norm = rms_norm(x)
 
@@ -57,6 +57,9 @@ top_k_weights = top_k_weights / top_k_weights.sum(dim=-1, keepdim=True)
 
 ![](img/7c0d341d6c688b90f85860afb32ff55b_15.png)
 
+
+![](img/7c0d341d6c688b90f85860afb32ff55b_17.png)
+
 ```python
 # 5. 初始化最终输出
 final_output = torch.zeros_like(x)
@@ -69,9 +72,6 @@ for i, (expert_idx, weight) in enumerate(zip(top_k_indices, top_k_weights)):
     expert_output = expert_mlp(x_norm)
     # 加权累加到最终输出
     final_output += weight * expert_output
-
-![](img/7c0d341d6c688b90f85860afb32ff55b_17.png)
-
 # 7. 添加残差连接
 output = x + final_output
 ```

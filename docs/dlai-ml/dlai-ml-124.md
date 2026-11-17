@@ -78,12 +78,12 @@ for i in range(iterations):
 
 为了在TensorFlow中实现协同过滤，你可以使用以下语法：
 
-```python
-# 指定优化器为Adam，并设置学习率
-optimizer = keras.optimizers.Adam(learning_rate=1e-1)
 
 ![](img/1373277e7c2bbe60f758f4dfd2abf40c_5.png)
 
+```python
+# 指定优化器为Adam，并设置学习率
+optimizer = keras.optimizers.Adam(learning_rate=1e-1)
 for iter in range(200):
     # 使用梯度带记录计算成本的操作
     with tf.GradientTape() as tape:

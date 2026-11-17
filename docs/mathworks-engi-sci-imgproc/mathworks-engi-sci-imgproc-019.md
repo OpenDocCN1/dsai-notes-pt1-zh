@@ -70,12 +70,12 @@ combined_mask = mask_bright | mask_dark;
 
 首先，创建图像的副本。然后，应用掩膜。使用 `repmat` 函数将二值掩膜复制到所有三个颜色平面。
 
-```matlab
-% 创建图像副本
-img_copy = img;
 
 ![](img/668197527a29e0ce81365028085972fa_16.png)
 
+```matlab
+% 创建图像副本
+img_copy = img;
 % 应用掩膜
 mask_3d = repmat(combined_mask, [1, 1, 3]);
 img_masked = img_copy .* uint8(mask_3d);

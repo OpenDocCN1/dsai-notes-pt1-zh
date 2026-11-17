@@ -10,6 +10,11 @@
 
 首先，我们需要加载项目数据并进行初步查看。以下是加载数据的核心代码：
 
+
+![](img/5f39f39ef310493e3649f5accc403c4f_5.png)
+
+![](img/5f39f39ef310493e3649f5accc403c4f_7.png)
+
 ```python
 import pandas as pd
 import numpy as np
@@ -19,11 +24,6 @@ df = pd.read_csv('./zhengqi_train.txt', sep='\t')
 # 提取特征（X）和目标值（y）
 X_train = df.iloc[:, :-1]
 y_train = df['target']
-
-![](img/5f39f39ef310493e3649f5accc403c4f_5.png)
-
-![](img/5f39f39ef310493e3649f5accc403c4f_7.png)
-
 # 加载测试数据
 X_test = pd.read_csv('./zhengqi_test.txt', sep='\t')
 
@@ -43,6 +43,11 @@ print(X_test.head())
 
 我们首先使用未经任何处理的原始数据来训练一个线性回归模型，并保存预测结果。
 
+
+![](img/5f39f39ef310493e3649f5accc403c4f_11.png)
+
+![](img/5f39f39ef310493e3649f5accc403c4f_13.png)
+
 ```python
 from sklearn.linear_model import LinearRegression
 
@@ -52,11 +57,6 @@ model = LinearRegression()
 model.fit(X_train, y_train)
 # 使用训练好的模型对测试集进行预测
 y_pred = model.predict(X_test)
-
-![](img/5f39f39ef310493e3649f5accc403c4f_11.png)
-
-![](img/5f39f39ef310493e3649f5accc403c4f_13.png)
-
 # 保存预测结果
 np.savetxt('./result1.txt', y_pred)
 ```
@@ -146,11 +146,14 @@ Z-Score 标准化（Standardization）将数据变换为均值为0、标准差�
 
 ![](img/5f39f39ef310493e3649f5accc403c4f_45.png)
 
-```python
-from sklearn.preprocessing import StandardScaler
 
 ![](img/5f39f39ef310493e3649f5accc403c4f_47.png)
 
+
+![](img/5f39f39ef310493e3649f5accc403c4f_49.png)
+
+```python
+from sklearn.preprocessing import StandardScaler
 # 初始化标准化器
 std_scaler = StandardScaler()
 # 拟合训练数据（计算训练集的均值和标准差）
@@ -164,9 +167,6 @@ X_test_std = std_scaler.transform(X_test)
 model_std = LinearRegression()
 model_std.fit(X_train_std, y_train)
 y_pred_std = model_std.predict(X_test_std)
-
-![](img/5f39f39ef310493e3649f5accc403c4f_49.png)
-
 # 保存结果
 np.savetxt('./result3.txt', y_pred_std)
 ```

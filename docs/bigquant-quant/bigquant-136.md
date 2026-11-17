@@ -95,15 +95,11 @@ y_predict = svc.predict(X_pca_test)
 
 ![](img/470919ffd16d1187d318610a8eaa8dc8_25.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/470919ffd16d1187d318610a8eaa8dc8_27.png)
 
 ![](img/470919ffd16d1187d318610a8eaa8dc8_29.png)
 
-# 设置画布大小：10行5列，每列宽2，每行高3（为标题留出空间）
-plt.figure(figsize=(5*2, 10*3))
 
 ![](img/470919ffd16d1187d318610a8eaa8dc8_31.png)
 
@@ -111,6 +107,19 @@ plt.figure(figsize=(5*2, 10*3))
 
 ![](img/470919ffd16d1187d318610a8eaa8dc8_35.png)
 
+
+![](img/470919ffd16d1187d318610a8eaa8dc8_37.png)
+
+![](img/470919ffd16d1187d318610a8eaa8dc8_39.png)
+
+![](img/470919ffd16d1187d318610a8eaa8dc8_41.png)
+
+![](img/470919ffd16d1187d318610a8eaa8dc8_43.png)
+
+```python
+import matplotlib.pyplot as plt
+# 设置画布大小：10行5列，每列宽2，每行高3（为标题留出空间）
+plt.figure(figsize=(5*2, 10*3))
 # 循环绘制前50个测试样本
 for i in range(50):
     # 创建子图，10行5列，当前是第i+1个
@@ -128,15 +137,6 @@ for i in range(50):
     
     # 为子图添加标题，格式为：真实姓名 \n 预测姓名
     plt.title(f"True: {true_name}\nPred: {predict_name}")
-
-![](img/470919ffd16d1187d318610a8eaa8dc8_37.png)
-
-![](img/470919ffd16d1187d318610a8eaa8dc8_39.png)
-
-![](img/470919ffd16d1187d318610a8eaa8dc8_41.png)
-
-![](img/470919ffd16d1187d318610a8eaa8dc8_43.png)
-
 plt.tight_layout()  # 自动调整子图参数，使之填充整个图像区域
 plt.show()
 ```

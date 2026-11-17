@@ -193,15 +193,11 @@ boto3
 ![](img/a9b3147697529d2d2c58f32f90520322_52.png)
 
 **ChromaDB基本用法：**
-```python
-import chromadb
 
 ![](img/a9b3147697529d2d2c58f32f90520322_54.png)
 
 ![](img/a9b3147697529d2d2c58f32f90520322_56.png)
 
-# 初始化客户端
-client = chromadb.Client()
 
 ![](img/a9b3147697529d2d2c58f32f90520322_58.png)
 
@@ -209,20 +205,24 @@ client = chromadb.Client()
 
 ![](img/a9b3147697529d2d2c58f32f90520322_61.png)
 
-# 创建或获取一个集合（类似于表）
-collection = client.create_collection(name="transcripts")
 
 ![](img/a9b3147697529d2d2c58f32f90520322_63.png)
 
+
+![](img/a9b3147697529d2d2c58f32f90520322_65.png)
+
+```python
+import chromadb
+# 初始化客户端
+client = chromadb.Client()
+# 创建或获取一个集合（类似于表）
+collection = client.create_collection(name="transcripts")
 # 添加文档（文本块）及其元数据
 collection.add(
     documents=["这是一个文档内容", "这是另一个文档"],
     metadatas=[{"source": "video1"}, {"source": "video2"}],
     ids=["id1", "id2"]
 )
-
-![](img/a9b3147697529d2d2c58f32f90520322_65.png)
-
 # 进行相似性搜索
 results = collection.query(
     query_texts=["搜索查询"],
@@ -295,12 +295,12 @@ class BedrockChat:
 我们使用Streamlit构建一个多步骤的前端界面。
 
 **前端结构 (`frontend/main.py`)：**
-```python
-import streamlit as st
-from backend.chat import BedrockChat
 
 ![](img/a9b3147697529d2d2c58f32f90520322_78.png)
 
+```python
+import streamlit as st
+from backend.chat import BedrockChat
 # 初始化聊天会话
 if "chat_session" not in st.session_state:
     st.session_state.chat_session = BedrockChat()
@@ -341,11 +341,11 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 ![](img/a9b3147697529d2d2c58f32f90520322_86.png)
 
 **后端代码 (`backend/get_transcript.py`) 核心：**
-```python
-from youtube_transcript_api import YouTubeTranscriptApi
 
 ![](img/a9b3147697529d2d2c58f32f90520322_88.png)
 
+```python
+from youtube_transcript_api import YouTubeTranscriptApi
 class YouTubeTranscriptDownloader:
     def get_transcript(self, video_url):
         # 从URL提取视频ID

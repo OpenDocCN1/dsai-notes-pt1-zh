@@ -77,6 +77,12 @@ def scrape_text(url):
 
 ![](img/9db3081941f7483f0eed54c29368853e_14.png)
 
+
+![](img/9db3081941f7483f0eed54c29368853e_16.png)
+
+
+![](img/9db3081941f7483f0eed54c29368853e_18.png)
+
 ```python
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema import StrOutputParser
@@ -87,14 +93,8 @@ template = """请根据以下上下文内容回答问题。如果上下文不包
 
 上下文：
 {context}
-
-![](img/9db3081941f7483f0eed54c29368853e_16.png)
-
 问题：
 {question}
-
-![](img/9db3081941f7483f0eed54c29368853e_18.png)
-
 答案："""
 prompt = ChatPromptTemplate.from_template(template)
 

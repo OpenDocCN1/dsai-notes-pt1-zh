@@ -53,11 +53,11 @@ print(floor(5.7))
 1.  从 `statistics` 包中导入所需的函数。
 2.  将函数应用于你的数据列表。
 
-```python
-from statistics import mean, stdev
 
 ![](img/7aaabb4b822b0151b08e462ee65c3555_1.png)
 
+```python
+from statistics import mean, stdev
 heights = [175, 168, 182, 165, 190]
 print(mean(heights))
 print(stdev(heights))

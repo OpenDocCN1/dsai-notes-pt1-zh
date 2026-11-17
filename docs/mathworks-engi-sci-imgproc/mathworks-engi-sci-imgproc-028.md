@@ -76,14 +76,14 @@ angle = stats.Orientation;
 
 以下是代码框架：
 
+
+![](img/bea0adb640e1d9734b44baf3e28bd852_7.png)
+
 ```matlab
 % 初始化空数组
 fileNames = [];
 labels = [];
 angles = [];
-
-![](img/bea0adb640e1d9734b44baf3e28bd852_7.png)
-
 % 重置数据存储到起始位置
 reset(imds);
 

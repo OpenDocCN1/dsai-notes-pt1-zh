@@ -88,12 +88,12 @@
 
 ![](img/0a1b414c4dd12262cbdec0f0301f27c1_36.png)
 
-```python
-# 加载模型并设置为评估模式
-model.eval()
 
 ![](img/0a1b414c4dd12262cbdec0f0301f27c1_38.png)
 
+```python
+# 加载模型并设置为评估模式
+model.eval()
 # 运行推断函数生成输出
 outputs = inference_function(model, test_questions)
 ```

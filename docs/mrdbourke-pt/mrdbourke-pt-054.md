@@ -36,24 +36,14 @@
 
 首先，我们创建一个简单的线性回归数据集。以下是创建数据集的步骤：
 
-```python
-import torch
 
 ![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_20.png)
 
 ![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_22.png)
 
-# 设置权重和偏置
-weight = 0.7
-bias = 0.3
 
 ![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_24.png)
 
-# 创建特征数据 X
-start = 0
-end = 1
-step = 0.01
-X_regression = torch.arange(start, end, step).unsqueeze(dim=1)
 
 ![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_26.png)
 
@@ -61,6 +51,16 @@ X_regression = torch.arange(start, end, step).unsqueeze(dim=1)
 
 ![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_28.png)
 
+```python
+import torch
+# 设置权重和偏置
+weight = 0.7
+bias = 0.3
+# 创建特征数据 X
+start = 0
+end = 1
+step = 0.01
+X_regression = torch.arange(start, end, step).unsqueeze(dim=1)
 # 使用线性回归公式创建标签数据 y
 y_regression = weight * X_regression + bias
 ```
@@ -89,12 +89,12 @@ y_regression = weight * X_regression + bias
 
 ![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_42.png)
 
-```python
-# 设置训练集分割比例
-train_split = int(0.8 * len(X_regression))
 
 ![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_44.png)
 
+```python
+# 设置训练集分割比例
+train_split = int(0.8 * len(X_regression))
 # 创建训练集
 X_train_regression = X_regression[:train_split]
 y_train_regression = y_regression[:train_split]
@@ -158,11 +158,11 @@ plot_predictions(train_data=X_train_regression,
 
 ![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_64.png)
 
-```python
-import torch.nn as nn
 
 ![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_66.png)
 
+```python
+import torch.nn as nn
 # 创建模型架构，仅改变输入特征数
 model_2 = nn.Sequential(
     nn.Linear(in_features=1, out_features=10),  # 输入层：1个特征 -> 10个隐藏单元
@@ -211,22 +211,22 @@ optimizer = torch.optim.SGD(params=model_2.parameters(), lr=0.01) # 使用随机
 
 ![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_88.png)
 
-```python
-# 设置训练轮数
-epochs = 1000
 
 ![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_90.png)
 
 ![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_92.png)
 
+
+![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_94.png)
+
+```python
+# 设置训练轮数
+epochs = 1000
 # 将数据移动到与模型相同的设备
 X_train_regression = X_train_regression.to(device)
 y_train_regression = y_train_regression.to(device)
 X_test_regression = X_test_regression.to(device)
 y_test_regression = y_test_regression.to(device)
-
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_94.png)
-
 for epoch in range(epochs):
     ### 训练
     model_2.train()

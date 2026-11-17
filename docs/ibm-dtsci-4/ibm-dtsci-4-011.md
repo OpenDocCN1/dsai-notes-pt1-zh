@@ -212,13 +212,13 @@ class Rectangle(object):
 
 ![](img/bb4d1704e49a91687dc23a7d4e7854f0_56.png)
 
+
+![](img/bb4d1704e49a91687dc23a7d4e7854f0_58.png)
+
 ```python
 # 创建 Circle 类的实例
 circle1 = Circle(radius=4, color='red')
 circle2 = Circle(radius=2, color='green')
-
-![](img/bb4d1704e49a91687dc23a7d4e7854f0_58.png)
-
 # 创建 Rectangle 类的实例
 rect1 = Rectangle(height=2, width=2, color='blue')
 rect2 = Rectangle(height=1, width=3, color='yellow')
@@ -372,12 +372,12 @@ class Circle(object):
 
 我们创建一个对象并调用 `add_radius` 方法。
 
-```python
-my_circle = Circle(2, 'red')  # 创建对象，radius=2, color='red'
-print(my_circle.radius)       # 输出：2
 
 ![](img/bb4d1704e49a91687dc23a7d4e7854f0_108.png)
 
+```python
+my_circle = Circle(2, 'red')  # 创建对象，radius=2, color='red'
+print(my_circle.radius)       # 输出：2
 my_circle.add_radius(8)       # 调用方法，增加半径8
 print(my_circle.radius)       # 输出：10
 ```

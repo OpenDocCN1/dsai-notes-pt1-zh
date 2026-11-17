@@ -35,27 +35,27 @@
 
 ![](img/e1413a46a066fb0fe58e11f740158ac6_18.png)
 
-```python
-# 示例代码：加载向量数据库并验证
-from langchain.vectorstores import Chroma
-from langchain.embeddings import OpenAIEmbeddings
 
 ![](img/e1413a46a066fb0fe58e11f740158ac6_20.png)
 
-# 加载已持久化的向量数据库
-persist_directory = ‘your_persist_dir’
-embedding = OpenAIEmbeddings()
-vectordb = Chroma(persist_directory=persist_directory, embedding_function=embedding)
 
 ![](img/e1413a46a066fb0fe58e11f740158ac6_22.png)
 
 ![](img/e1413a46a066fb0fe58e11f740158ac6_24.png)
 
-# 验证文档数量
-print(f“数据库中文档数量：{vectordb._collection.count()}”)
 
 ![](img/e1413a46a066fb0fe58e11f740158ac6_26.png)
 
+```python
+# 示例代码：加载向量数据库并验证
+from langchain.vectorstores import Chroma
+from langchain.embeddings import OpenAIEmbeddings
+# 加载已持久化的向量数据库
+persist_directory = ‘your_persist_dir’
+embedding = OpenAIEmbeddings()
+vectordb = Chroma(persist_directory=persist_directory, embedding_function=embedding)
+# 验证文档数量
+print(f“数据库中文档数量：{vectordb._collection.count()}”)
 # 执行相似性搜索测试
 docs = vectordb.similarity_search(“这门课的主要主题是什么？”, k=3)
 print(docs[0].page_content)
@@ -90,28 +90,28 @@ print(docs[0].page_content)
 
 ![](img/e1413a46a066fb0fe58e11f740158ac6_44.png)
 
-```python
-# 示例代码：初始化模型与问答链
-from langchain.chat_models import ChatOpenAI
-from langchain.chains import RetrievalQA
 
 ![](img/e1413a46a066fb0fe58e11f740158ac6_46.png)
 
-# 初始化语言模型
-llm = ChatOpenAI(model_name=“gpt-3.5-turbo”, temperature=0)
 
 ![](img/e1413a46a066fb0fe58e11f740158ac6_48.png)
 
 ![](img/e1413a46a066fb0fe58e11f740158ac6_50.png)
 
+
+![](img/e1413a46a066fb0fe58e11f740158ac6_52.png)
+
+```python
+# 示例代码：初始化模型与问答链
+from langchain.chat_models import ChatOpenAI
+from langchain.chains import RetrievalQA
+# 初始化语言模型
+llm = ChatOpenAI(model_name=“gpt-3.5-turbo”, temperature=0)
 # 创建检索问答链
 qa_chain = RetrievalQA.from_chain_type(
     llm=llm,
     retriever=vectordb.as_retriever()
 )
-
-![](img/e1413a46a066fb0fe58e11f740158ac6_52.png)
-
 # 进行提问
 question = “这门课的主要主题是什么？”
 result = qa_chain({“query”: question})
@@ -143,21 +143,24 @@ print(result[“result”])
 
 ![](img/e1413a46a066fb0fe58e11f740158ac6_66.png)
 
-```python
-# 示例代码：自定义提示模板并返回源文档
-from langchain.prompts import PromptTemplate
 
 ![](img/e1413a46a066fb0fe58e11f740158ac6_68.png)
 
+
+![](img/e1413a46a066fb0fe58e11f740158ac6_70.png)
+
+
+![](img/e1413a46a066fb0fe58e11f740158ac6_72.png)
+
+```python
+# 示例代码：自定义提示模板并返回源文档
+from langchain.prompts import PromptTemplate
 # 定义提示模板
 template = “””请根据以下上下文信息回答问题。如果你不知道答案，就说不知道。
 上下文：{context}
 问题：{question}
 答案：“””
 QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
-
-![](img/e1413a46a066fb0fe58e11f740158ac6_70.png)
-
 # 创建新的问答链，返回源文档
 qa_chain_new = RetrievalQA.from_chain_type(
     llm=llm,
@@ -165,9 +168,6 @@ qa_chain_new = RetrievalQA.from_chain_type(
     return_source_documents=True, # 返回源文档
     chain_type_kwargs={“prompt”: QA_CHAIN_PROMPT}
 )
-
-![](img/e1413a46a066fb0fe58e11f740158ac6_72.png)
-
 # 提问并查看结果与源文档
 result = qa_chain_new({“query”: “概率是课堂主题吗？”})
 print(“答案：”, result[“result”])
@@ -203,6 +203,12 @@ for doc in result[“source_documents”]:
 
 ![](img/e1413a46a066fb0fe58e11f740158ac6_86.png)
 
+
+![](img/e1413a46a066fb0fe58e11f740158ac6_88.png)
+
+
+![](img/e1413a46a066fb0fe58e11f740158ac6_90.png)
+
 ```python
 # 示例代码：尝试不同的链类型
 # MapReduce 方法
@@ -211,18 +217,12 @@ qa_chain_mapreduce = RetrievalQA.from_chain_type(
     retriever=vectordb.as_retriever(),
     chain_type=“map_reduce” # 指定链类型
 )
-
-![](img/e1413a46a066fb0fe58e11f740158ac6_88.png)
-
 # Refine 方法
 qa_chain_refine = RetrievalQA.from_chain_type(
     llm=llm,
     retriever=vectordb.as_retriever(),
     chain_type=“refine” # 指定链类型
 )
-
-![](img/e1413a46a066fb0fe58e11f740158ac6_90.png)
-
 # 比较结果
 question = “概率是课堂主题吗？”
 print(“MapReduce 答案：”, qa_chain_mapreduce.run(question))
@@ -250,6 +250,14 @@ print(“Refine 答案：”, qa_chain_refine.run(question))
 1.  使用 `ConversationalRetrievalChain` 代替基础的 `RetrievalQA` 链。
 2.  该链内部会管理一个“聊天历史”，将当前问题与历史对话一起提供给模型，使其能理解上下文。
 
+
+![](img/e1413a46a066fb0fe58e11f740158ac6_100.png)
+
+
+![](img/e1413a46a066fb0fe58e11f740158ac6_102.png)
+
+![](img/e1413a46a066fb0fe58e11f740158ac6_104.png)
+
 ```python
 # 示例代码：创建带记忆的对话链
 from langchain.chains import ConversationalRetrievalChain
@@ -264,17 +272,9 @@ conversational_qa_chain = ConversationalRetrievalChain.from_llm(
     retriever=vectordb.as_retriever(),
     memory=memory
 )
-
-![](img/e1413a46a066fb0fe58e11f740158ac6_100.png)
-
 # 进行多轮对话
 result1 = conversational_qa_chain({“question”: “概率是课堂主题吗？”})
 print(“第一轮回答：”, result1[“answer”])
-
-![](img/e1413a46a066fb0fe58e11f740158ac6_102.png)
-
-![](img/e1413a46a066fb0fe58e11f740158ac6_104.png)
-
 result2 = conversational_qa_chain({“question”: “为什么需要这些先决条件？”})
 print(“第二轮回答（基于上下文）：”, result2[“answer”])
 ```

@@ -40,14 +40,14 @@ Settings.embedding_model = OpenAIEmbedding(model="text-embedding-ada-002")
 *   **向量索引**：通过文本嵌入对节点进行索引。查询向量索引将根据嵌入相似度返回最相似的节点。这是构建任何RAG系统的核心抽象。
 *   **摘要索引**：这是一种非常简单的索引。查询摘要索引将返回索引中当前存在的所有节点，其返回结果不依赖于用户的具体查询。
 
-```python
-# 示例：构建索引
-from llama_index.core import VectorStoreIndex, SummaryIndex
 
 ![](img/fb35b26ae7bbd06863909e26b0189004_10.png)
 
 ![](img/fb35b26ae7bbd06863909e26b0189004_11.png)
 
+```python
+# 示例：构建索引
+from llama_index.core import VectorStoreIndex, SummaryIndex
 vector_index = VectorStoreIndex(nodes)
 summary_index = SummaryIndex(nodes)
 ```

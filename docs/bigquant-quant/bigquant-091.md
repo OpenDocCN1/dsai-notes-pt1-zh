@@ -94,6 +94,14 @@
 3.  **观察系数变化，理解稀疏性**
 4.  **与随机梯度下降（SGD）回归进行对比**
 
+
+![](img/487041767ad77527d4b222125617a4cd_65.png)
+
+![](img/487041767ad77527d4b222125617a4cd_67.png)
+
+
+![](img/487041767ad77527d4b222125617a4cd_69.png)
+
 ```python
 # 1. 导入库
 import numpy as np
@@ -115,18 +123,10 @@ print(f"X形状: {X.shape}, y形状: {y.shape}")
 # alpha=1.0 是默认值，对于此数据可能过大，会导致所有系数归零
 lasso = Lasso(alpha=0.1) # 尝试调整alpha值，如0.01, 0.5, 1.0
 lasso.fit(X, y)
-
-![](img/487041767ad77527d4b222125617a4cd_65.png)
-
-![](img/487041767ad77527d4b222125617a4cd_67.png)
-
 print("Lasso回归系数 (部分可能为0):")
 print(lasso.coef_)
 print("Lasso回归截距:")
 print(lasso.intercept_)
-
-![](img/487041767ad77527d4b222125617a4cd_69.png)
-
 # 3. 使用SGD回归（L1正则化）进行对比
 sgd = SGDRegressor(penalty='l1', alpha=0.01, max_iter=1000)
 sgd.fit(X, y)

@@ -49,14 +49,14 @@ tiles * points
 
 以下是创建绘图工具并连接数据流的示例：
 
+
+![](img/4f68067ad52d5c277ca19701bdde8f17_8.png)
+
 ```python
 # 创建空的点、路径、多边形数据源
 point_source = hv.streams.PointDraw()
 path_source = hv.streams.PathDraw()
 polygon_source = hv.streams.PolygonDraw()
-
-![](img/4f68067ad52d5c277ca19701bdde8f17_8.png)
-
 # 创建地图并附加绘图工具
 map_with_tools = tiles * hv.DynamicMap(lambda: hv.Points([]), streams=[point_source])
 # ... 附加其他工具

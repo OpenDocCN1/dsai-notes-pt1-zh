@@ -195,6 +195,13 @@ class VenueDetails(BaseModel):
 
 ![](img/9838fae71b260e6a118ce9b1f1bfa653_20.png)
 
+
+![](img/9838fae71b260e6a118ce9b1f1bfa653_22.png)
+
+![](img/9838fae71b260e6a118ce9b1f1bfa653_24.png)
+
+![](img/9838fae71b260e6a118ce9b1f1bfa653_25.png)
+
 ```python
 # 定义活动参数
 event_inputs = {
@@ -204,13 +211,6 @@ event_inputs = {
     "participants": 500,
     "budget": "$20,000"
 }
-
-![](img/9838fae71b260e6a118ce9b1f1bfa653_22.png)
-
-![](img/9838fae71b260e6a118ce9b1f1bfa653_24.png)
-
-![](img/9838fae71b260e6a118ce9b1f1bfa653_25.png)
-
 # 创建 Crew
 event_planning_crew = Crew(
     agents=[venue_coordinator, logistics_manager, marketing_agent],

@@ -48,6 +48,11 @@
 
 ![](img/292387c95684624db1777e029f07c5a6_6.png)
 
+
+![](img/292387c95684624db1777e029f07c5a6_8.png)
+
+![](img/292387c95684624db1777e029f07c5a6_9.png)
+
 ```python
 import torch
 import torch.nn as nn
@@ -59,11 +64,6 @@ import numpy as np
 
 # 设备配置
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-![](img/292387c95684624db1777e029f07c5a6_8.png)
-
-![](img/292387c95684624db1777e029f07c5a6_9.png)
-
 # 超参数
 num_epochs = 4
 batch_size = 4
@@ -105,6 +105,9 @@ classes = ('plane', 'car', 'bird', 'cat',
 
 ![](img/292387c95684624db1777e029f07c5a6_11.png)
 
+
+![](img/292387c95684624db1777e029f07c5a6_13.png)
+
 ```python
 class ConvNet(nn.Module):
     def __init__(self):
@@ -133,9 +136,6 @@ class ConvNet(nn.Module):
         # 最终输出层（无激活函数）
         x = self.fc3(x)
         return x
-
-![](img/292387c95684624db1777e029f07c5a6_13.png)
-
 # 实例化模型
 model = ConvNet().to(device)
 ```

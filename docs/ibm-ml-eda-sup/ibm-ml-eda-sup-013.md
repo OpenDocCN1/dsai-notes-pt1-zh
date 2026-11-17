@@ -132,19 +132,19 @@ connection = sqlite3.connect(database_path)
 
 ![](img/3fab3db4190950b2686d26a66e0b8acd_57.png)
 
-```python
-# 定义SQL查询
-query = "SELECT * FROM rock_songs"
 
 ![](img/3fab3db4190950b2686d26a66e0b8acd_59.png)
 
-# 使用pandas的read_sql函数执行查询
-observations = pd.read_sql(query, connection)
 
 ![](img/3fab3db4190950b2686d26a66e0b8acd_61.png)
 
 ![](img/3fab3db4190950b2686d26a66e0b8acd_62.png)
 
+```python
+# 定义SQL查询
+query = "SELECT * FROM rock_songs"
+# 使用pandas的read_sql函数执行查询
+observations = pd.read_sql(query, connection)
 # 显示数据的前5行
 observations.head()
 ```
@@ -179,6 +179,9 @@ observations.head()
 
 ![](img/3fab3db4190950b2686d26a66e0b8acd_75.png)
 
+
+![](img/3fab3db4190950b2686d26a66e0b8acd_77.png)
+
 ```python
 # 定义更复杂的SQL查询
 complex_query = """
@@ -191,9 +194,6 @@ FROM rock_songs
 GROUP BY artist, release_year
 ORDER BY number_of_songs DESC
 """
-
-![](img/3fab3db4190950b2686d26a66e0b8acd_77.png)
-
 # 执行查询
 summary_df = pd.read_sql(complex_query, connection)
 summary_df.head()
@@ -250,12 +250,15 @@ summary_df.head()
 
 ![](img/3fab3db4190950b2686d26a66e0b8acd_99.png)
 
-```python
-# 使用参数化读取
-query = "SELECT * FROM rock_songs"
 
 ![](img/3fab3db4190950b2686d26a66e0b8acd_100.png)
 
+
+![](img/3fab3db4190950b2686d26a66e0b8acd_102.png)
+
+```python
+# 使用参数化读取
+query = "SELECT * FROM rock_songs"
 # 创建生成器对象，每次读取5行
 observation_generator = pd.read_sql(
     query,
@@ -264,9 +267,6 @@ observation_generator = pd.read_sql(
     parse_dates=['release_year'], # 将'release_year'列解析为日期
     chunksize=5           # 每次返回5行数据
 )
-
-![](img/3fab3db4190950b2686d26a66e0b8acd_102.png)
-
 # 遍历生成器，查看前几个块（chunk）
 for index, chunk in enumerate(observation_generator):
     if index < 5:  # 只查看前5个数据块

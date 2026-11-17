@@ -18,13 +18,13 @@
 
 首先，我们使用`cv2.imread()`函数读取一张图像。读取后，为了展示图像，我们需要执行三个步骤：创建窗口、显示图像、等待用户操作。
 
-```python
-import cv2
 
 ![](img/644696af046a3dda36c64e7fd579b712_10.png)
 
 ![](img/644696af046a3dda36c64e7fd579b712_12.png)
 
+```python
+import cv2
 # 读取图像
 img = cv2.imread('cat.jpg')
 # 创建窗口并显示图像

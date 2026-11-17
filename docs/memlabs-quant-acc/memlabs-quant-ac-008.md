@@ -51,6 +51,13 @@ print(data['direction'].value_counts())
 
 然后，我们分割数据集并训练模型：
 
+
+![](img/ed521e90292db6d6a88e2b60a275d44d_1.png)
+
+![](img/ed521e90292db6d6a88e2b60a275d44d_2.png)
+
+![](img/ed521e90292db6d6a88e2b60a275d44d_3.png)
+
 ```python
 # 按时间顺序分割数据集（避免数据泄露）
 split_idx = int(len(data) * 0.8)
@@ -95,13 +102,6 @@ for epoch in range(epochs):
     loss = criterion(outputs, y_train_tensor)
     loss.backward()
     optimizer.step()
-
-![](img/ed521e90292db6d6a88e2b60a275d44d_1.png)
-
-![](img/ed521e90292db6d6a88e2b60a275d44d_2.png)
-
-![](img/ed521e90292db6d6a88e2b60a275d44d_3.png)
-
 # 在测试集上评估
 model.eval()
 with torch.no_grad():

@@ -44,6 +44,9 @@ import matplotlib.pyplot as plt
 
 数据集通常分为**训练集**和**测试集**。训练集用于学习输入与输出之间的关系，测试集用于评估学习到的关系。我们可以如下加载Fashion-MNIST数据：
 
+
+![](img/faf823c2bc8039ccf99eff970f54c538_15.png)
+
 ```python
 # 加载训练数据
 training_data = datasets.FashionMNIST(
@@ -52,9 +55,6 @@ training_data = datasets.FashionMNIST(
     download=True,        # 如果数据不在本地，则下载
     transform=ToTensor()  # 将图像转换为张量
 )
-
-![](img/faf823c2bc8039ccf99eff970f54c538_15.png)
-
 # 加载测试数据
 test_data = datasets.FashionMNIST(
     root="data",

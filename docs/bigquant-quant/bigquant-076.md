@@ -92,19 +92,19 @@ print(f"求解的斜率 (w1) 和截距 (w0): {w[1][0]:.2f}, {w[0][0]:.2f}")
 
 以下是多元线性回归的示例代码，假设真实参数为 `[2, 3, 4]`。
 
+
+![](img/6d441805d519c69d789209da6ada8e4f_9.png)
+
+
+![](img/6d441805d519c69d789209da6ada8e4f_11.png)
+
 ```python
 # 1. 创建多元模拟数据
 np.random.seed(42)
 X = 2 * np.random.rand(100, 2)  # 两个特征
 y = 2 + 3*X[:, 0:1] + 4*X[:, 1:2] + np.random.randn(100, 1)
-
-![](img/6d441805d519c69d789209da6ada8e4f_9.png)
-
 # 2. 初始化模型参数 theta (包含 θ0, θ1, θ2)
 theta = np.random.randn(3, 1)
-
-![](img/6d441805d519c69d789209da6ada8e4f_11.png)
-
 # 3. 训练循环 (与一元示例完全相同，仅变量名从 w 改为 theta)
 for epoch in range(epochs):
     shuffled_indices = np.random.permutation(n)

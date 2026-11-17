@@ -107,12 +107,12 @@ print(df_survey.head())
 
 `df_schema` 可能有两列：`‘column‘`（列名）和 `‘question_text‘`（问题文本）。将 `‘column‘` 设置为索引后，我们可以快速查找任何列的含义。
 
-```python
-# 设置 schema 的索引
-df_schema.set_index(‘column‘, inplace=True)
 
 ![](img/3dcad63db8fa7e323ad739c08e88ad23_1.png)
 
+```python
+# 设置 schema 的索引
+df_schema.set_index(‘column‘, inplace=True)
 # 快速查找 ‘hobbyist‘ 列的含义
 meaning = df_schema.loc[‘hobbyist‘, ‘question_text‘]
 print(meaning)
@@ -123,14 +123,14 @@ print(meaning)
 
 为了使索引更易于浏览，我们可以对其进行排序。使用 `sort_index()` 方法可以对索引按字母或数字顺序进行排列。
 
-```python
-# 按索引升序排序（临时查看）
-print(df_schema.sort_index())
 
 ![](img/3dcad63db8fa7e323ad739c08e88ad23_3.png)
 
 ![](img/3dcad63db8fa7e323ad739c08e88ad23_4.png)
 
+```python
+# 按索引升序排序（临时查看）
+print(df_schema.sort_index())
 # 按索引降序排序（永久修改）
 df_schema.sort_index(ascending=False, inplace=True)
 print(df_schema)

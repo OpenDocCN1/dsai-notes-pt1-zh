@@ -23,6 +23,8 @@
 3.  模型处理图像并生成描述文本。
 4.  解码并打印生成的描述。
 
+img_url = "https://example.com/image.jpg"
+
 ```python
 # 示例代码：使用 BLIP 生成图像描述
 from transformers import BlipProcessor, BlipForConditionalGeneration
@@ -30,7 +32,6 @@ from PIL import Image
 import requests
 
 # 获取图像
-img_url = "https://example.com/image.jpg"
 image = Image.open(requests.get(img_url, stream=True).raw)
 
 # 加载模型和处理器
@@ -55,6 +56,8 @@ print(caption)
 3.  模型处理输入，根据预定义的标签对图像进行分类。
 4.  输出概率最高的预测标签。
 
+img_url = "https://example.com/image.jpg"
+
 ```python
 # 示例代码：使用 CLIP 进行零样本图像分类
 from transformers import CLIPProcessor, CLIPModel
@@ -62,7 +65,6 @@ from PIL import Image
 import requests
 
 # 获取图像
-img_url = "https://example.com/image.jpg"
 image = Image.open(requests.get(img_url, stream=True).raw)
 
 # 定义候选标签
@@ -95,6 +97,8 @@ print(f"Predicted label: {predicted_label}")
 4.  模型评估图像与每个文本对的匹配程度。
 5.  输出匹配度最高的答案作为模拟回答。
 
+img_url = "https://example.com/image.jpg"
+
 ```python
 # 示例代码：使用 CLIP 模拟视觉问答
 from transformers import CLIPProcessor, CLIPModel
@@ -102,7 +106,6 @@ from PIL import Image
 import requests
 
 # 获取图像
-img_url = "https://example.com/image.jpg"
 image = Image.open(requests.get(img_url, stream=True).raw)
 
 # 定义问题和候选答案

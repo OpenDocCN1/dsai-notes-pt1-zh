@@ -116,12 +116,12 @@ elements = [el for el in elements if el.metadata.category != "Header"]
 *   **预处理PowerPoint**：使用非结构化开源库中的 `partition_pptx` 函数。
 *   **预处理Markdown**：使用非结构化开源库中的 `partition_md` 函数。
 
-```python
-from unstructured.partition.pptx import partition_pptx
-from unstructured.partition.md import partition_md
 
 ![](img/c1c5ba90202b449c5953f0251c01e288_36.png)
 
+```python
+from unstructured.partition.pptx import partition_pptx
+from unstructured.partition.md import partition_md
 ppt_elements = partition_pptx("donut_presentation.pptx")
 md_elements = partition_md("README.md")
 ```

@@ -55,15 +55,15 @@ tensor = torch.tensor([1, 2, 3])
 
 ![](img/9a77232d8958edf4ddc6d93138805976_19.png)
 
-```python
-# 张量加10
-tensor + 10
-# 输出：tensor([11, 12, 13])
 
 ![](img/9a77232d8958edf4ddc6d93138805976_20.png)
 
 ![](img/9a77232d8958edf4ddc6d93138805976_21.png)
 
+```python
+# 张量加10
+tensor + 10
+# 输出：tensor([11, 12, 13])
 # 张量加100
 tensor + 100
 # 输出：tensor([101, 102, 103])
@@ -112,10 +112,6 @@ tensor - 10
 
 除了使用Python运算符，PyTorch也提供了内置函数来执行这些操作。
 
-```python
-# 使用torch.mul进行乘法
-torch.mul(tensor, 10)
-# 输出：tensor([100, 200, 300])
 
 ![](img/9a77232d8958edf4ddc6d93138805976_35.png)
 
@@ -123,6 +119,10 @@ torch.mul(tensor, 10)
 
 ![](img/9a77232d8958edf4ddc6d93138805976_37.png)
 
+```python
+# 使用torch.mul进行乘法
+torch.mul(tensor, 10)
+# 输出：tensor([100, 200, 300])
 # 使用torch.add进行加法
 torch.add(tensor, 10)
 # 输出：tensor([20, 30, 40])

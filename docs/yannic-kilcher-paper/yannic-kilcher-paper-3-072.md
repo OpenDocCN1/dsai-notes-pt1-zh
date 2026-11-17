@@ -25,8 +25,9 @@ HTML是构建网页的语言，它由各种标签组成，这些标签定义了�
     <a href="https://www.example.com">这是一个链接</a>
     ```
 *   **图像标签**：例如`<img>`标签，用于在网页中嵌入图像。它通常包含`src`（图片来源URL）和`alt`（替代文本，用于描述图像内容）属性。
-    ```html
     <img src="https://example.com/image.jpg" alt="一张示例图片的描述">
+
+    ```html
     ```
 
 ![](img/3ac299981bc76e22a7c64e130e22587c_1.png)

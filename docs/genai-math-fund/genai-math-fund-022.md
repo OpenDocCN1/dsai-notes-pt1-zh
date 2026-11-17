@@ -35,23 +35,23 @@ Bi-GAN的网络结构包含三个部分：
 
 ![](img/5c4d497d3be5adf431fe2a8fde991f13_3.png)
 
+
+![](img/5c4d497d3be5adf431fe2a8fde991f13_5.png)
+
+
+![](img/5c4d497d3be5adf431fe2a8fde991f13_7.png)
+
 ```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, transforms
-
-![](img/5c4d497d3be5adf431fe2a8fde991f13_5.png)
-
 # 参数设置
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 batch_size = 128
 latent_dim = 50
 epochs = 50
 learning_rate = 0.0002
-
-![](img/5c4d497d3be5adf431fe2a8fde991f13_7.png)
-
 # 数据转换与加载（以MNIST为例）
 transform = transforms.Compose([
     transforms.ToTensor(),
@@ -134,16 +134,16 @@ class Discriminator(nn.Module):
 ### 3. 模型、损失函数与优化器实例化
 
 以下是初始化模型和优化器的步骤。
-```python
-# 实例化网络
-G = Generator(latent_dim).to(device)
-E = Encoder(latent_dim).to(device)
-D = Discriminator(latent_dim).to(device)
 
 ![](img/5c4d497d3be5adf431fe2a8fde991f13_20.png)
 
 ![](img/5c4d497d3be5adf431fe2a8fde991f13_21.png)
 
+```python
+# 实例化网络
+G = Generator(latent_dim).to(device)
+E = Encoder(latent_dim).to(device)
+D = Discriminator(latent_dim).to(device)
 # 损失函数：二元交叉熵
 criterion = nn.BCELoss()
 

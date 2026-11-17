@@ -51,9 +51,6 @@
 
 ![](img/40d1258203816d1c71a3a1177d535055_37.png)
 
-```c
-bool flag[n]; // 初始化为 false
-int label[n]; // 初始化为 0
 
 ![](img/40d1258203816d1c71a3a1177d535055_39.png)
 
@@ -61,14 +58,6 @@ int label[n]; // 初始化为 0
 
 ![](img/40d1258203816d1c71a3a1177d535055_43.png)
 
-void lock(int me) {
-    flag[me] = true; // 表示线程 me 希望进入临界区
-    label[me] = 1 + max(label[0], ..., label[n-1]); // 获取当前最大标签值加1
-    while ( (存在 k != me 且 flag[k] == true) &&
-            ( (label[k], k) < (label[me], me) ) ) {
-        // 等待：如果存在其他希望进入且“号码”更小的线程，则循环等待
-    }
-}
 
 ![](img/40d1258203816d1c71a3a1177d535055_45.png)
 
@@ -80,6 +69,17 @@ void lock(int me) {
 
 ![](img/40d1258203816d1c71a3a1177d535055_52.png)
 
+```c
+bool flag[n]; // 初始化为 false
+int label[n]; // 初始化为 0
+void lock(int me) {
+    flag[me] = true; // 表示线程 me 希望进入临界区
+    label[me] = 1 + max(label[0], ..., label[n-1]); // 获取当前最大标签值加1
+    while ( (存在 k != me 且 flag[k] == true) &&
+            ( (label[k], k) < (label[me], me) ) ) {
+        // 等待：如果存在其他希望进入且“号码”更小的线程，则循环等待
+    }
+}
 void unlock(int me) {
     flag[me] = false; // 表示线程 me 已离开临界区
 }

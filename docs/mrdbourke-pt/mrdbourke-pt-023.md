@@ -38,16 +38,16 @@
 
 ![](img/01aa05ad61275c6afc5aed38d671eb35_21.png)
 
-```python
-# 创建一个具有单一维度的张量
-x = torch.tensor([[1, 2, 3, 4, 5, 6, 7, 8, 9]])
-print(f"原始张量: {x}")
-print(f"原始形状: {x.shape}")  # 输出: torch.Size([1, 9])
 
 ![](img/01aa05ad61275c6afc5aed38d671eb35_23.png)
 
 ![](img/01aa05ad61275c6afc5aed38d671eb35_24.png)
 
+```python
+# 创建一个具有单一维度的张量
+x = torch.tensor([[1, 2, 3, 4, 5, 6, 7, 8, 9]])
+print(f"原始张量: {x}")
+print(f"原始形状: {x.shape}")  # 输出: torch.Size([1, 9])
 # 使用 squeeze 方法
 x_squeezed = x.squeeze()
 print(f"压缩后张量: {x_squeezed}")

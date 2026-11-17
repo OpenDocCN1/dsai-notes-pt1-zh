@@ -90,30 +90,16 @@ Stacking的核心思想是：首先使用训练集拟合多个不同的基础学
 ![](img/10a175b3e613e881653c8cfca09f4450_45.png)
 
 用伪代码可以简要描述为：
-```python
-# 第一步：训练基础学习器
-base_learners = [LogisticRegression(), SVM(), RandomForest()]
-for learner in base_learners:
-    learner.fit(X_train, y_train)
 
 ![](img/10a175b3e613e881653c8cfca09f4450_46.png)
 
 ![](img/10a175b3e613e881653c8cfca09f4450_47.png)
 
-# 第二步：生成元特征（新训练集）
-X_meta_train = []
-for learner in base_learners:
-    predictions = learner.predict(X_train)  # 或 predict_proba
-    X_meta_train.append(predictions)
-X_meta_train = stack_features(X_meta_train) # 将预测结果堆叠成新特征
 
 ![](img/10a175b3e613e881653c8cfca09f4450_49.png)
 
 ![](img/10a175b3e613e881653c8cfca09f4450_50.png)
 
-# 第三步：训练元分类器
-meta_classifier = LogisticRegression() # 元分类器也可以是其他模型
-meta_classifier.fit(X_meta_train, y_train)
 
 ![](img/10a175b3e613e881653c8cfca09f4450_52.png)
 
@@ -121,6 +107,20 @@ meta_classifier.fit(X_meta_train, y_train)
 
 ![](img/10a175b3e613e881653c8cfca09f4450_54.png)
 
+```python
+# 第一步：训练基础学习器
+base_learners = [LogisticRegression(), SVM(), RandomForest()]
+for learner in base_learners:
+    learner.fit(X_train, y_train)
+# 第二步：生成元特征（新训练集）
+X_meta_train = []
+for learner in base_learners:
+    predictions = learner.predict(X_train)  # 或 predict_proba
+    X_meta_train.append(predictions)
+X_meta_train = stack_features(X_meta_train) # 将预测结果堆叠成新特征
+# 第三步：训练元分类器
+meta_classifier = LogisticRegression() # 元分类器也可以是其他模型
+meta_classifier.fit(X_meta_train, y_train)
 # 第四步：对新样本预测
 X_meta_test = generate_meta_features(base_learners, X_test)
 final_prediction = meta_classifier.predict(X_meta_test)
@@ -193,11 +193,11 @@ final_prediction = meta_classifier.predict(X_meta_test)
 ![](img/10a175b3e613e881653c8cfca09f4450_87.png)
 
 以下是使用 `VotingClassifier` 的关键步骤：
-```python
-from sklearn.ensemble import VotingClassifier
 
 ![](img/10a175b3e613e881653c8cfca09f4450_88.png)
 
+```python
+from sklearn.ensemble import VotingClassifier
 # 创建VotingClassifier实例，传入已训练好的基础模型列表
 # estimators 应是一个包含（名称，模型实例）的列表
 vc = VotingClassifier(estimators=[('lr', logistic_regression_model),
@@ -227,8 +227,6 @@ predictions = vc.predict(X_test)
 ![](img/10a175b3e613e881653c8cfca09f4450_96.png)
 
 此外，Scikit-learn还提供了更灵活的 `StackingClassifier`。它的工作方式类似，但允许我们指定一个除了投票之外的不同最终分类器（元分类器）来得出最终预测。
-```python
-from sklearn.ensemble import StackingClassifier
 
 ![](img/10a175b3e613e881653c8cfca09f4450_98.png)
 
@@ -236,6 +234,8 @@ from sklearn.ensemble import StackingClassifier
 
 ![](img/10a175b3e613e881653c8cfca09f4450_101.png)
 
+```python
+from sklearn.ensemble import StackingClassifier
 # final_estimator 参数指定元分类器，默认为LogisticRegression
 stack_clf = StackingClassifier(estimators=[('lr', logistic_regression_model),
                                             ('svm', svm_model),

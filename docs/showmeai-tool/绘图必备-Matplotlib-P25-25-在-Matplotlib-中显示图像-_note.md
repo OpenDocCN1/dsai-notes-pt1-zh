@@ -33,11 +33,11 @@ Matplotlib 默认支持 PNG 格式，但要读取 JPG 等常见格式，需要�
 
 安装好 `Pillow` 后，就可以使用 `matplotlib.pyplot.imread` 函数来读取图像了。
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/8d79548ca219a16a461c1ec8be168e9c_5.png)
 
+```python
+import matplotlib.pyplot as plt
 # 读取图像文件
 image = plt.imread('your_image.jpg')
 ```

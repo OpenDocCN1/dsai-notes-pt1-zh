@@ -31,6 +31,11 @@ simple_transform = transforms.Compose([
 
 接下来，我们使用 `ImageFolder` 类加载数据，并将其转换为 `DataLoader`，以便进行批处理。
 
+
+![](img/acb015609dcf7347e5864c619069e7ce_2.png)
+
+![](img/acb015609dcf7347e5864c619069e7ce_4.png)
+
 ```python
 import os
 from torchvision import datasets
@@ -43,11 +48,6 @@ test_dir = "data/pizza_steak_sushi/test"
 # 加载训练和测试数据集
 train_data_simple = datasets.ImageFolder(root=train_dir, transform=simple_transform)
 test_data_simple = datasets.ImageFolder(root=test_dir, transform=simple_transform)
-
-![](img/acb015609dcf7347e5864c619069e7ce_2.png)
-
-![](img/acb015609dcf7347e5864c619069e7ce_4.png)
-
 # 设置批处理大小和工作线程数
 BATCH_SIZE = 32
 NUM_WORKERS = os.cpu_count()

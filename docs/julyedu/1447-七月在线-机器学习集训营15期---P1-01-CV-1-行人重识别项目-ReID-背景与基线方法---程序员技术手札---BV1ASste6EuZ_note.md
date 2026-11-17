@@ -64,6 +64,9 @@ ReID在实际应用中面临诸多挑战，包括行人姿态变化、遮挡（�
 
 ![](img/6aece9a2b0a40ade5c48a71431790da7_21.png)
 
+
+![](img/6aece9a2b0a40ade5c48a71431790da7_23.png)
+
 ```python
 import os
 import numpy as np
@@ -72,9 +75,6 @@ from sklearn.model_selection import train_test_split
 import tensorflow as tf
 from tensorflow.keras import layers, models
 from tensorflow.keras.applications import MobileNet
-
-![](img/6aece9a2b0a40ade5c48a71431790da7_23.png)
-
 # 配置参数
 IMG_HEIGHT, IMG_WIDTH = 64, 64
 BATCH_SIZE = 128

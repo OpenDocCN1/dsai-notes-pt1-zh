@@ -88,13 +88,13 @@ plt.legend() # 显示图例
 
 最后，我们在解（`t=30`分钟，`d=75`公里）处添加垂直和水平的虚线，以清晰标记交点。
 
+
+![](img/96c8635323e08c3db778318e6f464d34_14.png)
+
 ```python
 # 在交点处添加虚线
 plt.axvline(x=30, color='purple', linestyle='--') # 垂直虚线
 plt.axhline(y=75, color='purple', linestyle='--') # 水平虚线
-
-![](img/96c8635323e08c3db778318e6f464d34_14.png)
-
 # 显示图表
 plt.show()
 ```

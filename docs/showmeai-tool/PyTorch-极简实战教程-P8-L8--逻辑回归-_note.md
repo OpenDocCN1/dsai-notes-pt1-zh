@@ -40,15 +40,23 @@ from sklearn.model_selection import train_test_split
 3.  使用 `StandardScaler` 对特征进行标准化，使其均值为0，方差为1。
 4.  将数据转换为 PyTorch 张量，并调整标签的形状。
 
+
+![](img/d4aae67709503eb865c057216c0046f3_14.png)
+
+
+![](img/d4aae67709503eb865c057216c0046f3_16.png)
+
+
+![](img/d4aae67709503eb865c057216c0046f3_18.png)
+
+![](img/d4aae67709503eb865c057216c0046f3_20.png)
+
 ```python
 # 1. 加载数据
 bc = datasets.load_breast_cancer()
 X, y = bc.data, bc.target
 n_samples, n_features = X.shape
 print(f'样本数: {n_samples}, 特征数: {n_features}')
-
-![](img/d4aae67709503eb865c057216c0046f3_14.png)
-
 # 2. 划分数据集
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1234)
 
@@ -56,19 +64,11 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
-
-![](img/d4aae67709503eb865c057216c0046f3_16.png)
-
 # 4. 转换为PyTorch张量并调整形状
 X_train = torch.from_numpy(X_train.astype(np.float32))
 X_test = torch.from_numpy(X_test.astype(np.float32))
 y_train = torch.from_numpy(y_train.astype(np.float32))
 y_test = torch.from_numpy(y_test.astype(np.float32))
-
-![](img/d4aae67709503eb865c057216c0046f3_18.png)
-
-![](img/d4aae67709503eb865c057216c0046f3_20.png)
-
 y_train = y_train.view(y_train.shape[0], 1)
 y_test = y_test.view(y_test.shape[0], 1)
 ```

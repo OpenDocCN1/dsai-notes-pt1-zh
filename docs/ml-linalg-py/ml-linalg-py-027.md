@@ -72,13 +72,16 @@ X = [[4, 2],
 
 ![](img/5542567faee0d072a326e6c536fb7619_16.png)
 
-```python
-import numpy as np
 
 ![](img/5542567faee0d072a326e6c536fb7619_18.png)
 
 ![](img/5542567faee0d072a326e6c536fb7619_19.png)
 
+
+![](img/5542567faee0d072a326e6c536fb7619_21.png)
+
+```python
+import numpy as np
 # 定义特征矩阵 X 和结果向量 y
 X = np.array([[4, 2], [-5, -3]])
 y = np.array([4, -7])
@@ -90,9 +93,6 @@ print("X的逆矩阵:\n", X_inv)
 # 计算权重向量 W = X⁻¹ * y
 W = np.dot(X_inv, y)  # 或者使用 W = X_inv @ y
 print("求解的权重向量 W:", W)
-
-![](img/5542567faee0d072a326e6c536fb7619_21.png)
-
 # 验证：计算 X * W，结果应等于 y
 y_pred = np.dot(X, W)
 print("验证 X * W 是否等于 y:", y_pred)

@@ -67,6 +67,12 @@ def linear_dequantize_per_group(quantized_tensor, scale, group_size):
 
 现在让我们测试我们的实现。我们将测试一个大小为 6x6 的随机张量，并将组大小设置为 3。
 
+
+![](img/32cd969580e3111b71293e265947a1ed_3.png)
+
+
+![](img/32cd969580e3111b71293e265947a1ed_5.png)
+
 ```python
 # 创建测试张量
 test_tensor = torch.randn(6, 6)
@@ -74,14 +80,8 @@ group_size = 3
 
 # 执行分组量化
 quantized_tensor, scale = linear_quantize_symmetric_per_group(test_tensor, group_size)
-
-![](img/32cd969580e3111b71293e265947a1ed_3.png)
-
 # 执行分组反量化
 dequantized_tensor = linear_dequantize_per_group(quantized_tensor, scale, group_size)
-
-![](img/32cd969580e3111b71293e265947a1ed_5.png)
-
 # 绘制量化误差图以总结量化过程
 plot_quantization_error(test_tensor, quantized_tensor, dequantized_tensor)
 ```

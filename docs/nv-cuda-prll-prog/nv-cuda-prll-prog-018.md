@@ -46,15 +46,15 @@
 
 ![](img/002934d3a534431b7d11e9761f381033_18.png)
 
-```cuda
-__global__ void child(int father) {
-    printf("Parent %d, Child %d\n", father, threadIdx.x);
-}
 
 ![](img/002934d3a534431b7d11e9761f381033_20.png)
 
 ![](img/002934d3a534431b7d11e9761f381033_22.png)
 
+```cuda
+__global__ void child(int father) {
+    printf("Parent %d, Child %d\n", father, threadIdx.x);
+}
 __global__ void parent() {
     printf("Parent %d\n", threadIdx.x);
     child<<<1, 5>>>(threadIdx.x);
@@ -152,10 +152,6 @@ nvcc -arch=sm_35 -rdc=true dynamic_example.cu -o dynamic_example
 
 ![](img/002934d3a534431b7d11e9761f381033_63.png)
 
-```cuda
-cudaSetDevice(0); // 切换到 GPU 0
-kernel1<<<...>>>(...); // 在 GPU 0 上启动 kernel1
-cudaMemcpyAsync(..., cudaMemcpyDeviceToHost); // 从 GPU 0 异步拷贝数据
 
 ![](img/002934d3a534431b7d11e9761f381033_65.png)
 
@@ -163,6 +159,10 @@ cudaMemcpyAsync(..., cudaMemcpyDeviceToHost); // 从 GPU 0 异步拷贝数据
 
 ![](img/002934d3a534431b7d11e9761f381033_69.png)
 
+```cuda
+cudaSetDevice(0); // 切换到 GPU 0
+kernel1<<<...>>>(...); // 在 GPU 0 上启动 kernel1
+cudaMemcpyAsync(..., cudaMemcpyDeviceToHost); // 从 GPU 0 异步拷贝数据
 cudaSetDevice(1); // 切换到 GPU 1
 kernel2<<<...>>>(...); // 在 GPU 1 上启动 kernel2
 cudaMemcpyAsync(..., cudaMemcpyDeviceToHost); // 从 GPU 1 异步拷贝数据

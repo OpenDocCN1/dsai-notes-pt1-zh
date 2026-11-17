@@ -18,13 +18,13 @@
 
 ![](img/b3647b51d77e6b78045ac95d56632965_8.png)
 
+
+![](img/b3647b51d77e6b78045ac95d56632965_10.png)
+
 ```python
 # 导入必要的库并设置环境变量
 import os
 # ... (假设已设置OPENAI_API_KEY等环境变量)
-
-![](img/b3647b51d77e6b78045ac95d56632965_10.png)
-
 # 初始化语言模型
 from langchain.chat_models import ChatOpenAI
 llm = ChatOpenAI(temperature=0)
@@ -83,13 +83,13 @@ tools = load_tools(["llm-math", "wikipedia"], llm=llm)
 
 ![](img/b3647b51d77e6b78045ac95d56632965_40.png)
 
+
+![](img/b3647b51d77e6b78045ac95d56632965_42.png)
+
 ```python
 # 初始化代理
 from langchain.agents import initialize_agent
 from langchain.agents import AgentType
-
-![](img/b3647b51d77e6b78045ac95d56632965_42.png)
-
 agent = initialize_agent(
     tools,
     llm,
@@ -268,13 +268,13 @@ print(result)
 
 ![](img/b3647b51d77e6b78045ac95d56632965_103.png)
 
+
+![](img/b3647b51d77e6b78045ac95d56632965_105.png)
+
 ```python
 # 导入工具装饰器
 from langchain.tools import tool
 from datetime import datetime
-
-![](img/b3647b51d77e6b78045ac95d56632965_105.png)
-
 # 使用@tool装饰器将函数转换为工具
 @tool
 def time(text: str) -> str:
@@ -304,24 +304,24 @@ def time(text: str) -> str:
 
 ![](img/b3647b51d77e6b78045ac95d56632965_115.png)
 
+
+![](img/b3647b51d77e6b78045ac95d56632965_117.png)
+
+
+![](img/b3647b51d77e6b78045ac95d56632965_119.png)
+
+![](img/b3647b51d77e6b78045ac95d56632965_121.png)
+
 ```python
 # 创建包含自定义工具的代理
 custom_tools = load_tools(["llm-math", "wikipedia"], llm=llm)
 custom_tools.append(time) # 添加自定义的时间工具
-
-![](img/b3647b51d77e6b78045ac95d56632965_117.png)
-
 custom_agent = initialize_agent(
     custom_tools,
     llm,
     agent=AgentType.CHAT_ZERO_SHOT_REACT_DESCRIPTION,
     verbose=True
 )
-
-![](img/b3647b51d77e6b78045ac95d56632965_119.png)
-
-![](img/b3647b51d77e6b78045ac95d56632965_121.png)
-
 # 使用代理
 result = custom_agent.run("今天的日期是什么？")
 print(result) # 输出类似：今天的日期是2023-05-21。

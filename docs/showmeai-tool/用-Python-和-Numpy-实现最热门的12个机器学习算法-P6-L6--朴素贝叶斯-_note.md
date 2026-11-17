@@ -161,6 +161,12 @@ class NaiveBayes:
 
 ![](img/0c43fb2d3ef1d0cac23b2a5dddc91acf_21.png)
 
+
+![](img/0c43fb2d3ef1d0cac23b2a5dddc91acf_23.png)
+
+
+![](img/0c43fb2d3ef1d0cac23b2a5dddc91acf_25.png)
+
 ```python
 # 示例：使用合成数据测试
 from sklearn.datasets import make_classification
@@ -170,15 +176,9 @@ from sklearn.model_selection import train_test_split
 X, y = make_classification(n_samples=1000, n_features=10, n_classes=2, random_state=42)
 # 划分训练集和测试集
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-![](img/0c43fb2d3ef1d0cac23b2a5dddc91acf_23.png)
-
 # 创建并训练模型
 model = NaiveBayes()
 model.fit(X_train, y_train)
-
-![](img/0c43fb2d3ef1d0cac23b2a5dddc91acf_25.png)
-
 # 进行预测
 y_pred = model.predict(X_test)
 

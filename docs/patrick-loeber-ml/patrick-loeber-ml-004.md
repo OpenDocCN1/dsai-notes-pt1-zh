@@ -65,14 +65,14 @@
 
 首先，我们创建一个名为 `BaseRegression` 的基类，然后让 `LinearRegression` 和 `LogisticRegression` 类继承自这个基类。
 
-```python
-class BaseRegression:
-    # 基类代码将放在这里
 
 ![](img/deb40f827b6fb8d4c9fd1a3029854cea_24.png)
 
 ![](img/deb40f827b6fb8d4c9fd1a3029854cea_25.png)
 
+```python
+class BaseRegression:
+    # 基类代码将放在这里
 class LinearRegression(BaseRegression):
     # 线性回归类
 

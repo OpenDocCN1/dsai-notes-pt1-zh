@@ -64,11 +64,11 @@ print(tokens)
 3. **训练模型**：使用训练集训练模型，并在验证集上评估性能。
 
 以下是训练模型的示例代码：
-```python
-from transformers import AutoModelForSequenceClassification, Trainer, TrainingArguments
 
 ![](img/f77354fb6255303a63cbce2311f7c3cf_1.png)
 
+```python
+from transformers import AutoModelForSequenceClassification, Trainer, TrainingArguments
 model = AutoModelForSequenceClassification.from_pretrained("model_name", num_labels=1)
 training_args = TrainingArguments(
     output_dir="./results",

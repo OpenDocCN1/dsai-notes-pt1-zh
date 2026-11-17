@@ -588,14 +588,6 @@ dlogits /= n  # 因为损失是平均值
 ![](img/86f8499f4a173e8882bce59ebef07fb4_443.png)
 
 以下是根据推导结果实现的向量化代码：
-```python
-# 前向传播中计算的中间变量
-bnmean = bnraw.mean(dim=0, keepdim=True)
-bndiff = bnraw - bnmean
-bndiff2 = bndiff**2
-bnvar = (bndiff2).sum(dim=0, keepdim=True) / (n - 1) # 贝塞尔校正
-bnvar_inv = (bnvar + eps)**-0.5
-bnrawhat = bndiff * bnvar_inv
 
 ![](img/86f8499f4a173e8882bce59ebef07fb4_444.png)
 
@@ -611,6 +603,14 @@ bnrawhat = bndiff * bnvar_inv
 
 ![](img/86f8499f4a173e8882bce59ebef07fb4_454.png)
 
+```python
+# 前向传播中计算的中间变量
+bnmean = bnraw.mean(dim=0, keepdim=True)
+bndiff = bnraw - bnmean
+bndiff2 = bndiff**2
+bnvar = (bndiff2).sum(dim=0, keepdim=True) / (n - 1) # 贝塞尔校正
+bnvar_inv = (bnvar + eps)**-0.5
+bnrawhat = bndiff * bnvar_inv
 # 反向传播 (dhpreact 是损失对 y 的梯度)
 dbnraw = (bngain * bnvar_inv / (n-1)) * ( (n-1) * dhpreact - dhpreact.sum(dim=0, keepdim=True) - bnrawhat * (dhpreact * bnrawhat).sum(dim=0, keepdim=True) )
 ```

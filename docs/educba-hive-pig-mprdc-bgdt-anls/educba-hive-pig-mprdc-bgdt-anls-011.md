@@ -256,6 +256,9 @@ LATERAL VIEW EXPLODE(loc) loc_table AS loc_single;
 
 **步骤5：存储展开后的数据并进行分析**
 为了便于后续分析，我们将展开后的数据插入到一个新表中。
+
+![](img/406aa61aae9e6906eeeb8747772811a8_73.png)
+
 ```sql
 -- 创建用于存储中间结果的简单表
 CREATE TABLE tbl_intermediate (
@@ -263,9 +266,6 @@ CREATE TABLE tbl_intermediate (
     name STRING,
     loc STRING
 );
-
-![](img/406aa61aae9e6906eeeb8747772811a8_73.png)
-
 -- 将展开的数据插入新表
 INSERT OVERWRITE TABLE tbl_intermediate
 SELECT id, name, loc_single

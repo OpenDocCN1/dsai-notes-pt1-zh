@@ -81,9 +81,6 @@ print(f“Duration of signal: {duration:.2f} seconds”)
 
 为了直观比较不同音乐的波形，我们将使用Matplotlib绘制它们的波形图。
 
-```python
-# 创建图形，设置大小
-plt.figure(figsize=(15, 17))
 
 ![](img/391cbaece27f64c284238d800f2bc1c4_15.png)
 
@@ -93,27 +90,12 @@ plt.figure(figsize=(15, 17))
 
 ![](img/391cbaece27f64c284238d800f2bc1c4_18.png)
 
-# 绘制巴赫音频的波形
-plt.subplot(3, 1, 1)
-librosa.display.waveplot(bach, alpha=0.5)
-plt.title(‘Bach’)
-plt.ylim(-1, 1)
 
 ![](img/391cbaece27f64c284238d800f2bc1c4_19.png)
 
-# 绘制红辣椒乐队音频的波形
-plt.subplot(3, 1, 2)
-librosa.display.waveplot(redhot, alpha=0.5)
-plt.title(‘Red Hot Chili Peppers’)
-plt.ylim(-1, 1)
 
 ![](img/391cbaece27f64c284238d800f2bc1c4_21.png)
 
-# 绘制艾灵顿公爵音频的波形
-plt.subplot(3, 1, 3)
-librosa.display.waveplot(duke, alpha=0.5)
-plt.title(‘Duke Ellington’)
-plt.ylim(-1, 1)
 
 ![](img/391cbaece27f64c284238d800f2bc1c4_22.png)
 
@@ -123,6 +105,24 @@ plt.ylim(-1, 1)
 
 ![](img/391cbaece27f64c284238d800f2bc1c4_26.png)
 
+```python
+# 创建图形，设置大小
+plt.figure(figsize=(15, 17))
+# 绘制巴赫音频的波形
+plt.subplot(3, 1, 1)
+librosa.display.waveplot(bach, alpha=0.5)
+plt.title(‘Bach’)
+plt.ylim(-1, 1)
+# 绘制红辣椒乐队音频的波形
+plt.subplot(3, 1, 2)
+librosa.display.waveplot(redhot, alpha=0.5)
+plt.title(‘Red Hot Chili Peppers’)
+plt.ylim(-1, 1)
+# 绘制艾灵顿公爵音频的波形
+plt.subplot(3, 1, 3)
+librosa.display.waveplot(duke, alpha=0.5)
+plt.title(‘Duke Ellington’)
+plt.ylim(-1, 1)
 plt.show()
 ```
 
@@ -136,6 +136,9 @@ plt.show()
 
 这种方法通过循环遍历每个帧来计算振幅包络，易于理解。
 
+
+![](img/391cbaece27f64c284238d800f2bc1c4_28.png)
+
 ```python
 def amplitude_envelope(signal, frame_size, hop_length):
     “”“计算信号的振幅包络。”“”
@@ -148,9 +151,6 @@ def amplitude_envelope(signal, frame_size, hop_length):
 # 设置帧大小和跳跃长度
 FRAME_SIZE = 1024
 HOP_LENGTH = 512
-
-![](img/391cbaece27f64c284238d800f2bc1c4_28.png)
-
 # 计算巴赫音频的振幅包络
 ae_bach = amplitude_envelope(bach, FRAME_SIZE, HOP_LENGTH)
 print(f“Amplitude envelope size: {ae_bach.size}”)
@@ -175,6 +175,9 @@ print(np.array_equal(ae_bach, fancy_ae_bach))  # 应输出 True
 ## 可视化振幅包络
 
 现在，我们可以在波形图上叠加绘制振幅包络，以更直观地观察信号的能量变化。
+
+
+![](img/391cbaece27f64c284238d800f2bc1c4_32.png)
 
 ```python
 # 计算其他音频的振幅包络
@@ -208,9 +211,6 @@ librosa.display.waveplot(duke, alpha=0.5)
 plt.plot(time, ae_duke, color=‘r’)
 plt.title(‘Duke Ellington with Amplitude Envelope’)
 plt.ylim(-1, 1)
-
-![](img/391cbaece27f64c284238d800f2bc1c4_32.png)
-
 plt.show()
 ```
 

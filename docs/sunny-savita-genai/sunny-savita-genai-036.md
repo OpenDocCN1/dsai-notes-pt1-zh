@@ -109,6 +109,9 @@ os.environ[“OPENAI_API_KEY”] = “your_openai_api_key_here”
 2.  **构建图谱结构**：将提取出的实体作为节点，关系作为边，构建成图。
 3.  **存储文本与向量**：同时将原始文本块及其向量嵌入存储到数据库中，以便进行向量搜索。
 
+
+![](img/7a7accf1aff383a865f22d0cd06f560f_7.png)
+
 ```python
 from langchain_community.graphs import Neo4jGraph
 from langchain_experimental.graph_transformers import LLMGraphTransformer
@@ -120,9 +123,6 @@ graph = Neo4jGraph()
 # 2. 初始化LLM和图转换器，用于从文本提取图谱结构
 llm = ChatOpenAI(temperature=0, model=“gpt-3.5-turbo”)
 transformer = LLMGraphTransformer(llm=llm)
-
-![](img/7a7accf1aff383a865f22d0cd06f560f_7.png)
-
 # 3. 将文档块转换为图文档（包含实体和关系）
 graph_documents = transformer.convert_to_graph_documents(chunks)
 

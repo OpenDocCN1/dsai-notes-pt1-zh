@@ -58,11 +58,11 @@ X = |  4  -2 |
 
 以下是使用NumPy计算2x2矩阵行列式的示例：
 
-```python
-import numpy as np
 
 ![](img/7ad721e4a5819143f50b70a160beefa8_1.png)
 
+```python
+import numpy as np
 # 创建与幻灯片中相同的矩阵
 X = np.array([[4, -2],
               [-5, -3]])

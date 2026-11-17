@@ -221,14 +221,14 @@ nl_query = "John让多少客户感到开心？"
 
 现在我们已经准备好对整个数据集运行这个管道了。让我们尝试处理数据集中的前10个样本。
 
+
+![](img/b3573d7a45efcc6b594146bbd10b47a0_5.png)
+
 ```python
 # 重新初始化数据库
 if os.path.exists('extracted_info.db'):
     os.remove('extracted_info.db')
 initialize_database()
-
-![](img/b3573d7a45efcc6b594146bbd10b47a0_5.png)
-
 # 处理前10个样本
 for i in range(10):
     dialogue = dataset['train'][i]

@@ -73,13 +73,13 @@ quantized_tensor, scale = linear_q_symmetric(test_tensor)
 
 为了评估量化效果，我们需要将量化后的张量反量化回浮点数，并计算量化误差。
 
+
+![](img/78127bb1bfe604fb9d096eddc16a8aa7_4.png)
+
 ```python
 # 反量化
 from helper import linear_dequantize
 dequantized_tensor = linear_dequantize(quantized_tensor, scale, zero_point=0)
-
-![](img/78127bb1bfe604fb9d096eddc16a8aa7_4.png)
-
 # 计算并可视化量化误差
 from helper import plot_quantization_error, quantization_error
 plot_quantization_error(test_tensor, quantized_tensor, dequantized_tensor)

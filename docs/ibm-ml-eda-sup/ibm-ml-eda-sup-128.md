@@ -20,13 +20,13 @@
 
 ![](img/273e043cc228cc62d68db0f56c458552_7.png)
 
-```python
-from sklearn.tree import DecisionTreeClassifier
 
 ![](img/273e043cc228cc62d68db0f56c458552_9.png)
 
 ![](img/273e043cc228cc62d68db0f56c458552_11.png)
 
+```python
+from sklearn.tree import DecisionTreeClassifier
 # 初始化决策树分类器，设置随机种子以确保结果可复现
 dt = DecisionTreeClassifier(random_state=42)
 # 在训练集上拟合模型
@@ -96,23 +96,23 @@ def measure_error(y_true, y_pred, label):
 
 现在，我们使用这个函数来评估未剪枝决策树在训练集和测试集上的表现。
 
-```python
-# 对训练集和测试集进行预测
-y_train_pred = dt.predict(X_train)
-y_test_pred = dt.predict(X_test)
 
 ![](img/273e043cc228cc62d68db0f56c458552_33.png)
 
 ![](img/273e043cc228cc62d68db0f56c458552_34.png)
 
-# 计算误差指标
-train_metrics = measure_error(y_train, y_train_pred, '训练集')
-test_metrics = measure_error(y_test, y_test_pred, '测试集')
 
 ![](img/273e043cc228cc62d68db0f56c458552_36.png)
 
 ![](img/273e043cc228cc62d68db0f56c458552_37.png)
 
+```python
+# 对训练集和测试集进行预测
+y_train_pred = dt.predict(X_train)
+y_test_pred = dt.predict(X_test)
+# 计算误差指标
+train_metrics = measure_error(y_train, y_train_pred, '训练集')
+test_metrics = measure_error(y_test, y_test_pred, '测试集')
 # 将结果并排比较
 all_metrics = pd.concat([train_metrics, test_metrics], axis=1)
 print(all_metrics)
@@ -146,13 +146,16 @@ print(all_metrics)
 
 ![](img/273e043cc228cc62d68db0f56c458552_51.png)
 
-```python
-from sklearn.model_selection import GridSearchCV
 
 ![](img/273e043cc228cc62d68db0f56c458552_53.png)
 
 ![](img/273e043cc228cc62d68db0f56c458552_55.png)
 
+
+![](img/273e043cc228cc62d68db0f56c458552_57.png)
+
+```python
+from sklearn.model_selection import GridSearchCV
 # 1. 定义要搜索的超参数网格
 param_grid = {
     'max_depth': range(1, max_depth+1, 2),  # 尝试不同的最大深度
@@ -165,9 +168,6 @@ gr = GridSearchCV(estimator=DecisionTreeClassifier(random_state=42),
                   param_grid=param_grid,
                   scoring='accuracy',
                   n_jobs=-1)
-
-![](img/273e043cc228cc62d68db0f56c458552_57.png)
-
 # 3. 在训练集上执行网格搜索
 gr.fit(X_train, y_train)
 
@@ -203,10 +203,6 @@ print(f"最优树节点数: {opt_node_count}, 最优树深度: {opt_max_depth}")
 
 最后，我们评估这个优化后模型的性能。
 
-```python
-# 使用最优模型进行预测
-y_train_pred_opt = gr.predict(X_train)
-y_test_pred_opt = gr.predict(X_test)
 
 ![](img/273e043cc228cc62d68db0f56c458552_70.png)
 
@@ -214,14 +210,18 @@ y_test_pred_opt = gr.predict(X_test)
 
 ![](img/273e043cc228cc62d68db0f56c458552_74.png)
 
-# 计算误差指标
-train_metrics_opt = measure_error(y_train, y_train_pred_opt, '训练集（优化后）')
-test_metrics_opt = measure_error(y_test, y_test_pred_opt, '测试集（优化后）')
 
 ![](img/273e043cc228cc62d68db0f56c458552_76.png)
 
 ![](img/273e043cc228cc62d68db0f56c458552_77.png)
 
+```python
+# 使用最优模型进行预测
+y_train_pred_opt = gr.predict(X_train)
+y_test_pred_opt = gr.predict(X_test)
+# 计算误差指标
+train_metrics_opt = measure_error(y_train, y_train_pred_opt, '训练集（优化后）')
+test_metrics_opt = measure_error(y_test, y_test_pred_opt, '测试集（优化后）')
 # 比较结果
 all_metrics_opt = pd.concat([train_metrics_opt, test_metrics_opt], axis=1)
 print(all_metrics_opt)

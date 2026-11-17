@@ -50,17 +50,20 @@ Laplacian算子的一个常见卷积核如下：
 
 ![](img/ca89d05f7c73ccdc9ba4a8f262a1de61_3.png)
 
-```python
-import cv2
-import numpy as np
 
 ![](img/ca89d05f7c73ccdc9ba4a8f262a1de61_5.png)
 
-# 读取图像并转为灰度图
-img = cv2.imread('image.jpg', cv2.IMREAD_GRAYSCALE)
 
 ![](img/ca89d05f7c73ccdc9ba4a8f262a1de61_7.png)
 
+
+![](img/ca89d05f7c73ccdc9ba4a8f262a1de61_9.png)
+
+```python
+import cv2
+import numpy as np
+# 读取图像并转为灰度图
+img = cv2.imread('image.jpg', cv2.IMREAD_GRAYSCALE)
 # 1. 使用Sobel算子
 sobelx = cv2.Sobel(img, cv2.CV_64F, 1, 0, ksize=3)
 sobely = cv2.Sobel(img, cv2.CV_64F, 0, 1, ksize=3)
@@ -70,9 +73,6 @@ sobel_combined = cv2.convertScaleAbs(cv2.addWeighted(cv2.convertScaleAbs(sobelx)
 scharrx = cv2.Scharr(img, cv2.CV_64F, 1, 0)
 scharry = cv2.Scharr(img, cv2.CV_64F, 0, 1)
 scharr_combined = cv2.convertScaleAbs(cv2.addWeighted(cv2.convertScaleAbs(scharrx), 0.5, cv2.convertScaleAbs(scharry), 0.5, 0))
-
-![](img/ca89d05f7c73ccdc9ba4a8f262a1de61_9.png)
-
 # 3. 使用Laplacian算子
 # 注意：Laplacian算子直接计算，无需分x和y方向
 laplacian = cv2.Laplacian(img, cv2.CV_64F)

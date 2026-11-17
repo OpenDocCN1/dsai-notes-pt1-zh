@@ -24,15 +24,15 @@
 
 ![](img/cf66db87641b5ec31425a88c6ae7665d_9.png)
 
+
+![](img/cf66db87641b5ec31425a88c6ae7665d_11.png)
+
 ```python
 # 初始化Kmeans模型，设定聚类数量为3
 kmeans = KMeans(n_clusters=3)
 
 # 使用数据X训练模型
 kmeans.fit(X)
-
-![](img/cf66db87641b5ec31425a88c6ae7665d_11.png)
-
 # 对数据进行预测，得到每个样本的类别标签
 y_pred = kmeans.predict(X)
 ```
@@ -117,16 +117,16 @@ print(plt.colormaps())
 
 代码如下：
 
-```python
-from matplotlib.colors import ListedColormap
 
 ![](img/cf66db87641b5ec31425a88c6ae7665d_49.png)
 
-# 创建自定义颜色列表
-custom_cmap = ListedColormap([‘red‘, ‘green‘, ‘blue‘])
 
 ![](img/cf66db87641b5ec31425a88c6ae7665d_51.png)
 
+```python
+from matplotlib.colors import ListedColormap
+# 创建自定义颜色列表
+custom_cmap = ListedColormap([‘red‘, ‘green‘, ‘blue‘])
 # 使用自定义颜色映射绘图
 plt.figure(figsize=(6, 6))
 plt.scatter(X[:, 0], X[:, 1], c=y_pred, cmap=custom_cmap)

@@ -272,11 +272,16 @@ Flask会提供一个响应对象，就像它提供请求对象一样。你可以
 
 ![](img/b0f423b1ee3f1e0ac594a3136ce1becb_65.png)
 
-```python
-from flask import Flask, jsonify, make_response, redirect, abort
 
 ![](img/b0f423b1ee3f1e0ac594a3136ce1becb_66.png)
 
+
+![](img/b0f423b1ee3f1e0ac594a3136ce1becb_68.png)
+
+![](img/b0f423b1ee3f1e0ac594a3136ce1becb_69.png)
+
+```python
+from flask import Flask, jsonify, make_response, redirect, abort
 app = Flask(__name__)
 
 # 自动创建响应
@@ -301,11 +306,6 @@ def custom_response():
 @app.route('/old')
 def old_location():
     return redirect('/new')
-
-![](img/b0f423b1ee3f1e0ac594a3136ce1becb_68.png)
-
-![](img/b0f423b1ee3f1e0ac594a3136ce1becb_69.png)
-
 # 中止请求（返回错误）
 @app.route('/error')
 def cause_error():

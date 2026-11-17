@@ -87,6 +87,11 @@ review = “这款台灯有额外的储物空间，光线也很柔和。虽然�
 
 我们也可以编写一个提示词来同时提取多个字段的信息，而不是为每个字段分别调用模型。
 
+
+![](img/d457ebb94bafa2d1304dbb5654ffb19f_8.png)
+
+![](img/d457ebb94bafa2d1304dbb5654ffb19f_9.png)
+
 ```
 执行以下任务：
 1. 识别购买的商品。
@@ -95,11 +100,6 @@ review = “这款台灯有额外的储物空间，光线也很柔和。虽然�
 4. 识别制造公司。
 请将你的回复格式化为JSON对象，使用以下键：sentiment, anger, item, brand。
 其中，anger的值应为布尔值（true/false）。
-
-![](img/d457ebb94bafa2d1304dbb5654ffb19f_8.png)
-
-![](img/d457ebb94bafa2d1304dbb5654ffb19f_9.png)
-
 评论：```{review}```
 ```
 

@@ -74,14 +74,14 @@ graph
 
 让我们用代码实现这个过程。注意，我们的 `y_train` 是一个二维数组（尽管只有一列数据），在计算时需要注意轴的方向。
 
-```python
-# 计算y_train的平均值，作为初始预测值
-y_mean = y_train.mean(axis=0)
 
 ![](img/ee20561b6ddf9b6820bb8c233943052b_23.png)
 
 ![](img/ee20561b6ddf9b6820bb8c233943052b_25.png)
 
+```python
+# 计算y_train的平均值，作为初始预测值
+y_mean = y_train.mean(axis=0)
 # 计算每个样本的预测误差并平方
 squared_errors = (y_train - y_mean) ** 2
 

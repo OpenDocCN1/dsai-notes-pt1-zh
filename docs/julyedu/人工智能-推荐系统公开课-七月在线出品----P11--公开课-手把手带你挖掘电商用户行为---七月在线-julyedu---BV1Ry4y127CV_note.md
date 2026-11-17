@@ -128,15 +128,15 @@ model_gbdt.fit(X_train, y_train)
 **4. 模型评估**
 使用之前定义的F1分数对两个模型在测试集上的表现进行评估。
 
-```python
-from sklearn.metrics import f1_score
-y_pred_lr = model_lr.predict(X_test)
-y_pred_gbdt = model_gbdt.predict(X_test)
 
 ![](img/677c9dd01023194b2539282794d7064c_17.png)
 
 ![](img/677c9dd01023194b2539282794d7064c_19.png)
 
+```python
+from sklearn.metrics import f1_score
+y_pred_lr = model_lr.predict(X_test)
+y_pred_gbdt = model_gbdt.predict(X_test)
 f1_lr = f1_score(y_test, y_pred_lr)
 f1_gbdt = f1_score(y_test, y_pred_gbdt)
 print(f“逻辑回归 F1分数： {f1_lr:.4f}“)

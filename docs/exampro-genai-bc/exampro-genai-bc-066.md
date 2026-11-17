@@ -226,17 +226,17 @@ update() {
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_103.png)
 
+
+![](img/c1179ecf1e5548b317a38a1f2c14b2f0_105.png)
+
+![](img/c1179ecf1e5548b317a38a1f2c14b2f0_107.png)
+
 ```javascript
 // 创建日文文本
 this.japaneseText = this.add.text(dialogX + padding, dialogY + padding, ‘’, {
   fontSize: ‘28px’,
   wordWrap: { width: dialogWidth - padding * 2 }
 });
-
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_105.png)
-
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_107.png)
-
 // 在update中更新文本
 const currentNode = this.dialogueManager.currentNode;
 if (currentNode) {

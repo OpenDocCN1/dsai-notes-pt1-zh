@@ -76,21 +76,21 @@ plt.show()
 
 ![](img/8d5951280297357bd612b9daf49c99c3_21.png)
 
-```python
-# 创建 FacetGrid，列基于‘sex’，色调基于‘smoker’
-g = sns.FacetGrid(tips, col='sex', hue='smoker', height=4, aspect=1.3)
 
 ![](img/8d5951280297357bd612b9daf49c99c3_22.png)
 
+
+![](img/8d5951280297357bd612b9daf49c99c3_24.png)
+
+```python
+# 创建 FacetGrid，列基于‘sex’，色调基于‘smoker’
+g = sns.FacetGrid(tips, col='sex', hue='smoker', height=4, aspect=1.3)
 # 定义标记样式字典
 marker_dict = {'Yes': '^', 'No': 'v'}  # 吸烟者用上三角，非吸烟者用下三角
 scatter_kws = {'s': 50, 'linewidth': 0.5, 'edgecolor': 'white'}
 
 # 绘制散点图，并传入自定义参数
 g.map(plt.scatter, 'total_bill', 'tip', **scatter_kws)
-
-![](img/8d5951280297357bd612b9daf49c99c3_24.png)
-
 # 添加图例
 g.add_legend()
 plt.show()
@@ -114,6 +114,9 @@ FacetGrid 的功能非常灵活，可以处理更复杂的布局。
 
 ![](img/8d5951280297357bd612b9daf49c99c3_30.png)
 
+
+![](img/8d5951280297357bd612b9daf49c99c3_32.png)
+
 ```python
 # 加载另一个数据集
 attention = sns.load_dataset('attention')
@@ -123,9 +126,6 @@ g = sns.FacetGrid(attention, col='subject', col_wrap=5, height=1.5)
 
 # 在每个子图上绘制折线图
 g.map(plt.plot, 'solutions', 'score', marker='o')
-
-![](img/8d5951280297357bd612b9daf49c99c3_32.png)
-
 plt.show()
 ```
 

@@ -54,11 +54,6 @@ from sklearn.model_selection import GridSearchCV
 
 ![](img/a5e43002aa9c0fd66e62a6780c2c5320_26.png)
 
-```python
-# 假设已经导入了 PolynomialFeatures, StandardScaler, Ridge
-from sklearn.preprocessing import PolynomialFeatures, StandardScaler
-from sklearn.linear_model import Ridge
-from sklearn.pipeline import Pipeline
 
 ![](img/a5e43002aa9c0fd66e62a6780c2c5320_28.png)
 
@@ -68,6 +63,11 @@ from sklearn.pipeline import Pipeline
 
 ![](img/a5e43002aa9c0fd66e62a6780c2c5320_31.png)
 
+```python
+# 假设已经导入了 PolynomialFeatures, StandardScaler, Ridge
+from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+from sklearn.linear_model import Ridge
+from sklearn.pipeline import Pipeline
 # 创建管道
 pipeline = Pipeline([
     ('poly', PolynomialFeatures()),
@@ -131,13 +131,6 @@ param_grid = {
 
 ![](img/a5e43002aa9c0fd66e62a6780c2c5320_55.png)
 
-```python
-# 初始化GridSearchCV对象
-grid_search = GridSearchCV(
-    estimator=pipeline,      # 我们的模型管道
-    param_grid=param_grid,   # 要搜索的参数网格
-    cv=5                     # 使用5折交叉验证，也可以传入KFolds对象
-)
 
 ![](img/a5e43002aa9c0fd66e62a6780c2c5320_57.png)
 
@@ -147,6 +140,13 @@ grid_search = GridSearchCV(
 
 ![](img/a5e43002aa9c0fd66e62a6780c2c5320_60.png)
 
+```python
+# 初始化GridSearchCV对象
+grid_search = GridSearchCV(
+    estimator=pipeline,      # 我们的模型管道
+    param_grid=param_grid,   # 要搜索的参数网格
+    cv=5                     # 使用5折交叉验证，也可以传入KFolds对象
+)
 # 在数据上拟合网格搜索
 grid_search.fit(X_train, y_train)
 ```
@@ -197,14 +197,14 @@ print(f"最佳参数组合: {grid_search.best_params_}")
 
 ![](img/a5e43002aa9c0fd66e62a6780c2c5320_80.png)
 
-```python
-# 使用最佳模型进行预测（在训练集上，用于演示）
-y_pred = grid_search.predict(X_train)
 
 ![](img/a5e43002aa9c0fd66e62a6780c2c5320_82.png)
 
 ![](img/a5e43002aa9c0fd66e62a6780c2c5320_83.png)
 
+```python
+# 使用最佳模型进行预测（在训练集上，用于演示）
+y_pred = grid_search.predict(X_train)
 # 计算最终模型在训练集上的R²分数（通常表现会很好）
 from sklearn.metrics import r2_score
 final_score = r2_score(y_train, y_pred)
@@ -243,14 +243,14 @@ print(results_df[['params', 'mean_test_score', 'std_test_score']].head())
 
 ![](img/a5e43002aa9c0fd66e62a6780c2c5320_99.png)
 
-```python
-# 获取最佳估计器（即用最佳参数在整个数据集上训练好的管道）
-best_estimator = grid_search.best_estimator_
 
 ![](img/a5e43002aa9c0fd66e62a6780c2c5320_101.png)
 
 ![](img/a5e43002aa9c0fd66e62a6780c2c5320_103.png)
 
+```python
+# 获取最佳估计器（即用最佳参数在整个数据集上训练好的管道）
+best_estimator = grid_search.best_estimator_
 # 从管道中提取岭回归步骤，并查看系数
 ridge_model = best_estimator.named_steps['ridge']
 print(f"最佳模型的系数: {ridge_model.coef_}")

@@ -99,6 +99,11 @@ p.show_thought()  # 输出: I'm thinking.
 
 以下是具体示例：
 
+
+![](img/c08009c8c3b1be1c21f664553d1987a7_8.png)
+
+![](img/c08009c8c3b1be1c21f664553d1987a7_9.png)
+
 ```python
 class Person:
     def __init__(self, name):
@@ -109,11 +114,6 @@ class Person:
 
     def __call__(self):
         print(f"{self.name} is being called!")
-
-![](img/c08009c8c3b1be1c21f664553d1987a7_8.png)
-
-![](img/c08009c8c3b1be1c21f664553d1987a7_9.png)
-
 p = Person("Alice")
 print(p)   # 自动调用 __str__ 方法
 p()        # 自动调用 __call__ 方法

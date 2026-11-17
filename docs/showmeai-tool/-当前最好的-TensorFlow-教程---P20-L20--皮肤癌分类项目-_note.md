@@ -25,6 +25,9 @@
 
 为了便于使用 TensorFlow 的 `ImageDataGenerator`，我们需要将图像按类别整理到特定的文件夹结构中。以下是创建数据处理脚本的步骤：
 
+
+![](img/475fe094519811d342f56f12ace25357_6.png)
+
 ```python
 import os
 import shutil
@@ -34,9 +37,6 @@ import numpy as np
 # 设置随机种子以确保结果可复现
 random.seed(1)
 np.random.seed(1)
-
-![](img/475fe094519811d342f56f12ace25357_6.png)
-
 # 定义路径
 image_dir = 'ISIC/images/'
 data_dir = 'data/'
@@ -107,22 +107,22 @@ data/
 
 我们将使用一个预训练模型（NASNetMobile）作为特征提取器，并在其顶部添加一个全连接层用于二分类。以下是构建和编译模型的步骤：
 
+
+![](img/475fe094519811d342f56f12ace25357_8.png)
+
+
+![](img/475fe094519811d342f56f12ace25357_9.png)
+
 ```python
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 import tensorflow_hub as hub
-
-![](img/475fe094519811d342f56f12ace25357_8.png)
-
 # 参数设置
 IMG_HEIGHT = IMG_WIDTH = 224
 BATCH_SIZE = 32
 train_examples = 20225
 val_examples = 2555
-
-![](img/475fe094519811d342f56f12ace25357_9.png)
-
 # 构建模型
 model = keras.Sequential([
     # 使用 TensorFlow Hub 上的预训练 NASNetMobile

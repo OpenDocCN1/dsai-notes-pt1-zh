@@ -46,6 +46,11 @@
 
 ![](img/edb9094f067d848ec283d9d6ebbff2da_24.png)
 
+
+![](img/edb9094f067d848ec283d9d6ebbff2da_26.png)
+
+![](img/edb9094f067d848ec283d9d6ebbff2da_27.png)
+
 ```python
 # 加载环境变量
 import os
@@ -54,11 +59,6 @@ load_dotenv()
 
 # 定义用户配置
 profile = "John Doe"
-
-![](img/edb9094f067d848ec283d9d6ebbff2da_26.png)
-
-![](img/edb9094f067d848ec283d9d6ebbff2da_27.png)
-
 # 定义初始的硬编码提示指令
 prompt_instructions = {
     "ignore": "Ignore promotional emails and spam.",
@@ -99,15 +99,29 @@ prompt_instructions = {
 
 ![](img/edb9094f067d848ec283d9d6ebbff2da_43.png)
 
+
+![](img/edb9094f067d848ec283d9d6ebbff2da_45.png)
+
+
+![](img/edb9094f067d848ec283d9d6ebbff2da_47.png)
+
+![](img/edb9094f067d848ec283d9d6ebbff2da_48.png)
+
+![](img/edb9094f067d848ec283d9d6ebbff2da_49.png)
+
+
+![](img/edb9094f067d848ec283d9d6ebbff2da_51.png)
+
+![](img/edb9094f067d848ec283d9d6ebbff2da_52.png)
+
+![](img/edb9094f067d848ec283d9d6ebbff2da_53.png)
+
 ```python
 # 从配置中获取用户ID，用于创建记忆存储的命名空间
 from langgraph.config import Config
 config = Config()
 langgraph_user_id = config.get("langgraph_user_id", "default_user")
 namespace = (langgraph_user_id,)
-
-![](img/edb9094f067d848ec283d9d6ebbff2da_45.png)
-
 # 尝试获取“忽略”指令
 ignore_key = "triage_ignore"
 result = long_term_memory_store.get(namespace, ignore_key)
@@ -119,22 +133,8 @@ if result is None:
 else:
     # 如果存在，使用存储的值
     ignore_prompt = result["prompt"]
-
-![](img/edb9094f067d848ec283d9d6ebbff2da_47.png)
-
-![](img/edb9094f067d848ec283d9d6ebbff2da_48.png)
-
-![](img/edb9094f067d848ec283d9d6ebbff2da_49.png)
-
 # 对“通知”和“回复”指令重复上述过程
 # ... (代码类似，使用 triage_notify 和 triage_respond 作为键)
-
-![](img/edb9094f067d848ec283d9d6ebbff2da_51.png)
-
-![](img/edb9094f067d848ec283d9d6ebbff2da_52.png)
-
-![](img/edb9094f067d848ec283d9d6ebbff2da_53.png)
-
 # 在创建分流路由器提示时，使用从存储中获取的变量
 triage_router_prompt = f"""
 Based on the email content, decide to: IGNORE, NOTIFY, or RESPOND.
@@ -218,12 +218,12 @@ def create_prompt(config, store, prompt_instructions):
 
 让我们用一个示例邮件来运行更新后的智能体。
 
-```python
-example_email = "Hi John, urgent issue. Your service is down."
-config = {"langgraph_user_id": "lance"}
 
 ![](img/edb9094f067d848ec283d9d6ebbff2da_81.png)
 
+```python
+example_email = "Hi John, urgent issue. Your service is down."
+config = {"langgraph_user_id": "lance"}
 # 运行智能体
 response = email_agent.invoke({"email": example_email}, config=config)
 print(response)
@@ -268,18 +268,21 @@ print(long_term_memory_store.get(("lance",), "triage_respond"))
 
 ![](img/edb9094f067d848ec283d9d6ebbff2da_97.png)
 
-```python
-from langchain.memory import create_multi_prompt_optimizer
-from langchain_anthropic import ChatAnthropic
 
 ![](img/edb9094f067d848ec283d9d6ebbff2da_99.png)
 
-# 1. 准备轨迹和反馈
-trajectory = response_messages # 假设这是上次运行智能体产生的消息列表
-feedback = "Always sign your emails, John Doe."
 
 ![](img/edb9094f067d848ec283d9d6ebbff2da_101.png)
 
+
+![](img/edb9094f067d848ec283d9d6ebbff2da_103.png)
+
+```python
+from langchain.memory import create_multi_prompt_optimizer
+from langchain_anthropic import ChatAnthropic
+# 1. 准备轨迹和反馈
+trajectory = response_messages # 假设这是上次运行智能体产生的消息列表
+feedback = "Always sign your emails, John Doe."
 # 2. 定义待优化提示列表（从存储中获取当前值）
 prompts_to_optimize = [
     {
@@ -296,9 +299,6 @@ prompts_to_optimize = [
     },
     # ... 类似定义 triage_notify 和 triage_respond
 ]
-
-![](img/edb9094f067d848ec283d9d6ebbff2da_103.png)
-
 # 3. 创建优化器并运行
 llm = ChatAnthropic(model="claude-3-sonnet-20240229")
 optimizer = create_multi_prompt_optimizer(llm, kind="prompt_memory")

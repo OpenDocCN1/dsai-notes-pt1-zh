@@ -184,6 +184,9 @@ def depth_estimation_demo(input_image):
 
 然后，创建Gradio界面，指定输入和输出类型为图像，并启动应用。设置`share=True`可以生成一个可分享的链接。
 
+
+![](img/69c5daf5d98b9c205225587810d4a0e7_25.png)
+
 ```python
 iface = gr.Interface(
     fn=depth_estimation_demo,
@@ -191,9 +194,6 @@ iface = gr.Interface(
     outputs=gr.Image(type="pil"),
     title="深度估计演示"
 )
-
-![](img/69c5daf5d98b9c205225587810d4a0e7_25.png)
-
 iface.launch(share=True)
 ```
 

@@ -119,6 +119,9 @@ print(features.shape, labels.shape) # 应输出 torch.Size([4, 13]) torch.Size([
 
 以下是一个结合了 `DataLoader` 的虚拟训练循环示例：
 
+
+![](img/c1a2854fc440d590a0a01b0cce4cb953_8.png)
+
 ```python
 import math
 
@@ -129,9 +132,6 @@ total_samples = len(dataset)
 n_iterations = math.ceil(total_samples / batch_size)
 
 print(f'总样本数: {total_samples}, 迭代次数/周期: {n_iterations}')
-
-![](img/c1a2854fc440d590a0a01b0cce4cb953_8.png)
-
 for epoch in range(num_epochs):
     for i, (inputs, labels) in enumerate(data_loader):
         # 这里应进行：前向传播、计算损失、反向传播、更新参数

@@ -99,12 +99,12 @@ plt.show()
 
 ![](img/3f88dc472902567328f0043ae0f39ab1_19.png)
 
-```python
-img_color = cv2.imread('cat.jpg') # 读取彩色图像
-colors = ('b', 'g', 'r') # 对应BGR通道的颜色
 
 ![](img/3f88dc472902567328f0043ae0f39ab1_21.png)
 
+```python
+img_color = cv2.imread('cat.jpg') # 读取彩色图像
+colors = ('b', 'g', 'r') # 对应BGR通道的颜色
 plt.figure()
 plt.title("Color Histogram")
 plt.xlabel("Bins")

@@ -132,6 +132,21 @@ PCA算法除了基于特征值分解的实现外，还可以通过奇异值分�
 
 ![](img/24928dee5d8ddcf3a55531d477a06d76_80.png)
 
+
+![](img/24928dee5d8ddcf3a55531d477a06d76_82.png)
+
+![](img/24928dee5d8ddcf3a55531d477a06d76_84.png)
+
+
+![](img/24928dee5d8ddcf3a55531d477a06d76_86.png)
+
+![](img/24928dee5d8ddcf3a55531d477a06d76_88.png)
+
+
+![](img/24928dee5d8ddcf3a55531d477a06d76_90.png)
+
+![](img/24928dee5d8ddcf3a55531d477a06d76_92.png)
+
 ```python
 # 1. 导入必要的库
 import numpy as np
@@ -149,27 +164,12 @@ U, s, Vt = linalg.svd(X_centered, full_matrices=False)
 max_abs_cols = np.argmax(np.abs(U), axis=0)
 signs = np.sign(U[max_abs_cols, range(U.shape[1])])
 U *= signs
-
-![](img/24928dee5d8ddcf3a55531d477a06d76_82.png)
-
-![](img/24928dee5d8ddcf3a55531d477a06d76_84.png)
-
 # 5. 降维：选择前k个成分
 k = 2  # 假设要降至2维
 U_k = U[:, :k]
-
-![](img/24928dee5d8ddcf3a55531d477a06d76_86.png)
-
-![](img/24928dee5d8ddcf3a55531d477a06d76_88.png)
-
 # 6. 计算降维后的数据（主成分得分）
 # 也可以使用 X_reduced = X_centered.dot(Vt[:k, :].T)
 X_reduced_svd = U_k * s[:k]  # 注意：这里是对应元素相乘，因为s是奇异值向量
-
-![](img/24928dee5d8ddcf3a55531d477a06d76_90.png)
-
-![](img/24928dee5d8ddcf3a55531d477a06d76_92.png)
-
 # 7. 标准化（使各主成分标准差为1）
 X_reduced_svd_normalized = (X_reduced_svd - np.mean(X_reduced_svd, axis=0)) / np.std(X_reduced_svd, axis=0, ddof=1)
 ```

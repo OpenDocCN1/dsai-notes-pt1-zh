@@ -162,14 +162,14 @@ print(result["messages"][-1].content)
 
 以下是代码实现：
 
+
+![](img/561385389f1717f892cad7fa25c32734_14.png)
+
 ```python
 # 定义父图状态（与子图不同）
 class ParentStateDiffSchema(TypedDict):
     query: str
     response: str
-
-![](img/561385389f1717f892cad7fa25c32734_14.png)
-
 # 定义调用子图的中间节点函数
 def search_agent_node(state: ParentStateDiffSchema):
     # 1. 从父图状态中提取查询，并转换为子图期望的 messages 格式

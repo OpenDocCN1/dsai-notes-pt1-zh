@@ -102,14 +102,14 @@ print(f'模型截距: {model.intercept_[0]}')
 模型训练好后，我们使用测试集进行预测，并计算评估指标来衡量模型性能。
 
 以下是进行预测和评估的代码：
+
+![](img/a01ffc826bad3c74daefdfce961b2f3e_19.png)
+
 ```python
 y_pred = model.predict(X_test)
 
 mse = mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
-
-![](img/a01ffc826bad3c74daefdfce961b2f3e_19.png)
-
 print(f'均方误差 (MSE): {mse}')
 print(f'R平方分数 (R²): {r2}')
 ```

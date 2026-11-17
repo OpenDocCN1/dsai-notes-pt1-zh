@@ -72,14 +72,14 @@ Parsl的设计理念源于对现代科学工作流多样性的认识。工作流
 
 ![](img/1ed7327b987357d4d1c9641da11f3c1d_13.png)
 
+
+![](img/1ed7327b987357d4d1c9641da11f3c1d_15.png)
+
 ```python
 # 定义一个Bash App来封装外部对接程序
 @bash_app
 def docking(protein, ligand, stdout='docking.out'):
     return f'run_docking_tool {protein} {ligand}'
-
-![](img/1ed7327b987357d4d1c9641da11f3c1d_15.png)
-
 # 假设 proteins 和 ligands 是两个列表
 futures = []
 for protein in proteins:

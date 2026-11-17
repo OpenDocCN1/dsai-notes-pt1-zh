@@ -41,21 +41,21 @@ Matplotlib库中的 `contourf` 函数非常适合绘制这种区域图。我们�
 
 ![](img/d17dc8f7720589c00136fbad4aed332e_17.png)
 
-```python
-import numpy as np
 
 ![](img/d17dc8f7720589c00136fbad4aed332e_18.png)
 
 ![](img/d17dc8f7720589c00136fbad4aed332e_19.png)
 
-# 定义特征值的范围
-x_range = np.arange(0, 10, 0.1)  # 花瓣宽度范围
-y_range = np.arange(0, 10, 0.1)  # 花瓣长度范围
 
 ![](img/d17dc8f7720589c00136fbad4aed332e_21.png)
 
 ![](img/d17dc8f7720589c00136fbad4aed332e_23.png)
 
+```python
+import numpy as np
+# 定义特征值的范围
+x_range = np.arange(0, 10, 0.1)  # 花瓣宽度范围
+y_range = np.arange(0, 10, 0.1)  # 花瓣长度范围
 # 创建网格坐标矩阵
 xx, yy = np.meshgrid(x_range, y_range)
 ```
@@ -82,11 +82,11 @@ xx, yy = np.meshgrid(x_range, y_range)
 
 ![](img/d17dc8f7720589c00136fbad4aed332e_29.png)
 
-```python
-import pandas as pd
 
 ![](img/d17dc8f7720589c00136fbad4aed332e_31.png)
 
+```python
+import pandas as pd
 # 1. 将网格坐标矩阵展平
 xx_flat = xx.ravel()
 yy_flat = yy.ravel()
@@ -140,32 +140,32 @@ predictions = clf.predict(grid_df)
 
 ![](img/d17dc8f7720589c00136fbad4aed332e_50.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/d17dc8f7720589c00136fbad4aed332e_52.png)
 
-# 1. 将预测结果重塑为网格形状
-prediction_grid = predictions.reshape(xx.shape)
 
 ![](img/d17dc8f7720589c00136fbad4aed332e_54.png)
 
+
+![](img/d17dc8f7720589c00136fbad4aed332e_56.png)
+
+![](img/d17dc8f7720589c00136fbad4aed332e_58.png)
+
+
+![](img/d17dc8f7720589c00136fbad4aed332e_60.png)
+
+```python
+import matplotlib.pyplot as plt
+# 1. 将预测结果重塑为网格形状
+prediction_grid = predictions.reshape(xx.shape)
 # 2. 绘制决策边界区域
 plt.contourf(xx, yy, prediction_grid, alpha=0.3, cmap=‘RdYlBu‘)
 
 # 3. 绘制原始数据点（假设 df 是原始DataFrame，且‘species‘是类别列）
 setosa = df[df[‘species‘] == ‘setosa‘]
 others = df[df[‘species‘] != ‘setosa‘]
-
-![](img/d17dc8f7720589c00136fbad4aed332e_56.png)
-
-![](img/d17dc8f7720589c00136fbad4aed332e_58.png)
-
 plt.scatter(setosa[‘petal_width‘], setosa[‘petal_length‘], c=‘red‘, label=‘Setosa‘, edgecolor=‘k‘)
 plt.scatter(others[‘petal_width‘], others[‘petal_length‘], c=‘blue‘, label=‘Others‘, edgecolor=‘k‘)
-
-![](img/d17dc8f7720589c00136fbad4aed332e_60.png)
-
 plt.xlabel(‘Petal Width‘)
 plt.ylabel(‘Petal Length‘)
 plt.legend()
@@ -205,29 +205,29 @@ plt.show()
 2.  用相同的数据训练这个管道。
 3.  重复之前的网格预测和绘图步骤，观察决策边界形状的变化。
 
-```python
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LogisticRegression
 
 ![](img/d17dc8f7720589c00136fbad4aed332e_77.png)
 
 ![](img/d17dc8f7720589c00136fbad4aed332e_78.png)
 
+
+![](img/d17dc8f7720589c00136fbad4aed332e_80.png)
+
+
+![](img/d17dc8f7720589c00136fbad4aed332e_82.png)
+
+```python
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LogisticRegression
 # 1. 创建管道
 # 注意：每个步骤需要以 (名称, 估计器) 的元组形式给出
 poly_clf = Pipeline([
     (‘poly‘, PolynomialFeatures(degree=2)),  # 添加二次项特征
     (‘lr‘, LogisticRegression())             # 逻辑回归分类器
 ])
-
-![](img/d17dc8f7720589c00136fbad4aed332e_80.png)
-
 # 2. 训练模型（假设 X_train, y_train 已定义）
 poly_clf.fit(X_train, y_train)
-
-![](img/d17dc8f7720589c00136fbad4aed332e_82.png)
-
 # 3. 使用新模型 poly_clf 重复“准备数据并进行预测”及之后的绘图步骤
 # ... (代码与之前章节类似，只需将 clf 替换为 poly_clf)
 ```

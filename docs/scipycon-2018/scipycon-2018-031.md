@@ -143,15 +143,18 @@ with parallel_backend('dask'):
 要使用第一种策略（包装具有 `partial_fit` 方法的 scikit-learn 模型），每个估计器将一次在一个数据块（小批量）上进行训练，然后可以释放该块，模型参数将以这种方式逐步更新。Dask 集合已经是分块的，其底层是分块的 NumPy 数组数据结构（Dask 数组的后端）。因此，我们可以很自然地将这两个概念结合起来。
 
 在单机上手动进行核外循环的 scikit-learn 代码如下：
-```python
-# 手动核外循环
-from sklearn.linear_model import SGDClassifier
-import numpy as np
 
 ![](img/8e015b9d7efa49637d6b4944fc8dac46_33.png)
 
 ![](img/8e015b9d7efa49637d6b4944fc8dac46_35.png)
 
+
+![](img/8e015b9d7efa49637d6b4944fc8dac46_37.png)
+
+```python
+# 手动核外循环
+from sklearn.linear_model import SGDClassifier
+import numpy as np
 class DataStream:
     def __init__(self, data, chunk_size):
         self.data = data
@@ -160,9 +163,6 @@ class DataStream:
     def __iter__(self):
         for i in range(self.n_chunks):
             yield self.data[i*self.chunk_size:(i+1)*self.chunk_size]
-
-![](img/8e015b9d7efa49637d6b4944fc8dac46_37.png)
-
 model = SGDClassifier()
 for X_chunk, y_chunk in zip(DataStream(X, 1000), DataStream(y, 1000)):
     model.partial_fit(X_chunk, y_chunk, classes=np.unique(y))

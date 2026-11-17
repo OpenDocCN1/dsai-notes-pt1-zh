@@ -199,6 +199,13 @@ print(“70B 模型总结：”, response_70b)
 
 然后，我们将这个提示词发送给70B模型并获取评估结果。
 
+
+![](img/588166c654ee3027cc80109858ea7c4d_31.png)
+
+![](img/588166c654ee3027cc80109858ea7c4d_32.png)
+
+![](img/588166c654ee3027cc80109858ea7c4d_33.png)
+
 ```python
 evaluation_prompt = f”””
 给定原始文本（标记为[电子邮件]）和几个模型名称，以及每个模型输出的总结。
@@ -218,13 +225,6 @@ evaluation_prompt = f”””
 3. 模型：Llama 2 70B聊天模型
    总结：{response_70b}
 “””
-
-![](img/588166c654ee3027cc80109858ea7c4d_31.png)
-
-![](img/588166c654ee3027cc80109858ea7c4d_32.png)
-
-![](img/588166c654ee3027cc80109858ea7c4d_33.png)
-
 evaluation = llama_chat(evaluation_prompt, model=”70b”)
 print(“模型评估与比较：”, evaluation)
 ```
@@ -290,6 +290,9 @@ print(“70B 模型回答：”, response_70b)
 
 现在，我们再次使用模型分级评估来比较这三个回答。我们构建一个类似的评估提示，包含背景、查询和三个模型的回答，然后让70B模型进行评估。
 
+
+![](img/588166c654ee3027cc80109858ea7c4d_39.png)
+
 ```python
 reasoning_eval_prompt = f”””
 给定背景信息和查询，以及三个不同模型的回答。
@@ -301,9 +304,6 @@ reasoning_eval_prompt = f”””
 
 背景：{context}
 查询：{query}
-
-![](img/588166c654ee3027cc80109858ea7c4d_39.png)
-
 模型回答：
 1. 7B模型：{response_7b}
 2. 13B模型：{response_13b}

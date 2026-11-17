@@ -97,14 +97,14 @@ print(f"TensorFlow全局和: {total_sum_tf}")
 
 在NumPy中，我们通过 `axis` 参数指定规约的维度：
 
+
+![](img/7fe3d13ae30bf86d08ba55c49137a598_21.png)
+
 ```python
 # 沿行求和 (axis=0) - 列总和
 sum_along_rows_np = X_np.sum(axis=0)
 print(f"NumPy沿行(列)求和: {sum_along_rows_np}")
 # 输出: [14 25  9]  (即 10+4=14, 20+5=25, 3+6=9)
-
-![](img/7fe3d13ae30bf86d08ba55c49137a598_21.png)
-
 # 沿列求和 (axis=1) - 行总和
 sum_along_cols_np = X_np.sum(axis=1)
 print(f"NumPy沿列(行)求和: {sum_along_cols_np}")

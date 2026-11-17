@@ -8,6 +8,11 @@
 
 首先，我们快速回顾一下代码的初始设置。这部分内容在之前的教程中已经熟悉，主要包括数据加载和模型构建。
 
+
+![](img/50863ba9b782f7d5434a6b666c062394_2.png)
+
+![](img/50863ba9b782f7d5434a6b666c062394_3.png)
+
 ```python
 import tensorflow as tf
 
@@ -28,11 +33,6 @@ model = tf.keras.Sequential([
     tf.keras.layers.Flatten(),
     tf.keras.layers.Dense(10, activation='softmax')
 ])
-
-![](img/50863ba9b782f7d5434a6b666c062394_2.png)
-
-![](img/50863ba9b782f7d5434a6b666c062394_3.png)
-
 # 编译模型
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
@@ -78,6 +78,9 @@ history = model.fit(
 
 ![](img/50863ba9b782f7d5434a6b666c062394_9.png)
 
+
+![](img/50863ba9b782f7d5434a6b666c062394_11.png)
+
 ```python
 from tensorflow.keras.callbacks import LearningRateScheduler
 
@@ -87,9 +90,6 @@ def scheduler(epoch, lr):
         return lr  # 前两个epoch保持学习率不变
     else:
         return lr * 0.99  # 从第三个epoch开始，每个epoch学习率衰减1%
-
-![](img/50863ba9b782f7d5434a6b666c062394_11.png)
-
 # 创建 LearningRateScheduler 回调
 lr_scheduler_callback = LearningRateScheduler(scheduler, verbose=1)
 

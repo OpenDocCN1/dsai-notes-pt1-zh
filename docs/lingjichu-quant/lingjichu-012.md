@@ -20,14 +20,14 @@
 
 首先，我们需要导入必要的工具包并加载数据。以下是实现这一步骤的代码：
 
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
 
 ![](img/ae39b333fa402f920d4f8b356c6bb31e_14.png)
 
 ![](img/ae39b333fa402f920d4f8b356c6bb31e_16.png)
 
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
 # 读取数据，指定第一列为时间索引
 data = pd.read_csv('data.csv', index_col=0, parse_dates=True)
 ```
@@ -171,12 +171,15 @@ print(apple_data_clean[['AAPL', 'SMA_short', 'SMA_long', 'Position']].head())
 
 ![](img/ae39b333fa402f920d4f8b356c6bb31e_72.png)
 
-```python
-# 创建带有次坐标轴的可视化
-fig, ax1 = plt.subplots(figsize=(14, 7))
 
 ![](img/ae39b333fa402f920d4f8b356c6bb31e_74.png)
 
+
+![](img/ae39b333fa402f920d4f8b356c6bb31e_76.png)
+
+```python
+# 创建带有次坐标轴的可视化
+fig, ax1 = plt.subplots(figsize=(14, 7))
 ax1.plot(apple_data_clean['AAPL'], label='Price', color='blue', alpha=0.6)
 ax1.plot(apple_data_clean['SMA_short'], label=f'Short SMA', color='red', linewidth=1)
 ax1.plot(apple_data_clean['SMA_long'], label=f'Long SMA', color='green', linewidth=1)
@@ -189,9 +192,6 @@ ax2 = ax1.twinx()
 ax2.plot(apple_data_clean['Position'], label='Position (Buy/Sell Signal)', color='purple', alpha=0.3, drawstyle='steps-post')
 ax2.set_ylabel('Position Signal')
 ax2.legend(loc='upper right')
-
-![](img/ae39b333fa402f920d4f8b356c6bb31e_76.png)
-
 plt.title('Stock Price, Moving Averages, and Trading Signals')
 plt.show()
 ```

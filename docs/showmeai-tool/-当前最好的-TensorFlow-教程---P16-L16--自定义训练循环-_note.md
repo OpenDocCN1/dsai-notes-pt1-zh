@@ -12,6 +12,9 @@
 
 首先，我们需要导入必要的库并准备数据。我们将使用 TensorFlow Datasets 加载 MNIST 数据集，并定义一个简单的模型。
 
+
+![](img/38a145700a6404a2026fbca3d7269917_4.png)
+
 ```python
 import tensorflow as tf
 import tensorflow_datasets as tfds
@@ -24,9 +27,6 @@ import tensorflow_datasets as tfds
     as_supervised=True,
     with_info=True,
 )
-
-![](img/38a145700a6404a2026fbca3d7269917_4.png)
-
 # 定义一个标准化图像的函数
 def normalize_img(image, label):
     return tf.cast(image, tf.float32) / 255., label
@@ -117,20 +117,20 @@ for epoch in range(epochs):
 3.  更新评估指标。
 4.  计算并输出最终的测试准确率。
 
-```python
-print("\n开始在测试集上评估模型...")
 
 ![](img/38a145700a6404a2026fbca3d7269917_6.png)
 
+
+![](img/38a145700a6404a2026fbca3d7269917_7.png)
+
+```python
+print("\n开始在测试集上评估模型...")
 # 遍历测试数据集的每一个批次
 for x_batch, y_batch in ds_test:
     # 前向传播（无需记录梯度）
     y_pred = model(x_batch, training=False)
     # 更新准确率指标
     accuracy_metric.update_state(y_batch, y_pred)
-
-![](img/38a145700a6404a2026fbca3d7269917_7.png)
-
 # 计算并打印测试准确率
 test_acc = accuracy_metric.result()
 print(f'测试集准确率: {test_acc:.4f}')

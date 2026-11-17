@@ -136,6 +136,11 @@ df['YearsCode'].replace('More than 50 years', 51, inplace=True) # 可根据需�
 
 替换后，该列仍是对象类型，需要转换为数值型，然后进行计算。
 
+
+![](img/f3f6adee5351ab52b6113da712018c15_4.png)
+
+![](img/f3f6adee5351ab52b6113da712018c15_5.png)
+
 ```python
 # 将列转换为浮点数（因为存在 NaN）
 df['YearsCode'] = df['YearsCode'].astype(float)
@@ -143,11 +148,6 @@ df['YearsCode'] = df['YearsCode'].astype(float)
 # 计算平均编程年限
 average_years = df['YearsCode'].mean()
 median_years = df['YearsCode'].median()
-
-![](img/f3f6adee5351ab52b6113da712018c15_4.png)
-
-![](img/f3f6adee5351ab52b6113da712018c15_5.png)
-
 print(f"平均编程年限: {average_years:.1f} 年")
 print(f"编程年限中位数: {median_years} 年")
 ```

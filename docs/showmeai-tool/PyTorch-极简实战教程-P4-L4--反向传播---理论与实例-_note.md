@@ -84,11 +84,11 @@
 
 ![](img/84bf83ae2a8c01617b4cf06b2bc402cb_1.png)
 
-```python
-import torch
 
 ![](img/84bf83ae2a8c01617b4cf06b2bc402cb_3.png)
 
+```python
+import torch
 # 1. 定义数据与参数
 x = torch.tensor([1.0])
 y = torch.tensor([2.0])

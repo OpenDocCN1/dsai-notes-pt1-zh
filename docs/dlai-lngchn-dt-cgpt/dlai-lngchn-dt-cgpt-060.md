@@ -42,13 +42,13 @@
 3.  定义一个辅助函数 `generate_text`，用于更方便地向模型发送请求和调整参数（如温度 `temperature`）。
 
 相关代码示例：
+
+![](img/5b93b89e1adf49daf999b6a748f42045_16.png)
+
 ```python
 # 假设的配置代码
 import os
 os.environ[‘API_KEY‘] = ‘your_api_key_here‘
-
-![](img/5b93b89e1adf49daf999b6a748f42045_16.png)
-
 # 配置模型
 model_name = ‘models/text-bison-001‘
 
@@ -67,16 +67,16 @@ def generate_text(prompt, temperature=0.7):
 现在，让我们看看如何格式化之前提到的字符串模板。我们的目标是创建一个可复用的提示结构。
 
 一个完整的提示模板可以这样构建：
-```python
-prompt_template = “““
-{preheat}
-
-{question}
 
 ![](img/5b93b89e1adf49daf999b6a748f42045_20.png)
 
 ![](img/5b93b89e1adf49daf999b6a748f42045_22.png)
 
+```python
+prompt_template = “““
+{preheat}
+
+{question}
 {decorator}
 “““
 ```

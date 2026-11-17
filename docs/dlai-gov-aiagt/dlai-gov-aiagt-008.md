@@ -66,12 +66,12 @@ print(response)
 
 我们记录一个示例运行，并可以在MLflow实验界面中查看这次记录。
 
-```python
-import mlflow
-from agent import agent, tools_used, llm_used
 
 ![](img/5910c6447e42bc668ee05213381a8d5d_3.png)
 
+```python
+import mlflow
+from agent import agent, tools_used, llm_used
 with mlflow.start_run():
     # 记录模型、工具、LLM等信息
     mlflow.pyfunc.log_model(artifact_path="model", python_model=agent)

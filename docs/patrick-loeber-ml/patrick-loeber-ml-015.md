@@ -35,12 +35,12 @@ print(data.shape)  # 输出数据形状
 
 ![](img/f0d9de35cd58876615483521f3096b4c_4.png)
 
-```python
-n_samples, n_features = data.shape
-n_features -= 1  # 最后一列是标签
 
 ![](img/f0d9de35cd58876615483521f3096b4c_6.png)
 
+```python
+n_samples, n_features = data.shape
+n_features -= 1  # 最后一列是标签
 X = data[:, :n_features]  # 所有行，前n_features列
 y = data[:, -1]           # 所有行，最后一列
 print(X.shape, y.shape)

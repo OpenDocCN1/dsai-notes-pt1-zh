@@ -41,10 +41,6 @@ chunks = split_document_into_chunks(original_document, chunk_size=1000)
 以下是构建一个基础 RAG 系统的关键步骤代码：
 
 首先，导入必要的库并准备文档数据。我们模拟一个健身房的文档，并将其分成了六个小块。
-```python
-from langchain_community.document_loaders import TextLoader
-from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores import Chroma
 
 ![](img/7b875a345680312f31bacfa63ce32bf5_3.png)
 
@@ -54,6 +50,10 @@ from langchain_community.vectorstores import Chroma
 
 ![](img/7b875a345680312f31bacfa63ce32bf5_6.png)
 
+```python
+from langchain_community.document_loaders import TextLoader
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import Chroma
 # 模拟已分块的文档数据
 documents = [
     {"page_content": "Peak Performance Gym was founded in 2015 by Marcus Chen...", "metadata": {"source": "about.txt"}},
@@ -86,6 +86,11 @@ relevant_docs = retriever.invoke(query)
 ```
 
 最后，我们需要构建发送给 LLM 的提示模板。模板将整合检索到的上下文和用户问题。
+
+![](img/7b875a345680312f31bacfa63ce32bf5_8.png)
+
+![](img/7b875a345680312f31bacfa63ce32bf5_9.png)
+
 ```python
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
@@ -93,11 +98,6 @@ from langchain_openai import ChatOpenAI
 # 定义提示模板
 template = """Answer the question based on the following context:
 {context}
-
-![](img/7b875a345680312f31bacfa63ce32bf5_8.png)
-
-![](img/7b875a345680312f31bacfa63ce32bf5_9.png)
-
 Question: {question}
 """
 prompt = PromptTemplate.from_template(template)

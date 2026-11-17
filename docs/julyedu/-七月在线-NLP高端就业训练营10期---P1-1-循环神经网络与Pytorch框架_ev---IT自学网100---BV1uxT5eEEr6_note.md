@@ -232,13 +232,6 @@ class LSTMModel(nn.Module):
 
 训练循环包括前向传播、损失计算、反向传播和参数更新。
 
-```python
-import torch.optim as optim
-
-# 初始化模型、损失函数、优化器
-model = LSTMModel(...)
-criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 ![](img/77fdf2ced5678be963137fd30ae4b341_20.png)
 
@@ -246,6 +239,13 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 ![](img/77fdf2ced5678be963137fd30ae4b341_24.png)
 
+```python
+import torch.optim as optim
+
+# 初始化模型、损失函数、优化器
+model = LSTMModel(...)
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
 # 训练循环
 for epoch in range(num_epochs):
     for batch_x, batch_y in train_loader:  # 从DataLoader取批次数据

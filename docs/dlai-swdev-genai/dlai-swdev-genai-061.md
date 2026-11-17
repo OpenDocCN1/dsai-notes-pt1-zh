@@ -39,11 +39,11 @@ CRUD是数据库交互的基石，其含义如下：
 
 LLM生成的代码可能如下所示，它创建了一个会话并定义了`add_user`函数：
 
-```python
-from sqlalchemy.orm import sessionmaker
 
 ![](img/c96398fb39cf1e00e630933501c72db2_7.png)
 
+```python
+from sqlalchemy.orm import sessionmaker
 Session = sessionmaker(bind=engine)
 session = Session()
 
@@ -78,15 +78,15 @@ LLM生成的代码可能类似于以下内容，它执行查询并返回结果�
 
 ![](img/c96398fb39cf1e00e630933501c72db2_15.png)
 
+
+![](img/c96398fb39cf1e00e630933501c72db2_17.png)
+
 ```python
 def get_all_users():
     users = session.query(User).all()
     for user in users:
         print(f"ID: {user.id}, Name: {user.name}, Email: {user.email}")
     return users
-
-![](img/c96398fb39cf1e00e630933501c72db2_17.png)
-
 # 执行读取操作
 all_users = get_all_users()
 ```
@@ -110,6 +110,9 @@ all_users = get_all_users()
 
 ![](img/c96398fb39cf1e00e630933501c72db2_23.png)
 
+
+![](img/c96398fb39cf1e00e630933501c72db2_25.png)
+
 ```python
 def update_user_email(user_id, new_email):
     user = session.query(User).filter_by(id=user_id).first()
@@ -119,9 +122,6 @@ def update_user_email(user_id, new_email):
         print(f"User ID {user_id} email updated to {new_email}.")
     else:
         print(f"User with ID {user_id} not found.")
-
-![](img/c96398fb39cf1e00e630933501c72db2_25.png)
-
 # 更新用户邮箱
 update_user_email(1, "new.email@example.com")
 ```
@@ -145,6 +145,9 @@ update_user_email(1, "new.email@example.com")
 
 LLM生成的代码可能如下：
 
+
+![](img/c96398fb39cf1e00e630933501c72db2_33.png)
+
 ```python
 def delete_user(user_id):
     user = session.query(User).filter_by(id=user_id).first()
@@ -154,9 +157,6 @@ def delete_user(user_id):
         print(f"User with ID {user_id} deleted.")
     else:
         print(f"User with ID {user_id} not found.")
-
-![](img/c96398fb39cf1e00e630933501c72db2_33.png)
-
 # 删除用户
 delete_user(1)
 ```

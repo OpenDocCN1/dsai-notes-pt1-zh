@@ -87,11 +87,11 @@ model_inputs = tokenizer(sentences,
 
 ![](img/77009730db8ae748615a56ed0788b98a_13.png)
 
-```python
-from transformers import AutoModel
 
 ![](img/77009730db8ae748615a56ed0788b98a_15.png)
 
+```python
+from transformers import AutoModel
 model = AutoModel.from_pretrained(checkpoint)
 outputs = model(model_inputs)
 ```

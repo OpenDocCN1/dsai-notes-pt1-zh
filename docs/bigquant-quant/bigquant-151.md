@@ -22,11 +22,11 @@
 
 ![](img/d553d33c9f54dc9a1f4b145269759aeb_10.png)
 
-```python
-from sklearn.cluster import DBSCAN
 
 ![](img/d553d33c9f54dc9a1f4b145269759aeb_12.png)
 
+```python
+from sklearn.cluster import DBSCAN
 # 创建DBSCAN模型，设置半径(eps)和最小样本数(min_samples)
 dbscan = DBSCAN(eps=0.5, min_samples=3)
 # 对数据X进行拟合
@@ -43,13 +43,13 @@ y_ = dbscan.labels_
 
 ![](img/d553d33c9f54dc9a1f4b145269759aeb_18.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/d553d33c9f54dc9a1f4b145269759aeb_20.png)
 
 ![](img/d553d33c9f54dc9a1f4b145269759aeb_22.png)
 
+```python
+import matplotlib.pyplot as plt
 plt.figure(figsize=(5, 5))
 plt.scatter(X[:, 0], X[:, 1], c=y_)
 plt.show()
@@ -122,12 +122,12 @@ print(np.unique(y_))
 
 ![](img/d553d33c9f54dc9a1f4b145269759aeb_58.png)
 
-```python
-# 创建条件，选择所有标签不等于-1的样本
-cond = y_ != -1
 
 ![](img/d553d33c9f54dc9a1f4b145269759aeb_60.png)
 
+```python
+# 创建条件，选择所有标签不等于-1的样本
+cond = y_ != -1
 # 使用条件过滤数据X和标签y_
 plt.figure(figsize=(5, 5))
 plt.scatter(X[cond, 0], X[cond, 1], c=y_[cond])

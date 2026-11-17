@@ -18,11 +18,11 @@
 
 我们首先使用一个已知行列式为20的3x3矩阵 **X**。
 
-```python
-import numpy as np
 
 ![](img/42338a16f4cc4dd5f6a2529069a507d0_1.png)
 
+```python
+import numpy as np
 # 定义矩阵X
 X = np.array([[1, 2, 3],
               [0, 4, 5],
@@ -91,17 +91,17 @@ def plot_vectors(vectors, colors, title):
 ### 案例1：行列式为0的奇异矩阵
 
 首先，我们应用一个奇异矩阵 **N**，其列向量线性相关。
+
+![](img/42338a16f4cc4dd5f6a2529069a507d0_3.png)
+
+![](img/42338a16f4cc4dd5f6a2529069a507d0_5.png)
+
 ```python
 # 奇异矩阵N，第二列是第一列的-4倍
 N = np.array([[2, -8],
               [1, -4]])
 det_N = np.linalg.det(N)
 print(f"矩阵N的行列式 det(N) = {det_N}") # 应为0
-
-![](img/42338a16f4cc4dd5f6a2529069a507d0_3.png)
-
-![](img/42338a16f4cc4dd5f6a2529069a507d0_5.png)
-
 # 将N应用于基向量B
 B_transformed = N @ B
 print(f"变换后的向量：\n{B_transformed}")
@@ -117,14 +117,14 @@ plot_vectors([B_transformed[:, 0], B_transformed[:, 1]], ['lightblue', 'lightgre
 ![](img/42338a16f4cc4dd5f6a2529069a507d0_7.png)
 
 接着，我们应用单位矩阵 **I**，这是一个最简单的例子。
+
+![](img/42338a16f4cc4dd5f6a2529069a507d0_9.png)
+
 ```python
 # 单位矩阵I
 I = np.eye(2)
 det_I = np.linalg.det(I)
 print(f"单位矩阵I的行列式 det(I) = {det_I}")
-
-![](img/42338a16f4cc4dd5f6a2529069a507d0_9.png)
-
 # 应用单位矩阵
 B_transformed_I = I @ B # 结果仍是B
 

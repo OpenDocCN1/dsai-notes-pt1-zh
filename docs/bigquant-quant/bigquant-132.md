@@ -156,6 +156,9 @@ param_grid = {
 
 然后，创建 `GridSearchCV` 对象并进行拟合。
 
+
+![](img/2913454af0346aef9da69f68b0cb8532_51.png)
+
 ```python
 # 创建GridSearchCV对象
 # estimator: 要优化的模型（SVC）
@@ -166,9 +169,6 @@ grid_search = GridSearchCV(estimator=SVC(),
                            param_grid=param_grid,
                            cv=5,
                            n_jobs=-1)
-
-![](img/2913454af0346aef9da69f68b0cb8532_51.png)
-
 # 在训练数据上执行网格搜索
 grid_search.fit(X_train, y_train.ravel())
 ```
@@ -180,16 +180,16 @@ grid_search.fit(X_train, y_train.ravel())
 
 ![](img/2913454af0346aef9da69f68b0cb8532_53.png)
 
-```python
-# 输出最优参数组合
-print("找到的最优参数:", grid_search.best_params_)
-# 输出最优模型在交叉验证中的平均分数
-print("交叉验证最佳分数:", grid_search.best_score_)
 
 ![](img/2913454af0346aef9da69f68b0cb8532_55.png)
 
 ![](img/2913454af0346aef9da69f68b0cb8532_57.png)
 
+```python
+# 输出最优参数组合
+print("找到的最优参数:", grid_search.best_params_)
+# 输出最优模型在交叉验证中的平均分数
+print("交叉验证最佳分数:", grid_search.best_score_)
 # 使用最优模型在测试集上评估
 best_model = grid_search.best_estimator_
 test_score = best_model.score(X_test, y_test.ravel())

@@ -24,11 +24,11 @@
 
 ![](img/b5c80dad07160454805cc2db46a4e1ab_8.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/b5c80dad07160454805cc2db46a4e1ab_9.png)
 
+```python
+import matplotlib.pyplot as plt
 fig, ax = plt.subplots()
 x = [1, 2, 3, 4, 5]
 y = [2, 3, 5, 7, 11]

@@ -134,6 +134,11 @@ LangGraph提供了更优雅的内置方式来实现人工干预，即通过 **�
 
 这通过 `interrupt_before` 参数来实现。我们修改图的构建方式：
 
+
+![](img/7751fea551bb2ab275481605c74ea89a_12.png)
+
+![](img/7751fea551bb2ab275481605c74ea89a_13.png)
+
 ```python
 # 重新构建图，这次不使用自定义干预节点，而是依赖内置中断
 workflow_v2 = StateGraph(AgentState)
@@ -172,11 +177,6 @@ print("\n--- 模拟内置中断流程 ---")
 print("系统已到达‘node_two’（模拟付费操作）前的断点。")
 print("请决定是否继续执行 node_two？(yes/no)")
 human_decision = input().strip().lower()
-
-![](img/7751fea551bb2ab275481605c74ea89a_12.png)
-
-![](img/7751fea551bb2ab275481605c74ea89a_13.png)
-
 if human_decision == "yes":
     # 继续执行，从上一个检查点（即node_one之后）恢复，并执行node_two
     # 在实际使用中，LangGraph的流式（stream）接口会返回一个迭代器，当遇到中断时会产出特定事件。

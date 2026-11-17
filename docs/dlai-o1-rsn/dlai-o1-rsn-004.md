@@ -44,13 +44,13 @@ o1模型的一个突出应用场景是：在给定一组执行工具和任务约
 
 ![](img/9b13eb50de29b0f45b82f1f5eedc9c51_11.png)
 
-```python
-import openai
 
 ![](img/9b13eb50de29b0f45b82f1f5eedc9c51_13.png)
 
 ![](img/9b13eb50de29b0f45b82f1f5eedc9c51_15.png)
 
+```python
+import openai
 # 初始化客户端和模型
 client = openai.OpenAI(api_key='your_api_key')
 o1_model = "o1-mini"

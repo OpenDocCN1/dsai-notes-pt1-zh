@@ -35,6 +35,9 @@
 
 首先，我们需要安装必要的库并设置环境。
 
+
+![](img/91c554df1fce463d8a96e557313d4ba8_7.png)
+
 ```python
 # 导入必要的库
 import os
@@ -45,9 +48,6 @@ from llama_index.core.node_parser import SentenceWindowNodeParser
 
 # 设置OpenAI API密钥（请替换成你自己的密钥）
 os.environ["OPENAI_API_KEY"] = "your-api-key-here"
-
-![](img/91c554df1fce463d8a96e557313d4ba8_7.png)
-
 # 配置全局设置：嵌入模型和LLM
 Settings.embed_model = OpenAIEmbedding()
 Settings.llm = OpenAI(model="gpt-3.5-turbo")

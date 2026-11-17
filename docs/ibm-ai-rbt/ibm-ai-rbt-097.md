@@ -81,15 +81,15 @@
 
 ![](img/6c3ef5baf318097ffffc64f66eff3847_30.png)
 
-```python
-# test_functions.py
-import unittest
-from my_module import square, double  # 导入要测试的函数
 
 ![](img/6c3ef5baf318097ffffc64f66eff3847_32.png)
 
 ![](img/6c3ef5baf318097ffffc64f66eff3847_33.png)
 
+```python
+# test_functions.py
+import unittest
+from my_module import square, double  # 导入要测试的函数
 class TestMyModule(unittest.TestCase):  # 创建测试类并继承TestCase
     def test_square(self):  # 测试square函数的方法
         self.assertEqual(square(2), 4)  # 断言：square(2)应该等于4

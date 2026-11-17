@@ -79,12 +79,12 @@ api.upload_file(
 
 首先，加载模型配置以获取架构细节，然后在 `torch.device(‘meta’)` 的上下文管理器中初始化模型。
 
-```python
-from transformers import AutoConfig
-import torch
 
 ![](img/63fbdb15855afd369b0191026eadec20_12.png)
 
+```python
+from transformers import AutoConfig
+import torch
 config = AutoConfig.from_pretrained("facebook/opt-125m")
 with torch.device('meta'):
     model = AutoModelForCausalLM.from_config(config)
@@ -131,13 +131,13 @@ model = replace_linear_with_quant(model)
 
 现在，下一步是加载量化状态字典。我们同样使用Hugging Face Hub库来下载文件。
 
-```python
-from huggingface_hub import hf_hub_download
 
 ![](img/63fbdb15855afd369b0191026eadec20_22.png)
 
 ![](img/63fbdb15855afd369b0191026eadec20_23.png)
 
+```python
+from huggingface_hub import hf_hub_download
 # 指定Hub上文件的路径进行下载，返回缓存路径
 model_path = hf_hub_download(repo_id="your-username/opt125m-quantized-deeplearning-ai", filename="pytorch_model.bin")
 # 加载状态字典

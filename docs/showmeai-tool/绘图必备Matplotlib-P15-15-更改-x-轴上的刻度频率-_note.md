@@ -48,11 +48,11 @@ plt.show()
 
 ![](img/2c77c1e593fb989487c1f3b73491cf29_11.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/2c77c1e593fb989487c1f3b73491cf29_13.png)
 
+```python
+import matplotlib.pyplot as plt
 fig, ax = plt.subplots()
 x = [-6, -4, -2, 0, 2, 4, 6]
 y = [i**2 for i in x]

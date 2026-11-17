@@ -153,6 +153,9 @@ for name, param in model.named_parameters():
 
 以下是自定义线性回归模型的示例：
 
+
+![](img/2b520fac31b9d1c4d2989f76ec98bd5f_19.png)
+
 ```python
 class LinearRegression(nn.Module):
     def __init__(self, input_dim, output_dim):
@@ -163,9 +166,6 @@ class LinearRegression(nn.Module):
     def forward(self, x):
         # 定义前向传播
         return self.linear(x)
-
-![](img/2b520fac31b9d1c4d2989f76ec98bd5f_19.png)
-
 # 实例化模型
 model = LinearRegression(input_dim=n_features, output_dim=1)
 ```

@@ -22,17 +22,17 @@
 
 以下是一个使用审核API检查生成响应的例子：
 
-```python
-# 假设这是模型生成的回复
-generated_response = "这是一个综合性的回复内容。"
 
 ![](img/5f11d5d6b18377af2d7a613e4282e016_11.png)
 
-# 调用审核API检查该回复
-moderation_result = moderation_api.check(generated_response)
 
 ![](img/5f11d5d6b18377af2d7a613e4282e016_13.png)
 
+```python
+# 假设这是模型生成的回复
+generated_response = "这是一个综合性的回复内容。"
+# 调用审核API检查该回复
+moderation_result = moderation_api.check(generated_response)
 # 根据结果决定后续操作
 if moderation_result.is_flagged:
     # 如果内容被标记，采取适当行动，例如不显示或生成新回复

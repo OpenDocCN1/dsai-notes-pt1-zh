@@ -39,6 +39,9 @@
 
 我们将解决一个超定系统的小例子。假设有8个数据点，`X1` 代表治疗阿尔茨海默症的药物剂量，`Y` 代表患者的遗忘程度评分。
 
+
+![](img/4c17813a6bcace7a7d37b74c08fcfaf6_1.png)
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -46,9 +49,6 @@ import matplotlib.pyplot as plt
 # 模拟数据
 x1 = np.array([0, 1, 2, 3, 4, 5, 6, 7])  # 药物剂量
 y = np.array([1.8, 1.6, 1.4, 1.2, 1.0, 0.8, 0.6, 0.4])  # 遗忘程度
-
-![](img/4c17813a6bcace7a7d37b74c08fcfaf6_1.png)
-
 # 绘制数据点
 plt.figure(figsize=(8, 5))
 plt.scatter(x1, y)

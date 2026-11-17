@@ -6,11 +6,11 @@
 
 首先，我们需要导入 PyTorch 库。然后，创建一个张量并启用梯度跟踪功能。
 
-```python
-import torch
 
 ![](img/cecd5af4135b2f12f1bfa0bb78e5d673_1.png)
 
+```python
+import torch
 # 创建一个张量，并设置 requires_grad=True 以启用梯度跟踪
 x = torch.randn(3, requires_grad=True)
 print(x)

@@ -17,12 +17,12 @@
 以下是三种主要存储后端的配置方法：
 
 **伪数据库（内存存储）**
-```python
-from ml_metadata import metadata_store
-from ml_metadata.proto import metadata_store_pb2
 
 ![](img/725504f5697ac8ee7300639e8c71b1eb_6.png)
 
+```python
+from ml_metadata import metadata_store
+from ml_metadata.proto import metadata_store_pb2
 connection_config = metadata_store_pb2.ConnectionConfig()
 connection_config.fake_database.SetInParent()  # 使用内存数据库
 store = metadata_store.MetadataStore(connection_config)

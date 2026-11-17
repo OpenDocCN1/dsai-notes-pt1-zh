@@ -128,14 +128,14 @@ print(response)
 
 很好，现在让我们运行这个函数，并看看代码是否能通过这些测试。
 
+
+![](img/ecb1e1ca5e52af6482f7df777b04f3e1_9.png)
+
 ```python
 # 假设从响应中提取了函数代码
 def find_two_sum(nums, target):
     # ... Mistral生成的代码 ...
     pass
-
-![](img/ecb1e1ca5e52af6482f7df777b04f3e1_9.png)
-
 # 测试用例
 print(find_two_sum([2, 7, 11, 15], 9))  # 应返回 [0, 1]
 print(find_two_sum([3, 2, 4], 6))       # 应返回 [1, 2]

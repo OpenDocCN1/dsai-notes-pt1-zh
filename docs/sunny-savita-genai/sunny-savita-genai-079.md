@@ -118,6 +118,9 @@ researcher_agent_executor = AgentExecutor.from_agent_and_tools(
 4.  **创建执行器**：为其创建 `AgentExecutor`。
 
 代码结构示意如下：
+
+![](img/512e283e9465bc85a9a63cb7a1aa18fa_7.png)
+
 ```python
 # 1. 初始化 LLM (可以复用)
 analyst_llm = ChatOpenAI(model="gpt-4", temperature=0)
@@ -135,9 +138,6 @@ analyst_agent = create_react_agent(
     tools=[python_tool],
     prompt=analyst_prompt # 提示词应指导其进行“分析”
 )
-
-![](img/512e283e9465bc85a9a63cb7a1aa18fa_7.png)
-
 # 4. 创建智能体执行器
 analyst_agent_executor = AgentExecutor.from_agent_and_tools(
     agent=analyst_agent,

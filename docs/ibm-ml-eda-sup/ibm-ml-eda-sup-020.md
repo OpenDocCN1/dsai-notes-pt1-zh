@@ -168,19 +168,19 @@ sns.jointplot(x='sepal_length', y='sepal_width', data=df, kind='hex')
 
 ![](img/3a25a47d97aae41bee0a696991de87a5_61.png)
 
-```python
-# 创建分面网格对象，按‘species’列分面
-g = sns.FacetGrid(df, col='species', margin_titles=True)
 
 ![](img/3a25a47d97aae41bee0a696991de87a5_63.png)
 
-# 在每个分面上映射花萼宽度的直方图
-g.map(plt.hist, 'sepal_width')
 
 ![](img/3a25a47d97aae41bee0a696991de87a5_64.png)
 
 ![](img/3a25a47d97aae41bee0a696991de87a5_66.png)
 
+```python
+# 创建分面网格对象，按‘species’列分面
+g = sns.FacetGrid(df, col='species', margin_titles=True)
+# 在每个分面上映射花萼宽度的直方图
+g.map(plt.hist, 'sepal_width')
 # 创建另一个分面网格，绘制花萼长度的直方图
 g2 = sns.FacetGrid(df, col='species')
 g2.map(plt.hist, 'sepal_length')

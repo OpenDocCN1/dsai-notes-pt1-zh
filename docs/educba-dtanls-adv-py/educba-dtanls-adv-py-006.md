@@ -133,14 +133,14 @@ class IoTDevices:
 
 ![](img/25dda7d56f1773d8f2190fc7f575ca7e_58.png)
 
-```python
-device1 = IoTDevices("Raspberry Pi", "控制器", 3500)
-device2 = IoTDevices("数字万用表", "仪器", 500)
 
 ![](img/25dda7d56f1773d8f2190fc7f575ca7e_60.png)
 
 ![](img/25dda7d56f1773d8f2190fc7f575ca7e_61.png)
 
+```python
+device1 = IoTDevices("Raspberry Pi", "控制器", 3500)
+device2 = IoTDevices("数字万用表", "仪器", 500)
 device1.print_details()
 device2.print_details()
 ```
@@ -195,14 +195,14 @@ class IoTDevices:
 
 ![](img/25dda7d56f1773d8f2190fc7f575ca7e_79.png)
 
-```python
-device1 = IoTDevices("Raspberry Pi", "控制器", 3500)
-print(f"当前设备数量: {IoTDevices.get_count()}")
 
 ![](img/25dda7d56f1773d8f2190fc7f575ca7e_81.png)
 
 ![](img/25dda7d56f1773d8f2190fc7f575ca7e_83.png)
 
+```python
+device1 = IoTDevices("Raspberry Pi", "控制器", 3500)
+print(f"当前设备数量: {IoTDevices.get_count()}")
 device2 = IoTDevices("数字万用表", "仪器", 500)
 print(f"当前设备数量: {device2.get_count()}")  # 也可以通过对象调用
 ```

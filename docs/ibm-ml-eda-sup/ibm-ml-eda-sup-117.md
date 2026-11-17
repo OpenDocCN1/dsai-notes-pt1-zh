@@ -58,14 +58,14 @@ from sklearn.kernel_approximation import Nystroem
 
 ![](img/f443b8657d8dc12b6691807f9af07549_20.png)
 
-```python
-# 在训练集上拟合并变换
-X_train_approx = nystroem.fit_transform(X_train)
 
 ![](img/f443b8657d8dc12b6691807f9af07549_22.png)
 
 ![](img/f443b8657d8dc12b6691807f9af07549_23.png)
 
+```python
+# 在训练集上拟合并变换
+X_train_approx = nystroem.fit_transform(X_train)
 # 使用从训练集学到的参数变换测试集
 X_test_approx = nystroem.transform(X_test)
 ```
@@ -82,6 +82,16 @@ X_test_approx = nystroem.transform(X_test)
 
 ![](img/f443b8657d8dc12b6691807f9af07549_30.png)
 
+
+![](img/f443b8657d8dc12b6691807f9af07549_32.png)
+
+![](img/f443b8657d8dc12b6691807f9af07549_33.png)
+
+![](img/f443b8657d8dc12b6691807f9af07549_34.png)
+
+
+![](img/f443b8657d8dc12b6691807f9af07549_35.png)
+
 ```python
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
@@ -92,22 +102,12 @@ pipeline = Pipeline([
     ('kernel_approx', Nystroem()),
     ('linear_clf', SGDClassifier())
 ])
-
-![](img/f443b8657d8dc12b6691807f9af07549_32.png)
-
-![](img/f443b8657d8dc12b6691807f9af07549_33.png)
-
-![](img/f443b8657d8dc12b6691807f9af07549_34.png)
-
 # 定义参数网格进行搜索
 param_grid = {
     'kernel_approx__kernel': ['rbf', 'poly'],
     'kernel_approx__gamma': [0.01, 0.1, 1],
     'kernel_approx__n_components': [50, 100, 200]
 }
-
-![](img/f443b8657d8dc12b6691807f9af07549_35.png)
-
 grid_search = GridSearchCV(pipeline, param_grid, cv=5)
 grid_search.fit(X_train, y_train)
 ```

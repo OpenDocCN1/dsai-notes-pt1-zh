@@ -119,6 +119,12 @@ DAG在一个Python脚本中定义，该脚本代表了DAG的结构。因此，�
 让我们简要地看一个例子。
 
 **代码示例**：
+
+![](img/f02780fed08073a7bad0a03e33513511_37.png)
+
+
+![](img/f02780fed08073a7bad0a03e33513511_39.png)
+
 ```python
 # 1. 库导入
 from airflow import DAG
@@ -130,9 +136,6 @@ default_args = {
     'owner': 'airflow',
     'start_date': datetime(2023, 10, 27),
 }
-
-![](img/f02780fed08073a7bad0a03e33513511_37.png)
-
 # 3. DAG定义
 dag = DAG('example_dag', default_args=default_args, schedule_interval='@daily')
 
@@ -148,9 +151,6 @@ task2 = BashOperator(
     bash_command='sleep 5',
     dag=dag,
 )
-
-![](img/f02780fed08073a7bad0a03e33513511_39.png)
-
 # 5. 任务流水线
 task2.set_upstream(task1)  # task2 依赖于 task1
 ```

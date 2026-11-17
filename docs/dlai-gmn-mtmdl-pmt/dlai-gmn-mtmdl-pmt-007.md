@@ -93,11 +93,11 @@ API返回的JSON数据类似这样，其中基础货币是欧元：
 
 首先，导入必要的类并定义函数规范。函数声明需要详细描述函数的目的、参数及其类型。
 
-```python
-from google.generativeai.types import FunctionDeclaration, Tool
 
 ![](img/187a3e88282a073c6353fd0efed7d4df_19.png)
 
+```python
+from google.generativeai.types import FunctionDeclaration, Tool
 # 1. 定义函数声明
 get_exchange_rate_func = FunctionDeclaration(
     name=“get_exchange_rate”,

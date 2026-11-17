@@ -34,17 +34,9 @@
 
 ![](img/d3d0165531238d476a510ec86e1c70fc_15.png)
 
-```python
-import numpy as np
 
 ![](img/d3d0165531238d476a510ec86e1c70fc_17.png)
 
-# 创建一个二维数组
-x = np.array([[67, 12, 15],
-              [77, 45, 12],
-              [45, 12, 15],
-              [18, 78, 98],
-              [45, 50, 12]])
 
 ![](img/d3d0165531238d476a510ec86e1c70fc_19.png)
 
@@ -52,12 +44,20 @@ x = np.array([[67, 12, 15],
 
 ![](img/d3d0165531238d476a510ec86e1c70fc_21.png)
 
-# 方法一：使用 np.shape() 函数
-shape_via_function = np.shape(x)
-print(f"通过函数获取的形状: {shape_via_function}")
 
 ![](img/d3d0165531238d476a510ec86e1c70fc_23.png)
 
+```python
+import numpy as np
+# 创建一个二维数组
+x = np.array([[67, 12, 15],
+              [77, 45, 12],
+              [45, 12, 15],
+              [18, 78, 98],
+              [45, 50, 12]])
+# 方法一：使用 np.shape() 函数
+shape_via_function = np.shape(x)
+print(f"通过函数获取的形状: {shape_via_function}")
 # 方法二：使用 .shape 属性
 shape_via_attribute = x.shape
 print(f"通过属性获取的形状: {shape_via_attribute}")
@@ -122,11 +122,6 @@ print(f"新形状: {x.shape}")
 
 对于一个二维数组，我们可以通过指定行索引来访问整行。
 
-```python
-# 假设 x 目前是形状为 (3, 5) 的数组
-# 访问第0行（索引从0开始）
-row_0 = x[0]
-print(f"第0行: {row_0}")
 
 ![](img/d3d0165531238d476a510ec86e1c70fc_38.png)
 
@@ -134,6 +129,11 @@ print(f"第0行: {row_0}")
 
 ![](img/d3d0165531238d476a510ec86e1c70fc_40.png)
 
+```python
+# 假设 x 目前是形状为 (3, 5) 的数组
+# 访问第0行（索引从0开始）
+row_0 = x[0]
+print(f"第0行: {row_0}")
 # 访问第2行
 row_2 = x[2]
 print(f"第2行: {row_2}")
@@ -189,23 +189,23 @@ print(f"x[2, 2] 的元素是: {element}")
 
 ![](img/d3d0165531238d476a510ec86e1c70fc_60.png)
 
-```python
-# 获取前两行的所有列
-sub_array_rows = x[0:2, :]
-print("前两行:")
-print(sub_array_rows)
 
 ![](img/d3d0165531238d476a510ec86e1c70fc_62.png)
 
-# 获取所有行的第1到第3列（索引1到3，不包含3）
-sub_array_cols = x[:, 1:4]
-print("\n所有行的第1至第3列:")
-print(sub_array_cols)
 
 ![](img/d3d0165531238d476a510ec86e1c70fc_64.png)
 
 ![](img/d3d0165531238d476a510ec86e1c70fc_65.png)
 
+```python
+# 获取前两行的所有列
+sub_array_rows = x[0:2, :]
+print("前两行:")
+print(sub_array_rows)
+# 获取所有行的第1到第3列（索引1到3，不包含3）
+sub_array_cols = x[:, 1:4]
+print("\n所有行的第1至第3列:")
+print(sub_array_cols)
 # 获取一个具体的子区域：第0-1行，第2-4列
 sub_region = x[0:2, 2:5]
 print("\n第0-1行，第2-4列的子区域:")

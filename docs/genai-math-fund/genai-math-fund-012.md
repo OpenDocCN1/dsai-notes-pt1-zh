@@ -136,31 +136,31 @@ d_optimizer.step()  # 只更新判别器参数
 
 以下是生成器单次训练的关键代码逻辑：
 
-```python
-# 2. 训练生成器
-# 清零生成器梯度
-g_optimizer.zero_grad()
 
 ![](img/4bd9ad6037c142f8a2b858ae527b2045_5.png)
 
 ![](img/4bd9ad6037c142f8a2b858ae527b2045_7.png)
 
-# 再次用噪声生成图像（这次需要梯度）
-z = torch.randn(batch_size, noise_dim).to(device)
-fake_images = generator(z)
-fake_output = discriminator(fake_images)
 
 ![](img/4bd9ad6037c142f8a2b858ae527b2045_9.png)
 
 ![](img/4bd9ad6037c142f8a2b858ae527b2045_11.png)
 
-# 生成器希望假图像被判别为“真”
-g_loss = criterion(fake_output, real_labels)  # 使用真实标签“1”作为目标
 
 ![](img/4bd9ad6037c142f8a2b858ae527b2045_13.png)
 
 ![](img/4bd9ad6037c142f8a2b858ae527b2045_15.png)
 
+```python
+# 2. 训练生成器
+# 清零生成器梯度
+g_optimizer.zero_grad()
+# 再次用噪声生成图像（这次需要梯度）
+z = torch.randn(batch_size, noise_dim).to(device)
+fake_images = generator(z)
+fake_output = discriminator(fake_images)
+# 生成器希望假图像被判别为“真”
+g_loss = criterion(fake_output, real_labels)  # 使用真实标签“1”作为目标
 # 反向传播并更新
 g_loss.backward()
 g_optimizer.step()  # 只更新生成器参数

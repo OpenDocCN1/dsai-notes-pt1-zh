@@ -30,12 +30,12 @@
 接着，在Google Colab中新建一个笔记本。将Roboflow提供的下载代码粘贴到单元格中并运行。这段代码会安装必要的库并将数据集下载到Colab环境中。
 
 以下是核心代码示例：
-```python
-# 安装Roboflow库（通常只需运行一次）
-!pip install roboflow
 
 ![](img/c5d0e29298bf52cfddd7edc8a3f0a9da_1.png)
 
+```python
+# 安装Roboflow库（通常只需运行一次）
+!pip install roboflow
 # 从Roboflow下载数据集（使用您自己账户生成的代码）
 from roboflow import Roboflow
 rf = Roboflow(api_key="YOUR_API_KEY")
@@ -83,6 +83,9 @@ best_model_path = './runs/detect/train/weights/best.pt'
 获得车牌边界框后，我们需要提取框内的文本。这里使用OCR技术。我们以`pytesseract`库为例。
 
 首先，需要从边界框坐标中裁剪出车牌区域图像。
+
+![](img/c5d0e29298bf52cfddd7edc8a3f0a9da_9.png)
+
 ```python
 import cv2
 from PIL import Image
@@ -93,9 +96,6 @@ license_plate_roi = frame[y1:y2, x1:x2]
 
 # 将OpenCV图像转换为PIL图像，供Tesseract使用
 license_plate_image = Image.fromarray(cv2.cvtColor(license_plate_roi, cv2.COLOR_BGR2RGB))
-
-![](img/c5d0e29298bf52cfddd7edc8a3f0a9da_9.png)
-
 # 使用Tesseract进行OCR识别
 text = pytesseract.image_to_string(license_plate_image, config='--psm 8')
 print(f"识别到的车牌号: {text.strip()}")

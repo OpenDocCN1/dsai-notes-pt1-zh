@@ -14,11 +14,11 @@
 
 我们使用 `grpc.insecure_channel` 来创建一个通道。需要传入服务器的 IP 地址和端口号。
 
-```python
-import grpc
 
 ![](img/2d3083dfb65aab22875a2ba547f5a986_4.png)
 
+```python
+import grpc
 # 本机测试使用的 IP 和端口
 server_ip = '192.168.1.100'  # 请替换为你的服务器 IP
 server_port = '8500'  # gRPC 端口

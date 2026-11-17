@@ -30,13 +30,13 @@
 
 ![](img/6611f57afa341027c62f44f8188df02e_17.png)
 
+
+![](img/6611f57afa341027c62f44f8188df02e_19.png)
+
 ```python
 # 导入API密钥
 import os
 os.environ['OPENAI_API_KEY'] = 'your-api-key-here'
-
-![](img/6611f57afa341027c62f44f8188df02e_19.png)
-
 # 导入所需工具
 from langchain.chains import ConversationChain
 from langchain.chat_models import ChatOpenAI
@@ -80,20 +80,20 @@ conversation = ConversationChain(llm=llm, memory=memory, verbose=False)
 
 ![](img/6611f57afa341027c62f44f8188df02e_41.png)
 
-```python
-# 开始对话
-response = conversation.predict(input="Hi, my name is Andrew.")
-print(response)  # 输出可能是：你好，很高兴见到你，Andrew。
 
 ![](img/6611f57afa341027c62f44f8188df02e_43.png)
 
 ![](img/6611f57afa341027c62f44f8188df02e_45.png)
 
-response = conversation.predict(input="What is 1+1?")
-print(response)  # 输出：1加1等于2。
 
 ![](img/6611f57afa341027c62f44f8188df02e_47.png)
 
+```python
+# 开始对话
+response = conversation.predict(input="Hi, my name is Andrew.")
+print(response)  # 输出可能是：你好，很高兴见到你，Andrew。
+response = conversation.predict(input="What is 1+1?")
+print(response)  # 输出：1加1等于2。
 response = conversation.predict(input="What is my name?")
 print(response)  # 输出：你的名字是Andrew，如你之前所说。
 ```
@@ -196,21 +196,21 @@ print(memory.load_memory_variables({}))
 
 ![](img/6611f57afa341027c62f44f8188df02e_107.png)
 
-```python
-from langchain.memory import ConversationBufferWindowMemory
 
 ![](img/6611f57afa341027c62f44f8188df02e_109.png)
 
 ![](img/6611f57afa341027c62f44f8188df02e_111.png)
 
-# 只记住最近一次对话交换（k=1）
-memory = ConversationBufferWindowMemory(k=1)
-conversation = ConversationChain(llm=llm, memory=memory, verbose=False)
 
 ![](img/6611f57afa341027c62f44f8188df02e_113.png)
 
 ![](img/6611f57afa341027c62f44f8188df02e_115.png)
 
+```python
+from langchain.memory import ConversationBufferWindowMemory
+# 只记住最近一次对话交换（k=1）
+memory = ConversationBufferWindowMemory(k=1)
+conversation = ConversationChain(llm=llm, memory=memory, verbose=False)
 # 进行对话
 conversation.predict(input="Hi, my name is Andrew.")
 conversation.predict(input="What is 1+1?")
@@ -244,28 +244,28 @@ print(response)  # 输出可能：抱歉，我没有访问这些信息。
 
 ![](img/6611f57afa341027c62f44f8188df02e_134.png)
 
-```python
-from langchain.memory import ConversationTokenBufferMemory
 
 ![](img/6611f57afa341027c62f44f8188df02e_136.png)
 
 ![](img/6611f57afa341027c62f44f8188df02e_138.png)
 
-# 设置最大令牌限制
-memory = ConversationTokenBufferMemory(llm=llm, max_token_limit=50)
-conversation = ConversationChain(llm=llm, memory=memory, verbose=False)
 
 ![](img/6611f57afa341027c62f44f8188df02e_140.png)
 
 ![](img/6611f57afa341027c62f44f8188df02e_142.png)
 
+
+![](img/6611f57afa341027c62f44f8188df02e_144.png)
+
+```python
+from langchain.memory import ConversationTokenBufferMemory
+# 设置最大令牌限制
+memory = ConversationTokenBufferMemory(llm=llm, max_token_limit=50)
+conversation = ConversationChain(llm=llm, memory=memory, verbose=False)
 # 进行一段较长的对话
 inputs = ["AI is amazing.", "Backpropagation is beautiful.", "Chatbots are cool."]
 for inp in inputs:
     _ = conversation.predict(input=inp)
-
-![](img/6611f57afa341027c62f44f8188df02e_144.png)
-
 print(memory.load_memory_variables({}))
 ```
 
@@ -291,8 +291,6 @@ print(memory.load_memory_variables({}))
 
 ![](img/6611f57afa341027c62f44f8188df02e_160.png)
 
-```python
-from langchain.memory import ConversationSummaryBufferMemory
 
 ![](img/6611f57afa341027c62f44f8188df02e_162.png)
 
@@ -300,20 +298,22 @@ from langchain.memory import ConversationSummaryBufferMemory
 
 ![](img/6611f57afa341027c62f44f8188df02e_166.png)
 
-# 创建摘要记忆
-memory = ConversationSummaryBufferMemory(llm=llm, max_token_limit=100)
-conversation = ConversationChain(llm=llm, memory=memory, verbose=True)
 
 ![](img/6611f57afa341027c62f44f8188df02e_168.png)
 
 ![](img/6611f57afa341027c62f44f8188df02e_170.png)
 
-# 输入一段长文本（例如日程）
-schedule = "早上9点与产品团队会议，需要准备PPT。中午12点在意大利餐厅与客户共进午餐，记得带上笔记本电脑展示最新的产品演示。下午3点进行代码审查。"
-conversation.predict(input=f"Today's schedule is: {schedule}")
 
 ![](img/6611f57afa341027c62f44f8188df02e_172.png)
 
+```python
+from langchain.memory import ConversationSummaryBufferMemory
+# 创建摘要记忆
+memory = ConversationSummaryBufferMemory(llm=llm, max_token_limit=100)
+conversation = ConversationChain(llm=llm, memory=memory, verbose=True)
+# 输入一段长文本（例如日程）
+schedule = "早上9点与产品团队会议，需要准备PPT。中午12点在意大利餐厅与客户共进午餐，记得带上笔记本电脑展示最新的产品演示。下午3点进行代码审查。"
+conversation.predict(input=f"Today's schedule is: {schedule}")
 # 询问关于日程的问题
 response = conversation.predict(input="What should I present to the client?")
 print(response)

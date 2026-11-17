@@ -12,13 +12,13 @@
 
 首先，我们需要设置环境并导入必要的模块。我们将使用与之前课程相同的MetaGPT论文作为数据源。
 
+
+![](img/7948500d2aad2d99352bda9079e73d70_4.png)
+
 ```python
 # 设置OpenAI API密钥
 import os
 os.environ['OPENAI_API_KEY'] = 'your-api-key-here'
-
-![](img/7948500d2aad2d99352bda9079e73d70_4.png)
-
 # 导入LlamaIndex和工具
 from llama_index import VectorStoreIndex, SimpleDirectoryReader
 from llama_index.tools import QueryEngineTool, ToolMetadata
@@ -52,6 +52,9 @@ llm = OpenAI(model="gpt-3.5-turbo", temperature=0)
 
 以下是导入和设置这些组件的代码：
 
+
+![](img/7948500d2aad2d99352bda9079e73d70_8.png)
+
 ```python
 # 导入智能体组件
 from llama_index.agent import FunctionCallingAgentWorker, AgentRunner
@@ -62,9 +65,6 @@ agent_worker = FunctionCallingAgentWorker(
     llm=llm,
     verbose=True  # 设置为True以查看中间输出
 )
-
-![](img/7948500d2aad2d99352bda9079e73d70_8.png)
-
 # 创建智能体运行器
 agent = AgentRunner(agent_worker)
 ```
@@ -125,6 +125,9 @@ print(response2)
 
 我们将首先再次通过函数调用智能体工作器和智能体运行器设置来定义我们的智能体，然后开始使用低级API。我们首先从用户查询创建一个任务对象，然后开始逐步执行，甚至可以在中间注入我们自己的输入。
 
+
+![](img/7948500d2aad2d99352bda9079e73d70_14.png)
+
 ```python
 # 重新定义智能体（为了示例清晰）
 agent_worker = FunctionCallingAgentWorker(
@@ -137,9 +140,6 @@ agent = AgentRunner(agent_worker)
 # 使用低级API：创建任务
 task = agent.create_task("Tell me about the agent roles in MetaGPT and then how they communicate with each other.")
 print(f"Task created with ID: {task.task_id}")
-
-![](img/7948500d2aad2d99352bda9079e73d70_14.png)
-
 # 执行任务的第一步
 step_output = agent.run_step(task.task_id)
 print(step_output)

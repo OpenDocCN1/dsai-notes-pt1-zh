@@ -125,11 +125,14 @@ print(df_raw.head())
 在进一步分析前，我们先清理列名，并定义一个最小化的模式来确保我们关心的列存在。
 
 **代码示例**：
-```python
-import pandera as pa
 
 ![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_29.png)
 
+
+![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_31.png)
+
+```python
+import pandera as pa
 # 定义我们感兴趣的列
 minimal_schema = pa.DataFrameSchema({
     “Dispositions/Exclusions”: pa.Column(str, nullable=False),
@@ -138,9 +141,6 @@ minimal_schema = pa.DataFrameSchema({
     “Race”: pa.Column(str),
     “Cause of death”: pa.Column(str),
 })
-
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_31.png)
-
 def clean_columns(df: pd.DataFrame) -> pd.DataFrame:
     df_clean = (df
                 .rename(columns=lambda x: x.strip().replace(“ “, “_”).replace(“/”, “_”))
@@ -175,13 +175,13 @@ training_schema.to_yaml(“training_schema.yaml”)
 接下来，我们清洗数据（如规范化字符串、转换类型、派生目标变量）。我们使用 `check_input` 和 `check_output` 装饰器来确保清洗函数的输入和输出符合模式，形成“验证三明治”。
 
 **代码示例**：
-```python
-from pandera import check_input, check_output
 
 ![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_37.png)
 
 ![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_39.png)
 
+```python
+from pandera import check_input, check_output
 @check_input(training_schema)
 @check_output(training_schema.remove_columns([“dispositions_exclusions”]))
 def clean_data(df: pd.DataFrame) -> pd.DataFrame:
@@ -202,13 +202,13 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
 将数据拆分为训练集和测试集，并构建一个机器学习模型（例如随机森林分类器）。Pandera 的 `SeriesSchema` 和模式修改方法（如 `remove_columns`）在这里非常有用。
 
 **代码示例**：
+
+![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_45.png)
+
 ```python
 target_schema = pa.SeriesSchema(int, checks=pa.Check.isin([0, 1]))
 
 feature_schema = training_schema.remove_columns([“dispositions_exclusions”, “disposition_accidental”])
-
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_45.png)
-
 @check_output((feature_schema, target_schema, feature_schema, target_schema), [0, 1, 2, 3])
 def split_training_data(df):
     from sklearn.model_selection import train_test_split

@@ -671,12 +671,6 @@ W = torch.randn(fan_in, fan_out) * std
 ![](img/88dd9899d3a9ef459d32c32418af4090_495.png)
 
 **代码示例**：
-```python
-# 训练阶段
-bn_mean = x.mean(dim=0, keepdim=True)
-bn_var = x.var(dim=0, keepdim=True, unbiased=False)
-x_hat = (x - bn_mean) / torch.sqrt(bn_var + 1e-5)
-y = bn_gain * x_hat + bn_bias
 
 ![](img/88dd9899d3a9ef459d32c32418af4090_497.png)
 
@@ -710,9 +704,6 @@ y = bn_gain * x_hat + bn_bias
 
 ![](img/88dd9899d3a9ef459d32c32418af4090_519.png)
 
-# 更新运行统计量 (动量更新)
-running_mean = 0.999 * running_mean + 0.001 * bn_mean
-running_var = 0.999 * running_var + 0.001 * bn_var
 
 ![](img/88dd9899d3a9ef459d32c32418af4090_521.png)
 
@@ -742,6 +733,15 @@ running_var = 0.999 * running_var + 0.001 * bn_var
 
 ![](img/88dd9899d3a9ef459d32c32418af4090_544.png)
 
+```python
+# 训练阶段
+bn_mean = x.mean(dim=0, keepdim=True)
+bn_var = x.var(dim=0, keepdim=True, unbiased=False)
+x_hat = (x - bn_mean) / torch.sqrt(bn_var + 1e-5)
+y = bn_gain * x_hat + bn_bias
+# 更新运行统计量 (动量更新)
+running_mean = 0.999 * running_mean + 0.001 * bn_mean
+running_var = 0.999 * running_var + 0.001 * bn_var
 # 推理阶段
 x_hat = (x - running_mean) / torch.sqrt(running_var + 1e-5)
 y = bn_gain * x_hat + bn_bias

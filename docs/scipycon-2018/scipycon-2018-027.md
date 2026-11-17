@@ -29,17 +29,17 @@
 *   **数学方法**：利用二项分布的概率质量函数进行理论计算。这需要较多的先验知识。
 *   **计算方法**：编写代码来模拟实验过程。这种方法更直观，且计算机能快速执行。
 
-```python
-# 模拟投掷10个骰子，计算至少出现两个3点的概率
-import numpy as np
 
 ![](img/97da3ebeb38fd85503149008cf61b319_4.png)
 
-num_trials = 100000
-success_count = 0
 
 ![](img/97da3ebeb38fd85503149008cf61b319_6.png)
 
+```python
+# 模拟投掷10个骰子，计算至少出现两个3点的概率
+import numpy as np
+num_trials = 100000
+success_count = 0
 for _ in range(num_trials):
     rolls = np.random.randint(1, 7, size=10)  # 模拟一次投掷10个骰子
     if np.sum(rolls == 3) >= 2:  # 检查3点的数量是否大于等于2

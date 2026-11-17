@@ -14,11 +14,11 @@
 
 ![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_4.png)
 
-```python
-from sklearn.cluster import AgglomerativeClustering
 
 ![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_6.png)
 
+```python
+from sklearn.cluster import AgglomerativeClustering
 agg = AgglomerativeClustering(n_clusters=6, linkage='ward')
 y_pred = agg.fit_predict(X)
 ```

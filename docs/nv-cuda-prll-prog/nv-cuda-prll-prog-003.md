@@ -99,12 +99,12 @@
 
 ![](img/68e31b967d69cfea77cc142db62cac46_42.png)
 
-```c
-dim3 grid(2, 3, 4); // 定义一个2x3x4的网格（共24个线程块）
-dim3 block(5, 6, 7); // 定义一个5x6x7的线程块（共210个线程）
 
 ![](img/68e31b967d69cfea77cc142db62cac46_44.png)
 
+```c
+dim3 grid(2, 3, 4); // 定义一个2x3x4的网格（共24个线程块）
+dim3 block(5, 6, 7); // 定义一个5x6x7的线程块（共210个线程）
 // 启动内核，共创建 24 * 210 = 5040 个线程
 myKernel<<<grid, block>>>();
 cudaDeviceSynchronize();

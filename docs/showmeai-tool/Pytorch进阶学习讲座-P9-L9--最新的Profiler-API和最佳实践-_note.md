@@ -81,12 +81,12 @@ print(prof.key_averages().table(sort_by="cpu_memory_usage"))
 
 通过传递`with_stack=True`参数，并按照调用栈条目进行分组，可以精确定位操作符的调用来源。
 
-```python
-with torch.profiler.profile(with_stack=True) as prof:
-    model(inputs)
 
 ![](img/8ecf516795c50978f573dce9c644f972_9.png)
 
+```python
+with torch.profiler.profile(with_stack=True) as prof:
+    model(inputs)
 print(prof.key_averages(group_by_stack_n=5).table())
 ```
 

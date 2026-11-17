@@ -6,6 +6,9 @@
 
 以下代码块用于可视化模型的训练历史，通过绘制每个训练周期（epoch）的准确率和损失指标来帮助我们分析模型性能。它使用 Matplotlib 进行绘图。
 
+
+![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_1.png)
+
 ```python
 # 第一部分 打印训练历史字典的键，以识别可用的指标
 print(history.history.keys())
@@ -18,9 +21,6 @@ plt.ylabel('Accuracy')
 plt.xlabel('Epoch')
 plt.legend(['Train', 'Validation'], loc='upper left')
 plt.show()
-
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_1.png)
-
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
 plt.title('Model Loss')
@@ -44,6 +44,14 @@ plt.show()
 
 以下代码段加载图像、对其进行预处理，并使用训练好的模型进行预测。
 
+
+![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_6.png)
+
+
+![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_7.png)
+
+![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_8.png)
+
 ```python
 # 第一部分 从指定路径加载图像
 img_path = 'path/to/your/image.jpg'
@@ -53,17 +61,9 @@ img = image.load_img(img_path, target_size=(150, 150))
 img_array = image.img_to_array(img)
 img_array = np.expand_dims(img_array, axis=0)
 img_array /= 255.0  # 归一化
-
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_6.png)
-
 # 第一部分 使用模型进行预测
 prediction = model.predict(img_array)
 print(prediction)
-
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_7.png)
-
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_8.png)
-
 # 第一部分 根据预测结果输出类别
 if prediction[0] > 0.5:
     print("这是一只狗。")
@@ -117,23 +117,23 @@ print("模型已保存到磁盘。")
 
 以下是模型构建的核心部分：
 
+
+![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_19.png)
+
+
+![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_20.png)
+
+![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_21.png)
+
 ```python
 from tensorflow.keras.applications import VGG16
 from tensorflow.keras import layers, models
 
 # 第一部分 加载预训练的VGG16模型，不包括顶部分类层
 base_model = VGG16(weights='imagenet', include_top=False, input_shape=(150, 150, 3))
-
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_19.png)
-
 # 第一部分 冻结前15层
 for layer in base_model.layers[:15]:
     layer.trainable = False
-
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_20.png)
-
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_21.png)
-
 # 第一部分 在基础模型上添加自定义层
 model = models.Sequential()
 model.add(base_model)

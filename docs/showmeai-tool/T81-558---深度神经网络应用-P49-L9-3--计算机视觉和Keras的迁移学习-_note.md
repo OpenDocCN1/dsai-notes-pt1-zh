@@ -82,13 +82,13 @@ model = models.Model(inputs=base_model.input, outputs=predictions)
 *   在主目录下为每个类别创建一个子文件夹（例如`class_a`, `class_b`, `class_c`）。
 *   将对应类别的图像放入各自的文件夹中，图像格式可以是JPEG或PNG。
 
+
+![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_6.png)
+
 ```python
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 train_datagen = ImageDataGenerator(preprocessing_function=preprocess_input)
-
-![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_6.png)
-
 train_generator = train_datagen.flow_from_directory(
     'path/to/your/transfer_learning_data',  # 替换为你的数据目录路径
     target_size=(224, 224),

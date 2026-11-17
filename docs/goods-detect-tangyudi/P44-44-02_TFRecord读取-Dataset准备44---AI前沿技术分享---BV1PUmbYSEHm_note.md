@@ -79,6 +79,9 @@ reader = tf.TFRecordReader
 
 ![](img/7376838b6fac37f89f79dbaaedb141ba_18.png)
 
+
+![](img/7376838b6fac37f89f79dbaaedb141ba_20.png)
+
 ```python
 # 定义 keys_to_features， 指定TFRecord中存储的原始数据格式
 keys_to_features = {
@@ -96,9 +99,6 @@ keys_to_features = {
     'image/object/bbox/difficult': tf.VarLenFeature(dtype=tf.int64),
     'image/object/bbox/truncated': tf.VarLenFeature(dtype=tf.int64),
 }
-
-![](img/7376838b6fac37f89f79dbaaedb141ba_20.png)
-
 # 定义 items_to_handlers， 指定如何将解析后的特征映射到最终输出的张量
 items_to_handlers = {
     'image': slim.tfexample_decoder.Image('image/encoded', 'image/format'),

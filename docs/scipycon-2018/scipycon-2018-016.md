@@ -175,12 +175,12 @@ filter_dict = {
 ![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_57.png)
 
 以下是关键步骤的简化说明：
-```python
-# 1. 用户输入
-hurricane_id = 'AL152023'
 
 ![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_59.png)
 
+```python
+# 1. 用户输入
+hurricane_id = 'AL152023'
 # 2. & 3. 根据 hurricane_id 获取路径，并查询目录（内部逻辑）
 # 4. 获取数据并绘图
 # （此处省略具体的目录查询、数据获取和绘图代码，它们由后台自动完成）
@@ -199,24 +199,24 @@ hurricane_id = 'AL152023'
 
 例如，创建一个下拉菜单选择观测站，一个按钮选择变量，然后动态更新图表。对于不了解背后技术的用户来说，这就像一个专业的仪表盘应用。
 
-```python
-import ipywidgets as widgets
-from IPython.display import display
 
 ![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_65.png)
 
-station_dropdown = widgets.Dropdown(options=['Station_A', 'Station_B', 'Station_C'], description='Station:')
-variable_dropdown = widgets.Dropdown(options=['Temperature', 'Salinity', 'Wave Height'], description='Variable:')
-plot_button = widgets.Button(description='Plot')
 
 ![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_67.png)
 
-def on_plot_button_clicked(b):
-    # 根据下拉菜单的选择，重新获取数据并绘图
-    update_plot(station_dropdown.value, variable_dropdown.value)
 
 ![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_69.png)
 
+```python
+import ipywidgets as widgets
+from IPython.display import display
+station_dropdown = widgets.Dropdown(options=['Station_A', 'Station_B', 'Station_C'], description='Station:')
+variable_dropdown = widgets.Dropdown(options=['Temperature', 'Salinity', 'Wave Height'], description='Variable:')
+plot_button = widgets.Button(description='Plot')
+def on_plot_button_clicked(b):
+    # 根据下拉菜单的选择，重新获取数据并绘图
+    update_plot(station_dropdown.value, variable_dropdown.value)
 plot_button.on_click(on_plot_button_clicked)
 display(station_dropdown, variable_dropdown, plot_button)
 ```

@@ -174,18 +174,11 @@ Seaborn的`sns.boxplot()`函数在处理长格式数据时更为灵活。
 ![](img/eb0ae3a78138de7d376260f7b17e5cc3_82.png)
 
 以下是绘图代码的关键部分：
-```python
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 ![](img/eb0ae3a78138de7d376260f7b17e5cc3_84.png)
 
 ![](img/eb0ae3a78138de7d376260f7b17e5cc3_86.png)
 
-# 设置图形样式（可选，用于美化）
-sns.set_style(“whitegrid”)
-sns.set_context(“talk”)
-plt.figure(figsize=(10, 6))
 
 ![](img/eb0ae3a78138de7d376260f7b17e5cc3_87.png)
 
@@ -195,6 +188,13 @@ plt.figure(figsize=(10, 6))
 
 ![](img/eb0ae3a78138de7d376260f7b17e5cc3_91.png)
 
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+# 设置图形样式（可选，用于美化）
+sns.set_style(“whitegrid”)
+sns.set_context(“talk”)
+plt.figure(figsize=(10, 6))
 # 绘制箱线图
 # x: 测量类型（花萼长度等）
 # y: 测量值（size）

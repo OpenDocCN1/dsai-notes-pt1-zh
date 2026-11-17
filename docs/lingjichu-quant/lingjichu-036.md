@@ -34,11 +34,11 @@
 
 ![](img/aa89555d72839c2a8a3274f6517785a3_19.png)
 
-```python
-import numpy as np
 
 ![](img/aa89555d72839c2a8a3274f6517785a3_21.png)
 
+```python
+import numpy as np
 def filter_three_sigma(series, n=3):
     """
     使用三西格玛法去除极值。
@@ -121,13 +121,13 @@ def standardize(series):
 
 ![](img/aa89555d72839c2a8a3274f6517785a3_53.png)
 
-```python
-import statsmodels.api as sm
 
 ![](img/aa89555d72839c2a8a3274f6517785a3_55.png)
 
 ![](img/aa89555d72839c2a8a3274f6517785a3_57.png)
 
+```python
+import statsmodels.api as sm
 def neutralize(factor_series, exposure_series):
     """
     对因子进行中性化处理，消除指定暴露（如市值）的影响。

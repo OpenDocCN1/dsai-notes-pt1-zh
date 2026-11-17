@@ -64,12 +64,12 @@
 
 以下是如何将 PyTorch 原生的多头注意力切换到 TorchText 新容器的示例代码：
 
-```python
-# 假设原来使用 PyTorch 的 MultiheadAttention
-# attention = nn.MultiheadAttention(embed_dim, num_heads)
 
 ![](img/aaa011e1dc72912baa590f68c0c043cd_9.png)
 
+```python
+# 假设原来使用 PyTorch 的 MultiheadAttention
+# attention = nn.MultiheadAttention(embed_dim, num_heads)
 # 切换到 TorchText 的 MultiheadAttentionContainer
 from torchtext.nn import MultiheadAttentionContainer
 attention = MultiheadAttentionContainer(nhead=num_heads,

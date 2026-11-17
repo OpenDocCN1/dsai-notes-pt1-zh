@@ -18,24 +18,24 @@
 
 ![](img/fad0694e7961fde9838880d74cce18d7_9.png)
 
+
+![](img/fad0694e7961fde9838880d74cce18d7_11.png)
+
+![](img/fad0694e7961fde9838880d74cce18d7_13.png)
+
+
+![](img/fad0694e7961fde9838880d74cce18d7_15.png)
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import AgglomerativeClustering
 from sklearn.datasets import make_swiss_roll
 from mpl_toolkits.mplot3d import Axes3D
-
-![](img/fad0694e7961fde9838880d74cce18d7_11.png)
-
-![](img/fad0694e7961fde9838880d74cce18d7_13.png)
-
 # 生成瑞士卷数据
 X, y = make_swiss_roll(n_samples=1500, noise=0.05)
 print(np.unique(y))
 print(len(y))
-
-![](img/fad0694e7961fde9838880d74cce18d7_15.png)
-
 # 创建3D视图展示原始数据
 fig = plt.figure(figsize=(12, 9))
 ax = fig.add_subplot(111, projection='3d')
@@ -60,15 +60,15 @@ plt.show()
 
 接下来，我们使用K-Means算法尝试对这个数据集进行聚类，并观察其效果。
 
+
+![](img/fad0694e7961fde9838880d74cce18d7_27.png)
+
 ```python
 from sklearn.cluster import KMeans
 
 # 使用K-Means聚类，假设分为6类
 kmeans = KMeans(n_clusters=6)
 y_kmeans = kmeans.fit_predict(X)
-
-![](img/fad0694e7961fde9838880d74cce18d7_27.png)
-
 # 可视化K-Means聚类结果
 fig = plt.figure(figsize=(12, 9))
 ax = fig.add_subplot(111, projection='3d')

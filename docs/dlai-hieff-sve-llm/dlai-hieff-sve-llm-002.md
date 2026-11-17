@@ -138,11 +138,11 @@ print(f"生成的文本: {prompt} {‘ ‘.join(generated_tokens)}")
 
 然而，我们需要关注这种朴素方法的性能。由于每一步都将整个增长中的序列重新输入模型，计算量会随着序列变长而增加。让我们绘制每一步的耗时图来观察趋势。
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/5094465e98c642e5db2cea19a1ab9ea2_10.png)
 
+```python
+import matplotlib.pyplot as plt
 steps = list(range(1, len(durations)+1))
 plt.plot(steps, [d*1000 for d in durations], marker=‘o‘) # 转换为毫秒
 plt.xlabel(‘生成的词元序号‘)

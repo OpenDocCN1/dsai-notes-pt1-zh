@@ -31,11 +31,11 @@
 
 使用NumPy的`random.normal`函数从正态分布中生成随机样本。该函数需要三个主要参数：`loc`（均值）、`scale`（标准差）和`size`（样本大小）。
 
-```python
-import numpy as np
 
 ![](img/1342656f97f5dd06caa91ba8d0b8b895_6.png)
 
+```python
+import numpy as np
 mean_price = 3932
 std_dev = 750
 sample_size = 100

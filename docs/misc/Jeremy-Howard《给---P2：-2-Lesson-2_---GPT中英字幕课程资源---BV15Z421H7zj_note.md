@@ -141,15 +141,15 @@ learn.export(‘model.pkl’)
 
 下载导出的 `model.pkl` 文件到本地。现在，我们可以在不需要GPU的本地环境中加载模型并进行预测。
 
-```python
-# 在本地脚本或笔记本中
-from fastai.vision.all import *
-import PIL
 
 ![](img/db648937386866e30f85c95de73d0b35_41.png)
 
 ![](img/db648937386866e30f85c95de73d0b35_42.png)
 
+```python
+# 在本地脚本或笔记本中
+from fastai.vision.all import *
+import PIL
 learn = load_learner(‘model.pkl’)
 img = PILImage.create(‘dog.jpg’) # 加载一张图片
 pred, pred_idx, probs = learn.predict(img)

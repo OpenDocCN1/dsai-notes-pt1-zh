@@ -34,6 +34,9 @@ load_dotenv()
 
 接下来，我们定义一些变量。
 
+
+![](img/db79b7df13b758b6ae212fa8761fae00_3.png)
+
 ```python
 # 定义模型和路径
 MODEL_NAME = “models/gemini-2.0-flash”
@@ -41,9 +44,6 @@ MCP_SERVER_PATH = “./mcp-server-box”  # Box MCP 服务器的本地路径
 
 # 定义我们将要使用的工具名称
 TOOLS_TO_USE = [“list_folder_contents”, “ai_extract_freeform”]
-
-![](img/db79b7df13b758b6ae212fa8761fae00_3.png)
-
 # 从环境变量加载敏感信息
 GEMINI_API_KEY = os.getenv(“GEMINI_API_KEY”)
 BOX_FOLDER_ID = os.getenv(“BOX_FOLDER_ID”)  # 包含发票的 Box 文件夹 ID

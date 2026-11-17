@@ -86,13 +86,13 @@ PyTorch 会为张量上的每一个操作自动构建一个**计算图**。图�
 理论计算完成后，让我们在 PyTorch 中验证这一过程是否自动得出相同结果。
 
 以下是实现代码：
-```python
-import torch
 
 ![](img/564e3240802dbe7d6e0c0758c4df691d_1.png)
 
 ![](img/564e3240802dbe7d6e0c0758c4df691d_3.png)
 
+```python
+import torch
 # 1. 定义数据和张量，对权重w设置 requires_grad=True 以追踪梯度
 x = torch.tensor(1.0)
 y = torch.tensor(2.0)

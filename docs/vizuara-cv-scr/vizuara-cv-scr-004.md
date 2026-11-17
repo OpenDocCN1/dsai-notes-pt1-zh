@@ -43,20 +43,20 @@
 
 要使用Weights & Biases，首先需要安装其Python库并进行初始化。
 
-```python
-# 安装 wandb 库
-!pip install wandb -q
 
 ![](img/6809f64637cdb7d6cac1703eb5ceaa16_13.png)
 
 ![](img/6809f64637cdb7d6cac1703eb5ceaa16_15.png)
 
-# 导入必要的库
-import wandb
-from wandb.keras import WandbCallback
 
 ![](img/6809f64637cdb7d6cac1703eb5ceaa16_17.png)
 
+```python
+# 安装 wandb 库
+!pip install wandb -q
+# 导入必要的库
+import wandb
+from wandb.keras import WandbCallback
 # 初始化一个W&B运行实例
 # 这将创建一个项目来跟踪你的实验
 wandb.init(project="flower-classification-p4", entity="your-username")

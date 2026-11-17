@@ -32,10 +32,6 @@
 
 ![](img/0629c20054834ad43432bab705e8969b_17.png)
 
-```python
-# 基础设置代码
-import torch
-from diffusers import StableDiffusionPipeline
 
 ![](img/0629c20054834ad43432bab705e8969b_19.png)
 
@@ -45,9 +41,6 @@ from diffusers import StableDiffusionPipeline
 
 ![](img/0629c20054834ad43432bab705e8969b_22.png)
 
-# 加载预训练模型
-pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4")
-pipe = pipe.to("cuda")
 
 ![](img/0629c20054834ad43432bab705e8969b_23.png)
 
@@ -61,6 +54,13 @@ pipe = pipe.to("cuda")
 
 ![](img/0629c20054834ad43432bab705e8969b_30.png)
 
+```python
+# 基础设置代码
+import torch
+from diffusers import StableDiffusionPipeline
+# 加载预训练模型
+pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4")
+pipe = pipe.to("cuda")
 # 生成图像
 prompt = "A watercolor picture of an otter"
 image = pipe(prompt).images[0]
@@ -107,6 +107,11 @@ image.save("otter.png")
 
 ![](img/0629c20054834ad43432bab705e8969b_53.png)
 
+
+![](img/0629c20054834ad43432bab705e8969b_55.png)
+
+![](img/0629c20054834ad43432bab705e8969b_56.png)
+
 ```python
 def encode_image(vae, image_tensor):
     # 编码图像到潜在分布
@@ -116,11 +121,6 @@ def encode_image(vae, image_tensor):
     # 按原始论文缩放因子进行缩放
     latent_sample = latent_sample * 0.18215
     return latent_sample
-
-![](img/0629c20054834ad43432bab705e8969b_55.png)
-
-![](img/0629c20054834ad43432bab705e8969b_56.png)
-
 def decode_latent(vae, latent_sample):
     # 缩放回原始范围
     latent_sample = latent_sample / 0.18215
@@ -251,6 +251,13 @@ sigmas = scheduler.sigmas        # 对应每个时间步的噪声水平
 
 ![](img/0629c20054834ad43432bab705e8969b_106.png)
 
+
+![](img/0629c20054834ad43432bab705e8969b_108.png)
+
+![](img/0629c20054834ad43432bab705e8969b_109.png)
+
+![](img/0629c20054834ad43432bab705e8969b_111.png)
+
 ```python
 # 1. 分词
 tokenizer = pipe.tokenizer
@@ -262,13 +269,6 @@ text_input = tokenizer(
     return_tensors="pt"
 )
 input_ids = text_input.input_ids.to(device)  # 形状: [1, 77]
-
-![](img/0629c20054834ad43432bab705e8969b_108.png)
-
-![](img/0629c20054834ad43432bab705e8969b_109.png)
-
-![](img/0629c20054834ad43432bab705e8969b_111.png)
-
 # 2. 获取令牌嵌入
 token_embeddings = text_encoder.text_model.embeddings.token_embedding(input_ids)
 

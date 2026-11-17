@@ -32,11 +32,11 @@ import pandas as pd
 
 在本例中，我们将使用一个关于二手车售价的数据集（数据由Nehal Burer等人整理）。以下是使用pandas读取和查看数据的基本操作：
 
-```python
-import pandas as pd
 
 ![](img/7ac5ad0b05c23bf3f22e7afe84a03198_5.png)
 
+```python
+import pandas as pd
 # 读取CSV文件中的数据
 data = pd.read_csv(‘used_car_data.csv‘)
 # 打印出数据
@@ -81,11 +81,11 @@ import matplotlib.pyplot as plt
 
 ![](img/7ac5ad0b05c23bf3f22e7afe84a03198_9.png)
 
-```python
-import matplotlib.pyplot as plt
 
 ![](img/7ac5ad0b05c23bf3f22e7afe84a03198_11.png)
 
+```python
+import matplotlib.pyplot as plt
 # 创建散点图：x轴为里程，y轴为价格
 plt.scatter(data[‘mileage‘], data[‘price‘])
 plt.xlabel(‘Mileage (km)‘)  # 为x轴添加标签

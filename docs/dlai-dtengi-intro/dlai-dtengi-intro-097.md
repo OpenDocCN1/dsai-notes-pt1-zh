@@ -114,15 +114,15 @@ psql -h [数据库终端节点] -U [用户名] -d [数据库名]
 实验提供了SQL文件来创建表结构。首先，你需要下载实验文件。然后，在Cloud9终端中连接到数据库，并执行DDL（数据定义语言）文件。
 
 以下是操作命令示例：
+
+![](img/1fa50d34d453e4325f3249968b0ed19f_21.png)
+
 ```bash
 # 1. 下载实验所需文件（假设脚本已提供）
 # ./download_files.sh
 
 # 2. 连接到数据库
 psql -h [数据库终端节点] -U postgres -d postgres
-
-![](img/1fa50d34d453e4325f3249968b0ed19f_21.png)
-
 # 3. 执行创建表的SQL文件
 \i /path/to/sql/ratings_table_ddl.sql
 

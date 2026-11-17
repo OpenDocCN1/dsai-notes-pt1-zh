@@ -118,16 +118,11 @@
         """
         response = get_completion(prompt)
         print(response)
-    ```
-通过这种方式，你可以快速构建一个通用翻译器。你可以随时暂停，添加其他你想尝试的语言，看看模型表现如何。
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_57.png)
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_59.png)
 
-## ✍️ 语气与格式转换
-
-写作可以根据预期受众的不同而调整。例如，给同事的邮件和给弟弟的短信语气会截然不同。ChatGPT可以帮助生成不同的语气。
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_61.png)
 
@@ -135,26 +130,31 @@
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_65.png)
 
-**示例5：俚语转商务信函**
-*   **提示**：将以下内容从俚语翻译成商务信函：`Dude, This is Joe, check out this spec on the standing lamp.`
-*   **回应**：`Dear Sir/Madam, This is Joe. Please review the specifications for the standing lamp.`
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_66.png)
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_68.png)
 
-### 格式转换
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_70.png)
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_72.png)
 
-ChatGPT非常擅长在不同格式之间进行转换，例如JSON到HTML、XML、Markdown等。在提示中，我们需要清晰描述输入和输出格式。
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_74.png)
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_76.png)
 
+    ```
+通过这种方式，你可以快速构建一个通用翻译器。你可以随时暂停，添加其他你想尝试的语言，看看模型表现如何。
+## ✍️ 语气与格式转换
+
+写作可以根据预期受众的不同而调整。例如，给同事的邮件和给弟弟的短信语气会截然不同。ChatGPT可以帮助生成不同的语气。
+**示例5：俚语转商务信函**
+*   **提示**：将以下内容从俚语翻译成商务信函：`Dude, This is Joe, check out this spec on the standing lamp.`
+*   **回应**：`Dear Sir/Madam, This is Joe. Please review the specifications for the standing lamp.`
+### 格式转换
+ChatGPT非常擅长在不同格式之间进行转换，例如JSON到HTML、XML、Markdown等。在提示中，我们需要清晰描述输入和输出格式。
 **示例6：JSON转HTML表格**
 *   **输入数据**：
     ```json
@@ -171,28 +171,28 @@ ChatGPT非常擅长在不同格式之间进行转换，例如JSON到HTML、XML�
     ```python
     from IPython.display import display, HTML
     display(HTML(html_string))
-    ```
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_78.png)
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_79.png)
 
-## ✅ 拼写与语法检查
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_81.png)
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_83.png)
 
-拼写和语法检查是ChatGPT非常流行的用途。对于非母语写作者尤其有帮助。
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_85.png)
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_87.png)
 
-以下是实现步骤：
 
 ![](img/ed21d6cb87e54be3aa36b62268b33e0d_89.png)
 
+    ```
+## ✅ 拼写与语法检查
+拼写和语法检查是ChatGPT非常流行的用途。对于非母语写作者尤其有帮助。
+以下是实现步骤：
 1.  我们准备一个包含语法或拼写错误的句子列表。
     ```python
     texts = [

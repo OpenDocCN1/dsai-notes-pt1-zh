@@ -165,30 +165,30 @@ RDD是Spark最基础的数据抽象，代表一个不可变、可分区的元素
 ![](img/da2112c9d41156200a67fc3d0f77140b_40.png)
 
 **创建RDD与基础操作：**
-```python
-# 通过并行化集合创建RDD
-data = [1, 2, 3, 4, 5]
-rdd = spark.sparkContext.parallelize(data, numSlices=4)
 
 ![](img/da2112c9d41156200a67fc3d0f77140b_42.png)
 
-# 转换操作：每个元素乘以2（惰性执行）
-rdd_double = rdd.map(lambda x: x * 2)
-# 行动操作：触发计算并收集结果
-print(rdd_double.collect())  # 输出: [2, 4, 6, 8, 10]
 
 ![](img/da2112c9d41156200a67fc3d0f77140b_44.png)
 
 ![](img/da2112c9d41156200a67fc3d0f77140b_46.png)
 
-# 过滤操作
-rdd_filtered = rdd.filter(lambda x: x > 3)
-print(rdd_filtered.collect())  # 输出: [4, 5]
 
 ![](img/da2112c9d41156200a67fc3d0f77140b_48.png)
 
 ![](img/da2112c9d41156200a67fc3d0f77140b_50.png)
 
+```python
+# 通过并行化集合创建RDD
+data = [1, 2, 3, 4, 5]
+rdd = spark.sparkContext.parallelize(data, numSlices=4)
+# 转换操作：每个元素乘以2（惰性执行）
+rdd_double = rdd.map(lambda x: x * 2)
+# 行动操作：触发计算并收集结果
+print(rdd_double.collect())  # 输出: [2, 4, 6, 8, 10]
+# 过滤操作
+rdd_filtered = rdd.filter(lambda x: x > 3)
+print(rdd_filtered.collect())  # 输出: [4, 5]
 # 统计操作
 print(rdd.count())      # 计数: 5
 print(rdd.mean())       # 平均值: 3.0
@@ -297,6 +297,17 @@ Spark SQL的语法与标准SQL高度相似，支持SELECT、WHERE、GROUP BY、J
 5.  **模型训练与评估：** 使用朴素贝叶斯算法进行分类。
 
 **核心代码片段：**
+
+![](img/da2112c9d41156200a67fc3d0f77140b_52.png)
+
+![](img/da2112c9d41156200a67fc3d0f77140b_54.png)
+
+
+![](img/da2112c9d41156200a67fc3d0f77140b_56.png)
+
+
+![](img/da2112c9d41156200a67fc3d0f77140b_58.png)
+
 ```python
 from pyspark.ml import Pipeline
 from pyspark.ml.feature import Tokenizer, StopWordsRemover, HashingTF, IDF, StringIndexer
@@ -306,11 +317,6 @@ from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 # 1. 读取数据
 df = spark.read.csv("spam_data.csv", inferSchema=True, sep='\t')
 df = df.withColumnRenamed("_c0", "label").withColumnRenamed("_c1", "text")
-
-![](img/da2112c9d41156200a67fc3d0f77140b_52.png)
-
-![](img/da2112c9d41156200a67fc3d0f77140b_54.png)
-
 # 2. 定义管道阶段
 tokenizer = Tokenizer(inputCol="text", outputCol="words")
 remover = StopWordsRemover(inputCol="words", outputCol="filtered_words")
@@ -320,18 +326,12 @@ label_indexer = StringIndexer(inputCol="label", outputCol="indexed_label")
 
 # 3. 定义模型
 nb = NaiveBayes(labelCol="indexed_label", featuresCol="features")
-
-![](img/da2112c9d41156200a67fc3d0f77140b_56.png)
-
 # 4. 构建管道
 pipeline = Pipeline(stages=[label_indexer, tokenizer, remover, hashing_tf, idf, nb])
 
 # 5. 拆分数据集并训练
 train_df, test_df = df.randomSplit([0.7, 0.3])
 model = pipeline.fit(train_df)
-
-![](img/da2112c9d41156200a67fc3d0f77140b_58.png)
-
 # 6. 预测与评估
 predictions = model.transform(test_df)
 evaluator = MulticlassClassificationEvaluator(labelCol="indexed_label", predictionCol="prediction", metricName="accuracy")

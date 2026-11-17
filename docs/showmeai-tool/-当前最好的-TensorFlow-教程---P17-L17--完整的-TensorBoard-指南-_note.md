@@ -16,15 +16,20 @@
 
 使用 Keras 的回调（Callback）功能是记录这些指标最简单的方法。以下代码展示了如何设置 TensorBoard 回调并在训练时自动记录数据：
 
-```python
-import tensorflow as tf
-
-# ... 数据加载和预处理代码 ...
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_4.png)
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_6.png)
 
+
+![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_8.png)
+
+![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_10.png)
+
+```python
+import tensorflow as tf
+
+# ... 数据加载和预处理代码 ...
 model = tf.keras.Sequential([...]) # 定义你的模型
 
 model.compile(optimizer='adam',
@@ -35,11 +40,6 @@ model.compile(optimizer='adam',
 log_dir = "tb_callback_dir"
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir,
                                                        histogram_freq=1)
-
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_8.png)
-
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_10.png)
-
 # 开始训练，传入回调
 model.fit(ds_train,
           epochs=5,
@@ -76,6 +76,12 @@ model.fit(ds_train,
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_21.png)
 
+
+![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_23.png)
+
+
+![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_25.png)
+
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
@@ -91,9 +97,6 @@ def plot_to_image(figure):
     image = tf.image.decode_png(buf.getvalue(), channels=4)
     image = tf.expand_dims(image, 0)
     return image
-
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_23.png)
-
 def image_grid(data, labels, class_names):
     """创建带标签的图像网格。"""
     data = np.array(data)
@@ -114,9 +117,6 @@ def image_grid(data, labels, class_names):
             plt.imshow(data[i])
         plt.xlabel(class_names[labels[i]])
     return fig
-
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_25.png)
-
 # 在训练循环中调用
 with train_writer.as_default():
     figure = image_grid(images, labels, class_names)
@@ -142,12 +142,15 @@ with train_writer.as_default():
 
 核心函数 `plot_confusion_matrix` 代码如下：
 
-```python
-from sklearn.metrics import confusion_matrix
-import numpy as np
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_27.png)
 
+
+![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_29.png)
+
+```python
+from sklearn.metrics import confusion_matrix
+import numpy as np
 def plot_confusion_matrix(cm, class_names):
     """绘制混淆矩阵。"""
     size = len(class_names)
@@ -173,9 +176,6 @@ def plot_confusion_matrix(cm, class_names):
     plt.ylabel('Predicted label')
     plt.xlabel('True label')
     return fig
-
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_29.png)
-
 # 在训练循环中累积和绘制
 cm = np.zeros((len(class_names), len(class_names)))
 for batch, (x_batch, y_batch) in enumerate(ds_train):
@@ -201,19 +201,9 @@ TensorBoard 可以自动追踪并可视化用 `@tf.function` 装饰的函数或 
 
 以下是记录一个简单函数计算图的示例：
 
-```python
-import tensorflow as tf
-
-# 创建一个文件写入器用于记录图
-log_dir = "logs/graph"
-writer = tf.summary.create_file_writer(log_dir)
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_31.png)
 
-# 定义一个函数并用 @tf.function 装饰以生成静态图
-@tf.function
-def my_function(x, y):
-    return tf.nn.relu(tf.matmul(x, y))
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_33.png)
 
@@ -221,6 +211,16 @@ def my_function(x, y):
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_36.png)
 
+```python
+import tensorflow as tf
+
+# 创建一个文件写入器用于记录图
+log_dir = "logs/graph"
+writer = tf.summary.create_file_writer(log_dir)
+# 定义一个函数并用 @tf.function 装饰以生成静态图
+@tf.function
+def my_function(x, y):
+    return tf.nn.relu(tf.matmul(x, y))
 # 生成一些随机数据作为输入
 x = tf.random.uniform((3, 3))
 y = tf.random.uniform((3, 3))
@@ -277,11 +277,11 @@ TensorBoard 的 HParams 插件可以系统地记录和比较不同超参数组�
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_43.png)
 
-```python
-from tensorboard.plugins.hparams import api as hp
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_45.png)
 
+```python
+from tensorboard.plugins.hparams import api as hp
 # 1. 定义超参数
 HP_NUM_UNITS = hp.HParam('num_units', hp.Discrete([32, 64, 128]))
 HP_DROPOUT = hp.HParam('dropout', hp.Discrete([0.1, 0.2, 0.3]))
@@ -330,6 +330,11 @@ for num_units in HP_NUM_UNITS.domain.values:
 
 以下是关键步骤代码：
 
+
+![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_47.png)
+
+![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_49.png)
+
 ```python
 import os
 import tensorflow as tf
@@ -372,11 +377,6 @@ def plot_to_projector(feature_vectors, labels, images, class_names, log_dir):
 
     # 5. 写入配置
     projector.visualize_embeddings(log_dir, config)
-
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_47.png)
-
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_49.png)
-
 # 假设我们有一个批次的数据
 # 获取特征向量（例如，通过模型的某一层）
 # features = model.predict(images)

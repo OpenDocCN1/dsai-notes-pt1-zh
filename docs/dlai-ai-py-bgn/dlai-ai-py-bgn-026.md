@@ -100,10 +100,6 @@ print(celsius)
 
 首先，定义一个打印结果的函数：
 
-```python
-def fahrenheit_to_celsius(fahrenheit):
-    celsius = (fahrenheit - 32) * 5 / 9
-    print(celsius)
 
 ![](img/f41419f36defbe1559688350c0d3f313_9.png)
 
@@ -113,19 +109,23 @@ def fahrenheit_to_celsius(fahrenheit):
 
 ![](img/f41419f36defbe1559688350c0d3f313_12.png)
 
+```python
+def fahrenheit_to_celsius(fahrenheit):
+    celsius = (fahrenheit - 32) * 5 / 9
+    print(celsius)
 fahrenheit_to_celsius(72)
 fahrenheit_to_celsius(68)
 ```
 
 其次，定义一个返回结果的函数，以便将转换后的值保存下来进行后续操作：
 
+
+![](img/f41419f36defbe1559688350c0d3f313_14.png)
+
 ```python
 def fahrenheit_to_celsius(fahrenheit):
     celsius = (fahrenheit - 32) * 5 / 9
     return celsius
-
-![](img/f41419f36defbe1559688350c0d3f313_14.png)
-
 temp_f = 45
 temp_c = fahrenheit_to_celsius(temp_f)
 print(f"温度是 {temp_c} 摄氏度")

@@ -95,6 +95,9 @@ print(f"单一决策树得分: {score_tree:.4f}")
 
 由于单次数据划分具有随机性，为了得到更稳定的评估，我们进行100次实验并计算平均得分。
 
+
+![](img/c8b2e23ed8b5c03d093b4e8ca398895d_29.png)
+
 ```python
 scores_tree = 0
 for i in range(100):
@@ -102,9 +105,6 @@ for i in range(100):
     model_tree = DecisionTreeClassifier()
     model_tree.fit(X_train, y_train)
     scores_tree += model_tree.score(X_test, y_test)
-
-![](img/c8b2e23ed8b5c03d093b4e8ca398895d_29.png)
-
 print(f"单一决策树平均得分: {scores_tree / 100:.4f}")
 ```
 
@@ -155,13 +155,13 @@ print(f"随机森林平均得分: {scores_rf / 100:.4f}")
 
 ![](img/c8b2e23ed8b5c03d093b4e8ca398895d_45.png)
 
+
+![](img/c8b2e23ed8b5c03d093b4e8ca398895d_47.png)
+
 ```python
 # 决策树的预测概率（通常是0或1）
 proba_tree = model_tree.predict_proba(X_test)
 print("决策树预测概率示例（前5个样本）:\n", proba_tree[:5])
-
-![](img/c8b2e23ed8b5c03d093b4e8ca398895d_47.png)
-
 # 随机森林的预测概率（由投票比例决定）
 proba_rf = clf_rf.predict_proba(X_test)
 print("随机森林预测概率示例（前5个样本）:\n", proba_rf[:5])
@@ -181,6 +181,11 @@ print("随机森林预测概率示例（前5个样本）:\n", proba_rf[:5])
 
 ![](img/c8b2e23ed8b5c03d093b4e8ca398895d_57.png)
 
+
+![](img/c8b2e23ed8b5c03d093b4e8ca398895d_59.png)
+
+![](img/c8b2e23ed8b5c03d093b4e8ca398895d_61.png)
+
 ```python
 # 可视化单一决策树
 dot_data_tree = export_graphviz(model_tree, out_file=None,
@@ -188,11 +193,6 @@ dot_data_tree = export_graphviz(model_tree, out_file=None,
 graph_tree = graphviz.Source(dot_data_tree)
 graph_tree.render("decision_tree")  # 保存为PDF文件
 graph_tree  # 在Jupyter Notebook中显示
-
-![](img/c8b2e23ed8b5c03d093b4e8ca398895d_59.png)
-
-![](img/c8b2e23ed8b5c03d093b4e8ca398895d_61.png)
-
 # 可视化随机森林中的某一棵树（例如第0棵）
 dot_data_rf_0 = export_graphviz(clf_rf.estimators_[0], out_file=None,
                                 filled=True, rounded=True)

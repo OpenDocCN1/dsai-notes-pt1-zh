@@ -33,13 +33,13 @@ load_dotenv()
 
 ![](img/92ccfc59e7465ca7b35eec7bf4601f06_10.png)
 
+
+![](img/92ccfc59e7465ca7b35eec7bf4601f06_12.png)
+
 ```python
 # 示例代码：加载向量存储
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
-
-![](img/92ccfc59e7465ca7b35eec7bf4601f06_12.png)
-
 embeddings = OpenAIEmbeddings()
 vectorstore = Chroma(persist_directory="./chroma_db", embedding_function=embeddings)
 ```
@@ -78,6 +78,9 @@ llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
 
 ![](img/92ccfc59e7465ca7b35eec7bf4601f06_22.png)
 
+
+![](img/92ccfc59e7465ca7b35eec7bf4601f06_24.png)
+
 ```python
 # 示例代码：创建基础检索QA链
 from langchain.chains import RetrievalQA
@@ -89,9 +92,6 @@ prompt_template = """使用以下上下文来回答最后的问题。
 """
 PROMPT = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
 qa_chain = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=vectorstore.as_retriever(), chain_type_kwargs={"prompt": PROMPT})
-
-![](img/92ccfc59e7465ca7b35eec7bf4601f06_24.png)
-
 result = qa_chain.run("这门课的先修要求是什么？")
 print(result)
 ```
@@ -141,12 +141,12 @@ memory = ConversationBufferMemory(memory_key="chat_history", return_messages=Tru
 
 ![](img/92ccfc59e7465ca7b35eec7bf4601f06_44.png)
 
-```python
-# 示例代码：创建对话检索链
-from langchain.chains import ConversationalRetrievalChain
 
 ![](img/92ccfc59e7465ca7b35eec7bf4601f06_46.png)
 
+```python
+# 示例代码：创建对话检索链
+from langchain.chains import ConversationalRetrievalChain
 qa = ConversationalRetrievalChain.from_llm(llm, vectorstore.as_retriever(), memory=memory)
 ```
 
@@ -198,21 +198,21 @@ print(result["answer"])
 
 ![](img/92ccfc59e7465ca7b35eec7bf4601f06_64.png)
 
+
+![](img/92ccfc59e7465ca7b35eec7bf4601f06_66.png)
+
+![](img/92ccfc59e7465ca7b35eec7bf4601f06_68.png)
+
+
+![](img/92ccfc59e7465ca7b35eec7bf4601f06_70.png)
+
 ```
 给定以下对话和一个后续问题，请将后续问题重新表述为一个独立的问题。
 
 聊天历史：
 人类：这门课关于概率的主题有哪些？
 AI：教师假设学生对概率和统计有基本的理解...
-
-![](img/92ccfc59e7465ca7b35eec7bf4601f06_66.png)
-
-![](img/92ccfc59e7465ca7b35eec7bf4601f06_68.png)
-
 后续问题：为什么需要这些先修知识？
-
-![](img/92ccfc59e7465ca7b35eec7bf4601f06_70.png)
-
 独立问题：
 ```
 

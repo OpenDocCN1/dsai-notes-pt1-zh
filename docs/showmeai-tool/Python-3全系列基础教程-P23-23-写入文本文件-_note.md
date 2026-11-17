@@ -106,19 +106,19 @@ print("前10个字符是:", first_10_chars)
 
 随着读取操作的进行，文件内部的光标会向前移动。我们可以使用 **`.tell()`** 方法获取当前光标的位置，使用 **`.seek()`** 方法移动光标。
 
+
+![](img/8456fb4bd663a45b00a3716ccc59148e_11.png)
+
+
+![](img/8456fb4bd663a45b00a3716ccc59148e_12.png)
+
 ```python
 # 获取当前光标位置
 current_position = file_object.tell()
 print(f"当前光标位置: {current_position}")
-
-![](img/8456fb4bd663a45b00a3716ccc59148e_11.png)
-
 # 获取文件总大小（字节）
 file_size = os.stat(filename).st_size
 print(f"文件总大小: {file_size} 字节")
-
-![](img/8456fb4bd663a45b00a3716ccc59148e_12.png)
-
 # 将光标移回文件开头
 file_object.seek(0)
 print("光标已移回文件开头。")

@@ -104,10 +104,6 @@ plt.show()
 2.  然后，重复使用直方图代码，为第一个数据框（A等级）创建直方图。
 3.  接着，叠加第二个直方图，这次使用第二个数据框（D等级）。你可以保持所有参数相同，但为了区分，可以将第二个直方图的颜色改为默认的蓝色。
 
-```python
-# 过滤数据
-df_A = df[df['grade'] == 'A']
-df_D = df[df['grade'] == 'D']
 
 ![](img/e71bb0b77a17f780b0462b666752f301_15.png)
 
@@ -115,6 +111,10 @@ df_D = df[df['grade'] == 'D']
 
 ![](img/e71bb0b77a17f780b0462b666752f301_17.png)
 
+```python
+# 过滤数据
+df_A = df[df['grade'] == 'A']
+df_D = df[df['grade'] == 'D']
 # 叠加绘制两个直方图
 sns.histplot(data=df_A, x='loan_amount', color='orange', label='Grade A')
 sns.histplot(data=df_D, x='loan_amount', color='blue', alpha=0.5, label='Grade D')

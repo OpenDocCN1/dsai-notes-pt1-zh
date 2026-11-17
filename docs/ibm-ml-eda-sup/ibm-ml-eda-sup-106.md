@@ -56,8 +56,6 @@
 
 ![](img/d87d0b9b639520ef6954b0ebfea015b0_27.png)
 
-```python
-import pandas as pd
 
 ![](img/d87d0b9b639520ef6954b0ebfea015b0_28.png)
 
@@ -65,6 +63,8 @@ import pandas as pd
 
 ![](img/d87d0b9b639520ef6954b0ebfea015b0_30.png)
 
+```python
+import pandas as pd
 # 假设数据已加载到变量 churn_data 中
 df = churn_data.drop(columns=['不需要的列1', '不需要的列2'])
 print(df.head())

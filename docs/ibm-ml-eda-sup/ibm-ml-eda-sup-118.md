@@ -28,11 +28,6 @@
 
 以下是导入数据并查看其结构的代码：
 
-```python
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.preprocessing import MinMaxScaler
 
 ![](img/87518773a58ac627a5208dda23bdc623_16.png)
 
@@ -40,6 +35,11 @@ from sklearn.preprocessing import MinMaxScaler
 
 ![](img/87518773a58ac627a5208dda23bdc623_18.png)
 
+```python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
 # 导入数据
 data = pd.read_csv('wine_quality.csv')
 ```
@@ -135,9 +135,6 @@ plt.show()
 
 ![](img/87518773a58ac627a5208dda23bdc623_65.png)
 
-```python
-# 选择特征列（排除目标列‘color’）
-fields = data.columns[:-1]
 
 ![](img/87518773a58ac627a5208dda23bdc623_66.png)
 
@@ -147,13 +144,16 @@ fields = data.columns[:-1]
 
 ![](img/87518773a58ac627a5208dda23bdc623_71.png)
 
-# 计算每个特征与 y 的相关性
-correlations = data[fields].corrwith(y).sort_values()
 
 ![](img/87518773a58ac627a5208dda23bdc623_73.png)
 
 ![](img/87518773a58ac627a5208dda23bdc623_75.png)
 
+```python
+# 选择特征列（排除目标列‘color’）
+fields = data.columns[:-1]
+# 计算每个特征与 y 的相关性
+correlations = data[fields].corrwith(y).sort_values()
 # 绘制相关性条形图
 correlations.plot(kind='bar')
 plt.title('Correlation with Wine Color')
@@ -186,9 +186,6 @@ plt.show()
 
 ![](img/87518773a58ac627a5208dda23bdc623_89.png)
 
-```python
-# 1. 获取与 y 的绝对相关性，并排序
-abs_correlations = correlations.abs().sort_values()
 
 ![](img/87518773a58ac627a5208dda23bdc623_91.png)
 
@@ -198,21 +195,14 @@ abs_correlations = correlations.abs().sort_values()
 
 ![](img/87518773a58ac627a5208dda23bdc623_96.png)
 
-# 2. 选择相关性最高的两个特征
-top_two_fields = abs_correlations.index[-2:]
 
 ![](img/87518773a58ac627a5208dda23bdc623_98.png)
 
-# 3. 使用这两个特征创建新的特征矩阵 X
-X = data[top_two_fields]
 
 ![](img/87518773a58ac627a5208dda23bdc623_100.png)
 
 ![](img/87518773a58ac627a5208dda23bdc623_102.png)
 
-# 4. 初始化缩放器并缩放数据
-scaler = MinMaxScaler()
-X_scaled = scaler.fit_transform(X)
 
 ![](img/87518773a58ac627a5208dda23bdc623_104.png)
 
@@ -222,6 +212,16 @@ X_scaled = scaler.fit_transform(X)
 
 ![](img/87518773a58ac627a5208dda23bdc623_107.png)
 
+```python
+# 1. 获取与 y 的绝对相关性，并排序
+abs_correlations = correlations.abs().sort_values()
+# 2. 选择相关性最高的两个特征
+top_two_fields = abs_correlations.index[-2:]
+# 3. 使用这两个特征创建新的特征矩阵 X
+X = data[top_two_fields]
+# 4. 初始化缩放器并缩放数据
+scaler = MinMaxScaler()
+X_scaled = scaler.fit_transform(X)
 # 5. 将缩放后的数组转换回DataFrame，便于后续处理
 X_scaled_df = pd.DataFrame(X_scaled, columns=[f'{col}_scaled' for col in top_two_fields])
 ```

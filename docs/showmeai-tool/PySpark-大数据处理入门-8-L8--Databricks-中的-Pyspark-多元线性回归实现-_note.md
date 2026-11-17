@@ -49,6 +49,9 @@
 
 ![](img/759b85b7297b73430b32828500bf5bd4_13.png)
 
+
+![](img/759b85b7297b73430b32828500bf5bd4_15.png)
+
 ```python
 # 定义文件路径
 file_location = "/FileStore/tables/tips.csv"
@@ -56,9 +59,6 @@ file_type = "csv"
 
 # 读取CSV文件，第一行作为表头，并自动推断Schema
 df = spark.read.csv(file_location, header=True, inferSchema=True)
-
-![](img/759b85b7297b73430b32828500bf5bd4_15.png)
-
 # 查看数据前几行
 df.show()
 ```

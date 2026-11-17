@@ -34,6 +34,11 @@
 
 假设你想将几个数字相加。以下是一个实现此功能的程序。
 
+
+![](img/9f4bfdd28c8bae8cbeee05a388c5253a_5.png)
+
+![](img/9f4bfdd28c8bae8cbeee05a388c5253a_6.png)
+
 ```python
 # 输入：三个数字
 num1 = 3
@@ -42,11 +47,6 @@ num3 = 2
 
 # 处理：将它们相加
 total = num1 + num2 + num3
-
-![](img/9f4bfdd28c8bae8cbeee05a388c5253a_5.png)
-
-![](img/9f4bfdd28c8bae8cbeee05a388c5253a_6.png)
-
 # 输出：显示结果
 print(total)
 ```

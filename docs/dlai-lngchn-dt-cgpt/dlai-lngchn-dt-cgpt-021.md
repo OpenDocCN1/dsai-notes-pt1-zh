@@ -97,6 +97,9 @@ for text in doc_texts:
 
 接着，我们设置句子索引。这里使用OpenAI的GPT-3.5 Turbo作为LLM，设置温度为0，用于RAG的生成步骤。嵌入模型设置为`bge-small` v1.5。
 
+
+![](img/6f87d1fda84232c6f03ab28d46ab447f_33.png)
+
 ```python
 from llama_index.core import VectorStoreIndex, ServiceContext
 from llama_index.llms.openai import OpenAI
@@ -105,9 +108,6 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 llm = OpenAI(model="gpt-3.5-turbo", temperature=0)
 embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 service_context = ServiceContext.from_defaults(llm=llm, embed_model=embed_model)
-
-![](img/6f87d1fda84232c6f03ab28d46ab447f_33.png)
-
 index = VectorStoreIndex.from_documents(documents, service_context=service_context)
 ```
 
@@ -119,11 +119,11 @@ index = VectorStoreIndex.from_documents(documents, service_context=service_conte
 
 然后，我们设置句子窗口查询引擎，这将用于后续的高级RAG应用检索。
 
-```python
-from llama_index.core.indices.postprocessor import SentenceWindowNodePostprocessor
 
 ![](img/6f87d1fda84232c6f03ab28d46ab447f_39.png)
 
+```python
+from llama_index.core.indices.postprocessor import SentenceWindowNodePostprocessor
 postprocessor = SentenceWindowNodePostprocessor.from_defaults(window_size=3)
 query_engine = index.as_query_engine(node_postprocessors=[postprocessor])
 ```
@@ -237,6 +237,11 @@ tru.run_dashboard()
 
 现在，让我们回到笔记本，看看如何在代码中定义答案相关性反馈函数。
 
+
+![](img/6f87d1fda84232c6f03ab28d46ab447f_76.png)
+
+![](img/6f87d1fda84232c6f03ab28d46ab447f_78.png)
+
 ```python
 from trulens_eval import Feedback, Select
 from trulens_eval.feedback import Groundedness
@@ -244,11 +249,6 @@ from trulens_eval.feedback.provider.openai import OpenAI as TruLensOpenAI
 
 # 初始化提供者
 provider = TruLensOpenAI()
-
-![](img/6f87d1fda84232c6f03ab28d46ab447f_76.png)
-
-![](img/6f87d1fda84232c6f03ab28d46ab447f_78.png)
-
 # 定义答案相关性反馈函数
 f_answer_relevance = Feedback(provider.relevance_with_cot_reasoning, 
                              name="Answer Relevance"
@@ -488,11 +488,11 @@ TruLens提供了更广泛的评估集，以确保你构建的应用程序是**�
 
 现在我们已经设置了所有反馈函数，可以设置一个记录器对象来开始记录和评估。
 
-```python
-from trulens_eval import TruLlama
 
 ![](img/6f87d1fda84232c6f03ab28d46ab447f_180.png)
 
+```python
+from trulens_eval import TruLlama
 # 创建 TruLlama 记录器，集成 TruLens 与 LlamaIndex
 tru_recorder = TruLlama(
     query_engine,

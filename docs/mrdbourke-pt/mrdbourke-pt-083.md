@@ -211,15 +211,15 @@ def display_random_images(dataset: torch.utils.data.Dataset,
 
 现在，我们可以使用这个函数来可视化我们自定义数据集中的图像。
 
+
+![](img/e4cb044e1f0cda71b15485466b4e0c9c_2.png)
+
 ```python
 # 显示原生ImageFolder数据集中的图像
 display_random_images(dataset=train_data,
                       classes=class_names,
                       n=5,
                       seed=42)
-
-![](img/e4cb044e1f0cda71b15485466b4e0c9c_2.png)
-
 # 显示自定义数据集中的图像
 display_random_images(dataset=train_data_custom,
                       classes=class_names,

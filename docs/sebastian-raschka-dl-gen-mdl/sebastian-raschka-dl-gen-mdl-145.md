@@ -32,6 +32,9 @@
 
 ![](img/b2e6c1239a4480a5add3f26581c2e9bb_18.png)
 
+
+![](img/b2e6c1239a4480a5add3f26581c2e9bb_20.png)
+
 ```python
 import torch
 from torchvision import datasets, transforms
@@ -40,9 +43,6 @@ from torchvision import datasets, transforms
 batch_size = 256
 learning_rate = 0.0005
 num_epochs = 50
-
-![](img/b2e6c1239a4480a5add3f26581c2e9bb_20.png)
-
 # 加载MNIST数据集，仅使用图像
 train_dataset = datasets.MNIST(root='./data',
                                train=True,
@@ -79,9 +79,6 @@ train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
 
 ![](img/b2e6c1239a4480a5add3f26581c2e9bb_40.png)
 
-```python
-import torch.nn as nn
-import torch.nn.functional as F
 
 ![](img/b2e6c1239a4480a5add3f26581c2e9bb_42.png)
 
@@ -89,6 +86,9 @@ import torch.nn.functional as F
 
 ![](img/b2e6c1239a4480a5add3f26581c2e9bb_45.png)
 
+```python
+import torch.nn as nn
+import torch.nn.functional as F
 class ConvVAE(nn.Module):
     def __init__(self):
         super(ConvVAE, self).__init__()
@@ -219,14 +219,14 @@ def train(model, train_loader, optimizer, epoch, beta=1.0):
 
 ![](img/b2e6c1239a4480a5add3f26581c2e9bb_78.png)
 
-```python
-model = ConvVAE()
-optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
 ![](img/b2e6c1239a4480a5add3f26581c2e9bb_80.png)
 
 ![](img/b2e6c1239a4480a5add3f26581c2e9bb_82.png)
 
+```python
+model = ConvVAE()
+optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 for epoch in range(1, num_epochs + 1):
     train(model, train_loader, optimizer, epoch)
 ```
@@ -255,16 +255,6 @@ for epoch in range(1, num_epochs + 1):
 
 ![](img/b2e6c1239a4480a5add3f26581c2e9bb_96.png)
 
-```python
-def generate_samples(model, num_samples=10):
-    """从学习到的潜在分布中采样并生成新图像。"""
-    model.eval()
-    with torch.no_grad():
-        # 从标准正态分布采样
-        z = torch.randn(num_samples, 2)
-        # 仅使用解码器生成图像
-        samples = model.decode(z)
-        return samples
 
 ![](img/b2e6c1239a4480a5add3f26581c2e9bb_98.png)
 
@@ -276,6 +266,16 @@ def generate_samples(model, num_samples=10):
 
 ![](img/b2e6c1239a4480a5add3f26581c2e9bb_104.png)
 
+```python
+def generate_samples(model, num_samples=10):
+    """从学习到的潜在分布中采样并生成新图像。"""
+    model.eval()
+    with torch.no_grad():
+        # 从标准正态分布采样
+        z = torch.randn(num_samples, 2)
+        # 仅使用解码器生成图像
+        samples = model.decode(z)
+        return samples
 # 生成并显示10个样本
 new_digits = generate_samples(model, 10)
 # ... 使用matplotlib等库显示new_digits中的图像

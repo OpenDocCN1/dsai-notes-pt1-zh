@@ -19,12 +19,15 @@
 3.  定义用于调用图像描述模型的函数。
 4.  定义一个将图像转换为base64格式的函数，因为某些API需要这种格式的输入。
 
-```python
-import requests
-import base64
 
 ![](img/56c23ddbd7867665b2fb6a53208d97ac_4.png)
 
+
+![](img/56c23ddbd7867665b2fb6a53208d97ac_6.png)
+
+```python
+import requests
+import base64
 # 设置API密钥
 API_KEY = "your_api_key_here"
 API_URL = "https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-base"
@@ -34,9 +37,6 @@ def get_completion(image_base64):
     headers = {"Authorization": f"Bearer {API_KEY}"}
     response = requests.post(API_URL, headers=headers, data=image_base64)
     return response.json()
-
-![](img/56c23ddbd7867665b2fb6a53208d97ac_6.png)
-
 # 定义图像转base64的函数
 def image_to_base64(image_path):
     with open(image_path, "rb") as image_file:

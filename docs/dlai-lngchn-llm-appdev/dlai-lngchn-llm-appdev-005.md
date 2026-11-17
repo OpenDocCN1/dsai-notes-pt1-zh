@@ -12,14 +12,14 @@
 
 上一节我们介绍了课程目标，本节中我们来看看如何准备开发环境。首先，我们需要导入必要的库和设置环境变量。
 
-```python
-import os
-# 假设已设置 OPENAI_API_KEY 环境变量
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_6.png)
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_8.png)
 
+```python
+import os
+# 假设已设置 OPENAI_API_KEY 环境变量
 from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
 from langchain.document_loaders import CSVLoader
@@ -50,9 +50,6 @@ from IPython.display import display, Markdown
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_20.png)
 
-```python
-file = 'OutdoorClothingCatalog_1000.csv'
-loader = CSVLoader(file_path=file)
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_22.png)
 
@@ -60,12 +57,15 @@ loader = CSVLoader(file_path=file)
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_26.png)
 
-from langchain.indexes import VectorstoreIndexCreator
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_28.png)
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_30.png)
 
+```python
+file = 'OutdoorClothingCatalog_1000.csv'
+loader = CSVLoader(file_path=file)
+from langchain.indexes import VectorstoreIndexCreator
 index = VectorstoreIndexCreator(
     vectorstore_cls=DocArrayInMemorySearch
 ).from_loaders([loader])
@@ -210,9 +210,6 @@ print(docs[0].page_content)
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_105.png)
 
-```python
-from langchain.embeddings import OpenAIEmbeddings
-embedding = OpenAIEmbeddings()
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_107.png)
 
@@ -220,14 +217,17 @@ embedding = OpenAIEmbeddings()
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_110.png)
 
-# 为单个句子创建嵌入示例
-sample_embedding = embedding.embed_query("Hi, my name is Harrison")
-print(f"嵌入向量维度: {len(sample_embedding)}")
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_112.png)
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_114.png)
 
+```python
+from langchain.embeddings import OpenAIEmbeddings
+embedding = OpenAIEmbeddings()
+# 为单个句子创建嵌入示例
+sample_embedding = embedding.embed_query("Hi, my name is Harrison")
+print(f"嵌入向量维度: {len(sample_embedding)}")
 # 为所有文档创建嵌入并构建向量存储
 db = DocArrayInMemorySearch.from_documents(docs, embedding)
 ```
@@ -272,12 +272,12 @@ print(docs_result[0].page_content)
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_139.png)
 
-```python
-retriever = db.as_retriever()
-llm = ChatOpenAI(temperature=0.0)
 
 ![](img/89a5977cf51ecc58c6386d1d630341b1_141.png)
 
+```python
+retriever = db.as_retriever()
+llm = ChatOpenAI(temperature=0.0)
 # 手动模拟问答过程（仅示意）
 # 1. 检索相关文档
 relevant_docs = retriever.get_relevant_documents(query)

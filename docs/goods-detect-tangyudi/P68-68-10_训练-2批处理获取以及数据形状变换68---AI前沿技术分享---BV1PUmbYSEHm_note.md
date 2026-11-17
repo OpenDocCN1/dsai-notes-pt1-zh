@@ -59,12 +59,15 @@ print(glocalization) # 输出类似，也是一个列表
 为了解决上述问题，我们使用 `train_tools.reshape_list` 工具函数。这个函数的作用正是将嵌套的列表转换成一个单层的列表。
 
 **代码示例：实施转换与批处理**
-```python
-# 1. 将需要批处理的数据组合成一个列表
-data_to_batch = [image, gclasses, glocalization, gscores]
 
 ![](img/f5feffa018a44db75867a5659a9bfe4a_25.png)
 
+
+![](img/f5feffa018a44db75867a5659a9bfe4a_27.png)
+
+```python
+# 1. 将需要批处理的数据组合成一个列表
+data_to_batch = [image, gclasses, glocalization, gscores]
 # 2. 使用 reshape_list 函数转换嵌套结构
 flattened_list = train_tools.reshape_list(data_to_batch)
 
@@ -75,9 +78,6 @@ batch_tensors = tf.train.batch(
     num_threads=4,
     capacity=5 * FLAGS.batch_size
 )
-
-![](img/f5feffa018a44db75867a5659a9bfe4a_27.png)
-
 # 打印批处理后的结果以验证
 print(batch_tensors)
 ```

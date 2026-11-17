@@ -35,15 +35,15 @@ plt.savefig('my_plot.png')
 
 ![](img/2056f31602b26fc416661c899219e914_1.png)
 
+
+![](img/2056f31602b26fc416661c899219e914_3.png)
+
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
 
 x = np.linspace(0, 10, 100)
 y = np.sin(x)
-
-![](img/2056f31602b26fc416661c899219e914_3.png)
-
 plt.plot(x, y)
 plt.title('一个简单的正弦波')
 ```

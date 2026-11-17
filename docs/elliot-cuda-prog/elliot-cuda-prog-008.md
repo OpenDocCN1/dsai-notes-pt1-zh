@@ -141,13 +141,16 @@ int col = blockIdx.x * blockDim.x + (threadIdx.x / ELEMENTS_PER_THREAD); // 示�
 **索引计算**：这是最复杂的部分。需要仔细计算每个线程应该加载`As`和`Bs`中的哪个元素，以及如何将共享内存中的索引映射到全局内存。
 
 以下是一个简化的加载步骤示例：
+
+![](img/0f9ea5e8bacc4cc914094ea7b918190a_17.png)
+
+
+![](img/0f9ea5e8bacc4cc914094ea7b918190a_19.png)
+
 ```cpp
 // 假设 TILE_SIZE = BLOCK_SIZE
 int tx = threadIdx.x;
 int ty = threadIdx.y;
-
-![](img/0f9ea5e8bacc4cc914094ea7b918190a_17.png)
-
 // 加载 A 的 tile
 int aRow = blockIdx.y * TILE_SIZE + ty;
 int aCol = k * TILE_SIZE + tx; // k 是外层循环索引
@@ -156,9 +159,6 @@ if (aRow < M && aCol < K) {
 } else {
     As[ty][tx] = 0.0f;
 }
-
-![](img/0f9ea5e8bacc4cc914094ea7b918190a_19.png)
-
 // 加载 B 的 tile
 int bRow = k * TILE_SIZE + ty;
 int bCol = blockIdx.x * TILE_SIZE + tx;

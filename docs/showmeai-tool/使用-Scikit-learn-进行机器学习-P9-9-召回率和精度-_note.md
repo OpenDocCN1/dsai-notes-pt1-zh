@@ -120,21 +120,21 @@ print(f"\n平衡准确率：{balanced_accuracy:.2f}")
 
 ![](img/4322a1ad92201482e285377a84085572_15.png)
 
-```python
-# 二分类示例
-y_true_binary = [0, 1, 0, 1, 1, 0, 1] # 0代表负类，1代表正类
-y_pred_binary = [0, 1, 0, 0, 1, 0, 1]
 
 ![](img/4322a1ad92201482e285377a84085572_17.png)
 
 ![](img/4322a1ad92201482e285377a84085572_19.png)
 
-# 计算正类的召回率和精确度
-recall_pos = recall_score(y_true_binary, y_pred_binary, pos_label=1)
-precision_pos = precision_score(y_true_binary, y_pred_binary, pos_label=1)
 
 ![](img/4322a1ad92201482e285377a84085572_21.png)
 
+```python
+# 二分类示例
+y_true_binary = [0, 1, 0, 1, 1, 0, 1] # 0代表负类，1代表正类
+y_pred_binary = [0, 1, 0, 0, 1, 0, 1]
+# 计算正类的召回率和精确度
+recall_pos = recall_score(y_true_binary, y_pred_binary, pos_label=1)
+precision_pos = precision_score(y_true_binary, y_pred_binary, pos_label=1)
 print(f"\n二分类 - 正类召回率：{recall_pos:.2f}")
 print(f"二分类 - 正类精确度：{precision_pos:.2f}")
 ```

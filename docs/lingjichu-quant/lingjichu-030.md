@@ -108,12 +108,12 @@ def three_sigma(data_series, n=3):
 
 ![](img/bb26a03d0fb6b456033ed804c713dba4_19.png)
 
-```python
-# 应用函数，N=1
-processed_data = three_sigma(original_data, n=1)
 
 ![](img/bb26a03d0fb6b456033ed804c713dba4_21.png)
 
+```python
+# 应用函数，N=1
+processed_data = three_sigma(original_data, n=1)
 # 可以绘制处理前后的数据分布图进行对比
 import matplotlib.pyplot as plt
 fig, axes = plt.subplots(1, 2, figsize=(12, 4))

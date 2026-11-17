@@ -55,6 +55,9 @@
 理论可能有些抽象，让我们通过代码来实际验证这一区别。我们将使用 PyTorch 和 SciPy 库进行演示。
 
 **代码示例：**
+
+![](img/36b05a12588bea9fecc1b42d134f7669_15.png)
+
 ```python
 import torch
 import numpy as np
@@ -80,9 +83,6 @@ input_np = input_tensor.numpy().squeeze()
 weights_np = weights.detach().numpy().squeeze()
 output_corr = signal.correlate2d(input_np, weights_np, mode='valid')
 print(f"SciPy correlate2d output: {output_corr.item()}")
-
-![](img/36b05a12588bea9fecc1b42d134f7669_15.png)
-
 # 4. 使用 SciPy 的卷积函数（真正的卷积）进行对比
 output_conv = signal.convolve2d(input_np, weights_np, mode='valid')
 print(f"SciPy convolve2d output: {output_conv.item()}")

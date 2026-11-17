@@ -90,18 +90,9 @@
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_48.png)
 
-```cpp
-// 一个既可在主机运行也可在设备运行的函数
-__host__ __device__ void dh_func() {
-    printf("I can run on both CPU and GPU\n");
-}
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_50.png)
 
-// 一个设备函数
-__device__ void d_func() {
-    dh_func(); // 设备函数可以调用主机-设备函数
-}
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_52.png)
 
@@ -111,11 +102,6 @@ __device__ void d_func() {
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_58.png)
 
-// 一个内核函数
-__global__ void d_kernel() {
-    dh_func(); // 内核可以调用主机-设备函数
-    d_func();  // 内核可以调用设备函数
-}
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_60.png)
 
@@ -125,6 +111,20 @@ __global__ void d_kernel() {
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_66.png)
 
+```cpp
+// 一个既可在主机运行也可在设备运行的函数
+__host__ __device__ void dh_func() {
+    printf("I can run on both CPU and GPU\n");
+}
+// 一个设备函数
+__device__ void d_func() {
+    dh_func(); // 设备函数可以调用主机-设备函数
+}
+// 一个内核函数
+__global__ void d_kernel() {
+    dh_func(); // 内核可以调用主机-设备函数
+    d_func();  // 内核可以调用设备函数
+}
 // 一个主机函数
 __host__ void host_func() {
     dh_func(); // 主机函数可以调用主机-设备函数
@@ -219,16 +219,16 @@ int main() {
 
 请看以下示例：
 
-```cpp
-__host__ __device__ void func(int *counter) {
-    (*counter)++;
-    printf("Counter: %d\n", *counter);
-}
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_108.png)
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_110.png)
 
+```cpp
+__host__ __device__ void func(int *counter) {
+    (*counter)++;
+    printf("Counter: %d\n", *counter);
+}
 __global__ void print_k(int *counter) {
     func(counter); // 在GPU上调用func
 }
@@ -304,12 +304,6 @@ Main: 2
 **目标**：实现一个函数，对数组的所有元素执行 `arr[i]++` 操作。
 
 **初始方案（CPU串行，GPU单线程串行）**：
-```cpp
-__host__ __device__ void func(int *arr, int n) {
-    for (int i = 0; i < n; ++i) {
-        arr[i]++;
-    }
-}
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_137.png)
 
@@ -317,6 +311,12 @@ __host__ __device__ void func(int *arr, int n) {
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_141.png)
 
+```cpp
+__host__ __device__ void func(int *arr, int n) {
+    for (int i = 0; i < n; ++i) {
+        arr[i]++;
+    }
+}
 int main() {
     int n = 1024;
     int *h_arr = new int[n];
@@ -337,10 +337,6 @@ int main() {
 
 **优化方案（GPU并行）**：
 为了利用GPU的并行能力，我们修改调用方式，让每个GPU线程处理一个数组元素。
-```cpp
-__host__ __device__ void func(int *elem) {
-    (*elem)++; // 只操作单个元素
-}
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_143.png)
 
@@ -348,12 +344,6 @@ __host__ __device__ void func(int *elem) {
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_147.png)
 
-__global__ void d_parallel(int *arr, int n) {
-    int idx = threadIdx.x + blockIdx.x * blockDim.x;
-    if (idx < n) {
-        func(&arr[idx]); // 每个线程调用func处理一个元素
-    }
-}
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_149.png)
 
@@ -361,6 +351,16 @@ __global__ void d_parallel(int *arr, int n) {
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_153.png)
 
+```cpp
+__host__ __device__ void func(int *elem) {
+    (*elem)++; // 只操作单个元素
+}
+__global__ void d_parallel(int *arr, int n) {
+    int idx = threadIdx.x + blockIdx.x * blockDim.x;
+    if (idx < n) {
+        func(&arr[idx]); // 每个线程调用func处理一个元素
+    }
+}
 int main() {
     // ... 分配和初始化内存
     // CPU端仍串行
@@ -387,14 +387,6 @@ int main() {
 
 **最终方案（统一的函数接口）**：
 我们可以让 `func` 函数自身根据调用者决定行为，提供更统一的接口。
-```cpp
-__host__ __device__ void func(int *arr, int n) {
-    // 当从GPU并行调用时，n=1，每个线程增加一个元素
-    // 当从CPU串行调用时，n=数组长度，循环增加所有元素
-    for (int i = 0; i < n; ++i) {
-        arr[i]++;
-    }
-}
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_164.png)
 
@@ -406,6 +398,14 @@ __host__ __device__ void func(int *arr, int n) {
 
 ![](img/0cd3f371fd0cd709168919e0c2635342_172.png)
 
+```cpp
+__host__ __device__ void func(int *arr, int n) {
+    // 当从GPU并行调用时，n=1，每个线程增加一个元素
+    // 当从CPU串行调用时，n=数组长度，循环增加所有元素
+    for (int i = 0; i < n; ++i) {
+        arr[i]++;
+    }
+}
 __global__ void d_parallel_unified(int *arr, int n) {
     int idx = threadIdx.x + blockIdx.x * blockDim.x;
     if (idx < n) {

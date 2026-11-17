@@ -126,13 +126,13 @@ print(final_filtered)
 为了量化预处理的效果，我们可以比较各处理阶段列表的长度。
 
 以下是计算和比较长度的代码：
+
+![](img/1a5a97a84bd2b74d7a0a50cb59257062_14.png)
+
 ```python
 original_length = len(gold_word_tokenized)
 after_punct_length = len(post_punctuation)
 final_length = len(final_filtered)
-
-![](img/1a5a97a84bd2b74d7a0a50cb59257062_14.png)
-
 print(f"原始列表长度: {original_length}")
 print(f"移除标点后长度: {after_punct_length}")
 print(f"最终列表长度（移除标点和停用词后）: {final_length}")

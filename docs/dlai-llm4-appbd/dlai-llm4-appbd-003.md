@@ -82,8 +82,9 @@ def display_image(url):
 
 让我们使用一张羊驼（Llama）的图片进行测试。
 
-```python
 image_url = "https://example.com/llama_image.jpg"
+
+```python
 display_image(image_url)
 
 prompt = "What's in this image?"
@@ -101,9 +102,10 @@ print(response)
 
 与 Llama 3.2 不同，Llama 4 原生支持处理多张图像，在最多五张图像的评估中表现良好。让我们使用两张不同的羊驼图片。
 
-```python
 image_url_1 = "https://example.com/llama1.jpg"
 image_url_2 = "https://example.com/llama2.jpg"
+
+```python
 display_image(image_url_1)
 display_image(image_url_2)
 

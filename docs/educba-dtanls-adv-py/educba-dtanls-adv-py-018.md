@@ -126,19 +126,19 @@ encoded_message = full_message.encode('utf-8')
 
 ![](img/19c5c57765adcd8d4dd74ebecaa99038_57.png)
 
-```python
-from threading import Thread
 
 ![](img/19c5c57765adcd8d4dd74ebecaa99038_59.png)
 
-# 创建并启动接收消息的线程
-receive_thread = Thread(target=receive_data)
-receive_thread.start()
 
 ![](img/19c5c57765adcd8d4dd74ebecaa99038_61.png)
 
 ![](img/19c5c57765adcd8d4dd74ebecaa99038_62.png)
 
+```python
+from threading import Thread
+# 创建并启动接收消息的线程
+receive_thread = Thread(target=receive_data)
+receive_thread.start()
 # 主线程继续执行发送消息的函数
 send_data()
 ```

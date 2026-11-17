@@ -50,20 +50,20 @@ prompt = """
 """
 response = get_completion(prompt)
 print(response)
-```
-
-模型返回的翻译结果是：“Hola, me gustaría ordenar una licuadora.”
 
 ![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_8.png)
 
-### 语言识别
 
 ![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_10.png)
 
-模型不仅可以翻译，还可以识别文本所使用的语言。
 
 ![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_12.png)
 
+```
+
+模型返回的翻译结果是：“Hola, me gustaría ordenar una licuadora.”
+### 语言识别
+模型不仅可以翻译，还可以识别文本所使用的语言。
 ```python
 prompt = """
 告诉我这是什么语言：
@@ -254,14 +254,14 @@ for text in texts:
     print(f"原始文本: {text}")
     print(f"纠正后: {response}")
     print()
-```
 
 ![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_37.png)
 
-模型能够成功纠正这些句子中的语法错误。
 
 ![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_39.png)
 
+```
+模型能够成功纠正这些句子中的语法错误。
 ### 高级校对与风格转换
 
 我们还可以要求模型进行更彻底的修改，例如改变文本语气、使其更吸引人，并遵循特定的写作风格（如APA格式）。
@@ -300,10 +300,10 @@ prompt = f"""
 """
 response = get_completion(prompt)
 print(response)
-```
 
 ![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_46.png)
 
+```
 执行后，你会得到一篇经过润色、格式规范、语气专业的评论。
 
 为了更直观地看到修改之处，我们可以使用`redlines`库来比较原始文本和模型输出之间的差异。

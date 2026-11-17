@@ -85,12 +85,17 @@ train_encodings = tokenizer(train_texts.tolist()， truncation=True， padding=T
 
 ![](img/3d9d7ce1bd24c60024253efa02b91d54_25.png)
 
-```python
-import torch
-from torch.utils.data import Dataset， DataLoader
 
 ![](img/3d9d7ce1bd24c60024253efa02b91d54_27.png)
 
+
+![](img/3d9d7ce1bd24c60024253efa02b91d54_29.png)
+
+![](img/3d9d7ce1bd24c60024253efa02b91d54_30.png)
+
+```python
+import torch
+from torch.utils.data import Dataset， DataLoader
 class ReviewDataset(Dataset):
     def __init__(self， encodings， labels):
         self.encodings = encodings
@@ -101,11 +106,6 @@ class ReviewDataset(Dataset):
         return item
     def __len__(self):
         return len(self.labels)
-
-![](img/3d9d7ce1bd24c60024253efa02b91d54_29.png)
-
-![](img/3d9d7ce1bd24c60024253efa02b91d54_30.png)
-
 # 创建数据集和数据加载器
 train_dataset = ReviewDataset(train_encodings， train_labels)
 train_loader = DataLoader(train_dataset， batch_size=16， shuffle=True)
@@ -129,13 +129,13 @@ train_loader = DataLoader(train_dataset， batch_size=16， shuffle=True)
 
 ![](img/3d9d7ce1bd24c60024253efa02b91d54_37.png)
 
-```python
-from transformers import AdamW
 
 ![](img/3d9d7ce1bd24c60024253efa02b91d54_39.png)
 
 ![](img/3d9d7ce1bd24c60024253efa02b91d54_41.png)
 
+```python
+from transformers import AdamW
 optimizer = AdamW(model.parameters()， lr=5e-5)
 
 for epoch in range(3):
@@ -176,11 +176,11 @@ for epoch in range(3):
 
 ![](img/3d9d7ce1bd24c60024253efa02b91d54_54.png)
 
-```python
-from transformers import get_linear_schedule_with_warmup
 
 ![](img/3d9d7ce1bd24c60024253efa02b91d54_56.png)
 
+```python
+from transformers import get_linear_schedule_with_warmup
 # 创建优化器和调度器
 optimizer = AdamW(model.parameters()， lr=5e-5， weight_decay=0.01)
 scheduler = get_linear_schedule_with_warmup(optimizer， num_warmup_steps=0， num_training_steps=len(train_loader)*3)
@@ -206,11 +206,17 @@ Hugging Face库提供了更高级的 `Trainer` 类，它封装了训练、评估
 
 以下是使用 `Trainer` 的示例：
 
-```python
-from transformers import Trainer， TrainingArguments
 
 ![](img/3d9d7ce1bd24c60024253efa02b91d54_68.png)
 
+
+![](img/3d9d7ce1bd24c60024253efa02b91d54_70.png)
+
+
+![](img/3d9d7ce1bd24c60024253efa02b91d54_72.png)
+
+```python
+from transformers import Trainer， TrainingArguments
 training_args = TrainingArguments(
     output_dir=‘./results’，
     num_train_epochs=3，
@@ -219,18 +225,12 @@ training_args = TrainingArguments(
     weight_decay=0.01，
     logging_dir=‘./logs’，
 )
-
-![](img/3d9d7ce1bd24c60024253efa02b91d54_70.png)
-
 trainer = Trainer(
     model=model，
     args=training_args，
     train_dataset=train_dataset，
     eval_dataset=val_dataset，
 )
-
-![](img/3d9d7ce1bd24c60024253efa02b91d54_72.png)
-
 trainer.train()
 ```
 

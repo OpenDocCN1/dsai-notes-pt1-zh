@@ -10,24 +10,24 @@
 
 ![](img/e2570b5dfb6dc99b78b9fb2d94eeec7a_3.png)
 
-```python
-import numpy as np
-from sklearn import datasets
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
 
 ![](img/e2570b5dfb6dc99b78b9fb2d94eeec7a_5.png)
 
 ![](img/e2570b5dfb6dc99b78b9fb2d94eeec7a_7.png)
 
-# 加载鸢尾花数据集
-data = datasets.load_iris(return_X_y=True)
-X, y = data
 
 ![](img/e2570b5dfb6dc99b78b9fb2d94eeec7a_9.png)
 
 ![](img/e2570b5dfb6dc99b78b9fb2d94eeec7a_11.png)
 
+```python
+import numpy as np
+from sklearn import datasets
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+# 加载鸢尾花数据集
+data = datasets.load_iris(return_X_y=True)
+X, y = data
 # 划分训练集和测试集
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1024)
 ```

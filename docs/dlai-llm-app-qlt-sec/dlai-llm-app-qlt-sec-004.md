@@ -105,6 +105,9 @@ CONFIDENTIAL_ENTITIES = {"PERSON", "PRODUCT", "ORG"}
 
 接下来，创建一个基于实体模型的评估指标函数。
 
+
+![](img/bcc9159ebf7d99d4996e39f7204ddf80_5.png)
+
 ```python
 from whylogs.core.udf_schema import register_metric_udf
 
@@ -115,9 +118,6 @@ def prompt_entity_leakage(text: str) -> int:
         if ent.label_ in CONFIDENTIAL_ENTITIES:
             return 1
     return 0
-
-![](img/bcc9159ebf7d99d4996e39f7204ddf80_5.png)
-
 # 为响应创建类似的指标
 @register_metric_udf(["response"])
 def response_entity_leakage(text: str) -> int:

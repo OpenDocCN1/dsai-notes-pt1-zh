@@ -30,11 +30,11 @@ P(dropout) = 1 - keep_prob
 
 以下是一个简单的 Dropout 层的代码实现：
 
-```python
-import numpy as np
 
 ![](img/253ca2a72ec0e1612fa4a7ffb7b0a566_2.png)
 
+```python
+import numpy as np
 def dropout(X, keep_prob):
     """
     Dropout 层

@@ -44,12 +44,12 @@ plt.show()
 
 ![](img/3e3d7831ea348ad14d326743a360c01f_7.png)
 
-```python
-import numpy as np
-from PIL import Image
 
 ![](img/3e3d7831ea348ad14d326743a360c01f_8.png)
 
+```python
+import numpy as np
+from PIL import Image
 height = 64
 width = 64
 # 创建一个三维数组（高度，宽度，RGB三通道）

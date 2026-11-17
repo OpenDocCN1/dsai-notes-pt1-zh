@@ -143,9 +143,6 @@ df.to_csv(‘imdb_renamed.csv’, index=False)
 
 ![](img/a7a047c14a6293beebbf971ebf029967_73.png)
 
-```python
-import spacy
-spacy_en = spacy.load(‘en_core_web_sm’) # 需要先运行 ‘python -m spacy download en_core_web_sm’ 下载模型
 
 ![](img/a7a047c14a6293beebbf971ebf029967_75.png)
 
@@ -157,6 +154,9 @@ spacy_en = spacy.load(‘en_core_web_sm’) # 需要先运行 ‘python -m spacy
 
 ![](img/a7a047c14a6293beebbf971ebf029967_82.png)
 
+```python
+import spacy
+spacy_en = spacy.load(‘en_core_web_sm’) # 需要先运行 ‘python -m spacy download en_core_web_sm’ 下载模型
 def tokenizer(text):
     return [token.text for token in spacy_en.tokenizer(text)]
 ```
@@ -171,8 +171,6 @@ def tokenizer(text):
 
 ![](img/a7a047c14a6293beebbf971ebf029967_89.png)
 
-```python
-from torchtext.legacy import data
 
 ![](img/a7a047c14a6293beebbf971ebf029967_91.png)
 
@@ -182,6 +180,8 @@ from torchtext.legacy import data
 
 ![](img/a7a047c14a6293beebbf971ebf029967_95.png)
 
+```python
+from torchtext.legacy import data
 TEXT = data.Field(tokenize=tokenizer, batch_first=True)
 LABEL = data.LabelField(dtype=torch.long, batch_first=True)
 ```
@@ -329,13 +329,13 @@ train_loader, valid_loader, test_loader = data.BucketIterator.splits(
 
 ![](img/a7a047c14a6293beebbf971ebf029967_173.png)
 
-```python
-import torch.nn as nn
 
 ![](img/a7a047c14a6293beebbf971ebf029967_175.png)
 
 ![](img/a7a047c14a6293beebbf971ebf029967_177.png)
 
+```python
+import torch.nn as nn
 class RNN(nn.Module):
     def __init__(self, input_dim, embedding_dim, hidden_dim, output_dim):
         super().__init__()
@@ -433,6 +433,11 @@ def train(model, iterator, optimizer, criterion):
 4.  将索引张量输入模型，得到逻辑值（logits）。
 5.  应用Softmax函数得到概率分布。
 
+
+![](img/a7a047c14a6293beebbf971ebf029967_210.png)
+
+![](img/a7a047c14a6293beebbf971ebf029967_212.png)
+
 ```python
 def predict_sentiment(model, sentence):
     model.eval()
@@ -442,11 +447,6 @@ def predict_sentiment(model, sentence):
     logits = model(tensor)
     probabilities = torch.softmax(logits, dim=1)
     return probabilities[0][1].item() # 返回正面情感的概率
-
-![](img/a7a047c14a6293beebbf971ebf029967_210.png)
-
-![](img/a7a047c14a6293beebbf971ebf029967_212.png)
-
 # 示例
 positive_prob = predict_sentiment(model, “This is such an awesome movie, I really love it!”)
 print(f“正面概率: {positive_prob:.2%}”) # 可能输出：98%

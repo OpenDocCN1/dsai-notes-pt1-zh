@@ -152,26 +152,14 @@ all_context_vectors = torch.matmul(attention_weights_matrix, inputs)
 
 ![](img/bee02a5463ba446d9eed4413792631b4_29.png)
 
-```python
-torch.manual_seed(123)
-d_in = inputs.shape[1] # 输入维度，例如3
-d_out = 2 # 输出/上下文向量维度，可自由设定
 
 ![](img/bee02a5463ba446d9eed4413792631b4_31.png)
 
-# 初始化可训练的权重矩阵
-W_query = torch.nn.Parameter(torch.rand(d_in, d_out))
-W_key = torch.nn.Parameter(torch.rand(d_in, d_out))
-W_value = torch.nn.Parameter(torch.rand(d_in, d_out))
 
 ![](img/bee02a5463ba446d9eed4413792631b4_33.png)
 
 ![](img/bee02a5463ba446d9eed4413792631b4_34.png)
 
-# 1. 线性变换
-query_2 = torch.matmul(inputs[1], W_query) # q_2
-keys = torch.matmul(inputs, W_key) # 所有 k_i
-values = torch.matmul(inputs, W_value) # 所有 v_i
 
 ![](img/bee02a5463ba446d9eed4413792631b4_36.png)
 
@@ -187,6 +175,18 @@ values = torch.matmul(inputs, W_value) # 所有 v_i
 
 ![](img/bee02a5463ba446d9eed4413792631b4_47.png)
 
+```python
+torch.manual_seed(123)
+d_in = inputs.shape[1] # 输入维度，例如3
+d_out = 2 # 输出/上下文向量维度，可自由设定
+# 初始化可训练的权重矩阵
+W_query = torch.nn.Parameter(torch.rand(d_in, d_out))
+W_key = torch.nn.Parameter(torch.rand(d_in, d_out))
+W_value = torch.nn.Parameter(torch.rand(d_in, d_out))
+# 1. 线性变换
+query_2 = torch.matmul(inputs[1], W_query) # q_2
+keys = torch.matmul(inputs, W_key) # 所有 k_i
+values = torch.matmul(inputs, W_value) # 所有 v_i
 # 2. 计算注意力分数（针对查询2）
 attention_scores_2 = torch.matmul(query_2, keys.T) # q_2 与所有 k_i 点积
 
@@ -210,13 +210,13 @@ context_vector_2 = torch.matmul(attention_weights_2, values)
 *   对分数矩阵的每一行进行缩放和Softmax，得到注意力权重矩阵。
 *   使用注意力权重矩阵对值矩阵进行加权求和，得到所有上下文向量。
 
-```python
-import torch.nn as nn
 
 ![](img/bee02a5463ba446d9eed4413792631b4_49.png)
 
 ![](img/bee02a5463ba446d9eed4413792631b4_51.png)
 
+```python
+import torch.nn as nn
 class SelfAttentionV1(nn.Module):
     def __init__(self, d_in, d_out):
         super().__init__()
@@ -317,6 +317,11 @@ masked_attn_weights_dropout = dropout(masked_attn_weights)
 
 现在，我们将因果掩码和Dropout整合到之前的自注意力类中，创建一个完整的**因果自注意力**类。
 
+
+![](img/bee02a5463ba446d9eed4413792631b4_77.png)
+
+![](img/bee02a5463ba446d9eed4413792631b4_78.png)
+
 ```python
 class CausalAttention(nn.Module):
     def __init__(self, d_in, d_out, context_length, dropout_rate=0.0):
@@ -351,11 +356,6 @@ class CausalAttention(nn.Module):
 
         context_vec = torch.matmul(attn_weights, values)
         return context_vec
-
-![](img/bee02a5463ba446d9eed4413792631b4_77.png)
-
-![](img/bee02a5463ba446d9eed4413792631b4_78.png)
-
 # 使用示例（考虑批量输入）
 batch = torch.stack([inputs, inputs], dim=0) # 形状: (2, 6, 3)
 ca = CausalAttention(d_in=3, d_out=2, context_length=6, dropout_rate=0.0)

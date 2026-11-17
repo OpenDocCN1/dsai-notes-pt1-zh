@@ -128,16 +128,16 @@ UMAP有两个主要超参数：
 
 ![](img/08dfae8c8d53152487bb3d0841916489_35.png)
 
-```python
-import umap
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.datasets import load_digits
 
 ![](img/08dfae8c8d53152487bb3d0841916489_37.png)
 
 ![](img/08dfae8c8d53152487bb3d0841916489_39.png)
 
+```python
+import umap
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_digits
 # 加载示例数据集
 digits = load_digits()
 data = digits.data
@@ -146,15 +146,15 @@ labels = digits.target
 
 接下来，我们创建UMAP转换器并拟合数据。我们将尝试二维和三维嵌入。
 
-```python
-# 创建UMAP转换器，降至2维
-reducer_2d = umap.UMAP(n_components=2, n_neighbors=15, min_dist=0.1, metric='euclidean')
-embedding_2d = reducer_2d.fit_transform(data)
 
 ![](img/08dfae8c8d53152487bb3d0841916489_41.png)
 
 ![](img/08dfae8c8d53152487bb3d0841916489_42.png)
 
+```python
+# 创建UMAP转换器，降至2维
+reducer_2d = umap.UMAP(n_components=2, n_neighbors=15, min_dist=0.1, metric='euclidean')
+embedding_2d = reducer_2d.fit_transform(data)
 # 创建UMAP转换器，降至3维
 reducer_3d = umap.UMAP(n_components=3, n_neighbors=15, min_dist=0.1, metric='euclidean')
 embedding_3d = reducer_3d.fit_transform(data)

@@ -131,6 +131,12 @@ hotel_agent = create_react_agent(llm, hotel_tools)
 
 最后，我们使用监督者包来协调这些子智能体。
 
+
+![](img/4d179fb011bc56e57538c13cc1a2088a_5.png)
+
+
+![](img/4d179fb011bc56e57538c13cc1a2088a_7.png)
+
 ```python
 # 定义子智能体成员
 members = ["flight_assistant", "hotel_assistant"]
@@ -146,9 +152,6 @@ supervisor_graph = create_supervisor(
     members=members,
     system_prompt=system_prompt,
 )
-
-![](img/4d179fb011bc56e57538c13cc1a2088a_5.png)
-
 # 将子智能体的执行函数绑定到对应的名称上
 def flight_assistant_node(state):
     # 调用 flight_agent 处理状态中的消息
@@ -158,9 +161,6 @@ def flight_assistant_node(state):
 def hotel_assistant_node(state):
     result = hotel_agent.invoke(state)
     return {"messages": [result["messages"][-1]]}
-
-![](img/4d179fb011bc56e57538c13cc1a2088a_7.png)
-
 # 配置监督者图，将成员名称映射到对应的处理节点
 supervisor_graph.member_nodes = {
     "flight_assistant": flight_assistant_node,

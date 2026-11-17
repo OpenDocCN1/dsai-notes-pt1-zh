@@ -47,6 +47,14 @@ def get_weather(city: str) -> str:
 
 ![](img/662f5bf89bd91b1b744087375ab43c1c_4.png)
 
+
+![](img/662f5bf89bd91b1b744087375ab43c1c_6.png)
+
+![](img/662f5bf89bd91b1b744087375ab43c1c_7.png)
+
+
+![](img/662f5bf89bd91b1b744087375ab43c1c_9.png)
+
 ```python
 from langchain import hub
 from langchain.agents import create_react_agent, AgentExecutor
@@ -56,16 +64,8 @@ prompt = hub.pull("hwchase17/react")
 
 # 2. 创建代理
 agent = create_react_agent(llm, tools, prompt)
-
-![](img/662f5bf89bd91b1b744087375ab43c1c_6.png)
-
-![](img/662f5bf89bd91b1b744087375ab43c1c_7.png)
-
 # 3. 创建代理执行器
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
-
-![](img/662f5bf89bd91b1b744087375ab43c1c_9.png)
-
 # 4. 运行代理
 result = agent_executor.invoke({"input": "北京现在的天气怎么样？"})
 print(result["output"])

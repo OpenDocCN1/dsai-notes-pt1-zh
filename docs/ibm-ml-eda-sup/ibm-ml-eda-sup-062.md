@@ -58,10 +58,6 @@
 
 ![](img/956a2e074cf4f6a0c302ede4f0be3678_33.png)
 
-```python
-import os
-import pandas as pd
-import numpy as np
 
 ![](img/956a2e074cf4f6a0c302ede4f0be3678_35.png)
 
@@ -69,6 +65,10 @@ import numpy as np
 
 ![](img/956a2e074cf4f6a0c302ede4f0be3678_39.png)
 
+```python
+import os
+import pandas as pd
+import numpy as np
 # 设置数据路径
 data_path = ['data']
 file_path = os.path.join(*data_path, 'Ames_Housing_Sales.csv')
@@ -223,16 +223,11 @@ object_columns = data.columns[object_mask]
 
 ![](img/956a2e074cf4f6a0c302ede4f0be3678_115.png)
 
-```python
-# 计算每个对象列的唯一值数量
-n_unique_ohc = data[object_columns].apply(lambda x: x.nunique())
 
 ![](img/956a2e074cf4f6a0c302ede4f0be3678_117.png)
 
 ![](img/956a2e074cf4f6a0c302ede4f0be3678_118.png)
 
-# 排序以便查看
-n_unique_ohc.sort_values(ascending=False, inplace=True)
 
 ![](img/956a2e074cf4f6a0c302ede4f0be3678_120.png)
 
@@ -240,6 +235,11 @@ n_unique_ohc.sort_values(ascending=False, inplace=True)
 
 ![](img/956a2e074cf4f6a0c302ede4f0be3678_122.png)
 
+```python
+# 计算每个对象列的唯一值数量
+n_unique_ohc = data[object_columns].apply(lambda x: x.nunique())
+# 排序以便查看
+n_unique_ohc.sort_values(ascending=False, inplace=True)
 # 减去1，因为独热编码后会丢弃原始列
 n_unique_ohc -= 1
 

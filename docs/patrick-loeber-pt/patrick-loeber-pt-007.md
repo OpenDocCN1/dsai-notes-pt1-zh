@@ -17,17 +17,17 @@
 
 ![](img/004c57fdf2733b827527e360db06e196_1.png)
 
+
+![](img/004c57fdf2733b827527e360db06e196_2.png)
+
+![](img/004c57fdf2733b827527e360db06e196_4.png)
+
 ```python
 import torch
 import torch.nn as nn
 import numpy as np
 from sklearn import datasets
 import matplotlib.pyplot as plt
-
-![](img/004c57fdf2733b827527e360db06e196_2.png)
-
-![](img/004c57fdf2733b827527e360db06e196_4.png)
-
 # 生成回归数据集
 x_numpy, y_numpy = datasets.make_regression(n_samples=100, n_features=1, noise=20, random_state=1)
 

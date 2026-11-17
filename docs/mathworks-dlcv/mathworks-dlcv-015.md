@@ -82,14 +82,14 @@
 
 以下是提取特征的核心代码流程：
 
+
+![](img/1db534febaeab70d21be2d7eab8351b7_33.png)
+
 ```matlab
 % 初始化变量
 imageFeatures = [];
 imageNames = {};
 imageLabels = {};
-
-![](img/1db534febaeab70d21be2d7eab8351b7_33.png)
-
 % 循环处理每张图像
 while hasdata(imdsTrain)
     [img, info] = read(imdsTrain);

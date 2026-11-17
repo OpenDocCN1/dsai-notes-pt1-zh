@@ -66,14 +66,14 @@
 
 以下是我们将在下一节视频中编写的主要代码结构：
 
+
+![](img/654c8657c605c5d4894eb1dac6881a48_10.png)
+
 ```python
 # 创建训练数据加载器
 train_dataloader = DataLoader(dataset=train_data,
                               batch_size=32,
                               shuffle=True)
-
-![](img/654c8657c605c5d4894eb1dac6881a48_10.png)
-
 # 对测试数据做同样处理（通常不需要打乱）
 test_dataloader = DataLoader(dataset=test_data,
                              batch_size=32,

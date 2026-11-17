@@ -69,28 +69,28 @@ EMR提供了一个托管环境，简化了这些框架的设置和扩展，并�
 
 例如，你可以运行一个简单的PySpark脚本来分析S3桶中的数据。以下是一个计算特定日期范围内出租车行程平均费用的示例代码片段：
 
+
+![](img/b48d1bcbd18a438826c55c280e45b696_12.png)
+
+![](img/b48d1bcbd18a438826c55c280e45b696_13.png)
+
+
+![](img/b48d1bcbd18a438826c55c280e45b696_15.png)
+
+![](img/b48d1bcbd18a438826c55c280e45b696_16.png)
+
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import avg
 
 # 初始化Spark会话
 spark = SparkSession.builder.appName("TaxiFareAnalysis").getOrCreate()
-
-![](img/b48d1bcbd18a438826c55c280e45b696_12.png)
-
-![](img/b48d1bcbd18a438826c55c280e45b696_13.png)
-
 # 从S3读取数据
 df = spark.read.csv("s3://your-bucket-name/taxi_data.csv", header=True, inferSchema=True)
 
 # 过滤特定日期范围并计算平均费用
 filtered_df = df.filter((df["date"] >= "2023-01-01") & (df["date"] <= "2023-01-31"))
 average_fare = filtered_df.select(avg("fare_amount")).collect()[0][0]
-
-![](img/b48d1bcbd18a438826c55c280e45b696_15.png)
-
-![](img/b48d1bcbd18a438826c55c280e45b696_16.png)
-
 print(f"平均费用为: ${average_fare:.2f}")
 ```
 

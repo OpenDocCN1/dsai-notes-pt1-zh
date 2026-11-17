@@ -132,8 +132,6 @@ class GraphState(TypedDict):
 
 ![](img/7bbc8872412b78b5d231191522cb3256_70.png)
 
-```python
-from langgraph.graph import StateGraph, END
 
 ![](img/7bbc8872412b78b5d231191522cb3256_72.png)
 
@@ -141,8 +139,6 @@ from langgraph.graph import StateGraph, END
 
 ![](img/7bbc8872412b78b5d231191522cb3256_76.png)
 
-# 初始化图
-workflow = StateGraph(GraphState)
 
 ![](img/7bbc8872412b78b5d231191522cb3256_78.png)
 
@@ -150,37 +146,48 @@ workflow = StateGraph(GraphState)
 
 ![](img/7bbc8872412b78b5d231191522cb3256_82.png)
 
+
+![](img/7bbc8872412b78b5d231191522cb3256_84.png)
+
+
+![](img/7bbc8872412b78b5d231191522cb3256_86.png)
+
+
+![](img/7bbc8872412b78b5d231191522cb3256_88.png)
+
+
+![](img/7bbc8872412b78b5d231191522cb3256_90.png)
+
+
+![](img/7bbc8872412b78b5d231191522cb3256_92.png)
+
+![](img/7bbc8872412b78b5d231191522cb3256_94.png)
+
+![](img/7bbc8872412b78b5d231191522cb3256_95.png)
+
+```python
+from langgraph.graph import StateGraph, END
+# 初始化图
+workflow = StateGraph(GraphState)
 # 添加节点
 workflow.add_node(“retrieve”, retrieve_node)
 workflow.add_node(“grade_documents”, grade_documents_node)
 workflow.add_node(“transform_query”, transform_query_node)
 workflow.add_node(“web_search”, web_search_node)
 workflow.add_node(“generate”, generate_node)
-
-![](img/7bbc8872412b78b5d231191522cb3256_84.png)
-
 # 设置入口点
 workflow.set_entry_point(“retrieve”)
-
-![](img/7bbc8872412b78b5d231191522cb3256_86.png)
-
 # 添加固定边
 workflow.add_edge(“retrieve”, “grade_documents”)
 workflow.add_edge(“transform_query”, “web_search”)
 workflow.add_edge(“web_search”, “generate”)
 workflow.add_edge(“generate”, END)
-
-![](img/7bbc8872412b78b5d231191522cb3256_88.png)
-
 # 添加条件边（决策点）
 def decide_to_search(state):
     if state[“search”]:
         return “transform_query”
     else:
         return “generate”
-
-![](img/7bbc8872412b78b5d231191522cb3256_90.png)
-
 workflow.add_conditional_edges(
     “grade_documents”,
     decide_to_search,
@@ -189,13 +196,6 @@ workflow.add_conditional_edges(
         “generate”: “generate”,
     }
 )
-
-![](img/7bbc8872412b78b5d231191522cb3256_92.png)
-
-![](img/7bbc8872412b78b5d231191522cb3256_94.png)
-
-![](img/7bbc8872412b78b5d231191522cb3256_95.png)
-
 # 编译图
 app = workflow.compile()
 ```

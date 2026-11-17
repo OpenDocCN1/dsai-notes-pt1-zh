@@ -152,12 +152,12 @@ model.fit(X_train, y_train)
 常用的激活函数包括 ReLU、Tanh 等。
 
 **优点**：理论上可以逼近任何函数，适合学习难以手工构造的特征表示。
-```python
-from keras.models import Sequential
-from keras.layers import Dense, Dropout
 
 ![](img/4be40c3a9c1b8ee9379fc6a249ae47b6_18.png)
 
+```python
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
 model = Sequential()
 model.add(Dense(512, activation='relu', input_dim=X_train.shape[1]))
 model.add(Dropout(0.2)) # 引入Dropout防止过拟合

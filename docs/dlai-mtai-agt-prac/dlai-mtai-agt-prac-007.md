@@ -90,6 +90,11 @@ llm = ChatOpenAI(model="gpt-4o-mini")
 
 加载方式很直接，我们将它们分别存入四个变量中以便后续使用。
 
+
+![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_21.png)
+
+![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_22.png)
+
 ```python
 import yaml
 
@@ -98,11 +103,6 @@ with open('lead_agents.yaml') as file:
 
 with open('lead_tasks.yaml') as file:
     lead_tasks_config = yaml.safe_load(file)
-
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_21.png)
-
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_22.png)
-
 with open('email_agents.yaml') as file:
     email_agents_config = yaml.safe_load(file)
 
@@ -189,16 +189,6 @@ scrape_tool = ScrapeWebsiteTool()
 
 我们稍后可以在 YAML 中查看这些任务，但现在，我们将它们全部整合到这个单一的智能体组中。
 
-```python
-# 从YAML配置创建智能体
-lead_data_agent = Agent(**lead_agents_config['lead_data_agent'], llm=llm, tools=[search_tool, scrape_tool])
-cultural_fit_agent = Agent(**lead_agents_config['cultural_fit_agent'], llm=llm, tools=[search_tool, scrape_tool])
-scoring_agent = Agent(**lead_agents_config['scoring_validation_agent'], llm=llm)
-
-# 从YAML配置创建任务
-analyze_task = Task(**lead_tasks_config['analyze_lead_data'])
-research_task = Task(**lead_tasks_config['research_cultural_fit'])
-score_task = Task(**lead_tasks_config['final_lead_scoring'])
 
 ![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_34.png)
 
@@ -210,6 +200,16 @@ score_task = Task(**lead_tasks_config['final_lead_scoring'])
 
 ![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_38.png)
 
+```python
+# 从YAML配置创建智能体
+lead_data_agent = Agent(**lead_agents_config['lead_data_agent'], llm=llm, tools=[search_tool, scrape_tool])
+cultural_fit_agent = Agent(**lead_agents_config['cultural_fit_agent'], llm=llm, tools=[search_tool, scrape_tool])
+scoring_agent = Agent(**lead_agents_config['scoring_validation_agent'], llm=llm)
+
+# 从YAML配置创建任务
+analyze_task = Task(**lead_tasks_config['analyze_lead_data'])
+research_task = Task(**lead_tasks_config['research_cultural_fit'])
+score_task = Task(**lead_tasks_config['final_lead_scoring'])
 # 创建智能体组
 lead_qualification_crew = Crew(
     agents=[lead_data_agent, cultural_fit_agent, scoring_agent],

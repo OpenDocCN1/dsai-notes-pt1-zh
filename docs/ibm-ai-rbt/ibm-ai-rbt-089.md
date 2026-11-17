@@ -151,6 +151,9 @@ root = tree.getroot()
 ![](img/395a0c3f39469e7de34177510e90fc29_48.png)
 
 以下是遍历XML数据并创建DataFrame的代码示例：
+
+![](img/395a0c3f39469e7de34177510e90fc29_49.png)
+
 ```python
 data = []
 for elem in root.findall('.//record'):
@@ -158,9 +161,6 @@ for elem in root.findall('.//record'):
     for child in elem:
         row[child.tag] = child.text
     data.append(row)
-
-![](img/395a0c3f39469e7de34177510e90fc29_49.png)
-
 df = pd.DataFrame(data)
 print(df)
 ```
