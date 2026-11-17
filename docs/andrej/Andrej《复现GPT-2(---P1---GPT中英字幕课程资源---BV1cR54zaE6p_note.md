@@ -1,40 +1,29 @@
 # 复现GPT-2 (124M版本)：1：从零开始复现GPT-2
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_1.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_3.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_5.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_7.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_9.png)
 
 在本节课中，我们将要学习如何从零开始复现OpenAI发布的GPT-2模型，具体是拥有1.24亿参数的版本。我们将从加载预训练模型开始，逐步实现自己的GPT-2架构，并最终训练一个性能达到甚至超越原版模型的版本。
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_11.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_13.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_15.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_16.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_18.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_20.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_22.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_24.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_25.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_27.png)
 
 ## 概述与目标
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_29.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_31.png)
 
@@ -64,11 +53,8 @@
 
 首先，我们需要一个明确的目标。让我们加载OpenAI发布的GPT-2 124M模型，并尝试用它生成一些文本。
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_53.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_55.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_57.png)
 
 由于原始代码库使用TensorFlow，而我们将使用PyTorch，因此我们借助Hugging Face Transformers库来加载模型。这简化了从TensorFlow到PyTorch权重的转换过程。
 
@@ -76,7 +62,6 @@
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_61.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_63.png)
 
 以下是加载模型并检查其参数的代码：
 
@@ -98,9 +83,7 @@ for k, v in state_dict_hf.items():
 
 ## 实现我们自己的GPT-2模型
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_69.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_71.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_73.png)
 
@@ -114,9 +97,7 @@ for k, v in state_dict_hf.items():
 
 ### 模型骨架
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_81.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_82.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_84.png)
 
@@ -124,13 +105,10 @@ for k, v in state_dict_hf.items():
 
 GPT-2是一个仅包含解码器的Transformer。与原始Transformer论文相比，主要区别在于层归一化的位置有所调整，并且在最终自注意力块后添加了一个额外的层归一化。
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_88.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_90.png)
 
 以下是GPT-2模型的主要骨架：
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_92.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_94.png)
 
@@ -191,7 +169,6 @@ class GPT(nn.Module):
 
 每个Transformer块包含一个多头自注意力机制和一个前馈网络（MLP），并采用了“预归一化”结构。
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_112.png)
 
 以下是块的实现：
 
@@ -199,7 +176,6 @@ class GPT(nn.Module):
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_115.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_117.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_119.png)
 
@@ -240,7 +216,6 @@ class Block(nn.Module):
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_136.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_138.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_140.png)
 
@@ -248,7 +223,6 @@ class Block(nn.Module):
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_142.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_144.png)
 
 我们实现了一个高效的多头自注意力模块，它使用矩阵操作来并行处理所有注意力头。
 
@@ -283,13 +257,10 @@ class CausalSelfAttention(nn.Module):
         return y
 ```
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_148.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_149.png)
 
 ### 前馈网络（MLP）
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_151.png)
 
 MLP包含两个线性层，中间使用GELU激活函数。GPT-2使用的是GELU的近似版本。
 
@@ -308,9 +279,7 @@ class MLP(nn.Module):
         return x
 ```
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_153.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_155.png)
 
 ## 权重绑定
 
@@ -324,17 +293,13 @@ model.transformer.wte.weight = model.lm_head.weight
 
 ## 模型初始化
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_157.png)
 
 正确的初始化对训练稳定性至关重要。我们遵循GPT-2源代码中的初始化方案。
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_159.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_161.png)
 
 以下是初始化权重的函数：
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_163.png)
 
 ```python
 def _init_weights(self, module):
@@ -349,31 +314,21 @@ def _init_weights(self, module):
         torch.nn.init.normal_(module.weight, mean=0.0, std=0.02)
 ```
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_165.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_167.png)
 
 ## 数据加载与训练循环
 
 为了训练模型，我们需要一个数据加载器。我们从简单的Tiny Shakespeare数据集开始，然后过渡到更大的FineWeb-Edu数据集。
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_169.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_171.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_173.png)
 
 以下是一个简单的数据加载器实现：
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_175.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_176.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_178.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_180.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_182.png)
 
 ```python
 class DataLoaderLite:
@@ -398,7 +353,6 @@ class DataLoaderLite:
         return x, y
 ```
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_184.png)
 
 训练循环包括前向传播、损失计算、反向传播和优化器步骤。我们使用AdamW优化器，并采用梯度裁剪和学习率调度。
 
@@ -414,19 +368,13 @@ class DataLoaderLite:
 4.  **美化数字**：将词表大小等参数调整为2的幂次，以更好地匹配CUDA内核的块大小。
 5.  **分布式数据并行**：使用`DistributedDataParallel`在多个GPU上并行训练。
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_188.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_190.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_192.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_194.png)
 
 ## 评估与结果
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_196.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_198.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_200.png)
 
@@ -436,13 +384,10 @@ class DataLoaderLite:
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_202.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_204.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_206.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_208.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_209.png)
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_211.png)
 
