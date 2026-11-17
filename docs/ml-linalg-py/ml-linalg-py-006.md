@@ -8,33 +8,24 @@
 
 ## 标量的理论
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_1.png)
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_3.png)
 
 标量的特征在于其没有维度，它是一个单一的数值。在数学表示中，标量通常用小写斜体字母表示，例如 **x**。
 
 与所有在机器学习或数值计算库中使用的张量一样，标量也具有数据类型。例如，它可以是整数（如 `int`）或32位浮点数（如 `float32`）。
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_5.png)
 
 ## 动手实践：创建标量
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_6.png)
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_7.png)
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_8.png)
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_9.png)
 
 以下是创建和操作标量的实践步骤。我们将使用一个Jupyter笔记本进行交互式学习。
 
 ### 访问学习材料
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_11.png)
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_12.png)
 
 首先，你需要访问包含所有代码示例的Jupyter笔记本。
 
@@ -44,24 +35,18 @@
 
 为了获得最佳的交互学习体验，建议在 Google Colab 中打开并运行该笔记本。
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_14.png)
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_15.png)
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_16.png)
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_17.png)
 
 ### 准备Colab环境
 
 在Colab中打开笔记本后，建议执行以下操作以获得清晰的界面：
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_19.png)
 
 1.  点击菜单栏中的“编辑”选项。
 2.  选择“清除所有输出”。这将清除之前运行的所有代码结果，让你可以重新执行代码单元，获得干净、新鲜的输出。
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_21.png)
 
 Jupyter笔记本混合了Markdown文本单元和代码单元。Markdown单元用于解释说明，代码单元包含可执行的Python代码。你可以通过按 `Shift + Enter` 或点击单元格左侧的“播放”按钮来执行代码。
 
@@ -78,9 +63,7 @@ print(type(x))
 
 执行上述代码，`x` 的值是25，其类型是Python的 `int`（整数）。如果我们创建另一个标量 `y = 3`，可以使用Python的加法运算符将它们相加：
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_23.png)
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_24.png)
 
 ```python
 y = 3
@@ -89,7 +72,6 @@ print(py_sum)
 print(type(py_sum))
 ```
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_26.png)
 
 结果是28，类型同样是 `int`。如果创建一个浮点数标量：
 
@@ -105,13 +87,10 @@ print(type(result))
 
 ### 使用PyTorch创建标量
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_28.png)
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_29.png)
 
 PyTorch是一个用于自动微分（后续微积分主题会深入介绍）的流行Python库。PyTorch张量的设计非常“Python化”，行为类似NumPy数组，但其优势在于可以方便地利用GPU进行并行计算，这对于深度学习训练至关重要。
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_31.png)
 
 以下是PyTorch张量类型的文档链接，可供参考：[PyTorch Tensor Types](https://pytorch.org/docs/stable/tensors.html)。
 
@@ -130,9 +109,7 @@ print(x_pt.shape)
 
 ### 使用TensorFlow创建标量
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_33.png)
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_34.png)
 
 TensorFlow是另一个主流的自动微分库。在TensorFlow中，张量通常通过包装器创建。最常见的类型是 `Variable`、`Constant`、`Placeholder` 和 `SparseTensor`，其中 `Variable` 最为常用。
 
@@ -164,13 +141,10 @@ print(sum_tf_2)
 
 Python的 `+` 运算符在TensorFlow张量上已被重载，其底层调用的就是 `tf.add` 方法。
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_36.png)
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_37.png)
 
 此外，可以轻松地将TensorFlow张量转换为NumPy数组：
 
-![](img/120a8201d2c85929261b6c1d09e3b47a_39.png)
 
 ```python
 import numpy as np

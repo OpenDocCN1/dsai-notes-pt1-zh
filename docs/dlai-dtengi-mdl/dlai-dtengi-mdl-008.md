@@ -1,6 +1,5 @@
 # 008：与Drew Banin讨论dbt 🛠️
 
-![](img/5fbd4ae763d8711d40bb3ee68bbbb3b2_0.png)
 
 ![](img/5fbd4ae763d8711d40bb3ee68bbbb3b2_0.png)
 

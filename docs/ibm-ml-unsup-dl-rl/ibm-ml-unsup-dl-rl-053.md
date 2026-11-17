@@ -10,7 +10,6 @@ Welcome back for the second part of this demo on gradient Descent。As we mentio
 
 So in order to see this in practice。
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_1.png)
 
 We're going to actually pick a learning rate， as well as a number of iterations。
 
@@ -24,7 +23,6 @@ And then using that we'll find some examples where the learning rate is too high
 
  or just right。
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_3.png)
 
 So we're going to start off。With a learning rate of 1 times 10 to the negative 3， so 0。001。
 
@@ -34,7 +32,6 @@ And we're going to say we want 10000 iterations， so 10000 different steps。
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_5.png)
 
 So in order to actually perform gradient descent。We're going to pass in a learning rate。
 
@@ -54,7 +51,6 @@ And then we're setting that first value， so theta 0 for all the columns equal 
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_7.png)
 
 And then just to start off， we're going to set the loss vector equal to NP do zeros。
 
@@ -62,7 +58,6 @@ And then just to start off， we're going to set the loss vector equal to NP do 
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_9.png)
 
 We're then going to do this main gradient descent loop。
 
@@ -122,7 +117,6 @@ And then we're going to return after we go through that entire for loop， the e
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_11.png)
 
 So we have our gradient descent function。And then we're going to actually plot this out。
 
@@ -132,7 +126,6 @@ So we have our gradient descent function。And then we're going to actually plot
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_13.png)
 
 So we have our true coefficients。Which are just equal to the B。
 
@@ -164,7 +157,6 @@ And then for that second column， the different values for theta 1。 if we set
 
 And then， we can。
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_15.png)
 
 Say what the initial value is by calling theta path0 I and J and label that as the start。
 
@@ -178,15 +170,12 @@ In order to get the final value and we'll label that to finish。
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_17.png)
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_18.png)
 
 And then that's just going to be a subset when we call Cla O。
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_20.png)
 
 What we're doing is we're just taking each one of the different combinations of axes that we can。
 
@@ -194,7 +183,6 @@ What we're doing is we're just taking each one of the different combinations of 
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_22.png)
 
 And as we see here， we're calling plot I J 0，1。And then plot I J 0，2， and then plot I J 1，2。
 
@@ -208,11 +196,9 @@ We can then pass that into our plot all function that we defined with our learni
 
  our number of iterations and our theta。
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_24.png)
 
 We run this。
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_26.png)
 
 First， we have to obviously。Run what we have here， so we run that。
 
@@ -220,9 +206,7 @@ First， we have to obviously。Run what we have here， so we run that。
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_28.png)
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_29.png)
 
 Here we see the start and we see each one of these triangles and are moving closer and closer this axis here on the we look at the top left plot。
 
@@ -238,7 +222,6 @@ Theta1 also started stop at around 1。9。 and then if we look at the top right
 
  and that's actually pretty close to 5 already。
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_31.png)
 
 And we can see each step it takes along the way。 And then here we can see theta 1 versus theta 2。
 
@@ -258,37 +241,30 @@ We see the number of iterations and we see pretty quickly once it gets to， it 
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_33.png)
 
 Now I quickly want to show you what this looks like。If we were to decrease the number of iterations。
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_35.png)
 
 So if we decrease this to， say， 100。
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_37.png)
 
 And we run all this。We see that it stops a lot earlier along the way。
 
  The gradient descent didn't get to quite finish。
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_39.png)
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_40.png)
 
 Now if we keep this at 10，000。And we decrease the learning rate， which allows for larger steps。
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_42.png)
 
 We can see here that it actually reached the optimal solution。
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_44.png)
 
 So。Decreasing the learning rate allowed for those larger steps。
 
@@ -296,13 +272,11 @@ So。Decreasing the learning rate allowed for those larger steps。
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_46.png)
 
 Finally， I want to show you what will happen if you set that learning rate too large。
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_48.png)
 
 Now if we run this。Maybe a little bit difficult to see if you see the top right corner of this top left or top left corner of the top left plot。
 
@@ -310,11 +284,8 @@ Now if we run this。Maybe a little bit difficult to see if you see the top righ
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_50.png)
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_51.png)
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_52.png)
 
 We have missed our value by a long shot。 We totally overbl the optimal value。
 
@@ -322,7 +293,6 @@ We have missed our value by a long shot。 We totally overbl the optimal value�
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_54.png)
 
 The error shoots way， way， way up as we completely miss the optimal value。
 
@@ -330,6 +300,5 @@ So that closes out our video here working with vanilla gradient descent in the n
 
 
 
-![](img/ee5bd56e52e50fa24173b055cddeefb7_56.png)
 
 ![](img/ee5bd56e52e50fa24173b055cddeefb7_57.png)

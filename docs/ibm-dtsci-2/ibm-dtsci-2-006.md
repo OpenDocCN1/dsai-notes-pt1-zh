@@ -4,9 +4,7 @@
 
 
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_1.png)
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_2.png)
 
 到目前为止，我们已经回顾了Python、R和SQL。
 
@@ -16,19 +14,15 @@
 
 无可争议，Python、R和SQL是数据科学家最常用的三种语言。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_4.png)
 
 但在考虑使用哪种语言来解决特定的数据科学问题时，还有许多其他语言值得你花时间去了解。
 
 
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_5.png)
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_6.png)
 
 以下是几种值得关注的其他编程语言及其简要介绍。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_7.png)
 
 *   Scala、Java、C++和Julia可能是本幻灯片中最传统的数据科学语言。
 *   JavaScript、PHP、Go、Ruby、Visual Basic等语言也在数据科学社区中找到了各自的位置。
@@ -39,19 +33,15 @@
 
 ## ☕ Java
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_9.png)
 
 上一节我们介绍了多种语言，本节我们先来看看Java。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_10.png)
 
 Java是一种久经考验的通用、面向对象编程语言。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_12.png)
 
 它已在企业领域被广泛采用，其设计目标是快速和可扩展。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_14.png)
 
 Java应用程序被编译成字节码，并在Java虚拟机（JVM）上运行。
 
@@ -70,15 +60,12 @@ Apache Hadoop是另一个用Java构建的应用程序，它为在集群系统上
 
 接下来，我们看看Scala。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_16.png)
 
 Scala是一种通用编程语言，支持函数式编程并具有强大的静态类型系统。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_17.png)
 
 Scala语言构建中的许多设计决策都是为了解决对Java的批评。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_19.png)
 
 Scala也可以与Java互操作，因为它运行在JVM上。
 
@@ -86,7 +73,6 @@ Scala这个名字是“可扩展的”（scalable）和“语言”（language�
 
 对于数据科学，使用Scala构建的最流行的程序是**Apache Spark**。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_21.png)
 
 Spark是一个快速、通用的集群计算系统。它提供了易于编写并行作业的API，以及支持通用计算图的优化引擎。
 
@@ -101,17 +87,14 @@ Apache Spark的设计目标是比Hadoop更快。
 
 
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_23.png)
 
 ## ⚙️ C++
 
 现在，我们来了解C++。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_25.png)
 
 C++是一种通用编程语言，它是C编程语言的扩展，或者说“带类的C”。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_27.png)
 
 C++提高了处理速度，支持系统编程，并提供了对软件应用程序更广泛的控制。
 
@@ -132,11 +115,9 @@ C++提高了处理速度，支持系统编程，并提供了对软件应用程�
 
 JavaScript是万维网的一项核心技术，它是一种通用语言，随着Node.js和其他服务器端方法的创建，其应用已超越浏览器。JavaScript与Java语言无关。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_29.png)
 
 对于数据科学，最流行的实现无疑是**TensorFlow.js**。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_30.png)
 
 TensorFlow.js使得在Node.js以及浏览器中进行机器学习和深度学习成为可能。
 
@@ -156,7 +137,6 @@ TypeScript是JavaScript的超集。
 
 Julia由麻省理工学院设计，用于高性能数值分析和计算科学。
 
-![](img/f4216b5b2e2000fd2f2ae845e3e8a89c_32.png)
 
 它在提供像Python或R一样的快速开发体验的同时，能生成运行速度与C或Fortran程序相媲美的程序。
 

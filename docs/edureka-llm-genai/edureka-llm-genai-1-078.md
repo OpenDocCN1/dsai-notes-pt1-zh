@@ -7,7 +7,6 @@
 以下代码块用于可视化模型的训练历史，通过绘制每个训练周期（epoch）的准确率和损失指标来帮助我们分析模型性能。它使用 Matplotlib 进行绘图。
 
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_1.png)
 
 ```python
 # 第一部分 打印训练历史字典的键，以识别可用的指标
@@ -30,11 +29,8 @@ plt.legend(['Train', 'Validation'], loc='upper left')
 plt.show()
 ```
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_2.png)
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_3.png)
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_4.png)
 
 在生成的图表中，蓝色线条代表训练数据集，橙色线条代表测试（验证）数据集。图表显示模型在训练过程中表现良好。
 
@@ -45,12 +41,9 @@ plt.show()
 以下代码段加载图像、对其进行预处理，并使用训练好的模型进行预测。
 
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_6.png)
 
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_7.png)
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_8.png)
 
 ```python
 # 第一部分 从指定路径加载图像
@@ -82,17 +75,12 @@ plt.show()
 
 模型开始预测图像后，我们需要将其“冻结”或保存。
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_10.png)
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_11.png)
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_12.png)
 
 以下代码将 Keras 模型的架构保存到 JSON 文件（例如 `model2.json`），并将其权重保存到 HDF5 文件（例如 `first_try.h5`）。这些文件可以在以后用于重建模型架构并加载已学习的权重进行推理，而无需重新训练。
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_13.png)
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_14.png)
 
 ```python
 # 第一部分 保存模型架构为JSON
@@ -109,21 +97,16 @@ print("模型已保存到磁盘。")
 
 完成基础模型训练后，我们现在使用预训练的 VGG16 网络构建一个用于特征提取的 CNN 模型。
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_16.png)
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_17.png)
 
 该代码冻结了 VGG16 的前15层，同时允许后续层进行训练。VGG16 最后一个池化层的输出被展平，并连接到一个具有512个单元的全连接层，随后是 Dropout 层和正则化。最后，添加一个具有单个神经元和 Sigmoid 激活函数的密集层，用于二元分类任务。
 
 以下是模型构建的核心部分：
 
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_19.png)
 
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_20.png)
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_21.png)
 
 ```python
 from tensorflow.keras.applications import VGG16
@@ -149,13 +132,10 @@ model.add(layers.Dense(1, activation='sigmoid'))  # 二元分类输出层
 
 我建议大家仔细研究这些数据集和代码，以理解其具体工作原理。
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_23.png)
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_24.png)
 
 ---
 
-![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_25.png)
 
 ![](img/4a3ffacfbb654dc2bd8e84348ed7d1e8_26.png)
 

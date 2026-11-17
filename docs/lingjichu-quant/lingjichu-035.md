@@ -2,45 +2,30 @@
 
 在本节课中，我们将学习如何对股票池进行筛选，并获取我们所需的财务指标数据。这是构建量化交易策略中非常关键的一步，可以帮助我们剔除不符合条件的股票，并聚焦于核心数据。
 
-![](img/7c8eee4db736472276534d54fe52bb71_1.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_3.png)
 
 上一节我们介绍了量化策略的基本框架，本节中我们来看看如何具体实现数据的预处理。
 
-![](img/7c8eee4db736472276534d54fe52bb71_5.png)
 
 ## 过滤不想要的股票 🚫
 
-![](img/7c8eee4db736472276534d54fe52bb71_7.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_9.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_11.png)
 
 首先，我们需要从股票池中过滤掉那些我们不希望纳入分析的股票。这通常包括停牌股、ST/*ST股以及刚上市的新股。
 
-![](img/7c8eee4db736472276534d54fe52bb71_13.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_15.png)
 
 以下是实现过滤功能的三个核心函数：
 
-![](img/7c8eee4db736472276534d54fe52bb71_17.png)
 
 
-![](img/7c8eee4db736472276534d54fe52bb71_19.png)
-
-![](img/7c8eee4db736472276534d54fe52bb71_21.png)
-
-![](img/7c8eee4db736472276534d54fe52bb71_23.png)
 
 
-![](img/7c8eee4db736472276534d54fe52bb71_25.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_27.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_29.png)
+
+
 
 ```python
 def filter_suspended_stocks(stock_list):
@@ -77,11 +62,8 @@ def filter_new_stocks(stock_list, min_days=180):
 
 在定义了这些过滤函数后，我们可以按顺序对初始股票池进行层层筛选。
 
-![](img/7c8eee4db736472276534d54fe52bb71_31.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_33.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_35.png)
 
 ```python
 # 假设 initial_stocks 是初始的股票代码列表
@@ -90,34 +72,24 @@ filtered_stocks = filter_st_stocks(filtered_stocks)
 filtered_stocks = filter_new_stocks(filtered_stocks, min_days=180)
 ```
 
-![](img/7c8eee4db736472276534d54fe52bb71_37.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_39.png)
 
 经过以上步骤，我们就得到了一个经过初步清洗的、相对“干净”的股票池。
 
-![](img/7c8eee4db736472276534d54fe52bb71_41.png)
 
 ## 查询所需的财务指标 🔍
 
-![](img/7c8eee4db736472276534d54fe52bb71_43.png)
 
 在获得目标股票池后，下一步是获取这些股票的关键财务指标数据，例如市净率（PB）和市值（Market Cap）。
 
-![](img/7c8eee4db736472276534d54fe52bb71_45.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_47.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_49.png)
 
 以下是使用查询API获取指标数据的代码：
 
-![](img/7c8eee4db736472276534d54fe52bb71_51.png)
 
 
-![](img/7c8eee4db736472276534d54fe52bb71_53.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_55.png)
 
 ```python
 # 导入必要的库，假设 get_fundamentals 是查询财务数据的函数
@@ -133,16 +105,12 @@ query = get_fundamentals(
 )
 ```
 
-![](img/7c8eee4db736472276534d54fe52bb71_57.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_59.png)
 
 查询返回的数据通常是横向排列的（每行是一个指标，每列是一只股票）。为了便于后续分析，我们通常需要将其转置，使每行代表一只股票，每列代表一个指标，并处理可能存在的空值。
 
 
-![](img/7c8eee4db736472276534d54fe52bb71_61.png)
 
-![](img/7c8eee4db736472276534d54fe52bb71_63.png)
 
 ```python
 # 转置数据框，使行对应股票，列对应指标
@@ -151,11 +119,9 @@ transposed_data = query.T
 cleaned_data = transposed_data.dropna()
 ```
 
-![](img/7c8eee4db736472276534d54fe52bb71_65.png)
 
 这样，我们就得到了一个结构清晰、包含目标股票关键指标的数据集 `cleaned_data`，可以用于后续的因子计算和策略构建。
 
-![](img/7c8eee4db736472276534d54fe52bb71_67.png)
 
 ![](img/7c8eee4db736472276534d54fe52bb71_69.png)
 

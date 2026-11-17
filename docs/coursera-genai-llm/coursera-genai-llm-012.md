@@ -82,10 +82,8 @@ Transformer块类按顺序集成了以下组件：
 
 这些部分协同工作，使Transformer模型能够以前所未有的方式更好地理解语言。
 
-![](img/5f7e1572ee7f66a60fce9c42bb63da77_1.png)
 
 ![](img/5f7e1572ee7f66a60fce9c42bb63da77_1.png)
 
-![](img/5f7e1572ee7f66a60fce9c42bb63da77_2.png)
 
 ![](img/5f7e1572ee7f66a60fce9c42bb63da77_2.png)

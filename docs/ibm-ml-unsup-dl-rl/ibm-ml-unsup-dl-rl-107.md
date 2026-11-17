@@ -22,7 +22,6 @@ While keeping our parameters as close to the standard normal distribution as pos
 
 
 
-![](img/b675c0821c87973d4473f65587b72d63_1.png)
 
 So this comes down to the pixel wise difference between the reconstructed and original image for that first component。
 
@@ -76,7 +75,6 @@ But the reason that we do like to include it， though。
 
 
 
-![](img/b675c0821c87973d4473f65587b72d63_3.png)
 
 So as an example， what we have here is a variational autoencoder trained with two dimensions in the mu and sigma vectors。
 
@@ -94,7 +92,6 @@ And as long as our sample values are close within that latent space。
 
  we are able to generate these randomly。😊。
 
-![](img/b675c0821c87973d4473f65587b72d63_5.png)
 
 Now， just a recap。That will close out our section here on variational autoenrs。
 

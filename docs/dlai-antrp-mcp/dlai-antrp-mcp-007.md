@@ -2,7 +2,6 @@
 
 ![](img/c8229dd9ee8c403b79892556f4fe0bdc_0.png)
 
-![](img/c8229dd9ee8c403b79892556f4fe0bdc_2.png)
 
 ![](img/c8229dd9ee8c403b79892556f4fe0bdc_3.png)
 
@@ -71,7 +70,6 @@
 ## 实践演示
 让我们在终端中运行更新后的聊天机器人，看看多个服务器如何协同工作。
 
-![](img/c8229dd9ee8c403b79892556f4fe0bdc_5.png)
 
 首先，进入项目目录并激活虚拟环境：
 ```bash
@@ -87,9 +85,7 @@ uv run mcp_chatbot.py
 
 程序启动后，我们可以看到它成功连接了文件系统服务器、研究服务器和抓取服务器，并列出了所有可用的工具。
 
-![](img/c8229dd9ee8c403b79892556f4fe0bdc_7.png)
 
-![](img/c8229dd9ee8c403b79892556f4fe0bdc_8.png)
 
 现在，让我们尝试一个复杂的提示，综合利用这三个服务器的能力：
 > “请抓取模型上下文协议（Model Context Protocol）网站的内容，将摘要保存到名为`mcp_summary.md`的文件中，并创建一个总结该内容的可视化图表。”
@@ -104,16 +100,12 @@ uv run mcp_chatbot.py
 
 ![](img/c8229dd9ee8c403b79892556f4fe0bdc_12.png)
 
-![](img/c8229dd9ee8c403b79892556f4fe0bdc_14.png)
 
-![](img/c8229dd9ee8c403b79892556f4fe0bdc_15.png)
 
-![](img/c8229dd9ee8c403b79892556f4fe0bdc_17.png)
 
 我们再试一个结合所有三个服务器的例子：
 > “抓取‘deeplearning.ai’网站，从中找到一个有趣的术语，围绕这个术语搜索相关论文，然后将你的发现总结并写入名为`results.txt`的文件。”
 
-![](img/c8229dd9ee8c403b79892556f4fe0bdc_19.png)
 
 ![](img/c8229dd9ee8c403b79892556f4fe0bdc_21.png)
 
@@ -121,7 +113,6 @@ uv run mcp_chatbot.py
 
 ![](img/c8229dd9ee8c403b79892556f4fe0bdc_23.png)
 
-![](img/c8229dd9ee8c403b79892556f4fe0bdc_25.png)
 
 ## 总结
 本节课中，我们一起学习了如何将MCP聊天机器人升级为能够连接和管理多个服务器的强大客户端。关键点包括：

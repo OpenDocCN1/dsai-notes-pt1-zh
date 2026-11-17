@@ -38,9 +38,7 @@ def hello_world():
 
 ## 运行Flask应用程序
 
-![](img/78e19d6c99326101b3b5e684dfbfd19b_1.png)
 
-![](img/78e19d6c99326101b3b5e684dfbfd19b_2.png)
 
 第一步是设置一些系统环境变量。你需要一个名为 `FLASK_APP` 的变量，它包含主服务器文件的名称。此外，你还需要一个 `FLASK_ENV` 变量来定义开发或生产环境。这个变量在Flask 2.3中将被弃用。
 
@@ -54,11 +52,9 @@ export FLASK_ENV=development
 flask run
 ```
 
-![](img/78e19d6c99326101b3b5e684dfbfd19b_4.png)
 
 Flask应用程序默认在端口5000上运行。你可以浏览 `http://localhost:5000` 来查看你的消息。让我们也使用浏览器开发者工具来查看从服务器返回的信息。
 
-![](img/78e19d6c99326101b3b5e684dfbfd19b_5.png)
 
 请求的URL是 `http://localhost:5000`。请求方法是 `HTTP GET`。响应的状态码是200，表示成功响应。响应头中的内容类型是 `text/html`，服务器正在运行Python 3.6.15版本。
 
@@ -70,7 +66,6 @@ Flask应用程序默认在端口5000上运行。你可以浏览 `http://localhos
 
 现在，你需要在运行每个应用程序之前设置环境变量。你可以通过使用 `--app` 参数来标识要运行的Python文件，并使用 `--debug` 参数来启用开发模式，从而向 `flask` 命令传递配置。
 
-![](img/78e19d6c99326101b3b5e684dfbfd19b_7.png)
 
 调试标志还支持在源文件更改时自动重启，这在开发应用程序并希望立即看到更改时非常有用。在你的例子中，应用程序存储在名为 `app.py` 的文件中，因此你可以省略这个参数，因为Flask默认会在当前目录中查找 `app.py`。
 
@@ -78,13 +73,11 @@ Flask应用程序默认在端口5000上运行。你可以浏览 `http://localhos
 flask --app app.py --debug run
 ```
 
-![](img/78e19d6c99326101b3b5e684dfbfd19b_9.png)
 
 现在输出应该类似于这样，屏幕显示Flask应用程序正在以开发模式运行。
 
 ---
 
-![](img/78e19d6c99326101b3b5e684dfbfd19b_11.png)
 
 ## 返回JSON响应
 
@@ -104,11 +97,8 @@ def return_json():
 
 让我们看一个例子。首先从 `flask` 导入 `jsonify`。
 
-![](img/78e19d6c99326101b3b5e684dfbfd19b_13.png)
 
-![](img/78e19d6c99326101b3b5e684dfbfd19b_14.png)
 
-![](img/78e19d6c99326101b3b5e684dfbfd19b_15.png)
 
 ```python
 from flask import jsonify
@@ -146,9 +136,7 @@ def return_jsonify():
 
 随着应用程序的增长，你应该创建一个目录结构，而不是使用单个Python文件。构建应用程序的方法有很多，这里是一个例子。
 
-![](img/78e19d6c99326101b3b5e684dfbfd19b_17.png)
 
-![](img/78e19d6c99326101b3b5e684dfbfd19b_18.png)
 
 *   将主要源代码存储在其模块目录中。
 *   将所有配置存储在其文件中。

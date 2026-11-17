@@ -139,7 +139,6 @@ def test_filter_month(data): # `data` 参数会自动注入夹具的返回值
     assert result_none == []
 ```
 
-![](img/38c4208e4cfbd47fd4633efddcefabf0_1.png)
 
 ---
 
@@ -202,7 +201,6 @@ def count_risk_categories_by_month(data, month, year):
 
 创建一个新文件 `cli.py`：
 
-![](img/38c4208e4cfbd47fd4633efddcefabf0_3.png)
 
 ```python
 # cli.py
@@ -239,7 +237,6 @@ python cli.py --help
 
 ## 第五步：性能分析 ⚡
 
-![](img/38c4208e4cfbd47fd4633efddcefabf0_5.png)
 
 当处理大型数据集（如完整的 5 万行数据）时，代码性能变得重要。我们可以使用 `cProfile` 模块来分析代码的运行时间。
 
@@ -257,9 +254,7 @@ snakeviz profile_output.prof
 
 ---
 
-![](img/38c4208e4cfbd47fd4633efddcefabf0_7.png)
 
-![](img/38c4208e4cfbd47fd4633efddcefabf0_9.png)
 
 ## 第六步：打包与分发 📦
 
@@ -307,13 +302,10 @@ python setup.py bdist_wheel
 
 对于 Conda 环境，则需要创建 `meta.yaml` 文件来定义包的元数据、依赖和构建指令。通过 `conda build` 命令可以构建 Conda 包，并可以上传到 Anaconda.org 的个人频道进行分享。对于跨平台分发，尤其是包含编译代码的项目，`conda-forge` 社区提供了强大的自动化构建支持。
 
-![](img/38c4208e4cfbd47fd4633efddcefabf0_11.png)
 
-![](img/38c4208e4cfbd47fd4633efddcefabf0_13.png)
 
 ---
 
-![](img/38c4208e4cfbd47fd4633efddcefabf0_15.png)
 
 ## 总结
 

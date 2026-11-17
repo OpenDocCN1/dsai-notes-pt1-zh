@@ -1,8 +1,6 @@
 # 088：网络抓取 🕸️
 
-![](img/b6f3d91a9736a733f8f89df301744430_0.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_1.png)
 
 在本节课中，我们将要学习网络抓取。通过本课，你将能够定义网络抓取，理解Beautiful Soup对象的作用，应用`find_all`方法，并最终从网站上抓取数据。
 
@@ -12,23 +10,16 @@
 
 ## 开始使用
 
-![](img/b6f3d91a9736a733f8f89df301744430_3.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_4.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_5.png)
 
 要开始使用，我们只需要一点Python代码以及两个名为`requests`和`beautifulsoup4`的模块的帮助。
 
-![](img/b6f3d91a9736a733f8f89df301744430_6.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_7.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_8.png)
 
 假设你被要求从以下网页中找出一个国家篮球联赛球员的姓名和薪水。
 
-![](img/b6f3d91a9736a733f8f89df301744430_9.png)
 
 首先，我们导入Beautiful Soup。我们可以将网页HTML作为字符串存储在变量`html`中。要解析文档，将其传递给Beautiful Soup构造函数。我们得到Beautiful Soup对象`soup`，它将文档表示为嵌套的数据结构。
 
@@ -40,27 +31,18 @@ Beautiful Soup将HTML表示为一组树状对象，并提供了用于解析HTML�
 
 `Tag`对象对应于原始文档中的一个HTML标签。例如，`title`标签。
 
-![](img/b6f3d91a9736a733f8f89df301744430_11.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_12.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_13.png)
 
 考虑`h3`标签。如果有多个具有相同名称的标签，则选择第一个具有该标签的元素。在本例中，是“Lebron James”。我们看到姓名被包裹在粗体属性`<b>`中。要提取它，需要使用树状表示法。
 
-![](img/b6f3d91a9736a733f8f89df301744430_14.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_15.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_16.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_17.png)
 
 让我们使用树状表示法。变量`tag_object`位于此处。
 
-![](img/b6f3d91a9736a733f8f89df301744430_18.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_19.png)
 
 我们可以访问标签的子元素，或者沿着分支向下导航，如下所示：
 
@@ -68,15 +50,11 @@ Beautiful Soup将HTML表示为一组树状对象，并提供了用于解析HTML�
 tag_object.contents
 ```
 
-![](img/b6f3d91a9736a733f8f89df301744430_21.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_22.png)
 
 你可以通过使用`parent`属性向上导航树。变量`tag_child`位于此处，我们可以访问其父元素。这就是原始的`tag_object`。
 
-![](img/b6f3d91a9736a733f8f89df301744430_23.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_24.png)
 
 我们还可以找到`tag_object`的兄弟节点。我们只需使用`next_sibling`属性。
 
@@ -88,19 +66,13 @@ tag_object.contents
 tag_child.attrs
 ```
 
-![](img/b6f3d91a9736a733f8f89df301744430_26.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_27.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_28.png)
 
 你可以将内容作为`NavigableString`返回。这类似于支持Beautiful Soup功能的Python字符串。
 
-![](img/b6f3d91a9736a733f8f89df301744430_29.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_30.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_31.png)
 
 ## `find_all`方法
 
@@ -110,23 +82,16 @@ tag_child.attrs
 
 考虑披萨店的列表。像之前一样，创建一个Beautiful Soup对象，但这次将其命名为`table`。
 
-![](img/b6f3d91a9736a733f8f89df301744430_33.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_34.png)
 
 `find_all`方法会遍历标签的后代，并检索所有与你的过滤器匹配的后代。
 
-![](img/b6f3d91a9736a733f8f89df301744430_35.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_36.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_37.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_38.png)
 
 将其应用于带有`tr`标签的`table`。结果是一个Python可迭代对象，就像一个列表。
 
-![](img/b6f3d91a9736a733f8f89df301744430_39.png)
 
 每个元素都是`tr`的`Tag`对象。这对应于列表中的每一行，包括表头。
 
@@ -138,43 +103,29 @@ tag_child.attrs
 
 ## 应用于网页抓取
 
-![](img/b6f3d91a9736a733f8f89df301744430_41.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_42.png)
 
 让我们看看如何将Beautiful Soup应用于网页以进行抓取。
 
-![](img/b6f3d91a9736a733f8f89df301744430_43.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_44.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_45.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_46.png)
 
 我们还需要`requests`库。第一步是导入所需的模块。
 
-![](img/b6f3d91a9736a733f8f89df301744430_47.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_48.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_49.png)
 
 使用`requests`库中的`get`方法来下载网页。输入是URL。
 
-![](img/b6f3d91a9736a733f8f89df301744430_50.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_51.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_52.png)
 
 使用`text`属性获取文本，并将其分配给变量`page`，然后从变量`page`创建一个Beautiful Soup对象`soup`。这将允许你解析HTML页面，现在你可以抓取该页面了。请查看实验部分以获取更多信息。
 
 ## 总结
 
-![](img/b6f3d91a9736a733f8f89df301744430_54.png)
 
-![](img/b6f3d91a9736a733f8f89df301744430_55.png)
 
 ![](img/b6f3d91a9736a733f8f89df301744430_56.png)
 

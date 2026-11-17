@@ -240,7 +240,6 @@ __global__ void kernel(int *x) {
 
 为了解决之前`x++`的数据竞争问题，我们可以使用CUDA的`atomicAdd`函数。
 
-![](img/40d1258203816d1c71a3a1177d535055_140.png)
 
 ![](img/40d1258203816d1c71a3a1177d535055_142.png)
 

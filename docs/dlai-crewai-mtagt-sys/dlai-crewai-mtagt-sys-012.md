@@ -12,7 +12,6 @@
 
 首先，我们需要导入必要的类并设置环境变量。
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_1.png)
 
 ```python
 import warnings
@@ -30,9 +29,7 @@ os.environ["SERPER_API_KEY"] = "你的 Serper API 密钥"
 os.environ["OPENAI_MODEL_NAME"] = "gpt-4"  # 或你选择的模型
 ```
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_3.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_4.png)
 
 现在，导入我们将要使用的两个工具：`ScrapeWebsiteTool` 和 `SerperDevTool`。
 
@@ -90,7 +87,6 @@ marketing_agent = Agent(
 
 现在，我们拥有了一个不仅能寻找活动信息，还能统筹后勤和营销策略的系统。这在传统的非AI应用程序中是很难实现的。
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_6.png)
 
 ---
 
@@ -112,7 +108,6 @@ class VenueDetails(BaseModel):
 
 与经典 Python 类需要定义 `__init__` 方法不同，Pydantic 提供了一种语法糖，让你能更简洁地定义模型及其属性。Pydantic 的功能远不止于此，但本课中我们主要利用它将智能体输出转化为结构化数据。
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_8.png)
 
 ---
 
@@ -122,9 +117,7 @@ class VenueDetails(BaseModel):
 
 以下是三个核心任务：
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_10.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_11.png)
 
 1.  **寻找场地任务**：此任务负责为活动寻找场地。我们将使用 `output_json` 属性，将智能体的输出通过 `VenueDetails` 模型转换为 JSON 格式并保存到文件。
     ```python
@@ -173,9 +166,7 @@ class VenueDetails(BaseModel):
 
 我们利用了 crewAI 任务类的多个新属性来展示它们在真实场景中的用途。你现在可能已经在思考可以利用这些属性支持哪些用例了。
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_13.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_14.png)
 
 ---
 
@@ -183,24 +174,16 @@ class VenueDetails(BaseModel):
 
 现在我们已经有了智能体和任务，接下来创建 Crew 并启动执行过程。
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_16.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_17.png)
 
 创建 Crew 的过程很直接，与我们之前所做的一致：定义一组智能体、一组任务，并设置 `verbose` 模式。
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_18.png)
-
-![](img/9838fae71b260e6a118ce9b1f1bfa653_19.png)
-
-![](img/9838fae71b260e6a118ce9b1f1bfa653_20.png)
 
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_22.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_24.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_25.png)
+
+
 
 ```python
 # 定义活动参数
@@ -226,23 +209,16 @@ results = event_planning_crew.kickoff(inputs=event_inputs)
 
 当后勤任务需要人工输入时，程序会暂停等待你的反馈。之后，后勤任务和营销任务将并行执行，因为它们互不依赖。
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_27.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_28.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_29.png)
 
 ---
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_30.png)
 
 ## 查看输出结果 📄
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_32.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_33.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_34.png)
 
 执行完成后，我们可以查看生成的文件。
 
@@ -276,17 +252,12 @@ results = event_planning_crew.kickoff(inputs=event_inputs)
 
 这个系统不仅能够找到合适的场地、规划后勤，还能构思出一套可执行的营销策略。这仅仅是多智能体系统能力的冰山一角，展示了如何将 AI 代理应用于工程领域之外的真实世界场景。
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_36.png)
 
 ---
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_37.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_38.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_39.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_40.png)
 
 ## 总结
 
@@ -301,7 +272,6 @@ results = event_planning_crew.kickoff(inputs=event_inputs)
 
 ![](img/9838fae71b260e6a118ce9b1f1bfa653_42.png)
 
-![](img/9838fae71b260e6a118ce9b1f1bfa653_43.png)
 
 ![](img/9838fae71b260e6a118ce9b1f1bfa653_44.png)
 

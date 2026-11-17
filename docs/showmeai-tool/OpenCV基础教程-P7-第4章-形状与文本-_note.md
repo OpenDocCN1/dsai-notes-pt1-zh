@@ -1,6 +1,5 @@
 # OpenCV基础教程，P7：第4章：形状与文本 🎨
 
-![](img/8a937ccf6391fb83a5e9a49c5cfde311_0.png)
 
 ![](img/8a937ccf6391fb83a5e9a49c5cfde311_0.png)
 
@@ -167,7 +166,6 @@ cv2.destroyAllWindows()
 
 通过调整 `fontScale`（如2.0或0.5）和 `thickness`，你可以轻松改变文本的外观。
 
-![](img/8a937ccf6391fb83a5e9a49c5cfde311_2.png)
 
 ## 总结
 

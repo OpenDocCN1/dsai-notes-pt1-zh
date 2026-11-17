@@ -14,7 +14,6 @@
 
 ---
 
-![](img/ad245050ccf51b5f1572339c4571ca6c_2.png)
 
 ![](img/ad245050ccf51b5f1572339c4571ca6c_3.png)
 

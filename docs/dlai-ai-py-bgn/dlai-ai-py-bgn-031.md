@@ -12,7 +12,6 @@
 
 上一节我们介绍了导入代码的基本概念，本节中我们来看看如何利用社区中现成的强大工具。
 
-![](img/7ac5ad0b05c23bf3f22e7afe84a03198_1.png)
 
 ---
 
@@ -20,7 +19,6 @@
 
 最流行的Python第三方包之一是`pandas`，它常用于处理结构化数据，例如存储在电子表格和CSV文件中的数据。
 
-![](img/7ac5ad0b05c23bf3f22e7afe84a03198_3.png)
 
 > **注意**：这里的“pandas”与可爱的动物无关。它来源于经济学术语“面板数据”的缩写。如果你想知道更多，可以询问AI聊天机器人或搜索。当然，如果你想象一群可爱的熊猫在做数据科学能带来快乐，也完全可以保留这个画面。
 
@@ -33,7 +31,6 @@ import pandas as pd
 在本例中，我们将使用一个关于二手车售价的数据集（数据由Nehal Burer等人整理）。以下是使用pandas读取和查看数据的基本操作：
 
 
-![](img/7ac5ad0b05c23bf3f22e7afe84a03198_5.png)
 
 ```python
 import pandas as pd
@@ -43,7 +40,6 @@ data = pd.read_csv(‘used_car_data.csv‘)
 print(data)
 ```
 
-![](img/7ac5ad0b05c23bf3f22e7afe84a03198_7.png)
 
 pandas功能强大，可以进行数据筛选。例如，以下是获取售价高于10000美元的车辆的方法：
 
@@ -79,10 +75,8 @@ import matplotlib.pyplot as plt
 
 这个包名中间有一个点，但就使用而言，你无需担心其具体含义。导入后，我们可以创建散点图来可视化价格与里程数的关系：
 
-![](img/7ac5ad0b05c23bf3f22e7afe84a03198_9.png)
 
 
-![](img/7ac5ad0b05c23bf3f22e7afe84a03198_11.png)
 
 ```python
 import matplotlib.pyplot as plt

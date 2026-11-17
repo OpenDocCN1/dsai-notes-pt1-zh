@@ -4,15 +4,12 @@
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_2.png)
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_3.png)
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_4.png)
 
 在本节课中，我们将继续实现视觉小说游戏的核心功能。我们将重点处理对话系统的“下一步”按钮逻辑，并重构用户界面，使其更接近现代即时通讯应用的对话气泡风格，以提升用户体验。
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_6.png)
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_8.png)
 
 ## 概述：当前进度与目标
 
@@ -38,9 +35,7 @@
 
 “下一步”按钮位于 `DialogueUI` 组件中，其事件处理器名为 `handleDialogueNext`。我们需要确保这个事件能正确触发。
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_16.png)
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_18.png)
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_20.png)
 
@@ -56,7 +51,6 @@ this.events.on('dialogue-next', this.handleDialogueNext, this);
 
 ### 在对话管理器中实现推进逻辑
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_26.png)
 
 对话的推进逻辑核心在 `DialogueManager` 中。我们需要一个 `advance` 方法，它根据当前对话节点的数据结构来决定下一个要显示的节点。
 
@@ -84,7 +78,6 @@ this.events.on('dialogue-next', this.handleDialogueNext, this);
 当前节点 (currentNode) -> 检查 defaultNextId -> 新节点ID (nextNodeId) -> 更新对话
 ```
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_41.png)
 
 **代码示例：advance方法核心逻辑**
 ```javascript
@@ -130,7 +123,6 @@ update() {
 
 在实现了基础推进功能后，我们发现传统的底部对话框在显示多条消息或选择项时布局不够灵活。因此，我们决定重构UI，采用类似即时通讯软件的对话气泡样式。
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_44.png)
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_46.png)
 
@@ -197,7 +189,6 @@ class UIMessage {
 }
 ```
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_50.png)
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_52.png)
 
@@ -207,7 +198,6 @@ class UIMessage {
 
 我们的游戏使用一个 `UIFields` 容器来管理所有UI元素。我们需要将新的 `UIMessage` 组件适配到这个系统中，使其能够被正确添加、定位和更新。
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_56.png)
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_58.png)
 
@@ -222,9 +212,7 @@ class UIMessage {
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_64.png)
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_66.png)
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_68.png)
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_70.png)
 
@@ -236,11 +224,9 @@ class UIMessage {
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_75.png)
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_77.png)
 
 在重构过程中，我们遇到了几个典型问题：
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_79.png)
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_81.png)
 
@@ -255,7 +241,6 @@ class UIMessage {
 
 ---
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_85.png)
 
 ## 总结与下一步
 
@@ -275,13 +260,11 @@ class UIMessage {
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_99.png)
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_101.png)
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_103.png)
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_104.png)
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_106.png)
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_108.png)
 
@@ -291,7 +274,6 @@ class UIMessage {
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_110.png)
 
-![](img/7a1096523df0bc7c572ee94c6c40188a_112.png)
 
 ![](img/7a1096523df0bc7c572ee94c6c40188a_114.png)
 

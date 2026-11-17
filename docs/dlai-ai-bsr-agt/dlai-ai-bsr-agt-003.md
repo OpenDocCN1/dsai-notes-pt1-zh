@@ -147,7 +147,6 @@ instruction = “获取所有课程列表。”
 
 ## 总结
 
-![](img/b1415b448ab80bbd635b247bc0e8facb_4.png)
 
 ![](img/b1415b448ab80bbd635b247bc0e8facb_5.png)
 

@@ -1,30 +1,21 @@
 # 055：PyTorch中的逻辑回归代码示例 📝
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_1.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_3.png)
 
 在本节课中，我们将通过一个完整的代码示例，来总结之前四个视频中讨论的逻辑回归核心概念。我们将学习如何从零开始实现逻辑回归，以及如何使用PyTorch的高级API来实现相同的功能。
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_5.png)
 
 ---
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_7.png)
 
 ## 概述
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_9.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_10.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_12.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_14.png)
 
 逻辑回归是一种用于二分类问题的经典算法。其核心思想是通过一个线性模型结合Sigmoid激活函数，将输入映射到0到1之间的概率值。我们通过最小化损失函数（如负对数似然）来训练模型参数。
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_16.png)
 
 上一节我们详细推导了逻辑回归的梯度下降更新规则。本节中，我们来看看如何将这些数学公式转化为实际的PyTorch代码。
 
@@ -32,28 +23,20 @@
 
 ## 1. 从零开始实现逻辑回归
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_18.png)
 
 为了深入理解逻辑回归的工作原理，我们首先手动实现其前向传播和反向传播过程。
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_20.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_21.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_22.png)
 
 ### 1.1 模型定义
 
 我们创建一个`LogisticRegression`类，它包含权重、偏置以及必要的方法。
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_24.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_26.png)
 
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_28.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_29.png)
+
 
 ```python
 import torch
@@ -103,7 +86,6 @@ class LogisticRegression:
         return loss
 ```
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_31.png)
 
 以下是关键步骤的说明：
 *   `__init__`: 初始化模型参数。
@@ -112,7 +94,6 @@ class LogisticRegression:
 *   `predict` 和 `evaluate`: 用于模型预测和性能评估。
 *   `_sigmoid` 和 `_loss`: 定义激活函数和损失函数。
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_33.png)
 
 ### 1.2 训练循环
 
@@ -139,53 +120,33 @@ def train(model, x_train, y_train, epochs, learning_rate):
     return train_loss
 ```
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_35.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_37.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_39.png)
 
 ### 1.3 运行示例
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_41.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_43.png)
 
 我们使用一个简单的二分类数据集进行训练和测试。
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_45.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_47.png)
 
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_49.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_51.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_53.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_55.png)
 
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_57.png)
 
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_59.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_60.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_62.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_64.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_66.png)
 
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_68.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_69.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_70.png)
+
+
+
+
+
+
+
+
 
 ```python
 # 准备数据（示例，需替换为实际数据）
@@ -209,46 +170,32 @@ test_acc = model1.evaluate(X_test_t, y_test_t)
 print(f‘Test Accuracy: {test_acc:.2f}‘)
 ```
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_72.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_73.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_75.png)
 
 通过从零实现，我们清晰地看到了梯度计算和参数更新的每一步。
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_77.png)
 
 ---
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_79.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_80.png)
 
 ## 2. 使用PyTorch模块API实现逻辑回归
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_82.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_83.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_84.png)
 
 在实践中，我们更常使用PyTorch提供的高级API，它们更简洁且自动处理梯度计算。
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_86.png)
 
 ### 2.1 利用`nn.Module`定义模型
 
 PyTorch的`torch.nn`模块提供了构建神经网络所需的所有基础组件。
 
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_88.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_89.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_90.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_92.png)
 
 ```python
 import torch.nn as nn
@@ -270,13 +217,10 @@ class LogisticRegressionPyTorch(nn.Module):
 
 ### 2.2 使用优化器和损失函数进行训练
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_94.png)
 
 PyTorch的`torch.optim`模块提供了各种优化算法，`nn`模块中也包含了标准的损失函数。
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_96.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_97.png)
 
 ```python
 def train_pytorch(model, x_train, y_train, epochs, learning_rate):
@@ -305,32 +249,21 @@ def train_pytorch(model, x_train, y_train, epochs, learning_rate):
             print(f‘Epoch: {epoch+1:03d}/{epochs:03d} | Loss: {loss:.4f} | Acc: {acc:.2f}‘)
 ```
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_99.png)
 
 ### 2.3 运行PyTorch版本
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_101.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_103.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_105.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_107.png)
 
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_109.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_111.png)
 
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_113.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_115.png)
-
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_117.png)
 
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_118.png)
+
+
+
+
+
+
 
 ```python
 # 初始化PyTorch模型
@@ -350,35 +283,25 @@ with torch.no_grad():
 print(f‘PyTorch Test Accuracy: {test_acc_pt:.2f}‘)
 ```
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_120.png)
 
 可以看到，两个模型学习到的权重和偏置是相同的，验证了我们手动实现的正确性。PyTorch的实现更加简洁高效。
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_122.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_123.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_124.png)
 
 ---
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_126.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_127.png)
 
 ## 总结
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_129.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_131.png)
 
 本节课中我们一起学习了逻辑回归在PyTorch中的两种实现方式：
 1.  **从零实现**：我们手动编写了前向传播、Sigmoid激活、损失计算以及反向传播的梯度公式。这种方式有助于深刻理解算法底层原理。
 2.  **使用PyTorch API实现**：我们利用`nn.Linear`、`nn.BCELoss`和`torch.optim.SGD`等高级模块，快速构建并训练了逻辑回归模型。这是实际项目中的推荐做法。
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_133.png)
 
-![](img/54ee9d1a5027fa4bec5b5df80ebc8872_134.png)
 
 ![](img/54ee9d1a5027fa4bec5b5df80ebc8872_135.png)
 

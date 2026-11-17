@@ -98,7 +98,6 @@ synthetic-data-kit saves --input clean_qa_dataset.json --format Json --storage J
 
 在本节课中，我们一起学习了如何使用合成数据工具包生成合成数据。我们走完了从设置环境、摄取文档、创建问答数据集、筛选清理数据到最终保存为多种格式的完整流程。
 
-![](img/9884546a37d1911228f40451bd8bf366_1.png)
 
 ![](img/9884546a37d1911228f40451bd8bf366_2.png)
 

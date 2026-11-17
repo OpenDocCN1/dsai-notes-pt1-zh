@@ -8,9 +8,7 @@
 
 Jupyter小部件是一个强大的框架，它允许你在Jupyter笔记本或JupyterLab中创建交互式用户界面。通过将Python代码与浏览器中的JavaScript前端连接起来，你可以构建滑块、按钮、下拉菜单等控件，并实时响应用户的交互来更新计算和可视化结果。
 
-![](img/59dafc9a2f71919fbadbe94b446a0594_1.png)
 
-![](img/59dafc9a2f71919fbadbe94b446a0594_3.png)
 
 ![](img/59dafc9a2f71919fbadbe94b446a0594_5.png)
 
@@ -296,10 +294,8 @@ Jupyter小部件不仅限于内置的基础控件，其真正的力量在于丰�
 
 ![](img/59dafc9a2f71919fbadbe94b446a0594_17.png)
 
-![](img/59dafc9a2f71919fbadbe94b446a0594_19.png)
 
 
-![](img/59dafc9a2f71919fbadbe94b446a0594_21.png)
 
 ```python
 import bqplot.pyplot as plt
@@ -351,15 +347,11 @@ m
 
 ## 总结 🎉
 
-![](img/59dafc9a2f71919fbadbe94b446a0594_27.png)
 
 在本节课中，我们一起学习了Jupyter交互式小部件生态系统的核心内容：
 
-![](img/59dafc9a2f71919fbadbe94b446a0594_29.png)
 
-![](img/59dafc9a2f71919fbadbe94b446a0594_31.png)
 
-![](img/59dafc9a2f71919fbadbe94b446a0594_32.png)
 
 1.  **快速启动**：使用 `interact` 和 `interactive` 函数，无需深入细节即可创建交互界面。
 2.  **基础构建**：认识了各种基础小部件，学会了如何显示、获取/设置值以及链接它们。

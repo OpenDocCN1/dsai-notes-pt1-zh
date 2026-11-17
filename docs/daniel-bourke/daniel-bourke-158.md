@@ -2,15 +2,11 @@
 
 ![](img/dc5f478980a4ce82388cceb6c262852e_0.png)
 
-![](img/dc5f478980a4ce82388cceb6c262852e_2.png)
 
-![](img/dc5f478980a4ce82388cceb6c262852e_3.png)
 
-![](img/dc5f478980a4ce82388cceb6c262852e_5.png)
 
 在本节课中，我们将学习如何通过数据增强技术来创建训练数据集和DataLoader，以应对模型可能出现的过拟合问题。我们将使用PyTorch的`transforms`模块来实现图像增强，并构建适用于训练和测试的数据加载器。
 
-![](img/dc5f478980a4ce82388cceb6c262852e_6.png)
 
 ---
 

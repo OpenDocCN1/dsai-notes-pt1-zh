@@ -1,6 +1,5 @@
 # 017：利用人机协同方法应用AI
 
-![](img/5d270854ece206c9f120d1ac9dd14d9c_0.png)
 
 ![](img/5d270854ece206c9f120d1ac9dd14d9c_0.png)
 

@@ -1,8 +1,6 @@
 # 1：Binder 2.0 - 下一代可复现科学环境 🚀
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_1.png)
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_3.png)
 
 在本节课中，我们将学习 Binder 2.0 项目。Binder 是一个将代码仓库（如 GitHub 仓库）转换为可交互计算环境的工具，旨在促进科学研究的可复现性。我们将了解它的核心组件、工作原理以及它如何帮助科学家和研究者。
 
@@ -18,30 +16,25 @@ Binder 项目致力于解决科学计算中的可复现性问题。它通过结�
 
 在深入 Binder 之前，我们需要区分两个概念：**技术可复现性**和**实践可复现性**。
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_5.png)
 
 *   **技术可复现性**意味着理论上，只要找到正确的配置（如 Docker 文件），就能复现结果。但这通常需要深厚的计算机科学背景。
 *   **实践可复现性**意味着即使没有计算机科学背景，也能复现他人的工作。Binder 的目标正是实现后者，让复现工作对广大科学家而言变得简单易行。
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_7.png)
 
 为了实现实践可复现性，需要将多种工具无缝整合。这正是 Binder 所做的。
 
 ---
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_9.png)
 
 ## Binder 是什么？
 
 Binder 主要由三个核心部分组成：
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_11.png)
 
 1.  **Repo2Docker**：一个将 Git 代码仓库自动构建为 Docker 镜像的工具。
 2.  **JupyterHub**：一个多用户服务器，用于为每个用户生成和管理独立的 Jupyter 笔记本会话。
 3.  **BinderHub**：一个协调整个流程（从构建镜像到启动用户会话）并提供用户界面的服务。
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_13.png)
 
 此外，`mybinder.org` 是一个由 Binder 团队运营的公共免费服务，作为该技术的示范。
 
@@ -51,13 +44,10 @@ Binder 主要由三个核心部分组成：
 
 从用户角度看，Binder 的使用非常简单。例如，当 LIGO 团队发布其引力波探测论文时，他们同时提供了一个指向其 GitHub 仓库的 Binder 链接。
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_15.png)
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_17.png)
 
 用户点击该链接后，会看到一个“正在加载 Binder”的页面。此时，Binder 正在后台根据仓库中的配置文件构建 Docker 镜像，并在 JupyterHub 上为用户启动一个会话。完成后，用户会直接进入一个包含所有代码、数据和环境的可交互 Jupyter 笔记本中。
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_19.png)
 
 仓库中通常包含定义环境的文件，例如：
 *   `requirements.txt`：列出 Python 包依赖。
@@ -73,13 +63,11 @@ Binder 主要由三个核心部分组成：
 
 ### Repo2Docker：从仓库到镜像
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_21.png)
 
 Repo2Docker 是 Binder 的核心，它是一个独立的项目。其理念是自动化人类为发布可复现环境所采取的步骤。
 
 以下是运行 `jupyter-repo2docker` 命令后的主要步骤：
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_23.png)
 
 1.  **克隆仓库**：首先，工具会克隆指定的 Git 仓库。
 2.  **检测环境**：分析仓库中的文件（如 `requirements.txt`, `environment.yml`, `install.R`），以确定需要安装哪些软件来运行代码。
@@ -98,7 +86,6 @@ Repo2Docker 支持多种环境：
 
 JupyterHub 是一个为多用户启动和管理独立 Jupyter 笔记本服务器的工具。其关键在于可插拔的**验证器**和**生成器**。
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_25.png)
 
 *   **生成器** 定义了如何为用户启动服务器。Binder 主要使用 **Kubernetes** 生成器，它可以在任何云提供商上运行，具有良好的可扩展性，这对于维持大型服务的运行和迁移至关重要。
 *   社区已经提供了在 Kubernetes 上部署 JupyterHub 的成熟方案（如 `kubespawner` 和 `Zero to JupyterHub` 指南），这为 Binder 的可持续性提供了支持。
@@ -107,7 +94,6 @@ JupyterHub 是一个为多用户启动和管理独立 Jupyter 笔记本服务器
 
 BinderHub 负责提供用户访问的网页界面（即 `mybinder.org` 上的加载页面和表单）。它的主要职责是协调整个流程：
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_27.png)
 
 1.  接收用户请求（指定仓库和版本）。
 2.  询问 Repo2Docker 构建对应镜像（如果尚未构建）。
@@ -115,7 +101,6 @@ BinderHub 负责提供用户访问的网页界面（即 `mybinder.org` 上的加
 4.  请求 JupyterHub 为该镜像启动一个用户服务器。
 5.  将用户重定向到运行中的服务器。
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_29.png)
 
 整个交互流程可以概括为：
 `用户浏览器 -> BinderHub -> Repo2Docker / JupyterHub -> Kubernetes -> 用户会话`
@@ -128,13 +113,11 @@ Binder 的目标是能够在任何地方部署。`MyBinder.org` 是 Binder 团�
 
 该服务表现出极高的受欢迎度，用户遍布全球几乎每个国家，这体现了其在提升计算分析可及性方面的价值。
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_31.png)
 
 为了保持透明和开放，`MyBinder.org`：
 *   **公开监控数据**：在 `grafana.mybinder.org` 上实时展示服务状态、用户数量、热门仓库等信息。
 *   **关注可持续性**：团队致力于探索可持续的计算服务模式。通过优化和利用 Kubernetes 的弹性伸缩，目前 `MyBinder.org` 的运营成本已降至约 **每用户每天 1-2 美分**。团队也公开每月的云服务账单。
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_33.png)
 
 ---
 
@@ -153,7 +136,6 @@ Binder 团队对未来发展充满期待，主要集中在两个方向：
 
 ---
 
-![](img/0ab3f1495dc35c7ebfa4039ef1653a44_35.png)
 
 ## 总结
 

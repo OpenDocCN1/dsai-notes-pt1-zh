@@ -66,7 +66,6 @@
 
 ![](img/a3a25258d0ec0781b696ce90d82fcddd_3.png)
 
-![](img/a3a25258d0ec0781b696ce90d82fcddd_4.png)
 
 ---
 

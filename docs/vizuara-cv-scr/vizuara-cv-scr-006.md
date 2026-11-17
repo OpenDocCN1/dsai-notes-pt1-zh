@@ -1,6 +1,5 @@
 #  006：一个用于计算机视觉的简单神经网络
 
-![](img/c6b9640ef0ed87fb4d1a6a4f214cc7a1_0.png)
 
 ![](img/c6b9640ef0ed87fb4d1a6a4f214cc7a1_0.png)
 
@@ -20,6 +19,5 @@
 
 在进入编码部分之前，我们今天将完全在Google Colab中进行编码，这样你就不需要预先安装任何东西，操作起来非常容易，你不需要单独安装Python，一切都在运行。
 
-![](img/c6b9640ef0ed87fb4d1a6a4f214cc7a1_2.png)
 
 ![](img/c6b9640ef0ed87fb4d1a6a4f214cc7a1_2.png)

@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P38：L38- 在更新中使用子查询 📝
 
-![](img/1aaccc13121b796c4c981d548aa633d9_0.png)
 
 ![](img/1aaccc13121b796c4c981d548aa633d9_0.png)
 
@@ -74,11 +73,9 @@ FROM invoices
 WHERE payment_date IS NULL;
 ```
 
-![](img/1aaccc13121b796c4c981d548aa633d9_2.png)
 
 确认查询结果无误后，再将`WHERE`条件应用到`UPDATE`语句中。
 
-![](img/1aaccc13121b796c4c981d548aa633d9_3.png)
 
 ```sql
 UPDATE invoices
@@ -86,8 +83,6 @@ SET payment_total = 10
 WHERE payment_date IS NULL;
 ```
 
-![](img/1aaccc13121b796c4c981d548aa633d9_2.png)
-![](img/1aaccc13121b796c4c981d548aa633d9_3.png)
 
 ## 实战练习 ✍️
 
@@ -123,7 +118,6 @@ WHERE payment_date IS NULL;
 
 这个语句会找到所有黄金客户的ID，然后更新这些客户对应的订单评论。
 
-![](img/1aaccc13121b796c4c981d548aa633d9_8.png)
 
 ## 总结 📚
 

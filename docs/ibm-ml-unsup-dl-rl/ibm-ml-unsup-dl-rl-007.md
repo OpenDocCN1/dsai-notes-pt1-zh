@@ -12,23 +12,18 @@ Now sometimes there's going to be a specific amount of clusters。
 
 
 
-![](img/c7ecce103030f975211d50095ed14981_1.png)
 
 Or the business side of your organization may dictate that there are 10 clusters when trying to determine the different measurements to incorporate into our different sizes。
 
 
 
-![](img/c7ecce103030f975211d50095ed14981_3.png)
 
-![](img/c7ecce103030f975211d50095ed14981_4.png)
 
 Or a navigation interface for  browsing scientific papers may need to be split into 20 disciplines specifically。
 
  so you set K equal to 20。
 
-![](img/c7ecce103030f975211d50095ed14981_6.png)
 
-![](img/c7ecce103030f975211d50095ed14981_7.png)
 
 On the other hand， there's going to be times， though， that the number of clusters is unclear。
 
@@ -36,9 +31,7 @@ On the other hand， there's going to be times， though， that the number of c
 
 
 
-![](img/c7ecce103030f975211d50095ed14981_9.png)
 
-![](img/c7ecce103030f975211d50095ed14981_10.png)
 
 Now， in order to do so we're going to introduce some metrics。
 
@@ -46,7 +39,6 @@ Now， in order to do so we're going to introduce some metrics。
 
 
 
-![](img/c7ecce103030f975211d50095ed14981_12.png)
 
 The metric is going to just give us the total sum of squared distance of each point to its cluster centroid。
 
@@ -60,31 +52,24 @@ One drawback of using inertia is that this value will be sensitive to the number
 
 
 
-![](img/c7ecce103030f975211d50095ed14981_14.png)
 
-![](img/c7ecce103030f975211d50095ed14981_15.png)
 
 Now， distortion， on the other hand， takes the average of the square distances from each point to its cluster centroid。
 
 
 
-![](img/c7ecce103030f975211d50095ed14981_17.png)
 
-![](img/c7ecce103030f975211d50095ed14981_18.png)
 
 Again， it'll still hold that smaller values will correspond to tighter clusters。
 
 
 
-![](img/c7ecce103030f975211d50095ed14981_20.png)
 
 But this time， adding more points will not necessarily increase distortion as closer points will aid in actually decreasing that average distance。
 
 
 
-![](img/c7ecce103030f975211d50095ed14981_22.png)
 
-![](img/c7ecce103030f975211d50095ed14981_23.png)
 
 So thinking about inertia versus distortion， both are going to be measures of entropy per cluster。
 
@@ -100,7 +85,6 @@ Inertia will always increase as more members are added to each cluster。
 
 
 
-![](img/c7ecce103030f975211d50095ed14981_25.png)
 
 So what can we do in order to find the clustering with best inertia？
 
@@ -114,7 +98,6 @@ And with different initial configurations。 And with that， assuming we predei
 
 
 
-![](img/c7ecce103030f975211d50095ed14981_27.png)
 
 So as an example of this， we're thinking which model is going to be the right one。
 
@@ -138,6 +121,5 @@ As well as showing in the next video the syntax used to compute these methods us
 
  All right， I'll see you there。
 
-![](img/c7ecce103030f975211d50095ed14981_29.png)
 
 ![](img/c7ecce103030f975211d50095ed14981_30.png)

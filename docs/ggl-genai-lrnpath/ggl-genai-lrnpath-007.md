@@ -12,7 +12,6 @@
 
 
 
-![](img/2050b1d69c45bf91d849b1eabc94c2ea_1.png)
 
 ![](img/2050b1d69c45bf91d849b1eabc94c2ea_1.png)
 
@@ -20,7 +19,6 @@
 
 
 
-![](img/2050b1d69c45bf91d849b1eabc94c2ea_3.png)
 
 ![](img/2050b1d69c45bf91d849b1eabc94c2ea_3.png)
 
@@ -30,7 +28,6 @@
 
 
 
-![](img/2050b1d69c45bf91d849b1eabc94c2ea_5.png)
 
 接下来，我们将概述报告的结构。该报告细分为七个部分，包含的数据说明了负责任AI如何：
 

@@ -1,8 +1,6 @@
 # 076：网页抓取 🕸️
 
-![](img/755445de991797ba4dc01d6412d02c0a_0.png)
 
-![](img/755445de991797ba4dc01d6412d02c0a_1.png)
 
 在本节课中，我们将要学习**网页抓取**。这是一种自动从网站提取信息的技术，可以极大地节省手动收集数据的时间和精力。
 
@@ -14,15 +12,11 @@
 
 要开始网页抓取，我们只需要一些Python代码以及两个名为 `requests`  和 `beautifulsoup4` 的模块的帮助。
 
-![](img/755445de991797ba4dc01d6412d02c0a_3.png)
 
-![](img/755445de991797ba4dc01d6412d02c0a_4.png)
 
 假设你被要求从以下网页中找出国家篮球联盟球员的姓名和薪水。
 
-![](img/755445de991797ba4dc01d6412d02c0a_5.png)
 
-![](img/755445de991797ba4dc01d6412d02c0a_6.png)
 
 首先，我们导入Beautiful Soup。我们可以将网页HTML作为字符串存储在变量 `html` 中。为了解析文档，我们将其传递给Beautiful Soup的构造函数。这样我们就得到了一个Beautiful Soup对象 `soup`，它以一种嵌套的数据结构来表示文档。
 
@@ -36,37 +30,28 @@ Beautiful Soup将HTML表示为一组树状对象，并提供了用于解析HTML�
 
 我们可以通过以下方式访问标签的子节点，或者说沿着分支向下导航：
 
-![](img/755445de991797ba4dc01d6412d02c0a_8.png)
 
-![](img/755445de991797ba4dc01d6412d02c0a_9.png)
 
-![](img/755445de991797ba4dc01d6412d02c0a_10.png)
 
 ```python
 tag_object.contents
 ```
 
-![](img/755445de991797ba4dc01d6412d02c0a_11.png)
 
-![](img/755445de991797ba4dc01d6412d02c0a_12.png)
 
-![](img/755445de991797ba4dc01d6412d02c0a_13.png)
 
 你可以使用 `parent` 属性向上导航树。变量 `tag_child` 位于此处，我们可以访问它的父节点。这就是原始的 `tag_object`。
 
-![](img/755445de991797ba4dc01d6412d02c0a_14.png)
 
 我们还可以找到标签对象的兄弟节点。我们只需使用 `next_sibling` 属性。我们可以找到 `sibling1` 的兄弟节点，同样使用 `next_sibling` 属性。
 
 考虑 `tag_child` 对象。你可以像字典中的键值对一样访问其属性名称和值，如下所示：
 
-![](img/755445de991797ba4dc01d6412d02c0a_16.png)
 
 ```python
 tag_child[‘attribute_name’]
 ```
 
-![](img/755445de991797ba4dc01d6412d02c0a_17.png)
 
 你可以将内容作为可导航字符串返回。这类似于支持Beautiful Soup功能的Python字符串。
 
@@ -76,15 +61,11 @@ tag_child[‘attribute_name’]
 
 你可以使用过滤器基于标签的名称、属性、字符串的文本或这些条件的组合进行筛选。
 
-![](img/755445de991797ba4dc01d6412d02c0a_19.png)
 
-![](img/755445de991797ba4dc01d6412d02c0a_20.png)
 
-![](img/755445de991797ba4dc01d6412d02c0a_21.png)
 
 考虑一个披萨店的列表。像之前一样，创建一个Beautiful Soup对象，但这次将其命名为 `table`。
 
-![](img/755445de991797ba4dc01d6412d02c0a_22.png)
 
 `find_all` 方法会遍历一个标签的所有后代，并检索所有匹配你过滤器的后代。将其应用到带有标签 `tr` 的 `table` 上。结果是一个类似列表的Python可迭代对象。
 
@@ -94,13 +75,10 @@ tag_child[‘attribute_name’]
 
 我们也可以遍历每个表格单元格。首先，我们通过变量 `row` 遍历列表 `tr_rows`。每个元素对应于表格中的一行。
 
-![](img/755445de991797ba4dc01d6412d02c0a_24.png)
 
 我们可以应用 `find_all` 方法来查找所有的表格单元格。然后，我们可以为每一行遍历变量 `cells`。
 
-![](img/755445de991797ba4dc01d6412d02c0a_25.png)
 
-![](img/755445de991797ba4dc01d6412d02c0a_26.png)
 
 在每次迭代中，变量 `cell` 对应于该特定行表格中的一个元素。我们继续遍历每个元素，并为每一行重复这个过程。
 
@@ -114,17 +92,12 @@ tag_child[‘attribute_name’]
 
 使用 `text` 属性来获取文本，并将其赋值给变量 `page`。
 
-![](img/755445de991797ba4dc01d6412d02c0a_28.png)
 
-![](img/755445de991797ba4dc01d6412d02c0a_29.png)
 
 然后，从变量 `page` 创建一个Beautiful Soup对象 `soup`。这将允许你解析HTML页面，现在你就可以开始抓取页面了。
 
-![](img/755445de991797ba4dc01d6412d02c0a_30.png)
 
-![](img/755445de991797ba4dc01d6412d02c0a_31.png)
 
-![](img/755445de991797ba4dc01d6412d02c0a_32.png)
 
 请查看实验部分以获取更多实践内容。
 

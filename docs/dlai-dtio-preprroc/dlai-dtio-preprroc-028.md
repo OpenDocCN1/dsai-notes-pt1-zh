@@ -10,22 +10,14 @@
 
 让我们更进一步，请求**1000条**结果，这是该特定API单次请求所能获取的最大数量。API通常会设置请求限制以保护服务器资源。
 
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_1.png)
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_2.png)
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_3.png)
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_4.png)
 
 请注意，这次请求完成所需的时间稍长一些。
 
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_1.png)
 
 现在，Pandas提供了一个方法，可以将这个字典（JSON数据）转换为数据框。
 
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_2.png)
 
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_3.png)
 
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_4.png)
 
 再次查看返回数据的键（keys），你认为应该将哪个键对应的值转换为数据框？
 
@@ -45,9 +37,7 @@
 
 查看 `df.dtypes`，你会发现所有列的数据类型都是 `object`。
 
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_6.png)
 
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_6.png)
 
 正如之前所学，Python默认将所有内容视为对象（基本上是文本）。然而，有些列应该是数值型或日期型。
 
@@ -57,9 +47,7 @@
 
 现在，当你查看 `df.head()` 时，可以看到它们已格式化为包含年、月、日的日期。
 
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_8.png)
 
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_8.png)
 
 你还看到了哪些数据预处理的机会？
 
@@ -76,12 +64,8 @@
 
 让我们向大语言模型（LLM）咨询如何解决这个问题：“我的数据框中有一个列，只有 `Class 1`、`Class 2` 和 `Class 3` 这三个值。我尝试使用下面的代码进行替换，但得到了下面的错误结果。” 附上你的代码和奇怪的结果。
 
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_10.png)
 
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_11.png)
 
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_10.png)
-![](img/dcb308a5bdcbf7feb2470f6be6c82d10_11.png)
 
 大语言模型建议使用正则表达式，这是一个选择。但你也可以问：“有没有更简单的方法？” 它可能会建议使用 `map` 方法，你当然可以尝试。或者，更简单的思路是：先替换 `Class 3`，然后替换 `Class 2`。不过，我们按照模型的建议试试看。
 

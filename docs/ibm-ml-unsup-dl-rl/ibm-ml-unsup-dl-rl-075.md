@@ -8,19 +8,14 @@ So in order to cover this topic， we're going to discuss convolutional neural n
 
 
 
-![](img/7664e344d33207681664119f4442a7a4_1.png)
 
-![](img/7664e344d33207681664119f4442a7a4_2.png)
 
-![](img/7664e344d33207681664119f4442a7a4_3.png)
 
 And then we're going to go over many common terms that you're going to need to know and we'll understand much deeper as we go through these videos such as grid size。
 
  padding， pooling， and depth。
 
-![](img/7664e344d33207681664119f4442a7a4_5.png)
 
-![](img/7664e344d33207681664119f4442a7a4_6.png)
 
 Now let's start off with the motivation behind these convolutional neural networks。
 
@@ -32,11 +27,8 @@ So if we imagine an image and the way that an image works is that each one of th
 
 
 
-![](img/7664e344d33207681664119f4442a7a4_8.png)
 
-![](img/7664e344d33207681664119f4442a7a4_9.png)
 
-![](img/7664e344d33207681664119f4442a7a4_10.png)
 
 And the structure of our neural network so far treats all of our inputs interchangeably。
 
@@ -44,9 +36,7 @@ And the structure of our neural network so far treats all of our inputs intercha
 
 
 
-![](img/7664e344d33207681664119f4442a7a4_12.png)
 
-![](img/7664e344d33207681664119f4442a7a4_13.png)
 
 So there's no relationship between these individual features。
 
@@ -56,13 +46,10 @@ So there's no relationship between these individual features。
 
 
 
-![](img/7664e344d33207681664119f4442a7a4_15.png)
 
-![](img/7664e344d33207681664119f4442a7a4_16.png)
 
 In building out our neural net architecture。
 
-![](img/7664e344d33207681664119f4442a7a4_18.png)
 
 Now again， these convolutional networks that we discuss here were developed to deal with image data and the motivation behind them will become clear as we work through examples involving image data。
 
@@ -70,13 +57,9 @@ Now again， these convolutional networks that we discuss here were developed to
 
  such as working with time series。
 
-![](img/7664e344d33207681664119f4442a7a4_20.png)
 
-![](img/7664e344d33207681664119f4442a7a4_21.png)
 
-![](img/7664e344d33207681664119f4442a7a4_22.png)
 
-![](img/7664e344d33207681664119f4442a7a4_23.png)
 
 Now， some thoughts to keep in mind when diving into the motivation behind working with a new architecture。
 
@@ -88,9 +71,7 @@ And this makes images different from， say， loan default prediction where the
 
 
 
-![](img/7664e344d33207681664119f4442a7a4_25.png)
 
-![](img/7664e344d33207681664119f4442a7a4_26.png)
 
 We'll also want translation and variance， so when we're trying to identify whether there's a certain object in the image。
 
@@ -100,19 +81,16 @@ We want to ensure that it doesn't matter the size of that object or the orientat
 
 
 
-![](img/7664e344d33207681664119f4442a7a4_28.png)
 
 Convolutional neural nets are going to be based on what we know about the structure of images and also what we know about the human visual system。
 
 
 
-![](img/7664e344d33207681664119f4442a7a4_30.png)
 
 The human visual system has receptive fields， which respond to horizontal bars， vertical bars， etc。
 
  and pieces them together。
 
-![](img/7664e344d33207681664119f4442a7a4_32.png)
 
 Within data， many of the pixels， which again are going to be our features。
 
@@ -120,9 +98,7 @@ Within data， many of the pixels， which again are going to be our features。
 
  and we want to keep that in mind as well。
 
-![](img/7664e344d33207681664119f4442a7a4_34.png)
 
-![](img/7664e344d33207681664119f4442a7a4_35.png)
 
 Within these images， we're also going to want to be able to identify edges and shapes that exist within that data。
 

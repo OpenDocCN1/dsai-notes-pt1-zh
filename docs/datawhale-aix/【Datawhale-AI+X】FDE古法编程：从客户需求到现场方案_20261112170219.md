@@ -127,9 +127,7 @@ grade_one_hot = {
 
 总结一下，古法FDE的工作流程包括：概念验证、系统集成、生产上线。当时这是一个大团队的工作，讲师主要负责数据清洗、部署和客户主导等方面。
 
-![](img/907428dc993c4dd7eacc865be235d56c_6.png)
 
-![](img/907428dc993c4dd7eacc865be235d56c_8.png)
 
 如果你想深入了解机器学习系统中的工程细节，可以阅读名为《hidden technical debt in machine learning systems》的文章。这篇文章详细说明了除了模型代码本身，FDE还需要处理数据验证、特征工程、监控等大量复杂工作。
 

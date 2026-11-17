@@ -6,13 +6,11 @@
 
 在本节课中，我们将学习如何实现SSD模型的训练过程。主要内容包括：查看训练代码的运行结果与流程，理解关键命令行参数，以及为编写训练代码进行必要的初始配置确定。
 
-![](img/1eb58261c07eb0fb8a91d616a16795fc_5.png)
 
 ![](img/1eb58261c07eb0fb8a91d616a16795fc_7.png)
 
 ---
 
-![](img/1eb58261c07eb0fb8a91d616a16795fc_9.png)
 
 ## 训练运行结果与流程展示
 
@@ -82,7 +80,6 @@ python train_ssd_network.py --pretrained_model_path=... --fine_tuning_checkpoint
 
 ---
 
-![](img/1eb58261c07eb0fb8a91d616a16795fc_33.png)
 
 ## 训练初始配置确定
 

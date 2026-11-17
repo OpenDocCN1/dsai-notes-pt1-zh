@@ -24,7 +24,6 @@ Now， the goal of autoenrs is going to be to use those hidden layers in our neu
 
 
 
-![](img/dbad0e00b1bf78a7effc0f08255c4af8_1.png)
 
 Now， as motivation， let's say we want to find whether two images are similar to one another。
 
@@ -32,7 +31,6 @@ Now， as motivation， let's say we want to find whether two images are similar
 
 
 
-![](img/dbad0e00b1bf78a7effc0f08255c4af8_3.png)
 
 Now one option， and I'll say right off the bat that we probably don't want to do。
 
@@ -66,7 +64,6 @@ With something like autoencodederrs that leverages these deep neural networks。
 
  we should be able to capture these essences。
 
-![](img/dbad0e00b1bf78a7effc0f08255c4af8_5.png)
 
 Now， before getting into the actual method of working with autoencoderrs。
 
@@ -80,7 +77,6 @@ Some defects might be imperceptible for the human eye or difficult to scale。
 
 
 
-![](img/dbad0e00b1bf78a7effc0f08255c4af8_7.png)
 
 We may want to then reduce the dimensionality of those pixels so we can look at these defects at a lower dimensionality when we're comparing whether or not they're similar to one another。
 
@@ -96,7 +92,6 @@ We use PCA。And again， we're able to create a linear combination of our princ
 
 
 
-![](img/dbad0e00b1bf78a7effc0f08255c4af8_9.png)
 
 Now， just a quick reminder how PCA works before we get into auto encoders and to motivate auto encoders。
 

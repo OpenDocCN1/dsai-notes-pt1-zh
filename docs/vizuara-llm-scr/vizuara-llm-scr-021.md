@@ -1,6 +1,5 @@
 # 21：-23-编写完整的LLM Transformer Block
 
-![](img/9b79b6905784dd5547673ec07960bbc2_0.png)
 
 ![](img/9b79b6905784dd5547673ec07960bbc2_0.png)
 

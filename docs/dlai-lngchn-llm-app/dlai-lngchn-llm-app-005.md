@@ -1,8 +1,6 @@
 # 005：问答系统构建 🧠
 
-![](img/0e21b3ba79ba3f5ec23912bdd41a308b_0.png)
 
-![](img/0e21b3ba79ba3f5ec23912bdd41a308b_2.png)
 
 在本节课中，我们将综合运用前几节课的知识，构建一个能够利用外部数据作为上下文的对话式问答LLM应用程序。
 
@@ -43,7 +41,6 @@ async function initializeVectorStore(documents, chunkSize = 1536, chunkOverlap =
 
 以下是构建文档检索链的步骤：
 
-![](img/0e21b3ba79ba3f5ec23912bdd41a308b_4.png)
 
 1.  定义一个格式化文档内容的函数，使用XML标签分隔不同文档，以帮助LLM区分不同的信息。
 2.  创建一个可运行序列，该序列接受一个包含`question`字段的对象作为输入。
@@ -123,11 +120,8 @@ const qaChain = RunnableSequence.from([
 
 如果我们直接用这个后续问题查询向量存储，检索到的文档可能与“先修要求”无关，导致回答不准确。这揭示了当前简单检索问答系统在对话上下文处理上的局限性。
 
-![](img/0e21b3ba79ba3f5ec23912bdd41a308b_10.png)
 
-![](img/0e21b3ba79ba3f5ec23912bdd41a308b_11.png)
 
-![](img/0e21b3ba79ba3f5ec23912bdd41a308b_12.png)
 
 ## 总结
 

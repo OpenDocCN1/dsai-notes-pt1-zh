@@ -1,16 +1,12 @@
 # 009：饼图绘制
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_1.png)
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_2.png)
 
 在本节课中，我们将学习另一种数据可视化工具——饼图，并掌握如何使用Matplotlib库来创建它。
 
 饼图是一种圆形统计图表，通过分割成若干扇形来展示数值比例。例如，2015年加拿大联邦选举的饼图显示，自由党（红色部分）赢得了超过50%的众议院席位，因此红色占据了圆形的一半以上。
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_4.png)
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_6.png)
 
 ## 数据集回顾
 
@@ -22,19 +18,14 @@
 
 假设我们希望按大洲可视化移民到加拿大的分布情况。第一步是使用`Continent`列将数据按大洲分组。我们使用pandas的`groupby`函数对`df_canada`进行分组，并对属于同一大洲的国家的移民数量进行求和。
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_8.png)
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_9.png)
 
 以下是分组后的数据框，我们将其命名为`df_continents`。该数据框包含6行（每个大洲一行）和35列（代表1980年至2013年的年份，以及每个大洲的累计移民总数）。
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_11.png)
 
 ## 创建饼图
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_13.png)
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_14.png)
 
 现在，我们开始创建饼图。首先，导入必要的库：
 
@@ -43,23 +34,18 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 ```
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_16.png)
 
 接着，调用`df_continents`数据框中`Total`列的`plot`函数，并设置`kind='pie'`以生成饼图：
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_17.png)
 
 ```python
 df_continents['Total'].plot(kind='pie')
 ```
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_19.png)
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_21.png)
 
 然后，为图表添加标题，并调用`show`函数显示图表：
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_23.png)
 
 ```python
 plt.title('Immigration to Canada by Continent (1980-2013)')
@@ -68,27 +54,19 @@ plt.show()
 
 至此，我们成功创建了一个饼图，展示了1980年至2013年各洲移民到加拿大的比例。
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_25.png)
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_26.png)
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_27.png)
 
 ## 饼图的局限性
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_29.png)
 
 需要指出的是，饼图在某些情况下存在争议。许多反对者认为饼图难以准确、一致地展示数据。相比之下，条形图在呈现数据一致性和传达信息方面更为有效。
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_31.png)
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_32.png)
 
 如果你对反对饼图的论点感兴趣，可以参考视频下方链接中的文章，该文章详细讨论了饼图的缺陷。
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_34.png)
 
-![](img/5fd7af5e201345b2a47644e9a00bf189_35.png)
 
 ## 总结
 

@@ -1,6 +1,5 @@
 # PySpark 大数据处理入门，6：L6- PySpark MLlib 简介 🚀
 
-![](img/f720d66f49fae41d670aae65c8eaadee_1.png)
 
 在本节课中，我们将要学习 PySpark 的机器学习库 MLlib。我们将了解其两种主要 API，并通过一个简单的线性回归示例，演示如何使用 DataFrame API 来构建和评估一个机器学习模型。
 
@@ -10,13 +9,10 @@
 
 Spark MLlib 提供了优秀的文档和丰富的示例。MLlib 主要提供两种技术：一种是基于 RDD 的 API，另一种是基于 DataFrame 的 API。DataFrame API 是较新且广泛使用的技术，因此本教程将重点介绍如何使用 DataFrame API 来解决机器学习问题。
 
-![](img/f720d66f49fae41d670aae65c8eaadee_3.png)
 
 上一节我们介绍了 PySpark 的核心数据处理，本节中我们来看看如何使用其机器学习库。
 
-![](img/f720d66f49fae41d670aae65c8eaadee_4.png)
 
-![](img/f720d66f49fae41d670aae65c8eaadee_5.png)
 
 ---
 
@@ -24,7 +20,6 @@ Spark MLlib 提供了优秀的文档和丰富的示例。MLlib 主要提供两�
 
 Spark MLlib 包含两种不同的技术实现。
 
-![](img/f720d66f49fae41d670aae65c8eaadee_7.png)
 
 *   **RDD-based API**：基于弹性分布式数据集（RDD）的早期 API。
 *   **DataFrame-based API**：基于 DataFrame 的新 API，它构建在 Spark SQL 之上，能更好地利用 Spark 的优化器，并且与 ML 管道（Pipeline）集成得更好。
@@ -33,7 +28,6 @@ Spark MLlib 包含两种不同的技术实现。
 
 ---
 
-![](img/f720d66f49fae41d670aae65c8eaadee_10.png)
 
 ## 一个简单的机器学习示例
 
@@ -43,7 +37,6 @@ Spark MLlib 包含两种不同的技术实现。
 
 ### 1. 准备数据与 Spark 会话
 
-![](img/f720d66f49fae41d670aae65c8eaadee_13.png)
 
 首先，我们需要创建一个 SparkSession 并加载数据。
 
@@ -152,7 +145,6 @@ print("平均绝对误差 (MAE):", test_results.meanAbsoluteError)
 
 本节课中我们一起学习了 PySpark MLlib 的基本概念和使用流程。我们了解到 MLlib 提供了基于 DataFrame 的现代化 API。通过一个简单的线性回归示例，我们实践了从数据准备、特征组合、划分数据集、训练模型到评估模型的完整步骤。核心操作包括使用 `VectorAssembler` 组合特征，以及使用 `LinearRegression` 等算法进行建模。
 
-![](img/f720d66f49fae41d670aae65c8eaadee_15.png)
 
 在接下来的课程中，我们将更深入地探讨线性回归等算法的理论及其在 PySpark 中的详细实现。
 

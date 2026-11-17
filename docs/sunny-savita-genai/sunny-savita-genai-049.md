@@ -15,7 +15,6 @@
 
 ![](img/91c554df1fce463d8a96e557313d4ba8_1.png)
 
-![](img/91c554df1fce463d8a96e557313d4ba8_2.png)
 
 以下是其工作流程的简要说明：
 1.  用户提出一个查询。
@@ -25,7 +24,6 @@
 
 这种方法的好处在于，它能提供更丰富的上下文信息，帮助大语言模型更好地理解核心句子的含义和背景，从而生成更准确、连贯的回答，尤其能减少因信息碎片化导致的“幻觉”问题。
 
-![](img/91c554df1fce463d8a96e557313d4ba8_4.png)
 
 ![](img/91c554df1fce463d8a96e557313d4ba8_5.png)
 
@@ -73,7 +71,6 @@ node_parser = SentenceWindowNodeParser.from_defaults(
 nodes = node_parser.get_nodes_from_documents(documents)
 ```
 
-![](img/91c554df1fce463d8a96e557313d4ba8_11.png)
 
 解析完成后，我们需要将这些节点存入向量数据库并创建索引。
 

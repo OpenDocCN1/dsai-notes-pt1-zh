@@ -45,7 +45,6 @@ df_sorted = df_rank.sort_values(by='得分值', ascending=False)
 ## 提取前十名股票
 排序之后，我们通常只关心排名最靠前的股票。因此，最后一步是从排序结果中提取出前十名的股票代码。
 
-![](img/5e7da8b17dcaefe93d749b6b5585a83e_1.png)
 
 我们不需要所有列，只需要股票代码（通常作为索引）和得分。以下是提取前十名股票列表的代码：
 ```python
@@ -53,18 +52,14 @@ top_10_stocks = df_sorted['得分值'].head(10).index.tolist()
 ```
 这段代码首先选取“得分值”列，然后使用 `.head(10)` 获取前十个得分最高的条目，接着通过 `.index` 获取对应的股票代码索引，最后用 `.tolist()` 将其转换为Python列表。
 
-![](img/5e7da8b17dcaefe93d749b6b5585a83e_3.png)
 
-![](img/5e7da8b17dcaefe93d749b6b5585a83e_5.png)
 
 ---
 
-![](img/5e7da8b17dcaefe93d749b6b5585a83e_7.png)
 
 ## 总结
 本节课中我们一起学习了量化选股策略中完成选股的关键步骤。
 
-![](img/5e7da8b17dcaefe93d749b6b5585a83e_9.png)
 
 1.  **数据拼接**：将多个因子的评分DataFrame合并为一张综合表。
 2.  **总分计算与排序**：对合并后的因子分数进行求和，得到每只股票的总分，并按总分进行降序排序。

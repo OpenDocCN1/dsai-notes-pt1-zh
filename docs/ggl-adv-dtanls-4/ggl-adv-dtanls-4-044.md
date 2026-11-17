@@ -72,6 +72,5 @@ confidence_interval = (sample_mean - margin_of_error, sample_mean + margin_of_er
 
 ---
 
-![](img/cac316792de83fbb8675baf68f8c8c65_4.png)
 
 ![](img/cac316792de83fbb8675baf68f8c8c65_4.png)

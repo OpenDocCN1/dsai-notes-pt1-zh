@@ -8,13 +8,11 @@
 
 虽然我们使用的是医疗数据，但此基本场景可以广泛推广到法律、企业、金融等其他行业和应用。
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_1.png)
 
 本节课我们不会使用联邦学习。相反，我们将采用传统的**集中式微调方法**。如上图动画所示，数据会从各个医疗机构流出，汇集到中央服务器，在那里进行模型微调和更新。这正是我们接下来要在代码中实现的过程。
 
 ## 数据集介绍 📊
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_1.png)
 
 在进入代码之前，我们先了解一下将要使用的数据。为了提供一个私有数据的代表性示例，我们使用了 **MedAlpaca** 数据集。这是一个优秀的资源，包含了各种医疗领域的知识。关键的是，它包含了**问答对**。
 
@@ -22,13 +20,11 @@
 
 通过使用这个完全开源在线的 MedAlpaca 数据集，我们可以将其作为私有数据如何有益于大语言模型的一个有力代理。你将能亲身体验到，当把这种方法应用到你自己领域的私有数据时，可以期望获得怎样的改进。
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_3.png)
 
 ## 代码实践：环境准备与配置 ⚙️
 
 现在让我们开始查看代码。首先，我们需要导入一些必要的包和工具函数。
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_3.png)
 
 ```python
 # 导入必要的库
@@ -41,9 +37,7 @@ from utils import load_config, prepare_dataset
 
 在本课程的笔记本中，我们将使用 **Hydra** 来管理配置文件，这是一个非常强大的工具。
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_5.png)
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_5.png)
 
 接下来，让我们加载描述集中式微调如何执行的配置文件。
 
@@ -58,9 +52,7 @@ cfg = load_config(‘configs/centralized_finetuning.yaml’)
 *   **训练方法**：我们将使用 PEFT 和 **LoRA** 进行训练（下节课详解）。
 *   **超参数**：配置文件中的训练部分包含了典型超参数，如学习率、训练步数等。这些值已经过调整，以便在本笔记本中快速完成微调。
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_7.png)
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_7.png)
 
 ## 探索数据集与基准测试 🔍
 
@@ -99,11 +91,9 @@ print(f“10% 子集包含 {len(small_dataset)} 个训练样本。”)
 
 观察发现，模型做出了很好的尝试，但它并没有直接回答所问的问题，而是主要提供了利尿剂的定义。这显然没有包含我们要求的具体信息。
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_9.png)
 
 相比之下，数据集中提供的**真实答案**（上文已列出）则直接、切中要害。这清楚地表明，预训练模型在回答特定领域问题方面能力有限。
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_9.png)
 
 ## 实施集中式微调 🚀
 
@@ -119,15 +109,12 @@ tokenizer = AutoTokenizer.from_pretrained(cfg.model.name)
 tokenized_dataset = small_dataset.map(lambda x: tokenize_function(x, tokenizer), batched=True)
 ```
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_11.png)
 
 这里值得提一下模型的统计信息：我们即将使用 PEFT 微调的 7000 万参数模型，实际上**只会修改约 17 万个参数**，不到总参数的 **0.3%**。这种高效性是 PEFT 的优势之一。
 
 所有组件（模型、数据集、分词器）都准备好后，就可以开始微调了。我们需要一个函数将所有部分整合在一起。
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_11.png)
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_13.png)
 
 让我们看看 `fine_tune_centralized` 函数做了什么：
 
@@ -165,11 +152,9 @@ fine_tune_centralized(model, tokenized_dataset, cfg)
 
 训练过程中，你会看到损失值逐渐下降。大约一分钟后，微调完成。
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_13.png)
 
 ## 评估微调后的模型 📈
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_15.png)
 
 关键问题来了：微调后的模型比我们开始时看到的未微调模型表现更好吗？
 
@@ -184,7 +169,6 @@ fine_tune_centralized(model, tokenized_dataset, cfg)
 
 成功！我们看到了针对一个问题的明显改进。
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_15.png)
 
 ## 系统性评估与结果可视化 📊
 
@@ -192,11 +176,9 @@ fine_tune_centralized(model, tokenized_dataset, cfg)
 
 因此，我们预先离线进行了评估，并将结果保存下来以便可视化。当然，笔记本中也提供了生成这些结果的代码，你可以用自己的模型和数据运行它。
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_17.png)
 
 以下是我们评估结果的总结：
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_17.png)
 
 图表说明：
 *   **Y轴**：**准确率**。基于数据集中有明确对错的问答对进行评估。
@@ -207,9 +189,7 @@ fine_tune_centralized(model, tokenized_dataset, cfg)
 
 这个结果清晰地展示了，即使在有限的数据上进行微调，也能带来显著的性能提升。
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_19.png)
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_19.png)
 
 ## 课程总结 🎯
 
@@ -226,6 +206,5 @@ fine_tune_centralized(model, tokenized_dataset, cfg)
 
 那么，解决方案是什么？答案将是**联邦学习**。我们将在下一节课中深入探讨如何在不共享原始数据的前提下，利用联邦学习安全地微调大语言模型。
 
-![](img/32b044da86dd97659c4c8af8b05c6a3e_21.png)
 
 ![](img/32b044da86dd97659c4c8af8b05c6a3e_21.png)

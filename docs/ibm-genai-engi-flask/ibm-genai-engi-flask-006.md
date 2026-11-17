@@ -1,12 +1,9 @@
 # 生成式人工智能工程：006：单元测试 🧪
 
-![](img/d3a2a53b8ca332371a2a8889bb363185_1.png)
 
-![](img/d3a2a53b8ca332371a2a8889bb363185_2.png)
 
 在本节课中，我们将学习单元测试。你将能够定义单元测试，解释单元测试的流程，构建并执行单元测试，以及解读单元测试的输出结果。
 
-![](img/d3a2a53b8ca332371a2a8889bb363185_4.png)
 
 ## 什么是单元测试？
 
@@ -20,7 +17,6 @@ def square(number):
     return number ** 2
 ```
 
-![](img/d3a2a53b8ca332371a2a8889bb363185_6.png)
 
 `doubler` 函数的代码为：
 ```python
@@ -34,7 +30,6 @@ def doubler(number):
 
 上一节我们介绍了单元测试的基本概念，本节中我们来看看从单元测试到发布到生产代码库的端到端测试流程。
 
-![](img/d3a2a53b8ca332371a2a8889bb363185_8.png)
 
 在代码开发过程中，你需要测试每个单元。测试分两个阶段进行。
 
@@ -71,7 +66,6 @@ class TestMyModule(unittest.TestCase):
 
 接下来，让该类继承 `unittest` 库中的 `TestCase` 类。继承该类允许你利用 `TestCase` 类中现有的方法。
 
-![](img/d3a2a53b8ca332371a2a8889bb363185_10.png)
 
 然后，在单元测试类中创建与每个需要测试的函数相对应的函数。例如，在 `TestMyModule` 类中，两个函数 `test_square` 和 `test_doubler` 对应于 `my_module` 单元中的 `square` 和 `doubler` 函数。
 
@@ -81,19 +75,16 @@ class TestMyModule(unittest.TestCase):
 
 在创建测试用例时，添加一个或多个断言方法以确保满足单元测试条件。一个常用的断言函数是 `assertEqual`。请注意，在代码中，该方法已被添加到 `TestCase` 类中。
 
-![](img/d3a2a53b8ca332371a2a8889bb363185_12.png)
 
 ## 使用 `assertEqual` 函数
 
 `assertEqual` 函数比较两个值或实体，并判断它们是否相等。该方法用于检查函数是否返回了正确的值。
 
-![](img/d3a2a53b8ca332371a2a8889bb363185_14.png)
 
 `assertEqual` 函数接收的参数之一是实际值。对于实际值，你将调用你想要测试的函数。第二个参数是期望值，你需要在此处添加函数预期返回的内容。
 
 在示例中，第一个测试是针对 `square` 函数，使用数字 `2`。如果函数正确执行，它应该返回值 `4`。作为测试的一部分，首先评估函数，然后比较两个值是否相等。根据比较的输出结果，测试通过或失败。
 
-![](img/d3a2a53b8ca332371a2a8889bb363185_16.png)
 
 ## 解读单元测试输出
 
@@ -103,7 +94,6 @@ class TestMyModule(unittest.TestCase):
 
 考虑 `square` 函数，你编写了计算数字立方而不是平方的代码。函数会失败，并生成一个输出。
 
-![](img/d3a2a53b8ca332371a2a8889bb363185_18.png)
 
 让我们回顾一下失败的单元测试的示例输出。输出清晰地显示单元测试失败。例如，输出显示 `FAILED test_square (__main__.TestMyModule)`。你还可以查看单元测试失败的具体函数。例如，`test_square (self.assertEqual(square(2), 4))` 表明 `square` 函数失败。`AssertionError: 8 != 4` 表示值不匹配。详细的输出使你能在实际部署解决方案之前纠正错误。
 

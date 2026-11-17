@@ -2,7 +2,6 @@
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_1.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_2.png)
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_4.png)
 
@@ -20,7 +19,6 @@
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_14.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_16.png)
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_18.png)
 
@@ -54,7 +52,6 @@ this.sound.add('bgMusic', { loop: true, volume: 0.1 }).play();
 
 首先，我们创建`GlobalManager`类。它的核心职责是初始化并持有对其他管理器的引用，确保它们在游戏生命周期内是单例且可全局访问的。
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_29.png)
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_31.png)
 
@@ -64,7 +61,6 @@ this.sound.add('bgMusic', { loop: true, volume: 0.1 }).play();
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_36.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_38.png)
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_40.png)
 
@@ -111,11 +107,8 @@ class GlobalManager {
 
 接下来，我们需要修改游戏的启动流程，确保`GlobalManager`在游戏早期就被创建。
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_52.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_54.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_56.png)
 
 1.  **在BootScene中初始化**：在游戏启动的第一个场景中创建`GlobalManager`实例，并将其存入Phaser的注册表（Registry）。
     ```javascript
@@ -138,7 +131,6 @@ class GlobalManager {
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_66.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_68.png)
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_70.png)
 
@@ -165,9 +157,7 @@ class GlobalManager {
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_82.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_84.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_86.png)
 
 3.  **在MenuScene中使用全局管理器**：在菜单场景中，我们从注册表获取管理器，并调用其方法来播放音乐，而不是直接操作场景的音频系统。
     ```javascript
@@ -245,7 +235,6 @@ class AudioManager {
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_97.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_99.png)
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_101.png)
 
@@ -271,11 +260,9 @@ class AudioManager {
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_114.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_116.png)
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_118.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_119.png)
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_121.png)
 
@@ -283,9 +270,7 @@ class AudioManager {
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_123.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_125.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_127.png)
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_129.png)
 
@@ -297,7 +282,6 @@ class AudioManager {
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_135.png)
 
-![](img/4868cc9dc52af69cc45e18095c137e1c_137.png)
 
 ![](img/4868cc9dc52af69cc45e18095c137e1c_139.png)
 

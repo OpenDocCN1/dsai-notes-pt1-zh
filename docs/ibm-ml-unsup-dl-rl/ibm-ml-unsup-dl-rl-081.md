@@ -8,7 +8,6 @@ Here we're going to be using Python to build out a convolutional neural nets in 
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_1.png)
 
 And each one of these different images will be one of 10 classes， either airplane， automobile， bird。
 
@@ -16,7 +15,6 @@ And each one of these different images will be one of 10 classes， either airpl
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_3.png)
 
 New parts of Kas， new functions， and new layers that we hadn't used in our prior notebook。
 
@@ -50,7 +48,6 @@ Now we're going to print out the shape of our training set。
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_5.png)
 
 no。There's going to be 50，000 train samples and 10，000 test samples。
 
@@ -66,7 +63,6 @@ The first dimension is going to be the number of rows are the numbers of samples
 
  and that's 50，000。
 
-![](img/7b6540931773bd4319325bf2a0d4336c_7.png)
 
 And then the next one is going to be the height and width in terms of the number of pixels of our images as well as our depth。
 
@@ -76,7 +72,6 @@ And we can look for each individual image that we have this 32 by 32 by 3 shape�
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_9.png)
 
 And that's just going to be a bunch of numbers from zero to 255 for each one of these different colors。
 
@@ -88,7 +83,6 @@ And that's just going to be a bunch of numbers from zero to 255 for each one of 
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_11.png)
 
 And we see that it's actually going to be a real image。 Now， it's not a high definition image。
 
@@ -102,7 +96,6 @@ And we see that it's actually going to be a real image。 Now， it's not a high
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_13.png)
 
 Each one representing a different category。And as we discussed in lecture。
 
@@ -118,7 +111,6 @@ Set is that we want to change the categorical and the number of classes in that 
 
  which we see was nine。
 
-![](img/7b6540931773bd4319325bf2a0d4336c_15.png)
 
 The new value is going to be that one hot encoded version was zeros everywhere except for in the nine spot。
 
@@ -130,11 +122,9 @@ We ensure that all of our values are going to be between zero and 1。
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_17.png)
 
 No。
 
-![](img/7b6540931773bd4319325bf2a0d4336c_19.png)
 
 When we use this convolutional neural nets， when we create these layers， these convolutional layers。
 
@@ -144,7 +134,6 @@ And we want to ensure that we understand the different parameters that we can pa
 
  what kind of convolutional layer we want to use。
 
-![](img/7b6540931773bd4319325bf2a0d4336c_21.png)
 
 So thinking back to lecture。Some of the important parameters that you should know。
 
@@ -160,7 +149,6 @@ Or the number of kernels used if you think about， again。
 
  if we set filters equal to 10。
 
-![](img/7b6540931773bd4319325bf2a0d4336c_23.png)
 
 Then we have our kernel size， which will be a tuple giving the height and width of the kernel used。
 
@@ -204,7 +192,6 @@ And then if we set padding equal to and we'll see this later on same。
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_25.png)
 
 And then again， we have this flatten layer， and that turns our whatever input it has into a one dimensional vector。
 
@@ -212,7 +199,6 @@ And that will allow us once we do that to transition between the convolutional l
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_27.png)
 
 So we have here the initialization of our model using the sequential function。
 
@@ -226,7 +212,6 @@ We then add on our first comp 2 D layer。And this is in the ordering that we sa
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_29.png)
 
 Our kernel size is going to be5 by5。We're not going to use the default for strides。
 
@@ -236,7 +221,6 @@ Our kernel size is going to be5 by5。We're not going to use the default for str
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_31.png)
 
 And then we specify the input shape， and if you recall the shape of our x train is going to be the number of different samples we have than the actual shape。
 
@@ -244,11 +228,8 @@ And then we specify the input shape， and if you recall the shape of our x trai
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_33.png)
 
-![](img/7b6540931773bd4319325bf2a0d4336c_34.png)
 
-![](img/7b6540931773bd4319325bf2a0d4336c_35.png)
 
 So we added on that convolutional layer， we then have our activation。
 
@@ -270,7 +251,6 @@ We then also going to introduce some dropout to add a bit of regularization。
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_37.png)
 
 We then flattened that out。So that now we're working with just a one dimensional object rather than that three dimensional object that we were working with in the earlier layer。
 
@@ -288,13 +268,10 @@ So that our output is equal to the number of classes we have。
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_39.png)
 
-![](img/7b6540931773bd4319325bf2a0d4336c_40.png)
 
 And we can call the Model1。t summary。
 
-![](img/7b6540931773bd4319325bf2a0d4336c_42.png)
 
 And we can see here the number of parameters at each step。
 
@@ -310,7 +287,6 @@ Than we would have with our convolutional layers。 We have one more dense layer
 
  and then our final activation。😊。
 
-![](img/7b6540931773bd4319325bf2a0d4336c_44.png)
 
 We can then specify our batch size。As well as the optimizers we're going to use。
 
@@ -332,7 +308,6 @@ And then actually fit our model with the batcht size， specifying the number of
 
  this may take some time。
 
-![](img/7b6540931773bd4319325bf2a0d4336c_46.png)
 
 So that should have taken maybe five minutes， maybe a bit longer in order to run。
 
@@ -340,7 +315,6 @@ So that should have taken maybe five minutes， maybe a bit longer in order to r
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_48.png)
 
 And we have here the 15 different epochs。And we can see that the loss on the training set continuously went down for each one in 15 epochs。
 
@@ -356,19 +330,16 @@ On that validation set， but it continues to increase。For that training set�
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_50.png)
 
 Now， if we wanted to do any type of prediction， we can do the same thing that we did in our last notebook by taking that model。
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_52.png)
 
 And calling if we want the probabilities， we can just do dot predict。
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_54.png)
 
 And we can call that on our X test。And we run that。
 
@@ -378,7 +349,6 @@ And we can call that on our X test。And we run that。
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_56.png)
 
 As we did before， and we see here that as a prediction for each class。Now， if we recall。
 
@@ -406,7 +376,6 @@ From escalar metrics。Accuracy score， and then we can take that accuracy scor
 
 
 
-![](img/7b6540931773bd4319325bf2a0d4336c_58.png)
 
 And we have that same value 0。6176， since that was used as a validation set。
 
@@ -414,6 +383,5 @@ So that closes out that first exercise and in the next exercise we will walk thr
 
  I'll see you there。
 
-![](img/7b6540931773bd4319325bf2a0d4336c_60.png)
 
 ![](img/7b6540931773bd4319325bf2a0d4336c_61.png)

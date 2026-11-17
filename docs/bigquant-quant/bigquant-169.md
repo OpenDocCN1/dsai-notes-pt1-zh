@@ -2,19 +2,15 @@
 
 在本节课中，我们将学习如何使用局部线性嵌入算法对具有流行结构的数据进行降维，并与主成分分析算法的降维效果进行对比。
 
-![](img/31b691a239b6a2e2921016755cf1b209_1.png)
 
-![](img/31b691a239b6a2e2921016755cf1b209_3.png)
 
 ---
 
-![](img/31b691a239b6a2e2921016755cf1b209_5.png)
 
 ## 导入必要的库 📦
 
 首先，我们需要导入实现算法和可视化所需的库。
 
-![](img/31b691a239b6a2e2921016755cf1b209_7.png)
 
 ```python
 from sklearn.manifold import LocallyLinearEmbedding

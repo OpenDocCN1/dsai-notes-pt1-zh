@@ -22,7 +22,6 @@
 
 **A⁺ = V * D⁺ * Uᵀ**
 
-![](img/52e8f2de9fa62b1dc8ecf7bffb9b59f5_1.png)
 
 其中 **U**、**D** 和 **V** 是矩阵 **A** 的奇异值分解（SVD），我们在之前的视频中讨论过。而 **D⁺** 是奇异值分解中矩阵 **D** 的一个特殊版本，它取所有非零元素的倒数，然后进行转置。
 
@@ -30,11 +29,8 @@
 
 ## 代码演示：计算伪逆
 
-![](img/52e8f2de9fa62b1dc8ecf7bffb9b59f5_3.png)
 
-![](img/52e8f2de9fa62b1dc8ecf7bffb9b59f5_4.png)
 
-![](img/52e8f2de9fa62b1dc8ecf7bffb9b59f5_6.png)
 
 以下是使用NumPy计算矩阵 **A** 的伪逆 **A⁺** 的步骤。
 
@@ -56,7 +52,6 @@ U, D, Vt = np.linalg.svd(A, full_matrices=False)
 # 注意：full_matrices=False 确保返回的 U 和 Vt 尺寸与 A 匹配
 ```
 
-![](img/52e8f2de9fa62b1dc8ecf7bffb9b59f5_8.png)
 
 现在，我们需要计算 **D⁺**。矩阵 **D** 是一个对角矩阵，其主对角线上的元素是奇异值。要得到 **D⁺**，我们需要对 **D** 中的非零元素取倒数，然后转置。由于 **D** 是对角矩阵，我们可以直接使用 `np.linalg.inv` 来求逆，它会自动处理非零对角线元素的倒数。
 
@@ -98,7 +93,6 @@ print("\n两者是否接近？", np.allclose(A_plus_manual, A_plus_numpy))
 
 ## 练习：在PyTorch中实现
 
-![](img/52e8f2de9fa62b1dc8ecf7bffb9b59f5_10.png)
 
 为了加深理解，请将我们在NumPy中进行的整个过程（从计算奇异值分解到计算伪逆）移植到PyTorch中。
 
@@ -110,7 +104,6 @@ print("\n两者是否接近？", np.allclose(A_plus_manual, A_plus_numpy))
 
 ## 总结
 
-![](img/52e8f2de9fa62b1dc8ecf7bffb9b59f5_12.png)
 
 ![](img/52e8f2de9fa62b1dc8ecf7bffb9b59f5_13.png)
 

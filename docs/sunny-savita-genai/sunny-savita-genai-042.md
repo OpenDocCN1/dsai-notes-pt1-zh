@@ -6,7 +6,6 @@
 
 RAG架构通常包含数据分块、嵌入、相似性搜索和最终生成等步骤。然而，研究表明，当大型语言模型需要从检索到的大量文档中间部分提取关键信息时，其回答的准确性会显著下降。这就是所谓的“迷失在中间”问题。本节课，我们将深入理解这个问题，并学习使用合并检索器和长上下文重排序技术来有效缓解它。
 
-![](img/310fdb31932b51ddb4380e29273e9b2f_1.png)
 
 ## 理解“迷失在中间”问题
 
@@ -27,7 +26,6 @@ RAG架构通常包含数据分块、嵌入、相似性搜索和最终生成等�
 
 论文的结论部分也探讨了从模型架构层面进行优化的可能性，并提出了包括上下文重排在内的多种解决方案。
 
-![](img/310fdb31932b51ddb4380e29273e9b2f_4.png)
 
 ![](img/310fdb31932b51ddb4380e29273e9b2f_5.png)
 
@@ -48,12 +46,10 @@ RAG架构通常包含数据分块、嵌入、相似性搜索和最终生成等�
 
 ![](img/310fdb31932b51ddb4380e29273e9b2f_7.png)
 
-![](img/310fdb31932b51ddb4380e29273e9b2f_8.png)
 
 以下是使用LangChain框架的简化概念代码：
 
 
-![](img/310fdb31932b51ddb4380e29273e9b2f_10.png)
 
 ```python
 from langchain.retrievers import MergerRetriever
@@ -85,7 +81,6 @@ lotr = MergerRetriever(retrievers=[vector_retriever, bm25_retriever])
 
 ![](img/310fdb31932b51ddb4380e29273e9b2f_12.png)
 
-![](img/310fdb31932b51ddb4380e29273e9b2f_13.png)
 
 ```python
 from langchain.retrievers import LongContextReorder

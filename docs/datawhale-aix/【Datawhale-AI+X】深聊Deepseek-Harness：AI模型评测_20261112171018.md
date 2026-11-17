@@ -12,7 +12,6 @@ Deepseek Harness 是一个用于驾驭大模型的工程系统，它的核心目
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_2.png)
 
-![](img/0e7c73ff8d183dd06a271b60863b2157_4.png)
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_6.png)
 
@@ -66,7 +65,6 @@ Deepseek Harness 最让人眼前一亮的地方，就是它把所有东西都变
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_27.png)
 
-![](img/0e7c73ff8d183dd06a271b60863b2157_29.png)
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_31.png)
 
@@ -82,15 +80,12 @@ Deepseek Harness 最让人眼前一亮的地方，就是它把所有东西都变
 
 除了插件化，Harness 还提供了几种预设模式，适用于不同场景。以下是模式介绍。
 
-![](img/0e7c73ff8d183dd06a271b60863b2157_40.png)
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_41.png)
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_42.png)
 
-![](img/0e7c73ff8d183dd06a271b60863b2157_43.png)
 
-![](img/0e7c73ff8d183dd06a271b60863b2157_44.png)
 
 - 标准模式：适合一般任务，最直白最简单，但因为是初始阶段，可能会出现工具阻塞等问题。
 - 集简模式：适合写文档，只使用命令和文档创建，比较简单。
@@ -115,19 +110,15 @@ Deepseek Harness 最让人眼前一亮的地方，就是它把所有东西都变
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_56.png)
 
-![](img/0e7c73ff8d183dd06a271b60863b2157_57.png)
 
-![](img/0e7c73ff8d183dd06a271b60863b2157_58.png)
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_59.png)
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_60.png)
 
-![](img/0e7c73ff8d183dd06a271b60863b2157_61.png)
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_62.png)
 
-![](img/0e7c73ff8d183dd06a271b60863b2157_64.png)
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_65.png)
 
@@ -139,7 +130,6 @@ Deepseek Harness 最让人眼前一亮的地方，就是它把所有东西都变
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_68.png)
 
-![](img/0e7c73ff8d183dd06a271b60863b2157_70.png)
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_72.png)
 
@@ -147,7 +137,6 @@ Deepseek Harness 最让人眼前一亮的地方，就是它把所有东西都变
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_76.png)
 
-![](img/0e7c73ff8d183dd06a271b60863b2157_78.png)
 
 ![](img/0e7c73ff8d183dd06a271b60863b2157_79.png)
 

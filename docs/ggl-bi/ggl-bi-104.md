@@ -1,6 +1,5 @@
 #  104：与利益相关者角色扮演 🎭
 
-![](img/ce2ff4ccd7b4a241bc0a9c286514ad5a_0.png)
 
 ![](img/ce2ff4ccd7b4a241bc0a9c286514ad5a_0.png)
 

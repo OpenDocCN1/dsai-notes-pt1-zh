@@ -16,9 +16,7 @@ Google Colab是由Google提供的基于云的平台，允许用户在协作环�
 
 ## 数据准备与加载
 
-![](img/763b9085e28058a4947020f1e65ab99e_1.png)
 
-![](img/763b9085e28058a4947020f1e65ab99e_2.png)
 
 以下是数据准备与加载的步骤：
 
@@ -37,9 +35,7 @@ Google Colab是由Google提供的基于云的平台，允许用户在协作环�
 
 ## 数据可视化
 
-![](img/763b9085e28058a4947020f1e65ab99e_4.png)
 
-![](img/763b9085e28058a4947020f1e65ab99e_5.png)
 
 在数据可视化部分，我们使用以下代码：
 
@@ -47,9 +43,7 @@ Google Colab是由Google提供的基于云的平台，允许用户在协作环�
 
 `import matplotlib.pyplot as plt` 从Matplotlib库导入pyplot模块，用于绘图。
 
-![](img/763b9085e28058a4947020f1e65ab99e_7.png)
 
-![](img/763b9085e28058a4947020f1e65ab99e_8.png)
 
 `import matplotlib.image as mpimg` 从Matplotlib库导入image模块，允许进行图像相关操作。
 
@@ -65,23 +59,17 @@ Google Colab是由Google提供的基于云的平台，允许用户在协作环�
 
 此外，还导入了用于图像数据预处理和定义神经网络架构的模块，例如`Sequential`、`Conv2D`、`MaxPooling2D`、`Flatten`、`Dense`、`Dropout`。
 
-![](img/763b9085e28058a4947020f1e65ab99e_10.png)
 
-![](img/763b9085e28058a4947020f1e65ab99e_11.png)
 
-![](img/763b9085e28058a4947020f1e65ab99e_12.png)
 
 对于可视化，我们使用`matplotlib.pyplot`和`image`。这些是我们将使用的所有库。我们正在检查下载的版本，它是2.4.1。
 
-![](img/763b9085e28058a4947020f1e65ab99e_13.png)
 
 接下来的视频将进一步深入讨论正在进行的内容。
 
 ## 总结
 
-![](img/763b9085e28058a4947020f1e65ab99e_15.png)
 
-![](img/763b9085e28058a4947020f1e65ab99e_16.png)
 
 ![](img/763b9085e28058a4947020f1e65ab99e_17.png)
 

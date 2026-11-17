@@ -4,7 +4,6 @@
 
 在本节课中，我们将学习 TensorFlow Data Validation（TFDV）库。这是一个来自谷歌的工具，属于 TFX 生态系统的一部分。我们将了解如何使用 Python 进行数据验证，并理解其在生产规模机器学习系统中的重要性。
 
-![](img/a5bc10cad3d624daa3639ec6bb25d0d6_2.png)
 
 ---
 

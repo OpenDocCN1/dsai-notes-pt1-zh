@@ -4,9 +4,7 @@
 
 在本节课中，我们将学习如何优化使用 Triton 语言编写的 GPU 算子在 CPU 端的运行时开销。我们将分析原生 Python 运行时包装器（Wrapper）的性能瓶颈，并探讨如何通过将运行时和包装器迁移到 C++ 来实现显著的性能提升，从而减少 CPU 处理时间，让 GPU 更高效地执行计算。
 
-![](img/961d592846db82e898dcda7f2df88c38_1.png)
 
-![](img/961d592846db82e898dcda7f2df88c38_2.png)
 
 ---
 
@@ -62,7 +60,6 @@ Python 程序 -> Python Wrapper -> Triton 运行时（Python） -> 编译/缓存
 *   GPU Kernel 启动的平均间隔为 27 微秒。
 *   模型中大部分 Kernel 的执行时间很短（小于 66 微秒），其数量远超过长 Kernel。这意味着 Wrapper 开销对整体性能的影响是普遍且显著的。
 
-![](img/961d592846db82e898dcda7f2df88c38_4.png)
 
 ---
 
@@ -95,9 +92,7 @@ Triton 的 JIT 过程涉及两个主要部分：**运行时（Runtime）** 和 *
 3.  **缓存管理**：维护一个缓存（Cache），将已编译的 Kernel（根据特化信息生成）存储起来，避免重复编译。
 4.  **启动 Kernel**：收集 Kernel 函数指针、参数地址、启动配置（网格大小、共享内存等），并通过 CUDA Driver API 启动 Kernel。
 
-![](img/961d592846db82e898dcda7f2df88c38_6.png)
 
-![](img/961d592846db82e898dcda7f2df88c38_7.png)
 
 **编译器的职责**：
 1.  接收运行时发来的特化信息。

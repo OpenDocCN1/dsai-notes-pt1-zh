@@ -8,9 +8,7 @@
 
 ## 概述与准备
 
-![](img/138d9d8caf2da03cd169121d8d42c018_2.png)
 
-![](img/138d9d8caf2da03cd169121d8d42c018_3.png)
 
 ![](img/138d9d8caf2da03cd169121d8d42c018_4.png)
 
@@ -30,7 +28,6 @@
 6.  Python developers are wonderful people.
 7.  Typescript flips as a Java.
 
-![](img/138d9d8caf2da03cd169121d8d42c018_6.png)
 
 以下是导入必要库和设置嵌入模型的代码：
 
@@ -44,7 +41,6 @@ embedding_model = setup_embedding_model()
 
 我们将循环处理这七个句子，为每一个计算其嵌入向量。
 
-![](img/138d9d8caf2da03cd169121d8d42c018_8.png)
 
 ```python
 sentences = [sentence1, sentence2, sentence3, sentence4, sentence5, sentence6, sentence7]
@@ -62,9 +58,7 @@ print(embeddings_array.shape)  # 输出应为 (7, 768)
 
 ## 使用PCA进行降维可视化
 
-![](img/138d9d8caf2da03cd169121d8d42c018_10.png)
 
-![](img/138d9d8caf2da03cd169121d8d42c018_11.png)
 
 由于我们无法直接在二维屏幕上绘制768维的数据，因此需要使用主成分分析（PCA）技术将其压缩到二维。
 
@@ -83,7 +77,6 @@ print(embeddings_2d.shape)  # 输出应为 (7, 2)
 现在，每个句子对应一个二维坐标点，我们可以将其绘制在散点图上。
 
 
-![](img/138d9d8caf2da03cd169121d8d42c018_13.png)
 
 ```python
 import matplotlib.pyplot as plt
@@ -110,7 +103,6 @@ plt.show()
 
 > **重要提示**：在实际应用中，我们**不会**使用二维嵌入来计算相似度。为了可视化，PCA丢弃了大量信息。测量相似度时，应始终在原始的768维（或模型输出的原始维度）空间中进行，例如使用**余弦相似度**公式：`similarity(A, B) = (A·B) / (||A|| * ||B||)`，这样结果才更准确。
 
-![](img/138d9d8caf2da03cd169121d8d42c018_15.png)
 
 ## 使用热力图分析嵌入向量
 
@@ -132,7 +124,6 @@ new_sentences = [sentence1, sentence2, sentence3, sentence4]
 new_embeddings = compute_embeddings(new_sentences) # 假设的封装函数
 ```
 
-![](img/138d9d8caf2da03cd169121d8d42c018_18.png)
 
 以下是绘制热力图的代码：
 
@@ -156,7 +147,6 @@ plt.show()
 
 > **技术说明**：这种基于单个维度数值的可视化（如热力图或查看第一个主成分）在数学上并不完全严谨，因为嵌入空间的坐标轴方向具有一定的任意性（例如，可能发生随机旋转）。因此，它主要是一种帮助建立直觉的非正式可视化方法。可靠的操作是计算嵌入向量之间的**成对相似度**（如余弦相似度）。
 
-![](img/138d9d8caf2da03cd169121d8d42c018_22.png)
 
 ## 总结
 

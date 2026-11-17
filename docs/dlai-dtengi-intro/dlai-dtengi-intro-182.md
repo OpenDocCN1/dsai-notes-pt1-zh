@@ -1,6 +1,5 @@
 #  182：使用Amazon托管服务部署Apache Flink应用 🚀
 
-![](img/0b977e7d4860d5e9c1b5bee27a0930d9_0.png)
 
 ## 概述
 
@@ -19,7 +18,6 @@
 
 这些可以称为“自己动手”选项。但您也可以选择使用托管服务，例如Amazon Managed Service for Apache Flink，这正是我接下来要介绍的内容。
 
-![](img/0b977e7d4860d5e9c1b5bee27a0930d9_2.png)
 
 ---
 
@@ -39,13 +37,10 @@ Amazon Managed Service for Apache Flink在AWS上运行Apache Flink。它为您�
 
 ## 3. 演示：创建流处理应用程序
 
-![](img/0b977e7d4860d5e9c1b5bee27a0930d9_4.png)
 
 现在，我位于AWS管理控制台。我将在搜索栏中输入“Flink”，然后选择“Amazon Managed Service for Apache Flink”。
 
-![](img/0b977e7d4860d5e9c1b5bee27a0930d9_5.png)
 
-![](img/0b977e7d4860d5e9c1b5bee27a0930d9_6.png)
 
 Amazon Managed Service for Apache Flink为您创建托管环境以运行Apache Flink应用程序，但您需要像其他编程项目一样，在本地使用Apache Flink框架编写应用程序。
 
@@ -63,9 +58,7 @@ Amazon Managed Service for Apache Flink为您创建托管环境以运行Apache F
 
 它将设置一个Amazon Kinesis Data Stream作为我们要分析的源，然后设置将演示数据发送到流中所需的资源，并部署一个将从流中读取数据、处理数据，然后将处理后的数据发送到Amazon S3进行存储的应用程序。
 
-![](img/0b977e7d4860d5e9c1b5bee27a0930d9_8.png)
 
-![](img/0b977e7d4860d5e9c1b5bee27a0930d9_9.png)
 
 我将选择“在CloudFormation中部署蓝图”。CloudFormation现在将部署必要的资源。这需要几分钟才能完成，因此我们将在完成后返回。
 
@@ -111,7 +104,6 @@ public void runAppWithKinesisSource() {
 
 点击它以查看更多详情，我们可以看到为此作业定义的算子图。我们正在从流中读取股票数据，使用一个flatMap算子来过滤掉价格低于1美元的股票，然后将过滤后的数据写入S3文件。
 
-![](img/0b977e7d4860d5e9c1b5bee27a0930d9_11.png)
 
 该图直观地表示了数据通过这些算子的流动，使得更容易理解处理步骤以及数据如何被转换和存储。
 

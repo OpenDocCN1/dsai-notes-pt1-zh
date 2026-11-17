@@ -2,27 +2,20 @@
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_1.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_2.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_4.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_6.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_8.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_10.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_12.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_14.png)
 
 在本节课中，我们将要学习如何从零开始，使用Python代码实现一个基础的因子分解机（FM）模型。我们将使用MovieLens的电影评分数据集，通过实践来理解FM模型的核心思想、参数更新过程以及如何评估模型效果。
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_16.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_18.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_20.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_22.png)
 
@@ -46,9 +39,7 @@
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_38.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_40.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_42.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_43.png)
 
@@ -68,11 +59,9 @@
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_54.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_56.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_58.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_60.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_62.png)
 
@@ -80,7 +69,6 @@
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_64.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_66.png)
 
 ```python
 def load_data(filepath):
@@ -97,7 +85,6 @@ def load_data(filepath):
     return data
 ```
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_68.png)
 
 运行这个函数后，我们可以打印前几项数据来确认读取是否正确。
 
@@ -107,48 +94,34 @@ def load_data(filepath):
 
 ## 定义模型参数与预测函数
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_74.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_76.png)
 
 上一节我们介绍了如何读取数据，本节中我们来看看如何定义模型的核心参数和预测函数。
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_78.png)
 
 我们首先定义几个超参数：
 *   `M`: 用户数量（约6000）
 *   `N`: 电影数量（约3000）
 *   `K`: 隐向量的维度，这是一个需要通过交叉验证来选择的超参数。
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_80.png)
 
 我们使用`numpy`来存储和计算参数。用户隐向量矩阵 `U` 的形状是 `M x K`，电影隐向量矩阵 `V` 的形状是 `N x K`。我们使用高斯分布进行随机初始化。
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_82.png)
-
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_84.png)
-
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_86.png)
-
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_88.png)
 
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_90.png)
+
+
+
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_92.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_94.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_96.png)
 
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_98.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_100.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_102.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_104.png)
 
 ```python
 import numpy as np
@@ -162,50 +135,33 @@ U = np.random.randn(M, K)
 V = np.random.randn(N, K)
 ```
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_106.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_108.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_110.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_112.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_114.png)
 
 接下来，我们定义预测函数。为了专注于理解FM的二次项交互，我们暂时忽略线性项和常数项。在我们的简化场景中，只有用户ID和电影ID两个特征是非零的，因此FM的复杂求和公式退化为这两个特征对应隐向量的内积。
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_116.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_118.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_120.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_122.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_124.png)
 
 预测用户 `i` 对电影 `j` 的评分公式为：
 **`prediction = np.dot(U[i], V[j])`**
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_126.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_128.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_130.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_132.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_134.png)
 
 对应的Python函数如下：
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_136.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_138.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_140.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_142.png)
 
 ```python
 def predict(i, j):
@@ -217,30 +173,22 @@ def predict(i, j):
 
 我们的目标是预测评分，这是一个回归问题，因此使用均方误差（MSE）作为损失函数，并加入L2正则化项以防止过拟合。
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_144.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_146.png)
 
 单个样本 `(i, j, r)` 的损失函数 `L` 定义为：
 **`L = (prediction - r)^2 + reg * (||U[i]||^2 + ||V[j]||^2)`**
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_148.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_150.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_151.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_153.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_155.png)
 
 其中 `r` 是真实评分，`prediction` 是模型预测值。
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_157.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_159.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_161.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_163.png)
 
@@ -248,13 +196,11 @@ def predict(i, j):
 
 为了使用梯度下降法优化参数，我们需要计算损失函数对参数 `U[i]` 和 `V[j]` 的梯度。
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_167.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_169.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_171.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_173.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_175.png)
 
@@ -264,7 +210,6 @@ def predict(i, j):
 *   对 `U[i]` 的梯度 `g_i`：**`g_i = 2 * (prediction - r) * V[j] + 2 * reg * U[i]`**
 *   对 `V[j]` 的梯度 `g_j`：**`g_j = 2 * (prediction - r) * U[i] + 2 * reg * V[j]`**
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_179.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_181.png)
 
@@ -274,47 +219,34 @@ def predict(i, j):
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_187.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_189.png)
 
 ## 实现模型训练过程
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_191.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_193.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_195.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_197.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_199.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_201.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_203.png)
 
 有了梯度的计算公式，我们就可以实现训练函数了。我们将采用随机梯度下降（SGD）的方法，遍历数据集中的每一个样本，并根据计算出的梯度更新对应的参数。
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_205.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_207.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_209.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_211.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_213.png)
 
 以下是训练一个轮次（epoch）的代码：
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_215.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_216.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_218.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_220.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_222.png)
 
 ```python
 def train_one_epoch(data):
@@ -329,60 +261,39 @@ def train_one_epoch(data):
         V[j] -= step * grad_v
 ```
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_224.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_226.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_228.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_230.png)
 
 ## 模型评估与效果验证
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_232.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_234.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_236.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_238.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_240.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_242.png)
 
 训练过程中，我们需要监控模型在训练集和测试集上的表现，以判断模型是否学习有效以及是否出现过拟合。我们实现两个辅助函数：一个用于在给定数据集上生成所有预测值，另一个用于计算均方根误差（RMSE）。
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_244.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_246.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_248.png)
 
 以下是相关函数：
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_250.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_252.png)
-
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_254.png)
-
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_256.png)
-
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_258.png)
 
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_260.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_262.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_264.png)
+
+
+
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_266.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_267.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_269.png)
 
 ```python
 def make_predictions(data):
@@ -402,11 +313,9 @@ def rmse(data, predictions):
     return np.sqrt(total_error / count)
 ```
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_271.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_273.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_275.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_277.png)
 
@@ -414,37 +323,28 @@ def rmse(data, predictions):
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_279.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_281.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_283.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_285.png)
-
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_287.png)
 
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_289.png)
+
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_291.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_293.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_295.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_296.png)
 
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_298.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_300.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_302.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_304.png)
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_306.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_308.png)
 
 ```python
 # 假设 data 是加载的全部数据
@@ -465,31 +365,21 @@ for epoch in range(num_epochs):
     print(f"Epoch {epoch+1}: 训练集RMSE: {rmse(train_data, train_preds):.4f}, 测试集RMSE: {rmse(test_data, test_preds):.4f}")
 ```
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_310.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_312.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_314.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_316.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_318.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_320.png)
 
 ## 超参数调试与分析
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_322.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_324.png)
 
 在运行上述代码后，我们可能会发现模型表现不佳或训练不稳定。这时就需要调整超参数。以下是一些关键的调试点：
 
 ![](img/f009ba3df01ec62a4a8a0fa0f03876b0_326.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_328.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_329.png)
 
 1.  **参数初始化**：如果初始RMSE很大（例如接近4），说明随机初始化的隐向量内积范围与真实评分（1-5）不匹配。可以尝试调整初始化尺度。
 2.  **学习率（步长）**：步长 `step` 过大可能导致梯度更新震荡甚至数值溢出；过小则会导致收敛缓慢。需要尝试不同的值。
@@ -500,9 +390,7 @@ for epoch in range(num_epochs):
 
 在实践中，MovieLens数据集质量较高，简单的FM模型也能取得不错的效果，可能不容易观察到明显的过拟合现象。但通过调整这些参数，你可以更深入地理解它们对模型行为的影响。
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_333.png)
 
-![](img/f009ba3df01ec62a4a8a0fa0f03876b0_335.png)
 
 ## 总结
 

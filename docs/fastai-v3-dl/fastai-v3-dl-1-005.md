@@ -1,20 +1,14 @@
 # 深度学习实践课程：5：从零构建线性模型与神经网络
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_1.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_3.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_5.png)
 
 ## 概述
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_7.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_9.png)
 
 在本节课中，我们将学习如何从零开始，使用Python和PyTorch构建并训练一个线性模型和一个神经网络。我们将以泰坦尼克号数据集为例，涵盖数据预处理、模型构建、训练和评估的全过程。通过本课，你将理解深度学习模型背后的基本原理，并掌握使用PyTorch进行基础建模的技能。
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_11.png)
 
 ---
 
@@ -69,13 +63,10 @@ print(df.describe())
 df['LogFare'] = np.log(df['Fare'] + 1)
 ```
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_13.png)
 
 对于分类变量（如 `Sex`、`Embarked`），我们需要将其转换为模型可以处理的数值形式。常用的方法是创建虚拟变量（哑变量）。
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_15.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_17.png)
 
 ```python
 # 为分类变量创建虚拟变量
@@ -84,20 +75,13 @@ df = pd.get_dummies(df, columns=['Sex', 'Embarked', 'Pclass'])
 
 现在，我们已经将数据预处理完毕，可以将其转换为PyTorch张量，以便进行后续计算。
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_19.png)
-
-![](img/eec0150d9060fac6cc17d75a9fe5d165_21.png)
 
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_23.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_25.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_27.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_29.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_31.png)
+
 
 ```python
 # 定义自变量（特征）和因变量（标签）
@@ -108,7 +92,6 @@ indep = torch.tensor(df[indep_vars].values, dtype=torch.float)
 dep = torch.tensor(df[dep_var].values, dtype=torch.float)
 ```
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_33.png)
 
 ---
 
@@ -118,13 +101,9 @@ dep = torch.tensor(df[dep_var].values, dtype=torch.float)
 
 首先，我们需要初始化模型的系数（权重）。
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_35.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_36.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_38.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_40.png)
 
 ```python
 # 初始化随机系数
@@ -133,23 +112,15 @@ coefs = torch.rand(indep.shape[1]) - 0.5
 coefs.requires_grad_() # 告诉PyTorch我们需要计算这些系数的梯度
 ```
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_42.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_44.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_46.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_48.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_50.png)
 
 为了优化过程更稳定，我们通常需要对特征进行归一化处理。
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_52.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_54.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_56.png)
 
 ```python
 # 特征归一化（除以最大值）
@@ -190,9 +161,7 @@ def one_epoch(coefs, lr):
 接下来，我们将数据划分为训练集和验证集，并开始训练模型。
 
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_58.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_60.png)
 
 ```python
 from fastai.data.transforms import RandomSplitter
@@ -233,18 +202,13 @@ print(f'Validation Accuracy: {acc:.3f}')
 
 上一节我们构建了基础的线性模型，但它的输出范围没有限制。对于二分类问题（幸存/未幸存），我们希望模型的输出是一个介于0和1之间的概率。本节中我们引入Sigmoid函数来实现这一点。
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_62.png)
 
 Sigmoid函数的公式为：
 `σ(x) = 1 / (1 + e^(-x))`
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_64.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_66.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_68.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_70.png)
 
 它将任何实数映射到(0, 1)区间。我们只需在原始线性模型的输出上应用Sigmoid函数。
 
@@ -258,21 +222,14 @@ def calc_loss_sigmoid(coefs, indep, dep):
     return torch.abs(preds - dep).mean()
 ```
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_72.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_74.png)
 
 更新训练函数以使用新的预测和损失计算方式。通常，使用Sigmoid后，我们可以使用更大的学习率，模型也更容易优化。
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_76.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_78.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_80.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_82.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_84.png)
 
 ```python
 # 使用Sigmoid重新训练
@@ -307,9 +264,7 @@ def init_coefs(n_hidden=20):
 接下来，定义神经网络的前向传播过程。
 
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_86.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_88.png)
 
 ```python
 def calc_preds_nn(coefs, indep):
@@ -325,19 +280,13 @@ def calc_loss_nn(coefs, indep, dep):
     return torch.abs(preds - dep).mean()
 ```
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_90.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_92.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_94.png)
 
 更新系数时，我们需要遍历所有层。
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_96.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_98.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_100.png)
 
 ```python
 def update_coefs_nn(coefs, lr):
@@ -346,7 +295,6 @@ def update_coefs_nn(coefs, lr):
         coef.grad.zero_()
 ```
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_102.png)
 
 现在，我们可以训练这个神经网络了。
 
@@ -369,19 +317,15 @@ print(f'Neural Network Validation Accuracy: {acc_nn:.3f}')
 
 ---
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_104.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_106.png)
 
 ## 使用FastAI简化流程
 
 从零构建模型有助于理解原理，但在实际项目中，使用高级框架可以极大提升效率。本节中，我们使用FastAI库来快速构建并训练一个表格数据模型。
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_108.png)
 
 FastAI自动处理了许多繁琐的步骤，如缺失值填充、分类变量编码、数据分割等。
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_110.png)
 
 ```python
 from fastai.tabular.all import *
@@ -417,15 +361,11 @@ submission.to_csv('submission.csv', index=False)
 
 ---
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_112.png)
 
 ## 模型集成
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_114.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_116.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_118.png)
 
 单个模型的性能可能有限。一种提升性能的有效方法是模型集成，即结合多个模型的预测结果。最简单的方法是创建多个相同的模型，使用不同的随机初始化进行训练，然后对它们的预测取平均。
 
@@ -444,9 +384,7 @@ def ensemble(n_models=5):
 ensemble_preds = ensemble()
 ```
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_120.png)
 
-![](img/eec0150d9060fac6cc17d75a9fe5d165_122.png)
 
 ---
 

@@ -1,18 +1,14 @@
 # 008：条形图绘制教程
 
-![](img/ded6abd394fc3727adf7952281529b7d_0.png)
 
 在本节课中，我们将学习一种额外的可视化工具——条形图，并了解如何使用Matplotlib库创建条形图。
 
-![](img/ded6abd394fc3727adf7952281529b7d_2.png)
 
 ---
 
-![](img/ded6abd394fc3727adf7952281529b7d_3.png)
 
 ## 📈 条形图简介
 
-![](img/ded6abd394fc3727adf7952281529b7d_5.png)
 
 上一节我们介绍了数据可视化的基本概念，本节中我们来看看条形图。
 
@@ -20,25 +16,20 @@
 
 例如，假设我们想以离散的方式可视化从1980年到2013年从冰岛到加拿大的移民情况。
 
-![](img/ded6abd394fc3727adf7952281529b7d_7.png)
 
 一种方法是构建一个条形图，其中条形的高度代表特定年份从冰岛到加拿大的总移民人数。
 
 ---
 
-![](img/ded6abd394fc3727adf7952281529b7d_9.png)
 
-![](img/ded6abd394fc3727adf7952281529b7d_10.png)
 
 ## 🗃️ 数据准备
 
 在介绍如何使用Matplotlib绘制条形图之前，我们先快速回顾一下我们的数据集。
 
-![](img/ded6abd394fc3727adf7952281529b7d_12.png)
 
 数据集中的每一行代表一个国家，并包含有关该国家的元数据，例如其地理位置以及它是发展中国家还是发达国家。每一行还包含从1980年到2013年每年从该国到加拿大的移民数字。
 
-![](img/ded6abd394fc3727adf7952281529b7d_13.png)
 
 现在，让我们处理数据框，使国家名称成为每一行的索引，这将使检索特定国家的数据行变得更加容易。此外，我们添加一个额外的列，代表从1980年到2013年每个国家年度移民的累计总和。
 
@@ -65,11 +56,9 @@ years = list(range(1980, 2014))
 df_iceland = df_canada.loc['Iceland', years]
 ```
 
-![](img/ded6abd394fc3727adf7952281529b7d_15.png)
 
 接着，我们在`df_iceland`上调用绘图函数，并设置`kind='bar'`以生成条形图。
 
-![](img/ded6abd394fc3727adf7952281529b7d_16.png)
 
 ```python
 df_iceland.plot(kind='bar')
@@ -83,15 +72,11 @@ plt.xlabel('Year')
 plt.ylabel('Number of Immigrants')
 ```
 
-![](img/ded6abd394fc3727adf7952281529b7d_18.png)
 
-![](img/ded6abd394fc3727adf7952281529b7d_19.png)
 
 最后，我们调用`show`函数来显示图形。
 
-![](img/ded6abd394fc3727adf7952281529b7d_20.png)
 
-![](img/ded6abd394fc3727adf7952281529b7d_21.png)
 
 ```python
 plt.show()
@@ -101,7 +86,6 @@ plt.show()
 
 ---
 
-![](img/ded6abd394fc3727adf7952281529b7d_23.png)
 
 ## 🔍 解读条形图
 

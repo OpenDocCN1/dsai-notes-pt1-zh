@@ -94,7 +94,6 @@ graph.render('./decision_tree_graph', format='png')  # 保存为PNG
         f.write(s)
     ```
 
-![](img/49b8763ca4a7b32ccd0aeebe5e779bb1_1.png)
 
 2.  **从修改后的文件重新生成图形**
     使用修改后的 `.dot` 文件来创建和保存图形，中文就能正常显示了。
@@ -110,7 +109,6 @@ graph.render('./decision_tree_graph', format='png')  # 保存为PNG
     corrected_graph.render('./decision_tree_chinese', format='pdf')
     ```
 
-![](img/49b8763ca4a7b32ccd0aeebe5e779bb1_3.png)
 
 ## 总结
 

@@ -1,10 +1,7 @@
 # 课程 P50：数据接口设计 - 读取数据接口与基类定义 🧱
 
-![](img/7aa0bf62f4dce97825557276d1a31df1_1.png)
 
-![](img/7aa0bf62f4dce97825557276d1a31df1_3.png)
 
-![](img/7aa0bf62f4dce97825557276d1a31df1_5.png)
 
 在本节课中，我们将学习如何设计一个通用的数据读取接口。我们将创建一个基类，用于统一不同数据集（如Pascal VOC和COCO）的读取逻辑，从而提高代码的复用性和可维护性。
 
@@ -75,7 +72,6 @@ class TFRecordReaderBase(object):
         return None
 ```
 
-![](img/7aa0bf62f4dce97825557276d1a31df1_31.png)
 
 **代码解释**：
 1.  **`__init__` 方法**：接收一个 `params` 参数。这个字典包含了数据集的特定配置（如类别数、样本数等），子类在初始化时会传入自己的配置。
@@ -88,7 +84,6 @@ class TFRecordReaderBase(object):
 
 设计好基类后，我们的工作就完成了一半。接下来，针对每一个具体的数据集（如 `PascalVOCReader`、`COCOReader`），我们需要：
 
-![](img/7aa0bf62f4dce97825557276d1a31df1_33.png)
 
 1.  定义该数据集独有的配置参数字典 `params`。
 2.  创建一个类并继承 `TFRecordReaderBase`。

@@ -15,7 +15,6 @@
 
 ***
 
-![](img/2ce9083df959cdcda740730592b0f74a_1.png)
 
 ## 🔁 For循环
 
@@ -25,9 +24,7 @@
 
 
 
-![](img/2ce9083df959cdcda740730592b0f74a_1.png)
 
-![](img/2ce9083df959cdcda740730592b0f74a_3.png)
 
 为了便于操作，我们给每个方块编号，并将这组方块称为`squares`列表。在Python中，我们可以用列表来表示这些方块，列表中的每个元素是一个代表颜色的字符串。我们的目标是将每个元素的值改为`"white"`。
 
@@ -48,13 +45,11 @@ for i in range(5):
 
 
 
-![](img/2ce9083df959cdcda740730592b0f74a_3.png)
 
 ### 直接迭代列表元素
 
 我们也可以不通过索引，直接迭代列表或元组中的每一个元素。
 
-![](img/2ce9083df959cdcda740730592b0f74a_5.png)
 
 ```python
 squares = ['red', 'yellow', 'green']
@@ -73,7 +68,6 @@ for square in squares:
 
 
 
-![](img/2ce9083df959cdcda740730592b0f74a_5.png)
 
 其语法如下：
 ```python
@@ -91,7 +85,6 @@ for i, square in enumerate(squares):
 
 ## ⏱️ While循环
 
-![](img/2ce9083df959cdcda740730592b0f74a_7.png)
 
 for循环用于执行已知次数的重复任务，而**while循环**则用于在某个条件为真时，持续执行代码块。
 
@@ -99,18 +92,14 @@ for循环用于执行已知次数的重复任务，而**while循环**则用于�
 
 
 
-![](img/2ce9083df959cdcda740730592b0f74a_7.png)
 
 
 
-![](img/2ce9083df959cdcda740730592b0f74a_9.png)
 
 这就是while循环的典型应用。我们用代码来模拟这个过程：
 
-![](img/2ce9083df959cdcda740730592b0f74a_9.png)
 
 
-![](img/2ce9083df959cdcda740730592b0f74a_10.png)
 
 ```python
 squares = ['orange', 'orange', 'purple', 'blue']
@@ -128,13 +117,11 @@ while i < len(squares) and squares[i] == 'orange':
 
 
 
-![](img/2ce9083df959cdcda740730592b0f74a_12.png)
 
 ***
 
 ## 📝 总结
 
-![](img/2ce9083df959cdcda740730592b0f74a_12.png)
 
 本节课中我们一起学习了Python中两种主要的循环结构：
 1.  **For循环**：通常用于遍历序列（如列表、元组）或执行已知次数的迭代。我们学习了使用`range`函数控制迭代次数，以及使用`enumerate`函数同时获取元素索引和值。
@@ -144,6 +131,5 @@ while i < len(squares) and squares[i] == 'orange':
 
 
 
-![](img/2ce9083df959cdcda740730592b0f74a_14.png)
 
 ![](img/2ce9083df959cdcda740730592b0f74a_14.png)

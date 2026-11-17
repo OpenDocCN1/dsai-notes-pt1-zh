@@ -106,7 +106,6 @@ preprocess_fn = preprocess_factory.get_preprocess(dataset_name, train_or_test)
 
 ### 步骤总结
 
-![](img/4debdb016aa3f74e69e6d4d4e76e5346_36.png)
 
 在本节中，我们完成了训练准备工作的第一步：从各个工厂模块获取核心组件。
 

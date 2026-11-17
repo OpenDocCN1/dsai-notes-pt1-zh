@@ -1,8 +1,6 @@
 # 005：数据隐私 🔒
 
-![](img/f9e6762a5cbeb8b9d2bcdab5c3cb845b_0.png)
 
-![](img/f9e6762a5cbeb8b9d2bcdab5c3cb845b_2.png)
 
 在本节课中，我们将学习数据隐私以及隐私增强技术。你将了解隐私在联邦学习中的重要性，学习如何思考隐私保护技术，并以差分隐私为例进行深入探讨。
 
@@ -61,7 +59,6 @@ Mods（也称为修饰器）允许你在任务在 `ClientApp` 中被处理之前
 
 在服务器端，你首先像往常一样创建联邦平均策略。这次我们给它一个不同的名字，称为 `fed_avg_without_dp`。然后，我们不直接将联邦平均策略对象传递给 `server_app`，而是用一个名为 `DifferentialPrivacyClientSideAdaptiveClipping` 的包装策略来包装它。
 
-![](img/f9e6762a5cbeb8b9d2bcdab5c3cb845b_4.png)
 
 为此，你创建 `DifferentialPrivacyClientSideAdaptiveClipping` 的一个实例，并将之前创建的策略对象以及两个 DP 特定参数（噪声乘数和客户端采样数量）传递给它。`DifferentialPrivacyClientSideAdaptiveClipping` 策略包装器本身就是一个策略，它包装其他策略并负责在服务器端应用差分隐私。这意味着它接收模型更新，将其转发给内部策略进行聚合，然后向聚合后的模型添加噪声。
 
@@ -73,13 +70,10 @@ Mods（也称为修饰器）允许你在任务在 `ClientApp` 中被处理之前
 
 配置好我们的服务器端 DP 策略和客户端裁剪模块后，我们可以看到联邦训练如何与 DP 一起运行。在本地训练之后，客户端模块裁剪参数并将裁剪后的模型更新发送到服务器。内部策略然后聚合这些模型更新，DP 包装策略向聚合后的模型添加噪声。
 
-![](img/f9e6762a5cbeb8b9d2bcdab5c3cb845b_6.png)
 
-![](img/f9e6762a5cbeb8b9d2bcdab5c3cb845b_7.png)
 
 你可以像往常一样通过 `run_simulation` 运行此实验。这次，你使用 10 个模拟客户端运行模拟，并在每一轮中选择其中的 6 个客户端（这是 `fraction_fit=0.6` 的结果）。现在的日志信息更多一些，但你可以看到在客户端，模块裁剪了参数。你可以看到一些以 `adaptive_clipping_mod` 开头的日志，它显示参数被某个值裁剪。在以 `aggregate_fit` 开头的部分日志中，你可以看到添加了具有特定标准偏差的中心化 DP 噪声。
 
-![](img/f9e6762a5cbeb8b9d2bcdab5c3cb845b_8.png)
 
 由于裁剪和加噪，DP 通常会导致收敛速度变慢。因此，在这个实验中，我们使用了一个较小的噪声乘数（这导致隐私性较低），并运行联邦训练 50 轮（理想情况下，根据所需的隐私性和实用性，可以运行更多轮）。
 
@@ -87,11 +81,8 @@ Mods（也称为修饰器）允许你在任务在 `ClientApp` 中被处理之前
 
 本节课我们一起学习了数据隐私在联邦学习中的重要性。联邦学习本身并不能保证数据隐私。隐私增强技术（通常简称为 PETs），如差分隐私和安全聚合，可以提供帮助。
 
-![](img/f9e6762a5cbeb8b9d2bcdab5c3cb845b_10.png)
 
-![](img/f9e6762a5cbeb8b9d2bcdab5c3cb845b_11.png)
 
-![](img/f9e6762a5cbeb8b9d2bcdab5c3cb845b_12.png)
 
 ![](img/f9e6762a5cbeb8b9d2bcdab5c3cb845b_13.png)
 

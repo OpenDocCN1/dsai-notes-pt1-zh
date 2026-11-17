@@ -6,7 +6,6 @@
 
 LangChain表达式语言（LCEL）旨在简化构建基于大语言模型应用的过程。它提供了一种使用管道操作符（`|`）连接组件的直观方式，取代了早期版本中较为复杂的类继承方法。本节将介绍LCEL的核心概念、优势以及实际应用。
 
-![](img/72644b5079df4e01d48bb18e2f7d70cf_1.png)
 
 ![](img/72644b5079df4e01d48bb18e2f7d70cf_2.png)
 
@@ -41,7 +40,6 @@ LCEL的基础是所有组件都实现了 `Runnable` 接口。这意味着任何�
 以下是一个使用LCEL构建简单问答链的代码示例：
 
 
-![](img/72644b5079df4e01d48bb18e2f7d70cf_7.png)
 
 ```python
 from langchain.prompts import ChatPromptTemplate
@@ -160,7 +158,6 @@ print(answer)
 
 ## 总结
 
-![](img/72644b5079df4e01d48bb18e2f7d70cf_13.png)
 
 ![](img/72644b5079df4e01d48bb18e2f7d70cf_14.png)
 

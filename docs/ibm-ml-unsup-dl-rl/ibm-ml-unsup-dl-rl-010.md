@@ -46,7 +46,6 @@ So that takes a little too far。 we don't want it quite that obvious。
 
  so we're going to set it equal to one。
 
-![](img/87ec647f5630c348092d17a8be94bee1_1.png)
 
 We're then going to run our K means and set our initial number of clusters equal to7。
 
@@ -60,7 +59,6 @@ So you say K means we call the number of clusters equals to 7。 We do K M dot f
 
  and we see here the seven clusters that will be。
 
-![](img/87ec647f5630c348092d17a8be94bee1_3.png)
 
 Cated，1 we call K means with clusters equal to 7， and seems to arbitrarily be splitting in a way。
 
@@ -88,9 +86,7 @@ So we can see by calling K M dot inertia， we can get the inertia for the last 
 
 
 
-![](img/87ec647f5630c348092d17a8be94bee1_5.png)
 
-![](img/87ec647f5630c348092d17a8be94bee1_6.png)
 
 And I want you to think before I run this， which one will have a lower overall inertia。
 
@@ -98,13 +94,11 @@ And I want you to think before I run this， which one will have a lower overall
 
 
 
-![](img/87ec647f5630c348092d17a8be94bee1_8.png)
 
 So in order to plot this out。We create a blank list， so we have inertia equal to this blank list。
 
 
 
-![](img/87ec647f5630c348092d17a8be94bee1_10.png)
 
 We have that we're going to run through a range of different numbers of clusters ranging from one up to 11。
 
@@ -128,7 +122,6 @@ We're then going to set our X label and our y label to number of clusters and in
 
 
 
-![](img/87ec647f5630c348092d17a8be94bee1_12.png)
 
 And we run this。And we see this steep decline。From 1 to 2， then from 2 to 3，3 to 4。
 
@@ -156,6 +149,5 @@ Now that closes out this video in regards to looking at this elbow plot of the n
 
 On actual images。All right， I'll see you there。
 
-![](img/87ec647f5630c348092d17a8be94bee1_14.png)
 
 ![](img/87ec647f5630c348092d17a8be94bee1_15.png)

@@ -1,6 +1,5 @@
 # 007：DDIM加速采样 🚀
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_0.png)
 
 ![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_2.png)
 
@@ -22,13 +21,11 @@ DDIM之所以更快，是因为它能够**跳过时间步**。它不再需要从
 *   **DDPM（左侧）**：遵循标准的马尔可夫链，逐步去噪，过程较慢。
 *   **DDIM（右侧）**：可以跳过大量中间步骤，快速形成图像轮廓并细化。
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_7.png)
 
 ![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_9.png)
 
 ## 代码实现与对比
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_11.png)
 
 以下是DDIM采样算法的关键部分。请注意，其中涉及一个步长参数，它决定了我们跳过的步数。
 
@@ -38,21 +35,15 @@ n_steps = 20  # 总采样步数，远小于DDPM的500步
 step_size = max(1, total_timesteps // n_steps)  # 计算跳过的步长
 ```
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_13.png)
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_14.png)
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_15.png)
 
 在实验中，我们设置`n_steps=20`，这意味着采样过程大约只执行了原来的1/25（500/20）。运行后可以观察到，DDIM的采样速度极快，几乎瞬间就能看到图像的基本形态。
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_17.png)
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_19.png)
 
 ## 速度与质量的权衡
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_21.png)
 
 ![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_22.png)
 
@@ -60,13 +51,10 @@ step_size = max(1, total_timesteps // n_steps)  # 计算跳过的步长
 *   如果**采样500步**，DDPM通常表现更好。
 *   如果**采样步数少于500步**，DDIM的表现则要优秀得多。
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_24.png)
 
 因此，DDIM在追求速度的场景下具有巨大优势。
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_26.png)
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_27.png)
 
 ## 性能对比测试
 
@@ -76,15 +64,11 @@ step_size = max(1, total_timesteps // n_steps)  # 计算跳过的步长
 
 我们可以使用`timeit`等工具来量化比较DDIM与DDPM的采样速度。在典型的测试中，DDIM能带来**数量级级别的加速**。建议你在自己的笔记本中运行代码，亲身体验这种速度差异。
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_32.png)
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_33.png)
 
 ## 总结
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_34.png)
 
-![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_35.png)
 
 ![](img/f8a2dc18a9ee4c9d787dd7ed2c145d6c_37.png)
 

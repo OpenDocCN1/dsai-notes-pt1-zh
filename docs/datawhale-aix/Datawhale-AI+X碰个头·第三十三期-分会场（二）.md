@@ -94,7 +94,6 @@ def recursive_self_improvement(system):
 
 ![](img/30fb8b7ebe1c464392b096cfd07addf7_11.png)
 
-![](img/30fb8b7ebe1c464392b096cfd07addf7_12.png)
 
 ## 五、实际工程中的任务迭代系统
 

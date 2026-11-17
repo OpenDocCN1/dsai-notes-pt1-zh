@@ -1,12 +1,8 @@
 # 005：04_拒绝与提示注入 🛡️
 
-![](img/aaf610e6363b3603bbf5df5eb2190af8_1.png)
 
-![](img/aaf610e6363b3603bbf5df5eb2190af8_2.png)
 
-![](img/aaf610e6363b3603bbf5df5eb2190af8_4.png)
 
-![](img/aaf610e6363b3603bbf5df5eb2190af8_5.png)
 
 ![](img/aaf610e6363b3603bbf5df5eb2190af8_6.png)
 
@@ -77,7 +73,6 @@ filtered_chats = annotated_chats[(annotated_chats["response.sentiment.nltk"] <= 
 
 ![](img/aaf610e6363b3603bbf5df5eb2190af8_8.png)
 
-![](img/aaf610e6363b3603bbf5df5eb2190af8_9.png)
 
 ## 理解与检测提示注入 💉
 
@@ -95,7 +90,6 @@ filtered_chats = annotated_chats[(annotated_chats["response.sentiment.nltk"] <= 
 
 ![](img/aaf610e6363b3603bbf5df5eb2190af8_11.png)
 
-![](img/aaf610e6363b3603bbf5df5eb2190af8_12.png)
 
 ```python
 @register_dataset_udf(["prompt"], "prompt.text_length")
@@ -103,11 +97,8 @@ def text_length(text):
     return text.str.len()
 ```
 
-![](img/aaf610e6363b3603bbf5df5eb2190af8_14.png)
 
-![](img/aaf610e6363b3603bbf5df5eb2190af8_15.png)
 
-![](img/aaf610e6363b3603bbf5df5eb2190af8_17.png)
 
 我们可以将提示长度可视化，并设定一个阈值（例如200或300个字符）来初步判断是否为潜在的越狱尝试。虽然这会产生许多假阳性，但它是一个快速、简单的起点。
 

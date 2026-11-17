@@ -6,11 +6,9 @@
 
 ## 准备工作
 
-![](img/c1c5ba90202b449c5953f0251c01e288_1.png)
 
 上一节我们介绍了多种文档预处理技巧，本节中我们来看看如何将它们整合到一个完整的应用程序中。首先，你需要准备好语料库和必要的工具。
 
-![](img/c1c5ba90202b449c5953f0251c01e288_3.png)
 
 以下是构建RAG机器人前需要完成的准备工作：
 
@@ -23,22 +21,18 @@
 
 ---
 
-![](img/c1c5ba90202b449c5953f0251c01e288_5.png)
 
 ## 预处理PDF文档
 
-![](img/c1c5ba90202b449c5953f0251c01e288_7.png)
 
 现在，我们开始对PDF文档进行预处理。我们将应用在课程中学到的知识，使用非结构化API调用YOLOx模型进行文档布局检测。
 
-![](img/c1c5ba90202b449c5953f0251c01e288_9.png)
 
 ```python
 # 示例：使用非结构化API处理PDF
 processed_pdf_elements = unstructured_client.process_pdf("donut_paper.pdf", strategy="hi_res")
 ```
 
-![](img/c1c5ba90202b449c5953f0251c01e288_11.png)
 
 这是一个基于昂贵模型的工作负载，如果处理需要几分钟，属于正常现象。预处理完成后，可以查看结果。例如，以下是一个被识别为“标题”的元素：
 
@@ -46,29 +40,23 @@ processed_pdf_elements = unstructured_client.process_pdf("donut_paper.pdf", stra
 print(processed_pdf_elements[0].text)  # 输出标题文本
 ```
 
-![](img/c1c5ba90202b449c5953f0251c01e288_13.png)
 
 PDF中的表格信息被保存在元素的元数据中，以HTML格式存储。你可以在组装RAG应用程序后查询这些表格。
 
-![](img/c1c5ba90202b449c5953f0251c01e288_15.png)
 
 ---
 
 ## 过滤无关内容
 
-![](img/c1c5ba90202b449c5953f0251c01e288_17.png)
 
 预处理后的文档可能包含我们不希望被检索到的内容，例如参考文献和页眉。我们可以利用提取的元数据进行过滤。
 
 ### 过滤参考文献
 
-![](img/c1c5ba90202b449c5953f0251c01e288_19.png)
 
-![](img/c1c5ba90202b449c5953f0251c01e288_20.png)
 
 首先，我们过滤掉参考文献部分。参考文献不包含叙述性内容，对问答应用价值不大。
 
-![](img/c1c5ba90202b449c5953f0251c01e288_22.png)
 
 1.  **定位参考文献标题**：通过检查元素的类别和文本内容，找到“References”或“参考文献”标题元素。
 2.  **获取其元素ID**：将该标题元素的ID保存下来。
@@ -83,41 +71,34 @@ elements = [el for el in elements if el.metadata.parent_id != reference_title_id
 
 ### 过滤页眉信息
 
-![](img/c1c5ba90202b449c5953f0251c01e288_24.png)
 
 接下来，我们过滤掉每页顶部的页眉信息（如文档标题和页码），这些信息会破坏文档的叙事结构。
 
 1.  **识别页眉元素**：页眉元素的元数据中，`category` 字段通常为 `Header`。
 2.  **执行过滤**：直接从元素集合中移除类别为 `Header` 的元素。
 
-![](img/c1c5ba90202b449c5953f0251c01e288_26.png)
 
 ```python
 # 伪代码：过滤页眉
 elements = [el for el in elements if el.metadata.category != "Header"]
 ```
 
-![](img/c1c5ba90202b449c5953f0251c01e288_28.png)
 
 完成这两步过滤后，我们的元素集就只包含核心的叙述性内容了。
 
-![](img/c1c5ba90202b449c5953f0251c01e288_30.png)
 
 ---
 
-![](img/c1c5ba90202b449c5953f0251c01e288_32.png)
 
 ## 预处理其他文档类型
 
 处理完PDF后，我们继续预处理PowerPoint和Markdown文档。方法与我们早期课程中学到的一致。
 
-![](img/c1c5ba90202b449c5953f0251c01e288_34.png)
 
 *   **预处理PowerPoint**：使用非结构化开源库中的 `partition_pptx` 函数。
 *   **预处理Markdown**：使用非结构化开源库中的 `partition_md` 函数。
 
 
-![](img/c1c5ba90202b449c5953f0251c01e288_36.png)
 
 ```python
 from unstructured.partition.pptx import partition_pptx
@@ -126,13 +107,11 @@ ppt_elements = partition_pptx("donut_presentation.pptx")
 md_elements = partition_md("README.md")
 ```
 
-![](img/c1c5ba90202b449c5953f0251c01e288_38.png)
 
 ---
 
 ## 分块与加载到向量数据库
 
-![](img/c1c5ba90202b449c5953f0251c01e288_40.png)
 
 现在我们已经预处理了所有文档，下一步是将它们合并为单个语料库，并进行分块处理。
 
@@ -140,7 +119,6 @@ md_elements = partition_md("README.md")
 2.  **准备加载**：将分块后的文档转换为适合加载的格式，并包含元数据（如来源文件名），以便后续进行混合搜索。
 3.  **嵌入与加载**：使用OpenAI Embeddings为文档块生成向量，然后利用LangChain的工具将其加载到Chroma向量数据库中。
 
-![](img/c1c5ba90202b449c5953f0251c01e288_42.png)
 
 ```python
 from langchain.vectorstores import Chroma
@@ -156,13 +134,11 @@ vectorstore = Chroma.from_documents(
 
 ---
 
-![](img/c1c5ba90202b449c5953f0251c01e288_44.png)
 
 ## 设置检索器与提示模板
 
 向量数据库准备就绪后，我们需要设置检索器和与大模型对话的提示模板。
 
-![](img/c1c5ba90202b449c5953f0251c01e288_46.png)
 
 1.  **设置检索器**：创建一个基于向量相似度的检索器，用于从数据库中查找与问题相关的文档块。
 
@@ -185,7 +161,6 @@ vectorstore = Chroma.from_documents(
     PROMPT = PromptTemplate(template=template, input_variables=["context", "question"])
     ```
 
-![](img/c1c5ba90202b449c5953f0251c01e288_48.png)
 
 ---
 
@@ -206,7 +181,6 @@ vectorstore = Chroma.from_documents(
     )
     ```
 
-![](img/c1c5ba90202b449c5953f0251c01e288_50.png)
 
 2.  **进行查询**：现在可以向你的RAG机器人提问了。
 
@@ -229,7 +203,6 @@ vectorstore = Chroma.from_documents(
 
 本节课中我们一起学习了如何构建一个完整的RAG机器人。我们从预处理混合格式的文档开始，经历了过滤无关内容、分块、嵌入并加载到向量数据库，最后设置了检索器和提示模板，通过LangChain链实现了智能问答。
 
-![](img/c1c5ba90202b449c5953f0251c01e288_52.png)
 
 你现在已经拥有了构建自己RAG应用的基础。可以尝试以下方式进行改进：
 

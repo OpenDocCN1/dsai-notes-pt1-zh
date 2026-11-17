@@ -8,21 +8,17 @@ Now let's go over the learning goals for this set of videos。In this set of vid
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_1.png)
 
 We'll discuss both the practical and mathematical details that allow you to understand how recurrentin neural networks work。
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_3.png)
 
 And then finally we'll touch on some limitations of these recurrent neural networks that we discuss and that will lead into our next set of videos on how to adjust for those limitations。
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_5.png)
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_6.png)
 
 So we discuss how processing of images will force them into a specific input dimension。
 
@@ -34,7 +30,6 @@ So we discuss how processing of images will force them into a specific input dim
 
  and it makes sense for these types of input data。
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_8.png)
 
 But this may not be immediately obvious in regards to text。
 
@@ -42,25 +37,21 @@ But this may not be immediately obvious in regards to text。
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_10.png)
 
 For example， if our problem statement was to classify tweets as positive， negative or neutral。
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_12.png)
 
 Different tweets can have different number of words。
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_14.png)
 
 And we want to know how can we account for this variable link for each one of our input sequences？
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_16.png)
 
 Now we want to do better than just the bag of words implementationment。
 
@@ -68,7 +59,6 @@ Now we want to do better than just the bag of words implementationment。
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_18.png)
 
 Ideally。When working with text data， each word can be processed and understood in the appropriate context。
 
@@ -76,7 +66,6 @@ Ideally。When working with text data， each word can be processed and understo
 
  et cetera。
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_20.png)
 
 And those words should be handled differently， depending on that context， you can think about say。
 
@@ -84,9 +73,7 @@ And those words should be handled differently， depending on that context， yo
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_22.png)
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_23.png)
 
 Also， we get more words。As we get those more words。
 
@@ -94,7 +81,6 @@ Also， we get more words。As we get those more words。
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_25.png)
 
 So the solution will be to use this idea of recurrence。
 
@@ -102,13 +88,11 @@ So the solution will be to use this idea of recurrence。
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_27.png)
 
 And this would mean that we can deal with variable length by just continuing to feed until the end of the sentence or till the end of the document。
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_29.png)
 
 And because we have the information from prior words。
 
@@ -116,9 +100,7 @@ And because we have the information from prior words。
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_31.png)
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_32.png)
 
 Our network would then output two things as each new word came in。One being a prediction。
 
@@ -126,12 +108,10 @@ Our network would then output two things as each new word came in。One being a 
 
 
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_34.png)
 
 And second， a state， which contained a summary of everything that happened in the past leading up to that point。
 
  or again， that context that we're looking for。
 
-![](img/faac7b722715cca8b2d91342ec3b0fb3_36.png)
 
 ![](img/faac7b722715cca8b2d91342ec3b0fb3_37.png)

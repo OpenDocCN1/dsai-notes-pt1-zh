@@ -1,6 +1,5 @@
 # 071：简单API（第1部分）📡
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_0.png)
 
 在本节课中，我们将学习应用程序接口，简称API。我们将了解API是什么、API库、REST API（包括请求和响应），并通过一个使用Pycoin Gecko的实例来加深理解。
 
@@ -10,17 +9,12 @@ API允许两个软件组件相互通信。例如，你有一个程序、一些�
 
 ## API库示例：Pandas 🐼
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_2.png)
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_3.png)
 
 Pandas实际上是一组软件组件，其中许多甚至不是用Python编写的。你有一些数据和一组软件组件。我们通过Pandas API与其他软件组件通信，从而处理数据。
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_4.png)
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_5.png)
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_6.png)
 
 让我们清理一下图示。当你创建一个字典，然后使用DataFrame构造函数创建一个Pandas对象时，用API术语来说，这就是一个**实例**。字典中的数据被传递给Pandas API。然后，你使用这个DataFrame与API进行通信。
 
@@ -29,7 +23,6 @@ Pandas实际上是一组软件组件，其中许多甚至不是用Python编写�
 *   当你调用 `head()` 方法时，DataFrame会与API通信，显示数据框的前几行。
 *   当你调用 `mean()` 方法时，API会计算平均值并返回结果。
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_8.png)
 
 ## REST API 🌐
 
@@ -45,13 +38,10 @@ REST API是另一种流行的API类型。它们允许你通过互联网进行通
 *   **请求**：客户端发送给资源的信息。
 *   **响应**：资源（Web服务）发送给客户端的回复。
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_10.png)
 
 HTTP方法是互联网上传输数据的一种方式。
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_11.png)
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_12.png)
 
 ## 通过REST API发送请求与接收响应 🔄
 
@@ -63,9 +53,7 @@ HTTP方法是互联网上传输数据的一种方式。
 
 加密货币数据非常适合用于API，因为它不断更新，对加密货币交易至关重要。我们将使用Pycoin Gecko（CoinGecko API的Python客户端或封装器）来获取每分钟更新的数据。我们使用这个封装器是因为它易于使用，让你可以专注于数据收集任务。我们还将介绍Pandas中处理时间序列数据的函数。
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_14.png)
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_15.png)
 
 使用Pycoin Gecko收集数据很简单，步骤如下：
 
@@ -84,9 +72,7 @@ data = client.get_coin_market_chart_by_id(id='bitcoin', vs_currency='usd', days=
 
 为了简化操作，我们可以将嵌套列表转换为具有`timestamp`和`price`两列的数据框。时间戳列难以理解，我们将使用Pandas的 `to_datetime()` 函数将其转换为更易读的格式。
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_17.png)
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_18.png)
 
 使用 `to_datetime()` 函数可以创建可读的时间数据。输入是时间戳列，时间单位设置为毫秒。我们将输出附加到新的 `date` 列。
 
@@ -94,13 +80,10 @@ data = client.get_coin_market_chart_by_id(id='bitcoin', vs_currency='usd', days=
 
 现在，我们可以通过打开HTML文件并点击标签页左上角的“信任HTML”来查看K线图。它看起来应该类似这样。
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_20.png)
 
 ## 总结 📝
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_21.png)
 
-![](img/5f90714cbd2e73566aa0b15e6b5b04d0_22.png)
 
 ![](img/5f90714cbd2e73566aa0b15e6b5b04d0_23.png)
 

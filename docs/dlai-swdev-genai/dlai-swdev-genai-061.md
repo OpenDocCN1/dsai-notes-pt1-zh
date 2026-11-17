@@ -32,7 +32,6 @@ CRUD是数据库交互的基石，其含义如下：
 
 让我们开始请求ChatGPT帮助生成一个函数，用于向电子商务数据库的`users`表添加新用户。
 
-![](img/c96398fb39cf1e00e630933501c72db2_5.png)
 
 **提示示例**：
 > “使用SQLAlchemy，为我的电子商务数据库的`users`表编写一个添加新用户的Python函数。”
@@ -79,7 +78,6 @@ LLM生成的代码可能类似于以下内容，它执行查询并返回结果�
 ![](img/c96398fb39cf1e00e630933501c72db2_15.png)
 
 
-![](img/c96398fb39cf1e00e630933501c72db2_17.png)
 
 ```python
 def get_all_users():
@@ -104,14 +102,11 @@ all_users = get_all_users()
 **提示示例**：
 > “编写一个函数，根据用户ID更新`users`表中用户的电子邮件地址。”
 
-![](img/c96398fb39cf1e00e630933501c72db2_21.png)
 
 生成的函数可能如下所示，它根据ID查找用户并更新其邮箱：
 
-![](img/c96398fb39cf1e00e630933501c72db2_23.png)
 
 
-![](img/c96398fb39cf1e00e630933501c72db2_25.png)
 
 ```python
 def update_user_email(user_id, new_email):
@@ -146,7 +141,6 @@ update_user_email(1, "new.email@example.com")
 LLM生成的代码可能如下：
 
 
-![](img/c96398fb39cf1e00e630933501c72db2_33.png)
 
 ```python
 def delete_user(user_id):
@@ -196,7 +190,6 @@ def add_user_safe(name, email):
 
 使用ORM方法添加用户，既能完成操作，也提升了安全性。
 
-![](img/c96398fb39cf1e00e630933501c72db2_40.png)
 
 ## 动手练习
 

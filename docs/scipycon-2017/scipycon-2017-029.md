@@ -2,13 +2,10 @@
 
 在本节课中，我们将学习 Spyder 集成开发环境的插件生态系统。我们将介绍四个由社区开发的第三方插件，它们为 Spyder 增添了新颖且强大的功能，包括集成 Jupyter Notebook、编写动态报告、运行系统终端以及执行单元测试。
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_1.png)
 
 ## Spyder 简介
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_3.png)
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_4.png)
 
 在深入了解插件之前，我们先简要回顾一下 Spyder 是什么。Spyder 是一个桌面应用程序，其界面设计类似于 MATLAB。它主要包含以下几个核心组件：
 
@@ -19,7 +16,6 @@
 
 例如，在控制台中执行 `a = 10`，变量 `a` 就会出现在变量资源管理器中。变量资源管理器不仅支持数字，还支持列表、字典、元组、NumPy 数组和 Pandas DataFrame 等对象。要获取帮助，例如查看 `numpy.sin` 的文档，只需在编辑器或控制台中选中该对象并按 `Ctrl+I`，文档就会以网页形式呈现。
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_6.png)
 
 ## 插件一：Spyder Notebook 📓
 
@@ -27,7 +23,6 @@
 
 以下是使用 Spyder Notebook 的主要优势：
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_8.png)
 
 *   **无需指定目录**：无需在特定目录下启动 Jupyter Notebook 服务器。
 *   **临时存储**：未命名的笔记本会保存在临时目录，避免污染文件系统。
@@ -47,7 +42,6 @@
 
 动态报告通常包含文本、代码、图形和数学公式。一些用户，特别是来自 R 社区的用户，习惯使用 R Markdown 等工具，当他们转向 Python 时，会怀念类似的功能。Spyder Reports 正是为了满足这一需求。
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_10.png)
 
 使用 Markdown 编写报告有以下优势：
 
@@ -58,45 +52,35 @@
 
 使用方式很简单：在 Spyder 编辑器中编写一个包含特殊语法（如 `pweave` 项目定义的 Noweb 语法）的 Markdown 文件，然后通过“运行”菜单中的“渲染 HTML”选项，即可在 Spyder 中查看渲染后的报告。
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_12.png)
 
 ## 插件三：Spyder Terminal 💻
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_14.png)
 
 现在，我们来看第三个插件——Spyder Terminal。这个插件允许你在 Spyder 内部运行命令行应用程序。
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_16.png)
 
 并非所有的命令行工具都适合在 Spyder 的 IPython 控制台中运行。例如，`git`、`htop`、`conda`、`pip` 等命令需要在系统终端中才能正常工作。为了避免用户为了执行这些命令而频繁切换出 Spyder，我们开发了这个插件。
 
 该插件的工作原理是：使用 Tornado 启动一个服务，该服务运行 `xterm.js`（一个 JavaScript 终端模拟器库）。这与 Jupyter Notebook 嵌入系统终端的方式类似。但我们的插件有一个重要改进：它通过一个名为 `pywinpty` 的 Python 封装库，成功地在 Windows 系统上实现了这一功能，而 Jupyter 的终端仅支持 Unix 类操作系统。
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_18.png)
 
 在插件中，你可以像在普通终端里一样运行命令，例如 `htop` 或 `git status`。这为用户，尤其是 Windows 用户，提供了极大的便利，使他们无需离开 Spyder 就能完成各种命令行操作。
 
 ## 插件四：Spyder Unit Test ✅
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_20.png)
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_22.png)
 
 最后，我们介绍第四个插件——Spyder Unit Test。顾名思义，这个插件允许你在 Spyder 内部运行和检查单元测试结果。
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_23.png)
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_25.png)
 
 它支持两种流行的 Python 测试框架：`pytest` 和 `unittest`。要配置此插件，你需要点击“配置”按钮，选择你想要使用的测试框架以及测试文件所在的目录。
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_27.png)
 
 配置完成后，你可以直接运行测试，结果将在 Spyder 界面中显示。绿色行表示测试通过，并会显示测试名称和耗时。如果测试失败，则会显示失败的位置和具体的错误信息。这个插件旨在鼓励开发者在 IDE 内进行测试，减少切换到外部终端执行测试的需要。
 
 ## 总结与展望
 
-![](img/0039f9e3fa1f4724fb4ea4071974ca64_29.png)
 
 本节课中我们一起学习了 Spyder 的四个核心插件：Spyder Notebook、Spyder Reports、Spyder Terminal 和 Spyder Unit Test。它们分别扩展了 Spyder 在交互式计算、动态报告生成、命令行操作和代码测试方面的能力。
 

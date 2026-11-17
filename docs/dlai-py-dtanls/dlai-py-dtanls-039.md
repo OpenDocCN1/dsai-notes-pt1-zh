@@ -30,17 +30,13 @@ df.set_index('some_column', inplace=True)
 df['HoursLearningToCode'].hist()
 ```
 
-![](img/5490de2e73c66eefe861eb7ba745a1f9_1.png)
 
 这个分布呈现出强烈的**正偏态**。你可以看到，大多数受访者每周编码时间少于20小时，而花费更多时间编码的受访者数量则越来越少。
 
-![](img/5490de2e73c66eefe861eb7ba745a1f9_2.png)
 
-![](img/5490de2e73c66eefe861eb7ba745a1f9_3.png)
 
 现在，你可以计算描述性统计量了。首先计算平均小时数。
 
-![](img/5490de2e73c66eefe861eb7ba745a1f9_4.png)
 
 ```python
 mean_hours = df['HoursLearningToCode'].mean()
@@ -74,13 +70,10 @@ median_hours = df['HoursLearningToCode'].median()
 
 所有这些常见的描述性统计量计算起来都非常直接。你不需要在这些函数中提供任何参数，可以直接在你的Series上调用它们。
 
-![](img/5490de2e73c66eefe861eb7ba745a1f9_6.png)
 
 作为一个快速提醒，所有这些计算与直接在列名上使用这些方法会产生相同的结果。
 
-![](img/5490de2e73c66eefe861eb7ba745a1f9_7.png)
 
-![](img/5490de2e73c66eefe861eb7ba745a1f9_8.png)
 
 ## 计算分位数
 
@@ -126,7 +119,6 @@ df['HoursLearningToCode'].describe()
 
 你可能注意到偏度没有被包含在`.describe()`中。但是，你可以使用`.skew()`方法。
 
-![](img/5490de2e73c66eefe861eb7ba745a1f9_10.png)
 
 ```python
 skewness = df['HoursLearningToCode'].skew()

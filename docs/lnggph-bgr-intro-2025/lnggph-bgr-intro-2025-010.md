@@ -16,7 +16,6 @@ LLM可以支持多种输出格式，如JSON、字典、字符串、YAML、HTML�
 
 ## 方法一：使用 Pydantic 模型 📝
 
-![](img/663efbd42a4a7aa5f84dfc4c14ce19c5_1.png)
 
 Pydantic 是一个Python库，用于定义和验证数据结构。它就像是数据的蓝图，利用Python的类型提示来确保数据类型的正确性。
 
@@ -58,13 +57,11 @@ Pydantic 是一个Python库，用于定义和验证数据结构。它就像是�
 
 ---
 
-![](img/663efbd42a4a7aa5f84dfc4c14ce19c5_3.png)
 
 ## 方法二：使用 TypedDict 类 🗂️
 
 如果你不需要Pydantic提供的运行时数据验证，而只是想要一个类型提示清晰的字典结构，可以使用Python的`TypedDict`。
 
-![](img/663efbd42a4a7aa5f84dfc4c14ce19c5_5.png)
 
 以下是具体步骤：
 
@@ -94,7 +91,6 @@ Pydantic 是一个Python库，用于定义和验证数据结构。它就像是�
 
 ---
 
-![](img/663efbd42a4a7aa5f84dfc4c14ce19c5_7.png)
 
 ## 方法三：直接提供 JSON Schema 📄
 
@@ -126,7 +122,6 @@ Pydantic 是一个Python库，用于定义和验证数据结构。它就像是�
     }
     ```
 
-![](img/663efbd42a4a7aa5f84dfc4c14ce19c5_9.png)
 
 2.  **创建结构化输出的LLM**：将JSON Schema字典传给`with_structured_output`。
     ```python

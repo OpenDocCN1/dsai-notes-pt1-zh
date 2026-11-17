@@ -167,11 +167,9 @@ print("智能体输出（表格）:\n", result_table['output'])
 
 这是一个学生的“填空练习”文档，学生名为John Smith。我们可以看到学生提交的答案，例如“I am an honest person”，以及语法不正确的“day is dancing”。
 
-![](img/47dfb016a1617ad621561da86e10f97d_5.png)
 
 我们要求智能体处理该文档，提取学生姓名以及所有10个问题的学生答案。
 
-![](img/47dfb016a1617ad621561da86e10f97d_7.png)
 
 ```python
 ocr_result_handwriting = ocr_tool('handwriting_exercise.jpg')

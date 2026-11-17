@@ -2,31 +2,23 @@
 
 在本节课中，我们将学习如何切换Midjourney的不同模型版本，并通过实践观察不同版本在生成同一提示词（prompt）时产生的图像差异。我们将从设置模型开始，逐步生成并对比图像效果。
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_1.png)
 
 ---
 
 ## 概述
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_3.png)
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_4.png)
 
 上一节我们介绍了Midjourney的订阅计划。本节中，我们将实际操作，探索从版本4到最新版本5.2的图像生成效果。通过输入相同的提示词，您可以直观地比较各版本在图像质量、风格和细节上的演进。
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_6.png)
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_7.png)
 
 ## 切换至版本4模型
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_9.png)
 
 首先，我们将模型切换至版本4。在Discord中输入 `/settings` 命令并发送，在设置菜单中选择 `Nizzy model4`。
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_10.png)
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_12.png)
 
 ![](img/6913b63ba87c6db6da9f769124b71dc7_1.png)
 
@@ -34,32 +26,20 @@
 
 ![](img/6913b63ba87c6db6da9f769124b71dc7_14.png)
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_3.png)
-![](img/6913b63ba87c6db6da9f769124b71dc7_4.png)
-![](img/6913b63ba87c6db6da9f769124b71dc7_6.png)
-![](img/6913b63ba87c6db6da9f769124b71dc7_7.png)
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_16.png)
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_18.png)
 
 ## 切换至版本5.1模型
 
 接下来，我们尝试版本5.1。再次输入 `/settings`，选择 `Midjourney version 5.1`。然后，同样使用 `/imagine` 命令和相同的提示词 `crystallized dessert oasis` 生成图像。
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_9.png)
-![](img/6913b63ba87c6db6da9f769124b71dc7_10.png)
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_20.png)
 
 图像生成后，点击查看。您可以观察到版本5.1生成的图像与版本4存在差异。同时，等待之前版本4生成的图像完成。
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_22.png)
 
 ![](img/6913b63ba87c6db6da9f769124b71dc7_12.png)
 ![](img/6913b63ba87c6db6da9f769124b71dc7_14.png)
-![](img/6913b63ba87c6db6da9f769124b71dc7_16.png)
-![](img/6913b63ba87c6db6da9f769124b71dc7_18.png)
 
 将版本5.1的图像在浏览器中打开，可以更清晰地看到其图像质量的不同。
 
@@ -67,7 +47,6 @@
 
 现在，让我们测试最新的版本5.2。输入 `/settings`，选择 `Midjourney version 5.2` 或保留默认模式（默认会使用最新版本）。再次使用相同的提示词生成图像。
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_20.png)
 ![](img/6913b63ba87c6db6da9f769124b71dc7_22.png)
 
 这是最新版本生成的结果。通过对比版本1、2、3、4、Niji（动画风格）、5.1和5.2，您可以清晰地看到图像质量的提升，即使在放大后细节表现也不同。Midjourney仍在持续开发中，我们期待未来的更新。
@@ -82,7 +61,6 @@
 
 ![](img/6913b63ba87c6db6da9f769124b71dc7_27.png)
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_29.png)
 
 *   **放大图像**：在生成的四宫格图片下，点击 `U1`、`U2`、`U3` 或 `U4` 来放大对应的单张图片。
 *   **重新生成**：点击 `🔄`（重新生成）按钮，系统将基于原提示词重新生成一组四张新图像。
@@ -106,7 +84,6 @@
 
 ## 总结
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_33.png)
 
 本节课中，我们一起实践了Midjourney的图像生成流程。我们学习了：
 
@@ -121,6 +98,5 @@
 
 ![](img/6913b63ba87c6db6da9f769124b71dc7_36.png)
 
-![](img/6913b63ba87c6db6da9f769124b71dc7_33.png)
 ![](img/6913b63ba87c6db6da9f769124b71dc7_35.png)
 ![](img/6913b63ba87c6db6da9f769124b71dc7_36.png)

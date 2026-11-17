@@ -32,11 +32,9 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 ### 准备数据集
 
-![](img/02234eb3942d65add174ab367852377e_1.png)
 
 模型加载完成后，下一步是准备用于训练的数据。我们将使用IMDB电影评论数据集作为示例。
 
-![](img/02234eb3942d65add174ab367852377e_2.png)
 
 以下代码加载IMDB数据集并进行分词处理：
 ```python
@@ -92,9 +90,7 @@ predictions = outputs.logits.argmax(-1)
 print(predictions) # 输出预测的标签
 ```
 
-![](img/02234eb3942d65add174ab367852377e_4.png)
 
-![](img/02234eb3942d65add174ab367852377e_5.png)
 
 ---
 

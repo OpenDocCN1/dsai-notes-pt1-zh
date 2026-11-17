@@ -39,7 +39,6 @@ with open('email.txt', 'r') as file:
 print(email)
 ```
 
-![](img/f42f08166d4e274eaa81a417f1ee2277_1.png)
 
 同样地，我们可以读取 `recipe.txt` 文件。
 
@@ -49,35 +48,29 @@ with open('recipe.txt', 'r') as file:
 print(recipe)
 ```
 
-![](img/f42f08166d4e274eaa81a417f1ee2277_3.png)
 
 ## 上传你自己的文件
 
 为了处理你自己的数据，你需要将文件上传到当前工作目录。以下是操作步骤：
 
-![](img/f42f08166d4e274eaa81a417f1ee2277_5.png)
 
 1.  运行 `upload_text_file()` 函数，它会创建一个上传按钮。
 2.  点击按钮，从你的电脑中选择一个文本文件（例如，一个 `.txt` 文件）。
 3.  文件上传后，它会出现在当前工作目录中。
 
-![](img/f42f08166d4e274eaa81a417f1ee2277_6.png)
 
 ```python
 upload_text_file()
 ```
 
-![](img/f42f08166d4e274eaa81a417f1ee2277_8.png)
 
 上传完成后，再次列出目录中的文件，确认你的新文件（例如 `london.txt`）已出现。
 
-![](img/f42f08166d4e274eaa81a417f1ee2277_9.png)
 
 ```python
 files_in_directory()
 ```
 
-![](img/f42f08166d4e274eaa81a417f1ee2277_11.png)
 
 现在，你可以像之前一样打开并读取这个新文件。
 
@@ -87,14 +80,12 @@ with open(‘london.txt’， ‘r’) as file:
 print(your_file_content)
 ```
 
-![](img/f42f08166d4e274eaa81a417f1ee2277_13.png)
 
 ## 使用AI处理你的文本数据
 
 读取文件内容后，你可以利用大型语言模型（AI）对其进行处理。例如，你可以创建一个提示来总结文本。
 
 
-![](img/f42f08166d4e274eaa81a417f1ee2277_15.png)
 
 ```python
 prompt = f”””请用两句话总结以下文本内容：
@@ -103,7 +94,6 @@ prompt = f”””请用两句话总结以下文本内容：
 print_response(prompt)
 ```
 
-![](img/f42f08166d4e274eaa81a417f1ee2277_17.png)
 
 除了总结，你还可以尝试其他任务，例如提取关键要点或基于内容进行头脑风暴。
 

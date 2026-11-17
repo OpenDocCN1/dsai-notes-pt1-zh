@@ -36,7 +36,6 @@ ggplot(data = penguins) +
   geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species))
 ```
 
-![](img/de1685f624b7af8414358f2ad75e847c_4.png)
 
 现在，使用 `labs()` 函数为其添加一个标题，以明确图表目的。
 

@@ -44,7 +44,6 @@ LF AI & Data基金会是全球最大的开源非盈利组织Linux基金会旗下
 
 回到我们今天的正题，我们在看看当前我们所属的时代。实际上当前我们的时代，不管是工业界还是学术界，大家的认知都是一致的。我们认为这是属于AI的技术爆炸的起点时刻，我们在通向通用人工智能的关键时刻。
 
-![](img/b99db2669c193aa1f705f27e0bc42bca_3.png)
 
 现在的一个流行词就是从前几年的Machine Learning、Deep Learning、AI Framework，慢慢的现在更多的大家听到的都是Transformer、Attention、AIGC、LLM、Large Language Model这些词。其实这些都看到这两年每隔一年或者两年，它的焦点都不一样。尤其是当去年底ChatGPT出来之后，其实上引爆了一个核弹，快速的让AI的生态能够蓬勃的发展。
 

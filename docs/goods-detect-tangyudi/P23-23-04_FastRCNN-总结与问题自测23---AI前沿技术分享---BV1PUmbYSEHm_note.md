@@ -1,12 +1,10 @@
 # 课程 P23：Fast R-CNN 总结与问题自测 🧠
 
-![](img/4533874fcf99440329685ffbc036811c_0.png)
 
 在本节课中，我们将对 Fast R-CNN 模型进行总结，回顾其核心流程，分析其存在的缺点，并梳理需要掌握的关键知识点。最后，我们将通过几个自测问题来检验学习成果。
 
 ---
 
-![](img/4533874fcf99440329685ffbc036811c_2.png)
 
 ## 模型流程总结 📊
 
@@ -32,11 +30,9 @@ cls_score, bbox_pred = FC_Layers(pooled_features)
 loss = classification_loss(cls_score) + regression_loss(bbox_pred)
 ```
 
-![](img/4533874fcf99440329685ffbc036811c_4.png)
 
 ---
 
-![](img/4533874fcf99440329685ffbc036811c_6.png)
 
 ## 模型缺点分析 ⚠️
 
@@ -51,7 +47,6 @@ Fast R-CNN 最主要的缺点集中在区域推荐阶段：
 
 ---
 
-![](img/4533874fcf99440329685ffbc036811c_8.png)
 
 ## 核心知识点梳理 📝
 

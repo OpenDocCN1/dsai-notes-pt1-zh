@@ -101,7 +101,6 @@ plt.legend()
 plt.show()
 ```
 
-![](img/0b99f67b455e4663c622cb7cf268272a_2.png)
 
 ---
 

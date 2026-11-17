@@ -32,7 +32,6 @@
 我们将加载在Lab2中训练好的模型作为本次实验的起点。同时，我们需要准备一个用于评估毒性的数据集。
 
 
-![](img/4ab64c442d92181c84467f2a25f13a61_3.png)
 
 ```python
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, AutoModelForSequenceClassification

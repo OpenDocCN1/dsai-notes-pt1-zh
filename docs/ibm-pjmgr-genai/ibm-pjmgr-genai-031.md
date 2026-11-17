@@ -1,6 +1,5 @@
 #  031：课程介绍
 
-![](img/245e2700cc95ecca03e5b14745da4e98_0.png)
 
 ![](img/245e2700cc95ecca03e5b14745da4e98_2.png)
 

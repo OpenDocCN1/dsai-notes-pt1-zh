@@ -1,8 +1,6 @@
 # 026：视图（Views）👁️
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_0.png)
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_1.png)
 
 在本节课中，我们将要学习SQL中的一个重要概念——视图。我们将了解视图的定义、适用场景以及如何创建和使用视图。
 
@@ -16,13 +14,10 @@
 
 上一节我们介绍了视图的基本概念，本节中我们来看看视图的主要应用场景。
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_3.png)
 
 以下是视图的几个典型用途：
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_4.png)
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_5.png)
 
 *   **数据筛选**：用于展示给定表中的特定数据，从而可以隐藏敏感信息，如税务信息、出生日期或薪资。
 *   **数据整合**：以有意义的方式组合两个或多个表的数据。
@@ -41,9 +36,7 @@
 
 **创建视图的基本语法如下：**
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_7.png)
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_8.png)
 
 ```sql
 CREATE VIEW view_name [(column1, column2, ...)]
@@ -53,15 +46,11 @@ FROM base_table_name
 [WHERE condition];
 ```
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_9.png)
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_10.png)
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_11.png)
 
 **语法说明：**
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_12.png)
 
 *   `CREATE VIEW`：用于创建视图的关键字。
 *   `view_name`：为视图指定一个名称（长度最多128个字符）。
@@ -85,31 +74,22 @@ WHERE manager_id = 30002;
 
 创建视图后，你可以使用 `SELECT` 语句来查看视图中的信息，以验证是否只包含了经理ID为30002的行。
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_14.png)
 
 ```sql
 SELECT * FROM F_Fin;
 ```
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_15.png)
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_16.png)
 
 ---
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_17.png)
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_18.png)
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_19.png)
 
 ## 如何删除视图？🗑️
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_20.png)
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_21.png)
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_22.png)
 
 最后，如果你需要完全移除一个视图，可以使用 `DROP VIEW` 语句。
 
@@ -121,11 +101,9 @@ DROP VIEW view_name;
 
 ## 课程总结 📝
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_24.png)
 
 本节课中我们一起学习了SQL视图。
 
-![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_25.png)
 
 ![](img/92a0fad1fd224d816aa8c2aba0dfb4a6_26.png)
 

@@ -1,6 +1,5 @@
 # 第二三四部分 50：其他领域的下一个词预测
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_0.png)
 
 ## 概述
 
@@ -16,11 +15,8 @@
 
 这就像拥有一个编码助手，它能预判下一行代码或下一个函数。以下是其核心过程的简化表示：
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_2.png)
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_3.png)
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_4.png)
 
 ```python
 # 第二三四部分 模型根据已有代码上下文预测下一个token
@@ -29,29 +25,20 @@ predicted_token = model.predict_next_token(context)
 # 第二三四部分 可能的预测输出: "return"
 ```
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_5.png)
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_6.png)
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_7.png)
 
 这种能力使编程变得更加轻松。
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_8.png)
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_9.png)
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_10.png)
 
 ### 音乐生成 🎵
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_11.png)
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_12.png)
 
 大型语言模型的能力不仅限于词语，它们也能预测下一个音符。
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_13.png)
 
 这就像拥有一个音乐伙伴，能与创作者的曲调和谐共鸣。它通过提供一系列可能的旋律走向，来辅助创造性的音乐作曲，为音乐家探索和创作开辟新路径。
 
@@ -67,29 +54,20 @@ predicted_token = model.predict_next_token(context)
 这个过程通常结合了视觉编码器和语言模型：
 **图像特征 → LLM → 描述文本**
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_15.png)
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_16.png)
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_17.png)
 
 ---
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_18.png)
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_19.png)
 
 ## 总结
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_20.png)
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_21.png)
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_22.png)
 
 本节课中我们一起学习了，强大的大型语言模型如何超越句子中的词语预测，将其能力扩展到多样化的领域。
 
-![](img/a785a6f3d4300a84728e56ff62baf4ab_23.png)
 
 ![](img/a785a6f3d4300a84728e56ff62baf4ab_24.png)
 

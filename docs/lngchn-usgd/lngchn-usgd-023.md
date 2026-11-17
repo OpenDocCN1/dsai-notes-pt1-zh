@@ -71,9 +71,7 @@ chain = prompt | llm.with_structured_output(CodeSolution)
 
 现在，让我们测试这个链，让它生成一个斐波那契数列函数。
 
-![](img/de2b8c3c2d5aab950823b1581dd2bd7a_1.png)
 
-![](img/de2b8c3c2d5aab950823b1581dd2bd7a_2.png)
 
 ```python
 # 测试生成
@@ -93,13 +91,10 @@ print(f"Code:\n{result.code}")
 
 我们的工作流可以概括为：生成代码 -> 检查代码 -> 根据检查结果决定是返回给用户还是反馈重试。
 
-![](img/de2b8c3c2d5aab950823b1581dd2bd7a_4.png)
 
-![](img/de2b8c3c2d5aab950823b1581dd2bd7a_5.png)
 
 ### 定义图状态
 
-![](img/de2b8c3c2d5aab950823b1581dd2bd7a_6.png)
 
 首先，我们需要定义一个“状态”（State），它会在整个图的生命周期中传递，包含所有节点共享的信息。
 

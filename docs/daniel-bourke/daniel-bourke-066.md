@@ -1,10 +1,7 @@
 # 66：分类问题的输入与输出形状示例 🍕📊
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_0.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_2.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_4.png)
 
 在本节课中，我们将学习分类问题中数据的输入与输出形状。我们将以构建一个名为“Food Vision”的食物图像分类器为例，具体探讨如何将图像转换为数值表示（张量），以及模型如何输出预测概率。
 
@@ -14,15 +11,12 @@
 
 假设我们有一些精美的食物照片，并试图构建一个“Food Vision”系统来识别照片中的食物。这个过程可以分解为三个部分：**输入**、**机器学习算法**和**输出**。
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_6.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_7.png)
 
 对于输入，我们需要以某种数值形式表示这些图像。一种常见的方法是将每张图片调整为224像素宽、224像素高的正方形。图像在计算机中通常由宽度、高度和颜色通道三个维度表示。颜色通道通常指红、绿、蓝（RGB）三色，每个像素点都由这三个通道的数值组合成最终颜色。
 
 ![](img/a81be931b8ea17ba1165cacc237f4ebc_9.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_10.png)
 
 因此，一张图片的数值编码（即像素值）可以表示为一个三维张量。我们将这个数值张量输入到机器学习算法中。算法可以是现成的，我们也可以使用PyTorch为特定问题构建一个。
 
@@ -32,7 +26,6 @@
 
 ![](img/a81be931b8ea17ba1165cacc237f4ebc_14.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_15.png)
 
 ![](img/a81be931b8ea17ba1165cacc237f4ebc_17.png)
 
@@ -40,7 +33,6 @@
 
 ---
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_19.png)
 
 现在，让我们从张量形状的角度来具体分析。我们以构建“Food Vision”为例。
 
@@ -48,26 +40,21 @@
 
 以下是输入和输出张量的典型形状：
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_21.png)
 
 **输入张量形状**
 输入图像被表示为一个四维张量，其形状通常为：
 `[batch_size, color_channels, height, width]`
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_23.png)
 
 ![](img/a81be931b8ea17ba1165cacc237f4ebc_24.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_25.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_26.png)
 
 *   **batch_size**：模型一次处理的图像数量。设为 `None` 表示该维度可变，训练时代码会自动填充。`32` 也是一个非常常见且高效的批次大小。
 *   **color_channels**：颜色通道数。对于RGB图像，该值为 `3`。
 *   **height**：图像高度，例如 `224`。
 *   **width**：图像宽度，例如 `224`。
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_28.png)
 
 因此，一个具体的输入张量形状可能是 `[32, 3, 224, 224]`，代表一次处理32张224x224的RGB图像。
 
@@ -75,15 +62,12 @@
 
 ![](img/a81be931b8ea17ba1165cacc237f4ebc_30.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_31.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_32.png)
 
 ![](img/a81be931b8ea17ba1165cacc237f4ebc_33.png)
 
 ![](img/a81be931b8ea17ba1165cacc237f4ebc_34.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_36.png)
 
 **输出张量形状**
 输出是一个二维张量，其形状为：
@@ -98,11 +82,9 @@
 
 ![](img/a81be931b8ea17ba1165cacc237f4ebc_38.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_39.png)
 
 ![](img/a81be931b8ea17ba1165cacc237f4ebc_40.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_41.png)
 
 ![](img/a81be931b8ea17ba1165cacc237f4ebc_42.png)
 
@@ -112,17 +94,12 @@
 
 ---
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_45.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_46.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_47.png)
 
 本节课中，我们一起学习了分类问题中输入与输出数据的形状。我们了解到图像输入通常被表示为 `[batch_size, color_channels, height, width]` 形状的张量，而模型输出则是 `[batch_size, num_classes]` 形状的预测概率张量。理解这些形状是使用PyTorch构建和调试模型的重要基础。
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_49.png)
 
-![](img/a81be931b8ea17ba1165cacc237f4ebc_50.png)
 
 ![](img/a81be931b8ea17ba1165cacc237f4ebc_51.png)
 

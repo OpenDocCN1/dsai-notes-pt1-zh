@@ -6,7 +6,6 @@
 
 ## 什么是预测性机器学习模型？
 
-![](img/a30cb486b968c560aaf702b908fac05f_2.png)
 
 ![](img/a30cb486b968c560aaf702b908fac05f_3.png)
 

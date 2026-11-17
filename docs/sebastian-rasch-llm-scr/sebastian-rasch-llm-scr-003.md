@@ -4,9 +4,7 @@
 
 ## 3.3：通过自注意力关注输入的不同部分
 
-![](img/bee02a5463ba446d9eed4413792631b4_1.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_3.png)
 
 自注意力是一种解析输入数据的机制。它允许模型在处理序列中的任何一个元素时，都能参考整个输入序列，并根据重要性为不同部分分配不同的权重。
 
@@ -23,9 +21,7 @@
 
 #### 实现步骤
 
-![](img/bee02a5463ba446d9eed4413792631b4_5.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_6.png)
 
 以下是计算第二个词（`x_2`）的上下文向量的步骤。
 
@@ -67,7 +63,6 @@ attention_weights = torch.softmax(attention_scores, dim=0)
 **4. 计算上下文向量**
 最后，我们将输入序列中的每个向量乘以其对应的注意力权重，然后求和，得到最终的上下文向量 `z_2`。
 
-![](img/bee02a5463ba446d9eed4413792631b4_8.png)
 
 ```python
 context_vector_2 = torch.zeros(query.shape)
@@ -109,21 +104,15 @@ all_context_vectors = torch.matmul(attention_weights_matrix, inputs)
 
 现在，`all_context_vectors` 矩阵的每一行就对应一个输入词的上下文向量。自注意力机制的核心思想——每个输出位置都能关注所有输入位置——在此得以完整实现。
 
-![](img/bee02a5463ba446d9eed4413792631b4_13.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_15.png)
 
 ## 3.4：引入可训练权重的真实自注意力
 
-![](img/bee02a5463ba446d9eed4413792631b4_17.png)
 
 简化的自注意力直接使用原始嵌入向量计算相似度。而真实的自注意力机制（如Transformer中所用）引入了三组可训练的权重矩阵：**查询（Query）**、**键（Key）** 和 **值（Value）**。这使得模型能够学习如何更有效地提取和组合信息。
 
-![](img/bee02a5463ba446d9eed4413792631b4_19.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_20.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_22.png)
 
 ### 3.4.1：单查询的键值查询（KQV）注意力
 
@@ -144,16 +133,11 @@ all_context_vectors = torch.matmul(attention_weights_matrix, inputs)
 
 **代码实现**
 
-![](img/bee02a5463ba446d9eed4413792631b4_24.png)
-
-![](img/bee02a5463ba446d9eed4413792631b4_25.png)
-
-![](img/bee02a5463ba446d9eed4413792631b4_27.png)
-
-![](img/bee02a5463ba446d9eed4413792631b4_29.png)
 
 
-![](img/bee02a5463ba446d9eed4413792631b4_31.png)
+
+
+
 
 
 ![](img/bee02a5463ba446d9eed4413792631b4_33.png)
@@ -161,15 +145,10 @@ all_context_vectors = torch.matmul(attention_weights_matrix, inputs)
 ![](img/bee02a5463ba446d9eed4413792631b4_34.png)
 
 
-![](img/bee02a5463ba446d9eed4413792631b4_36.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_38.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_39.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_41.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_43.png)
 
 ![](img/bee02a5463ba446d9eed4413792631b4_45.png)
 
@@ -211,9 +190,7 @@ context_vector_2 = torch.matmul(attention_weights_2, values)
 *   使用注意力权重矩阵对值矩阵进行加权求和，得到所有上下文向量。
 
 
-![](img/bee02a5463ba446d9eed4413792631b4_49.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_51.png)
 
 ```python
 import torch.nn as nn
@@ -254,7 +231,6 @@ context_vectors = sa_v1(inputs)
 
 ![](img/bee02a5463ba446d9eed4413792631b4_56.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_58.png)
 
 ### 3.5.1：因果注意力掩码
 
@@ -281,9 +257,7 @@ print(masked_attn_weights)
 ```
 应用掩码后，注意力权重矩阵的上三角部分（代表对未来词的关注）都变成了0。
 
-![](img/bee02a5463ba446d9eed4413792631b4_60.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_61.png)
 
 ![](img/bee02a5463ba446d9eed4413792631b4_63.png)
 
@@ -291,9 +265,7 @@ print(masked_attn_weights)
 
 ![](img/bee02a5463ba446d9eed4413792631b4_64.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_65.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_66.png)
 
 ![](img/bee02a5463ba446d9eed4413792631b4_68.png)
 
@@ -301,7 +273,6 @@ print(masked_attn_weights)
 
 除了因果掩码，有时还会应用**Dropout掩码**。这是一种正则化技术，在训练过程中随机“丢弃”（置零）一部分注意力权重，迫使模型不过度依赖某些特定的注意力连接，从而减轻过拟合。
 
-![](img/bee02a5463ba446d9eed4413792631b4_71.png)
 
 ```python
 dropout = nn.Dropout(0.5) # 以50%的概率丢弃
@@ -311,16 +282,12 @@ masked_attn_weights_dropout = dropout(masked_attn_weights)
 
 ### 3.5.3：实现因果注意力类
 
-![](img/bee02a5463ba446d9eed4413792631b4_73.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_75.png)
 
 现在，我们将因果掩码和Dropout整合到之前的自注意力类中，创建一个完整的**因果自注意力**类。
 
 
-![](img/bee02a5463ba446d9eed4413792631b4_77.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_78.png)
 
 ```python
 class CausalAttention(nn.Module):
@@ -362,7 +329,6 @@ ca = CausalAttention(d_in=3, d_out=2, context_length=6, dropout_rate=0.0)
 context_vectors_causal = ca(batch)
 ```
 
-![](img/bee02a5463ba446d9eed4413792631b4_80.png)
 
 ![](img/bee02a5463ba446d9eed4413792631b4_81.png)
 
@@ -403,25 +369,16 @@ class MultiHeadAttentionWrapper(nn.Module):
 
 ### 3.6.2：高效的多头注意力实现
 
-![](img/bee02a5463ba446d9eed4413792631b4_84.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_86.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_88.png)
 
 上述实现使用Python循环顺序调用各个头，效率较低。我们可以利用矩阵运算的并行性，通过一次大的矩阵乘法完成所有头的线性变换，然后通过重塑（reshape）和转置操作来分离各个头。
 
-![](img/bee02a5463ba446d9eed4413792631b4_90.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_91.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_92.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_94.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_95.png)
 
-![](img/bee02a5463ba446d9eed4413792631b4_96.png)
 
 ![](img/bee02a5463ba446d9eed4413792631b4_98.png)
 

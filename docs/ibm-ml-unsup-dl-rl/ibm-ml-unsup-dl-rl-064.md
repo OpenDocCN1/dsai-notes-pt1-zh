@@ -20,7 +20,6 @@ And then finally， we're going to have that output layer Y1， Y2 and Y3。 And
 
 
 
-![](img/9e8b485b1abcb5f7c84d099f6db0a760_1.png)
 
 So the first thing that you're going to want to do is import that sequential function and initialize your model objects。
 
@@ -34,7 +33,6 @@ We can then add layers to the model one by one。And in order to do so we're goi
 
  relu， leaky rulu and so on。
 
-![](img/9e8b485b1abcb5f7c84d099f6db0a760_3.png)
 
 So the actual code is going to look like what we have here and we have in that first step importing the libraries and the model elements we just discussed。
 
@@ -76,7 +74,6 @@ And you can just call model dot add。 We want a fully connected network， and 
 
 
 
-![](img/9e8b485b1abcb5f7c84d099f6db0a760_5.png)
 
 So just to recap。In this section we discussed an overview of the different Python libraries available to build out these deep learning frameworks and that included TensorFlow。
 
@@ -92,6 +89,5 @@ We then discussed with that mind setting up an actual network structure using Ca
 
  I'll see you there。
 
-![](img/9e8b485b1abcb5f7c84d099f6db0a760_7.png)
 
 ![](img/9e8b485b1abcb5f7c84d099f6db0a760_8.png)

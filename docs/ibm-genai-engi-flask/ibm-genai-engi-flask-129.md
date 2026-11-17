@@ -1,26 +1,21 @@
 # 生成式人工智能工程：13：使用PyTorch预训练BERT模型 🧠
 
-![](img/d6c171688578398e616b04e923a38405_1.png)
 
 在本节课中，我们将学习如何使用PyTorch框架来预训练一个BERT模型。我们将涵盖从数据加载、模型构建到训练和评估的完整流程。
 
 ---
 
-![](img/d6c171688578398e616b04e923a38405_3.png)
 
 ## 概述
 
 我们将分步学习以下核心内容：如何为BERT的特定训练任务创建PyTorch数据加载器；如何构建一个BERT模型；以及如何使用PyTorch训练该模型。
 
-![](img/d6c171688578398e616b04e923a38405_5.png)
 
 ---
 
-![](img/d6c171688578398e616b04e923a38405_7.png)
 
 ## 创建自定义数据集与数据加载器
 
-![](img/d6c171688578398e616b04e923a38405_9.png)
 
 首先，我们需要创建一个自定义的数据集类，用于从CSV文件中加载数据到PyTorch的Dataset中。
 
@@ -35,9 +30,7 @@
 3.  使用指定的文件路径，为训练集和测试集创建 `BRT_CSV_Dataset` 类的实例。
 4.  最后，创建对应的DataLoader。
 
-![](img/d6c171688578398e616b04e923a38405_11.png)
 
-![](img/d6c171688578398e616b04e923a38405_12.png)
 
 ```python
 # 示例代码结构
@@ -81,9 +74,7 @@ test_loader = DataLoader(test_dataset, batch_size=batch_size, collate_fn=collate
 
 ### BertEmbedding 类
 
-![](img/d6c171688578398e616b04e923a38405_14.png)
 
-![](img/d6c171688578398e616b04e923a38405_15.png)
 
 `BertEmbedding` 类是一个用于BERT模型中嵌入操作和位置编码的模块。与其他模型的主要区别在于，它**额外添加了片段嵌入**。
 
@@ -91,9 +82,7 @@ test_loader = DataLoader(test_dataset, batch_size=batch_size, collate_fn=collate
 
 现在，让我们定义完整的BERT模型。定义一个名为 `BertModel` 的类，它是 `torch.nn.Module` 的子类。
 
-![](img/d6c171688578398e616b04e923a38405_17.png)
 
-![](img/d6c171688578398e616b04e923a38405_18.png)
 
 *   `__init__` 方法通过指定词汇表大小 `vocab_size`、模型维度 `d_model`、层数 `n_layers`、注意力头数 `n_heads` 和丢弃率 `dropout` 来初始化BERT模型。
 *   BERT模型包含一个嵌入层，它结合了词元嵌入和片段嵌入。这通过之前定义的 `BertEmbedding` 类实现。
@@ -103,7 +92,6 @@ test_loader = DataLoader(test_dataset, batch_size=batch_size, collate_fn=collate
 *   `forward` 方法定义了BERT模型的前向传播过程。它以BERT输入（输入词元和片段标签）作为输入，并返回NSP和MLM的预测结果。
 
 
-![](img/d6c171688578398e616b04e923a38405_20.png)
 
 ```python
 import torch.nn as nn
@@ -167,9 +155,7 @@ model = BertModel(vocab_size, d_model, n_layers, n_heads, dropout)
 
 ## 定义评估函数与训练循环
 
-![](img/d6c171688578398e616b04e923a38405_22.png)
 
-![](img/d6c171688578398e616b04e923a38405_23.png)
 
 模型创建完成后，下一步是在数据上训练它并评估其性能。为了便于这个过程，我们可以定义一个评估函数。该函数用于评估BERT模型的性能，并在训练阶段评估模型的进展。
 
@@ -183,21 +169,16 @@ model = BertModel(vocab_size, d_model, n_layers, n_heads, dropout)
 
 通过将总损失除以总批次数，可以计算平均损失、平均下一句损失和平均掩码损失。打印平均损失并从函数返回。
 
-![](img/d6c171688578398e616b04e923a38405_25.png)
 
-![](img/d6c171688578398e616b04e923a38405_26.png)
 
-![](img/d6c171688578398e616b04e923a38405_27.png)
 
 在训练开始之前，定义用于训练BERT模型的优化器。优化器是Adam。
 
-![](img/d6c171688578398e616b04e923a38405_28.png)
 
 让我们看一下训练循环。在每个epoch内，可以按批次遍历训练数据。对于每个批次，执行前向传播，计算损失，并通过反向传播和梯度裁剪更新模型的参数。
 
 每个epoch之后，可以打印平均训练损失，并在测试集上评估模型的性能。也可以在每个epoch后保存模型。
 
-![](img/d6c171688578398e616b04e923a38405_30.png)
 
 ```python
 import torch.optim as optim
@@ -254,11 +235,9 @@ for epoch in range(num_epochs):
 
 ## 使用训练好的模型进行预测
 
-![](img/d6c171688578398e616b04e923a38405_32.png)
 
 现在，让我们检查模型的性能。为此，定义一个名为 `predict_nsp` 的函数，它使用预训练的BERT模型预测第二个句子是否跟随第一个句子。
 
-![](img/d6c171688578398e616b04e923a38405_34.png)
 
 该函数接受两个句子、一个BERT模型和一个分词器作为输入。函数使用 `tokenizer.encode_plus` 方法对输入句子进行分词，该方法返回一个分词后输入的字典。然后将分词后的输入转换为张量，并移动到适当的设备进行处理。
 
@@ -273,9 +252,7 @@ for epoch in range(num_epochs):
 调用 `predict_mlm` 函数，传入一个示例句子、BERT模型和分词器。打印预测的句子，其中掩码词元被预测的词元替换。
 
 
-![](img/d6c171688578398e616b04e923a38405_36.png)
 
-![](img/d6c171688578398e616b04e923a38405_37.png)
 
 ```python
 # 假设我们有一个简单的分词器（此处为示意，实际使用Hugging Face的BertTokenizer）
@@ -342,7 +319,6 @@ mlm_result = predict_mlm(“今天天气很[MASK]”, model, tokenizer)
 2.  **构建BERT模型**：你需要定义一个用于嵌入操作和位置编码的类，以及一个BERT模型类，两者都是 `torch.nn.Module` 的子类。在BERT模型类中，你需要定义嵌入层、Transformer编码器层、用于NSP和MLM的线性层以及BERT模型的前向传播过程。
 3.  **训练与评估**：作为BERT模型训练的一部分，你需要定义一个函数来评估BERT模型的性能，定义用于训练BERT模型的优化器，定义训练循环并监控损失。
 
-![](img/d6c171688578398e616b04e923a38405_39.png)
 
 ![](img/d6c171688578398e616b04e923a38405_41.png)
 

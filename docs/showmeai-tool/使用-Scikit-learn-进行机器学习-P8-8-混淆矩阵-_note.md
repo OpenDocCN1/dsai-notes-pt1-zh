@@ -1,33 +1,25 @@
 # 机器学习课程 P8：混淆矩阵 📊
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_0.png)
 
 在本节课中，我们将学习如何评估分类模型的性能。我们将超越简单的“准确率”，深入了解模型可能犯的不同类型的错误。为此，我们将重点学习一个核心工具：**混淆矩阵**。
 
 ## 概述：从准确率到更细致的评估
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_2.png)
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_3.png)
 
 上一节我们介绍了使用 `score` 方法快速评估模型。然而，单一的准确率分数有时不足以描述模型的表现。例如，在医疗诊断或金融风控中，不同类型的错误（如误诊健康人或漏诊病人）代价截然不同。因此，我们需要一种方法来区分这些错误。
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_4.png)
 
 本节中，我们将看看如何通过 **混淆矩阵** 来细致地分析模型的预测结果。
 
 ## 准备示例数据
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_6.png)
 
 首先，我们创建一些简单的虚拟数据来演示。假设我们有一个特征 `x` 和一个布尔目标值 `y`：当 `x` 为正数时 `y` 为 `True`，为负数时 `y` 为 `False`。
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_8.png)
-
-![](img/7fa687d432e52faf3c8af2fb5cde9289_10.png)
 
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_12.png)
+
 
 ```python
 import pandas as pd
@@ -43,16 +35,13 @@ train_data = data.iloc[:4]
 test_data = data.iloc[4:]
 ```
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_14.png)
 
 ## 训练模型并获取预测
 
 我们将使用逻辑回归模型（虽然名为“回归”，但它是一个分类器）进行训练和预测。
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_16.png)
 
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_17.png)
 
 ```python
 from sklearn.linear_model import LogisticRegression
@@ -68,14 +57,12 @@ actuals = test_data['y']
 
 ## 理解 `score` 方法
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_19.png)
 
 之前我们使用 `lr.score(test_data[['x']], test_data['y'])` 得到了一个分数（例如0.75）。这个 `score` 方法是模型的一个快捷评估方式。对于 `LogisticRegression`，它默认返回的是 **平均准确率**。
 
 平均准确率的计算公式是：
 `准确率 = (正确预测的数量) / (总预测数量)`
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_21.png)
 
 我们可以手动计算它，这有助于理解后续更复杂的指标。
 
@@ -91,15 +78,12 @@ print(f"模型准确率: {manual_accuracy}")
 
 准确率告诉我们“做对了多少”，但没有告诉我们“错在哪里”。混淆矩阵可以解决这个问题。
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_23.png)
 
 **混淆矩阵** 是一个表格，用于描述分类模型在测试集上的性能。它显示了每个类别的样本被正确和错误分类的具体情况。
 
 以下是使用 Scikit-learn 计算混淆矩阵的方法：
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_25.png)
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_26.png)
 
 ```python
 from sklearn.metrics import confusion_matrix
@@ -112,9 +96,7 @@ print(cm)
 
 为了更清晰地解读，我们将其转换为带有标签的 DataFrame：
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_28.png)
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_30.png)
 
 ```python
 # 将混淆矩阵转换为易读的DataFrame
@@ -134,9 +116,7 @@ print(cm_df)
 
 ## 解读混淆矩阵
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_32.png)
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_33.png)
 
 在二分类问题中，混淆矩阵的四个格子有特定的名称：
 
@@ -147,7 +127,6 @@ print(cm_df)
 
 我们可以从 DataFrame 中提取这些值：
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_35.png)
 
 ```python
 # 假设 cm_df 是上面得到的 DataFrame
@@ -162,9 +141,7 @@ print(f"假阴性(FN): {FN}")
 print(f"真阳性(TP): {TP}")
 ```
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_37.png)
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_39.png)
 
 ## 从混淆矩阵衍生的关键指标
 
@@ -172,36 +149,27 @@ print(f"真阳性(TP): {TP}")
 
 以下是几个最常用的指标及其计算公式：
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_41.png)
 
 1.  **精确率 (Precision)**：在所有被模型预测为阳性的样本中，真正是阳性的比例。关注 **预测的准确性**。
     `精确率 = TP / (TP + FP)`
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_43.png)
 
 2.  **召回率 (Recall)**：在所有实际为阳性的样本中，被模型正确预测出来的比例。关注 **找出所有正例的能力**。
     `召回率 = TP / (TP + FN)`
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_44.png)
 
 3.  **F1分数 (F1-Score)**：精确率和召回率的调和平均数，用于平衡两者。
     `F1 = 2 * (精确率 * 召回率) / (精确率 + 召回率)`
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_46.png)
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_47.png)
 
 这些指标在 Scikit-learn 中都可以直接计算：
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_49.png)
-
-![](img/7fa687d432e52faf3c8af2fb5cde9289_51.png)
 
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_53.png)
 
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_55.png)
+
 
 ```python
 from sklearn.metrics import precision_score, recall_score, f1_score
@@ -213,15 +181,12 @@ print(f"召回率: {recall:.2f}")
 print(f"F1分数: {f1:.2f}")
 ```
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_57.png)
 
 ## 多分类问题的混淆矩阵
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_59.png)
 
 混淆矩阵同样适用于多分类问题。例如，一个识别猫、狗、老鼠的图片分类器，其混淆矩阵能清晰展示模型最容易混淆哪些类别。
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_61.png)
 
 ```python
 # 多分类示例（假设已有数据）
@@ -241,7 +206,6 @@ print(cm_multi_df)
 
 本节课中我们一起学习了：
 
-![](img/7fa687d432e52faf3c8af2fb5cde9289_63.png)
 
 1.  **模型评估的局限性**：单一的准确率分数无法区分错误类型。
 2.  **混淆矩阵的构建与解读**：我们学习了如何使用 `sklearn.metrics.confusion_matrix` 计算混淆矩阵，并将其转换为易于解读的 DataFrame 格式。

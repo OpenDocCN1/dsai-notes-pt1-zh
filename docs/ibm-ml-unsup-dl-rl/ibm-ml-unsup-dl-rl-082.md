@@ -36,9 +36,7 @@ Have 32 different filters。Here are grids going to be 3 by 3 above， if you re
 
  So that will also move across a bit quicker。
 
-![](img/9aff474a2a6da6d5881a4e4163d1e277_1.png)
 
-![](img/9aff474a2a6da6d5881a4e4163d1e277_2.png)
 
 And then we before we had the the strides equal to one by one by two by two now they're going to be at their default of one by one。
 
@@ -60,29 +58,23 @@ Then we have our relo activation， and again， we set the default。
 
 
 
-![](img/9aff474a2a6da6d5881a4e4163d1e277_4.png)
 
 So we run this to set up our new framework， and then when we look down at the number of total parameters that we have to learn or up to 1。
 
 25 million total parameters that we have to train。
 
-![](img/9aff474a2a6da6d5881a4e4163d1e277_6.png)
 
-![](img/9aff474a2a6da6d5881a4e4163d1e277_7.png)
 
 And if you were called before， we only had around 181000 to train。
 
 
 
-![](img/9aff474a2a6da6d5881a4e4163d1e277_9.png)
 
-![](img/9aff474a2a6da6d5881a4e4163d1e277_10.png)
 
 So if we think about the timing that this will take and we'll start to run it here。
 
 
 
-![](img/9aff474a2a6da6d5881a4e4163d1e277_12.png)
 
 We're going to have probably something that's going to take a lot longer at each one of the epochs。
 
@@ -94,13 +86,11 @@ We're going to have probably something that's going to take a lot longer at each
 
 
 
-![](img/9aff474a2a6da6d5881a4e4163d1e277_14.png)
 
 What we had before， what was going through each epoch。Around 27 seconds。
 
 
 
-![](img/9aff474a2a6da6d5881a4e4163d1e277_16.png)
 
 Now， I'm going to pause a video here and come back when this is done running。
 
@@ -112,7 +102,6 @@ Now， I'm going to pause a video here and come back when this is done running�
 
 
 
-![](img/9aff474a2a6da6d5881a4e4163d1e277_18.png)
 
 All right， I'll see you in just a bit。So hopefully you're able to run that on your own。
 
@@ -146,6 +135,5 @@ A classification of images for a completely different data set。
 
  All right， I'll see you there。
 
-![](img/9aff474a2a6da6d5881a4e4163d1e277_20.png)
 
 ![](img/9aff474a2a6da6d5881a4e4163d1e277_21.png)

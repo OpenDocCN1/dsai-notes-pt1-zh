@@ -1,8 +1,6 @@
 # 026：视图创建 👁️
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_0.png)
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_1.png)
 
 在本节课中，我们将要学习SQL中的一个重要概念——视图。我们将了解视图的定义、适用场景以及如何创建和使用视图。
 
@@ -18,18 +16,14 @@
 
 以下是使用视图的几个常见场景：
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_3.png)
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_4.png)
 
 *   **数据安全与简化**：通过授予对视图的访问权限，而非直接访问底层表，可以控制用户能看到的数据。例如，可以创建一个不显示敏感信息（如薪资、出生日期）的员工信息视图。
 *   **数据组合**：将两个或多个表中的数据以有意义的方式组合起来，形成一个逻辑上统一的视图。
 *   **简化复杂查询**：对于频繁使用的复杂查询，可以将其创建为视图，之后只需查询视图即可，无需重复编写复杂的SQL语句。
 *   **数据抽象**：只向特定流程或用户展示与其相关的数据部分，隐藏不必要的数据细节。
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_5.png)
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_6.png)
 
 ## 创建视图的语法
 
@@ -55,21 +49,15 @@ FROM base_table_name
 
 让我们通过一个具体的例子来实践视图的创建。假设我们有一个 `employees` 表，包含员工ID、姓名、地址、职位ID、经理ID、部门ID、薪资和出生日期等列。
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_8.png)
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_9.png)
 
 我们希望创建一个名为 `emp_info` 的视图，它仅包含非敏感的员工信息，并且只显示经理ID为 `30002` 的员工记录。
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_10.png)
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_11.png)
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_12.png)
 
 创建该视图的SQL语句如下：
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_13.png)
 
 ```sql
 CREATE VIEW emp_info (emp_id, emp_name, address, job_id, manager_id, dept_id)
@@ -93,25 +81,17 @@ SELECT * FROM emp_info;
 
 执行此查询将返回一个结果集，其中只包含 `employees` 表中经理ID为30002且不包含敏感字段的行。
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_15.png)
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_16.png)
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_17.png)
 
 ## 删除视图
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_18.png)
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_19.png)
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_20.png)
 
 如果不再需要某个视图，可以使用 `DROP VIEW` 语句将其完全删除。
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_21.png)
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_22.png)
 
 ```sql
 DROP VIEW view_name;
@@ -125,11 +105,9 @@ DROP VIEW emp_info;
 
 ## 课程总结
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_24.png)
 
 本节课中我们一起学习了SQL视图。
 
-![](img/52ca859b7aa60408dc6e5f266a7efe02_25.png)
 
 ![](img/52ca859b7aa60408dc6e5f266a7efe02_26.png)
 

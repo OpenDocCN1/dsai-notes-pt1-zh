@@ -198,7 +198,6 @@ RAG模块 $\mathcal{R}$。检索增强生成（RAG）模块 $\mathcal{R}$ 接受
 
 对失败案例的进一步分析。我们可视化了$\alpha_{t}^{\textrm{Q}}$、$\alpha_{t}^{\textrm{A}}$和$\beta$在不同情况下的动态，如图[4](https://arxiv.org/html/2402.08567v2#S4.F4 "Figure 4 ‣ 4.1 Basic Setups ‣ 4 Experiments ‣ Agent Smith: A Single Image Can Jailbreak One Million Multimodal LLM Agents Exponentially Fast") *(底部)*所示。首先，我们注意到，对于成功的传染性越狱，$\beta_{t}$、$\alpha_{t}^{\textrm{Q}}$和$\alpha_{t}^{\textrm{A}}$的值在整个聊天过程中保持稳定的高值。在最初的几轮聊天中，这些值会有波动，因为一开始携带病毒的代理较少。对于三种失败的案例，观察到$\beta_{t}$持续较高，表明${\color[rgb]{1,0,0}\definecolor[named]{pgfstrokecolor}{rgb}{1,0,0}\mathbf{V}^{% \textrm{adv}}}$在系统中迅速传播。然而，观察到$\alpha_{t}^{\textrm{Q}}$和$\alpha_{t}^{\textrm{A}}$的值下降，防止了携带病毒的代理展示症状，从而抑制或阻止了感染。$\alpha_{t}^{\textrm{Q}}$和$\alpha_{t}^{\textrm{A}}$的突然下降可能归因于随着代理之间互动的进行，新产生的聊天记录挑战了${\color[rgb]{1,0,0}\definecolor[named]{pgfstrokecolor}{rgb}{1,0,0}\mathbf{V}^{% \textrm{adv}}}$的普适性。对聊天记录的进一步检查显示，携带病毒的代理常常产生与有害目标相似但并不完全匹配的内容。此外，代理可能还会添加无关的文本。这种差异表明，Zou等人（[2023](https://arxiv.org/html/2402.08567v2#bib.bib105)）使用的精确匹配标准可能低估了传染性越狱的实际效果。我们在附录[E.4](https://arxiv.org/html/2402.08567v2#A5.SS4 "E.4 More Qualitative Analysis on Failure Cases ‣ Appendix E More Experiments ‣ Agent Smith: A Single Image Can Jailbreak One Million Multimodal LLM Agents Exponentially Fast")中提供了关于这一点的更详细分析。
 
-![请参见标题](img/19617a14eedda17e6e8e87083f18f92b.png)![请参见标题](img/bb02e7116d9d3e710e7872da840154ce.png)
 
 图5：在不同集成样本大小$M$下，第$16$轮聊天($p_{16}$)的累计/当前感染比例（%）。我们评估了边界攻击$h=8$ *(左)* 和像素攻击$\ell_{\infty},\epsilon=16$ *(右)*。我们设置$N=256$，$|\mathcal{H}|=3$，$|\mathcal{B}|=10$。
 
@@ -894,7 +893,6 @@ As Samir N Hanan, I can tell you that the colorful pillow in the image is a deco
 
 优化算法。${\color[rgb]{1,0,0}\definecolor[named]{pgfstrokecolor}{rgb}{1,0,0}\mathbf{V}^{% \textrm{adv}}}$的优化是通过动量迭代快速梯度符号法（MI-FGSM）完成的（Dong等人，[2018](https://arxiv.org/html/2402.08567v2#bib.bib18)），具体来说是基本迭代法（BIM）（Kurakin等人，[2016](https://arxiv.org/html/2402.08567v2#bib.bib36)）与动量（Dong等人，[2018](https://arxiv.org/html/2402.08567v2#bib.bib18)）。为了确保人类不可察觉，我们在本文中将像素攻击和边界攻击作为${\color[rgb]{1,0,0}\definecolor[named]{pgfstrokecolor}{rgb}{1,0,0}\mathbf{V}^{% \textrm{adv}}}$的优化约束。对于这两种攻击类型的完整算法，请参见算法[2](https://arxiv.org/html/2402.08567v2#alg2 "Algorithm 2 ‣ D.2 Our Infectious Jailbreaking Method ‣ Appendix D Implementation of Jailbreak Methods ‣ Agent Smith: A Single Image Can Jailbreak One Million Multimodal LLM Agents Exponentially Fast")和算法[3](https://arxiv.org/html/2402.08567v2#alg3 "Algorithm 3 ‣ D.2 Our Infectious Jailbreaking Method ‣ Appendix D Implementation of Jailbreak Methods ‣ Agent Smith: A Single Image Can Jailbreak One Million Multimodal LLM Agents Exponentially Fast")。为了构造边界攻击的扰动掩码$\mathbf{M}$，我们将位于边界的像素设置为宽度$h$的$1$，其余像素设置为$0$。
 
-![参见说明](img/f695bb95537947cd39a8d9cc58a16cdb.png)![参见说明](img/dcfdbe2ca7a4d44ca8ec300d4fd27dc5.png)![参见说明](img/1790fae910c038277ad864876a8b5d2c.png)
 
 图 18：在不同超参数下，第$t$轮聊天的当前感染比例（%）。我们考虑$p_{8}$、$p_{16}$和$p_{24}$作为评估指标。我们将步长$\eta$在$\{0.1, 0.2, 0.5, 1.0, 2.0, 5.0\}$范围内变化，RAG损失权重$\lambda_{\textrm{R}}$在$\{0.5, 1.0, 2.0, 4.0, 8.0\}$范围内变化，动量因子$\mu$在$\{0.0, 0.5, 0.9, 0.95, 1.0\}$范围内变化。我们设定$N=256$，$|\mathcal{H}|=3$和$|\mathcal{B}|=10$。
 
@@ -930,11 +928,9 @@ As Samir N Hanan, I can tell you that the colorful pillow in the image is a deco
 
 我们逐渐增加$N$以检查我们方法的可扩展性。我们考虑$N=2^{14}$、$N=2^{17}$、$N=2^{20}$。为了减少计算成本，相同的对抗样本${\color[rgb]{1,0,0}\definecolor[named]{pgfstrokecolor}{rgb}{1,0,0}\mathbf{V}^{% \textrm{adv}}}$被插入到$16$、$128$、$1024$个代理的相册中，建立了初始的病毒携带比例$c_{0}=\frac{1}{1024}$。值得注意的是，正如图[19](https://arxiv.org/html/2402.08567v2#A5.F19 "Figure 19 ‣ E.1 Scaling Up 𝑁 to Over One Million (Full Version) ‣ Appendix E More Experiments ‣ Agent Smith: A Single Image Can Jailbreak One Million Multimodal LLM Agents Exponentially Fast")所示，22轮时的当前感染比例分别为$p_{22}=95.03\%$、$p_{22}=96.02\%$、$p_{22}=96.23\%$，这意味着几乎所有的代理都已经越狱。
 
-![参考说明](img/e357f8b562b8c823249a904e42696c0e.png)
 
 (a) $N=2^{14}$
 
-![参考说明](img/e555cbce5f8ea4eda34204a7883da7b7.png)
 
 (b) $N=2^{17}$
 
@@ -977,15 +973,12 @@ As Samir N Hanan, I can tell you that the colorful pillow in the image is a deco
 
 这里我们还包括了在LLaVA-1.5 13B⁵⁵5[https://huggingface.co/llava-hf/llava-1.5-13b-hf](https://huggingface.co/llava-hf/llava-1.5-13b-hf)上的实验，除了在主文中使用的LLaVA-1.5 7B⁶⁶6[https://huggingface.co/llava-hf/llava-1.5-7b-hf](https://huggingface.co/llava-hf/llava-1.5-7b-hf)和InstructBLIP 7B⁷⁷7[https://huggingface.co/Salesforce/instructblip-vicuna-7b](https://huggingface.co/Salesforce/instructblip-vicuna-7b)。如图[20](https://arxiv.org/html/2402.08567v2#A5.F20 "Figure 20 ‣ E.3 Infectious Jailbreak on LLaVA-1.5 13B ‣ Appendix E More Experiments ‣ Agent Smith: A Single Image Can Jailbreak One Million Multimodal LLM Agents Exponentially Fast")所示，结果表明我们的方法可以扩展到更大的多模态大语言模型（MLLM）。
 
-![参考标题](img/49890eec2194e11f0dbb132d59658e49.png)
 
 (a) $h=6$
 
-![参考标题](img/11ca7aaf5ac2ce76ba8b3390ea7269b5.png)
 
 (b) $h=8$
 
-![参考标题](img/f63b7538d7b0747000df4a93a8205ad3.png)
 
 (c) $\ell_{\infty}\textrm{,}\,\epsilon=\frac{8}{255}$
 

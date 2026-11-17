@@ -4,16 +4,12 @@
 
 ## 概述与准备工作
 
-![](img/29e74a766bda69812908c49e36510eae_1.png)
 
-![](img/29e74a766bda69812908c49e36510eae_2.png)
 
 首先，我们需要导入必要的库并加载音频文件。我们将使用三首风格迥异的音乐：一首德彪西的管弦乐作品、一首红辣椒乐队的歌曲以及一首艾灵顿公爵的爵士乐。
 
 
-![](img/29e74a766bda69812908c49e36510eae_4.png)
 
-![](img/29e74a766bda69812908c49e36510eae_5.png)
 
 ```python
 import librosa
@@ -32,9 +28,7 @@ duke, sr_duke = librosa.load(duke_path)
 
 接下来，我们需要设置用于特征提取的帧长和跳跃长度参数。
 
-![](img/29e74a766bda69812908c49e36510eae_7.png)
 
-![](img/29e74a766bda69812908c49e36510eae_8.png)
 
 ```python
 FRAME_SIZE = 2048
@@ -47,10 +41,8 @@ HOP_LENGTH = 512
 
 以下是使用Librosa提取频谱质心的步骤：
 
-![](img/29e74a766bda69812908c49e36510eae_10.png)
 
 
-![](img/29e74a766bda69812908c49e36510eae_12.png)
 
 ```python
 # 为德彪西作品计算频谱质心
@@ -80,28 +72,20 @@ sc_redhot = spectral_centroid_redhot[0]
 sc_duke = spectral_centroid_duke[0]
 ```
 
-![](img/29e74a766bda69812908c49e36510eae_14.png)
 
-![](img/29e74a766bda69812908c49e36510eae_15.png)
 
 ## 可视化频谱质心
 
-![](img/29e74a766bda69812908c49e36510eae_17.png)
 
-![](img/29e74a766bda69812908c49e36510eae_18.png)
 
 计算完成后，我们可以将三首音乐的频谱质心随时间变化的情况绘制在同一张图中进行比较。
 
 以下是创建可视化图表的代码：
 
 
-![](img/29e74a766bda69812908c49e36510eae_20.png)
 
-![](img/29e74a766bda69812908c49e36510eae_21.png)
 
-![](img/29e74a766bda69812908c49e36510eae_23.png)
 
-![](img/29e74a766bda69812908c49e36510eae_25.png)
 
 ```python
 # 计算时间轴
@@ -120,7 +104,6 @@ plt.legend()
 plt.show()
 ```
 
-![](img/29e74a766bda69812908c49e36510eae_27.png)
 
 观察图表可以发现，红辣椒乐队摇滚乐的频谱质心整体上高于德彪西的管弦乐和艾灵顿公爵的爵士乐。这通常是因为摇滚乐或电子音乐中高频成分更丰富。
 
@@ -128,20 +111,14 @@ plt.show()
 
 了解了频谱质心后，我们进一步看看频谱带宽。频谱带宽衡量的是频谱能量围绕质心的分散程度。
 
-![](img/29e74a766bda69812908c49e36510eae_29.png)
 
 提取频谱带宽的代码与提取质心非常相似：
 
-![](img/29e74a766bda69812908c49e36510eae_31.png)
 
 
-![](img/29e74a766bda69812908c49e36510eae_33.png)
 
-![](img/29e74a766bda69812908c49e36510eae_34.png)
 
-![](img/29e74a766bda69812908c49e36510eae_36.png)
 
-![](img/29e74a766bda69812908c49e36510eae_38.png)
 
 ```python
 # 为三首音乐计算频谱带宽
@@ -167,23 +144,16 @@ bw_duke = spectral_bandwidth_duke[0]
 
 同样地，我们可以将频谱带宽的可视化结果绘制出来。
 
-![](img/29e74a766bda69812908c49e36510eae_40.png)
 
-![](img/29e74a766bda69812908c49e36510eae_41.png)
 
-![](img/29e74a766bda69812908c49e36510eae_42.png)
 
-![](img/29e74a766bda69812908c49e36510eae_44.png)
 
 以下是绘制频谱带宽图表的代码：
 
 
-![](img/29e74a766bda69812908c49e36510eae_46.png)
-
-![](img/29e74a766bda69812908c49e36510eae_47.png)
 
 
-![](img/29e74a766bda69812908c49e36510eae_49.png)
+
 
 ```python
 # 使用相同的时间轴（因为帧数相同）
@@ -201,7 +171,6 @@ plt.show()
 
 ## 总结
 
-![](img/29e74a766bda69812908c49e36510eae_51.png)
 
 本节课中我们一起学习了如何使用Librosa库提取和可视化两个关键的频谱特征：频谱质心和频谱带宽。
 

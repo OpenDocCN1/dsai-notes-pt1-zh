@@ -15,7 +15,6 @@
 
 我们在做事过程中，会希望**以最小的代价取得最大的收益**。在解决一些工程问题时，人们常会遇到多种因素交织在一起与决策目标相互影响的情况；我们会使用最优化数学理论来应对这一挑战，而大家了解的线性规划也是最早的最优化方法之一。
 
-![最优化问题 Optimization Problems](img/46aa123537fa41d2e04584e633e56061.png)
 
 李航博士的《统计学习方法》将机器学习总结为：**机器学习 = 模型 + 策略 + 算法**。而公式中的算法指的就是优化算法。大家在算法求职面试过程中，在项目模型效果调优过程中，都经常会遇到优化算法，它是学习 AI 必备的数学知识。
 
@@ -39,7 +38,6 @@ min ⁡ f ( x )  s.t.  h i ( x ) = 0 g j ( x ) ⩽ 0 \begin{array}{ll} \min & 
 
 实数域 R R R 上（或复数 C C C 上）的向量空间中，如果集合 S S S 中任两点的连线上的点都在 S S S 内，则称集合 S S S 为凸集。
 
-![凸集 Convex Set](img/786d03a4f07270d39318432ade58e1dc.png)
 设集合 S ⊂ R n S\subset R^{n} S⊂Rn，若对于任意两点 x , y ∈ S x, y \in S x,y∈S，及实数 λ ( 0 ≤ λ ≤ 1 ) \lambda(0 \leq \lambda \leq 1) λ(0≤λ≤1)都有： λ x + ( 1 − λ ) y ∈ S \lambda x+(1-\lambda) y \in S λx+(1−λ)y∈S 则称集合 S \mathrm{S} S 为凸集。
 
 ## 2）超平面和半空间
@@ -54,13 +52,11 @@ min ⁡ f ( x )  s.t.  h i ( x ) = 0 g j ( x ) ⩽ 0 \begin{array}{ll} \min & 
 
 所谓两个凸集分离，直观地看是指两个凸集合没有交叉和重合的部分，因此可以用一张超平面将两者隔在两边，如图所示。
 
-![凸集分离定理 Hyperplane Separation Theorem](img/0d3439fcea27ce386505b5fe9e321c16.png)
 
 ## 4）凸函数（Convex Function）
 
 凸函数就是一个定义域在某个向量空间的凸子集 C C C 上的实值函数。
 
-![凸函数 Convex Function](img/f6ae54475b1c76611be12f28beaa0cd1.png)
 数学定义为：对于函数 f ( x ) f(x) f(x)，如果其定义域 C C C 是凸的，且对于 ∀ x 1 , x 2 ∈ C ∀x_{1},x_{2}∈C ∀x1​,x2​∈C 0 ≤ t ≤ 1 0\leq t \leq 1 0≤t≤1，有： f ( t x 1 + ( 1 − t ) x 2 ) ≤ t f ( x 1 ) + ( 1 − t ) f ( x 2 ) f\left( t x_{1}+\left( 1- t \right) x_{2} \right) \leq t f\left( x_{1} \right) +\left( 1- t \right) f\left( x_{2} \right) f(tx1​+(1−t)x2​)≤tf(x1​)+(1−t)f(x2​)，则 f ( x ) f(x) f(x)是凸函数。
 
 注：**如果一个函数是凸函数，则其局部最优点就是它的全局最优点**。这个性质在机器学习算法优化中有很重要的应用，因为**机器学习模型最后就是在求某个函数的全局最优点，一旦证明该函数（机器学习里面叫“损失函数”）是凸函数，那相当于我们只用求它的局部最优点了**。
@@ -83,7 +79,6 @@ min ⁡ f ( x )  s.t.  h i ( x ) = 0 g j ( x ) ⩽ 0 \begin{array}{ll} \min & 
 
 min ⁡ f ( x ) \min f(x) minf(x)
 
-![梯度下降算法 Gradient Descent Algorithm](img/0e3a7fd9a5099dc16edf1dc991a805e2.png)
 根据导数的定义，函数 f ( x ) f(x) f(x)的导函数就是目标函数在 x x x 上的变化率。在多元的情况下，目标函数 f ( x , y , z ) f(x, y, z) f(x,y,z)在某点的梯度 grad ⁡ f ( x , y , z ) = ( ∂ f ∂ x , ∂ f ∂ y , ∂ f ∂ z ) \operatorname{grad}f(x, y, z)=\left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}\right) gradf(x,y,z)=(∂x∂f​,∂y∂f​,∂z∂f​)是一个由各个分量的偏导数构成的向量，负梯度方向是 f ( x , y , z ) f(x, y, z) f(x,y,z)减小最快的方向。
 
 如上图所示，当需要求 f ( x ) f(x) f(x)的最小值时（机器学习中的 f ( x ) f(x) f(x)一般就是损失函数，而我们的目标就是希望损失函数最小化），我们就可以先任意选取一个函数的初始点 x 0 x_{0} x0​（三维情况就是 ( x 0 , y 0 , z 0 ) \left(x_{0}, y_{0}, z_{0}\right) (x0​,y0​,z0​)），让其沿着图中红色箭头（负梯度方向）走，依次到$x_{1}, x_{2}, \ldots, x_{n} $（迭代 n 次）这样可最快达到极小值点。
@@ -115,7 +110,6 @@ min ⁡ f ( x ) \min f(x) minf(x)
 
 我们希望找到一种比较好的方法能够平衡步长。
 
-![随机梯度下降算法 Stochastic Gradient Descent, SGD](img/3e96605b091a5c33facbdca6d68199ee.png)
 
 **随机梯度下降法引进了随机样本抽取方式，并提供了一种动态步长取值策略。目的就是又要优化精度，又要满足收敛速度。**
 
@@ -129,7 +123,6 @@ min ⁡ f ( x ) \min f(x) minf(x)
 
 牛顿法也是求解无约束最优化问题常用的方法，最大的优点是收敛速度快。从本质上去看，牛顿法是二阶收敛，梯度下降是一阶收敛，所以牛顿法就更快。
 
-![牛顿法 Newton's Method](img/b0c84f96851347422352402ed98a28c0.png)
 
 通俗地说，比如你想找一条最短的路径走到一个盆地的最底部。梯度下降法每次只从你当前所处位置选一个坡度最大的方向走一步；牛顿法在选择方向时，不仅会考虑坡度是否够大，还会考虑你走了一步之后，坡度是否会变得更大。所以，可以说牛顿法比梯度下降法看得更远一点，能更快地走到最底部。
 

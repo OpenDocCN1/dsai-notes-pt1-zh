@@ -12,7 +12,6 @@ So here we're going to work with the cart pole V0。And as before， you can loo
 
 
 
-![](img/5aab3028539f1e6eb135753b3a5b403a_1.png)
 
 So the idea of cartpo is that there's a pole attached by an unanctuated joint to a cart as we see in the picture to the right。
 
@@ -38,7 +37,6 @@ And the goal is to keep it up without moving 2。4 units for as long as possible
 
 
 
-![](img/5aab3028539f1e6eb135753b3a5b403a_3.png)
 
 Now some details that are worth knowing that are。In our documentation here。Is that at each time step。
 

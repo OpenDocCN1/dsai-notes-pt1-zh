@@ -1,6 +1,5 @@
 # 028：使用Python处理Spark数据框 🐍
 
-![](img/f82626dd33e61fdf0bbcfd3a9210d4e5_0.png)
 
 在本节课中，我们将学习如何使用Python对Spark数据框进行基本操作。我们将涵盖数据框的创建、数据操作、数据清洗、数据聚合以及如何定义和使用用户自定义函数。
 
@@ -22,7 +21,6 @@
 from pyspark.sql import SparkSession
 ```
 
-![](img/f82626dd33e61fdf0bbcfd3a9210d4e5_2.png)
 
 然后，通过调用`getOrCreate`方法创建一个名为“example”的Spark会话。如果名为“example”的会话已存在，此方法将获取它；否则，它将创建一个新的会话。
 

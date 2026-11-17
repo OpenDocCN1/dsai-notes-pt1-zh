@@ -8,7 +8,6 @@ NLG Cloud是一个利用大型语言模型来大规模生成高质量内容的�
 
 ![](img/bfa85368a944beac045ac5ad82efbbae_1.png)
 
-![](img/bfa85368a944beac045ac5ad82efbbae_2.png)
 
 ![](img/bfa85368a944beac045ac5ad82efbbae_3.png)
 
@@ -20,7 +19,6 @@ NLG Cloud是一个自然语言生成平台。该平台能大规模生成高质�
 
 ## 核心功能与特点 ⚙️
 
-![](img/bfa85368a944beac045ac5ad82efbbae_5.png)
 
 了解了平台的基本定义后，本节我们将详细拆解它的核心功能。
 

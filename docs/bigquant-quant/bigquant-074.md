@@ -4,13 +4,10 @@
 
 ---
 
-![](img/cd6cffd0215f78d4b0cabd3ea439d9a6_1.png)
 
-![](img/cd6cffd0215f78d4b0cabd3ea439d9a6_3.png)
 
 ## 数据准备与问题回顾
 
-![](img/cd6cffd0215f78d4b0cabd3ea439d9a6_5.png)
 
 上一节我们介绍了批量梯度下降，本节中我们来看看随机梯度下降（SGD）的实现。首先，我们需要创建用于训练的数据。我们以一个简单的一元一次方程 `y = w*x + b` 为例，其中 `w` 是斜率，`b` 是截距。
 
@@ -100,7 +97,6 @@ print(f"真实斜率 w 为: {w_real:.2f}, 真实截距 b 为: {b_real:.2f}")
 print(f"SGD求解的斜率 w 为: {w_sgd:.2f}, 截距 b 为: {b_sgd:.2f}")
 ```
 
-![](img/cd6cffd0215f78d4b0cabd3ea439d9a6_7.png)
 
 运行代码后，输出结果可能类似于：
 ```
@@ -108,7 +104,6 @@ print(f"SGD求解的斜率 w 为: {w_sgd:.2f}, 截距 b 为: {b_sgd:.2f}")
 SGD求解的斜率 w 为: 5.92, 截距 b 为: 4.15
 ```
 
-![](img/cd6cffd0215f78d4b0cabd3ea439d9a6_9.png)
 
 可以看到，SGD算法能够有效地逼近真实的斜率和截距。由于随机性和较小的样本量，结果会在真实值附近波动。
 

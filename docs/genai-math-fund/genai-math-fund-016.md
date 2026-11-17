@@ -1,6 +1,5 @@
 # 016：W4L10-GAN训练的饱和
 
-![](img/dc27cc5c588f1db18e4f709bc358f6e1_1.png)
 
 ![](img/dc27cc5c588f1db18e4f709bc358f6e1_1.png)
 

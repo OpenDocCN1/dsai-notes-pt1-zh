@@ -1,6 +1,5 @@
 # Excel中级教程 (P8) 📸：Word、PPT和Excel的屏幕截图工具
 
-![](img/c9f198c70a23d98da6f60d5ef6e59dd1_0.png)
 
 ![](img/c9f198c70a23d98da6f60d5ef6e59dd1_0.png)
 
@@ -66,6 +65,5 @@
 
 这个内置工具能极大提升您在整合多源内容到Office文档时的工作效率。
 
-![](img/c9f198c70a23d98da6f60d5ef6e59dd1_2.png)
 
 ![](img/c9f198c70a23d98da6f60d5ef6e59dd1_2.png)

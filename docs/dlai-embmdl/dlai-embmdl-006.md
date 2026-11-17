@@ -1,6 +1,5 @@
 # 006：推理
 
-![](img/f53b9ab6fd6b9d30ae2253bea4c3a4f4_0.png)
 
 ![](img/f53b9ab6fd6b9d30ae2253bea4c3a4f4_2.png)
 
@@ -20,7 +19,6 @@
 
 ## 检索匹配文本
 
-![](img/f53b9ab6fd6b9d30ae2253bea4c3a4f4_6.png)
 
 在计算出问题嵌入后，我们如何找到匹配的文本块呢？
 

@@ -1,10 +1,8 @@
 # 007：使用函数调用整合实时数据 📡
 
-![](img/187a3e88282a073c6353fd0efed7d4df_0.png)
 
 在本节课中，我们将学习如何通过“函数调用”功能，为大型语言模型（如Gemini）整合实时数据。这将解决模型知识陈旧、无法查询外部数据的问题，从而提升应用程序的准确性和自动化程度。
 
-![](img/187a3e88282a073c6353fd0efed7d4df_2.png)
 
 ---
 
@@ -14,11 +12,9 @@
 
 想象一下，你想知道欧元对美元的当前汇率。你可能会直接询问模型：“今天欧元对美元的汇率是多少？”。
 
-![](img/187a3e88282a073c6353fd0efed7d4df_4.png)
 
 为了测试，我们首先初始化Gemini API并调用模型：
 
-![](img/187a3e88282a073c6353fd0efed7d4df_6.png)
 
 ```python
 # 初始化模型并提问
@@ -31,7 +27,6 @@ print(response.text)
 1.  它们在训练后知识就被“冻结”，导致信息可能过时。
 2.  它们不能主动查询或修改外部数据源。
 
-![](img/187a3e88282a073c6353fd0efed7d4df_8.png)
 
 **函数调用** 正是为了解决这些缺点而设计的功能。
 
@@ -51,7 +46,6 @@ print(response.text)
 
 这种模式的优势在于，你将模型强大的语言理解能力与你对代码、API和后端系统的完全控制权结合了起来。
 
-![](img/187a3e88282a073c6353fd0efed7d4df_10.png)
 
 ---
 
@@ -59,7 +53,6 @@ print(response.text)
 
 理解了原理后，让我们动手构建一个能查询实时汇率的函数。我们将使用欧洲中央银行（ECB）提供的开源汇率API。
 
-![](img/187a3e88282a073c6353fd0efed7d4df_12.png)
 
 首先，我们查看目标API的返回格式：
 
@@ -71,7 +64,6 @@ response = requests.get(url)
 print(response.json())
 ```
 
-![](img/187a3e88282a073c6353fd0efed7d4df_14.png)
 
 API返回的JSON数据类似这样，其中基础货币是欧元：
 ```json
@@ -85,16 +77,13 @@ API返回的JSON数据类似这样，其中基础货币是欧元：
 }
 ```
 
-![](img/187a3e88282a073c6353fd0efed7d4df_16.png)
 
 接下来，我们需要为模型定义函数声明。以下是关键步骤：
 
-![](img/187a3e88282a073c6353fd0efed7d4df_17.png)
 
 首先，导入必要的类并定义函数规范。函数声明需要详细描述函数的目的、参数及其类型。
 
 
-![](img/187a3e88282a073c6353fd0efed7d4df_19.png)
 
 ```python
 from google.generativeai.types import FunctionDeclaration, Tool

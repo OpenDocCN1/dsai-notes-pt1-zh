@@ -10,7 +10,6 @@ So let's say we're at this stage and we have five clusters as we see here。
 
 
 
-![](img/7a8ff8b1ac725acdc7634c1dc2fbc226_1.png)
 
 So at this stage， we can say that the average cluster distances for each one of our clusters。
 
@@ -22,7 +21,6 @@ And with that， so we have each of the average distances and with that we have 
 
 
 
-![](img/7a8ff8b1ac725acdc7634c1dc2fbc226_3.png)
 
 So in the next iteration。We find that light， purple and magenta clusters are going to be merged。
 
@@ -30,7 +28,6 @@ Therefore， that average cluster distance for that particular cluster should go
 
 
 
-![](img/7a8ff8b1ac725acdc7634c1dc2fbc226_5.png)
 
 So we can visualize this change in that average cluster distance as followed。
 
@@ -46,13 +43,11 @@ And now we only have four remaining clusters， and as a whole。
 
 
 
-![](img/7a8ff8b1ac725acdc7634c1dc2fbc226_7.png)
 
 In the next step， we can have that purple cluster is going to merge with the teal cluster in that top right corner。
 
 
 
-![](img/7a8ff8b1ac725acdc7634c1dc2fbc226_9.png)
 
 Ands the new cluster forms。Combining that teal and purple is now above that threshold。
 
@@ -64,7 +59,6 @@ Now we don't stop at this point， though， we are only going to stop once the 
 
 
 
-![](img/7a8ff8b1ac725acdc7634c1dc2fbc226_11.png)
 
 Now， in this next step， once we move to two clusters。
 
@@ -72,7 +66,6 @@ Now， in this next step， once we move to two clusters。
 
 
 
-![](img/7a8ff8b1ac725acdc7634c1dc2fbc226_13.png)
 
 And finally， once we merged these two。All the cluster distances are above this threshold。
 
@@ -80,7 +73,6 @@ And finally， once we merged these two。All the cluster distances are above th
 
 
 
-![](img/7a8ff8b1ac725acdc7634c1dc2fbc226_15.png)
 
 Now we mentioned earlier that we would want to merge clusters at some point that are closest to one another。
 
@@ -124,7 +116,6 @@ So it'll be very easy to be skewed by certain outliers falling close to certain 
 
 
 
-![](img/7a8ff8b1ac725acdc7634c1dc2fbc226_17.png)
 
 Now another linkage type is going to be called the complete linkage。And with complete leakage。
 
@@ -142,7 +133,6 @@ Now another linkage type is going to be called the complete linkage。And with c
 
 
 
-![](img/7a8ff8b1ac725acdc7634c1dc2fbc226_19.png)
 
 Alternatively。We can also take the average of all the points for a given cluster and use those averages or those cluster centroids as we've been introduced to to determine the distance between our different clusters。
 
@@ -150,7 +140,6 @@ Now， the pros and cons of using the average can kind of be seen as an average 
 
 
 
-![](img/7a8ff8b1ac725acdc7634c1dc2fbc226_21.png)
 
 And then finally， we have the ward linkage， and the ward linkage is going to compute the inertia。
 

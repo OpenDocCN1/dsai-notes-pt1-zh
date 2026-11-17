@@ -33,7 +33,6 @@
 在NumPy中，转置操作非常简单。我们使用 `.T` 属性。
 
 
-![](img/98fb997d2e187ab750ef1d7f1604446f_1.png)
 
 ```python
 import numpy as np
@@ -57,7 +56,6 @@ print("形状:", X_transposed.shape)
 PyTorch 与 NumPy 一样简单，同样使用 `.T` 属性。
 
 
-![](img/98fb997d2e187ab750ef1d7f1604446f_3.png)
 
 ```python
 import torch
@@ -73,7 +71,6 @@ print("\n转置后的张量:")
 print(X_torch_transposed)
 ```
 
-![](img/98fb997d2e187ab750ef1d7f1604446f_5.png)
 
 **3. TensorFlow 实现**
 

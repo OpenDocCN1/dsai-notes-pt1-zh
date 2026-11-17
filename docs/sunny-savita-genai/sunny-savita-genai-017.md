@@ -44,7 +44,6 @@
 4.  为你的集群命名（例如“my_project”），然后点击创建。
 5.  创建完成后，你可以在集群详情页找到你的**集群URL**和用于生成**API密钥**的选项。
 
-![](img/8675932c2fa72482cde7edf1876b5c9a_5.png)
 
 获取到`WEAVIATE_API_KEY`和`WEAVIATE_CLUSTER_URL`后，你就可以在代码中配置客户端了。
 
@@ -169,7 +168,6 @@ for i, doc in enumerate(result["source_documents"]):
 
 执行这段代码，你将看到模型基于文档内容生成的答案，以及答案所依据的文本片段。
 
-![](img/8675932c2fa72482cde7edf1876b5c9a_17.png)
 
 ---
 

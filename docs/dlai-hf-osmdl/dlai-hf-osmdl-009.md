@@ -1,6 +1,5 @@
 # 009：目标检测 🎯
 
-![](img/904b131b94f40a51c0dfe9cff001e295_1.png)
 
 在本节课中，我们将探索计算机视觉模型，并动手实践，构建一个能够帮助视障人士理解图片内容的智能助手。我们将重点学习目标检测任务，并使用Hugging Face的`transformers`库来实现它。
 
@@ -44,9 +43,7 @@ od_pipe = pipeline("object-detection", model="facebook/detr-resnet-50")
 
 ![](img/904b131b94f40a51c0dfe9cff001e295_6.png)
 
-![](img/904b131b94f40a51c0dfe9cff001e295_7.png)
 
-![](img/904b131b94f40a51c0dfe9cff001e295_8.png)
 
 目标检测的任务是识别图像中感兴趣的物体，并为每个检测到的物体提供**类别标签**和**边界框位置**。它结合了分类和定位两个子任务。
 
@@ -67,15 +64,12 @@ od_pipe = pipeline("object-detection", model="facebook/detr-resnet-50")
 
 ![](img/904b131b94f40a51c0dfe9cff001e295_14.png)
 
-![](img/904b131b94f40a51c0dfe9cff001e295_15.png)
 
-![](img/904b131b94f40a51c0dfe9cff001e295_16.png)
 
 1.  加载一张图片。
 2.  将图片传入管道。
 3.  使用辅助函数可视化结果。
 
-![](img/904b131b94f40a51c0dfe9cff001e295_17.png)
 
 ![](img/904b131b94f40a51c0dfe9cff001e295_18.png)
 
@@ -116,7 +110,6 @@ result_image.show()
 ![](img/904b131b94f40a51c0dfe9cff001e295_25.png)
 
 
-![](img/904b131b94f40a51c0dfe9cff001e295_27.png)
 
 ```python
 import gradio as gr
@@ -139,11 +132,8 @@ demo = gr.Interface(
 demo.launch(share=True)
 ```
 
-![](img/904b131b94f40a51c0dfe9cff001e295_28.png)
 
-![](img/904b131b94f40a51c0dfe9cff001e295_29.png)
 
-![](img/904b131b94f40a51c0dfe9cff001e295_30.png)
 
 ![](img/904b131b94f40a51c0dfe9cff001e295_31.png)
 

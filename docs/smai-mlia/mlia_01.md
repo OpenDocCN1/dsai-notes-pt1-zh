@@ -25,11 +25,9 @@
 
 ## [1.Python 机器学习算法应用实践](http://www.showmeai.tech/article-detail/201)
 
-![Python 机器学习算法应用实践](img/1a57a2d58b4cbaa64d3e25b5e0a66923.png)
 
 ## [2.SKLearn 入门与简单应用案例](http://www.showmeai.tech/article-detail/202)
 
-![SKLearn 入门与简单应用案例](img/f312db4fe0c3457ce3dd9a6b05dc818d.png)
 
 ## [3.SKLearn 最全应用指南](http://www.showmeai.tech/article-detail/203)
 
@@ -37,27 +35,21 @@
 
 ## [4.XGBoost 建模应用详解](http://www.showmeai.tech/article-detail/204)
 
-![XGBoost 建模应用详解](img/7498bac49b0eb342dba9172d88239947.png)
 
 ## [5.LightGBM 建模应用详解](http://www.showmeai.tech/article-detail/205)
 
-![LightGBM 建模应用详解](img/96f67c1a23aa6c847c5f43845926949c.png)
 
 ## [6.Python 机器学习综合项目-电商销量预估](http://www.showmeai.tech/article-detail/206)
 
-![Python 机器学习综合项目-电商销量预估](img/85ac3aad19c91ce7fbd2e90d5e996d5f.png)
 
 ## [7.Python 机器学习综合项目-电商销量预估<进阶方案>](http://www.showmeai.tech/article-detail/207)
 
-![Python 机器学习综合项目-电商销量预估<进阶方案>](img/656ed747253863553dc0b1c641e26079.png)
 
 ## [8.机器学习特征工程最全解读](http://www.showmeai.tech/article-detail/208)
 
-![机器学习特征工程最全解读](img/2f2aaebf66c22742863b2fe7f193e2d4.png)
 
 ## [9.自动化特征工程工具 Featuretools 应用](http://www.showmeai.tech/article-detail/209)
 
-![自动化特征工程工具 Featuretools 应用](img/0026f36f51f64b10678aaa4a5b5c4f96.png)
 
 ## [10.AutoML 自动化机器学习建模](http://www.showmeai.tech/article-detail/210)
 

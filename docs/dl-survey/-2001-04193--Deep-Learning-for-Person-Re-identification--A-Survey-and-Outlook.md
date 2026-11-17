@@ -269,7 +269,6 @@ OIM 损失。除了上述三种损失函数外，还设计了一种具有内存�
 
 (a) Market-1501 上的 SOTA [5]
 
-![参见说明](img/952cca198b6cb85c5e41735da282c6b9.png)
 
 (b) DukeMTMC 上的 SOTA [42]
 

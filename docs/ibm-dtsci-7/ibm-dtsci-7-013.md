@@ -1,8 +1,6 @@
 # 013：Python数据格式化
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_0.png)
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_2.png)
 
 在本节课中，我们将学习如何处理不同格式、单位和表示方式的数据，并介绍pandas库中帮助我们解决这些问题的相关方法。
 
@@ -20,28 +18,21 @@
 
 在Python中，这可以轻松地用一行代码完成。你取该列并将其设置为等于235除以整个列的值。在第二行代码中，使用数据框的`rename`方法将列名从“City Miles per gallon”重命名为“City lit per 100 km”。
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_4.png)
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_5.png)
 
 以下是转换和重命名的代码示例：
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_7.png)
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_8.png)
 
 ```python
 df['City lit per 100 km'] = 235 / df['City Miles per gallon']
 df.rename(columns={'City Miles per gallon': 'City lit per 100 km'}, inplace=True)
 ```
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_9.png)
 
 ## 📝 数据类型识别与转换
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_11.png)
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_12.png)
 
 由于多种原因，包括将数据集导入Python时，数据类型可能被错误地设置。例如，这里我们注意到“price”特征的数据类型被指定为“object”，尽管预期的数据类型应该是整数或浮点数类型。
 
@@ -51,34 +42,23 @@ pandas中有许多数据类型。“object”可以是字母或单词，“int64
 
 要在Python中识别特征的数据类型，我们可以使用数据框的`dtypes`方法，并检查数据框中每个变量的数据类型。
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_14.png)
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_15.png)
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_16.png)
 
 在数据类型错误的情况下，可以使用`dataframe.astype()`方法将数据类型从一种格式转换为另一种格式。
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_17.png)
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_18.png)
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_19.png)
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_20.png)
 
 例如，对“price”列使用`astype('int')`，你可以将“object”列转换为整数类型变量。
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_21.png)
 
 以下是数据类型检查和转换的代码示例：
 
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_23.png)
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_24.png)
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_25.png)
 
 ```python
 # 检查数据类型
@@ -87,23 +67,18 @@ print(df.dtypes)
 df['price'] = df['price'].astype('int')
 ```
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_27.png)
 
 ## 📋 核心方法总结
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_28.png)
 
 以下是本节课介绍的核心pandas方法：
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_30.png)
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_31.png)
 
 *   **`df.dtypes`**：用于检查数据框中各列的数据类型。
 *   **`df.rename()`**：用于重命名数据框的列。
 *   **`df.astype()`**：用于将数据列转换为指定的数据类型。
 
-![](img/1a0c8d4ce99f6c882f5a772ba23b35a4_33.png)
 
 ## 🎯 课程总结
 

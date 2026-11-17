@@ -60,11 +60,9 @@ model = SamModel.from_pretrained("facebook/sam-vit-base")
 processor = SamProcessor.from_pretrained("facebook/sam-vit-base")
 ```
 
-![](img/69c5daf5d98b9c205225587810d4a0e7_3.png)
 
 我们使用同一张图片，并希望分割图中Andrew的蓝色衬衫。为此，我们在衬衫区域指定一个二维坐标点（例如`[1600, 700]`，坐标系原点在左上角）。
 
-![](img/69c5daf5d98b9c205225587810d4a0e7_5.png)
 
 以下是编码和推理步骤：
 1.  使用处理器同时编码图像和输入点。
@@ -88,7 +86,6 @@ masks = processor.post_process_masks(outputs.pred_masks, inputs["original_sizes"
 best_mask = masks[0][0][0] # 取第一个图像的第一个掩码
 ```
 
-![](img/69c5daf5d98b9c205225587810d4a0e7_7.png)
 
 可视化结果显示，三个预测掩码中有两个准确地分割出了衬衫区域，另一个则分割出了整个人物。为了获得更好的效果，可以尝试为同一个掩码提供多个点，或者提供一个包围目标区域的边界框。
 
@@ -96,11 +93,8 @@ best_mask = masks[0][0][0] # 取第一个图像的第一个掩码
 
 ## 使用DPT模型进行深度估计 📏
 
-![](img/69c5daf5d98b9c205225587810d4a0e7_9.png)
 
-![](img/69c5daf5d98b9c205225587810d4a0e7_10.png)
 
-![](img/69c5daf5d98b9c205225587810d4a0e7_11.png)
 
 ![](img/69c5daf5d98b9c205225587810d4a0e7_12.png)
 
@@ -120,9 +114,7 @@ depth_estimator = pipeline("depth-estimation", model="Intel/dpt-hybrid-midas")
 
 加载一张测试图片（例如一个站在路上的玩具），然后进行深度估计：
 
-![](img/69c5daf5d98b9c205225587810d4a0e7_15.png)
 
-![](img/69c5daf5d98b9c205225587810d4a0e7_16.png)
 
 ```python
 output = depth_estimator(image)
@@ -180,12 +172,10 @@ def depth_estimation_demo(input_image):
 
 ![](img/69c5daf5d98b9c205225587810d4a0e7_22.png)
 
-![](img/69c5daf5d98b9c205225587810d4a0e7_23.png)
 
 然后，创建Gradio界面，指定输入和输出类型为图像，并启动应用。设置`share=True`可以生成一个可分享的链接。
 
 
-![](img/69c5daf5d98b9c205225587810d4a0e7_25.png)
 
 ```python
 iface = gr.Interface(
@@ -197,7 +187,6 @@ iface = gr.Interface(
 iface.launch(share=True)
 ```
 
-![](img/69c5daf5d98b9c205225587810d4a0e7_27.png)
 
 现在，你就可以通过生成的链接与朋友或同事分享这个深度估计工具了。
 
@@ -215,7 +204,6 @@ iface.launch(share=True)
 
 ![](img/69c5daf5d98b9c205225587810d4a0e7_30.png)
 
-![](img/69c5daf5d98b9c205225587810d4a0e7_31.png)
 
 ![](img/69c5daf5d98b9c205225587810d4a0e7_33.png)
 

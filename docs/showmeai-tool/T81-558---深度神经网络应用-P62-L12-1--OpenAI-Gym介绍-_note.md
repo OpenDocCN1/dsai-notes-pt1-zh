@@ -3,11 +3,9 @@
 ## 概述
 在本节课中，我们将学习OpenAI Gym。OpenAI Gym是一个用于开发和比较强化学习算法的基准平台。它提供了多种环境，包括经典的控制任务和Atari游戏，允许我们评估和训练自己的强化学习程序。
 
-![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_1.png)
 
 ---
 
-![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_2.png)
 
 ## OpenAI Gym简介
 OpenAI Gym是一个基准平台，让你可以在Python中评估你的强化学习程序，并与著名游戏如Atari游戏等进行对比。我们将学习如何与这个平台交互，并使用它来观看游戏在屏幕上播放，或以离线方式进行训练。
@@ -21,14 +19,11 @@ OpenAI Gym是一个基准平台，让你可以在Python中评估你的强化学�
 2.  **创建环境**：使用`gym.make(‘环境名称’)`来创建一个特定的游戏环境。
 3.  **与环境交互**：智能体在每一步选择一个动作，环境返回新的状态和奖励。
 
-![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_4.png)
 
 以下是一个简单的代码示例，展示了如何启动一个环境：
 
 
-![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_6.png)
 
-![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_7.png)
 
 ```python
 import gym
@@ -129,7 +124,6 @@ env.close()
 show_video(‘atlantis_random.mp4’)
 ```
 
-![](img/e05a69d9ca1dbcb4403e08d1b85b5a4e_9.png)
 
 运行上述代码后，你将能看到一个由随机动作生成的游戏视频片段。
 

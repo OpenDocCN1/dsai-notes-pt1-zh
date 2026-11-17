@@ -77,9 +77,7 @@ print(f"标签 {label} 对应的类别: {class_names[label]}")
 
 ---
 
-![](img/79a0d022483c9396f2e028ae66b86493_2.png)
 
-![](img/79a0d022483c9396f2e028ae66b86493_4.png)
 
 ## 3. 可视化数据集
 
@@ -136,21 +134,17 @@ plt.show()
 
 ---
 
-![](img/79a0d022483c9396f2e028ae66b86493_10.png)
 
-![](img/79a0d022483c9396f2e028ae66b86493_12.png)
 
 ## 总结
 
 在本节课中，我们一起学习了如何使用`torchvision.datasets`模块获取计算机视觉数据集。我们以FashionMNIST为例，演示了数据下载、基本探索和可视化过程。通过本节课，你应该能够：
 
-![](img/79a0d022483c9396f2e028ae66b86493_14.png)
 
 1. 使用`torchvision.datasets`下载内置数据集。
 2. 了解数据集的基本信息，如样本数量和图像形状。
 3. 使用Matplotlib可视化图像数据。
 
-![](img/79a0d022483c9396f2e028ae66b86493_16.png)
 
 ![](img/79a0d022483c9396f2e028ae66b86493_17.png)
 

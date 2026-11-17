@@ -1,7 +1,6 @@
 # 033：使用R编程进行数据分析 🧮
 ## 第33课：R Markdown概览 📄
 
-![](img/c258a4ccf2788270cc1d735a74e65fc6_0.png)
 
 在本节课中，我们将要学习R Markdown，这是一个用于创建动态文档的强大工具，它能将你的分析代码、结果和解释整合在一起，便于记录和分享。
 
@@ -32,7 +31,6 @@ Markdown语言最初是为HTML输出而设计的。HTML是用于创建网页的�
 
 虽然R Markdown是记录和分享分析的绝佳方式，但也有其他选择。像Jupyter、Kaggle和Google Colab这样的笔记本，其功能与R Markdown笔记本非常相似，包括交互式元素。
 
-![](img/c258a4ccf2788270cc1d735a74e65fc6_2.png)
 
 ![](img/c258a4ccf2788270cc1d735a74e65fc6_2.png)
 

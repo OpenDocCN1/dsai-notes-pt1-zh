@@ -1,6 +1,5 @@
 # Python 3全系列基础教程，P19：19）函数和参数 🧩
 
-![](img/caba28d7676c25dbda8d624c235720e2_0.png)
 
 ![](img/caba28d7676c25dbda8d624c235720e2_0.png)
 
@@ -95,7 +94,6 @@ funky(get_data)
 
 这种方式非常灵活，允许我们动态决定在 `funky` 中执行哪个函数。
 
-![](img/caba28d7676c25dbda8d624c235720e2_5.png)
 
 ## 课程总结
 

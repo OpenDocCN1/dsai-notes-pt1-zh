@@ -1,8 +1,6 @@
 # 人工智能—计算机视觉CV公开课（七月在线出品） - P22：凭什么，Transformer在CV领域这么火 🚀
 
-![](img/d926fd5206e4651f94ff1fe2848f07ba_0.png)
 
-![](img/d926fd5206e4651f94ff1fe2848f07ba_2.png)
 
 在本节课中，我们将要学习Transformer模型为何能在计算机视觉领域取得巨大成功。我们将回顾其起源，探讨其核心思想，并重点分析Vision Transformer及其重要变体Swin Transformer的工作原理和优势。
 
@@ -91,7 +89,6 @@ Swin Transformer的核心创新是**滑动窗口**和**层级设计**。
 
 Transformer的成功不仅体现在图像分类上，更在目标检测、分割等下游任务中展现出强大潜力，其设计思想正在重塑计算机视觉的研究范式。
 
-![](img/d926fd5206e4651f94ff1fe2848f07ba_4.png)
 
 ![](img/d926fd5206e4651f94ff1fe2848f07ba_6.png)
 

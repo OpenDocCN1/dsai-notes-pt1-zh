@@ -38,9 +38,7 @@
 
 我们的目标就是找到使 `J(w, b)` 最小的 `w` 和 `b`。
 
-![](img/ce4667748848c4687cace578f8ebabf6_3.png)
 
-![](img/ce4667748848c4687cace578f8ebabf6_5.png)
 
 ### 3. 优化方法：梯度下降
 
@@ -169,15 +167,11 @@ class LinearRegression:
 3.  **进行预测**：在测试集上调用 `predict` 方法。
 4.  **评估模型**：使用均方误差 (MSE) 来量化模型在测试集上的表现。
 
-![](img/ce4667748848c4687cace578f8ebabf6_30.png)
 
 
-![](img/ce4667748848c4687cace578f8ebabf6_32.png)
-
-![](img/ce4667748848c4687cace578f8ebabf6_33.png)
 
 
-![](img/ce4667748848c4687cace578f8ebabf6_35.png)
+
 
 
 ![](img/ce4667748848c4687cace578f8ebabf6_36.png)

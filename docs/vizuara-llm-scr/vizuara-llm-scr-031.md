@@ -1,6 +1,5 @@
 # 31：大语言模型微调入门与实践
 
-![](img/44f82b0c53c5f17db524c35aea93f40a_0.png)
 
 ![](img/44f82b0c53c5f17db524c35aea93f40a_0.png)
 
@@ -166,13 +165,11 @@ LLM必须对电子邮件是垃圾邮件还是非垃圾邮件进行分类。这�
 
 ![](img/44f82b0c53c5f17db524c35aea93f40a_7.png)
 
-![](img/44f82b0c53c5f17db524c35aea93f40a_9.png)
 
 ![](img/44f82b0c53c5f17db524c35aea93f40a_9.png)
 
 Pandas的这个功能是，它可以获取你的数据框并将其转换为CSV文件。我也会在信息描述中添加此链接。
 
-![](img/44f82b0c53c5f17db524c35aea93f40a_11.png)
 
 ![](img/44f82b0c53c5f17db524c35aea93f40a_11.png)
 

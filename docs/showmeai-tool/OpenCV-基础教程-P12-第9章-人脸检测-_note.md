@@ -1,6 +1,5 @@
 # OpenCV 基础教程，P12：第9章：人脸检测 👤
 
-![](img/ee7624d5ac788edf9da2d4cad266c30a_0.png)
 
 ![](img/ee7624d5ac788edf9da2d4cad266c30a_0.png)
 
@@ -75,7 +74,6 @@ cv2.waitKey(0)
 
 运行上述代码后，我们就能在图像中检测到人脸并为其创建边界框。
 
-![](img/ee7624d5ac788edf9da2d4cad266c30a_4.png)
 
 ## 拓展与应用
 

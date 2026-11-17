@@ -73,11 +73,9 @@ def agent_execute(task, model):
 
 ---
 
-![](img/be16388cc13d0d006d2fedb1f57b3480_1.png)
 
 ## 多模态与具身智能体：视觉与界面交互  
 
-![](img/be16388cc13d0d006d2fedb1f57b3480_3.png)
 
 智能体不仅需要处理文本，还需要像人类一样理解并操作图形用户界面（GUI）。我们进一步探索了多模态模型在智能体领域的应用。
 
@@ -91,11 +89,9 @@ def agent_execute(task, model):
 
 ---
 
-![](img/be16388cc13d0d006d2fedb1f57b3480_5.png)
 
 ## 总结与展望  
 
-![](img/be16388cc13d0d006d2fedb1f57b3480_7.png)
 
 本节课中我们一起学习了：
 

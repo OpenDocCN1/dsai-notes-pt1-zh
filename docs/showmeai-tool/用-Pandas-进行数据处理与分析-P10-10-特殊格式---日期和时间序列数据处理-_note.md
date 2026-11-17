@@ -166,15 +166,11 @@ plt.show()
 
 ![](img/cfdbb346186d8f4761ed57fbc05d2db1_2.png)
 
-![](img/cfdbb346186d8f4761ed57fbc05d2db1_3.png)
 
-![](img/cfdbb346186d8f4761ed57fbc05d2db1_4.png)
 
-![](img/cfdbb346186d8f4761ed57fbc05d2db1_5.png)
 
 本节课中我们一起学习了 Pandas 处理日期和时间序列数据的核心技能。
 
-![](img/cfdbb346186d8f4761ed57fbc05d2db1_6.png)
 
 我们首先学习了如何将字符串格式的日期正确转换为 `datetime` 对象，这是所有后续操作的基础。接着，我们探索了如何使用 `.dt` 访问器调用日期时间方法，以及如何按日期条件筛选数据，特别是将日期设为索引后使用切片的高效方法。
 

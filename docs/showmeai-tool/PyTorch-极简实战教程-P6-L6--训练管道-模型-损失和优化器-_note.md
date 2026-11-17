@@ -4,7 +4,6 @@
 
 ---
 
-![](img/2b520fac31b9d1c4d2989f76ec98bd5f_1.png)
 
 ## 概述 📋
 
@@ -42,14 +41,12 @@ for epoch in range(num_epochs):
 
 首先，我们需要导入必要的模块。
 
-![](img/2b520fac31b9d1c4d2989f76ec98bd5f_3.png)
 
 ```python
 import torch
 import torch.nn as nn
 ```
 
-![](img/2b520fac31b9d1c4d2989f76ec98bd5f_5.png)
 
 我们将不再手动定义损失函数，而是使用 PyTorch 提供的 `MSELoss`（均方误差损失）。同时，我们使用 `SGD`（随机梯度下降）作为优化器。
 
@@ -85,11 +82,9 @@ optimizer.zero_grad()
 
 ## 3. 步骤四：使用 PyTorch 模型
 
-![](img/2b520fac31b9d1c4d2989f76ec98bd5f_7.png)
 
 上一节我们替换了损失和优化器，本节中我们来看看如何用 PyTorch 模型替换手动实现的前向传播。
 
-![](img/2b520fac31b9d1c4d2989f76ec98bd5f_9.png)
 
 首先，我们需要调整数据的形状以适应 PyTorch 的线性层。线性层期望输入是二维张量，形状为 `[样本数量, 特征数量]`。
 
@@ -110,11 +105,9 @@ print(f"样本数量: {n_samples}, 特征数量: {n_features}")
 model = nn.Linear(in_features=n_features, out_features=1)
 ```
 
-![](img/2b520fac31b9d1c4d2989f76ec98bd5f_11.png)
 
 在训练循环中，获取预测值的方式也发生了变化：
 
-![](img/2b520fac31b9d1c4d2989f76ec98bd5f_13.png)
 
 ```python
 # 前向传播，获取预测
@@ -143,18 +136,15 @@ for name, param in model.named_parameters():
 
 ---
 
-![](img/2b520fac31b9d1c4d2989f76ec98bd5f_15.png)
 
 ## 4. 构建自定义模型
 
-![](img/2b520fac31b9d1c4d2989f76ec98bd5f_17.png)
 
 虽然 `nn.Linear` 适用于简单线性回归，但理解如何构建自定义模型至关重要。自定义模型需要继承 `nn.Module` 类并实现 `__init__` 和 `forward` 方法。
 
 以下是自定义线性回归模型的示例：
 
 
-![](img/2b520fac31b9d1c4d2989f76ec98bd5f_19.png)
 
 ```python
 class LinearRegression(nn.Module):
@@ -170,7 +160,6 @@ class LinearRegression(nn.Module):
 model = LinearRegression(input_dim=n_features, output_dim=1)
 ```
 
-![](img/2b520fac31b9d1c4d2989f76ec98bd5f_20.png)
 
 这个自定义类的作用与直接使用 `nn.Linear` 完全相同，但它展示了构建更复杂模型的基本框架。
 

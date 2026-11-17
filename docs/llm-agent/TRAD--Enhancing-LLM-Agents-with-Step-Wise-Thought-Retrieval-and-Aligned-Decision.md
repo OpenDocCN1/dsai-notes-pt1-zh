@@ -279,7 +279,6 @@ Mind2Web（Deng 等，[2023](https://arxiv.org/html/2403.06221v1#bib.bib5)）是
 
 接下来，我们改变一个关键的超参数——时间扩展步数，并研究整体性能如何随之变化。为了避免在$B$和$F$上进行昂贵的网格搜索，我们仅考虑单边扩展，通过将$B$或$F$从$0$变为$4$，并将另一个设置为$0$。所有3个子集的结果如图[3](https://arxiv.org/html/2403.06221v1#S4.F3 "Figure 3 ‣ 4.4.2\. The Effect of Expansion Steps 𝐵 and 𝐹 ‣ 4.4\. Ablation Studies ‣ 4\. Experiments ‣ TRAD: Enhancing LLM Agents with Step-Wise Thought Retrieval and Aligned Decision")所示。
 
-![参见说明文字](img/0a4c9e3f68674c8f017b01738710605e.png)
 
 (a) 改变$F$
 
@@ -578,35 +577,27 @@ ALFWorld 包含 6 种不同类型的任务，这里我们仅展示 Put 任务的
 
 我们在图[6](https://arxiv.org/html/2403.06221v1#A2.F6 "图6 ‣ B.1. $F$ 和 $B$ 的效果 ‣ 附录B 完整实验结果 ‣ TRAD：通过逐步思维检索和对齐决策增强LLM代理")中列出了在Mind2Web基准测试的每个子集以及所有3个子集上的$F$和$B$的不同后续步骤数和前置步骤数的效果。
 
-![请参阅标题](img/7a9946a6b435d91bca388e983fc9a42f.png)
 
 (a) 跨任务（$F$）
 
-![请参阅标题](img/ef538a0eb76a9b11780f196317f7a9ac.png)
 
 (b) 跨任务（$B$）
 
-![请参阅标题](img/9f4d699ac9d081a79576806dbc49c52a.png)
 
 (c) 跨网站（$F$）
 
-![请参阅标题](img/bd127b09d38aa18eb7e4aacbd01cf726.png)
 
 (d) 跨网站（$B$）
 
-![请参阅标题](img/d629613a1f93b46f6b7bb27dc83b9402.png)
 
 (e) 跨领域（$F$）
 
-![请参阅标题](img/911d748e53b584210106e413b1a08757.png)
 
 (f) 跨领域（$B$）
 
-![请参阅标题](img/9626c48912184ead9b8288fcb3699008.png)
 
 (g) 全部（$F$）
 
-![请参阅标题](img/16c87d0f273415e28a25cc13c019c41f.png)
 
 (h) 全部（$B$）
 
@@ -616,15 +607,12 @@ ALFWorld 包含 6 种不同类型的任务，这里我们仅展示 Put 任务的
 
 我们在图 [7](https://arxiv.org/html/2403.06221v1#A2.F7 "Figure 7 ‣ B.2\. The Effect of 𝐾 ‣ Appendix B Full Experiment Results ‣ TRAD: Enhancing LLM Agents with Step-Wise Thought Retrieval and Aligned Decision") 中列出了不同检索大小 $K$ 对每个子集以及对所有 3 个子集的 Mind2Web 基准测试结果。
 
-![请参见标题](img/2b02ae8f173e2aa4cc753c96cba36abd.png)
 
 (a) 跨任务
 
-![请参见标题](img/7247fbe226e092791696b25a88f5f026.png)
 
 (b) 跨网站
 
-![请参见标题](img/bf9c1f4e0f59ab5020d9d147c5e53079.png)
 
 (c) 跨领域
 

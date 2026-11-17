@@ -45,9 +45,7 @@ loss_fn = nn.L1Loss()
 
 ## 优化器：指导模型参数更新
 
-![](img/167c45768dc22cba7c867c4bcb50003c_12.png)
 
-![](img/167c45768dc22cba7c867c4bcb50003c_13.png)
 
 优化器（Optimizer）的作用是根据损失函数计算出的“错误”程度，来调整模型的参数（如权重和偏置），目标是找到一组能使损失值最小的参数。
 
@@ -88,7 +86,6 @@ optimizer = optim.SGD(params=model.parameters(), lr=0.01)
 4.  **SGD（随机梯度下降）** 是一种基础且常用的优化器。
 5.  **学习率（lr）** 是优化器的一个关键超参数，控制着参数更新的步长。
 
-![](img/167c45768dc22cba7c867c4bcb50003c_15.png)
 
 ![](img/167c45768dc22cba7c867c4bcb50003c_17.png)
 

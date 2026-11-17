@@ -12,13 +12,11 @@ And this will I promise tie back into scaling our input so just hold tight。
 
  whatever that input was from the last layer。
 
-![](img/4a22b7ea282475e30be83988e37d53b2_1.png)
 
 And at each iteration of gradient descent。W new， our new W is going to be that W old minus a learning rate times this partial derivative。
 
 
 
-![](img/4a22b7ea282475e30be83988e37d53b2_3.png)
 
 Now， when I equals zero， we are using the input values of x of those actual inputs as part of the derivative to update W New。
 
@@ -26,15 +24,12 @@ So those input values at that first layer are going to play a large role。
 
 
 
-![](img/4a22b7ea282475e30be83988e37d53b2_5.png)
 
-![](img/4a22b7ea282475e30be83988e37d53b2_6.png)
 
 And this is going to mean that if we don't normalize the input values。
 
 
 
-![](img/4a22b7ea282475e30be83988e37d53b2_8.png)
 
 Those with higher values。Are going to update much more quickly than those with lower value。
 
@@ -42,7 +37,6 @@ Because again， we're using the AI from that prior step in order to update our 
 
 
 
-![](img/4a22b7ea282475e30be83988e37d53b2_10.png)
 
 So if we have them on different scales， higher values will update quickly and the lower values will not update as quickly。
 
@@ -52,9 +46,7 @@ So if we have them on different scales， higher values will update quickly and 
 
 
 
-![](img/4a22b7ea282475e30be83988e37d53b2_12.png)
 
-![](img/4a22b7ea282475e30be83988e37d53b2_13.png)
 
 So for that reason， we need to scale our inputs and different ways that we can scale our inputs that we've discussed in prior courses is the linear scaling to the interval between0 and1。
 
@@ -62,9 +54,7 @@ So for that reason， we need to scale our inputs and different ways that we can
 
 
 
-![](img/4a22b7ea282475e30be83988e37d53b2_15.png)
 
-![](img/4a22b7ea282475e30be83988e37d53b2_16.png)
 
 Or we can do here linear scaling to the interval between negative  one and 1。
 
@@ -80,15 +70,12 @@ Or we can do here linear scaling to the interval between negative  one and 1。
 
 
 
-![](img/4a22b7ea282475e30be83988e37d53b2_18.png)
 
-![](img/4a22b7ea282475e30be83988e37d53b2_19.png)
 
 So let's recap what we learned here in this section。
 
 
 
-![](img/4a22b7ea282475e30be83988e37d53b2_21.png)
 
 In this section， we discuss preprocessing and preparing our data for our neural net models。
 
@@ -100,17 +87,11 @@ In this section， we discuss preprocessing and preparing our data for our neura
 
 
 
-![](img/4a22b7ea282475e30be83988e37d53b2_23.png)
 
-![](img/4a22b7ea282475e30be83988e37d53b2_24.png)
 
-![](img/4a22b7ea282475e30be83988e37d53b2_25.png)
 
-![](img/4a22b7ea282475e30be83988e37d53b2_26.png)
 
-![](img/4a22b7ea282475e30be83988e37d53b2_27.png)
 
-![](img/4a22b7ea282475e30be83988e37d53b2_28.png)
 
 So that closes out our discussion here on different transformations that are important for your different neural net models。
 
@@ -120,12 +101,8 @@ So that closes out our discussion here on different transformations that are imp
 
 
 
-![](img/4a22b7ea282475e30be83988e37d53b2_30.png)
 
-![](img/4a22b7ea282475e30be83988e37d53b2_31.png)
 
-![](img/4a22b7ea282475e30be83988e37d53b2_32.png)
 
-![](img/4a22b7ea282475e30be83988e37d53b2_33.png)
 
 ![](img/4a22b7ea282475e30be83988e37d53b2_34.png)

@@ -2,46 +2,31 @@
 
 在本节课中，我们将学习如何本地运行 Meta 最新发布的 Llama 3.1 模型，并利用它构建一个具备自我纠正能力的检索增强生成智能体。我们还将简要了解如何将其与其他模型进行性能对比。
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_1.png)
 
 ## 概述：Llama 3.1 模型发布
 
 Meta 发布了备受期待的 Llama 3.1 模型。该系列包含多个版本：8B、70B 和 405B 参数模型，并支持 128K 的上下文长度。
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_1.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_3.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_4.png)
 
 其中，405B 参数模型性能卓越，可与 GPT-4 Omni、Claude 3.5 Sonnet 等大型闭源模型相媲美。它将被托管在 Grok、Fireworks 等多个平台上。
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_5.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_3.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_4.png)
 ![](img/b4a524dad6217cb8930d33cfb95458ad_5.png)
 
 对于本地运行而言，8B 参数模型是一个“甜点”尺寸。例如，在一台配备 32GB 内存的 M2 MacBook Pro 上，它可以流畅运行，且性能优于之前的 Llama 3、Gemma 2 和 Mistral 7B Instruct 模型。
 
 ![](img/b4a524dad6217cb8930d33cfb4a524dad6217cb8930d33cfb95458ad_7.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_8.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_9.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_10.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_7.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_8.png)
 
 ## 第一步：环境设置与模型准备 🔧
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_9.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_10.png)
 
 首先，我们需要设置运行环境并拉取 Llama 3.1 模型。
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_12.png)
 
 ### 拉取模型
 
@@ -50,11 +35,9 @@ Meta 发布了备受期待的 Llama 3.1 模型。该系列包含多个版本：8
 ollama pull llama3.1
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_14.png)
 
 拉取完成后，你可以在 `ollama` 的模型库中看到不同尺寸的模型。8B 模型仅需约 4.7GB 空间，非常适合本地开发。
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_12.png)
 
 ### 安装必要的 Python 库
 
@@ -80,43 +63,27 @@ os.environ[“OPENAI_API_KEY”] = “your-openai-api-key”
 os.environ[“TAVILY_API_KEY”] = “your-tavily-api-key”
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_16.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_17.png)
 
 ## 第二步：构建自我纠正的 RAG 智能体 🤖
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_18.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_19.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_20.png)
 
 我们将构建一个“自我纠正检索增强生成”智能体。其核心思想是：智能体能够评估检索到的文档相关性，如果文档不相关，则触发网络搜索来补充信息。这为智能体提供了灵活性，使其在问题超出向量数据库知识范围时，仍能通过网络搜索回答问题。
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_21.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_16.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_17.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_18.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_19.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_20.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_21.png)
 
 ### 2.1 创建向量数据库
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_23.png)
 
 首先，我们需要一个包含知识文档的向量数据库作为检索源。
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_24.png)
 
 我们将索引几篇来自 LangChain 的博客文章（主题包括智能体、提示工程、对抗性测试）。以下是创建向量数据库的步骤：
 
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_26.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_27.png)
 
 ```python
 from langchain_community.document_loaders import WebBaseLoader
@@ -145,12 +112,8 @@ vectorstore = SKLearnVectorStore.from_documents(
 retriever = vectorstore.as_retriever()
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_26.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_27.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_29.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_30.png)
 
 创建完成后，可以测试检索器是否正常工作：
 ```python
@@ -160,19 +123,13 @@ retrieved_docs = retriever.invoke(question)
 print(f”检索到 {len(retrieved_docs)} 个文档片段。”)
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_31.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_32.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_33.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_36.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_34.png)
 
 ### 2.2 配置工具与模型
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_36.png)
 
 我们需要一个网络搜索工具和我们的核心模型——Llama 3.1。
 
@@ -182,12 +139,8 @@ from langchain_community.tools.tavily_search import TavilySearchResults
 search_tool = TavilySearchResults(max_results=2)
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_38.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_39.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_38.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_39.png)
 
 **配置 Llama 3.1 模型：**
 确保已通过 `ollama pull llama3.1` 拉取模型。
@@ -197,27 +150,17 @@ from langchain_llama import ChatLlama
 llm = ChatLlama(model=“llama3.1”)
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_41.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_42.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_43.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_44.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_41.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_42.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_43.png)
 
 ### 2.3 构建 RAG 链与评估器
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_44.png)
 
 **构建基础的 RAG 链：**
 这是一个简单的问答链，基于检索到的文档生成答案。
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_46.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_47.png)
 
 ```python
 from langchain_core.prompts import ChatPromptTemplate
@@ -235,8 +178,6 @@ rag_prompt = ChatPromptTemplate.from_template(“””
 rag_chain = rag_prompt | llm | StrOutputParser()
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_46.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_47.png)
 
 **构建文档相关性评估器：**
 这是实现“自我纠正”的关键组件。它将判断检索到的文档是否与问题相关。
@@ -261,43 +202,25 @@ grader_prompt = ChatPromptTemplate.from_template(“””
 grader = grader_prompt | llm.with_structured_output(GradeDocuments)
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_49.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_50.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_51.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_49.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_50.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_51.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_52.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_53.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_54.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_55.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_52.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_53.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_54.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_55.png)
 
 现在，我们拥有了智能体所需的所有核心组件：向量检索器、RAG 链、评估器和网络搜索工具。
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_57.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_57.png)
 
 ## 第三步：使用 LangGraph 编排智能体工作流 ⚙️
 
 我们将使用 `LangGraph` 来定义智能体的控制流。`LangGraph` 允许我们以图的形式清晰地表达复杂的智能体推理步骤。
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_59.png)
 
 首先，定义智能体运行过程中需要维护的状态：
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_60.png)
 
 ```python
 from typing import TypedDict, List, Annotated
@@ -310,12 +233,8 @@ class GraphState(TypedDict):
     steps: List[str] # 记录执行步骤，用于调试或追踪
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_59.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_60.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_62.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_63.png)
 
 接下来，我们将智能体的每个步骤定义为一个“节点”函数。
 
@@ -334,17 +253,9 @@ def retrieve(state: GraphState):
     }
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_65.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_66.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_62.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_63.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_65.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_66.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_67.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_67.png)
 
 **2. 评估文档节点：**
 这个节点评估每个检索到的文档的相关性。如果任何文档被评估为“不相关”，则触发网络搜索标志。
@@ -374,15 +285,8 @@ def grade_documents(state: GraphState):
     }
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_69.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_71.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_77.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_78.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_79.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_80.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_81.png)
 
 **3. 网络搜索节点：**
 当评估节点判定需要搜索时，执行此节点。
@@ -401,11 +305,8 @@ def web_search(state: GraphState):
     }
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_73.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_74.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_75.png)
 
 **4. 生成答案节点：**
 使用所有可用的文档（检索到的或搜索到的）来生成最终答案。
@@ -424,23 +325,15 @@ def generate(state: GraphState):
     }
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_73.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_74.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_75.png)
 
 **5. 定义控制流图：**
 最后，我们将所有节点连接起来，定义完整的工作流。
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_77.png)
-
-![](img/b4a524dad6217cb8930d33cfb95458ad_78.png)
 
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_79.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_80.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_81.png)
+
 
 ```python
 from langgraph.graph import StateGraph, END
@@ -474,23 +367,12 @@ workflow.add_edge(“generate”, END) # 生成后结束
 app = workflow.compile()
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_83.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_84.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_85.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_83.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_84.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_85.png)
 
 至此，我们的自我纠正 RAG 智能体就构建完成了。其工作流清晰对应了最初的设计图。
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_87.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_88.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_89.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_90.png)
-![](img/b4a524dad6217cb8930d33cfb95458ad_91.png)
 
 ## 第四步：测试智能体 🧪
 
@@ -520,17 +402,11 @@ run_agent(“What is agent memory?”)
 run_agent(“What is the latest version of PyTorch?”)
 ```
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_87.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_93.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_88.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_89.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_90.png)
 
-![](img/b4a524dad6217cb8930d33cfb95458ad_91.png)
 
 ## 总结与回顾 📚
 

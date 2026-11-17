@@ -8,9 +8,7 @@
 
 上一节我们深入探讨了扩散模型的核心训练过程。本节中，我们将关注实验的工程化实践。首先，我们会看到如何使用工具（如Weights & Biases）来记录和管理实验。接着，我们将学习两个重要的图像生成评估指标：FID和KID。最后，我们会探索DDIM采样算法，它能在保持图像质量的同时，显著提升采样速度。
 
-![](img/b03efc3da48136e7578d4cad5e680ab1_1.png)
 
-![](img/b03efc3da48136e7578d4cad5e680ab1_2.png)
 
 ![](img/b03efc3da48136e7578d4cad5e680ab1_4.png)
 
@@ -18,11 +16,8 @@
 
 ---
 
-![](img/b03efc3da48136e7578d4cad5e680ab1_7.png)
 
-![](img/b03efc3da48136e7578d4cad5e680ab1_9.png)
 
-![](img/b03efc3da48136e7578d4cad5e680ab1_11.png)
 
 ![](img/b03efc3da48136e7578d4cad5e680ab1_13.png)
 
@@ -133,7 +128,6 @@ DDIM是一种更通用、更灵活的采样框架，其核心优势在于：
 
 DDIM的采样步骤核心公式如下：
 
-![](img/b03efc3da48136e7578d4cad5e680ab1_19.png)
 
 ```python
 # DDIM 采样步骤（简化版）
@@ -146,7 +140,6 @@ x_{t-1} = sqrt(alpha_bar_{t-1}) * pred_x0 + dir_xt + sigma_t * z
 # 其中 z 是随机噪声（当 η>0 时），sigma_t 由 η 控制。
 ```
 
-![](img/b03efc3da48136e7578d4cad5e680ab1_21.png)
 
 ### 效果对比
 
@@ -162,9 +155,7 @@ x_{t-1} = sqrt(alpha_bar_{t-1}) * pred_x0 + dir_xt + sigma_t * z
 
 本节课中我们一起学习了深度学习实验中的三个重要工程实践主题。
 
-![](img/b03efc3da48136e7578d4cad5e680ab1_23.png)
 
-![](img/b03efc3da48136e7578d4cad5e680ab1_25.png)
 
 首先，我们了解了**实验跟踪**的必要性，并介绍了如何使用Weights & Biases等工具来记录实验、管理超参数和可视化结果，这对于进行长期或复杂的实验至关重要。
 

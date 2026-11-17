@@ -390,7 +390,6 @@ $\bullet$ 局部准确度（locality）评估代理在回答与操作知识相�
 
 最后，我们使用MMLU基准在表[IV](https://arxiv.org/html/2407.07791v2#S4.T4 "表 IV ‣ IV-C 关于反事实知识的传播结果 ‣ IV 评估 ‣ 基于大规模语言模型的多智能体社区中操控知识的传播")中系统评估了我们提出的两阶段攻击方法对基于LLM的智能体的基础能力的副作用。具体来说，我们分别评估了阶段\@slowromancapi@和\@slowromancapii@之前和之后智能体的MMLU得分。对于阶段\@slowromancapii@，我们随机选择了数据集中的5个操控知识示例，并计算了平均MMLU得分。所选示例见附录[VII-A](https://arxiv.org/html/2407.07791v2#Sx1.SS1 "VII-A 操控知识的示例 ‣ 附录 ‣ 基于大规模语言模型的多智能体社区中操控知识的传播")。
 
-![参见说明文字](img/7fe3ee5f36e9c4a0d0c98e337514d4e9.png)
 
 图5：在基于LLM的多智能体社区中，随着对话轮次的增加，操控反事实知识的准确性。
 
@@ -436,7 +435,6 @@ $\bullet$ 局部准确度（locality）评估代理在回答与操作知识相�
 
 随后，我们在图[6](https://arxiv.org/html/2407.07791v2#S4.F6 "图6 ‣ IV-D 有毒知识传播结果 ‣ IV 评估 ‣ 基于LLM的多智能体社区中操作知识的传播")中绘制了多轮对话中有毒知识传播的准确度。重述准确度和局部性准确度的趋势分别显示在附录[VII-B](https://arxiv.org/html/2407.07791v2#Sx1.SS2 "VII-B 不同轮次的重述准确度 ‣ 附录 ‣ 基于LLM的多智能体社区中有毒知识的传播")和附录[VII-C](https://arxiv.org/html/2407.07791v2#Sx1.SS3 "VII-C 不同轮次的局部性准确度 ‣ 附录 ‣ 基于LLM的多智能体社区中有毒知识的传播")中。与反事实知识类似，它显示了随着对话轮次增加，传播准确度逐渐提高，突出显示了社区内长时间互动的累积效应。
 
-![参见标题](img/9aa1eb46d05a760143f57d3413c54630.png)
 
 图6：在基于LLM的多智能体社区中，操作过的有毒知识随对话轮次变化的准确度。
 
@@ -692,11 +690,9 @@ $\bullet$ 局部准确度（locality）评估代理在回答与操作知识相�
 
 改述准确性衡量了智能体对同一问题不同表述的应答稳健性（见[IV-A5节](https://arxiv.org/html/2407.07791v2#S4.SS1.SSS5 "IV-A5 主要评估指标 ‣ IV-A 实验设置 ‣ IV 评估 ‣ 在基于LLM的多智能体社区中操控知识的扩散")）。图[7](https://arxiv.org/html/2407.07791v2#Sx1.F7 "图7 ‣ VII-B 不同回合中的改述准确性 ‣ 附录 ‣ 在基于LLM的多智能体社区中操控知识的扩散")和图[8](https://arxiv.org/html/2407.07791v2#Sx1.F8 "图8 ‣ VII-B 不同回合中的改述准确性 ‣ 附录 ‣ 在基于LLM的多智能体社区中操控知识的扩散")分别展示了在操控的反事实和有毒知识上，经过多个对话回合后改述准确性的趋势。不同对话设置下的改述准确性趋势与评估部分中讨论的准确性趋势一致（见[IV-C节](https://arxiv.org/html/2407.07791v2#S4.SS3 "IV-C 反事实知识扩散结果 ‣ IV 评估 ‣ 在基于LLM的多智能体社区中操控知识的扩散")，[IV-D节](https://arxiv.org/html/2407.07791v2#S4.SS4 "IV-D 有毒知识扩散结果 ‣ IV 评估 ‣ 在基于LLM的多智能体社区中操控知识的扩散")）。
 
-![参见标题](img/de706f79e3244d9ed05b9cd3f5ce8743.png)
 
 图 7：基于LLM的多智能体社区中，通过多轮对话回合，操控的反事实知识的改述准确性。
 
-![参见标题](img/1a2f2c64f943857b848c584247d9596e.png)
 
 图 8：基于LLM的多智能体社区中，通过多轮对话回合，操控的有毒知识的改述准确性。
 
@@ -704,7 +700,6 @@ $\bullet$ 局部准确度（locality）评估代理在回答与操作知识相�
 
 局部准确度衡量模型正确回答与操控知识相关问题的能力，是对副作用检测的一个测试。我们在图[9](https://arxiv.org/html/2407.07791v2#Sx1.F9 "Figure 9 ‣ VII-C Locality Accuracy across Different Turns ‣ Appendix ‣ Flooding Spread of Manipulated Knowledge in LLM-Based Multi-Agent Communities")和[10](https://arxiv.org/html/2407.07791v2#Sx1.F10 "Figure 10 ‣ VII-C Locality Accuracy across Different Turns ‣ Appendix ‣ Flooding Spread of Manipulated Knowledge in LLM-Based Multi-Agent Communities")中分别展示了反事实和有毒知识在多个对话回合中的局部准确度趋势。与重述准确度不同，局部准确度在多个对话回合中变化相对较小。这表明对话回合数对智能体在操控知识邻近上下文中回答问题的能力影响有限。
 
-![参见标题](img/2dac8238e3098a200663da76866cc9c1.png)
 
 图9：操控的反事实知识在LLM基础的多智能体社区中，随对话回合数的变化而变化的局部准确度。
 

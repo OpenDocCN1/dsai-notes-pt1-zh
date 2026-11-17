@@ -256,7 +256,6 @@ OAEI 解剖学赛道仅包含人类和小鼠解剖学的参考对齐，该对齐
 
     测试用例 1：该路线最初包含大量标准化标签相同的琐碎对应项（例如，“femoral artery”和“Femoral_Artery”）。图 [4](https://arxiv.org/html/2312.00326v6#S5.F4 "Figure 4 ‣ item 1 ‣ 5.2.2\. OAEI Anatomy Track ‣ 5.2\. Evaluation of Three OAEI Tracks ‣ 5\. Evaluation ‣ Agent-OM: Leveraging LLM Agents for Ontology Matching") 比较了 Agent-OM 与 OAEI 2022 和 OAEI 2023 中 12 个 OM 系统在琐碎对应项对齐方面的结果。在与琐碎对应项匹配时，几乎所有 OM 系统都达到了相对较高的精确度和召回率。对于 Agent-OM，其整体 F1 得分在 2022 年和 2023 年排名第二。
 
-    ![参见标题](img/64426a31982824364934acee8dadfbaa.png)
 
     图 4\. OAEI 解剖学路线 测试用例 1。
 
@@ -276,7 +275,6 @@ OAEI MSE 路线提供了材料科学与工程本体的参考对齐（Nasr，[202
 
     测试用例 1：此用例提供了一个小版本的 MaterialInformation 和中等大小的 MatOnto 的参考对齐。该任务的挑战在于，参考故意包括了几个包含关系对齐点，而 OM 系统可能会错误地将包含关系映射为等价关系。图 [6](https://arxiv.org/html/2312.00326v6#S5.F6 "图 6 ‣ 项目 1 ‣ 5.2.3\. OAEI MSE 路径 ‣ 5.2\. 三个 OAEI 路径的评估 ‣ 5\. 评估 ‣ Agent-OM：利用 LLM 代理进行本体匹配") 将 Agent-OM 与 OAEI 2022 和 OAEI 2023 中 4 个 OM 系统的结果进行了比较。Agent-OM 实现了最佳性能，具有最高的 F1 分数。
 
-    ![参见标题说明](img/1210565ccdd477c73e32c5fc75366f67.png)
 
     图 6\. OAEI MSE 路径测试用例 1。
 
@@ -284,7 +282,6 @@ OAEI MSE 路线提供了材料科学与工程本体的参考对齐（Nasr，[202
 
     测试用例 2：此用例提供了大版本的 MaterialInformation 和中等大小的 MatOnto 的参考对齐。该任务的挑战在于对材料科学中使用的许多特定术语、缩写和首字母缩略词进行对齐。例如，“Au”代表“金”，“Ag”代表“银”，“Cu”代表“铜”。图 [7](https://arxiv.org/html/2312.00326v6#S5.F7 "图 7 ‣ 项目 2 ‣ 5.2.3\. OAEI MSE 路径 ‣ 5.2\. 三个 OAEI 路径的评估 ‣ 5\. 评估 ‣ Agent-OM：利用 LLM 代理进行本体匹配") 将 Agent-OM 与 OAEI 2022 和 OAEI 2023 中 4 个 OM 系统的结果进行了比较。Agent-OM 在 OAEI 2022 和 OAEI 2023 的精度、召回率和总体 F1 分数上都表现最好。由于 LLM 模型能够访问大量的训练文献，因此我们预计基于 LLM 的匹配器在此测试用例中会有较高的召回率。
 
-    ![参见标题说明](img/8c1ab85dbb0c05149464ab48e2774c3d.png)
 
     图 7\. OAEI MSE 路径测试用例 2。
 
@@ -330,11 +327,9 @@ OAEI MSE 路线提供了材料科学与工程本体的参考对齐（Nasr，[202
 
 我们通过要求LLM自我检查候选对应关系来使用验证器。这有助于检测两种常见类型的假阳性映射：（1）不存在的映射和（2）反直觉的映射。图[11](https://arxiv.org/html/2312.00326v6#S6.F11 "图11 ‣ 6.1.5\. 匹配验证器 ‣ 6.1\. 系统组件 ‣ 6\. 消融研究 ‣ Agent-OM: 利用LLM代理进行本体匹配")比较了我们分析的三个OAEI赛道中，使用和不使用验证的精确度、召回率和F1分数。使用验证的匹配结果通常在精确度和F1分数上有所提高，但召回率略有下降。这与CoT自一致性（CoT-SC）（Wang等，[2023b](https://arxiv.org/html/2312.00326v6#bib.bib77)）中的发现一致，在这些研究中，提供自我检查能够减少LLM的幻觉。请注意，我们的实验设置了相似度阈值$T\in[0.90,0.95]$，因此匹配性能的提高在统计上并不显著，但当相似度阈值较低时，匹配验证器将对性能产生重大影响。
 
-![参考说明](img/cda96b284b447ad90d595ed98f1489a5.png)
 
 (a)
 
-![参考说明](img/59224e76b8e8c699410e441d8050a63f.png)
 
 (b)
 
@@ -348,11 +343,9 @@ OAEI MSE 路线提供了材料科学与工程本体的参考对齐（Nasr，[202
 
 我们应用了一个合并函数 $O_{s}\Leftrightarrow O_{t}$，将 $O_{s}\Rightarrow O_{t}$ 和 $O_{s}\Leftarrow O_{t}$ 的结果结合，以提高匹配性能。图 [12](https://arxiv.org/html/2312.00326v6#S6.F12 "Figure 12 ‣ 6.1.6\. Matching Merger ‣ 6.1\. System Components ‣ 6\. Ablation Study ‣ Agent-OM: Leveraging LLM Agents for Ontology Matching") 显示了我们分析的三个 OAEI 路径中 $O_{s}\Rightarrow O_{t}$、$O_{t}\Leftarrow O_{s}$ 和 $O_{s}\Leftrightarrow O_{t}$ 的精度、召回率和 F1 分数的比较。合并后的匹配结果通常在精度和 F1 分数上有显著提升，而召回率略有下降。结果与 RAG-Fusion（Raudaschl, [[n.d.]](https://arxiv.org/html/2312.00326v6#bib.bib65)）中的发现一致，其中提供两条不同路径执行相同的匹配任务可以减少 LLM 的幻觉现象。
 
-![参见标题](img/c877a94301f913dc63cb6e6d8c852630.png)
 
 (a)
 
-![参见标题](img/f9af65ded8c0aedb96382d4b840b5d18.png)
 
 (b)
 

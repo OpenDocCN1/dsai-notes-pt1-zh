@@ -150,10 +150,8 @@ result = total.compute()
 
 假设我们有一组 CSV 文件（例如，1990-1999 年纽约的航班数据），需要计算每个机场的平均起飞延误时间。串行处理代码如下：
 
-![](img/2e0f3d0fda67c161aca31c77d327c239_9.png)
 
 
-![](img/2e0f3d0fda67c161aca31c77d327c239_11.png)
 
 ```python
 import pandas as pd
@@ -352,7 +350,6 @@ mean_along_axis0 = big_array.mean(axis=0).compute()
 
 ![](img/2e0f3d0fda67c161aca31c77d327c239_21.png)
 
-![](img/2e0f3d0fda67c161aca31c77d327c239_23.png)
 
 ![](img/2e0f3d0fda67c161aca31c77d327c239_24.png)
 
@@ -385,9 +382,7 @@ Dask Bag 非常适合数据清洗和预处理阶段，尤其是处理嵌套、�
 
 ## 5. 调度器与分布式计算 🌐
 
-![](img/2e0f3d0fda67c161aca31c77d327c239_26.png)
 
-![](img/2e0f3d0fda67c161aca31c77d327c239_27.png)
 
 到目前为止，我们的计算默认在单机的线程池或进程池中运行。Dask 的真正威力在于其分布式调度器，它可以将任务分配到多台机器组成的集群上执行。
 
@@ -440,9 +435,7 @@ result = df.groupby('origin')['dep_delay'].mean().compute()
 ![](img/2e0f3d0fda67c161aca31c77d327c239_29.png)
 
 
-![](img/2e0f3d0fda67c161aca31c77d327c239_31.png)
 
-![](img/2e0f3d0fda67c161aca31c77d327c239_33.png)
 
 ```python
 from dask.distributed import Client
@@ -466,15 +459,12 @@ print(future_c.result())
 
 Futures API 非常适合实现自定义的迭代算法、异步工作流或需要细粒度任务控制的场景。
 
-![](img/2e0f3d0fda67c161aca31c77d327c239_35.png)
 
-![](img/2e0f3d0fda67c161aca31c77d327c239_37.png)
 
 ---
 
 ## 总结
 
-![](img/2e0f3d0fda67c161aca31c77d327c239_39.png)
 
 ![](img/2e0f3d0fda67c161aca31c77d327c239_41.png)
 

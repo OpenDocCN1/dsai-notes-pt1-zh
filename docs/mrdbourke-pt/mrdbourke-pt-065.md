@@ -41,9 +41,7 @@
 
 以下是检查DataLoader的步骤：
 
-![](img/c4647565262b6e8cf6319aeeca8ea300_9.png)
 
-![](img/c4647565262b6e8cf6319aeeca8ea300_10.png)
 
 1.  **打印DataLoader**：查看DataLoader的基本信息。
     ```python
@@ -61,11 +59,9 @@
 
 ## 可视化批次中的样本
 
-![](img/c4647565262b6e8cf6319aeeca8ea300_12.png)
 
 为了更直观地理解DataLoader中的数据，我们可以从批次中随机选择一个样本进行可视化。
 
-![](img/c4647565262b6e8cf6319aeeca8ea300_14.png)
 
 以下是可视化批次样本的步骤：
 

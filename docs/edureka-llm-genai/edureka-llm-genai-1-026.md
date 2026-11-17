@@ -16,32 +16,25 @@ sns.heatmap(cm, annot=True, fmt='d')
 
 接着，我们设置坐标轴标签：
 
-![](img/3f73b6acc5b7c7d2b7d383f5af711bbb_1.png)
 
 ```python
 plt.xlabel('Predicted')
 plt.ylabel('Actual')
 ```
 
-![](img/3f73b6acc5b7c7d2b7d383f5af711bbb_2.png)
 
-![](img/3f73b6acc5b7c7d2b7d383f5af711bbb_3.png)
 
 这些代码行设置了热力图的 X 轴和 Y 轴标签，分别表示预测类别和真实类别。
 
 最后，使用 `plt.show()` 显示可视化结果。
 
-![](img/3f73b6acc5b7c7d2b7d383f5af711bbb_5.png)
 
 执行代码后，我们可以看到混淆矩阵的热力图表示，同时也能看到模型的准确率。
 
-![热力图示例](img/3f73b6acc5b7c7d2b7d383f5af711bbb_5.png)
 
 现在，我们可以看到预测值和实际值的具体数值。正如之前讨论的，混淆矩阵展示了真正例、假正例、假反例等。这就是其可视化表示的工作原理。
 
-![](img/3f73b6acc5b7c7d2b7d383f5af711bbb_7.png)
 
-![](img/3f73b6acc5b7c7d2b7d383f5af711bbb_8.png)
 
 ---
 
@@ -75,9 +68,7 @@ top_10_features = importances_series.nlargest(10)
 
 最后，绘制水平条形图来展示这些特征的重要性：
 
-![](img/3f73b6acc5b7c7d2b7d383f5af711bbb_10.png)
 
-![](img/3f73b6acc5b7c7d2b7d383f5af711bbb_11.png)
 
 ```python
 top_10_features.plot(kind='barh')
@@ -89,19 +80,15 @@ plt.show()
 
 执行这段代码，你将看到输出的图表。这段代码提供了特征重要性的视觉表示。
 
-![特征重要性示例](img/3f73b6acc5b7c7d2b7d383f5af711bbb_11.png)
 
 这使我们能够理解哪些特征对模型的预测有最显著的影响。它有助于特征选择和理解模型的行为。
 
 总而言之，本段代码完成了数据加载、预处理、划分训练集和测试集、构建并训练随机森林分类器、评估性能以及可视化特征重要性的全过程。这就是关于这个分类问题陈述的全部内容。
 
-![](img/3f73b6acc5b7c7d2b7d383f5af711bbb_13.png)
 
-![](img/3f73b6acc5b7c7d2b7d383f5af711bbb_14.png)
 
 ---
 
-![](img/3f73b6acc5b7c7d2b7d383f5af711bbb_15.png)
 
 ![](img/3f73b6acc5b7c7d2b7d383f5af711bbb_16.png)
 

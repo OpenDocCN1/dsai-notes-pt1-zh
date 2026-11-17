@@ -1,6 +1,5 @@
 # 200：4-GBDT梯度提升分类树使用 🚀
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_1.png)
 
 在本节课中，我们将学习如何使用梯度提升决策树（GBDT）进行分类任务。我们将从导入必要的库开始，逐步完成数据准备、模型训练、预测和评估的完整流程。
 
@@ -63,10 +62,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 *   `learning_rate`: 每棵树的贡献权重。
 *   `max_depth`: 每棵决策树的最大深度。
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_3.png)
 
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_5.png)
 
 ```python
 # 创建GBDT分类器实例
@@ -76,7 +73,6 @@ gbdt_model.fit(X_train, y_train)
 ```
 模型会迭代地构建100棵最大深度为3的决策树，学习率为0.1。
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_7.png)
 
 ---
 
@@ -89,9 +85,7 @@ gbdt_model.fit(X_train, y_train)
 
 以下是预测和计算准确率的代码：
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_9.png)
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_10.png)
 
 ```python
 # 对测试集进行预测
@@ -101,7 +95,6 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"模型在测试集上的准确率为：{accuracy:.4f}")
 ```
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_12.png)
 
 ---
 
@@ -109,7 +102,6 @@ print(f"模型在测试集上的准确率为：{accuracy:.4f}")
 
 为了获得更好的性能，我们通常需要调整模型的超参数。上一节我们完成了模型的初步训练和评估，本节中我们来看看如何进行参数调优。
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_14.png)
 
 常见的调优方法包括网格搜索（Grid Search）和随机搜索（Random Search）。以下是使用网格搜索的示例步骤：
 
@@ -117,16 +109,12 @@ print(f"模型在测试集上的准确率为：{accuracy:.4f}")
 2.  使用`GridSearchCV`进行交叉验证搜索。
 3.  找到最佳参数组合并训练最终模型。
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_16.png)
 
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_18.png)
 
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_20.png)
 
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_22.png)
 
 ```python
 from sklearn.model_selection import GridSearchCV
@@ -144,15 +132,12 @@ print("最佳参数组合：", grid_search.best_params_)
 print("最佳交叉验证分数：", grid_search.best_score_)
 ```
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_24.png)
 
 ---
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_26.png)
 
 ## 总结 🎯
 
-![](img/a6dcb1d93d7ec76615a1faa572f97f0f_28.png)
 
 本节课中我们一起学习了使用GBDT进行二元分类的完整流程。
 

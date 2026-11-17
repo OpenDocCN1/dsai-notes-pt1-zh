@@ -4,7 +4,6 @@
 
 在本节课中，我们将学习如何利用o1模型的强大推理能力来制定任务计划。我们将看到如何结合o1-mini的智能规划和GPT-4o-mini的高效执行，以平衡智能、延迟和成本，从而解决复杂的多步骤任务。
 
-![](img/9b13eb50de29b0f45b82f1f5eedc9c51_2.png)
 
 ![](img/9b13eb50de29b0f45b82f1f5eedc9c51_3.png)
 
@@ -12,7 +11,6 @@
 
 ![](img/9b13eb50de29b0f45b82f1f5eedc9c51_5.png)
 
-![](img/9b13eb50de29b0f45b82f1f5eedc9c51_6.png)
 
 ## 概述
 
@@ -36,18 +34,12 @@ o1模型的一个突出应用场景是：在给定一组执行工具和任务约
 
 首先，导入OpenAI密钥，并初始化OpenAI客户端以及o1和GPT-4o模型。
 
-![](img/9b13eb50de29b0f45b82f1f5eedc9c51_8.png)
-
-![](img/9b13eb50de29b0f45b82f1f5eedc9c51_9.png)
-
-![](img/9b13eb50de29b0f45b82f1f5eedc9c51_10.png)
-
-![](img/9b13eb50de29b0f45b82f1f5eedc9c51_11.png)
 
 
-![](img/9b13eb50de29b0f45b82f1f5eedc9c51_13.png)
 
-![](img/9b13eb50de29b0f45b82f1f5eedc9c51_15.png)
+
+
+
 
 ```python
 import openai
@@ -170,13 +162,10 @@ def orchestrate_scenario(scenario):
 
 ### 6. 运行示例
 
-![](img/9b13eb50de29b0f45b82f1f5eedc9c51_17.png)
 
-![](img/9b13eb50de29b0f45b82f1f5eedc9c51_19.png)
 
 定义好所有变量后，剩下的就是提出一个客户希望我们执行的场景。
 
-![](img/9b13eb50de29b0f45b82f1f5eedc9c51_21.png)
 
 ![](img/9b13eb50de29b0f45b82f1f5eedc9c51_22.png)
 
@@ -197,7 +186,6 @@ result = orchestrate_scenario(customer_scenario)
 print(result)
 ```
 
-![](img/9b13eb50de29b0f45b82f1f5eedc9c51_25.png)
 
 ## 计划与执行分析
 

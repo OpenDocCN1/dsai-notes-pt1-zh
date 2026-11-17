@@ -110,7 +110,6 @@ Alex C. Kot, IEEE 终身会员，Bihan Wen，IEEE 高级会员，郭兰青、王
 
 单图像阴影去除的目标是去除图像中的阴影，同时保持或恢复场景的原始外观。然而，实现这一目标面临一些挑战（参见图 4）：
 
-![参见图注](img/58fcf5786e1dbc11af6f0b1d6fb3412a.png)
 
 (a) 学习策略
 
@@ -1308,7 +1307,6 @@ Video [62] 阴影去除数据集包含 8 个视频，这些视频展示了静态
 
 (a) 输入
 
-![参考标题](img/1a9fb15d9808f2e280a35797cb21f031.png)
 
 (b) 遮罩（残差）
 
@@ -1316,7 +1314,6 @@ Video [62] 阴影去除数据集包含 8 个视频，这些视频展示了静态
 
 (c) 遮罩（DHAN [48])
 
-![参考标题](img/335fae97ca2ada978ab5eeb146777950.png)
 
 (d) DSC [46]
 
@@ -1328,7 +1325,6 @@ Video [62] 阴影去除数据集包含 8 个视频，这些视频展示了静态
 
 (f) AEF [52]
 
-![参考标题](img/ed9d7429f286b397568fd3c8baeb44d7.png)
 
 (g) EMDN [29]
 
@@ -1344,7 +1340,6 @@ Video [62] 阴影去除数据集包含 8 个视频，这些视频展示了静态
 
 (j) SG-ShadowNet [68]
 
-![参见说明](img/d6601046b57ab63380bc2bd4faf4dd86.png)
 
 (k) Inpaint4Shadow [74]
 
@@ -1352,11 +1347,9 @@ Video [62] 阴影去除数据集包含 8 个视频，这些视频展示了静态
 
 (l) ShadowDiffusion [30]
 
-![参见说明](img/1f899686566d05a9a1a15951b4002d6e.png)
 
 (m) DeS3 [76]
 
-![参见说明](img/f367682b39686cf551da671986cd9c46.png)
 
 (n) HomoFormer [78]
 
@@ -1374,7 +1367,6 @@ Video [62] 阴影去除数据集包含 8 个视频，这些视频展示了静态
 
 (a) 输入
 
-![参见说明](img/a2a87d05ce9a328c010a92384c950b4f.png)
 
 (b) 掩码 (残差)
 
@@ -1382,47 +1374,36 @@ Video [62] 阴影去除数据集包含 8 个视频，这些视频展示了静态
 
 (c) 掩码 (DHAN [48])
 
-![参见说明](img/d20d4ac7256608947e25afccc9275978.png)
 
 (d) DSC [46]
 
-![参见说明](img/5ed15cfdbb056c48ef38f8250ab74c90.png)
 
 (e) DHAN [48]
 
-![参见说明](img/402f09795c139d27f18e030e99d760b6.png)
 
 (f) AEF [52]
 
-![参见说明](img/94c14e387cd259507e99c0f8654c97bf.png)
 
 (g) EMDN [29]
 
-![参见说明](img/118f72ed1ffc838019186b42f3de95be.png)
 
 (h) BMNet [54]
 
-![参见说明](img/a50621aef090d75f6d6077f3263dfa8c.png)
 
 (i) DC-ShadowNet [58]
 
-![参见说明](img/ec4983532a016f01cd55d1071f40fb89.png)
 
 (j) SG-ShadowNet [68]
 
-![参见说明](img/17d94b44740597088d6d2b756ab8ee87.png)
 
 (k) Inpaint4Shadow [74]
 
-![参见说明](img/bdaea7cf04154e1225941b39948656e6.png)
 
 (l) ShadowDiffusion [30]
 
-![参见说明](img/1af1ef7cc4bca9c3d301090ec84690a3.png)
 
 (m) DeS3 [76]
 
-![参见说明](img/c07e13b646f97149e52ecc9d88bfe675.png)
 
 (n) HomoFormer [78]
 
@@ -1472,31 +1453,24 @@ Video [62] 阴影去除数据集包含 8 个视频，这些视频展示了静态
 
 (b) 掩膜（残差）
 
-![参见说明](img/5234ad42fcdd98827c094cf1836261a2.png)
 
 (c) SP+M-Net [51]
 
-![参见说明](img/6144d8908091f102d432d1a803cfbb8e.png)
 
 (d) EMDN [29]
 
-![参见说明](img/9acc7b3689f16a9514f6ec609cb532b5.png)
 
 (e) G2R-ShadowNet [63]
 
-![参见说明](img/259eec93654474500547f34b310b76f4.png)
 
 (f) Inpaint4Shadow [74]
 
-![参见说明](img/4997729c4fa6337457df728976f31676.png)
 
 (g) ShadowFormer [55]
 
-![参见说明](img/fdd9464b462094761d3e5551e8cc8a3c.png)
 
 (h) ShadowDiffusion [30]
 
-![参见说明](img/29daff33996d1b1b6b6e9e1ff677890f.png)
 
 (i) HomoFormer [78]
 
@@ -1514,27 +1488,21 @@ Video [62] 阴影去除数据集包含 8 个视频，这些视频展示了静态
 
 (b) 掩膜（残差）
 
-![参见说明](img/4f95b2bf03a88638cce663ed6fcb6626.png)
 
 (c) SP+M-Net [51]
 
-![参见说明](img/0041e9bbbbdec59d9604f0daabd9f382.png)
 
 (d) EMDN [29]
 
-![参见说明](img/8008f2550ed31bacc032421c5bd1741b.png)
 
 (e) G2R-ShadowNet [63]
 
-![参见说明](img/f51f1149f7b8defd20f6ea25bdb0ac12.png)
 
 (f) Inpaint4Shadow [74]
 
-![参见说明](img/dc211fb205c50ac3ff753b5ca0616c68.png)
 
 (g) ShadowFormer [55]
 
-![参见说明](img/cdf7e58149dc8ffade68c2cbdd4fa6cd.png)
 
 (h) ShadowDiffusion [30]
 

@@ -4,15 +4,11 @@
 
 上一节我们介绍了卷积神经网络的基本概念，本节中我们来看看二维卷积的具体维度计算。
 
-![](img/cf82abbda4ba626e8e12b8e0d7656a8e_1.png)
 
-![](img/cf82abbda4ba626e8e12b8e0d7656a8e_3.png)
 
 ## 输入与输出维度解析
 
-![](img/cf82abbda4ba626e8e12b8e0d7656a8e_5.png)
 
-![](img/cf82abbda4ba626e8e12b8e0d7656a8e_6.png)
 
 首先，我们来看一个典型的二维卷积定义：
 ```python
@@ -28,11 +24,9 @@ nn.Conv2d(in_channels=3, out_channels=64, kernel_size=3, stride=1, padding=0, bi
 
 ## 维度计算示例
 
-![](img/cf82abbda4ba626e8e12b8e0d7656a8e_8.png)
 
 让我们通过一个具体例子来理解维度如何变化。
 
-![](img/cf82abbda4ba626e8e12b8e0d7656a8e_10.png)
 
 假设我们有一张输入图像，其尺寸为 `9 x 9` 像素，并且有3个颜色通道（RGB）。因此，输入张量的形状为 `(3, 9, 9)`。
 
@@ -55,11 +49,9 @@ nn.Conv2d(in_channels=3, out_channels=64, kernel_size=3, stride=1, padding=0, bi
 
 在我们的例子中，如果设置 `out_channels=64`，那么输出张量的形状将是 `(64, 7, 7)`。
 
-![](img/cf82abbda4ba626e8e12b8e0d7656a8e_12.png)
 
 ## 滤波器结构与可学习参数
 
-![](img/cf82abbda4ba626e8e12b8e0d7656a8e_14.png)
 
 理解滤波器结构是计算参数数量的关键。
 
@@ -71,7 +63,6 @@ nn.Conv2d(in_channels=3, out_channels=64, kernel_size=3, stride=1, padding=0, bi
 **总参数数量计算：**
 总参数数 = `out_channels * (in_channels * kernel_height * kernel_width)`
 
-![](img/cf82abbda4ba626e8e12b8e0d7656a8e_16.png)
 
 如果 `bias=True`，则每个输出通道还会增加一个偏置参数：
 总参数数 = `out_channels * (in_channels * kernel_height * kernel_width + 1)`
@@ -81,11 +72,9 @@ nn.Conv2d(in_channels=3, out_channels=64, kernel_size=3, stride=1, padding=0, bi
 
 这意味着该卷积层有1728个权重值会在训练过程中被优化。
 
-![](img/cf82abbda4ba626e8e12b8e0d7656a8e_18.png)
 
 ## 总结
 
-![](img/cf82abbda4ba626e8e12b8e0d7656a8e_20.png)
 
 本节课中我们一起学习了二维卷积的核心维度概念。
 *   输入维度由 `(in_channels, H_in, W_in)` 定义。

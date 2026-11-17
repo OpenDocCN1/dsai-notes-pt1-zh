@@ -69,7 +69,6 @@
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_43.png)
 
-![](img/849f9634ffa9fef9cf255d58f370c34c_45.png)
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_47.png)
 
@@ -106,7 +105,6 @@ flag = true;
 *   **进展性**：❌ **不保证**。执行顺序被固定：必须先执行 `S2`，然后才能执行 `S1`。如果 `T2` 不执行，`T1` 将永远等待。
 *   **死锁**：✅ **不会发生**。因为 `flag` 的值非真即假，不会导致两个线程都卡在 `while` 循环中。
 
-![](img/849f9634ffa9fef9cf255d58f370c34c_59.png)
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_61.png)
 
@@ -114,7 +112,6 @@ flag = true;
 
 **结论**：此方案存在严重缺陷，无法保证互斥性。
 
-![](img/849f9634ffa9fef9cf255d58f370c34c_65.png)
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_67.png)
 
@@ -142,7 +139,6 @@ flag = true;
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_85.png)
 
-![](img/849f9634ffa9fef9cf255d58f370c34c_87.png)
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_89.png)
 
@@ -168,7 +164,6 @@ flag = true;
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_99.png)
 
-![](img/849f9634ffa9fef9cf255d58f370c34c_101.png)
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_103.png)
 
@@ -187,9 +182,7 @@ flag = true;
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_108.png)
 
-![](img/849f9634ffa9fef9cf255d58f370c34c_110.png)
 
-![](img/849f9634ffa9fef9cf255d58f370c34c_112.png)
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_113.png)
 
@@ -298,14 +291,12 @@ Peterson算法巧妙地结合了**声明意向** (`flag[]`) 和**礼貌谦让** 
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_150.png)
 
-![](img/849f9634ffa9fef9cf255d58f370c34c_152.png)
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_154.png)
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_156.png)
 
 
-![](img/849f9634ffa9fef9cf255d58f370c34c_158.png)
 
 ```c
 volatile bool flag[2] = {false, false};
@@ -348,7 +339,6 @@ void unlock(int tid) {
 4.  **牺牲变量法 (V2)**：保证互斥性且无死锁，但无进展性。
 5.  **Peterson算法 (V3)**：完美地同时保证了**互斥性**、**进展性**和**无死锁**。
 
-![](img/849f9634ffa9fef9cf255d58f370c34c_164.png)
 
 ![](img/849f9634ffa9fef9cf255d58f370c34c_166.png)
 

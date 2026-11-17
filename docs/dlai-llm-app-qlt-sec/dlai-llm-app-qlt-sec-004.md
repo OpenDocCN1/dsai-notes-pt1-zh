@@ -1,6 +1,5 @@
 # 004：数据泄露与毒性检测 🛡️
 
-![](img/bcc9159ebf7d99d4996e39f7204ddf80_1.png)
 
 在本节课中，我们将学习如何检测数据泄露。数据泄露是指私人数据出现在提示词或大语言模型的响应中。我们将从简单的指标开始，逐步介绍最先进的方法。
 
@@ -38,7 +37,6 @@ from helper_functions import *
 data = load_dataset()
 ```
 
-![](img/bcc9159ebf7d99d4996e39f7204ddf80_3.png)
 
 现在，我们可以查看一个数据泄露的示例。
 
@@ -106,7 +104,6 @@ CONFIDENTIAL_ENTITIES = {"PERSON", "PRODUCT", "ORG"}
 接下来，创建一个基于实体模型的评估指标函数。
 
 
-![](img/bcc9159ebf7d99d4996e39f7204ddf80_5.png)
 
 ```python
 from whylogs.core.udf_schema import register_metric_udf

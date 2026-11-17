@@ -50,9 +50,7 @@ Python 提供了大量用于数据可视化的库，以下是其中几个核心�
 
 ### IBM Cognos Analytics
 
-![](img/241e5867567a733bea997716df79dd9d_3.png)
 
-![](img/241e5867567a733bea997716df79dd9d_4.png)
 
 IBM Cognos Analytics 是一个端到端的分析解决方案。Cognos 提供的一些可视化功能包括：
 *   导入自定义可视化。

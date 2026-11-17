@@ -30,7 +30,6 @@ We'll then un discuss inception， which will be a means of combining different 
 
 
 
-![](img/264736b3cc0055a45472f62673b55132_1.png)
 
 So starting off with Lyette， Wellette was created by Ian McCum in the 1990s， so again。
 
@@ -50,7 +49,6 @@ And he was able to use this concept of convolutions for the first time to effici
 
 
 
-![](img/264736b3cc0055a45472f62673b55132_3.png)
 
 So let's walk through the actual architecture of working with Lyette。
 
@@ -140,7 +138,6 @@ And now we are just working with fully connected layers so we can go from 400 do
 
 
 
-![](img/264736b3cc0055a45472f62673b55132_5.png)
 
 So how many weights did we actually have to train as we walked through this Lynette structure？
 
@@ -166,6 +163,5 @@ That close out discussion here in regards to Lyette in the next video。
 
  I'll see you there。
 
-![](img/264736b3cc0055a45472f62673b55132_7.png)
 
 ![](img/264736b3cc0055a45472f62673b55132_8.png)

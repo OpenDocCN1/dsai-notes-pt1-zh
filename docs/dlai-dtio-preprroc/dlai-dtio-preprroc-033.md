@@ -2,7 +2,6 @@
 
 在本节课中，我们将学习如何安全地管理API密钥。我们将探讨为什么不能将密钥直接硬编码在代码中，并介绍使用环境变量和`.env`文件来保护敏感信息的行业标准做法。
 
-![](img/293ea26080d5271ffc13ec9b1ec7cccb_1.png)
 
 ---
 
@@ -10,7 +9,6 @@
 
 但看起来你像是凭空加载了你的API密钥。
 
-![](img/293ea26080d5271ffc13ec9b1ec7cccb_1.png)
 
 让我们退一步，分解一下你所看到的代码是如何安全加载API密钥的。
 
@@ -28,12 +26,8 @@
 
 当你在一家公司担任数据分析师时，你经常需要分享你的代码，但你不想分享你的API密钥。你现在学习最佳实践，是为了避免未来的安全问题。
 
-![](img/293ea26080d5271ffc13ec9b1ec7cccb_3.png)
 
-![](img/293ea26080d5271ffc13ec9b1ec7cccb_3.png)
-![](img/293ea26080d5271ffc13ec9b1ec7cccb_4.png)
 
-![](img/293ea26080d5271ffc13ec9b1ec7cccb_4.png)
 
 你可以使用环境变量。环境变量是存储在你的Python文件外部的值，你的代码可以在需要时访问它们。
 
@@ -53,13 +47,11 @@ FOOD_SAFETY_API_KEY=your_actual_key_here
 
 你甚至可以添加多个密钥。只需确保这个文件永远不会被分享或上传到公共网络。
 
-![](img/293ea26080d5271ffc13ec9b1ec7cccb_6.png)
 
 现在，如果你的电脑里只有一个`.env`文件躺着，它对你没什么用。你需要让你的Python文件能够访问那些信息。
 
 让我们看看你之前使用的代码，并逐行分解它。
 
-![](img/293ea26080d5271ffc13ec9b1ec7cccb_6.png)
 
 ```python
 import os
@@ -76,7 +68,6 @@ API_KEY = os.getenv(‘FOOD_SAFETY_API_KEY’)
 *   `load_dotenv()`函数读取`.env`文件，并将其内容作为环境变量提供。
 *   `API_KEY = os.getenv(‘FOOD_SAFETY_API_KEY’)`从环境中检索`FOOD_SAFETY_API_KEY`的值，并将其存储在`API_KEY`变量中。
 
-![](img/293ea26080d5271ffc13ec9b1ec7cccb_8.png)
 
 关于API密钥的出色工作！你已经学会了一项行业标准的安全措施，作为数据分析师，你会经常用到它。
 

@@ -2,13 +2,10 @@
 
 在本节课中，我们将要学习如何使用Python的Pandas库来加载和处理数据。Pandas是一个强大的数据分析库，它提供了简单易用的数据结构和数据分析工具，是进行数据科学和人工智能项目的基础。
 
-![](img/bc63774810e1edc394ab376fa582e1de_1.png)
 
-![](img/bc63774810e1edc394ab376fa582e1de_2.png)
 
 ## 概述：什么是依赖库？
 
-![](img/bc63774810e1edc394ab376fa582e1de_3.png)
 
 依赖库或库是预先编写好的代码，用于帮助解决特定问题。在数据分析领域，Pandas是一个非常流行的库。
 
@@ -30,46 +27,35 @@ import pandas as pd
 
 现在，我们可以使用`pd`来调用Pandas的所有功能，这比每次都输入`pandas`要方便得多。
 
-![](img/bc63774810e1edc394ab376fa582e1de_5.png)
 
 ## 加载CSV文件
 
-![](img/bc63774810e1edc394ab376fa582e1de_6.png)
 
-![](img/bc63774810e1edc394ab376fa582e1de_7.png)
 
-![](img/bc63774810e1edc394ab376fa582e1de_8.png)
 
 CSV（逗号分隔值）是一种常用于存储数据的文件格式。Pandas提供了`read_csv()`函数来读取这种文件。
 
-![](img/bc63774810e1edc394ab376fa582e1de_9.png)
 
-![](img/bc63774810e1edc394ab376fa582e1de_10.png)
 
 以下是加载CSV文件的基本步骤：
 1.  指定CSV文件的路径。
 2.  使用`pd.read_csv()`函数读取文件。
 3.  将读取的结果存储在一个变量中，这个变量通常被称为**数据框**。
 
-![](img/bc63774810e1edc394ab376fa582e1de_11.png)
 
-![](img/bc63774810e1edc394ab376fa582e1de_12.png)
 
 ```python
 path = ‘file.csv‘
 df = pd.read_csv(path)
 ```
 
-![](img/bc63774810e1edc394ab376fa582e1de_13.png)
 
-![](img/bc63774810e1edc394ab376fa582e1de_14.png)
 
 在上面的代码中：
 *   `path`变量存储了CSV文件的路径。
 *   `pd.read_csv(path)`是调用读取CSV文件的函数。
 *   `df`是存储结果的变量，它是“data frame”（数据框）的缩写。
 
-![](img/bc63774810e1edc394ab376fa582e1de_15.png)
 
 现在，数据已经加载到名为`df`的数据框中，我们可以开始对其进行操作。例如，使用`.head()`方法可以查看数据框的前五行。
 
@@ -77,17 +63,13 @@ df = pd.read_csv(path)
 df.head()
 ```
 
-![](img/bc63774810e1edc394ab376fa582e1de_17.png)
 
-![](img/bc63774810e1edc394ab376fa582e1de_18.png)
 
 ## 加载Excel文件
 
 加载Excel文件的过程与加载CSV文件类似。我们使用`read_excel()`函数，并传入Excel文件的路径。
 
-![](img/bc63774810e1edc394ab376fa582e1de_20.png)
 
-![](img/bc63774810e1edc394ab376fa582e1de_21.png)
 
 ```python
 path = ‘file.xlsx‘
@@ -96,17 +78,13 @@ df_excel = pd.read_excel(path)
 
 同样，结果`df_excel`也是一个Pandas数据框。
 
-![](img/bc63774810e1edc394ab376fa582e1de_23.png)
 
 ## 理解数据框
 
-![](img/bc63774810e1edc394ab376fa582e1de_24.png)
 
-![](img/bc63774810e1edc394ab376fa582e1de_25.png)
 
 数据框是Pandas的核心数据结构，它由行和列组成，类似于一个电子表格或SQL表。
 
-![](img/bc63774810e1edc394ab376fa582e1de_27.png)
 
 我们不仅可以从文件创建数据框，还可以直接从Python字典创建。在字典中，键（keys）对应数据框的列标签，值（values）是对应行的数据列表。
 
@@ -122,13 +100,10 @@ data = {
 df_from_dict = pd.DataFrame(data)
 ```
 
-![](img/bc63774810e1edc394ab376fa582e1de_29.png)
 
-![](img/bc63774810e1edc394ab376fa582e1de_30.png)
 
 创建的数据框`df_from_dict`将直接反映字典的结构：键成为列标题，列表成为行数据。
 
-![](img/bc63774810e1edc394ab376fa582e1de_31.png)
 
 ## 从数据框中选择列
 
@@ -150,7 +125,6 @@ multiple_columns_df = df[[‘Column1‘, ‘Column2‘, ‘Column3‘]]
 
 结果`multiple_columns_df`是一个由指定列组成的新数据框。
 
-![](img/bc63774810e1edc394ab376fa582e1de_33.png)
 
 ![](img/bc63774810e1edc394ab376fa582e1de_34.png)
 

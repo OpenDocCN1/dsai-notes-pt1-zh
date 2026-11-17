@@ -4,7 +4,6 @@
 
 ![](img/3bcb4d62da92adfc595307e8d6399bb0_2.png)
 
-![](img/3bcb4d62da92adfc595307e8d6399bb0_4.png)
 
 在本节课中，我们将学习并完成一个关于图像边缘检测的OpenCL内核优化练习。我们将通过实现一个图像互相关（cross-correlation）算法来应用一个边缘检测滤波器，并学习如何将计算任务分配到多个OpenCL计算设备上。
 

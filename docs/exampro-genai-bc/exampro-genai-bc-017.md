@@ -1,24 +1,15 @@
 # 17：使用AI编码助手构建后端API 🚀
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_1.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_2.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_3.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_5.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_6.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_8.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_10.png)
 
 ## 概述
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_12.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_13.png)
 
 在本节课中，我们将学习如何利用AI编码助手（如Cursor）来高效地构建一个语言学习门户的后端API。我们将从理解项目需求开始，逐步使用AI工具来规划、实现和测试一个关键的API端点。课程将重点展示AI辅助开发的完整工作流程，包括需求分析、代码生成、测试和调试。
 
@@ -38,15 +29,12 @@
 
 上一节我们介绍了课程的整体安排，本节中我们来看看本周的具体项目。
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_21.png)
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_23.png)
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_25.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_26.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_27.png)
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_28.png)
 
@@ -59,7 +47,6 @@
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_32.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_33.png)
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_35.png)
 
@@ -69,11 +56,9 @@
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_39.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_40.png)
 
 ### 应用演示与架构
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_42.png)
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_44.png)
 
@@ -83,9 +68,7 @@
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_48.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_50.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_52.png)
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_54.png)
 
@@ -93,7 +76,6 @@
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_56.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_58.png)
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_59.png)
 
@@ -121,7 +103,6 @@ WordGroup -> has_many -> Words (通过联结表)
 
 在开始编码之前，你需要准备好你的AI编码助手。以下是推荐的步骤：
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_64.png)
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_65.png)
 
@@ -146,29 +127,20 @@ WordGroup -> has_many -> Words (通过联结表)
 
 ### 制定开发规则（Cursor Rules）
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_68.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_70.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_71.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_73.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_75.png)
 
 与AI协作就像指导一位初级开发者。为了提高代码质量并保持一致性，我们可以为AI创建“规则”（Rules）。
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_77.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_79.png)
 
 规则是告诉AI在特定项目或目录中应遵循的编码规范和惯例的文档。例如，我们可以创建一个针对 Flask 后端的规则。
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_81.png)
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_82.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_84.png)
 
 创建规则的步骤：
 1.  进入 Cursor 设置 (`Settings` -> `General` -> `Project Rules`)。
@@ -201,7 +173,6 @@ WordGroup -> has_many -> Words (通过联结表)
 **第一步：生成详细实现计划**
 与其直接让AI编写代码，不如先让它制定一个分步计划。这能确保AI理解所有细节，并让你能控制开发进程。
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_92.png)
 
 你可以将项目需求粘贴到 ChatGPT 或 Cursor 的 Chat 中，并给出如下指令：
 ```
@@ -280,20 +251,16 @@ curl -X POST http://localhost:5000/api/study_sessions \
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_104.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_105.png)
 
 一个基本的技术规格文档应包含：
 1.  **业务需求**：用列表形式描述系统需要做什么。
 2.  **API端点规范**：列出所有端点（GET/POST/PUT/DELETE），描述其功能、请求格式和响应格式。
 3.  **数据库模式**：定义主要的数据表及其字段、类型和关系。
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_107.png)
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_108.png)
 
 你可以手动编写这份文档，也可以让AI根据你的描述生成初稿。在后续开发中，不断让AI“参考技术规格文档”，以确保实现与设计保持一致。
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_109.png)
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_111.png)
 
@@ -305,7 +272,6 @@ curl -X POST http://localhost:5000/api/study_sessions \
 
 我们首先明确了语言学习门户的项目需求，然后演示了如何设置和使用 Cursor 这一强大的AI编程工具。核心的实战环节展示了通过“生成计划-逐步执行”的方法，高效、可控地实现了一个复杂的API端点。我们还探讨了创建开发规则、编写测试、调试以及项目文档化的重要性。
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_114.png)
 
 ![](img/79bd73c5d3880d121dc048ea0fd982a6_115.png)
 
@@ -319,7 +285,6 @@ curl -X POST http://localhost:5000/api/study_sessions \
 *   作业提交平台将在每周的课程材料末尾提供。请合理安排时间，注重持续交付而非完美主义。
 *   鼓励在社区（如Discord特定频道）分享你的作品和开发过程。
 
-![](img/79bd73c5d3880d121dc048ea0fd982a6_117.png)
 
 请继续关注本周即将发布的其他教学视频，包括前端开发、测试代码生成等更多AI辅助开发场景。祝你编码愉快！
 

@@ -14,7 +14,6 @@ TensorFlow Serving 是一个灵活、高性能的机器学习模型服务系统�
 
 ---
 
-![](img/2b6fb71010748249f0e74d6f680960aa_2.png)
 
 ## TensorFlow Serving 的核心特性
 

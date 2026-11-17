@@ -18,7 +18,6 @@ And the batches are not going to be the exact same ones every single time。
 
 
 
-![](img/5b063643736e001f3a407a8e8169e6b9_1.png)
 
 So let's go over what this actually looks like。Now， if we were to do full batch rating descent。
 
@@ -26,7 +25,6 @@ Then we would run through the entire data set， that would be a single epoch。
 
  and then there would be no reordering necessary。
 
-![](img/5b063643736e001f3a407a8e8169e6b9_3.png)
 
 Now if we are to split this into multiple batches。As we normally would with mini batch gradient descent。
 
@@ -34,7 +32,6 @@ Now if we are to split this into multiple batches。As we normally would with mi
 
  batch two being a certain subset and so on。
 
-![](img/5b063643736e001f3a407a8e8169e6b9_5.png)
 
 And then recall that at each one of these batches， we find the derivative and use that to move our weights towards the optimal value。
 
@@ -44,7 +41,6 @@ And once we run through the whole data set， then we've run through a single ep
 
  we're going to run through more than one epoch。
 
-![](img/5b063643736e001f3a407a8e8169e6b9_7.png)
 
 We're going to want to actually have multiple run throughs of the data set。
 
@@ -54,7 +50,6 @@ We're going to want to actually have multiple run throughs of the data set。
 
  multiple epochs through our full data set。
 
-![](img/5b063643736e001f3a407a8e8169e6b9_9.png)
 
 And you see that there's not that same ordering of the different colors。
 
@@ -62,7 +57,6 @@ And you see that there's not that same ordering of the different colors。
 
 
 
-![](img/5b063643736e001f3a407a8e8169e6b9_11.png)
 
 Rather than going back to batch 1， it's going to actually start with some other random batch。
 
@@ -76,7 +70,6 @@ And that will be the next step and will keep running through until we reach that
 
 
 
-![](img/5b063643736e001f3a407a8e8169e6b9_13.png)
 
 Now that closes out this video。Now let's recap what we learned here in this section。In this section。
 
@@ -102,6 +95,5 @@ And in the next video， we'll actually introduce the library that we'll be usin
 
  Allright， I'll see you there。
 
-![](img/5b063643736e001f3a407a8e8169e6b9_15.png)
 
 ![](img/5b063643736e001f3a407a8e8169e6b9_16.png)

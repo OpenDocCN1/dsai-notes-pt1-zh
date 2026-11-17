@@ -10,7 +10,6 @@
 在模块1中，你已经见过`Sequential`的用法。它非常便捷，但PyTorch中更常见且灵活的模式是使用`nn.Module`来创建自定义模型。以下代码实现的功能与`Sequential`版本完全相同，但提供了更多控制权。
 
 
-![](img/644b5b157fba1443d1e94777dcc396bc_1.png)
 
 ```python
 import torch.nn as nn
@@ -61,9 +60,7 @@ for epoch in range(num_epochs):
 
 这个标准顺序至关重要。`zero_grad()` 清除所有旧的计算结果，`backward()` 计算出改进方向（梯度），`step()` 根据梯度更新你的模型。
 
-![](img/644b5b157fba1443d1e94777dcc396bc_3.png)
 
-![](img/644b5b157fba1443d1e94777dcc396bc_4.png)
 
 如果你不遵循这个标准顺序，你的训练可能会静默地失败。PyTorch不会抛出错误，但模型无法正常学习。例如：
 *   如果你交换了 `backward()` 和 `step()` 的顺序，代码可以正常运行，但模型将基于**上一个批次**的计算结果来更新自己，而不是当前批次。

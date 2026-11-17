@@ -1,6 +1,5 @@
 # 006：行业应用 🏢
 
-![](img/ad90c74283eb924b90d2c9bdae88d1a4_0.png)
 
 ![](img/ad90c74283eb924b90d2c9bdae88d1a4_0.png)
 
@@ -8,7 +7,6 @@
 
 
 
-![](img/ad90c74283eb924b90d2c9bdae88d1a4_2.png)
 
 ![](img/ad90c74283eb924b90d2c9bdae88d1a4_2.png)
 
@@ -76,9 +74,7 @@ print(response)
 
 
 
-![](img/ad90c74283eb924b90d2c9bdae88d1a4_11.png)
 
-![](img/ad90c74283eb924b90d2c9bdae88d1a4_11.png)
 
 对于第二个例子，你将分析这个包含不同业务单元财务信息的表格。你可以看到一些关于收入、利润率和同比增长的信息。让我们给它一个提示。
 
@@ -94,9 +90,7 @@ print(response)
 
 
 
-![](img/ad90c74283eb924b90d2c9bdae88d1a4_13.png)
 
-![](img/ad90c74283eb924b90d2c9bdae88d1a4_13.png)
 
 现在让我们尝试更多。运行一个类似的查询，但这次添加一个推理信息。我们想找出哪个业务单元的收入增长最高。
 
@@ -115,9 +109,7 @@ print(response)
 
 
 
-![](img/ad90c74283eb924b90d2c9bdae88d1a4_15.png)
 
-![](img/ad90c74283eb924b90d2c9bdae88d1a4_15.png)
 
 为了分析这个流程图，让我们提供这样一个提示：要求视觉模型以编号列表的形式，提供图像中流程图的总结性分解。
 
@@ -131,9 +123,7 @@ print(response)
 
 
 
-![](img/ad90c74283eb924b90d2c9bdae88d1a4_17.png)
 
-![](img/ad90c74283eb924b90d2c9bdae88d1a4_17.png)
 
 你甚至可以进一步推动视觉模型。你可以要求它分析图像中的流程图，并输出实现该流程的单个函数的代码。
 
@@ -159,6 +149,5 @@ print(response)
 
 很棒，我们下节课见。
 
-![](img/ad90c74283eb924b90d2c9bdae88d1a4_19.png)
 
 ![](img/ad90c74283eb924b90d2c9bdae88d1a4_19.png)

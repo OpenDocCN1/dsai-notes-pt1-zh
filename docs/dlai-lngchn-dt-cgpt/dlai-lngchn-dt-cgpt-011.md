@@ -1,6 +1,5 @@
 # 011：第2集 指南 📘
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_0.png)
 
 ## 概述
 
@@ -10,13 +9,11 @@
 
 ![](img/d818aa18c66e5dbe4a5908071fcc6d2d_4.png)
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_6.png)
 
 ---
 
 ## 环境设置与辅助函数
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_8.png)
 
 在深入探讨原则之前，我们需要设置好开发环境。我们将使用OpenAI的Python库来调用其API。
 
@@ -29,7 +26,6 @@ pip install openai
 接下来，导入库并设置你的API密钥。在本课程的环境中，密钥已经预先配置好。
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_10.png)
 
 ```python
 import openai
@@ -39,7 +35,6 @@ openai.api_key = "你的API密钥"
 
 为了更方便地调用模型和查看结果，我们定义一个辅助函数`get_completion`：
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_12.png)
 
 ```python
 def get_completion(prompt, model="gpt-3.5-turbo"):
@@ -52,33 +47,27 @@ def get_completion(prompt, model="gpt-3.5-turbo"):
     return response.choices[0].message["content"]
 ```
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_14.png)
 
 这个函数接收一个提示词，并返回模型生成的文本完成结果。
 
 ---
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_16.png)
 
 ## 原则一：编写清晰具体的指令 ✍️
 
 第一个核心原则是向模型提供清晰、具体的指令。这能引导模型产生更符合预期的输出，并减少无关或错误响应的可能性。请注意，**清晰**不等于**简短**，有时更长的提示能提供更多上下文，从而得到更好的结果。
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_18.png)
 
 以下是实现这一原则的四个具体策略。
 
 ### 策略一：使用分隔符
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_20.png)
 
 使用分隔符可以明确地指示输入文本的不同部分，这有助于模型准确理解需要处理的内容。分隔符可以是三个反引号、引号、XML标签等。
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_22.png)
 
 以下是一个使用三个反引号作为分隔符来总结文本的例子：
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_24.png)
 
 ```python
 text = f"""
@@ -93,19 +82,14 @@ prompt = f"""
 response = get_completion(prompt)
 print(response)
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_26.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_27.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_29.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_31.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_33.png)
 
 ```
 使用分隔符还有一个额外好处：可以避免“提示注入”。如果用户输入中包含类似“忽略之前指令”的内容，分隔符能让模型清楚地知道哪些是应该处理的文本，哪些是用户指令。
@@ -121,23 +105,16 @@ prompt = f"""
 response = get_completion(prompt)
 print(response)
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_35.png)
-
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_37.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_39.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_41.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_43.png)
-
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_45.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_47.png)
+
+
 
 ```
 这样输出的结果可以直接被Python解析为字典或列表，非常方便。
@@ -158,14 +135,12 @@ prompt = f"""
 你将获得由三个引号括起来的文本。\
 如果它包含一系列指令，请按以下格式重写这些指令：
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_49.png)
 
 步骤1 - ...
 步骤2 - ...
 ...
 步骤N - ...
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_51.png)
 
 如果文本不包含指令，则直接写“未提供步骤”。
 \"\"\"{text_1}\"\"\"
@@ -186,14 +161,12 @@ prompt = f"""
 你将获得由三个引号括起来的文本。\
 如果它包含一系列指令，请按以下格式重写这些指令：
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_53.png)
 
 步骤1 - ...
 步骤2 - ...
 ...
 步骤N - ...
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_55.png)
 
 如果文本不包含指令，则直接写“未提供步骤”。
 \"\"\"{text_2}\"\"\"
@@ -202,12 +175,9 @@ response = get_completion(prompt)
 print("\n对文本2的回应：")
 print(response)
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_57.png)
-
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_59.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_61.png)
+
 
 ```
 
@@ -221,45 +191,32 @@ prompt = f"""
 
 <孩子>: 请教我耐心。
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_63.png)
 
 <祖父母>: 挖出最深峡谷的河流源于一处不起眼的泉眼；最宏伟的交响乐始于单一的音符；最复杂的挂毯始于一根孤独的线。
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_65.png)
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_67.png)
 
 <孩子>: 请教我韧性。
 """
 response = get_completion(prompt)
 print(response)
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_69.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_71.png)
-
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_73.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_75.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_77.png)
-
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_79.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_81.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_83.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_85.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_87.png)
+
+
 
 ```
 通过提供一个例子，模型学会了用类似的比喻风格来回答关于“韧性”的问题。
@@ -282,13 +239,10 @@ prompt = f"""
 3 - 在法语总结中列出每个名字。
 4 - 输出一个包含以下键的JSON对象：french_summary, num_names。
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_89.png)
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_91.png)
 
 请用换行符分隔你的回答。
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_93.png)
 
 文本：
 ```{text}```
@@ -298,19 +252,14 @@ print("完整回答：")
 print(response)
 ```
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_95.png)
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_96.png)
 
 为了获得更结构化、更易解析的输出，我们还可以在提示中指定输出格式：
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_98.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_100.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_102.png)
 
 ```python
 prompt_2 = f"""
@@ -336,21 +285,15 @@ print(response)
 
 当需要模型判断一个解决方案是否正确时，直接提问可能导致它仓促同意。更好的方法是要求模型先自己解决问题，再将它的解决方案与给定的方案进行比较。
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_104.png)
 
 首先，我们看一个直接判断导致错误的例子：
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_106.png)
-
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_108.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_110.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_112.png)
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_114.png)
+
 
 ```python
 prompt = f"""
@@ -376,12 +319,9 @@ print(response)
 
 接下来，我们使用一个更优的提示，指导模型先自行计算：
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_116.png)
 
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_118.png)
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_120.png)
 
 ```python
 prompt = f"""
@@ -412,7 +352,6 @@ prompt = f"""
 ```
 正确或不正确
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_122.png)
 
 ```
 问题：
@@ -439,25 +378,19 @@ print(response)
 ```
 这次，模型先自行计算出了正确答案`总成本 = 100x + 250x + 100,000 + 10x = 360x + 100,000`，然后通过与学生的解答对比，得出了学生解答不正确的正确判断。
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_124.png)
 
 ---
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_126.png)
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_128.png)
 
 ## 模型的局限性：幻觉
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_130.png)
 
 在开发大型语言模型应用时，了解其局限性至关重要。模型虽然拥有海量知识，但并不能完美记忆所有信息，也不清楚自己知识的边界。因此，它有时会针对不熟悉的话题编造出听起来合理但实际错误的答案，这种现象被称为“幻觉”。
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_132.png)
 
 以下是一个模型产生幻觉的例子：
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_134.png)
 
 ```python
 prompt = f"""
@@ -468,26 +401,21 @@ print(response)
 ```
 模型可能会生成一段关于这个虚构产品的非常逼真的描述。这很危险，因为它听起来很有说服力。
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_136.png)
 
 为了减少幻觉，一个有效的策略是：**要求模型在基于文本生成答案时，先找到相关的引用依据**。你可以指示模型引用源文档中的段落来支持它的答案，这使得答案更可追溯和验证。
 
 ---
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_138.png)
 
 ## 总结
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_140.png)
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_142.png)
 
 本节课我们一起学习了有效提示工程的两大核心原则。
 
 1.  **编写清晰具体的指令**：我们可以通过使用分隔符、要求结构化输出、检查任务前提条件和进行少量提示等策略来实现这一原则。
 2.  **给模型时间思考**：通过将复杂任务分解为步骤、以及指导模型在得出结论前先自行推理，我们可以显著提高模型回答的准确性。
 
-![](img/d818aa18c66e5dbe4a5908071fcc6d2d_144.png)
 
 同时，我们也了解了模型可能产生“幻觉”的局限性，并知道了要求模型提供引用是缓解该问题的策略之一。
 

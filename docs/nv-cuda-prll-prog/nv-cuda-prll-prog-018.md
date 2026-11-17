@@ -20,7 +20,6 @@
 
 ### 动态并行的适用场景
 
-![](img/002934d3a534431b7d11e9761f381033_6.png)
 
 ![](img/002934d3a534431b7d11e9761f381033_8.png)
 
@@ -80,7 +79,6 @@ nvcc -arch=sm_35 -rdc=true dynamic_example.cu -o dynamic_example
 
 ![](img/002934d3a534431b7d11e9761f381033_29.png)
 
-![](img/002934d3a534431b7d11e9761f381033_31.png)
 
 ![](img/002934d3a534431b7d11e9761f381033_32.png)
 
@@ -184,13 +182,11 @@ cudaMemcpyAsync(..., cudaMemcpyDeviceToHost); // 从 GPU 1 异步拷贝数据
 
 ![](img/002934d3a534431b7d11e9761f381033_73.png)
 
-![](img/002934d3a534431b7d11e9761f381033_75.png)
 
 ![](img/002934d3a534431b7d11e9761f381033_77.png)
 
 ![](img/002934d3a534431b7d11e9761f381033_78.png)
 
-![](img/002934d3a534431b7d11e9761f381033_80.png)
 
 ### 枚举设备属性示例
 
@@ -347,7 +343,6 @@ if ((threadIdx.x % 32) == 0) { // 每个warp选一个leader线程
 
 本节课中我们一起学习了CUDA编程的三个高级主题。
 
-![](img/002934d3a534431b7d11e9761f381033_143.png)
 
 ![](img/002934d3a534431b7d11e9761f381033_145.png)
 

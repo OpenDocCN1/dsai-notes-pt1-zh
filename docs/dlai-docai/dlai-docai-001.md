@@ -1,8 +1,6 @@
 # 001：1.课程介绍
 
-![](img/a32f5eb187f7b2786a0f6f514b3b4b6d_0.png)
 
-![](img/a32f5eb187f7b2786a0f6f514b3b4b6d_0.png)
 
 ## 概述
 

@@ -1,6 +1,5 @@
 # 19：EarthSim - 灵活的环境模拟工作流 🗺️
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_1.png)
 
 在本节课中，我们将学习 EarthSim 项目。EarthSim 不是一个独立的框架，而是一个集成了多种开源工具的实验平台和最佳实践集合，旨在为地球科学和模拟工作流提供灵活的解决方案。我们将通过一系列演示，了解如何利用 PyViz 生态系统的工具进行交互式数据探索、注释和可视化。
 
@@ -20,7 +19,6 @@ EarthSim 构建在 PyViz 技术栈之上。项目还与 AquaVayo 公司合作，
 
 首先，我们导入一系列必要的包，包括 HoloViews、GeoViews 以及一些仍在实验中的 EarthSim 组件。
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_3.png)
 
 ```python
 import holoviews as hv
@@ -28,11 +26,9 @@ import geoviews as gv
 from earthsim import *  # 实验性组件
 ```
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_5.png)
 
 以下是一个简单的示例，展示如何使用瓦片服务器和 GeoViews 在地图上绘制几个点（如休斯顿、达拉斯、奥斯汀）。
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_6.png)
 
 ```python
 # 示例：在地图上绘制点
@@ -50,7 +46,6 @@ tiles * points
 以下是创建绘图工具并连接数据流的示例：
 
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_8.png)
 
 ```python
 # 创建空的点、路径、多边形数据源
@@ -64,15 +59,12 @@ map_with_tools = tiles * hv.DynamicMap(lambda: hv.Points([]), streams=[point_sou
 
 用户在地图上的绘制操作会实时更新到 Python 的 `point_source.data`、`path_source.data` 等对象中。反之，在 Python 中修改这些数据，也会立即反映在地图视图上。这为实现复杂的交互式工作流奠定了基础。
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_10.png)
 
 ## 动态数据获取与处理
 
 利用上述绘图工具，我们可以构建更实用的功能。例如，用户可以在地图上绘制一个边界框，然后程序自动从 USGS NED 高程服务器下载该区域的高程数据。
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_12.png)
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_14.png)
 
 步骤如下：
 1.  使用边界框工具在地图上绘制一个矩形区域。
@@ -81,11 +73,8 @@ map_with_tools = tiles * hv.DynamicMap(lambda: hv.Points([]), streams=[point_sou
 4.  将数据合并为单个栅格图层并加载。
 5.  利用优化后的 HoloViews/GeoViews 功能进行快速、动态分辨率更新的可视化。
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_16.png)
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_18.png)
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_20.png)
 
 ```python
 # 伪代码：根据绘制的边界框下载高程数据
@@ -95,15 +84,11 @@ elevation_raster = gv.Raster(elevation_data)  # 创建栅格对象
 tiles * elevation_raster  # 叠加显示
 ```
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_21.png)
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_23.png)
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_25.png)
 
 ## 数据注释器
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_27.png)
 
 上一节我们实现了数据的动态获取，本节中我们来看看如何为地理要素添加属性信息。
 
@@ -118,21 +103,15 @@ tiles * elevation_raster  # 叠加显示
 
 这种功能对于准备模拟输入数据非常有用，例如为不同区域设置不同的网格分辨率或边界条件类型。
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_29.png)
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_30.png)
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_32.png)
 
 ## 集成示例：驱动网格生成
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_34.png)
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_35.png)
 
 现在，我们将绘图工具和注释器结合起来，演示一个完整的用例：根据用户绘制的海岸线和指定的点属性来生成自适应三角形网格。
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_37.png)
 
 1.  用户绘制一个代表海岸线的多边形。
 2.  在关键位置（如近岸和远海）添加几个点。
@@ -141,7 +120,6 @@ tiles * elevation_raster  # 叠加显示
 
 这个例子展示了如何通过交互式操作来驱动复杂的后端计算流程。
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_39.png)
 
 ## 大规模非结构化网格可视化
 
@@ -189,7 +167,6 @@ EarthSim 是一个持续开发的项目。未来的工作重点包括：
 
 ## 总结
 
-![](img/4f68067ad52d5c277ca19701bdde8f17_41.png)
 
 ![](img/4f68067ad52d5c277ca19701bdde8f17_43.png)
 

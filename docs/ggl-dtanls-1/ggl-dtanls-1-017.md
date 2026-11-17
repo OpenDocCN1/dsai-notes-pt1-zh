@@ -1,6 +1,5 @@
 # 017：数据分析阶段与本课程结构 📊
 
-![](img/cdce3702af5ed5dbdfac85e2e5eef8fc_0.png)
 
 ![](img/cdce3702af5ed5dbdfac85e2e5eef8fc_0.png)
 

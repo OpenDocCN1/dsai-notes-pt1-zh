@@ -8,9 +8,7 @@
 
 OPEA是一个开源项目集合，旨在为企业提供构建生成式AI工作负载的模块化组件。本节课的核心目标是理解并运行其核心组件之一：Ollama模型服务。我们将通过Docker容器来部署它，并学习如何与之交互。
 
-![](img/59451dcf14943cb7b0e883332bf11af5_1.png)
 
-![](img/59451dcf14943cb7b0e883332bf11af5_3.png)
 
 上一节我们介绍了OPEA项目的背景和组件概览，本节中我们来看看如何具体运行一个Ollama模型服务。
 
@@ -22,7 +20,6 @@ OPEA是一个开源项目集合，旨在为企业提供构建生成式AI工作�
 
 以下是安装Docker所需的命令序列：
 
-![](img/59451dcf14943cb7b0e883332bf11af5_5.png)
 
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_7.png)
@@ -51,7 +48,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_9.png)
 
-![](img/59451dcf14943cb7b0e883332bf11af5_11.png)
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_12.png)
 
@@ -59,7 +55,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_14.png)
 
-![](img/59451dcf14943cb7b0e883332bf11af5_16.png)
 
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_18.png)
@@ -96,7 +91,6 @@ docker run hello-world
 
 OPEA的组件以微服务形式提供。我们将使用其`ollama`组件，该组件将Ollama封装在Docker容器中运行。
 
-![](img/59451dcf14943cb7b0e883332bf11af5_35.png)
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_37.png)
 
@@ -104,9 +98,7 @@ OPEA的组件以微服务形式提供。我们将使用其`ollama`组件，该�
 
 首先，从OPEA的GitHub仓库获取`docker-compose.yaml`配置文件。该文件定义了Ollama服务的容器配置。
 
-![](img/59451dcf14943cb7b0e883332bf11af5_41.png)
 
-![](img/59451dcf14943cb7b0e883332bf11af5_43.png)
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_45.png)
 
@@ -121,7 +113,6 @@ OPEA的组件以微服务形式提供。我们将使用其`ollama`组件，该�
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_52.png)
 
-![](img/59451dcf14943cb7b0e883332bf11af5_53.png)
 
 ```yaml
 version: '3.8'
@@ -165,7 +156,6 @@ networks:
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_65.png)
 
-![](img/59451dcf14943cb7b0e883332bf11af5_67.png)
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_69.png)
 
@@ -191,13 +181,11 @@ docker compose up -d
 
 使用`docker ps`命令可以查看容器是否正在运行。如果看到`ollama-server`容器状态为`Up`，则说明服务已成功启动。
 
-![](img/59451dcf14943cb7b0e883332bf11af5_77.png)
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_79.png)
 
 ---
 
-![](img/59451dcf14943cb7b0e883332bf11af5_81.png)
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_83.png)
 
@@ -209,7 +197,6 @@ docker compose up -d
 
 Ollama服务启动后，会提供一个REST API。默认情况下，在桥接网络模式下，我们可以从宿主机通过映射的端口（本例中为8008）访问容器内的服务。
 
-![](img/59451dcf14943cb7b0e883332bf11af5_89.png)
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_91.png)
 
@@ -217,7 +204,6 @@ Ollama服务启动后，会提供一个REST API。默认情况下，在桥接网
 
 首先，我们需要通过API将指定的模型拉取（下载）到容器中。
 
-![](img/59451dcf14943cb7b0e883332bf11af5_94.png)
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_96.png)
 
@@ -241,7 +227,6 @@ curl http://localhost:8008/api/pull -d '{
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_104.png)
 
-![](img/59451dcf14943cb7b0e883332bf11af5_105.png)
 
 以下是使用`curl`命令请求模型生成文本的示例：
 
@@ -253,7 +238,6 @@ curl http://localhost:8008/api/generate -d '{
 }'
 ```
 
-![](img/59451dcf14943cb7b0e883332bf11af5_107.png)
 
 API会返回一个JSON响应，其中包含模型生成的答案。虽然原始JSON输出可能不够美观，但这证明了我们的模型服务正在正常工作。
 
@@ -263,7 +247,6 @@ API会返回一个JSON响应，其中包含模型生成的答案。虽然原始J
 
 ![](img/59451dcf14943cb7b0e883332bf11af5_113.png)
 
-![](img/59451dcf14943cb7b0e883332bf11af5_114.png)
 
 ---
 

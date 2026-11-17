@@ -4,7 +4,6 @@
 
 在本节课中，我们将学习如何利用自然语言提示，构建一个从文本描述到图像分割掩码的完整流水线。我们将使用零样本目标检测模型 OWL-ViT 来定位图像中的目标，然后将其输出的边界框作为输入，传递给 Mobile SAM 模型以生成精确的分割掩码。最后，我们将利用生成的掩码对图像进行编辑（例如模糊人脸）。
 
-![](img/8a9d39936fc7785e3f54151c1707dfc4_2.png)
 
 ## 概述
 
@@ -43,7 +42,6 @@ image.show()
 
 ## 3. 使用 OWL-ViT 进行目标检测
 
-![](img/8a9d39936fc7785e3f54151c1707dfc4_6.png)
 
 接下来，我们从 Hugging Face 加载 OWL-ViT 模型。我们将使用 Transformers 库的 `pipeline` 方法，并选择基础模型 `owlvit-base-patch32`。
 
@@ -64,7 +62,6 @@ predictions = detector(image, candidate_labels=text_prompt)
 
 检查输出变量，模型应该为标签“狗”检测到两个位于不同位置的边界框。我们使用工具函数将这些边界框绘制在原始图像上。
 
-![](img/8a9d39936fc7785e3f54151c1707dfc4_8.png)
 
 ```python
 # 预处理输出以便绘图
@@ -79,7 +76,6 @@ show_boxes_and_labels_on_image(image, processed_outputs)
 
 成功识别出狗之后，流水线的下一步是利用这些边界框为每只狗创建分割掩码。方法与前一次课程类似，但这里我们将使用 **Mobile SAM** 模型。
 
-![](img/8a9d39936fc7785e3f54151c1707dfc4_10.png)
 
 Mobile SAM 通过**模型蒸馏**技术，将大型 SAM 模型的知识转移到一个小得多的模型中，从而能在没有 GPU 的设备上高效运行，同时保持相近的性能。
 
@@ -109,7 +105,6 @@ results = sam_model.predict(image, bboxes=bounding_boxes, labels=labels)
 
 `predict` 函数返回一个结果对象，其中包含掩码、原始图像和其他元数据。我们可以从中提取布尔掩码数组。
 
-![](img/8a9d39936fc7785e3f54151c1707dfc4_12.png)
 
 ```python
 # 从结果中提取掩码
@@ -118,7 +113,6 @@ masks = results[0].masks.data
 
 最后，使用工具函数可视化生成的掩码。
 
-![](img/8a9d39936fc7785e3f54151c1707dfc4_14.png)
 
 ![](img/8a9d39936fc7785e3f54151c1707dfc4_15.png)
 
@@ -216,7 +210,6 @@ Comet 平台允许我们可视化图像、边界框，并可以基于模型置�
 
 ![](img/8a9d39936fc7785e3f54151c1707dfc4_30.png)
 
-![](img/8a9d39936fc7785e3f54151c1707dfc4_32.png)
 
 你可以尝试调整文本提示，或者使用笔记本中提供的其他图像（如咖啡馆、街道、地铁中的人群）来练习所学技术，构建自己的图像编辑流水线。
 

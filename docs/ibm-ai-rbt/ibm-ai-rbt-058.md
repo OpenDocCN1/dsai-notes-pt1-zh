@@ -16,7 +16,6 @@
 3.  **获取凭证**：助手创建后，你需要获取其唯一的身份凭证（如`assistant_id`和`api_key`）。
 4.  **配置部署渠道**：选择你希望机器人出现的渠道，例如“预览链接”或“WordPress”。
 
-![](img/23010b0b04bd8a80e71c3666fe692377_1.png)
 
 对于更高级的部署（如集成到你自己的Web或移动应用程序），需要一些编程技能。但幸运的是，在本课程中，我们将无需编写任何代码即可完成部署。如果你是程序员，Watson Assistant的API文档完善，并提供了JavaScript和Python的示例代码。
 
@@ -29,7 +28,6 @@ const assistant = new WatsonAssistantV2({
 });
 ```
 
-![](img/23010b0b04bd8a80e71c3666fe692377_3.png)
 
 ---
 
@@ -41,11 +39,8 @@ const assistant = new WatsonAssistantV2({
 
 如果你的网站由开源版WordPress驱动，那么借助我们开发的一个插件，你可以极大地简化聊天机器人的部署过程。你只需一键安装插件，从助手中复制凭证，你的聊天机器人就会神奇地出现在你的网站上。WordPress极其流行，约占全球网站的三分之一。能够在WordPress上部署聊天机器人，极大地简化了向广大公众提供聊天机器人的过程。
 
-![](img/23010b0b04bd8a80e71c3666fe692377_5.png)
 
-![](img/23010b0b04bd8a80e71c3666fe692377_6.png)
 
-![](img/23010b0b04bd8a80e71c3666fe692377_7.png)
 
 以下是该插件的主要优势：
 *   **一键安装**：简化部署流程。
@@ -57,7 +52,6 @@ const assistant = new WatsonAssistantV2({
 
 安装插件后，花些时间研究其功能是值得的。
 
-![](img/23010b0b04bd8a80e71c3666fe692377_9.png)
 
 ---
 

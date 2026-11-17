@@ -138,9 +138,7 @@ print(japan_stats)
 
 ![](img/f68605379f547ff8d305f85d92ec3497_2.png)
 
-![](img/f68605379f547ff8d305f85d92ec3497_3.png)
 
-![](img/f68605379f547ff8d305f85d92ec3497_4.png)
 
 ![](img/f68605379f547ff8d305f85d92ec3497_5.png)
 

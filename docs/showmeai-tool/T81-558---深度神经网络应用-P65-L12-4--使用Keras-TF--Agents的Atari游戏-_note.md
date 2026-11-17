@@ -6,11 +6,9 @@
 
 ## 概述与背景
 
-![](img/8a587b916463673ac1aabf070d00efab_1.png)
 
 上一节我们介绍了深度强化学习的基本概念。本节中，我们将看看一个非常流行的应用场景：玩Atari游戏。Atari 2600是早期的游戏主机，其游戏环境相对简单，是测试和演示强化学习算法的理想平台。
 
-![](img/8a587b916463673ac1aabf070d00efab_2.png)
 
 Atari 2600的典型游戏画面分辨率较低，例如40x192像素，其游戏状态可以有效地输入到卷积神经网络中进行处理。我们将使用TF-Agents库，它提供了便捷的包装器来加载和处理Atari游戏环境。
 
@@ -40,7 +38,6 @@ import matplotlib.pyplot as plt
 
 ---
 
-![](img/8a587b916463673ac1aabf070d00efab_4.png)
 
 ## 超参数配置
 
@@ -62,13 +59,10 @@ eval_interval = 1000  # 评估间隔
 `Q(s, a) = R + γ * max_a' Q(s', a')`
 其中，R是奖励，γ是折扣因子。
 
-![](img/8a587b916463673ac1aabf070d00efab_6.png)
 
 ---
 
-![](img/8a587b916463673ac1aabf070d00efab_7.png)
 
-![](img/8a587b916463673ac1aabf070d00efab_8.png)
 
 ## 创建Atari游戏环境
 

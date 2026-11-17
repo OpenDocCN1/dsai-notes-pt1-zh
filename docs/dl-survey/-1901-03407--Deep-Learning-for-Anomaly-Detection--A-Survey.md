@@ -38,11 +38,9 @@ schawla@qf.org.qa
 
 在分析真实世界的数据集时，一个常见的需求是确定哪些实例与其他所有实例明显不同。这些实例被称为*异常*，而*异常检测*（也称为*离群点检测*）的目标是以数据驱动的方式确定所有这样的实例（chandola2007outlier）。异常可能是数据错误造成的，但有时也可能是表明一种新的、之前未知的潜在过程；hawkins 将离群点定义为偏离其他观察值如此显著的观察值，以至于引起怀疑它是由不同机制生成的。在更广泛的机器学习领域，近年来深度神经网络的激增带来了在各种应用领域前所未有的成果。深度学习是机器学习的一个子集，通过学习将数据表示为神经网络层中的嵌套概念层次来实现良好的性能和灵活性。随着数据规模的增加，深度学习优于传统机器学习，如图 1 所示。近年来，基于深度学习的异常检测算法变得越来越流行，并被应用于各种任务，如图 2 所示；研究表明，深度学习完全超越了传统方法（javaid2016deep；peng2015multi）。本调查的目标有两个：首先，我们提供了对深度异常检测（DAD）研究方法的结构化和全面的回顾。此外，我们还讨论了 DAD 方法在各个应用领域的采用情况，并评估其有效性。
 
-⟦h⟧ ![参考标题](img/7310de803425b6effac1396bba508f25.png)scale=0.5⟧images/traditionalVsDeepLearning
 
 图 1：基于深度学习的算法与传统算法的性能比较 deeplearningVstraditionalAlgorithms。
 
-⟦h⟧ ![参考标题](img/7310de803425b6effac1396bba508f25.png)scale=0.5⟧images/applications
 
 图 2：基于深度学习的异常检测算法的应用。
 
@@ -54,13 +52,11 @@ schawla@qf.org.qa
 
 在数据挖掘和统计文献中，异常也被称为异常值、偏差点或离群点（aggarwal2013introduction）。如图 4 所示，$N_{1}$和$N_{2}$是包含大多数观察值的区域，因此被认为是正常数据实例区域，而区域$O_{3}$和数据点$O_{1}$及$O_{2}$是位于数据点大多数区域远离的少量数据点，因此被认为是异常值。异常的产生原因多种多样，如恶意行为、系统故障、故意欺诈。这些异常揭示了数据中令人兴奋的见解，并常常传达有关数据的有价值信息。因此，异常检测被认为是各种决策系统中的一个重要步骤。
 
-![参见说明](img/7310de803425b6effac1396bba508f25.png)
 
 scale=0.35⟧images/anomalies.png
 
 图 3：二维数据集中的异常说明。
 
-![参见说明](img/7310de803425b6effac1396bba508f25.png)
 
 scale=0.35⟧images/novel.png
 
@@ -102,7 +98,6 @@ scale=0.35⟧images/novel.png
 
 尽管深度学习方法在许多机器学习问题上取得了显著进展，但在异常检测领域中，深度学习方法相对较少。 adiwumi2017survey 提供了对基于深度学习的欺诈检测方法的全面调查。 kwon2017survey 对深度异常检测（DAD）技术在网络入侵检测中的应用进行了广泛的回顾。 litjens2017survey 对 DAD 技术在医疗领域的应用进行了详尽的综述。 mohammadi2017deep 对物联网 (IoT) 和大数据异常检测的 DAD 技术进行了概述。 ball2017comprehensive 对传感器网络异常检测进行了回顾。 kiran2018overview 提出了用于视频异常检测的最先进的深度学习方法及其各种类别。尽管有一些关于应用 DAD 技术的综述，但缺乏对用于异常检测的深度学习架构的比较分析。例如，虽然使用深度自编码器进行异常检测的研究量很大，但针对特定数据集和应用领域的最佳深度架构的全面调查仍然缺乏。我们希望本次调查能够弥补这一空白，并为希望利用深度学习进行异常检测的研究人员和工程师提供全面的参考。 表 1 techniques ‣ Deep Learning for Anomaly Detection: A Survey") 显示了我们调查所涵盖的研究方法和应用领域。
 
-⟦h⟧ ![参考说明](img/7310de803425b6effac1396bba508f25.png)scale=0.45⟧images/AnomalyDetectionTaxonomy
 
 图 5：与基于深度学习的异常检测技术相关的关键组件。
 
@@ -154,7 +149,6 @@ scale=0.35⟧images/novel.png
 
 正常实例的标签比异常实例更容易获取，因此，半监督 DAD 技术更为广泛采用，这些技术利用单一（通常为正类）的现有标签来分离离群点。使用深度自编码器进行异常检测的一种常见方法是用没有异常的数据样本以半监督的方式进行训练。通过足够的训练样本，正常类的自编码器会对正常实例产生低重建误差，对异常事件则会有较高误差（wulsin2010semi; nadeem2016semi; song2017hybrid）。我们将在第 10.2 Models ‣ 9.10 Video Surveillance ‣ 9 Applications of Deep Anomaly Detection ‣ 8.5.2 Labels: ‣ 8.5 Output of DAD Techniques ‣ 8.4.3 Collective or Group Anomaly Detection. ‣ 8.4 Type of Anomaly ‣ 8.3.2 One-Class Neural Networks (OC-NN) ‣ 8.3 Based on the training objective ‣ 8.2.3 Unsupervised deep anomaly detection ‣ 8.2.2 Semi-supervised deep anomaly detection ‣ 8.2.1 Supervised deep anomaly detection ‣ 8.2 Based on Availability of labels ‣ 8 Different aspects of deep learning-based anomaly detection. ‣ Deep Learning for Anomaly Detection: A Survey")节中详细回顾这些方法。
 
-⟦h⟧ ![参考说明](img/7310de803425b6effac1396bba508f25.png)scale=0.7⟧images/TypeOfModels
 
 图 6：基于深度学习模型类型的分类。
 
@@ -170,7 +164,6 @@ scale=0.35⟧images/novel.png
 
 深度混合模型用于异常检测，主要使用深度神经网络（如自编码器）作为特征提取器，自编码器中的隐藏表示所学到的特征被输入到传统的异常检测算法中，如一类 SVM（OC-SVM），以检测异常点 (andrews2016detecting)。图 7 ‣ 8.3 Based on the training objective ‣ 8.2.3 Unsupervised deep anomaly detection ‣ 8.2.2 Semi-supervised deep anomaly detection ‣ 8.2.1 Supervised deep anomaly detection ‣ 8.2 Based on Availability of labels ‣ 8 Different aspects of deep learning-based anomaly detection. ‣ Deep Learning for Anomaly Detection: A Survey") 展示了用于异常检测的深度混合模型架构。在迁移学习成功获取来自大数据集预训练模型的丰富表示特征之后，混合模型也利用这些预训练迁移学习模型作为特征提取器取得了很大成功 (pan2010survey)。ergen2017unsupervised 提出了一个混合模型的变体，该模型考虑了特征提取器与 OC-SVM（或 SVDD）目标的联合训练，以最大化检测性能。这些混合方法的一个显著缺陷是缺乏为异常检测量身定制的可训练目标，因此这些模型未能提取丰富的差异特征以检测异常点。为了解决这一限制，引入了针对异常检测的定制目标，如深度一类分类 (ruff2018deep)和一类神经网络 (chalapathy2018anomaly)。
 
-![参考标题](img/7310de803425b6effac1396bba508f25.png)
 
 scale=0.7⟧images/HybridDeepModels
 
@@ -184,7 +177,6 @@ scale=0.7⟧images/HybridDeepModels
 
 异常可以大致分为三种类型：点异常、上下文异常和集体异常。深度异常检测（DAD）方法已被证明能够成功地检测这三种类型的异常。
 
-⟦h⟧ ![参见说明](img/7310de803425b6effac1396bba508f25.png)scale=0.7⟧images/TypeOfAnomaly
 
 图 8：基于异常类型的深度学习技术分类。
 
@@ -198,13 +190,11 @@ scale=0.7⟧images/HybridDeepModels
 
 ⟦htp⟧
 
-![参见说明](img/7310de803425b6effac1396bba508f25.png)
 
 scale=0.35⟧images/temperature.png
 
 (a) 温度数据 hayes2015contextual。
 
-![参见说明](img/7310de803425b6effac1396bba508f25.png)
 
 scale=0.35⟧images/deeplog.png
 
@@ -216,7 +206,6 @@ scale=0.35⟧images/deeplog.png
 
 单个数据点的异常集合被称为集体或群体异常，其中每个单独的数据点在孤立时看起来是正常的数据实例，而在群体中观察时则表现出异常特征。例如，考虑一个欺诈信用卡交易的示例，在图 10 ‣ 8.3 Based on the training objective ‣ 8.2.3 Unsupervised deep anomaly detection ‣ 8.2.2 Semi-supervised deep anomaly detection ‣ 8.2.1 Supervised deep anomaly detection ‣ 8.2 Based on Availability of labels ‣ 8 Different aspects of deep learning-based anomaly detection. ‣ Deep Learning for Anomaly Detection: A Survey")中显示的日志数据中，如果出现了一笔单独的“杂项”交易，它可能不会显得特别异常。接下来的这些价值为$\$75$的交易确实似乎是集体或群体异常的候选者。群体异常检测（GAD）强调不规则的群体分布（例如，使用变体的自编码器模型检测不规则的图像像素混合(chalapathy2018group; bontemps2016collective; araya2016collective; zhuang2017group)）。
 
-⟦h⟧ ![参见说明](img/7310de803425b6effac1396bba508f25.png)scale=0.5⟧images/PointAndCollectiveAnomaly
 
 图 10：信用卡欺诈检测：展示点异常和集体异常。
 
@@ -248,7 +237,6 @@ scale=0.35⟧images/deeplog.png
 
 NIDS 系统通过检查每一个网络数据包来监控整个网络中的可疑流量。由于实时流行为的特性，这些数据的性质类似于具有高容量、速度和多样性的“大数据”。网络数据还具有时间方面的特征。NIDS 的一些成功的 DAD 技术如表 4: ‣ 9.1 Intrusion Detection ‣ 9 Applications of Deep Anomaly Detection ‣ 8.5.2 Labels: ‣ 8.5 Output of DAD Techniques ‣ 8.4.3 Collective or Group Anomaly Detection. ‣ 8.4 Type of Anomaly ‣ 8.3.2 One-Class Neural Networks (OC-NN) ‣ 8.3 Based on the training objective ‣ 8.2.3 Unsupervised deep anomaly detection ‣ 8.2.2 Semi-supervised deep anomaly detection ‣ 8.2.1 Supervised deep anomaly detection ‣ 8.2 Based on Availability of labels ‣ 8 Different aspects of deep learning-based anomaly detection. ‣ Deep Learning for Anomaly Detection: A Survey") 中有所说明。这份调查还列出了用于评估 DAD 入侵检测方法的数据集，如表 5: ‣ 9.1 Intrusion Detection ‣ 9 Applications of Deep Anomaly Detection ‣ 8.5.2 Labels: ‣ 8.5 Output of DAD Techniques ‣ 8.4.3 Collective or Group Anomaly Detection. ‣ 8.4 Type of Anomaly ‣ 8.3.2 One-Class Neural Networks (OC-NN) ‣ 8.3 Based on the training objective ‣ 8.2.3 Unsupervised deep anomaly detection ‣ 8.2.2 Semi-supervised deep anomaly detection ‣ 8.2.1 Supervised deep anomaly detection ‣ 8.2 Based on Availability of labels ‣ 8 Different aspects of deep learning-based anomaly detection. ‣ Deep Learning for Anomaly Detection: A Survey")。DAD 技术在入侵检测中面临的挑战是，异常的性质会随着入侵者适应网络攻击以规避现有的入侵检测解决方案而不断变化。
 
-![参见说明](img/7310de803425b6effac1396bba508f25.png)
 
 scale=0.4⟧images/IDS
 

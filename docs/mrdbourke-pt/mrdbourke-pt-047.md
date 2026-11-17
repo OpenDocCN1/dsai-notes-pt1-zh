@@ -2,9 +2,7 @@
 
 ![](img/9af4c2f55c2294927d2d3cb2320bc5bb_0.png)
 
-![](img/9af4c2f55c2294927d2d3cb2320bc5bb_2.png)
 
-![](img/9af4c2f55c2294927d2d3cb2320bc5bb_4.png)
 
 在本节课中，我们将学习如何将数据转换为PyTorch张量，并创建训练集和测试集。这是构建神经网络模型前的关键准备步骤。
 
@@ -12,9 +10,7 @@
 
 ## 1.1 检查输入和输出形状 📐
 
-![](img/9af4c2f55c2294927d2d3cb2320bc5bb_6.png)
 
-![](img/9af4c2f55c2294927d2d3cb2320bc5bb_7.png)
 
 上一节我们创建了分类数据。本节中，我们来看看数据的形状。关注输入和输出形状非常重要，因为机器学习大量处理张量形式的数值表示。输入和输出形状不匹配是常见的错误来源。
 
@@ -90,11 +86,9 @@ print(f"Number of training labels (y): {len(y_train)}")
 print(f"Number of testing labels (y): {len(y_test)}")
 ```
 
-![](img/9af4c2f55c2294927d2d3cb2320bc5bb_9.png)
 
 我们设置了`test_size=0.2`，这意味着20%的数据（200个样本）将用作测试，剩下的80%（800个样本）用于训练。`random_state`参数确保了每次运行代码时，分割都是随机但可复现的。
 
-![](img/9af4c2f55c2294927d2d3cb2320bc5bb_10.png)
 
 ---
 
@@ -110,19 +104,15 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Using device: {device}")
 ```
 
-![](img/9af4c2f55c2294927d2d3cb2320bc5bb_12.png)
 
 这段代码检查是否有可用的CUDA（GPU），如果有则使用GPU，否则使用CPU。在Google Colab中，我们可以通过菜单栏的"运行时" -> "更改运行时类型" -> 选择"GPU"来启用GPU加速。
 
-![](img/9af4c2f55c2294927d2d3cb2320bc5bb_13.png)
 
 ---
 
 ## 总结 📝
 
-![](img/9af4c2f55c2294927d2d3cb2320bc5bb_15.png)
 
-![](img/9af4c2f55c2294927d2d3cb2320bc5bb_16.png)
 
 本节课中我们一起学习了数据准备的核心步骤：
 1.  **检查数据形状**：理解了输入特征和输出标签的结构。

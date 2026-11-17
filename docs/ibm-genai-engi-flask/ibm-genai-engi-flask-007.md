@@ -1,10 +1,8 @@
 生成式人工智能工程：007：Python 打包 📦
 
-![](img/e83253865b00fdddc7203d98ea94c7db_1.png)
 
 在本节课中，我们将要学习 Python 中模块、包和库的概念与区别，并掌握如何创建、验证和使用一个 Python 包。
 
-![](img/e83253865b00fdddc7203d98ea94c7db_3.png)
 
 ---
 
@@ -18,7 +16,6 @@
 *   第一个函数是 `def square(number): return number ** 2`，用于计算输入数字的平方。
 *   第二个函数是 `def doubler(number): return number * 2`，用于将输入数字翻倍。
 
-![](img/e83253865b00fdddc7203d98ea94c7db_5.png)
 
 如果该模块文件与你的脚本在同一目录下，你可以导入并使用其中的函数。例如，调用 `square(4)` 会输出 `4^2 = 16`；调用 `doubler(4)` 会输出 `2*4 = 8`。
 
@@ -26,13 +23,11 @@
 
 例如，一个名为 `my_project` 的包，其目录结构可能包含 `module1.py`、`module2.py` 和 `__init__.py` 文件。当你导入一个模块或包时，Python 创建的对象类型始终是 `module`。请注意，模块和包的区别仅在于文件系统层面。
 
-![](img/e83253865b00fdddc7203d98ea94c7db_7.png)
 
 **Python 库** 是一个或多个包的集合。例如，NumPy、PyTorch 和 Pandas 都是库。需要注意的是，“包”和“库”这两个术语经常互换使用，因此 NumPy、PyTorch 和 Pandas 也常被称为包。
 
 ---
 
-![](img/e83253865b00fdddc7203d98ea94c7db_9.png)
 
 ### 创建 Python 包的步骤 🛠️
 
@@ -54,7 +49,6 @@ from . import module2
 
 ---
 
-![](img/e83253865b00fdddc7203d98ea94c7db_11.png)
 
 ### 验证 Python 包 ✅
 
@@ -63,7 +57,6 @@ from . import module2
 2.  确保当前目录与你的包所在的文件夹处于同一层级。
 3.  在 shell 中运行 `python` 命令，打开 Python 解释器。
 
-![](img/e83253865b00fdddc7203d98ea94c7db_13.png)
 
 在 Python 提示符下，键入 `import` 后跟你的包名，例如：
 ```python
@@ -73,7 +66,6 @@ import my_project
 
 测试包中函数的一般结构是：`包名.模块名.函数名(参数)`。例如，调用 `my_project.module1.square(2)`，该函数应返回值 `4`。
 
-![](img/e83253865b00fdddc7203d98ea94c7db_15.png)
 
 ---
 
@@ -81,7 +73,6 @@ import my_project
 
 成功创建并验证包后，就可以在其他脚本中使用它了，前提是包文件夹与脚本在同一目录下。
 
-![](img/e83253865b00fdddc7203d98ea94c7db_17.png)
 
 例如，在父目录中有一个 `test.py` 文件，你可以这样导入包中的函数：
 ```python
@@ -98,7 +89,6 @@ print(f“(2+1+3)/3 = {mean(2, 1, 3)}“)
 
 ### 总结 📝
 
-![](img/e83253865b00fdddc7203d98ea94c7db_19.png)
 
 ![](img/e83253865b00fdddc7203d98ea94c7db_21.png)
 

@@ -6,7 +6,6 @@
 
 ## 从特征缩放开始
 
-![](img/940afed0167512727db64930c1b1db57_1.png)
 
 上一节我们介绍了数据预处理，本节中我们来看看如何对特征进行标准化缩放。特征缩放能确保不同量纲的特征对模型的影响处于同一水平，这对于许多机器学习算法至关重要。
 
@@ -19,9 +18,7 @@
 
 对应的核心代码如下：
 
-![](img/940afed0167512727db64930c1b1db57_3.png)
 
-![](img/940afed0167512727db64930c1b1db57_4.png)
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -34,19 +31,15 @@ X_test_scaled = scaler.transform(X_test)
 
 ---
 
-![](img/940afed0167512727db64930c1b1db57_6.png)
 
-![](img/940afed0167512727db64930c1b1db57_7.png)
 
 ## 训练分类器模型
 
 完成特征缩放后，下一步是训练我们的分类器模型。这里我们选择使用随机森林算法。
 
-![](img/940afed0167512727db64930c1b1db57_9.png)
 
 以下是训练分类器的步骤：
 
-![](img/940afed0167512727db64930c1b1db57_10.png)
 
 1.  从 `sklearn.ensemble` 导入 `RandomForestClassifier`。
 2.  初始化分类器，设置树的数量（`n_estimators`）和随机种子（`random_state`）以确保结果可复现。
@@ -64,7 +57,6 @@ model.fit(X_train_scaled, y_train)
 
 ---
 
-![](img/940afed0167512727db64930c1b1db57_12.png)
 
 ## 评估分类器性能
 
@@ -81,10 +73,8 @@ model.fit(X_train_scaled, y_train)
 对应的核心代码如下：
 
 
-![](img/940afed0167512727db64930c1b1db57_14.png)
 
 
-![](img/940afed0167512727db64930c1b1db57_15.png)
 
 ```python
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report

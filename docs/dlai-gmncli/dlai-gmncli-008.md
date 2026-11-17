@@ -32,7 +32,6 @@ gemini-cli process-video --input podcast.mp4 --transcribe --output transcript.tx
 
 过程中可能会遇到一些问题，但Gemini CLI能够诊断并尝试恢复。运行完成后，它会遍历整个视频，生成带时间戳的转录稿。
 
-![](img/0a7510698328c9a429063f08d5cd7649_3.png)
 
 结果完全符合我们的要求。此外，Gemini CLI还利用这些转录内容生成了不同格式的字幕文件。
 
@@ -48,7 +47,6 @@ gemini-cli process-video --input podcast.mp4 --transcribe --output transcript.tx
 
 Gemini CLI会分析内容，并 pinpoint 出三个它认为适合用于剪辑视频的短片时间段或时间戳。
 
-![](img/0a7510698328c9a429063f08d5cd7649_5.png)
 
 任务完成后，它选取并剪辑出了三个片段。看起来分别是：
 1.  Gemini CLI的介绍。
@@ -88,7 +86,6 @@ Gemini CLI会从视频本身截取屏幕截图，然后将这些图像作为输�
 
 执行相应指令后，Gemini CLI生成了四个社交媒体帖子。让我们来看一下效果。
 
-![](img/0a7510698328c9a429063f08d5cd7649_10.png)
 
 它提出的一些帖子创意相当不错，甚至可能达到可以直接发布的标准。
 

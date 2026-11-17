@@ -58,7 +58,6 @@ class CNN(nn.Module):
         return x
 ```
 
-![](img/37a74f0b0f2704e24a14bf2f2f9575b5_2.png)
 
 ### 任务三：实现快速梯度符号攻击
 
@@ -67,7 +66,6 @@ class CNN(nn.Module):
 **公式**：  
 `x_adv = x + ε * sign(∇_x L(θ, x, y))`
 
-![](img/37a74f0b0f2704e24a14bf2f2f9575b5_4.png)
 
 其中，`x`是原始输入，`ε`是扰动预算，`L`是损失函数，`∇_x`表示对输入的梯度。
 

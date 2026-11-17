@@ -12,13 +12,9 @@
 
 
 
-![](img/4cbaddd4c3e61af76b438ec97b010a06_1.png)
 
-![](img/4cbaddd4c3e61af76b438ec97b010a06_1.png)
 
-![](img/4cbaddd4c3e61af76b438ec97b010a06_2.png)
 
-![](img/4cbaddd4c3e61af76b438ec97b010a06_2.png)
 
 创建一个新的 Notebook，并将其命名为类似 `Avalanche_app` 的名称。确保将其连接到现有的 Avalanche 数据库和模式，并指向合并了客户评论和运输数据的表。
 
@@ -65,10 +61,7 @@ add a date and sentiment filter to my streamlit app.
 
 
 
-![](img/4cbaddd4c3e61af76b438ec97b010a06_4.png)
 
-![](img/4cbaddd4c3e61af76b438ec97b010a06_4.png)
 
-![](img/4cbaddd4c3e61af76b438ec97b010a06_5.png)
 
 ![](img/4cbaddd4c3e61af76b438ec97b010a06_5.png)

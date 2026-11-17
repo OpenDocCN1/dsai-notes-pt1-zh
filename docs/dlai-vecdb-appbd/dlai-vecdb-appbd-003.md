@@ -148,13 +148,10 @@ def get_embedding(texts, model="text-embedding-ada-002"):
 
 ![](img/5c4d6b14ac8318338d2d3339b85c5e23_1.png)
 
-![](img/5c4d6b14ac8318338d2d3339b85c5e23_2.png)
 
-![](img/5c4d6b14ac8318338d2d3339b85c5e23_3.png)
 
 首先，为查询问题生成向量嵌入。
 
-![](img/5c4d6b14ac8318338d2d3339b85c5e23_4.png)
 
 ```python
 query = "What is the Berlin Wall?"
@@ -187,7 +184,6 @@ print("\n---\n".join(context_texts))
 以下是构建提示的步骤：
 
 
-![](img/5c4d6b14ac8318338d2d3339b85c5e23_6.png)
 
 ```python
 # 构建提示工程
@@ -203,7 +199,6 @@ print("\n--- 发送给 OpenAI 的完整提示 ---\n")
 print(prompt)
 ```
 
-![](img/5c4d6b14ac8318338d2d3339b85c5e23_7.png)
 
 现在，我们将这个精心构建的提示发送给 OpenAI 的完成 API，以生成最终的回答。
 
@@ -230,7 +225,6 @@ print(generated_answer)
 
 ![](img/5c4d6b14ac8318338d2d3339b85c5e23_10.png)
 
-![](img/5c4d6b14ac8318338d2d3339b85c5e23_11.png)
 
 ![](img/5c4d6b14ac8318338d2d3339b85c5e23_12.png)
 

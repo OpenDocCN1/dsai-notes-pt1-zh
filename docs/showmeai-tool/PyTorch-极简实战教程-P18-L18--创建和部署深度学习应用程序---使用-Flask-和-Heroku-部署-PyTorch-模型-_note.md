@@ -4,11 +4,9 @@
 
 在本节课中，我们将学习如何将一个训练好的 PyTorch 模型封装成一个 Web 应用，并使用 Flask 框架创建 REST API，最终将其部署到 Heroku 云平台上。我们将以手写数字识别（MNIST）为例，构建一个可以接收用户上传的图片并返回预测结果的完整应用。
 
-![](img/a4f608f66d892f12b3640cd5547c24da_3.png)
 
 ## 概述 📋
 
-![](img/a4f608f66d892f12b3640cd5547c24da_5.png)
 
 我们将按照以下步骤进行：
 1.  创建项目目录和虚拟环境。
@@ -20,7 +18,6 @@
 7.  配置应用以适配 Heroku 部署环境。
 8.  将应用部署到 Heroku 并在线测试。
 
-![](img/a4f608f66d892f12b3640cd5547c24da_7.png)
 
 ## 1. 项目初始化与环境搭建
 
@@ -49,7 +46,6 @@
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_10.png)
 
-![](img/a4f608f66d892f12b3640cd5547c24da_11.png)
 
 ```python
 # app/main.py
@@ -65,7 +61,6 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-![](img/a4f608f66d892f12b3640cd5547c24da_12.png)
 
 现在，我们可以在终端中启动这个应用进行测试。
 
@@ -94,7 +89,6 @@ if __name__ == '__main__':
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_16.png)
 
-![](img/a4f608f66d892f12b3640cd5547c24da_18.png)
 
 首先，我们需要获取并运行训练代码来生成模型文件。
 
@@ -102,7 +96,6 @@ if __name__ == '__main__':
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_21.png)
 
-![](img/a4f608f66d892f12b3640cd5547c24da_22.png)
 
 以下是模型训练和保存的步骤：
 
@@ -136,21 +129,15 @@ if __name__ == '__main__':
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_35.png)
 
-![](img/a4f608f66d892f12b3640cd5547c24da_36.png)
 
 
-![](img/a4f608f66d892f12b3640cd5547c24da_37.png)
 
 
-![](img/a4f608f66d892f12b3640cd5547c24da_39.png)
 
 
-![](img/a4f608f66d892f12b3640cd5547c24da_41.png)
-
-![](img/a4f608f66d892f12b3640cd5547c24da_43.png)
 
 
-![](img/a4f608f66d892f12b3640cd5547c24da_45.png)
+
 
 ```python
 # app/torch_utils.py
@@ -264,10 +251,8 @@ if __name__ == '__main__':
 
 更新测试脚本 `test.py`，使其能够上传一张本地图片进行测试。
 
-![](img/a4f608f66d892f12b3640cd5547c24da_51.png)
 
 
-![](img/a4f608f66d892f12b3640cd5547c24da_53.png)
 
 ```python
 # test.py
@@ -283,9 +268,7 @@ print(response.json())
 
 运行 `python test.py`，如果一切正常，你将收到类似 `{'prediction': 7, 'class_name': '7'}` 的响应。你也可以用画图工具自己画一个数字（白字黑底）保存为图片进行测试。
 
-![](img/a4f608f66d892f12b3640cd5547c24da_55.png)
 
-![](img/a4f608f66d892f12b3640cd5547c24da_57.png)
 
 ## 6. 为 Heroku 部署做准备
 
@@ -331,7 +314,6 @@ print(response.json())
 
 以下是部署命令序列：
 
-![](img/a4f608f66d892f12b3640cd5547c24da_62.png)
 
 *   **登录 Heroku**：`heroku login -i`
 *   **创建 Heroku 应用**：`heroku create flask-pytorch-tutorial` (应用名需唯一)
@@ -345,7 +327,6 @@ print(response.json())
 *   **查看部署日志**：推送后，Heroku 会自动构建和部署。在终端观察输出，直到出现 `Verifying deploy... done.` 字样。
 *   **获取应用在线地址**：部署成功后，可以使用 `heroku open` 命令打开应用主页，或记下类似 `https://flask-pytorch-tutorial.herokuapp.com` 的 URL。
 
-![](img/a4f608f66d892f12b3640cd5547c24da_63.png)
 
 ## 8. 测试线上应用
 
@@ -353,9 +334,7 @@ print(response.json())
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_65.png)
 
-![](img/a4f608f66d892f12b3640cd5547c24da_66.png)
 
-![](img/a4f608f66d892f12b3640cd5547c24da_67.png)
 
 
 ![](img/a4f608f66d892f12b3640cd5547c24da_69.png)
@@ -382,19 +361,15 @@ response = requests.post(f'{app_url}/predict',
 print('Online App Response:', response.json())
 ```
 
-![](img/a4f608f66d892f12b3640cd5547c24da_76.png)
 
 运行 `python test_heroku.py`，如果返回正确的预测结果，恭喜你，你的 PyTorch 模型已经成功部署为线上服务！
 
-![](img/a4f608f66d892f12b3640cd5547c24da_77.png)
 
 ## 总结 🎉
 
-![](img/a4f608f66d892f12b3640cd5547c24da_79.png)
 
 在本节课中，我们一起学习了将一个 PyTorch 模型部署为 Web 应用的完整流程。
 
-![](img/a4f608f66d892f12b3640cd5547c24da_81.png)
 
 我们首先使用 Flask 创建了一个简单的 REST API 框架，然后集成并封装了 PyTorch 模型的加载和推理逻辑。接着，我们在本地进行了充分的测试。最后，通过配置 `Procfile`、`requirements.txt` 等文件，并使用 Git 将应用成功部署到了 Heroku 云平台，使其能够通过互联网被访问。
 

@@ -15,7 +15,6 @@
 
 一个标量就是一个单独的数。**只具有数值大小，没有方向**（部分有正负之分），运算遵循一般的代数法则。
 
-![标量 Scalar](img/f1b97a5af97d54b4471baeba42387708.png)
 
 *   一般用小写的变量名称表示。
 *   质量 m m m、速率 v v v、时间 t t t、电阻 ρ \rho ρ 等物理量，都是数据标量。
@@ -24,7 +23,6 @@
 
 向量指具有大小和方向的量，形态上看就是一列数。
 
-![向量 Vector](img/e635865068b3ef4808055ecda9a3cde0.png)
 
 *   通常赋予向量**粗体小写**的名称；手写体则在字母上加一个向右的箭头。
 
@@ -40,7 +38,6 @@
 
 矩阵是二维数组，其中的每一个元素被两个索引确定。矩阵在机器学习中至关重要，无处不在。
 
-![矩阵 Matrix](img/1380e319a6bac02b7b5d0a1677b0c647.png)
 
 *   通常会赋予矩阵粗体大写的变量名称。
 
@@ -54,9 +51,7 @@
 *   向量，可以视为一阶张量
 *   矩阵，可以视为二阶张量
 
-![张量 Tensor](img/b4c7ea8a99d6dcb7dca80415b22bee65.png)
 
-![张量 Tensor](img/6566f3aa788ba8588db17151909df430.png)
 
 *   图片以矩阵形态表示：将一张彩色图片表示成一个 H × W × C H \times W \times C H×W×C 的三阶张量，其中 H H H 是高， W W W 是宽， C C C 通常取 3，表示彩色图 3 个颜色通道。
 *   在这个例子的基础上，将这一定义继续扩展，即：用四阶张量（样本，高度，宽度，通道）表示一个包含多张图片的数据集，其中，样本表示图片在数据集中的编号。
@@ -75,7 +70,6 @@
 
 *   矩阵范数（Matrix Norm），表征矩阵引起变化的大小。比如，通过运算 A X = B \boldsymbol{A}\boldsymbol{X} = \boldsymbol{B} AX=B，可以将向量 X \boldsymbol{X} X 变化为 B \boldsymbol{B} B，矩阵范数就可以度量这个变化的大小。
 
-![向量范数 Vector Norm](img/33d6e217f745ce93861a8327e6132eca.png)
 
 **向量范数的计算**：
 
@@ -101,7 +95,6 @@
 
 > 同样，我们可以将『矩阵』分解为一组『特征向量』和『特征值』，来发现矩阵表示为数组元素时不明显的函数性质。特征分解（Eigen-decomposition）是广泛使用的矩阵分解方式之一。
 
-![特征分解 Eigendecomposition](img/8305fa35e77440e15ad654da64ee07b9.png)
 
 *   **特征向量**：方阵 A \boldsymbol{A} A 的特征向量，是指与 A \boldsymbol{A} A 相乘后相当于对该向量进行缩放的非零向量，即 A ν = λ ν \boldsymbol{A}\nu =\lambda \nu Aν=λν。
 
@@ -115,7 +108,6 @@
 
 > 将矩阵的『特征分解』进行推广，得到一种被称为『矩阵的奇异值分解』的方法，即将一个普通矩阵分解为『奇异向量』和『奇异值』。通过奇异值分解，我们会得到一些类似于特征分解的信息。
 
-![奇异值分解 Singular Value Decomposition, SVD](img/c481e7cc041ed22085925e2474697356.png)
 
 将矩阵 A \boldsymbol{A} A 分解成三个矩阵的乘积 A = U D V − 1 \boldsymbol{A} = \boldsymbol{U} \boldsymbol{D} \boldsymbol{V}^{-1} A=UDV−1。
 
@@ -141,7 +133,6 @@ Moore-Penrose 伪逆使我们能够解决这种情况，矩阵 A \boldsymbol{A} 
 
 A + = lim ⁡ a → 0 ( A T A + α I ) − 1 A T \boldsymbol{A}^{+}=\lim _{a \rightarrow 0}\left(\boldsymbol{A}^{T} \boldsymbol{A}+\alpha \boldsymbol{I}\right)^{-1} \boldsymbol{A}^{T} A+=a→0lim​(ATA+αI)−1AT
 
-![广义逆/伪逆 Moore-Penrose Pseudoinverse](img/a9e219c5af6cc1f3a4cb807ffdcbfb3e.png)
 
 但是计算伪逆的实际算法没有基于这个式子，而是使用下面的公式：
 
@@ -163,11 +154,9 @@ B = [ x 21 , x 22 , . . . , x 2 n ] T B=[ x_{21} ,x_{22} ,...,x_{2n} ] ^{T} B=[x
 
 **一些常用的距离公式定义如下**：
 
-![距离度量 Distance](img/8f1ff244bef9074a497cb57f336b2c94.png)
 
 ### 1）曼哈顿距离（Manhattan Distance）
 
-![曼哈顿距离 Manhattan Distance](img/2ebd78ae3f11fb5b38a3f7823117ece5.png)
 
 曼哈顿距离也称为城市街区距离，数学定义如下：
 
@@ -188,7 +177,6 @@ print("曼哈顿距离为", manhaton_dist)
 
 ### 2）欧氏距离（Euclidean Distance）
 
-![欧氏距离 Euclidean Distance](img/86737cb59da990f99334836a152f9ed4.png)
 
 欧氏距离其实就是 L2 范数，数学定义如下：
 
@@ -209,7 +197,6 @@ print("欧式距离为", eud_dist)
 
 ### 3）闵氏距离（Minkowski Distance）
 
-![闵氏距离 Minkowski Distance](img/b53d7232b030eb99fb44e738b474e298.png)
 
 从严格意义上讲，闵可夫斯基距离不是一种距离，而是一组距离的定义：
 
@@ -221,7 +208,6 @@ d 12 = ∑ k = 1 n ( x 1 k − x 2 k ) p p d_{12} =\sqrt[p]{\sum_{k=1}^{n}{( x_{
 
 ### 4）切比雪夫距离（Chebyshev Distance）
 
-![切比雪夫距离 Chebyshev Distance](img/dee95873e49bd93162376a5b40858454.png)
 
 切比雪夫距离就是无穷范数，数学表达式如下：
 
@@ -248,7 +234,6 @@ print("切比雪夫距离为", cb_dist)
 *   当两个向量的方向重合时，夹角余弦取最大值 1；
 *   当两个向量的方向完全相反时，夹角余弦取最小值-1。
 
-![余弦相似度 Cosine Similarity](img/fc7c6ce6988517a3707ad083a549c5bf.png)
 
 机器学习中用这一概念来衡量样本向量之间的差异，其数学表达式如下：
 
@@ -269,7 +254,6 @@ print("余弦相似度为", cos_sim)
 
 ### 6）汉明距离（Hamming Distance）
 
-![汉明距离 Hamming Distance](img/6271d64bf5788889fbc0a182e87598a4.png)
 
 汉明距离定义的是两个字符串中不相同位数的数目。例如，字符串‘1111’与‘1001’之间的汉明距离为 2。信息编码中一般应使得编码间的汉明距离尽可能的小。
 
@@ -289,7 +273,6 @@ print("汉明距离为", hanm_dis)
 
 ### 7）杰卡德系数（Jaccard Index）
 
-![杰卡德系数 Jaccard Index](img/fe55a652bd440e71e51ff07423253f01.png)
 
 两个集合 A A A 和 B B B 的交集元素在 A A A 和 B B B 的并集中所占的比例称为两个集合的杰卡德系数，用符号 J ( A , B ) J(A,B) J(A,B)表示，数学表达式为：
 

@@ -8,19 +8,15 @@
 
 许多NLP任务需要同时处理两个句子。例如，我们可能需要判断两个文本是否相同，或者它们在逻辑上是否相关。
 
-![](img/6c5fec0939d8ec492c6e56dd82094de9_1.png)
 
 以下是两种常见的句对分类任务：
 
 1.  **重复问题识别**：判断两个问题是否在语义上重复。例如，从Quora问题对数据集中提取的示例中，需要识别两个问题是否为重复问题。
-    ![](img/6c5fec0939d8ec492c6e56dd82094de9_1.png)
 
 2.  **自然语言推理**：判断两个句子之间的逻辑关系（如蕴含、矛盾或中立）。例如，从MultiNLI数据集中提取的例子，需要为每对句子分配一个标签（矛盾/中立/蕴含）。
-    ![](img/6c5fec0939d8ec492c6e56dd82094de9_3.png)
 
 句对分类是一个重要的问题。在GLUE等学术基准测试中，10个数据集里有8个都专注于使用句子对的任务。因此，像BERT这样的模型通常采用双重训练目标，除了语言建模，还包含与句对相关的目标（如下一句预测）。
 
-![](img/6c5fec0939d8ec492c6e56dd82094de9_3.png)
 
 ## 使用Tokenizer处理句对
 
@@ -57,7 +53,6 @@ print(encoded_input.keys()) # 输出: dict_keys([‘input_ids’, ‘token_type_
 以下是批量处理的示例：
 
 
-![](img/6c5fec0939d8ec492c6e56dd82094de9_5.png)
 
 ```python
 sentences_a = [“Sentence A1”, “Sentence A2”]
@@ -65,14 +60,10 @@ sentences_b = [“Sentence B1”, “Sentence B2”]
 batch_encoded = tokenizer(sentences_a, sentences_b, padding=True, return_tensors=“pt”)
 ```
 
-![](img/6c5fec0939d8ec492c6e56dd82094de9_5.png)
 
 放大后可以看到，分词器会自动为较短的句对添加填充（`[PAD]`），使批次内所有样本长度一致。同时，它会正确生成每对句子的`token_type_ids`和`attention_mask`。
 
-![](img/6c5fec0939d8ec492c6e56dd82094de9_7.png)
 
-![](img/6c5fec0939d8ec492c6e56dd82094de9_7.png)
-![](img/6c5fec0939d8ec492c6e56dd82094de9_8.png)
 
 ![](img/6c5fec0939d8ec492c6e56dd82094de9_8.png)
 

@@ -3,9 +3,7 @@
 ## 概述
 在本节课中，我们将学习如何利用 Snowflake Cortex 的内置功能，将上传到 Snowflake 暂存区的大量 Word 文档，转换并解析成一个结构化的数据表。整个过程无需复杂的 Python 库，直接在 Snowflake Notebook 中使用 SQL 即可完成。
 
-![](img/db5ebc04080a1aae90d34ce3ffe89a69_1.png)
 
-![](img/db5ebc04080a1aae90d34ce3ffe89a69_2.png)
 
 上一节我们介绍了如何将数据上传到 Snowflake 暂存区，本节中我们来看看如何解析和结构化这些数据。
 
@@ -53,7 +51,6 @@ SELECT * FROM raw_customer_reviews LIMIT 5;
 ```
 这将显示每个文档的前几行内容，方便您检查解析是否按预期进行。如果您在这里看到了结果，那就太好了！这意味着您的 100 个 Word 文档现在已经整齐地组织好，并准备进行下一步的清理工作。
 
-![](img/db5ebc04080a1aae90d34ce3ffe89a69_7.png)
 
 ![](img/db5ebc04080a1aae90d34ce3ffe89a69_8.png)
 

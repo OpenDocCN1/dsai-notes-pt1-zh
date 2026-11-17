@@ -18,11 +18,8 @@
 
 我们感谢为此短片课程做出贡献的许多人。感谢OpenAI团队的Andrew Cndrick、Joe Polermo、Boris Power和Ted Sanders，以及DeepLearning.AI团队的Jeff Ludwig、Eddie Shu和Tommy Nelson。
 
-![](img/bfb97e837959eb56572cd059ccdd97c9_1.png)
 
-![](img/bfb97e837959eb56572cd059ccdd97c9_2.png)
 
-![](img/bfb97e837959eb56572cd059ccdd97c9_3.png)
 
 通过这个短片课程，我们希望你能自信地构建复杂的多步骤应用程序，并为维护和持续改进它做好准备。
 

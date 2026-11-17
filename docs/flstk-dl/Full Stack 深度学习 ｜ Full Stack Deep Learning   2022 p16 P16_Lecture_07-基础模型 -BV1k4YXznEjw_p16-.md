@@ -458,7 +458,6 @@ So we don't know exactly why it has trouble emergingrg characters probably becau
 
 
 
-![](img/55fbc81872b269890a843d2ec923c2ed_11.png)
 
 And at that point， it actually gets a correct encyclcloedia。So this is from Peter Wellender。
 
@@ -694,7 +693,6 @@ Search as Google to find some URLs， then sends the list of URLs to GP3 to ask 
 
  and then the GP3 returns it。
 
-![](img/55fbc81872b269890a843d2ec923c2ed_15.png)
 
 So pretty crazy feels interesting， and this is also a research paper called WebGPT。
 

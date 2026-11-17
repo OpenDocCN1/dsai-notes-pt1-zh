@@ -24,7 +24,6 @@ And then the step is the part of the game that includes one action。
 
  where you will be after that action is taken。
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_1.png)
 
 So we're going to import gym and we're going to import pandas as we'll use that as well。
 
@@ -40,11 +39,9 @@ And that will allow you to look at what goes into each one of the different envi
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_3.png)
 
 And you try to make it to the G here at that end。
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_5.png)
 
 So you see， the object of the game is to get to the gold G without landing in any holes。
 
@@ -56,7 +53,6 @@ So you see， the object of the game is to get to the gold G without landing in 
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_7.png)
 
 Now， built into that and we'll discuss this a bit later。
 
@@ -72,7 +68,6 @@ It's not going to be that you can always necessarily go in the direction that yo
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_9.png)
 
 So we're going to create our environment by callingG。tMake and passing in this string frozen link V0。
 
@@ -80,7 +75,6 @@ So we're going to create our environment by callingG。tMake and passing in this
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_11.png)
 
 We're then going to get our current observation。And when we call environment。reset。
 
@@ -88,7 +82,6 @@ We're then going to get our current observation。And when we call environment�
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_13.png)
 
 And we'll see that current observation in just a second， we print that out。
 
@@ -96,7 +89,6 @@ And we'll see that current observation in just a second， we print that out。
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_15.png)
 
 Now。I want to look a bit deeper into what our environment actually is。 I'm going to call environment。
 
@@ -104,7 +96,6 @@ Now。I want to look a bit deeper into what our environment actually is。 I'm g
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_17.png)
 
 And look at the documentation。And in the documentation， we can see more about the game。
 
@@ -120,7 +111,6 @@ Where again S is that starting point， F is the frozen surface， H is a whole�
 
  and G is the goal that you're trying to get to。
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_19.png)
 
 So that's how this game actually is going to work。If we want to look at the actual environment。
 
@@ -130,15 +120,12 @@ So that's how this game actually is going to work。If we want to look at the ac
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_21.png)
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_22.png)
 
 So I'm going to print out our action space and the action space will include four discrete actions that we can take It'll just say here we'll print this out so we can see it just says here discrete4 but that describes that we can go up down。
 
  right or left。
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_24.png)
 
 And then if we want to take an action。What we can do because we don't know which actions to take。
 
@@ -156,7 +143,6 @@ And I can run this again， still at three。And I run this again。
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_26.png)
 
 So now let's act， let's actually take this action。So our new action is equal to。
 
@@ -172,7 +158,6 @@ And we'll discuss this a bit further later on， we're actually going to print t
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_28.png)
 
 So we see that the observation we cell observation0。 there's no reward。
 
@@ -188,7 +173,6 @@ Our orange square is now below。 Again， our reward will still be 0 because we
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_30.png)
 
 Now we're going to take five different moves。So for I range 5。
 
@@ -200,13 +184,11 @@ What our observation is， what the reward is， whether or not we're done， th
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_32.png)
 
 So we see we moved down， then we moved down again， then we moved up。
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_34.png)
 
 Went to the right， and we see that we made each one of these moves throughout。 Again。
 
@@ -222,13 +204,11 @@ The reward stays at zero unless we reach the end of the game。And here it says 
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_36.png)
 
 So that's why we have done actually equal to true here。
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_38.png)
 
 Now， hopefully we have a clear idea or a guess as to what each one of these outputs mean。
 
@@ -240,7 +220,6 @@ Now， hopefully we have a clear idea or a guess as to what each one of these ou
 
  And we see this is 5。
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_40.png)
 
 And that's observation 5。The reward refers to the outcome of the game and we only get a one if we're at that G。
 
@@ -256,7 +235,6 @@ Then the info gives us extra information about the world。 And here its probabi
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_42.png)
 
 So now we want to simulate an entire episode。So again。
 
@@ -268,11 +246,9 @@ So now we want to simulate an entire episode。So again。
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_44.png)
 
 We know that done is equal to false to start off。
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_46.png)
 
 And while that's false。We set that new action equal to the sample。We then take a random action。
 
@@ -288,7 +264,6 @@ And we see each one of the actions taken。The observations where we ended up。
 
  and our game ended。
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_48.png)
 
 So some things to notice about the actions taken。And where we ended up。If we look at。
 
@@ -302,7 +277,6 @@ Some of the actions。And where we end up， so we see here action0 at observati
 
 
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_50.png)
 
 And。If we think about it， action seems like， again up down left or right。
 
@@ -312,9 +286,7 @@ And。If we think about it， action seems like， again up down left or right�
 
  given that you chose a certain direction。
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_52.png)
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_53.png)
 
 Now， I'm going to pause the video here as we walk through just this setup here of working with Jim。
 
@@ -322,6 +294,5 @@ Now， I'm going to pause the video here as we walk through just this setup here
 
  All right， I'll see you in the next video。😊。
 
-![](img/6355b5c4ed396d6793b3f834f15baca9_55.png)
 
 ![](img/6355b5c4ed396d6793b3f834f15baca9_56.png)

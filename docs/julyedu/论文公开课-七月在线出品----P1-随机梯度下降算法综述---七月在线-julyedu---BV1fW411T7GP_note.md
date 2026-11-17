@@ -188,7 +188,6 @@ v_t &= \beta_2 v_{t-1} + (1-\beta_2) (\nabla_\theta J(\theta_t))^2 \quad &\text{
 4.  系统学习了一系列改进算法：**Momentum/NAG** 通过引入“惯性”缓解震荡；**Adagrad/Adadelta/RMSprop** 通过自适应学习率处理稀疏性和自动衰减；**Adam** 综合了动量与自适应学习的优势，成为当前最流行的选择。
 5.  最后，了解了一些辅助优化策略，如**数据打乱、批标准化、早停和添加梯度噪声**。
 
-![](img/3f8a5a68c6467dbf275f01b9c87787a4_1.png)
 
 ![](img/3f8a5a68c6467dbf275f01b9c87787a4_3.png)
 

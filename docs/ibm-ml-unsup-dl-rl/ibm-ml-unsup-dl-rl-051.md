@@ -8,7 +8,6 @@ So rather than summing together all of the error values and then taking the grad
 
  as we did with that vanilla gradient descent。
 
-![](img/a37c370ede81cb97013dc0b20c7e2fc3_1.png)
 
 We instead calculate our weights by subtracting from W n the gradient。
 
@@ -32,9 +31,7 @@ Moving down our cost function。And eventually， we end up hopefully near some 
 
 
 
-![](img/a37c370ede81cb97013dc0b20c7e2fc3_3.png)
 
-![](img/a37c370ede81cb97013dc0b20c7e2fc3_4.png)
 
 Now， finally， with mini batch gradients set。We can choose some value n between one and the size of the entire data set。
 
@@ -50,9 +47,7 @@ And now we get the best of both worlds， we can reduce the memory relative to o
 
 
 
-![](img/a37c370ede81cb97013dc0b20c7e2fc3_6.png)
 
-![](img/a37c370ede81cb97013dc0b20c7e2fc3_7.png)
 
 But it'll be less noisy and get to the optimal value much smoother than working with sarcchastic gradientant descent。
 
@@ -62,7 +57,6 @@ So that's going to be the idea behind mini batch gradientding descents。
 
 
 
-![](img/a37c370ede81cb97013dc0b20c7e2fc3_9.png)
 
 Now， just a Rika。In this section we discuss gradient descent or full batch gradient descent where we went through every single row in our data set in order to update each one of our gradients。
 
@@ -90,6 +84,5 @@ Now it closes out our video here on gradient descent。
 
  Allright， I'll see you there。😊。
 
-![](img/a37c370ede81cb97013dc0b20c7e2fc3_11.png)
 
 ![](img/a37c370ede81cb97013dc0b20c7e2fc3_12.png)

@@ -1,6 +1,5 @@
 # 002：概览与基础API 🧠
 
-![](img/e17771124ed26ba8f789e3725fa476dd_0.png)
 
 ![](img/e17771124ed26ba8f789e3725fa476dd_0.png)
 
@@ -8,7 +7,6 @@
 
 
 
-![](img/e17771124ed26ba8f789e3725fa476dd_2.png)
 
 ![](img/e17771124ed26ba8f789e3725fa476dd_2.png)
 
@@ -34,7 +32,6 @@
 
 
 
-![](img/e17771124ed26ba8f789e3725fa476dd_4.png)
 
 ![](img/e17771124ed26ba8f789e3725fa476dd_4.png)
 
@@ -98,6 +95,5 @@ Evidently已经实现了一系列描述器，如果你查看文档，会发现�
 
 
 
-![](img/e17771124ed26ba8f789e3725fa476dd_11.png)
 
 ![](img/e17771124ed26ba8f789e3725fa476dd_11.png)

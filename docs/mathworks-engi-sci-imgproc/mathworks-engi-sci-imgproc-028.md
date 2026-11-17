@@ -4,7 +4,6 @@
 
 ## 概述
 
-![](img/bea0adb640e1d9734b44baf3e28bd852_1.png)
 
 上一节我们介绍了使用批处理处理器应用程序处理数据。本节中，我们来看看如何通过编写代码实现相同的功能。标准方法是使用图像数据存储。数据存储不直接加载全部图像，而是存储图像的位置信息，以便在需要时导入和处理。
 
@@ -77,7 +76,6 @@ angle = stats.Orientation;
 以下是代码框架：
 
 
-![](img/bea0adb640e1d9734b44baf3e28bd852_7.png)
 
 ```matlab
 % 初始化空数组
@@ -111,7 +109,6 @@ end
 dataTable = table(fileNames, labels, angles, 'VariableNames', {'FileName', 'Label', 'Angle'});
 ```
 
-![](img/bea0adb640e1d9734b44baf3e28bd852_9.png)
 
 ## 处理异常情况
 

@@ -72,14 +72,11 @@ reloaded_model = TFAutoModel.from_pretrained("./my_bert_model")
 
 ## 总结
 
-![](img/2918b334c029ecd181f96c38b1ffc1ef_1.png)
 
 本节课中，我们一起学习了如何使用Transformers库在TensorFlow中实例化Transformer模型。我们了解了`TFAutoModel`和`AutoConfig`类如何自动处理模型架构和配置的选择，学习了如何加载预训练权重、修改模型配置以创建定制架构，以及如何保存和重新加载模型。掌握这些步骤是使用预训练Transformer模型进行下游任务或进一步研究的基础。
 
 ---
 
-![](img/2918b334c029ecd181f96c38b1ffc1ef_2.png)
 
-![](img/2918b334c029ecd181f96c38b1ffc1ef_1.png)
 
 ![](img/2918b334c029ecd181f96c38b1ffc1ef_2.png)

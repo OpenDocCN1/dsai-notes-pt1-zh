@@ -155,9 +155,7 @@ mlab.show()
 *   `np.linspace(0, 4 * np.pi, 20)` 生成从 0 到 4π 的 20 个等间距点。
 *   `mlab.points3d(x, y, z)` 在三维空间中绘制这些点。
 
-![](img/074b4f7319e3d1de310c02f2d51cd2cd_5.png)
 
-![](img/074b4f7319e3d1de310c02f2d51cd2cd_7.png)
 
 ### 一维数据（线）
 接下来，我们看看如何绘制一维数据，即连接点的线。
@@ -288,9 +286,7 @@ for i in range(10):
 ### 使用生成器创建动画
 对于更复杂的动画，我们可以使用生成器函数，并结合 `mlab.animate` 装饰器。
 
-![](img/074b4f7319e3d1de310c02f2d51cd2cd_9.png)
 
-![](img/074b4f7319e3d1de310c02f2d51cd2cd_11.png)
 
 以下是使用生成器创建动画的示例：
 

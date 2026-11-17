@@ -1,6 +1,5 @@
 # 25：在真实数据集上评估LLM性能 _ 动手项目 _ 书籍数据
 
-![](img/4c9a7fda21aa4fe26333c49c5ac03a99_0.png)
 
 ![](img/4c9a7fda21aa4fe26333c49c5ac03a99_0.png)
 

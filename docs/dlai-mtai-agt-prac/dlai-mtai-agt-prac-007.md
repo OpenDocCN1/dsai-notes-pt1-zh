@@ -12,7 +12,6 @@
 
 第二个智能体组将利用我们找到的客户信息，撰写一封旨在提高参与度的邮件。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_1.png)
 
 我们将把所有这些步骤封装到一个 **Flow** 中。Flow 通过事件来确保我们按顺序执行所有步骤，并且它拥有一个 **状态（State）**，用于在流程执行期间或之后存储和访问信息。
 
@@ -20,30 +19,24 @@
 
 ## 智能体组设计
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_3.png)
 
 第一个是“潜在客户评分智能体组”。它将执行以下任务：
 1.  分析客户数据。
 2.  研究该公司的文化背景。
 3.  进行最终的客户评分。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_4.png)
 
 如果评分足够高，第二个“邮件撰写智能体组”将接手，执行以下任务：
 1.  起草初始邮件。
 2.  优化邮件以提高参与度。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_1.png)
 
 需要指出的是，潜在客户评分智能体组将输出**结构化数据**。我们将利用这些数据，并将其传递给邮件撰写智能体组。这展示了如何从智能体和智能体组中获取复杂的结构化输出，非常实用。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_6.png)
 
 ## 什么是智能销售管道？
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_8.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_10.png)
 
 智能销售管道本质上会：
 1.  研究潜在客户。
@@ -54,10 +47,7 @@
 
 现在，让我们动手构建它。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_12.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_3.png)
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_4.png)
 
 ## 代码实现：构建智能体组
 
@@ -69,31 +59,23 @@ from crewai import Agent, Task, Crew
 
 接下来，设置我们将要使用的 OpenAI 模型。我们将使用 `gpt-4o-mini`。请注意，这已经是 crewAI 的默认设置，但为了明确起见，我们在这里进行设置。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_14.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_15.png)
 
 ```python
 from langchain_openai import ChatOpenAI
 llm = ChatOpenAI(model="gpt-4o-mini")
 ```
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_16.png)
 
 然后，我们需要加载所有智能体和任务的 YAML 配置文件，方式与过去类似。不同之处在于，我们现在使用两个智能体组，因此需要加载两组 YAML 文件：一组用于专注于客户评分和研究的“潜在客户智能体”，另一组用于专注于撰写邮件的“邮件智能体”。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_6.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_18.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_19.png)
 
 加载方式很直接，我们将它们分别存入四个变量中以便后续使用。
 
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_21.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_22.png)
 
 ```python
 import yaml
@@ -110,17 +92,13 @@ with open('email_tasks.yaml') as file:
     email_tasks_config = yaml.safe_load(file)
 ```
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_24.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_25.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_8.png)
 
 ## 创建结构化数据模型
 
 现在，创建我们将要使用的 Pydantic 模型，用于将客户信息和数据构造成可用的形式。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_10.png)
 
 我们将使用四个不同的模型：
 1.  `LeadPersonalInfo`：保存客户个人信息。
@@ -159,13 +137,9 @@ class LeadScoringResult(BaseModel):
 
 创建好模型后，导入智能体组将使用的工具。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_27.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_12.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_29.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_30.png)
 
 对于这些智能体组，我们将只使用两个工具：`SerperDevTool` 和 `ScrapeWebsiteTool`。这些工具允许我们的智能体使用谷歌搜索互联网，并抓取遇到的任何 URL，以便了解更多关于特定版本或网站的信息。
 
@@ -185,20 +159,14 @@ scrape_tool = ScrapeWebsiteTool()
 *   `CulturalFitAgent`：确保该公司符合我们的理想客户画像。
 *   `ScoringValidationAgent`：整合所有信息，给出最终评分，并说明评分依据。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_32.png)
 
 我们稍后可以在 YAML 中查看这些任务，但现在，我们将它们全部整合到这个单一的智能体组中。
 
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_34.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_35.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_36.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_37.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_38.png)
 
 ```python
 # 从YAML配置创建智能体
@@ -218,55 +186,35 @@ lead_qualification_crew = Crew(
 )
 ```
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_40.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_14.png)
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_15.png)
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_16.png)
 
 现在，让我们快速看一下智能体的定义。你可以看到它们的角色、目标和背景故事。这些智能体的定义非常直接，其核心目标是找到关于该客户的信息，以便就是否为优质客户做出明智决策。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_42.png)
 
 如果我们查看任务，可以看到我们试图为每个客户提取的信息类型。包括姓名、职位、角色、专业背景等个人信息，以及行业、公司规模、收入、市场存在感等公司信息。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_44.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_45.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_18.png)
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_19.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_46.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_47.png)
 
 你可以看到，我们在任务定义中预设了要销售的公司和产品（本例中是 crewAI，一个多智能体编排平台）。我们告诉智能体我们的理想客户画像以及如何推销这个平台，然后将客户数据插入到任务定义中。当然，我们也可以将公司和产品信息作为变量插入，但为了示例简单，我们直接将其定义在任务中。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_49.png)
 
 其他任务则继续寻找关于文化、价值观、战略契合度以及客户质量的定性评分等信息。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_51.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_52.png)
 
 了解了智能体和任务后，让我们回到代码。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_21.png)
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_22.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_54.png)
 
 ## 构建第二个智能体组：邮件撰写
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_56.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_57.png)
 
 现在创建我们的第二个智能体组：邮件参与度智能体组。该智能体组将在客户被评分和分类后，为其撰写邮件。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_59.png)
 
 这个智能体组非常直接。我们有两个智能体：`EmailContentSpecialist` 和 `EngagementStrategist`。它们将执行起草初始邮件和优化邮件以确保其吸引力的步骤。该智能体组只关注我们获得的高评分客户，以确保能与他们有效互动。
 
@@ -287,30 +235,20 @@ email_engagement_crew = Crew(
 )
 ```
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_61.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_62.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_64.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_24.png)
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_25.png)
 
 ## 创建 Flow
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_66.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_67.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_68.png)
 
 现在两个智能体组都已创建，我们准备开始创建 Flow。Flow 是 crewAI 的一个全新功能，它允许你在智能体组执行之前、期间或之后执行常规 Python 代码。
 
 这让你拥有更多控制权，能够构建更完整、更复杂的自动化流程，既利用了智能体带来的自主性，又保留了在需要时执行常规 Python 代码的能力。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_70.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_72.png)
 
 首先，导入我们将要使用的类和函数。你可以看到我导入了 `Flow` 类以及两个函数装饰器：`listen` 和 `start`。这将是一个非常直接的 Flow，但能让我们理解其强大之处。
 
@@ -320,9 +258,7 @@ email_engagement_crew = Crew(
 
 获取客户后，我们需要对这些客户进行评分。为此，我们可以创建一个名为 `score_leads` 的新函数。你可以看到我们在这个函数上使用了不同的装饰器 `@listen`，并引用了 `fetch_leads` 函数。这意味着 `score_leads` 函数将在 `fetch_leads` 完成后执行。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_74.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_76.png)
 
 `fetch_leads` 函数返回的内容（本例中是一个客户数组）将被传递给 `score_leads` 函数，我们可以用它来为每个客户启动评分智能体组。
 
@@ -330,9 +266,7 @@ email_engagement_crew = Crew(
 
 评分完成后，我们想做两件事：将结果存储到数据库，并筛选出评分非常高（例如高于70分）的客户。为此，我们创建两个新函数：`store_leads_score` 和 `filter_leads`。这两个函数都监听 `score_leads`。因此，一旦 `score_leads` 执行完成，这两个函数将**并行执行**。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_78.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_79.png)
 
 `store_leads` 函数可以将信息存回数据库。`filter_leads` 函数则过滤掉评分低于70的客户。现在，`filter_leads` 函数的返回值将只包含我们获得的高评分客户。
 
@@ -342,7 +276,6 @@ email_engagement_crew = Crew(
 
 这就是一个 Flow，设置起来非常直接。要执行它，你可以先创建一个 Flow 实例。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_81.png)
 
 ```python
 from crewai.flow import Flow, start, listen
@@ -402,11 +335,7 @@ class SalesPipelineFlow(Flow):
 flow = SalesPipelineFlow()
 ```
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_83.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_27.png)
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_29.png)
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_30.png)
 
 ## 可视化 Flow
 
@@ -416,27 +345,16 @@ flow = SalesPipelineFlow()
 flow.plot('sales_pipeline_flow.html')
 ```
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_85.png)
 
 现在，我们加载这个 HTML 文件来看看它的样子。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_32.png)
 
 在这里，你可以看到整个 Flow。它从 `fetch_leads` 函数开始，然后调用 `score_leads`。在 `score_leads` 之后，它并行执行两件事：将评分存储到数据库，以及筛选评分高于70的客户。之后，它撰写邮件并发送。图中还有一个图例，教你如何阅读整个图表，理解 Flow 中发生的一切。这对于导出流程图、附加到 GitHub 仓库或向他人解释流程执行情况非常有用。
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_34.png)
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_35.png)
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_36.png)
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_37.png)
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_38.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_87.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_88.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_89.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_90.png)
 
 ## 运行 Flow 并查看指标
 
@@ -448,13 +366,9 @@ flow.plot('sales_pipeline_flow.html')
 emails = await flow.kickoff()
 ```
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_92.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_93.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_94.png)
 
-![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_95.png)
 
 ![](img/d4e05605ddc4eb0f5b18ffc1cb17a648_96.png)
 

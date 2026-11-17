@@ -14,7 +14,6 @@
 
 ### 基于类的签名
 
-![](img/8cc4d2faa230049c956fc6475e007f78_4.png)
 
 这是推荐的方式。你需要从`dspy.Signature`类继承，并使用`dspy.InputField`和`spy.OutputField`来标记输入输出字段。
 
@@ -36,7 +35,6 @@ class SentimentSignature(dspy.Signature):
 
 ### 基于字符串的签名
 
-![](img/8cc4d2faa230049c956fc6475e007f78_6.png)
 
 这是一种更轻量的方式，适合快速原型设计。
 
@@ -54,7 +52,6 @@ signature = "text -> sentiment"
 
 模块除了签名外，还有可配置的属性，例如`demos`属性用于携带示例。DSPy模块可以自定义以实现复杂逻辑，并且一个模块可以由多个子模块组成。
 
-![](img/8cc4d2faa230049c956fc6475e007f78_8.png)
 
 DSPy提供了一系列构建模块，让用户能轻松上手。以下是几个重要的内置模块：
 *   **`dspy.Predict`**：最基本的模块，执行语言模型交互，是所有复杂模块的构建基础。
@@ -67,7 +64,6 @@ DSPy提供了一系列构建模块，让用户能轻松上手。以下是几个�
 
 要使用内置模块，只需将签名传递给模块构造函数，然后通过设置关键字参数来调用它。
 
-![](img/8cc4d2faa230049c956fc6475e007f78_10.png)
 
 ```python
 # 创建一个带有签名的问题生成器模块
@@ -124,10 +120,8 @@ dspy.configure(lm=lm)
 我们使用之前定义的`SentimentSignature`，并创建一个`dspy.Predict`模块。
 
 
-![](img/8cc4d2faa230049c956fc6475e007f78_12.png)
 
 
-![](img/8cc4d2faa230049c956fc6475e007f78_14.png)
 
 ```python
 # 定义签名
@@ -142,7 +136,6 @@ result = classifier(text="这部电影真是太精彩了！")
 print(result.sentiment) # 输出情感分数
 ```
 
-![](img/8cc4d2faa230049c956fc6475e007f78_16.png)
 
 `result`是一个`dspy.Prediction`对象，类似于字典，但支持关键字和点号两种访问方式。
 
@@ -152,7 +145,6 @@ print(result.sentiment) # 输出情感分数
 print(lm.inspect_history(n=1))
 ```
 
-![](img/8cc4d2faa230049c956fc6475e007f78_18.png)
 
 输出会展示系统消息（包含签名、字段格式）、用户消息（格式化后的输入）和助手的响应（格式化后的输出）。DSPy将签名、模块信息和实际输入组合成一个多轮对话提示词，并根据签名解析语言模型的响应，使得语言模型就像一个具有明确定义输入输出的API。
 

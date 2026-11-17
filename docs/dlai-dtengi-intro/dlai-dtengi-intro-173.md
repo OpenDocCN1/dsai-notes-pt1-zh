@@ -1,6 +1,5 @@
 #  173：高级SQL查询（第2部分）📊
 
-![](img/2fd990ce7a0a43de0f99426ded8ce935_0.png)
 
 在本节课中，我们将学习几种高级SQL技术，包括公共表表达式、子查询和窗口函数。我们将通过具体的DVD租赁数据库示例，了解如何应用这些技术来执行更复杂的数据分析和计算。
 
@@ -14,11 +13,9 @@
 
 有时，我们可能需要在先前查询结果的基础上执行额外的计算，但又不希望将这些结果存储在单独的表中。这时，我们可以使用公共表表达式来定义临时的结果集，以便在查询的其他部分引用。
 
-![](img/2fd990ce7a0a43de0f99426ded8ce935_2.png)
 
 以下是定义和使用CTE的步骤：
 
-![](img/2fd990ce7a0a43de0f99426ded8ce935_3.png)
 
 1.  使用 `WITH` 关键字开始。
 2.  为CTE指定一个名称。
@@ -41,7 +38,6 @@ WITH staff_customer_pairs AS (
 
 定义好CTE后，我们就可以像查询普通表一样查询它。以下查询从CTE中选择员工ID并统计客户数量，然后按员工ID分组。
 
-![](img/2fd990ce7a0a43de0f99426ded8ce935_5.png)
 
 ```sql
 SELECT staff_id, COUNT(customer_id) AS total_customers
@@ -64,7 +60,6 @@ WITH customer_payment_info AS (
 
 然后，我们可以从这个CTE中查询，计算每位客户的按时支付平均值（即百分比）。
 
-![](img/2fd990ce7a0a43de0f99426ded8ce935_7.png)
 
 ```sql
 SELECT customer_id, AVG(on_time_payment) * 100 AS percent_on_time
@@ -99,7 +94,6 @@ FROM customer_percent_on_time;
 SELECT AVG(length) FROM dim_film;
 ```
 
-![](img/2fd990ce7a0a43de0f99426ded8ce935_9.png)
 
 然后，我们可以将这个查询作为子查询嵌入到主查询的 `WHERE` 条件中：
 
@@ -117,7 +111,6 @@ WHERE length > (SELECT AVG(length) FROM dim_film);
 
 要定义窗口，需要使用 `OVER()` 子句，它需要两个信息：按哪一列对行进行分区，以及按哪一列对行进行排序。
 
-![](img/2fd990ce7a0a43de0f99426ded8ce935_11.png)
 
 ### 排名函数示例
 
@@ -135,7 +128,6 @@ WITH customer_info AS (
 )
 ```
 
-![](img/2fd990ce7a0a43de0f99426ded8ce935_13.png)
 
 现在，我们想为这个结果添加一列，显示对于每位客户，每个类别基于租赁天数的排名。
 

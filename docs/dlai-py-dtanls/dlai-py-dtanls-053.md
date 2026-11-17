@@ -17,9 +17,7 @@
 2.  **简化数据操作**：它内置了数据分组和汇总功能，无需手动预处理。
 3.  **提供额外图表类型**：它包含一些Matplotlib中没有的、更高级的图表。
 
-![](img/137758b37782a9320caee89828b92299_1.png)
 
-![](img/137758b37782a9320caee89828b92299_2.png)
 
 ### 对比：Matplotlib vs. Seaborn
 
@@ -50,13 +48,10 @@ grouped.plot(kind='bar')
 plt.show()
 ```
 
-![](img/137758b37782a9320caee89828b92299_4.png)
 
-![](img/137758b37782a9320caee89828b92299_5.png)
 
 这种方法有两个令人困扰的地方：图表不够美观，并且需要大量繁琐的数据操作才能生成这种常见的图表。
 
-![](img/137758b37782a9320caee89828b92299_6.png)
 
 **使用Seaborn创建相同的图表**则简单得多：
 
@@ -71,11 +66,8 @@ plt.show()
 
 上面的图表展示了各州的平均贷款额。如果我们还想按贷款等级（grade）进一步细分，该怎么办呢？在Seaborn中，这非常简单。
 
-![](img/137758b37782a9320caee89828b92299_8.png)
 
-![](img/137758b37782a9320caee89828b92299_9.png)
 
-![](img/137758b37782a9320caee89828b92299_10.png)
 
 以下是使用`hue`参数添加分组的方法：
 
@@ -94,19 +86,14 @@ plt.show()
 
 由于Seaborn构建在Matplotlib之上，因此可以完美地结合两者的命令。你可以像上面例子中那样，在Seaborn绘图后，继续使用Matplotlib的`plt.title()`、`plt.xlabel()`、`plt.ylabel()`等函数来添加或修改图表元素。
 
-![](img/137758b37782a9320caee89828b92299_12.png)
 
-![](img/137758b37782a9320caee89828b92299_13.png)
 
-![](img/137758b37782a9320caee89828b92299_14.png)
 
 ### 快速尝试其他度量和图表
 
 Seaborn的设置也使得快速尝试其他度量指标变得容易。例如，如果你想可视化利率而不是贷款金额，只需更改`y`参数：
 
-![](img/137758b37782a9320caee89828b92299_16.png)
 
-![](img/137758b37782a9320caee89828b92299_17.png)
 
 ```python
 sns.barplot(data=filtered_df, x='state', y='int_rate', hue='grade')
@@ -131,9 +118,7 @@ sns.barplot(data=filtered_df, x='state', y='int_rate', hue='grade', estimator=le
 
 本节课中我们一起学习了Seaborn的核心能力，让我们来总结一下：
 
-![](img/137758b37782a9320caee89828b92299_19.png)
 
-![](img/137758b37782a9320caee89828b92299_20.png)
 
 1.  **提供额外的绘图函数**：如`barplot`、`lineplot`、`regplot`等。
 2.  **自动数据汇总**：无需手动进行`groupby`和汇总步骤，默认使用`np.mean`。

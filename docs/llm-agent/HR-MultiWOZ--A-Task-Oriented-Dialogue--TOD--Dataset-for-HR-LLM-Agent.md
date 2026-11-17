@@ -30,7 +30,6 @@ weijiexu@amazon.com
 
 LLM 代理（Gao 等， [2023](https://arxiv.org/html/2402.01018v1#bib.bib4)）使用 LLM 作为其核心计算引擎，使其能够进行对话、完成任务、推理，并展示一定程度的自主性。与其他领域类似（Kalvakurthi 等， [2023](https://arxiv.org/html/2402.01018v1#bib.bib8)；Hsu 等， [2023](https://arxiv.org/html/2402.01018v1#bib.bib7)），创建一个 LLM 代理来协助这些任务可以为员工节省大量时间，并提高工作满意度。一个好的 LLM 代理应该能够理解用户的需求（Liu 等， [2023](https://arxiv.org/html/2402.01018v1#bib.bib11)）。用于评估或训练 HR LLM 代理的理想数据集应包含虚拟助手与员工之间的对话，并带有对话状态的标注。对话状态包含对话当前上下文的表示，如意图和相关信息。
 
-![参见说明](img/1e2832d07816feb45915e16dc8a78175.png)
 
 图 1：该图描述了数据生成管道。HR 专家首先通过识别任务、创建架构和生成员工档案来开始。然后应用 LLM 来生成多样化的场景并进行释义，使对话更自然。标签随后通过 DeBERTa 提取，并由 MTurk 精炼。
 
@@ -289,11 +288,9 @@ DeBERTa 模型也有一些限制。我们在比较原始短答案与 DeBERTa 提
 
 ## 附录 K 人类评估得分分布
 
-![参考说明](img/2388fd27f6141be78000b8beaae6f782.png)
 
 图 4: MTurk 得分分布，用于判断HR问题是否清晰
 
-![参考说明](img/ca9561ef11ae1d0ff34f95bd93fd7ea6.png)
 
 图 5: MTurk 得分分布，用于判断HR问题是否礼貌
 

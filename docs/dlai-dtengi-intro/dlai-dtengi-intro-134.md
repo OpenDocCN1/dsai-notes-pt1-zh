@@ -1,6 +1,5 @@
 #  134：XCom与变量 🚀
 
-![](img/eed07bf2d03170b49599a137e23b32bc_0.png)
 
 ## 概述
 
@@ -18,7 +17,6 @@
 
 ## 引入XCom：轻量级数据共享
 
-![](img/eed07bf2d03170b49599a137e23b32bc_2.png)
 
 但对于少量数据，有另一种称为**XCom**的方法可以使用。
 
@@ -63,7 +61,6 @@ def extract_from_api(**context):
     task_instance.xcom_push(key='senior_ratio', value=senior_ratio)
 ```
 
-![](img/eed07bf2d03170b49599a137e23b32bc_6.png)
 
 我调用了一个招聘网站的REST API，获取美国地区最新的40个远程数据工程师职位发布。然后，我计算了其中要求高级数据工程师的职位比例。现在，我想将这个值传递给第二个任务。
 
@@ -107,11 +104,8 @@ def print_data(**context):
 
 ### 在Airflow UI中创建变量
 
-![](img/eed07bf2d03170b49599a137e23b32bc_10.png)
 
-![](img/eed07bf2d03170b49599a137e23b32bc_11.png)
 
-![](img/eed07bf2d03170b49599a137e23b32bc_12.png)
 
 让我们在Airflow UI中创建两个变量：一个用于帖子数量，另一个用于位置。
 
@@ -138,9 +132,7 @@ def extract_from_api(**context):
 
 然后在代码内部，使用`Variable.get()`方法来检索帖子总数和位置列表。如果您希望此方法将JSON对象作为字典而不是字符串返回，请将参数`deserialize_json`设置为`True`。
 
-![](img/eed07bf2d03170b49599a137e23b32bc_14.png)
 
-![](img/eed07bf2d03170b49599a137e23b32bc_15.png)
 
 ![](img/eed07bf2d03170b49599a137e23b32bc_16.png)
 

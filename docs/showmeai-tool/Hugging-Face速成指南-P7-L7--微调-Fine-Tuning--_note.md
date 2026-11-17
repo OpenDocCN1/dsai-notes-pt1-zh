@@ -32,9 +32,7 @@
 
 将编码后的数据封装成PyTorch的`Dataset`对象，便于后续使用`DataLoader`进行批量加载。
 
-![](img/4ee3097c7f433d913bfc9e33552e43f7_4.png)
 
-![](img/4ee3097c7f433d913bfc9e33552e43f7_5.png)
 
 代码示例如下：
 ```python

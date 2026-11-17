@@ -31,7 +31,6 @@ device = torch.device("musa")
 
 ## 2️⃣ 第二部分：yTorch IR与量化方法
 
-![](img/7c57d5da2161b421a3c0d93c2cdbf61f_5.png)
 
 在深入探讨压缩工具包和New Trim之前，我们需要先了解PyTorch提供的多种中间表示。
 
@@ -81,7 +80,6 @@ device = torch.device("musa")
 
 ---
 
-![](img/7c57d5da2161b421a3c0d93c2cdbf61f_7.png)
 
 ## 总结
 

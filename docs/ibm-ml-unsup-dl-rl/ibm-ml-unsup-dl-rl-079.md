@@ -22,7 +22,6 @@ And then if we think about kernels that aren't square， we have here height 1 a
 
 
 
-![](img/5fd0e2cb5e006dc3c30527407bc7ff72_1.png)
 
 Now， I discussed before that as we move a kernel across our image。
 
@@ -40,7 +39,6 @@ You won't be able to because you have that three by3 and the center of that thre
 
 
 
-![](img/5fd0e2cb5e006dc3c30527407bc7ff72_3.png)
 
 So the idea is to pad and padding adds extra pixels around that frame。
 
@@ -52,7 +50,6 @@ And those added pixels are typically going to be zero valued， so we just call 
 
 
 
-![](img/5fd0e2cb5e006dc3c30527407bc7ff72_5.png)
 
 So to think about this example。First， I want you to look at our original input。
 
@@ -72,7 +69,6 @@ We won't be able to center around that one in that top left corner or the two ri
 
 
 
-![](img/5fd0e2cb5e006dc3c30527407bc7ff72_7.png)
 
 Now， with padding， we add on these zeros around each one of the edges。
 
@@ -88,7 +84,6 @@ Another thing that I want you to notice is that we're still using that 3 by  thr
 
 
 
-![](img/5fd0e2cb5e006dc3c30527407bc7ff72_9.png)
 
 Another thing that we can tune when creating our convolutional neural nets is going to be the stride or the step size as the kernel moves across the image。
 
@@ -114,7 +109,6 @@ And when that shriide is greater than one。 If we think about the output that w
 
  So bring down that output value。
 
-![](img/5fd0e2cb5e006dc3c30527407bc7ff72_11.png)
 
 So here we have an example of strideide equal to two， so rather than just moving over one。
 
@@ -124,7 +118,6 @@ So here we have an example of strideide equal to two， so rather than just movi
 
 
 
-![](img/5fd0e2cb5e006dc3c30527407bc7ff72_13.png)
 
 And then our vertical is also going to be moving down to。 So once it got to the end of the image。
 
@@ -132,7 +125,6 @@ And then our vertical is also going to be moving down to。 So once it got to th
 
  which is just going to be zero。
 
-![](img/5fd0e2cb5e006dc3c30527407bc7ff72_15.png)
 
 Now， we can combine this with padding as well and still have this stride equal to 2。
 
@@ -150,7 +142,6 @@ In the next video， I want to introduce to you the idea of adding on depths so 
 
 
 
-![](img/5fd0e2cb5e006dc3c30527407bc7ff72_17.png)
 
 All right， I'll see you there。
 

@@ -1,6 +1,5 @@
 # 003：顺序对话与客户引导
 
-![](img/abff030e4df082e1bcf6cf40b10f6141_0.png)
 
 在本节课中，我们将学习如何利用多智能体设计来完成一个包含多个步骤的任务。我们将构建一个由多个智能体参与的对话序列，它们将协作完成一个产品的客户引导流程。我们还将体验人类如何无缝地参与到AI系统的循环中。
 
@@ -10,9 +9,7 @@
 
 ![](img/abff030e4df082e1bcf6cf40b10f6141_2.png)
 
-![](img/abff030e4df082e1bcf6cf40b10f6141_3.png)
 
-![](img/abff030e4df082e1bcf6cf40b10f6141_4.png)
 
 上一节我们介绍了多智能体的基本概念，本节中我们来看看如何通过顺序对话来完成这一系列任务。
 
@@ -56,11 +53,9 @@ onboarding_topic_agent = ConversableAgent(
 
 ### 3. 创建客户互动智能体
 
-![](img/abff030e4df082e1bcf6cf40b10f6141_7.png)
 
 第三个智能体将根据客户的个人信息和话题偏好，提供有趣的事实、笑话或故事。
 
-![](img/abff030e4df082e1bcf6cf40b10f6141_9.png)
 
 ```python
 engagement_agent = ConversableAgent(
@@ -170,7 +165,6 @@ result_engagement = customer_proxy_agent.initiate_chat(
 ![](img/abff030e4df082e1bcf6cf40b10f6141_11.png)
 
 
-![](img/abff030e4df082e1bcf6cf40b10f6141_13.png)
 
 ```python
 # 检查第一段对话的总结信息
@@ -187,18 +181,15 @@ print("互动消息:", result_engagement.last_message()["content"])
 
 同样，你也可以查看与每次对话相关的成本。
 
-![](img/abff030e4df082e1bcf6cf40b10f6141_17.png)
 
 ```python
 # 查看总成本信息
 print("总成本详情:", result_info.cost, result_topic.cost, result_engagement.cost)
 ```
 
-![](img/abff030e4df082e1bcf6cf40b10f6141_19.png)
 
 成本信息通常包括总成本、提示词令牌成本和补全令牌成本。
 
-![](img/abff030e4df082e1bcf6cf40b10f6141_20.png)
 
 ## 总结
 

@@ -66,9 +66,7 @@ for param in param_grid:
 
 使用优化后的参数（`changepoint_prior_scale=0.7`）重新训练模型并进行预测。
 
-![](img/57f4725114ff7dc00f972d5917b8bdfb_1.png)
 
-![](img/57f4725114ff7dc00f972d5917b8bdfb_3.png)
 
 *   **预测效果提升**：对比优化前后模型对某个特定日期的预测值，发现新模型的预测误差更小。
 *   **预测未来**：模型可以方便地预测未来任意时间点的值，并给出不确定性区间（上下界）。
@@ -78,17 +76,12 @@ for param in param_grid:
     # forecast 中包含 ‘yhat’, ‘yhat_lower’, ‘yhat_upper’ 等列
     ```
 
-![](img/57f4725114ff7dc00f972d5917b8bdfb_5.png)
 
-![](img/57f4725114ff7dc00f972d5917b8bdfb_7.png)
 
 ## 探索性应用：模拟股票交易
 
-![](img/57f4725114ff7dc00f972d5917b8bdfb_9.png)
 
-![](img/57f4725114ff7dc00f972d5917b8bdfb_11.png)
 
-![](img/57f4725114ff7dc00f972d5917b8bdfb_13.png)
 
 我们可以将预测结果用于简单的策略回测，例如：
 *   **策略**：如果模型预测明日股价上涨（`yhat_tomorrow > yhat_today`），则今日买入，明日卖出。

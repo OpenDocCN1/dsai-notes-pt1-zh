@@ -6,7 +6,6 @@
 
 ![](img/3d86121ce03106f4a2678b2c89ee9927_3.png)
 
-![](img/3d86121ce03106f4a2678b2c89ee9927_5.png)
 
 ---
 
@@ -66,7 +65,6 @@ optimizer.zero_grad()
 
 ![](img/3d86121ce03106f4a2678b2c89ee9927_12.png)
 
-![](img/3d86121ce03106f4a2678b2c89ee9927_14.png)
 
 调用 `loss.backward()` 后，PyTorch的自动微分引擎（autograd）会自动为所有 `requires_grad=True` 的参数计算梯度。
 
@@ -78,11 +76,8 @@ optimizer.zero_grad()
 
 ![](img/3d86121ce03106f4a2678b2c89ee9927_18.png)
 
-![](img/3d86121ce03106f4a2678b2c89ee9927_20.png)
 
-![](img/3d86121ce03106f4a2678b2c89ee9927_21.png)
 
-![](img/3d86121ce03106f4a2678b2c89ee9927_22.png)
 
 学习率是一个重要的超参数，它控制着每次参数更新的步长：
 *   **小学习率**：更新步伐小，训练稳定但可能收敛慢。
@@ -105,12 +100,9 @@ optimizer.step()
 
 以下是上述五个步骤组合成一个完整训练循环的代码框架：
 
-![](img/3d86121ce03106f4a2678b2c89ee9927_29.png)
 
 
-![](img/3d86121ce03106f4a2678b2c89ee9927_31.png)
 
-![](img/3d86121ce03106f4a2678b2c89ee9927_33.png)
 
 ```python
 # 设置训练轮数（epoch）
@@ -135,7 +127,6 @@ for epoch in range(epochs):
     optimizer.step()
 ```
 
-![](img/3d86121ce03106f4a2678b2c89ee9927_35.png)
 
 ---
 
@@ -148,11 +139,9 @@ for epoch in range(epochs):
 *   **梯度下降**：相当于你朝着最陡的下坡方向迈出一步。
 *   **学习率**：相当于你这一步迈出的距离。
 
-![](img/3d86121ce03106f4a2678b2c89ee9927_37.png)
 
 如果学习率太小（小碎步），下山会很慢。如果学习率太大（大步跳跃），可能会越过谷底甚至导致发散。
 
-![](img/3d86121ce03106f4a2678b2c89ee9927_39.png)
 
 ![](img/3d86121ce03106f4a2678b2c89ee9927_41.png)
 

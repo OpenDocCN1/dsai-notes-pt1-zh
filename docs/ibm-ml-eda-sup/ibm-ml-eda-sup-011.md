@@ -2,19 +2,15 @@
 
 在本节课中，我们将要学习如何从不同的数据源中检索数据，特别是从CSV和JSON文件中读取数据。我们将介绍使用Pandas库进行数据读取的基本方法，并探讨一些实用的参数和技巧。
 
-![](img/e2ab553becea8d7d6651c8b6a49f661e_1.png)
 
-![](img/e2ab553becea8d7d6651c8b6a49f661e_2.png)
 
 ## 概述
 
-![](img/e2ab553becea8d7d6651c8b6a49f661e_4.png)
 
 数据是机器学习的基石，而数据通常存储在各种格式的文件中。本节我们将重点介绍两种常见的数据格式：CSV和JSON。我们将学习如何使用Python的Pandas库来读取这些文件，并将其转换为易于处理的数据结构。
 
 ## 从CSV文件中读取数据
 
-![](img/e2ab553becea8d7d6651c8b6a49f661e_6.png)
 
 CSV文件是一种以逗号分隔值的文本文件，常用于存储表格数据。在Pandas中，读取CSV文件通常只需要几行代码。
 
@@ -24,7 +20,6 @@ CSV文件是一种以逗号分隔值的文本文件，常用于存储表格数�
 2. 设置文件路径变量，指向CSV文件的位置。
 3. 使用`pd.read_csv()`函数读取文件，并将结果保存为Pandas DataFrame。
 
-![](img/e2ab553becea8d7d6651c8b6a49f661e_8.png)
 
 ```python
 import pandas as pd
@@ -33,7 +28,6 @@ data = pd.read_csv(file_path)
 print(data.head())
 ```
 
-![](img/e2ab553becea8d7d6651c8b6a49f661e_10.png)
 
 执行上述代码后，你将看到DataFrame的前五行数据，包括列名和对应的值。
 
@@ -53,7 +47,6 @@ print(data.head())
 data = pd.read_csv(file_path, sep='\t', header=0, names=['col1', 'col2'], na_values=['NA', 99])
 ```
 
-![](img/e2ab553becea8d7d6651c8b6a49f661e_12.png)
 
 ## 从JSON文件中读取数据
 
@@ -61,7 +54,6 @@ JSON文件是一种轻量级的数据交换格式，常用于NoSQL数据库和AP
 
 以下是读取JSON文件的基本步骤：
 
-![](img/e2ab553becea8d7d6651c8b6a49f661e_14.png)
 
 1. 使用Pandas的`read_json()`函数读取JSON文件。
 2. 传入文件路径，并将结果保存为DataFrame。
@@ -71,7 +63,6 @@ data = pd.read_json('data/example.json')
 print(data.head())
 ```
 
-![](img/e2ab553becea8d7d6651c8b6a49f661e_16.png)
 
 ### JSON文件的参数
 

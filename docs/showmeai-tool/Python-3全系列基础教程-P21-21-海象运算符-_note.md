@@ -1,6 +1,5 @@
 # Python 3全系列基础教程，P21：21）海象运算符 🦭
 
-![](img/9da42199d1e55f92d2acdd27f6b5f98c_0.png)
 
 ![](img/9da42199d1e55f92d2acdd27f6b5f98c_0.png)
 

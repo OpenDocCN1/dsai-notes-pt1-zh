@@ -1,6 +1,5 @@
 # 生成式AI：P3：生成式AI历史第二部分
 
-![](img/e78be00c2ffb8dc6b12b2f11f2f1a39c_0.png)
 
 ![](img/e78be00c2ffb8dc6b12b2f11f2f1a39c_0.png)
 

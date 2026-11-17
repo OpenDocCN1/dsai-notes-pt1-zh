@@ -1,22 +1,15 @@
 # 72：机器学习基础与神经网络入门
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_1.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_3.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_5.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_6.png)
 
 ## 概述
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_8.png)
 
 在本节课中，我们将学习机器学习的基础知识，包括使用Scikit-learn和Keras库构建简单的分类模型。我们将通过一个经典的鸢尾花数据集分类问题，了解监督式学习的基本流程，并动手构建一个简单的人工神经网络。
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_10.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_11.png)
 
 ![](img/81fc1a612f9d5feb62c4a52e702b9797_12.png)
 
@@ -72,9 +65,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random
 
 我们选择一个逻辑回归模型来解决这个分类问题。逻辑回归是一种用于分类的线性模型，它通过一个S形函数将线性回归的输出映射到概率。
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_20.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_21.png)
 
 ```python
 from sklearn.linear_model import LogisticRegression
@@ -86,7 +77,6 @@ model.fit(X_train, y_train)
 
 使用训练好的模型对测试集进行预测，并评估其性能。我们使用准确度和混淆矩阵作为评估指标。
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_23.png)
 
 ```python
 from sklearn.metrics import accuracy_score, confusion_matrix
@@ -98,13 +88,10 @@ print("混淆矩阵:")
 print(conf_matrix)
 ```
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_25.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_27.png)
 
 **混淆矩阵**是一个重要的可视化工具，它显示了模型预测结果与真实标签的对比。理想情况下，所有样本都应落在矩阵的对角线上（预测正确）。非对角线上的值代表预测错误。
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_29.png)
 
 ---
 
@@ -129,34 +116,22 @@ y_categorical = to_categorical(y)
 X_train, X_test, y_train, y_test = train_test_split(X_normalized, y_categorical, test_size=0.25, random_state=42)
 ```
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_31.png)
 
 ### 2. 构建神经网络模型
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_33.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_34.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_36.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_38.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_40.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_42.png)
 
 我们使用Keras的`Sequential` API来构建一个顺序模型，即层与层之间线性堆叠。我们添加一个全连接层（Dense），一个Dropout层用于防止过拟合，以及最终的输出层。
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_44.png)
 
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_46.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_47.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_49.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_51.png)
 
 ```python
 from tensorflow.keras.models import Sequential
@@ -174,11 +149,8 @@ model.summary()
 
 使用`fit`方法训练模型。我们将观察训练过程中的损失和准确度变化。
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_53.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_55.png)
 
-![](img/81fc1a612f9d5feb62c4a52e702b9797_57.png)
 
 ```python
 history = model.fit(X_train, y_train, epochs=300, validation_split=0.2, verbose=0)

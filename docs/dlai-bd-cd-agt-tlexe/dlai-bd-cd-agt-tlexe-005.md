@@ -2,7 +2,6 @@
 
 在本节课中，我们将学习如何使用 HubB Sandbox 环境，在云端安全地运行智能体生成的代码。你将学会创建、管理并与一个远程沙盒环境进行交互，该环境能够安全地执行代码。
 
-![](img/8c4e6446b82820fc021ea8d1a5a083b0_1.png)
 
 ## 概述
 
@@ -10,7 +9,6 @@
 
 ## 使用 HubB API 管理沙盒
 
-![](img/8c4e6446b82820fc021ea8d1a5a083b0_3.png)
 
 HubB 提供了非常简单的 API 来管理沙盒。以下是核心操作步骤。
 
@@ -272,7 +270,6 @@ log_output(response3)
 display(IFrame(src=f"http://{sandbox.host}:3000/snake_game", width=800, height=600))
 ```
 
-![](img/8c4e6446b82820fc021ea8d1a5a083b0_8.png)
 
 你可以用箭头键移动蛇，吃水果，蛇会随之生长。如果撞到墙或自己，游戏结束，按空格键可以重新开始。
 
@@ -289,7 +286,6 @@ with open("local_snake_game.html", "w") as f:
 # 现在你可以在本地浏览器中打开 `local_snake_game.html` 文件
 ```
 
-![](img/8c4e6446b82820fc021ea8d1a5a083b0_10.png)
 
 ## 总结
 

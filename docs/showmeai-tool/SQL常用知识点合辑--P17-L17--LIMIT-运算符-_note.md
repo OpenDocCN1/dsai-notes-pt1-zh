@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P17：L17- LIMIT 运算符 📄
 
-![](img/9fdb6991c94c6629bfbb30c9e40830d4_0.png)
 
 ![](img/9fdb6991c94c6629bfbb30c9e40830d4_0.png)
 
@@ -40,12 +39,8 @@ SELECT * FROM customers LIMIT 6, 3;
 
 在这个例子中，`6` 是偏移量，`3` 是要获取的记录数。执行该查询将返回客户7、8和9。
 
-![](img/9fdb6991c94c6629bfbb30c9e40830d4_2.png)
 
-![](img/9fdb6991c94c6629bfbb30c9e40830d4_2.png)
-![](img/9fdb6991c94c6629bfbb30c9e40830d4_3.png)
 
-![](img/9fdb6991c94c6629bfbb30c9e40830d4_3.png)
 
 ## 3. 实践练习：查询最忠诚的客户
 
@@ -79,10 +74,8 @@ SELECT * FROM customers ORDER BY points DESC LIMIT 3;
 
 如果改变这个顺序，MySQL将会报错。因此，在编写查询时请务必注意子句的顺序。
 
-![](img/9fdb6991c94c6629bfbb30c9e40830d4_5.png)
 
 ![](img/9fdb6991c94c6629bfbb30c9e40830d4_5.png)
-![](img/9fdb6991c94c6629bfbb30c9e40830d4_7.png)
 
 ![](img/9fdb6991c94c6629bfbb30c9e40830d4_7.png)
 

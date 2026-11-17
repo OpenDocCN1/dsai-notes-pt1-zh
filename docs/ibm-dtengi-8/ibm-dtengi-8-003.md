@@ -1,40 +1,28 @@
 # 003：ELT基础知识
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_0.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_1.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_3.png)
 
 在本节课中，我们将要学习**ELT**（提取、加载、转换）流程的基础知识。我们将了解ELT是什么，它与ETL的区别，以及它为何在现代数据工程中成为一种新兴趋势。
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_4.png)
 
 ## 什么是ELT流程？🔍
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_6.png)
 
 上一节我们介绍了数据管道的基本概念，本节中我们来看看ELT流程的具体定义。
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_7.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_8.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_9.png)
 
 **ELT** 是 **提取（Extract）、加载（Load）、转换（Transform）** 的缩写。它是一种特定的自动化数据管道工程方法。
 
 ELT与ETL类似，都涉及相似的阶段，但**执行顺序不同**。
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_11.png)
 
 ## ELT流程详解 ⚙️
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_12.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_13.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_14.png)
 
 了解了ELT的基本定义后，我们来详细分解它的三个核心阶段。
 
@@ -48,23 +36,15 @@ ELT与ETL类似，都涉及相似的阶段，但**执行顺序不同**。
 
 现在我们已经清楚了ELT的工作流程，接下来看看它在哪些场景下最能发挥优势。
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_16.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_17.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_18.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_19.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_20.png)
 
 ELT流程的典型用例通常属于**高性能计算和大数据领域**。
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_21.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_22.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_23.png)
 
 以下是ELT的主要应用场景：
 *   处理实施大数据产品时带来的**大规模波动和扩展**。
@@ -73,13 +53,10 @@ ELT流程的典型用例通常属于**高性能计算和大数据领域**。
 
 在速度方面，**移动数据通常比处理数据更易成为瓶颈**，因此移动得越少越好。所以，当你想从相同的数据源灵活构建一系列数据产品时，ELT可能是最佳选择。
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_25.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_26.png)
 
 ## ELT为何成为新兴趋势？☁️
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_27.png)
 
 我们看到了ELT的诸多优势，那么推动它成为趋势的背后力量是什么呢？主要是云计算的发展。
 
@@ -89,15 +66,11 @@ ELT流程的典型用例通常属于**高性能计算和大数据领域**。
 
 使用ELT，你可以在**移动数据**和**处理数据**之间实现清晰的分离。当然，云计算同样有能力处理这两项任务中最具挑战性的情况。
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_29.png)
 
 最后，ELT提供了**灵活性**。转换数据的原因和方式可能有很多种。因此，ELT是一种灵活的选择，能够从同一数据源支持多种应用。因为你处理的是源数据的副本，所以**没有信息丢失**。许多类型的转换都可能导致信息丢失，如果这种情况发生在管道上游，可能需要很长时间才能提出变更请求。更糟糕的是，如果原始数据没有被存储，信息可能会永远丢失。
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_30.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_31.png)
 
-![](img/45f0b859ecd55dde49ec0ccacd4cb8d8_32.png)
 
 ## 总结 📝
 

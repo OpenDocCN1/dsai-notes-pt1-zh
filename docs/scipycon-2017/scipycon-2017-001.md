@@ -1,6 +1,5 @@
 # 1：Pandas 数据分析入门教程 🐼
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_1.png)
 
 在本课程中，我们将学习如何使用 Python 的 Pandas 库进行数据分析。Pandas 是一个强大的工具，可以看作是支持异构数据的 NumPy，或者类似于 R 语言中的数据框。它提供了一种编程方式来操作类似 Excel 表格的数据。
 
@@ -28,17 +27,12 @@ df = pd.read_csv('../data/gapminder.tsv', delimiter='\t')
 df.head()
 ```
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_3.png)
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_5.png)
 
 要了解数据集的整体结构，我们可以使用 `shape` 属性获取行数和列数，或使用 `info` 方法查看每列的数据类型和非空值数量。
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_7.png)
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_9.png)
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_11.png)
 
 ```python
 df.shape
@@ -55,14 +49,10 @@ df.info()
 
 选择单列有两种常见方法：使用方括号或点号表示法。点号表示法更简洁，但要求列名不包含空格。
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_13.png)
-
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_15.png)
 
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_17.png)
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_19.png)
+
 
 ```python
 # 方法一：方括号
@@ -84,11 +74,8 @@ subset.head()
 
 选择行主要使用 `loc` 和 `iloc` 属性。`loc` 通过行标签选择，而 `iloc` 通过行位置（索引）选择。
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_23.png)
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_25.png)
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_27.png)
 
 ```python
 # 使用 loc 选择标签为 0 的行
@@ -121,11 +108,8 @@ above_average = df.loc[df['lifeExp'] > life_exp_mean, :]
 
 ## 分组与聚合统计
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_29.png)
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_31.png)
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_32.png)
 
 在查看了如何选择数据子集后，一个常见的分析任务是计算分组统计量。Pandas 的 `groupby` 功能非常强大。
 
@@ -133,9 +117,7 @@ above_average = df.loc[df['lifeExp'] > life_exp_mean, :]
 
 例如，计算每年的平均寿命期望：
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_34.png)
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_36.png)
 
 ```python
 # 按年份分组，计算 lifeExp 列的平均值
@@ -159,9 +141,7 @@ flat_df = grouped.reset_index()
 
 ---
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_38.png)
 
-![](img/0cc7e38a4f4c14b27415ca3f3a631bb7_39.png)
 
 ## 数据可视化与保存
 

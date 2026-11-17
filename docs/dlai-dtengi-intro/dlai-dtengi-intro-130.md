@@ -1,6 +1,5 @@
 #  130：编排基础 🧭
 
-![](img/798a86a1fe55a3c91c6730e39ed106d6_0.png)
 
 在本节课中，我们将学习数据管道编排的核心概念。编排是协调和管理数据管道中多个任务自动执行的过程。与简单的定时调度相比，编排提供了更强大的功能，如任务依赖管理、错误处理和监控。
 
@@ -30,13 +29,11 @@
 
 以下是定义数据管道中所有任务和依赖关系的代码示例：
 
-![](img/798a86a1fe55a3c91c6730e39ed106d6_2.png)
 
 
 ![](img/798a86a1fe55a3c91c6730e39ed106d6_3.png)
 
 
-![](img/798a86a1fe55a3c91c6730e39ed106d6_5.png)
 
 ```python
 # 示例：在Airflow中定义一个简单的DAG
@@ -75,7 +72,6 @@ task = PythonOperator(
 以下是你可以如何在Airflow中定义一个名为“传感器”的任务，用于监听文件上传事件：
 
 
-![](img/798a86a1fe55a3c91c6730e39ed106d6_7.png)
 
 ```python
 from airflow.providers.amazon.aws.sensors.s3 import S3KeySensor
@@ -90,15 +86,11 @@ wait_for_file = S3KeySensor(
 )
 ```
 
-![](img/798a86a1fe55a3c91c6730e39ed106d6_8.png)
 
-![](img/798a86a1fe55a3c91c6730e39ed106d6_9.png)
 
-![](img/798a86a1fe55a3c91c6730e39ed106d6_10.png)
 
 以这个任务开始的DAG部分将不会运行，直到`myfile.csv`在S3存储桶中可用。
 
-![](img/798a86a1fe55a3c91c6730e39ed106d6_11.png)
 
 ## 监控、日志与数据质量检查 🔍
 
@@ -120,11 +112,9 @@ def data_quality_check(**context):
     print("数据质量检查通过。")
 ```
 
-![](img/798a86a1fe55a3c91c6730e39ed106d6_13.png)
 
 再次说明，我现在展示的所有内容都是在Airflow中进行的，但我演示的这些概念是你可以从任何编排平台中期望的功能。
 
-![](img/798a86a1fe55a3c91c6730e39ed106d6_14.png)
 
 ![](img/798a86a1fe55a3c91c6730e39ed106d6_15.png)
 

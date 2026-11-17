@@ -1,16 +1,12 @@
 # 005：重排序（Rerank）技术详解 🎯
 
-![](img/d913ddd72db44a6e4df8ecfd8327f6d6_0.png)
 
 ## 概述
 
-![](img/d913ddd72db44a6e4df8ecfd8327f6d6_2.png)
 
-![](img/d913ddd72db44a6e4df8ecfd8327f6d6_3.png)
 
 在本节课中，我们将学习语义搜索的第二个核心组件——**重排序（Rerank）**。这是一种利用大型语言模型对搜索结果进行排序，以提升关键词搜索和密集检索效果的方法。
 
-![](img/d913ddd72db44a6e4df8ecfd8327f6d6_5.png)
 
 ---
 

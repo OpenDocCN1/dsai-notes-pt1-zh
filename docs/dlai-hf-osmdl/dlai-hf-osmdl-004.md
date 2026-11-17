@@ -76,7 +76,6 @@ gc.collect() # 调用垃圾回收
 
 创建摘要管道与翻译类似，只需更改任务和模型。
 
-![](img/bf51082d585dfed0df66acc4f7301ae0_3.png)
 
 ```python
 # 创建摘要管道
@@ -91,10 +90,8 @@ summarizer = pipeline(
 
 现在，让我们对一段关于巴黎的长文本进行总结。
 
-![](img/bf51082d585dfed0df66acc4f7301ae0_5.png)
 
 
-![](img/bf51082d585dfed0df66acc4f7301ae0_6.png)
 
 ```python
 # 定义长文本
@@ -110,7 +107,6 @@ print(summary)
 
 在调用摘要器时，我们通过 `max_length` 和 `min_length` 参数控制了摘要的长度范围，使输出更加精炼。
 
-![](img/bf51082d585dfed0df66acc4f7301ae0_8.png)
 
 模型生成了一段简洁的摘要，概括了原文关于巴黎的核心信息。
 

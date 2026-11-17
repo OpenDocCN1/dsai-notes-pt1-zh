@@ -1,6 +1,5 @@
 # 33：第 86 讲：CuTe DSL 入门指南 🚀
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_1.png)
 
 ## 概述
 在本节课中，我们将学习 NVIDIA 的 CuTe DSL（领域特定语言）。CuTe DSL 旨在为开发者提供一种在保持对硬件完全控制的同时，比 PTX 更简单的抽象层来编写 GPU 内核代码的方法。我们将通过一系列示例，了解其核心概念、编程模型和实用功能。
@@ -33,18 +32,14 @@ CuTe 的设计架构包含多个抽象层：
 
 在接下来的内容中，我们将聚焦于为 GPU MODE 竞赛提供的模板程序，并以这些程序为例，帮助大家理解如何使用 CuTe DSL 的功能来编写代码。
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_3.png)
 
 ---
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_5.png)
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_7.png)
 
 ## 示例一：简单矩阵乘法（GEMM）
 我们将从第一个示例开始，这是一个简单的矩阵乘法（GEMM）计算。
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_9.png)
 
 ### 核心装饰器：`@cute.jit` 与 `@cute.kernel`
 在 CuTe DSL 中，有两个关键的装饰器。
@@ -61,9 +56,7 @@ CuTe 的设计架构包含多个抽象层：
 
 CuTe 布局主要包含一系列**划分**（`partition`）和**切片**（`slice`）操作。例如，在 GEMM 中，我们使用 `tile` 操作根据给定的 `BLOCK_M` 和 `BLOCK_K` 配置来划分全局输入矩阵 A。
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_11.png)
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_12.png)
 
 ```python
 # 示例：使用 tile 操作划分全局张量
@@ -113,9 +106,7 @@ CuTe DSL 支持 `for`、`while` 和 `if` 控制流，允许用户编写符合直
 
 序列和逻辑非常相似。优化的关键在于如何选择原子操作、分块模式，以确保最大的内存带宽利用率和最佳的张量核心效率。
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_14.png)
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_16.png)
 
 ### 优化思路
 对于竞赛参与者，可以从以下几个方面探索优化：
@@ -124,11 +115,9 @@ CuTe DSL 支持 `for`、`while` 和 `if` 控制流，允许用户编写符合直
 *   **工作组专业化**：利用 TMA 和张量核心指令的异步特性，让不同的工作组负责不同的拷贝和计算任务，提高并发性。
 *   **细粒度分块**：在输出阶段（Epilogue）对数据进行子分块，在寄存器中进行逐元素操作，并与共享内存传输并发执行，以优化寄存器使用和共享内存压力。
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_18.png)
 
 ---
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_20.png)
 
 ## 示例三：双矩阵乘法（Dual GEMM）
 接下来，我们看看双矩阵乘法（Dual GEMM）示例。
@@ -144,9 +133,7 @@ CuTe DSL 支持 `for`、`while` 和 `if` 控制流，允许用户编写符合直
 
 ---
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_22.png)
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_24.png)
 
 ## 示例四：分组矩阵乘法（Grouped GEMM）
 本节我们来看最复杂的分组矩阵乘法（Grouped GEMM）示例。
@@ -170,12 +157,10 @@ CuTe DSL 支持 `for`、`while` 和 `if` 控制流，允许用户编写符合直
 
 ---
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_26.png)
 
 ## 其他实用功能
 除了核心编程模型，CuTe DSL 还提供了一些其他实用功能来辅助开发和调试。
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_28.png)
 
 ### 编译与缓存
 CuTe DSL 支持自定义**缓存键**。由于 DSL 编译时间可能较长，在基准测试时，我们不希望每次都重新编译内核。用户可以自定义一个键来索引缓存。如果内核已在全局缓存中，则无需重新编译。
@@ -186,9 +171,7 @@ CuTe DSL 支持自定义**缓存键**。由于 DSL 编译时间可能较长，�
 *   `cute.print`：在主机端和设备端均可使用，打印运行时参数的值。
 *   `cute.print_tensor`：打印张量的内容（支持的数据类型有限）。对于低精度数据，可以先转换为 `float32` 再打印。
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_30.png)
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_32.png)
 
 ### 内部调试与 PTX 内联
 CuTe DSL 还支持生成内部表示以辅助调试。
@@ -201,9 +184,7 @@ CuTe DSL 还支持生成内部表示以辅助调试。
 ## 总结与资源
 本节课我们一起学习了 NVIDIA CuTe DSL 的核心概念和编程方法。
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_34.png)
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_36.png)
 
 我们回顾了：
 1.  CuTe DSL 的设计目标与架构。
@@ -212,18 +193,14 @@ CuTe DSL 还支持生成内部表示以辅助调试。
 4.  了解了 Dual GEMM 和 Grouped GEMM 的特殊处理方式。
 5.  掌握了编译缓存、调试打印和内联 PTX 等实用功能。
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_38.png)
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_39.png)
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_41.png)
 
 **有用的资源**：
 *   CuTe 创始人 Chris 在 GPU MODE 竞赛中的介绍，包含了代数和布局变换的详细细节。
 *   CuTe DSL 官方文档，涵盖了本课程提到的大部分功能。
 *   GitHub 上的 DSL 示例库，其中许多展示了如何达到接近理论极限的性能。
 
-![](img/46f9f16094c0ec7fca81ffefc0000fab_43.png)
 
 ![](img/46f9f16094c0ec7fca81ffefc0000fab_45.png)
 

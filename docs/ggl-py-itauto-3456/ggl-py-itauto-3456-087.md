@@ -1,6 +1,5 @@
 #  087：崩溃程序介绍 🚨
 
-![](img/1da9ca9756ded5df7b11c994c0f40faa_1.png)
 
 ![](img/1da9ca9756ded5df7b11c994c0f40faa_2.png)
 

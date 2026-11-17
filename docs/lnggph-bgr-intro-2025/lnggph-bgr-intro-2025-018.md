@@ -1,6 +1,5 @@
 # 018：声明式注释状态转换 🧩
 
-![](img/93e871d47c5ce8790f5dfbaf714906b5_0.png)
 
 在本节课中，我们将要学习LangGraph中的“声明式注释状态转换”。这是一种更简洁、更声明式的方法，用于定义状态如何随着节点执行而更新，可以避免在多个节点中重复编写相同的状态更新逻辑。
 
@@ -10,15 +9,11 @@
 
 ## 声明式状态转换详解
 
-![](img/93e871d47c5ce8790f5dfbaf714906b5_2.png)
 
-![](img/93e871d47c5ce8790f5dfbaf714906b5_3.png)
 
 以下是声明式注释状态转换的核心步骤：
 
-![](img/93e871d47c5ce8790f5dfbaf714906b5_4.png)
 
-![](img/93e871d47c5ce8790f5dfbaf714906b5_5.png)
 
 首先，我们需要从`langgraph.graph`导入`StateGraph`和`ANNOTATIONS`模块中的`add_messages`（或其他操作符），但根据原文示例，我们将直接使用一个通用的`operator`概念。在实际的LangGraph中，你可能需要从`langgraph.graph`导入特定的操作符，如`add_messages`用于消息列表。为了演示，我们假设有一个`operator`对象提供了各种方法。
 

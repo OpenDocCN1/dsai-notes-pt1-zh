@@ -1,6 +1,5 @@
 #  020：Python基本语法介绍 🐍
 
-![](img/5cc090d20b394db9660f07691bf8d2f2_0.png)
 
 ![](img/5cc090d20b394db9660f07691bf8d2f2_2.png)
 

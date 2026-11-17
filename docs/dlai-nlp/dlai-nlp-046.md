@@ -1,6 +1,5 @@
 #  046：近似最近邻 🎯
 
-![](img/07ae12717983752300ae644f0bb543ea_0.png)
 
 ## 概述
 
@@ -64,7 +63,6 @@ hash_values = (dot_products > 0).astype(int)
 
 结果是向量 `v` 位于这三个随机平面中每一个的正侧。
 
-![](img/07ae12717983752300ae644f0bb543ea_2.png)
 
 ![](img/07ae12717983752300ae644f0bb543ea_2.png)
 

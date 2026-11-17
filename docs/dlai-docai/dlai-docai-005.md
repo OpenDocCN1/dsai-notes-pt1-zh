@@ -10,7 +10,6 @@
 
 首先，我们需要为现代OCR流程进行一些基础设置。
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_1.png)
 
 我们将导入必要的库：
 *   `PIL`（Pillow）用于处理图像。
@@ -27,7 +26,6 @@ import matplotlib.pyplot as plt
 from paddleocr import PaddleOCR
 ```
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_3.png)
 
 此外，与上一个实验类似，我们需要导入用于智能体的API密钥。
 
@@ -46,17 +44,14 @@ from paddleocr import PaddleOCR
 ocr = PaddleOCR(lang='en', use_angle_cls=True, det=True, rec=True)
 ```
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_5.png)
 
 ## 处理收据图像
 
 这张收据图像与实验1中的相同。运行此单元格将执行OCR。
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_1.png)
 
 结果将是一个列表，其中每个元素对应一个被处理的页面。对于单页图像，它只包含一个字典。
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_7.png)
 
 ```python
 # 对图像进行OCR
@@ -81,7 +76,6 @@ for line in result[0]:
 
 让我们继续请求图像，然后在另一个单元格中执行以查看叠加了所有信息的图像。
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_5.png)
 
 现在，如果你仔细比较这张图像和原始图像，会发现部分背景被移除，并且图像被顺时针轻微旋转以使其更水平。
 
@@ -89,7 +83,6 @@ for line in result[0]:
 
 为什么要重复这样的例子？请注意边界框的添加。我们现在获得了关于收据中特定文本字段位置的位置信息。同时注意到我们获取的值是正确的。之前，这个“795”是错误的。
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_7.png)
 
 ## 将PaddleOCR封装为智能体工具
 
@@ -100,7 +93,6 @@ for line in result[0]:
 定义好函数后，我们现在指定该函数是智能体可用的工具。其余部分将与第1课相同，注意我们使用 `gpt-3.5-turbo` 作为我们的LLM。
 
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_9.png)
 
 ```python
 # 定义OCR工具函数
@@ -114,7 +106,6 @@ def ocr_tool(image_path):
 
 ## 使用智能体验证收据总额
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_11.png)
 
 这个任务看起来很熟悉，我们将使用收据并验证总额是否正确。
 
@@ -128,7 +119,6 @@ def ocr_tool(image_path):
 
 ## 处理表格图像
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_13.png)
 
 让我们将所有这些应用到表格上。这是表格的预览。
 
@@ -142,7 +132,6 @@ def ocr_tool(image_path):
 
 但让我们继续前进。我们将给智能体分配任务，再次从标记为“EN to DE”的列中提取FLOPS（每秒浮点运算次数）。
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_11.png)
 
 让我们再次滚动查看输出，青绿色来自PaddleOCR，绿色来自LLM。然后，在我们的函数中，我们还要求在底部打印这个结果。
 
@@ -166,7 +155,6 @@ def ocr_tool(image_path):
 
 问题一非常清楚是“I am”，但在文本识别中，我们得到的是“I _”，然后这看起来像“A UAN”给我，所以这不好。问题二，我们在这里有一个额外的下划线，我们可能可以在后处理中清理它，这比Tesseract的表现有所改进。
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_15.png)
 
 现在，让我们给智能体分配提取学生回答为JSON的任务。
 
@@ -178,17 +166,13 @@ def ocr_tool(image_path):
 
 ## 探索PaddleOCR的局限性
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_20.png)
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_21.png)
 
 在本节中，我们将查看三个新例子，我们特意选择它们来暴露一些弱点。但如果你正在使用PaddleOCR进行构建，这些都是你需要意识到的事情。
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_22.png)
 
 这是一个名为 `report.png` 的新例子，它似乎是一份关于美国经济报告的内页。
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_24.png)
 
 ![](img/5ec87d4aeb173b68365a886cd54090d8_17.png)
 
@@ -200,7 +184,6 @@ def ocr_tool(image_path):
 
 让我们看看 `article.jpeg`。它包含什么？
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_20.png)
 
 这看起来像是一篇关于牙齿的学术文章的前页。
 
@@ -210,7 +193,6 @@ def ocr_tool(image_path):
 
 让我们向下滚动查看边界框输出，看看它在处理这种多栏文档时表现如何。
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_24.png)
 
 这里有很多边界框，但我只想提请你注意第一栏和第二栏。当然，这里的阅读顺序，在大多数进行口腔健康调查的西方国家，你会先读完左手栏。
 
@@ -252,7 +234,6 @@ layout_ocr = PaddleOCR(use_angle_cls=True, det=True, rec=True, layout=True)
 
 让我们看看用一个例子能推进到什么程度。这是一个银行对账单。
 
-![](img/5ec87d4aeb173b68365a886cd54090d8_26.png)
 
 通常，在处理银行对账单时，最终的下游用例是从中提取一定数量的键值对。
 

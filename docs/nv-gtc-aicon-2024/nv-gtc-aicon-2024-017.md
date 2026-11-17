@@ -22,7 +22,6 @@
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_19.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_21.png)
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_23.png)
 
@@ -62,9 +61,7 @@
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_53.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_55.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_57.png)
 
 英伟达创始人兼首席执行官黄仁勋在演讲开篇指出，我们正处在一场根本性的计算变革之中。这场变革不仅影响计算机行业，更将重塑全球价值百万亿美元的所有产业。其核心驱动力是**加速计算**和**生成式人工智能**。
 
@@ -92,13 +89,10 @@
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_77.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_79.png)
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_81.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_83.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_85.png)
 
 通用计算的发展已触及瓶颈，而加速计算能带来显著的性能提升。这种提升在英伟达自身所处的行业——利用仿真工具创造产品的行业——中尤为重要。目标不再是降低计算成本，而是**提升计算规模**，实现完全数字化、高保真度的产品全流程模拟，即构建“数字孪生”。
 
@@ -167,7 +161,6 @@
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_135.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_137.png)
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_139.png)
 
@@ -175,13 +168,11 @@
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_143.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_145.png)
 
 大语言模型的规模正在以惊人的速度增长。模型参数数量和训练所需的数据量共同决定了所需的计算规模。以当前先进的约 **1.8 万亿参数**的模型为例，其训练需要执行数**千万亿次浮点运算**。
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_147.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_149.png)
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_150.png)
 
@@ -215,7 +206,6 @@ Blackwell 不是一个单一的芯片，而是一个平台。其核心是拥有 
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_174.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_175.png)
 
 Blackwell 平台包含多项关键创新：
 *   **第二代 Transformer 引擎**：能动态、自动地调整数值精度，在保持训练收敛性的同时提升效率。
@@ -274,7 +264,6 @@ Blackwell 平台包含多项关键创新：
 
 上一节我们介绍了为训练而生的 Blackwell 平台，本节中我们来看看它如何服务于生成式 AI 的推理（生成）阶段，并理解“AI 工厂”的概念。
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_216.png)
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_218.png)
 
@@ -284,7 +273,6 @@ Blackwell 平台包含多项关键创新：
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_224.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_226.png)
 
 未来的计算方式将从“检索”转向“生成”。当用户与 AI 交互时，后台是 GPU 在生成内容（Token）。这种生成式计算是全新的产业，其基础设施可被称为 **AI 工厂**。AI 工厂的目标是产出“智能”这一新形态的价值。
 
@@ -356,11 +344,8 @@ Blackwell 平台包含多项关键创新：
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_283.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_284.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_286.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_288.png)
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_289.png)
 
@@ -397,13 +382,11 @@ Blackwell 平台包含多项关键创新：
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_311.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_313.png)
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_315.png)
 
 英伟达正与 SAP、ServiceNow、Snowflake 等全球领先的企业软件平台合作，利用 AI Foundry 帮助它们构建各自的 AI 助手和副驾驶。
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_317.png)
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_319.png)
 
@@ -417,9 +400,7 @@ Blackwell 平台包含多项关键创新：
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_326.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_327.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_329.png)
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_331.png)
 
@@ -439,7 +420,6 @@ Blackwell 平台包含多项关键创新：
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_344.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_345.png)
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_347.png)
 
@@ -501,7 +481,6 @@ Blackwell 平台包含多项关键创新：
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_389.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_391.png)
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_393.png)
 
@@ -544,7 +523,6 @@ Blackwell 平台包含多项关键创新：
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_422.png)
 
-![](img/b9fddff26153f33fe6c2fa6d9347f8c9_423.png)
 
 ![](img/b9fddff26153f33fe6c2fa6d9347f8c9_424.png)
 

@@ -20,11 +20,9 @@ So can we create a set of weights such that a single neuron can output this prop
 
 
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_1.png)
 
 And it turns out that we can't。And。
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_3.png)
 
 If we want to， what we're going to need to do is actually create another layer。
 
@@ -84,7 +82,6 @@ And that will output the correct output for our X orgate。 And we see that in p
 
 
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_5.png)
 
 Both the or gate and the not and gate， we pass in that C And D。
 
@@ -94,15 +91,12 @@ Both the or gate and the not and gate， we pass in that C And D。
 
  if just one of them is equal to true。
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_7.png)
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_8.png)
 
 So that closes out our discussion in regards to working with that Xor gate and adding on the extra layer and saying how we can come up with more complex boundaries once we move to multiple layers。
 
 
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_10.png)
 
 Now we discussed during lecture。The actual matrix weights， taking our input。
 
@@ -112,13 +106,11 @@ Now we discussed during lecture。The actual matrix weights， taking our input�
 
 
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_12.png)
 
 So here we're going to start with three weight matrices， W1， W2， and W3。
 
  representing the weights in each layer。
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_14.png)
 
 And the convention for these matrices is that W。 I J gives the weight from neuron I from the prior layer。
 
@@ -126,7 +118,6 @@ Two neuron J up until the next layer， so the weight of moving from I up until 
 
 
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_16.png)
 
 Now a vector X in is going to represent a single input。As we discussed during lecture。
 
@@ -136,7 +127,6 @@ Now a vector X in is going to represent a single input。As we discussed during 
 
 
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_18.png)
 
 And the goal far exercise here is seeing four input X in。
 
@@ -152,7 +142,6 @@ We're going to write a function then that does the entire neural network calcula
 
  which is our toy dataset set。
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_20.png)
 
 So let's look at this W1， W2 and W3， which will highlight for us how these actual weight matrices should look in the back end。
 
@@ -172,9 +161,7 @@ W2 is going to be4 by4。And then column 3 is going to be4 by 3。 And while I s
 
 
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_22.png)
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_23.png)
 
 So that's the idea of W1， W2 and W3。So our input's just going to be these three values， 0。5。
 
@@ -186,7 +173,6 @@ So that's the idea of W1， W2 and W3。So our input's just going to be these th
 
 
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_25.png)
 
 We're defining here the softm for a vector， which is just going to allow us to output probabilities for a single vector。
 
@@ -194,7 +180,6 @@ We're defining here the softm for a vector， which is just going to allow us to
 
  that we have for our W1， a 3 by four matrix。
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_27.png)
 
 That's going to be multiplied by a row vector， so one by3 multiplied by a3 by4 should output a  one by four matrix。
 
@@ -232,13 +217,11 @@ And once we have that linear combination， we can again take the sigmoid。
 
 😊。
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_29.png)
 
 And then we take that Z4 and call a soft max to see probabilities for each one of the different values。
 
 
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_31.png)
 
 So we see that for the different classes that we predict that the first class is the most likely。
 
@@ -248,7 +231,6 @@ Now， quickly， I want to show you what this looks like if we are to pass in f
 
 
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_33.png)
 
 So we run X mat in。 and instead of it just being one row。
 
@@ -258,7 +240,6 @@ Dot product of that output by the4 by 4。 And we still had that7 by 4 matrix。
 
 Then we multiply that by our。
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_35.png)
 
 Then we take the sigmoid of that， excuse me of the Z3， so still the same shape。
 
@@ -270,17 +251,13 @@ Then we take the sigmoid of that， excuse me of the Z3， so still the same sha
 
 
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_37.png)
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_38.png)
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_39.png)
 
 Now， just to see how that computes all the way through from beginning through to the ends。
 
 
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_41.png)
 
 We create a function called the soft max Vc， which shall just be the。 You see what we pass through。
 
@@ -296,11 +273,8 @@ And then we can do the same。 And just instead of passing in， it'll all be th
 
 
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_43.png)
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_44.png)
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_45.png)
 
 All right。 well， that closes out our video here。Working with。From beginning to end a neural network。
 
@@ -310,6 +284,5 @@ And once we get back into lecture， we'll discuss how to actually optimize this
 
  All right， I'll see you there。
 
-![](img/39b5299d3bbcd05947e733a1e7cc4a5f_47.png)
 
 ![](img/39b5299d3bbcd05947e733a1e7cc4a5f_48.png)

@@ -12,23 +12,18 @@
 
 这种归一化处理通过统一变量间的数值范围，可以使后续的统计分析更为简便。它确保了不同特征之间能够进行更公平的比较。
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_1.png)
 
 确保所有特征具有相同的影响力，这对于计算过程也至关重要。
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_1.png)
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_3.png)
 
 另一个例子能帮助你更好地理解归一化的重要性。考虑一个包含“年龄”和“收入”两个特征的数据集，其中年龄范围是0到100岁，而收入范围则是0到20，000及以上。
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_3.png)
 
 收入的值大约是年龄的1000倍，其范围可能在20，000到500，000之间。因此，这两个特征处于完全不同的数值量级。当我们进行进一步分析（例如线性回归）时，由于“收入”特征的数值更大，它本质上会对结果产生更大的影响。但这并不一定意味着它作为一个预测因子就更重要。
 
 数据的这种特性会使线性回归模型偏向于更重视“收入”而非“年龄”。
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_5.png)
 
 为了避免这种情况，我们可以将这两个变量归一化到0到1的范围内。比较右侧归一化后的两个表格，现在两个变量对我们后续要构建的模型具有相似的影响力。
 
@@ -43,9 +38,7 @@
 **公式：**
 `X_new = X_old / X_max`
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_7.png)
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_5.png)
 
 这使得新值的范围介于0和1之间。
 
@@ -60,14 +53,12 @@
 
 ### 3. Z分数标准化
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_7.png)
 
 第三种方法是Z分数标准化（或标准分数）。在这个公式中，对于每个值，你减去该特征的平均值 `μ`，然后除以该特征的标准差 `σ`。
 
 **公式：**
 `X_new = (X_old - μ) / σ`
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_9.png)
 
 得到的值围绕0分布，通常范围在-3到+3之间，但也可能更高或更低。
 
@@ -79,54 +70,42 @@
 
 我们使用简单特征缩放方法，用pandas的 `.max()` 方法获取特征最大值，然后将每个值除以该最大值。
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_9.png)
 
 **代码示例：**
 ```python
 df[‘length_normalized_simple‘] = df[‘length‘] / df[‘length‘].max()
 ```
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_11.png)
-![](img/3decebb1710cdda843c2ae7b56e7718f_12.png)
 
 这只需一行代码即可完成。
 
 ### 应用最小-最大归一化
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_11.png)
 
 以下是对“长度”特征应用最小-最大方法。我们减去该列的最小值，然后除以其范围（最大值减最小值）。
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_12.png)
 
 **代码示例：**
 ```python
 df[‘length_normalized_minmax‘] = (df[‘length‘] - df[‘length‘].min()) / (df[‘length‘].max() - df[‘length‘].min())
 ```
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_14.png)
-![](img/3decebb1710cdda843c2ae7b56e7718f_15.png)
 
 ### 应用Z分数标准化
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_14.png)
 
 最后，我们对“长度”特征应用Z分数方法来归一化数值。这里，我们对长度特征应用 `.mean()` 和 `.std()` 方法。
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_15.png)
 
 **代码示例：**
 ```python
 df[‘length_normalized_zscore‘] = (df[‘length‘] - df[‘length‘].mean()) / df[‘length‘].std()
 ```
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_17.png)
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_17.png)
 
 `.mean()` 方法将返回数据集中该特征的平均值，而 `.std()` 方法将返回数据集中该特征的标准差。
 
-![](img/3decebb1710cdda843c2ae7b56e7718f_19.png)
 
 ## 总结
 

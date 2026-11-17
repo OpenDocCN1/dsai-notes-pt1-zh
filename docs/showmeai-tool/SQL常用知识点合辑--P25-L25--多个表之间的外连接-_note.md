@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P25：L25- 多个表之间的外连接 🧩
 
-![](img/f6bd3bb20257fc5641e595994cdeaef6_0.png)
 
 ![](img/f6bd3bb20257fc5641e595994cdeaef6_0.png)
 
@@ -64,19 +63,15 @@ LEFT JOIN shippers s ON o.shipper_id = s.shipper_id;
 
 在上一个教程中，你学到了使用左连接或右连接都可以得到相同的结果，只需交换表的顺序。然而，作为最佳实践，应避免使用右连接。
 
-![](img/f6bd3bb20257fc5641e595994cdeaef6_2.png)
 
 当连接多个表，并且混合使用左连接、右连接和内连接时，查询会变得非常复杂。其他人阅读你的代码时，会很难理解表是如何连接的。例如，如果一个查询中既有右连接又有左连接，逻辑会变得难以追踪。
 
-![](img/f6bd3bb20257fc5641e595994cdeaef6_4.png)
 
 因此，为了保持代码的清晰和可读性，建议统一使用左连接。
 
-![](img/f6bd3bb20257fc5641e595994cdeaef6_2.png)
 
 ## 练习：综合运用连接
 
-![](img/f6bd3bb20257fc5641e595994cdeaef6_4.png)
 
 以下是本教程的练习。请编写一个查询，产生包含以下列的结果集：订单日期（`order_date`）、订单ID（`order_id`）、客户名字（`customer_name`）、发货人（`shipper_name`）和订单状态（`status_name`）。注意，一些订单可能尚未发货，因此发货人列可能为 `NULL`。
 
@@ -127,7 +122,6 @@ JOIN order_statuses os ON o.status = os.order_status_id;
 
 请注意，在最后一个连接中，我们使用了内连接（`JOIN`），因为假设每个订单都有一个有效的状态。执行这个查询，我们将得到包含所有所需列的完整结果集。
 
-![](img/f6bd3bb20257fc5641e595994cdeaef6_6.png)
 
 ![](img/f6bd3bb20257fc5641e595994cdeaef6_6.png)
 

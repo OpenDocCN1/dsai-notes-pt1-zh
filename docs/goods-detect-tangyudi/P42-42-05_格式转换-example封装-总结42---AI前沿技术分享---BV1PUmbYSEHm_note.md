@@ -29,9 +29,7 @@
 *   **读取XML**：使用 `ET.parse(xml_path).getroot()` 获取根节点，然后通过 `root.find('object').find('bndbox').find('xmin').text` 等方式提取标注信息。
 *   **数据标准化**：将边界框坐标进行归一化处理，公式为 `x / image_width` 和 `y / image_height`。目的是为了适应后续算法的运算需求。
 
-![](img/8ccd09ec026d2b0dffb9add06ac37e61_16.png)
 
-![](img/8ccd09ec026d2b0dffb9add06ac37e61_18.png)
 
 ![](img/8ccd09ec026d2b0dffb9add06ac37e61_20.png)
 

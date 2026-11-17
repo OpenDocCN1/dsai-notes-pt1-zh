@@ -21,23 +21,18 @@ sns.displot(data=data, x='column_name')
 plt.show()
 ```
 
-![](img/038ed56b7665de55bd9a707070b413db_1.png)
 
 执行上述代码后，你会看到一个包含直方图和核密度估计（KDE）曲线的图形。
 
-![](img/038ed56b7665de55bd9a707070b413db_1.png)
 
-![](img/038ed56b7665de55bd9a707070b413db_2.png)
 
 ## 理解图形组件
 
-![](img/038ed56b7665de55bd9a707070b413db_3.png)
 
 生成的图形包含两个主要部分：
 *   **直方图**：由一系列柱状条组成，每个柱状条代表一个数据区间（或“桶”）内数据点的数量。
 *   **核密度估计（KDE）曲线**：是一条平滑的曲线，它提供了数据分布概率密度的估计。
 
-![](img/038ed56b7665de55bd9a707070b413db_4.png)
 
 如果你不希望显示 KDE 曲线，可以通过设置参数 `kde=False` 来关闭它。
 
@@ -46,7 +41,6 @@ sns.displot(data=data, x='column_name', kde=False)
 plt.show()
 ```
 
-![](img/038ed56b7665de55bd9a707070b413db_4.png)
 
 ## 调整直方图区间
 
@@ -59,9 +53,7 @@ sns.displot(data=data, x='column_name', bins=25)
 plt.show()
 ```
 
-![](img/038ed56b7665de55bd9a707070b413db_8.png)
 
-![](img/038ed56b7665de55bd9a707070b413db_6.png)
 
 `bins` 参数决定了你在图形中看到的柱状条数量，这直接影响你对数据分布细节的观察。
 
@@ -69,7 +61,6 @@ plt.show()
 *   **bins 值较小**：柱状条更宽，分布轮廓更平滑，但可能掩盖细节。
 *   **bins 值较大**：柱状条更窄，能显示更多数据细节，但图形可能显得杂乱。
 
-![](img/038ed56b7665de55bd9a707070b413db_7.png)
 
 ## 总结
 

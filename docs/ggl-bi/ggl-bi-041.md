@@ -1,6 +1,5 @@
 #  041：克服冒名顶替综合征
 
-![](img/a14741f1bddf5ee57f9a44d7e6c80d82_0.png)
 
 ![](img/a14741f1bddf5ee57f9a44d7e6c80d82_0.png)
 

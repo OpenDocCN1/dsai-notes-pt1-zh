@@ -137,7 +137,6 @@ def store_core_memory(state):
 
 ![](img/d5068f90420c60bc51f1ba4e337c13af_24.png)
 
-![](img/d5068f90420c60bc51f1ba4e337c13af_25.png)
 
 ## 集成 Discord 机器人
 代理在云端运行良好，但为了能让最终用户方便地使用，我们需要一个交互界面。本节我们将把代理集成到 Discord 机器人中。
@@ -164,7 +163,6 @@ def store_core_memory(state):
     *   为 Cloud Build 服务账户分配适当的 IAM 权限，使其能够构建和部署。
 3.  运行项目提供的部署脚本（如 `deploy_server.sh`），脚本会自动构建镜像并部署到 Cloud Run。
 
-![](img/d5068f90420c60bc51f1ba4e337c13af_27.png)
 
 部署完成后，你的 Discord 机器人就上线了。在服务器中 @机器人 或与其私聊，它会将消息转发给 LangGraph Cloud 上的代理处理，并将回复传回 Discord。由于代理记住了 `user_id`（来自 Discord 用户ID），它能跨对话线程维护和更新每个用户的记忆。
 

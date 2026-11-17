@@ -22,7 +22,6 @@ So we're going to import the necessary libraries， you should be familiar with 
 
 cars。 datasets。
 
-![](img/ab5245e489ee604bd516a84803cfae41_1.png)
 
 And then we'll see how this is used later on， but we're also importing the back end from Cars。
 
@@ -40,7 +39,6 @@ And then we'll see how this is used later on， but we're also importing the bac
 
  but be able to do it a bit more quickly。😊。
 
-![](img/ab5245e489ee604bd516a84803cfae41_3.png)
 
 We're then going to set some of the parameters。So we're going to have the same batch size。
 
@@ -58,13 +56,11 @@ We're then also going to set the pool size and that'll just be the square so it'
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_5.png)
 
 Now we're bringing out that K that we mentioned earlier， which is just the back end。
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_7.png)
 
 And we're saying four images， depending on your backend， when you pulled in this data set。
 
@@ -84,9 +80,7 @@ This is just the gray scale， so there's only a depth of one， so it's 1 by 28
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_9.png)
 
-![](img/ab5245e489ee604bd516a84803cfae41_10.png)
 
 Now we're going to create a function。In order to actually run our model in the same aspect。
 
@@ -112,7 +106,6 @@ So that it has the same number of rows， so if you think about pulling out that
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_12.png)
 
 Plus， the input shape， and this is the input shape that we defined up here。Which will either be。
 
@@ -126,13 +119,10 @@ The channels and image rows and image columns or the image rows， image columns
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_14.png)
 
-![](img/ab5245e489ee604bd516a84803cfae41_15.png)
 
 This is going to be。
 
-![](img/ab5245e489ee604bd516a84803cfae41_17.png)
 
 Our first value in our twople， and then if I call a shape。That first value。
 
@@ -152,13 +142,11 @@ We'll then print out the shape so that we'll be able to confirm that the shapes 
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_19.png)
 
 And then we can see how many train samples we have， how many test samples we have。Or then。
 
  because we are using。
 
-![](img/ab5245e489ee604bd516a84803cfae41_21.png)
 
 Classification of values between either0 and 4 or5 through9。
 
@@ -200,11 +188,9 @@ We can then call model do evaluate on X test and Y test in order to get the scor
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_23.png)
 
 So， here， we have initialized。
 
-![](img/ab5245e489ee604bd516a84803cfae41_25.png)
 
 Our train model。We're then going to get the data that we need。 So we're loading。
 
@@ -218,9 +204,7 @@ Or are x trains such that they're all greater than or equal to5。
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_27.png)
 
-![](img/ab5245e489ee604bd516a84803cfae41_28.png)
 
 We're then going to define the feature layers。 And these are going to be those earlier layers that we hope to transfer on our new problem。
 
@@ -230,11 +214,9 @@ So these are going to be those layers that we freeze if you think back to what t
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_30.png)
 
 And we're going to set these all to a list。
 
-![](img/ab5245e489ee604bd516a84803cfae41_32.png)
 
 So features layers are equal to this list and it's going to have this convolutional layer with the filters and kernels that we specified earlier。
 
@@ -256,7 +238,6 @@ And then we're going to have the layers that were actually going to be fine tuni
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_34.png)
 
 Some drop out and then another dense layer to get it down to the number of classes。
 
@@ -268,11 +249,9 @@ And then we're setting our model equal to sequential again， as mentioned。
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_36.png)
 
 Now we have our model， we can look at the summary。
 
-![](img/ab5245e489ee604bd516a84803cfae41_38.png)
 
 And we see here， in the summary。That we have each one of those layers that we specified before in regards to our different feature layers。
 
@@ -280,15 +259,12 @@ And we see here， in the summary。That we have each one of those layers that w
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_40.png)
 
-![](img/ab5245e489ee604bd516a84803cfae41_41.png)
 
 And then we see that we have a total number of parameterss of 600，165 that we're going to the train。
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_43.png)
 
 Now that we have our model， we can call that function that we created earlier。Using that model。
 
@@ -302,7 +278,6 @@ So we're going to start running this and this will take。Maybe呃。Two minutes
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_45.png)
 
 So we see here that that took about three minutes to train， three minutes and 12 seconds here。
 
@@ -318,7 +293,6 @@ So CARS allows layers to be frozen during the training process。
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_47.png)
 
 In order to do what we just said， that is， some layers would have their weights updated during the train process while others will remain pros。
 
@@ -334,7 +308,6 @@ You also want to note that a lot of the training time。
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_49.png)
 
 So in order to freeze the layers， we just set each one of those layers。
 
@@ -344,11 +317,9 @@ So in order to freeze the layers， we just set each one of those layers。
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_51.png)
 
 Now when we look at the model dot summary。
 
-![](img/ab5245e489ee604bd516a84803cfae41_53.png)
 
 We see that our total number of parameters is 609000。
 
@@ -358,7 +329,6 @@ And that's going to be due to the fact that we are freezing these upper layers i
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_55.png)
 
 Now we do still have to train a lot， but again， those being later layers。
 
@@ -366,11 +336,9 @@ Now we do still have to train a lot， but again， those being later layers。
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_57.png)
 
 So now we can call train model。
 
-![](img/ab5245e489ee604bd516a84803cfae41_59.png)
 
 This time on the values less than 5。 So if we recall going back up。
 
@@ -380,13 +348,9 @@ This time on the values less than 5。 So if we recall going back up。
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_61.png)
 
-![](img/ab5245e489ee604bd516a84803cfae41_62.png)
 
-![](img/ab5245e489ee604bd516a84803cfae41_63.png)
 
-![](img/ab5245e489ee604bd516a84803cfae41_64.png)
 
 4 values less than 5。 Sorry， I run this。 And again， this will take some time。
 
@@ -394,7 +358,6 @@ This time on the values less than 5。 So if we recall going back up。
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_66.png)
 
 Now， looking at the results that we have here， we see that the total training time came down by a full minute when we're only training five epochs。
 
@@ -406,13 +369,11 @@ So we see how this power of transfer learning allowed us to save time while gain
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_68.png)
 
 Now， just to close out， we want to flip these two steps， so rather than。
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_70.png)
 
 Doing the ordering of。First on training on our greater than five and then freezing layers。
 
@@ -420,7 +381,6 @@ Doing the ordering of。First on training on our greater than five and then free
 
 And then run our final model on greater than five。
 
-![](img/ab5245e489ee604bd516a84803cfae41_72.png)
 
 So in order to do that。We're going to reset our feature layers。
 
@@ -434,7 +394,6 @@ So in order to do that。We're going to reset our feature layers。
 
  just not trained yet。
 
-![](img/ab5245e489ee604bd516a84803cfae41_74.png)
 
 We look at the summary and it should be the same steps。
 
@@ -446,7 +405,6 @@ And we run this。And this will take some time to run。
 
  so we'll see you as soon as this is done running。
 
-![](img/ab5245e489ee604bd516a84803cfae41_76.png)
 
 Now we can see now that it's done running。 we can see the different accuracy numbers。
 
@@ -454,9 +412,7 @@ Now we can see now that it's done running。 we can see the different accuracy n
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_78.png)
 
-![](img/ab5245e489ee604bd516a84803cfae41_79.png)
 
 We look at the summary again。We see that same number of total parameters versus the number of trainable parameters。
 
@@ -470,7 +426,6 @@ We run this and again， this will take a bit to run shorter than the last one�
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_81.png)
 
 So as we see here now that the results are completed， we were able to reduce the training time。
 
@@ -484,7 +439,6 @@ So as we see here now that the results are completed， we were able to reduce t
 
 😊。
 
-![](img/ab5245e489ee604bd516a84803cfae41_83.png)
 
 And we are getting continuous improvement on accuracy。
 
@@ -500,6 +454,5 @@ That closes out our notebook here on Transfer Learn。
 
 
 
-![](img/ab5245e489ee604bd516a84803cfae41_85.png)
 
 ![](img/ab5245e489ee604bd516a84803cfae41_86.png)

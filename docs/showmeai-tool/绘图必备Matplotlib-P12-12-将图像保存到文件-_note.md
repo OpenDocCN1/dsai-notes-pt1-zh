@@ -57,7 +57,6 @@ plt.savefig('my_sine_wave.png')
 
 执行后，你可以在文件系统中找到`my_sine_wave.png`。如果你想获得更高质量的图片，可以增加`dpi`参数：
 
-![](img/2056f31602b26fc416661c899219e914_5.png)
 
 ```python
 # 保存为高分辨率图片

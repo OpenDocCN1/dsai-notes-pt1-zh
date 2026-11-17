@@ -6,7 +6,6 @@
 
 Claude Code 提供了一个官方的 GitHub 集成。通过此集成，Claude Code 可以在 GitHub Action 工作流中运行。这为自动化代码审查和响应特定事件（如在 Issue 或 Pull Request 中 @ 提及 Claude）提供了可能。
 
-![](img/67bc2748a7db23776aa1977b7d7d7ef3_1.png)
 
 ## 设置集成
 
@@ -55,7 +54,6 @@ Claude Code 提供了一个官方的 GitHub 集成。通过此集成，Claude Co
 
 ![](img/67bc2748a7db23776aa1977b7d7d7ef3_6.png)
 
-![](img/67bc2748a7db23776aa1977b7d7d7ef3_7.png)
 
 接下来，我还需要添加一些配置来设置 Playwright MCP 服务器本身。
 
@@ -79,7 +77,6 @@ Claude Code 提供了一个官方的 GitHub 集成。通过此集成，Claude Co
 
 😊 最终，Claude 会做出响应。它通常会创建一个步骤清单来完成给定任务。在本例中，它将尝试访问应用，手动测试按钮，并修复发现的任何问题。Claude 会注意到按钮实际上工作正常，因此它会提前终止，并附上记录其发现的信息。
 
-![](img/67bc2748a7db23776aa1977b7d7d7ef3_9.png)
 
 ## 总结
 

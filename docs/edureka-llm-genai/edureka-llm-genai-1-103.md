@@ -28,7 +28,6 @@ NLTK，即自然语言工具包，是一个功能强大的Python库，专门用�
 
 NLTK不包含在标准的Python安装中，因此需要单独安装。您可以使用Python包管理器Pip来安装，运行以下命令：
 
-![](img/9f4c48921c9d5968fa8c13514f9481d3_5.png)
 
 ```bash
 pip install nltk

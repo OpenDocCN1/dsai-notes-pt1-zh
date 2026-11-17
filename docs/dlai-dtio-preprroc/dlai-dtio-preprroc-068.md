@@ -10,14 +10,10 @@
 
 本节中我们来看看 **左连接** 的具体应用。左连接有助于为你当前的表添加更多背景信息。在本模块之前的课程中，我们一直使用乐高套装数据库中的一个单一表（`sets_with_theme`）。实际上，这个表是由多个表组合而成的。在实践中，数据库的不同部分通常分开存储。以乐高数据库为例，套装和主题信息就分别存储在不同的表中。
 
-![](img/5c2ba02d74be410fac028030aecabdb7_1.png)
 
 查看实际的乐高数据模式，你会注意到套装和主题存储在独立的表中。`set_num` 是 `sets` 表的主键。那么 `sets` 表中的 `theme_id` 是什么呢？
 
-![](img/5c2ba02d74be410fac028030aecabdb7_2.png)
 
-![](img/5c2ba02d74be410fac028030aecabdb7_1.png)
-![](img/5c2ba02d74be410fac028030aecabdb7_2.png)
 
 `theme_id` 是一个**外键**，它允许你访问 `themes` 表中的主题信息。因此，左连接将允许你把主题名称和父级ID等信息添加到套装表中。
 
@@ -41,7 +37,6 @@ import sqlite3
 conn = sqlite3.connect(‘your_database.db’)
 ```
 
-![](img/5c2ba02d74be410fac028030aecabdb7_4.png)
 
 左连接会返回**左表**的所有条目，以及**右表**的匹配条目。如果没有匹配项，结果中右表的列将显示为 `NULL` 值。
 
@@ -49,7 +44,6 @@ conn = sqlite3.connect(‘your_database.db’)
 
 同时，查询 `SELECT * FROM sets_parts` 会给出 `set_num`, `part_num`, `color_id`, `quantity` 和 `is_spare`。这个表代表每个零件，因此只包含零件的独立信息。数据框底部显示有近 600,000 行。
 
-![](img/5c2ba02d74be410fac028030aecabdb7_4.png)
 
 为了连接它们，我们这样写查询：
 
@@ -90,7 +84,6 @@ GROUP BY year;
 
 你还可以使用折线图将这些数据可视化。
 
-![](img/5c2ba02d74be410fac028030aecabdb7_6.png)
 
 增长趋势非常明显。
 

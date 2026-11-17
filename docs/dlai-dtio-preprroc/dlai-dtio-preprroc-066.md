@@ -4,13 +4,11 @@
 
 ## 概述
 
-![](img/1ceec271bdba427b3081aaa827ea3f32_1.png)
 
 分组数据后，可以基于聚合函数的结果对分组进行筛选。`HAVING`子句在此过程中扮演关键角色。
 
 在SQL中，筛选可以在分组之前或之后进行。
 
-![](img/1ceec271bdba427b3081aaa827ea3f32_1.png)
 
 ## 分组前筛选：WHERE子句
 
@@ -33,7 +31,6 @@
 SELECT theme_name, COUNT(*) AS set_count FROM sets_with_themes GROUP BY theme_name
 ```
 
-![](img/1ceec271bdba427b3081aaa827ea3f32_3.png)
 
 可以扩展此查询，通过添加`HAVING COUNT(*) > 50`语句，仅包含至少拥有50个数据集的主题。
 
@@ -43,7 +40,6 @@ SELECT theme_name, COUNT(*) AS set_count FROM sets_with_themes GROUP BY theme_na
 
 这里，`HAVING COUNT(*) > 50`充当过滤器，只保留数据集数量超过50的主题。此语句有助于将分析重点集中在最受欢迎的主题上。
 
-![](img/1ceec271bdba427b3081aaa827ea3f32_3.png)
 
 ## WHERE与HAVING的区别
 
@@ -62,9 +58,7 @@ SELECT theme_name, COUNT(theme_id) AS set_count, AVG(num_parts) AS average_parts
 
 因此，模块化建筑（非常大且复杂的套装）平均拥有许多零件，而钥匙链则很少。事实上，似乎有很多钥匙链的平均零件数低于1，因为平均值小于1。
 
-![](img/1ceec271bdba427b3081aaa827ea3f32_5.png)
 
-![](img/1ceec271bdba427b3081aaa827ea3f32_5.png)
 
 ## 总结
 
@@ -72,7 +66,6 @@ SELECT theme_name, COUNT(theme_id) AS set_count, AVG(num_parts) AS average_parts
 
 通常基于`COUNT`和`AVG`等聚合函数进行筛选。
 
-![](img/1ceec271bdba427b3081aaa827ea3f32_7.png)
 
 ![](img/1ceec271bdba427b3081aaa827ea3f32_7.png)
 

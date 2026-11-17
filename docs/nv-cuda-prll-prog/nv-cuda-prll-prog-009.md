@@ -205,7 +205,6 @@ __global__ void myKernel(int n) {
 
 ## 共享内存的存储体冲突 ⚡️（初步了解）
 
-![](img/3026efa599658b0243d3bfd2c79f4da7_109.png)
 
 ![](img/3026efa599658b0243d3bfd2c79f4da7_111.png)
 
@@ -250,7 +249,6 @@ __global__ void myKernel(int n) {
 
 ## 总结 🎯
 
-![](img/3026efa599658b0243d3bfd2c79f4da7_135.png)
 
 ![](img/3026efa599658b0243d3bfd2c79f4da7_136.png)
 

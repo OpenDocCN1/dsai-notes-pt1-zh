@@ -8,23 +8,17 @@
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_4.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_6.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_7.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_9.png)
 
 ## 概述
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_11.png)
 
 OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤其是GPU显存）要求较高。当本地计算机资源不足时，我们可以转向云端计算平台。本节将演示如何在Lightning AI Studio中设置环境并尝试运行OmniGen，同时也会介绍使用Replicate这一托管服务的备选方案。
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_13.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_15.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_17.png)
 
 ## 尝试在Lightning AI上运行
 
@@ -48,7 +42,6 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_31.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_33.png)
 
 ### 登录并创建工作室
 
@@ -62,7 +55,6 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_39.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_40.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_1.png)
 
@@ -76,14 +68,9 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_48.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_50.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_51.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_53.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_6.png)
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_7.png)
 
 接下来，我创建了一个新的工作室，将其命名为“OmniGen-Test”，并选择了GPU实例。平台清晰地显示了每种实例的每小时成本。
 
@@ -91,9 +78,7 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_57.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_9.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_59.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_61.png)
 
@@ -105,7 +90,6 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_67.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_69.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_11.png)
 
@@ -121,15 +105,11 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_77.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_19.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_79.png)
 
 根据OmniGen仓库的`requirements.txt`文件，我们需要安装特定版本的库。以下是关键步骤：
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_81.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_83.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_85.png)
 
@@ -153,9 +133,7 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ### 运行模型与遇到的错误
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_91.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_92.png)
 
 依赖安装完成后，我尝试运行OmniGen提供的示例代码来生成图像。
 
@@ -163,7 +141,6 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_95.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_46.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_97.png)
 
@@ -171,9 +148,7 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_99.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_53.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_101.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_102.png)
 
@@ -183,7 +158,6 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_106.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_108.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_110.png)
 
@@ -191,13 +165,10 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ### 排查与解决尝试
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_112.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_114.png)
 
 根据社区讨论，这个错误可能与库版本冲突有关。以下是尝试的解决方案：
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_116.png)
 
 1.  **确保版本完全匹配**：再次检查并强制安装`requirements.txt`中指定的所有版本，尤其是`transformers`。
 2.  **使用`pip install -e .`方式安装**：进入克隆的仓库目录，执行此命令以“可编辑模式”安装，确保依赖解析正确。
@@ -209,15 +180,11 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_118.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_119.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_120.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_122.png)
 
 尽管进行了多次尝试，错误依然存在。这表明在Lightning AI的这个特定环境或配置下运行OmniGen存在兼容性问题。
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_124.png)
 
 ## 使用Replicate托管服务
 
@@ -237,9 +204,7 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 以下是使用Replicate的核心步骤：
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_137.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_139.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_141.png)
 
@@ -254,20 +219,16 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_143.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_144.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_146.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_118.png)
 *通过Replicate界面提交生成任务*
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_147.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_149.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_150.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_152.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_154.png)
 
@@ -276,13 +237,9 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_156.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_157.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_158.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_160.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_162.png)
 
 ## 性能考量与硬件对比
 
@@ -290,9 +247,7 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_166.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_168.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_170.png)
 
 在等待模型运行的过程中，我们对比了不同GPU的性能，这对于选择计算平台很重要：
 
@@ -309,21 +264,16 @@ OmniGen是一个强大的生成式AI模型，但其运行对计算资源（尤�
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_178.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_180.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_182.png)
 
 选择平台时，需要在**成本**、**可用性**（等待时间）、**显存大小**和**计算速度**之间做出权衡。对于实验和原型开发，Replicate这类按需付费的托管服务通常更便捷。
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_184.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_186.png)
 
 ## 总结
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_187.png)
 
-![](img/9af27a1fc0d942b7f7eb6cb20e932c14_189.png)
 
 ![](img/9af27a1fc0d942b7f7eb6cb20e932c14_190.png)
 

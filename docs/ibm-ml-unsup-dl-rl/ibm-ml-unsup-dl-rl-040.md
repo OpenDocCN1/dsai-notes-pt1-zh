@@ -12,13 +12,11 @@ Think of all the cool features in our phones， ranging from face recognition to
 
 
 
-![](img/0ad8facf08ecb37dda2808c54b0a94f1_1.png)
 
 Also， many of the classification and regression problems that you need to solve at your business are going to end up being good candidates for neural networks and deep learning as well。
 
 
 
-![](img/0ad8facf08ecb37dda2808c54b0a94f1_3.png)
 
 Now there are several Watson applications and artificial intelligence APIs that help you infuse artificial intelligence into your business。
 
@@ -34,7 +32,6 @@ Here we have some of the most used with links to live demos that you can explore
 
 
 
-![](img/0ad8facf08ecb37dda2808c54b0a94f1_5.png)
 
 Now it's often noted that the biology of the brain serves as an inspiration for the mathematical models that make up our neural networks。
 

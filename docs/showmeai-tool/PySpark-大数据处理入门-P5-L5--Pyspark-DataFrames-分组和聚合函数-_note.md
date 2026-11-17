@@ -1,6 +1,5 @@
 # PySpark 大数据处理入门，P5：L5 - PySpark DataFrames 分组和聚合函数 📊
 
-![](img/1babe07f0737b77a8ca240e4a3c70599_1.png)
 
 在本节课中，我们将要学习 PySpark DataFrames 中两个核心的数据处理操作：**分组**和**聚合**。我们将通过具体的例子，了解如何按特定列对数据进行分组，并使用聚合函数（如求和、求平均值、计数等）来汇总和分析数据。
 
@@ -12,9 +11,7 @@
 
 首先，我们需要导入必要的库并创建一个 SparkSession，这是所有 Spark 功能的入口点。
 
-![](img/1babe07f0737b77a8ca240e4a3c70599_3.png)
 
-![](img/1babe07f0737b77a8ca240e4a3c70599_4.png)
 
 ```python
 from pyspark.sql import SparkSession

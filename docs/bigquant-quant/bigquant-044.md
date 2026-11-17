@@ -54,21 +54,15 @@
 
 为了直观理解“线性”的含义，我们可以通过代码绘图来观察。
 
-![](img/aef17a858b016fc7b3ca8e54794d5817_1.png)
 
 以下是绘制一次函数（线性）和二次函数（非线性）图像的示例代码：
 
-![](img/aef17a858b016fc7b3ca8e54794d5817_3.png)
 
 
-![](img/aef17a858b016fc7b3ca8e54794d5817_5.png)
-
-![](img/aef17a858b016fc7b3ca8e54794d5817_7.png)
-
-![](img/aef17a858b016fc7b3ca8e54794d5817_9.png)
 
 
-![](img/aef17a858b016fc7b3ca8e54794d5817_11.png)
+
+
 
 ```python
 import numpy as np

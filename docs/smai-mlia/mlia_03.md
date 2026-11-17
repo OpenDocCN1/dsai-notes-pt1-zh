@@ -16,13 +16,11 @@
 
 在前面的机器学习案例中，我们使用了 Python 机器学习工具库 Scikit-Learn，它建立在 NumPy、SciPy、Pandas 和 Matplotlib 之上，也是最常用的 Python 机器学习工具库之一，里面的 API 的设计非常好，所有对象的接口简单，很适合新手上路。[ShowMeAI](http://www.showmeai.tech/)在本篇内容中对 Scikit-Learn 做一个介绍。
 
-![](img/47ed351d43f2443aac2e409e783c6439.png)
 
 # 1.SKLearn 是什么
 
 Scikit-Learn 也简称 SKLearn，是一个基于 Python 语言的机器学习工具，它对常用的机器学习方法进行了封装，例如，分类、回归、聚类、降维、模型评估、数据预处理等，我们只需调用对应的接口即可。
 
-![](img/989e127fe0196e8eb45ef2db1c6688a3.png)
 ![](img/dde27d2cd18e98ad631a436c2d49fdbc.png)
 
 在 SKLearn 的官网上，写着以下四点介绍：
@@ -58,7 +56,6 @@ pip install scikit-learn -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 更多数据集请参考 SKLearn 官网：[`scikit-learn.org/stable/modules/classes.html?highlight=dataset#module-sklearn.datasets`](https://scikit-learn.org/stable/modules/classes.html?highlight=dataset#module-sklearn.datasets)
 
-![](img/09883eaa677d01bda41a5c0ed99bd8f2.png)
 
 ```py
 #鸢尾花数据集
@@ -73,7 +70,6 @@ from sklearn.datasets import load_boston
 
 官网链接：[`scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing`](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing)
 
-![](img/3af9ade57e1c701bed8ebab2b44fa08f.png)
 
 ```py
 #拆分数据集
@@ -86,7 +82,6 @@ from sklearn.preprocessing import MinMaxScaler
 
 官网链接：[`scikit-learn.org/stable/modules/classes.html#module-sklearn.feature_extraction`](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.feature_extraction)
 
-![](img/0e60c989d4ae8fa32b2650fa858d893b.png)
 
 ```py
 from sklearn.feature_extraction import DictVectorizer
@@ -99,7 +94,6 @@ X = v.fit_transform(D)
 
 官网链接：[`scikit-learn.org/stable/modules/classes.html#module-sklearn.feature_selection`](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.feature_selection)
 
-![](img/0ea58fec6412d73055a401c821ace084.png)
 
 ```py
 from sklearn.datasets import load_digits
@@ -113,7 +107,6 @@ X_new = SelectKBest(chi2, k=20).fit_transform(X, y)
 
 官网链接：[`scikit-learn.org/stable/modules/classes.html`](https://scikit-learn.org/stable/modules/classes.html)
 
-![](img/7a78d5373f40f9f7b88d42fc93155e09.png)
 
 ```py
 #KNN 模型
@@ -128,7 +121,6 @@ from sklearn.ensemble import RandomForestClassifier
 
 ## 3.6 建模拟合与预测
 
-![](img/8d37503f6474c7bb94f969e94fb7dd92.png)
 
 ```py
 #拟合训练集

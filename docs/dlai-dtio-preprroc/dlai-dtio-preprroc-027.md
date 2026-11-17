@@ -22,9 +22,7 @@
 
 ### 参数结构与语法
 
-![](img/c9fd1a7a6a31675e64119486d2638619_1.png)
 
-![](img/c9fd1a7a6a31675e64119486d2638619_2.png)
 
 查询参数附加在基础端点URL之后。一个问号 `?` 标志着查询参数的开始。参数使用 `key=value` 的格式，类似于函数中的命名参数。`&` 符号允许你在单个请求中添加多个参数。
 
@@ -55,18 +53,15 @@ https://api.fda.gov/food/enforcement.json?search=distribution_pattern:nationwide
 
 让我们回到代码中，看看如何实际操作。
 
-![](img/c9fd1a7a6a31675e64119486d2638619_4.png)
 
 ### 方法一：手动拼接URL
 
-![](img/c9fd1a7a6a31675e64119486d2638619_5.png)
 
 假设你之前已经向基础端点发送了请求，并将响应保存在变量 `data` 中。如果只查询基础端点而不带任何参数，你只会得到一个结果。
 
 如果你想获取五个结果，可以在基础端点后添加 `?limit=5`：
 
 
-![](img/c9fd1a7a6a31675e64119486d2638619_7.png)
 
 ```python
 import requests
@@ -89,13 +84,11 @@ url = “https://api.fda.gov/food/enforcement.json?search=state:HI&limit=5”
 
 例如，如果你想将响应数量限制为5，可以创建一个字典：
 
-![](img/c9fd1a7a6a31675e64119486d2638619_9.png)
 
 ```python
 parameters = {‘limit’: 5}
 ```
 
-![](img/c9fd1a7a6a31675e64119486d2638619_10.png)
 
 然后，在调用 `requests.get()` 时，添加一个新的命名参数 `params=parameters`：
 

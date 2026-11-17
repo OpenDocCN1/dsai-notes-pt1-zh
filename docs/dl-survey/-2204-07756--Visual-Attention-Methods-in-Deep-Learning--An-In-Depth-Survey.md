@@ -197,7 +197,6 @@ CBAM 中的通道注意力：卷积块注意力模块（CBAM）[25] 采用通道
 | (c) SOCA [27] |
 | ![参考说明](img/6dc88c47c652f45c7f803eaa33dddf70.png) |
 | (d) A${}^{2}-$Net [75] |
-| ![参考说明](img/fb2e2630f7f66b650c18c6eca3f55e16.png) |
 | (e) DAN Positional [37] |
 | ![参考说明](img/3f6c7e0fae28f3f6e34d5d4d3b0a5803.png) |
 | (f) DAN Channel [37] |

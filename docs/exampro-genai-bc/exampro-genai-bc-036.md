@@ -61,22 +61,17 @@
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_15.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_17.png)
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_19.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_21.png)
 
 **场景：用户处于练习状态**
 *   **前提**：应用处于练习状态。
 *   **操作**：用户会看到一个英文句子、一个图片上传区域和一个“提交评审”按钮。
 *   **结果**：当用户上传图片并点击“提交评审”按钮，图片将被传递给评分系统，应用状态将切换到“复习状态”。
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_23.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_25.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_27.png)
 
 **场景：用户处于复习状态**
 *   **前提**：应用处于复习状态。
@@ -85,7 +80,6 @@
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_29.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_31.png)
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_33.png)
 
@@ -101,7 +95,6 @@
 请确保句子简洁，适合初学者练习书写。
 ```
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_35.png)
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_37.png)
 
@@ -133,9 +126,7 @@
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_51.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_53.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_55.png)
 
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_57.png)
@@ -146,9 +137,7 @@
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_61.png)
 
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_63.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_65.png)
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_67.png)
 
@@ -234,7 +223,6 @@ elif st.session_state.app_state == AppState.REVIEW:
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_71.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_73.png)
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_75.png)
 
@@ -248,13 +236,11 @@ elif st.session_state.app_state == AppState.REVIEW:
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_82.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_84.png)
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_86.png)
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_88.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_90.png)
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_91.png)
 
@@ -266,19 +252,16 @@ elif st.session_state.app_state == AppState.REVIEW:
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_97.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_99.png)
 
 完成基础应用搭建后，我们需要将其集成到语言学习门户中，并进行测试。
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_101.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_103.png)
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_105.png)
 
 首先，我们需要在门户的`study_activities`种子数据中添加这个新应用，并指定其运行端口（例如8081）。然后，确保Streamlit应用通过`streamlit run app.py --server.port 8081`命令在指定端口启动。
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_107.png)
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_109.png)
 
@@ -296,7 +279,6 @@ elif st.session_state.app_state == AppState.REVIEW:
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_119.png)
 
-![](img/8bf79ee38a3d52c6191c4671faccca1d_121.png)
 
 ![](img/8bf79ee38a3d52c6191c4671faccca1d_123.png)
 

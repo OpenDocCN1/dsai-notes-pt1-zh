@@ -28,7 +28,6 @@ with open('yolov3.cfg', 'r') as f:
 
 ## 第二步：解析网络结构
 
-![](img/e751cdc219674b021f66714f52a0b610_1.png)
 
 上一节我们介绍了如何读取配置文件，本节中我们来看看如何解析其中的网络结构定义。
 
@@ -36,7 +35,6 @@ with open('yolov3.cfg', 'r') as f:
 
 以下是解析过程的关键步骤：
 
-![](img/e751cdc219674b021f66714f52a0b610_3.png)
 
 1.  初始化一个空的模块列表 `module_list`，用于按顺序存放构建好的网络层。
 2.  遍历配置文件的每一行。
@@ -50,7 +48,6 @@ with open('yolov3.cfg', 'r') as f:
 
 在YOLOv3的配置中，一个 `[convolutional]` 模块实际上代表了一个“三合一”的组合：**卷积层 (Conv2D) + 批归一化层 (BatchNorm) + 激活函数层 (LeakyReLU)**。
 
-![](img/e751cdc219674b021f66714f52a0b610_5.png)
 
 以下是构建这个组合模块的代码逻辑：
 

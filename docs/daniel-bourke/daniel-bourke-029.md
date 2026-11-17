@@ -101,11 +101,9 @@
 
 ---
 
-![](img/678cebb32460ebb8da12804d704eb3a0_2.png)
 
 ## 张量置换（Permute） 🔀
 
-![](img/678cebb32460ebb8da12804d704eb3a0_4.png)
 
 ![](img/678cebb32460ebb8da12804d704eb3a0_5.png)
 

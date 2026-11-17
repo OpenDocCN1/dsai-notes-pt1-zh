@@ -30,7 +30,6 @@ So we're going to start off with a circle inside a square。
 
 
 
-![](img/5290aebc27fbfda875071e1d77a9326b_1.png)
 
 And the idea is that we're just going to have a square that's going to be the diameter of the circle。
 
@@ -44,7 +43,6 @@ And the idea is that we're just going to have a square that's going to be the di
 
 
 
-![](img/5290aebc27fbfda875071e1d77a9326b_3.png)
 
 And the point is that that circle should touch the borders of our square。
 
@@ -62,7 +60,6 @@ And then generalize that to higher dimensions and discuss how as we move to high
 
 
 
-![](img/5290aebc27fbfda875071e1d77a9326b_5.png)
 
 So the point is to bring in that concept， but I'd be remiss if I didn't also walk you through a lot of the new code that we're going to be talking about as we go through some more complicated plots。
 
@@ -78,7 +75,6 @@ This way， when you're back home， you will be able to go ahead。
 
 
 
-![](img/5290aebc27fbfda875071e1d77a9326b_7.png)
 
 So to start off。We're going to。Initiate our figure。And then so Plt。
 
@@ -100,7 +96,6 @@ And then we're saying aspect equals equal。 And this can be similar to what we 
 
 😊。
 
-![](img/5290aebc27fbfda875071e1d77a9326b_9.png)
 
 So we run this and we see that we now have our bounding box going from zero to1。
 
@@ -114,7 +109,6 @@ And then going from zero to 1 and then from zero to negative one as well。
 
 
 
-![](img/5290aebc27fbfda875071e1d77a9326b_11.png)
 
 So I'll bring this back into play once we walk through this code where we increase our X limit and our Y limit。
 
@@ -122,7 +116,6 @@ So then we're going to add on this scatter plot。Which is just going to be that
 
 
 
-![](img/5290aebc27fbfda875071e1d77a9326b_13.png)
 
 And we are saying that。We have the size equal to 10 and the colors equal to black。 That's at 0，0。
 
@@ -130,7 +123,6 @@ And we are saying that。We have the size equal to 10 and the colors equal to bl
 
  it's still not at negative 1，1。
 
-![](img/5290aebc27fbfda875071e1d77a9326b_15.png)
 
 We're then going to add on a straight line， and this is going to represent the radius of our circle。
 
@@ -150,7 +142,6 @@ And then for the y values， we're going to stay at 0。
 
  We're going to add this on to our graph。😊。
 
-![](img/5290aebc27fbfda875071e1d77a9326b_17.png)
 
 We have to make sure that we have。No extra tabs there。 And now we see it goes from 0 to one。
 
@@ -160,7 +151,6 @@ Now we can go through some of the pieces that we skipped over， so coming back 
 
 
 
-![](img/5290aebc27fbfda875071e1d77a9326b_19.png)
 
 And this is something that's probably the most new。For those that are watching through this video。
 
@@ -194,9 +184,7 @@ And we're saying that we want an R， we can say the size of that R and where we
 
 
 
-![](img/5290aebc27fbfda875071e1d77a9326b_21.png)
 
-![](img/5290aebc27fbfda875071e1d77a9326b_22.png)
 
 We've already set our X limit in Y limit and hopefully already familiar with sending your Y label。
 
@@ -204,7 +192,6 @@ We've already set our X limit in Y limit and hopefully already familiar with sen
 
 
 
-![](img/5290aebc27fbfda875071e1d77a9326b_24.png)
 
 So we have all that within our plot。 And then it's saying when we say point equals 0 here。
 
@@ -222,7 +209,6 @@ That it's a far away point。Just to highlight what we're signifying as a far aw
 
 
 
-![](img/5290aebc27fbfda875071e1d77a9326b_26.png)
 
 So the idea is that each axis in this example is supposed to be a different covariate and are supposed to imagine we've standard scaled our data。
 
@@ -230,7 +216,6 @@ So the idea is that each axis in this example is supposed to be a different cova
 
 
 
-![](img/5290aebc27fbfda875071e1d77a9326b_28.png)
 
 So this is just saying that values that are outside the circle。
 
@@ -240,15 +225,12 @@ Is that we are now identifying that anything outside that circle is pretty far a
 
 
 
-![](img/5290aebc27fbfda875071e1d77a9326b_30.png)
 
 So we're going to run this。And we see our unit circle when we call make circle on its own。
 
  very similar to what we have above。
 
-![](img/5290aebc27fbfda875071e1d77a9326b_32.png)
 
-![](img/5290aebc27fbfda875071e1d77a9326b_33.png)
 
 And then when we call make circle and we call one rather than point equals 0。
 
@@ -258,9 +240,7 @@ And then when we call make circle and we call one rather than point equals 0。
 
 
 
-![](img/5290aebc27fbfda875071e1d77a9326b_35.png)
 
-![](img/5290aebc27fbfda875071e1d77a9326b_36.png)
 
 Now。The point that we want to make here。Is how much of this square is going to be outside that circle。
 
@@ -292,6 +272,5 @@ So I'm going to pause here。And in the next video， we're going to extend this
 
  All right， I'll see you there。
 
-![](img/5290aebc27fbfda875071e1d77a9326b_38.png)
 
 ![](img/5290aebc27fbfda875071e1d77a9326b_39.png)

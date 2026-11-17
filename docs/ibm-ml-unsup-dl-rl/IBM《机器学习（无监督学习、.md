@@ -12,7 +12,6 @@ Welcome back now in this exercise we're just going to play around with some of t
 
 So。
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_1.png)
 
 First thing that we have is we set the max features equal to 20，000。
 
@@ -24,7 +23,6 @@ Here， rather than the 30 that we had before， we're going to pad or truncate 
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_3.png)
 
 Everything else that we have here stays the same。The same holds for our H dimension。
 
@@ -32,13 +30,11 @@ Everything else that we have here stays the same。The same holds for our H dime
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_5.png)
 
 So we're just going to run this， we're not going to walk through that again。
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_7.png)
 
 Again， we're going to use RMS prop and again the loss will be binary cross entropy。
 
@@ -48,7 +44,6 @@ We run this and then again， finally we will fit on our training set using our 
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_9.png)
 
 So we run this and again， this may take some time to run and the only difference again that we have with this sample versus before is that we're setting the max length where we will truncate our sequences up here at 80。
 
@@ -56,7 +51,6 @@ So I'm going to pause here and we'll come back once this training is done。
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_11.png)
 
 So that will actually take quite a bit of time to run we're not also going to run the accuracy results as we did before。
 
@@ -66,23 +60,17 @@ So that will actually take quite a bit of time to run we're not also going to ru
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_13.png)
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_14.png)
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_15.png)
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_16.png)
 
 Now we want to see again， we're going to play around with just one more parameter here。
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_18.png)
 
 So we have， again， this time， instead of。
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_20.png)
 
 20，000 features， which is the amount of actual words we're going to use using the most common words。
 
@@ -90,7 +78,6 @@ So we have， again， this time， instead of。
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_22.png)
 
 And then for our word embedding dimension， recall that that's going to take those integer values that we're starting off with。
 
@@ -100,17 +87,14 @@ And convert them into x dimensional vectors here， 20 dimensional prior they we
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_24.png)
 
 So you run this to get our new Xtrain and X test。
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_26.png)
 
 We get our new R&N model， everything else yet the same。
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_28.png)
 
 And then after that， again， we will use the compile with the same loss function， the same optimizer。
 
@@ -118,7 +102,6 @@ And then after that， again， we will use the compile with the same loss funct
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_30.png)
 
 And then after that， this is going to run。 and this will take some time as well。
 
@@ -126,7 +109,6 @@ And then after that， this is going to run。 and this will take some time as w
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_32.png)
 
 But here we see it's running through that first epoch。
 
@@ -140,13 +122,11 @@ The goal being that if the accuracy on our holdoutet is continuing to improve。
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_34.png)
 
 After each epoch， so we probably could have continued to run that and get even higher accuracy。
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_36.png)
 
 So we're actually going to do that here。 we'll see after 10 epochs how well we were able to perform。
 
@@ -158,9 +138,7 @@ It'll run for another 10 epoch and we'll see how much that accuracy can actually
 
  which will be quite a bit of time。
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_38.png)
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_39.png)
 
 Now， looking at our results here are going through now 20 epochs， 10 on the first run。
 
@@ -170,35 +148,28 @@ Now， looking at our results here are going through now 20 epochs， 10 on the 
 
 8479。
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_41.png)
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_42.png)
 
 On the training set， and we see that continues to go up as that loss continues to go down。
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_44.png)
 
 And we see towards the ends that we get that validation accuracy of about 0。84， that is。
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_46.png)
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_47.png)
 
 Around equal to what we were able to accomplish in just 10 epochs。
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_49.png)
 
 Using the word embeddings with 50 dimensions， max features are 20000 and the max length of 80。
 
 
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_51.png)
 
 I'd say again， feel free to play around with these different parameters。
 
@@ -206,12 +177,10 @@ I'd say again， feel free to play around with these different parameters。
 
  specifically LSTMs。
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_53.png)
 
 So I'll see you back in lecture where we will pick up with long short term memory models。 All right。
 
  I'll see you there。
 
-![](img/f11f466a4aaf6b9495c5afc275de31d5_55.png)
 
 ![](img/f11f466a4aaf6b9495c5afc275de31d5_56.png)

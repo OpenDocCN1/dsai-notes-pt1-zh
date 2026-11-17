@@ -10,7 +10,6 @@ The model is going to be producing a single word at a time。
 
 
 
-![](img/24c623e36e87845aa47fb680ffd24f0a_1.png)
 
 And with that in mind。If at any point it produces one wrong word。
 
@@ -18,7 +17,6 @@ We may end up with a completely different trajectory and that would throw off th
 
 
 
-![](img/24c623e36e87845aa47fb680ffd24f0a_3.png)
 
 Now， again， the way it's currently constructed is that it will continue to predict new words until it hits this end of sentence term。
 
@@ -36,7 +34,6 @@ So we can imagine that each of these that we're seeing being built out here woul
 
 
 
-![](img/24c623e36e87845aa47fb680ffd24f0a_5.png)
 
 So the way that our encoder decoder model is currently built out。
 
@@ -64,7 +61,6 @@ And attention is going to solve for that problem and allow us to look specifical
 
 
 
-![](img/24c623e36e87845aa47fb680ffd24f0a_7.png)
 
 Now， with attention， our goal is to consider the words that are most similar to our current position in our sentence generation。
 
@@ -72,7 +68,6 @@ So rather than just using the hidden state from that entire sentence。 So again
 
  that final hidden state。
 
-![](img/24c623e36e87845aa47fb680ffd24f0a_9.png)
 
 We can actually use the hidden state from each one of the different terms。So how does this work？
 
@@ -80,7 +75,6 @@ We know that each word in either language will be represented by some type of ve
 
 
 
-![](img/24c623e36e87845aa47fb680ffd24f0a_11.png)
 
 So what we can do is that each word within our decoder。
 
@@ -96,7 +90,6 @@ So that we know how similar each term， so you see this is a function mapping t
 
 
 
-![](img/24c623e36e87845aa47fb680ffd24f0a_13.png)
 
 And then this similarity function will then weight the different embedding layers。
 
@@ -110,7 +103,6 @@ To our decoder term where we currently are， then that will have a much higher 
 
 
 
-![](img/24c623e36e87845aa47fb680ffd24f0a_15.png)
 
 And this will then better allow you to translate between different languages when that ordering of the words are often different so that you know。
 
@@ -118,7 +110,6 @@ And this will then better allow you to translate between different languages whe
 
 
 
-![](img/24c623e36e87845aa47fb680ffd24f0a_17.png)
 
 Terms would have the cat at the end of the sentence， would have that noun at the end of the sentence。
 
@@ -126,6 +117,5 @@ Terms would have the cat at the end of the sentence， would have that noun at t
 
 
 
-![](img/24c623e36e87845aa47fb680ffd24f0a_19.png)
 
 ![](img/24c623e36e87845aa47fb680ffd24f0a_20.png)

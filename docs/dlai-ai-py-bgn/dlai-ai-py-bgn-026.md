@@ -42,7 +42,6 @@ print_journal("Sydney.txt")
 print_journal("Paris.txt")
 ```
 
-![](img/f41419f36defbe1559688350c0d3f313_1.png)
 
 让我们详细解析这段代码：
 *   `def` 是一个特殊的关键字，用于告诉Python你要定义一个新函数。
@@ -50,7 +49,6 @@ print_journal("Paris.txt")
 *   括号内的 `file` 是函数的**参数**。这意味着当你调用这个函数时，需要为它提供一个文件名。
 *   冒号 `:` 后面是一个缩进的代码块。每次调用 `print_journal` 函数时，都会执行这四行代码。
 
-![](img/f41419f36defbe1559688350c0d3f313_3.png)
 
 ## 函数的返回值 📤
 
@@ -82,11 +80,8 @@ print(len(journal_tokyo))
 
 ## 另一个例子：温度转换 🌡️
 
-![](img/f41419f36defbe1559688350c0d3f313_5.png)
 
-![](img/f41419f36defbe1559688350c0d3f313_6.png)
 
-![](img/f41419f36defbe1559688350c0d3f313_7.png)
 
 让我们看一个更通用的例子：将华氏度转换为摄氏度。没有函数时，每次转换都需要写一遍公式：
 
@@ -101,13 +96,9 @@ print(celsius)
 首先，定义一个打印结果的函数：
 
 
-![](img/f41419f36defbe1559688350c0d3f313_9.png)
 
-![](img/f41419f36defbe1559688350c0d3f313_10.png)
 
-![](img/f41419f36defbe1559688350c0d3f313_11.png)
 
-![](img/f41419f36defbe1559688350c0d3f313_12.png)
 
 ```python
 def fahrenheit_to_celsius(fahrenheit):
@@ -120,7 +111,6 @@ fahrenheit_to_celsius(68)
 其次，定义一个返回结果的函数，以便将转换后的值保存下来进行后续操作：
 
 
-![](img/f41419f36defbe1559688350c0d3f313_14.png)
 
 ```python
 def fahrenheit_to_celsius(fahrenheit):
@@ -134,13 +124,11 @@ print(type(temp_c))
 
 ## 动手练习 ✍️
 
-![](img/f41419f36defbe1559688350c0d3f313_16.png)
 
 现在，你已经了解了函数的基本用法。可以尝试修改上面的温度转换代码：
 *   创建一个将摄氏度转换为华氏度的函数。
 *   创建一个将英尺转换为米的函数。
 
-![](img/f41419f36defbe1559688350c0d3f313_18.png)
 
 ## 总结 📝
 

@@ -23,12 +23,9 @@ return Command(goto="next_node_name", update={"key": "updated_value"})
 以下是该示例的完整代码和分步解析：
 
 
-![](img/a063f34edb8e7af3116f32daad8a75ba_1.png)
 
 
-![](img/a063f34edb8e7af3116f32daad8a75ba_3.png)
 
-![](img/a063f34edb8e7af3116f32daad8a75ba_4.png)
 
 ```python
 from langgraph.graph import StateGraph, END
@@ -96,7 +93,6 @@ print(f"最终状态: {final_state}")
 2.  命令类的基本语法：`Command(goto=..., update=...)`。
 3.  通过一个从Node A到B再到C的串联示例，实践了如何使用命令类构建流程。
 
-![](img/a063f34edb8e7af3116f32daad8a75ba_6.png)
 
 ![](img/a063f34edb8e7af3116f32daad8a75ba_7.png)
 

@@ -2,7 +2,6 @@
 
 在本节课中，我们将要学习 AWS Bedrock 服务。AWS Bedrock 是一项旨在简化基础模型（特别是生成式 AI 模型）部署和管理的服务。Bedrock 提供了一套来自领先 AI 公司（如 Anthropic、Stability AI 等）的预训练模型，以及用于大规模定制和部署这些模型的工具。
 
-![](img/fda1b2f561afdf535088f8756ba0ba51_1.png)
 
 ## AWS Bedrock 核心特性
 
@@ -15,27 +14,20 @@ AWS Bedrock 的关键特性包括：
 
 上一节我们介绍了 AWS Bedrock 的核心特性，本节中我们来看看如何为生成式 AI 模型设置 Bedrock。
 
-![](img/fda1b2f561afdf535088f8756ba0ba51_3.png)
 
-![](img/fda1b2f561afdf535088f8756ba0ba51_5.png)
 
 ## 为生成式 AI 模型设置 Bedrock
 
-![](img/fda1b2f561afdf535088f8756ba0ba51_7.png)
 
-![](img/fda1b2f561afdf535088f8756ba0ba51_8.png)
 
 以下是设置 Bedrock 的详细步骤。
 
 ### 步骤 1：创建 AWS 账户
 
-![](img/fda1b2f561afdf535088f8756ba0ba51_10.png)
 
 如果您没有 AWS 账户，请前往 AWS 官方网站进行注册。注册时需要提供必要的详细信息，如电子邮件地址、密码和联系信息。
 
-![](img/fda1b2f561afdf535088f8756ba0ba51_12.png)
 
-![](img/fda1b2f561afdf535088f8756ba0ba51_13.png)
 
 ### 步骤 2：访问 AWS Bedrock
 
@@ -86,9 +78,7 @@ IAM（身份和访问管理）角色用于授予 Bedrock 必要的权限。
 2.  **测试部署**：向已部署的模型端点发送示例请求以验证其性能。检查延迟、准确性和任何可能的错误。
 3.  **与应用程序集成**：从 Bedrock 控制台获取端点 URL。将此 URL 集成到您的应用程序代码中以发送推理请求。这通常涉及向端点发送带有输入数据的 HTTP POST 请求。确保您的应用程序能正确处理响应和错误。
 
-![](img/fda1b2f561afdf535088f8756ba0ba51_15.png)
 
-![](img/fda1b2f561afdf535088f8756ba0ba51_16.png)
 
 ### 步骤 9：监控与维护
 
@@ -116,9 +106,7 @@ IAM（身份和访问管理）角色用于授予 Bedrock 必要的权限。
 
 ## 最佳实践
 
-![](img/fda1b2f561afdf535088f8756ba0ba51_18.png)
 
-![](img/fda1b2f561afdf535088f8756ba0ba51_19.png)
 
 遵循最佳实践可以确保部署的健壮性和效率。
 

@@ -43,11 +43,9 @@ circles.label.value_counts()
 
 ---
 
-![](img/a4ace18fd1f59c2c6dd7f3931caed54e_2.png)
 
 ## 下载辅助函数
 
-![](img/a4ace18fd1f59c2c6dd7f3931caed54e_4.png)
 
 我们将编写代码，从 GitHub 仓库下载 `helper_functions.py` 文件。如果文件已存在，则跳过下载。
 

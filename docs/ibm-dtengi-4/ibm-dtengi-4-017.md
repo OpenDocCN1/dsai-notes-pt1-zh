@@ -1,22 +1,16 @@
 # 017：ALTER、DROP 和 TRUNCATE 表 🗂️
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_0.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_1.png)
 
 在本节课中，我们将学习如何修改和删除数据库中的表。具体来说，我们将掌握三个核心SQL语句：`ALTER TABLE`、`DROP TABLE` 和 `TRUNCATE TABLE`。这些语句用于改变表结构、删除整个表或清空表中的所有数据。
 
 观看本视频后，你将能够描述这些语句的作用，解释其语法，并在查询中使用它们。`ALTER TABLE` 语句用于向表中添加或删除列、修改列的数据类型、添加或删除键以及约束。
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_3.png)
 
 ---
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_4.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_5.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_6.png)
 
 ## ALTER TABLE 语句
 
@@ -37,21 +31,15 @@ ADD COLUMN telephone_number BIGINT;
 
 ---
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_8.png)
 
 ### 修改列的数据类型
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_9.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_10.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_11.png)
 
 你也可以使用 `ALTER TABLE` 语句来修改列的数据类型。为此，需要使用 `ALTER COLUMN` 子句，并为列指定新的数据类型。
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_12.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_13.png)
 
 例如，使用数字数据类型存储电话号码意味着你不能将括号、加号或破折号作为号码的一部分。为了克服这个问题，可以将列的数据类型改为 `CHAR`。
 
@@ -66,25 +54,17 @@ SET DATA TYPE CHAR(20);
 
 ---
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_15.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_16.png)
 
 ### 删除列
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_17.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_18.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_19.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_20.png)
 
 如果你的需求发生变化，不再需要某个额外的列，你可以再次使用 `ALTER TABLE` 语句，这次配合 `DROP COLUMN` 子句来删除该列。
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_21.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_22.png)
 
 操作如下所示：
 ```sql
@@ -108,27 +88,18 @@ DROP TABLE table_name;
 DROP TABLE author;
 ```
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_24.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_25.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_26.png)
 
 ---
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_27.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_28.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_29.png)
 
 ## TRUNCATE TABLE 语句
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_30.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_31.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_32.png)
 
 有时，你可能只想删除表中的数据，而不是删除表本身。虽然你可以使用不带 `WHERE` 子句的 `DELETE` 语句来实现，但通常使用 `TRUNCATE TABLE` 语句会更快速、更高效。
 
@@ -149,17 +120,13 @@ TRUNCATE TABLE author IMMEDIATE;
 
 本节课我们一起学习了三个重要的数据定义语言（DDL）语句：
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_34.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_35.png)
 
 *   **`ALTER TABLE` 语句**：用于更改现有表的结构，例如添加、修改或删除列。
 *   **`DROP TABLE` 语句**：用于删除数据库中的现有表。
 *   **`TRUNCATE TABLE` 语句**：用于删除表中的所有数据行。
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_36.png)
 
-![](img/8e70a80fb87cd1a4f8190786a768f13f_37.png)
 
 ![](img/8e70a80fb87cd1a4f8190786a768f13f_39.png)
 

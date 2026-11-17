@@ -10,9 +10,7 @@
 
 
 
-![](img/85199853184e760e6ea7bf5156983594_1.png)
 
-![](img/85199853184e760e6ea7bf5156983594_2.png)
 
 ## 数据抽样与规模
 
@@ -20,9 +18,7 @@
 
 
 
-![](img/85199853184e760e6ea7bf5156983594_4.png)
 
-![](img/85199853184e760e6ea7bf5156983594_4.png)
 
 随后，完整的数据集可用于微调模型。提供的12个数据文件代表了从每个月随机抽取的总行程的2%。
 
@@ -34,17 +30,13 @@
 
 
 
-![](img/85199853184e760e6ea7bf5156983594_6.png)
 
-![](img/85199853184e760e6ea7bf5156983594_6.png)
 
-![](img/85199853184e760e6ea7bf5156983594_8.png)
 
 首先，双击一月份的数据文件以打开导入工具。
 
 
 
-![](img/85199853184e760e6ea7bf5156983594_8.png)
 
 每次行程都提供了许多详细信息，包括上车和下车的地点与时间、行程距离和车费。现在重命名一些冗长或不方便的变量名，将使后续输入更容易且不易出错。例如，`tpep_pickup_datetime` 可以缩短为 `pickup_time`。
 
@@ -54,9 +46,7 @@
 
 
 
-![](img/85199853184e760e6ea7bf5156983594_10.png)
 
-![](img/85199853184e760e6ea7bf5156983594_10.png)
 
 请注意，其中一些变量只能取少数几个值。例如，`rate_code` 只能取值1到6。将 `rate_code`、`vendor` 和 `payment_type` 的数据类型更改为 `categorical`。
 
@@ -187,7 +177,6 @@ gscatter(taxiData.total_amount, taxiData.tip_amount, taxiData.rate_code)
 geoscatter(taxiData.pickup_latitude, taxiData.pickup_longitude)
 ```
 
-![](img/85199853184e760e6ea7bf5156983594_12.png)
 
 看起来这些数据中也有一些极端的异常值。
 

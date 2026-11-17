@@ -68,9 +68,7 @@ decorator = “为每一行代码插入注释。”
 
 模板化的优势在于，你可以固定引导和修饰部分，只更换问题部分来尝试不同的任务，非常灵活。
 
-![](img/ad4fbe0374eee6ea3e4c4916fafa955c_5.png)
 
-![](img/ad4fbe0374eee6ea3e4c4916fafa955c_7.png)
 
 ## 尝试更复杂的场景
 
@@ -79,13 +77,9 @@ decorator = “为每一行代码插入注释。”
 question = “在Python中创建一个非常大的随机数列表，然后编写代码对该列表进行排序。”
 ```
 
-![](img/ad4fbe0374eee6ea3e4c4916fafa955c_9.png)
 
-![](img/ad4fbe0374eee6ea3e4c4916fafa955c_10.png)
 
-![](img/ad4fbe0374eee6ea3e4c4916fafa955c_11.png)
 
-![](img/ad4fbe0374eee6ea3e4c4916fafa955c_12.png)
 
 我们保持引导和修饰部分不变，仅更新问题部分，生成新的提示词并发送给模型。
 
@@ -95,15 +89,10 @@ question = “在Python中创建一个非常大的随机数列表，然后编写
 
 ## 总结
 
-![](img/ad4fbe0374eee6ea3e4c4916fafa955c_14.png)
 
-![](img/ad4fbe0374eee6ea3e4c4916fafa955c_15.png)
 
-![](img/ad4fbe0374eee6ea3e4c4916fafa955c_16.png)
 
-![](img/ad4fbe0374eee6ea3e4c4916fafa955c_17.png)
 
-![](img/ad4fbe0374eee6ea3e4c4916fafa955c_18.png)
 
 ![](img/ad4fbe0374eee6ea3e4c4916fafa955c_20.png)
 

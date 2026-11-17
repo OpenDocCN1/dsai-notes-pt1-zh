@@ -126,7 +126,6 @@ motiwari@stanford.edu
 
 RQ1. 自我复制对多参与者应用的影响是什么？
 
-![参考图例](img/09754debaa1c44e201d9f69530d031e9.png)
 
 (a) 全球消息传递：所有工具类型的平均攻击成功率
 
@@ -158,7 +157,6 @@ RQ3. 感染提示如何在开放的、非线性的代理互动中传播？
 
 与[5.1节](https://arxiv.org/html/2410.07283v1#S5.SS1 "5.1 Prompt Infection Against Multi-Agent Applications ‣ 5 Results ‣ Prompt Infection: LLM-to-LLM Prompt Injection within Multi-Agent Systems")不同，后者中代理关系是按线性方式预先确定的，这里我们探讨的是一个更加动态的环境，其中代理之间的连接会不可预测地演化。这个设置使我们能够研究感染提示是如何自然地通过一个去中心化的代理网络传播的。在开始时，只有一个代理携带感染，提示的传播基于代理之间不断发展的互动。
 
-![参见说明文字](img/8c27e3cef3ff5ef6e48366c0e9bb891e.png)
 
 (a) 有重要性评分操作时，感染体的数量随时间变化。此操作导致感染传播更快，不同代理人群体中的感染体数量更多，表现为感染体数量的逐步增加和稳定的完全感染回合点。
 

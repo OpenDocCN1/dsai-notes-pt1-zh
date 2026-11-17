@@ -10,7 +10,6 @@ GitHub Copilot是一款由人工智能驱动的代码补全工具，能够帮助
 
 ### 兼容的IDE
 
-![](img/a1d14c1babc88f500f8d40c098cc7a49_4.png)
 
 GitHub Copilot支持多种流行的集成开发环境和代码编辑器。
 
@@ -25,7 +24,6 @@ GitHub Copilot支持多种流行的集成开发环境和代码编辑器。
 
 上一节我们介绍了GitHub Copilot支持的IDE，本节中我们来看看如何在PyCharm中具体安装它。安装过程在其他IDE（如Visual Studio Code）中类似。
 
-![](img/a1d14c1babc88f500f8d40c098cc7a49_6.png)
 
 以下是详细的安装步骤：
 1.  打开PyCharm，在初始窗口或通过 **File** > **New Project** 创建一个新项目，进入主界面。
@@ -38,7 +36,6 @@ GitHub Copilot支持多种流行的集成开发环境和代码编辑器。
 
 ### 更多兼容工具
 
-![](img/a1d14c1babc88f500f8d40c098cc7a49_8.png)
 
 除了上述IDE，GitHub Copilot还支持更多开发工具。
 

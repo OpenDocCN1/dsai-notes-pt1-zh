@@ -14,7 +14,6 @@ We'll then discuss principal component analysis or PCA and how we can use that t
 
 
 
-![](img/de8721eeb467c44e5db267c93f5adf80_1.png)
 
 Now， we should recall from earlier in the course， as well as working through our notebook on the curseive dimensionality that due to the curseive dimensionality。
 
@@ -24,7 +23,6 @@ And our distance measures that we're using perform poorly as well as the inciden
 
 
 
-![](img/de8721eeb467c44e5db267c93f5adf80_3.png)
 
 And the reason why this is， if we think about just working with one dimension that has， say。
 
@@ -36,7 +34,6 @@ Each one with 10 different positions。Then we would need 60 different observati
 
 
 
-![](img/de8721eeb467c44e5db267c93f5adf80_5.png)
 
 And then if we increase it to three dimensions and beyond。
 
@@ -46,7 +43,6 @@ And then if we increase it to three dimensions and beyond。
 
 
 
-![](img/de8721eeb467c44e5db267c93f5adf80_7.png)
 
 So this is a very common situation within business。
 
@@ -62,7 +58,6 @@ Or you can combine with linear and nonlinear transformations。
 
 
 
-![](img/de8721eeb467c44e5db267c93f5adf80_9.png)
 
 So how does PCA or this idea of creating new features out of the many features？Actually work。
 
@@ -84,7 +79,6 @@ So here are the different projections。And this will entail a linear transforma
 
 
 
-![](img/de8721eeb467c44e5db267c93f5adf80_11.png)
 
 Now with our linear transformation， the points are going to now lie on this line that we see here。
 

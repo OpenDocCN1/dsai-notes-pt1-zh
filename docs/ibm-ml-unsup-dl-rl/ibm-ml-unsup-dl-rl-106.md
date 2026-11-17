@@ -10,7 +10,6 @@ Now let's go over the learning goals for this section。
 
 
 
-![](img/e9a6fef02f2c985827b13c1323d6e258_1.png)
 
 In this section， we're going to cover how variational auto encoders work。
 
@@ -22,7 +21,6 @@ Then we'll discuss variational autoencoder loss functions。
 
 
 
-![](img/e9a6fef02f2c985827b13c1323d6e258_3.png)
 
 Net with variational auto encoders will still be generating that latent representation。
 
@@ -30,7 +28,6 @@ Net with variational auto encoders will still be generating that latent represen
 
 
 
-![](img/e9a6fef02f2c985827b13c1323d6e258_5.png)
 
 And then similarly， we can reconstruct these to generate new samples。Now。
 
@@ -48,7 +45,6 @@ And then using variational autoencors and the fact that we are going to be sampl
 
  we can actually generate new images。
 
-![](img/e9a6fef02f2c985827b13c1323d6e258_7.png)
 
 Now， the goal of variational auto encoders will be to generate images using the decoder portion of our network。
 
@@ -64,19 +60,16 @@ And a secondary goal that will come along with that is that similar images will 
 
 
 
-![](img/e9a6fef02f2c985827b13c1323d6e258_9.png)
 
 So let's walk through the steps of how variational autoencoderrs will come up with this latent space represented by a normal distribution。
 
 
 
-![](img/e9a6fef02f2c985827b13c1323d6e258_11.png)
 
 The first step will still be to pass through a network with some bottleneck。
 
  So reducing the number of nodes。
 
-![](img/e9a6fef02f2c985827b13c1323d6e258_13.png)
 
 As we did with the regular auto encoders。But now at step 2。
 
@@ -104,6 +97,5 @@ In the next video， we're going to touch on a high level some of the math that 
 
  Allright， I'll see you there。
 
-![](img/e9a6fef02f2c985827b13c1323d6e258_15.png)
 
 ![](img/e9a6fef02f2c985827b13c1323d6e258_16.png)

@@ -47,17 +47,12 @@ args = getResolvedOptions(sys.argv, ['JOB_NAME', 'input_path', 'output_path'])
 
 完成两个转换脚本中的转换函数后，你需要从终端运行Terraform来创建资源。脚本存储桶应该被创建成功。
 
-![](img/265c56974c41b7bff31173a17b5f450b_2.png)
 
-![](img/265c56974c41b7bff31173a17b5f450b_2.png)
 
 你将获得Glue作业和Glue角色的名称。
 
-![](img/265c56974c41b7bff31173a17b5f450b_4.png)
 
-![](img/265c56974c41b7bff31173a17b5f450b_4.png)
 
-![](img/265c56974c41b7bff31173a17b5f450b_6.png)
 
 然后，从终端使用这些名称来运行Glue作业。
 
@@ -112,7 +107,6 @@ glue_client = boto3.client('glue')
 
 至此，你已经准备好尝试这个实验。但如前所述，在实验的最后有一个可选部分，你将在其中探索在S3中存储数据时压缩和分区的效果。如果你有兴趣尝试这个可选部分，可以观看下一个视频，我将引导你完成那些可选实验，或者你也可以直接开始实验。
 
-![](img/265c56974c41b7bff31173a17b5f450b_11.png)
 
 ---
 

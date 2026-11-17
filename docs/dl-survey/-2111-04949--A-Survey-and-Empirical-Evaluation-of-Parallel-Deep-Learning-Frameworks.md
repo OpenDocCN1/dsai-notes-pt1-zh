@@ -370,7 +370,6 @@ Dryden 等人（Dryden 等人，2019b）还提出了几种算法用于划分卷�
 
 在本节中，我们展示并讨论了关于 epoch 执行时间、统计效率和内存利用率的实验结果。
 
-![参考说明](img/8c71b32446f766d400ef9bef19a368c5.png)
 
 图 4\. Lassen 上 VGG-16 和 GPT2-medium 的单 GPU 性能与 4 GPU 加速比比较。标签列出了每个框架相对于其自身 1 GPU 性能的加速比。
 
@@ -386,7 +385,6 @@ Dryden 等人（Dryden 等人，2019b）还提出了几种算法用于划分卷�
 
 图 5\. 在 ThetaGPU 的 1、2、4 和 8 个 GPU 上训练 GPT2-medium 的时间分解。我们使用 NVIDIA 的 NVTX SDK 来注释事件，并使用 Nsight Systems 进行仪器化。Megatron 指的是 Megatron-intra。
 
-![参考说明](img/80bbee79864d94018c4a99c936e8e86f.png)![参考说明](img/a6ee0d8ebbfc19950c6ad1917046ece6.png)
 
 图 6\. Lassen 上的 VGG-16 和 GPT2-medium 的性能结果。
 

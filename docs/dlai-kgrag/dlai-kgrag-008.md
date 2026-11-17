@@ -2,7 +2,6 @@
 
 ![](img/22e2df8e2dcf53f14c905230827f2f7f_0.png)
 
-![](img/22e2df8e2dcf53f14c905230827f2f7f_2.png)
 
 ![](img/22e2df8e2dcf53f14c905230827f2f7f_3.png)
 
@@ -30,7 +29,6 @@
 
 以下是本节将要使用的图谱架构示意图：
 
-![](img/22e2df8e2dcf53f14c905230827f2f7f_0.png)
 
 经理人持有公司的股份，公司提交了已被分块的表格。现在，经理人和公司都连接到地址节点。借助这些地址信息，我们可以提出更有趣的问题。
 
@@ -38,9 +36,7 @@
 
 和往常一样，我们首先导入必要的库并创建Neo4j图实例。
 
-![](img/22e2df8e2dcf53f14c905230827f2f7f_5.png)
 
-![](img/22e2df8e2dcf53f14c905230827f2f7f_7.png)
 
 现在，我们准备使用Cypher进行探索。以下是一些查询示例：
 
@@ -114,7 +110,6 @@ RETURN c.name, companyAddress.address
 
 当用户提问“圣克拉拉有哪些公司？”时，LLM会学习示例中的模式，将城市名替换，生成相应的查询。
 
-![](img/22e2df8e2dcf53f14c905230827f2f7f_9.png)
 
 我们使用LangChain来构建这个工作流。创建一个 `GraphCypherQAChain`，它结合了LLM（ChatOpenAI）和我们已有的知识图谱，并指定使用上述的Cypher生成提示模板。
 
@@ -132,7 +127,6 @@ RETURN c.name, companyAddress.address
 
 更新提示词和链之后，LLM就能学会生成包含 `point.distance` 函数的复杂查询了。
 
-![](img/22e2df8e2dcf53f14c905230827f2f7f_11.png)
 
 **连接回原始文档数据**
 我们还可以教导LLM回答关于公司业务的问题。这需要查询连接到公司的原始SEC文件分块。
@@ -153,9 +147,7 @@ RETURN c.name, companyAddress.address
 
 本节课中，我们一起学习了如何与构建好的知识图谱进行交互。
 
-![](img/22e2df8e2dcf53f14c905230827f2f7f_13.png)
 
-![](img/22e2df8e2dcf53f14c905230827f2f7f_15.png)
 
 1.  我们首先回顾了“提取-增强-扩展”的图谱构建模式。
 2.  接着，我们使用**Cypher查询语言**直接探索图谱，执行了包括简单匹配、全文搜索、聚合统计以及利用**地理空间索引**进行邻近搜索在内的多种查询。

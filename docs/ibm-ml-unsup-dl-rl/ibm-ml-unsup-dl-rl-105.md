@@ -136,13 +136,11 @@ So， you know。Now that function has been initiated。We also， I forgot to r
 
 
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_1.png)
 
 And then we're going to actually plot the results， and this should make what I just discussed a bit clearer。
 
 
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_3.png)
 
 So here we have the different groupings， so we see for our purple here， which is related to our ones。
 
@@ -150,15 +148,12 @@ So here we have the different groupings， so we see for our purple here， whic
 
 
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_5.png)
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_6.png)
 
 And then when we look at the numbers generated， those tend to be ones。
 
 
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_8.png)
 
 Whereas。You see here on the bottom that darker purple is the zeroes。
 
@@ -168,17 +163,13 @@ Whereas。You see here on the bottom that darker purple is the zeroes。
 
 
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_10.png)
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_11.png)
 
 Predicting or generating sevens as well， so we can see this generative process。
 
 
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_13.png)
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_14.png)
 
 Then finally， in exercise six， we want to train the variational autoencoder as was the autoencoder for 10 epochs each。
 
@@ -188,7 +179,6 @@ And see which one seems to have more potential to continuously learn as it's giv
 
 
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_16.png)
 
 So。We have here。 It's going to start running for 10 epochs。 I'm going to continue running。
 
@@ -200,11 +190,8 @@ So。We have here。 It's going to start running for 10 epochs。 I'm going to c
 
 
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_18.png)
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_19.png)
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_20.png)
 
 Where we defined。This function here that trains AEE our autoend for a certain number of epos。
 
@@ -238,6 +225,5 @@ Now that closes out our notebook here。And after this。
 
 
 
-![](img/657c6b49aad658a8a0a51f44c3193ad9_22.png)
 
 ![](img/657c6b49aad658a8a0a51f44c3193ad9_23.png)

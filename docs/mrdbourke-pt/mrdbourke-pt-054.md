@@ -1,55 +1,37 @@
 #  54：创建直线数据集 📈
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_0.png)
 
 在本节课中，我们将学习如何创建一个简单的直线数据集，并调整我们之前构建的模型来拟合它。这是一种重要的故障排除方法：当模型在复杂问题上表现不佳时，先在一个已知能解决的简单问题上测试它。
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_2.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_3.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_4.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_5.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_7.png)
 
 ## 概述
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_9.png)
 
 在之前的视频中，我们尝试构建一个模型来区分蓝点和红点，但之前的努力都失败了。我们尝试了多种改进模型的方法，例如增加训练轮数、添加更多层、增加隐藏单元、更改激活函数和学习率等。
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_11.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_13.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_14.png)
 
 一种我喜欢的故障排除方法是，将大问题分解，先测试一个更小、更简单的问题。我们知道在之前的章节中，我们构建过一个可以拟合直线的模型。因此，我们将创建一个直线数据集，看看我们当前的模型是否能学到任何东西。如果连直线都拟合不了，那说明我们的模型架构或训练过程存在根本性问题。
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_16.png)
 
 ## 创建直线数据集
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_18.png)
 
 首先，我们创建一个简单的线性回归数据集。以下是创建数据集的步骤：
 
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_20.png)
-
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_22.png)
 
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_24.png)
 
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_26.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_27.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_28.png)
+
 
 ```python
 import torch
@@ -65,32 +47,23 @@ X_regression = torch.arange(start, end, step).unsqueeze(dim=1)
 y_regression = weight * X_regression + bias
 ```
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_30.png)
 
 我们使用了线性回归公式 **`y = weight * X + bias`** 来生成数据，这是一个没有误差项 `epsilon` 的简化版本。
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_31.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_33.png)
 
 ## 划分训练集和测试集
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_35.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_37.png)
 
 创建数据集后，下一步是将其划分为训练集和测试集。这有助于我们评估模型在未见过的数据上的表现。
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_39.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_40.png)
 
 以下是划分数据集的代码：
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_42.png)
 
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_44.png)
 
 ```python
 # 设置训练集分割比例
@@ -104,23 +77,17 @@ X_test_regression = X_regression[train_split:]
 y_test_regression = y_regression[train_split:]
 ```
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_46.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_47.png)
 
 划分后，我们检查了数据集的形状，确认训练集有80个样本，测试集有20个样本。
 
 ## 可视化数据
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_49.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_50.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_51.png)
 
 在机器学习中，可视化数据至关重要。我们使用之前创建的 `plot_predictions` 辅助函数来绘制数据。
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_52.png)
 
 ```python
 # 假设 plot_predictions 函数已从 helper_functions.py 导入
@@ -130,11 +97,9 @@ plot_predictions(train_data=X_train_regression,
                  test_labels=y_test_regression)
 ```
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_54.png)
 
 可视化帮助我们直观地理解数据分布，确保我们处理的是有意义的数据，而不是一堆无意义的数字。
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_56.png)
 
 ## 调整模型以适应新数据
 
@@ -146,20 +111,14 @@ plot_predictions(train_data=X_train_regression,
 
 而之前的 `model_1` 是为二维特征（用于区分蓝红点）设计的。因此，我们需要创建一个新模型，将其第一层的输入特征数从2改为1。
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_58.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_59.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_61.png)
 
 以下是使用 `nn.Sequential` 创建 `model_2` 的代码：
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_63.png)
-
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_64.png)
 
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_66.png)
+
 
 ```python
 import torch.nn as nn
@@ -171,17 +130,13 @@ model_2 = nn.Sequential(
 )
 ```
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_68.png)
 
 ## 设置损失函数和优化器
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_70.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_72.png)
 
 由于任务从分类变为回归，我们需要相应地更改损失函数。对于回归问题，我们使用L1损失（平均绝对误差）。
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_74.png)
 
 ```python
 # 设置损失函数和优化器
@@ -191,33 +146,22 @@ optimizer = torch.optim.SGD(params=model_2.parameters(), lr=0.01) # 使用随机
 
 ## 训练模型
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_76.png)
 
 我们将模型和数据移动到目标设备（如GPU），然后进行训练循环。
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_78.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_80.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_81.png)
 
 以下是训练循环的核心代码：
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_82.png)
-
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_84.png)
-
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_86.png)
-
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_88.png)
 
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_90.png)
-
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_92.png)
 
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_94.png)
+
+
+
+
 
 ```python
 # 设置训练轮数
@@ -252,27 +196,19 @@ for epoch in range(epochs):
         print(f"Epoch: {epoch} | Train loss: {loss:.5f} | Test loss: {test_loss:.5f}")
 ```
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_96.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_97.png)
 
 运行训练后，我们观察到训练损失和测试损失都在下降，这表明模型正在学习！
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_99.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_101.png)
 
 ## 总结
 
 本节课中，我们一起学习了如何通过创建一个简单的直线数据集来进行模型故障排除。我们回顾了数据创建、划分、可视化的流程，并调整了模型架构、损失函数以适应回归任务。最后，我们成功训练了模型，并观察到损失下降，证明模型能够学习这个简单问题的模式。
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_103.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_104.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_105.png)
 
-![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_106.png)
 
 ![](img/4c823f6e9e9ecb4c96ca9f0d86a04e1b_107.png)
 

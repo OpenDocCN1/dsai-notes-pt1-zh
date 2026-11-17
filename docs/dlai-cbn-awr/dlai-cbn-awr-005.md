@@ -1,8 +1,6 @@
 # 005：利用实时能源数据进行低碳训练 🌱
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_0.png)
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_2.png)
 
 在本节课中，我们将基于前两节课程的内容，学习如何利用来自Electricity Maps的实时电力数据，为机器学习模型训练选择碳排放最低的区域。我们将通过编写代码，查询实时碳强度，并据此动态选择最“绿色”的云区域来运行训练任务。
 
@@ -97,7 +95,6 @@ def carbon_intensity(vertex_regions, api_key, region):
 
 以下是`cleanest`函数的代码和解析：
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_10.png)
 
 ```python
 def cleanest(vertex_regions, api_key):
@@ -127,15 +124,11 @@ def cleanest(vertex_regions, api_key):
 
 运行这个函数，可能会返回类似的结果：`{‘lat’: 45.5017, ‘lon’: -73.5673, ‘name’: ‘northamerica-northeast1’, ‘carbon_intensity’: 36}`。这意味着当前时刻，加拿大蒙特利尔区域的电网碳强度最低。
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_12.png)
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_13.png)
 
 ---
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_15.png)
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_16.png)
 
 ## 在最优区域运行训练任务
 
@@ -169,21 +162,15 @@ model = job.run()
 
 通过对比，我们发现新区域（碳强度36）的碳强度远低于之前使用的`us-central1`区域（碳强度416），这意味着此次训练产生的碳排放约为之前的1/11，减排效果显著。
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_18.png)
 
 ---
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_20.png)
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_21.png)
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_22.png)
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_23.png)
 
 ## 关于实时数据的注意事项
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_25.png)
 
 使用实时碳强度数据选择训练时机和地点，对于短时间任务（如本例）可以显著降低排放。但对于长达数天或更久的训练任务，其减排效果可能被“平均化”，因为电网的碳强度在一天中会波动。
 
@@ -199,7 +186,6 @@ print(history_data) # 将输出过去一段时间内每小时的平均碳强度
 
 ---
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_27.png)
 
 ## 总结
 
@@ -211,9 +197,7 @@ print(history_data) # 将输出过去一段时间内每小时的平均碳强度
 4.  **实践应用**：我们利用`cleanest`函数的返回结果，在碳强度最低的区域创建了存储桶并成功提交了Vertex AI训练任务，实现了基于实时数据的动态低碳调度。
 5.  **深入思考**：我们讨论了实时数据策略对长时任务效果的局限性，并介绍了查询历史碳强度数据的方法，以便进行更全面的碳排放估算。
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_29.png)
 
-![](img/b2f921c4a300b0a1af2953844f70cefa_30.png)
 
 ![](img/b2f921c4a300b0a1af2953844f70cefa_32.png)
 

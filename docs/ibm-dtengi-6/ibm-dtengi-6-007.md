@@ -123,7 +123,6 @@ YUM是用于更新基于RPM的系统的命令行工具。YUM代表Yellowdog Upda
 
 ![](img/5a4f7167782c783fd388ea7fd6372930_8.png)
 
-![](img/5a4f7167782c783fd388ea7fd6372930_9.png)
 
 1.  输入命令：
     ```bash

@@ -12,7 +12,6 @@
 
 ## 导入数据与特征工程
 
-![](img/871eac54f0821d602de310d547070add_1.png)
 
 首先，导入一个月的出租车数据，并添加一些额外特征，例如行程发生的时间段。目标是训练一个能够预测行程时长的模型。
 
@@ -41,13 +40,11 @@ linearModel = fitlm(taxiData, 'linear', 'ResponseVar', 'Duration', 'PredictorVar
 
 ---
 
-![](img/871eac54f0821d602de310d547070add_3.png)
 
 ## 检查模型与进行预测
 
 要更详细地检查输出，可以在工作区中双击模型变量。您将看到具有不同类型信息的多个属性。您可以在脚本中使用点表示法访问这些属性。
 
-![](img/871eac54f0821d602de310d547070add_5.png)
 
 例如，要查看拟合系数的信息，可以输入：
 ```matlab
@@ -66,7 +63,6 @@ predictedDuration = predict(linearModel, taxiData);
 
 ---
 
-![](img/871eac54f0821d602de310d547070add_7.png)
 
 ## 评估初始模型性能
 
@@ -81,7 +77,6 @@ ylabel('Trip Duration (minutes)');
 legend('Actual', 'Predicted');
 ```
 
-![](img/871eac54f0821d602de310d547070add_9.png)
 
 可以看到预测点和实际点之间存在显著的重叠。但是，中午时分的预测时长与一天中其他时段的预测时长差异不大，而实际上它们应该更低。这表明模型有改进空间。
 
@@ -91,7 +86,6 @@ legend('Actual', 'Predicted');
 
 除了 `'linear'` 选项，`fitlm` 还有其他选择，例如 `'interactions'` 或 `'quadratic'`。由于时长在一天中可能上下波动，进一步自定义模型以包含高阶项可能是个好主意。
 
-![](img/871eac54f0821d602de310d547070add_11.png)
 
 对于多项式回归，使用字符串 `'poly'`，后跟一系列整数，用于指定每个预测变量的多项式阶数。
 
@@ -101,7 +95,6 @@ legend('Actual', 'Predicted');
 polyModel = fitlm(taxiData, 'poly14', 'ResponseVar', 'Duration', 'PredictorVars', {'Distance', 'TimeOfDay'});
 ```
 
-![](img/871eac54f0821d602de310d547070add_13.png)
 
 现在可以在输出中看到四阶项，以及低阶项和交互项。当您重新运行包含散点图的代码段时，可以看到预测结果有所改善。现在，模型预测清晨和深夜的行程时长较短。
 
@@ -113,7 +106,6 @@ polyModel = fitlm(taxiData, 'poly14', 'ResponseVar', 'Duration', 'PredictorVars'
 customModel = fitlm(taxiData, 'Duration ~ Distance * TimeOfDay^4');
 ```
 
-![](img/871eac54f0821d602de310d547070add_15.png)
 
 请注意，输出中的几个项带有冒号，在 Wilkinson 表示法中用于表示交互作用。您可以在输出顶部的完整展开表达式中看到这些带冒号的项是如何包含的。
 
@@ -131,7 +123,6 @@ treeModel = fitrtree(taxiData, 'Duration', 'PredictorNames', {'Distance', 'TimeO
 
 请注意，训练模型可能需要很长时间，具体取决于数据集大小和模型类型等因素。回归树的默认选项将创建一个具有大量叶子的树，这比之前的线性回归模型训练时间更长。
 
-![](img/871eac54f0821d602de310d547070add_17.png)
 
 ---
 
@@ -139,7 +130,6 @@ treeModel = fitrtree(taxiData, 'Duration', 'PredictorNames', {'Distance', 'TimeO
 
 `fitrtree` 的输出是一个模型变量，具有其独特的属性。让我们从工作区打开模型来查看它们。例如，`NumNodes` 属性是树大小的度量，它是决策节点（或分割）数量与终端节点（或叶子）数量之和。
 
-![](img/871eac54f0821d602de310d547070add_19.png)
 
 要查看树本身，请使用 `view` 函数。输出是定义树结构的决策规则列表。
 
@@ -147,7 +137,6 @@ treeModel = fitrtree(taxiData, 'Duration', 'PredictorNames', {'Distance', 'TimeO
 view(treeModel, 'Mode', 'text');
 ```
 
-![](img/871eac54f0821d602de310d547070add_21.png)
 
 可以看到顶部节点都使用距离变量，这表明距离是该模型中最重要的预测变量。
 
@@ -181,7 +170,6 @@ legend('Actual', 'Predicted (Tree)');
 treeModelCustom1 = fitrtree(taxiData, 'Duration', 'PredictorNames', {'Distance', 'TimeOfDay'}, 'MinLeafSize', 50);
 ```
 
-![](img/871eac54f0821d602de310d547070add_23.png)
 
 再次查看散点图，看看这如何影响预测。现在，实际值和预测值之间的重叠减少了。但这可能是件好事，因为模型没有拟合数据中的所有噪声变化。
 
@@ -197,13 +185,11 @@ treeModelCustom2 = fitrtree(taxiData, 'Duration', 'PredictorNames', {'Distance',
 view(treeModelCustom2, 'Mode', 'graph');
 ```
 
-![](img/871eac54f0821d602de310d547070add_25.png)
 
 将出现一个单独的图，显示树的可视化表示。您可以放大以检查各个分支。例如，此节点使用距离创建两个分支，然后根据时间段进行分割。
 
 请记住，当有成千上万个节点时，这种类型的可视化会非常混乱。
 
-![](img/871eac54f0821d602de310d547070add_27.png)
 
 让我们最后看一下散点图。
 
@@ -219,7 +205,6 @@ legend('Actual', 'Predicted (Custom Tree)');
 
 您现在可以看到预测数据点的明显条带，这是决策规则较少的结果。换句话说，这种自定义使模型过于简单，可能会损害性能。
 
-![](img/871eac54f0821d602de310d547070add_29.png)
 
 为所有不同参数选择一个好的值是一个难题，但别担心，您将在后续模块中学习有助于选择参数的不同技术。
 

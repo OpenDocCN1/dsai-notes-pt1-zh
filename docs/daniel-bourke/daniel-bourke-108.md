@@ -2,11 +2,9 @@
 
 ![](img/f9fe3e5cc50895c883f133981c16624a_0.png)
 
-![](img/f9fe3e5cc50895c883f133981c16624a_2.png)
 
 在本节课中，我们将学习如何编写一个完整的训练和测试循环，使用批次数据来训练我们的第一个PyTorch模型。我们将使用`DataLoader`来处理数据批次，并理解优化器如何基于每个批次（而非每个周期）来更新模型参数。
 
-![](img/f9fe3e5cc50895c883f133981c16624a_4.png)
 
 ---
 
@@ -127,7 +125,6 @@ print(f"Total training time: {total_train_time_model_0:.2f} seconds on {next(mod
 *   理解并实现了优化器在每个批次（而非每个周期）更新模型参数的核心机制。
 *   使用 `tqdm` 添加进度条，并使用计时器跟踪训练时间。
 
-![](img/f9fe3e5cc50895c883f133981c16624a_6.png)
 
 ![](img/f9fe3e5cc50895c883f133981c16624a_8.png)
 

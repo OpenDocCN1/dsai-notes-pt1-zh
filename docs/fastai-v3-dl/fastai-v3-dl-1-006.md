@@ -1,102 +1,58 @@
 # 深度学习实践课程：6：表格数据与决策树 🌳
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_1.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_3.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_5.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_7.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_9.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_11.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_13.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_15.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_17.png)
 
 在本节课中，我们将学习如何处理表格数据，并深入探讨决策树和随机森林这两种强大的机器学习算法。我们将从最简单的规则开始，逐步构建更复杂的模型，并了解如何评估和解释它们。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_19.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_20.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_22.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_24.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_26.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_28.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_30.png)
 
 ## 从单一规则到决策树
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_32.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_33.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_35.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_36.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_38.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_40.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_42.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_43.png)
 
 上一节我们介绍了泰坦尼克号数据集，并尝试通过单一规则（如性别）来预测乘客的生存情况。我们通过计算每个分组内生存率的标准差来衡量规则的好坏，并创建了一个简单的界面来手动寻找最佳分割点。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_45.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_47.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_49.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_51.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_53.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_54.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_56.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_58.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_60.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_62.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_64.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_66.png)
 
 我们成功找到了一个非常有效的单一规则：根据性别进行分割。然而，单一规则通常不足以解决复杂问题。我们可以进一步思考：能否在每个分组内再次进行分割？
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_68.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_70.png)
 
 例如，在泰坦尼克号数据集中，我们首先根据性别将乘客分为男性和女性两组。然后，我们可以分别对男性和女性乘客再次应用相同的规则寻找最佳分割点。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_72.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_74.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_75.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_77.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_79.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_81.png)
 
 以下是实现这一过程的关键步骤：
 ```python
@@ -110,40 +66,27 @@ find_best_split(males, 'Survived')
 find_best_split(females, 'Survived')
 ```
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_83.png)
 
 通过这种方法，我们为男性乘客找到了年龄（是否大于6岁）作为最佳预测因子，为女性乘客找到了船舱等级（是否为一等舱）作为最佳预测因子。这样就形成了一个包含四个“叶节点”的决策树。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_85.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_87.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_89.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_91.png)
 
 ## 使用Scikit-Learn构建决策树
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_93.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_95.png)
 
 手动构建多层决策树非常繁琐。我们可以使用Scikit-Learn库中的`DecisionTreeClassifier`类来自动完成这个过程。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_97.png)
 
 以下是创建和可视化决策树的代码：
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_99.png)
-
-![](img/31da51d8b2f299b859df5d61d2cb319e_101.png)
-
-![](img/31da51d8b2f299b859df5d61d2cb319e_103.png)
-
-![](img/31da51d8b2f299b859df5d61d2cb319e_105.png)
 
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_107.png)
+
+
+
 
 ```python
 from sklearn.tree import DecisionTreeClassifier
@@ -154,64 +97,43 @@ m.fit(X, y)
 draw_tree(m, X, y)
 ```
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_109.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_110.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_112.png)
 
 决策树的可视化结果清晰地展示了分割逻辑：首先根据性别分割，然后对女性乘客根据船舱等级分割，对男性乘客根据年龄分割。在每个叶节点中，我们可以看到生存和死亡的人数统计，这有助于快速理解数据中的关键驱动因素。
 
 ## 基尼不纯度：衡量分割质量的指标
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_114.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_116.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_118.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_119.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_121.png)
 
 在决策树的可视化中，我们看到了一个名为“Gini”的指标。基尼不纯度是衡量一个节点“纯净度”的另一种方法。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_123.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_125.png)
 
 基尼不纯度的概念是：从该节点中随机抽取两个样本，它们属于不同类别的概率是多少？如果一个节点中所有样本都属于同一类别，那么基尼不纯度就是0（因为抽到相同类别的概率是1）。如果类别完全均匀混合（例如各占50%），那么基尼不纯度就是0.5。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_127.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_128.png)
 
 在二分类情况下，基尼不纯度的计算公式为：
 **Gini = 1 - (p_survived² + p_died²)**
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_130.png)
 
 决策树算法会寻找能最大程度降低加权平均基尼不纯度的分割点。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_132.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_134.png)
 
 ## 从决策树到随机森林 🌲🌲🌲
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_136.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_138.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_139.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_141.png)
 
 单个决策树的能力是有限的，特别是当叶节点中样本数量很少时，继续分割会导致过拟合。那么，如何获得更强大、更稳定的模型呢？
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_143.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_145.png)
 
 答案是：集成学习。其核心思想是，如果我们能创建许多不同的、无偏的模型，然后对它们的预测结果取平均，那么平均后的误差将趋近于零，从而得到比任何单个模型都更好的预测结果。
 
@@ -222,24 +144,16 @@ draw_tree(m, X, y)
 
 由于每棵树都是在不同的数据子集上训练的，它们之间相关性较低，且都是无偏的（平均预测值接近真实平均值）。将这些树的预测结果取平均，就构成了一个**随机森林**。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_147.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_149.png)
 
 以下是手动实现随机森林核心逻辑的简化代码：
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_151.png)
-
-![](img/31da51d8b2f299b859df5d61d2cb319e_153.png)
-
-![](img/31da51d8b2f299b859df5d61d2cb319e_154.png)
-
-![](img/31da51d8b2f299b859df5d61d2cb319e_156.png)
 
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_158.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_159.png)
+
+
+
 
 ```python
 def get_tree(train_data):
@@ -256,77 +170,53 @@ mean_preds = preds.mean(axis=0)
 
 在实际应用中，我们直接使用`RandomForestClassifier`。随机森林还有一个关键技巧：在构建每棵树的每个分割点时，不仅对行进行随机抽样，还会随机选择一部分特征列进行评估。这进一步增加了树之间的差异性，使集成效果更稳健。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_161.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_163.png)
 
 ## 随机森林的强大洞察力
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_165.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_167.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_169.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_170.png)
 
 随机森林不仅是一个强大的预测工具，还能为我们提供关于数据的深刻洞察。以下是几个关键功能：
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_172.png)
 
 **1. 特征重要性图**
 随机森林可以告诉我们哪些特征对预测结果最重要。它通过计算每个特征在所有树中带来的基尼不纯度降低的总和来实现这一点。特征重要性图能帮助我们快速识别出数据集中最具预测力的变量，这对于初步探索拥有数百个特征的数据集尤其有用。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_174.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_176.png)
 
 **2. 预测置信度**
 对于单个样本的预测，我们可以查看森林中所有树对该样本预测结果的标准差。如果标准差很高，说明不同树的预测差异很大，我们对这个预测的置信度就较低。这在风险评估等场景中非常有用。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_178.png)
 
 **3. 部分依赖图**
 部分依赖图用于展示单个特征与预测目标之间的关系，同时保持其他所有特征不变。它的计算方法是：将数据集中某个特征的值统一设置为某个特定值（如1950年），用模型进行预测并取平均；然后重复这个过程（设置为1951年、1952年等），最后绘制出平均预测值随该特征变化的曲线。这种方法可以排除其他特征混杂因素的影响，揭示出纯粹的关联关系。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_180.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_182.png)
 
 **4. 单样本预测解释**
 我们可以分析对于一个特定的预测（例如，拒绝某人的贷款申请），随机森林是如何做出决定的。通过追踪该样本在每棵树中经过的路径，我们可以汇总出哪些特征对该预测的影响最大，以及影响的方向（是提高还是降低了预测值）。这类似于针对单个样本的特征重要性分析。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_184.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_186.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_188.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_190.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_192.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_194.png)
 
 ## 实践演练：Kaggle竞赛迭代流程 🏆
 
 理论学习之后，让我们通过一个实际的Kaggle竞赛（水稻病害分类）来实践完整的迭代流程。快速迭代和有效验证是竞赛和实际项目成功的关键。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_196.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_198.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_200.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_202.png)
 
 **核心原则：**
 *   **建立可靠的验证集**：这是评估模型改进的基石。
 *   **快速实验循环**：选择能够快速训练的模型和设置，以便在短时间内尝试大量想法。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_204.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_206.png)
 
 **迭代步骤示例：**
 1.  **基线模型**：使用`fastkaggle`库快速设置竞赛数据，选择一个训练速度快的架构（如ResNet26d），进行少量周期的训练，并立即提交结果。即使排名靠后，这也建立了起点。
@@ -338,17 +228,12 @@ mean_preds = preds.mean(axis=0)
 
 在整个过程中，保持代码的模块化和可重复性，为每个重要的实验步骤创建独立的笔记本，并记录结果。每天提交到排行榜，用客观分数驱动迭代。
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_208.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_210.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_212.png)
 
 ## 总结
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_214.png)
 
-![](img/31da51d8b2f299b859df5d61d2cb319e_216.png)
 
 ![](img/31da51d8b2f299b859df5d61d2cb319e_218.png)
 

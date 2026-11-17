@@ -18,7 +18,6 @@ Nsight Systems 是 NVIDIA 推出的综合性性能分析工具。如今，Nsight
 
 “配方”的输出结果通过 Jupyter Notebook 集成进行可视化。这能引导您定位需要优化的环节以及潜在的问题根源。
 
-![](img/1fe8217d0e27ba8bba7fea6011b1da44_2.png)
 
 以下是“配方”可以帮助您检查的关键指标：
 
@@ -26,11 +25,9 @@ Nsight Systems 是 NVIDIA 推出的综合性性能分析工具。如今，Nsight
 *   Host to Device 通信时间
 *   网络通信
 
-![](img/1fe8217d0e27ba8bba7fea6011b1da44_4.png)
 
 ![](img/1fe8217d0e27ba8bba7fea6011b1da44_4.png)
 
-![](img/1fe8217d0e27ba8bba7fea6011b1da44_6.png)
 
 ![](img/1fe8217d0e27ba8bba7fea6011b1da44_6.png)
 
@@ -45,13 +42,11 @@ Nsight Systems 是 NVIDIA 推出的综合性性能分析工具。如今，Nsight
 *   NVLink 吞吐量
 *   计算与网络通信的重叠情况
 
-![](img/1fe8217d0e27ba8bba7fea6011b1da44_8.png)
 
 ![](img/1fe8217d0e27ba8bba7fea6011b1da44_8.png)
 
 ## 容器与云端集成 ☁️
 
-![](img/1fe8217d0e27ba8bba7fea6011b1da44_10.png)
 
 为了适应现代开发环境，Nsight Systems 增强了对流行容器系统的性能剖析支持，例如 Kubernetes 和 Docker。这包括对各大云服务提供商 Kubernetes 服务的全面支持，涵盖亚马逊、微软、甲骨文和谷歌。
 
@@ -59,7 +54,6 @@ Nsight Systems 是 NVIDIA 推出的综合性性能分析工具。如今，Nsight
 
 此外，为了在您编写代码的地方提供支持，服务器端开发通过远程 GUI 流式容器得以实现。这允许您远程查看报告，而无需将其复制回您的个人电脑或笔记本电脑。
 
-![](img/1fe8217d0e27ba8bba7fea6011b1da44_12.png)
 
 ![](img/1fe8217d0e27ba8bba7fea6011b1da44_12.png)
 
@@ -67,17 +61,14 @@ Nsight Systems 是 NVIDIA 推出的综合性性能分析工具。如今，Nsight
 
 Nsight Systems 与 Jupyter 软件的集成正在进一步扩展。现在，Nsight Systems 可以与 Jupyter Lab 集成，允许您在单个代码单元内剖析代码性能。您还可以直接在 Jupyter Lab 中查看文本结果，例如统计信息。
 
-![](img/1fe8217d0e27ba8bba7fea6011b1da44_14.png)
 
 ![](img/1fe8217d0e27ba8bba7fea6011b1da44_14.png)
 
-![](img/1fe8217d0e27ba8bba7fea6011b1da44_15.png)
 
 ![](img/1fe8217d0e27ba8bba7fea6011b1da44_15.png)
 
 时间线报告只需单击一下即可启动远程 GUI 流式容器，并在新标签页中无缝打开。
 
-![](img/1fe8217d0e27ba8bba7fea6011b1da44_17.png)
 
 ![](img/1fe8217d0e27ba8bba7fea6011b1da44_17.png)
 
@@ -87,6 +78,5 @@ Nsight Systems 与 Jupyter 软件的集成正在进一步扩展。现在，Nsigh
 
 了解更多信息并开始使用，请访问 developer.nvidia.com。
 
-![](img/1fe8217d0e27ba8bba7fea6011b1da44_19.png)
 
 ![](img/1fe8217d0e27ba8bba7fea6011b1da44_19.png)

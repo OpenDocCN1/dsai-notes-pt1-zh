@@ -3,14 +3,12 @@
 ## 概述
 在本节课中，我们将学习一种名为**连续批处理**的技术。该技术通过利用语言模型逐词生成文本的特性，旨在同时实现**高吞吐量**和**低延迟**的推理效果。
 
-![](img/cee304a1d6b13e25aa897c4cfbcdffea_1.png)
 
 ---
 
 ## 回顾同步批处理
 上一节我们介绍了同步批处理，它通过将多个请求打包成一个批次同时处理来提高吞吐量，但代价是增加了延迟。
 
-![](img/cee304a1d6b13e25aa897c4cfbcdffea_3.png)
 
 同步批处理的核心流程如下：
 1.  收集多个在不同时间到达的请求。
@@ -38,12 +36,10 @@
 
 ---
 
-![](img/cee304a1d6b13e25aa897c4cfbcdffea_5.png)
 
 ## 动手实现连续批处理
 现在，让我们从零开始实现连续批处理过程。
 
-![](img/cee304a1d6b13e25aa897c4cfbcdffea_7.png)
 
 首先，导入必要的库并加载模型，与之前一样，我们使用Hugging Face的GPT-2模型。
 
@@ -54,12 +50,9 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 
 我们定义一些常量和请求队列。队列中的每个请求是一个元组，包含提示字符串和需要生成的词元数量。
 
-![](img/cee304a1d6b13e25aa897c4cfbcdffea_9.png)
 
 
-![](img/cee304a1d6b13e25aa897c4cfbcdffea_11.png)
 
-![](img/cee304a1d6b13e25aa897c4cfbcdffea_12.png)
 
 ```python
 QUEUE_SIZE = 32
@@ -86,7 +79,6 @@ batches = [request_queue[i:i+BATCH_SIZE] for i in range(0, len(request_queue), B
 然后，我们运行同步批处理并记录总耗时。这个过程会比较慢，因为批次中即使只有一个请求需要生成100个词元，其他所有请求也必须等待它完成。
 
 
-![](img/cee304a1d6b13e25aa897c4cfbcdffea_14.png)
 
 ```python
 import time
@@ -101,7 +93,6 @@ total_duration_sync = time.time() - start_time
 print(f"同步批处理总耗时：{total_duration_sync:.2f}秒")
 ```
 
-![](img/cee304a1d6b13e25aa897c4cfbcdffea_16.png)
 
 现在，开始实现连续批处理算法。核心逻辑是一个循环，只要请求队列不为空或当前缓存批次中还有请求未完成，就持续运行。
 
@@ -138,9 +129,7 @@ def continuous_batching_loop(request_queue, batch_size):
     return processed_count
 ```
 
-![](img/cee304a1d6b13e25aa897c4cfbcdffea_18.png)
 
-![](img/cee304a1d6b13e25aa897c4cfbcdffea_19.png)
 
 在上述循环中，我们使用了几个关键辅助函数：
 *   `init_batch`: 对新请求进行预填充，初始化其键值缓存。

@@ -24,26 +24,15 @@
 
 我们祝愿你在这段激动人心的旅程中一切顺利，并期待在你获取谷歌职业证书的过程中为你提供支持。
 
-![](img/626c73afd0fcb5fd6d19d5d9ad854f02_1.png)
 
-![](img/626c73afd0fcb5fd6d19d5d9ad854f02_2.png)
 
-![](img/626c73afd0fcb5fd6d19d5d9ad854f02_3.png)
 
-![](img/626c73afd0fcb5fd6d19d5d9ad854f02_1.png)
 
-![](img/626c73afd0fcb5fd6d19d5d9ad854f02_2.png)
 
-![](img/626c73afd0fcb5fd6d19d5d9ad854f02_4.png)
 
-![](img/626c73afd0fcb5fd6d19d5d9ad854f02_3.png)
 
-![](img/626c73afd0fcb5fd6d19d5d9ad854f02_4.png)
 
-![](img/626c73afd0fcb5fd6d19d5d9ad854f02_5.png)
 
-![](img/626c73afd0fcb5fd6d19d5d9ad854f02_5.png)
 
-![](img/626c73afd0fcb5fd6d19d5d9ad854f02_6.png)
 
 ![](img/626c73afd0fcb5fd6d19d5d9ad854f02_6.png)

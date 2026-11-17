@@ -86,7 +86,6 @@ MNIST 数据集包含 70,000 张 0 到 9 的手写数字灰度图像。这些图
 
 ## 总结
 
-![](img/94df207c28dddd31ead74c4c807c524d_4.png)
 
 ![](img/94df207c28dddd31ead74c4c807c524d_6.png)
 

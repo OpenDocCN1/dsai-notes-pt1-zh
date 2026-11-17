@@ -89,22 +89,17 @@ cursor.execute("""INSERT INTO teacher (id, name, gender) VALUES (14, "DEF", "M")
 
 所有数据操作完成后，必须提交更改，否则数据库不会保存任何修改。提交后，关闭数据库连接是一个好习惯。
 
-![](img/8666e507692facde06b7820c3c3873c2_1.png)
 
 ```python
 connection.commit()
 connection.close()
 ```
 
-![](img/8666e507692facde06b7820c3c3873c2_3.png)
 
-![](img/8666e507692facde06b7820c3c3873c2_4.png)
 
 运行整个脚本后，数据库文件`school.db`将被创建并保存在项目目录中。你可以使用数据库浏览器工具查看其中的`student`和`teacher`表，确认数据已成功插入。
 
-![](img/8666e507692facde06b7820c3c3873c2_6.png)
 
-![](img/8666e507692facde06b7820c3c3873c2_8.png)
 
 ## 总结
 

@@ -12,9 +12,7 @@
 
 在开始教程之前，我们先通过一些幻灯片来介绍 Julia 语言，并探讨学习这门新语言的动机。
 
-![](img/6d9ea84e2a35e0febaea3a7e1c38b337_3.png)
 
-![](img/6d9ea84e2a35e0febaea3a7e1c38b337_4.png)
 
 首先，我是 Jane Harriman，在 Julia Computing 工作，同时也是材料物理学的研究生。我主要作为 Julia 的用户，而非开发者。而 Sasha Vivei 来自斯坦福大学和 Julia 项目，是语言的核心开发者之一，他将帮助我们解答更深层次的开发或设计哲学问题。
 

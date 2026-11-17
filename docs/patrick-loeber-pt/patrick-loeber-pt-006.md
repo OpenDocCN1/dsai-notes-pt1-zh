@@ -30,16 +30,13 @@ import torch.optim as optim
     loss_fn = nn.MSELoss()
     ```
 
-![](img/cf0687d8ce9e165151d75cc2fdb2ba36_3.png)
 
 2.  **定义优化器**：使用随机梯度下降优化器`SGD`。它需要两个参数：待优化的参数列表（这里是我们之前定义的权重`w`）和学习率`lr`。
     ```python
     optimizer = optim.SGD([w], lr=learning_rate)
     ```
 
-![](img/cf0687d8ce9e165151d75cc2fdb2ba36_5.png)
 
-![](img/cf0687d8ce9e165151d75cc2fdb2ba36_6.png)
 
 3.  **修改训练循环**：在循环内部，计算损失和更新权重的步骤变得非常简单。
     *   计算损失：`loss = loss_fn(y_pred, y)`
@@ -70,7 +67,6 @@ print(f"样本数: {n_samples}, 特征数: {n_features}")  # 例如：样本数:
     model = nn.Linear(n_features, n_features)
     ```
 
-![](img/cf0687d8ce9e165151d75cc2fdb2ba36_8.png)
 
 2.  **更新优化器**：优化器的参数现在来自模型本身。
     ```python
@@ -95,7 +91,6 @@ print(f"样本数: {n_samples}, 特征数: {n_features}")  # 例如：样本数:
 
 以下是构建一个自定义线性回归模型的示例：
 
-![](img/cf0687d8ce9e165151d75cc2fdb2ba36_10.png)
 
 ```python
 class LinearRegression(nn.Module):
@@ -112,7 +107,6 @@ class LinearRegression(nn.Module):
 model = LinearRegression(input_size, output_size)
 ```
 
-![](img/cf0687d8ce9e165151d75cc2fdb2ba36_12.png)
 
 这个自定义类封装了一个线性层，其功能与直接使用`nn.Linear`相同。但它演示了构建更复杂模型的基本范式：在`__init__`中定义网络层，在`forward`方法中定义数据如何通过这些层。
 

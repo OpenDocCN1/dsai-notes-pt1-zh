@@ -16,17 +16,13 @@
 
 以下是确认服务器状态的步骤：
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_5.png)
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_6.png)
 
 1.  打开终端。
 2.  运行与启动服务器时相同的命令。
 3.  检查终端输出，确认服务器进程是否活跃。
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_8.png)
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_9.png)
 
 如果服务器运行在Deep Learning Dojo AI环境中，它会持续运行120分钟。如果在本地运行，只要Python脚本未停止，服务器就会一直运行。
 
@@ -38,11 +34,8 @@
 
 首先，我们需要导入必要的库。为了能在Jupyter Notebook环境中运行异步调用，我们需要导入`asyncio`。同时，我们还会从ACP SDK中导入客户端模块，并使用`colorama`库来美化终端输出，使结果更清晰易读。
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_11.png)
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_12.png)
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_13.png)
 
 以下是构建客户端所需的导入语句和初始化步骤：
 
@@ -58,11 +51,8 @@ from colorama import Fore, Style
 
 我们将创建一个异步函数来执行对服务器的调用。这个函数会连接到我们的ACP服务器，并向指定的代理发送请求。
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_15.png)
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_16.png)
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_17.png)
 
 以下是创建异步函数`example`的步骤：
 
@@ -89,15 +79,11 @@ async def example():
 
 ---
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_19.png)
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_20.png)
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_21.png)
 
 ## 执行客户端调用 ▶️
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_22.png)
 
 函数定义完成后，我们需要执行它来触发对服务器的调用。
 
@@ -119,11 +105,9 @@ asyncio.run(example())
 
 ## 总结 📝
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_26.png)
 
 ![](img/d017eb4cf5e74ae597b0c9efd980a86f_27.png)
 
-![](img/d017eb4cf5e74ae597b0c9efd980a86f_28.png)
 
 ![](img/d017eb4cf5e74ae597b0c9efd980a86f_29.png)
 

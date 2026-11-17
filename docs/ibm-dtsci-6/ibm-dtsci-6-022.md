@@ -1,6 +1,5 @@
 # 022：表创建、数据加载与查询
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_0.png)
 
 在本节课中，我们将学习使用Python创建数据库表、向表中加载数据以及查询数据的基本概念。我们将以IBM DB2 on Cloud数据库和Jupyter Notebooks为例，演示如何执行这些任务。
 
@@ -8,32 +7,24 @@
 
 ---
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_2.png)
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_3.png)
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_4.png)
 
 ## 🔗 连接到数据库
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_5.png)
 
 首先，我们需要建立与数据库的连接。我们使用`ibm_db` API的`connect`方法来获取一个连接资源。
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_7.png)
 
 以下是连接数据库的示例代码：
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_9.png)
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_10.png)
 
 ```python
 import ibm_db
 conn = ibm_db.connect("DATABASE=<dbname>;HOSTNAME=<hostname>;PORT=<port>;PROTOCOL=TCPIP;UID=<username>;PWD=<password>;", "", "")
 ```
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_12.png)
 
 这段代码创建了一个到DB2数据库的连接，后续操作都将基于这个连接资源进行。
 
@@ -45,7 +36,6 @@ conn = ibm_db.connect("DATABASE=<dbname>;HOSTNAME=<hostname>;PORT=<port>;PROTOCO
 
 假设我们需要为商用卡车数据库创建一个名为`TRUCKS`的表。以下是该表的结构示例：
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_14.png)
 
 | 列名 | 数据类型 | 约束 |
 | :--- | :--- | :--- |
@@ -55,24 +45,18 @@ conn = ibm_db.connect("DATABASE=<dbname>;HOSTNAME=<hostname>;PORT=<port>;PROTOCO
 | ENGINE_SIZE | INT | |
 | WEIGHT | INT | |
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_15.png)
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_16.png)
 
 我们将使用`ibm_db.exec_immediate`函数来执行创建表的SQL语句。该函数的参数如下：
 *   `connection`: 一个有效的数据库连接资源，由`ibm_db.connect`函数返回。
 *   `statement`: 包含SQL语句的字符串。
 *   `options`: 可选参数，是一个指定返回结果集游标类型的字典。
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_17.png)
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_18.png)
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_19.png)
 
 以下是创建`TRUCKS`表的Python代码：
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_20.png)
 
 ```python
 create_table_sql = """
@@ -89,13 +73,10 @@ ibm_db.exec_immediate(conn, create_table_sql)
 
 这段代码执行后，数据库中就会创建一个包含五列的新表，其中`SERIAL_NO`被定义为主键。
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_22.png)
 
 ---
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_23.png)
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_24.png)
 
 ## 📥 加载数据
 
@@ -118,7 +99,6 @@ ibm_db.exec_immediate(conn, insert_sql)
 
 我们继续使用`ibm_db.exec_immediate`函数，但这次执行的是`SELECT`查询语句。
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_26.png)
 
 ```python
 select_sql = "SELECT * FROM TRUCKS"
@@ -129,30 +109,23 @@ while result:
     result = ibm_db.fetch_both(stmt)
 ```
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_27.png)
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_28.png)
 
 这段Python代码会执行查询，并逐行打印出`TRUCKS`表中所有数据字段的内容。你可以通过对比DB2控制台中的数据来验证查询结果的正确性。
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_30.png)
 
 ---
 
 ## 🐼 使用Pandas处理数据
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_32.png)
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_33.png)
 
 除了直接使用`ibm_db`，我们还可以利用Pandas库来更高效地检索和处理数据库中的数据。Pandas是一个强大的Python数据分析库，提供了高级数据结构和操作工具。
 
 以下是如何将`TRUCKS`表中的数据加载到一个Pandas DataFrame中：
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_35.png)
 
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_37.png)
 
 ```python
 import pandas as pd
@@ -165,21 +138,16 @@ df = pd.read_sql("SELECT * FROM TRUCKS", pconn)
 print(df.head())
 ```
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_39.png)
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_40.png)
 
 DataFrame是一种类似电子表格的表格型数据结构，包含有序的列集合，每列可以是不同的值类型。使用Pandas可以方便地对数据进行后续的分析和处理。
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_41.png)
 
 ---
 
 ## 📝 总结
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_43.png)
 
-![](img/b59e4ffcb8d8dbd1e8b4cb5f1c887f66_44.png)
 
 在本节课中，我们一起学习了使用Python操作IBM DB2数据库的核心步骤：
 1.  使用`ibm_db.connect`建立数据库连接。

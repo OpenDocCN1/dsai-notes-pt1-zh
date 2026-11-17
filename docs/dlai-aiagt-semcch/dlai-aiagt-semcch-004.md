@@ -2,9 +2,7 @@
 
 在本节课中，我们将学习如何评估你的语义缓存。我们将使用命中率、精确率、召回率和延迟等指标来衡量缓存的实际效果，并理解其性能表现。
 
-![](img/ccf0e425a167f0d7cf3bfec5ffc38322_1.png)
 
-![](img/ccf0e425a167f0d7cf3bfec5ffc38322_2.png)
 
 ## 概述
 
@@ -174,7 +172,6 @@ print(report_auto)
 
 ## 总结
 
-![](img/ccf0e425a167f0d7cf3bfec5ffc38322_4.png)
 
 ![](img/ccf0e425a167f0d7cf3bfec5ffc38322_5.png)
 

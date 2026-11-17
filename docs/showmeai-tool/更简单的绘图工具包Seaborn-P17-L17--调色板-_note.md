@@ -14,23 +14,17 @@ import matplotlib.pyplot as plt
 sns.set(style="talk")
 ```
 
-![](img/ffdad37982e1a7198018b6acc1d66d7c_1.png)
 
-![](img/ffdad37982e1a7198018b6acc1d66d7c_2.png)
 
 上一节我们设置了图表的整体样式，本节中我们来看看如何创建并自定义一个具体的图表。
 
-![](img/ffdad37982e1a7198018b6acc1d66d7c_3.png)
 
 现在，我们创建一个条形图。我们将使用熟悉的“小费”数据集，并探索如何根据性别（`hue='sex'`）来区分数据。
 
-![](img/ffdad37982e1a7198018b6acc1d66d7c_4.png)
 
 以下是创建条形图的代码：
 
-![](img/ffdad37982e1a7198018b6acc1d66d7c_5.png)
 
-![](img/ffdad37982e1a7198018b6acc1d66d7c_6.png)
 
 ```python
 # 加载数据集
@@ -40,7 +34,6 @@ sns.barplot(x="day", y="total_bill", hue="sex", data=tips)
 plt.show()
 ```
 
-![](img/ffdad37982e1a7198018b6acc1d66d7c_7.png)
 
 运行上述代码后，你可以看到图表最终呈现的效果。图表中使用的默认颜色有时效果很好，有时则不然。如果你想改变颜色，可以设置调色板。
 
@@ -53,13 +46,10 @@ plt.show()
 
 你可以为自己寻找不同的颜色选项。通过访问Matplotlib库，特别是其颜色映射（Colormap）部分，可以找到丰富的选择。在Matplotlib官网搜索“colormap”，你会进入一个展示众多可用颜色映射示例的页面。
 
-![](img/ffdad37982e1a7198018b6acc1d66d7c_9.png)
 
-![](img/ffdad37982e1a7198018b6acc1d66d7c_10.png)
 
 向下滚动页面，你可以看到各种颜色映射的示例及其对应的颜色输出。例如，假设我想使用“magma”颜色映射，我可以在代码中指定它。
 
-![](img/ffdad37982e1a7198018b6acc1d66d7c_11.png)
 
 运行设置为“magma”的代码后，你可以评估视觉效果是否更好。你也可以尝试其他不同的样式。
 
@@ -101,13 +91,10 @@ for loc in locations:
 
 在Matplotlib中查找“pyplot legend”，它会显示所有不同的位置选项代码，例如“upper left”、“lower right”等。你还可以通过使用元组将图例精确定位在特定的XY坐标上。
 
-![](img/ffdad37982e1a7198018b6acc1d66d7c_13.png)
 
-![](img/ffdad37982e1a7198018b6acc1d66d7c_14.png)
 
 因此，有很多不同的方法可以通过改变调色板和调整图例位置等方式来样式化图表。
 
-![](img/ffdad37982e1a7198018b6acc1d66d7c_15.png)
 
 ---
 

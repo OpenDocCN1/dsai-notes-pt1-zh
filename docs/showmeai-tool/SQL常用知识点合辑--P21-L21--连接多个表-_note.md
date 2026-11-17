@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P21：L21- 连接多个表 🧩
 
-![](img/2073790dd6021bcc01fbda62e137a44d_0.png)
 
 ![](img/2073790dd6021bcc01fbda62e137a44d_0.png)
 
@@ -42,11 +41,9 @@ JOIN order_statuses os
 
 执行此查询会返回所有列，但结果可能过于复杂。为了生成更清晰的报告，我们应明确选择所需的列。
 
-![](img/2073790dd6021bcc01fbda62e137a44d_2.png)
 
 以下是优化后的查询，只选择关键信息：
 
-![](img/2073790dd6021bcc01fbda62e137a44d_4.png)
 
 ```sql
 SELECT

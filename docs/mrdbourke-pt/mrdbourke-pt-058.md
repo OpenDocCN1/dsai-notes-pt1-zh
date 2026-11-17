@@ -108,7 +108,6 @@ with torch.inference_mode():
     y_preds = y_pred_probs.argmax(dim=1)
 ```
 
-![](img/5d68ff86f2922038dd9101184bb58c3f_5.png)
 
 然后，我们可以绘制决策边界来直观地查看模型如何对测试数据进行分类。
 ```python
@@ -122,9 +121,7 @@ plot_decision_boundary(model, X_blob_test, y_blob_test)
 plt.show()
 ```
 
-![](img/5d68ff86f2922038dd9101184bb58c3f_7.png)
 
-![](img/5d68ff86f2922038dd9101184bb58c3f_8.png)
 
 ![](img/5d68ff86f2922038dd9101184bb58c3f_9.png)
 
@@ -142,9 +139,7 @@ plt.show()
 
 ![](img/5d68ff86f2922038dd9101184bb58c3f_17.png)
 
-![](img/5d68ff86f2922038dd9101184bb58c3f_18.png)
 
-![](img/5d68ff86f2922038dd9101184bb58c3f_19.png)
 
 ## 更多分类评估指标 🎯
 

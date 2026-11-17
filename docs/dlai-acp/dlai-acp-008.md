@@ -7,20 +7,15 @@
 
 ![](img/aec080aaa4d5af66ecf09975e6bece56_2.png)
 
-![](img/aec080aaa4d5af66ecf09975e6bece56_3.png)
 
-![](img/aec080aaa4d5af66ecf09975e6bece56_5.png)
 
 ---
 
 ## 检查服务器状态
 上一节我们介绍了如何分别运行保险和医院ACP服务器。本节中，我们来看看如何让它们协同工作。首先，我们需要确保两个服务器都在正常运行。
 
-![](img/aec080aaa4d5af66ecf09975e6bece56_7.png)
 
-![](img/aec080aaa4d5af66ecf09975e6bece56_8.png)
 
-![](img/aec080aaa4d5af66ecf09975e6bece56_9.png)
 
 以下是检查步骤：
 
@@ -31,7 +26,6 @@
 
 ![](img/aec080aaa4d5af66ecf09975e6bece56_11.png)
 
-![](img/aec080aaa4d5af66ecf09975e6bece56_12.png)
 
 ---
 
@@ -40,7 +34,6 @@
 
 我们将使用异步编程来实现顺序调用。首先，我们会调用医院服务器，询问“肩部手术后是否需要康复治疗”。然后，我们将获取其回答，并将其作为上下文传递给保险服务器的策略代理，询问“康复治疗的等待期是多久”。
 
-![](img/aec080aaa4d5af66ecf09975e6bece56_14.png)
 
 以下是实现串联调用的关键代码步骤：
 
@@ -91,11 +84,8 @@ asyncio.run(hospital_workflow())
 1.  首先触发对医院服务器的调用。我们看到它进行了网络搜索并返回结果：**“是的，肩部重建手术后需要康复治疗。”**（以亮粉色显示）。
 2.  接着，这个答案被自动作为上下文，触发对保险服务器的调用。保险代理处理信息后返回：**“根据金牌保险计划，肩部重建手术的典型等待期是两个月。”**（以黄色显示）。
 
-![](img/aec080aaa4d5af66ecf09975e6bece56_16.png)
 
-![](img/aec080aaa4d5af66ecf09975e6bece56_17.png)
 
-![](img/aec080aaa4d5af66ecf09975e6bece56_18.png)
 
 通过这个例子，我们成功地串联了两次ACP调用。这展示了将不同流程、甚至不同组织内的专用代理连接起来的可能性。您可以根据需要，以类似方式构建更复杂的多步骤工作流。
 
@@ -105,9 +95,7 @@ asyncio.run(hospital_workflow())
 
 ![](img/aec080aaa4d5af66ecf09975e6bece56_21.png)
 
-![](img/aec080aaa4d5af66ecf09975e6bece56_22.png)
 
-![](img/aec080aaa4d5af66ecf09975e6bece56_23.png)
 
 ## 总结
 本节课中我们一起学习了ACP的核心优势之一：**跨框架、跨服务器的代理协同**。我们掌握了如何：
@@ -115,7 +103,6 @@ asyncio.run(hospital_workflow())
 2.  使用异步编程顺序调用不同的代理。
 3.  将一个代理的输出作为上下文，无缝传递给下一个代理。
 
-![](img/aec080aaa4d5af66ecf09975e6bece56_25.png)
 
 ![](img/aec080aaa4d5af66ecf09975e6bece56_26.png)
 

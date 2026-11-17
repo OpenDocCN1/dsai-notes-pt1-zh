@@ -6,13 +6,9 @@
 
 ## 常见功能概览
 
-![](img/47cb246598ffceacda2a404fdf329aa7_1.png)
 
-![](img/47cb246598ffceacda2a404fdf329aa7_2.png)
 
-![](img/47cb246598ffceacda2a404fdf329aa7_3.png)
 
-![](img/47cb246598ffceacda2a404fdf329aa7_4.png)
 
 上一节我们了解了提示工程工具的作用，本节中我们来看看这些工具通常提供哪些核心功能。
 
@@ -29,9 +25,7 @@
 
 了解了核心功能后，接下来我们具体探索几种常见的提示工程工具。
 
-![](img/47cb246598ffceacda2a404fdf329aa7_6.png)
 
-![](img/47cb246598ffceacda2a404fdf329aa7_7.png)
 
 ### 1. IBM Watsonx.ai Prompt Lab
 
@@ -41,9 +35,7 @@
 
 ### 2. Spellbook (Scale AI)
 
-![](img/47cb246598ffceacda2a404fdf329aa7_9.png)
 
-![](img/47cb246598ffceacda2a404fdf329aa7_10.png)
 
 接下来，我们了解一下 **Spellbook**。这是 Scale AI 提供的一个集成开发环境。通过 Spellbook，你可以基于语言模型构建应用程序，并为各种用例（包括文本生成、信息提取、分类、问答、自动补全和摘要）试验提示词。
 
@@ -53,13 +45,9 @@
 
 另一个提示工程工具是 **Dust**。它提供了一个用于编写提示词并将其链接在一起的 Web 用户界面。你可以管理链式提示词的不同版本。它还提供了一种自定义编码语言和一组标准模块，用于处理 LLM 提供的输出。Dust 也支持集成其他模型和服务。
 
-![](img/47cb246598ffceacda2a404fdf329aa7_12.png)
 
-![](img/47cb246598ffceacda2a404fdf329aa7_13.png)
 
-![](img/47cb246598ffceacda2a404fdf329aa7_14.png)
 
-![](img/47cb246598ffceacda2a404fdf329aa7_15.png)
 
 ### 4. PromptPerfect
 
@@ -69,23 +57,16 @@
 
 例如，一个示例展示了用户编写的原始提示词和由 PromptPerfect 生成的相应优化提示词。为了进一步优化，你可以在“流线模式”中逐步优化和精炼提示词：编写提示词、优化它、再次编辑、再优化，直到对输出满意为止。
 
-![](img/47cb246598ffceacda2a404fdf329aa7_17.png)
 
 ## 其他资源与平台
 
-![](img/47cb246598ffceacda2a404fdf329aa7_18.png)
 
-![](img/47cb246598ffceacda2a404fdf329aa7_19.png)
 
-![](img/47cb246598ffceacda2a404fdf329aa7_20.png)
 
-![](img/47cb246598ffceacda2a404fdf329aa7_21.png)
 
-![](img/47cb246598ffceacda2a404fdf329aa7_22.png)
 
 除了上述专用工具，还有一些流行的平台和接口为提示工程提供资源或帮助你试验提示词。
 
-![](img/47cb246598ffceacda2a404fdf329aa7_23.png)
 
 *   **GitHub**：提供了大量关于提示工程和 LLM 的代码仓库。这些仓库中的指南、示例和工具有助于提升提示工程技能。
 *   **OpenAI Playground**：一个基于 Web 的工具，帮助用户使用 OpenAI 的各种模型（如 GPT 系列）试验和测试提示词。
@@ -95,7 +76,6 @@
 
 ## 总结
 
-![](img/47cb246598ffceacda2a404fdf329aa7_25.png)
 
 ![](img/47cb246598ffceacda2a404fdf329aa7_26.png)
 

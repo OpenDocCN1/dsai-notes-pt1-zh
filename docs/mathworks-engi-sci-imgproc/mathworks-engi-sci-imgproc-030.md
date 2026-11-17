@@ -2,31 +2,23 @@
 
 在本节课中，我们将学习如何从复杂的静态背景中检测一个或多个运动物体。我们将以一段火鸡在Mathworks园区内行走的视频为例，介绍背景减除法的核心原理和实现步骤。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_1.png)
 
 ## 概述
 
 假设你需要在一个复杂背景上检测一个或多个运动物体，例如这只在Mathworks园区内行走的火鸡。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_3.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_1.png)
 
 在每一帧图像中，火鸡本身没有简单的形状、易于区分的颜色或清晰的图像簇可供直接分割。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_5.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_3.png)
 
 然而，在每一帧中，如果能够找到背景图像与当前整体图像之间的差异，问题就能迎刃而解。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_7.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_5.png)
 
 这是因为背景区域相减后会变为零，而包含火鸡的区域则会保持非零值。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_7.png)
 
 ## 获取背景图像
 
@@ -42,44 +34,30 @@
 
 请注意，视频处理代码可能需要一些时间来执行。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_9.png)
 
 可以看到，得到的背景图像有些模糊。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_9.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_11.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_11.png)
 
 这在平均视频帧时很常见，通常是由于相机抖动或背景中的微小移动造成的。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_13.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_13.png)
 
 ## 分割运动物体
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_15.png)
 
 上一节我们介绍了如何获取平均背景图像，本节我们来看看如何通过从其他帧中减去这个平均背景并对结果进行分割，来隔离出火鸡。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_16.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_15.png)
-![](img/698fbd201fb3fb9e5b36ca83de700b46_16.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_18.png)
 
 第一步是从视频中选择一些有代表性的帧。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_18.png)
 
 这里我们使用 `read` 函数从视频对象中提取一帧，并将其转换为双精度类型以便计算。我们刚刚计算的平均帧已经是双精度类型，但如果你将来保存并重新加载它，也需要确保进行转换。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_20.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_20.png)
 
 为了隔离火鸡像素，需要计算当前帧与背景图像差值的绝对值。
 
@@ -87,29 +65,21 @@
 diff_frame = abs(current_frame - background_frame);
 ```
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_22.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_22.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_24.png)
 
 可以看到，在结果图像中火鸡非常突出。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_24.png)
 
 由于平均背景的模糊，图像中存在一些伪影。然而，相对于火鸡来说它们很小，因此分割应该不会太困难。
 
 请记住，在处理视频时，你的函数需要处理大量帧。因此，很可能需要在视频的多个代表性帧上重复“计算与平均背景的差异”这一过程，并开发一个在所有帧上都表现良好的分割函数。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_26.png)
 
 为了节省时间，我们已经通过该过程开发了一个 `segment_turkey` 函数。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_26.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_28.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_28.png)
 
 可以看到，它能很好地勾勒出火鸡的轮廓。
 
@@ -119,23 +89,17 @@ diff_frame = abs(current_frame - background_frame);
 
 让我们在这个掩膜上使用 `regionprops` 函数来获取火鸡边界框的坐标，并使用 `insertShape` 函数将其添加到原始帧中。在进行此操作时，通常指定颜色并调整线宽以提高边界框的可见性会很有帮助。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_30.png)
 
 效果很好。😊
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_30.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_32.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_32.png)
 
 ## 整合算法处理整个视频
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_34.png)
 
 现在，让我们将以上所有步骤整合起来，以检测视频中移动的火鸡。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_34.png)
 
 以下是处理流程：
 1.  创建并打开一个新的视频写入对象。
@@ -146,30 +110,22 @@ diff_frame = abs(current_frame - background_frame);
 
 再次提醒，视频处理代码可能需要一些时间来执行。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_36.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_36.png)
 
 检查结果时，你可能会注意到某些帧的分割似乎不正确。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_38.png)
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_38.png)
 
 这时你可能需要返回并优化你的步骤。然而，完美通常难以实现。
 
 ## 总结
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_40.png)
 
 本节课中，我们一起学习了如何从相对静态但复杂的背景中隔离运动物体。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_41.png)
 
 总而言之，如果你需要从相对静态但复杂的背景中隔离运动物体，使用背景减除法通常是一个好方法。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_40.png)
-![](img/698fbd201fb3fb9e5b36ca83de700b46_41.png)
 
 一般步骤如下：
 1.  为了计算，需要在双精度数据类型下工作。
@@ -177,6 +133,5 @@ diff_frame = abs(current_frame - background_frame);
 3.  然后计算每一帧与背景的绝对差值。
 4.  最后对差值结果进行分割。
 
-![](img/698fbd201fb3fb9e5b36ca83de700b46_43.png)
 
 ![](img/698fbd201fb3fb9e5b36ca83de700b46_43.png)

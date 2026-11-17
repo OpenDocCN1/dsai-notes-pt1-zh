@@ -44,7 +44,6 @@ print(result) # 输出约4.54亿
 
 以下是向LLM提问的一个示例：
 
-![](img/2672a8a803504c654dcaf6bae9c76f0c_8.png)
 
 > “如何在Python中测量一个函数的执行时间？”
 
@@ -52,7 +51,6 @@ LLM的回复可能会介绍几种不同的方法，包括使用`time`模块、`t
 
 根据LLM的建议，我们生成了如下测量代码：
 
-![](img/2672a8a803504c654dcaf6bae9c76f0c_10.png)
 
 ```python
 import timeit
@@ -63,7 +61,6 @@ print(f"Execution time: {execution_time} seconds")
 
 运行这段代码，可以看到执行时间略超过40秒。请注意，使用`timeit.timeit`时，务必指定`number`参数（函数被调用的次数），其默认值为100万。如果不指定，运行这段测试代码可能会耗费非常长的时间。
 
-![](img/2672a8a803504c654dcaf6bae9c76f0c_12.png)
 
 ## 识别性能瓶颈
 
@@ -83,7 +80,6 @@ import cProfile
 cProfile.run('sum_of_primes_naive(100000)')
 ```
 
-![](img/2672a8a803504c654dcaf6bae9c76f0c_18.png)
 
 运行后，你会得到类似下面的输出。这次分析运行了大约52秒，但关键是要看大部分时间花在了哪里。输出显示，绝大部分时间都消耗在`is_prime`函数上。在总共52秒中，只有0.046秒不在这个函数里，因此它显然是一个性能瓶颈。
 

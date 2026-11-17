@@ -1,6 +1,5 @@
 # 056：使用LLM创建数据可视化 📊
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_0.png)
 
 在本节课中，我们将学习如何利用大型语言模型（LLM），例如Claude或ChatGPT，来辅助我们创建数据可视化图表。我们将通过一个酒店预订数据的实际案例，演示从数据上传到生成多种图表的完整流程。
 
@@ -12,11 +11,9 @@
 
 ## 第一步：选择与准备工具
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_2.png)
 
 首先，我们尝试使用Claude来处理一个包含36,000行数据的酒店预订CSV文件。
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_0.png)
 
 然而，Claude提示文件过大，无法直接处理。这表明我们需要根据数据规模选择合适的工具。
 
@@ -33,9 +30,7 @@
 help me visualize the total number of bookings in each of the 12 months.
 ```
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_4.png)
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_2.png)
 
 生成的图表显示，全年预订量总体呈上升趋势，但在十一月和十二月出现锐减。
 
@@ -43,17 +38,13 @@ help me visualize the total number of bookings in each of the 12 months.
 
 接下来，我们希望优化这个图表。具体需求是：X轴显示月份名称而非数字，并且将图表类型从柱状图改为条形图。
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_6.png)
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_7.png)
 
 我们向ChatGPT发出调整指令。调整后的图表如下：
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_4.png)
 
 现在，Y轴显示了从一月到十二月的月份，条形则代表了每个月的总预订量。
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_9.png)
 
 ## 第四步：探索更多可视化类型
 
@@ -68,8 +59,6 @@ help me visualize the total number of bookings in each of the 12 months.
 visualize cancellation rates across market segments.
 ```
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_6.png)
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_7.png)
 
 图表显示，大约三分之二的预订未被取消，这与我们在电子表格中核查的数据一致。
 
@@ -80,7 +69,6 @@ visualize cancellation rates across market segments.
 plot the average booking value by month.
 ```
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_9.png)
 
 图表表明，冬季月份的平均预订价值较低，在夏季旅游旺季达到峰值。
 
@@ -93,7 +81,6 @@ create a bar chart to visualize lead time by repeated guests and booking status.
 
 这是一个跨多个分类变量的数值变量比较。生成的是一个分组条形图。
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_11.png)
 
 观察到一个已知模式：已取消预订的平均提前期往往更长。值得注意的是，图表用蓝色代表“已取消”，红色代表“未取消”，这与常规直觉相反。
 
@@ -106,7 +93,6 @@ How can I visualize the different values for average price per room for canceled
 
 模型建议使用箱形图或小提琴图。我们尝试生成一个箱形图。
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_11.png)
 
 数值范围在0到550之间。箱形图中的中线代表中位数。可以看出，已取消预订的中位数价格略高于未取消的预订（大约高出10欧元），但两者的价格分布范围大致相似。
 
@@ -120,6 +106,5 @@ How can I visualize the different values for average price per room for canceled
 
 完成后，请跟随我进入本课程的最后一个模块，该模块将全面介绍你在数据分析生命周期中的角色。
 
-![](img/0e3c629689a2e1c33c0adba3cb1a765a_13.png)
 
 ![](img/0e3c629689a2e1c33c0adba3cb1a765a_13.png)

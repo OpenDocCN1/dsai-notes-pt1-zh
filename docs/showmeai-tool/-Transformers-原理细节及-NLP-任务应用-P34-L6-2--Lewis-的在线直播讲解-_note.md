@@ -2,7 +2,6 @@
 
 在本节课中，我们将深入探讨 Transformers 库的内部工作原理。我们将重点关注模型的类型、API 以及将文本转换为模型可处理格式的分词器。通过解构 `pipeline` API，我们将理解文本预处理、模型推理和后处理的完整流程。
 
-![](img/40873acb06abf924ac4a43fae802679a_1.png)
 
 ## 概述：从 Pipeline 到内部组件
 
@@ -14,9 +13,7 @@
 
 Transformers 库中的每个模型都有一个对应的建模文件。例如，BERT 的建模文件包含了用于不同任务（如序列分类、问答）的源代码。`BertModel` 类负责创建输入的上下文嵌入。
 
-![](img/40873acb06abf924ac4a43fae802679a_3.png)
 
-![](img/40873acb06abf924ac4a43fae802679a_5.png)
 
 ### 模型的核心组件
 
@@ -75,9 +72,7 @@ model.save_pretrained("./my_model_directory")
 model = AutoModelForSequenceClassification.from_pretrained("./my_model_directory")
 ```
 
-![](img/40873acb06abf924ac4a43fae802679a_14.png)
 
-![](img/40873acb06abf924ac4a43fae802679a_15.png)
 
 保存的目录会包含 `config.json`（配置）和 `pytorch_model.bin`（权重）两个文件。
 
@@ -85,9 +80,7 @@ model = AutoModelForSequenceClassification.from_pretrained("./my_model_directory
 
 我们已经了解了模型如何加载和运行，接下来看看如何将原始文本准备成模型所需的格式，这就是分词器的工作。
 
-![](img/40873acb06abf924ac4a43fae802679a_17.png)
 
-![](img/40873acb06abf924ac4a43fae802679a_18.png)
 
 分词器的目标是将文本转换为数字，因为机器学习模型只能处理数值。有几种不同的分词策略：
 
@@ -140,9 +133,7 @@ print(input_ids)
 
 更常见的做法是直接使用分词器的 `__call__` 方法，它一次性完成所有步骤（添加特殊标记、填充、截断等）。
 
-![](img/40873acb06abf924ac4a43fae802679a_33.png)
 
-![](img/40873acb06abf924ac4a43fae802679a_35.png)
 
 ![](img/40873acb06abf924ac4a43fae802679a_37.png)
 
@@ -190,15 +181,11 @@ tokenizer.padding_side = "left"
 
 现在，让我们把学到的所有知识结合起来，手动复现情感分析 `pipeline` 的功能，以彻底理解其内部流程。
 
-![](img/40873acb06abf924ac4a43fae802679a_45.png)
 
-![](img/40873acb06abf924ac4a43fae802679a_46.png)
 
 ### 步骤一：加载模型和分词器
 
-![](img/40873acb06abf924ac4a43fae802679a_48.png)
 
-![](img/40873acb06abf924ac4a43fae802679a_50.png)
 
 首先，加载与 pipeline 默认使用的相同模型和分词器。
 

@@ -32,16 +32,12 @@ signal, sr = librosa.load(audio_path, sr=None) # sr=None 保持原始采样率
 
 在从音频中提取梅尔频谱图之前，我们先来回顾并可视化梅尔滤波器组。梅尔滤波器组是获取梅尔频谱图的关键，其原理是将滤波器组矩阵与普通频谱图进行矩阵乘法运算。
 
-![](img/ee9105527e3fdfb9472f7eeda67c2563_1.png)
 
 在Librosa中，我们可以使用一个实用函数来生成梅尔滤波器组，而无需手动实现所有步骤。
 
 
-![](img/ee9105527e3fdfb9472f7eeda67c2563_3.png)
 
-![](img/ee9105527e3fdfb9472f7eeda67c2563_4.png)
 
-![](img/ee9105527e3fdfb9472f7eeda67c2563_5.png)
 
 ```python
 # 定义参数
@@ -73,9 +69,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![](img/ee9105527e3fdfb9472f7eeda67c2563_7.png)
 
-![](img/ee9105527e3fdfb9472f7eeda67c2563_8.png)
 
 在生成的图像中，X轴表示频率（Hz），Y轴表示不同的梅尔带（本例中为10个）。颜色亮度代表在特定频率下，某个梅尔带的权重值，最亮的点（权重为1）对应每个梅尔带的中心频率。
 
@@ -107,7 +101,6 @@ log_mel_spectrogram = librosa.power_to_db(mel_spectrogram, ref=np.max)
 print(log_mel_spectrogram.shape) # 形状保持不变
 ```
 
-![](img/ee9105527e3fdfb9472f7eeda67c2563_10.png)
 
 ## 可视化梅尔频谱图
 
@@ -123,13 +116,10 @@ plt.tight_layout()
 plt.show()
 ```
 
-![](img/ee9105527e3fdfb9472f7eeda67c2563_12.png)
 
-![](img/ee9105527e3fdfb9472f7eeda67c2563_13.png)
 
 在生成的频谱图中，X轴是时间，Y轴是梅尔带。对于我们的钢琴音阶，可以看到能量在梅尔带上依次上升的模式。为了更清晰地看到离散的梅尔带，我们可以将 `n_mels` 参数设置为一个较小的值（如10）并重新运行，这样在Y轴上就能看到10个清晰的色块。
 
-![](img/ee9105527e3fdfb9472f7eeda67c2563_14.png)
 
 ## 总结
 

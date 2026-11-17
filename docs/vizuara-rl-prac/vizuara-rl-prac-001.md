@@ -54,11 +54,8 @@ attention_mask_positive = [1] * len(real_tokens) + [0] * (block_size - len(real_
 
 训练的目标是最大化正样本分数与负样本分数之间的差距。常用的损失函数是**对比损失**，例如：
 
-![](img/17948cc839ecb3f77d7eb2d689aa1928_1.png)
 
-![](img/17948cc839ecb3f77d7eb2d689aa1928_3.png)
 
-![](img/17948cc839ecb3f77d7eb2d689aa1928_4.png)
 
 **损失函数公式**：
 `loss = -log(sigmoid(reward_chosen - reward_rejected))`

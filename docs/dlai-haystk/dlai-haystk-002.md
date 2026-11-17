@@ -228,7 +228,6 @@ print(f"Retrieved {len(documents)} documents.")
 
 如你所见，我们现在正在向检索器组件添加输入并调用前k为3。现在不是10个，而是3个最相关的文档。
 
-![](img/9f56761f615efe37c4e1e3d6d9c1af1b_1.png)
 
 ## 总结
 

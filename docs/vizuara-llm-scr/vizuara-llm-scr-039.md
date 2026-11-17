@@ -1,6 +1,5 @@
 # 39：LLM 微调训练循环实战
 
-![](img/36c49726e9ff332e586e1d1df09a1e3c_0.png)
 
 ![](img/36c49726e9ff332e586e1d1df09a1e3c_0.png)
 
@@ -97,10 +96,8 @@
 
 至此，我们已经完成了流程图中的前两个阶段：准备数据集和微调 LLM。下节课，我们将进入第三阶段：评估 LLM。
 
-![](img/36c49726e9ff332e586e1d1df09a1e3c_10.png)
 
 ![](img/36c49726e9ff332e586e1d1df09a1e3c_10.png)
 
-![](img/36c49726e9ff332e586e1d1df09a1e3c_12.png)
 
 ![](img/36c49726e9ff332e586e1d1df09a1e3c_12.png)

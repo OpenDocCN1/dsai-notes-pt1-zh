@@ -4,7 +4,6 @@ So autoenderrs are going to be a neural network architecture that will force the
 
 
 
-![](img/110ea596c6742ab38c54f18645d93830_1.png)
 
 So the way that auto encoders work。Step by step。Is that they will have that same value as both input and output as we see in the image。
 
@@ -12,7 +11,6 @@ We'll then feed this input through our encoder network represented here as that 
 
 
 
-![](img/110ea596c6742ab38c54f18645d93830_3.png)
 
 From this encoding step， we're going to be able to produce the lower dimensional embedding of our original data。
 
@@ -28,13 +26,11 @@ Which we have there through to our final output， which again is going to be th
 
 
 
-![](img/110ea596c6742ab38c54f18645d93830_5.png)
 
 And that decoder portion is meant to go about creating a reconstructive version of that original be。
 
 
 
-![](img/110ea596c6742ab38c54f18645d93830_7.png)
 
 And once we have that reconstructed version of the data。
 
@@ -46,7 +42,6 @@ And use that to train our actual network。So we take that loss function as we d
 
 
 
-![](img/110ea596c6742ab38c54f18645d93830_9.png)
 
 And the result will be that in that middle portion。
 
@@ -62,7 +57,6 @@ In that middle where we have just two nodes， we're going to have that lower di
 
 
 
-![](img/110ea596c6742ab38c54f18645d93830_11.png)
 
 And we can use an autoencoder to find image similarity。
 
@@ -74,7 +68,6 @@ So that allows us to actually see。At a。Version that we'd be able to scale be
 
 
 
-![](img/110ea596c6742ab38c54f18645d93830_13.png)
 
 And we can always use that decoder portion of the network to map those vectors from our lower dimensional space。
 
@@ -82,7 +75,6 @@ To the full dimensional space of our images。The point being that this allows u
 
 
 
-![](img/110ea596c6742ab38c54f18645d93830_15.png)
 
 Now， another use of the decoder model is to actually work as a generative model。
 
@@ -130,7 +122,6 @@ Is going to be using sparse auto encoders， which essentially allow for those d
 
 
 
-![](img/110ea596c6742ab38c54f18645d93830_17.png)
 
 So just to recap。In this section， we discussed nonde learning based techniques for data representation and remind ourselves how PCA will use a linear combination of our original features to come up with a representation that maintains as much of the variance as possible from our original data set。
 

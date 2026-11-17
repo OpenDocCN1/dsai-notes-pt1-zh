@@ -67,13 +67,11 @@ print(y)
 *   在 Jupyter 主页的 “Running” 标签页中，点击对应 Notebook 的 “Shutdown” 按钮。
 *   直接关闭整个 Jupyter 服务器（例如，在终端中按 `Ctrl+C`）。
 
-![](img/8143106a5aad5bd9fb9cf7a814fb2830_1.png)
 
 ---
 
 ## 重启内核
 
-![](img/8143106a5aad5bd9fb9cf7a814fb2830_3.png)
 
 重启内核是重置 Notebook 状态的终极方法。它的效果等同于关闭 Python 解释器再重新打开，**所有内存中的变量都会被清除**。
 

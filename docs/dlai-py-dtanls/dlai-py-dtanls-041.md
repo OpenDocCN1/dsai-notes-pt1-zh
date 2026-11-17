@@ -2,11 +2,9 @@
 
 ## 概述
 
-![](img/37849a1ccad8eaf0caa51fda6d66181a_1.png)
 
 在本节课中，我们将要学习如何使用Pandas进行相关分析。相关分析是量化两个数值型特征之间关系强度和方向的重要工具。我们将学习如何创建散点图来直观地观察关系，以及如何计算皮尔逊相关系数来精确地量化这种关系。
 
-![](img/37849a1ccad8eaf0caa51fda6d66181a_3.png)
 
 ---
 
@@ -32,15 +30,12 @@ df.plot(kind='scatter', x='income', y='money_spent_learning_code')
 
 接下来，我们复制代码来观察“年龄”和“编程月数”之间的关系：
 
-![](img/37849a1ccad8eaf0caa51fda6d66181a_5.png)
 
-![](img/37849a1ccad8eaf0caa51fda6d66181a_6.png)
 
 ```python
 df.plot(kind='scatter', x='age', y='months_spent_programming')
 ```
 
-![](img/37849a1ccad8eaf0caa51fda6d66181a_7.png)
 
 这个图表显示出更有趣的关系。可以看到许多人的“编程月数”为零，表明他们是初学者。但同时，似乎存在一种正向关系：有一组受访者年龄越大，编程的月数也越多。此外，还有一大群初学者分布在各个年龄段。
 
@@ -78,7 +73,6 @@ correlation_matrix
 *   “收入”和“学习编程的花费”之间的相关系数约为 **0.08**，这是一个非常弱的相关性。
 *   “年龄”和“编程月数”之间的相关系数约为 **0.22**，这是一个稍强但仍属弱相关的正相关性。这意味着年龄可以解释约22%的编程月数变化。
 
-![](img/37849a1ccad8eaf0caa51fda6d66181a_9.png)
 
 ---
 

@@ -1,6 +1,5 @@
 # 154：分层聚类瑞士卷数据效果
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_0.png)
 
 在本节课中，我们将学习如何使用分层聚类算法处理瑞士卷数据，并探讨连接性约束如何帮助算法识别数据的流形结构，避免跨层聚类。
 
@@ -8,14 +7,11 @@
 
 上一节我们介绍了瑞士卷数据的特点，本节中我们来看看如何使用分层聚类算法对其进行聚类。
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_2.png)
 
 我们首先声明一个分层聚类模型，并设置聚类数量为6。`linkage`参数用于定义簇间的距离计算方式，这里我们选择`ward`方法，该方法旨在最小化合并后新簇的方差，即倾向于合并那些内部点距离较近的簇。
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_4.png)
 
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_6.png)
 
 ```python
 from sklearn.cluster import AgglomerativeClustering
@@ -23,7 +19,6 @@ agg = AgglomerativeClustering(n_clusters=6, linkage='ward')
 y_pred = agg.fit_predict(X)
 ```
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_8.png)
 
 以下是绘制聚类结果的代码：
 
@@ -34,36 +29,28 @@ ax.scatter(X[:, 0], X[:, 1], X[:, 2], c=y_pred, cmap='rainbow')
 plt.show()
 ```
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_10.png)
 
 执行代码后，我们发现聚类结果与K-Means类似，出现了颜色跨越瑞士卷不同“层”的情况。这表明，在标准的欧式距离下，分层聚类同样难以捕捉数据的流形结构。
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_12.png)
 
 ## 调整连接策略
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_14.png)
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_16.png)
 
 我们尝试调整`linkage`参数，观察不同策略的效果。
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_18.png)
 
 以下是几种常见的连接策略及其效果简述：
 *   **`average`**：使用两个簇中所有点之间距离的平均值。执行后，聚类结果依然存在跨层现象。
 *   **`complete`**：使用两个簇中距离最远的两个点之间的距离。结果同样不理想。
 *   **`single`**：使用两个簇中距离最近的两个点之间的距离。执行后，几乎所有点都被归为同一类。
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_20.png)
 
 经过测试，仅调整`linkage`参数无法解决跨层聚类的问题。
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_22.png)
 
 ## 引入连接性约束
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_24.png)
 
 上面我们尝试了不同的连接策略，本节中我们来看看如何通过“连接性约束”来解决跨层问题。
 
@@ -78,13 +65,10 @@ from sklearn.neighbors import kneighbors_graph
 connectivity = kneighbors_graph(X, n_neighbors=10)
 ```
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_26.png)
 
 接下来，我们在声明分层聚类模型时，将构建好的连接性矩阵传递给`connectivity`参数。
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_28.png)
 
-![](img/8232ed27e2cd4fd3e99f1de3c55f04fc_30.png)
 
 ```python
 agg_constrained = AgglomerativeClustering(n_clusters=6,

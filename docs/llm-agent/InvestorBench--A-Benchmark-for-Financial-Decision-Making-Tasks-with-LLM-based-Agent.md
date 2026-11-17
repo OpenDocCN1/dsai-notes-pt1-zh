@@ -172,7 +172,6 @@ ETF 市场环境是使用 News-Informed Financial Trend Yield (NIFTY) 数据集�
 
     用红色突出显示的数字表示对应指标的最佳表现结果。
 
-![请参阅标题](img/b28182aad8166358ba247d6f9fb42357.png)
 
 (a) 按不同模型类型进行的表现比较。
 

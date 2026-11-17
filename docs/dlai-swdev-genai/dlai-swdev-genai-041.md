@@ -30,11 +30,9 @@
 
 让我们从Java开始。如果您熟悉Java，它有一种称为JavaDoc的格式，用于自动生成文档。
 
-![](img/ae1bc4594d514508d0570a1ebc491a51_5.png)
 
 这是与之前视频中Python版本相同的冒泡排序算法的一些Java代码。您可以立即看出这段代码比Python版本更难阅读。
 
-![](img/ae1bc4594d514508d0570a1ebc491a51_7.png)
 
 ```java
 public class BubbleSort {
@@ -89,7 +87,6 @@ public class BubbleSort {
 
 JavaScript是另一种具有良好形式化文档字符串格式的语言，它称为JSDoc语法。让我们看一个例子。
 
-![](img/ae1bc4594d514508d0570a1ebc491a51_13.png)
 
 这是用于冒泡排序数组的JavaScript代码，与其他语言非常相似，只是语法不同。
 

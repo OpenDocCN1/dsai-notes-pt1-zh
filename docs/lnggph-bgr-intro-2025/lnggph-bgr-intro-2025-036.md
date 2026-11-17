@@ -24,7 +24,6 @@ chunks = split_document_into_chunks(original_document, chunk_size=1000)
 
 最后，我们将原始文本块及其对应的向量嵌入一起存储到一个专门的数据库中，即**向量数据库**。这样，我们就完成了知识库的构建。
 
-![](img/7b875a345680312f31bacfa63ce32bf5_1.png)
 
 ### 查询处理
 
@@ -42,13 +41,9 @@ chunks = split_document_into_chunks(original_document, chunk_size=1000)
 
 首先，导入必要的库并准备文档数据。我们模拟一个健身房的文档，并将其分成了六个小块。
 
-![](img/7b875a345680312f31bacfa63ce32bf5_3.png)
 
-![](img/7b875a345680312f31bacfa63ce32bf5_4.png)
 
-![](img/7b875a345680312f31bacfa63ce32bf5_5.png)
 
-![](img/7b875a345680312f31bacfa63ce32bf5_6.png)
 
 ```python
 from langchain_community.document_loaders import TextLoader
@@ -87,9 +82,7 @@ relevant_docs = retriever.invoke(query)
 
 最后，我们需要构建发送给 LLM 的提示模板。模板将整合检索到的上下文和用户问题。
 
-![](img/7b875a345680312f31bacfa63ce32bf5_8.png)
 
-![](img/7b875a345680312f31bacfa63ce32bf5_9.png)
 
 ```python
 from langchain.prompts import PromptTemplate

@@ -9,15 +9,12 @@
 
 ## 重构UI管理器与按钮系统
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_3.png)
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_4.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_6.png)
 
 上一节我们处理了游戏设置和保存系统。本节中，我们来看看如何优化游戏的用户界面。
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_8.png)
 
 目前，我们的UI代码与游戏场景逻辑紧密耦合，这导致代码难以维护和扩展。我们的目标是创建一个独立的UI管理器（UI Manager）和可复用的UI组件。
 
@@ -25,7 +22,6 @@
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_12.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_13.png)
 
 ### 创建UI管理器
 首先，我们在全局管理器（Global Manager）中初始化一个UI管理器实例。
@@ -45,11 +41,8 @@ this.uiManager = new UIManager();
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_23.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_25.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_27.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_29.png)
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_30.png)
 
@@ -66,7 +59,6 @@ UI管理器将负责提供创建UI元素的通用方法和默认样式，使得�
 ### 设计可复用的UI按钮组件
 原始的按钮创建代码分散在菜单场景中，包含了大量重复的设置（如尺寸、位置、纹理、交互事件）。我们将其提取为一个独立的`UIButton`类。
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_39.png)
 
 以下是`UIButton`类构造函数的基本结构：
 ```javascript
@@ -87,9 +79,7 @@ class UIButton {
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_42.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_44.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_46.png)
 
 这个类接收一个场景引用和一个配置选项对象，然后自动创建按钮的视觉元素并设置交互逻辑。
 
@@ -132,11 +122,8 @@ createButtons() {
 
 直接调用函数会导致组件间紧密耦合。我们引入一个事件总线作为中央通信枢纽，组件可以发出（emit）事件或监听（on）其他组件发出的事件，而无需直接引用对方。
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_58.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_60.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_62.png)
 
 ### 事件总线的工作原理
 事件总线是一个发布-订阅模式的实现。其核心概念非常简单：
@@ -153,7 +140,6 @@ this.image.on('pointerdown', () => {
 });
 ```
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_64.png)
 
 ### 在全局管理器中监听事件
 然后，在游戏的核心逻辑（例如全局管理器）中，我们监听这些事件并执行相应的操作。
@@ -171,7 +157,6 @@ this.eventBus.on('ui_button_open_settings', (eventData) => {
 });
 ```
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_66.png)
 
 ---
 
@@ -189,13 +174,10 @@ this.eventBus.on('ui_button_open_settings', (eventData) => {
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_78.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_80.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_82.png)
 
 在实现新系统后，进行测试至关重要。我们通过检查控制台日志来验证事件是否被正确发出和接收。
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_84.png)
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_86.png)
 
@@ -215,11 +197,9 @@ this.eventBus.on('ui_button_open_settings', (eventData) => {
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_96.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_98.png)
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_100.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_102.png)
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_104.png)
 
@@ -233,13 +213,11 @@ this.eventBus.on('ui_button_open_settings', (eventData) => {
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_110.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_112.png)
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_114.png)
 
 ## 总结
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_116.png)
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_117.png)
 
@@ -251,13 +229,11 @@ this.eventBus.on('ui_button_open_settings', (eventData) => {
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_121.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_122.png)
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_124.png)
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_125.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_127.png)
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_129.png)
 
@@ -275,13 +251,9 @@ this.eventBus.on('ui_button_open_settings', (eventData) => {
 
 接着，我们引入了**事件总线（EventBus）** 这一核心概念，用它来解耦UI组件与游戏逻辑。组件通过发出事件来通信，其他部分通过监听事件来响应，这大大提高了代码的灵活性和可维护性。
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_141.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_142.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_143.png)
 
-![](img/3af1cad902b1cf76c2483d395ed4a853_145.png)
 
 ![](img/3af1cad902b1cf76c2483d395ed4a853_147.png)
 

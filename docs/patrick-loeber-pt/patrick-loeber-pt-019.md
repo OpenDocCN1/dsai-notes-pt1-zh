@@ -147,11 +147,9 @@ def train(line_tensor， category_tensor):
 
 在训练过程中，我们会记录损失值并绘制损失曲线，以观察模型的学习情况。同时，我们也会在验证集上查看模型的预测准确率。
 
-![](img/025eb46f59b9fd9e2edf30c52228adda_8.png)
 
 训练完成后，我们可以实现一个简单的预测函数，让用户输入姓名，模型给出预测的国家。
 
-![](img/025eb46f59b9fd9e2edf30c52228adda_10.png)
 
 ```python
 def predict(input_line):

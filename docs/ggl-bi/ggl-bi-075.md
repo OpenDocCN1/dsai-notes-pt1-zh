@@ -1,6 +1,5 @@
 #  075：欢迎来到模块4
 
-![](img/dc6e2441ac751bbaa08d694ff52cc200_0.png)
 
 ![](img/dc6e2441ac751bbaa08d694ff52cc200_0.png)
 
@@ -28,7 +27,6 @@
 
 为了完成期末项目，你将获得关于业务案例的更多细节。
 
-![](img/dc6e2441ac751bbaa08d694ff52cc200_2.png)
 
 ![](img/dc6e2441ac751bbaa08d694ff52cc200_2.png)
 

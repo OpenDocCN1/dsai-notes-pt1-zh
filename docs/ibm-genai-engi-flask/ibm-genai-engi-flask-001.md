@@ -10,21 +10,17 @@
 
 根据Stack Overflow的一项调查，Python是全球使用最广泛的十大编程语言之一。
 
-![](img/c9be026f0c3b71d5a2aa35cc0743f0f1_1.png)
 
 Flask是一个Python微框架，对外部库的依赖极少甚至没有。
 
 使用Python和Flask，程序员可以开发简洁的应用，即使是在企业级的AI组件中，也能轻松成为可扩展解决方案的一部分。
 
-![](img/c9be026f0c3b71d5a2aa35cc0743f0f1_1.png)
 
 完成本课程后，你将能够描述创建应用程序所涉及的步骤和流程，创建Python模块，运行单元测试，以及打包应用程序。
 
 你将能够使用Flask框架在Web上部署应用程序，并使用IBM Watson嵌入式AI库和Flask创建并部署一个基于AI的应用程序到Web服务器。
 
-![](img/c9be026f0c3b71d5a2aa35cc0743f0f1_3.png)
 
-![](img/c9be026f0c3b71d5a2aa35cc0743f0f1_3.png)
 
 ## 目标学员
 
@@ -65,7 +61,6 @@ Flask是一个Python微框架，对外部库的依赖极少甚至没有。
 
 感谢你成为我们课程的一员，欢迎你的加入。
 
-![](img/c9be026f0c3b71d5a2aa35cc0743f0f1_5.png)
 
 ---
 

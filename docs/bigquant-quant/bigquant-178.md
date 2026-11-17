@@ -61,16 +61,11 @@ print(f"模型准确率: {score}")
 以下是可视化决策树的步骤：
 
 
-![](img/0e74722d391d4fec70481c614bf0f3a0_1.png)
-
-![](img/0e74722d391d4fec70481c614bf0f3a0_3.png)
-
-![](img/0e74722d391d4fec70481c614bf0f3a0_5.png)
 
 
-![](img/0e74722d391d4fec70481c614bf0f3a0_7.png)
 
-![](img/0e74722d391d4fec70481c614bf0f3a0_9.png)
+
+
 
 ```python
 import matplotlib.pyplot as plt
@@ -92,11 +87,8 @@ plt.show()
 plt.savefig('./决策树.png', dpi=100)
 ```
 
-![](img/0e74722d391d4fec70481c614bf0f3a0_11.png)
 
-![](img/0e74722d391d4fec70481c614bf0f3a0_13.png)
 
-![](img/0e74722d391d4fec70481c614bf0f3a0_15.png)
 
 在生成的决策树图中，每个节点都显示了分裂条件（例如“好友密度 <= 0.5”）以及当前节点的基尼不纯度或熵值。颜色深度通常表示节点的“纯度”，颜色越深，该节点中样本属于同一类别的比例越高。
 
@@ -120,7 +112,6 @@ model_entropy.fit(X, y)
 
 ---
 
-![](img/0e74722d391d4fec70481c614bf0f3a0_17.png)
 
 ![](img/0e74722d391d4fec70481c614bf0f3a0_18.png)
 

@@ -1,18 +1,15 @@
 # 113：Sigmoid与Softmax异同 🔍
 
-![](img/76639750618d0528f3c2d842fec54d99_0.png)
 
 在本节课中，我们将深入探讨逻辑回归（Logistic Regression）与Softmax回归（Softmax Regression）之间的核心联系与区别。我们将通过数学推导证明，当分类类别数K=2时，Softmax回归会退化为逻辑回归。理解这一点对于掌握分类模型的本质至关重要。
 
 ---
 
-![](img/76639750618d0528f3c2d842fec54d99_2.png)
 
 ## 同根同源：Softmax回归与逻辑回归
 
 上一节我们介绍了多分类问题。本节中，我们来看看Softmax回归与逻辑回归的内在联系。它们是同根同源的模型。
 
-![](img/76639750618d0528f3c2d842fec54d99_4.png)
 
 当我们的分类类别数 **K = 2** 时，Softmax回归会退化为逻辑斯蒂回归。以下是证明过程。
 
@@ -26,7 +23,6 @@ P(y=i | x) = \frac{e^{\theta_i^T x}}{\sum_{j=1}^{K} e^{\theta_j^T x}}
 
 ## 从Softmax到Sigmoid的推导 🧮
 
-![](img/76639750618d0528f3c2d842fec54d99_6.png)
 
 当 **K=2** 时，我们有两个类别，其概率计算公式为：
 ```math
@@ -36,7 +32,6 @@ P(y=1 | x) = \frac{e^{\theta_1^T x}}{e^{\theta_1^T x} + e^{\theta_2^T x}}
 P(y=2 | x) = \frac{e^{\theta_2^T x}}{e^{\theta_1^T x} + e^{\theta_2^T x}}
 ```
 
-![](img/76639750618d0528f3c2d842fec54d99_8.png)
 
 我们可以对公式进行等价变换。因为参数是向量，我们可以在分子和分母中同时减去 `θ_1^T x`：
 ```math
@@ -46,7 +41,6 @@ P(y=1 | x) = \frac{e^{\theta_1^T x - \theta_1^T x}}{e^{\theta_1^T x - \theta_1^T
 P(y=2 | x) = \frac{e^{\theta_2^T x - \theta_1^T x}}{e^{\theta_1^T x - \theta_1^T x} + e^{\theta_2^T x - \theta_1^T x}} = \frac{e^{(\theta_2 - \theta_1)^T x}}{1 + e^{(\theta_2 - \theta_1)^T x}}
 ```
 
-![](img/76639750618d0528f3c2d842fec54d99_10.png)
 
 我们令新的参数向量 **θ = θ_2 - θ_1**。那么，类别1的概率公式就变为：
 ```math
@@ -54,17 +48,14 @@ P(y=1 | x) = \frac{1}{1 + e^{\theta^T x}}
 ```
 这正是逻辑回归（或Sigmoid函数）的标准形式。而 `P(y=2 | x) = 1 - P(y=1 | x)`。
 
-![](img/76639750618d0528f3c2d842fec54d99_12.png)
 
 因此，我们证明了：**当K=2时，Softmax回归在数学上等价于逻辑回归**。它们在代码中的实现方式可能不同，但本质是相通的。
 
 ---
 
-![](img/76639750618d0528f3c2d842fec54d99_14.png)
 
 ## 核心要点总结 ✨
 
-![](img/76639750618d0528f3c2d842fec54d99_16.png)
 
 本节课中我们一起学习了Softmax回归与逻辑回归的关键关系：
 1.  **本质相同**：Softmax回归是逻辑回归在多分类（K>2）问题上的自然推广。
@@ -79,7 +70,6 @@ P(y=1 | x) = \frac{1}{1 + e^{\theta^T x}}
 
 我们今天的课程介绍了多分类理论。为了巩固所学，请完成以下实践作业。
 
-![](img/76639750618d0528f3c2d842fec54d99_18.png)
 
 以下是作业的具体要求与步骤：
 *   **任务**：使用逻辑回归（LogisticRegression）实现手写数字的多分类识别。数字类别为0到9，共10类。

@@ -1,6 +1,5 @@
 # 026：解码客户信息与数据库存储 🧩
 
-![](img/d3c168c1116475ebd86ae574fc315e33_1.png)
 
 在本节课中，我们将学习如何从接收到的二进制数据中解码客户信息，并将这些信息（如姓名和邮箱）存储到SQLite数据库中。整个过程涉及字符串分割、数据解码和数据库操作。
 
@@ -20,23 +19,18 @@ client_info_list = client_info_str.split(',')
 ```
 执行上述代码后，`client_info_list` 将是一个包含两个元素的列表，例如 `['XYZ', 'xyz@company.com']`。
 
-![](img/d3c168c1116475ebd86ae574fc315e33_3.png)
 
-![](img/d3c168c1116475ebd86ae574fc315e33_4.png)
 
 ## 提取姓名与邮箱
 
-![](img/d3c168c1116475ebd86ae574fc315e33_6.png)
 
 从分割得到的列表中，我们可以轻松地提取出独立的姓名和邮箱变量。
 
-![](img/d3c168c1116475ebd86ae574fc315e33_8.png)
 
 以下是提取方法：
 *   **姓名** 是列表的第一个元素（索引0）。
 *   **邮箱** 是列表的第二个元素（索引1）。
 
-![](img/d3c168c1116475ebd86ae574fc315e33_10.png)
 
 ```python
 name = client_info_list[0]
@@ -44,11 +38,9 @@ email = client_info_list[1]
 ```
 现在，`name` 变量存储了客户姓名（如“XYZ”），`email` 变量存储了客户邮箱（如“xyz@company.com”）。这些数据已经准备好被存入数据库。
 
-![](img/d3c168c1116475ebd86ae574fc315e33_12.png)
 
 ## 连接与创建数据库
 
-![](img/d3c168c1116475ebd86ae574fc315e33_14.png)
 
 为了存储数据，我们需要先建立与SQLite数据库的连接，并确保存在一张可以存储客户信息的表。
 
@@ -58,15 +50,11 @@ email = client_info_list[1]
 3.  通过连接创建游标（`cursor`）。
 4.  使用游标执行SQL语句，创建 `clients` 表。该表包含 `client_name`、`email` 和 `addr` 等字段。
 
-![](img/d3c168c1116475ebd86ae574fc315e33_16.png)
 
 
-![](img/d3c168c1116475ebd86ae574fc315e33_18.png)
-
-![](img/d3c168c1116475ebd86ae574fc315e33_20.png)
 
 
-![](img/d3c168c1116475ebd86ae574fc315e33_22.png)
+
 
 ```python
 import sqlite3
@@ -86,16 +74,13 @@ connection.commit()
 
 ## 插入数据到数据库
 
-![](img/d3c168c1116475ebd86ae574fc315e33_24.png)
 
-![](img/d3c168c1116475ebd86ae574fc315e33_26.png)
 
 在成功解码信息并建立数据库连接后，最后一步是将提取出的客户数据插入到数据库表中。
 
 以下是数据插入方法：
 在每次需要保存数据时，使用游标执行 `INSERT` SQL语句，将 `name` 和 `email` 变量的值作为参数传入。
 
-![](img/d3c168c1116475ebd86ae574fc315e33_28.png)
 
 ```python
 # 将解码后的客户信息插入数据库

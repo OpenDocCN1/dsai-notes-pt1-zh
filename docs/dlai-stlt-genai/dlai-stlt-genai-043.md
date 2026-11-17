@@ -30,9 +30,7 @@ SELECT
 FROM parsed_reviews;
 ```
 
-![](img/b5464f84a7c23873489ea26994b0f551_1.png)
 
-![](img/b5464f84a7c23873489ea26994b0f551_2.png)
 
 至此，你的数据已完成分块并加载到 `chunked_content` 表中。通过选择前几行数据快速查看新表，确保分块过程正确执行，数据已为后续分析做好准备。
 

@@ -10,18 +10,15 @@
 
 为了让教程对每个人都简单易行，我将主要使用 Seaborn 内置的数据集。你可以通过以下代码查看所有可用的内置数据集名称：
 
-![](img/5bee53f2a5a6b75e28fce706ce3d0092_1.png)
 
 ```python
 import seaborn as sns
 print(sns.get_dataset_names())
 ```
 
-![](img/5bee53f2a5a6b75e28fce706ce3d0092_2.png)
 
 执行上述代码后，你会看到一个数据集名称列表。请注意，有时在调用这些数据集时可能会遇到一个错误提示，这通常是因为环境没有正确识别数据类型，忽略它即可。Seaborn 内置了多种数据集，我将在本系列教程中至少使用其中三个。
 
-![](img/5bee53f2a5a6b75e28fce706ce3d0092_3.png)
 
 ## 加载数据集示例
 
@@ -47,11 +44,9 @@ print(car_crashes_df.head())
 
 这些就是我们将要用于分析的数据列。
 
-![](img/5bee53f2a5a6b75e28fce706ce3d0092_5.png)
 
 ## 获取配套资源
 
-![](img/5bee53f2a5a6b75e28fce706ce3d0092_6.png)
 
 在视频描述中，你将找到一个 Jupyter Notebook 文件。这个文件包含了我所做的所有操作代码，并且附有大量的注释来帮助你理解。它就像一个巨大的免费备忘单，可以辅助你的学习。
 

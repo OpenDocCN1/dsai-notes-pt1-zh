@@ -63,7 +63,6 @@ print(list_tasks())
 
 接着，你可能会尝试删除一个任务，然后再次检查任务列表，以验证任务是否被正确移除。
 
-![](img/863ee8746609baa48923e6a257965d76_3.png)
 
 ```python
 print(remove_task("groceries"))

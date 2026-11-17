@@ -83,7 +83,6 @@ optimizer.step()
 `parameter = parameter - learning_rate * parameter.grad`
 这就是“梯度下降”发生的地方，模型由此向更优的方向迈出一步。
 
-![](img/55bfd574ecc040157f77c94a7211c315_8.png)
 
 ---
 

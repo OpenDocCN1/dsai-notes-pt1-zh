@@ -14,7 +14,6 @@
 
 为了直观理解，我们来看一个例子。下图比较了神经网络预测的标签 **ŷ** 与实际标签 **y**。
 
-![](img/a02ee10df661eb3ed7f62d57db402657_1.png)
 
 ![](img/a02ee10df661eb3ed7f62d57db402657_1.png)
 
@@ -78,7 +77,6 @@ loss = criterion(logits, true_labels) # 计算损失
 
 ## 🎯 优化：最小化损失的方法
 
-![](img/a02ee10df661eb3ed7f62d57db402657_8.png)
 
 我们已经定义了损失函数来衡量模型的好坏，本节中我们将学习如何通过优化来最小化这个损失。
 
@@ -109,7 +107,6 @@ loss = criterion(logits, true_labels) # 计算损失
 
 在本案例中，我们已经预先确定了超参数，因此当前的重点必须放在测试数据上。
 
-![](img/a02ee10df661eb3ed7f62d57db402657_10.png)
 
 ![](img/a02ee10df661eb3ed7f62d57db402657_10.png)
 
@@ -151,6 +148,5 @@ scheduler.step() # 更新学习率
 
 通过掌握这些概念和步骤，你已经为使用TorchText构建和训练自己的文档分类模型奠定了坚实的基础。
 
-![](img/a02ee10df661eb3ed7f62d57db402657_12.png)
 
 ![](img/a02ee10df661eb3ed7f62d57db402657_12.png)

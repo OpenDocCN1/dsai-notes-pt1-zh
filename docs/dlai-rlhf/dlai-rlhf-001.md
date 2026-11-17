@@ -36,9 +36,7 @@ RLHF并不能解决大语言模型中所有关于真实性和毒性的问题，�
 
 ---
 
-![](img/5105aff3dfcf0c11a04edbed076f90d6_1.png)
 
-![](img/5105aff3dfcf0c11a04edbed076f90d6_2.png)
 
 ![](img/5105aff3dfcf0c11a04edbed076f90d6_3.png)
 

@@ -199,7 +199,6 @@ MobileAgentBench 的概述如图[2](https://arxiv.org/html/2406.08184v1#S3.F2 "�
 
 主要实验结果如表[2](https://arxiv.org/html/2406.08184v1#S4.T2 "Table 2 ‣ 4.3 Results ‣ 4 Experiments and Agent Evaluations ‣ MobileAgentBench: An Efficient and User-Friendly Benchmark for Mobile LLM Agents")所示。我们观察到，AppAgent的成功率最高，得益于其自我探索机制。CogAgent的成功率最低，最可能的原因是其简单的代理实现，限制了历史信息的使用。尽管AutoDroid与MobileAgent的成功率相似，但其逐步效率显著较低，可能是由于AutoDroid使用的GPT-3.5模型推理能力较弱。就延迟而言，AutoDroid和CogAgent的延迟都非常低，表明使用GPT-4V模型的推理成本较高。AppAgent需要查找应用文档，因此消耗的token比其他代理更多。另一方面，由于CogAgent的简单代理实现，它消耗的token最少。AutoDroid和CogAgent的假阴性（FN）率非常高，表明它们在任务未完成时总是提前停止。虽然AppAgent具有最高的任务成功率，但它在确定任务是否成功时表现不佳，无法在任务完成后优雅地停止，并且假阳性（FP）率较高。
 
-![参见标题说明](img/e61b77d2cdfb00eca097bfed62926a7d.png)
 
 (a) 任务成功率与难度等级的关系。
 

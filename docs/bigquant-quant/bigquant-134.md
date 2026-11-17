@@ -4,7 +4,6 @@
 
 ## 数据准备与加载
 
-![](img/868817e6c632361c8c08d03017c3124f_1.png)
 
 上一节我们介绍了支持向量机的基本概念，本节中我们来看看如何准备用于人脸识别的数据。
 
@@ -38,12 +37,9 @@ data = datasets.fetch_lfw_people(min_faces_per_person=70, resize=1)
 
 加载完成后，`data`变量是一个类似字典的对象，包含了数据集的所有信息。我们来提取并查看关键部分。
 
-![](img/868817e6c632361c8c08d03017c3124f_3.png)
 
 
-![](img/868817e6c632361c8c08d03017c3124f_5.png)
 
-![](img/868817e6c632361c8c08d03017c3124f_7.png)
 
 ```python
 # 提取数据、标签和原始图片
@@ -56,11 +52,8 @@ print(f"y shape: {y.shape}")
 print(f"faces shape: {faces.shape}")
 ```
 
-![](img/868817e6c632361c8c08d03017c3124f_9.png)
 
-![](img/868817e6c632361c8c08d03017c3124f_11.png)
 
-![](img/868817e6c632361c8c08d03017c3124f_13.png)
 
 执行上述代码，你会看到类似以下输出：
 *   `X shape: (1288, 11750)`：表示有1288个样本，每个样本有11750个特征（即像素点）。
@@ -76,12 +69,9 @@ print(f"faces shape: {faces.shape}")
 以下是随机显示一张人脸图片并查看其对应人名的代码：
 
 
-![](img/868817e6c632361c8c08d03017c3124f_15.png)
 
 
-![](img/868817e6c632361c8c08d03017c3124f_17.png)
 
-![](img/868817e6c632361c8c08d03017c3124f_19.png)
 
 ```python
 # 随机选择一个索引
@@ -99,7 +89,6 @@ person_name = target_names[y[index]]
 print(f"This person is: {person_name}")
 ```
 
-![](img/868817e6c632361c8c08d03017c3124f_21.png)
 
 代码说明：
 1.  `np.random.randint`用于生成一个随机索引。

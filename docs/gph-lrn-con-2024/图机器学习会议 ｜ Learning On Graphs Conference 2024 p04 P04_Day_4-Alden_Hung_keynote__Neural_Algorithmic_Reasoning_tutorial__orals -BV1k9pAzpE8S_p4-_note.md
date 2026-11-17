@@ -125,7 +125,6 @@ CLRS-30 自动处理数据生成、模型编码/解码器设计、损失函数�
 
 ![](img/90b6a22ff63acd0a08edf68b07af400f_41.png)
 
-![](img/90b6a22ff63acd0a08edf68b07af400f_42.png)
 
 ![](img/90b6a22ff63acd0a08edf68b07af400f_44.png)
 

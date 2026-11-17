@@ -104,9 +104,7 @@ manager_agent = CodeAgent(
 
 ## 实施质量检查
 
-![](img/7f0b67eeff652b36233662884cf6d32d_1.png)
 
-![](img/7f0b67eeff652b36233662884cf6d32d_2.png)
 
 为了确保最终结果的质量，我们引入一个验证步骤。使用一个多模态模型（例如，能分析图像的模型）来检查生成的报告地图是否满足了用户任务的所有要求。
 
@@ -146,7 +144,6 @@ final_map = manager_agent.latest_state.get('final_plot')
 display(final_map)
 ```
 
-![](img/7f0b67eeff652b36233662884cf6d32d_7.png)
 
 现在，你就可以根据这份报告，在世界顶级博物馆旁规划你的冰淇淋车生意了！
 

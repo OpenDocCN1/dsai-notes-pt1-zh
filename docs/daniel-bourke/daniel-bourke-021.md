@@ -24,11 +24,9 @@ float_32_tensor = torch.tensor([3, 6, 9], dtype=None)
 float_16_tensor = torch.tensor([3, 6, 9], dtype=torch.float16)
 ```
 
-![](img/a4b344476cb377c5623a01c6dc15ce83_2.png)
 
 现在，我们得到了一个`float16`张量。创建张量时还有另一个非常重要的参数，那就是`device`。我们稍后会看到它是什么。最后还有一个同样重要的参数是`requires_grad`，我们可以将其设置为`False`或`True`。目前我们将其设为`False`。
 
-![](img/a4b344476cb377c5623a01c6dc15ce83_3.png)
 
 因此，创建张量时最重要的三个参数是：
 *   **`dtype`**：张量的数据类型，例如`float32`或`float16`。

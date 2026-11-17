@@ -40,15 +40,11 @@
 
 ## 持续获取谷歌最新资讯 📬
 
-![](img/40a4f3767f4ce9f092c0c112c89bf09a_1.png)
 
-![](img/40a4f3767f4ce9f092c0c112c89bf09a_2.png)
 
-![](img/40a4f3767f4ce9f092c0c112c89bf09a_3.png)
 
 为了获取谷歌关于职业建议、AI应用以及新课程通知的最新信息，请订阅我们的新闻通讯，网址是：grow.google/updates。
 
-![](img/40a4f3767f4ce9f092c0c112c89bf09a_4.png)
 
 ![](img/40a4f3767f4ce9f092c0c112c89bf09a_5.png)
 

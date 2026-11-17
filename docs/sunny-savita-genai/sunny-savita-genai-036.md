@@ -30,9 +30,7 @@
 
 ![](img/7a7accf1aff383a865f22d0cd06f560f_1.png)
 
-![](img/7a7accf1aff383a865f22d0cd06f560f_2.png)
 
-![](img/7a7accf1aff383a865f22d0cd06f560f_3.png)
 
 ---
 

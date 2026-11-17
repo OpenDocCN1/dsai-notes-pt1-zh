@@ -1,6 +1,5 @@
 # Jupyter Notebook 超棒教程！P10：使用 pandas 加载和显示数据 📊
 
-![](img/40f6b2bf3ea276bf57a2926301aad74e_0.png)
 
 在本节课中，我们将学习如何在 Jupyter Notebook 中使用 pandas 库来加载和查看数据。这是进行数据分析和数据科学项目的基础步骤。
 
@@ -24,7 +23,6 @@ import pandas as pd
 !ls
 ```
 
-![](img/40f6b2bf3ea276bf57a2926301aad74e_2.png)
 
 运行上述代码会列出当前目录下的所有文件，你应该能看到 `heart.csv`。
 

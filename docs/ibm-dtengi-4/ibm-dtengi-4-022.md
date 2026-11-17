@@ -1,12 +1,9 @@
 # 022：索引概述
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_0.png)
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_1.png)
 
 在本节课中，我们将要学习数据库索引。我们将了解索引是什么，如何创建索引，以及使用索引的优缺点。
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_3.png)
 
 ## 什么是索引？🔍
 
@@ -20,19 +17,14 @@
 
 ## 如何创建索引？⚙️
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_5.png)
 
 默认情况下，当您在表上创建主键时，会自动在该键上创建一个索引。但您也可以在经常被搜索的列上创建自己的索引。
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_6.png)
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_7.png)
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_8.png)
 
 使用 `CREATE INDEX` 语句来定义索引，指定索引名称、其唯一性以及要基于的表和列。
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_9.png)
 
 ```sql
 CREATE INDEX index_name ON table_name (column_name);
@@ -47,21 +39,14 @@ CREATE INDEX index_name ON table_name (column_name);
 
 索引为数据库用户提供了许多好处，但也存在一些缺点。让我们分别来看一下。
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_11.png)
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_12.png)
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_13.png)
 
 ### 索引的优点
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_14.png)
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_15.png)
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_16.png)
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_17.png)
 
 索引提供了以下主要优势：
 
@@ -78,11 +63,9 @@ CREATE INDEX index_name ON table_name (column_name);
 
 您应该只在从优势中获得的收益大于从劣势中遭受的损失时才创建索引。例如，在一个很少插入或更新行，但经常在SELECT查询和WHERE子句中使用的表上创建索引是合适的。
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_19.png)
 
 如果您在一个表上创建许多索引，实际上可能会抵消性能优势，就像为书中的每个单词都建立索引会导致一个无用的索引一样。
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_20.png)
 
 ## 总结 📝
 
@@ -93,7 +76,6 @@ CREATE INDEX index_name ON table_name (column_name);
 *   索引可以提高SELECT查询的性能。
 *   索引可能会降低INSERT、UPDATE和DELETE查询的性能。
 
-![](img/b37520cf063a3e1b932f4fba1712fc10_22.png)
 
 ![](img/b37520cf063a3e1b932f4fba1712fc10_23.png)
 

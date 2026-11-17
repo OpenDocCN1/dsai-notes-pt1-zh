@@ -127,22 +127,16 @@ automl.export('best_pipeline.py')
 *   **H2O AutoML**：功能强大，提供多种语言接口和优秀的Web界面。
 *   **AutoKeras**：专注于深度学习架构搜索的自动化工具。
 
-![](img/8938c0ddc47a02b577c9c52b94117062_9.png)
 
-![](img/8938c0ddc47a02b577c9c52b94117062_10.png)
 
-![](img/8938c0ddc47a02b577c9c52b94117062_11.png)
 
-![](img/8938c0ddc47a02b577c9c52b94117062_13.png)
 
 **商业工具：**
 *   **DataRobot**
 *   **Google Cloud AutoML**
 *   **Azure Automated ML**
 
-![](img/8938c0ddc47a02b577c9c52b94117062_15.png)
 
-![](img/8938c0ddc47a02b577c9c52b94117062_17.png)
 
 这些工具大多致力于提供简单易用的接口，让用户能够快速将自动化机器学习集成到现有工作流中。
 

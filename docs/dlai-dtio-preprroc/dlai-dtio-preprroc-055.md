@@ -36,11 +36,8 @@
 
 你将使用`LEFT JOIN`、`INNER JOIN`和`OUTER JOIN`等操作，将来自多个表的数据组合起来。
 
-![](img/28cc2c869bc0d4352be4aff5bd6f6ef0_1.png)
 
-![](img/28cc2c869bc0d4352be4aff5bd6f6ef0_1.png)
 
-![](img/28cc2c869bc0d4352be4aff5bd6f6ef0_2.png)
 
 ![](img/28cc2c869bc0d4352be4aff5bd6f6ef0_2.png)
 

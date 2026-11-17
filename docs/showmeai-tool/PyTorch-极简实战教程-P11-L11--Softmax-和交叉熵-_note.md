@@ -60,7 +60,6 @@ print(outputs)
 ![](img/e7ecf0933f8ff6fd629229f5815a80cb_7.png)
 
 
-![](img/e7ecf0933f8ff6fd629229f5815a80cb_9.png)
 
 ```python
 def cross_entropy(y_true, y_pred):

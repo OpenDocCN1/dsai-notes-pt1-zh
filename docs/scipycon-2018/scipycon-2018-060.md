@@ -157,9 +157,7 @@ stats = df.groupby('beer_name')['review_overall'].agg(['count', 'mean'])
 2.  每个观察结果构成一行。
 3.  每种观测单位构成一个表格。
 
-![](img/fc2814f20c7c152bcee4cf74b4a103f6_5.png)
 
-![](img/fc2814f20c7c152bcee4cf74b4a103f6_7.png)
 
 我们常遇到“宽格式”数据（一个主题的多项观测放在多列）和“长格式”数据（一个主题的多项观测放在多行）。pandas 提供了在两者间转换的工具。
 

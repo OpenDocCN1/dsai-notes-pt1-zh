@@ -1,6 +1,5 @@
 # 全栈深度学习：Lab 01：PyTorch中的神经网络 🧠
 
-![](img/393eadabae439726e550de7337881748_0.png)
 
 ![](img/393eadabae439726e550de7337881748_0.png)
 
@@ -16,7 +15,6 @@
 
 查看Lab 1的目录结构，它目前非常简单，只有一个名为`text_recognizer`的库，该库主要包含处理数据和模型的两个部分。
 
-![](img/393eadabae439726e550de7337881748_2.png)
 
 当我们查看Lab 2的目录时，会发现新增了一个用于训练的库，同时`text_recognizer`库也变得更为复杂，例如我们添加了Lightning模型等组件。
 
@@ -66,7 +64,6 @@ find text_recognizer -type f -name "*.py"
 
 关于本实验我要说的就是这些。请开始深入学习PyTorch、`torch.nn`吧。我将在下一个关于PyTorch Lightning和卷积网络的实验中与大家再见。
 
-![](img/393eadabae439726e550de7337881748_4.png)
 
 ## 总结
 

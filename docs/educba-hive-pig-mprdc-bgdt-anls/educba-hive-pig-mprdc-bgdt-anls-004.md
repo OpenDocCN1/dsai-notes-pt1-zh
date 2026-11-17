@@ -6,7 +6,6 @@
 
 ## 表结构概述
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_1.png)
 
 我们主要处理三个表：`directory_number`、`control_services` 和 `contract_all`。每个表都包含与客户、服务和套餐计划相关的特定字段。为了提高查询效率，我们将根据业务逻辑对表进行分区。
 
@@ -24,7 +23,6 @@
 
 为了提高查询性能，我们将根据 `TM Code` 和 `S Code` 对该表进行分区。这样，当我们在特定套餐或服务中搜索号码时，效率会更高。
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_3.png)
 
 ---
 
@@ -41,15 +39,12 @@
 
 我们将根据 `User Last Modification` 和 `T Code` 对该表进行分区。
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_5.png)
 
 ---
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_7.png)
 
 ### 3. 客户总表 (`customer_all`)
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_9.png)
 
 此表包含客户级别的详细信息。字段包括：
 *   **Customer ID**：客户ID。
@@ -65,7 +60,6 @@
 *   **User Last Mode**：最后进行修改的用户。
 *   **C Mode Date**：最后的修改日期。
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_11.png)
 
 我们将根据 `TM Code` 和 `PRG Code` 对该表进行分区。
 
@@ -77,15 +71,11 @@
 
 ### 创建目录号码表 (`directory_number`)
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_13.png)
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_15.png)
 
 首先，如果已存在同名表，我们先删除它。
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_17.png)
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_19.png)
 
 ```sql
 DROP TABLE IF EXISTS directory_number;
@@ -113,11 +103,9 @@ STORED AS TEXTFILE;
 
 执行成功后，表结构将包含定义的列以及分区列 `DealerId` 和 `HLCode`。
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_21.png)
 
 ---
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_23.png)
 
 ### 创建控制服务表 (`control_services`)
 
@@ -174,9 +162,7 @@ STORED AS TEXTFILE;
 
 ---
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_25.png)
 
-![](img/2a70ce453a1defa4c15cfab539d62e57_27.png)
 
 ## 总结
 

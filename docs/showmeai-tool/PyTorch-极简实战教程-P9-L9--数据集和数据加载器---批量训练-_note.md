@@ -16,9 +16,7 @@
 
 ## 核心概念与术语 📖
 
-![](img/c1a2854fc440d590a0a01b0cce4cb953_1.png)
 
-![](img/c1a2854fc440d590a0a01b0cce4cb953_2.png)
 
 在深入代码之前，让我们明确几个关于批量训练的核心术语。
 
@@ -31,13 +29,11 @@
 
 例如，如果我们有 100 个样本，批量大小设为 20，那么一个周期内就有 5 次迭代（100 / 20 = 5）。
 
-![](img/c1a2854fc440d590a0a01b0cce4cb953_4.png)
 
 ---
 
 ## 实现自定义数据集 🛠️
 
-![](img/c1a2854fc440d590a0a01b0cce4cb953_6.png)
 
 上一节我们介绍了批量训练的概念，本节中我们来看看如何创建自己的数据集。PyTorch 通过 `torch.utils.data.Dataset` 类提供了构建数据集的框架。
 
@@ -120,7 +116,6 @@ print(features.shape, labels.shape) # 应输出 torch.Size([4, 13]) torch.Size([
 以下是一个结合了 `DataLoader` 的虚拟训练循环示例：
 
 
-![](img/c1a2854fc440d590a0a01b0cce4cb953_8.png)
 
 ```python
 import math

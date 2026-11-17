@@ -217,7 +217,6 @@ ASM 的成像原理如图 2 所示。可以看到，从物体到达相机的光�
 
 对于计算机视觉任务，如目标检测、图像分割和图像分类，准确的真实标签可以通过仔细标注获得。然而，对于自然场景中的雾霾图像，几乎不可能获得清晰、准确且逐像素的标签（即配对的无雾图像）。目前，主要有两种方法来获得配对的雾霾和无雾图像。第一种方法是借助 ASM 获得合成数据，如 D-HAZY（Ancuti et al., 2016）、HazeRD（Zhang et al., 2017b）和 RESIDE（Li et al., 2019c）。通过选择不同的 ASM 参数，研究人员可以轻松获得具有不同雾霾密度的图像。合成雾霾图像需要四个组件：清晰图像、与清晰图像内容对应的深度图$d(x)$、大气光$A$和大气散射参数$\beta$。因此，我们可以将合成数据集分为两个阶段。在第一阶段，需要成对收集清晰图像及其对应的深度图。为了确保合成的雾霾尽可能接近现实世界的雾霾，深度信息必须足够准确。图 3 展示了 NYU-Depth 数据集中清晰图像及其对应的深度图（Silberman et al., 2012）。在第二阶段，大气光$A$和大气散射参数$\beta$被指定为固定值或随机选择。常用的 D-HAZY（Ancuti et al., 2016）数据集是在$A$和$\beta$均为$1$时合成的。若干研究选择不同的$A$和$\beta$以增加合成图像的多样性，从而提高训练模型的泛化能力。例如，MSCNN（Ren et al., 2016）将$A\in(0.7,1.0)$和$\beta\in(0.5,1.5)$。图 4 展示了当$\beta$取$6$个不同值时的对应雾霾图像。
 
-![参见说明](img/60136141ecd63dd2e71a51ede116fec1.png)![参见说明](img/e41d2dfc40739fce93d6721617f524dd.png)
 
 (a) 清晰图像       (b) 清晰图像的深度
 
@@ -821,13 +820,10 @@ YOLY（Li 等，2021a）使用三个联合解耦子网络进行清晰图像和�
 | Cycle-Dehaze | 0.861/20.347 |
 | ZID | 0.633/13.520 |
 
-![参考说明](img/f2feb7aa286362078dfe8186f310925d.png)![参考说明](img/e418d85a6ae343188b08b02a3ad6a92c.png)![参考说明](img/2428c902fccbec1bcacf909a5e7bd4df.png)![参考说明](img/389fd6a26aa53b01a8883f7b6ec217ab.png)![参考说明](img/b1d6407d47e0a14538c9976fcdfbd68c.png)![参考说明](img/4594fcd3634f81c59bcd89ed6da37c86.png)![参考说明](img/b6f5f2c29d263145e069929d814bface.png)![参考说明](img/43af5737033d352a00d5d9036de2496d.png)![参考说明](img/98fee125a5ea6f50f70277d099bafde8.png)![参考说明](img/35e8cd57d7c7d47c8802ad55c3519e2d.png)![参考说明](img/c9f2c3d3419ab045ef4b7e8101ed2a12.png)![参考说明](img/dee2c61c33aa4a2634a4f2e0abcbd6ce.png)
 
 (a) 模糊       (b) 4kDehazing       (c) AODNet       (d) DMMFD         (e) FFA-Net       (f) GCA-Net
 
-![参考说明](img/0265fca5f17e3afe4bacdd124402b6ac.png) ![参考说明](img/637f18ddf1be133d9d9a6d45dd4cc022.png) ![参考说明](img/e30793f2ea4c8952e6aad7b332237c23.png) ![参考说明](img/8d16c4a1f9f7ae603e2295cc36996415.png) ![参考说明](img/0f645aef82073de109986af5c39e4cba.png) ![参考说明](img/99aebfe9185de93e7e66932d62d42898.png)
 
-![参考说明](img/ad036f8379af4611d79a1147af6eaa15.png)![参考说明](img/53c7bd060ecb81cc8ee7992cf241b1d4.png)![参考说明](img/6d23ab8ae6c39bd64cd8340df126b260.png)![参考说明](img/8b4a6ffc7663471489aa68104c7f1056.png)![参考说明](img/e4b48e13428ee7136c32e0fbc905aebc.png)![参考说明](img/b4ec35306228437ec033cc0f53c76719.png)
 
 (g) GridDehazeNet   (h) MSBDN        (i) SSID        (j) Cycle-Dehaze        (k) ZID          (l) 清晰
 
@@ -835,11 +831,9 @@ YOLY（Li 等，2021a）使用三个联合解耦子网络进行清晰图像和�
 
 为了公平比较基准方法的计算速度，基于零-shot 的 ZID 和高分辨率的 4kDehazing 被排除在外。图 12 显示了每个算法运行 1000 次的平均时间，使用 PyTorch 框架。可以看出，AODNet 是最快的，能够实现对不同尺寸输入的实时效果。FFA-Net 最慢，处理 $672\times 672$ 的输入需要超过 0.3 秒。
 
-![参见说明](img/5a4f08bf1d355f9968af362221046d1d.png)![参见说明](img/5b918adaccab1c195ed3dec9473afeec.png)![参见说明](img/08b5b66664070f079d16fb266494771e.png)![参见说明](img/9884719b91385e20926c3b32da2dce84.png)![参见说明](img/f0fba61952cd7d03bce779fcc518f669.png)![参见说明](img/0e1cffc4f3971a082e7d7c4f653c4c93.png)![参见说明](img/2f6c7b259446e234d2edb6ca5c54d084.png)![参见说明](img/9a7c55b7e8d9f4779a234ca3b9410640.png)![参见说明](img/f8b86157fa28cddb393ad089c7e207b5.png)![参见说明](img/e04635817fa8d55f6eb165a6e95fdfe6.png)![参见说明](img/6c0c8c5703ad99355a02a70f3975932f.png)![参见说明](img/bdac90bf8dac6d18140c54d8cf9ab913.png)
 
 (a) 有雾       (b) 4k 去雾       (c) AODNet       (d) DMMFD         (e) FFA-Net       (f) GCA-Net
 
-![参见说明](img/bd980cba3ea42e600d042cd16e5b3e43.png) ![参见说明](img/839113d06d8afdc49672df5104101e1a.png) ![参见说明](img/cc48c167cfe455ef7c980f1e038e3a6f.png) ![参见说明](img/d54216a1933edd7e224448735e674f58.png) ![参见说明](img/2a23e72d85c231ac49545b13a7f24b3f.png) ![参见说明](img/e36b5bab9e12b91740e14c5fc89f7957.png)
 
 ![参见说明](img/0568101726b59880cc8237702f6897c3.png)![参见说明](img/f1df20ef1bda3e07de87344d5e2a0e92.png)![参见说明](img/c037f06c9e16f2dada648ff67e987a32.png)![参见说明](img/3530b94362a34dc9b8befdd019bc8518.png)![参见说明](img/7a74af0e6abdda5eddbced6819596ca5.png)![参见说明](img/6e96c861dce4ea57cad9321f7d7cb7f6.png)
 

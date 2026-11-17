@@ -1,6 +1,5 @@
 # 7：总结
 
-![](img/b84fff61b3f3a5d10c3be95bf48df7ef_0.png)
 
 ![](img/b84fff61b3f3a5d10c3be95bf48df7ef_0.png)
 
@@ -30,7 +29,6 @@
 
 至此，我们已经完成了自然语言处理入门部分的学习。希望你现在已经准备好进入模块一的学习。
 
-![](img/b84fff61b3f3a5d10c3be95bf48df7ef_2.png)
 
 ![](img/b84fff61b3f3a5d10c3be95bf48df7ef_2.png)
 

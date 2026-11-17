@@ -282,7 +282,6 @@ plt.step(time_history, 1 - np.array(best_valid_loss_history), where='post')
 plt.show() 
 ```
 
-![](img/891d50eca4835a092d056c5babb39648.png)
 
 ### (6) 对比默认 XGBoost/LightGBM 实验结果
 

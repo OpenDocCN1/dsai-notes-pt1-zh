@@ -20,7 +20,6 @@ FlagTree的发展规划如下：项目于2024年11月立项，到2025年3月发�
 
 下图展示了从FlagTree 1.0版本到Next版本的演进迭代。1.0版本全面使能多后端能力。Next版本则进一步基于硬件抽象的通信扩展，拓展其通信和特性。
 
-![](img/13fb583dc3aef97c6e0bdf5c5a8fbe4d_1.png)
 
 针对FlagTree的0.1版本，由于现有不同厂商的Triton兼容模式较为发散，因此0.1版本会兼容现有的适配方案，在其代码库上形成统一。在短期内（即2025年底前），将全面实现单仓库多版本的多后端支持。
 
@@ -51,7 +50,6 @@ FlagTree的多后端，实际上是在FLIR这一层做了两条路径的兼容�
 
 下图展示了从FlagJams到FlagTree的结构化视角。从上到下，FlagJams通过中间管理层（如DS Detector）调用并管理各种不同芯片厂商的后端，包括配置和特化的算子实现。这些特化模块加上通用的OP实现，会进一步调用到FlagTree的最终实现中。
 
-![](img/13fb583dc3aef97c6e0bdf5c5a8fbe4d_3.png)
 
 以FlagTree的结构视角来看，需求导向是从FlagJams上层下来的Kernel会透传到FlagTree里，进行进一步的多后端适配。FlagTree的多后端适配主要有两个大的抽象方面：
 1.  在通用的IR Module里增加FLIR中间层。这一层会做各种硬件的通用性设计，将通信统一起来。
@@ -59,7 +57,6 @@ FlagTree的多后端，实际上是在FLIR这一层做了两条路径的兼容�
 
 这两部分联合起来，就会产生一个多后端的FlagTree版本。
 
-![](img/13fb583dc3aef97c6e0bdf5c5a8fbe4d_1.png)
 
 FlagTree的多后端在FLIR这一层主要有三个核心关键点：
 1.  **允许注释嵌入**：允许程序员通过注释嵌入的方式提示优化信息，这对程序员友好。在编码时，可以以`# hint`注释的形式透传一些Attribute到编译器，做进一步优化。
@@ -68,9 +65,7 @@ FlagTree的多后端在FLIR这一层主要有三个核心关键点：
 
 接下来，我们将基于前面宏观的结构化展示，进一步介绍如何进行具体接入的实施。
 
-![](img/13fb583dc3aef97c6e0bdf5c5a8fbe4d_3.png)
 
-![](img/13fb583dc3aef97c6e0bdf5c5a8fbe4d_4.png)
 
 FlagTree代码核心的多后端设计接入原则分为两个部分：
 1.  Triton Plugin源码结合二进制混合接入。

@@ -36,7 +36,6 @@ from transformers import AutoProcessor
 processor = AutoProcessor.from_pretrained("Salesforce/blip-vqa-base")
 ```
 
-![](img/6a0e8b5bb1e0ff58e7fff31a4b770159_3.png)
 
 ## 准备输入数据
 
@@ -49,7 +48,6 @@ from PIL import Image
 image = Image.open("path/to/your/image.jpg")
 ```
 
-![](img/6a0e8b5bb1e0ff58e7fff31a4b770159_5.png)
 
 假设我们加载的是一张“沙滩上的狗和女人”的图片。
 
@@ -63,11 +61,9 @@ image = Image.open("path/to/your/image.jpg")
 inputs = processor(images=image, text="How many dogs are in the picture?", return_tensors="pt")
 ```
 
-![](img/6a0e8b5bb1e0ff58e7fff31a4b770159_7.png)
 
 然后，将处理好的输入传递给模型的`.generate()`方法以获取输出。
 
-![](img/6a0e8b5bb1e0ff58e7fff31a4b770159_9.png)
 
 ```python
 outputs = model.generate(**inputs)

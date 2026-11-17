@@ -26,7 +26,6 @@
 
 argmax函数返回的是使函数参数最大化的k值，而不是最大值本身。
 
-![](img/151de57b1845cfbec93c39de9a34afe7_2.png)
 
 ![](img/151de57b1845cfbec93c39de9a34afe7_2.png)
 

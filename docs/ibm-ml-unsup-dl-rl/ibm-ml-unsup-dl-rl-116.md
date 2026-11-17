@@ -32,11 +32,9 @@ And then our x variable， our x data that we care about is just going to be the
 
 
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_1.png)
 
 Given our X and Y。
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_3.png)
 
 And that gives us steps to take along the way。And it gives us an outcome of given the X values that went in。
 
@@ -48,7 +46,6 @@ And then return which one of those actions resulted in our model， giving the h
 
  So let's see that here。
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_5.png)
 
 So we have our model here we're going to use random forcegresser。
 
@@ -56,19 +53,15 @@ So we have our model here we're going to use random forcegresser。
 
 
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_7.png)
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_8.png)
 
 We're then going to do 500 different episodes this time just to see the results。
 
 
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_10.png)
 
 We don't need to worry about this right now。
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_12.png)
 
 And then we're going to save our life memory as we did before。
 
@@ -84,7 +77,6 @@ As well as I for I in range 4， recall that we only have four different steps a
 
  say some old observation。
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_14.png)
 
 We can see usually that we'll say here that's at five。
 
@@ -98,7 +90,6 @@ We can see what our。Data is， we we're saying。Passing in this tuple and rec
 
 
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_16.png)
 
 We then。Call our model and call predict for each one of these different tuples。And when we do that。
 
@@ -106,13 +97,11 @@ We then。Call our model and call predict for each one of these different tuples
 
 
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_18.png)
 
 This is， again， referencing this model above， not the model that we have initiated down here。
 
 
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_20.png)
 
 But you see that this outputs four different values where that maximum value should be the next step。
 
@@ -120,7 +109,6 @@ But you see that this outputs four different values where that maximum value sho
 
 
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_22.png)
 
 And that's why we callmp。org max on the output of what we add here。Pta Arg Max。And that will tell us。
 
@@ -128,13 +116,11 @@ Which action would lead to the highest possible reward。
 
 
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_24.png)
 
 And then we take that new action， so now our new action is going to be decided by that Arcm。
 
 
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_26.png)
 
 And then as we go along， we keep adding on the reward。
 
@@ -142,17 +128,13 @@ And then as we go along， we keep adding on the reward。
 
  the reward and the episode that we're at。
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_28.png)
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_29.png)
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_30.png)
 
 And we reay the old observation and run through this loop until we hit that done。Equal to true。
 
  right， this over here being equal to true。
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_32.png)
 
 We're then going to incorporate that the total reward into our episode memory。
 
@@ -166,11 +148,9 @@ We're then going to incorporate that the total reward into our episode memory。
 
 
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_34.png)
 
 And then we add that on to our life memory。
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_36.png)
 
 And then we have our new data frame with this new life memory。
 
@@ -180,7 +160,6 @@ And then we have our new data frame with this new life memory。
 
 
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_38.png)
 
 So I'm going to run this。And as we'll take just a second to run。
 
@@ -190,7 +169,6 @@ So we're going to pause the video as it's taking just a second to run。
 
 
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_40.png)
 
 And then here we see the results that we ended up getting。And that may have taken just a bit of time。
 
@@ -212,6 +190,5 @@ Now that closes out our video here。In the last video in regards to reinforceme
 
 
 
-![](img/48dc51cc564f14dee265d737e3ae4d64_42.png)
 
 ![](img/48dc51cc564f14dee265d737e3ae4d64_43.png)

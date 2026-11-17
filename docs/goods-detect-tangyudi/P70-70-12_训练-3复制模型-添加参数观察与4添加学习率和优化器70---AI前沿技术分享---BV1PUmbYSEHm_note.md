@@ -8,7 +8,6 @@
 
 ## 概述
 
-![](img/3ae7c20434d5bdaccc018126fcc39f0f_5.png)
 
 上一节我们完成了数据批处理队列的构建。本节我们将回到训练主流程，执行以下核心步骤：
 1.  将网络模型、损失计算等操作复制到多个GPU设备。
@@ -20,7 +19,6 @@
 
 数据准备就绪后，下一步是将数据输入网络进行计算，得到预测结果并定义损失函数。这些操作需要被复制到多个计算设备（Client）上，并为每个设备添加TensorBoard观察点。
 
-![](img/3ae7c20434d5bdaccc018126fcc39f0f_7.png)
 
 ![](img/3ae7c20434d5bdaccc018126fcc39f0f_9.png)
 
@@ -87,17 +85,13 @@ first_clone_ops, first_clone_scope, clones = train_tools.deploy_loss_summary(
 
 ![](img/3ae7c20434d5bdaccc018126fcc39f0f_23.png)
 
-![](img/3ae7c20434d5bdaccc018126fcc39f0f_25.png)
 
 ## 第四步：定义学习率与优化器 ⚙️
 
-![](img/3ae7c20434d5bdaccc018126fcc39f0f_27.png)
 
-![](img/3ae7c20434d5bdaccc018126fcc39f0f_29.png)
 
 损失计算图在多设备上部署完成后，接下来需要定义学习率衰减策略和优化器，以便更新网络参数。
 
-![](img/3ae7c20434d5bdaccc018126fcc39f0f_31.png)
 
 ### 关键概念与函数
 
@@ -117,7 +111,6 @@ first_clone_ops, first_clone_scope, clones = train_tools.deploy_loss_summary(
 
 在配置之前，需要在命令行参数中添加相关配置项，例如学习率类型、初始学习率、终止学习率、优化器类型以及权重衰减系数等。
 
-![](img/3ae7c20434d5bdaccc018126fcc39f0f_41.png)
 
 ![](img/3ae7c20434d5bdaccc018126fcc39f0f_43.png)
 

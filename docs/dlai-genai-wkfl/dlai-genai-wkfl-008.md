@@ -1,8 +1,6 @@
 # 008：准备应对失败 🛡️
 
-![](img/a0bfdcf6ae676f19a731b91da6dc0074_0.png)
 
-![](img/a0bfdcf6ae676f19a731b91da6dc0074_2.png)
 
 在本节课中，我们将学习如何使你的数据处理流水线（Pipeline）更加健壮。你将了解如何添加自动重试机制来应对临时性故障，并学习在任务或整个工作流失败时如何添加通知。
 
@@ -10,11 +8,9 @@
 
 上一节我们介绍了如何构建基础的工作流。本节中，我们来看看如何增强其容错能力。我们将通过模拟任务失败、设置自动重试、调整任务触发规则以及配置失败回调通知，来构建一个能够优雅处理错误的、生产就绪的流水线。
 
-![](img/a0bfdcf6ae676f19a731b91da6dc0074_4.png)
 
 ## 模拟任务失败
 
-![](img/a0bfdcf6ae676f19a731b91da6dc0074_5.png)
 
 首先，我们通过制造一个错误来观察工作流的失败行为。在 `create_collection_if_not_exists` 任务中，添加一行会导致Python零除错误的代码。
 
@@ -24,7 +20,6 @@ print(10 / 0)
 
 在Airflow中，任务内的任何错误或异常都会导致该任务失败，并且错误行之后的代码将不会被执行。这与Python脚本或Jupyter Notebook的行为一致。
 
-![](img/a0bfdcf6ae676f19a731b91da6dc0074_7.png)
 
 保存修改后的DAG文件后，你可以在Airflow UI中手动触发一次DAG运行。`create_collection_if_not_exists` 任务的失败将导致整个DAG运行失败。
 
@@ -32,7 +27,6 @@ print(10 / 0)
 
 在Airflow UI的DAG概览页面，你可以看到最近失败任务的错误日志摘要，并有一个快速链接可以查看完整日志。
 
-![](img/a0bfdcf6ae676f19a731b91da6dc0074_9.png)
 
 无论是在网格视图还是图形视图中，你都能看到失败任务如何导致其下游任务 `load_embeddings_to_vector_db` 进入 `upstream_failed` 状态。这意味着该下游任务没有运行，因为它的上游任务并未全部成功完成。
 
@@ -66,11 +60,9 @@ print(10 / 0)
 
 ## 调整任务触发规则
 
-![](img/a0bfdcf6ae676f19a731b91da6dc0074_11.png)
 
 另一个常见情况是，某些任务经常失败，但你仍然希望其下游任务能够运行。在本例中，如果集合已经存在于向量数据库中，那么即使 `create_collection_if_not_exists` 任务失败，向其加载数据仍然可以工作。
 
-![](img/a0bfdcf6ae676f19a731b91da6dc0074_12.png)
 
 默认情况下，Airflow任务要求其所有上游任务都成功才能运行。这被称为触发规则，默认的规则叫做 `all_success`。
 
@@ -102,7 +94,6 @@ Airflow提供了许多其他触发规则。一个实用的规则是 `all_done`�
 
 ## 总结
 
-![](img/a0bfdcf6ae676f19a731b91da6dc0074_14.png)
 
 ![](img/a0bfdcf6ae676f19a731b91da6dc0074_15.png)
 

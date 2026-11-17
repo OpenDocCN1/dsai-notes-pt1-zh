@@ -2,7 +2,6 @@
 
 ![](img/94ee4e2a5ea1def9e034ba6ffd199db7_1.png)
 
-![](img/94ee4e2a5ea1def9e034ba6ffd199db7_3.png)
 
 在本节课中，我们将深入探索蒙特卡洛树搜索算法，这是一种在复杂设计空间中寻找最优解的强大算法。随后，我们将探讨AgentQ框架中Amias的方法，以创建能够完成网页任务的自主浏览器智能体。
 
@@ -47,7 +46,6 @@ grid = [
 
 其中，`c`是探索权重，`Q`是节点累计奖励，`N`是访问次数。
 
-![](img/94ee4e2a5ea1def9e034ba6ffd199db7_7.png)
 
 我们使用提供的`MCTS grid wrapper`来触发算法并收集最优路径。完成后，通过`Compare_exploration_weight`函数可视化结果。
 

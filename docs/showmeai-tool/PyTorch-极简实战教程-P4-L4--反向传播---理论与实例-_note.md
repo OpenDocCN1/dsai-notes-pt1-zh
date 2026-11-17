@@ -82,7 +82,6 @@
 
 以下是完整的代码示例：
 
-![](img/84bf83ae2a8c01617b4cf06b2bc402cb_1.png)
 
 
 ![](img/84bf83ae2a8c01617b4cf06b2bc402cb_3.png)

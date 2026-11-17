@@ -64,7 +64,6 @@ sudo apt install idle3
 
 安装完成后，在终端中输入 `idle3` 即可启动IDLE。
 
-![](img/8f3fc136cba2f12ed176abe59c661234_4.png)
 
 启动IDLE后，你会看到一个交互式解释器窗口。要创建新的脚本文件，请点击菜单栏的 `File` -> `New File`。
 

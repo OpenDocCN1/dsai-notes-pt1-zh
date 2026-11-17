@@ -2250,7 +2250,6 @@ And like deep learning network is part is one of the approaches also like tuurin
 
 ![](img/90b6a22ff63acd0a08edf68b07af400f_41.png)
 
-![](img/90b6a22ff63acd0a08edf68b07af400f_42.png)
 
 Can everyone to hear me。Yeah， yeah， we can hear you， but we we don't see anything just we talking。
 

@@ -12,13 +12,11 @@
 
 Conda是一个强大的Python包管理器和虚拟环境管理器。如果你尚未安装，建议先访问Miniconda或Anaconda官网进行安装。
 
-![](img/1bb0809fe52c14e8b00816326d3ba37b_1.png)
 
 ### 创建并激活虚拟环境
 
 以下是创建名为`matplotlib_tutorial`的虚拟环境并安装所需包的核心步骤。
 
-![](img/1bb0809fe52c14e8b00816326d3ba37b_3.png)
 
 1.  **打开终端（或Anaconda Prompt）**，执行以下命令创建环境：
     ```bash
@@ -59,7 +57,6 @@ Conda是一个强大的Python包管理器和虚拟环境管理器。如果你尚
 
 ### 开始使用Colab
 
-![](img/1bb0809fe52c14e8b00816326d3ba37b_9.png)
 
 以下是使用Google Colab的步骤。
 

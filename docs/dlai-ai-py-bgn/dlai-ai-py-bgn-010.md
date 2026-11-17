@@ -22,7 +22,6 @@ from helper_functions import print_llm_response
 
 要使用这个函数，你可以输入 `print_llm_response`，然后在括号内输入提示词字符串。例如：
 
-![](img/0e6dd393ca4adacd65342730cfa93c43_1.png)
 
 ```python
 print_llm_response("What is the capital of France?")
@@ -34,13 +33,10 @@ print_llm_response("What is the capital of France?")
 
 现在，你可以运用目前所学的所有Python编程知识，来构建包含变量的复杂提示词，然后通过这段代码将其传递给大语言模型。
 
-![](img/0e6dd393ca4adacd65342730cfa93c43_3.png)
 
-![](img/0e6dd393ca4adacd65342730cfa93c43_4.png)
 
 ## 使用变量构建动态提示词
 
-![](img/0e6dd393ca4adacd65342730cfa93c43_5.png)
 
 以下是一个有趣的例子。我们使用变量和F字符串来动态生成提示词：
 
@@ -49,7 +45,6 @@ age = 21 / 7
 print_llm_response(f"Write a short bio for a {age} year old human.")
 ```
 
-![](img/0e6dd393ca4adacd65342730cfa93c43_7.png)
 
 运行后，模型可能会生成类似这样的回答：“Okay, this would be an adult... playful and so on.”
 
@@ -59,9 +54,7 @@ print_llm_response(f"Write a short bio for a {age} year old human.")
 
 现在，让我们看几个使用变量的例子，并学习如何发现和修复其中的错误。
 
-![](img/0e6dd393ca4adacd65342730cfa93c43_9.png)
 
-![](img/0e6dd393ca4adacd65342730cfa93c43_10.png)
 
 假设我们想写一个儿童故事，其中包含驾驶员、车辆和星球等变量。以下是初始代码，但其中存在一些错误：
 

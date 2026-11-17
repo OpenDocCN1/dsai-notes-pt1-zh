@@ -16,7 +16,6 @@
 
 以下是创建数据的核心代码：
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_1.png)
 
 ```python
 # 示例代码：创建两组二维数据点
@@ -32,13 +31,10 @@ X = np.vstack([group1, group2])
 y = np.hstack([np.zeros(150), np.ones(150)])  # 0代表紫色，1代表黄色
 ```
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_1.png)
 
 观察我们的散点图。可以看到紫色点聚集在一起，与黄色点明显分开。
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_3.png)
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_3.png)
 
 ---
 
@@ -48,7 +44,6 @@ y = np.hstack([np.zeros(150), np.ones(150)])  # 0代表紫色，1代表黄色
 
 我们需要将数据转换成PyTorch能够理解的格式。这就像将我们的数据翻译成PyTorch的语言。我们还会创建大小为32的数据批次。
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_5.png)
 
 以下是数据加载的核心步骤：
 
@@ -66,15 +61,12 @@ batch_size = 32
 dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 ```
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_7.png)
 
 为了获得更好的学习效果，我们对数据进行打乱。
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_9.png)
 
 ---
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_7.png)
 
 ## 构建逻辑回归模型 🧠
 
@@ -82,7 +74,6 @@ dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
 逻辑回归模型的核心是一个线性层，后接一个Sigmoid激活函数，用于输出一个介于0和1之间的概率值。其公式可以表示为：
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_9.png)
 
 **`ŷ = σ(W·X + b)`**
 
@@ -95,7 +86,6 @@ dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
 以下是模型的PyTorch实现：
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_11.png)
 
 ```python
 import torch.nn as nn
@@ -110,7 +100,6 @@ class LogisticRegressionModel(nn.Module):
         return torch.sigmoid(self.linear(x))
 ```
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_11.png)
 
 ---
 
@@ -120,7 +109,6 @@ class LogisticRegressionModel(nn.Module):
 
 以下是训练循环的核心代码：
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_13.png)
 
 ```python
 model = LogisticRegressionModel(input_dim=2)
@@ -145,11 +133,8 @@ for epoch in range(num_epochs):
 
 观察损失值（错误的数量）如何随着时间的推移而减小。
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_15.png)
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_13.png)
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_15.png)
 
 ---
 
@@ -157,7 +142,6 @@ for epoch in range(num_epochs):
 
 最后，让我们看看训练好的模型是如何区分这两组点的。灰色区域展示了模型的决策边界。
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_17.png)
 
 以下是可视化决策边界的思路：
 
@@ -165,10 +149,8 @@ for epoch in range(num_epochs):
 2.  用训练好的模型预测网格中每个点的类别。
 3.  根据预测结果对网格进行着色。
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_19.png)
 
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_21.png)
 
 ```python
 import matplotlib.pyplot as plt
@@ -192,32 +174,24 @@ plt.legend()
 plt.show()
 ```
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_17.png)
 
 浅色区域预测为黄色组。
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_23.png)
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_19.png)
 
 深色区域预测为紫色组。
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_21.png)
 
 可以看到，模型在我们的数据簇之间画出了一条平滑的分界线。
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_23.png)
 
 ---
 
 ## 总结
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_25.png)
 
 本节课中，我们一起学习了如何使用逻辑回归模型教计算机区分两组二维数据点。我们从创建模拟数据开始，经历了数据预处理、模型构建、训练以及最终的可视化。决策边界清晰地展示了模型是如何做出预测的。逻辑回归虽然简单，但它是理解更复杂分类模型的重要基础。
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_26.png)
 
-![](img/af8c39e3bd1d4ae804615df3eeef3050_25.png)
 
 ![](img/af8c39e3bd1d4ae804615df3eeef3050_26.png)

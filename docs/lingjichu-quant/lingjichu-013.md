@@ -1,10 +1,8 @@
 # 013：14.14.3-策略收益效果分析 📈
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_1.png)
 
 在本节课中，我们将学习如何计算和比较一个交易策略的最终收益。我们将基于之前构建的双均线策略，计算其在一段时间内的累计收益，并与“什么都不做”的原始股价增长进行对比。
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_3.png)
 
 ---
 
@@ -14,16 +12,13 @@
 
 首先，我们需要计算股价的日收益率。收益率是衡量投资回报的基本指标，计算公式为：当日收盘价除以前一日收盘价。
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_5.png)
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_7.png)
 
 以下是计算收益率的步骤：
 1.  获取股价数据。
 2.  使用 `shift(1)` 方法将数据向下移动一行，以获取前一天的股价。
 3.  用当日股价除以前一日股价，得到每日的增长率。
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_9.png)
 
 ```python
 # 假设 data[‘close’] 是包含收盘价的列
@@ -32,13 +27,10 @@ returns = data[‘close’] / data[‘close’].shift(1)
 
 执行这段代码后，`returns` 列就存储了每日的股价增长率。
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_11.png)
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_13.png)
 
 ## 计算策略收益率
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_15.png)
 
 接下来，我们根据交易信号来调整收益率。我们的策略核心是：当 `position` 为 1 时，我们跟随市场走势；当 `position` 为 -1 时，我们进行反向操作（即做空或卖出）。
 
@@ -46,7 +38,6 @@ returns = data[‘close’] / data[‘close’].shift(1)
 1.  将交易信号 `position` 也进行 `shift(1)` 操作，以确保我们使用的是前一天生成的信号来指导今天的交易。
 2.  将调整后的 `position` 与原始 `returns` 相乘。当 `position` 为 -1 时，收益方向与市场相反。
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_17.png)
 
 ```python
 # 假设 position 是之前生成的交易信号列
@@ -55,24 +46,19 @@ strategy_returns = position.shift(1) * returns
 
 这样，`strategy_returns` 就代表了遵循我们策略后，每日的实际收益率。
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_19.png)
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_21.png)
 
 ## 处理缺失值与累计收益
 
 在计算开始时，由于 `shift` 操作，数据首行会产生缺失值（NaN）。我们需要先处理这些缺失值。
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_23.png)
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_25.png)
 
 以下是处理缺失值并计算累计收益的步骤：
 1.  使用 `dropna()` 方法删除含有缺失值的行。
 2.  对处理后的收益率序列进行求和，得到对数空间下的总收益。
 3.  由于我们之前计算的是乘法关系的增长率，在求和后需要通过指数函数 `np.exp()` 将其还原为最终的累计收益倍数。
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_27.png)
 
 ```python
 # 删除缺失值
@@ -86,19 +72,15 @@ cumulative_strategy_return = np.exp(strategy_returns_clean.sum())
 
 ## 结果对比与分析
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_29.png)
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_31.png)
 
 最后，我们对比两种情况的最终收益。
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_33.png)
 
 执行计算后，我们可能得到类似这样的结果：
 *   **原始收益**：1 元本金最终变为约 4 元。
 *   **策略收益**：1 元本金最终变为约 5.8 元。
 
-![](img/992efb5ef9d2fd1bb9229fc7204fde2e_35.png)
 
 这个对比表明，在我们构建的这个特定双均线策略和测试数据下，策略收益超过了单纯持有股票的收益。这初步验证了策略在历史数据上的有效性。
 

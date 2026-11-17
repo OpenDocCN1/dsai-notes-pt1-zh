@@ -13,7 +13,6 @@
 首先，我们需要导入必要的库并准备数据。我们将使用 TensorFlow Datasets 加载 MNIST 数据集，并定义一个简单的模型。
 
 
-![](img/38a145700a6404a2026fbca3d7269917_4.png)
 
 ```python
 import tensorflow as tf
@@ -118,10 +117,8 @@ for epoch in range(epochs):
 4.  计算并输出最终的测试准确率。
 
 
-![](img/38a145700a6404a2026fbca3d7269917_6.png)
 
 
-![](img/38a145700a6404a2026fbca3d7269917_7.png)
 
 ```python
 print("\n开始在测试集上评估模型...")

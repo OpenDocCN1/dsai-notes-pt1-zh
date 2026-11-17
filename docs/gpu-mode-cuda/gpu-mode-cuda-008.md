@@ -2,7 +2,6 @@
 
 ![](img/7afa40a00a8eca49c6179e42d3093166_1.png)
 
-![](img/7afa40a00a8eca49c6179e42d3093166_3.png)
 
 ![](img/7afa40a00a8eca49c6179e42d3093166_5.png)
 
@@ -121,7 +120,6 @@ isa_graph = codegen([graph1, graph2])
 
 ![](img/7afa40a00a8eca49c6179e42d3093166_21.png)
 
-![](img/7afa40a00a8eca49c6179e42d3093166_23.png)
 
 ---
 
@@ -131,7 +129,6 @@ isa_graph = codegen([graph1, graph2])
 
 最后，我们来看执行层，它负责在主机上管理和服务推理请求。
 
-![](img/7afa40a00a8eca49c6179e42d3093166_27.png)
 
 **Aviator运行时**
 这是一个模型无关的图执行层。它的目标是接收计算图及其输入张量，在加速器上异步执行，并将结果返回给用户。

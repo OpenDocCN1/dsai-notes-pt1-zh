@@ -1,6 +1,5 @@
 # 006：构建带循环的自我反思智能体 🧠
 
-![](img/932376b7d8a4ac5307efc7301474eb89_0.png)
 
 在本节课中，我们将学习如何构建一个能够进行自我反思的Haystack智能体管道。这个管道将包含一个循环机制，允许大型语言模型（LLM）评估并迭代改进自己的输出。我们将通过一个具体的例子来实现：让LLM从非结构化文本中提取命名实体，并通过自我反思来优化结果。
 
@@ -10,15 +9,12 @@
 
 ## 构建自定义组件：实体验证器
 
-![](img/932376b7d8a4ac5307efc7301474eb89_2.png)
 
 首先，我们需要创建一个自定义的Haystack组件，用于验证LLM的回复。这个组件将决定LLM是否完成了任务，或者是否需要进一步反思。
 
-![](img/932376b7d8a4ac5307efc7301474eb89_4.png)
 
 以下是创建 `EntityValidator` 组件的代码：
 
-![](img/932376b7d8a4ac5307efc7301474eb89_6.png)
 
 ```python
 from haystack import component
@@ -36,26 +32,21 @@ class EntityValidator:
             return {"entities_to_validate": replies}
 ```
 
-![](img/932376b7d8a4ac5307efc7301474eb89_8.png)
 
 这个组件的逻辑很简单：
 *   如果LLM的回复中包含“完成”这个词，组件就将回复作为最终“实体”输出。
 *   如果不包含“完成”，组件会用红色打印回复，并将其作为“需要验证的实体”输出，以便进行下一轮反思。
 
-![](img/932376b7d8a4ac5307efc7301474eb89_10.png)
 
 ## 设计动态提示模板
 
 为了让LLM能够根据上下文（首次尝试或反思后）接收不同的指令，我们需要创建一个动态的提示模板。我们将使用Jinja2模板的 `if-else` 语句来实现。
 
 
-![](img/932376b7d8a4ac5307efc7301474eb89_12.png)
 
 
-![](img/932376b7d8a4ac5307efc7301474eb89_14.png)
 
 
-![](img/932376b7d8a4ac5307efc7301474eb89_16.png)
 
 ```python
 from haystack.components.builders import PromptBuilder
@@ -94,10 +85,8 @@ prompt_builder = PromptBuilder(template=template)
 
 现在，我们将生成器、提示构建器和验证器组件连接起来，形成一个可以循环的管道。关键点在于设置循环逻辑和最大循环次数，以控制成本和防止无限循环。
 
-![](img/932376b7d8a4ac5307efc7301474eb89_18.png)
 
 
-![](img/932376b7d8a4ac5307efc7301474eb89_20.png)
 
 ```python
 from haystack import Pipeline
@@ -136,18 +125,14 @@ pipeline.connect("validator.entities_to_validate", "prompt_builder.entities_to_v
 
 ## 运行与测试
 
-![](img/932376b7d8a4ac5307efc7301474eb89_22.png)
 
 让我们用两段示例文本来测试这个自我反思智能体。
 
-![](img/932376b7d8a4ac5307efc7301474eb89_24.png)
 
 **示例 1：关于城市的描述**
 
-![](img/932376b7d8a4ac5307efc7301474eb89_26.png)
 
 
-![](img/932376b7d8a4ac5307efc7301474eb89_28.png)
 
 ```python
 text_1 = “””
@@ -165,12 +150,10 @@ result = pipeline.run({
 print(f"\033[92m最终实体：{result['validator']['entities']}\033[0m")
 ```
 
-![](img/932376b7d8a4ac5307efc7301474eb89_30.png)
 
 **示例 2：会议记录**
 
 
-![](img/932376b7d8a4ac5307efc7301474eb89_32.png)
 
 ```python
 text_2 = “””
@@ -185,15 +168,12 @@ result = pipeline.run({
 print(f"\033[92m最终实体：{result['validator']['entities']}\033[0m")
 ```
 
-![](img/932376b7d8a4ac5307efc7301474eb89_34.png)
 
 运行过程中，控制台会以红色显示LLM在反思过程中生成的中间实体，最后以绿色显示它最终满意的实体结果。你可以观察到LLM如何从第一次可能不完整或格式不正确的输出，通过反思逐步修正为符合要求的答案。
 
-![](img/932376b7d8a4ac5307efc7301474eb89_36.png)
 
 ## 总结
 
-![](img/932376b7d8a4ac5307efc7301474eb89_38.png)
 
 在本节课中，我们一起学习了如何构建一个带循环功能的自我反思智能体。我们实现了以下核心步骤：
 

@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P30：L30- 联合操作符 UNION 🧩
 
-![](img/04095bb29a99dad8fca5419a36682056_0.png)
 
 ![](img/04095bb29a99dad8fca5419a36682056_0.png)
 
@@ -110,11 +109,9 @@ SELECT first_name FROM customers;
 
 最终结果需要按客户名字（`first_name`）排序。
 
-![](img/04095bb29a99dad8fca5419a36682056_2.png)
 
 以下是实现步骤和最终查询：
 
-![](img/04095bb29a99dad8fca5419a36682056_4.png)
 
 首先，查询“青铜”级别客户。
 
@@ -196,6 +193,5 @@ ORDER BY first_name;
 
 掌握`UNION`能极大地增强你处理复杂数据汇总和报告生成的能力。
 
-![](img/04095bb29a99dad8fca5419a36682056_6.png)
 
 ![](img/04095bb29a99dad8fca5419a36682056_6.png)

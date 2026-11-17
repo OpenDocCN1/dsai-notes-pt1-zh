@@ -1,6 +1,5 @@
 #  004：数值数据的基尼不纯度
 
-![](img/bc3f917a4fd30ce929e42e7bff5db8bb_0.png)
 
 ![](img/bc3f917a4fd30ce929e42e7bff5db8bb_0.png)
 

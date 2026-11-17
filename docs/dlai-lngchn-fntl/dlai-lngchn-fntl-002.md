@@ -1,8 +1,6 @@
 # 002：OpenAI函数调用详解 🧠
 
-![](img/b7b476e56249b0cbc7c070ebc723dec5_0.png)
 
-![](img/b7b476e56249b0cbc7c070ebc723dec5_2.png)
 
 在本节课中，我们将学习OpenAI API在几个月前新增的一项功能：函数调用。我们将详细介绍如何使用这项功能，并分享一些获得最佳效果的技巧。
 
@@ -221,7 +219,6 @@ if assistant_message.get("function_call"):
 
 本节课中，我们一起学习了OpenAI函数调用的核心概念和使用方法。我们了解到，函数调用通过 `functions` 和 `function_call` 参数，使语言模型能够智能地与外部工具交互。我们探讨了三种调用模式（`auto`, `none`, 强制调用），并实践了“模型决策 -> 执行函数 -> 返回结果”的完整工作流。
 
-![](img/b7b476e56249b0cbc7c070ebc723dec5_4.png)
 
 ![](img/b7b476e56249b0cbc7c070ebc723dec5_5.png)
 

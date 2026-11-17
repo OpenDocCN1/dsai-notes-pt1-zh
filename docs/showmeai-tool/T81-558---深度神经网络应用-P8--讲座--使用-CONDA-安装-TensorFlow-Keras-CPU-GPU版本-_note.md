@@ -4,9 +4,7 @@
 
 如果你不熟悉命令行操作，或者不想在本地安装复杂软件，也可以选择使用 **Google Colab** 在线平台，它同样提供 GPU 支持。
 
-![](img/a16e1b74716826f74e6f5876073581a1_1.png)
 
-![](img/a16e1b74716826f74e6f5876073581a1_2.png)
 
 ---
 
@@ -21,7 +19,6 @@
 
 ---
 
-![](img/a16e1b74716826f74e6f5876073581a1_4.png)
 
 ## 第一步：下载课程文件与 Miniconda
 
@@ -47,7 +44,6 @@ conda install -y jupyter
 conda create -n tensorflow python=3.7
 ```
 
-![](img/a16e1b74716826f74e6f5876073581a1_6.png)
 
 环境创建成功后，激活该环境：
 
@@ -55,7 +51,6 @@ conda create -n tensorflow python=3.7
 conda activate tensorflow
 ```
 
-![](img/a16e1b74716826f74e6f5876073581a1_8.png)
 
 ![](img/a16e1b74716826f74e6f5876073581a1_9.png)
 
@@ -111,7 +106,6 @@ conda env update -f environment.yml
 conda install nb_conda
 ```
 
-![](img/a16e1b74716826f74e6f5876073581a1_16.png)
 
 ![](img/a16e1b74716826f74e6f5876073581a1_17.png)
 
@@ -146,7 +140,6 @@ print(f"GPU Available: {tf.config.list_physical_devices('GPU')}")
 
 如果输出显示 TensorFlow 版本（例如 2.1.0）并列出可用的 GPU 设备，则说明 GPU 版本安装成功。如果显示 GPU 不可用，则你运行的是 CPU 版本。
 
-![](img/a16e1b74716826f74e6f5876073581a1_21.png)
 
 ---
 
@@ -166,13 +159,11 @@ print(f"GPU Available: {tf.config.list_physical_devices('GPU')}")
 
 如果遇到其他错误，建议将完整的错误信息复制到搜索引擎（如 Google）或 Stack Overflow 上查找解决方案。
 
-![](img/a16e1b74716826f74e6f5876073581a1_25.png)
 
 ---
 
 ## 总结与备选方案
 
-![](img/a16e1b74716826f74e6f5876073581a1_27.png)
 
 本节课中，我们一起学习了如何使用 Conda 在本地计算机上安装 TensorFlow 和 Keras 的完整开发环境。我们涵盖了从下载工具、创建独立环境、安装 CPU/GPU 版本的 TensorFlow，到配置 Jupyter Notebook 和验证安装的全过程。
 

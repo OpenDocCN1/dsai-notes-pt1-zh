@@ -1,28 +1,22 @@
 # 093：4_多类逻辑回归 📊
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_1.png)
 
 在本节课中，我们将要学习如何将二分类逻辑回归模型扩展到多类分类场景。我们将重点介绍一种称为“一对多”的技术，它允许我们使用多个二分类器来解决多类别预测问题。
 
 
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_2.png)
 
 ## 多类分类问题概述
 
 上一节我们介绍了二分类逻辑回归。本节中我们来看看当目标变量包含两个以上类别时的情况。
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_4.png)
 
 我们面临的问题不再是预测“流失”与“未流失”，而是需要预测三个标签：“未流失”、“已取消”和“转向竞争对手”。
 
 
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_5.png)
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_6.png)
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_7.png)
 
 ## 一对多方法原理
 
@@ -32,25 +26,18 @@
 
 
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_9.png)
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_10.png)
 
 ## 第一步：构建第一个二分类器
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_11.png)
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_12.png)
 
 首先，我们选取一个类别，例如“未流失”，将其标记为正类（蓝色点）。
 
 然后，将所有其他类别（“已取消”和“转向竞争对手”）合并标记为负类。
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_14.png)
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_15.png)
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_16.png)
 
 接着，我们可以拟合一个逻辑回归模型。
 
@@ -60,13 +47,10 @@
 
 
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_18.png)
 
 ## 第二步：为其余类别重复此过程
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_20.png)
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_21.png)
 
 接下来，我们为其他每个类别重复上述步骤。
 
@@ -78,21 +62,16 @@
 
 
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_23.png)
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_24.png)
 
 然后，我们对“转向竞争对手”这个类别（红色标签）进行同样的操作，即训练“转向竞争对手 vs 所有其他类”的分类器。
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_25.png)
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_26.png)
 
 最终，我们为三个不同的类别分别训练了“一对多”的逻辑回归模型。
 
 
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_28.png)
 
 ## 模型结果与预测
 
@@ -102,17 +81,13 @@
 
 对于每个样本，其预测类别将是这三个“一对多”模型中估计概率最高的那个类别。
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_30.png)
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_31.png)
 
 我们最终得到三条独立的决策边界，每条边界都对应一个二分类问题中概率最高的区域。
 
 
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_32.png)
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_33.png)
 
 如图所示，蓝色区域代表“转向竞争对手”，粉色区域代表“未流失”，右侧的紫色区域则代表“已取消”。
 
@@ -120,7 +95,6 @@
 
 ## 总结
 
-![](img/61eb4aebfad64262d26b9a0ae8d89fe6_35.png)
 
 ![](img/61eb4aebfad64262d26b9a0ae8d89fe6_36.png)
 

@@ -191,7 +191,6 @@ for output in app.stream(inputs):
 
 如果你想深入了解代理的每一步执行过程，可以使用 LangSmith。运行上述代码后，你可以在 LangSmith 控制台中看到类似下图的追踪信息：
 
-![](img/bebc921deb71da587cb95f3b61f9ff5c_1.png)
 
 ![](img/bebc921deb71da587cb95f3b61f9ff5c_1.png)
 

@@ -1,6 +1,5 @@
 # 课程 P73：73.01_测试流程介绍与代码实现 🧪
 
-![](img/c29eafed08b5e9ee1345407ca2fb2599_1.png)
 
 ![](img/c29eafed08b5e9ee1345407ca2fb2599_3.png)
 
@@ -16,11 +15,9 @@
 
 上一节我们完成了模型的训练，本节中我们来看看如何对训练好的模型进行测试。测试流程与训练流程有相似之处，但也有其独特步骤。
 
-![](img/c29eafed08b5e9ee1345407ca2fb2599_9.png)
 
 测试流程的目标是：完成一个简单的测试，了解如何加载已学习的模型、如何产生预测结果，以及如何处理这些预测结果。
 
-![](img/c29eafed08b5e9ee1345407ca2fb2599_11.png)
 
 以下是测试流程的核心步骤：
 
@@ -47,11 +44,9 @@
 
 ![](img/c29eafed08b5e9ee1345407ca2fb2599_19.png)
 
-![](img/c29eafed08b5e9ee1345407ca2fb2599_21.png)
 
 为了组织代码，我们需要创建特定的文件结构。我们将在项目根目录下创建一个名为 `test` 的目录。
 
-![](img/c29eafed08b5e9ee1345407ca2fb2599_23.png)
 
 以下是测试所需的文件结构：
 
@@ -67,7 +62,6 @@ test/
 
 我们选择在 **Jupyter Notebook** 中编写测试流程，因为它便于我们逐步执行、输入图片、查看中间结果，并直接利用 `matplotlib` 等库可视化最终图片。
 
-![](img/c29eafed08b5e9ee1345407ca2fb2599_29.png)
 
 因此，我们需要：
 1.  创建 `test` 文件夹。
@@ -99,7 +93,6 @@ test/
 首先，我们需要导入所有必需的 Python 模块。为了能调用项目其他目录下的处理模块，我们需要将上级目录添加到系统路径中。
 
 
-![](img/c29eafed08b5e9ee1345407ca2fb2599_45.png)
 
 ```python
 import sys
@@ -112,7 +105,6 @@ from nets import nets_factory
 from notebooks.test import visualization  # 导入可视化工具
 ```
 
-![](img/c29eafed08b5e9ee1345407ca2fb2599_47.png)
 
 **代码解释**：
 *   `sys.path.append('../')`：确保 Python 能在项目根目录下查找和导入我们自定义的模块（如 `preprocessing`, `nets`）。
@@ -134,7 +126,6 @@ from notebooks.test import visualization  # 导入可视化工具
 image_input = tf.placeholder(tf.uint8, shape=(None, None, None, 3))
 ```
 
-![](img/c29eafed08b5e9ee1345407ca2fb2599_53.png)
 
 **代码解释**：
 *   `tf.placeholder` 定义了一个数据占位符 `image_input`。
@@ -144,7 +135,6 @@ image_input = tf.placeholder(tf.uint8, shape=(None, None, None, 3))
     *   第二、三个 `None`：图片的高度和宽度（可接受任意尺寸的图片）。
     *   `3`：RGB 三个颜色通道。
 
-![](img/c29eafed08b5e9ee1345407ca2fb2599_55.png)
 
 ### 第三步：图片预处理
 
@@ -239,7 +229,6 @@ with tf.contrib.slim.arg_scope(network_fn.arg_scope(data_format='NHWC')):
 *   **非极大值抑制 (NMS)**：去除对同一物体的重复检测框。
 *   **坐标转换与缩放**：将预测的边界框坐标从网络输出格式转换并缩放到原始输入图片的尺寸。
 
-![](img/c29eafed08b5e9ee1345407ca2fb2599_73.png)
 
 这部分代码逻辑相对复杂，会用到 SSD 算法中定义的解码和筛选函数。为了课程清晰，我们在此概述步骤，具体函数调用请参考项目提供的 `visualization.py` 或后续教程。
 

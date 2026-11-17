@@ -10,19 +10,14 @@
 
 **资源列表的访问地址为：** `https://jenny-cloudpro-bootcamp.com/for-freecodecamp`
 
-![](img/02eedf72fe17351dcd35b46051423d00_1.png)
 
 该页面汇集了多种主题的学习资料，未来还会持续更新。
 
-![](img/02eedf72fe17351dcd35b46051423d00_2.png)
 
-![](img/02eedf72fe17351dcd35b46051423d00_3.png)
 
-![](img/02eedf72fe17351dcd35b46051423d00_4.png)
 
 ## 核心主题资源示例 🎯
 
-![](img/02eedf72fe17351dcd35b46051423d00_5.png)
 
 以下是一些关键主题的补充资源示例，你可以根据自身需求选择学习。
 

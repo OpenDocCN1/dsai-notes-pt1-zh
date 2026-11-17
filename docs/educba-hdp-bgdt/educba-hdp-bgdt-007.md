@@ -34,7 +34,6 @@ CREATE DATABASE demo;
 USE demo;
 ```
 
-![](img/859c4475114cf5a17293d8a8e6ed89de_9.png)
 
 ![](img/859c4475114cf5a17293d8a8e6ed89de_11.png)
 

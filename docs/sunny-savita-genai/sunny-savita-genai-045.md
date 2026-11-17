@@ -8,7 +8,6 @@
 
 ![](img/0da8f75ba763d6f2b7c31b026d3c8d09_1.png)
 
-![](img/0da8f75ba763d6f2b7c31b026d3c8d09_2.png)
 
 ## 什么是检索？
 
@@ -25,7 +24,6 @@
 
 ![](img/0da8f75ba763d6f2b7c31b026d3c8d09_4.png)
 
-![](img/0da8f75ba763d6f2b7c31b026d3c8d09_5.png)
 
 理解了检索的定义后，我们来深入其工作原理。检索工作主要依赖于语义搜索技术。系统首先将用户的查询文本通过嵌入模型转换为一个高维向量。同时，知识库中的所有文档片段也已被预先转换为向量并存储在向量数据库中。
 
@@ -33,7 +31,6 @@
 
 ---
 
-![](img/0da8f75ba763d6f2b7c31b026d3c8d09_7.png)
 
 ![](img/0da8f75ba763d6f2b7c31b026d3c8d09_8.png)
 
@@ -75,7 +72,6 @@ compressed_docs = compression_retriever.get_relevant_documents(query)
 
 ---
 
-![](img/0da8f75ba763d6f2b7c31b026d3c8d09_10.png)
 
 ![](img/0da8f75ba763d6f2b7c31b026d3c8d09_11.png)
 

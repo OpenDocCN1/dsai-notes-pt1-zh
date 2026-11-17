@@ -8,17 +8,12 @@
 
 我们使用的数据集包含个人特征（如职业和贷款历史）以及贷款特征（如贷款金额和利率）。在开始之前，我们已经导入了必要的模块并将数据读取到了名为`df`的DataFrame中。
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_1.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_2.png)
 
 ## 绘制基础箱线图
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_3.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_4.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_5.png)
 
 Seaborn的`sns.boxplot()`函数使得创建箱线图非常容易。以下是创建一个基础箱线图的步骤。
 
@@ -30,17 +25,9 @@ sns.boxplot(data=df, x='interest_rate')
 plt.show()
 ```
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_7.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_1.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_2.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_3.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_4.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_5.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_8.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_9.png)
 
 生成的图表显示了利率的偏态分布，中位数利率约为12%。这个分布图有助于我们理解这些贷款的典型利率水平。
 
@@ -59,17 +46,10 @@ plt.title('Distribution of Loan Interest Rates')
 plt.ylabel('Interest Rate (%)')
 ```
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_7.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_8.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_9.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_11.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_12.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_13.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_14.png)
 
 ## 自定义图表样式：移除边框
 
@@ -94,16 +74,9 @@ sns.despine(bottom=True)
 sns.boxplot(data=df, x='grade', y='interest_rate')
 ```
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_16.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_17.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_11.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_12.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_13.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_14.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_18.png)
 
 从图中可以清晰地看到，利率随着贷款等级下降而显著上升。A级贷款的利率在个位数，而E、F、G级贷款的利率则在20%左右。这种图表可以帮助客户理解不同风险等级贷款的盈利情况。
 
@@ -124,23 +97,15 @@ plt.grid(axis='y', alpha=0.5)
 sns.boxplot(data=df, x='grade', y='interest_rate', palette='RdYlGn_r')
 ```
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_16.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_17.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_18.png)
 
 > **注意**：你可能会看到一个关于`palette`参数的警告。这不是错误，而是模块开发者的提示，表明未来版本中某些用法可能会改变。在当前版本，如果同时使用`x`和`palette`参数，可能会收到警告。你可以尝试使用`hue`参数来代替`x`进行分组，但这样可能会使图例仅靠颜色区分，降低可读性。因此，根据你的Seaborn版本，可以选择保留`x`参数。
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_20.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_21.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_22.png)
 
 ## 调整图表尺寸
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_23.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_25.png)
 
 当图表中包含大量信息时，增大图表尺寸可以提升可读性。我们可以在创建图表之前使用`plt.figure()`来设置画布大小。
 ```python
@@ -149,14 +114,7 @@ sns.boxplot(data=df, x='grade', y='interest_rate')
 ```
 默认的图形尺寸约为6.4 x 4.8英寸（约16 x 12厘米）。将尺寸设置为8 x 6英寸是一个不错的增大选择。
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_26.png)
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_20.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_21.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_22.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_23.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_25.png)
-![](img/f12b4b2cb3808866fba16b298dfa105d_26.png)
 
 ## 总结 📝
 
@@ -168,7 +126,6 @@ sns.boxplot(data=df, x='grade', y='interest_rate')
 *   **简化边框**：使用 `sns.despine()` 可以移除图表的顶部和右侧边框，使用 `bottom=True` 等参数可以移除其他边框。
 *   **调整尺寸**：在绘图前使用 `plt.figure(figsize=(width, height))` 可以调整图表的整体大小，尺寸单位为英寸。
 
-![](img/f12b4b2cb3808866fba16b298dfa105d_28.png)
 
 ![](img/f12b4b2cb3808866fba16b298dfa105d_28.png)
 

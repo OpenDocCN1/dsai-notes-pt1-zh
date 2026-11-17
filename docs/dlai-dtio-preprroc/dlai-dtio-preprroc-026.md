@@ -25,11 +25,9 @@ url = "https://api.fda.gov/food/enforcement.json"
 
 这个URL是FDA执法API的“基础端点”，你将在后续视频中了解更多关于端点的知识。
 
-![](img/e4a2566fc89d691d025c5baaf121a630_1.png)
 
 接下来，我们向这个URL发送一个GET请求。GET请求就像是向服务器询问：“你好，我可以获取这些数据吗？”
 
-![](img/e4a2566fc89d691d025c5baaf121a630_2.png)
 
 ```python
 response = requests.get(url)
@@ -45,9 +43,7 @@ print(response.status_code)
 
 ## 提取与处理响应数据
 
-![](img/e4a2566fc89d691d025c5baaf121a630_4.png)
 
-![](img/e4a2566fc89d691d025c5baaf121a630_5.png)
 
 成功收到响应后，我们需要从中提取出有用的数据。响应对象内部存储了许多信息，状态码就是其中之一。
 
@@ -61,11 +57,9 @@ data = response.json()
 
 现在，让我们查看一下获取到的数据。瞧，这里就有来自佛罗里达州的召回信息。😊
 
-![](img/e4a2566fc89d691d025c5baaf121a630_7.png)
 
 为了验证数据的有效性，我们可以进行一些快速检查。
 
-![](img/e4a2566fc89d691d025c5baaf121a630_8.png)
 
 以下是几个有用的数据检查步骤：
 
@@ -88,7 +82,6 @@ print(len(data[‘results’]))  # 检查结果列表中的项目数
 
 你做得很好！你使用Python的`requests`库发送了GET请求，并通过检查状态码确保请求成功，这与网页爬虫的步骤类似。随后，你使用`.json()`方法将响应中的JSON数据提取为Python字典，以便进行后续操作。
 
-![](img/e4a2566fc89d691d025c5baaf121a630_10.png)
 
 ![](img/e4a2566fc89d691d025c5baaf121a630_11.png)
 

@@ -12,11 +12,9 @@
 
 当你使用 Snowflake 构建 Streamlit 应用时，主要有两种部署选择。以下是这两种选项的详细介绍。
 
-![](img/2b97810ef9e80ace82a366e95346e9b0_1.png)
 
 ### 选项一：Streamlit Community Cloud
 
-![](img/2b97810ef9e80ace82a366e95346e9b0_2.png)
 
 你已经在模块一中使用过此选项。它的优势在于可以直接连接到 Snowflake。当你希望公开分享应用时，可以选择 Streamlit Community Cloud。
 
@@ -46,7 +44,6 @@
 
 ## 总结
 
-![](img/2b97810ef9e80ace82a366e95346e9b0_4.png)
 
 ![](img/2b97810ef9e80ace82a366e95346e9b0_5.png)
 

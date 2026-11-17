@@ -1,6 +1,5 @@
 # 014：填充数据仓库
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_0.png)
 
 在本节课中，我们将学习如何填充数据仓库。这是一个持续的过程，包括初始加载和后续的增量加载。我们将介绍主要步骤、变更检测方法，并通过一个手动创建销售星型模式的实例来演示整个过程。
 
@@ -10,7 +9,6 @@
 
 通常，事实表是动态的，需要频繁更新，而维度表则不常变化。例如，城市或商店列表相当静态，但销售交易每天都在发生。
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_2.png)
 
 ## 🛠️ 自动化填充工具
 
@@ -28,7 +26,6 @@
 
 完成初始加载后，是时候设置持续的数据加载了。
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_4.png)
 
 你可以使用脚本自动化后续的增量加载，作为ETL数据管道的一部分。你还可以根据需求，将增量加载安排为每日或每周执行。你还需要包含一些逻辑，以确定暂存区中哪些数据是新的或已更新的。
 
@@ -50,13 +47,11 @@
 
 让我们通过一个简化的例子来说明这个过程：手动填充一个名为“sales”的星型模式数据仓库。我们假设你已经实例化了数据仓库和sales模式。
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_6.png)
 
 以下是一家名为“Shi Auto Sales”的虚构公司的一些汽车销售交易数据样本。你可以看到几个外键列，例如 `sales_id`（标识销售发票号的顺序键）、`emp_no`（员工编号）和 `class_id`（编码所售汽车的类型，如小型SUV）。这些键中的每一个都代表一个维度，指向星型模式中相应的维度表。`date` 列是一个指示销售日期的维度。`amount` 列是销售金额，它恰好是我们关注的事实。这个表已经非常接近事实表的形式，唯一的例外是 `date` 列尚未用外键 `date_id` 表示。
 
 让我们使用PostgreSQL的终端前端PSQL来演示如何创建维度表，以销售人员维度为例。
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_8.png)
 
 使用 `CREATE TABLE` 子句在 `sales` 模式下创建 `dim_salesperson` 表，其中 `salesperson_id` 作为序列主键，`salesperson_alt_id` 作为销售人员的员工编号，最后一列是销售人员的姓名。
 
@@ -68,29 +63,22 @@ CREATE TABLE sales.dim_salesperson (
 );
 ```
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_10.png)
 
 现在，你可以开始逐行填充 `dim_salesperson` 表。
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_11.png)
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_12.png)
 
 使用 `INSERT INTO` 子句，指定 `salesperson_alt_id` 和 `salesperson_name` 列，并开始插入值，例如员工编号680和姓名“Cadillac Jack”。你将类似地创建和填充其余维度的表。
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_14.png)
 
 你可以输入SQL语句 `SELECT * FROM sales.dim_salesperson LIMIT 5;` 来查看你的销售人员维度表，并确认一切似乎都已正确填充，例如记录1：员工编号617，销售人员姓名“Go-cart Joe”。
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_15.png)
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_16.png)
 
 ## 📊 创建事实表并建立关系
 
 现在，是时候创建你的销售事实表了。
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_18.png)
 
 使用 `CREATE TABLE` 语句，以 `sales.fact_auto_sales` 作为表名，`transaction_id` 作为 `BIGSERIAL` 类型的主键，以及各种外键，如 `sales_id` 和 `auto_class_id`，最后，我们关注的事实 `amount` 的类型为 `MONEY`。
 
@@ -107,11 +95,8 @@ CREATE TABLE sales.fact_auto_sales (
 
 接下来，你继续设置sales模式中事实表和维度表之间的关系。
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_20.png)
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_21.png)
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_22.png)
 
 例如，你可以对 `sales.fact_auto_sales` 表应用 `ALTER TABLE` 语句和 `ADD CONSTRAINT` 子句，添加一个名为 `fk_autoclass_id` 的外键，将 `autoclass_id` 关联到 `sales.dim_auto_category` 表中同名的列，使用 `REFERENCES` 子句。然后，你将使用相同的方法为剩余的维度表设置关系。
 
@@ -124,22 +109,18 @@ REFERENCES sales.dim_auto_category (autoclass_id);
 
 ## 📥 填充事实表
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_24.png)
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_25.png)
 
 在定义了所有表并建立了相应的关系之后，终于可以开始使用你最初拥有的销售数据来填充事实表了。
 
 你可以使用 `INSERT INTO` 语句，指定列名 `sales_id`、`amount`、`salesperson_id`、`autoclass_id` 和 `sales_d_key`，并插入行，例如 `(1629, 4200.21, 1, 4, 20190101)`，这些数据将从汽车销售数据中获取。
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_27.png)
 
 ```sql
 INSERT INTO sales.fact_auto_sales (sales_id, amount, salesperson_id, autoclass_id, sales_d_key)
 VALUES (1629, 4200.21, 1, 4, 20190101);
 ```
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_28.png)
 
 你可以通过输入SQL语句 `SELECT * FROM sales.fact_auto_sales LIMIT 5;` 来查看汽车销售事实表，显示其前五行。在这里，你可以看到单笔汽车销售的美元金额、名为 `transaction_id` 的主键以及你设置的外键列。
 
@@ -147,7 +128,6 @@ VALUES (1629, 4200.21, 1, 4, 20190101);
 
 本节课中，我们一起学习了填充企业数据仓库的过程。
 
-![](img/8ea36ac3bb12b1755e64e5fa2c368573_30.png)
 
 ![](img/8ea36ac3bb12b1755e64e5fa2c368573_31.png)
 

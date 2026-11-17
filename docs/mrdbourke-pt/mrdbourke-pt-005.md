@@ -67,9 +67,7 @@ model = xgb.XGBClassifier()
 
 深度学习和神经网络的美妙之处在于，其可应用的问题种类几乎与其可构建的架构方式一样多。
 
-![](img/89f65ebc6250fedf4a79192719ae0aa1_6.png)
 
-![](img/89f65ebc6250fedf4a79192719ae0aa1_7.png)
 
 ## 选择与艺术
 

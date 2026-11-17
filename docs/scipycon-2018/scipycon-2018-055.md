@@ -113,11 +113,9 @@ SciPy 官网列出了 16 个子模块，我们可以将其归纳为五大类别�
 
 ## 总结 🎯
 
-![](img/afa3d5760af3b36ff43fd96beabb35d8_1.png)
 
 ![](img/afa3d5760af3b36ff43fd96beabb35d8_3.png)
 
-![](img/afa3d5760af3b36ff43fd96beabb35d8_5.png)
 
 ![](img/afa3d5760af3b36ff43fd96beabb35d8_7.png)
 

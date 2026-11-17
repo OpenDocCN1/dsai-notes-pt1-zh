@@ -16,7 +16,6 @@
 
 ## 数据准备与转换
 
-![](img/72e3983a6fe9bea182104921bb00ff11_13.png)
 
 上一节我们介绍了数据加载，本节中我们来看看如何对数据进行预处理和转换。
 
@@ -90,7 +89,6 @@ class NeuralNetwork(nn.Module):
 
 ![](img/72e3983a6fe9bea182104921bb00ff11_42.png)
 
-![](img/72e3983a6fe9bea182104921bb00ff11_44.png)
 
 ![](img/72e3983a6fe9bea182104921bb00ff11_46.png)
 
@@ -200,7 +198,6 @@ MLP的原理同样适用于更复杂的网络，如卷积神经网络。
 
 ![](img/72e3983a6fe9bea182104921bb00ff11_90.png)
 
-![](img/72e3983a6fe9bea182104921bb00ff11_92.png)
 
 ![](img/72e3983a6fe9bea182104921bb00ff11_94.png)
 

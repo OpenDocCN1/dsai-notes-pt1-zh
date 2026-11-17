@@ -29,17 +29,14 @@
 
 这些图像展示了Midjourney根据文字描述生成多样化视觉内容的能力。
 
-![](img/b4b6cb5d4df2144e82c2831f54bf1d60_2.png)
 
 ## Midjourney的工作原理
 
-![](img/b4b6cb5d4df2144e82c2831f54bf1d60_4.png)
 
 上一节我们看到了Midjourney能做什么，本节中我们来看看它是如何生成这些图像的。
 
 通常，Midjourney使用AI模型将文本描述翻译成图像。下图是一个参考的图示表示。
 
-![](img/b4b6cb5d4df2144e82c2831f54bf1d60_4.png)
 
 Midjourney主要包含三个部分：
 1.  **文本提示编码**
@@ -65,7 +62,6 @@ Midjourney图像生成过程仍在开发中，但它有潜力彻底改变图像�
 
 本视频的下一部分将在接下来的视频中详细阐述。
 
-![](img/b4b6cb5d4df2144e82c2831f54bf1d60_6.png)
 
 ## 总结
 

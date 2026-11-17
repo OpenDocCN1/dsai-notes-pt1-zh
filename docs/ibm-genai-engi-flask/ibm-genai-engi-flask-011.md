@@ -2,9 +2,7 @@
 
 在本节课中，我们将学习Flask框架中的两个核心对象：请求对象（Request Object）和响应对象（Response Object）。你将了解如何定义路由以响应不同的HTTP方法（如GET和POST），如何从客户端请求中提取数据，以及如何构建和定制返回给客户端的响应。
 
-![](img/12ec7c84b9c4c88e2f3be98f9d6e9d83_1.png)
 
-![](img/12ec7c84b9c4c88e2f3be98f9d6e9d83_2.png)
 
 ---
 
@@ -19,7 +17,6 @@
 例如，以下两种写法是等价的。第一种写法中，GET方法是隐式指定的；第二种写法则明确指定了GET方法。
 
 
-![](img/12ec7c84b9c4c88e2f3be98f9d6e9d83_4.png)
 
 ```python
 @app.route('/')
@@ -71,7 +68,6 @@ def health_check():
 
 通常，Flask内置的请求类提供的属性和方法已经足够，替换为自定义请求对象是可选的。
 
-![](img/12ec7c84b9c4c88e2f3be98f9d6e9d83_6.png)
 
 ---
 
@@ -95,13 +91,11 @@ def health_check():
 
 ---
 
-![](img/12ec7c84b9c4c88e2f3be98f9d6e9d83_8.png)
 
 ## 从请求中提取数据 🛠️
 
 有多种方法可以从请求对象中获取信息。
 
-![](img/12ec7c84b9c4c88e2f3be98f9d6e9d83_10.png)
 
 *   使用 `request.get_data()` 以字节形式访问POST请求的数据，然后你需要负责解析这些数据。
 *   使用 `request.get_json()` 方法获取已解析为JSON格式的POST请求数据。
@@ -116,7 +110,6 @@ Flask还提供了更聚焦的方法来直接从请求中获取特定类型的信
 
 ---
 
-![](img/12ec7c84b9c4c88e2f3be98f9d6e9d83_12.png)
 
 ## 提取特定值 📝
 
@@ -145,9 +138,7 @@ def get_course():
 
 ---
 
-![](img/12ec7c84b9c4c88e2f3be98f9d6e9d83_14.png)
 
-![](img/12ec7c84b9c4c88e2f3be98f9d6e9d83_15.png)
 
 ## 理解Flask响应对象 📤
 
@@ -200,7 +191,6 @@ def get_course():
 
 ---
 
-![](img/12ec7c84b9c4c88e2f3be98f9d6e9d83_17.png)
 
 ## 总结 📚
 

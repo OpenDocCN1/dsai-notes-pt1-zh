@@ -10,20 +10,17 @@
 
 ---
 
-![](img/4d13edbd47db261637678d5c7b6a739c_7.png)
 
 ## 📥 模型下载与简介
 
 首先，我们需要获取 GLM-4-9B 模型。模型可以从 **ModelScope** 或 **Hugging Face** 平台下载，两个平台的模型权重是同步的。
 
-![](img/4d13edbd47db261637678d5c7b6a739c_9.png)
 
 以下是不同模型文件的区别：
 *   **glm-4-9b**：这是一个基座模型，不支持对话，上下文长度为 8K。
 *   **glm-4-9b-chat** 与 **glm-4-9b-chat-1m**：这两个都是对话模型，具备工具调用能力。前者支持 128K 上下文，后者支持 1M 上下文。
 *   **glm-4v-9b**：这是一个视觉问答模型，支持 8K 上下文，在一个对话中仅支持处理一张图像。
 
-![](img/4d13edbd47db261637678d5c7b6a739c_11.png)
 
 在下载时，请确保使用最新的代码仓库（例如支持 Flash Attention 2 的版本），模型权重本身无需更新。
 
@@ -50,7 +47,6 @@
 
 ![](img/4d13edbd47db261637678d5c7b6a739c_17.png)
 
-![](img/4d13edbd47db261637678d5c7b6a739c_19.png)
 
 ```python
 # 设置 vLLM 引擎参数
@@ -69,19 +65,15 @@ llm = LLM(
 
 ---
 
-![](img/4d13edbd47db261637678d5c7b6a739c_21.png)
 
 ## 🛠️ 模型微调指南
 
-![](img/4d13edbd47db261637678d5c7b6a739c_23.png)
 
 了解了部署后，我们进入模型微调环节。微调的关键在于准备格式正确的数据集。
 
-![](img/4d13edbd47db261637678d5c7b6a739c_25.png)
 
 ### 数据集格式
 
-![](img/4d13edbd47db261637678d5c7b6a739c_27.png)
 
 数据集的构建有两种类型：
 
@@ -92,7 +84,6 @@ llm = LLM(
 
 ![](img/4d13edbd47db261637678d5c7b6a739c_31.png)
 
-![](img/4d13edbd47db261637678d5c7b6a739c_33.png)
 
 **2. 工具微调数据集**
 格式相对复杂，核心结构如下：
@@ -100,7 +91,6 @@ llm = LLM(
 *   `tools` 字段描述工具的定义，格式与 OpenAI API 相同。
 *   工具执行结果的返回角色是 `observation`，而非 OpenAI 格式中的 `tool`。
 
-![](img/4d13edbd47db261637678d5c7b6a739c_35.png)
 
 一个最小的工具调用数据单元示例：
 ```json
@@ -125,9 +115,7 @@ llm = LLM(
 }
 ```
 
-![](img/4d13edbd47db261637678d5c7b6a739c_37.png)
 
-![](img/4d13edbd47db261637678d5c7b6a739c_39.png)
 
 ![](img/4d13edbd47db261637678d5c7b6a739c_41.png)
 
@@ -164,7 +152,6 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 训练完成后，可以使用提供的推理脚本加载微调后的模型进行检查。
 
-![](img/4d13edbd47db261637678d5c7b6a739c_49.png)
 
 ![](img/4d13edbd47db261637678d5c7b6a739c_51.png)
 

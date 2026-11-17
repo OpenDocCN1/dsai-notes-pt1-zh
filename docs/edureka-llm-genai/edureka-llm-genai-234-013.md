@@ -7,12 +7,10 @@
 
 ![](img/cc65f1696fe6bd6d4c3293d39dcb4613_1.png)
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_2.png)
 
 ## 什么是数据可视化？🔍
 上一节我们介绍了课程目标，本节中我们来看看数据可视化的核心概念。
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_4.png)
 
 数据可视化是利用图表、图形等视觉元素对信息进行图形化表示。它提供了一种易于理解的方式来分析数据中的趋势和模式。在大数据时代，原始信息可能令人不知所措，数据可视化工具在将数据转化为可操作的见解方面发挥着关键作用。
 
@@ -22,7 +20,6 @@
 
 ---
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_6.png)
 
 ## 探索性数据分析 (EDA) 🔬
 理解了数据可视化的基本概念后，我们接下来探讨一个关键的应用场景：探索性数据分析。
@@ -38,16 +35,13 @@
 
 ![](img/cc65f1696fe6bd6d4c3293d39dcb4613_9.png)
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_10.png)
 
 ---
 
 ## 实践示例：使用ChatGPT和Google Colab进行EDA 📈
 理论部分已经介绍完毕，现在让我们通过一个实际的机器学习项目示例，看看如何将理论应用于实践。
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_12.png)
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_13.png)
 
 ![](img/cc65f1696fe6bd6d4c3293d39dcb4613_14.png)
 
@@ -81,16 +75,11 @@
 
 ChatGPT可能会生成类似以下的Python代码（以著名的Iris数据集为例）：
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_25.png)
-
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_26.png)
 
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_27.png)
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_28.png)
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_29.png)
+
 
 ```python
 # 第二三四部分 示例代码片段：加载数据并创建散点图矩阵
@@ -117,30 +106,21 @@ plt.show()
 
 ![](img/cc65f1696fe6bd6d4c3293d39dcb4613_31.png)
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_32.png)
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_33.png)
 
 通过观察这些可视化结果，你可以轻松地识别出：
 *   不同类别（如鸢尾花品种）在特征上的差异。
 *   哪些特征之间存在强相关性。
 *   数据的整体分布情况。
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_34.png)
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_35.png)
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_36.png)
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_37.png)
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_38.png)
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_39.png)
 
 这比直接阅读原始数据表格要直观和高效得多。
 
-![](img/cc65f1696fe6bd6d4c3293d39dcb4613_40.png)
 
 ![](img/cc65f1696fe6bd6d4c3293d39dcb4613_41.png)
 

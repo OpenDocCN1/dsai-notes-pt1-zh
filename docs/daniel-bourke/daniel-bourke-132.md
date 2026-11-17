@@ -2,9 +2,7 @@
 
 ![](img/717b6134f9d591db06bcadb55faa25f4_1.png)
 
-![](img/717b6134f9d591db06bcadb55faa25f4_2.png)
 
-![](img/717b6134f9d591db06bcadb55faa25f4_4.png)
 
 在本节课中，我们将学习如何将你自己的数据导入PyTorch，以便构建模型来解决你感兴趣的问题。我们将重点介绍如何创建自定义数据集，这是处理非标准数据的关键步骤。
 
@@ -45,7 +43,6 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 3.  在 **Hardware accelerator**（硬件加速器）下拉菜单中，选择 **GPU**。
 4.  点击 **Save**（保存）。
 
-![](img/717b6134f9d591db06bcadb55faa25f4_6.png)
 
 完成设置后，我们可以验证GPU是否可用及其型号。
 
@@ -55,7 +52,6 @@ if device == "cuda":
     print(f"GPU型号: {torch.cuda.get_device_name(0)}")
 ```
 
-![](img/717b6134f9d591db06bcadb55faa25f4_8.png)
 
 ![](img/717b6134f9d591db06bcadb55faa25f4_10.png)
 

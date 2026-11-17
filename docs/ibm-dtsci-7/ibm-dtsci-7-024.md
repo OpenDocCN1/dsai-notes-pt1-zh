@@ -1,22 +1,16 @@
 # 024：相关性分析
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_1.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_2.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_4.png)
 
 在本节课中，我们将学习相关性分析的基本概念，了解如何衡量不同变量之间的相互依赖程度，并通过实际案例掌握如何使用Python进行相关性分析。
 
 ## 概述：什么是相关性？
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_6.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_7.png)
 
 相关性是一种统计指标，用于衡量不同变量之间相互依赖的程度。
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_8.png)
 
 换句话说，当我们观察两个变量随时间的变化时，如果一个变量发生变化，另一个变量会如何随之改变。例如，吸烟与肺癌之间存在相关性，因为吸烟会增加患肺癌的风险。
 
@@ -24,52 +18,37 @@
 
 需要明确的是，相关性并不意味着因果关系。我们可以说雨伞和降雨量是相关的，但没有足够的信息断定是雨伞导致了降雨，还是降雨导致了雨伞的使用。在数据科学中，我们通常更关注相关性本身。
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_10.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_11.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_12.png)
 
 ## 正相关示例：发动机大小与价格
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_13.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_14.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_15.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_16.png)
 
 上一节我们介绍了相关性的基本概念，本节中我们来看看一个具体的正相关示例：汽车发动机大小与价格之间的关系。
 
 为了分析这两个变量，我们可以使用散点图并添加一条回归线（线性线），以直观展示两者之间的关系。
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_18.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_19.png)
 
 该图表的主要目的是观察发动机大小是否对价格产生影响。在这个例子中，穿过数据点的直线非常陡峭，这表明两个变量之间存在正向的线性关系。随着发动机尺寸值的增加，价格值也随之上升，且直线的斜率为正。因此，发动机大小与价格之间存在正相关。
 
 我们可以使用Seaborn库的`regplot`函数来创建这个散点图。
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_21.png)
 
 ```python
 import seaborn as sns
 sns.regplot(x='engine-size', y='price', data=df)
 ```
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_22.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_23.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_24.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_25.png)
 
 ## 负相关示例：高速公路油耗与价格
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_27.png)
 
 了解了正相关后，现在让我们看看负相关的例子：高速公路每加仑行驶里程（油耗）对汽车价格的影响。
 
@@ -77,19 +56,13 @@ sns.regplot(x='engine-size', y='price', data=df)
 
 ## 弱相关或无相关示例
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_29.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_30.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_31.png)
 
 最后，我们来看一个弱相关或无相关的例子。例如，峰值转速（RPM）的低值和高值都对应着低价格和高价格。因此，我们无法使用峰值转速来可靠地预测价格值。
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_32.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_33.png)
 
-![](img/b96e852d2c06cc44a3dc35befb917b7b_34.png)
 
 ## 总结
 

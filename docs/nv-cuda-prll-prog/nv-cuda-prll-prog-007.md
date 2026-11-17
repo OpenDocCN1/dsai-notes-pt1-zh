@@ -10,7 +10,6 @@
 ## 上一节回顾
 在上一节中，我们介绍了内存层次结构、带宽以及**空间局部性**和**时间局部性**的概念。我们通过CPU上的例子看到，遵循内存的存储顺序（如行主序）进行访问可以带来显著的性能提升。
 
-![](img/df312d42a097bbad3d97c841f3ecfc46_2.png)
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_4.png)
 
@@ -22,11 +21,9 @@
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_9.png)
 
-![](img/df312d42a097bbad3d97c841f3ecfc46_10.png)
 
 ---
 
-![](img/df312d42a097bbad3d97c841f3ecfc46_12.png)
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_14.png)
 
@@ -42,7 +39,6 @@
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_20.png)
 
-![](img/df312d42a097bbad3d97c841f3ecfc46_22.png)
 
 这意味着，原本可能需要32次独立内存访问的操作，现在可能只需要1次或几次合并后的访问即可完成。这极大地减少了内存延迟，提升了内存带宽的利用率。
 
@@ -111,7 +107,6 @@ __global__ void initArray(int *A) {
 ![](img/df312d42a097bbad3d97c841f3ecfc46_54.png)
 
 1.  **完全合并访问**：线程束中所有线程访问连续且位于同一内存块内的地址。这是最理想的情况。
-    ![](img/df312d42a097bbad3d97c841f3ecfc46_2.png)
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_56.png)
 
@@ -154,19 +149,16 @@ for (int i = start; i < end; i++) {
 ```
 当`chunk_size`为32时，线程0访问元素0-31，线程1访问元素32-63...，彼此毫无重叠，导致完全非合并。
 
-![](img/df312d42a097bbad3d97c841f3ecfc46_68.png)
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_70.png)
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_72.png)
 
-![](img/df312d42a097bbad3d97c841f3ecfc46_74.png)
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_76.png)
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_78.png)
 
-![](img/df312d42a097bbad3d97c841f3ecfc46_79.png)
 
 ### 3. 部分合并访问
 ```c
@@ -233,7 +225,6 @@ StudentData students; // 一个结构体，其成员是多个数组
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_91.png)
 
-![](img/df312d42a097bbad3d97c841f3ecfc46_93.png)
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_95.png)
 
@@ -245,7 +236,6 @@ StudentData students; // 一个结构体，其成员是多个数组
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_101.png)
 
-![](img/df312d42a097bbad3d97c841f3ecfc46_103.png)
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_105.png)
 
@@ -270,7 +260,6 @@ cudaMalloc(&d_students, N * sizeof(Student));
 cudaMemcpy(d_students, h_students, N * sizeof(Student), cudaMemcpyHostToDevice);
 ```
 
-![](img/df312d42a097bbad3d97c841f3ecfc46_109.png)
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_111.png)
 
@@ -303,7 +292,6 @@ cudaMemcpy(d_marks, h_marks, N * sizeof(double), cudaMemcpyHostToDevice);
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_121.png)
 
-![](img/df312d42a097bbad3d97c841f3ecfc46_122.png)
 
 ---
 
@@ -318,7 +306,6 @@ cudaMemcpy(d_marks, h_marks, N * sizeof(double), cudaMemcpyHostToDevice);
     *   **AoS** 在CPU上利用局部性有优势，但在GPU上会导致跨步访问，破坏合并。
     *   **SoA** 是GPU编程的推荐模式，它能确保对同一属性的访问是连续的，从而实现完美的内存合并，带来显著的性能提升。
 
-![](img/df312d42a097bbad3d97c841f3ecfc46_128.png)
 
 ![](img/df312d42a097bbad3d97c841f3ecfc46_130.png)
 

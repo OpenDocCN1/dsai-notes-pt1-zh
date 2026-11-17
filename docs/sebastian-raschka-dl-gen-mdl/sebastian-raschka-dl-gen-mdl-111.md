@@ -57,7 +57,6 @@ loss = torch.sum((C - I)**2) # 忽略对角线缩放因子等细节
 
 实现上，只需将输出层的Softmax激活函数替换为Sigmoid函数即可。这对于应用卷积神经网络解决此类社会问题是一个有趣的方向。
 
-![](img/85f5c8f09bbf4f7a7cbf6cee465a6061_1.png)
 
 ---
 
@@ -77,13 +76,10 @@ loss = torch.sum((C - I)**2) # 忽略对角线缩放因子等细节
 ## 实用工具推荐 🛠️
 上一节我们探讨了前沿挑战，本节我们来介绍一些能提升当前工作效率的实用工具。
 
-![](img/85f5c8f09bbf4f7a7cbf6cee465a6061_5.png)
 
-![](img/85f5c8f09bbf4f7a7cbf6cee465a6061_7.png)
 
 以下是本周发现的几款有用工具：
 
-![](img/85f5c8f09bbf4f7a7cbf6cee465a6061_9.png)
 
 *   **CVAT**：一个开源的图像和视频标注工具，特别方便进行目标检测任务的标注。
 *   **PyTorch Profiler**：一个用于分析PyTorch代码性能、识别训练瓶颈的新工具。它可以与TensorBoard集成进行可视化。

@@ -24,7 +24,6 @@ XGBoost 作为常见的强大 Python 机器学习工具库，安装也比较简�
 
 ## 1.1 Python 与 IDE 环境设置
 
-![XGBoost 工具库建模应用详解; XGBoost 安装; 4-1](img/9a14857f36b0a0796da91fb2e07ce4e4.png)
 
 python 环境与 IDE 设置可以参考[ShowMeAI](http://www.showmeai.tech/)文章 [**图解 python | 安装与环境设置**](http://www.showmeai.tech/article-detail/65) 进行设置。
 
@@ -224,7 +223,6 @@ print('错误类为%f' % \
 bst.save_model('./model/0002.model') 
 ```
 
-![XGBoost 工具库建模应用详解; 不同建模方式; 内置建模方式–csv; 4-5](img/aaacdb61ec0d919b357d43228a5d222f.png)
 
 ```py
 [0]  eval-error:0.354167  train-error:0.194444
@@ -298,7 +296,6 @@ joblib.dump(xgb_classifier, './model/0003.model')
 
 在运行 XGBoost 之前，必须设置三种类型成熟：general parameters，booster parameters 和 task parameters：
 
-![XGBoost 工具库建模应用详解; 模型调参与高级功能; XGBoost 参数详解; 4-7](img/a8d674499c7c9705232ffc9e55801d39.png)
 
 *   **通用参数**：General parameters
 
@@ -312,7 +309,6 @@ joblib.dump(xgb_classifier, './model/0003.model')
 
 ### (1) 通用参数
 
-![XGBoost 工具库建模应用详解; 模型调参与高级功能; XGBoost 参数详解; 4-8](img/89a0230bc332cb3875f1b104ab393629.png)
 
 *   **booster [default=gbtree]**
 
@@ -336,7 +332,6 @@ Boosting 过程中用到的特征维数，设置为特征个数。XGBoost 会自
 
 ### (2) 树模型 booster 参数
 
-![XGBoost 工具库建模应用详解; 模型调参与高级功能; XGBoost 参数详解; 4-9](img/93c70969b8ea46f139d1a9e2bf07dafd.png)
 
 *   **eta [default=0.3]**
 
@@ -368,7 +363,6 @@ Boosting 过程中用到的特征维数，设置为特征个数。XGBoost 会自
 
 ### (3) 线性 Booster 参数
 
-![XGBoost 工具库建模应用详解; 模型调参与高级功能; XGBoost 参数详解; 4-10](img/157a34876f66e89d0ab8a05acb23468d.png)
 
 *   **lambda [default=0]**
 
@@ -384,7 +378,6 @@ L1 正则的惩罚系数
 
 ### (4) 任务参数
 
-![XGBoost 工具库建模应用详解; 模型调参与高级功能; XGBoost 参数详解; 4-11](img/4334a75419af97d884ec727f153ef35d.png)
 
 *   **objective [ default=reg:linear ]**
 
@@ -482,9 +475,7 @@ bst = xgb.train(param, dtrain, num_round, watchlist, logregobj, evalerror)
 xgb.cv(param, dtrain, num_round, nfold = 5, seed = 0, obj = logregobj, feval=evalerror) 
 ```
 
-![XGBoost 工具库建模应用详解; 模型调参与高级功能; 自定义损失函数与评估准则; 4-15](img/01464bd7dc1322c36f95850178228c24.png)
 
-![XGBoost 工具库建模应用详解; 模型调参与高级功能; 自定义损失函数与评估准则; 4-16](img/3b300deab4b8f78c99590f84ac16d02e.png)
 
 ```py
 使用自定义损失函数进行交叉验证
@@ -538,7 +529,6 @@ print('用前 1 颗树预测的错误率为 %f' % (np.sum((ypred1>0.5)!=label) /
 print('用前 9 颗树预测的错误率为 %f' % (np.sum((ypred2>0.5)!=label) /float(len(label)))) 
 ```
 
-![XGBoost 工具库建模应用详解; 模型调参与高级功能; 只用前 n 颗树预测; 4-17](img/9d295e37a407e750e332c1045803fa86.png)
 
 ```py
 [0]  eval-error:0.255208  train-error:0.196181
@@ -662,7 +652,6 @@ print(clf.best_score_)
 print(clf.best_params_) 
 ```
 
-![XGBoost 工具库建模应用详解; 模型调参与高级功能; 网格搜索调参; 4-18](img/c0157ed46e439f31d3f256111f8571a7.png)
 
 ```py
 参数最优化：
@@ -692,7 +681,6 @@ clf.fit(X_train, y_train, early_stopping_rounds=10, eval_metric="auc",
         eval_set=[(X_val, y_val)]) 
 ```
 
-![XGBoost 工具库建模应用详解; 模型调参与高级功能; early stopping 早停止; 4-19](img/8f5598fc6e26936012e46c6fc399a5c2.png)
 
 ```py
 [0]  validation_0-auc:0.999497

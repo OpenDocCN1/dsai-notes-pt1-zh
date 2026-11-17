@@ -2,7 +2,6 @@
 
 ![](img/da0d6f0c6aa59e2544613bcd771d300a_0.png)
 
-![](img/da0d6f0c6aa59e2544613bcd771d300a_2.png)
 
 ![](img/da0d6f0c6aa59e2544613bcd771d300a_3.png)
 
@@ -59,7 +58,6 @@ similarity_1_3 = np.dot(vec1, vec3)
 
 以下是创建和保存向量存储的步骤：
 
-![](img/da0d6f0c6aa59e2544613bcd771d300a_5.png)
 
 ```python
 # 创建并持久化向量存储
@@ -74,11 +72,8 @@ vectorstore = Chroma.from_documents(
 print(vectorstore._collection.count()) # 应输出209，与块数量一致
 ```
 
-![](img/da0d6f0c6aa59e2544613bcd771d300a_7.png)
 
-![](img/da0d6f0c6aa59e2544613bcd771d300a_8.png)
 
-![](img/da0d6f0c6aa59e2544613bcd771d300a_10.png)
 
 ## 进行语义搜索
 
@@ -98,18 +93,15 @@ print(docs[0].page_content) # 查看最相关块的内容
 ```
 搜索结果显示，最相关的文本块确实包含了课程助教的邮箱地址：`cs229qa@cs.stanford.edu`。这证明基本的语义搜索是有效的。
 
-![](img/da0d6f0c6aa59e2544613bcd771d300a_16.png)
 
 最后，记得持久化向量数据库以供后续课程使用：
 ```python
 vectorstore.persist()
 ```
 
-![](img/da0d6f0c6aa59e2544613bcd771d300a_18.png)
 
 ## 当前方法的局限性
 
-![](img/da0d6f0c6aa59e2544613bcd771d300a_20.png)
 
 虽然基本搜索效果不错，但该方法并不完美。我们接下来探讨几个它可能失效的边缘情况。
 
@@ -119,7 +111,6 @@ vectorstore.persist()
 **2. 结构化信息缺失问题**
 另一个失效情况出现在询问需要结合结构化信息的查询时。例如，问题：“在第三讲中，他们关于回归说了什么？”直觉上，我们希望所有返回的文档都来自第三讲。
 
-![](img/da0d6f0c6aa59e2544613bcd771d300a_22.png)
 
 但当我们检查返回文档的元数据时，会发现结果混合了第一讲、第二讲和第三讲的内容。这是因为当前的语义搜索主要基于整个句子的嵌入相似度，它捕捉到了“回归”这个关键词，但未能有效捕捉“仅限第三讲”这个结构化过滤条件。
 

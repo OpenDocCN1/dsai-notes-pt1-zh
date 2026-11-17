@@ -8,7 +8,6 @@ So clustering will be used for classification， for anomaly detection， for cu
 
 
 
-![](img/5d42519d78713e008dc9b0fda506a465_1.png)
 
 So a common use case to start is classification， as we mentioned， for data that is not labeled。
 
@@ -22,9 +21,7 @@ And examples of this used for unlabeled data include finding groupings that are 
 
 
 
-![](img/5d42519d78713e008dc9b0fda506a465_3.png)
 
-![](img/5d42519d78713e008dc9b0fda506a465_4.png)
 
 Now， another common use case for cluster will be anomaly detection。
 
@@ -40,9 +37,7 @@ Imagine that we are working with credit card transactions， and we have a certa
 
 😊。
 
-![](img/5d42519d78713e008dc9b0fda506a465_6.png)
 
-![](img/5d42519d78713e008dc9b0fda506a465_7.png)
 
 Another common use case will be customer segmentation。 So think of finding， for example。
 
@@ -60,7 +55,6 @@ Or another common segmentation is by demographics and that level of engagement�
 
 
 
-![](img/5d42519d78713e008dc9b0fda506a465_9.png)
 
 And then another common use case， or final common use case will be to help improve supervised learning。
 
@@ -76,7 +70,6 @@ And perhaps you'll be able to improve your performance if you look at each one o
 
 😊。
 
-![](img/5d42519d78713e008dc9b0fda506a465_11.png)
 
 Now， again， the other type of unsupervised learning that we discussed is going to be dimension reduction。
 
@@ -94,7 +87,6 @@ And then with that model that we fit。We can then take high resolution images t
 
 
 
-![](img/5d42519d78713e008dc9b0fda506a465_13.png)
 
 So common reduction use cases here in image processing。
 

@@ -34,13 +34,11 @@ And just to highlight the main takeaway from all this is that GPUs are great at 
 
 And we're going to look into why right now。
 
-![](img/cd7e65caa7c5ee9a7da333ffd04dc696_1.png)
 
 So the CPU is only made of a couple dozen cores， where cores are the powerless CPU to do any small calculations。
 
 
 
-![](img/cd7e65caa7c5ee9a7da333ffd04dc696_3.png)
 
 Whereas JeU， on the other hand。Are made of hundreds of maybe weaker cores。
 
@@ -48,9 +46,7 @@ Whereas JeU， on the other hand。Are made of hundreds of maybe weaker cores。
 
 
 
-![](img/cd7e65caa7c5ee9a7da333ffd04dc696_5.png)
 
-![](img/cd7e65caa7c5ee9a7da333ffd04dc696_6.png)
 
 So looking at the CPU and the breakdown， we have the ALU or the aritic arithmetic logic unit。
 
@@ -62,7 +58,6 @@ We have here the cache， which serves as high speed memory where instructions c
 
 And then we have the DRA。
 
-![](img/cd7e65caa7c5ee9a7da333ffd04dc696_8.png)
 
 Which is for more longer term memory。And then if we look at this breakdown for the GPUs and all the colors should fit accordingly。
 
@@ -72,7 +67,6 @@ We see that for the GPUs， we spread out the control and cache and they're much
 
 
 
-![](img/cd7e65caa7c5ee9a7da333ffd04dc696_10.png)
 
 Now GPUs are specialized processor great for specific tasks such as gaming and deep learning。CPUs。
 

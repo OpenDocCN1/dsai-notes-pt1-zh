@@ -132,7 +132,6 @@ consistency_result = logical_consistency_feedback.run(trace=full_execution_trace
 以下是注册代理并添加GPA评估的代码：
 
 
-![](img/234228cc40cc6c20e15a8007d86d942f_1.png)
 
 ```python
 # 构建代理图
@@ -170,11 +169,8 @@ for query in test_queries:
 
 ## 总结
 
-![](img/234228cc40cc6c20e15a8007d86d942f_3.png)
 
-![](img/234228cc40cc6c20e15a8007d86d942f_4.png)
 
-![](img/234228cc40cc6c20e15a8007d86d942f_5.png)
 
 本节课中，我们一起学习了如何衡量数据代理的“目标-计划-行动”协调性。我们介绍了四种核心评估方法：
 1.  **计划质量**：评估计划本身对目标的达成度。
@@ -182,7 +178,6 @@ for query in test_queries:
 3.  **执行效率**：评估执行轨迹是否高效、无冗余。
 4.  **逻辑一致性**：评估整个推理和执行过程中是否存在逻辑矛盾。
 
-![](img/234228cc40cc6c20e15a8007d86d942f_7.png)
 
 ![](img/234228cc40cc6c20e15a8007d86d942f_8.png)
 

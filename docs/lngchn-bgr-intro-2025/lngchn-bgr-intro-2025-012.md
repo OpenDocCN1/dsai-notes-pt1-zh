@@ -51,9 +51,7 @@ template_string = “写一封语气为 {tone} 的邮件给 {company} 公司，�
 
 下一步是将这个提示字符串转换为LangChain能够理解的格式。为此，我们需要导入`ChatPromptTemplate`类。
 
-![](img/90964bc4098bcadd2ea26683a0f23a7b_1.png)
 
-![](img/90964bc4098bcadd2ea26683a0f23a7b_2.png)
 
 ```python
 # 步骤2：导入ChatPromptTemplate并转换模板

@@ -17,7 +17,6 @@
 以下是 `reason` 节点的关键输出：
 *   **AgentAction**：这是 `reason` 节点的主要输出，它建议使用特定的工具，并附上相应的工具输入参数。
 
-![](img/0d45b5f4f6e9d79d242755fd685876d5_3.png)
 
 ![](img/0d45b5f4f6e9d79d242755fd685876d5_1.png)
 
@@ -31,7 +30,6 @@
 
 ![](img/0d45b5f4f6e9d79d242755fd685876d5_6.png)
 
-![](img/0d45b5f4f6e9d79d242755fd685876d5_5.png)
 
 ![](img/0d45b5f4f6e9d79d242755fd685876d5_7.png)
 
@@ -42,7 +40,6 @@
 2.  获取工具执行后的输出。
 3.  将一个元组（Tuple）追加到状态中的 `intermediate_steps` 列表里。
 
-![](img/0d45b5f4f6e9d79d242755fd685876d5_9.png)
 
 ![](img/0d45b5f4f6e9d79d242755fd685876d5_6.png)
 
@@ -60,7 +57,6 @@
 
 在追踪记录的最后部分，我们可以看到 `should_continue` 方法收到了 `AgentFinish`，随后控制流导向终点（`END`），整个图执行完毕。
 
-![](img/0d45b5f4f6e9d79d242755fd685876d5_11.png)
 
 ![](img/0d45b5f4f6e9d79d242755fd685876d5_11.png)
 
@@ -72,6 +68,5 @@
 
 本节内容就到这里。在下一节中，我们将探索LangGraph的另一个重要方面——可能是持久化（Persistence）或是检索增强生成（RAG）应用，我对接下来的内容充满期待，我们下节再见。
 
-![](img/0d45b5f4f6e9d79d242755fd685876d5_13.png)
 
 ![](img/0d45b5f4f6e9d79d242755fd685876d5_13.png)

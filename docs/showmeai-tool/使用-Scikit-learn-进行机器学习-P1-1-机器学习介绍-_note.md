@@ -1,6 +1,5 @@
 # 机器学习入门与Scikit-learn基础，P1：机器学习介绍 🧠
 
-![](img/cca75afc4da139e8d5dce602f436c338_0.png)
 
 ![](img/cca75afc4da139e8d5dce602f436c338_1.png)
 

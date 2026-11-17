@@ -4,17 +4,11 @@
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_2.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_4.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_6.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_8.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_10.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_12.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_13.png)
 
 ## 概述
 
@@ -36,19 +30,15 @@
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_24.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_25.png)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_26.png)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_28.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_29.png)
 
 上一节我们结束了直播。本节中，我们首先需要将分叉的代码库整合到主仓库中，以便统一管理。
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_31.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_33.png)
 
 以下是整合步骤：
 
@@ -66,7 +56,6 @@
 
 完成整合后，项目结构更加清晰，便于后续开发。
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_41.png)
 
 ---
 
@@ -91,9 +80,7 @@
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_45.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_47.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_49.png)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_51.png)
 
@@ -105,9 +92,7 @@
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_55.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_57.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_59.png)
 
 我们使用以下流程：
 
@@ -135,13 +120,9 @@ display_raw_transcript(transcript_text)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_61.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_63.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_65.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_67.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_69.png)
 
 1.  **结构识别**：JLPT 听力测试通常包含多个部分（如 `問題1`、`問題2`），每部分格式可能不同（有图题、无图题、长对话题）。
 2.  **信息提取**：需要提取每个问题的“场景介绍”、“对话内容”和“问题本身”。对于有图题，还需处理图像选项描述。
@@ -172,49 +153,31 @@ prompt_template = """
 
 通过多次迭代和优化提示词（例如，指定忽略例题、区分不同题型、要求不翻译日语文本等），我们最终能将转录稿解析为结构化的 JSON 或字典格式，并保存到本地文件（如 `data/questions/section_2_questions.txt`）。
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_79.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_81.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_83.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_85.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_86.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_88.png)
 
 这是构建知识库最关键且最耗时的一步，直接决定了后续生成问题的质量。
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_90.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_92.png)
 
 ---
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_94.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_96.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_98.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_99.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_101.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_103.png)
 
 ## 构建向量数据库（RAG）
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_105.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_107.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_109.png)
 
 获得结构化问题数据后，我们需要将其存储起来，以便基于语义搜索来生成新的相关练习题。本节我们使用 ChromaDB 构建向量数据库。
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_111.png)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_113.png)
 
@@ -227,7 +190,6 @@ prompt_template = """
 
 核心的向量存储与搜索代码如下：
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_115.png)
 
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_117.png)
@@ -245,17 +207,12 @@ similar_questions = vector_store.search_similar_questions(
 )
 ```
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_119.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_121.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_123.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_125.png)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_127.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_129.png)
 
 将向量数据库与数据解析逻辑解耦，使得系统更灵活。同时，注意将向量数据库文件（如 `*.bin`）添加到 `.gitignore` 中，避免提交大文件。
 
@@ -277,19 +234,15 @@ similar_questions = vector_store.search_similar_questions(
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_131.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_133.png)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_135.png)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_137.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_139.png)
 
 后端的生成函数核心逻辑如下：
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_141.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_143.png)
 
 ```python
 def generate_new_question(topic: str, section: str = "section_2") -> dict:
@@ -326,13 +279,11 @@ def generate_new_question(topic: str, section: str = "section_2") -> dict:
 
 ## 挑战与未来方向：音频生成
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_151.png)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_153.png)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_155.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_157.png)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_159.png)
 
@@ -340,7 +291,6 @@ def generate_new_question(topic: str, section: str = "section_2") -> dict:
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_161.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_163.png)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_165.png)
 
@@ -361,7 +311,6 @@ def generate_new_question(topic: str, section: str = "section_2") -> dict:
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_171.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_173.png)
 
 由于实现复杂度较高，且涉及额外服务配置，我们将在后续课程或项目中深入探讨。
 
@@ -383,7 +332,6 @@ def generate_new_question(topic: str, section: str = "section_2") -> dict:
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_185.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_187.png)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_189.png)
 
@@ -393,7 +341,6 @@ def generate_new_question(topic: str, section: str = "section_2") -> dict:
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_193.png)
 
-![](img/f725e4b8fde0f83a900447c51f2d804c_194.png)
 
 ![](img/f725e4b8fde0f83a900447c51f2d804c_196.png)
 

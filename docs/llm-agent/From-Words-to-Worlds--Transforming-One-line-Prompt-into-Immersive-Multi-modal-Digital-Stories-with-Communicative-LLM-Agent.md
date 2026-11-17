@@ -150,7 +150,6 @@ LLM 代理系统广泛应用于复杂的生成任务，如游戏世界叙事[[53
 
 在我们的研究中，我们使用了装配框架CC2D[[56](https://arxiv.org/html/2406.10478v2#bib.bib56)]来构建和动画化人类虚拟形象。为了生成角色不同部分的图像资产，例如裤子和衣物，我们将外观描述输入到文本到图像生成模型[[5](https://arxiv.org/html/2406.10478v2#bib.bib5)]中。这些资产是通过补充提示——例如“详细的、卡通风格的、8k”—来增强初步描述生成的。由于基于扩散的生成模型难以直接生成有意义的2D纹理，生成过程经历了复合与分解的步骤。首先，我们将长袍和裤子的2D纹理合成成有意义的资产形状（见图[5](https://arxiv.org/html/2406.10478v2#S3.F5 "Figure 5 ‣ 3.3 Asset generation teams ‣ 3 Method ‣ From Words to Worlds: Transforming One-line Prompt into Immersive Multi-modal Digital Stories with Communicative LLM Agent")），然后使用组装的蒙版生成资产。生成完成后，我们将整个资产与其纹理蒙版分解，并将其整合到CC2D框架中（见图[6](https://arxiv.org/html/2406.10478v2#S3.F6 "Figure 6 ‣ 3.3 Asset generation teams ‣ 3 Method ‣ From Words to Worlds: Transforming One-line Prompt into Immersive Multi-modal Digital Stories with Communicative LLM Agent")）。纹理在运行时加载（见图[7](https://arxiv.org/html/2406.10478v2#S3.F7 "Figure 7 ‣ 3.3 Asset generation teams ‣ 3 Method ‣ From Words to Worlds: Transforming One-line Prompt into Immersive Multi-modal Digital Stories with Communicative LLM Agent")）。
 
-![请参见标题](img/f30f72e4d1dec7a6b374027bec32306d.png)  ![请参见标题](img/58d1eebd8ef1167e5e1d1a110736541d.png)  ![请参见标题](img/8c717046926d1656972e8f8a403ea79a.png)
 
 图5：角色裤子资产示例
 
@@ -226,23 +225,18 @@ LLM 代理系统广泛应用于复杂的生成任务，如游戏世界叙事[[53
 
     替换：通过用人类创作的结果替换生成的结果，人类创作者可以对结果进行最大控制。然而，替换下游资产可能会导致一致性问题，因为框架无法反映它们。
 
-![请参阅说明](img/f7e0c923b546ffd8612e9daf7bd46dc9.png)
 
 (a) 一个名叫蒂姆的好奇男孩和他那位冒险的朋友萨姆决定探索他们家附近的森林，尽管那里流传着它闹鬼的传闻。
 
-![请参阅说明](img/85844a0b0ed4001d14a9c55d8dec7cce.png)
 
 (b) 当他们深入森林时，发现了刻在树上的神秘信息。他们决定解读这些信息，认为它们可能指向宝藏。
 
-![请参阅说明](img/35ac43a7d20b02539dae3de24d55e3a4.png)
 
 (c) 他们终于解读出信息，指引他们找到了一棵特定的树。他们在树根下发现了一个古老、风化的盒子。
 
-![请参阅说明](img/04f33a67452e345685a2d57551ec4581.png)
 
 (d) 他们打开盒子，发现一张数十年前的镇地图，地图上标记了一条通往他们家的路线。
 
-![请参阅说明](img/5660c3184f2e9fab4415899b84be31c6.png)
 
 (e) 他们沿着地图上的路线前进，意识到真正的宝藏是他们所经历的旅程和所创造的回忆。最终，他们带着更深的友谊回到了萨姆的家。
 
@@ -274,13 +268,11 @@ StoryAgent可以将详细的场景信息融入到数字故事讲述中，创造�
 
 首先，互动发生在语义层面。当故事展开时，人物会在对话中提及场景中的物体，同时保持故事的一致性。在图[11](https://arxiv.org/html/2406.10478v2#S4.F11 "Figure 11 ‣ 4.2 Scene interactivity ‣ 4 Storytelling Experience ‣ From Words to Worlds: Transforming One-line Prompt into Immersive Multi-modal Digital Stories with Communicative LLM Agent")中，人物正在谈论他们的童年记忆，同时背景中升起了一座篱笆作为参照。
 
-![参见说明](img/d39ecdd3bdd4e38a49d1aae6b4532f0c.png)  ![参见说明](img/7862ad181d17366a47c71aef1c456fad.png)
 
 图 11：带有场景理解的人物对话。（左）“看看我们的房子，Sam。它不是我们期望的宝藏，但它是我们今天冒险的象征。”（右）“你说得对，Tim。还记得我们以前坐在那个篱笆上，梦想着找到宝藏吗？”
 
 互动性还通过对话、角色手势和摄影技术之间的同步互动得到了增强。当角色在场景中讨论某个物体时，镜头不仅会转移焦点并放大该物体以便详细展示，角色也会将视线和手势指向该物体。这种协调使得数字叙事更加易于理解且富有吸引力，尤其适合儿童，正如图[12](https://arxiv.org/html/2406.10478v2#S4.F12 "图 12 ‣ 4.2 场景互动性 ‣ 4 叙事体验 ‣ 从文字到世界：通过沟通性LLM代理将单行提示转化为沉浸式多模态数字故事")中所述。
 
-![参见说明](img/c2e8476b2a685ac0e1f578fc7ec3e18c.png) ![参见说明](img/f52b5690eba82ab0bf0ee6ea5b837f66.png)
 
 图 12：镜头拍摄和角色手势与场景理解。（左）镜头转移，聚焦于树木的同时，角色指着它们进行讨论。（右）镜头放大角色的脸部，同时叙述者描述他的眼睛。
 

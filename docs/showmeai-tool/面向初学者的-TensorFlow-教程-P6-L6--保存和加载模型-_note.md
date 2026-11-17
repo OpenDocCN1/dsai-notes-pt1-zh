@@ -1,6 +1,5 @@
 # TensorFlow 初学者教程 P6：L6 - 保存和加载模型 🗂️
 
-![](img/9b9ffc459a3e832c981ed4cc62448cda_0.png)
 
 ![](img/9b9ffc459a3e832c981ed4cc62448cda_0.png)
 
@@ -144,6 +143,5 @@ new_model_from_json.compile(optimizer='adam',
 
 根据你的具体需求（如部署、继续训练、分享架构等），可以选择最合适的方法。TensorFlow 的 API 使得这些操作变得非常简便。
 
-![](img/9b9ffc459a3e832c981ed4cc62448cda_2.png)
 
 ![](img/9b9ffc459a3e832c981ed4cc62448cda_2.png)

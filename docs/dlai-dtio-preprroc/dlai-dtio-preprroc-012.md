@@ -16,7 +16,6 @@
 
 一种简单的方法是检查“官方语言”是否完全等于“English”。让我们先尝试这种方法。
 
-![](img/39bba195c7c7eac7f85144117fbda7ad_1.png)
 
 ```python
 df['English'] = df['official_language'] == 'English'

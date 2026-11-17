@@ -6,7 +6,6 @@
 
 ![](img/66cb8c6da524c4d0b6faf63feb7f4744_1.png)
 
-![](img/66cb8c6da524c4d0b6faf63feb7f4744_2.png)
 
 ## 什么是残差分析？
 

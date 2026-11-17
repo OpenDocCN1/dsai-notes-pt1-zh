@@ -18,19 +18,16 @@ But there are actually several variants to the step of updating the weights that
 
 
 
-![](img/eb0755172bf82d68290247cfd9023718_1.png)
 
 And these tweaks to the updating step will all be built around improving further and further from this original formulation that we see here。
 
 
 
-![](img/eb0755172bf82d68290247cfd9023718_3.png)
 
 And these different methods of updating the weights or optimizing these weights are going to be called optimizers。
 
 
 
-![](img/eb0755172bf82d68290247cfd9023718_5.png)
 
 So let's start with the concept of momentum。With the regular gradient descent。
 
@@ -38,7 +35,6 @@ So let's start with the concept of momentum。With the regular gradient descent�
 
 
 
-![](img/eb0755172bf82d68290247cfd9023718_7.png)
 
 Now with momentum， you're going to smooth out this process。
 
@@ -46,7 +42,6 @@ And you do this by taking somewhat of a running average of each of the steps and
 
 
 
-![](img/eb0755172bf82d68290247cfd9023718_9.png)
 
 So if we look at our formula， we see that rather than just updating our weights with that gradient。
 
@@ -82,9 +77,7 @@ And when we choose our n and our alpha in practice。
 
  you'll probably want to use an alpha around 0。1。
 
-![](img/eb0755172bf82d68290247cfd9023718_11.png)
 
-![](img/eb0755172bf82d68290247cfd9023718_12.png)
 
 So just to show this in terms of a picture。For gradientd descent。
 
@@ -92,7 +85,6 @@ So just to show this in terms of a picture。For gradientd descent。
 
 
 
-![](img/eb0755172bf82d68290247cfd9023718_14.png)
 
 Now with momentum。We tend to smooth out those steps。The fluctuations aren't going to be as dramatic。
 
@@ -104,7 +96,6 @@ But the momentum will shrink at this point and you should be able to come back t
 
 
 
-![](img/eb0755172bf82d68290247cfd9023718_16.png)
 
 So the idea with Nera momentum， which will build off of the momentum we just learned。
 
@@ -112,9 +103,7 @@ So the idea with Nera momentum， which will build off of the momentum we just l
 
  and they'll do so by looking one step ahead。
 
-![](img/eb0755172bf82d68290247cfd9023718_18.png)
 
-![](img/eb0755172bf82d68290247cfd9023718_19.png)
 
 So now rather than just taking the momentum and taking into account the gradient at the current step。
 
@@ -130,7 +119,6 @@ And this will work because generally speaking， the momentum vector will be poi
 
 
 
-![](img/eb0755172bf82d68290247cfd9023718_21.png)
 
 So if we think of standard momentum steps， we see that by using the past steps。
 

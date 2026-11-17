@@ -6,7 +6,6 @@ Thinking about that pixel location in two dimensions。
 
 
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_1.png)
 
 And these different numbers in that same location。Are generally going to be referred to as the numbers for the different channels。
 
@@ -20,13 +19,11 @@ And then you have a little bit less commonly CMYK or cion magenta。
 
 
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_3.png)
 
 Now， the number of channels that you have within your image is referred to as the depth of that input image。
 
 
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_5.png)
 
 And the filter itself will have a depth the same size as the number of input channels。
 
@@ -34,7 +31,6 @@ So your filter will be as deep if youre working with RGB as there are channels�
 
  So there would be a depth of three。
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_7.png)
 
 So an example of this is if you're working with a5 by5 kernel on an RGB image。Then that kernel。
 
@@ -42,11 +38,9 @@ Well how many weights？It'll have five by five by three because it'll be for ea
 
 
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_9.png)
 
 Now， the output from the layer。
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_11.png)
 
 We'll also have a death。So the way that that works is the network typically train many different kernels。
 
@@ -58,9 +52,7 @@ That's still going to output a single number。 So each kernel outputs a single 
 
 
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_13.png)
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_14.png)
 
 But。You can have many kernels， so if you add 10 kernels in a layer。
 
@@ -72,7 +64,6 @@ And that's because we don't want to be confined to only working with a single ke
 
 
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_16.png)
 
 So how is that going to work？So if you look all the way to the left， top left。
 
@@ -118,7 +109,6 @@ But the idea is that the number of filters you have will be the depth of the nex
 
 
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_18.png)
 
 So now I want to introduce another concept that's important in convolutional neural nets。
 
@@ -132,7 +122,6 @@ Though there are different types of pooling operations。
 
  whatever it is。
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_20.png)
 
 So speaking of the different types of pooling， we have max pooling。
 
@@ -142,7 +131,6 @@ That pooling will represent the maximum for that patch。
 
 
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_22.png)
 
 So an example here is we're using two by two maxpo and we take our original image that's four by four。
 
@@ -152,7 +140,6 @@ And we get the max value within each one of those scarces to reduce the size of 
 
 
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_24.png)
 
 And then the average pool is self explanatoryates in the name。
 
@@ -164,15 +151,12 @@ And then the average pool is self explanatoryates in the name。
 
 
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_26.png)
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_27.png)
 
 I would say taking the max value is generally much more common practice in regards to what you'll be using when you actually pull together your data。
 
 
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_29.png)
 
 So just to recap。In this section， we gave you an idea of what convolutional neural networks are。
 
@@ -196,6 +180,5 @@ Now that closes out our discussion here on convolutional neural nets。And in th
 
  All right， I'll see you there。😊。
 
-![](img/b29e6230c0f84896bb2dbfa50b2c7381_31.png)
 
 ![](img/b29e6230c0f84896bb2dbfa50b2c7381_32.png)

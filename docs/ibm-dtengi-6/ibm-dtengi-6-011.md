@@ -2,11 +2,9 @@
 
 在本节课中，我们将学习Linux系统中用于管理文件和目录的核心命令。你将掌握如何创建、删除、复制、移动文件和目录，以及如何管理文件权限。
 
-![](img/94dc9b40d5a3082c8e33fa9dbed9f333_1.png)
 
 ---
 
-![](img/94dc9b40d5a3082c8e33fa9dbed9f333_3.png)
 
 ## 🗂️ 创建和删除目录
 
@@ -20,7 +18,6 @@
 
 ---
 
-![](img/94dc9b40d5a3082c8e33fa9dbed9f333_5.png)
 
 ## 📄 创建和更新文件
 
@@ -30,7 +27,6 @@
 
 ---
 
-![](img/94dc9b40d5a3082c8e33fa9dbed9f333_7.png)
 
 ## 📋 复制文件和目录
 
@@ -40,11 +36,9 @@
 
 接下来，你可以使用左侧的语法创建一个名为 `docs_copy` 的 `documents` 文件夹副本。正如预期的那样，你现在有了一个 `docs_copy` 文件夹，其内容与原始的 `documents` 文件夹相同。
 
-![](img/94dc9b40d5a3082c8e33fa9dbed9f333_9.png)
 
 ---
 
-![](img/94dc9b40d5a3082c8e33fa9dbed9f333_11.png)
 
 ## 🚚 移动文件和目录
 
@@ -56,11 +50,9 @@
 
 ---
 
-![](img/94dc9b40d5a3082c8e33fa9dbed9f333_13.png)
 
 ## 🔐 管理文件权限
 
-![](img/94dc9b40d5a3082c8e33fa9dbed9f333_15.png)
 
 `chmod` 代表 “change mode”，用于更改文件的读、写和执行权限。假设你的当前目录中有一个名为 `my_script.sh` 的 Shell 脚本文件，其内容为 `echo "Learning Linux is fun"`。输入 `ls -l my_script.sh` 显示你的 Shell 脚本具有读和写权限（由 `r` 和 `w` 字符表示），但如果你尝试执行该文件，你会得到一个 “permission denied” 错误。
 
@@ -70,7 +62,6 @@
 
 ## 📝 总结
 
-![](img/94dc9b40d5a3082c8e33fa9dbed9f333_17.png)
 
 本节课中，我们一起学习了以下核心的Linux文件和目录管理命令：
 

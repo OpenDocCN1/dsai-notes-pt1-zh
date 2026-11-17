@@ -1,10 +1,8 @@
 # 004：图像理解与推理 🖼️
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_0.png)
 
 在本节课中，我们将学习如何使用 Llama 4 进行图像理解与推理。我们将通过多个实际案例，从识别图像中的物体到根据界面截图生成代码，全面探索 Llama 4 的多模态能力。
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_2.png)
 
 ## 概述：Llama 4 的多模态能力
 
@@ -31,11 +29,9 @@ Llama 4、Sc 和 Maverick 模型被设计为能够同时处理语言和视觉输
 
 ![](img/a3d50cfda5d1d3c8c23a057306ee3e61_5.png)
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_6.png)
 
 大多数推理服务提供商（如 Together AI）通常期望图像数据以 Base64 字符串的形式嵌入，而不是直接放在请求负载中。因此，我们使用一个辅助函数来获取图像路径并返回其 Base64 编码。
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_7.png)
 
 ```python
 # 示例：将图像转换为 Base64
@@ -74,34 +70,24 @@ def image_to_base64(image_path):
 
 这是一个 PDF 文件，其中包含我们想要提问的表格。为了将 PDF 转换为文本，我们可以使用一个辅助函数，它接收文件并提取返回其文本内容。让我们将 PDF 文件传递给 `pdf_to_text` 函数以获取其文本。
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_13.png)
 
 让我们查看报告中这个表格转换后的文本。
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_15.png)
 
 我们可以在文本中搜索“第四季度和2024全年财务”，定位到相关段落。
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_17.png)
 
 这就是包含表格的文本。
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_19.png)
 
 现在，让我们使用报告文本来询问 Llama 关于 2024 年运营利润率的问题。得到的回答是：“2024年的运营利润率为42%”，这是正确的。
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_13.png)
 
 现在，让我们使用保存为图像的表格来重复这个操作。
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_15.png)
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_17.png)
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_21.png)
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_22.png)
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_19.png)
 
 我们已将其保存在这个文件中。这就是图像。我们可以将图像转换为 Base64，并将其与提示词一起传递给 Llama 4。得到的回答同样是“42%”，与使用报告文本得到的结果一致。
 
@@ -109,13 +95,10 @@ def image_to_base64(image_path):
 
 ## 应用三：从截图生成用户界面代码 💻
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_21.png)
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_22.png)
 
 现在，让我们使用 Llama 根据界面图像来编写代码。为此，我们将从 Meta 网站的一个视频中截取这一帧画面，并使用 Llama 4 为其生成代码。
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_24.png)
 ![](img/a3d50cfda5d1d3c8c23a057306ee3e61_25.png)
 
 这是该截图的图像。首先，让我们提一个问题，看看 Llama 是否理解这张图像：“如果我想改变图像中的温度，应该点击哪里？”温度是这里的滑块，当前设置为 0.6。这是 Llama 的回答：“要更改图像中的温度，您应该点击温度旁边的滑块。”并且也给出了当前值。很好。
@@ -126,9 +109,7 @@ def image_to_base64(image_path):
 
 我们提示它：“编写一个使用 Gradio 实现图像中聊天机器人用户界面的 Python 脚本。”
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_24.png)
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_25.png)
 
 这是模型的回复，包含了需要安装的指令以及最终的 Python 代码。
 
@@ -138,27 +119,20 @@ def image_to_base64(image_path):
 
 ![](img/a3d50cfda5d1d3c8c23a057306ee3e61_27.png)
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_31.png)
 
 运行后，我们得到了这个界面，所有滑块都已实现，甚至包括可以输入消息并与之交互的聊天框。请注意，这只是我们要求 Llama 实现的界面，并不包含后期需要添加的、使其完全工作的所有功能。
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_29.png)
 
 ## 应用四：解决数学问题 ➗
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_31.png)
 
 现在，让我们使用 Llama 解决一个数学问题。
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_33.png)
 
 这是我们想要解决的问题。要解决它，Llama 需要理解问题及其解法。这是我们的提示词：“回答图像中的问题。”
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_33.png)
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_35.png)
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_35.png)
 
 我们将 Base64 编码的数学图像与提示词一起传递给 Llama。这是回复。Llama 给出了解决这个问题的所有步骤，最终计算出的答案是 40，这是正确的。
 
@@ -183,7 +157,6 @@ def image_to_base64(image_path):
 
 这些实践展示了 Llama 4 强大的多模态理解能力，为构建智能视觉应用奠定了基础。在下一节课中，我们将深入探讨 Llama 4 的提示工程与格式化。
 
-![](img/a3d50cfda5d1d3c8c23a057306ee3e61_37.png)
 
 ![](img/a3d50cfda5d1d3c8c23a057306ee3e61_37.png)
 

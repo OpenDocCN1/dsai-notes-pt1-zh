@@ -1,8 +1,6 @@
 # 课程一：ChatGLM与LangChain简介及本地知识库问答原理 🧠
 
-![](img/9e6ab9221bbd27ed8b9032e28e354e9b_1.png)
 
-![](img/9e6ab9221bbd27ed8b9032e28e354e9b_3.png)
 
 在本节课中，我们将学习ChatGLM与LangChain的基本概念，并深入探讨基于本地知识库进行智能问答的核心原理与实践流程。
 
@@ -83,19 +81,14 @@ LangChain适用于多种场景，例如：
 **5. 生成答案**
 将构建好的提示词发送给语言模型，获得基于文档内容的回答。
 
-![](img/9e6ab9221bbd27ed8b9032e28e354e9b_9.png)
 
 以上是基于单一文件的流程。对于**本地知识库**，我们需要处理多个文档。其核心原理是构建一个**向量数据库**。
 
-![](img/9e6ab9221bbd27ed8b9032e28e354e9b_11.png)
 
-![](img/9e6ab9221bbd27ed8b9032e28e354e9b_12.png)
 
-![](img/9e6ab9221bbd27ed8b9032e28e354e9b_13.png)
 
 ![](img/9e6ab9221bbd27ed8b9032e28e354e9b_15.png)
 
-![](img/9e6ab9221bbd27ed8b9032e28e354e9b_17.png)
 
 ![](img/9e6ab9221bbd27ed8b9032e28e354e9b_19.png)
 
@@ -103,7 +96,6 @@ LangChain适用于多种场景，例如：
 
 ![](img/9e6ab9221bbd27ed8b9032e28e354e9b_21.png)
 
-![](img/9e6ab9221bbd27ed8b9032e28e354e9b_22.png)
 
 ```
 1. 加载本地多个文件 -> 2. 文本拆分 -> 3. 段落向量化 -> 4. 存储到向量数据库

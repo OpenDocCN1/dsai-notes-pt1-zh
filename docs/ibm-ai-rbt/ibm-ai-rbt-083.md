@@ -1,6 +1,5 @@
 # 083：简单API 第1部分 🚀
 
-![](img/f75816e32539b63ac59bf25994edd58d_0.png)
 
 在本节课中，我们将学习应用程序接口，简称API。我们将探讨API是什么、API库、REST API（包括请求和响应），并通过一个使用Pycoin Gecko的实例来加深理解。
 
@@ -10,25 +9,17 @@ API让两个软件组件能够相互通信。例如，你有一个程序、一�
 
 Pandas库实际上就是一组软件组件，其中许多甚至不是用Python编写的。你有一些数据和一组软件组件，通过Pandas API与其他软件组件通信来处理数据。
 
-![](img/f75816e32539b63ac59bf25994edd58d_2.png)
 
 ## API库示例：Pandas 📊
 
-![](img/f75816e32539b63ac59bf25994edd58d_3.png)
 
-![](img/f75816e32539b63ac59bf25994edd58d_4.png)
 
-![](img/f75816e32539b63ac59bf25994edd58d_5.png)
 
 让我们通过一个图表来理清概念。当你创建一个字典，然后使用DataFrame构造函数创建一个Pandas对象时，这在API术语中称为一个**实例**。字典中的数据被传递给Pandas API。然后，你使用这个DataFrame对象与API通信。
 
-![](img/f75816e32539b63ac59bf25994edd58d_6.png)
 
-![](img/f75816e32539b63ac59bf25994edd58d_7.png)
 
-![](img/f75816e32539b63ac59bf25994edd58d_8.png)
 
-![](img/f75816e32539b63ac59bf25994edd58d_9.png)
 
 以下是使用Pandas API的典型步骤：
 
@@ -37,7 +28,6 @@ Pandas库实际上就是一组软件组件，其中许多甚至不是用Python�
 3.  调用`mean`方法时，API会计算平均值并返回结果。
 
 
-![](img/f75816e32539b63ac59bf25994edd58d_11.png)
 
 ```python
 import pandas as pd
@@ -58,17 +48,12 @@ print(df.mean())
 
 REST代表**表征状态转移**。在REST API中，你的程序被称为**客户端**。API通过互联网与你调用的**Web服务**进行通信。通信遵循一套关于输入（即**请求**）和输出（即**响应**）的规则。
 
-![](img/f75816e32539b63ac59bf25994edd58d_13.png)
 
-![](img/f75816e32539b63ac59bf25994edd58d_14.png)
 
 以下是REST API中的一些常见术语：
 
-![](img/f75816e32539b63ac59bf25994edd58d_15.png)
 
-![](img/f75816e32539b63ac59bf25994edd58d_16.png)
 
-![](img/f75816e32539b63ac59bf25994edd58d_17.png)
 
 *   **客户端**：指你或你的代码。
 *   **资源**：指Web服务。
@@ -82,11 +67,9 @@ REST代表**表征状态转移**。在REST API中，你的程序被称为**客�
 
 类似地，Web服务通过HTTP消息返回**响应**，信息通常以JSON文件形式返回，并传输回客户端。
 
-![](img/f75816e32539b63ac59bf25994edd58d_19.png)
 
 ## 实践：使用Pycoin Gecko API获取加密货币数据 💹
 
-![](img/f75816e32539b63ac59bf25994edd58d_20.png)
 
 加密货币数据非常适合用于API实践，因为它不断更新且对交易至关重要。我们将使用Pycoin Gecko（CoinGecko API的Python客户端或封装器）来获取数据，该数据由CoinGecko每分钟更新。
 
@@ -100,10 +83,8 @@ REST代表**表征状态转移**。在REST API中，你的程序被称为**客�
 
 在下面的函数调用中，我们获取比特币过去30天以美元计价的数据。响应是一个JSON文件，在Python中表示为嵌套列表的字典，包含价格、市值和总交易量等数据，其中包含Unix时间戳和对应时间点的价格。
 
-![](img/f75816e32539b63ac59bf25994edd58d_22.png)
 
 
-![](img/f75816e32539b63ac59bf25994edd58d_23.png)
 
 ```python
 # 示例代码结构
@@ -125,15 +106,11 @@ bitcoin_data = cg.get_coin_market_chart_by_id(id='bitcoin', vs_currency='usd', d
 
 最后，我们将使用Plotly库创建K线图并进行绘制。现在，我们可以通过打开生成的HTML文件并在浏览器标签页左上方点击“信任HTML”来查看K线图。
 
-![](img/f75816e32539b63ac59bf25994edd58d_25.png)
 
-![](img/f75816e32539b63ac59bf25994edd58d_26.png)
 
-![](img/f75816e32539b63ac59bf25994edd58d_27.png)
 
 ## 总结 📝
 
-![](img/f75816e32539b63ac59bf25994edd58d_28.png)
 
 ![](img/f75816e32539b63ac59bf25994edd58d_30.png)
 

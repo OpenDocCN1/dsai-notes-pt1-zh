@@ -8,27 +8,21 @@
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_6.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_8.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_10.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_11.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_12.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_14.png)
 
 在本节课中，我们将学习如何为视觉小说游戏实现场景切换功能，并解决游戏内事件管理混乱的问题。我们将创建一个新的游戏场景UI，并重构事件总线系统，以确保不同场景间的事件能够正确注册和注销。
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_16.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_17.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_19.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_21.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_23.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_25.png)
 
@@ -75,11 +69,8 @@ this.scene.start('game');
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_51.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_53.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_55.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_57.png)
 
 **解决方案**是：在游戏场景的创建函数中，暂时注释掉创建背景音乐的代码，或者确保在创建新音频前停止旧的音频。这揭示了Phaser的一个特性：场景切换时，前一个场景的资源（如音频）不会自动停止，除非显式设置或进行管理。
 
@@ -93,11 +84,9 @@ this.scene.start('game');
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_67.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_69.png)
 
 ---
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_71.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_73.png)
 
@@ -117,7 +106,6 @@ this.scene.start('game');
 
 成功切换到游戏场景后，我们需要为该场景创建一个用户界面。这个UI将包含设置、加载、快速保存等操作按钮。
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_86.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_87.png)
 
@@ -135,7 +123,6 @@ this.scene.start('game');
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_97.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_99.png)
 
 ```javascript
 class GameUIActions extends BaseUIActions {
@@ -170,19 +157,15 @@ class GameUIActions extends BaseUIActions {
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_107.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_109.png)
 
 在游戏场景（`GameScene`）中，我们需要实例化这个`GameUIActions`组件并显示它。
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_111.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_113.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_115.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_117.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_119.png)
 
 ```javascript
 // 在GameScene的create方法中
@@ -193,35 +176,23 @@ create() {
 }
 ```
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_121.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_123.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_125.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_126.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_128.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_130.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_132.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_134.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_135.png)
 
 ---
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_137.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_139.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_141.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_143.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_145.png)
 
 ## 事件总线的重构与问题 🔄
 
@@ -235,15 +206,12 @@ create() {
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_152.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_154.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_156.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_158.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_160.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_162.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_164.png)
 
@@ -251,51 +219,38 @@ create() {
 
 我们的目标是重构事件系统，使其更清晰、易于管理。我们决定创建一个`BaseScene`基类，所有主要场景（如`MenuScene`、`GameScene`）都继承自它。
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_168.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_170.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_172.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_174.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_176.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_178.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_180.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_182.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_184.png)
 
 `BaseScene`的核心职责是：
 1.  在场景创建时自动注册事件监听器。
 2.  在场景关闭或切换时自动注销事件监听器，防止内存泄漏和事件重复触发。
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_186.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_187.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_189.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_191.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_193.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_195.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_197.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_199.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_201.png)
 
 以下是`BaseScene`的简化实现：
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_203.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_205.png)
 
 ```javascript
 class BaseScene extends Phaser.Scene {
@@ -328,25 +283,18 @@ class BaseScene extends Phaser.Scene {
 }
 ```
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_207.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_209.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_211.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_213.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_214.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_216.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_218.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_220.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_222.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_223.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_225.png)
 
@@ -356,7 +304,6 @@ class BaseScene extends Phaser.Scene {
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_229.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_231.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_232.png)
 
@@ -388,7 +335,6 @@ class MenuScene extends BaseScene {
 }
 ```
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_234.png)
 
 通过这种方式，我们确保了事件监听器的生命周期与场景的生命周期绑定，避免了事件重复监听和无法注销的问题。
 
@@ -396,15 +342,12 @@ class MenuScene extends BaseScene {
 
 ---
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_238.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_240.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_242.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_244.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_246.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_248.png)
 
@@ -418,21 +361,16 @@ class MenuScene extends BaseScene {
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_256.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_258.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_260.png)
 
 最后，我们需要将设置菜单功能整合到游戏场景的UI中。当点击游戏场景UI中的“设置”按钮时，应该能打开之前创建的设置面板。
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_262.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_264.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_266.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_268.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_270.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_272.png)
 
@@ -475,7 +413,6 @@ create() {
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_284.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_286.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_288.png)
 
@@ -487,13 +424,10 @@ create() {
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_293.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_294.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_296.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_298.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_300.png)
 
 本节课中我们一起学习了：
 1.  **场景切换**：使用`this.scene.start(key)`进行场景切换，并注意处理跨场景的音频等资源管理。
@@ -501,7 +435,6 @@ create() {
 3.  **事件总线重构**：通过创建`BaseScene`基类，将事件监听器的注册和注销逻辑与场景生命周期绑定，解决了事件管理混乱和潜在的内存泄漏问题。
 4.  **功能整合**：利用事件总线，将设置菜单无缝集成到游戏场景中，实现了UI组件间的通信。
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_302.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_303.png)
 
@@ -511,7 +444,6 @@ create() {
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_309.png)
 
-![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_311.png)
 
 ![](img/3db46d12bb0cc1019a3b6a2ceb5f22eb_313.png)
 

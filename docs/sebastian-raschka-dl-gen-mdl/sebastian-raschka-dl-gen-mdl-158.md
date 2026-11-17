@@ -4,11 +4,9 @@
 
 ## 概述
 
-![](img/92e6e20cb731f01544a13e139a483ebe_1.png)
 
 上一节我们介绍了LSTM的基本概念和结构。本节中，我们来看看如何用PyTorch代码实现一个字符级的LSTM网络。我们将使用一个关于COVID-19的FAQ文本数据集，训练模型来预测序列中的下一个字符，并最终让它能够生成新的文本。
 
-![](img/92e6e20cb731f01544a13e139a483ebe_3.png)
 
 ## 代码实现
 
@@ -218,7 +216,6 @@ def evaluate(model, prime_str='TH', predict_len=100, temperature=0.8):
 
 ## 总结
 
-![](img/92e6e20cb731f01544a13e139a483ebe_5.png)
 
 ![](img/92e6e20cb731f01544a13e139a483ebe_7.png)
 

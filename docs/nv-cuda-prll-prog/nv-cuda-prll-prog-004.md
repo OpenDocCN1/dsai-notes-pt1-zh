@@ -77,9 +77,7 @@ void matrixSquareCPU(float *matrix, float *result, int n) {
 
 ### GPU版本1：仅并行化外层循环
 
-![](img/0428ac231f548f543bc72c89d20b697a_1.png)
 
-![](img/0428ac231f548f543bc72c89d20b697a_3.png)
 
 在第一个GPU版本中，我们仅并行化了最外层的 `i` 循环。每个线程负责计算结果矩阵的一整行。
 
@@ -105,7 +103,6 @@ __global__ void matrixSquareGPUv1(float *matrix, float *result, int n) {
 
 ### GPU版本2：并行化两个外层循环
 
-![](img/0428ac231f548f543bc72c89d20b697a_5.png)
 
 为了提升并行度，我们同时并行化 `i` 和 `j` 循环。每个线程负责计算结果矩阵中的一个单独元素。
 
@@ -133,7 +130,6 @@ __global__ void matrixSquareGPUv2(float *matrix, float *result, int n) {
 
 ## GPU计算层次结构
 
-![](img/0428ac231f548f543bc72c89d20b697a_7.png)
 
 理解GPU的硬件执行模型对编写高效CUDA程序至关重要。其计算层次从高到低如下：
 
@@ -147,7 +143,6 @@ __global__ void matrixSquareGPUv2(float *matrix, float *result, int n) {
 
 **关键点**：锁步执行仅发生在**线程束内部**。不同线程束之间的执行是异步的。
 
-![](img/0428ac231f548f543bc72c89d20b697a_9.png)
 
 ## 线程发散
 
@@ -171,11 +166,9 @@ __global__ void divergentKernel(int *data) {
 
 ### 何时会发生发散？
 
-![](img/0428ac231f548f543bc72c89d20b697a_11.png)
 
 导致发散的关键不是条件语句本身，而是**条件在同一个线程束内是否对所有线程评估出相同的结果**。
 
-![](img/0428ac231f548f543bc72c89d20b697a_13.png)
 
 *   **不会发散的例子**：`if (threadIdx.x < 32)`。对于一个线程束（0-31），条件对所有线程都为真，因此没有发散。
 *   **会发散的例子**：循环次数依赖于线程ID，`for(int i=0; i<threadIdx.x; i++)`。线程束内不同线程的循环次数不同，最后一个线程（迭代31次）将决定整个线程束的执行时间，导致其他线程等待，引发发散。
@@ -207,7 +200,6 @@ x = (x == y) * z + (x == z) * y;
 3.  深入理解了GPU的计算层次结构，特别是**线程束**的SIMD执行模式。
 4.  分析了**线程发散**问题的成因、影响以及避免方法。核心在于意识到：**线程束内执行路径的分化是性能杀手**，编写代码时应尽量让同一个线程束内的线程执行相同的指令流。
 
-![](img/0428ac231f548f543bc72c89d20b697a_15.png)
 
 ![](img/0428ac231f548f543bc72c89d20b697a_17.png)
 

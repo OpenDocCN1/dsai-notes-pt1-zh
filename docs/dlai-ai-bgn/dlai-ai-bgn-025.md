@@ -16,11 +16,9 @@
 
 ---
 
-![](img/89e2f9772015fb69ca09b7cdd5337ce3_1.png)
 
 ## 处理行程表示例
 
-![](img/89e2f9772015fb69ca09b7cdd5337ce3_3.png)
 
 在本节中，我们将使用一个处理行程表的例子，该表格如下所示：
 
@@ -124,10 +122,7 @@ display_table(filtered_data)
 
 期待在下一节课见到你。
 
-![](img/89e2f9772015fb69ca09b7cdd5337ce3_5.png)
 
-![](img/89e2f9772015fb69ca09b7cdd5337ce3_5.png)
 
-![](img/89e2f9772015fb69ca09b7cdd5337ce3_6.png)
 
 ![](img/89e2f9772015fb69ca09b7cdd5337ce3_6.png)

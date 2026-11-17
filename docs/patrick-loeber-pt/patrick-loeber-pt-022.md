@@ -165,7 +165,6 @@ PyTorch还提供了其他高级调度器，例如：
 4.  基于指标的调度器（如`ReduceLROnPlateau`）能更智能地响应模型的实际训练状态。
 5.  实现只需在优化器更新后调用`scheduler.step()`（对于`ReduceLROnPlateau`需要传入监控指标）。
 
-![](img/9ee3f508efbceaa54b61c7c262b20ae3_12.png)
 
 ![](img/9ee3f508efbceaa54b61c7c262b20ae3_13.png)
 

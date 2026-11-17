@@ -4,7 +4,6 @@
 
 上一节我们介绍了查询路由，它负责将问题引导至正确的数据源。本节中，我们来看看如何将自然语言问题，具体地转换为适用于向量数据库元数据过滤器的结构化查询。
 
-![](img/c600de11a286e2e0a54384f17a291d7d_1.png)
 
 ## 问题定义
 
@@ -16,7 +15,6 @@
 
 ## 核心流程
 
-![](img/c600de11a286e2e0a54384f17a291d7d_3.png)
 
 以下是查询结构化的高级流程：
 1.  提取向量数据库中存在的**元数据字段**。
@@ -59,13 +57,10 @@ prompt = ChatPromptTemplate.from_messages([
 query_analyzer_chain = prompt | llm.with_structured_output(TutorialSearch)
 ```
 
-![](img/c600de11a286e2e0a54384f17a291d7d_5.png)
 
-![](img/c600de11a286e2e0a54384f17a291d7d_6.png)
 
 现在，我们可以用不同的问题来测试这个链条。
 
-![](img/c600de11a286e2e0a54384f17a291d7d_7.png)
 
 以下是测试不同查询的示例：
 

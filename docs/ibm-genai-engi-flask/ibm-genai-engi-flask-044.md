@@ -25,20 +25,17 @@ grouped_data = df[['drive-wheels', 'body-style', 'price']].groupby(['drive-wheel
 
 ## 创建数据透视表
 
-![](img/6c03456b70f499f678086bebb6f274af_1.png)
 
 上述形式的表格并不易于阅读和可视化。为了更容易理解，我们可以使用`pivot`方法将此表格转换为数据透视表。
 
 在之前的表格中，“驱动系统”和“车身样式”都列在列中。数据透视表则将一个变量沿列显示，另一个变量沿行显示。只需一行代码，并使用Pandas的`pivot`方法，我们就可以将“车身样式”变量设置为沿列显示，而“驱动系统”沿行显示。
 
-![](img/6c03456b70f499f678086bebb6f274af_3.png)
 
 ```python
 # 示例代码
 pivot_table = grouped_data.pivot(index='drive-wheels', columns='body-style')
 ```
 
-![](img/6c03456b70f499f678086bebb6f274af_5.png)
 
 价格数据现在变成了一个矩形网格，更易于可视化。这类似于在Excel电子表格中通常进行的操作。
 
@@ -52,7 +49,6 @@ pivot_table = grouped_data.pivot(index='drive-wheels', columns='body-style')
 
 ## 总结
 
-![](img/6c03456b70f499f678086bebb6f274af_7.png)
 
 ![](img/6c03456b70f499f678086bebb6f274af_8.png)
 

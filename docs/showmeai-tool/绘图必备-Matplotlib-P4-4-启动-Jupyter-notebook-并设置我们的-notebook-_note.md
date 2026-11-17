@@ -6,7 +6,6 @@
 
 ## 启动 Jupyter Notebook
 
-![](img/892da33aad000f8edbbf075405535965_1.png)
 
 现在，我位于我的 Matplotlib 教程文件夹中。我将运行 Jupyter Notebook，以便继续进行后续的 Matplotlib 教程。
 
@@ -14,11 +13,9 @@
 
 在 Jupyter Notebook 启动后，让我们关闭其他无关的 Chrome 浏览器窗口。
 
-![](img/892da33aad000f8edbbf075405535965_3.png)
 
 ![](img/892da33aad000f8edbbf075405535965_3.png)
 
-![](img/892da33aad000f8edbbf075405535965_4.png)
 
 ![](img/892da33aad000f8edbbf075405535965_4.png)
 
@@ -73,7 +70,6 @@ Matplotlib 还包含各种其他子模块，你可以通过按下 `Tab` 键来�
 
 但无论如何，我们主要使用 `pyplot`，并将其导入为 `plt`。这几乎将是你每次使用 Matplotlib 时的标准导入方式。
 
-![](img/892da33aad000f8edbbf075405535965_6.png)
 
 ---
 

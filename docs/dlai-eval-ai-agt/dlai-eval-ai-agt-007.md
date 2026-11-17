@@ -41,12 +41,10 @@ from utils import run_agent, start_main_span, tools
 
 ---
 
-![](img/8d8727614c7311c847e4bea86138feb3_1.png)
 
 ## 运行代理并生成追踪数据📊
 评估代理的一种方法是通过真实查询来运行它，并追踪这些运行过程。为此，我们设置一些基础问题来测试代理。
 
-![](img/8d8727614c7311c847e4bea86138feb3_3.png)
 
 以下是准备向代理提出的问题列表：
 *   “Sw公司最受欢迎的产品是什么？”
@@ -59,7 +57,6 @@ from utils import run_agent, start_main_span, tools
 接下来，我们循环遍历这些问题，并使用导入的 `start_main_span` 方法让代理处理每个问题，同时将过程追踪到 Phoenix。
 
 
-![](img/8d8727614c7311c847e4bea86138feb3_5.png)
 
 ```python
 questions = [
@@ -77,7 +74,6 @@ for question in questions:
 
 运行这个单元需要一两分钟。完成后，所有运行的追踪数据都会出现在 Phoenix 中。
 
-![](img/8d8727614c7311c847e4bea86138feb3_7.png)
 
 ---
 
@@ -88,7 +84,6 @@ for question in questions:
 2.  项目内应有六条追踪记录，每条对应代理的一次运行。
 3.  点击任意一条追踪，可以查看该次运行中代理执行的详细步骤，包括对多个不同工具的调用。
 
-![](img/8d8727614c7311c847e4bea86138feb3_9.png)
 
 现在，我们可以开始评估代理的各个组成部分。正如前面课程所介绍的，评估可以针对**路由器**（决定调用哪个工具）进行，也可以针对具体的**技能**（如销售数据查询、可视化生成）进行。
 
@@ -207,7 +202,6 @@ viz_spans_df = px.Client().query_spans(
 )
 ```
 
-![](img/8d8727614c7311c847e4bea86138feb3_15.png)
 
 接下来，定义一个简单的函数来检查生成的代码是否可运行。
 
@@ -225,9 +219,7 @@ def code_is_runnable(code_str: str) -> bool:
         return False
 ```
 
-![](img/8d8727614c7311c847e4bea86138feb3_17.png)
 
-![](img/8d8727614c7311c847e4bea86138feb3_19.png)
 
 然后，将这个函数应用到导出的数据框上，生成标签和分数。
 
@@ -237,13 +229,10 @@ viz_spans_df["label"] = viz_spans_df["generated_code"].apply(code_is_runnable).m
 viz_spans_df["score"] = viz_spans_df["label"].apply(lambda x: 1 if x == "runnable" else 0)
 ```
 
-![](img/8d8727614c7311c847e4bea86138feb3_21.png)
 
-![](img/8d8727614c7311c847e4bea86138feb3_22.png)
 
 最后，将评估结果上传到 Phoenix。
 
-![](img/8d8727614c7311c847e4bea86138feb3_24.png)
 
 ```python
 px.Client().log_evaluations(
@@ -258,7 +247,6 @@ px.Client().log_evaluations(
 
 在 Phoenix 中，现在会出现一个新的评估项 `runnable_code`。在这个例子中，评估器可能发现生成的代码不可运行，这有助于我们定位问题。
 
-![](img/8d8727614c7311c847e4bea86138feb3_29.png)
 
 ---
 
@@ -310,7 +298,6 @@ clarity_labeled_df["score"] = clarity_labeled_df["label"].apply(lambda x: 1 if x
 
 将评估结果上传到 Phoenix。
 
-![](img/8d8727614c7311c847e4bea86138feb3_33.png)
 
 ```python
 px.Client().log_evaluations(
@@ -319,7 +306,6 @@ px.Client().log_evaluations(
 )
 ```
 
-![](img/8d8727614c7311c847e4bea86138feb3_35.png)
 
 在 Phoenix 中，会出现 `response_clarity` 评估项，显示回答的清晰度百分比。
 
@@ -352,11 +338,9 @@ sql_spans_df = px.Client().query_spans(
 sql_spans_df = sql_spans_df[sql_spans_df["question"].str.contains("generate a SQL", case=False)]
 ```
 
-![](img/8d8727614c7311c847e4bea86138feb3_37.png)
 
 运行 LLM 评判员评估并上传结果。
 
-![](img/8d8727614c7311c847e4bea86138feb3_39.png)
 
 ```python
 with px.suppress_tracing():
@@ -377,7 +361,6 @@ px.Client().log_evaluations(
 
 ---
 
-![](img/8d8727614c7311c847e4bea86138feb3_41.png)
 
 ## 总结🎯
 本节课中，我们一起学习了如何为 AI 代理添加全面的性能评估。

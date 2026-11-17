@@ -207,7 +207,6 @@ McNemar检验统计量计算公式为：
 
 我们的分析显示，使用不同类型自我反思的代理比基线代理表现更好。在所有LLM的所有自我反思类型中，性能提升在统计上是显著的（$p<0.001$）。以GPT-4为例，在图[2](https://arxiv.org/html/2405.06682v3#S3.F2 "Figure 2 ‣ 3.1 Performance by Agent ‣ 3 Results ‣ Self-Reflection in LLM Agents: Effects on Problem-Solving Performance")中，我们可以看到所有类型的自我反思都提高了代理在解决多选问题时的准确性。有关GPT-4结果的数值分析，请参见附录中的表[3](https://arxiv.org/html/2405.06682v3#A1.T3 "Table 3 ‣ A.1 Results ‣ Appendix A Appendix ‣ Self-Reflection in LLM Agents: Effects on Problem-Solving Performance")。
 
-![参考标题](img/2ac0fa32dbf0f0eb73e15ec9b92b33e3.png)
 
 图2：所有自我反思类型提高了GPT-4代理的准确性。
 
@@ -215,7 +214,6 @@ McNemar检验统计量计算公式为：
 
 就模型的表现而言，我们测试的每个大规模语言模型（LLM）在所有类型的自我反思中都表现出了类似的准确度提升。在所有情况下，表现的改善在统计上是显著的（$p<0.001$）。请参见图[3](https://arxiv.org/html/2405.06682v3#S3.F3 "Figure 3 ‣ 3.2 Performance by Model ‣ 3 Results ‣ Self-Reflection in LLM Agents: Effects on Problem-Solving Performance")，查看按模型和代理的准确度绘图。有关所有模型的准确度的数值分析，请参见表[4](https://arxiv.org/html/2405.06682v3#A1.T4 "Table 4 ‣ A.1 Results ‣ Appendix A Appendix ‣ Self-Reflection in LLM Agents: Effects on Problem-Solving Performance")。
 
-![参考标题](img/b639bde56cb305e0c573cf46a1e1ead4.png)
 
 图3：我们测试的所有LLM在自我反思代理中都展示了相似的改进模式。
 

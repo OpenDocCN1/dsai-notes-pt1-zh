@@ -18,7 +18,6 @@
 
 上一节我们介绍了非线性激活函数，本节中我们来看看如何为多分类问题创建数据集。
 
-![](img/cdaa01b6e36e8c0484c4831c7000c266_8.png)
 
 ![](img/cdaa01b6e36e8c0484c4831c7000c266_9.png)
 
@@ -88,20 +87,16 @@ plt.show()
 
 ![](img/cdaa01b6e36e8c0484c4831c7000c266_19.png)
 
-![](img/cdaa01b6e36e8c0484c4831c7000c266_21.png)
 
 多分类模型与二分类模型的主要区别在于输出层和激活函数：
 *   **输出特征数量**：等于类别数量（本例中为4）。
 *   **输出激活函数**：使用 `Softmax` 而非 `Sigmoid`。
 *   **损失函数**：使用交叉熵损失 `CrossEntropyLoss` 而非二元交叉熵损失。
 
-![](img/cdaa01b6e36e8c0484c4831c7000c266_23.png)
 
 以下是构建模型类的代码：
 
-![](img/cdaa01b6e36e8c0484c4831c7000c266_25.png)
 
-![](img/cdaa01b6e36e8c0484c4831c7000c266_26.png)
 
 ```python
 import torch
@@ -134,9 +129,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 model_4 = BlobModel(input_features=2, output_features=4, hidden_units=8).to(device)
 ```
 
-![](img/cdaa01b6e36e8c0484c4831c7000c266_28.png)
 
-![](img/cdaa01b6e36e8c0484c4831c7000c266_29.png)
 
 我们构建了一个包含两个隐藏层和 ReLU 激活函数的模型。模型最终输出四个值，对应四个类别的原始预测值（logits）。接下来，我们需要定义损失函数和优化器。
 
@@ -185,7 +178,6 @@ optimizer = torch.optim.SGD(params=model_4.parameters(),
 
 ![](img/cdaa01b6e36e8c0484c4831c7000c266_35.png)
 
-![](img/cdaa01b6e36e8c0484c4831c7000c266_36.png)
 
 ```python
 # 将模型设置为评估模式并进行前向传播（推理）

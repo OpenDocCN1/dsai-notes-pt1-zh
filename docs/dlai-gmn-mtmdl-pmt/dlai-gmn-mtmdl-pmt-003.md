@@ -1,8 +1,6 @@
 # 003：提示与参数控制 🎛️
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_0.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_2.png)
 
 在本节课中，我们将学习如何使用文本和图像来提示多模态模型Gemini。我们将探索各种模型参数，了解如何选择它们，并理解它们对模型创造性和一致性的影响。
 
@@ -31,11 +29,8 @@ aiplatform.init(project=PROJECT_ID, location=LOCATION)
 2.  指定模型版本，例如 `gemini-1.0-pro-vision`。
 3.  使用辅助函数或直接调用 `model.generate_content()` 来获取模型响应。
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_4.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_6.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_8.png)
 
 ```python
 # 示例：导入并指定模型
@@ -43,39 +38,28 @@ from vertexai.preview.generative_models import GenerativeModel
 model = GenerativeModel(“gemini-1.0-pro-vision”)
 ```
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_10.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_12.png)
 
 ## 基础文本提示 📝
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_14.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_16.png)
 
 让我们从一个简单的文本提示开始，了解Gemini如何响应。
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_18.png)
 
 我们可以问：“什么是多模态模型？”。调用API后，模型会返回一个解释多模态模型的文本响应。你可以尝试更改提示，观察模型的不同回答。
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_20.png)
 
 ## 流式传输响应 ⚡
 
 为了提升交互体验，特别是构建实时应用时，我们可以使用流式传输功能。
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_22.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_24.png)
 
 流式传输允许我们在模型生成完整响应之前就开始处理文本片段。这通过将 `stream` 参数设置为 `True` 来实现。
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_26.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_27.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_29.png)
 
 ```python
 # 示例：使用流式传输
@@ -84,19 +68,14 @@ for chunk in response:
     print(chunk.text)
 ```
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_31.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_33.png)
 
 ## 结合图像与文本提示 🖼️➕📝
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_35.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_37.png)
 
 上一节我们介绍了纯文本提示，本节中我们来看看如何结合图像和文本来提示Gemini模型。
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_39.png)
 
 首先，需要从SDK导入处理图像所需的类。然后，我们可以加载一张本地图像，并组合图像和一个文本提示（例如“描述这张图片”）发送给模型。
 
@@ -118,25 +97,17 @@ for chunk in response:
 3.  将视频URI和提示组合后发送给模型。
 4.  模型会分析视频内容并逐一回答问题。
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_41.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_43.png)
 
 ## 理解模型参数 🎚️
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_45.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_47.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_49.png)
 
 在尝试调整模型参数之前，我们先快速了解几个关键参数，它们就像控制模型输出“风味”的旋钮。
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_51.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_53.png)
 
-![](img/10ace67a3b7118c1bf47cd308b4e972f_55.png)
 
 以下是核心参数及其作用：
 *   **温度 (Temperature)**：控制输出的随机性。公式可理解为 `P(word) ∝ exp(logit / T)`，其中T是温度。

@@ -1,6 +1,5 @@
 #  059：故障排查概念介绍 🧩
 
-![](img/3aff1d7b20c3bdb13c10e75727785f7f_1.png)
 
 ![](img/3aff1d7b20c3bdb13c10e75727785f7f_2.png)
 

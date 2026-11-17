@@ -66,11 +66,8 @@
 
 恭喜你，你已经独立构建并训练了一个模型！
 
-![](img/e8f7bf95fa7a3fb25fc811f317b88cfb_1.png)
 
-![](img/e8f7bf95fa7a3fb25fc811f317b88cfb_1.png)
 
-![](img/e8f7bf95fa7a3fb25fc811f317b88cfb_3.png)
 
 ## 总结
 

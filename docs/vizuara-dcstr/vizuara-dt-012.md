@@ -1,6 +1,5 @@
 #  012：在Python中构建完整的回归决策树 🚀
 
-![](img/aa6f06492e3bd89a8b7bc0d95fd0c51f_0.png)
 
 ![](img/aa6f06492e3bd89a8b7bc0d95fd0c51f_0.png)
 

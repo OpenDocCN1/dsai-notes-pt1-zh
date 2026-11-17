@@ -85,15 +85,12 @@ for idx in cleaner.delete(): cleaner.files[idx].unlink()
 
 ![](img/ee7b9a2faf685413bc8869fb66d9d516_3.png)
 
-![](img/ee7b9a2faf685413bc8869fb66d9d516_5.png)
 
 ![](img/ee7b9a2faf685413bc8869fb66d9d516_6.png)
 
 ### 第一步：创建Hugging Face Space
 
-![](img/ee7b9a2faf685413bc8869fb66d9d516_8.png)
 
-![](img/ee7b9a2faf685413bc8869fb66d9d516_10.png)
 
 1.  访问 [Hugging Face Spaces](https://huggingface.co/spaces)。
 2.  点击“Create new Space”。
@@ -136,12 +133,9 @@ learn.export('model.pkl')
 
 ![](img/ee7b9a2faf685413bc8869fb66d9d516_32.png)
 
-![](img/ee7b9a2faf685413bc8869fb66d9d516_34.png)
 
 
-![](img/ee7b9a2faf685413bc8869fb66d9d516_36.png)
 
-![](img/ee7b9a2faf685413bc8869fb66d9d516_38.png)
 
 ```python
 from fastai.vision.all import *
@@ -166,9 +160,7 @@ iface = gr.Interface(fn=classify_image, inputs=image, outputs=label, examples=ex
 iface.launch()
 ```
 
-![](img/ee7b9a2faf685413bc8869fb66d9d516_40.png)
 
-![](img/ee7b9a2faf685413bc8869fb66d9d516_41.png)
 
 **关键点**：如果模型在训练时使用了自定义的标签函数（如`is_cat`），你必须在`app.py`中重新定义这个函数，因为导出的模型不包含源代码。
 
@@ -218,7 +210,6 @@ Gradio界面适合快速原型开发。如果你需要更定制化的用户体�
 
 ![](img/ee7b9a2faf685413bc8869fb66d9d516_62.png)
 
-![](img/ee7b9a2faf685413bc8869fb66d9d516_64.png)
 
 ![](img/ee7b9a2faf685413bc8869fb66d9d516_66.png)
 
@@ -276,11 +267,9 @@ Gradio界面适合快速原型开发。如果你需要更定制化的用户体�
 
 ## 本地开发环境设置 💻
 
-![](img/ee7b9a2faf685413bc8869fb66d9d516_74.png)
 
 为了在本地运行Jupyter Notebook和进行开发，我们推荐使用Mamba（一个更快的Conda替代品）来管理Python环境。
 
-![](img/ee7b9a2faf685413bc8869fb66d9d516_76.png)
 
 ### 简易安装步骤
 
@@ -288,7 +277,6 @@ Gradio界面适合快速原型开发。如果你需要更定制化的用户体�
 
 ![](img/ee7b9a2faf685413bc8869fb66d9d516_80.png)
 
-![](img/ee7b9a2faf685413bc8869fb66d9d516_81.png)
 
 1.  **安装Mambaforge**：使用[fastsetup](https://github.com/fastai/fastsetup)脚本可以一键安装。
 2.  **创建环境并安装库**：

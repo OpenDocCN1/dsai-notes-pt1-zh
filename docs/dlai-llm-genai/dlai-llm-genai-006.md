@@ -62,7 +62,6 @@ Transformer架构的强大之处在于其能够学习句子中所有单词的相
 
 ## 总结
 
-![](img/a9ad2e0d9cbdb7c007bb41c35b6647a8_1.png)
 
 ![](img/a9ad2e0d9cbdb7c007bb41c35b6647a8_2.png)
 

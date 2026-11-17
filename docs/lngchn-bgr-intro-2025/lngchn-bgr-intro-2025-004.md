@@ -54,7 +54,6 @@
 
 ---
 
-![](img/efef79d3d3657918ba2480e564aac5de_3.png)
 
 ![](img/efef79d3d3657918ba2480e564aac5de_4.png)
 

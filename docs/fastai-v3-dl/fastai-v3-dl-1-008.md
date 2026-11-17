@@ -91,13 +91,9 @@ class CollabNN(Module):
 
 在深度CNN中，我们会堆叠多个卷积层。每一层的输入可能具有多个“通道”（如第一层是RGB三个通道，后续层是多个特征图通道）。因此，滤波器也变成三维的（例如3x3xC_in），其输出是多个新的特征图通道（C_out）。
 
-![](img/434a257bbd5bac269d7eb0cf4e7a4822_1.png)
 
-![](img/434a257bbd5bac269d7eb0cf4e7a4822_3.png)
 
-![](img/434a257bbd5bac269d7eb0cf4e7a4822_5.png)
 
-![](img/434a257bbd5bac269d7eb0cf4e7a4822_7.png)
 
 传统CNN架构中，卷积层后常接“池化层”（如2x2最大池化），以逐步降低特征图的空间尺寸。现代架构则更常使用“步幅为2的卷积”来替代池化层，实现下采样。
 
@@ -105,9 +101,7 @@ class CollabNN(Module):
 
 重要的是，卷积运算可以被重新表述为一种特殊的矩阵乘法，其中权重矩阵具有大量固定的零值和重复的权重。这帮助我们理解，CNN的核心仍然是矩阵乘法和激活函数的组合。
 
-![](img/434a257bbd5bac269d7eb0cf4e7a4822_9.png)
 
-![](img/434a257bbd5bac269d7eb0cf4e7a4822_11.png)
 
 ---
 
@@ -115,9 +109,7 @@ class CollabNN(Module):
 
 ![](img/434a257bbd5bac269d7eb0cf4e7a4822_13.png)
 
-![](img/434a257bbd5bac269d7eb0cf4e7a4822_15.png)
 
-![](img/434a257bbd5bac269d7eb0cf4e7a4822_17.png)
 
 ![](img/434a257bbd5bac269d7eb0cf4e7a4822_19.png)
 

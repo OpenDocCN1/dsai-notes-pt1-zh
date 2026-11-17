@@ -240,7 +240,6 @@ Haoyi Qiu^($\heartsuit$)^†   Alexander R. Fabbri^($\diamondsuit$)^∗   Di
 
 (a) GPT-4
 
-![参见标题](img/a63953b3d09a8d6e07e55a585f8ad3f6.png)
 
 (b) GPT-3.5
 

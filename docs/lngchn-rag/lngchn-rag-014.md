@@ -1,6 +1,5 @@
 # 014：ColBERT 索引方法 🧠
 
-![](img/77fb86da281feb1e5404bf26b116a2b8_1.png)
 
 在本节课中，我们将要学习一种名为 ColBERT 的高级索引方法。这是一种不同于传统向量嵌入的检索方法，旨在通过为文档中的每个词元（token）生成向量表示，来更精细地捕捉语义信息。
 
@@ -40,7 +39,6 @@ ColBERT 的直觉非常简单直接。它不再为整个文档生成一个向量
 
 接下来，我们通过代码来实践 ColBERT。有一个名为 RAGatouille 的优秀库，可以让我们轻松尝试 ColBERT。
 
-![](img/77fb86da281feb1e5404bf26b116a2b8_3.png)
 
 首先，我们安装必要的库并加载一个预训练的 ColBERT 模型。
 
@@ -56,7 +54,6 @@ RAG = RAGPretrainedModel.from_pretrained("colbert-ir/colbertv2.0")
 
 然后，我们准备一些文档数据并创建索引。以下示例使用了一篇关于宫崎骏的维基百科文章。
 
-![](img/77fb86da281feb1e5404bf26b116a2b8_5.png)
 
 ```python
 # 准备文档
@@ -81,9 +78,7 @@ for doc in results:
 
 此外，RAGatouille 的检索器可以很方便地集成到 LangChain 中，作为一个标准的检索器组件使用，与各种语言模型和其他模块（如重排序器）协同工作。
 
-![](img/77fb86da281feb1e5404bf26b116a2b8_7.png)
 
-![](img/77fb86da281feb1e5404bf26b116a2b8_8.png)
 
 ```python
 from ragatouille import RAGPretrainedModel
@@ -98,7 +93,6 @@ retriever = RAGatouilleRetriever.from_pretrained("colbert-ir/colbertv2.0", index
 
 本节课我们一起学习了 ColBERT 索引方法。我们首先回顾了传统嵌入方法可能存在的限制，然后详细介绍了 ColBERT 如何通过为文档和问题中的每个词元生成向量，并采用“最大相似度求和”的机制来计算相关性，从而提供更精细的语义检索。最后，我们使用 RAGatouille 库快速实践了如何创建 ColBERT 索引并进行检索，并了解了如何将其集成到 LangChain 生态中。
 
-![](img/77fb86da281feb1e5404bf26b116a2b8_10.png)
 
 ![](img/77fb86da281feb1e5404bf26b116a2b8_11.png)
 

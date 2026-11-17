@@ -1,8 +1,6 @@
 # 011：用量化层替换PyTorch层
 
-![](img/ea6217299523e94b7e52a9d2afedea34_0.png)
 
-![](img/ea6217299523e94b7e52a9d2afedea34_0.png)
 
 在本节课中，我们将学习如何构建一个量化器。这个量化器将作为一个量化流水线，遍历原始模型中的所有线性模块，并用我们新创建的W8A16线性层模块替换它们，同时使用原始权重对替换后的模块进行量化。让我们一步步来实现这个过程。
 
@@ -10,11 +8,8 @@
 
 首先，我们需要构建一个名为 `replace_linear_with_target` 的方法。这个方法将遍历模型，识别出所有属于 `torch.nn.Linear` 类的模块，并用新的模块替换它们。
 
-![](img/ea6217299523e94b7e52a9d2afedea34_2.png)
 
-![](img/ea6217299523e94b7e52a9d2afedea34_3.png)
 
-![](img/ea6217299523e94b7e52a9d2afedea34_4.png)
 
 以下是该方法的签名：
 
@@ -38,7 +33,6 @@ def replace_linear_with_target(module, target_class, module_names_to_exclude):
 
 ## 测试模块替换方法
 
-![](img/ea6217299523e94b7e52a9d2afedea34_6.png)
 
 为了测试这个方法，我们创建一个用于测试的虚拟模型，它包含两个线性层和一个语言模型头（LM Head）。语言模型头通常是Transformer模型中的最后一个模块。
 
@@ -61,44 +55,32 @@ replace_linear_with_target(model1, W8A16Linear, module_names_to_exclude=[‘lm_h
 replace_linear_with_target(model2, W8A16Linear, module_names_to_exclude=[])
 ```
 
-![](img/ea6217299523e94b7e52a9d2afedea34_8.png)
 
 正如预期的那样，第二个模型中的所有线性层实例都被替换成了目标类。
 
-![](img/ea6217299523e94b7e52a9d2afedea34_9.png)
 
-![](img/ea6217299523e94b7e52a9d2afedea34_10.png)
 
-![](img/ea6217299523e94b7e52a9d2afedea34_11.png)
 
 ## 集成量化步骤
 
-![](img/ea6217299523e94b7e52a9d2afedea34_12.png)
 
-![](img/ea6217299523e94b7e52a9d2afedea34_14.png)
 
 上一节我们成功实现了模块替换。现在，我们需要对这个方法进行一些调整，使其在替换模块后，能立即对新模块进行量化。
 
-![](img/ea6217299523e94b7e52a9d2afedea34_16.png)
 
 我们对 `replace_linear_with_target` 方法进行修改。在成功替换模块后，我们需要：
 
 1.  通过 `getattr(parent_module, name)` 再次获取刚刚替换进去的新模块。
 2.  调用新模块的 `.quantize(old_weight)` 方法，传入原始权重，完成量化。
 
-![](img/ea6217299523e94b7e52a9d2afedea34_18.png)
 
-![](img/ea6217299523e94b7e52a9d2afedea34_19.png)
 
 同时，也需要更新递归调用的部分，确保所有层级的替换都包含量化步骤。
 
-![](img/ea6217299523e94b7e52a9d2afedea34_21.png)
 
 让我们用一个全新的虚拟模型来测试这个集成后的方法：
 
-![](img/ea6217299523e94b7e52a9d2afedea34_23.png)
 
-![](img/ea6217299523e94b7e52a9d2afedea34_24.png)
 
 ```python
 replace_linear_with_target(new_dummy_model, W8A16Linear, module_names_to_exclude=[])
@@ -106,9 +88,7 @@ replace_linear_with_target(new_dummy_model, W8A16Linear, module_names_to_exclude
 
 测试结果显示，方法运行成功。我们不仅替换了线性层，还完成了权重量化。
 
-![](img/ea6217299523e94b7e52a9d2afedea34_26.png)
 
-![](img/ea6217299523e94b7e52a9d2afedea34_27.png)
 
 ## 总结
 

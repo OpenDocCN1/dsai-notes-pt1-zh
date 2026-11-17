@@ -213,7 +213,6 @@ print(filtered)
 以下是过滤股票数据的代码：
 
 
-![](img/45eb811e7f17537cdccd963cfaeb5893_2.png)
 
 ```python
 def filter_func(group):
@@ -227,7 +226,6 @@ print(filtered_df['Year'].unique())  # 打印出哪些年份被保留了
 
 本节课中我们一起学习了pandas中数据分组与合并的核心操作。
 
-![](img/45eb811e7f17537cdccd963cfaeb5893_4.png)
 
 我们掌握了如何使用`groupby`将数据拆分成组，这是“拆分”步骤。接着，我们学习了多种“应用”操作：
 *   `aggregate`/`agg`: 用于对组进行聚合计算（如求和、求平均）。

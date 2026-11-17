@@ -40,11 +40,9 @@ ice_cream_flavors = {
 
 因为字典有键和值，我们有时会说Python中的字典存储了一组**键值对**，其中每一行都是一个键值对。
 
-![](img/9976abf4e1fe34c253475c3fd574a5b9_1.png)
 
 如果你想查看键，我可以打印`ice_cream_flavors.keys()`，这会打印出预期的三个名称。如果你想打印值，那么我们可以运行`ice_cream_flavors.values()`，这会打印出字典的值。
 
-![](img/9976abf4e1fe34c253475c3fd574a5b9_3.png)
 
 ## 访问字典中的项目
 
@@ -66,7 +64,6 @@ ice_cream_flavors["rocky road"] = "chocolate ice cream mixed with other ingredie
 
 事实证明，字典可以保存各种数据。在我们使用的例子中，我们将冰淇淋口味映射到冰淇淋口味的描述，但字典也可以映射到数字，而不仅仅是字符串。例如，如果我想创建一个关于Isabel的字典，包含年龄28和最喜欢的颜色红色，那么我可以像这样构建字典：记住用花括号来构建字典，这里键“age”映射到数字28，键“favorite_color”映射到另一个字符串“red”。
 
-![](img/9976abf4e1fe34c253475c3fd574a5b9_5.png)
 
 如果我打印`isabel_facts`，最终会得到这个字典，其中一个值是整数，另一个值是字符串。所以字典可以将键映射到不同类型的数据，在本例中是字符串或数字。
 

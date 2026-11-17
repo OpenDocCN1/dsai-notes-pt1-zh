@@ -1,6 +1,5 @@
 #  122：Great Expectations核心组件 🧪
 
-![](img/2c746e1904322f7f650a208d2c771886_0.png)
 
 在本节课中，我们将学习Great Expectations的核心组件及其典型工作流程。Great Expectations是一个用于数据质量测试的开源工具，它能帮助我们确保数据符合预期标准。
 

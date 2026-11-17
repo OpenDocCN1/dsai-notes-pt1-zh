@@ -227,7 +227,6 @@ LLM作为自我批评功能。为了确保合理性集合$\mathcal{R}$与行动�
 
 推理依据结构。我们分析了为提取推理依据而设计的各个查询的效果。在图[4(a)](https://arxiv.org/html/2412.11499v1#S5.F4.sf1 "Figure 4(a) ‣ Figure 4 ‣ 5.3 Ablation Studies ‣ 5 Evaluation ‣ Embodied CoT Distillation From LLM To Off-the-shelf Agents")中，我们评估了通过推理策略生成的推理依据集，该策略涉及LLM的自我批判功能（见[3](https://arxiv.org/html/2412.11499v1#S4.E3 "Equation 3 ‣ 4.1 Rationale Dataset Construction ‣ 4 Approach ‣ Embodied CoT Distillation From LLM To Off-the-shelf Agents")）。虚线表示使用所有$7$个查询时的性能，而沿x轴的每个柱状图表示在数据集构建过程中排除第$i$个查询时的性能。由于每个查询是专门设计用来捕捉MDP中的独特特征，如目标、状态和回报目标（如图[2](https://arxiv.org/html/2412.11499v1#S4.F2 "Figure 2 ‣ 4 Approach ‣ Embodied CoT Distillation From LLM To Off-the-shelf Agents")所示），排除任何一个查询都会导致性能下降。在图[4(b)](https://arxiv.org/html/2412.11499v1#S5.F4.sf2 "Figure 4(b) ‣ Figure 4 ‣ 5.3 Ablation Studies ‣ 5 Evaluation ‣ Embodied CoT Distillation From LLM To Off-the-shelf Agents")中，沿x轴的每个柱状图表示当推理依据集通过查询直到第$i$个查询来制定时所取得的性能。在推理依据生成过程中，第$1$个和第$2$个查询包含了适用于任何任务的一般信息。从第$3$个查询开始，推理变得越来越具体，针对给定的任务。因此，我们观察到，当使用所有查询时，基于早期步骤中生成的全面信息，性能最佳。
 
-![参见说明](img/93f0677e46ce0867d4f9c40f7157232f.png)
 
 (a) 推理依据的遗漏
 
@@ -396,7 +395,6 @@ $\Phi_{\text{R}}$ $\Phi_{\text{P}}$ 参数大小 见过 未见过 t5-small gpt2 
 
 (b) Pick Two & Place任务示例。
 
-![参见说明](img/676f0bd7b3b98da9b70176afc97c1c40.png)
 
 (c) Examine & in Light任务示例。
 

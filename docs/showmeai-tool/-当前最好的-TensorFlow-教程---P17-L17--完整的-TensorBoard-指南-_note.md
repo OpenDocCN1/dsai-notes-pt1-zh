@@ -17,12 +17,9 @@
 使用 Keras 的回调（Callback）功能是记录这些指标最简单的方法。以下代码展示了如何设置 TensorBoard 回调并在训练时自动记录数据：
 
 
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_4.png)
-
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_6.png)
 
 
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_8.png)
+
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_10.png)
 
@@ -58,7 +55,6 @@ model.fit(ds_train,
 
 在模型训练中，尤其是在应用了数据增强（如随机裁剪、颜色变换）后，可视化输入图像可以确保数据预处理操作符合预期。
 
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_14.png)
 
 以下是创建图像网格并写入 TensorBoard 的步骤：
 
@@ -209,7 +205,6 @@ TensorBoard 可以自动追踪并可视化用 `@tf.function` 装饰的函数或 
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_34.png)
 
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_36.png)
 
 ```python
 import tensorflow as tf
@@ -387,7 +382,6 @@ plot_to_projector(features, labels, images, class_names, "logs/projector")
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_51.png)
 
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_52.png)
 
 在 TensorBoard 的 `PROJECTOR` 标签页，你可以选择 PCA、t-SNE 等降维算法，并看到数据点在三维空间中的聚类情况。点击点可以查看对应的原始图片，直观验证模型学习到的表示是否合理。
 
@@ -395,7 +389,6 @@ plot_to_projector(features, labels, images, class_names, "logs/projector")
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_55.png)
 
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_57.png)
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_59.png)
 
@@ -419,11 +412,9 @@ TensorFlow Profiler 可以帮助你定位训练过程中的性能瓶颈，例如
 
 ![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_72.png)
 
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_74.png)
 
 使用 Profiler 最简单的方法是通过 `tf.keras.callbacks.TensorBoard` 回调的 `profile_batch` 参数。
 
-![](img/41a5fdcb23b17bc7ced9ef9ac3dfb245_76.png)
 
 ```python
 # 创建一个回调，分析第 500 到 520 个批次

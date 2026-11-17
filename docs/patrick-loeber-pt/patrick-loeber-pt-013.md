@@ -18,29 +18,21 @@ import matplotlib.pyplot as plt
 
 为了确保代码能在GPU上运行（如果可用），我们需要进行设备配置。
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_1.png)
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_3.png)
 
 ```python
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 ```
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_5.png)
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_7.png)
 
 ## 定义超参数
 
 接下来，我们定义一些超参数，这些参数将决定模型的结构和训练过程。
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_9.png)
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_10.png)
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_11.png)
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_13.png)
 
 ```python
 input_size = 784    # 28x28 像素的图像被展平为784维向量
@@ -53,19 +45,14 @@ learning_rate = 0.001 # 学习率
 
 ## 加载并准备MNIST数据集
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_15.png)
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_17.png)
 
 我们将使用PyTorch内置的`torchvision.datasets`来下载和加载MNIST数据集，并使用`DataLoader`来创建可迭代的数据加载器。
 
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_19.png)
-
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_20.png)
 
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_22.png)
+
 
 ```python
 # 加载训练数据集
@@ -87,18 +74,14 @@ test_loader = torch.utils.data.DataLoader(dataset=test_dataset,
                                           shuffle=False)
 ```
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_24.png)
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_25.png)
 
 ## 查看数据样本
 
 在开始构建模型之前，让我们先查看一下数据的样子，以确认数据加载正确。
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_27.png)
 
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_29.png)
 
 ```python
 # 获取一个批次的样本
@@ -115,22 +98,16 @@ for i in range(6):
 plt.show()
 ```
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_31.png)
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_32.png)
 
 ## 构建前馈神经网络模型
 
 现在，我们来构建一个包含一个隐藏层的全连接神经网络。我们将创建一个继承自`nn.Module`的类。
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_34.png)
-
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_35.png)
 
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_37.png)
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_39.png)
+
 
 ```python
 class NeuralNet(nn.Module):
@@ -167,9 +144,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
 ## 训练模型
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_41.png)
 
-![](img/4f9b5a50cb66458551d079eafb4a5a3c_42.png)
 
 训练循环是模型学习的核心。我们将遍历多个轮次（epochs），在每个轮次中遍历所有批次（batches）的数据，进行前向传播、计算损失、反向传播和参数更新。
 

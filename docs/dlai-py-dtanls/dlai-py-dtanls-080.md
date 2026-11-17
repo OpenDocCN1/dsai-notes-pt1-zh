@@ -16,7 +16,6 @@
 
 首先，需要向模型清晰说明你正在解决的问题。就像与同事协作一样，提供足够的背景信息。
 
-![](img/7d2cccadbddc9e8dbd8a1f73bcfa4543_1.png)
 
 以下是提供给LLM的提示示例：
 
@@ -36,7 +35,6 @@
 
 ---
 
-![](img/7d2cccadbddc9e8dbd8a1f73bcfa4543_3.png)
 
 ## 根据LLM建议修改模型代码
 
@@ -50,7 +48,6 @@
 
 > “以下是我的模型代码。请帮我修改它，在模型中包含`carat_squared`（克拉的平方），而不仅仅是`carat`。同时，请提供用于创建X和Y以及拟合模型的代码。”
 
-![](img/7d2cccadbddc9e8dbd8a1f73bcfa4543_3.png)
 
 LLM推荐的修改相对直接：在数据框中新建一个`carat_squared`列，然后照常运行回归。你可以复制提供的代码并尝试实现。
 
@@ -71,7 +68,6 @@ LLM的回答是肯定的：同时包含原始变量及其平方项是完全可�
 
 你可以继续追问：“这种方法没有显著改善我的模型，你能帮忙解释一下原因吗？因为R平方只提高了零点几个百分点。”
 
-![](img/7d2cccadbddc9e8dbd8a1f73bcfa4543_8.png)
 
 LLM基本同意你的观察，即平方项只捕捉了价格方差中很小的一部分额外信息。它随后给出了一些可能的原因：
 
@@ -82,7 +78,6 @@ LLM基本同意你的观察，即平方项只捕捉了价格方差中很小的�
 
 ![](img/7d2cccadbddc9e8dbd8a1f73bcfa4543_8.png)
 
-![](img/7d2cccadbddc9e8dbd8a1f73bcfa4543_9.png)
 
 最后，LLM给出了一些进一步分析的建议，包括检查残差、进行更多特征工程，或探索线性回归之外的非线性模型。
 
@@ -105,17 +100,14 @@ LLM解释了下一步操作：首先对价格和/或克拉应用对数变换，�
 
 ---
 
-![](img/7d2cccadbddc9e8dbd8a1f73bcfa4543_11.png)
 
 ## 实施对数变换并评估结果
 
-![](img/7d2cccadbddc9e8dbd8a1f73bcfa4543_12.png)
 
 ![](img/7d2cccadbddc9e8dbd8a1f73bcfa4543_13.png)
 
 现在，让我们请求LLM提供实施对数变换的具体代码。
 
-![](img/7d2cccadbddc9e8dbd8a1f73bcfa4543_15.png)
 
 提示：“修改这段代码，使其包含`log(price)`和`log(carat)`，但不包含`carat_squared`。”
 
@@ -125,7 +117,6 @@ LLM解释了下一步操作：首先对价格和/或克拉应用对数变换，�
 
 虽然对数变换在理解上可能有挑战，但我们可以先继续实施，看其是否有效。以下是修改后的代码关键部分：
 
-![](img/7d2cccadbddc9e8dbd8a1f73bcfa4543_17.png)
 
 ```python
 import numpy as np

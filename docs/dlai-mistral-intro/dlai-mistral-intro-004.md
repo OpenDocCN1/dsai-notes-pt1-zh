@@ -1,10 +1,8 @@
 # 004：模型选择 🧠
 
-![](img/ecb1e1ca5e52af6482f7df777b04f3e1_0.png)
 
 在本节课中，你将学习如何根据你的具体使用场景，选择合适的Mistral模型。
 
-![](img/ecb1e1ca5e52af6482f7df777b04f3e1_2.png)
 
 Mistral AI提供了五个API端点，对应五个领先的语言模型：Mistral 7B、Mixtral 8x7B、Mistral Small、Mistral Medium和Mistral Large。从模型性能来看，例如在MMLU（多任务语言理解）任务上，Mistral Large表现最佳。事实上，在包括推理、多语言任务、数学和编码在内的各种基准测试中，Mistral Large的表现都优于其他所有模型。
 
@@ -30,9 +28,7 @@ def load_api_key():
     # ... 你的代码 ...
 ```
 
-![](img/ecb1e1ca5e52af6482f7df777b04f3e1_4.png)
 
-![](img/ecb1e1ca5e52af6482f7df777b04f3e1_5.png)
 
 接着，我们定义一个`Mistral`函数，以便轻松调用Mistral Python API。这段代码在之前的课程中已经见过。
 
@@ -89,7 +85,6 @@ print(response)
 
 正如你所见，Mistral Large能够将这个问题分解为多个步骤，并给出正确答案。
 
-![](img/ecb1e1ca5e52af6482f7df777b04f3e1_7.png)
 
 让我们尝试另一个有趣的例子：根据购买详情，计算我在每个类别（餐厅、杂货、毛绒玩具和道具）上花了多少钱。交易详情如下。
 
@@ -129,7 +124,6 @@ print(response)
 很好，现在让我们运行这个函数，并看看代码是否能通过这些测试。
 
 
-![](img/ecb1e1ca5e52af6482f7df777b04f3e1_9.png)
 
 ```python
 # 假设从响应中提取了函数代码
@@ -141,7 +135,6 @@ print(find_two_sum([2, 7, 11, 15], 9))  # 应返回 [0, 1]
 print(find_two_sum([3, 2, 4], 6))       # 应返回 [1, 2]
 ```
 
-![](img/ecb1e1ca5e52af6482f7df777b04f3e1_11.png)
 
 看起来我们的函数运行正常。现在，Andrew会因为你给出了正确答案而感到非常高兴。
 

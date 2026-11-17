@@ -54,21 +54,16 @@ for event in stream_events:
         print(event["messages"][-1])  # 打印最新的消息
 ```
 
-![](img/a4b1dd4e8f2a4450029fbd4602fdaf7a_4.png)
 
-![](img/a4b1dd4e8f2a4450029fbd4602fdaf7a_6.png)
 
 运行上述代码，我们将看到一系列消息被流式输出：首先是AI决定调用天气工具的消息，然后是工具返回的天气结果消息，最后是AI总结的最终答案消息。
 
-![](img/a4b1dd4e8f2a4450029fbd4602fdaf7a_8.png)
 
 ## 实践：多轮对话与线程隔离
 
-![](img/a4b1dd4e8f2a4450029fbd4602fdaf7a_10.png)
 
 现在，让我们利用持久化进行多轮对话。我们可以在同一个线程ID下提出后续问题。
 
-![](img/a4b1dd4e8f2a4450029fbd4602fdaf7a_12.png)
 
 ```python
 # 继续线程ID为“1”的对话
@@ -80,7 +75,6 @@ for event in agent.stream(follow_up_messages, {"configurable": {"thread_id": "1"
 
 智能体会利用之前的对话历史，理解“洛杉矶”指的是天气，并给出回答。这证明了持久化的有效性。
 
-![](img/a4b1dd4e8f2a4450029fbd4602fdaf7a_14.png)
 
 为了展示线程ID的重要性，我们尝试使用一个新的线程ID提问：
 
@@ -92,13 +86,10 @@ for event in agent.stream(new_thread_messages, {"configurable": {"thread_id": "2
         print(event["messages"][-1])
 ```
 
-![](img/a4b1dd4e8f2a4450029fbd4602fdaf7a_16.png)
 
-![](img/a4b1dd4e8f2a4450029fbd4602fdaf7a_18.png)
 
 由于线程ID“2”没有历史记录，智能体会感到困惑，并要求用户明确比较对象。这清晰地说明了线程ID如何隔离不同的对话会话。
 
-![](img/a4b1dd4e8f2a4450029fbd4602fdaf7a_20.png)
 
 ## 进阶：流式处理令牌
 
@@ -106,7 +97,6 @@ for event in agent.stream(new_thread_messages, {"configurable": {"thread_id": "2
 
 以下是实现令牌流式处理的步骤：
 
-![](img/a4b1dd4e8f2a4450029fbd4602fdaf7a_22.png)
 
 1.  **切换到异步检查点器**：例如使用`AsyncSqliteSaver`。
 2.  **使用`astream_events`方法**：这是一个异步方法，可以提供更底层的事件流。

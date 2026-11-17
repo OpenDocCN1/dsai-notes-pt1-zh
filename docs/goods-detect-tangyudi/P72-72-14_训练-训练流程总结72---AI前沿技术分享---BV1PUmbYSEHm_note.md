@@ -12,7 +12,6 @@
 
 ![](img/97b9d15549f76f413f75eac73e7bbf83_5.png)
 
-![](img/97b9d15549f76f413f75eac73e7bbf83_7.png)
 
 上一节我们介绍了训练代码的编写，本节中我们来看看如何运行它并开始训练过程。
 
@@ -37,7 +36,6 @@ python train_ssd_network.py --ckpt_path=./pretrained_model --save_dir=./finetune
 
 ## 监控训练过程
 
-![](img/97b9d15549f76f413f75eac73e7bbf83_9.png)
 
 当训练开始后，模型文件会保存到指定的 `CKPT` 目录下的 `finetuning` 文件夹中。同时，会生成一个用于TensorBoard可视化的 `summary` 目录。
 
@@ -91,7 +89,6 @@ tensorboard --logdir=.
     *   对数据进行预处理和增强（如缩放、翻转）。
     *   对先验框（anchor boxes）进行编码，标记正负样本。
 
-![](img/97b9d15549f76f413f75eac73e7bbf83_17.png)
 
 3.  **前向传播与损失计算**
     *   定义SSD网络结构。
@@ -113,7 +110,6 @@ tensorboard --logdir=.
 7.  **模型保存**
     *   定期将训练好的模型参数保存到指定路径（如`.ckpt`文件），以便后续评估或继续训练。
 
-![](img/97b9d15549f76f413f75eac73e7bbf83_19.png)
 
 ---
 

@@ -18,7 +18,6 @@
 
 Homebrew 是 macOS 上一个强大的包管理器，类似于 Linux 系统中的 `yum` 或 `apt-get`。我们将通过它来安装后续所需的工具。
 
-![](img/4a3455f71b0c1dc63732e659663e9a9d_3.png)
 
 以下是安装 Homebrew 的步骤：
 
@@ -32,7 +31,6 @@ Homebrew 是 macOS 上一个强大的包管理器，类似于 Linux 系统中的
 
 安装完成后，建议关闭并重新打开终端，以确保环境变量正确加载。你可以通过运行 `brew --version` 来验证安装是否成功。
 
-![](img/4a3455f71b0c1dc63732e659663e9a9d_5.png)
 
 ---
 
@@ -40,7 +38,6 @@ Homebrew 是 macOS 上一个强大的包管理器，类似于 Linux 系统中的
 
 ## 第二步：安装 Miniforge
 
-![](img/4a3455f71b0c1dc63732e659663e9a9d_8.png)
 
 Miniforge 是一个支持多种 CPU 架构（包括 Apple M1）的 Conda 发行版。为了在 M1 上使用 TensorFlow 的 GPU 加速功能，我们需要使用 Miniforge 而不是标准的 Anaconda。
 
@@ -56,7 +53,6 @@ Miniforge 是一个支持多种 CPU 架构（包括 Apple M1）的 Conda 发行�
     ```
     然后重新启动终端。
 
-![](img/4a3455f71b0c1dc63732e659663e9a9d_10.png)
 
 现在，你的基础 Python 环境应该已经切换到了 Miniforge 提供的版本。可以通过运行 `which python` 命令来确认。
 
@@ -64,7 +60,6 @@ Miniforge 是一个支持多种 CPU 架构（包括 Apple M1）的 Conda 发行�
 
 ## 第三步：创建 TensorFlow 环境
 
-![](img/4a3455f71b0c1dc63732e659663e9a9d_12.png)
 
 我们将创建一个独立的 Conda 环境，专门用于本课程，并在其中安装所有必要的软件包。
 
@@ -102,15 +97,11 @@ Miniforge 是一个支持多种 CPU 架构（包括 Apple M1）的 Conda 发行�
 
 ## 第四步：激活环境并配置 Jupyter
 
-![](img/4a3455f71b0c1dc63732e659663e9a9d_14.png)
 
-![](img/4a3455f71b0c1dc63732e659663e9a9d_15.png)
 
 环境创建完成后，需要激活它，并将其内核注册到 Jupyter 中，以便在 Notebook 中使用。
 
-![](img/4a3455f71b0c1dc63732e659663e9a9d_16.png)
 
-![](img/4a3455f71b0c1dc63732e659663e9a9d_17.png)
 
 以下是配置步骤：
 

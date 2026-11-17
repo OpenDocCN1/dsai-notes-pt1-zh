@@ -22,15 +22,12 @@
 
 ## [1.线性代数与矩阵论](http://www.showmeai.tech/article-detail/162)
 
-![线性代数与矩阵论](img/48489975afff0c7e9ab5fe0e4dbaac8f.png)
 
 ## [2.概率与统计](http://www.showmeai.tech/article-detail/163)
 
-![概率与统计](img/75b2aa243ba5a7b7c2798d42ff464faa.png)
 
 ## [3.信息论](http://www.showmeai.tech/article-detail/164)
 
-![信息论](img/e6f5a71879374fa6b1ab5445ecc5a639.png)
 
 ## [4.微积分与最优化](http://www.showmeai.tech/article-detail/165)
 

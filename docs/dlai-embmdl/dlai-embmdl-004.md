@@ -1,8 +1,6 @@
 # 004：4.L3 词元嵌入与句子嵌入
 
-![](img/388f883abd1384ebd9c168bfed2c3a7c_0.png)
 
-![](img/388f883abd1384ebd9c168bfed2c3a7c_0.png)
 
 ![](img/388f883abd1384ebd9c168bfed2c3a7c_2.png)
 
@@ -82,7 +80,6 @@ messages = [
 ]
 ```
 
-![](img/388f883abd1384ebd9c168bfed2c3a7c_6.png)
 
 ![](img/388f883abd1384ebd9c168bfed2c3a7c_7.png)
 
@@ -166,6 +163,5 @@ plot_similarity(messages, minilm_embeddings)
 
 在本节课中，我们亲眼看到了BERT嵌入的平均池化为何不适用于句子嵌入，以及像MiniLM-L6这样的预训练句子嵌入模型如何做得更好。你可能好奇如何构建这些双编码器模型。这正是你将在下一课中学到的内容。我们下节课见。
 
-![](img/388f883abd1384ebd9c168bfed2c3a7c_11.png)
 
 ![](img/388f883abd1384ebd9c168bfed2c3a7c_11.png)

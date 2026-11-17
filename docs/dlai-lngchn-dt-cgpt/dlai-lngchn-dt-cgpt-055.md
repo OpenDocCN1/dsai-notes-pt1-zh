@@ -1,26 +1,20 @@
 # 055：图像生成应用 🖼️
 
-![](img/c90c3c06d1e295caeb58f6aac3221f81_0.png)
 
 ## 概述
 
-![](img/c90c3c06d1e295caeb58f6aac3221f81_2.png)
 
 在本节课中，我们将学习如何构建一个图像生成应用。我们将使用开源的文本到图像模型，通过API连接到服务器，并创建一个交互式的用户界面，让用户可以输入文本描述来生成图像。
 
-![](img/c90c3c06d1e295caeb58f6aac3221f81_4.png)
 
 ---
 
-![](img/c90c3c06d1e295caeb58f6aac3221f81_6.png)
 
 ## 构建图像生成应用
 
-![](img/c90c3c06d1e295caeb58f6aac3221f81_8.png)
 
 上一节我们介绍了文本到图像模型的基本概念，本节中我们来看看如何具体实现一个应用。
 
-![](img/c90c3c06d1e295caeb58f6aac3221f81_10.png)
 
 图像生成模型通常是扩散模型。我们将通过一个API URL来连接服务器。
 
@@ -41,7 +35,6 @@ def generate_image(prompt):
 
 ### 测试图像生成
 
-![](img/c90c3c06d1e295caeb58f6aac3221f81_12.png)
 
 定义好函数后，我们可以进行测试。输入一段文本描述，模型将尝试生成相关的图像。
 
@@ -49,7 +42,6 @@ def generate_image(prompt):
 
 ---
 
-![](img/c90c3c06d1e295caeb58f6aac3221f81_14.png)
 
 ## 构建基础用户界面
 
@@ -57,14 +49,12 @@ def generate_image(prompt):
 
 以下是构建基础UI的关键步骤：
 
-![](img/c90c3c06d1e295caeb58f6aac3221f81_16.png)
 
 1.  **导入库**：导入Gradio和其他必要的库。
 2.  **定义界面函数**：创建一个函数，接收文本提示作为输入，调用我们的`generate_image`函数，并返回生成的图像。
 3.  **创建界面**：使用Gradio的`Interface`类，将函数、输入组件和输出组件绑定在一起。
 
 
-![](img/c90c3c06d1e295caeb58f6aac3221f81_18.png)
 
 ```python
 import gradio as gr
@@ -88,7 +78,6 @@ demo.launch()
 
 ---
 
-![](img/c90c3c06d1e295caeb58f6aac3221f81_20.png)
 
 ## 添加高级参数控制
 
@@ -102,7 +91,6 @@ demo.launch()
 *   **引导尺度**：控制模型遵循提示的严格程度。
 *   **图像尺寸**：设置生成图像的宽度和高度。
 
-![](img/c90c3c06d1e295caeb58f6aac3221f81_22.png)
 
 以下是更新后的UI构建思路，我们将使用Gradio Blocks来获得更灵活的布局控制：
 

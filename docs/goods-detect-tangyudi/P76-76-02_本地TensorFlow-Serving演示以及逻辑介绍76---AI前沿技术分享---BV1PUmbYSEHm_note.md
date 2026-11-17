@@ -6,7 +6,6 @@
 
 在本节课中，我们将学习如何使用 TensorFlow Serving 在生产环境中部署机器学习模型。我们将通过一个完整的本地演示，了解从模型导出、服务启动到客户端调用的全流程。
 
-![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_5.png)
 
 ![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_7.png)
 
@@ -36,25 +35,19 @@ TensorFlow Serving 是一个专为生产环境设计的高性能服务系统。�
 
 ![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_17.png)
 
-![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_19.png)
 
 我们使用 `tf.saved_model.builder.SavedModelBuilder` 模块来导出模型。导出的模型结构应尽可能简洁，其职责是接收符合要求的输入数据，并直接输出预测结果。
 
-![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_21.png)
 
 **核心设计原则**：模型服务本身不处理复杂的业务逻辑（如数据预处理）。这些工作应在客户端或调用链的其他环节完成。
 
-![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_23.png)
 
 ### 第二步：启动服务
 
-![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_25.png)
 
-![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_27.png)
 
 我们使用 Docker 命令来启动服务。命令的关键是指定模型在本地文件系统中的绝对路径。
 
-![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_29.png)
 
 启动命令示例：
 ```bash
@@ -78,7 +71,6 @@ docker run -p 8501:8501 \
 
 它的工作流程清晰地体现在其架构图中：
 
-![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_35.png)
 
 1.  **模型训练与导出**：开发者使用数据训练模型，并通过 SavedModel 格式导出。
 2.  **服务部署**：将导出的模型部署到 TensorFlow Serving 服务器上。
@@ -89,13 +81,11 @@ docker run -p 8501:8501 \
 
 ## 模型导出代码结构
 
-![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_37.png)
 
 ![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_39.png)
 
 现在，我们具体看看如何用代码实现模型导出。
 
-![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_41.png)
 
 以下是导出模型的关键代码结构：
 
@@ -103,7 +93,6 @@ docker run -p 8501:8501 \
     *   **输入**：模型算法所要求的张量（例如，归一化后的图像张量 `[None, height, width, channels]`）。
     *   **输出**：模型的预测结果张量。
 
-![](img/1e4ad782ae2c8f6b1c9ac40cf440df45_43.png)
 
 2.  **构建 SavedModel**：使用 `SavedModelBuilder` 来构建并保存模型。
     *   定义模型导出的目标路径。

@@ -18,9 +18,7 @@ import torch.optim as optim
 
 `torch` 提供了PyTorch的核心功能。`torch.nn` 包含了构建神经网络的组件。`torch.optim` 提供了训练这些网络的优化器工具。
 
-![](img/f92559c8ab124dd1f01db99354d645fd_1.png)
 
-![](img/f92559c8ab124dd1f01db99354d645fd_2.png)
 
 ## 准备数据
 

@@ -1,10 +1,8 @@
 # Matplotlib 绘图教程 P7：在同一坐标轴上绘制多个图形 📊
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_1.png)
 
 在本节课中，我们将学习如何使用 Matplotlib 在同一坐标轴上绘制多个图形。我们将涵盖在同一坐标轴上叠加折线图、散点图和柱状图的方法，以及如何为图形添加标签、图例和突出显示特定数据点。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_3.png)
 
 ---
 
@@ -21,7 +19,6 @@ plt.show()
 
 接下来，我们可以在同一个坐标轴对象 `ax` 上多次调用绘图方法。例如，我们可以绘制一个抛物线和一个阻尼振荡曲线。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_5.png)
 
 以下是绘制两个图形的步骤：
 
@@ -29,13 +26,10 @@ plt.show()
 2.  使用 `ax.plot()` 方法绘制第一个图形。
 3.  使用 `ax.plot()` 方法绘制第二个图形。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_7.png)
 
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_9.png)
 
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_11.png)
 
 ```python
 import numpy as np
@@ -52,11 +46,9 @@ ax.plot(x, y_damped)
 plt.show()
 ```
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_13.png)
 
 运行上述代码，Matplotlib 会自动为两个图形分配不同的颜色。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_15.png)
 
 ---
 
@@ -64,24 +56,18 @@ plt.show()
 
 当在同一坐标轴上绘制多个图形时，添加标签和图例至关重要，以便区分不同的数据系列。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_17.png)
 
 要为图形添加标签，只需在 `plot()` 方法中传入 `label` 参数。然后，调用 `ax.legend()` 方法来显示图例。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_19.png)
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_21.png)
 
 以下是添加标签和图例的步骤：
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_23.png)
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_25.png)
 
 1.  在 `plot()` 方法中设置 `label` 参数。
 2.  调用 `ax.legend()` 方法。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_27.png)
 
 ```python
 fig, ax = plt.subplots()
@@ -93,47 +79,36 @@ ax.legend()
 plt.show()
 ```
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_29.png)
 
 执行代码后，图例会显示在图形上，并自动匹配图形的颜色和线型。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_31.png)
 
 ---
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_33.png)
 
 ## 3. 应用：按类别着色的散点图
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_35.png)
 
 现在，我们将这个技巧应用到真实数据中。我们将使用一个心脏病数据集，创建一个散点图来探索静息血压与胆固醇之间的关系，并根据患者是否患有心脏病为数据点着色。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_37.png)
 
 假设我们有一个名为 `df` 的 DataFrame，其中包含 `trestbps`（静息血压）、`chol`（胆固醇）和 `target`（是否有心脏病，0表示无，1表示有）等列。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_39.png)
 
 以下是按类别着色散点图的步骤：
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_41.png)
 
 1.  创建图形和坐标轴。
 2.  分别筛选出健康患者（`target == 0`）和心脏病患者（`target == 1`）的数据。
 3.  为每个子集分别绘制散点图，并指定标签。
 4.  添加图例。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_43.png)
 
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_45.png)
 
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_47.png)
 
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_49.png)
 
 ```python
 fig, ax = plt.subplots()
@@ -151,39 +126,30 @@ plt.show()
 
 Matplotlib 会自动为两个系列分配不同的颜色。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_51.png)
 
 ---
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_53.png)
 
 ## 4. 进阶：使用循环优化代码
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_54.png)
 
 如果类别很多，重复编写绘图代码会显得冗余。我们可以通过循环遍历类别的唯一值来优化代码。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_56.png)
 
 以下是使用循环绘图的步骤：
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_58.png)
 
 1.  获取分类列的唯一值。
 2.  循环遍历每个唯一值。
 3.  在每次迭代中，筛选出对应类别的数据并进行绘制。
 4.  可以使用字典将类别值映射为更具描述性的标签。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_60.png)
 
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_62.png)
 
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_64.png)
 
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_66.png)
 
 ```python
 fig, ax = plt.subplots()
@@ -199,38 +165,29 @@ ax.legend()
 plt.show()
 ```
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_68.png)
 
 这种方法使代码更简洁，易于扩展。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_69.png)
 
 ---
 
 ## 5. 突出显示特定数据点
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_71.png)
 
 有时我们需要在图表中突出显示某个特定的数据点。这可以通过在该点上叠加一个不同颜色或大小的新散点图来实现。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_73.png)
 
 以下是突出显示单个数据点的步骤：
 
 1.  首先绘制所有数据点（例如设为灰色）。
 2.  然后，单独绘制你想要突出的那个数据点（例如设为红色并增大点的大小）。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_75.png)
-
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_76.png)
 
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_78.png)
 
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_80.png)
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_81.png)
+
 
 ```python
 fig, ax = plt.subplots()
@@ -246,31 +203,23 @@ ax.legend()
 plt.show()
 ```
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_83.png)
 
 参数 `s` 控制点的大小，`c` 控制点的颜色。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_85.png)
 
 ---
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_86.png)
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_88.png)
 
 ## 6. 组合不同类型的图表
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_90.png)
 
 最后，我们可以在同一坐标轴上组合不同类型的图表，例如将折线图和柱状图结合在一起。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_92.png)
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_94.png)
 
 假设我们想展示不同年龄组的平均胆固醇水平（折线图）和平均静息血压（柱状图）。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_96.png)
 
 以下是组合图表的步骤：
 
@@ -280,10 +229,8 @@ plt.show()
 4.  为两个系列添加标签和图例。
 
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_98.png)
 
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_100.png)
 
 ```python
 # 假设已按年龄分组并计算了均值
@@ -301,11 +248,9 @@ ax.legend()
 plt.show()
 ```
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_102.png)
 
 `alpha` 参数控制柱状图的透明度，`width` 参数控制柱子的宽度，这有助于在组合图表时提高可读性。
 
-![](img/ba4f2bfdbb4eb6c9346c88ace128100c_104.png)
 
 ---
 

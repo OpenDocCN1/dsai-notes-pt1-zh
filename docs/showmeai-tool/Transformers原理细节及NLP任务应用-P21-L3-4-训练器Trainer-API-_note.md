@@ -75,13 +75,11 @@ training_args = TrainingArguments(
 
 在笔记本中启动训练后，你将看到一个进度条，并在每个周期结束时看到包含损失和评估指标（如准确率）的表格，如下所示：
 
-![](img/1ef271a91eb13804a6c25e3c97f83cbb_1.png)
 
 训练完成后的评估结果可能类似这样：
 
 ![](img/1ef271a91eb13804a6c25e3c97f83cbb_1.png)
 
-![](img/1ef271a91eb13804a6c25e3c97f83cbb_3.png)
 
 ---
 

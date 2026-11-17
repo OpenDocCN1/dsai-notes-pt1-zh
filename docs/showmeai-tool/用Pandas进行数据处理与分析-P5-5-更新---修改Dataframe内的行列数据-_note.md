@@ -167,19 +167,13 @@ df['hobbyist'] = df['hobbyist'].map({'Yes': True, 'No': False})
 ```
 如果确定该列只有“是”和“否”，使用`map`是合适的。如果想保留其他可能的值，则应使用`replace`。
 
-![](img/e5b1b0669b3d37c98e40fb48d9e86bdf_3.png)
 
-![](img/e5b1b0669b3d37c98e40fb48d9e86bdf_4.png)
 
-![](img/e5b1b0669b3d37c98e40fb48d9e86bdf_5.png)
 
-![](img/e5b1b0669b3d37c98e40fb48d9e86bdf_6.png)
 
-![](img/e5b1b0669b3d37c98e40fb48d9e86bdf_7.png)
 
 ---
 
-![](img/e5b1b0669b3d37c98e40fb48d9e86bdf_8.png)
 
 ## 总结
 

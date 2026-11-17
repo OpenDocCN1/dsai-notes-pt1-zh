@@ -2,11 +2,9 @@
 
 ## 概述
 
-![](img/9f6d8ed747c7b0b6d60769a8615696dc_1.png)
 
 在本节课中，我们将学习如何利用上一节课构建的知识图谱，创建一个能够自动发现并执行API以完成用户查询的AI智能体。我们将定义三个核心工具，并演示智能体如何遵循业务流程规则来执行“获取采购订单”和“创建采购订单”等任务。
 
-![](img/9f6d8ed747c7b0b6d60769a8615696dc_3.png)
 
 ---
 
@@ -31,7 +29,6 @@ embedding_model = OpenAIEmbeddings()
 
 然后，加载我们在前几节课中创建的知识图谱。
 
-![](img/9f6d8ed747c7b0b6d60769a8615696dc_5.png)
 
 ```python
 # 加载知识图谱
@@ -180,7 +177,6 @@ def post_data_tool(service_name: str, payload: dict) -> str:
 
 我们将使用LangChain预定义的智能体循环（Agent Loop）。
 
-![](img/9f6d8ed747c7b0b6d60769a8615696dc_7.png)
 
 ```python
 from langchain.agents import create_react_agent, AgentExecutor
@@ -190,7 +186,6 @@ from langchain.agents import create_react_agent, AgentExecutor
 
 在提示词中，我们告诉智能体：基于用户查询发现API和业务流程信息，然后根据业务流程调用API。我们还必须告诉智能体如何使用导航链接在单次调用中创建抬头（header）和行项目（item）级别的对象。
 
-![](img/9f6d8ed747c7b0b6d60769a8615696dc_9.png)
 
 ```python
 # 定义智能体提示词
@@ -253,7 +248,6 @@ print(result1_updated['output'])
 
 现在，让我们看另一个更复杂一点的例子，这次是关于创建采购订单。
 
-![](img/9f6d8ed747c7b0b6d60769a8615696dc_11.png)
 
 ```python
 # 示例查询2：创建采购订单
@@ -261,13 +255,10 @@ result2 = agent_executor.invoke({"input": "Create a purchase order for 5 laptops
 print(result2['output'])
 ```
 
-![](img/9f6d8ed747c7b0b6d60769a8615696dc_12.png)
 
-![](img/9f6d8ed747c7b0b6d60769a8615696dc_13.png)
 
 在这里，智能体必须确定需要先创建一个采购申请，然后创建一个引用该采购申请的采购订单。
 
-![](img/9f6d8ed747c7b0b6d60769a8615696dc_14.png)
 
 如你所见，智能体首先进行发现，获取正确的API及其属性、导航和业务流程信息规范。这次，它识别出应该使用业务流程信息，即创建采购订单前应先创建采购申请。因此，它首先调用 `post_data_tool`，服务名称为“PurchaseRequisition”，在单个有效负载中创建了采购申请。然后，以此作为参考，再次调用 `post_data_tool`，使用采购订单API，创建了一个新的编号以5结尾的采购订单，引用了新创建的采购申请（Ref3）。
 

@@ -44,7 +44,6 @@
 
 ![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_23.png)
 
-![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_25.png)
 
 ![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_27.png)
 
@@ -92,7 +91,6 @@
 
 ![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_52.png)
 
-![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_54.png)
 
 ![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_55.png)
 
@@ -239,7 +237,6 @@
 考虑以下两个线程（T1和T2）的代码片段，其中 `flag` 是一个初始值未知的共享变量，`S1` 和 `S2` 代表两个临界区（例如，更新共享变量的操作）。
 
 
-![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_124.png)
 
 ![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_126.png)
 
@@ -260,7 +257,6 @@ flag = 0;
 
 ![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_132.png)
 
-![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_134.png)
 
 **问题**：这段代码是否存在数据竞争？它保证了什么属性？
 
@@ -289,7 +285,6 @@ flag = 0;
 
 ![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_146.png)
 
-![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_148.png)
 
 **任务描述**：有80个学生，学号即数组索引。给定一个存储学生分数的数组 `marks[]`。评分标准为：S(>=90), A(80-89), B(70-79), C(60-69), D(50-59), E(40-49), U(<40)。需要统计每个等级的学生人数。
 
@@ -351,7 +346,6 @@ __global__ void shortestPathKernel(Graph graph, int* distance) {
 2.  **竞争点2（不影响最终正确性，但影响效率）**：`int my_dist = distance[tid];` 中的**读取**与另一个线程正在执行的 `distance[tid] = ...` **写入**可能并发发生。
     *   **场景**：顶点A正在更新 `distance[B]` 为7。同时，顶点B正在读取自己的 `distance[B]` 以计算其邻居的距离。B可能读到旧的无穷大值，从而基于错误信息进行松弛。然而，在Bellman-Ford的多轮迭代中，下一轮迭代B会读到更新后的正确值7。因此，这**不会影响算法的最终正确性**，但可能会增加达到收敛所需的迭代轮数，**影响性能**。
 
-![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_165.png)
 
 ![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_167.png)
 
@@ -373,7 +367,6 @@ __global__ void shortestPathKernel(Graph graph, int* distance) {
 
 ![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_177.png)
 
-![](img/f0bef69f03e0d8ea63e07ce3df5f3d4a_179.png)
 
 *   **数据竞争** 发生在多个线程并发读写共享内存且至少有一个写操作时，它会导致程序行为不确定和结果错误。
 *   我们通过多个**实例**（累加、计数、成绩统计、最短路径）深入分析了数据竞争的产生场景和后果。

@@ -162,15 +162,12 @@ LLM生成的策略与其他必要信息一起被纳入提示中，以促进后�
 
 基于层级的觅食。基于层级的觅食（LBF）（Papoudakis & Schäfer, [2021](https://arxiv.org/html/2410.03997v1#bib.bib26)）是为多智能体强化学习（MARL）训练设计的一个具有挑战性的稀疏奖励环境。在该环境中，智能体必须学会导航路径并成功收集食物，只有在任务完成后才会获得奖励。为了在合作场景中评估我们的框架，我们选择了2玩家、2食物的完全合作场景。在这个场景中，所有智能体必须协作并协调行动，以便同时收集食物。该环境提供的动作空间包括[NONE, NORTH, SOUTH, WEST, EAST, LOAD]，我们将任务集定义为[NONE, 食物i, …, LOAD]。通过使用智能体和食物项目的相对位置，我们将分配的任务映射到动作空间中的相应动作，并基于此对齐计算奖励。我们在3个不同种子下评估了我们的框架，结果如图[2](https://arxiv.org/html/2410.03997v1#S5.F2 "Figure 2 ‣ 5.2 Results ‣ 5 Experiments ‣ YOLO-MARL: You Only LLM Once for Multi-agent Reinforcement Learning")和表[1](https://arxiv.org/html/2410.03997v1#S5.T1 "Table 1 ‣ 5.2 Results ‣ 5 Experiments ‣ YOLO-MARL: You Only LLM Once for Multi-agent Reinforcement Learning")所示。LLM通过提供奖励信号来辅助MARL算法，我们的框架在所有测试的MARL算法中显著超越了基线，达到了最大105%的均值回报提升，并且收敛速度比基线快了2倍。根据结果，我们的框架在所有基线算法中都表现出色，特别是在QMIX和MADDPG中取得了显著的改进，同时在MAPPO中也实现了更快的收敛速度。为了评估我们生成的函数质量的变异性，我们展示了三种不同生成函数的结果，见附录[B.1](https://arxiv.org/html/2410.03997v1#A2.SS1 "B.1 Comparison for different generated funcions ‣ Appendix B Additional result ‣ YOLO-MARL: You Only LLM Once for Multi-agent Reinforcement Learning")中的图[8](https://arxiv.org/html/2410.03997v1#A2.F8 "Figure 8 ‣ B.1 Comparison for different generated funcions ‣ Appendix B Additional result ‣ YOLO-MARL: You Only LLM Once for Multi-agent Reinforcement Learning")和表[3](https://arxiv.org/html/2410.03997v1#A2.T3 "Table 3 ‣ B.1 Comparison for different generated funcions ‣ Appendix B Additional result ‣ YOLO-MARL: You Only LLM Once for Multi-agent Reinforcement Learning")。结果表明，我们的框架始终生成高质量的函数，每个函数在所有基线算法中均取得了相似的改进。
 
-![参见说明文字](img/96aaf9c6d35441b5f3194b8f7b57806c.png)
 
 (a) MADDPG
 
-![参见说明文字](img/0067f63181dae42974920d62fe006d92.png)
 
 (b) MAPPO
 
-![参见说明文字](img/45e69c265d27556ec1314d4f905c4681.png)
 
 (c) QMIX
 
@@ -178,21 +175,17 @@ LLM生成的策略与其他必要信息一起被纳入提示中，以促进后�
 
 多代理粒子环境。我们在多代理粒子环境（MPE）（Lowe 等， [2020](https://arxiv.org/html/2410.03997v1#bib.bib21)）的简单扩展环境中评估我们的框架，这是一个完全合作的游戏。这个环境包含 N 个代理和 N 个地标。总体而言，代理必须学会覆盖所有地标，同时避免碰撞。其动作空间包括 [no_action, move_left, move_right, move_down, move_up]。我们定义每个代理的任务为 [Landmark_i,…,No action]。在训练过程中，基于全局观察，我们获取每个代理相对于地标的位置。类似于 LBF，我们将每个代理的任务映射回相应的动作空间，然后在动作空间层面奖励策略的动作。我们在 3 代理和 4 代理场景中使用 QMIX 和 MADDPG 作为基线评估我们的方法。如图 [3](https://arxiv.org/html/2410.03997v1#S5.F3 "Figure 3 ‣ 5.2 Results ‣ 5 Experiments ‣ YOLO-MARL: You Only LLM Once for Multi-agent Reinforcement Learning") 所示，我们的框架（彩色线）在 3 代理场景中相比于基线（黑色线）算法平均回报提高了 7.66% 和 8.8%，在 4 代理场景中使用 QMIX 和 MADDPG 时，分别提高了 2.4% 和 18.09%。这些提升展示了我们框架在增强代理之间的协调以覆盖所有地标方面的有效性。
 
-![参见图注](img/0418daaa1dbaf4e6d5a163a7bad783cb.png)
 
 （a）MADDPG
 
-![参见图注](img/7f23aa1566f9e1586d75db1e51777b40.png)
 
 （b）QMIX
 
 图 3：MPE 简单扩展场景 3 个代理的结果。实线表示平均表现，阴影区域表示 3 个不同生成的规划函数的范围（最小值到最大值）。
 
-![参见图注](img/fd5f9b4b20f341a3a3407bf3ab672519.png)
 
 （a）MADDPG
 
-![参见图注](img/dd9ea54a4818413fb681b8ede19e212e.png)
 
 （b）QMIX
 
@@ -202,15 +195,12 @@ LLM生成的策略与其他必要信息一起被纳入提示中，以促进后�
 
 在我们的实验中，我们将指派空间简单定义为[移动、攻击、停止、无（针对死亡代理）]。我们测试了MAPPO的表现，SMAC的结果如图[5](https://arxiv.org/html/2410.03997v1#S5.F5 "Figure 5 ‣ 5.2 Results ‣ 5 Experiments ‣ YOLO-MARL: You Only LLM Once for Multi-agent Reinforcement Learning")所示。如图所示，尽管我们提供了可能远非最佳的简单指令，我们的框架在某些地图上仍能取得相当的结果。这表明我们的框架即使在需要战略性移动的环境中，依然具有竞争力。我们还探讨了该环境下的稀疏奖励情况，其中基准算法的胜率始终接近0，而我们生成的规划奖励函数对比基准算法表现更佳。我们建议将这种配对生成作为未来工作，并将在第[7](https://arxiv.org/html/2410.03997v1#S7 "7 Limitation and Future Work ‣ YOLO-MARL: You Only LLM Once for Multi-agent Reinforcement Learning")节中进一步讨论。
 
-![请参考说明文字](img/d59f86cd8db9765d7e6d0fc084cefef5.png)
 
 (a) 3m
 
-![请参考说明文字](img/5cd03344aad8942094d2ab8b920f6cd6.png)
 
 (b) 2s vs 1sc
 
-![请参考说明文字](img/4c9ed214f6b2c0756da8fd2e00887fdb.png)
 
 (c) 2c vs 64zg
 
@@ -226,15 +216,12 @@ LLM生成的策略与其他必要信息一起被纳入提示中，以促进后�
 
 根据我们的测试，策略生成模块在YOLO-MARL方法中发挥着重要作用。如图[6](https://arxiv.org/html/2410.03997v1#S6.F6 "图6 ‣ 6.1 YOLO-MARL 有无策略生成的对比 ‣ 6 消融研究 ‣ YOLO-MARL: You Only LLM Once for Multi-agent Reinforcement Learning")所示，在没有LLM生成的策略时，我们得到的规划函数表现较差。有趣的是，在没有LLM生成策略的评估函数的平均回报并不总是接近零，这表明生成的规划函数并非完全错误。基于此，我们可以确认，策略生成模块有助于规划函数生成模块为该游戏提供更好的解决方案。此外，提供策略也有助于稳定生成代码的质量。我们观察到，在没有提供策略的情况下，出现错误函数的风险更高。
 
-![参见说明](img/231c30aff242f198982f47195f7b831a.png)
 
 (a) MADDPG
 
-![参见说明](img/116c6d077a7b6d51ff08348b6fd01928.png)
 
 (b) MAPPO
 
-![参见说明](img/7b32cdce6cbf73c79f2c06fd9b298126.png)
 
 (c) QMIX
 
@@ -262,15 +249,12 @@ LLM生成的策略与其他必要信息一起被纳入提示中，以促进后�
 
 我们的实验表明，单纯依赖LLM生成的奖励函数会导致较差的性能。如图[7](https://arxiv.org/html/2410.03997v1#S6.F7 "Figure 7 ‣ 6.3 Comparison between YOLO-MARL and reward generation ‣ 6 Ablation Study ‣ YOLO-MARL: You Only LLM Once for Multi-agent Reinforcement Learning")所示，LLM生成的奖励函数对的平均回报始终低于所有三种MARL算法的性能。这表明，在LLM生成的奖励函数下，智能体未能有效学习。然而，我们确实观察到略微的正回报，这表明该框架在奖励塑造任务中的潜力，尤其是在标准MARL算法在稀疏奖励场景中难以学习时。
 
-![参考说明](img/5f0a51ef9d8f45f4b35560b910617353.png)
 
 (a) MADDPG
 
-![参考说明](img/1b9030ae2db600cbfc51ea34e388028d.png)
 
 (b) MAPPO
 
-![参考说明](img/e9e10a74668f850338a720ac397b1103.png)
 
 (c) QMIX
 
@@ -396,15 +380,12 @@ LLM生成的策略与其他必要信息一起被纳入提示中，以促进后�
 
 考虑到 LLM 输出的变异性，我们评估了生成函数的质量，并比较了 3 种基线方法与使用我们框架的结果。我们在第[1](https://arxiv.org/html/2410.03997v1#S5.T1 "表 1 ‣ 5.2 结果 ‣ 5 实验 ‣ YOLO-MARL：多智能体强化学习中的一次性 LLM")节介绍的 LBF 环境中进行实验。
 
-![参见标题](img/da7a9739f623fbc8ca69a7cb822e6313.png)
 
 (a) MADDPG
 
-![参见标题](img/bfaa3b5284fe258967ee2a23c2a08ef7.png)
 
 (b) MAPPO
 
-![参见标题](img/576e49450ff5acc45b5936bfb41daaa5.png)
 
 (c) QMIX
 
@@ -420,15 +401,12 @@ LLM生成的策略与其他必要信息一起被纳入提示中，以促进后�
 
 ### B.2 奖励反馈的附加结果
 
-![参见标题](img/1a1372a51bdfa67fe83932057d8375d6.png)
 
 (a) 第一轮迭代
 
-![参见标题](img/f321eb948d2a528a2b446d2d1bbd349d.png)
 
 (b) 第二轮迭代
 
-![参见标题](img/934b66976775cb58dddea658d448d378.png)
 
 (c) 第三轮迭代
 
@@ -440,7 +418,6 @@ LLM生成的策略与其他必要信息一起被纳入提示中，以促进后�
 
 ### B.3 状态解释消融研究的附加结果
 
-![参见标题](img/89afca928e3dd67b852c75d0d9feb837.png)
 
 (a) 失败案例：未提供解释代码
 
@@ -454,11 +431,9 @@ LLM生成的策略与其他必要信息一起被纳入提示中，以促进后�
 
 我们测试了这种新方法，利用 YOLO-MARL 在 SMAC 环境下生成规划和奖励函数配对，并在完全稀疏奖励设置下进行测试。在三张 SMAC 地图上测试的基线表现较差，评估胜率始终接近零。然而，正如图[11](https://arxiv.org/html/2410.03997v1#A2.F11 "图11 ‣ B.4 未来工作的附加结果 ‣ 附录B 附加结果 ‣ YOLO-MARL：仅一次大语言模型用于多智能体强化学习")所示，将规划功能纳入奖励生成显著提高了性能。
 
-![参见标题](img/d51a4b2ba41ed658306f706d3e7186b8.png)
 
 (a) 3m 地图的结果
 
-![参见标题](img/f7081d4d5f69897c38996912cacc3d76.png)
 
 (b) 2s 与 1sc 地图的结果
 

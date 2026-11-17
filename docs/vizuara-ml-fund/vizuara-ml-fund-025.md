@@ -1,10 +1,7 @@
 #  025：P25 从零实现基于动量的梯度下降
 
-![](img/ee79b0fda06778d88a402ba6fe652d37_0.png)
 
-![](img/ee79b0fda06778d88a402ba6fe652d37_0.png)
 
-![](img/ee79b0fda06778d88a402ba6fe652d37_2.png)
 
 ![](img/ee79b0fda06778d88a402ba6fe652d37_2.png)
 

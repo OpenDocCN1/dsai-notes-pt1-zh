@@ -184,7 +184,6 @@ Lin等人（[2024](https://arxiv.org/html/2412.09572v1#bib.bib20)）使用基于
 
 这些发现突显了对模型如何依赖预训练数据中的语义关联、忽视问题中其他关键内容的系统性研究的需求（Zhang 等，[2024](https://arxiv.org/html/2412.09572v1#bib.bib41); Li 等，[2024](https://arxiv.org/html/2412.09572v1#bib.bib18)）。我们在模型中观察到的行为可能显著削弱它们输出的可信度。潜在的解决方案包括通过同时使用与同一查询相关的多样化问题对模型进行微调/知识编辑。
 
-![请参见标题说明](img/d4975ce3eaf9d8c83261db0b84108f75.png)![请参见标题说明](img/0ff826d9703f728a5e7276884570c9ef.png)
 
 图 3：所有数据集上测试方法的 AR 曲线。SC 表示 SC（SE）。SC w 5 个问题表示在没有代理交互的情况下使用代理的多样化问题来计算熵。
 
@@ -216,11 +215,9 @@ Lin等人（[2024](https://arxiv.org/html/2412.09572v1#bib.bib20)）使用基于
 
 代理数量。我们分析了代理数量的影响。在图[4](https://arxiv.org/html/2412.09572v1#S4.F4 "图 4 ‣ 4.3 提出的DiverseAgentEntropy分析 ‣ 4 实验 ‣ DiverseAgentEntropy：通过多样的视角和多代理互动量化黑箱LLM不确定性")和附录图[9](https://arxiv.org/html/2412.09572v1#A1.F9 "图 9 ‣ A.9 复杂问题的短形式答案扩展讨论 ‣ 附录 A 附录 ‣ DiverseAgentEntropy：通过多样的视角和多代理互动量化黑箱LLM不确定性")中，我们增加了代理的数量，限制互动回合数为4回合。代理数量增加时，性能有所提升，但超过4个代理后性能的提升较为有限，表明5个代理已经足够。
 
-![参见标题](img/0916b3c295786d748ed118aa47e92afe.png)![参见标题](img/1ab3610082f4f956dfb6c8e3e840790b.png)
 
 (a) 代理数量
 
-![参见标题](img/827c86399b02fff84d73194db05d3576.png)![参见标题](img/117176993f3ccad6267ff811d08ba53e.png)
 
 (b) 互动回合数
 
@@ -230,7 +227,6 @@ Lin等人（[2024](https://arxiv.org/html/2412.09572v1#bib.bib20)）使用基于
 
 代理人互动的形式。我们考察了代理人是应该进行一对一互动，还是小组互动，其中在小组设置中，每个代理人可以查看所有其他代理人独特的问题和答案。我们在图[5](https://arxiv.org/html/2412.09572v1#S4.F5 "Figure 5 ‣ 4.3 Analysis of the proposed DiverseAgentEntropy ‣ 4 Experiment ‣ DiverseAgentEntropy: Quantifying Black-Box LLM Uncertainty through Diverse Perspectives and Multi-Agent Interaction")和附录图[11](https://arxiv.org/html/2412.09572v1#A1.F11 "Figure 11 ‣ A.9 Discussion of extension to complex questions with short-form answer ‣ Appendix A Appendix ‣ DiverseAgentEntropy: Quantifying Black-Box LLM Uncertainty through Diverse Perspectives and Multi-Agent Interaction")中展示了我们的发现。结果表明，一对一互动优于小组互动。在我们对每个模型的30个错误示例进行分析时，发现了两种主要错误类型：（1）50%的错误发生在代理人受多数错误答案影响时，（2）15%的错误发生在代理人得出问题没有有效答案或因冲突回答而基于错误前提的结论时。这一分析进一步表明，代理人更容易受到主导错误信息的影响，这强化了使用一对一互动进行单次查询不确定性检查的重要性，因为这种方式既能让模型接触到多样化的信息，又能保持其独立推理的能力。
 
-![请参阅说明文字](img/59e972acd8d957a5e80977f9c00fb5e8.png)![请参阅说明文字](img/cc0fcdcba49d9f5eef9bb6e72caa7ce5.png)
 
 (a) 互动的形式
 
@@ -449,23 +445,18 @@ DiverseAgentEntropy的局限性。探索简单问答之外的内容揭示了我�
 
 探索超越简单问答的方法揭示了我们提出的方法的局限性。我们在图[7](https://arxiv.org/html/2412.09572v1#A1.F7 "Figure 7 ‣ A.9 Discussion of extension to complex questions with short-form answer ‣ Appendix A Appendix ‣ DiverseAgentEntropy: Quantifying Black-Box LLM Uncertainty through Diverse Perspectives and Multi-Agent Interaction")中分析了我们提出的方法，基于从HotpotQA（Yang等，[2018](https://arxiv.org/html/2412.09572v1#bib.bib38)）中随机抽取的450个实例，其中所有数据都是多跳问题。与简单问题的行为相反，直接评估复杂问题上的表现非常有效，而代理人交互可能会使模型产生困惑。我们的错误分析识别出了两种主要类型的错误：1）40%的错误发生在代理人得出结论认为问题包含错误的假设、没有答案或包含未指定的实体时，2）10%的错误发生在代理人在两个答案之间犹豫，其中一个是正确答案。结果表明，当初始查询是复杂的时，代理人更倾向于通过暗示问题本身存在问题来采取捷径，以避免答案的不一致。一种可能的解决方案是引入总结器或元评判者（Chan等，[2023](https://arxiv.org/html/2412.09572v1#bib.bib7)），以追踪代理人对查询的整体理解。
 
-![请参见说明文字](img/09604724cb99b6e7c1634fa2b2fc6439.png)![请参见说明文字](img/127b45a2390a4ed7fbab31e1b794984c.png)
 
 图7：我们的方法在HotpotQA上的表现。
 
-![请参见说明文字](img/4491f5dc0419ecdbf66ef476dc598d6d.png)![请参见说明文字](img/43c2b0347976126489dbbae0e131eb44.png)![请参见说明文字](img/86bc1cbab8210f58075ef6994062e9cb.png)![请参见说明文字](img/1a5f6432c57884fb247531eac3420a1c.png)![请参见说明文字](img/19a5f3aad051b44c2a848e563db45bd5.png)![请参见说明文字](img/cbe90da87ced7652e98e8421ff737de1.png)![请参见说明文字](img/87bcb65fd320f34c2063f51c48d8e9cb.png)![请参见说明文字](img/50c71d8acb47c5e3dfc2bb1c367414c1.png)![请参见说明文字](img/ad6c607b7e840c1ee5ddaeeba6ad17d7.png)![请参见说明文字](img/c4516de07ee903bc87af38b090393591.png)
 
 图8：基准方法和我们提出的方法在各个数据集上的AR曲线。SC指的是基于自一致性的熵。SC w 5 questions指的是使用代理人问题且没有代理人交互的基准方法。
 
-![参见说明文字](img/481253c6c25a63898ed7898f698839b8.png)![参见说明文字](img/87603793ba0beea17292c13ee447c2bf.png)![参见说明文字](img/4e0ffab224cc5df64bff64368e9227a4.png)![参见说明文字](img/1be673ee8a4e3e4ea7f28603064b2ea7.png)![参见说明文字](img/bacdd14b73fe74ce358f5ec88a21da98.png)![参见说明文字](img/d44450dccb13b9d0b42e03d21dbb6033.png)![参见说明文字](img/9b4c86f88a704c17ce7dad30b65d255f.png)![参见说明文字](img/d0d08e962b9c4a31676f17a4e4314309.png)![参见说明文字](img/b56a9bee36288b19da94b2420290e2fd.png)![参见说明文字](img/54069985b4b6488fe3ccea2c6fdbc1eb.png)
 
 图9：我们展示了代理数量对每个数据集上代理性能的影响。
 
-![参见说明文字](img/fbee4fc3eea0bc6a245dd3433f5fea9e.png)![参见说明文字](img/dbeb3cdf4bf9ee79b18e2f5c0aceb3fc.png)![参见说明文字](img/bed6796a0f7739e555a03ba3d7965883.png)![参见说明文字](img/eb8dc1e0ab26e32217b1e4c3c60cae16.png)![参见说明文字](img/97f5196ab3a35adfa01e04ba09cb10f2.png)![参见说明文字](img/8e0eb58747de9c9dcda5944de8798c44.png)![参见说明文字](img/81df403c32e1fc4401454c6f23dc50ac.png)![参见说明文字](img/83fd761dcd81070642a5521f3e2e6cc1.png)![参见说明文字](img/415cda782687ca445c45e1bfbb4598cc.png)![参见说明文字](img/14b591f5894ab91d89c344ee228892c0.png)
 
 图10：我们展示了交互数量对每个数据集上代理性能的影响。
 
-![参见说明文字](img/97c4e679bef0b3d43da3e41dc1209eed.png)![参见说明文字](img/ae464d3a5387fb80bc3d230c47ab87c5.png)![参见说明文字](img/352e78dc763ab3728fde4ce58a1c82d5.png)![参见说明文字](img/295f140b0fcb30edb34e10fa898176b0.png)![参见说明文字](img/65aa47859cd554bf51479d363d52c7a2.png)![参见说明文字](img/98894208f50f73f0e54d5d6082a416a1.png)![参见说明文字](img/178fc567a34720ceb43d3fcccd7d89b4.png)![参见说明文字](img/91582d549ea0fba93f5d0fceb6138680.png)![参见说明文字](img/7f211e232c8da7782963b8c7a09cd0e3.png)![参见说明文字](img/349d403d01d47d4825efd4b18ead9377.png)
 
 图11：我们展示了交互格式对每个数据集的影响。
 

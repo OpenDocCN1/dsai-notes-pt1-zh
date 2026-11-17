@@ -1,6 +1,5 @@
 # 第一部分 127：Scikit-learn中的计数向量化
 
-![](img/8f357c8e54e4cee9cde54b12451365d0_1.png)
 
 在本节课中，我们将学习如何使用Scikit-learn库中的计数向量化技术，将文本数据转换为机器学习模型可以处理的数值格式。我们将通过一个具体的代码示例来理解其工作原理和应用。
 
@@ -18,17 +17,13 @@
 
 以下是使用Scikit-learn实现计数向量化的步骤。
 
-![](img/8f357c8e54e4cee9cde54b12451365d0_5.png)
 
-![](img/8f357c8e54e4cee9cde54b12451365d0_6.png)
 
 ### 代码实现步骤
 
 以下是实现计数向量化的具体代码流程。
 
-![](img/8f357c8e54e4cee9cde54b12451365d0_8.png)
 
-![](img/8f357c8e54e4cee9cde54b12451365d0_9.png)
 
 1.  **导入所需库**
     首先，我们需要从`sklearn.feature_extraction.text`模块导入`CountVectorizer`类。
@@ -83,7 +78,6 @@
 
     生成的DataFrame中，每一行代表一个文档，每一列代表一个唯一的单词，单元格中的值表示该单词在对应文档中出现的次数。
 
-![](img/8f357c8e54e4cee9cde54b12451365d0_11.png)
 
 ![](img/8f357c8e54e4cee9cde54b12451365d0_12.png)
 

@@ -1,10 +1,7 @@
 # 164：SVD奇异值分解 🧮
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_1.png)
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_2.png)
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_4.png)
 
 在本节课中，我们将要学习奇异值分解。这是一种重要的矩阵因子分解运算，尤其适用于那些无法进行特征值分解的矩阵。我们将通过对比特征值分解，来理解SVD的结构、意义和计算方法。
 
@@ -22,7 +19,6 @@
 *   **Σ** 是一个对角矩阵，其对角线上的值称为奇异值。
 *   **V^T** 是右奇异向量矩阵 **V** 的转置。
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_6.png)
 
 ## 与特征值分解的对比
 
@@ -45,12 +41,9 @@
 
 让我们通过代码来演示奇异值分解。首先，我们创建一个无法进行特征值分解的矩阵。
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_8.png)
 
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_10.png)
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_12.png)
 
 ```python
 import numpy as np
@@ -60,12 +53,10 @@ print("原始矩阵 X:")
 print(X)
 ```
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_14.png)
 
 接下来，我们使用SciPy库中的`linalg.svd`函数进行奇异值分解。
 
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_16.png)
 
 ```python
 from scipy import linalg
@@ -87,12 +78,9 @@ print(Vt)
 为了验证分解的有效性，我们可以用分解出的三个矩阵来近似重构原始矩阵 **X**。由于 **Sigma** 是向量，我们需要先将其转换为对角矩阵。
 
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_18.png)
 
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_20.png)
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_22.png)
 
 ```python
 # 将奇异值向量Sigma转换为对角矩阵
@@ -107,13 +95,10 @@ print(X)
 
 你会看到 `X_reconstructed` 与原始矩阵 `X` 在数值上非常接近。细微的差异（如非常接近零的值）是由于浮点数计算精度和SVD本身的近似性质导致的。
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_24.png)
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_26.png)
 
 ## 总结
 
-![](img/c4bb2c8976a51a295bd71a1e1fcebe15_28.png)
 
 本节课中我们一起学习了奇异值分解。
 1.  **SVD是什么**：它是一种将矩阵分解为 **U Σ V^T** 三个矩阵的运算。

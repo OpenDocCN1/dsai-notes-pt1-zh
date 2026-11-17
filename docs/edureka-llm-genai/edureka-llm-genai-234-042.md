@@ -6,19 +6,13 @@
 
 上一节我们介绍了LLM扩展的总体框架，本节中我们来看看具体的扩展技术。这些技术共同确保了我们的“数字英雄”——即AI模型——能够保持最佳状态并适应各种挑战。
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_1.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_2.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_3.png)
 
 ## 持续监控与优化 📈
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_4.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_5.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_6.png)
 
 想象一下健身追踪器如何帮助人们改善锻炼计划。在LLM扩展中，持续改进和优化就如同追踪我们AI的“健康状况”，并不断进行改进，确保我们的数字英雄保持在顶尖的语言状态。
 
@@ -28,25 +22,17 @@
 
 考虑一位英雄如何确保对所有人都公正。在LLM扩展中，处理伦理和偏见问题就如同我们的AI英雄在语言中倡导公平与公正。
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_8.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_9.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_10.png)
 
 **处理伦理与偏见问题**涉及实施措施以确保AI的行为符合道德且无偏见。这就像为我们的数字英雄灌输正义感，以促进公平、无偏见的语言生成。
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_11.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_12.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_13.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_14.png)
 
 ## 文档记录与团队协作 📚
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_15.png)
 
 想象一支超级英雄团队共享信息以击败共同的敌人。在LLM扩展中，文档记录与协作涉及为我们的AI创建一本“超级英雄手册”，并促进团队合作。
 
@@ -56,19 +42,13 @@
 
 想象为你最喜欢的游戏角色调整设置以获得更好的表现。在LLM扩展中，参数调优就像微调我们语言模型的设置，以实现最佳的语言生成效果。
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_17.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_18.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_19.png)
 
 **参数调优**涉及调整AI模型的内部设置以优化其性能。这就像调整旋钮，确保我们的数字英雄以最有效的方式生成语言。
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_20.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_21.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_22.png)
 
 ## 理解与应用扩展定律 📊
 
@@ -78,35 +58,23 @@
 
 ## 操作适应性调整 🔄
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_24.png)
 
 想象一位英雄根据环境动态改变策略。在LLM扩展中，操作适应性调整涉及调整AI的操作以适应各种语言场景。
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_25.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_26.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_27.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_28.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_29.png)
 
 **操作适应性调整**意味着我们的数字英雄根据语言环境动态改变其方法。
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_30.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_31.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_32.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_33.png)
 
 ## 用户行为监控 👁️
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_34.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_36.png)
 
 最后，想象一位英雄从人们的行为中学习以更好地服务他们。在LLM扩展中，用户行为监控涉及观察用户与AI语言输出的互动，并据此调整模型。
 
@@ -114,11 +82,8 @@
 
 ---
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_38.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_39.png)
 
-![](img/5cdee22d2cefd1f03cf21b293fa25d71_40.png)
 
 ![](img/5cdee22d2cefd1f03cf21b293fa25d71_41.png)
 

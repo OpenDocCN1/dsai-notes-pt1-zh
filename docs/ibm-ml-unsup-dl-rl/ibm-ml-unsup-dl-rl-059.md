@@ -6,21 +6,17 @@ So let's go over the learning goals for this section。
 
 
 
-![](img/7d7fe224b341485171693bec95d3a4f3_1.png)
 
 In this section， we're going to cover the different activation functions for our nodes within our neural network。
 
 
 
-![](img/7d7fe224b341485171693bec95d3a4f3_3.png)
 
 And then at the end， we'll summarize each one of the commonly used activation functions that we discuss。
 
 
 
-![](img/7d7fe224b341485171693bec95d3a4f3_5.png)
 
-![](img/7d7fe224b341485171693bec95d3a4f3_6.png)
 
 So recall that this basic perceptron that we have here is the simplest building block for our neural network。
 
@@ -44,7 +40,6 @@ And without this activation function in general。The model would be a linear mo
 
 
 
-![](img/7d7fe224b341485171693bec95d3a4f3_8.png)
 
 And in this analogy， we use the sigmoid because we want outputs between 0 and one。
 
@@ -56,11 +51,8 @@ And in this analogy， we use the sigmoid because we want outputs between 0 and 
 
 
 
-![](img/7d7fe224b341485171693bec95d3a4f3_10.png)
 
-![](img/7d7fe224b341485171693bec95d3a4f3_11.png)
 
-![](img/7d7fe224b341485171693bec95d3a4f3_12.png)
 
 So we're going to start our discussion of activation functions with that sigmoid function。
 

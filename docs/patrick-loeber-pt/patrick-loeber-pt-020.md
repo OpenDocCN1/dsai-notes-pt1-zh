@@ -6,7 +6,6 @@
 
 ## 概述与准备工作
 
-![](img/bff8cef36ea0f83882ae721618efcda8_1.png)
 
 ![](img/bff8cef36ea0f83882ae721618efcda8_2.png)
 
@@ -64,7 +63,6 @@ class RNN(nn.Module):
 
 ![](img/bff8cef36ea0f83882ae721618efcda8_14.png)
 
-![](img/bff8cef36ea0f83882ae721618efcda8_15.png)
 
 我们需要创建初始隐藏状态张量`h0`，其形状为`(num_layers, batch_size, hidden_size)`，并初始化为零。
 

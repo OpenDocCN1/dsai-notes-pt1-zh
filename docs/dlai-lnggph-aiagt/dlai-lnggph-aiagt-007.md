@@ -1,8 +1,6 @@
 # 007：7.第六课 论文写作器 📝
 
-![](img/b9aa3130604dcbcb03d9630d24407b8d_0.png)
 
-![](img/b9aa3130604dcbcb03d9630d24407b8d_2.png)
 
 ## 概述
 在本节课中，我们将构建一个功能更全面的项目——一个AI论文写作器。这个智能体将遵循“规划-研究-生成-反思”的循环流程，自动撰写并迭代改进一篇论文。
@@ -152,16 +150,12 @@ def research_critique_node(state: AgentState):
     return {“content”: current_content}
 ```
 
-![](img/b9aa3130604dcbcb03d9630d24407b8d_4.png)
 
-![](img/b9aa3130604dcbcb03d9630d24407b8d_6.png)
 
 ### 4. 定义条件边
 我们需要一个逻辑来决定是结束流程还是继续反思循环。
 
-![](img/b9aa3130604dcbcb03d9630d24407b8d_8.png)
 
-![](img/b9aa3130604dcbcb03d9630d24407b8d_9.png)
 
 ```python
 def should_continue(state: AgentState) -> str:
@@ -171,23 +165,16 @@ def should_continue(state: AgentState) -> str:
         return “reflect”
 ```
 
-![](img/b9aa3130604dcbcb03d9630d24407b8d_11.png)
 
-![](img/b9aa3130604dcbcb03d9630d24407b8d_12.png)
 
-![](img/b9aa3130604dcbcb03d9630d24407b8d_13.png)
 
 ### 5. 组装成图
 最后，将所有节点和边组合成一个完整的工作流图。
 
-![](img/b9aa3130604dcbcb03d9630d24407b8d_15.png)
-
-![](img/b9aa3130604dcbcb03d9630d24407b8d_16.png)
-
-![](img/b9aa3130604dcbcb03d9630d24407b8d_18.png)
 
 
-![](img/b9aa3130604dcbcb03d9630d24407b8d_20.png)
+
+
 
 ```python
 # 初始化图

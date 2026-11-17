@@ -4,7 +4,6 @@
 
 ---
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_1.png)
 
 ## 概述
 
@@ -12,16 +11,13 @@
 
 ---
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_3.png)
 
 ## 准备工作
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_5.png)
 
 首先，我们需要设置环境并导入必要的库。这包括抑制警告、加载环境变量以及导入Haystack和OpenAI相关的组件。
 
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_7.png)
 
 ```python
 import warnings
@@ -37,20 +33,17 @@ from haystack.components.joiners import BranchJoiner
 from haystack.experimental.components.function_call import OpenAIFunctionCaller
 ```
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_9.png)
 
 ---
 
 ## 第一步：创建RAG管道函数
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_11.png)
 
 上一节我们完成了基础设置，本节中我们来看看如何将RAG管道包装成一个可被调用的函数。
 
 我们将创建一个标准的RAG管道，但为了演示，这里使用一些预设的“虚假”文档数据。
 
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_13.png)
 
 ```python
 # 假设的文档数据
@@ -72,7 +65,6 @@ def create_rag_pipeline():
 rag_pipeline = create_rag_pipeline()
 ```
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_15.png)
 
 现在，我们将这个管道包装成一个Python函数，以便后续作为工具调用。
 
@@ -97,13 +89,11 @@ def rag_pipeline_func(query: str):
 
 ## 第二步：创建模拟天气函数
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_17.png)
 
 除了RAG管道，我们还可以为代理提供其他工具。接下来，我们创建一个模拟的天气查询函数。
 
 以下是模拟的天气数据：
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_19.png)
 
 ```python
 weather_data = {
@@ -132,19 +122,16 @@ def get_current_weather(location: str):
 
 现在，我们有了两个可用的工具：一个用于回答居住地问题的RAG函数，另一个用于查询天气的函数。
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_21.png)
 
 ---
 
 ## 第三步：将函数描述为OpenAI工具
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_23.png)
 
 为了让OpenAI模型理解并调用我们的函数，我们需要按照OpenAI API的规范来描述这些工具。
 
 以下是描述工具的方法：
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_25.png)
 
 ```python
 tools = [
@@ -198,7 +185,6 @@ chat_generator = OpenAIChatGenerator(model="gpt-3.5-turbo", generation_kwargs={"
 
 接下来，我们需要一个组件来实际执行模型要求调用的函数。我们将使用Haystack实验包中的`OpenAIFunctionCaller`。
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_27.png)
 
 ```python
 # 初始化函数调用器，并为其提供可用的函数字典
@@ -213,13 +199,11 @@ function_caller = OpenAIFunctionCaller(functions=available_functions)
 
 ## 第五步：构建聊天代理管道
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_29.png)
 
 现在，我们将各个组件组合成一个完整的聊天代理管道。这个管道需要处理消息的流转、工具的调用以及响应的生成。
 
 以下是构建管道的步骤：
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_31.png)
 
 1.  **消息收集器**：使用`BranchJoiner`来合并来自用户和函数调用器的消息，形成一个连贯的消息历史。
 2.  **聊天生成器**：接收消息历史，决定是否需要调用工具，并生成回复。
@@ -246,7 +230,6 @@ chat_agent.connect("function_caller.replies", "message_collector")
 # chat_agent.draw("./chat_agent_pipeline.png")
 ```
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_33.png)
 
 ---
 
@@ -254,11 +237,9 @@ chat_agent.connect("function_caller.replies", "message_collector")
 
 管道构建完成后，我们可以创建一个简单的交互循环来测试它。
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_35.png)
 
 首先，初始化消息队列，并可以加入一个系统消息来指导模型行为。
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_37.png)
 
 ```python
 messages = [ChatMessage.from_system("如果需要，请将用户问题分解为更简单的问题。不要对要插入函数的值进行假设。")]
@@ -292,22 +273,17 @@ while True:
 
 ---
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_39.png)
 
 ## 第七步：创建Gradio Web界面（可选）
 
 为了使聊天代理更易于使用，我们可以使用Gradio快速创建一个Web界面。
 
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_41.png)
 
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_43.png)
-
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_45.png)
 
 
-![](img/a5ec60c37eb8c27d65a943f44fc9882d_47.png)
+
 
 ```python
 import gradio as gr

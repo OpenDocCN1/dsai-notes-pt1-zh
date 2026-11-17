@@ -14,7 +14,6 @@ OpenCV（Open Source Computer Vision Library）是一个开源的计算机视觉
 
 ![](img/3fe5bb4609f7a8a8ccd4c78a238230e7_5.png)
 
-![](img/3fe5bb4609f7a8a8ccd4c78a238230e7_6.png)
 
 我们将从最基础的安装开始，逐步学习各项功能，最终能够创建实际的项目，例如颜色检测、形状识别、人脸检测甚至车牌识别等项目。
 
@@ -32,9 +31,7 @@ OpenCV（Open Source Computer Vision Library）是一个开源的计算机视觉
 
 上一节我们介绍了课程的整体目标，本节中我们来看看具体的学习路径。以下是本课程将涵盖的主要章节和主题：
 
-![](img/3fe5bb4609f7a8a8ccd4c78a238230e7_13.png)
 
-![](img/3fe5bb4609f7a8a8ccd4c78a238230e7_14.png)
 
 1.  **图像介绍**：了解数字图像的基本概念。
 2.  **环境安装**：完成Python和OpenCV库的必要安装。

@@ -1,6 +1,5 @@
 # 006：利用Assistants API连接SQL数据库
 
-![](img/0645b59863125fc7d2ae3fcc79c39a53_0.png)
 
 ![](img/0645b59863125fc7d2ae3fcc79c39a53_0.png)
 
@@ -10,17 +9,12 @@
 
 ![](img/0645b59863125fc7d2ae3f2ae3fcc79c39a53_2.png)
 
-![](img/0645b59863125fc7d2ae3fcc79c39a53_4.png)
 
 本节课将为你提供使用全新Assistants API的机会，并测试其函数调用和代码解释器功能。这将完善多种实现模式，帮助你连接SQL数据库并创建自己的数据库智能体。
 
-![](img/0645b59863125fc7d2ae3fcc79c39a53_5.png)
 
-![](img/0645b59863125fc7d2ae3fcc79c39a53_6.png)
 
-![](img/0645b59863125fc7d2ae3fcc79c39a53_4.png)
 
-![](img/0645b59863125fc7d2ae3fcc79c39a53_5.png)
 
 ![](img/0645b59863125fc7d2ae3fcc79c39a53_6.png)
 
@@ -165,6 +159,5 @@ messages = client.beta.threads.messages.list(thread_id=thread.id)
 
 通过结合这些功能，你可以创建出能够理解上下文、动态调用工具并自主执行代码以找到解决方案的智能数据库代理，从而大大增强了AI应用处理SQL数据库的能力。
 
-![](img/0645b59863125fc7d2ae3fcc79c39a53_8.png)
 
 ![](img/0645b59863125fc7d2ae3fcc79c39a53_8.png)

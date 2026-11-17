@@ -70,7 +70,6 @@ JOIN order_statuses os ON o.status = os.order_status_id;
 
 假设我们需要连接`order_items`表和`order_item_notes`表，连接条件涉及两列：`order_id`和`product_id`。使用`ON`子句的写法如下：
 
-![](img/4c5e0763cfb44e98994d583aeac17078_3.png)
 
 ```sql
 SELECT *
@@ -80,7 +79,6 @@ JOIN order_item_notes oin
   AND oi.product_id = oin.product_id;
 ```
 
-![](img/4c5e0763cfb44e98994d583aeac17078_5.png)
 
 这个连接条件看起来有些混乱。我们可以用`USING`关键字来简化它：
 
@@ -92,11 +90,9 @@ JOIN order_item_notes USING (order_id, product_id);
 
 在`USING`后的括号中，我们只需列出两个表中都存在的、用于连接的列名，并用逗号分隔。这样写不仅更简洁，也更容易理解。
 
-![](img/4c5e0763cfb44e98994d583aeac17078_7.png)
 
 ## 实践练习
 
-![](img/4c5e0763cfb44e98994d583aeac17078_8.png)
 
 现在，让我们回到SQL发票数据库进行一个练习。
 

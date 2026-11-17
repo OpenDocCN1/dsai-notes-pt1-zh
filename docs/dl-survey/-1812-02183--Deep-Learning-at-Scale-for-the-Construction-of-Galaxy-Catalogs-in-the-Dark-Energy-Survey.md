@@ -108,13 +108,11 @@ DES 数据集 采用相同的步骤，首先从 NCSA DESaccess 网站上选择 D
 
 在训练过程中，我们首先从预训练模型的倒数第二层提取特征图，进行一个周期的训练，并将其输入到预训练模型末尾添加的几个自定义全连接层中（见图 7 在 A）。然后，我们逐步解冻整个网络的早期层，并对它们的权重进行几轮训练的微调。
 
-![参见说明](img/a90131496c7a0191c5198610f2d60e42.png)![参见说明](img/4c2497e6b2d75c5027bb022e945d4a99.png)
 
 ![参见说明](img/5f4e20d911e309a89d258440f37cc6e7.png)![参见说明](img/bf1da76e0dd0ae8692170d5fffad7251.png)
 
 图 2：上面部分：标记的 SDSS 训练集图像。下面部分：来自 SDSS-DR7 的星系样本以及对应的 DES DR1 交叉匹配星系。
 
-![参见说明](img/067b59cb52d811d9e0f98fad40b4e4dd.png)
 
 ![参见说明](img/8491eb5a309dc3de0bdaad9830398877.png)
 
@@ -162,7 +160,6 @@ DES 数据集 采用相同的步骤，首先从 NCSA DESaccess 网站上选择 D
 
 图 5：HP SDSS 和 DES 测试集以及未标记 DES 测试集的 t-SNE 聚类可视化。
 
-![参见标题](img/44fb4d1ea37ce02f877be031dd234bf5.png) ![参见标题](img/6c3eb578ec55335b3fb6de83bfb50075.png)
 
 ![参见标题](img/17792cd1c6eb73d21cf8a1fe4b8aaa8d.png) ![参见标题](img/0f4dcfcf812f0e466bf0e43497d3e58b.png)
 
@@ -453,7 +450,6 @@ DES 数据集 采用相同的步骤，首先从 NCSA DESaccess 网站上选择 D
 
 除了提供使用十种不同模型的递归训练结果（见图 6），我们还提供了十个样本中的一个典型模型的 ROC 结果。这些 ROC 结果表明，递归训练确实提高了 SDSS 和 DES 的分类准确率。
 
-![参见说明](img/e5145fe36c092fe692ea9d16cee83885.png)
 
 ![参见说明](img/0e6991dae23c0dd1c220f579f8ed7851.png)
 
@@ -469,7 +465,6 @@ DES 数据集 采用相同的步骤，首先从 NCSA DESaccess 网站上选择 D
 
 在图 12 中，我们展示了全重叠（FO）测试集中的不准确预测示例。
 
-![参见说明](img/9358f4964bb2f04f6a383922984b69a7.png) ![参见说明](img/dde6e8b58c076f7171bfb64a1a18b9fa.png)
 
 ![参见说明](img/26ccd8e183cc4f23a0317f66281efdf4.png) ![参见说明](img/7778ee366689020f2bfd3d9a4eb1292c.png)
 

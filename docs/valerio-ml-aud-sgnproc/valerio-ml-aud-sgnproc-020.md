@@ -56,7 +56,6 @@ mfccs = librosa.feature.mfcc(y=signal, n_mfcc=13, sr=sr)
 
 提取完成后，我们可以查看MFCCs矩阵的形状。
 
-![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_1.png)
 
 ```python
 mfccs.shape
@@ -68,7 +67,6 @@ mfccs.shape
 
 以下是可视化步骤：
 
-![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_3.png)
 
 ```python
 plt.figure(figsize=(25, 10))
@@ -93,25 +91,19 @@ delta2_mfccs = librosa.feature.delta(mfccs, order=2)
 
 我们可以检查导数的形状，确认它们与原始MFCCs一致。
 
-![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_5.png)
 
-![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_6.png)
 
-![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_8.png)
 
 ```python
 delta_mfccs.shape
 ```
 
-![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_10.png)
 
 同样地，我们可以将导数可视化。
 
-![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_12.png)
 
 以下是可视化Delta MFCCs的代码：
 
-![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_13.png)
 
 ```python
 plt.figure(figsize=(25, 10))
@@ -129,13 +121,10 @@ plt.colorbar(format=‘%+2.0f dB’)
 plt.show()
 ```
 
-![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_15.png)
 
-![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_16.png)
 
 ## 组合特征
 
-![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_17.png)
 
 最后，我们可以将原始MFCCs及其一阶、二阶导数在特征维度上拼接起来，形成一个包含静态和动态信息的综合性特征向量。
 
@@ -153,9 +142,7 @@ comprehensive_mfccs.shape
 
 ## 总结
 
-![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_19.png)
 
-![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_20.png)
 
 ![](img/f1d527ff9c8f5f6d7cb3cf02fb2ebf9b_22.png)
 

@@ -95,23 +95,18 @@ Farhad Moghimifar${}^{1}$ 和 Yuan-Fang Li${}^{1}$ Robert Thomson${}^{2}$ 
 
 图 2：我们数据收集流程的图示。选择一个来自政党$p$宣言的陈述，$m_{p}^{k}$。我们使用*检索模块*将上下文范围缩小至来自联合政府协议数据集的相关陈述。将该陈述及相关上下文集合输入GPT-4以收集注释。
 
-![参见说明](img/4a6590d2c6b8d21866786e6137968fe8.png)![参见说明](img/3dbb4f5b720fef2d460755a68bb3141e.png)
 
 (a)
 
-![参见说明](img/f5a0b06fa68ae01d0297b2daddd0935b.png)![参见说明](img/07ca3523345dc8a6ff7a219421dba572.png)
 
 (b)
 
-![参见说明](img/4d6f734e997d3c16a10b4108bf1725e9.png)![参见说明](img/a0eb4d5d5fb149f79bc7aa03e8c4348f.png)
 
 (c)
 
-![参见说明](img/dece053bb9de8421725626ccdd479f45.png)![参见说明](img/f75fbf917b1d3f322ae4a7a5e055d449.png)
 
 (d)
 
-![参见说明](img/bddfa20f5db4a8b157cb30be54e29401.png)![参见说明](img/c720349009a08ab52023579a487616b9.png)
 
 (e)
 

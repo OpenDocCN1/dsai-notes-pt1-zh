@@ -1,14 +1,11 @@
 # 人工智能—计算机视觉CV公开课（七月在线出品） - P16：时间序列实战：心电图疾病监测 📈
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_0.png)
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_2.png)
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_4.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_6.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_8.png)
 
 在本节课中，我们将要学习时间序列分析的基础知识、特征提取方法、分类与回归模型，并通过一个心电图疾病识别的实战案例，掌握如何应用深度学习模型解决实际问题。
 
@@ -20,11 +17,9 @@
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_10.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_12.png)
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_13.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_14.png)
 
 ## 时间序列的组成与分解 🔍
 
@@ -40,13 +35,10 @@
 **加法模型**：当季节和残差与趋势无关时，序列由三者相加得到。
 `序列 = 趋势 + 季节 + 残差`
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_16.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_17.png)
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_19.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_21.png)
 
 **乘法模型**：当季节波动的幅度与趋势水平相关时，序列由三者相乘得到。
 `序列 = 趋势 * 季节 * 残差`
@@ -93,7 +85,6 @@ additive_ts = trend + seasonal + residual
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_35.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_37.png)
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_39.png)
 
@@ -105,28 +96,19 @@ additive_ts = trend + seasonal + residual
 另一种重要的特征是**滞后特征**。它的核心思想是利用历史数据作为当前时刻的特征。
 例如，`lag1` 表示用前一时刻的值作为当前特征，`lag2` 表示用前两个时刻的值，以此类推。在Pandas中，这可以通过 `shift()` 操作轻松实现。
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_43.png)
 
 此外，我们还可以计算**滚动窗口特征**。
 例如，计算窗口大小为7的滚动平均值，即用最近7个时刻的均值作为一个特征。这有助于平滑短期波动，捕捉中期趋势。与之相对的是**扩展窗口特征**，它计算从序列起点到当前时刻所有数据的累积统计值（如累积均值）。
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_45.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_47.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_48.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_50.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_52.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_53.png)
 
 ## 时间序列的分类与回归模型 🤖
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_55.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_57.png)
 
 提取特征后，我们就可以构建模型了。时间序列任务主要分为分类和回归两大类。
 
@@ -136,16 +118,13 @@ additive_ts = trend + seasonal + residual
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_62.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_63.png)
 
 **时间序列分类**：目标是识别一个序列所属的类别（如心电图是否异常）。常用方法有：
 1.  基于距离的方法（如KNN），使用DTW（动态时间规整）等算法计算序列相似度。
 2.  提取手工特征（如上节所述），然后使用传统机器学习模型（如随机森林）进行分类。
 3.  使用端到端的深度学习模型，如一维卷积神经网络（1D CNN），自动学习特征并分类。
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_65.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_67.png)
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_69.png)
 
@@ -158,39 +137,27 @@ additive_ts = trend + seasonal + residual
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_72.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_73.png)
 
 例如，我们可以使用GluonTS库中的DeepAR模型进行时间序列预测，该模型会输出预测值及相应的置信区间。
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_75.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_76.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_78.png)
 
 ## 实战案例：心电图疾病识别 ❤️
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_80.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_82.png)
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_83.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_85.png)
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_87.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_88.png)
 
 现在，我们将应用所学知识，解决一个实际问题：心电图疾病识别。心电图信号是典型的时间序列数据。
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_90.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_92.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_94.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_96.png)
 
 我们的目标是构建一个分类模型，根据一段心电图信号判断其对应的疾病类别。数据集中包含5个类别，且存在类别不均衡的问题。
 
@@ -198,11 +165,8 @@ additive_ts = trend + seasonal + residual
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_100.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_101.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_102.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_104.png)
 
 以下是解决此问题的核心步骤：
 1.  **数据预处理**：读取数据，进行下采样以缓解类别不均衡，并将数据集划分为训练集和验证集。
@@ -223,17 +187,12 @@ additive_ts = trend + seasonal + residual
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_106.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_108.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_110.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_112.png)
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_113.png)
 
 ## 总结 📝
 
-![](img/1cebb71d97b4a547eba57fece2a7f602_115.png)
 
 ![](img/1cebb71d97b4a547eba57fece2a7f602_117.png)
 

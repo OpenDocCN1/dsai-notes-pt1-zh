@@ -31,14 +31,12 @@
 
 让我们开始第一步。首先导入必要的库。
 
-![](img/2839d8d527e20dd0e06d8eeff92b9cbc_2.png)
 
 ```python
 import torch
 from torch import nn
 ```
 
-![](img/2839d8d527e20dd0e06d8eeff92b9cbc_3.png)
 
 接下来，我们设置设备无关代码。这意味着代码会自动检测是否有可用的GPU（CUDA），并优先使用它进行计算；如果没有，则回退到CPU。
 
@@ -52,11 +50,9 @@ print(f"Using device: {device}")
 
 为了演示GPU的设置，我们可以更改运行环境。在运行时菜单中选择“更改运行时类型”，然后选择GPU并保存。这会重启运行时并重新连接。
 
-![](img/2839d8d527e20dd0e06d8eeff92b9cbc_5.png)
 
 重启后，我们需要重新运行之前定义数据（如 `X_train`）的单元格。我们可以选择“运行所有”或“运行之前”的单元格。
 
-![](img/2839d8d527e20dd0e06d8eeff92b9cbc_6.png)
 
 一旦环境重新连接并运行了设备设置代码，`device` 变量现在应该显示为 `"cuda"`，表明我们正在使用GPU。这样，我们就成功配置了设备无关的代码。
 

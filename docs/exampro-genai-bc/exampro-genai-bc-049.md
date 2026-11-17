@@ -4,7 +4,6 @@
 
 在本节课中，我们将继续处理直播中遇到的Docker网络问题，并深入探索OPEA（Open Platform for Enterprise AI）架构中服务注册与组件调用的机制。我们将学习如何诊断和解决容器网络连接问题，并理解如何通过覆盖特定方法来定制AI服务的行为。
 
-![](img/ab5c44e744faf81c8be46ebfd8667189_1.png)
 
 ## 从直播遗留问题开始
 
@@ -12,7 +11,6 @@
 
 我注意到网络配置存在一些问题。我不确定具体原因，但可以看到这里创建了很多网络资源。目前尚不清楚为何网络部分如此棘手。
 
-![](img/ab5c44e744faf81c8be46ebfd8667189_3.png)
 
 我已经完全移除了这里的网络配置部分。现在尝试执行 `docker compose up` 命令，可能仍会遇到相同的问题。
 
@@ -46,7 +44,6 @@ networks:
 
 既然服务正在运行，我们应该测试我们的端点。我们之前已经创建并使用过它，但现在需要将其指向服务运行的位置。
 
-![](img/ab5c44e744faf81c8be46ebfd8667189_7.png)
 
 如果使用桥接模式，我不确定端口8888是否已暴露。让我们尝试ping这个端口。
 
@@ -72,7 +69,6 @@ networks:
 
 我尝试将网络模式改为 `default`。修改docker-compose文件，将网络配置更改为：
 
-![](img/ab5c44e744faf81c8be46ebfd8667189_11.png)
 
 ```yaml
 networks:
@@ -98,7 +94,6 @@ networks:
 
 修改Dockerfile中的基础镜像：
 
-![](img/ab5c44e744faf81c8be46ebfd8667189_15.png)
 
 ```dockerfile
 FROM python:3.10-slim

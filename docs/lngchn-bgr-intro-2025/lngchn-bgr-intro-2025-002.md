@@ -32,7 +32,6 @@ Langchain的第二个核心组件是提示模板。其基本思想是将发送�
 
 ![](img/44262f4f14ed2028ba853daabe802bd2_2.png)
 
-![](img/44262f4f14ed2028ba853daabe802bd2_3.png)
 
 ![](img/44262f4f14ed2028ba853daabe802bd2_4.png)
 

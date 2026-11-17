@@ -1,6 +1,5 @@
 #  082：SQL查询基础 🗃️
 
-![](img/c9defbc7608b77f03fbef9511e948b62_0.png)
 
 ## 概述
 
@@ -18,7 +17,6 @@
 
 同样，关于电影和租赁交易本身的数据也存储在单独的表中。你可以参考这个实体关系模型，它展示了Rio数据库中表的关系和属性。
 
-![](img/c9defbc7608b77f03fbef9511e948b62_2.png)
 
 ## SQL基础：从单表查询开始
 
@@ -59,7 +57,6 @@ WHERE length < 60;
 
 这将返回96部时长少于一小时的电影列表。
 
-![](img/c9defbc7608b77f03fbef9511e948b62_4.png)
 
 你也可以按任意列对结果进行排序。例如，我可以在`WHERE`子句后添加`ORDER BY length`，以按电影时长升序排列结果。
 
@@ -114,7 +111,6 @@ WHERE length < 60;
 
 最后，我将按`film_count`降序排列结果。
 
-![](img/c9defbc7608b77f03fbef9511e948b62_6.png)
 
 ```sql
 SELECT category.name, COUNT(*) AS film_count
@@ -134,7 +130,6 @@ ORDER BY film_count DESC;
 
 实验还涵盖了一些数据操作操作，包括`CREATE`、`INSERT INTO`、`UPDATE`和`DELETE`。因此，在尝试每个练习时，请确保仔细阅读说明。
 
-![](img/c9defbc7608b77f03fbef9511e948b62_8.png)
 
 ![](img/c9defbc7608b77f03fbef9511e948b62_9.png)
 

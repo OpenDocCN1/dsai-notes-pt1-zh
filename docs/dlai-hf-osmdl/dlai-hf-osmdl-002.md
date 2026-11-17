@@ -4,7 +4,6 @@
 
 ## 概述
 
-![](img/066721af296acac908234af878ffdd78_1.png)
 
 如今，有数千个开源模型可供使用。每周都有许多新模型在Hugging Face Hub上发布。Hugging Face Hub是一个托管模型、数据集和机器学习演示（称为Spaces）的开放平台。那么，如何为你的项目找到所需的模型呢？让我们前往Hugging Face Hub一探究竟。
 
@@ -50,11 +49,9 @@
 
 ## 使用Transformers库加载模型
 
-![](img/066721af296acac908234af878ffdd78_3.png)
 
 要从Hugging Face Hub加载此模型，你可以使用Transformers库。注意“使用Transformers”按钮。
 
-![](img/066721af296acac908234af878ffdd78_3.png)
 
 如果你点击它，你会找到两个有用的代码片段，展示如何加载模型检查点。在本课程中，你将使用 `pipeline` 对象来处理模型，如第一个示例所示。
 
@@ -64,6 +61,5 @@
 
 现在你已经知道如何为你的任务寻找模型以及在哪里找到 `pipeline` 代码片段。让我们构建你的第一个应用程序。我们进入下一课。
 
-![](img/066721af296acac908234af878ffdd78_5.png)
 
 ![](img/066721af296acac908234af878ffdd78_5.png)

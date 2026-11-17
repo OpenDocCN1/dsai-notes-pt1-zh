@@ -8,7 +8,6 @@ There are going to be many parameters and complex networks and connections withi
 
 
 
-![](img/ca07cbbe46ade506bebf7165a479f82c_1.png)
 
 So one approach is to generate locally interpretable model， agnostic explanations or a align。
 
@@ -18,7 +17,6 @@ So we'll test how well simpler models will perform if we look at small changes i
 
 
 
-![](img/ca07cbbe46ade506bebf7165a479f82c_3.png)
 
 This will be analogous to feature importance in this respect that Lyme will summarize the sensitivity of regression or classification outcomes to each one of our variables。
 
@@ -30,7 +28,6 @@ And it will lean on linear models to produce the feature importance。
 
 
 
-![](img/ca07cbbe46ade506bebf7165a479f82c_5.png)
 
 So to briefly recap。We discuss the computational issues on working with deep learning models and how we may want to use GPUs versus CPUUs。
 
@@ -46,6 +43,5 @@ Now that closes out our video here in our final video。
 
 
 
-![](img/ca07cbbe46ade506bebf7165a479f82c_7.png)
 
 ![](img/ca07cbbe46ade506bebf7165a479f82c_8.png)

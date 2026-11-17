@@ -1,6 +1,5 @@
 # 062：DDPM噪声估计的实现 🎼
 
-![](img/f4da9b1a7e6654fe9a664b21da59b1d6_1.png)
 
 ![](img/f4da9b1a7e6654fe9a664b21da59b1d6_1.png)
 

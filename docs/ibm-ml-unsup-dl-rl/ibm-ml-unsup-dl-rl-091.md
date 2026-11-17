@@ -4,11 +4,9 @@ Now this picture of how the recurrent network is。Used or how it's built is oft
 
 
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_1.png)
 
 But what we're looking at here。
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_3.png)
 
 Is that the input will come into a network one word or one time step at a time。
 
@@ -16,21 +14,17 @@ And as those values come in， we can update the state with all past context so 
 
 
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_5.png)
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_6.png)
 
 As well as outputting a value so that we can have a prediction at each word or at each time set。
 
 
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_8.png)
 
 Now， as I said， this may be a bit unclear， so let's unroll this recurrent neural net and take a deeper dive inside。
 
 
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_10.png)
 
 Now looking at the quote unquote， unrolled version of what we just saw。
 
@@ -92,7 +86,6 @@ So you see the question mark question mark， and then it was able to predict th
 
 
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_12.png)
 
 Now each of these cells can have an output greater than one。
 
@@ -104,7 +97,6 @@ And this is the idea of having more than one node in our first layer within a fe
 
  those are one and the same。
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_14.png)
 
 So if we're assuming something like five or more nodes or five or more outputs。
 
@@ -112,7 +104,6 @@ So if we're assuming something like five or more nodes or five or more outputs�
 
 
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_16.png)
 
 We'll need to have a dense matrix that give the linear combination of each one of those nodes。
 
@@ -120,7 +111,6 @@ We'll need to have a dense matrix that give the linear combination of each one o
 
 
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_18.png)
 
 Now， if this is a bit confusing， an important note is that usually we're only looking at that final output。
 
@@ -140,7 +130,6 @@ And if we have something like five or 32 nodes， then we need to pass that thro
 
  whatever it is you're trying to classify。
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_20.png)
 
 Now what we have here， what we have circled here is really the crux of our recurrent neural net。
 
@@ -148,7 +137,6 @@ Now what we have here， what we have circled here is really the crux of our rec
 
 
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_22.png)
 
 In Cars， we call this part that we have as the input， the kernel。
 
@@ -158,7 +146,6 @@ In Cars， we call this part that we have as the input， the kernel。
 
 
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_24.png)
 
 And then we also have weights within our recurrent portion of our network。
 
@@ -168,10 +155,8 @@ Now that closes out this video and in the next video we'll start to walk through
 
 
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_26.png)
 
 All right， I'll see you there。
 
-![](img/24dfff1659b93fd8f726ee009b20c7ff_28.png)
 
 ![](img/24dfff1659b93fd8f726ee009b20c7ff_29.png)

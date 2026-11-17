@@ -1,6 +1,5 @@
 # 058：IBM《机器学习（无监督学习、深度学习和强化学习、毕业项目）｜machine learning》中英字幕 p58 19_反向传播笔记本（选修部分）第2部分.zh_en -BV1eu4m1F7oz_p58-
 
-![](img/3faeb54eb91d6a9edd652b06209ec090_0.png)
 
 Welcome back。In this cell that we have here。We're going to walk through a bunch of the different functions that we're going to use throughout in order to make that feed forward neural net。
 
@@ -64,7 +63,6 @@ So we're pulling in these global values that we've defined Xmat， y and nu。
 
 
 
-![](img/3faeb54eb91d6a9edd652b06209ec090_2.png)
 
 We're then going to compute the new predictions step by step here。
 
@@ -136,9 +134,7 @@ And that gradient is going to have the gradient in respect to each one of our di
 
 
 
-![](img/3faeb54eb91d6a9edd652b06209ec090_4.png)
 
-![](img/3faeb54eb91d6a9edd652b06209ec090_5.png)
 
 And then finally， we define this。Loss accuracy， this plot loss accuracy。
 
@@ -168,6 +164,5 @@ As well as our back propagation。 and then ultimately。
 
 
 
-![](img/3faeb54eb91d6a9edd652b06209ec090_7.png)
 
 ![](img/3faeb54eb91d6a9edd652b06209ec090_8.png)

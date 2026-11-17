@@ -18,7 +18,6 @@ Now， what's important here is not the equation itself。But rather。
 
 
 
-![](img/fb9e880bdd991b5828d071dad3948b02_1.png)
 
 So what does this look like？When we look at the graph of this function and we think about it in relation to the sigmoid function。
 
@@ -40,7 +39,6 @@ But as we discussed with the sigmoid function。 and as we can see here on the g
 
 
 
-![](img/fb9e880bdd991b5828d071dad3948b02_3.png)
 
 So in order to answer this vanish ingredient problem。
 
@@ -58,7 +56,6 @@ Is going to be equal to Z？And the relieu of any negative value will just be 0�
 
  So what does this look like graphically。
 
-![](img/fb9e880bdd991b5828d071dad3948b02_5.png)
 
 We can see it here in thinking through this graph。 We can see that it is still nonlinear。
 
@@ -80,7 +77,6 @@ Now， on the other hand。There will be no learning happening at each of those 
 
 
 
-![](img/fb9e880bdd991b5828d071dad3948b02_7.png)
 
 With that in mind， we have the leaky rectified linear unit or Eery Lo。
 
@@ -106,7 +102,6 @@ Z for z equals zero。Z for any value， z greater than 0。And then for values 
 
 So what does this look like graphically？
 
-![](img/fb9e880bdd991b5828d071dad3948b02_9.png)
 
 Now we can see width the graph for this function。We no longer have that zero value at any of our nodes。
 
@@ -124,7 +119,6 @@ And the best practice would be to try both starting with Relu or leaky Relu and 
 
 
 
-![](img/fb9e880bdd991b5828d071dad3948b02_11.png)
 
 So to summarize。The sigmoid function is going to be powerful when we want outputs between 0 and 1。
 
@@ -144,7 +138,6 @@ But also solves for that potential of the dying relo problem as well。
 
 
 
-![](img/fb9e880bdd991b5828d071dad3948b02_13.png)
 
 So to recap。In this section， we discussed the different activation functions that we just went over for nodes in our neural network and summarized each one of those commonly used activation functions。
 
@@ -154,6 +147,5 @@ Now， in the next video， we'll begin to introduce a topic that will be import
 
  Allright， I'll see you there。
 
-![](img/fb9e880bdd991b5828d071dad3948b02_15.png)
 
 ![](img/fb9e880bdd991b5828d071dad3948b02_16.png)

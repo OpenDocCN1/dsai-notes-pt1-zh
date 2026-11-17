@@ -1,8 +1,6 @@
 #  094：互联网网关和NAT网关 🌐
 
-![](img/65ee3bdbaa3283dcad9ae87dea96a918_0.png)
 
-![](img/65ee3bdbaa3283dcad9ae87dea96a918_0.png)
 
 在本节课中，我们将学习如何为AWS虚拟私有云（VPC）配置互联网连接。我们将重点介绍两个核心组件：互联网网关和网络地址转换（NAT）网关。通过它们，我们可以让VPC内的资源安全地与互联网通信，同时保护内部资源不被直接暴露。
 
@@ -61,9 +59,7 @@
 
 NAT网关代表网络地址转换。这是一项允许私有子网中的资源连接到互联网或其他AWS服务，但阻止互联网主动与这些资源建立连接的服务。可以把它想象成一个受控的门道。
 
-![](img/65ee3bdbaa3283dcad9ae87dea96a918_2.png)
 
-![](img/65ee3bdbaa3283dcad9ae87dea96a918_2.png)
 
 它只允许出站流量，并保护内部发起该流量的资源。
 
@@ -97,9 +93,7 @@ ALB将传入的应用程序流量分发到多个后端目标，比如我们的EC
 ![](img/65ee3bdbaa3283dcad9ae87dea96a3283dcad9ae87dea96a918_6.png)
 ![](img/65ee3bdbaa3283dcad9ae87dea96a3283dcad9ae87dea96a918_7.png)
 
-![](img/65ee3bdbaa3283dcad9ae87dea96a918_6.png)
 
-![](img/65ee3bdbaa3283dcad9ae87dea96a918_7.png)
 
 现在我们有了一个互联网网关，但需要将其附加到VPC。请注意，一个VPC只能有一个互联网网关，并且一个互联网网关一次只能附加到一个VPC。这是一对一的关系。
 
@@ -121,7 +115,6 @@ ALB将传入的应用程序流量分发到多个后端目标，比如我们的EC
 3.  从下拉菜单中选择“Subnet1”。
 4.  NAT网关需要配置一个弹性IP地址，以提供静态IP。点击“分配弹性IP”来完成此操作。
 
-![](img/65ee3bdbaa3283dcad9ae87dea96a918_9.png)
 
 ![](img/65ee3bdbaa3283dcad9ae87dea96a918_10.png)
 
@@ -130,7 +123,6 @@ ALB将传入的应用程序流量分发到多个后端目标，比如我们的EC
 ![](img/65ee3bdbaa3283dcad9ae87dea96a3283dcad9ae87dea96a918_11.png)
 ![](img/65ee3bdbaa3283dcad9ae87dea96a3283dcad9ae87dea96a918_13.png)
 
-![](img/65ee3bdbaa3283dcad9ae87dea96a918_11.png)
 
 5.  点击“创建NAT网关”。
 6.  重复上述步骤，但这次将NAT网关放置到另一个公有子网中。
@@ -146,15 +138,12 @@ ALB将传入的应用程序流量分发到多个后端目标，比如我们的EC
 
 ---
 
-![](img/65ee3bdbaa3283dcad9ae87dea96a918_15.png)
 
-![](img/65ee3bdbaa3283dcad9ae87dea96a918_16.png)
 
 ## 当前架构与后续步骤
 
 至此，我们的网络架构如下图所示，包含了EC2实例、RDS数据库和ALB。
 
-![](img/65ee3bdbaa3283dcad9ae87dea96a918_18.png)
 
 ![](img/65ee3bdbaa3283dcad9ae87dea96a918_19.png)
 

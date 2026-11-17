@@ -25,7 +25,6 @@ print(get_response(list_of_tasks[1]))
 
 ## for循环的组成部分详解 🧩
 
-![](img/027d20ce4179adb5ad67366c2d711ba3_1.png)
 
 让我们详细解析这段代码的每个部分：
 *   `for`：这是一个for命令或for语句。
@@ -52,9 +51,7 @@ for task in list_of_tasks:
 ```
 运行需要一点时间。这是第一个任务的响应，这是第二个任务（生日祝福）的响应，这是第三个任务（评论）的响应。
 
-![](img/027d20ce4179adb5ad67366c2d711ba3_3.png)
 
-![](img/027d20ce4179adb5ad67366c2d711ba3_5.png)
 
 ## 常见错误与调试 🐛
 

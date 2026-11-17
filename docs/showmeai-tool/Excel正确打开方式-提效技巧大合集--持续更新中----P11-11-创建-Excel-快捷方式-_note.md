@@ -1,6 +1,5 @@
 # Excel 高效技巧合集 - P11：创建 Excel 宏快捷方式 🚀
 
-![](img/75be585f2a0ce56c5af847454dad935c_0.png)
 
 ![](img/75be585f2a0ce56c5af847454dad935c_0.png)
 
@@ -98,7 +97,6 @@
 
 感谢观看。希望本教程对你有帮助。
 
-![](img/75be585f2a0ce56c5af847454dad935c_5.png)
 
 ![](img/75be585f2a0ce56c5af847454dad935c_2.png)
 ![](img/75be585f2a0ce56c5af847454dad935c_3.png)

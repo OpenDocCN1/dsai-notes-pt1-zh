@@ -42,7 +42,6 @@
     client.attach_source(agent_id=agent.id, source_id=source.id)
     ```
 
-![](img/cb9b4d12e082937e89e9dae2a8764b56_4.png)
 
 5.  **进行查询**：现在可以向智能体提问，例如询问公司休假政策。智能体会意识到需要从归档内存中搜索信息，并自动执行检索。
     ```python
@@ -53,9 +52,7 @@
 
 ## 实现方式二：通过自定义工具连接外部数据
 
-![](img/cb9b4d12e082937e89e9dae2a8764b56_6.png)
 
-![](img/cb9b4d12e082937e89e9dae2a8764b56_8.png)
 
 除了使用归档内存，我们还可以为智能体添加自定义工具来直接查询外部数据管道。
 
@@ -85,7 +82,6 @@
     )
     ```
 
-![](img/cb9b4d12e082937e89e9dae2a8764b56_10.png)
 
 4.  **进行查询**：当用户询问“我的生日是什么时候？”时，智能体会决定调用`query_birthday_database`工具，获取结果后生成回复。
     ```python
@@ -93,7 +89,6 @@
     print(response)
     ```
 
-![](img/cb9b4d12e082937e89e9dae2a8764b56_12.png)
 
 ## 实现方式三：集成LangChain工具进行网络搜索
 
@@ -128,9 +123,7 @@ LiteLLM支持集成LangChain和LlamaIndex的工具。接下来，我们创建一
     )
     ```
 
-![](img/cb9b4d12e082937e89e9dae2a8764b56_14.png)
 
-![](img/cb9b4d12e082937e89e9dae2a8764b56_16.png)
 
 4.  **进行查询**：向智能体提问，例如“谁创立了OpenAI？”。智能体会调用搜索工具，获取网络信息，并生成带有引用的回答。LiteLLM框架会自动处理过长的工具返回结果。
     ```python
@@ -138,9 +131,7 @@ LiteLLM支持集成LangChain和LlamaIndex的工具。接下来，我们创建一
     print(response)
     ```
 
-![](img/cb9b4d12e082937e89e9dae2a8764b56_18.png)
 
-![](img/cb9b4d12e082937e89e9dae2a8764b56_19.png)
 
 5.  **（可选）使用更强大的模型**：如果默认模型（如GPT-4o-mini）效果不佳，可以指定使用GPT-4等模型，但需注意其成本和延迟更高。
     ```python
@@ -158,9 +149,7 @@ LiteLLM支持集成LangChain和LlamaIndex的工具。接下来，我们创建一
 
 本节课中，我们一起学习了Agentic RAG与外部内存的三种集成方式：
 
-![](img/cb9b4d12e082937e89e9dae2a8764b56_21.png)
 
-![](img/cb9b4d12e082937e89e9dae2a8764b56_22.png)
 
 1.  **数据加载到归档内存**：用户可以将文件数据预加载到智能体的归档内存中，智能体在需要时自动检索。
 2.  **自定义工具连接数据库**：通过创建自定义函数工具，智能体可以直接查询外部数据库或API。

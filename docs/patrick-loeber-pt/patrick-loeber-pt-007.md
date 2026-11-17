@@ -15,12 +15,9 @@
 3.  将生成的NumPy数组转换为PyTorch张量，并确保数据类型为`float32`。
 4.  调整标签`y`的形状，使其成为一个列向量。
 
-![](img/004c57fdf2733b827527e360db06e196_1.png)
 
 
-![](img/004c57fdf2733b827527e360db06e196_2.png)
 
-![](img/004c57fdf2733b827527e360db06e196_4.png)
 
 ```python
 import torch
@@ -44,15 +41,12 @@ n_samples, n_features = x.shape
 
 ---
 
-![](img/004c57fdf2733b827527e360db06e196_6.png)
 
-![](img/004c57fdf2733b827527e360db06e196_7.png)
 
 ## 模型设计 🏗️
 
 上一节我们准备好了数据，本节中我们来看看如何设计线性回归模型。在PyTorch中，线性回归模型可以通过一个线性层轻松构建。
 
-![](img/004c57fdf2733b827527e360db06e196_9.png)
 
 我们使用`nn.Linear`来创建模型，它需要指定输入特征的数量和输出值的数量。对于我们的简单回归问题，输入和输出大小都是1。
 
@@ -61,7 +55,6 @@ n_samples, n_features = x.shape
 model = nn.Linear(in_features=n_features, out_features=1)
 ```
 
-![](img/004c57fdf2733b827527e360db06e196_11.png)
 
 ---
 
@@ -71,11 +64,8 @@ model = nn.Linear(in_features=n_features, out_features=1)
 
 对于线性回归，我们使用**均方误差（MSE）**作为损失函数。优化器我们选择**随机梯度下降（SGD）**，并为其设置一个学习率。
 
-![](img/004c57fdf2733b827527e360db06e196_13.png)
 
-![](img/004c57fdf2733b827527e360db06e196_14.png)
 
-![](img/004c57fdf2733b827527e360db06e196_15.png)
 
 ```python
 # 定义损失函数和优化器
@@ -88,17 +78,13 @@ optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)  # 随机梯�
 
 ## 训练循环 🔁
 
-![](img/004c57fdf2733b827527e360db06e196_17.png)
 
 现在，我们将进入核心的训练环节。训练循环包括前向传播、计算损失、反向传播和参数更新这几个关键步骤。
 
-![](img/004c57fdf2733b827527e360db06e196_19.png)
 
-![](img/004c57fdf2733b827527e360db06e196_20.png)
 
 以下是训练循环的详细步骤：
 
-![](img/004c57fdf2733b827527e360db06e196_22.png)
 
 1.  **前向传播**：将输入数据`x`传递给模型，得到预测值`y_predicted`。
 2.  **计算损失**：使用损失函数`criterion`比较预测值`y_predicted`和真实值`y`。
@@ -129,9 +115,7 @@ for epoch in range(num_epochs):
         print(f‘epoch: {epoch+1}, loss = {loss.item():.4f}’)
 ```
 
-![](img/004c57fdf2733b827527e360db06e196_24.png)
 
-![](img/004c57fdf2733b827527e360db06e196_25.png)
 
 ---
 
@@ -155,9 +139,7 @@ plt.show()
 
 ---
 
-![](img/004c57fdf2733b827527e360db06e196_27.png)
 
-![](img/004c57fdf2733b827527e360db06e196_29.png)
 
 ## 总结 🎯
 

@@ -46,7 +46,6 @@ result = (condition) ? value1 : value2;
 
 那么，让我们开始吧，释放你与AI互动的全部潜力。
 
-![](img/3291c2cb9ce70832c126b2ceb33a477f_6.png)
 
 ![](img/3291c2cb9ce70832c126b2ceb33a477f_7.png)
 

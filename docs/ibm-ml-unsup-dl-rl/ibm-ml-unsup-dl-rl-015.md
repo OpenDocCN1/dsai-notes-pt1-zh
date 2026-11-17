@@ -6,13 +6,11 @@ Building off of what we just discussed in two dimensions。 So we had our square
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_1.png)
 
 We are now going to push that out into three dimensions and work with a sphere rather than a circle and a cube rather than a square。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_3.png)
 
 Now， I want to remind you how this ties back to a data science problem。
 
@@ -26,29 +24,21 @@ Now， I want to remind you how this ties back to a data science problem。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_5.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_6.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_7.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_8.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_9.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_10.png)
 
 If we think about this value and look at the square here。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_12.png)
 
 The idea is that to be a single unit away from that center value。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_14.png)
 
 That would indicate that you're one standard deviation away， whether you're pointing horizontally。
 
@@ -62,21 +52,15 @@ That would indicate that you're one standard deviation away， whether you're po
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_16.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_17.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_18.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_19.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_20.png)
 
 These are the values outside the circle that will be， in a sense， outliers。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_22.png)
 
 Now， in that same sense， if we were to add on a third dimension Covariate C。
 
@@ -88,35 +72,26 @@ Now， in that same sense， if we were to add on a third dimension Covariate C�
 
  not just diagonally but diagonally within space。
 
-![](img/b80f59e4271847e53f2572a06664fff0_24.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_25.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_26.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_27.png)
 
 And then anything outside that sphere， we can then again think of in the same sense that we just did with the circle and the square that this is more than one standard deviation away still between negative one and one and see how many outliers we have。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_29.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_30.png)
 
 So again， with the square we had 21% now we're moving to plotting in three dimensions。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_32.png)
 
 I'm going to show you step by step how you can plot some of these values in three dimensions so that you can go home or leave this notebook and then be able to plot in three dimensions yourself as well。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_34.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_35.png)
 
 So the first thing that we do is we are going to have to import this axes 3D library Now。
 
@@ -124,27 +99,22 @@ So the first thing that we do is we are going to have to import this axes 3D lib
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_37.png)
 
 And then from that figure， we get our current axes and make them 3D projections。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_39.png)
 
 We'll see that we get in error。
 
-![](img/b80f59e4271847e53f2572a06664fff0_41.png)
 
 We will have to first import that library。That axes 3D to give us that option。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_43.png)
 
 So。We pull this in。
 
-![](img/b80f59e4271847e53f2572a06664fff0_45.png)
 
 And I'm going to run through just as we did before。
 
@@ -156,19 +126,14 @@ And I'm going to run through just as we did before。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_47.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_48.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_49.png)
 
 So hopefully this is exciting to see that we have values for X， Y axes and then now a z axis as well。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_51.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_52.png)
 
 We're then going to draw our cube。 Now we have here this idea of combinations and taking the products。
 
@@ -178,21 +143,16 @@ We're then going to draw our cube。 Now we have here this idea of combinations 
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_54.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_55.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_56.png)
 
 But right now， we're taking the product of three R's and the R is just defined as negative 1 and one。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_58.png)
 
 In order to make this a little clear。
 
-![](img/b80f59e4271847e53f2572a06664fff0_60.png)
 
 We're going to use three different lists of two， rather than negative one and one， though。
 
@@ -202,13 +162,11 @@ We're going to use three different lists of two， rather than negative one and 
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_62.png)
 
 We also have to make sure that we import that library。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_64.png)
 
 You see that it comes up with every possible combination， not accounting for ordering。 So1，3 and 5。
 
@@ -216,17 +174,13 @@ You see that it comes up with every possible combination， not accounting for o
 
  and then 1，4，5，1，4，6。
 
-![](img/b80f59e4271847e53f2572a06664fff0_66.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_67.png)
 
 2，3，5 so you can see how it's going through each one of these different values ensuring that it covers all the different possible combinations。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_69.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_70.png)
 
 So it does that with negative 1，1。 And then the combinations of value of 2 will give you values of two for each one of different combinations。
 
@@ -234,17 +188,13 @@ So it does that with negative 1，1。 And then the combinations of value of 2 w
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_72.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_73.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_74.png)
 
 We're pulling out an S and an E， it's going to output two different values when we get that combination。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_76.png)
 
 We're going to take the sum of S minus E， and that has to be equal to。This is using our R1。
 
@@ -252,19 +202,15 @@ We're going to take the sum of S minus E， and that has to be equal to。This i
 
  is's trying to find where each of our edges lie。
 
-![](img/b80f59e4271847e53f2572a06664fff0_78.png)
 
 Now I'm going to pull out this portion of code just to show you how one line is drawn in three dimensional space。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_80.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_81.png)
 
 Let me。All this。
 
-![](img/b80f59e4271847e53f2572a06664fff0_83.png)
 
 We copy this， we're going to move it above。And we're saying for S and E。
 
@@ -276,25 +222,19 @@ We copy this， we're going to move it above。And we're saying for S and E。
 
  And I'll actually print here so we can see what。
 
-![](img/b80f59e4271847e53f2572a06664fff0_85.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_86.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_87.png)
 
 This output looks like。So。Zipping S and E。And then I'm going to break。
 
  so we're just going to plot one line。
 
-![](img/b80f59e4271847e53f2572a06664fff0_89.png)
 
 So I'm going to run this。R is not defined yet， if you forgot to copy that in。
 
  say r equals negative 11。
 
-![](img/b80f59e4271847e53f2572a06664fff0_91.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_92.png)
 
 And we see that we plotted this one line。Now the zip S。
 
@@ -302,7 +242,6 @@ This is going to be our x values of our two points， the y values of our two po
 
  and the z values of our two points。
 
-![](img/b80f59e4271847e53f2572a06664fff0_94.png)
 
 So we're plot from negative one， negative  one， negative  one， up to negative  one， negative  one，1。
 
@@ -312,7 +251,6 @@ So we're plot from negative one， negative  one， negative  one， up to negat
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_96.png)
 
 Now， when we run through all the different lines， all we're doing is using this plot 3D。
 
@@ -322,13 +260,9 @@ Now， when we run through all the different lines， all we're doing is using t
 
  calling ax dot plot。
 
-![](img/b80f59e4271847e53f2572a06664fff0_98.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_99.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_100.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_101.png)
 
 So if I don't run the brake here and do this for let the for loop run all the way through。
 
@@ -336,9 +270,7 @@ So if I don't run the brake here and do this for let the for loop run all the wa
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_103.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_104.png)
 
 The next step that we want to do in order to draw our sphere is we're first going to create this mesh grid。
 
@@ -346,13 +278,11 @@ So I'm going to copy this above into a different cell。And in order to make thi
 
  this is going to be the number of points。
 
-![](img/b80f59e4271847e53f2572a06664fff0_106.png)
 
 If you were to do without the J， the J just in general， so you know。
 
  within Python means a complex number。
 
-![](img/b80f59e4271847e53f2572a06664fff0_108.png)
 
 We are working here with the J， not because we're working with complex numbers。
 
@@ -360,15 +290,12 @@ We are working here with the J， not because we're working with complex numbers
 
  we want 20 points in between 0 and two times pi。
 
-![](img/b80f59e4271847e53f2572a06664fff0_110.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_111.png)
 
 That's all we're doing here by using the complex number。But we're going to reduce this。
 
  just for our example， to3 and 2， so F。
 
-![](img/b80f59e4271847e53f2572a06664fff0_113.png)
 
 Three values and two values。 And the idea is that when we want to plot along many different points and we want to cover So here it's supposed to go from0 to two times pi。
 
@@ -376,7 +303,6 @@ Three values and two values。 And the idea is that when we want to plot along m
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_115.png)
 
 And then we're also going from 0 to pi with just two values。 So 0 to pi。
 
@@ -386,9 +312,7 @@ And then we're also going from 0 to pi with just two values。 So 0 to pi。
 
  and then。
 
-![](img/b80f59e4271847e53f2572a06664fff0_117.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_118.png)
 
 Pi coming from our count from 0。Through22 pi， we then have pi and 0。
 
@@ -398,13 +322,9 @@ Pi coming from our count from 0。Through22 pi， we then have pi and 0。
 
  it has two outputs。
 
-![](img/b80f59e4271847e53f2572a06664fff0_120.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_121.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_122.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_123.png)
 
 For each one of the different grids， those are both equal in shape。So you have 0 and 1。
 
@@ -414,23 +334,18 @@ For each one of the different grids， those are both equal in shape。So you ha
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_125.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_126.png)
 
 And we're expanding that to create our sphere by using each one of those different points and taking the cosine of each of these values ranging from。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_128.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_129.png)
 
 From U， you go from0 to2 pi， and then from V， from 0 to pi。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_131.png)
 
 Multiplying them together。 And then first Z， we just get cosine of V。
 
@@ -444,29 +359,23 @@ And in order to connect all those spaces into one final sphere。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_133.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_134.png)
 
 So we call x dot plot wireframe on the X， Y， and z。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_136.png)
 
 And we run this。And then we see all these different points that were created in three dimensional space。
 
  all being connected by this wire frame。
 
-![](img/b80f59e4271847e53f2572a06664fff0_138.png)
 
 And ultimately， we saw here how to plot in 3D and may be difficult to visualize how much extra empty space there is。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_140.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_141.png)
 
 But if we think about it in terms of the equations。
 
@@ -480,15 +389,12 @@ But if we think about it in terms of the equations。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_143.png)
 
 We can see that the volume outside the sphere is going to be one minus that volume of the sphere。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_145.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_146.png)
 
 Four over three times pi r cubed， over two are cubed。You do some cross multiplication。
 
@@ -498,11 +404,8 @@ Four over three times pi r cubed， over two are cubed。You do some cross multi
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_148.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_149.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_150.png)
 
 And that same radius being described as your standard deviation and being beyond that being a bit of an outlier。
 
@@ -512,16 +415,12 @@ And that same radius being described as your standard deviation and being beyond
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_152.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_153.png)
 
 So that closes out this video in the next video we will continue and show you how you can actually generalize this to even higher dimensional space and see those percentages as we continuously increase the number of dimensions。
 
 
 
-![](img/b80f59e4271847e53f2572a06664fff0_155.png)
 
-![](img/b80f59e4271847e53f2572a06664fff0_156.png)
 
 ![](img/b80f59e4271847e53f2572a06664fff0_157.png)

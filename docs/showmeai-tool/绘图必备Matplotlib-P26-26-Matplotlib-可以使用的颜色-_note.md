@@ -1,42 +1,33 @@
 # 绘图必备Matplotlib，P26：Matplotlib 可用的颜色 🎨
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_1.png)
 
 在本节课中，我们将学习如何在Matplotlib中查找和使用可用的颜色。对于初学者来说，颜色参数（如`cmap='gray'`或`color='r'`）可能会令人困惑。本节将介绍如何系统地探索Matplotlib的颜色系统。
 
 ## 导入颜色模块
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_3.png)
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_4.png)
 
 上一节我们介绍了基本的绘图参数，本节中我们来看看如何访问Matplotlib的颜色库。
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_5.png)
 
 首先，我们需要从Matplotlib中导入颜色模块。
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_7.png)
 
 ```python
 import matplotlib.colors as mcolors
 ```
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_9.png)
 
 导入后，我们可以通过`mcolors`模块来探索所有可用的颜色。
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_11.png)
 
 ## 探索颜色列表
 
 以下是探索`mcolors`模块中预定义颜色的方法。
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_13.png)
 
 我们可以使用Python的交互功能（如Tab补全）来查看`mcolors`模块下的属性。其中一个重要的属性是`BASE_COLORS`，它包含了基本的颜色映射。
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_15.png)
 
 ```python
 print(mcolors.BASE_COLORS)
@@ -45,7 +36,6 @@ print(mcolors.BASE_COLORS)
 
 继续向下探索，我们会发现`CSS4_COLORS`，这是一个更庞大的、符合CSS4标准的颜色名称列表，所有这些颜色都可以在Matplotlib中直接使用。
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_17.png)
 
 ```python
 print(list(mcolors.CSS4_COLORS.keys())[:10]) # 查看前10个颜色名
@@ -53,15 +43,12 @@ print(list(mcolors.CSS4_COLORS.keys())[:10]) # 查看前10个颜色名
 
 ## XKCD颜色调查
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_19.png)
 
 除了标准颜色，Matplotlib还包含一个有趣的“XKCD颜色”集合。这源于著名的网络漫画XKCD进行的一项颜色调查，它提供了许多富有创意且直观的颜色名称。
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_20.png)
 
 以下是访问XKCD颜色的方法。
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_22.png)
 
 ```python
 print(list(mcolors.XKCD_COLORS.keys())[:10]) # 查看前10个XKCD颜色名
@@ -74,9 +61,7 @@ print(list(mcolors.XKCD_COLORS.keys())[:10]) # 查看前10个XKCD颜色名
 
 以下是生成该可视化图表的代码概要。
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_24.png)
 
-![](img/c3379774ebee01c9721e4dfa1bcd475d_26.png)
 
 ```python
 # 此处应插入Stack Overflow上提供的可视化代码

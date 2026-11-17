@@ -24,9 +24,7 @@
 
 ---
 
-![](img/1e93beff30f20e0aeafc4478e465886d_2.png)
 
-![](img/1e93beff30f20e0aeafc4478e465886d_2.png)
 
 各地的小型企业也开始利用数据驱动的洞察来改善运营并做出更好的决策。
 
@@ -43,11 +41,8 @@
 
 ---
 
-![](img/1e93beff30f20e0aeafc4478e465886d_4.png)
 
-![](img/1e93beff30f20e0aeafc4478e465886d_4.png)
 
-![](img/1e93beff30f20e0aeafc4478e465886d_5.png)
 
 ![](img/1e93beff30f20e0aeafc4478e465886d_5.png)
 

@@ -1,8 +1,6 @@
 # 035：多项式回归与流水线
 
-![](img/c971fac86ce34a1f98bce910525d00e3_1.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_2.png)
 
 在本节课中，我们将学习多项式回归和流水线。当线性模型无法很好地拟合数据时，多项式回归提供了一种有效的替代方案。流水线则能帮助我们简化代码，将多个数据处理步骤有序地组合在一起。
 
@@ -10,7 +8,6 @@
 
 ## 🔍 多项式回归简介
 
-![](img/c971fac86ce34a1f98bce910525d00e3_4.png)
 
 上一节我们介绍了线性回归。本节中我们来看看多项式回归。
 
@@ -18,19 +15,14 @@
 
 
 
-![](img/c971fac86ce34a1f98bce910525d00e3_6.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_7.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_8.png)
 
 ### 什么是曲线关系？
 
 曲线关系是指通过将预测变量平方或设置更高阶项来获得的关系。我们通过变换数据来实现这一点。
 
-![](img/c971fac86ce34a1f98bce910525d00e3_10.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_12.png)
 
 以下是多项式回归的几种常见形式：
 
@@ -44,11 +36,8 @@
 
 当二阶或三阶多项式仍未达到良好拟合时，还可以使用更高阶的多项式回归。改变多项式回归的阶数会显著改变图形的形状。回归的阶数选择至关重要，选择合适的值可以获得更好的拟合效果。
 
-![](img/c971fac86ce34a1f98bce910525d00e3_14.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_15.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_16.png)
 
 在所有情况下，变量与参数之间的关系始终是线性的。
 
@@ -56,11 +45,9 @@
 
 ## 🐍 Python中的多项式回归实现
 
-![](img/c971fac86ce34a1f98bce910525d00e3_18.png)
 
 让我们看一个基于数据生成多项式回归模型的例子。
 
-![](img/c971fac86ce34a1f98bce910525d00e3_19.png)
 
 在Python中，我们可以使用`polyfit`函数来实现。
 
@@ -80,17 +67,13 @@ print(model)
 
 
 
-![](img/c971fac86ce34a1f98bce910525d00e3_21.png)
 
 ### 多维多项式回归
 
-![](img/c971fac86ce34a1f98bce910525d00e3_23.png)
 
 我们也可以进行多维多项式线性回归。表达式可能会变得复杂。以下是一个二维二阶多项式的一部分项示例。
 
-![](img/c971fac86ce34a1f98bce910525d00e3_25.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_26.png)
 
 NumPy的`polyfit`函数无法执行这种类型的回归。我们使用scikit-learn中的`preprocessing`库来创建一个多项式特征对象。
 
@@ -114,31 +97,22 @@ X_poly = pr.fit_transform(X)
 print(X_poly.shape)  # 查看新特征的维度
 ```
 
-![](img/c971fac86ce34a1f98bce910525d00e3_28.png)
 
 考虑这里显示的特征。应用该方法后，我们转换了数据。现在我们拥有了一组新的特征，它们是原始特征的转换版本。
 
 
 
-![](img/c971fac86ce34a1f98bce910525d00e3_29.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_30.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_31.png)
 
 ## ⚙️ 数据预处理与标准化
 
-![](img/c971fac86ce34a1f98bce910525d00e3_32.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_33.png)
 
 随着数据维度的增加，我们可能希望同时标准化多个特征。在scikit-learn中，我们可以使用`preprocessing`模块来简化许多任务。
 
-![](img/c971fac86ce34a1f98bce910525d00e3_34.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_35.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_36.png)
 
 例如，我们可以同时标准化每个特征。
 
@@ -151,7 +125,6 @@ print(X_poly.shape)  # 查看新特征的维度
 
 
 
-![](img/c971fac86ce34a1f98bce910525d00e3_38.png)
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -163,23 +136,17 @@ scale.fit(X)
 X_scale = scale.transform(X)
 ```
 
-![](img/c971fac86ce34a1f98bce910525d00e3_39.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_40.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_41.png)
 
 `preprocessing`库中提供了更多的归一化方法以及其他转换功能。
 
 
 
-![](img/c971fac86ce34a1f98bce910525d00e3_42.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_43.png)
 
 ## 🚀 使用流水线简化流程
 
-![](img/c971fac86ce34a1f98bce910525d00e3_45.png)
 
 我们可以通过使用流水线库来简化代码。获得预测通常涉及许多步骤，例如归一化、多项式变换和线性回归。我们使用流水线来简化这个过程。
 
@@ -187,7 +154,6 @@ X_scale = scale.transform(X)
 
 以下是创建和使用流水线的步骤：
 
-![](img/c971fac86ce34a1f98bce910525d00e3_47.png)
 
 1.  首先导入所有需要的模块，然后导入`Pipeline`库。
 2.  创建一个元组列表。元组中的第一个元素包含估计器/模型的名称，第二个元素包含模型构造函数。
@@ -195,20 +161,14 @@ X_scale = scale.transform(X)
 
 
 
-![](img/c971fac86ce34a1f98bce910525d00e3_48.png)
-
-![](img/c971fac86ce34a1f98bce910525d00e3_49.png)
 
 
-![](img/c971fac86ce34a1f98bce910525d00e3_51.png)
 
 
-![](img/c971fac86ce34a1f98bce910525d00e3_53.png)
 
 
-![](img/c971fac86ce34a1f98bce910525d00e3_55.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_56.png)
+
 
 ```python
 from sklearn.pipeline import Pipeline
@@ -229,7 +189,6 @@ pipe.fit(X_train, y_train)
 y_pred = pipe.predict(X_test)
 ```
 
-![](img/c971fac86ce34a1f98bce910525d00e3_58.png)
 
 我们现在有了一个流水线对象。我们可以通过对流水线对象应用`fit`方法来训练它。我们也可以用它来生成预测。
 
@@ -237,9 +196,7 @@ y_pred = pipe.predict(X_test)
 
 
 
-![](img/c971fac86ce34a1f98bce910525d00e3_60.png)
 
-![](img/c971fac86ce34a1f98bce910525d00e3_61.png)
 
 ## 📝 课程总结
 

@@ -24,7 +24,6 @@ Distributed Deep Learning, Efficient Communication^†^†ccs: Computing methodo
 
 深度学习（DL）近年来取得了显著进展。研究人员和工程师们已经将 DL 技术应用于解决各个领域的复杂问题，包括但不限于计算机视觉 (resnet, )，自然语言处理 (attention, ; bert, ; yang2020survey, )，语音识别 (deepspeech, )，以及其他许多领域。DL 通常涉及到深度神经网络（DNNs）中训练数据集和模型参数的增加，以提高在不同应用中的预测性能，例如分类任务中的准确率 (ml1991, ; Russakovsky2015ILS28465472846559, ; 8237359, )。然而，随着数据规模和模型复杂性的增加，训练过程变得极为计算密集且耗时。例如，使用最新的 Nvidia Tesla V100 GPU 在 ImageNet 数据集上训练一个最先进的 ResNet-50 (resnet, )模型（90 个 epochs）大约需要两天的时间 (wang2019performance, )。然而，如图 1 所示，GPU FLOPs 和内存的发展速度无法跟上新型大型神经网络的发展，例如 GPT-3 (gpt3, )，GShard (lepikhin2021gshard, )和百度 RecSys (zhao2020distributed, )。此外，为了在某些任务中取得令人满意的结果，超参数调优是必要的，这进一步需要大量的时间和财政投入。
 
-![参见说明](img/0b659eb861584b896afc5a4c91b01a74.png)
 
 (a) GPU 和神经网络的内存。
 

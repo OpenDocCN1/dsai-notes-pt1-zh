@@ -1,6 +1,5 @@
 # 031：技术考虑因素 🧠
 
-![](img/89d1b616befb2b72e637d8479b8c8bfc_0.png)
 
 在本节课中，我们将学习在使用PySpark进行数据转换时，如何根据具体场景在Spark SQL和Python DataFrame API之间做出选择。我们还将探讨何时应该使用分布式计算框架（如Spark），以及如何通过优化数据提取来提升处理性能。
 
@@ -12,7 +11,6 @@
 
 使用PySpark转换数据时，你可以通过SparkSQL执行SQL查询，也可以直接使用Python操作Spark DataFrame。在选择这两种方式时，应考虑转换的复杂性、代码的可重用性与可测试性，以及团队的技术背景和技能。
 
-![](img/89d1b616befb2b72e637d8479b8c8bfc_2.png)
 
 以下是选择时需要考虑的几个关键点：
 

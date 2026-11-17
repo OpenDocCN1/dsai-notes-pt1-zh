@@ -16,11 +16,8 @@
 
 以下是读取数据的步骤：
 
-![](img/9b594c5107da277a61b695c7585e4c96_2.png)
 
-![](img/9b594c5107da277a61b695c7585e4c96_4.png)
 
-![](img/9b594c5107da277a61b695c7585e4c96_6.png)
 
 1.  打开数据文件。
 2.  逐行读取，并使用制表符分割每一行，得到英文和中文句子。
@@ -32,7 +29,6 @@
 
 ![](img/9b594c5107da277a61b695c7585e4c96_12.png)
 
-![](img/9b594c5107da277a61b695c7585e4c96_14.png)
 
 ```python
 def load_data(in_file):
@@ -64,9 +60,7 @@ def load_data(in_file):
 
 以下是分词和添加标记的步骤：
 
-![](img/9b594c5107da277a61b695c7585e4c96_24.png)
 
-![](img/9b594c5107da277a61b695c7585e4c96_26.png)
 
 1.  对英文句子使用`word_tokenize`进行分词。
 2.  对中文句子按字符进行分割。
@@ -100,7 +94,6 @@ def tokenize_and_tag(english_sentences, chinese_sentences):
 4.  使用构建好的词汇表，将分词后的句子序列转换为对应的数字ID序列。
 
 
-![](img/9b594c5107da277a61b695c7585e4c96_28.png)
 
 
 ![](img/9b594c5107da277a61b695c7585e4c96_30.png)

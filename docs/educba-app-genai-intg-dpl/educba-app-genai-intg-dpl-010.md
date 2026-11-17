@@ -40,35 +40,24 @@
     ```
 4.  **监控部署模型的性能和可扩展性**：利用Amazon CloudWatch等工具监控端点的延迟、调用次数和错误率，以便根据需求进行扩展。
 
-![](img/a7fd38c27427b9ee03dddd0ce05c2be2_1.png)
 
-![](img/a7fd38c27427b9ee03dddd0ce05c2be2_2.png)
 
-![](img/a7fd38c27427b9ee03dddd0ce05c2be2_3.png)
 
-![](img/a7fd38c27427b9ee03dddd0ce05c2be2_4.png)
 
-![](img/a7fd38c27427b9ee03dddd0ce05c2be2_5.png)
 
-![](img/a7fd38c27427b9ee03dddd0ce05c2be2_1.png)
 
-![](img/a7fd38c27427b9ee03dddd0ce05c2be2_2.png)
 
 ## AWS Bedrock 部署练习 🏔️
 
-![](img/a7fd38c27427b9ee03dddd0ce05c2be2_3.png)
 
 了解了SageMaker的部署后，我们转向AWS的另一项托管服务——Bedrock，它专门用于简化基础模型的访问和使用。
 
-![](img/a7fd38c27427b9ee03dddd0ce05c2be2_4.png)
 
-![](img/a7fd38c27427b9ee03dddd0ce05c2be2_5.png)
 
 **练习目标**：理解在AWS Bedrock上部署和管理生成式AI模型的流程。
 
 以下是使用AWS Bedrock的关键步骤：
 
-![](img/a7fd38c27427b9ee03dddd0ce05c2be2_7.png)
 
 1.  **设置AWS Bedrock环境**：在AWS控制台中访问Bedrock服务，并请求启用你需要使用的模型。
 2.  **将生成式AI模型部署到Bedrock**：Bedrock本身提供了一系列预置的领先模型（如来自Anthropic、AI21 Labs的模型），你无需自行托管，可直接通过API调用。
@@ -98,7 +87,6 @@
 
 除了使用云服务，有时我们也需要在本地环境部署模型。接下来，我们学习如何本地部署Anthropic的模型。
 
-![](img/a7fd38c27427b9ee03dddd0ce05c2be2_9.png)
 
 **练习目标**：学习如何为Anthropic模型设置和配置本地部署。
 
@@ -109,7 +97,6 @@
     pip install anthropic
     ```
 2.  **配置本地环境设置**：设置API密钥、模型路径等环境变量或配置文件。
-    ![](img/a7fd38c27427b9ee03dddd0ce05c2be2_9.png)
 3.  **本地部署模型并运行样本推理**：运行模型服务，并编写代码进行文本生成测试。
     ```python
     import anthropic
@@ -158,10 +145,7 @@
         print(output.outputs[0].text)
     ```
 4.  **优化模型和本地环境以获得更好性能**：利用VLLM的PagedAttention等特性，以及调整硬件设置来提升吞吐量和降低延迟。
-    ![](img/a7fd38c27427b9ee03dddd0ce05c2be2_11.png)
-    ![](img/a7fd38c27427b9ee03dddd0ce05c2be2_12.png)
 
-![](img/a7fd38c27427b9ee03dddd0ce05c2be2_11.png)
 
 ---
 

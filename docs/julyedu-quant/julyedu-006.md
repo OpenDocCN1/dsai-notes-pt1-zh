@@ -6,7 +6,6 @@
 
 在本节课中，我们将学习机器学习流程中至关重要的一步——特征选择。我们将探讨特征选择的意义、三种主要方法，并深入讲解两个在实践中极其有效但理论背景相对“玄学”的算法：遗传算法和神经网络的反向传播算法。掌握这些内容，将帮助你从原始数据中提炼出高质量的特征，并理解现代人工智能算法的核心运作机制。
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_2.png)
 
 ---
 
@@ -109,7 +108,6 @@
 
 ### 梯度下降与反向传播的奥秘
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_4.png)
 
 梯度下降法是求解此类优化问题的基本框架：
 `W_new = W_old - learning_rate * ∂Loss/∂W`
@@ -136,79 +134,47 @@
 
 ![](img/5fffcd7617edf55f8c65cda7ac10ad9f_6.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_8.png)
 
 ![](img/5fffcd7617edf55f8c65cda7ac10ad9f_10.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_12.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_14.png)
 
 前面介绍的前馈神经网络（包括MLP、CNN）在处理时序数据时，无法记忆历史信息。循环神经网络（RNN）通过让网络层间的连接具有循环性，使网络能够保留之前时刻的“状态”，从而处理序列数据。
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_16.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_18.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_20.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_22.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_24.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_26.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_28.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_30.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_32.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_34.png)
 
 **核心思想**：在t时刻，RNN不仅接收当前的输入 `x_t`，还接收来自上一时刻的隐藏状态 `h_{t-1}`，共同计算当前时刻的输出 `y_t` 和新的隐藏状态 `h_t`。
 `h_t = activation(W_hh * h_{t-1} + W_xh * x_t + b_h)`
 `y_t = W_hy * h_t + b_y`
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_36.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_38.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_40.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_42.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_44.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_46.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_48.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_50.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_52.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_53.png)
 
 这使得 `y_t` 的预测依赖于 `x_t, x_{t-1}, x_{t-2}, ...` 的信息。RNN及其变体（如LSTM、GRU）在时间序列预测、自然语言处理等领域取得了巨大成功。
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_55.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_57.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_59.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_61.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_63.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_65.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_67.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_69.png)
 
-![](img/5fffcd7617edf55f8c65cda7ac10ad9f_71.png)
 
 ![](img/5fffcd7617edf55f8c65cda7ac10ad9f_73.png)
 

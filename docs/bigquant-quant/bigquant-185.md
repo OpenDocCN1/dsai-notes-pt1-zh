@@ -1,12 +1,9 @@
 # 185：决策树鸢尾花分类案例 🌸
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_0.png)
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_2.png)
 
 在本节课中，我们将学习如何使用决策树算法对经典的鸢尾花数据集进行分类。我们将从数据加载开始，逐步完成模型训练、评估和可视化，并解释决策树预测结果的特点。
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_4.png)
 
 ---
 
@@ -14,7 +11,6 @@
 
 首先，我们需要导入必要的库并加载鸢尾花数据集。
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_6.png)
 
 ```python
 import numpy as np
@@ -24,7 +20,6 @@ from sklearn.tree import DecisionTreeClassifier
 import graphviz
 ```
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_8.png)
 
 以下是加载数据的具体步骤：
 
@@ -74,7 +69,6 @@ model.fit(X_train, y_train)
 现在模型已经训练好，本节中我们来看看它的预测准确度如何。我们将使用测试集进行预测，并计算模型的准确率得分。
 
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_10.png)
 
 ```python
 # 在测试集上评估模型
@@ -88,17 +82,14 @@ print(“真实结果：”, y_test)
 
 执行代码后，可以看到模型在测试集上的准确率（例如 0.96），并对比预测结果与真实标签，观察哪些样本被错误分类。
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_12.png)
 
 ## 理解决策树的预测概率
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_14.png)
 
 决策树的一个特点是其预测概率的输出方式。
 
 上一节我们评估了模型的整体性能，本节中我们深入探讨一个细节：决策树预测的概率值。我们使用 `predict_proba` 方法来查看模型对每个测试样本属于各个类别的概率估计。
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_16.png)
 
 ```python
 # 查看预测概率
@@ -106,33 +97,24 @@ probabilities = model.predict_proba(X_test)
 print(“预测概率：\n”, probabilities)
 ```
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_18.png)
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_20.png)
 
 你会发现，决策树输出的概率值通常是极端的（例如 0.0 或 1.0），而不是像逻辑回归那样平滑的概率（如 0.8、0.2）。这是因为：
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_22.png)
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_24.png)
 
 > 决策树在划分时，每个样本最终都会落到一个确定的叶子节点上。该叶子节点所代表的类别就被认为是该样本 100% 所属的类别，因此其预测概率非 0 即 1。
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_26.png)
 
 ## 可视化决策树
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_28.png)
 
 为了更直观地理解模型的决策过程，我们可以将训练好的决策树可视化。
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_30.png)
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_31.png)
 
 理解了这个概念后，让我们直观地看看这棵决策树长什么样。我们使用 `graphviz` 库来生成决策树的结构图。
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_33.png)
 
 ```python
 # 可视化决策树
@@ -149,11 +131,9 @@ graph # 在Jupyter Notebook中显示
 
 生成的树形图会展示从根节点到叶子节点的完整决策路径，包括每个节点使用的特征、划分阈值、基尼系数或信息熵、样本数量以及最终的类别分布。这有助于我们理解模型是如何做出分类决定的。
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_35.png)
 
 ---
 
-![](img/65c768ea420a3ba19e6ece194a54dbe3_37.png)
 
 ![](img/65c768ea420a3ba19e6ece194a54dbe3_39.png)
 

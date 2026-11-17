@@ -4,11 +4,9 @@
 
 在本节课中，我们将学习混合搜索。你将利用Pinecone的一项功能，该功能允许索引条目同时拥有稠密向量和稀疏向量。这意味着我们可以同时对稀疏向量和稠密向量进行搜索。为此，我们将利用BM25和CLIP从时尚产品数据中生成向量，以便同时搜索文本和图像产品描述。
 
-![](img/6a1ce69c6956fd8e6c2fe9856b38033e_2.png)
 
 ![](img/6a1ce69c6956fd8e6c2fe9856b38033e_3.png)
 
-![](img/6a1ce69c6956fd8e6c2fe9856b38033e_4.png)
 
 ## 概述
 
@@ -27,7 +25,6 @@ from pinecone_text.sparse import BM25Encoder
 
 接着，我们获取Pinecone API密钥并连接到索引。这次，我们将相似度计算指标从余弦相似度改为点积。
 
-![](img/6a1ce69c6956fd8e6c2fe9856b38033e_6.png)
 
 ```python
 # 创建Pinecone索引，使用点积作为相似度度量
@@ -110,9 +107,7 @@ print(“稠密向量维度：”, dense_vector.shape)
 ![](img/6a1ce69c6956fd8e6c2fe9856b38033e_9.png)
 
 
-![](img/6a1ce69c6956fd8e6c2fe9856b38033e_10.png)
 
-![](img/6a1ce69c6956fd8e6c2fe9856b38033e_11.png)
 
 ```python
 from tqdm.auto import tqdm
@@ -146,15 +141,11 @@ for i in tqdm(range(0, len(fashion), batch_size)):
     index.upsert(vectors=upserts)
 ```
 
-![](img/6a1ce69c6956fd8e6c2fe9856b38033e_13.png)
 
 ## 执行混合搜索查询
 
-![](img/6a1ce69c6956fd8e6c2fe9856b38033e_14.png)
 
-![](img/6a1ce69c6956fd8e6c2fe9856b38033e_16.png)
 
-![](img/6a1ce69c6956fd8e6c2fe9856b38033e_17.png)
 
 数据上传完毕后，我们就可以执行混合搜索了。关键在于查询时同时提供稀疏和稠密向量表示，并通过`alpha`参数控制两者的权重。
 

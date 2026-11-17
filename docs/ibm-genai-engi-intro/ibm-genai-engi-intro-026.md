@@ -6,7 +6,6 @@
 
 ---
 
-![](img/d3ad4f7f8d119baabd445e12bf7052bf_3.png)
 
 ## 什么是AI治理？🎯
 
@@ -28,7 +27,6 @@
 
 ---
 
-![](img/d3ad4f7f8d119baabd445e12bf7052bf_5.png)
 
 ## 什么是ESG？🌍
 

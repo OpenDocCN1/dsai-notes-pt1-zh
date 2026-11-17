@@ -14,20 +14,16 @@
 
 首先，我们需要执行与之前视频中相同的预处理步骤。
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_1.png)
 
 以下是第一步，将`classification`列转换为数值类型。
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_2.png)
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_3.png)
 
 ```python
 # 将classification列转换为数值类型
 df['classification'] = pd.to_numeric(df['classification'])
 ```
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_4.png)
 
 所有步骤合并执行后，数据看起来不错。接下来，将日期列转换为`datetime`类型。
 
@@ -38,10 +34,6 @@ for col in date_columns:
     df[col] = pd.to_datetime(df[col])
 ```
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_1.png)
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_2.png)
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_3.png)
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_4.png)
 
 ## 处理数据异常
 
@@ -54,7 +46,6 @@ for col in date_columns:
 df['recall_initiation_date'].sort_values()
 ```
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_6.png)
 
 结果显示，除了这个212年的异常值，其他日期最早可追溯到2008年。
 
@@ -65,7 +56,6 @@ df['recall_initiation_date'].sort_values()
 df.at[20513, 'recall_initiation_date'] = '212-12-07'
 ```
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_6.png)
 
 现在再次尝试运行日期时间转换。
 
@@ -79,9 +69,7 @@ for col in date_columns:
 
 ## 计算召回持续时间
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_8.png)
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_9.png)
 
 现在，我们可以开始进行分析，以实现分析随时间变化的召回率这一最终目标。我们可以研究召回事件平均解决速度，以及这个速度是变快了还是变慢了。
 
@@ -92,8 +80,6 @@ for col in date_columns:
 df['duration'] = df['termination_date'] - df['recall_initiation_date']
 ```
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_8.png)
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_9.png)
 
 请注意，检查`df.info()`会发现只有大约23700个非空持续时间值。这是因为查看`status`的唯一值时，发现有些案例仍在进行中，因此没有终止日期。
 
@@ -108,30 +94,20 @@ duration_df = df.dropna(subset=['duration'])
 
 ## 数据分析
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_11.png)
 
 现在，我们可以按`recall_initiation_date`升序对数据框进行排序，这样数据就从2008年开始，一直到2024年。
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_12.png)
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_13.png)
 
 ```python
 # 按召回开始日期排序
 duration_df = duration_df.sort_values('recall_initiation_date')
 ```
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_14.png)
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_15.png)
 
 检查前几行，发现有些案例仅在一周内就关闭了。
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_11.png)
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_12.png)
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_13.png)
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_14.png)
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_15.png)
 
 平均持续时间略低于一年。有一个案例在近10年后才关闭。但75%的召回在500天内得到解决。
 
@@ -154,13 +130,10 @@ plt.show()
 
 数据强烈右偏。大多数案例在500天内解决，但仍有一些事件超过500天仍未解决。
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_17.png)
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_18.png)
 
 为了展示召回持续时间如何随时间变化，可以创建一个折线图，绘制每个季度开始的召回平均持续时间。这需要对数据进行分组。
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_19.png)
 
 ```python
 # 按季度分组并计算平均持续时间
@@ -176,13 +149,9 @@ plt.xticks(rotation=45)
 plt.show()
 ```
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_17.png)
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_18.png)
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_19.png)
 
 如图所示，从2008年到2024年，召回持续时间显著减少。2024年最近的下降可能部分是由于删除了未结案例的行，但总体趋势非常清晰。这是一个很好的洞察，可以与消费者分享，帮助他们理解FDA的辛勤工作。
 
-![](img/0ae1979643d774123b9ec2a99f4c6e5e_21.png)
 
 ![](img/0ae1979643d774123b9ec2a99f4c6e5e_21.png)
 

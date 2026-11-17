@@ -1,6 +1,5 @@
 # Lex Fridman 播客 #367《Sam Altman OpenAI CEO：关于GPT-4, ChatGPT和AI的未来》中英字幕 - P1 - GPT中英字幕课程资源 - BV1kSkLBpEpL
 
-![](img/16cb68510ebc0947326849bba29af2bb_1.png)
 
 ## 课程概述：第1章：AI的黎明与OpenAI的诞生
 

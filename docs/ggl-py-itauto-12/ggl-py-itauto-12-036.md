@@ -18,7 +18,6 @@
 
 ## 三种循环技术
 
-![](img/3d56409621da2c41dcaf0000d9c5cc4c_4.png)
 
 ![](img/3d56409621da2c41dcaf0000d9c5cc4c_5.png)
 

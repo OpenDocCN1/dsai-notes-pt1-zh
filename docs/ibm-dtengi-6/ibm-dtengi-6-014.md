@@ -2,7 +2,6 @@
 
 在本节课中，我们将学习几个关键的Linux网络命令。你将学会如何检查网络配置、测试网络连接的稳定性，以及如何从互联网上获取数据。
 
-![](img/1ebf4b7fe13abf157d4244e6ee352ce4_1.png)
 
 ---
 
@@ -40,9 +39,7 @@
 
 ---
 
-![](img/1ebf4b7fe13abf157d4244e6ee352ce4_3.png)
 
-![](img/1ebf4b7fe13abf157d4244e6ee352ce4_4.png)
 
 ## 使用Curl传输数据 🔄
 
@@ -50,7 +47,6 @@
 
 输入 `curl www.google.com` 会使用默认的HTTP协议，返回Google首页的全部HTML内容。例如，你可以在输出中看到Google G标志的PNG文件路径。在浏览器中访问该路径，就能看到这个标志。
 
-![](img/1ebf4b7fe13abf157d4244e6ee352ce4_6.png)
 
 你还可以使用 `-O` 选项，让 `curl` 将URL的内容保存到本地文件。例如，输入 `curl -O google.txt www.google.com`。之后，你可以使用 `head` 命令查看 `google.txt` 文件的内容，以验证其与之前 `curl` 的直接输出是否一致。
 
@@ -62,11 +58,9 @@
 
 `wget` 和 `curl` 一样，可以获取URL指向的文件或网页的HTML代码。但 `wget` 在协议支持上更专业，并具备递归下载能力。当一个URL指向一个包含多个文件的文件夹时，这个功能非常有用。
 
-![](img/1ebf4b7fe13abf157d4244e6ee352ce4_8.png)
 
 这里，我们使用 `wget` 下载一个由 `w3.org` 托管的测试文件 `ISO-8859-1.txt`。`wget` 在下载过程中会返回信息，例如解析并连接到目标服务器、发送HTTP请求、等待响应，以及将文件自动保存到当前目录。
 
-![](img/1ebf4b7fe13abf157d4244e6ee352ce4_10.png)
 
 作为参考，在浏览器中查看该URL时，你会看到一个简单的文本文件。
 

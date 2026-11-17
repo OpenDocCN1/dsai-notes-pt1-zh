@@ -1,6 +1,5 @@
 # 005：CUDA中的线程发散（续）与内存模型概述
 
-![](img/b5d103ab5699247b995703b379c1a9e5_0.png)
 
 ![](img/b5d103ab5699247b995703b379c1a9e5_0.png)
 
@@ -149,7 +148,6 @@ __global__ void T_kernel(float* vector, int vector_size) {
 
 ![](img/b5d103ab5699247b995703b379c1a9e5_52.png)
 
-![](img/b5d103ab5699247b995703b379c1a9e5_54.png)
 
 ![](img/b5d103ab5699247b995703b379c1a9e5_56.png)
 
@@ -173,7 +171,6 @@ __global__ void D_kernel(float* vector, int vector_size) {
 
 ![](img/b5d103ab5699247b995703b379c1a9e5_58.png)
 
-![](img/b5d103ab5699247b995703b379c1a9e5_59.png)
 
 **问题**：线程束执行此 `switch` 结构需要多少步？
 
@@ -184,7 +181,6 @@ __global__ void D_kernel(float* vector, int vector_size) {
 
 ![](img/b5d103ab5699247b995703b379c1a9e5_63.png)
 
-![](img/b5d103ab5699247b995703b379c1a9e5_65.png)
 
 **优化**：通过观察，我们可以合并一些执行相同或等价操作的 `case`，从而减少步数：
 *   `case 0` 和 `case 2`：由于线程锁步执行，当 `id=2` 执行 `vector[2] = vector[0];` 时，`vector[0]` 已被 `id=0` 的线程初始化为0。因此两者效果可合并（将`vector`对应位置赋0）。
@@ -297,7 +293,6 @@ GPU拥有复杂的内存层次结构，设计目标是隐藏全局内存的高�
 *   **优化全局内存访问**：通过合并访问（Coalesced Access）来最大化内存带宽利用率（后续课程详述）。
 *   **善用常量与纹理内存**：将只读的常量或具有空间局部性的数据放置于此。
 
-![](img/b5d103ab5699247b995703b379c1a9e5_95.png)
 
 ![](img/b5d103ab5699247b995703b379c1a9e5_96.png)
 
@@ -324,7 +319,6 @@ GPU拥有复杂的内存层次结构，设计目标是隐藏全局内存的高�
 
 ![](img/b5d103ab5699247b995703b379c1a9e5_110.png)
 
-![](img/b5d103ab5699247b995703b379c1a9e5_112.png)
 
 ![](img/b5d103ab5699247b995703b379c1a9e5_114.png)
 

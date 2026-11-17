@@ -1,6 +1,5 @@
 # 23：从输出张量预测下一个词元
 
-![](img/914f064cc76f34ff22cbb67a3a0d79c8_0.png)
 
 ![](img/914f064cc76f34ff22cbb67a3a0d79c8_0.png)
 

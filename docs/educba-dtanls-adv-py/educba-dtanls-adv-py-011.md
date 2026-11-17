@@ -12,21 +12,15 @@
 
 编写客户端或服务器端代码的第一步是导入`socket`模块。这个模块包含了创建和管理网络连接所需的所有类和方法。
 
-![](img/c2f6f5488a554a5ebba6187494803c38_1.png)
 
-![](img/c2f6f5488a554a5ebba6187494803c38_2.png)
 
 ```python
 import socket
 ```
 
-![](img/c2f6f5488a554a5ebba6187494803c38_3.png)
 
-![](img/c2f6f5488a554a5ebba6187494803c38_4.png)
 
-![](img/c2f6f5488a554a5ebba6187494803c38_5.png)
 
-![](img/c2f6f5488a554a5ebba6187494803c38_6.png)
 
 ---
 
@@ -75,9 +69,7 @@ print(f"收到来自地址 {address} 的客户端连接")
 
 以下是客户端需要执行的关键步骤：
 
-![](img/c2f6f5488a554a5ebba6187494803c38_8.png)
 
-![](img/c2f6f5488a554a5ebba6187494803c38_9.png)
 
 1.  **连接到服务器**：使用`connect()`方法，指定服务器的地址（如`localhost`）和端口号（如1234），发起连接。
 
@@ -88,9 +80,7 @@ client_socket.connect(('localhost', 1234))
 
 ---
 
-![](img/c2f6f5488a554a5ebba6187494803c38_11.png)
 
-![](img/c2f6f5488a554a5ebba6187494803c38_12.png)
 
 ## 发送与接收数据
 
@@ -101,7 +91,6 @@ client_socket.connect(('localhost', 1234))
 1.  **客户端发送数据**：客户端使用`sendall()`方法发送数据。在发送前，需要将字符串使用`encode()`方法编码为字节。
 2.  **服务器接收数据**：服务器使用`recv()`方法接收数据。接收到的数据是字节格式，需要使用`decode()`方法解码为字符串。
 
-![](img/c2f6f5488a554a5ebba6187494803c38_14.png)
 
 ```python
 # 客户端发送消息

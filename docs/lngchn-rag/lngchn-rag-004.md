@@ -1,6 +1,5 @@
 # 004：生成环节 🧠
 
-![](img/1a7346eb214dc21f852698eaf4ae46eb_0.png)
 
 在本节课中，我们将要学习 RAG（检索增强生成）流程中的最后一个关键环节：**生成**。我们将了解如何将检索到的文档与用户问题结合，通过大语言模型生成最终答案，并使用 LangChain 的组件来简化这一过程。
 
@@ -36,10 +35,8 @@ result = chain.invoke({“context”: retrieved_docs, “question”: user_quest
 
 以下是构建检索器的步骤（快速回顾）：
 
-![](img/1a7346eb214dc21f852698eaf4ae46eb_2.png)
 
 
-![](img/1a7346eb214dc21f852698eaf4ae46eb_4.png)
 
 ```python
 # 加载文档
@@ -90,7 +87,6 @@ chain = prompt | llm
 现在，我们可以手动传入检索到的文档和问题来调用这个链：
 
 
-![](img/1a7346eb214dc21f852698eaf4ae46eb_6.png)
 
 ```python
 # 假设我们有一个问题和检索到的文档
@@ -102,7 +98,6 @@ response = chain.invoke({“context”: context, “question”: question})
 print(response.content)
 ```
 
-![](img/1a7346eb214dc21f852698eaf4ae46eb_8.png)
 
 运行上述代码后，我们可以在 LangSmith 中观察到完整的执行轨迹，包括传入的上下文、问题以及模型生成的答案。
 
@@ -134,17 +129,14 @@ print(result)
 4.  将构建好的提示发送给大语言模型 `llm`。
 5.  返回模型生成的答案。
 
-![](img/1a7346eb214dc21f852698eaf4ae46eb_10.png)
 
 我们同样可以在 LangSmith 中查看这个自动化流程的详细追踪，包括检索步骤和生成步骤。
 
-![](img/1a7346eb214dc21f852698eaf4ae46eb_12.png)
 
 ## 总结与展望
 
 本节课中我们一起学习了 RAG 系统的生成环节。我们了解了如何将检索到的文档与用户问题通过提示模板结合，并利用大语言模型生成最终答案。我们实践了两种方法：手动构建调用链和使用 LangChain 提供的便捷 `RAGChain`。
 
-![](img/1a7346eb214dc21f852698eaf4ae46eb_14.png)
 
 至此，我们已经完成了 RAG 基础流程的三大核心环节：索引、检索和生成的概述。这个简单的管道是构建更复杂应用的基础。在接下来的短课程中，我们将深入探讨一些更复杂的主题和高级技术，以解决这个基础管道可能存在的局限性，例如处理长文档、提高检索精度和优化生成质量等。
 

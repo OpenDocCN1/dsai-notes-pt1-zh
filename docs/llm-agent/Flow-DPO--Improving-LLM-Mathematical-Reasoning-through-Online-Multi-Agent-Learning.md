@@ -75,7 +75,6 @@ pmineiro@microsoft.com   邓一赫^(1,2), 保罗·米内罗²
 
 其中，$N$ 是已见训练数据的数量，表示基于前 $i-1$ 个数据点微调的语言模型，$\mathbf{x}_{i}$ 是数据中的第 $i$ 个问题，$y_{i}$ 是正确答案。该指标作为 Flow 在整个训练过程中泛化性能的可靠指示器。图 [3](https://arxiv.org/html/2410.22304v1#S3.F3 "Figure 3 ‣ 3.2 Progressive Validation Accuracy ‣ 3 Results ‣ Flow-DPO: Improving LLM Mathematical Reasoning through Online Multi-Agent Learning") 和 [4](https://arxiv.org/html/2410.22304v1#S3.F4 "Figure 4 ‣ 3.2 Progressive Validation Accuracy ‣ 3 Results ‣ Flow-DPO: Improving LLM Mathematical Reasoning through Online Multi-Agent Learning") 展示了我们 Flow 的渐进验证准确率，分别在有训练和无训练的情况下，并与单一 LLM 在一步生成推理和答案时的零-shot表现进行了对比。在没有训练的情况下，Flow 的推理准确率稍微低于独立模型的准确率。这一差异表明 Flow 在处理任务特定需求时的初期效率较低，例如在基于部分答案明确判断何时结束推理或继续推理方面。 这些结果突出了训练过程在优化 Flow 对复杂推理任务性能中的重要性。与此同时，在线 DPO 训练有效提升了 Flow 在跨多种 LLM 模型的在线学习过程中对新数据的泛化能力。对于 Llama-3-8B-Instruct 模型，在线 DPO 学习在仅 $2,000$ 个训练实例内就显著提升了 Flow 的表现，提升幅度达到 $20\%$。类似地，对于 Phi-3-medium-128k-instruct 模型，该模型在数学推理方面表现强劲，训练数据上的零-shot 准确率为 $79\%$，而在线 DPO 学习使其准确率提升了 4 个百分点，接近 $83\%$。我们注意到，在线训练方案使得我们可以将渐进验证准确率作为早停的良好指示器。
 
-![参考图注](img/4d1ed02f7864336c0a29e2c6d3c5f4bf.png)
 
 图 3：Llama-3-Instruct 在 MetaMath 上的渐进验证准确率。
 

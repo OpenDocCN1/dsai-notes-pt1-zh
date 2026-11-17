@@ -2,7 +2,6 @@
 
 ![](img/fd0fce9992301fb08177a253e85c6f71_0.png)
 
-![](img/fd0fce9992301fb08177a253e85c6f71_2.png)
 
 ![](img/fd0fce9992301fb08177a253e85c6f71_3.png)
 
@@ -31,7 +30,6 @@ global_variable = "value"
 *   `cik`：SEC的中央索引密钥。
 *   `cusip`：CUSIP代码。
 
-![](img/fd0fce9992301fb08177a253e85c6f71_5.png)
 
 以下是创建此节点的参数化Cypher查询：
 

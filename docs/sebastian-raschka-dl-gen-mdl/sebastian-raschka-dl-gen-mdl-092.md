@@ -1,8 +1,6 @@
 # 092：PyTorch中的学习率调度器 📉
 
-![](img/e7a62680671b2910b2da284e9a413656_0.png)
 
-![](img/e7a62680671b2910b2da284e9a413656_2.png)
 
 在本节课中，我们将学习如何在PyTorch中实现学习率衰减。学习率衰减是一种在训练过程中动态降低学习率的技术，有助于模型在训练后期更精细地调整参数，从而可能达到更好的性能。
 
@@ -24,13 +22,11 @@ def adjust_learning_rate(optimizer, epoch, initial_lr, decay_rate):
             param_group['lr'] = initial_lr * (decay_rate ** (epoch // 10))
 ```
 
-![](img/e7a62680671b2910b2da284e9a413656_4.png)
 
 这个函数的核心逻辑是：每经过10个训练周期（epoch），就将优化器中的所有参数组的学习率乘以一个衰减因子。这里的 `decay_rate` 就是衰减率，例如0.1表示学习率变为原来的十分之一。
 
 在训练循环中，你可以在每个epoch结束后调用此函数：
 
-![](img/e7a62680671b2910b2da284e9a413656_6.png)
 
 ```python
 for epoch in range(num_epochs):
@@ -40,13 +36,11 @@ for epoch in range(num_epochs):
 
 然而，这只是手动实现的方式。在实践中，如果你想使用现有的、常见的学习率衰减方法，可以直接使用PyTorch内置的调度器。
 
-![](img/e7a62680671b2910b2da284e9a413656_8.png)
 
 ## 使用PyTorch内置调度器
 
 PyTorch在 `torch.optim.lr_scheduler` 模块中提供了多种学习率调度器。使用它们通常只需要两个步骤：初始化和在训练循环中调用 `.step()`。
 
-![](img/e7a62680671b2910b2da284e9a413656_10.png)
 
 以下是使用 `ExponentialLR` 调度器的通用流程：
 
@@ -54,7 +48,6 @@ PyTorch在 `torch.optim.lr_scheduler` 模块中提供了多种学习率调度器
 2.  **在训练循环中更新**：在每个epoch结束后调用调度器的 `.step()` 方法。
 
 
-![](img/e7a62680671b2910b2da284e9a413656_12.png)
 
 ```python
 import torch.optim as optim
@@ -76,15 +69,12 @@ for epoch in range(num_epochs):
 
 通过访问PyTorch官方文档，你可以找到更多类型的调度器，如 `StepLR`、`MultiStepLR`、`ReduceLROnPlateau` 等。
 
-![](img/e7a62680671b2910b2da284e9a413656_14.png)
 
-![](img/e7a62680671b2910b2da284e9a413656_15.png)
 
 ## 一个有效的实践策略：基于验证集性能的衰减
 
 接下来，我们介绍一种在实践中非常有效的策略，它源自2016年关于深度残差网络（ResNet）的论文。其核心思想是：**当模型在验证集上的性能（如准确率）停止提升（达到平台期）时，将学习率除以10**。
 
-![](img/e7a62680671b2910b2da284e9a413656_17.png)
 
 这种方法通常与带动量的SGD优化器配合使用。以下是关键的超参数设置：
 *   **优化器**：SGD with momentum
@@ -96,14 +86,10 @@ for epoch in range(num_epochs):
 
 在PyTorch中，我们可以使用 `ReduceLROnPlateau` 调度器轻松实现此策略。
 
-![](img/e7a62680671b2910b2da284e9a413656_19.png)
 
 
-![](img/e7a62680671b2910b2da284e9a413656_21.png)
 
-![](img/e7a62680671b2910b2da284e9a413656_23.png)
 
-![](img/e7a62680671b2910b2da284e9a413656_25.png)
 
 ```python
 from torch.optim.lr_scheduler import ReduceLROnPlateau
@@ -132,7 +118,6 @@ for epoch in range(num_epochs):
 
 在使用学习率调度器和长时间训练时，保存和加载模型检查点至关重要。这不仅可以用于后续的预测任务，还可以从中间状态继续训练，而无需从头开始。
 
-![](img/e7a62680671b2910b2da284e9a413656_27.png)
 
 PyTorch推荐的方式是保存和加载模型的 **状态字典（state_dict）**，它包含了模型的所有可学习参数。
 

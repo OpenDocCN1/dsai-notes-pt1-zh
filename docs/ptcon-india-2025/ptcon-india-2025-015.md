@@ -1,6 +1,5 @@
 # 015：闭幕致辞与活动组织
 
-![](img/070a8356fec1e77967c7a2e3c8ef56cb_0.png)
 
 ![](img/070a8356fec1e77967c7a2e3c8ef56cb_1.png)
 

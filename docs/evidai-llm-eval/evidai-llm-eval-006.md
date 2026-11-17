@@ -1,6 +1,5 @@
 # 006：评估大语言模型在分类任务上的表现 🧪
 
-![](img/47b9ea45b3e968e2da895c5b2a3bae66_0.png)
 
 ![](img/47b9ea45b3e968e2da895c5b2a3bae66_2.png)
 

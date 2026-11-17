@@ -1,6 +1,5 @@
 # TensorFlow 教程 P10：L11 - 文本分类 📚
 
-![](img/cf77d9b01a43fab5f293c40eb502060f_0.png)
 
 ![](img/cf77d9b01a43fab5f293c40eb502060f_0.png)
 
@@ -151,6 +150,5 @@ for i in range(5):
 
 通过本教程，你已经掌握了应用基本自然语言处理技术和RNN模型进行文本分类的基础知识。
 
-![](img/cf77d9b01a43fab5f293c40eb502060f_2.png)
 
 ![](img/cf77d9b01a43fab5f293c40eb502060f_2.png)

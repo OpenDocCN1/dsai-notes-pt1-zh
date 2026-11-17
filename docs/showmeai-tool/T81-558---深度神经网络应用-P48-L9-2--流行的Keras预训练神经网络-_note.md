@@ -31,19 +31,14 @@ from tensorflow.keras.applications import MobileNetV2
 model = MobileNetV2(weights='imagenet')
 ```
 
-![](img/56e8d9866f4ec8a3da33b17a92d76bbd_5.png)
 
-![](img/56e8d9866f4ec8a3da33b17a92d76bbd_6.png)
 
 ## 外部模型资源
 
-![](img/56e8d9866f4ec8a3da33b17a92d76bbd_7.png)
 
-![](img/56e8d9866f4ec8a3da33b17a92d76bbd_8.png)
 
 除了Keras内置的模型，我们还可以从外部获取优秀的预训练模型。上一节我们介绍了Keras内置的资源，本节中我们来看看两个非常重要的外部网站。
 
-![](img/56e8d9866f4ec8a3da33b17a92d76bbd_9.png)
 
 以下是两个极具价值的资源网站：
 
@@ -52,7 +47,6 @@ model = MobileNetV2(weights='imagenet')
 
 ## 模型选择与应用
 
-![](img/56e8d9866f4ec8a3da33b17a92d76bbd_11.png)
 
 面对众多选择，如何为你的项目挑选合适的模型呢？通常，你需要根据任务需求（如精度、速度、设备限制）来权衡。例如，对于移动端应用，MobileNet是理想选择；而对于追求最高精度的服务器端应用，可能需要考虑更复杂的模型如ResNet或EfficientNet。
 

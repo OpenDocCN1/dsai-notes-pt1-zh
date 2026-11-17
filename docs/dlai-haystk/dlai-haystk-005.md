@@ -4,17 +4,14 @@
 
 ## 概述
 
-![](img/df2d29d845a86b3065b7116302337cd7_1.png)
 
 我们之前提到过管道可以分支，本节课将实际构建一个分支管道。回退机制是分支管道的一个典型应用场景。我们将使用Haystack中的**条件路由器**组件，根据RAG管道的输出结果来决定是直接给出答案，还是转向网络搜索分支。
 
 ## 构建基础RAG管道
 
-![](img/df2d29d845a86b3065b7116302337cd7_3.png)
 
 首先，我们需要构建一个基础的检索增强生成管道。以下是构建步骤：
 
-![](img/df2d29d845a86b3065b7116302337cd7_5.png)
 
 以下是导入依赖项和初始化环境的代码：
 
@@ -27,7 +24,6 @@ from haystack.document_stores import InMemoryDocumentStore
 from haystack.nodes import BM25Retriever, PromptNode, PromptTemplate, ConditionalRouter
 ```
 
-![](img/df2d29d845a86b3065b7116302337cd7_7.png)
 
 接下来，我们将一些虚拟文档写入内存文档存储。这些文档描述了不同的Haystack组件及其使用方法。
 
@@ -42,11 +38,9 @@ documents = [
 document_store.write_documents(documents)
 ```
 
-![](img/df2d29d845a86b3065b7116302337cd7_9.png)
 
 现在，我们开始创建RAG管道。首先定义提示模板，其中包含一个特殊指令：如果答案不在文档中，则回复“无答案”。
 
-![](img/df2d29d845a86b3065b7116302337cd7_11.png)
 
 ```python
 rag_prompt_template = PromptTemplate(
@@ -60,7 +54,6 @@ rag_prompt_template = PromptTemplate(
 然后，我们初始化管道并添加组件：基于关键字的BM25检索器、提示构建器以及使用GPT-3的生成器。
 
 
-![](img/df2d29d845a86b3065b7116302337cd7_13.png)
 
 ```python
 rag_pipeline = Pipeline()
@@ -88,17 +81,13 @@ print(result)
 ```
 由于文档中没有相关信息，模型应回复：`无答案`。
 
-![](img/df2d29d845a86b3065b7116302337cd7_15.png)
 
 ## 引入条件路由器实现分支
 
-![](img/df2d29d845a86b3065b7116302337cd7_17.png)
 
 上一节我们构建了基础的RAG管道，本节中我们来看看如何通过**条件路由器**为其添加分支逻辑，实现回退机制。
 
-![](img/df2d29d845a86b3065b7116302337cd7_19.png)
 
-![](img/df2d29d845a86b3065b7116302337cd7_21.png)
 
 条件路由器是一个特殊组件，它根据预定义的条件和路线来决定管道的执行流向。其核心逻辑可以用以下伪代码描述：
 
@@ -113,17 +102,14 @@ else:
 
 在我们的用例中，条件是基于生成器的回复是否包含“无答案”。我们将创建两条路线：
 
-![](img/df2d29d845a86b3065b7116302337cd7_23.png)
 
 1.  **路线1（网络搜索）**：如果回复中包含“无答案”（不区分大小写），则将查询路由到网络搜索分支。
 2.  **路线2（答案）**：如果回复中不包含“无答案”，则直接将回复作为最终答案输出。
 
 以下是定义路线的代码：
 
-![](img/df2d29d845a86b3065b7116302337cd7_25.png)
 
 
-![](img/df2d29d845a86b3065b7116302337cd7_27.png)
 
 ```python
 from haystack.nodes import RouteCondition
@@ -151,13 +137,11 @@ router = ConditionalRouter(routes=[route_web, route_answer])
 rag_pipeline.add_node(component=router, name="Router", inputs=["Generator"])
 ```
 
-![](img/df2d29d845a86b3065b7116302337cd7_29.png)
 
 此时，管道的结构变为：`Query -> Retriever -> PromptBuilder -> Generator -> Router`。路由器将根据生成器的回复，输出到`go_to_web_search`或`answer`。
 
 让我们测试一下分支逻辑。再次询问未知问题：
 
-![](img/df2d29d845a86b3065b7116302337cd7_31.png)
 
 ```python
 result = rag_pipeline.run(query="海斯塔克有哪些米斯特拉尔组件？")
@@ -165,23 +149,18 @@ print(result)
 ```
 输出应为：`{'go_to_web_search': {'query': '海斯塔克有哪些米斯特拉尔组件？'}}`。这表明路由器已成功将查询导向网络搜索分支。
 
-![](img/df2d29d845a86b3065b7116302337cd7_33.png)
 
 ## 构建网络搜索分支
 
-![](img/df2d29d845a86b3065b7116302337cd7_35.png)
 
 上一节我们成功将查询路由到了网络搜索分支，本节中我们来看看如何构建这个分支，使其能够从互联网获取信息并生成回答。
 
-![](img/df2d29d845a86b3065b7116302337cd7_37.png)
 
 我们将使用 `SerperDevWebSearch` 组件进行网络搜索。该组件接收查询，在网络上搜索，并将结果作为Haystack文档返回。这样，我们就可以构建一个与之前类似的RAG管道，但文档来源是网络。
 
-![](img/df2d29d845a86b3065b7116302337cd7_39.png)
 
 首先，定义用于网络搜索的提示模板，要求模型在答案中注明信息来源于网络搜索。
 
-![](img/df2d29d845a86b3065b7116302337cd7_41.png)
 
 ```python
 web_prompt_template = PromptTemplate(
@@ -192,15 +171,12 @@ web_prompt_template = PromptTemplate(
 )
 ```
 
-![](img/df2d29d845a86b3065b7116302337cd7_43.png)
 
 现在，我们构建完整的、包含回退机制的分支管道。我们将创建一个新管道，它整合了基础的RAG管道和网络搜索分支。
 
 
-![](img/df2d29d845a86b3065b7116302337cd7_45.png)
 
 
-![](img/df2d29d845a86b3065b7116302337cd7_47.png)
 
 ```python
 from haystack.nodes import WebRetriever # 假设使用WebRetriever，实际可能是SerperDevWebSearch
@@ -223,9 +199,7 @@ full_pipeline.add_node(component=web_generator, name="WebGenerator", inputs=["We
 
 最后，我们需要连接这些节点。关键点在于，路由器输出的查询（`go_to_web_search`）将同时作为 `WebRetriever` 的查询输入和 `WebPromptBuilder` 的查询输入。
 
-![](img/df2d29d845a86b3065b7116302337cd7_49.png)
 
-![](img/df2d29d845a86b3065b7116302337cd7_51.png)
 
 ```python
 # 连接网络搜索分支
@@ -234,7 +208,6 @@ full_pipeline.connect(source="Router.go_to_web_search", target="WebPromptBuilder
 full_pipeline.connect(source="WebRetriever", target="WebPromptBuilder.documents")
 ```
 
-![](img/df2d29d845a86b3065b7116302337cd7_53.png)
 
 现在，完整的管道已经构建完毕。其逻辑流程如下图所示（用文字描述）：
 1.  用户查询进入基础RAG管道。
@@ -245,15 +218,12 @@ full_pipeline.connect(source="WebRetriever", target="WebPromptBuilder.documents"
 4.  `go_to_web_search`的查询触发网络搜索。
 5.  网络搜索结果和原始查询被送入新的提示构建器和生成器，产生最终答案。
 
-![](img/df2d29d845a86b3065b7116302337cd7_55.png)
 
 ## 测试完整管道
 
-![](img/df2d29d845a86b3065b7116302337cd7_57.png)
 
 让我们用几个问题来测试完整的管道。
 
-![](img/df2d29d845a86b3065b7116302337cd7_58.png)
 
 首先，测试一个RAG管道能够回答的问题：
 
@@ -263,11 +233,9 @@ print(result['answer'])
 ```
 输出应为来自基础RAG管道的答案。
 
-![](img/df2d29d845a86b3065b7116302337cd7_60.png)
 
 其次，测试一个RAG管道无法回答、需要回退到网络搜索的问题：
 
-![](img/df2d29d845a86b3065b7116302337cd7_62.png)
 
 ```python
 result = full_pipeline.run(query="法国的首都是什么？")
@@ -278,7 +246,6 @@ print(result.get('WebGenerator', {}).get('replies', ['No reply'])[0])
 
 你可以尝试更多问题，例如“海斯塔克有什么卡希尔组件？”（应触发网络搜索）和“提示构建器是做什么的？”（应由基础RAG回答）。
 
-![](img/df2d29d845a86b3065b7116302337cd7_64.png)
 
 ## 总结
 

@@ -221,7 +221,6 @@ GPT（生成式预训练变换器）是仅解码器类型的架构。GPT-2唯一
 
 ## 总结
 
-![](img/34c46c89b6201e72b8cbfd67ce47bfba_2.png)
 
 ![](img/34c46c89b6201e72b8cbfd67ce47bfba_3.png)
 

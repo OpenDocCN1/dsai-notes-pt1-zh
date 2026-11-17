@@ -2,17 +2,13 @@
 
 在本节课中，我们将学习如何计算轮廓的特征，例如面积和周长，并探索轮廓近似的方法。这些技术对于从图像中提取结构化信息和简化形状表示至关重要。
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_1.png)
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_3.png)
 
 ## 轮廓特征计算
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_5.png)
 
 上一节我们介绍了如何检测和绘制轮廓。本节中，我们来看看如何计算轮廓的几何特征。OpenCV 提供了多个函数来计算这些特征，但在使用前，需要将具体的轮廓提取出来。
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_7.png)
 
 以下是计算轮廓面积和周长的核心方法：
 
@@ -39,35 +35,24 @@ perimeter = cv2.arcLength(cnt, True)  # 计算周长
 
 最终，复杂的曲线被一系列首尾相连的直线段所替代。
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_9.png)
 
 ## 轮廓近似实践
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_11.png)
 
 了解了原理后，我们来看看如何在 OpenCV 中实现轮廓近似。以下是一个完整的示例流程：
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_13.png)
-
-![](img/8fe87be69dd7f94e92a5044796fecb8f_15.png)
 
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_17.png)
 
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_19.png)
-
-![](img/8fe87be69dd7f94e92a5044796fecb8f_21.png)
 
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_23.png)
-
-![](img/8fe87be69dd7f94e92a5044796fecb8f_25.png)
 
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_27.png)
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_29.png)
+
+
+
 
 ```python
 import cv2
@@ -91,20 +76,15 @@ cv2.imshow('Approximated Contour', img_approx)
 cv2.waitKey(0)
 ```
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_31.png)
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_33.png)
 
 **参数 `epsilon` 的影响**：
 *   `epsilon` 值越小，近似结果越接近原始轮廓，细节保留越多。
 *   `epsilon` 值越大，近似结果越简化，可能变成一个三角形甚至一条直线。
 *   通常，`epsilon` 被设置为轮廓周长的一个百分比（如 0.01 * 周长），需要根据实际需求调整。
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_35.png)
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_37.png)
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_39.png)
 
 ## 轮廓的外接形状
 
@@ -112,22 +92,16 @@ cv2.waitKey(0)
 
 以下是计算外接矩形和外接圆的方法：
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_41.png)
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_43.png)
 
 *   **外接矩形（Bounding Rectangle）**：`cv2.boundingRect(cnt)` 返回一个矩形的 (x, y, w, h)，即左上角坐标和宽高。
 *   **最小外接矩形（Rotated Rectangle）**：`cv2.minAreaRect(cnt)` 返回一个可以旋转的矩形。
 *   **外接圆**：`cv2.minEnclosingCircle(cnt)` 返回圆心坐标和半径。
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_45.png)
-
-![](img/8fe87be69dd7f94e92a5044796fecb8f_47.png)
-
-![](img/8fe87be69dd7f94e92a5044796fecb8f_49.png)
 
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_51.png)
+
+
 
 ```python
 # 计算并绘制外接矩形
@@ -143,20 +117,16 @@ cv2.circle(img, center, radius, (255, 0, 0), 2)  # 用蓝色绘制
 
 **特征衍生示例**：通过外接矩形，可以计算轮廓的“紧密度”或“饱满度”特征，例如 **轮廓面积 / 外接矩形面积**。这个比值越接近1，说明轮廓形状越饱满，越接近矩形。
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_53.png)
 
 ## 总结
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_55.png)
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_57.png)
 
 本节课中我们一起学习了轮廓分析的两个核心操作：特征计算与形状近似。
 *   我们掌握了如何计算轮廓的**面积**和**周长**。
 *   我们理解了**轮廓近似（Douglas-Peucker算法）** 的原理，并学会了使用 `cv2.approxPolyDP` 函数来简化轮廓形状。
 *   我们探索了如何为轮廓计算**外接矩形**和**外接圆**，并了解到这些外接形状可用于衍生出更多有价值的图像特征。
 
-![](img/8fe87be69dd7f94e92a5044796fecb8f_59.png)
 
 ![](img/8fe87be69dd7f94e92a5044796fecb8f_61.png)
 

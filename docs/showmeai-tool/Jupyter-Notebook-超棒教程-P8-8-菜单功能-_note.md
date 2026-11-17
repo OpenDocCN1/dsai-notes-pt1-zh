@@ -2,7 +2,6 @@
 
 在本节课中，我们将详细学习Jupyter Notebook界面顶部的菜单栏功能。菜单栏是控制Notebook文件、编辑内容、调整视图和获取帮助的核心区域。掌握这些功能将帮助你更高效地使用Jupyter Notebook。
 
-![](img/aed28feec306fc2072b2f30ee5bfdd03_1.png)
 
 上一节我们介绍了Notebook的基本界面，本节中我们来看看如何通过菜单栏的各项功能来管理和操作你的Notebook。
 

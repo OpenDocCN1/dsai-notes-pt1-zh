@@ -8,9 +8,7 @@ Hugging Face是一个开源人工智能平台。其创建目的是为开源AI社
 
 最初，Hugging Face社区专注于创建基于Transformer的模型，以利用自然语言处理（NLP）的能力。然而，如今该平台提供了各种用于生成文本、图像、音频和视频的机器学习工具。
 
-![](img/3932cdb103378c6aea5ca54afe9c1f7e_1.png)
 
-![](img/3932cdb103378c6aea5ca54afe9c1f7e_2.png)
 
 ## 核心资源与工具
 
@@ -25,9 +23,7 @@ Hugging Face是一个开源人工智能平台。其创建目的是为开源AI社
 
 该库中的模型执行多种任务，例如文本生成、问答、摘要、自动语音识别和图像分割等。用户可以通过名称筛选这些模型以找到现有模型，也可以将自己的模型分享到库中。
 
-![](img/3932cdb103378c6aea5ca54afe9c1f7e_4.png)
 
-![](img/3932cdb103378c6aea5ca54afe9c1f7e_5.png)
 
 开发者还可以在“Spaces”选项卡上托管生成式AI应用的演示，允许用户进行交互和验证。
 
@@ -42,14 +38,12 @@ Hugging Face为企业提供“企业中心”，企业可以从中访问预训�
 *   **B**：评估其生成式AI模型以过滤有偏见的数据。
 *   **C**：创建具有文本、图像、音频和视频生成能力的多模态应用。
 
-![](img/3932cdb103378c6aea5ca54afe9c1f7e_7.png)
 
 超过5万家大大小小的公司都在积极使用Hugging Face。例如：
 *   生成式AI解决方案提供商Writer在Hugging Face上托管其PALM大语言模型。
 *   Intel已正式加入Hugging Face的硬件合作伙伴计划，并与之合作构建先进的机器学习硬件和端到端机器学习工作流。
 *   大学和非营利组织也是Hugging Face社区的一部分。
 
-![](img/3932cdb103378c6aea5ca54afe9c1f7e_9.png)
 
 在其他服务中，Hugging Face还提供专家加速计划来指导非开发人员使用机器学习模型。HuggingChat是首个开源的ChatGPT替代品。
 
@@ -61,11 +55,8 @@ Hugging Face将协作努力更进一步，与Watson X.ai（IBM为AI构建者打�
 
 Watson X.ai在其工作室中提供精选的Hugging Face模型，以帮助其构建者社区训练、测试和部署各种类型的机器学习和生成式AI应用。这样，该工作室就利用了Hugging Face提供的数据多样性、社区力量和开源库。
 
-![](img/3932cdb103378c6aea5ca54afe9c1f7e_11.png)
 
-![](img/3932cdb103378c6aea5ca54afe9c1f7e_12.png)
 
-![](img/3932cdb103378c6aea5ca54afe9c1f7e_13.png)
 
 另一方面，Hugging Face创建了IBM大语言模型的开源版本，并将其提供在自己的平台上。双方都相信开源技术，并押注社区在AI领域创造价值。
 

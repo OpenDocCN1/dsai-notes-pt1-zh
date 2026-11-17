@@ -6,13 +6,10 @@
 
 提示词工程工具提供了多种特性和功能，旨在优化提示词的创建，以获得期望的结果。这些工具对于不精通自然语言处理技术，但又希望在使用生成式AI模型时达成特定目标的用户尤为有用。
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_1.png)
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_2.png)
 
 接下来，我们将探讨这些工具提供的常见功能。
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_3.png)
 
 ## 提示词工程工具的常见功能
 
@@ -27,9 +24,7 @@
 
 上一节我们介绍了提示词工程工具的通用功能，本节中我们来看看几款具体的常用工具。
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_5.png)
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_6.png)
 
 ## 常用提示词工程工具介绍
 
@@ -49,11 +44,9 @@ Spellbook 是 Scale AI 提供的一个集成开发环境。借助 Spellbook，�
 
 Dust 提供了一个用于编写提示词并将其链接在一起的 Web 用户界面。用户可以管理链式提示词的不同版本。它还提供了一种自定义编码语言和一组用于处理LLM输出的标准模块。Dust 还支持 API 集成，以接入其他模型和服务。
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_8.png)
 
 ### 4. PromptPerfect
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_9.png)
 
 PromptPerfect 是一款可用于为不同的大型语言模型或文生图模型优化提示词的工具。它支持常见的文本模型（如 GPT、Claude、Stable LM 和 LLaMA）以及图像模型（如 DALL-E 和 Stable Diffusion）。
 
@@ -63,28 +56,20 @@ PromptPerfect 是一款可用于为不同的大型语言模型或文生图模型
 
 除了上述专门工具，还有一些其他流行的平台和接口为提示词工程提供资源或帮助用户试验提示词。
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_11.png)
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_12.png)
 
 ### 其他资源与平台
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_13.png)
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_14.png)
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_15.png)
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_16.png)
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_17.png)
 
 *   **GitHub**：拥有大量关于提示词工程和LLM的代码仓库。这些仓库中提供的指南、示例和工具有助于提升提示词工程技能。
 *   **OpenAI Playground**：一个基于 Web 的工具，帮助用户使用 OpenAI 的各种模型（如 GPT 系列）试验和测试提示词。
 *   **Playground AI**：该平台帮助用户使用文本提示词，通过 Stable Diffusion 模型生成图像进行实验。
 *   **LangChain**：一个 Python 库，提供了构建和链接提示词的功能。
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_18.png)
 
 最后，有趣的是，提示词本身也可以进行买卖。**PromptBase** 就是一个提示词市场的例子。它支持为流行的生成式AI工具和模型（如 Midjourney、ChatGPT、DALL-E、Stable Diffusion 和 LLaMA）提供提示词。
 
@@ -92,9 +77,7 @@ PromptPerfect 是一款可用于为不同的大型语言模型或文生图模型
 
 ## 总结
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_20.png)
 
-![](img/43b96d8531fd927e1532cc312f6e06ef_21.png)
 
 ![](img/43b96d8531fd927e1532cc312f6e06ef_22.png)
 

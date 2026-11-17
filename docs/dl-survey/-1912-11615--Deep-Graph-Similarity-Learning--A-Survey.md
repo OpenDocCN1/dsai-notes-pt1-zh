@@ -427,7 +427,6 @@ ktena2018metric 中的工作提出使用 Siamese 图卷积神经网络（S-GCN�
 
 #### 3.2.3 基于 GNN 的图匹配网络
 
-![参见说明](img/ad0b721705d044fb79a27348e83b410a.png)
 
 (a) Siamese GNN
 

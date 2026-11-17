@@ -20,9 +20,7 @@
 /imagine 一个有着五颜六色花朵的公园
 ```
 
-![](img/d9e5e4bf5bf9caff09bb08d76cf5bae1_4.png)
 
-![](img/d9e5e4bf5bf9caff09bb08d76cf5bae1_5.png)
 
 现在，我想为这张图决定宽高比。为此，我需要添加参数。按照规则，我们使用双连字符 `--` 后跟参数名。这里我的参数名是 `aspect`，我给出的比例是 `6:9`。同时，我还添加了另一个参数 `chaos`，并将其值设为 `0`。
 
@@ -44,11 +42,9 @@
 /imagine 一个有着五颜六色花朵的公园
 ```
 
-![](img/d9e5e4bf5bf9caff09bb08d76cf5bae1_7.png)
 
 ## 核心参数详解
 
-![](img/d9e5e4bf5bf9caff09bb08d76cf5bae1_9.png)
 
 正如之前提到的，是否使用 `--chaos` 或 `--aspect` 参数完全取决于你的需求。如果你想决定图像的尺寸，可以使用 `--aspect`。如果你想决定图像是更写实还是更具创意，可以使用 `--chaos`。
 
@@ -117,7 +113,6 @@
 
 ## 总结
 
-![](img/d9e5e4bf5bf9caff09bb08d76cf5bae1_15.png)
 
 ![](img/d9e5e4bf5bf9caff09bb08d76cf5bae1_16.png)
 

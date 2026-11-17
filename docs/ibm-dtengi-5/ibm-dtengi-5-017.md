@@ -1,18 +1,14 @@
 # 017：子查询与嵌套选择 🧩
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_1.png)
 
 在本节课中，我们将学习如何编写子查询或嵌套的SELECT语句。子查询是SQL中一项强大的功能，它允许我们将一个查询嵌套在另一个查询内部，从而构建更复杂、更灵活的数据检索操作。
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_3.png)
 
 ---
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_5.png)
 
 ## 什么是子查询？ 🔍
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_7.png)
 
 子查询，也称为嵌套SELECT语句，类似于常规查询，但被放置在括号内并嵌套在另一个查询中。这使得我们能够构建比单独使用简单查询更强大的查询语句。
 
@@ -23,17 +19,14 @@ FROM table1
 WHERE column1 = (SELECT column1 FROM table2 WHERE condition);
 ```
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_9.png)
 
 ---
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_11.png)
 
 ## 为什么需要子查询？ 🤔
 
 上一节我们介绍了子查询的基本概念，本节中我们来看看为什么需要它。考虑一个来自之前视频的`employees`表，它包含员工ID、姓名、薪水等列。
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_13.png)
 
 假设我们想检索薪水高于平均薪水的所有员工列表。一个直观但错误的尝试可能是：
 ```sql
@@ -43,15 +36,12 @@ SELECT * FROM employees WHERE salary > AVG(salary);
 
 为了克服这个限制，我们可以使用子查询。
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_15.png)
 
 ---
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_16.png)
 
 ## 在WHERE子句中使用子查询 🛠️
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_18.png)
 
 以下是解决上述问题的正确方法，即在`WHERE`子句中嵌套一个子查询来计算平均薪水：
 ```sql
@@ -61,11 +51,9 @@ WHERE salary > (SELECT AVG(salary) FROM employees);
 ```
 在这个例子中，子查询`(SELECT AVG(salary) FROM employees)`首先执行，计算出平均薪水，然后这个结果被用于外层查询的`WHERE`条件中进行比较。
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_20.png)
 
 ---
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_22.png)
 
 ## 在SELECT列表中使用子查询（列表达式） 📊
 
@@ -81,17 +69,14 @@ FROM employees;
 ```
 这样，子查询会为结果集中的每一行都计算并返回相同的平均薪水值。
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_24.png)
 
 ---
 
 ## 在FROM子句中使用子查询（派生表/表表达式） 🗂️
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_26.png)
 
 另一种选择是将子查询作为`FROM`子句的一部分。这类子查询有时被称为派生表或表表达式，因为外层查询将子查询的结果作为一个数据源来使用。
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_28.png)
 
 例如，我们可以创建一个不包含敏感信息（如出生日期、薪水）的员工信息派生表：
 ```sql
@@ -105,11 +90,9 @@ FROM (SELECT employee_id, first_name, last_name, department_id
 
 ## 总结 📝
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_30.png)
 
 本节课中我们一起学习了子查询和嵌套查询的用法。我们了解到，子查询可以帮助我们构建更丰富的查询逻辑，并克服聚合函数在`WHERE`子句等位置使用的限制。
 
-![](img/d2b116f76022e009b9cb0bde6df44f40_32.png)
 
 具体来说，你学会了：
 *   子查询的基本概念和作用。

@@ -29,7 +29,6 @@
 
 Numpy(Numerical Python)是 Python 语言的一个扩展程序库，支持大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。Numpy 的主要特征如下：
 
-![综合项目; 电商销量预估<1>; 工具库介绍; Numpy; 6-1](img/eb8184813ab351b20e69601ab1cb97c6.png)
 
 *   一个强大的 N 维数组对象 ndarray
 *   广播功能函数
@@ -42,7 +41,6 @@ Numpy(Numerical Python)是 Python 语言的一个扩展程序库，支持大量�
 
 Pandas 是一个强大的序列数据处理工具包，项目开发之初是为了分析公司的财务数据以及金融数据。如今 Pandas 广泛地应用在了其他领域的数据分析中。它提供了大量能使我们快速便捷地处理数据的函数和方法，非常强大。
 
-![综合项目; 电商销量预估<1>; 工具库介绍; Pandas; 6-2](img/be8ce086e0475e3d813b5969a3522baf.png)
 
 想对 Pandas 有详细了解的宝宝，欢迎查看[ShowMeAI](http://www.showmeai.tech/)的 [数据分析系列教程](http://www.showmeai.tech/tutorials/33) 中的 Pandas 部分。大家也可以查看[ShowMeAI](http://www.showmeai.tech/)总结的 Pandas 速查表 [**数据科学工具速查 | Pandas 使用指南**](http://www.showmeai.tech/article-detail/101) 做一个快速了解。
 
@@ -50,7 +48,6 @@ Pandas 是一个强大的序列数据处理工具包，项目开发之初是为�
 
 Matplotlib 是 Python 最强大的绘图工具之一，其主要用于绘制 2D 图形或 3D 图形的 2D 示意图。其在数据分析领域它有很大的地位，因为可视化可以帮助我们更清晰直观地了解数据分布特性。
 
-![综合项目; 电商销量预估<1>; 工具库介绍; Matplotlib; 6-3](img/7764103de9d54aef4552a51756c3b305.png)
 
 想学习 Matplotlib 工具库的宝宝，也可以查看[ShowMeAI](http://www.showmeai.tech/)总结的 Matplotlib 速查表 [**数据科学工具速查 | Matplotlib 使用指南**](http://www.showmeai.tech/article-detail/103) 做一个快速了解。
 
@@ -58,7 +55,6 @@ Matplotlib 是 Python 最强大的绘图工具之一，其主要用于绘制 2D 
 
 Seaborn 是基于 Python 且非常受欢迎的图形可视化库，在 Matplotlib 的基础上，进行了更高级的封装，使得作图更加方便快捷。即便是没有什么基础的人，也能通过极简的代码，做出具有分析价值而又十分美观的图形。
 
-![综合项目; 电商销量预估<1>; 工具库介绍; Seaborn; 6-4](img/cadc8890cf5d4fdccf55d9aa0ff67fed.png)
 
 想对 Seaborn 有详细了解的宝宝，欢迎查看[ShowMeAI](http://www.showmeai.tech/)的 [数据分析系列教程](http://www.showmeai.tech/tutorials/33) 中的 Seaborn 部分。
 大家也可以查看[ShowMeAI](http://www.showmeai.tech/)总结的 Seaborn 速查表 [**数据科学工具速查 | Seaborn 使用指南**](http://www.showmeai.tech/article-detail/105) 做一个快速了解。
@@ -67,7 +63,6 @@ Seaborn 是基于 Python 且非常受欢迎的图形可视化库，在 Matplotli
 
 Python 机器学习工具库 Scikit-Learn，构建在 Numpy，SciPy，Pandas 和 Matplotlib 之上，也是最常用的 Python 机器学习工具库之一，里面的 API 的设计非常好，所有对象的接口简单，很适合新手上路。覆盖的模型非常多，适用场景广泛。
 
-![综合项目; 电商销量预估<1>; 工具库介绍; Scikit-Learn; 6-5](img/17ed12cb8a94b5655ce7ff548d63bfdb.png)
 
 想对 Scikit-Learn 有详细了解的宝宝，欢迎查看[ShowMeAI](http://www.showmeai.tech/)的机器学习实战教程中的[**SKLearn 入门**](http://www.showmeai.tech/article-detail/202) 和 [**SKLearn 指南**](http://www.showmeai.tech/article-detail/203) 部分。也可以查看[ShowMeAI](http://www.showmeai.tech/)总结的 Scikit-Learn 速查表 [**AI 建模工具速查 | Scikit-Learn 使用指南**](http://www.showmeai.tech/article-detail/108) 做一个快速了解。
 
@@ -75,7 +70,6 @@ Python 机器学习工具库 Scikit-Learn，构建在 Numpy，SciPy，Pandas 和
 
 XGBoost 是 eXtreme Gradient Boosting 的缩写称呼，它是一个非常强大的 Boosting 算法工具包，优秀的性能(效果与速度)让其在很长一段时间内霸屏数据科学比赛解决方案榜首，现在很多大厂的机器学习方案依旧会首选这个模型。XGBoost 在并行计算效率、缺失值处理、控制过拟合、预测泛化能力上都变现非常优秀。
 
-![综合项目; 电商销量预估<1>; 工具库介绍; XGBoost; 6-6](img/ec45bc6d1a49c945c83d19a0471acb56.png)
 
 想对 XGBoost 有详细了解的宝宝，欢迎查看[ShowMeAI](http://www.showmeai.tech/)的文章 [**图解机器学习 | XGBoost 模型详解**](http://www.showmeai.tech/article-detail/194) 理解其原理，以及文章 [**XGBoost 工具库建模应用详解**](http://www.showmeai.tech/article-detail/204) 了解详细用法。
 
@@ -83,7 +77,6 @@ XGBoost 是 eXtreme Gradient Boosting 的缩写称呼，它是一个非常强大
 
 LightGBM 是微软开发的 boosting 集成模型，和 XGBoost 一样是对 GBDT 的优化和高效实现，原理有一些相似之处，但它很多方面比 XGBoost 有着更为优秀的表现。
 
-![综合项目; 电商销量预估<1>; 工具库介绍; LightGBM; 6-7](img/f3af7a0a5fbe01135fcff642c4cf38d3.png)
 
 想对 LightGBM 有详细了解的宝宝，欢迎查看[ShowMeAI](http://www.showmeai.tech/)的文章 [图解机器学习 | LightGBM 模型详解](http://www.showmeai.tech/article-detail/195) 理解其原理，以及文章 [LightGBM 工具库建模应用详解](http://www.showmeai.tech/article-detail/205) 了解详细用法。
 
@@ -95,7 +88,6 @@ LightGBM 是微软开发的 boosting 集成模型，和 XGBoost 一样是对 GBD
 
 Rossmann 成立于 1972 年，是德国最大的日化用品超市，在 7 个欧洲国家有 3000 多家商店。商店不定时会举办短期的促销活动以及连续的促销活动以此来提高销售额。除此之外，商店的销售还受到许多因素的影响，包括促销、竞争、学校和国家假日、季节性和周期性。
 
-![综合项目; 电商销量预估<1>; 项目概况介绍; 背景介绍 Rossmann; 6-8](img/6e3cf5a1fa99e4a61f891fdf116b4abb.png)
 
 ## 3.2 数据介绍
 
@@ -123,7 +115,6 @@ Rossmann 成立于 1972 年，是德国最大的日化用品超市，在 7 个�
 
 我们在 Kaggle 的 data 页面下部的数据概览可以大致查看每个数据的分布情况和部分数据样例如下：
 
-![综合项目; 电商销量预估<1>; 项目概况介绍; 数据介绍; 6-9](img/5f679672d08a7d0aab1320951e00ba5c.png)
 
 ### (2) test.csv
 
@@ -133,7 +124,6 @@ Rossmann 成立于 1972 年，是德国最大的日化用品超市，在 7 个�
 
 数据分布和部分示例数据如下：
 
-![综合项目; 电商销量预估<1>; 项目概况介绍; 数据介绍; 6-10](img/6ab642c99e04ccc83e18c339b5327874.png)
 
 ### (3) sample_submission.csv
 
@@ -141,7 +131,6 @@ Rossmann 成立于 1972 年，是德国最大的日化用品超市，在 7 个�
 
 在 Python 中我们只需要打开此文件，并将预测数据按照顺序填入 Sales 这一列后，使用`Dataframe.to_csv(‘sample_submission.csv‘)`后就可以将带有预测数据的`sample_submission.csv`保存至本地并准备后续上传。
 
-![综合项目; 电商销量预估<1>; 项目概况介绍; 数据介绍; 6-11](img/1c50dd9f4f65cc293f139de3fa043840.png)
 
 ### (4) store.csv
 
@@ -151,7 +140,6 @@ Rossmann 成立于 1972 年，是德国最大的日化用品超市，在 7 个�
 
 数据分布和部分示例数据如下：
 
-![综合项目; 电商销量预估<1>; 项目概况介绍; 数据介绍; 6-12](img/f512b1d4285f2e40774595531a4924c6.png)
 
 其中：
 
@@ -209,7 +197,6 @@ train.loc[train['Store']==1,['Date','Sales']].plot(x='Date',y='Sales',title='The
     *   图片的尺寸为(16, 4)
 *   Matplotlib 中的`figsize`参数可以约束图片的长宽以及大小，我们这里设置为(16, 4)，意味可视化图片的像素大小为 1600*400 像素。
 
-![综合项目; 电商销量预估<1>; EDA 探索性数据分析; 折线图; 6-13](img/7b19e40576aaad846881d5a3d6c0f97f.png)
 
 编号为 1 号的店铺从 2013 年 1 月至 2015 年 8 月的销售量曲线图
 
@@ -221,7 +208,6 @@ train.loc[train['Store']==1,['Date','Sales']].plot(x='Date',y='Sale s',title='St
 
 上述代码增加了 xlim 参数，达到了在 x 轴上对时间线进行截取的目的。
 
-![综合项目; 电商销量预估<1>; EDA 探索性数据分析; 折线图; 6-14](img/798dc14fa8f0d92c3988605fa5773de7.png)
 
 > 编号为 1 号的店铺从 2014 年 6 月 1 日至 2014 年 7 月 31 日的销售量曲线图
 
@@ -235,7 +221,6 @@ sns.distplot(train.loc[train['Store']==1,['Date','Sales']]['Sales'],bins=10, rug
 
 得到的结果如下，即一号店铺这么多年来全部销售状态的分布情况。
 
-![综合项目; 电商销量预估<1>; EDA 探索性数据分析; 单变量分布图; 6-15](img/720df768d493c31243c010251250c482.png)
 
 > 编号为 1 号的店铺从 2013 年 1 月至 2015 年 8 月的销售量数据分布
 
@@ -254,7 +239,6 @@ sns.jointplot(x=train["Sales"], y=train["Customers"], kind="hex")
 
 下图中显示了销售额(x 轴)与客户流量(y 轴)之间的关系，并且在各自的轴上显示了对于轴的数据分布状态。
 
-![综合项目; 电商销量预估<1>; EDA 探索性数据分析; 二元变量联合分布图; 6-16](img/391eed70bb1b9bd83bb833e81e358593.png)
 
 > 2013 年 1 月至 2015 年 8 月的销售量与客户流量的关系
 
@@ -262,7 +246,6 @@ sns.jointplot(x=train["Sales"], y=train["Customers"], kind="hex")
 
 在`jointplot()`中还可以给其传递不同的 kind 参数改变图像的风格，例如下图中我们将 kind 的参数从`hex`改为`reg`，下图风格就从六边形风格变成了如下风格，并增加了两个列数据组成的回归线以表示数据的基本趋势。
 
-![综合项目; 电商销量预估<1>; EDA 探索性数据分析; 二元变量联合分布图; 6-17](img/5dde1987441bd2abbaad3892052e21d7.png)
 
 > 2013 年 1 月至 2015 年 8 月的销售量与客户流量的关系
 
@@ -286,7 +269,6 @@ sns.boxplot(train.Sales, palette="Set3")
 
 其中，`train.Sales`是另外一种读取 Pandas 某列数据的方式，当然你也可以使用`x=train ["Sales"]`来达到同样的效果。
 
-![综合项目; 电商销量预估<1>; EDA 探索性数据分析; 箱线图; 6-18](img/66fd90da2766b45a86ae2e4fefd32851.png)
 
 > 销售额数据的箱线图
 
@@ -306,7 +288,6 @@ sns.boxplot(x="StoreType", y="Sales", data=train, palette="Set3")
 
 `palette`参数可以调节箱线图的配色状态，这里用的是`Set3`(色彩可以根据自己的个人喜好或展示要求进行修改)。
 
-![综合项目; 电商销量预估<1>; EDA 探索性数据分析; 箱线图; 6-19](img/274019bcf915e83a1ba3de68f47c676d.png)
 
 > 不同店铺类型下的销售额箱线图情况
 
@@ -318,7 +299,6 @@ Seaborn 中的函数`violinplot()`也提供了和箱线图功能类似的提琴�
 sns.violinplot(x="StoreType", y="Sales", data=train, palette="Set3") 
 ```
 
-![在综合项目; 电商销量预估<1>; EDA 探索性数据分析; 提琴图; 6-20](img/a57a24ab667762b9f7334b2c98b641c1.png)
 
 > 不同店铺类型下的销售额提琴图情况
 
@@ -350,7 +330,6 @@ sns.heatmap(train.corr(), annot=True, vmin=-0.1,vmax=0.1,center=0)
 *   `vim`与 vmax`规定了右侧色卡的显示范围，这里我们设置为了从-0.1 至-0.1 的范围
 *   `center=0`表示我们将中心值设置为 0
 
-![综合项目; 电商销量预估<1>; EDA 探索性数据分析; 热力图; 6-21](img/8dc912aff2a7b8a09a06491b560482b8.png)
 
 > 各列的相关性热力图
 
@@ -364,7 +343,6 @@ sns.heatmap(train.corr(), annot=True, vmin=-0.1,vmax=0.1,center=0)
 
 过拟合是指模型可以很好的拟合训练样本，但对新数据的预测准确性很差，泛化能力弱。欠拟合是指模型不能很好的拟合训练样本，且对新数据的预测性也不好。
 
-![综合项目; 电商销量预估<1>; 模型的训练和评估; 过拟合和欠拟合; 6-22](img/abf71d83cd758ada4ef36f1aab3b9ee0.png)
 
 > 过拟合欠拟合示意图
 
@@ -391,7 +369,6 @@ sns.heatmap(train.corr(), annot=True, vmin=-0.1,vmax=0.1,center=0)
 因此模型的性能对数据的划分就不那么敏感，对数据的使用也会更充分，模型评估结果更加稳定，可以很好地避免上述问题。
 更详细的讲解大家可以参考[ShowMeAI](http://www.showmeai.tech/)的文章 [图解机器学习 | 机器学习基础知识](http://www.showmeai.tech/article-detail/185)。
 
-![综合项目; 电商销量预估<1>; 模型的训练和评估; 交叉验证; 6-23](img/fd87363b2690c084cbcb1b8c2c9c73d3.png)
 
 ## 5.4 建模工具库与模型选择
 

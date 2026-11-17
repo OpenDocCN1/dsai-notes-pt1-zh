@@ -88,11 +88,9 @@
 
 以下是删除行的具体方法：
 
-![](img/5df007f7bc271b60efa09726ca478ccf_1.png)
 
 ![](img/5df007f7bc271b60efa09726ca478ccf_2.png)
 
-![](img/5df007f7bc271b60efa09726ca478ccf_3.png)
 
 1.  **按索引删除**：直接指定要删除行的索引。
     ```python
@@ -106,7 +104,6 @@
     df.drop(index=df[filt].index, inplace=True)
     ```
 
-![](img/5df007f7bc271b60efa09726ca478ccf_4.png)
 
 ---
 
@@ -119,7 +116,6 @@
 *   **添加行**：使用`append`方法添加单行或合并DataFrame。
 *   **删除行**：使用`drop(index=…)`方法，可按索引或条件删除。
 
-![](img/5df007f7bc271b60efa09726ca478ccf_6.png)
 
 ![](img/5df007f7bc271b60efa09726ca478ccf_8.png)
 

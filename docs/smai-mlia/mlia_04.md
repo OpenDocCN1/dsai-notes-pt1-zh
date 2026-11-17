@@ -19,9 +19,7 @@
 *   SKLearn 官网：https://scikit-learn.org/stable/
 *   SKLearn 的快速使用方法也推荐大家查看[ShowMeAI](http://www.showmeai.tech/)的文章和速查手册 [**AI 建模工具速查|Scikit-learn 使用指南**](http://www.showmeai.tech/article-detail/108)
 
-![SKLearn 最全应用指南; SKLearn—; 分类 / 回归 / 聚类; 3-1](img/68c06a7b50f40204cd3b377704294eb5.png)
 
-![SKLearn 最全应用指南; SKLearn—降维 / 模型; 评估 / 数据预处理; 3-2](img/82e9418790c5ccdb5cf51ab1ff45fc24.png)
 
 在 SKLearn 中，因为做了上层的封装，分类模型、回归模型、聚类与降维模型、预处理器等等都叫做估计器(estimator)，就像在 Python 里「万物皆对象」，在 SKLearn 里「万物皆估计器」。
 
@@ -42,7 +40,6 @@
 
 > A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E.
 
-![SKLearn 最全应用指南; 机器学习简介; 机器学习的定义; 3-3](img/a4484eace291156785b16b41fb12ca3d.png)
 
 这段英文中有两个词 computer program 和 learn，翻译成中文就是机器(计算机程序)和学习，整体翻译下来就是说：如果计算机程序在 T 任务上的性能(由 P 衡量)随着经验 E 而提高，则称计算机程序从经验 E 中学习某类任务 T。
 
@@ -53,13 +50,11 @@
 *   性能度量(Quality Metric)
 *   算法(Algorithm)
 
-![SKLearn 最全应用指南; 机器学习简介; 机器学习的构成要素; 3-4](img/f79fccc7c33ba8cb20b78e1adcbe2388.png)
 
 ## 1.2 数据
 
 数据(data)是信息的载体。数据可以有以下划分方式：
 
-![SKLearn 最全应用指南; 机器学习简介; 不同的数据类型; 3-5](img/ee4c3942e6be298ef98fdf92ef79511f.png)
 
 *   从「**数据具体类型**」维度划分：结构化数据和非结构化数据。
 
@@ -73,7 +68,6 @@
 
 机器学习模型很多时候使用的是结构化数据，即二维的数据表。我们这里以 iris 花瓣数据集举例，如下图。
 
-![SKLearn 最全应用指南; 机器学习简介; iris 数据集–结构化数据; 3-6](img/bb71af049e784066ea31a835ed4a4686.png)
 
 下面术语大家在深入了解机器学习前一定要弄清楚：
 
@@ -96,15 +90,12 @@
 
 下图画出机器学习各类之间的关系。
 
-![SKLearn 最全应用指南; 机器学习简介; 机器学习的构成要素; 3-7](img/b73c71489536206a0d549b493625bf95.png)
 
 ## 1.4 性能度量
 
 回归和分类任务中最常见的误差函数以及一些有用的性能度量如下，详细内容可以参考[ShowMeAI](http://www.showmeai.tech/)文章 [**机器学习评估与度量准则**](http://www.showmeai.tech/article-detail/186)。
 
-![SKLearn 最全应用指南; 机器学习简介; 回归问题的性能度量; 3-8](img/2318a3ab61ab1643f6caed008035c9cc.png)
 
-![SKLearn 最全应用指南; 机器学习简介; 分类问题的性能度量; 3-9](img/cc0678ea0c241c06ea2641e20d006d89.png)
 
 # 2\. SKLearn 数据
 
@@ -133,7 +124,6 @@ SKLearn 里面有很多自带数据集供用户使用。
 
 比如在之前文章[**Python 机器学习算法实践**](http://www.showmeai.tech/article-detail/201)中用到的鸢尾花数据集，包含四个特征(萼片长/宽和花瓣长/宽)和三个类别。
 
-![SKLearn 最全应用指南; SKLearn 数据; 自带数据集–iris 数据集; 3-10](img/25d298600cf38f15671e99b426ff36a8.png)
 
 我们可以直接从 SKLearn 里面的 datasets 模块中引入，代码如下(代码可以在 [线上 Jupyter 环境](https://jupyter.org/try) 中运行)：
 
@@ -208,7 +198,6 @@ iris_data.head(3).append(iris_data.tail(3))
 sns.pairplot( iris_data, hue='species', palette='husl' ) 
 ```
 
-![SKLearn 最全应用指南; SKLearn 数据; 自带数据集–iris 数据集; 3-11](img/76a24c715f67b7e97cc3777c582a3e99.png)
 
 ## 2.3 数据集引入方式
 
@@ -274,7 +263,6 @@ dict_keys(['data', 'target', 'feature_names', 'DESCR'])
 *   **预测器**(**predictor**)是具有预测功能的估计器。
 *   **转换器**(**transformer**)是具有转换功能的估计器。
 
-![SKLearn 最全应用指南; SKLearn 核心 API; 3-12](img/f573043fed79c33ff4019facbebb0f94.png)
 
 ## 3.1 估计器
 
@@ -283,7 +271,6 @@ dict_keys(['data', 'target', 'feature_names', 'DESCR'])
 *   ① 需要输入数据。
 *   ② 可以估计参数。
 
-![SKLearn 最全应用指南; SKLearn 核心 API; 估计器 Estimator; 3-13](img/8bc6775a58b6a0e2d41eb9915dae77bb.png)
 
 估计器首先被创建，然后被拟合。
 
@@ -305,7 +292,6 @@ dict_keys(['data', 'target', 'feature_names', 'DESCR'])
 
 ### (1) 线性回归
 
-![SKLearn 最全应用指南; SKLearn 核心 API; 估计器–线性回归; 3-14](img/51154c88c977ed3f779a8e7d4a7cea94.png)
 
 首先从 SKLearn 工具库的`linear_model`中引入`LinearRegression`；创建模型对象命名为 model，设置超参数`normalize`为`True`（在每个特征值上做标准化，这样能保证拟合的稳定性，加速模型拟合速度）。
 
@@ -333,7 +319,6 @@ y = 2 * x + 1
 plt.plot( x, y, 'o' ) 
 ```
 
-![SKLearn 最全应用指南; SKLearn 核心 API; 估计器–线性回归; 3-15](img/b5a237468895d72a5c86d46a48158866.png)
 
 在我们生成的数据里，X 是一维，我们做一点小小的调整，用`np.newaxis`加一个维度，把[1,2,3]转成[[1],[2],[3]]，这样的数据形态可以符合 sklearn 的要求。接着把 X 和 y 送入`fit()`函数来拟合线性模型的参数。
 
@@ -542,14 +527,12 @@ s = model.score( X_new )
 *   估计器里`fit + predict`
 *   转换器里`fit + transform`
 
-![SKLearn 最全应用指南; SKLearn 核心 API; 转换器 Transformer; 3-20](img/c48aa859cf4aab56fe15251ee230516c.png)
 
 本节介绍两大类转换器：
 
 *   将类别型变量(categorical)编码成数值型变量(numerical)
 *   规范化(normalize)或标准化(standardize)数值型变量
 
-![SKLearn 最全应用指南; SKLearn 核心 API; 转换器 Transformer; 3-21](img/3c8f77ad74a8817d26a5d410c9fc9d1a.png)
 
 ### (1) 类别型变量编码
 
@@ -668,7 +651,6 @@ array([[0., 0., 1.],
 *   **标准化**(**standardizati**on)：每个维度的特征减去该特征均值，除以该维度的标准差。
 *   **规范化**(**normalization**)：每个维度的特征减去该特征最小值，除以该特征的最大值与最小值之差。
 
-![SKLearn 最全应用指南; SKLearn 核心 API; 转换器 Transformer; 3-22](img/dee012b7a125850807194fd00c5ee107.png)
 
 #### ① MinMaxScaler
 
@@ -719,7 +701,6 @@ array([[-0.47424487],
 
 我们在这节中给大家介绍 SKLearn 的「**高级 API**」，即五大元估计器（集成功能的 Ensemble，多分类和多标签的 Multiclass，多输出的 Multioutput，选择模型的 Model Selection，流水线的 Pipeline）。
 
-![SKLearn 最全应用指南; SKLearn 高级 API; 3-23](img/56d1f542fd8b0ac7af6f0daaea7084b7.png)
 
 *   `ensemble.BaggingClassifier`
 *   `ensemble.VotingClassifier`
@@ -732,7 +713,6 @@ array([[-0.47424487],
 
 ## 4.1 Ensemble 估计器
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Ensemble 估计器; 3-24](img/fe8f4c8970a38e09f722e180c4a02e6e.png)
 
 如上图：分类器统计每个子分类器的预测类别数，再用「多数投票」原则得到最终预测。回归器计算每个子回归器的预测平均值。
 
@@ -766,7 +746,6 @@ X_train, X_test, y_train, y_test = train_test_split(iris['data'], iris['target']
 
 ### (1) RandomForestClassifier
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Ensemble 估计器; 3-25](img/ee16b71a1848c204a18ac5f54cfa153a.png)
 
 [**随机森林**](http://www.showmeai.tech/article-detail/191)RandomForestClassifier 通过控制`n_estimators`超参数来决定基估计器的个数，在这里是 4 棵决策树(森林由树组成)；此外每棵树的最大树深为 5(`max_depth=5`)。
 
@@ -842,7 +821,6 @@ RF - Accuracy (Test):  0.9667
 
 ### (2) VotingClassifier
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Ensemble 估计器; 3-26](img/58b161575962ab624ccbb78a7dc22c80.png)
 
 和[**随机森林**](http://www.showmeai.tech/article-detail/191)由同质分类器「决策树」不同，投票分类器由若干个异质分类器组成。下面我们用 VotingClassifier 建立个含有逻辑回归(Logistic regression)、随机森林(RandomForest)和高斯朴素贝叶斯(GNB)三个分类器的集成模型。
 
@@ -925,7 +903,6 @@ Ensemble - Accuracy (Test): 1
 
 ## 4.2 Multiclass 估计器
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Multiclass 估计器; 3-27](img/df31cbb51b3c110adefdb8128720ace9.png)
 
 `sklearn.multiclass`可以处理多类别(multi-class) 的多标签(multi-label) 的分类问题。下面我们会使用数字数据集 digits 作为示例数据来讲解。我们先将数据分成 80:20 的训练集和测试集。
 
@@ -979,13 +956,11 @@ for i, ax in enumerate( axes.flat ):
     ax.set_yticks([]) 
 ```
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Multiclass 估计器; 3-28](img/c3c66ea87284b05d8a981ee6553d8396.png)
 
 ### (1) 多类别分类
 
 手写数字有 0-9 十类，但手头上只有二分类估计器（比如像支撑向量机）怎么用呢？我们可以采取以下策略处理：
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Multiclass 估计器; 3-29](img/504f92df25f548f47404436e110613f2.png)
 
 *   **一对一**(One vs One，OvO)：一个分类器用来处理数字 0 和数字 1，一个用来处理数字 0 和数字 2，一个用来处理数字 1 和 2，以此类推。N 个类需要 N(N-1)/2 个分类器。
 *   **一对其他**(One vs All，OvA)：训练 10 个二分类器，每一个对应一个数字，第一个分类「1」和「非 1」，第二个分类「2」和「非 2」，以此类推。N 个类需要 N 个分类器。
@@ -1000,7 +975,6 @@ for i, ax in enumerate( axes.flat ):
 
 在下图的例子中，f1 和 f2 都预测为橙色，f3 预测为紫色。根据多数原则得到的结合预测为橙色，如下图所示。
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Multiclass 估计器; 3-30](img/f1f5bf0c1dc24310902fc53320fdf80f.png)
 
 回到数字分类问题上，代码及结果如下：
 
@@ -1068,7 +1042,6 @@ OvO LR - Accuracy (Test): 0.9806
 
 三个分类器都预测了紫色，根据多数原则得到的预测是紫色，即阴天。
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Multiclass 估计器; 3-31](img/89b889cde857cd739ba30a7f4ecd4dc5.png)
 
 回到数字分类问题上，代码和结果如下：
 
@@ -1152,7 +1125,6 @@ print(y_train_multilabel)
 *   [True True]：4 是偶数，小于等于 4
 *   [False False]：5 不是偶数，大于 4
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Multiclass 估计器; 3-33](img/3a5fcf520a41ed09e2a40740e8b7b17f.png)
 
 我们这次用`y_train_multilabel`来训练模型。代码如下
 
@@ -1196,7 +1168,6 @@ for i, ax in enumerate( axes.flat ):
     ax.set_yticks([]) 
 ```
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Multiclass 估计器; 3-34](img/38c7fb50237ecaadb9195ea362622046.png)
 
 第一张图片是数字 2，它是偶数(标签 1 为 true)，小于等于 4(标签 2 为 true)。
 
@@ -1214,11 +1185,9 @@ print( ova_ml.predict(X_test[:1,:]) )
 
 `sklearn.multioutput`可以处理多输出(multi-output)的分类问题。
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Multioutput 估计器; 3-35](img/89151c61ed3c69a1ef314b78e80c8d28.png)
 
 多输出分类是多标签分类的泛化，在这里每一个标签可以是多类别(大于两个类别)的。一个例子就是预测图片每一个像素(标签)的像素值是多少(从 0 到 255 的 256 个类别)。
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Multioutput 估计器; 3-36](img/34d68b4623c776f7ccf95080036af5e0.png)
 
 Multioutput 估计器有两个：
 
@@ -1287,7 +1256,6 @@ array([[0, 2],[0, 2],[0, 0],[2, 9],[1, 5]])
 
 这个 ndarray 第一列是标签 1 的类别，第二列是标签 2 的类别。预测结果是这五张照片分别显示数字 2、2、0、9、5(标签 2)，它们前三个数 2、2、0 都小于等于 4(标签 1 第一类)，第四个数 9 大于等于 7(标签 1 第二类)，而第五个数 5 在 4 和 7 之间(标签 1 第三类)。
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Multioutput 估计器; 3-37](img/bdc18aa44d5aebbd7904afc493c1e9ad.png)
 
 再看看真实标签。
 
@@ -1308,7 +1276,6 @@ array([[0, 2],[0, 2],[0, 0],[2, 9],[1, 5]])
 
 ## 4.4 Model Selection 估计器
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Model Selection 估计器; 3-38](img/b6a6af0572fadd57cf5666cde57d4847.png)
 
 模型选择(Model Selction)在机器学习非常重要，它主要用于评估模型表现，常见的 Model Selection 估计器有以下几个：
 
@@ -1325,11 +1292,9 @@ K-折交叉验证(K-fold cross validation set)，指的是把整个数据集平�
 
 在这 K 份，每次选 K-1 份作为训练集拟合参数，在剩下 1 份验证集上进行评估计算。由于遍历了这 K 份数据，因此该操作称为交叉验证。操作如下图所示
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Model Selection 估计器; 3-39](img/e2d5c34ecdd6fa97f8712ab7fc99be79.png)
 
 下图展示了两个调参的估计器：「**网格搜索**」和「**随机搜索**」。
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Model Selection 估计器; 3-40](img/b467d164fae5918ad326ad478feb15e1.png)
 
 **网格搜索调参**：参数 1 在[1,10,100,1000]中取值，参数 2 在[0.01, 0.1, 1 10] 中取值，注意并不是等间距取值。模型在所有 16 组超参数上实验，选取交叉验证误差最小的参数。
 
@@ -1406,7 +1371,6 @@ GridSearchCV took 2.30 seconds for 36 candidate parameter settings.
 
 Pipeline 估计器又叫流水线，把各种估计器串联(Pipeline)或并联(FeatureUnion)的方式组成一条龙服务。用好了它真的能大大提高效率。
 
-![SKLearn 最全应用指南; SKLearn 高级 API; Pipeline 估计器; 3-41](img/1d8d709bc2df801fb62d8efa7ce48ec1.png)
 
 ### (1) Pipeline
 

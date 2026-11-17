@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P15：L15- IS NULL 运算符 📊
 
-![](img/8660f6ca174255d5ec5fa668f2b77ac7_0.png)
 
 ![](img/8660f6ca174255d5ec5fa668f2b77ac7_0.png)
 
@@ -27,11 +26,9 @@ SELECT * FROM customers WHERE phone IS NULL;
 
 ## 使用 IS NOT NULL 运算符
 
-![](img/8660f6ca174255d5ec5fa668f2b77ac7_2.png)
 
 与 `IS NULL` 相对的是 `IS NOT NULL` 运算符，用于查找指定字段**不是** `NULL` 值的记录。
 
-![](img/8660f6ca174255d5ec5fa668f2b77ac7_3.png)
 
 其语法如下：
 ```sql
@@ -44,8 +41,6 @@ SELECT * FROM customers WHERE phone IS NOT NULL;
 ```
 执行此查询将返回所有 `phone` 字段有值的客户记录。
 
-![](img/8660f6ca174255d5ec5fa668f2b77ac7_2.png)
-![](img/8660f6ca174255d5ec5fa668f2b77ac7_3.png)
 
 ## 实践练习：查找未发货订单
 
@@ -69,10 +64,8 @@ SELECT * FROM orders WHERE shipper_id IS NULL;
 
 执行以上任一查询，都将返回订单ID为1、3、4、6和8的五个未发货订单记录。
 
-![](img/8660f6ca174255d5ec5fa668f2b77ac7_5.png)
 
 ![](img/8660f6ca174255d5ec5fa668f2b77ac7_5.png)
-![](img/8660f6ca174255d5ec5fa668f2b77ac7_6.png)
 
 ![](img/8660f6ca174255d5ec5fa668f2b77ac7_6.png)
 

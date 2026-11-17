@@ -4,7 +4,6 @@
 
 在本节课中，我们将学习如何使用开源的图像到文本模型，构建一个图像描述（Image Captioning）应用。我们将设置API密钥，调用预训练模型，并通过Gradio创建一个直观的交互界面。
 
-![](img/16a006e618fc43b1e8a2d38184a69788_2.png)
 
 ## 概述
 
@@ -22,7 +21,6 @@ os.environ[‘HF_API_KEY’] = ‘your_huggingface_api_key_here’
 接下来，我们定义一个辅助函数 `get_completion` 来调用图像描述模型的API端点。这个端点对应的是Salesforce Blip图像描述模型。
 
 
-![](img/16a006e618fc43b1e8a2d38184a69788_4.png)
 
 ```python
 import requests
@@ -111,7 +109,6 @@ demo.launch()
 
 ## 运行与测试应用
 
-![](img/16a006e618fc43b1e8a2d38184a69788_6.png)
 
 运行上述代码后，Gradio应用界面将会启动。界面包含一个图片上传区域和一个用于显示描述的文字框。
 
@@ -119,7 +116,6 @@ demo.launch()
 *   你可以上传宠物、家人或身边有趣事物的照片，看看模型如何描述它们。
 *   也可以直接点击界面提供的示例图片进行测试。
 
-![](img/16a006e618fc43b1e8a2d38184a69788_8.png)
 
 例如，使用之前测试过的小狗图片，应用会生成相同的描述：“a dog wearing a Santa hat and scarf”。
 再尝试示例中的小鸟图片，模型描述为：“There is a bird that is flying in the yard.”，描述准确。

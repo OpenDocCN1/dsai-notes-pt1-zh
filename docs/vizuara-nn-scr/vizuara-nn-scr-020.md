@@ -1,6 +1,5 @@
 #  020：Vizuara【中英⚡从零开始构建神经网络｜Building Neural Networks from Scratch】 p20 P20 Lecture 20 - 构建神经网络反向传播管道的完整过程｜[BV1iEHPzGEpa_p20]
 
-![](img/1a6e2d934c19cfbda33fdf1bf1d54a8f_0.png)
 
 🎼是的。大家好，欢迎来到神经网络从零开始的系列课程中这个非常重要的讲座。
 

@@ -8,7 +8,6 @@
 
 ## 什么是DevSecOps？
 
-![](img/54ccccce24289488e9fc7ea7ad7fab1e_2.png)
 
 在之前的视频中，我们讨论了开发运维（DevOps），并将其描述为软件开发与IT部门协作的一种方式。
 
@@ -18,7 +17,6 @@ DevSecOps本质上是**在软件开发生命周期中添加安全测试与保护
 
 ---
 
-![](img/54ccccce24289488e9fc7ea7ad7fab1e_4.png)
 
 ## 为何使用DevSecOps？
 

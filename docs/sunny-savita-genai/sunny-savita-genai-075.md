@@ -12,7 +12,6 @@
 
 首先，我们来理解我们要解决的问题和整体架构。
 
-![](img/bb36f20b5ec766396dbbb190ba1d1eef_3.png)
 
 ![](img/bb36f20b5ec766396dbbb190ba1d1eef_5.png)
 
@@ -29,15 +28,11 @@
 *   **大语言模型**：Gemini API 的 `gemini-1.5-pro` 模型。
 *   **代理编排**：LangGraph，用于创建和管理代理的工作流。
 
-![](img/bb36f20b5ec766396dbbb190ba1d1eef_7.png)
 
-![](img/bb36f20b5ec766396dbbb190ba1d1eef_8.png)
 
 接下来，我们看一下具体的架构图，它描述了代理的内部工作流程。
 
-![](img/bb36f20b5ec766396dbbb190ba1d1eef_9.png)
 
-![](img/bb36f20b5ec766396dbbb190ba1d1eef_10.png)
 
 ![](img/bb36f20b5ec766396dbbb190ba1d1eef_11.png)
 
@@ -51,7 +46,6 @@
 
 这个架构确保了代理能够稳健地处理各种查询，并在出错时进行自我修正。接下来，我们将开始准备数据库环境。
 
-![](img/bb36f20b5ec766396dbbb190ba1d1eef_13.png)
 
 ## 准备数据库环境
 
@@ -72,7 +66,6 @@ cursor = connection.cursor()
 以下是创建这些表的 SQL 语句：
 
 
-![](img/bb36f20b5ec766396dbbb190ba1d1eef_15.png)
 
 ```sql
 -- 创建员工表
@@ -103,7 +96,6 @@ CREATE TABLE orders (
 );
 ```
 
-![](img/bb36f20b5ec766396dbbb190ba1d1eef_17.png)
 
 使用游标执行上述建表语句。
 

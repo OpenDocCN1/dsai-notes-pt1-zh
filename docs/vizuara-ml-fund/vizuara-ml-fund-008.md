@@ -1,6 +1,5 @@
 #  008：非方阵的变换
 
-![](img/afa2b1d9c663cfe845af773ad2bcda81_0.png)
 
 ![](img/afa2b1d9c663cfe845af773ad2bcda81_0.png)
 

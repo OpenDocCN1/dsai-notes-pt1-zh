@@ -31,7 +31,6 @@ def validate_login(username, password):
 *   是否存在不安全的数据处理流程？
 *   脚本是否使应用面临SQL注入或跨站脚本攻击的风险？
 
-![](img/ab5f9b75b06d1044ec09b09b8338c9ac_1.png)
 
 ![](img/ab5f9b75b06d1044ec09b09b8338c9ac_1.png)
 
@@ -39,7 +38,6 @@ def validate_login(username, password):
 
 模型发现了一些问题，例如代码使用文本文件作为数据库，以及用户名和密码以明文形式存储，这些都是安全漏洞。模型还建议了一个改进后的脚本，这非常有用。正如你所见，你获得了具体、可操作的、能增强代码质量的建议。
 
-![](img/ab5f9b75b06d1044ec09b09b8338c9ac_3.png)
 
 ![](img/ab5f9b75b06d1044ec09b09b8338c9ac_3.png)
 

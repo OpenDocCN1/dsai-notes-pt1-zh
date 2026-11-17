@@ -3,7 +3,6 @@
 ## 概述
 在本节课程中，我们将学习如何将 **Chat-LangChain** 问答助手集成到 **Slack** 工作环境中。通过本教程，你将能够在 Slack 中直接向 Chat-LangChain 提问，并获得来自 LangChain 官方文档的结构化答案。
 
-![](img/5c003fd33e28f8db4d272a6ab81e60dc_1.png)
 
 ---
 
@@ -57,37 +56,29 @@ def handle_slack_event(event):
 1.  **访问创建链接**：前往 Slack API 页面（假设你已有 Slack 账户和 API 访问权限）。
 2.  **创建新应用**：点击“创建新应用”。为了快速开始，选择“**从清单创建**”。
 
-![](img/5c003fd33e28f8db4d272a6ab81e60dc_3.png)
 
 3.  **选择工作区**：连接到你的目标 Slack 工作区（例如，LangChain 的 Slack 账户）。
 4.  **使用提供的清单模板**：转到本教程提供的代码仓库，复制我们准备好的清单模板。这个清单会为你的应用设置必要的权限（**作用域**）和**事件订阅**。
 
-![](img/5c003fd33e28f8db4d272a6ab81e60dc_5.png)
 
 **清单主要配置**：
 *   **作用域**：授予应用读取和写入消息的权限。
 *   **事件订阅**：定义应用将从 Slack 接收哪些事件。
 
-![](img/5c003fd33e28f8db4d272a6ab81e60dc_7.png)
 
-![](img/5c003fd33e28f8db4d272a6ab81e60dc_3.png)
 
 5.  **粘贴并修改清单**：将复制的清单粘贴到 Slack 的配置页面。你需要修改：
     *   应用名称。
     *   应用描述。
     *   **请求 URL**（稍后设置，现在可以先留空）。
 
-![](img/5c003fd33e28f8db4d272a6ab81e60dc_9.png)
 
-![](img/5c003fd33e28f8db4d272a6ab81e60dc_5.png)
 
 6.  **安装应用到工作区**：完成清单配置后，向下滚动到“OAuth & Permissions”部分，点击“**Install to Workspace**”。安装完成后，你会获得一个 **Bot User OAuth Token**。
 
-![](img/5c003fd33e28f8db4d272a6ab81e60dc_7.png)
 
 7.  **获取签名密钥**：在“Basic Information”页面，找到“**Signing Secret**”并复制它。
 
-![](img/5c003fd33e28f8db4d272a6ab81e60dc_9.png)
 
 至此，你获得了两个关键凭证：
 *   **`SLACK_BOT_TOKEN`**：用于你的机器人向 Slack 发起 API 调用的身份验证。
@@ -119,7 +110,6 @@ ASSISTANT_ID=your_assistant_id_here
 
 **快捷方式**：本教程的仓库提供了一个公开的 Chat-LangChain 部署链接。你可以直接使用这个链接，只需提供你自己的 LangSmith API 密钥即可与 Chat-LangChain 交互。
 
-![](img/5c003fd33e28f8db4d272a6ab81e60dc_15.png)
 
 ### 第三步：设置 Modal 服务器
 Modal 服务器将充当 Slack 和你的 LangChain 应用之间的中间层。
@@ -128,7 +118,6 @@ Modal 服务器将充当 Slack 和你的 LangChain 应用之间的中间层。
 2.  **设置 Modal Token**：运行 `modal token new` 来设置你的 Modal 令牌。
 3.  **安装依赖并部署**：在代码仓库目录下，安装所需包，然后部署 Modal 应用。
 
-![](img/5c003fd33e28f8db4d272a6ab81e60dc_15.png)
 
 ![](img/5c003fd33e28f8db4d272a6ab81e60dc_19.png)
 
@@ -140,7 +129,6 @@ Modal 服务器将充当 Slack 和你的 LangChain 应用之间的中间层。
 
 ![](img/5c003fd33e28f8db4d272a6ab81e60dc_19.png)
 
-![](img/5c003fd33e28f8db4d272a6ab81e60dc_21.png)
 
 ### 第四步：完成 Slack 应用配置
 最后一步是告诉 Slack 应用将事件发送到哪里。
@@ -150,7 +138,6 @@ Modal 服务器将充当 Slack 和你的 LangChain 应用之间的中间层。
 1.  **回到 Slack 应用配置页面**：进入“Event Subscriptions”设置。
 2.  **设置请求 URL**：将你获得的 **Modal 服务器 URL**（并附加上 `/events` 等特定端点路径）粘贴到“Request URL”字段中。清单已经为你预设了要订阅的事件，所以你只需要提供这个 URL 即可。
 
-![](img/5c003fd33e28f8db4d272a6ab81e60dc_23.png)
 
 3.  **保存更改**。
 

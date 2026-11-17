@@ -28,47 +28,29 @@ Gradio 的使命是赋予 Python 开发者“超能力”，让他们能够轻�
 
 ## Gradio 如何解决问题
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_1.png)
 
 ### 1. 每个 Gradio 应用都是现成的 API
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_3.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_4.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_5.png)
 
 每个 Gradio 应用底部都有一个“Use via API”的链接。点击后，你会看到应用中每个函数的自动生成文档，包括参数、载荷类型、返回值以及示例请求。这一切都是自动完成的。
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_6.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_7.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_8.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_9.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_10.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_11.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_13.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_14.png)
 
 **示例代码**：一个简单的 Gradio 应用结构
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_16.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_17.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_18.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_19.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_21.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_22.png)
 
 ```python
 import gradio as gr
@@ -91,7 +73,6 @@ Gradio 应用可以部署在任何地方，但与 Hugging Face Spaces 的集成�
 
 ### 3. 简化 API 使用：API 记录器
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_24.png)
 
 编写和阅读 API 文档可能很繁琐。Gradio 引入了 **API 记录器** 来解决这个问题。你只需在 UI 中与应用交互，Gradio 就会记录这些交互，并生成对应的客户端 API 调用代码。这样，你无需查阅文档就能快速获得调用 API 所需的脚本。
 
@@ -101,7 +82,6 @@ Gradio 应用可以部署在任何地方，但与 Hugging Face Spaces 的集成�
 *   **`concurrency_limit`**：设置同时处理某个函数的工作进程数量。例如，如果你有 3 个 GPU 用于图像生成，可以将其设为 3。
 *   **`concurrency_id`**：为可以共享工作进程的不同函数设置相同的 ID，以便更精细地控制资源分配。
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_26.png)
 
 ### 5. 极低的开销
 
@@ -109,19 +89,15 @@ Gradio 团队持续优化，力求在请求处理中添加尽可能少的开销�
 
 一个典型的例子是 **Chatbot Arena** 应用，它每天为数万用户处理数十万条流式请求，完全由 Gradio 支撑，无需担心扩展性问题。
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_28.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_29.png)
 
 ### 6. 内置监控仪表板
 
 对于生产用例，监控 API 流量至关重要。现在，每个 Gradio 应用都附带一个 **API 监控仪表板**。只需访问 `你的应用URL/monitoring`，即可查看所有请求的详细信息，包括请求量、成功率、延迟等。这个仪表板仅对应用创建者可见。
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_31.png)
 
 以上我们了解了 Gradio 作为后端服务的强大功能，接下来我们将目光转向客户端，看看如何在实际应用中调用这些 API。
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_33.png)
 
 ## Gradio 客户端库
 
@@ -151,7 +127,6 @@ console.log(result);
 
 ![](img/914f1ea15ae1afa17c468c0b5de2b22c_35.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_37.png)
 
 对于流式响应，处理方式同样直观：
 ```python
@@ -162,9 +137,7 @@ for output in job:
 
 ### 透明性与高级功能
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_39.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_41.png)
 
 客户端库几乎能实现 UI 上的所有操作。
 
@@ -189,9 +162,7 @@ status = job.status()
 print(f"Queue position: {status.rank}")
 ```
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_45.png)
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_47.png)
 
 **复制（Duplicate）公共空间**：
 此功能允许你将任何公共空间复制到自己的 Hugging Face 账户下，并可以更改硬件、设置隐私和休眠超时。
@@ -206,7 +177,6 @@ Gradio 客户端可以在任何能运行 Python 或 JavaScript 的地方使用�
 *   Node.js、Deno、Cloudflare Workers 等环境。
 *   甚至可以通过 `curl` 命令直接调用，为其他语言提供了接入可能。
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_49.png)
 
 **`curl` 调用示例**：
 ```bash
@@ -221,7 +191,6 @@ Hugging Chat 的“工具”功能就是一个很好的例子，它内部集成�
 
 ## 实战演示：构建一个笑话生成器
 
-![](img/914f1ea15ae1afa17c468c0b5de2b22c_51.png)
 
 ![](img/914f1ea15ae1afa17c468c0b5de2b22c_53.png)
 

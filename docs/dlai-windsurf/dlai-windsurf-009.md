@@ -1,6 +1,5 @@
 # 009：添加缓存与处理意外情况
 
-![](img/7ee57770439b840cbcfef85eec55f6f7_0.png)
 
 ![](img/7ee57770439b840cbcfef85eec55f6f7_0.png)
 
@@ -65,10 +64,8 @@ Create a local cache of the script results. I don‘t want to rerun even the pro
 
 在下节课中，我们将把目前完成的所有工作可视化，通过添加一个前端界面，以一种美观的方式展示所有这些结果和词频数据。我们下节课见。
 
-![](img/7ee57770439b840cbcfef85eec55f6f7_2.png)
 
 ![](img/7ee57770439b840cbcfef85eec55f6f7_2.png)
 
-![](img/7ee57770439b840cbcfef85eec55f6f7_3.png)
 
 ![](img/7ee57770439b840cbcfef85eec55f6f7_3.png)

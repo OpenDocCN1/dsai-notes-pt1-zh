@@ -36,7 +36,6 @@ Yanna Zhao, 会员, IEEE, Yuanjie Zheng, 会员, IEEE, 和 Shuqiang Jiang, 高�
 
 (a) 微弱光线
 
-![参见说明](img/107331ed035c57bd8731e4dad361c821.png)
 
 (b) 图像旋转
 
@@ -530,7 +529,6 @@ Lin *等人* 于 2017 年提出了特征金字塔网络（FPN）[75]，该方法
 
 (a) 小尺寸。
 
-![参见说明文字](img/a3339fcfed4849c25b327619b8187dc0.png)
 
 (b) 高度多样化的背景。
 

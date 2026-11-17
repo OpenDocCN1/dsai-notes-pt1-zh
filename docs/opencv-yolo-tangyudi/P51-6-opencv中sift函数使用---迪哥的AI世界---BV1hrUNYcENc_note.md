@@ -8,16 +8,13 @@
 
 以下是降级OpenCV版本的具体步骤：
 
-![](img/4f435cee67df54d36f2bcf296e1318d7_1.png)
 
 1.  首先，需要卸载当前已安装的高版本OpenCV包。
 2.  然后，重新安装指定版本的`opencv-python`和`opencv-contrib-python`包。
 
-![](img/4f435cee67df54d36f2bcf296e1318d7_3.png)
 
 具体操作命令如下。请根据你的Python环境，在相应的命令行或终端中执行：
 
-![](img/4f435cee67df54d36f2bcf296e1318d7_5.png)
 
 ```bash
 # 1. 卸载已安装的OpenCV包
@@ -41,17 +38,14 @@ print(cv2.__version__)  # 应输出 3.4.1.15
 
 以下是使用SIFT检测关键点的完整代码流程：
 
-![](img/4f435cee67df54d36f2bcf296e1318d7_7.png)
 
 1.  导入OpenCV库并读取图像。
 2.  将图像转换为灰度图，这是SIFT算法要求的输入格式。
 3.  创建SIFT检测器实例。
 4.  使用`detect`方法检测图像中的关键点。
 
-![](img/4f435cee67df54d36f2bcf296e1318d7_9.png)
 
 
-![](img/4f435cee67df54d36f2bcf296e1318d7_11.png)
 
 ```python
 import cv2
@@ -66,7 +60,6 @@ sift = cv2.xfeatures2d.SIFT_create()
 keypoints = sift.detect(gray, None)
 ```
 
-![](img/4f435cee67df54d36f2bcf296e1318d7_13.png)
 
 检测到的关键点存储在`keypoints`变量中，它是一个由OpenCV封装的对象列表，包含了每个关键点的位置、尺度和方向等信息。
 

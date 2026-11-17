@@ -4,13 +4,10 @@
 
 ## 数据准备思路 💡
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_1.png)
 
 上一节我们介绍了特征工程的概念。本节中，我们来看看如何为统计分析准备数据。核心思路是：我们想统计在“前两天”和“前一天”出现特定涨跌组合（例如，连续两天都跌）时，“当天”出现上涨、下跌或不变的概率。这需要我们将连续的价格变化数据，转换为代表“涨”或“跌”的类别标签。
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_3.png)
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_5.png)
 
 以下是实现此目标的关键步骤：
 1.  **数据转换**：将代表价格变化的数值列（如“L1_Close”表示前一天收盘价变化）转换为二元的“涨/跌”标签（例如，用1表示上涨，0表示下跌或不变）。
@@ -19,15 +16,11 @@
 
 ## 第一步：创建涨跌标签函数 ⚙️
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_7.png)
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_9.png)
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_11.png)
 
 首先，我们需要一个函数来将价格变化数据转换为涨跌标签。我们将创建一个名为 `create_bins` 的函数。
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_13.png)
 
 ```python
 def create_bins(data, bins=[0]):
@@ -40,7 +33,6 @@ def create_bins(data, bins=[0]):
             col_names.append(name)
 ```
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_15.png)
 
 **代码解释**：
 *   `np.digitize(data[col], bins=[0])`：这是一个将数据分箱（离散化）的函数。`bins=[0]` 表示以0为分界点。如果 `data[col]` 的值大于0，则返回1（表示“涨”）；如果小于或等于0，则返回0（表示“跌”或“平”）。
@@ -52,7 +44,6 @@ def create_bins(data, bins=[0]):
 create_bins(data)
 ```
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_17.png)
 
 现在，查看一下处理后的数据：
 ```python
@@ -60,36 +51,27 @@ print(data[['L1_Close_B', 'L2_Close_B']].head())
 ```
 输出将显示两列由0和1组成的数据，1代表对应周期价格上涨，0代表价格未上涨（下跌或持平）。
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_19.png)
 
 ## 第二步：整合目标数据 🎯
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_21.png)
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_23.png)
 
 我们的原始数据中已经存在一列 `direction`，它直接记录了“当天”实际的涨跌情况（通常1为涨，-1为跌，0为平）。现在，我们需要将“前两天的标签”、“前一天的标签”和“当天的实际方向”放在一起，以便进行分组统计。
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_25.png)
 
 我们已有的数据列是：
 *   `L2_Close_B`：代表“前两天”的涨跌标签。
 *   `L1_Close_B`：代表“前一天”的涨跌标签。
 *   `direction`：代表“当天”的实际涨跌方向。
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_27.png)
 
 ## 第三步：执行分组统计 📈
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_29.png)
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_31.png)
 
 上一节我们准备好了标签数据，本节中我们来看看如何进行分组统计。我们将使用Pandas的 `groupby` 方法，按照“前两天标签”、“前一天标签”和“当天实际方向”进行分组，并计算每个分组的大小（即出现的次数）。
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_33.png)
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_35.png)
 
 以下是执行分组统计的代码：
 ```python
@@ -98,22 +80,17 @@ result = grouped.size()
 print(result)
 ```
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_37.png)
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_39.png)
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_41.png)
 
 **代码解释**：
 1.  `data[[‘L2_Close_B‘, ‘L1_Close_B‘, ‘direction‘]]`：从数据中选取我们需要的三列。
 2.  `.groupby([‘L2_Close_B‘, ‘L1_Close_B‘, ‘direction‘])`：按照这三列进行分组。这意味着所有在这三列上值完全相同的行会被分到同一个组里。
 3.  `.size()`：计算每个分组中的行数，即该特定情况在历史中出现的次数。
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_43.png)
 
 执行后，`result` 是一个Series对象，其索引是一个多层索引（`L2_Close_B`, `L1_Close_B`, `direction`），值是对应的出现次数。例如，索引 `(0, 1, 1)` 表示“前两天跌(`0`)，前一天涨(`1`)，当天实际涨(`1`)”这种情况在历史上发生了多少次。
 
-![](img/9d44d2ea7bf33f2fbdf4c123952aee16_45.png)
 
 ## 总结 🏁
 

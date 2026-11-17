@@ -47,11 +47,9 @@ spectrogram = spectrogram_transform(waveform)
 
 ---
 
-![](img/d47b4dd266be755b011d1bea67152b4b_7.png)
 
 ## 核心功能二：音频变换
 
-![](img/d47b4dd266be755b011d1bea67152b4b_9.png)
 
 了解了数据加载后，我们进入下一个核心功能：**音频变换**。
 
@@ -60,7 +58,6 @@ spectrogram = spectrogram_transform(waveform)
 以下是一个组合变换的示例：
 
 
-![](img/d47b4dd266be755b011d1bea67152b4b_11.png)
 
 ```python
 from torch import nn
@@ -139,7 +136,6 @@ TorchAudio 添加了针对不同任务的模型和示例训练管道：
 
 要开始使用和了解更多关于 TorchAudio 的信息，你可以访问 [PyTorch 官网](https://pytorch.org/audio)。该网站包含 API 文档、安装说明、教程以及 GitHub 页面的链接。还有一个新的语音命令识别教程可供学习。
 
-![](img/d47b4dd266be755b011d1bea67152b4b_27.png)
 
 TorchAudio 兼容 Linux、macOS、Windows，并支持 Python 3.6 及以上版本，与 PyTorch 本身保持一致。
 

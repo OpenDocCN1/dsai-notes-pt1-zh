@@ -20,7 +20,6 @@ Back propagation is ultimately going to be that key framework that tells us how 
 
  using the chain rule from calculus。
 
-![](img/935e11356894a587848d69200b76fd61_1.png)
 
 So how do we train our model before using gradient tos set？
 
@@ -46,7 +45,6 @@ So let's start off our discussion of this process for neural networks with these
 
  making a prediction and calculating the loss。
 
-![](img/935e11356894a587848d69200b76fd61_3.png)
 
 So first we pass in our input values。We have initialized values for each of the weights。
 
@@ -58,7 +56,6 @@ AndThen we ultimately get our predicted output values for that given input and t
 
  our squared error or our logistic loss。
 
-![](img/935e11356894a587848d69200b76fd61_5.png)
 
 So how can we ultimately change our weights to continue to lower that loss function at each iteration？
 
@@ -88,7 +85,6 @@ And through for every node within that layer。And then we need to also do this 
 
 
 
-![](img/935e11356894a587848d69200b76fd61_7.png)
 
 Now our goal then， when we find the gradients is to find the partial derivative of each weight in respect to J。
 
@@ -102,6 +98,5 @@ So that closes out this first video， and in the next video we'll officially in
 
 
 
-![](img/935e11356894a587848d69200b76fd61_9.png)
 
 ![](img/935e11356894a587848d69200b76fd61_10.png)

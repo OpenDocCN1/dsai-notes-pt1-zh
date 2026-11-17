@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P13：L13- LIKE 运算符 🔍
 
-![](img/987f1c63e9084fb804d511337ab2db5a_0.png)
 
 ![](img/987f1c63e9084fb804d511337ab2db5a_0.png)
 
@@ -50,7 +49,6 @@ WHERE column_name LIKE pattern;
 
 以下是使用下划线通配符的示例：
 
-![](img/987f1c63e9084fb804d511337ab2db5a_2.png)
 
 *   **匹配固定长度的字符串**：例如，查找姓氏恰好为两个字符的客户。
     ```sql
@@ -59,7 +57,6 @@ WHERE column_name LIKE pattern;
     ```
     模式 `‘__’` 使用了两个下划线，代表两个字符。
 
-![](img/987f1c63e9084fb804d511337ab2db5a_3.png)
 
 *   **匹配特定模式的字符串**：例如，查找姓氏以“B”开头，总长度为六个字符，并以“Y”结尾的客户。
     ```sql
@@ -100,7 +97,6 @@ SELECT * FROM customers
 WHERE phone NOT LIKE '%9';
 ```
 
-![](img/987f1c63e9084fb804d511337ab2db5a_8.png)
 
 ![](img/987f1c63e9084fb804d511337ab2db5a_8.png)
 

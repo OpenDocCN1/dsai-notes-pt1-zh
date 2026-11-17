@@ -4,9 +4,7 @@
 
 
 
-![](img/367ea4d288ffb017ce66dc5e0f6c0fa2_1.png)
 
-![](img/367ea4d288ffb017ce66dc5e0f6c0fa2_2.png)
 
 ## 🔍 查询语言
 

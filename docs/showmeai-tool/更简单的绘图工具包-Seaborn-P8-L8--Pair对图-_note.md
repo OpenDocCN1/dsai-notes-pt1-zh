@@ -12,10 +12,8 @@
 
 首先，我们需要导入Seaborn并加载一个数据集。这里我们使用`seaborn.load_dataset`函数来获取“car_crashes”数据集。
 
-![](img/4a9e49a89e73c905344cc66b813032a6_1.png)
 
 
-![](img/4a9e49a89e73c905344cc66b813032a6_2.png)
 
 ```python
 import seaborn as sns
@@ -23,7 +21,6 @@ import seaborn as sns
 cash_df = sns.load_dataset('car_crashes')
 ```
 
-![](img/4a9e49a89e73c905344cc66b813032a6_3.png)
 
 接下来，我们可以使用`sns.pairplot()`函数来创建对图。只需将数据框作为参数传入即可。
 
@@ -32,11 +29,9 @@ cash_df = sns.load_dataset('car_crashes')
 sns.pairplot(cash_df)
 ```
 
-![](img/4a9e49a89e73c905344cc66b813032a6_4.png)
 
 执行这段代码后，会生成一个图表。图表左侧和顶部是变量名，如“total”（总数）、“speeding”（超速）、“alcohol”（酒精）等。对角线上的子图是每个变量的直方图，展示了其分布情况。其他位置的子图则是散点图，展示了任意两个变量之间的关系，帮助我们观察这些不同数据是如何相互影响的。
 
-![](img/4a9e49a89e73c905344cc66b813032a6_5.png)
 
 ## 使用分类数据着色
 

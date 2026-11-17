@@ -6,7 +6,6 @@
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_3.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_5.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_7.png)
 
@@ -20,7 +19,6 @@
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_15.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_16.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_18.png)
 
@@ -30,21 +28,16 @@
 *   如何动态计算和设置UI容器内元素的布局与间距。
 *   如何正确设置UI元素的原点（Origin）以实现精准定位。
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_20.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_21.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_22.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_24.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_26.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_27.png)
 
 ## UI基础架构重构 🏗️
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_29.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_31.png)
 
@@ -52,9 +45,7 @@
 
 我们首先需要创建一个`BaseUI`类作为所有UI组件的管理核心。这个类负责注册UI元素，并统一控制它们的显示、隐藏和交互状态。
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_34.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_35.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_37.png)
 
@@ -126,11 +117,9 @@ class BaseUI {
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_47.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_49.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_51.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_52.png)
 
 通过这个基础类，我们可以确保所有UI组件都能被集中管理。例如，在游戏菜单场景中，我们可以轻松地在设置界面和主菜单之间切换显示。
 
@@ -146,11 +135,9 @@ class BaseUI {
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_61.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_63.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_65.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_67.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_69.png)
 
@@ -181,15 +168,10 @@ class BaseUI {
 3.  **注册元素**：调用`this.registerUIElement(childElement, true)`将子元素注册到基础管理系统。`true`表示该元素是可交互的。
 4.  **统一控制**：之后，通过调用`this.hide()`或`this.show()`，即可控制该UI组件的所有子元素。
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_89.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_91.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_93.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_94.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_96.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_98.png)
 
@@ -197,29 +179,20 @@ class BaseUI {
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_101.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_102.png)
 
 **关键点**：确保每个UI元素类（如`UIButton`, `UITextInput`）都实现了`setVisible`和`setEnabled`方法，以便`BaseUI`能正确控制它们。
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_104.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_106.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_108.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_110.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_112.png)
 
 ## 解决可见性与交互控制问题 🎯
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_114.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_116.png)
 
 在重构过程中，我们遇到了一个典型问题：某些UI元素在调用`hide()`方法后仍然可见或可交互。
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_118.png)
 
 **问题根源**：
 1.  **元素未注册**：部分动态创建的子元素没有被正确调用`registerUIElement`方法。
@@ -249,25 +222,19 @@ setVisible(visible) {
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_130.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_132.png)
 
 同时，我们检查了`SettingsUI`等容器类，确保所有通过`add`方法添加的子元素都被正确注册。
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_134.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_135.png)
 
 ## 动态布局与间距计算 📐
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_137.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_138.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_139.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_140.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_142.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_144.png)
 
@@ -277,22 +244,17 @@ setVisible(visible) {
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_148.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_150.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_151.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_152.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_154.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_156.png)
 
 **核心逻辑**：
 1.  **计算容器尺寸**：遍历容器内所有字段（field），获取每个字段的实际宽度和高度。
 2.  **动态定位**：根据布局方向（垂直或水平）和设定的间距（spacing），动态计算每个字段的位置。
 3.  **考虑原点**：根据容器的原点设置，调整整个容器及其内部字段的起始位置。
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_158.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_160.png)
 
@@ -340,9 +302,7 @@ updateFieldPositions() {
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_168.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_170.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_172.png)
 
 通过这种方式，无论是按钮、滑块还是输入框，都能在容器内自动获得正确的间距和布局，无需手动调整硬编码数值。
 
@@ -358,21 +318,17 @@ updateFieldPositions() {
 
 ## 原点（Origin）控制与对齐 🎯
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_184.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_186.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_188.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_190.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_192.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_194.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_196.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_198.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_200.png)
 
@@ -384,28 +340,20 @@ updateFieldPositions() {
 
 **问题**：我们希望将按钮容器在屏幕上居中，但简单的设置位置为屏幕中心坐标`(width/2, height/2)`会导致容器的左上角位于屏幕中心，而不是容器本身居中。
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_206.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_208.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_210.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_212.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_214.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_216.png)
 
 **解决方案**：
 1.  在`UIFields`类中添加`originX`和`originY`属性。
 2.  在`updateFieldPositions`方法中，如上节代码所示，根据原点属性计算偏移量，调整容器内所有字段的起始绘制位置。
 3.  这样，当我们将容器位置设置为`(400, 300)`且原点为`(0.5, 0.5)`时，容器的中心点就会精确地落在`(400, 300)`的位置上。
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_218.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_220.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_222.png)
 
 这使得UI布局更加灵活和精确。
 
@@ -419,7 +367,6 @@ updateFieldPositions() {
 
 ## 集成与测试 ✅
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_232.png)
 
 在完成上述重构后，我们将更改集成到游戏场景中：
 
@@ -432,7 +379,6 @@ updateFieldPositions() {
 3.  **事件切换**：为菜单中的“设置”按钮和设置界面中的“返回”按钮添加事件监听。点击后，分别调用`menuUI.hide() / settingsUI.show()` 和 `menuUI.show() / settingsUI.hide()`，实现界面的切换。
 4.  **交互测试**：测试所有按钮的点击、输入框的聚焦、滑块的拖动等功能，确保在界面隐藏时交互被正确禁用。
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_238.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_240.png)
 
@@ -440,11 +386,9 @@ updateFieldPositions() {
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_242.png)
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_244.png)
 
 本节课中我们一起学习了如何重构一个游戏项目的UI系统。我们从创建一个集中管理的`BaseUI`类开始，解决了UI元素的注册、统一控制问题。然后，我们深入实现了动态布局系统，通过计算容器内元素的尺寸来自动确定间距和位置，摒弃了容易出错的硬编码方式。最后，我们引入了原点控制，使得UI元素的定位和对齐更加精准和灵活。
 
-![](img/f30394fe64098a6d2d3fd82167b7ad39_246.png)
 
 ![](img/f30394fe64098a6d2d3fd82167b7ad39_248.png)
 

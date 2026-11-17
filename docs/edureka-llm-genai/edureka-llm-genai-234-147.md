@@ -17,7 +17,6 @@
 
 我们知道，编写代码是一项耗时且繁琐的任务。但GitHub Copilot与你并肩工作，可以提高准确性、生产力和效率。现在，让我们来探索GitHub Copilot提供的代码建议。
 
-![](img/581136ee396a6e473deefa29a9d80385_4.png)
 
 上一节我们介绍了GitHub Copilot的基本概念，本节中我们来看看它在实际编码中如何提供建议，使编码过程变得更简单。
 
@@ -61,7 +60,6 @@ GitHub Copilot最酷的功能之一是能够将你的注释转化为代码。例
 
 
 
-![](img/581136ee396a6e473deefa29a9d80385_6.png)
 
 ## GitHub Copilot 的工作原理
 

@@ -147,7 +147,6 @@ embeddings_sentences = np.array(embeddings_sentences)
 
 我们实践了如何使用Cohere API为单词和句子生成嵌入，并通过可视化观察到语义相似性如何在嵌入空间中体现。最后，我们看到了这项技术如何应用于大规模文本数据集（如维基百科），为语义搜索和**密集检索**奠定了基础。
 
-![](img/2af543a033b90a07d7e952331cc81852_4.png)
 
 ![](img/2af543a033b90a07d7e952331cc81852_5.png)
 

@@ -61,7 +61,6 @@ client.set_default_model("gpt-4o-mini")
 *   对于 `persona` 部分，我们告诉智能体：“你是一个乐于助人的助手，喜欢使用表情符号。” 这将定义智能体的个性，但由于它在记忆部分，所以仍然是可编辑的。
 
 
-![](img/1b266b8ec6c1f0837cc686c1a4fdb81e_4.png)
 
 ```python
 from lettra import ChatMemory
@@ -93,7 +92,6 @@ print_messages(response.messages)
 
 我们还可以看到，MGPT 智能体实际上是在使用一个**工具**进行通信：通过 `send_message` 工具将消息发送回用户。这实际上允许智能体通过不同的媒介进行通信（例如，如果你想让它生成短信）。同时，这也允许智能体区分哪些信息发送给最终用户（即消息内容），哪些信息留给自己（如内部独白）。
 
-![](img/1b266b8ec6c1f0837cc686c1a4fdb81e_6.png)
 
 ---
 
@@ -161,7 +159,6 @@ print(recall_memory)
 
 我们还可以获取智能体的原始消息历史记录，查看其中的单个消息，以准确理解智能体的执行轨迹。
 
-![](img/1b266b8ec6c1f0837cc686c1a4fdb81e_8.png)
 
 ```python
 message_history = client.get_message_history(agent_state.agent_id)
@@ -174,7 +171,6 @@ print(message_history)
 
 核心记忆是智能体的上下文内记忆。MGPT 的独特之处在于，它实际上可以使用工具编辑自己的核心记忆。
 
-![](img/1b266b8ec6c1f0837cc686c1a4fdb81e_10.png)
 
 以下是一个示例：我们可以使用智能体的 ID 向其发送一条消息，告诉它“我的名字实际上是 Bob”，尽管我之前告诉它我的名字是 Sarah。或者，你也可以让智能体添加你最初未包含在 `human` 字符串中的关于你的额外信息。
 
@@ -189,7 +185,6 @@ print_messages(response.messages)
 
 到目前为止，我们有一个非常友好的智能体，在其消息中使用了很多表情符号。但在我们给出以下反馈后，我们期望它在未来可能发送的任何消息中**永远不再使用表情符号**。
 
-![](img/1b266b8ec6c1f0837cc686c1a4fdb81e_12.png)
 
 ```python
 response = client.step(agent_state.agent_id, "请不要在消息中使用表情符号。")
@@ -209,7 +204,6 @@ print(current_memory.persona)  # 输出：你是一个乐于助人的助手，�
 
 这基本上反映了我们之前看到的变化。
 
-![](img/1b266b8ec6c1f0837cc686c1a4fdb81e_14.png)
 
 ---
 
@@ -230,7 +224,6 @@ print_messages(response.messages)
 
 现在，如果我们获取归档记忆，应该会看到里面有一些内容。
 
-![](img/1b266b8ec6c1f0837cc686c1a4fdb81e_16.png)
 
 ```python
 archival_memory = client.get_archival_memory(agent_state.agent_id)
@@ -246,7 +239,6 @@ print(archival_memory_text)
 
 现在我们看到，归档记忆中的第一行文本是“Bob 爱猫”，数据已成功添加。
 
-![](img/1b266b8ec6c1f0837cc686c1a4fdb81e_18.png)
 
 ---
 
@@ -274,11 +266,9 @@ print_messages(response.messages)
 
 这是一个示例，展示了智能体如何利用其归档记忆中的内容，向用户生成信息更丰富的回应。
 
-![](img/1b266b8ec6c1f0837cc686c1a4fdb81e_20.png)
 
 ---
 
-![](img/1b266b8ec6c1f0837cc686c1a4fdb81e_21.png)
 
 ## 总结 🎉
 

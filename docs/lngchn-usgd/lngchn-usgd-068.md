@@ -77,9 +77,7 @@
 
 我想展示如何在你的机器上本地运行 LangGraph 平台以进行开发。你需要做的就是按照这些说明操作：安装 `langgraph-cli` 包，然后运行 `langgraph dev`。
 
-![](img/f79fc4703269a68bda49f1cc29f8e43f_5.png)
 
-![](img/f79fc4703269a68bda49f1cc29f8e43f_6.png)
 
 ![](img/f79fc4703269a68bda49f1cc29f8e43f_7.png)
 
@@ -92,7 +90,6 @@ uvx langgraph-cli[in-memory] --editable . --python 3.11 langgraph dev
 
 ![](img/f79fc4703269a68bda49f1cc29f8e43f_9.png)
 
-![](img/f79fc4703269a68bda49f1cc29f8e43f_10.png)
 
 `langgraph-cli[in-memory]` 指定环境应包含我们刚刚讨论过的 LangGraph CLI 包，并带有 `in-memory` 扩展，用于在开发模式下本地运行。`--editable .` 以可编辑模式安装当前目录（你的应用），代码更改将立即反映，无需重新安装包。`--python 3.11` 指定 Python 版本。最后 `langgraph dev` 启动服务器。
 
@@ -100,15 +97,11 @@ uvx langgraph-cli[in-memory] --editable . --python 3.11 langgraph dev
 
 你还会看到一些有用的链接：直接链接到 API、API 文档，以及 **Studio UI**。点击 Studio 链接即可打开它。
 
-![](img/f79fc4703269a68bda49f1cc29f8e43f_12.png)
 
-![](img/f79fc4703269a68bda49f1cc29f8e43f_13.png)
 
-![](img/f79fc4703269a68bda49f1cc29f8e43f_14.png)
 
 ---
 
-![](img/f79fc4703269a68bda49f1cc29f8e43f_15.png)
 
 ## 探索 Studio 界面 🔍
 
@@ -120,13 +113,11 @@ uvx langgraph-cli[in-memory] --editable . --python 3.11 langgraph dev
 
 如果你查看输入状态的定义（例如在 `state.py` 中），你可能看到它只包含一个字段 `research_topic`。这也在整体图状态中。输入状态代表了我们希望向用户暴露的部分。在 Studio 中，你只能看到 `research_topic` 暴露给用户。这通常很好，因为我们不希望向用户暴露图中存在的所有可能状态变量。
 
-![](img/f79fc4703269a68bda49f1cc29f8e43f_17.png)
 
 ---
 
 ## 使用 Studio 进行调试和检查 🐛
 
-![](img/f79fc4703269a68bda49f1cc29f8e43f_19.png)
 
 正如我们之前看到的，我们可以提供输入，然后观察图的运行。最初它运行 `generate_query`，我们可以看到它的流式输出。`web_research` 完成后，我们实际上可以去检查所有的网络搜索结果。我们之前看到状态在流式更新。
 

@@ -114,7 +114,6 @@ Qian Li、Jianxin Li、Jiawei Sheng、Shiyao Cui、Jia Wu、Yiming Hei、Hao Pen
 
     `Argument role classification`：论元角色分类基于事件提取模式中的论元，每个论元的类别根据识别出的论元进行分类。对于图 2 中的提取词，例如“摄影师”，该子任务是将该词分类为 Object 类别。因此，它也可以视为一个多标签文本分类任务。
 
-![参考标题](img/e4ff535b4463d6e3c3c51a83ad37b705.png)
 
 (a) 基于分类的任务。
 

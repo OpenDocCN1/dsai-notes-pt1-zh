@@ -158,7 +158,6 @@ except RuntimeError as e:
 
 ![](img/d79ec12cd82ce038fb6b6a27b6d6d892_14.png)
 
-![](img/d79ec12cd82ce038fb6b6a27b6d6d892_16.png)
 
 ```python
 # 假设我们有一个修改了forward方法的模型，或者我们手动模拟前向传播
@@ -176,11 +175,8 @@ with torch.inference_mode():
     # 这个 x.shape[1] 的值就是全连接层需要的 in_features
 ```
 
-![](img/d79ec12cd82ce038fb6b6a27b6d6d892_18.png)
 
-![](img/d79ec12cd82ce038fb6b6a27b6d6d892_20.png)
 
-![](img/d79ec12cd82ce038fb6b6a27b6d6d892_21.png)
 
 ![](img/d79ec12cd82ce038fb6b6a27b6d6d892_23.png)
 

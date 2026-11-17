@@ -6,13 +6,11 @@ Welcome back to the final video for this notebook。In this final video。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_1.png)
 
 And with that， I want to quickly touch on again how we can fight the curse of dimensionality。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_3.png)
 
 And two different methods that should immediately come to mind as we discuss them in the intro to this course are going to be feature selection。
 
@@ -22,11 +20,8 @@ And two different methods that should immediately come to mind as we discuss the
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_5.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_6.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_7.png)
 
 As well as feature extraction and with feature extraction。
 
@@ -38,19 +33,14 @@ Which we'll learn later on within this course to transform our raw data into low
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_9.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_10.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_11.png)
 
 So here we're going to show creating play data sets how high dimensionality will end up affecting our model performance。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_13.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_14.png)
 
 In order to do so， we're going to import。Many libraries here we're doing a classification problem。
 
@@ -66,31 +56,22 @@ In order to do so， we're going to import。Many libraries here we're doing a c
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_16.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_17.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_18.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_19.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_20.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_21.png)
 
 So first thing that we're going to do is create our classification data set in order to do so。
 
  we're using this make classification。
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_23.png)
 
 Function that I just introduced a second ago， and I'm going to show you a bit about how these arguments work。
 
  So I'm going to create a cell above。
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_25.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_26.png)
 
 And of course， first we're going to have to import that library。
 
@@ -98,9 +79,7 @@ And of course， first we're going to have to import that library。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_28.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_29.png)
 
 And our x is going to be this two dimensional data set。
 
@@ -108,17 +87,13 @@ And our x is going to be this two dimensional data set。
 
  so if we were to run x dot shape。
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_31.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_32.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_33.png)
 
 We would see that we have 100 rows and two features。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_35.png)
 
 Those two features are going to be decided because we said that we want the number of features equal to two。
 
@@ -130,11 +105,8 @@ We're saying that the number of features that are redundants that don't give any
 
  there will be a bit of redundancy built in。
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_37.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_38.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_39.png)
 
 The number of informative features will be the rest of that。
 
@@ -142,7 +114,6 @@ The number of informative features will be the rest of that。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_41.png)
 
 And then the number of class clusters per class will allow us to spread out that data in a way。 Now。
 
@@ -150,19 +121,16 @@ And then the number of class clusters per class will allow us to spread out that
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_43.png)
 
 Along with that X， we have which class each one of those values belong to。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_45.png)
 
 In order to look at both of those， we're going to use a scatter plot， and we're going to scatter。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_47.png)
 
 Are x such that y equals 1。And that'll be。On X， we want first， our first feature。
 
@@ -170,13 +138,11 @@ Are x such that y equals 1。And that'll be。On X， we want first， our first
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_49.png)
 
 To create another scatter plot。That's going to be。Our y equal to 0。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_51.png)
 
 And everything else the same。So here you see our two different classes。
 
@@ -188,9 +154,7 @@ And everything else the same。So here you see our two different classes。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_53.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_54.png)
 
 Then you see that they're very clearly separated， so adding on this extra cluster allowed them to be a little bit closer together as there were going to be separate clusters for that class。
 
@@ -198,7 +162,6 @@ Also， to go along with that， if instead of having both of our features being
 
 If we only had。
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_56.png)
 
 One of our features as informative。Then we would see that the other one is redundant in everything along one axis。
 
@@ -208,19 +171,14 @@ One of our features as informative。Then we would see that the other one is red
 
  they don't add any extra value。
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_58.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_59.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_60.png)
 
 So that's how the make classification works。 We saw that original plot of what our data actually looks like when we're working with two features。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_62.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_63.png)
 
 We're then going to add on that a bit of noise。So we're just going to use our random state here。
 
@@ -234,11 +192,8 @@ We're then going to add on that a bit of noise。So we're just going to use our 
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_65.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_66.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_67.png)
 
 And we're going to add on values that are between0 and 2。
 
@@ -246,7 +201,6 @@ And we're going to add on values that are between0 and 2。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_69.png)
 
 And we're going to multiply that by two， soll be values between0 and 2。
 
@@ -260,27 +214,21 @@ We're then going to scale our data so that it is all between0 ends。 Well。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_71.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_72.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_73.png)
 
 So we have our toy data set。
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_75.png)
 
 We can then use our decision tree classifier。And run that on X train and Y train and see what our score is for our X test and Y test。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_77.png)
 
 And we see that our score from this two feature classifier is 0。875。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_79.png)
 
 Now we're going to run all the same steps and what's important to note here is that the number of features is obviously going to be going up 100 fold。
 
@@ -288,21 +236,17 @@ Now we're going to run all the same steps and what's important to note here is t
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_81.png)
 
 So we're not allowing for redundant features here， so we still have all of our features being informative。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_83.png)
 
 We are going to run through the same steps。 Otherwise everything else is the same。 We are going to。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_85.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_86.png)
 
 Said our range。Again， setting that random state， adding on that extra noise two times the uniform value。
 
@@ -310,9 +254,7 @@ Said our range。Again， setting that random state， adding on that extra nois
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_88.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_89.png)
 
 Then we're going to use again our decision tree classifier on our standard scale data。
 
@@ -322,21 +264,17 @@ And we see that our score goes all the way down to 0。425。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_91.png)
 
 So we see that adding on additional features， even if they're informative。
 
  end up leading to worse model performance。
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_93.png)
 
 Due to the fact that it will very heavily increase the amount that it will overfi to each one of these features。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_95.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_96.png)
 
 And something to note along with this， is that， as we mentioned during the lectures， you should。
 
@@ -350,23 +288,16 @@ And something to note along with this， is that， as we mentioned during the l
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_98.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_99.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_100.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_101.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_102.png)
 
 We're then going to， rather than just looking at 2 and 200 loop through values between 50 and 4000 and run through each one of these same steps。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_104.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_105.png)
 
 So all the steps are going to be the same。 We're calling for nu and NP dot L space starting at 50。
 
@@ -376,29 +307,23 @@ So all the steps are going to be the same。 We're calling for nu and NP dot L s
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_107.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_108.png)
 
 As well as。By setting number of redundant equal to zero by default， all of them will be informative。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_110.png)
 
 And then everything else is the same。 We can get each one of our different scores as those are going to be appended on to this empty list。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_112.png)
 
 We run this and this will take just a second to run， and then we can plot that as well。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_114.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_115.png)
 
 Just looking across each one of the numbers of different features and seeing the classification and accuracy as we increase the number of features。
 
@@ -408,27 +333,22 @@ Now， by chance， some of these can be a bit more accurate。
 
  but it very easily can。
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_117.png)
 
 So in this example， the accuracy is highly volatile in the number of features and increasing features again can reduce that accuracy。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_119.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_120.png)
 
 Additionally， in our example， we testified that none of the features are redundant and in practice when you have this many more features。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_122.png)
 
 Generally speaking， you will almost definitely have redundant features。
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_124.png)
 
 And for example， if we are predicting customer churn， as we've discussed throughout these courses。
 
@@ -442,17 +362,11 @@ And for example， if we are predicting customer churn， as we've discussed thr
 
 
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_126.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_127.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_128.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_129.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_130.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_131.png)
 
 So that closes out our video here on the curse of dimensionality with that we're going to go back to discussing different types of groupings。
 
@@ -460,10 +374,7 @@ So that closes out our video here on the curse of dimensionality with that we're
 
  and I look forward to seeing you there。
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_133.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_134.png)
 
-![](img/b002437c2fa3ec18f3a613ce171a9e15_135.png)
 
 ![](img/b002437c2fa3ec18f3a613ce171a9e15_136.png)

@@ -8,9 +8,7 @@
 
 ## 初始化模型与提示词模板
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_1.png)
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_2.png)
 
 首先，我们需要初始化大语言模型并创建一个提示词模板。这与之前章节的步骤类似。
 
@@ -27,9 +25,7 @@ prompt = ChatPromptTemplate.from_messages([
 ])
 ```
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_4.png)
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_5.png)
 
 我们采用这种方式创建模板，是为了在模板中包含更多信息，例如系统消息和人类用户消息。系统消息定义了AI的角色，而人类消息则包含了需要填充的占位符，如 `{animal}` 和 `{count}`。
 
@@ -37,9 +33,7 @@ prompt = ChatPromptTemplate.from_messages([
 
 在之前的章节中，我们采用分步调用的方式：
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_7.png)
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_8.png)
 
 1.  调用提示词模板填充占位符。
 2.  将填充后的提示词传递给大语言模型。
@@ -47,9 +41,7 @@ prompt = ChatPromptTemplate.from_messages([
 
 虽然这是正确的流程，但我们需要重复调用 `.invoke()` 方法，代码显得较为繁琐。
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_10.png)
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_12.png)
 
 ## 使用链简化流程
 
@@ -61,13 +53,10 @@ prompt = ChatPromptTemplate.from_messages([
 2.  **调用链**：使用 `chain.invoke()` 方法，并传入一个包含所有占位符值的字典。
 3.  **传递数据**：传入的字典数据在整个链的所有任务中都是可用的。
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_14.png)
 
 以下是具体代码示例：
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_15.png)
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_16.png)
 
 ```python
 from langchain_core.output_parsers import StrOutputParser
@@ -80,28 +69,21 @@ response = chain.invoke({"animal": "猫", "count": "2"})
 print(response)
 ```
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_18.png)
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_19.png)
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_20.png)
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_21.png)
 
 在这个链中：
 *   第一个任务 `prompt` 接收输入并生成完整的提示词。
 *   第二个任务 `model` 接收上一步的提示词并生成AI响应。
 *   第三个任务 `StrOutputParser()` 是一个内置函数，它从模型返回的复杂响应对象中提取出纯文本内容。
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_23.png)
 
 运行上述代码，我们将得到关于猫的两个事实。如果我们改变输入，例如 `{"animal": "大象", "count": "1"}`，链将相应地输出关于大象的一个事实。
 
 ## 链的优势：代码对比
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_25.png)
 
-![](img/0091c8e5d860bb356abcd0bf84aa2e0f_26.png)
 
 通过链，我们用几行代码就完成了提示词生成、模型调用和输出解析的整个流程。
 

@@ -10,17 +10,14 @@ Tableau允许用户通过编辑一个名为`Preferences.tps`的XML配置文件�
 
 首先，你需要找到并打开`Preferences.tps`文件。
 
-![](img/a75b515a90694e4ca69dcd908cf6e991_1.png)
 
 1.  导航至你的“我的Tableau存储库”文件夹。
 2.  找到名为`Preferences.tps`的文件。
 3.  使用记事本（Notepad）或其他文本编辑器打开此文件。
 
-![](img/a75b515a90694e4ca69dcd908cf6e991_3.png)
 
 打开后，你可能会看到一个基本为空或结构简单的XML文件。
 
-![](img/a75b515a90694e4ca69dcd908cf6e991_5.png)
 
 ## 第二步：理解XML文件结构
 
@@ -38,13 +35,10 @@ Tableau允许用户通过编辑一个名为`Preferences.tps`的XML配置文件�
 
 ## 第三步：编写自定义调色板代码
 
-![](img/a75b515a90694e4ca69dcd908cf6e991_7.png)
 
-![](img/a75b515a90694e4ca69dcd908cf6e991_8.png)
 
 以下是添加一个自定义调色板所需的XML代码示例。你需要根据你的颜色进行修改。
 
-![](img/a75b515a90694e4ca69dcd908cf6e991_9.png)
 
 ```xml
 <color-palette name="Mac色调" type="regular">
@@ -66,13 +60,11 @@ Tableau允许用户通过编辑一个名为`Preferences.tps`的XML配置文件�
 
 一个推荐的网站是 `color-hex.com`。在该网站上，你可以浏览或搜索喜欢的配色方案，并直接复制每种颜色对应的六位HEX代码（例如`#4ECDC4`）。
 
-![](img/a75b515a90694e4ca69dcd908cf6e991_11.png)
 
 ## 第五步：编辑文件并应用调色板
 
 获取颜色值后，即可完成配置并应用。
 
-![](img/a75b515a90694e4ca69dcd908cf6e991_13.png)
 
 1.  将第三步中的代码块，粘贴到`Preferences.tps`文件的`<preferences>`标签内。
 2.  将示例代码中的`<color>`标签内容替换为你自己获取的HEX颜色值，并确保`name`是你想要的调色板名称。

@@ -1,10 +1,7 @@
 # 003：自动化评估概述 🧪
 
-![](img/7316d081545fb41c2d114cbc32cf45f3_1.png)
 
-![](img/7316d081545fb41c2d114cbc32cf45f3_2.png)
 
-![](img/7316d081545fb41c2d114cbc32cf45f3_3.png)
 
 在本节课中，我们将学习如何为基于LLM的应用程序设置自动化评估。我们将从基于规则的评估开始，这种评估运行速度快、成本低，非常适合在开发的早期迭代阶段频繁运行。最终，我们将看到这些评估如何在持续集成管道中自动运行。
 
@@ -44,7 +41,6 @@
 
 在开始构建之前，我们需要进行一些设置。本应用需要使用CircleCI、GitHub和OpenAI等第三方服务。相关密钥已预先配置好。我们还将使用一个为每位学员生成的独立GitHub分支，以避免冲突。
 
-![](img/7316d081545fb41c2d114cbc32cf45f3_5.png)
 
 首先，我们创建测验的数据集。为了清晰展示，我们将数据存储在字符串中。在实际应用中，你更可能将数据放入文件或数据库。
 
@@ -124,17 +120,13 @@ def eval_expected_words(response, expected_words):
 
 测试用例示例：
 
-![](img/7316d081545fb41c2d114cbc32cf45f3_7.png)
 
-![](img/7316d081545fb41c2d114cbc32cf45f3_8.png)
 
 ![](img/7316d081545fb41c2d114cbc32cf45f3_9.png)
 
-![](img/7316d081545fb41c2d114cbc32cf45f3_10.png)
 
 ![](img/7316d081545fb41c2d114cbc32cf45f3_11.png)
 
-![](img/7316d081545fb41c2d114cbc32cf45f3_12.png)
 
 ```python
 # test_assistant.py 中的测试用例
@@ -148,19 +140,14 @@ def test_refusal_for_unknown_topic():
     assert eval_expected_words(response, expected) == True
 ```
 
-![](img/7316d081545fb41c2d114cbc32cf45f3_14.png)
 
-![](img/7316d081545fb41c2d114cbc32cf45f3_15.png)
 
 我们使用Git将这两个文件推送到GitHub仓库。我们在项目中已经配置了CircleCI的配置文件（如 `.circleci/config.yml`），该文件定义了CI管道的步骤：设置环境、安装依赖、运行测试（使用 `pytest test_assistant.py`）。
 
-![](img/7316d081545fb41c2d114cbc32cf45f3_16.png)
 
-![](img/7316d081545fb41c2d114cbc32cf45f3_17.png)
 
 当我们推送代码到GitHub时，会自动触发CircleCI管道。管道会拉取代码，在一个干净的环境中运行我们的所有评估测试。如果所有测试通过，管道显示成功；如果有任何测试失败，管道会停止并报告错误，通知开发者修复问题。
 
-![](img/7316d081545fb41c2d114cbc32cf45f3_19.png)
 
 ## 总结 🎯
 

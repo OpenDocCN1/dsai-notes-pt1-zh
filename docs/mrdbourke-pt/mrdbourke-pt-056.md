@@ -2,11 +2,9 @@
 
 ![](img/f1c4c1677dab72d0c1c1147d6bab0081_0.png)
 
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_2.png)
 
 在本节课中，我们将要学习深度学习中的一个核心概念：非线性。我们将探讨为什么线性模型在处理复杂数据（如圆形数据）时能力有限，以及如何通过引入非线性激活函数（如ReLU和Sigmoid）来构建更强大的神经网络模型。我们将从理论理解过渡到代码实践，最终构建并训练一个能够处理非线性数据的模型。
 
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_4.png)
 
 ---
 
@@ -27,9 +25,7 @@
 以下是创建和可视化数据集的步骤：
 
 
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_6.png)
 
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_7.png)
 
 ![](img/f1c4c1677dab72d0c1c1147d6bab0081_9.png)
 
@@ -59,7 +55,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 ![](img/f1c4c1677dab72d0c1c1147d6bab0081_12.png)
 
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_13.png)
 
 ![](img/f1c4c1677dab72d0c1c1147d6bab0081_14.png)
 
@@ -93,19 +88,15 @@ model_3 = CircleModelV2()
 print(model_3)
 ```
 
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_17.png)
 
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_18.png)
 
 **核心概念解释**：
 *   **`nn.Linear`**：执行线性变换 `y = xA^T + b`。
 *   **`nn.ReLU`**：执行非线性变换 `ReLU(x) = max(0, x)`。它将所有负输入变为0，保持正输入不变，从而引入“弯曲”。
 
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_20.png)
 
 ---
 
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_22.png)
 
 ## 3. 设置损失函数和优化器 ⚙️
 
@@ -121,9 +112,7 @@ optimizer = torch.optim.SGD(params=model_3.parameters(), lr=0.1)
 
 ---
 
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_24.png)
 
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_25.png)
 
 ## 4. 训练非线性模型 🚂
 
@@ -178,7 +167,6 @@ for epoch in range(epochs):
 
 以下是评估和可视化代码：
 
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_27.png)
 
 ```python
 # 1. 进行预测
@@ -197,7 +185,6 @@ plot_decision_boundary(model_3, X_test, y_test)
 plt.show()
 ```
 
-![](img/f1c4c1677dab72d0c1c1147d6bab0081_29.png)
 
 与之前纯线性模型的直线决策边界相比，现在的边界应该是曲线，能够更好地分离红蓝圆圈，尽管可能还不完美。
 

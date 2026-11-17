@@ -2,17 +2,13 @@
 
 在本节课中，我们将要学习图像处理中的一项基础技术——图像平滑处理。平滑处理的核心是对图像数据进行各种滤波操作，其目的是去除图像中的噪声，使图像看起来更柔和。如果你了解过卷积的概念，那么理解平滑处理将会非常简单。
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_1.png)
 
 ## 概述
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_3.png)
 
 我们首先来看一下本次处理的输入图像。这张图像经过了一些特殊处理，上面存在明显的椒盐噪声点。我们的目标就是通过滤波操作，尽可能去除这些噪声。
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_1.png)
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_5.png)
 
 如上图所示，输入图像中包含了许多不规则的亮点和暗点，这些就是我们需要处理的噪声。接下来，我们将介绍几种不同的滤波方法来平滑图像。
 
@@ -33,7 +29,6 @@
 `新像素值 = (P1 + P2 + P3 + P4 + P5 + P6 + P7 + P8 + P9) / 9`
 其中 P1 到 P9 是核覆盖的 9 个像素点的值。
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_7.png)
 
 在代码实现中，我们通常使用 OpenCV 库的 `cv2.blur()` 函数。
 
@@ -47,29 +42,21 @@ blurred = cv2.blur(img, (5, 5))
 
 让我们看一下均值滤波的效果。原始图像中的椒盐噪声非常明显。
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_13.png)
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_9.png)
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_11.png)
 
 经过均值滤波处理后，图像中的噪声点变得模糊，整体观感更为平滑。
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_13.png)
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_15.png)
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_15.png)
 
 可以看到，噪声虽然被削弱，但图像的边缘也同时变得模糊，这是均值滤波的一个特点。
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_17.png)
 
 ## 方框滤波
 
 了解了基础的均值滤波后，我们来看一个与之非常相似的操作——方框滤波。你可以将方框滤波视为均值滤波的一个更通用的版本。
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_19.png)
 
 方框滤波的核心操作同样是卷积求和，但它多了一个是否进行归一化的选项。以下是方框滤波的关键参数：
 
@@ -96,15 +83,11 @@ box_blur_no_norm = cv2.boxFilter(img, -1, (5,5), normalize=False)
 
 让我们对比一下效果。当 `normalize=True` 时，结果与均值滤波相同。
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_21.png)
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_23.png)
 
 当 `normalize=False` 时，由于大量像素值在求和后超过255并被置为255，图像中会出现大面积的白色区域。
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_23.png)
 
-![](img/10362adcaa100a5c3d6fcd2eedd9ff89_25.png)
 
 因此，在使用方框滤波时，通常建议保持归一化选项开启，除非有特殊需求。
 

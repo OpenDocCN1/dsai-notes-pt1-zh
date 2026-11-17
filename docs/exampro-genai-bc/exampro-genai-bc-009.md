@@ -116,7 +116,6 @@ When presented with an English sentence:
 
 我们修改了“教学指令”部分，使其更结构化：
 
-![](img/85a12d86fbe8a068e33e0eeae55ccb73_38.png)
 
 ![](img/85a12d86fbe8a068e33e0eeae55ccb73_40.png)
 
@@ -143,19 +142,15 @@ When presented with an English sentence:
 2.  **GPT-4o-mini**：速度更快，有时在遵循基础指令方面表现得更直接、更简洁，输出结果可能更接近我们的初始期望。
 3.  **ChatGPT “项目”功能**：我们探索了ChatGPT的“项目”功能，它允许上传文件（如将示例单独存为XML文件）并与提示词结合使用。这有助于管理更复杂的提示和示例库，使主提示词更简洁。
 
-![](img/85a12d86fbe8a068e33e0eeae55ccb73_46.png)
 
-![](img/85a12d86fbe8a068e33e0eeae55ccb73_48.png)
 
 ![](img/85a12d86fbe8a068e33e0eeae55ccb73_50.png)
 
-![](img/85a12d86fbe8a068e33e0eeae55ccb73_51.png)
 
 ![](img/85a12d86fbe8a068e33e0eeae55ccb73_52.png)
 
 测试表明，更智能的模型（如GPT-4）并不总是能产出更符合特定指令的结果。根据任务需求选择合适的模型非常重要。
 
-![](img/85a12d86fbe8a068e33e0eeae55ccb73_54.png)
 
 ---
 
@@ -165,7 +160,6 @@ When presented with an English sentence:
 
 ## 总结
 
-![](img/85a12d86fbe8a068e33e0eeae55ccb73_60.png)
 
 ![](img/85a12d86fbe8a068e33e0eeae55ccb73_62.png)
 

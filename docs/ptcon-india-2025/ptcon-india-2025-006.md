@@ -108,7 +108,6 @@ Megatron Bridge是一个扩展框架，它包含了AutoModel中的所有并行�
 2.  脚本读取一个自定义的YAML配置文件，其中包含了训练器、模型等所有相关的超参数。
 3.  虽然配置可能比AutoModel更复杂，但它允许您进行更细致和特定的调整。
 
-![](img/ad535039017ae67c6b079c15ee2c91fa_8.png)
 
 ![](img/ad535039017ae67c6b079c15ee2c91fa_10.png)
 

@@ -1,12 +1,9 @@
 # 深度学习在计算机视觉中的应用：21：使用目标检测模型进行迁移学习 🎯
 
-![](img/f218bfc046803c6bec3978846be8891b_1.png)
 
 在本节课中，我们将学习如何通过迁移学习来设置和训练一个目标检测模型。具体步骤包括：调整检测数据尺寸、估计锚框、划分验证集、构建模型，最后进行训练。
 
-![](img/f218bfc046803c6bec3978846be8891b_3.png)
 
-![](img/f218bfc046803c6bec3978846be8891b_5.png)
 
 ---
 
@@ -14,7 +11,6 @@
 
 我们将通过一个完整的流程，演示如何使用预训练模型进行迁移学习，以训练一个自定义的目标检测器。即使你不需要执行所有步骤（例如调整尺寸或使用锚框），了解这些常见预处理任务也是有益的。
 
-![](img/f218bfc046803c6bec3978846be8891b_7.png)
 
 ---
 
@@ -33,11 +29,9 @@
 transformedData = transform(combinedDataStore, @(data) customResize(data, targetSize));
 ```
 
-![](img/f218bfc046803c6bec3978846be8891b_9.png)
 
 ---
 
-![](img/f218bfc046803c6bec3978846be8891b_11.png)
 
 ## 模型配置：估计锚框
 
@@ -49,15 +43,12 @@ transformedData = transform(combinedDataStore, @(data) customResize(data, target
 
 ---
 
-![](img/f218bfc046803c6bec3978846be8891b_13.png)
 
 ## 数据准备：划分验证集
 
-![](img/f218bfc046803c6bec3978846be8891b_15.png)
 
 接下来，需要划分出一部分数据作为验证集，用于在训练过程中评估模型性能。
 
-![](img/f218bfc046803c6bec3978846be8891b_17.png)
 
 以下是划分验证集的步骤：
 1.  首先，打乱数据顺序，以帮助消除任何可能基于数据顺序的模式。
@@ -72,19 +63,16 @@ trainingData = subset(shuffledData, 1:numTrainingFiles);
 validationData = subset(shuffledData, numTrainingFiles+1:end);
 ```
 
-![](img/f218bfc046803c6bec3978846be8891b_19.png)
 
 ---
 
 ## 模型构建：创建检测器
 
-![](img/f218bfc046803c6bec3978846be8891b_21.png)
 
 现在进入构建网络的关键步骤。请放心，我们正在进行迁移学习，因此无需从头开始构建网络，甚至不需要手动添加头部或颈部组件。MATLAB函数会完成所有繁重的工作。
 
 首先，需要选择你计划使用的网络架构。如果你需要使用锚框，现在就需要按面积对它们进行排序，以便分配给不同的检测头。
 
-![](img/f218bfc046803c6bec3978846be8891b_23.png)
 
 请记住，网络中更深的附件（检测头）更擅长检测更大的物体。因此，在将锚框分配给模型之前，需要先按面积对它们进行排序。在本例中，我们计划使用YOLOv4的微小版本，它有两个检测头。
 
@@ -115,7 +103,6 @@ detector = yolov4ObjectDetector('tiny-yolov4-coco', classNames, anchorBoxes, 'In
 
 每个检测器训练函数都将训练数据、检测器和训练选项作为输入。现在，你已经准备好在MATLAB中使用迁移学习来训练目标检测模型了。
 
-![](img/f218bfc046803c6bec3978846be8891b_25.png)
 
 在本视频的示例中，你将有机会逐步完成整个流程。如果你拥有足够的硬件资源，还可以在接下来的阅读材料中亲自执行训练。
 

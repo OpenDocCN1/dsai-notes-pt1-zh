@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P24：L24- 外连接 🧩
 
-![](img/f8df46f601a08cab13c11a5e4f1fe4d4_0.png)
 
 ![](img/f8df46f601a08cab13c11a5e4f1fe4d4_0.png)
 
@@ -110,7 +109,6 @@ LEFT JOIN order_items oi
 
 执行此查询后，所有产品都会出现在结果中。对于从未被订购过的产品（如产品7），其`quantity`字段将显示为`NULL`。
 
-![](img/f8df46f601a08cab13c11a5e4f1fe4d4_5.png)
 
 ## 总结
 
@@ -118,6 +116,5 @@ LEFT JOIN order_items oi
 
 本节课中我们一起学习了SQL外连接的核心知识。我们了解到，内连接只返回两个表中匹配的记录，而外连接（包括左连接和右连接）可以返回一个表中的全部记录，并与另一个表进行匹配，不匹配的部分用`NULL`填充。`LEFT JOIN`和`RIGHT JOIN`的选择取决于你想以哪个表为基准返回所有行。记住，`OUTER`关键字通常可以省略，使代码更简洁。
 
-![](img/f8df46f601a08cab13c11a5e4f1fe4d4_7.png)
 
 ![](img/f8df46f601a08cab13c11a5e4f1fe4d4_7.png)

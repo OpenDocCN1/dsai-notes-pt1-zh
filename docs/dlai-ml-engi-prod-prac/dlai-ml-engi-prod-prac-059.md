@@ -1,6 +1,5 @@
 #  059：使用 TF Transform 的 Hello World 🌟
 
-![](img/1b5a470f06ab0d04b93241e43aaf9c96_1.png)
 
 在本节课中，我们将学习如何使用 TensorFlow Transform 进行特征工程。我们将通过一个简单的示例，展示如何将原始数据转换为可用于机器学习模型的特征。我们将涵盖数据收集、元数据定义、预处理函数编写以及使用 Apache Beam 执行转换的完整流程。
 
@@ -146,7 +145,6 @@ feature_cross: [-0.0, 0.0, 1.0]
 2. **大规模数据处理**：通过 Apache Beam，可以在大规模数据处理框架（如 Spark、Flink 或 Google Cloud Dataflow）上运行预处理管道。
 3. **TFX 集成**：在 TFX 管道中，Transform 组件使用 TensorFlow Transform 库来实现特征工程。
 
-![](img/1b5a470f06ab0d04b93241e43aaf9c96_7.png)
 
 ![](img/1b5a470f06ab0d04b93241e43aaf9c96_8.png)
 

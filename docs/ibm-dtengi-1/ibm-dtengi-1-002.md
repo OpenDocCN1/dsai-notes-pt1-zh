@@ -1,28 +1,22 @@
 # 002：作业概述 🎯
 
-![](img/99b5ed0b50cbd4faf79f83ac57fcb137_0.png)
 
-![](img/99b5ed0b50cbd4faf79f83ac57fcb137_1.png)
 
 在本节课中，我们将学习《数据工程毕业项目》第一个模块“数据平台架构与OLTP数据库”的作业概览。我们将了解需要完成的三个主要练习及其具体任务。
 
 ## 概述
 
-![](img/99b5ed0b50cbd4faf79f83ac57fcb137_3.png)
 
 本模块包含三个练习，每个练习由多个任务组成。在开始作业前，你需要首先启动MySQL服务器以检查实验环境是否就绪。
 
-![](img/99b5ed0b50cbd4faf79f83ac57fcb137_4.png)
 
 ## 练习一：设计OLTP数据库模式
 
 上一节我们介绍了模块的整体目标，本节中我们来看看第一个练习的具体内容。
 
-![](img/99b5ed0b50cbd4faf79f83ac57fcb137_6.png)
 
 第一个练习要求你为OLTP数据库设计模式。该数据库将存储销售数据，例如产品ID、客户ID、价格、数量和销售时间戳。
 
-![](img/99b5ed0b50cbd4faf79f83ac57fcb137_7.png)
 
 以下是该练习的核心概念：
 *   **OLTP数据库**：用于处理日常事务的数据库，例如销售记录。
@@ -39,11 +33,9 @@
 2.  执行SQL命令列出所有表：`SHOW TABLES;`
 3.  编写查询以获取记录数：`SELECT COUNT(*) FROM table_name;`
 
-![](img/99b5ed0b50cbd4faf79f83ac57fcb137_9.png)
 
 ## 练习三：管理任务与数据导出
 
-![](img/99b5ed0b50cbd4faf79f83ac57fcb137_10.png)
 
 接下来，我们将进入最后一个练习，它侧重于数据库的管理和维护任务。
 
@@ -54,9 +46,7 @@
 *   **列出索引**：`SHOW INDEX FROM sales_data;`
 *   **编写导出脚本**：一个包含 `mysqldump` 命令的bash脚本。
 
-![](img/99b5ed0b50cbd4faf79f83ac57fcb137_12.png)
 
-![](img/99b5ed0b50cbd4faf79f83ac57fcb137_13.png)
 
 ## 作业提交要求
 
@@ -64,7 +54,6 @@
 
 ## 总结
 
-![](img/99b5ed0b50cbd4faf79f83ac57fcb137_15.png)
 
 ![](img/99b5ed0b50cbd4faf79f83ac57fcb137_16.png)
 

@@ -93,15 +93,11 @@ open-clo onboarding
 
 上一节我们介绍了Open Cloud的安装与部署方法。本节中我们来看看何乐和佳诺针对Open Cloud的安全性与隐私问题展开的吐槽讨论，这部分内容适合关注数据安全和隐私保护的用户。
 
-![](img/a24dda040d84d74eae55d89f64f9655a_1.png)
 
-![](img/a24dda040d84d74eae55d89f64f9655a_3.png)
 
 安全性是Open Cloud最基础的问题之一。如果将Open Cloud部署在个人电脑上，而电脑中还部署了其他代码或数据库资料，一旦因为主动运行方式不当导致不良Skill下载，可能引发代码泄露或API Key泄露，造成重大损失。
 
-![](img/a24dda040d84d74eae55d89f64f9655a_5.png)
 
-![](img/a24dda040d84d74eae55d89f64f9655a_7.png)
 
 本地部署的风险可以用以下公式简单表示：
 
@@ -137,9 +133,7 @@ Open Cloud与GPT接入聊天软件有明显区别。GPT接入聊天软件只是�
 
 在记忆管理方面，Open Cloud的群聊和私聊处于不同的会话中，上下文不共享。如果想让Open Cloud了解上下文，需要让它保存到接力文档中，或者开始时加载接力文档，给它一个角色，这样才能建立更个性化的功能。
 
-![](img/a24dda040d84d74eae55d89f64f9655a_13.png)
 
-![](img/a24dda040d84d74eae55d89f64f9655a_14.png)
 
 # 💰 Datawhale AI+X OpenClaw吐槽大会：第7章：Token消耗与免费模型选择建议
 
@@ -167,9 +161,7 @@ Skill开发是Open Cloud使用中的一个重要话题，但也存在较多难�
 
 在开发Skill时，颗粒度非常关键。如果将一个复杂任务变成一个Skill，模型能做到的程度受限于该Skill的粗糙程度。有些团队在现有Skill无法完成任务时才会追加新Skill，否则不会轻易增加。Clo Code自带的Skill不超过20个，体现了对Skill的敬畏之心。
 
-![](img/a24dda040d84d74eae55d89f64f9655a_20.png)
 
-![](img/a24dda040d84d74eae55d89f64f9655a_22.png)
 
 一些用户尝试通过One Panel来规范Open Cloud的行为。One Panel提供标准API，可以限制IP、固定输入输出格式，强制Open Cloud只能调用这些操作，避免其乱来。例如，用户可以让Open Cloud使用One Panel的API进行DNS解析、部署网站、创建Docker、配置反向代理等操作，所有操作都有日志可查，面板会实时可视化显示，保证安全性。
 

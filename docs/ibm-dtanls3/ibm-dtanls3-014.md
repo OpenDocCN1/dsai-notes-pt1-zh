@@ -6,11 +6,9 @@
 
 常言道，一图胜千言。
 
-![](img/169f5cdae37ed46d3cfc55a078917f26_1.png)
 
 这句话在数据分析领域尤为贴切。
 
-![](img/169f5cdae37ed46d3cfc55a078917f26_2.png)
 
 数据可视化在呈现小规模和大规模数据方面都扮演着至关重要的角色。
 
@@ -18,27 +16,20 @@
 
 
 
-![](img/169f5cdae37ed46d3cfc55a078917f26_4.png)
 
-![](img/169f5cdae37ed46d3cfc55a078917f26_1.png)
 
-![](img/169f5cdae37ed46d3cfc55a078917f26_2.png)
 
-![](img/169f5cdae37ed46d3cfc55a078917f26_6.png)
 
 你将同时使用Excel和Cognos Analytics来学习创建不同类型绘图、图表和图形所需的基本技能，并构建交互式看板。
 
 
 
-![](img/169f5cdae37ed46d3cfc55a078917f26_7.png)
 
-![](img/169f5cdae37ed46d3cfc55a078917f26_4.png)
 
 你不仅将学习使用Excel和Cognos Analytics的数据可视化技术，还将在整个课程中通过多个动手实验和作业进行实践。
 
 
 
-![](img/169f5cdae37ed46d3cfc55a078917f26_6.png)
 
 ![](img/169f5cdae37ed46d3cfc55a078917f26_7.png)
 
@@ -86,7 +77,6 @@
 
 ![](img/169f5cdae37ed46d3cfc55a078917f26_9.png)
 
-![](img/169f5cdae37ed46d3cfc55a078917f26_10.png)
 
 如果你在学习过程中需要任何帮助，课程团队和其他同学可以在课程讨论区为你提供支持。
 
@@ -94,6 +84,5 @@
 
 
 
-![](img/169f5cdae37ed46d3cfc55a078917f26_12.png)
 
 ![](img/169f5cdae37ed46d3cfc55a078917f26_12.png)

@@ -52,7 +52,6 @@
 
 再次确认保持推荐设置（不勾选“Add Miniconda to my PATH environment variable”选项，安装程序提示不推荐勾选此选项）。然后点击“Install”并等待安装完成。
 
-![](img/a41430cf316de116d477abbb53287f40_2.png)
 
 安装完成后，取消勾选所有可选选项（例如“Learn more about Anaconda Cloud”），然后点击“Finish”。
 

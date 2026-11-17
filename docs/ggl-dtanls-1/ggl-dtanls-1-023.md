@@ -8,7 +8,6 @@
 
 每当我学习一项新技能时，都感觉像是在重新学习如何说话。
 
-![](img/1bf6bb4c76ed0b34a4fa5fe795b9ba99_1.png)
 
 ![](img/1bf6bb4c76ed0b34a4fa5fe795b9ba99_1.png)
 

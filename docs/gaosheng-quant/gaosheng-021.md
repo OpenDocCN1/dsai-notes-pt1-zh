@@ -31,19 +31,13 @@
 
 ## 核心概念三：投入资本的决策逻辑
 
-![](img/54bb6ed5cf4d1d320c049ac874df2ed3_6.png)
 
-![](img/54bb6ed5cf4d1d320c049ac874df2ed3_8.png)
 
-![](img/54bb6ed5cf4d1d320c049ac874df2ed3_10.png)
 
 关于何时投入资本，没有一本放之四海而皆准的规则手册。但有一些基于经验的原则可以遵循：
 
-![](img/54bb6ed5cf4d1d320c049ac874df2ed3_12.png)
 
-![](img/54bb6ed5cf4d1d320c049ac874df2ed3_13.png)
 
-![](img/54bb6ed5cf4d1d320c049ac874df2ed3_15.png)
 
 以下是投入资本时的两条经验法则：
 *   **不要**将资本投入正在亏损或价格行动表现不佳的想法。

@@ -3,7 +3,6 @@
 ## 概述
 在本节课中，我们将学习如何构建自己的第一个 LangGraph 图。我们将利用上一节创建的链，构建一个反思代理。这个代理会生成内容，然后进行自我反思和优化，循环数次后输出最终结果。
 
-![](img/dbc4426934a26bcd889bde19b7260a76_1.png)
 
 ## 准备工作
 在开始编写代码之前，需要确保已安装必要的包。使用以下命令安装 LangGraph：
@@ -28,11 +27,8 @@ from chains import generation_chain, reflection_chain
 *   `END` 和 `MessageGraph`：来自 LangGraph 的核心类，用于构建图。
 *   `generation_chain` 和 `reflection_chain`：我们在上一节创建的两个链。
 
-![](img/dbc4426934a26bcd889bde19b7260a76_3.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_4.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_5.png)
 
 ## 理解 MessageGraph
 在开始构建之前，我们需要理解什么是 MessageGraph。
@@ -48,16 +44,12 @@ MessageGraph 是 LangGraph 提供的一个类，用于协调不同节点之间�
 
 如果你的应用需要管理更复杂的状态（而不仅仅是消息列表），则可以考虑使用 `StateGraph`。但就本节课的用例而言，`MessageGraph` 完全够用。
 
-![](img/dbc4426934a26bcd889bde19b7260a76_7.png)
 
 ## 构建图结构
 理解了 MessageGraph 后，我们现在开始构建自己的图。整个过程类似于绘制流程图并控制节点间的连接。
 
-![](img/dbc4426934a26bcd889bde19b7260a76_9.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_10.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_11.png)
 
 首先，我们初始化一个 MessageGraph 实例。
 ```python
@@ -70,9 +62,7 @@ REFLECT = "reflect"
 GENERATE = "generate"
 ```
 
-![](img/dbc4426934a26bcd889bde19b7260a76_13.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_14.png)
 
 ### 创建生成节点
 生成节点是一个函数，它接收当前状态（即消息列表），调用生成链，并将链的响应追加到历史中。
@@ -85,15 +75,10 @@ def generate_node(state: List[BaseMessage]):
 ```
 这个函数的作用是：基于已有的对话历史，生成一条新的推文。
 
-![](img/dbc4426934a26bcd889bde19b7260a76_16.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_17.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_18.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_19.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_20.png)
 
 ### 创建反思节点
 反思节点的结构与生成节点类似，但它调用的是反思链来批判上一步生成的内容。
@@ -106,7 +91,6 @@ def reflect_node(state: List[BaseMessage]):
 ```
 **一个可选技巧**：在现实中，反思通常由人类完成。为了让日志跟踪更清晰，我们可以将反思节点的输出标记为来自“人类”。这可以通过返回一个 `HumanMessage` 对象来实现，但这并非必需。简单的 `return [response]` 同样有效。
 
-![](img/dbc4426934a26bcd889bde19b7260a76_22.png)
 
 ### 将节点添加到图中
 创建好节点函数后，我们将它们添加到图中。
@@ -115,13 +99,9 @@ graph.add_node(GENERATE, generate_node)
 graph.add_node(REFLECT, reflect_node)
 ```
 
-![](img/dbc4426934a26bcd889bde19b7260a76_24.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_25.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_26.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_27.png)
 
 ### 设置入口点
 每个图都需要一个起始节点。在我们的流程中，入口点是 `GENERATE` 节点。
@@ -142,13 +122,9 @@ def should_continue(state: List[BaseMessage]):
     return REFLECT
 ```
 
-![](img/dbc4426934a26bcd889bde19b7260a76_29.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_30.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_31.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_32.png)
 
 ## 连接节点
 现在我们需要用“边”将节点连接起来，定义消息的流动路径。
@@ -216,9 +192,7 @@ from langchain_openai import ChatOpenAI
 model = ChatOpenAI(model="gpt-4")
 ```
 
-![](img/dbc4426934a26bcd889bde19b7260a76_34.png)
 
-![](img/dbc4426934a26bcd889bde19b7260a76_35.png)
 
 ## 总结
 本节课我们一起学习了如何从零开始构建一个 LangGraph 图。我们完成了以下步骤：

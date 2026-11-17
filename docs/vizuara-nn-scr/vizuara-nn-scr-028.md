@@ -1,6 +1,5 @@
 #  028： Coded from scratch [BV1iEHPzGEpa_p28]
 
-![](img/a3a86e176edf0632d4c17c05b98d6d4e_0.png)
 
 🎼Yeah。Hello， everyone。Welcome to this video， which is titled neuralural Network from Sctch。
 

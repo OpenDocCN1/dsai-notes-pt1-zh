@@ -6,9 +6,7 @@
 
 ## 导入依赖与初始化客户端
 
-![](img/4ebc1b232250840d5203a0299863d802_1.png)
 
-![](img/4ebc1b232250840d5203a0299863d802_2.png)
 
 首先，我们需要导入必要的Python库并初始化Lorax客户端以连接到推理服务器。
 
@@ -20,7 +18,6 @@ from pydantic import BaseModel
 from lorax import Client, AsyncClient
 ```
 
-![](img/4ebc1b232250840d5203a0299863d802_4.png)
 
 初始化客户端需要提供推理服务器的端点URL和用于身份验证的请求头。
 
@@ -58,7 +55,6 @@ print(f"总耗时: {end_time - start_time:.2f} 秒")
 
 这个调用会一次性返回完整的响应。耗时包括了模型推理时间和网络延迟。
 
-![](img/4ebc1b232250840d5203a0299863d802_6.png)
 
 ---
 
@@ -69,7 +65,6 @@ print(f"总耗时: {end_time - start_time:.2f} 秒")
 我们将调用`generate_stream`端点，逐个令牌地接收响应，并记录每个令牌的生成延迟。
 
 
-![](img/4ebc1b232250840d5203a0299863d802_8.png)
 
 ```python
 from lorax.types import Response
@@ -96,19 +91,14 @@ print(f"\n\n首令牌延迟: {time_to_first_token:.3f} 秒")
 print(f"解码吞吐量: {throughput_tokens_per_sec:.1f} 令牌/秒")
 ```
 
-![](img/4ebc1b232250840d5203a0299863d802_10.png)
 
-![](img/4ebc1b232250840d5203a0299863d802_11.png)
 
-![](img/4ebc1b232250840d5203a0299863d802_13.png)
 
 运行后，你会看到令牌逐个流出。首令牌延迟（约0.5秒）明显长于后续令牌的延迟（约0.01-0.1秒），这验证了Prefill/Decode的性能差异。
 
 ---
 
-![](img/4ebc1b232250840d5203a0299863d802_15.png)
 
-![](img/4ebc1b232250840d5203a0299863d802_17.png)
 
 ## 性能优化：连续批处理
 
@@ -117,7 +107,6 @@ print(f"解码吞吐量: {throughput_tokens_per_sec:.1f} 令牌/秒")
 首先，定义一个工具函数，用不同颜色打印文本以区分不同请求的输出。
 
 
-![](img/4ebc1b232250840d5203a0299863d802_19.png)
 
 ```python
 def format_text(text, color_code):
@@ -127,12 +116,10 @@ def format_text(text, color_code):
 colors = [31, 32, 34]
 ```
 
-![](img/4ebc1b232250840d5203a0299863d802_21.png)
 
 接下来，我们使用异步客户端并发地发送三个请求。
 
 
-![](img/4ebc1b232250840d5203a0299863d802_23.png)
 
 ```python
 async def run_async_request(prompt, max_new_tokens, color_idx):
@@ -170,7 +157,6 @@ asyncio.run(main())
 
 你会看到红、绿、蓝三色文本交错出现，这表明服务器正在并发处理这些请求。所有请求的首令牌延迟相近，而生成100个令牌的请求获得了更高的吞吐量，这体现了连续批处理的优势。
 
-![](img/4ebc1b232250840d5203a0299863d802_25.png)
 
 ---
 
@@ -190,7 +176,6 @@ def run_with_adapter(prompt, adapter_id, max_new_tokens=64):
     print() # 换行
 ```
 
-![](img/4ebc1b232250840d5203a0299863d802_27.png)
 
 现在，我们可以用不同的适配器执行不同的任务。
 
@@ -211,10 +196,8 @@ run_with_adapter(prompt, adapter_id)
 
 **2. 新闻摘要任务**
 
-![](img/4ebc1b232250840d5203a0299863d802_29.png)
 
 
-![](img/4ebc1b232250840d5203a0299863d802_31.png)
 
 ```python
 prompt_template = """
@@ -229,11 +212,9 @@ adapter_id = "predibase/cnn" # 在CNN数据集上微调的摘要适配器
 run_with_adapter(prompt, adapter_id)
 ```
 
-![](img/4ebc1b232250840d5203a0299863d802_32.png)
 
 **3. 命名实体识别任务**
 
-![](img/4ebc1b232250840d5203a0299863d802_34.png)
 
 ```python
 prompt_template = """
@@ -247,28 +228,21 @@ adapter_id = "predibase/conllpp" # 在CoNLL-2003数据集上微调的NER适配�
 run_with_adapter(prompt, adapter_id)
 ```
 
-![](img/4ebc1b232250840d5203a0299863d802_36.png)
 
 每个请求都指定了不同的`adapter_id`，Lorax会在运行时动态加载对应的LoRA权重，在同一个基础模型（如Mistral 7B）上执行特定任务。
 
-![](img/4ebc1b232250840d5203a0299863d802_38.png)
 
 ---
 
-![](img/4ebc1b232250840d5203a0299863d802_40.png)
 
-![](img/4ebc1b232250840d5203a0299863d802_41.png)
 
 ## 并发多适配器推理
 
-![](img/4ebc1b232250840d5203a0299863d802_43.png)
 
-![](img/4ebc1b232250840d5203a0299863d802_44.png)
 
 更强大的是，Lorax可以同时对多个不同的适配器请求进行连续批处理。我们将并发运行上述三个任务。
 
 
-![](img/4ebc1b232250840d5203a0299863d802_46.png)
 
 ```python
 async def run_async_with_adapter(prompt, adapter_id, color_idx):
@@ -299,9 +273,7 @@ asyncio.run(main_multi_adapter())
 
 输出中，代表不同适配器的彩色文本会交织在一起，这证明Lorax成功地将三个不同微调模型的请求放入同一个批次进行并行处理。
 
-![](img/4ebc1b232250840d5203a0299863d802_48.png)
 
-![](img/4ebc1b232250840d5203a0299863d802_50.png)
 
 ---
 
@@ -312,11 +284,8 @@ asyncio.run(main_multi_adapter())
 首先，使用Pydantic定义期望的输出模式。
 
 
-![](img/4ebc1b232250840d5203a0299863d802_52.png)
 
-![](img/4ebc1b232250840d5203a0299863d802_53.png)
 
-![](img/4ebc1b232250840d5203a0299863d802_55.png)
 
 ```python
 from pydantic import BaseModel
@@ -334,13 +303,10 @@ print(json_schema)
 
 然后，在生成请求中指定`response_format`参数。
 
-![](img/4ebc1b232250840d5203a0299863d802_57.png)
 
 
-![](img/4ebc1b232250840d5203a0299863d802_59.png)
 
 
-![](img/4ebc1b232250840d5203a0299863d802_61.png)
 
 ```python
 text = "Only France and Britain backed Fischer's proposal."
@@ -358,16 +324,13 @@ except json.JSONDecodeError:
     print("输出不是有效的JSON。")
 ```
 
-![](img/4ebc1b232250840d5203a0299863d802_63.png)
 
 结构化生成能保证输出格式，但无法保证内容的正确性（例如，可能仍将“France”错误分类为“organization”）。
 
 为了同时获得正确的格式和内容，我们需要**结合微调**。
 
 
-![](img/4ebc1b232250840d5203a0299863d802_65.png)
 
-![](img/4ebc1b232250840d5203a0299863d802_66.png)
 
 ```python
 # 使用微调后的NER适配器 + 结构化生成
@@ -396,9 +359,7 @@ except json.JSONDecodeError:
 3.  **多LoRA推理**：展示了如何动态加载不同的微调适配器，并在同一批次中处理针对不同任务的请求。
 4.  **结构化生成**：探索了如何使用JSON Schema约束输出格式，并结合模型微调来确保输出内容的准确性。
 
-![](img/4ebc1b232250840d5203a0299863d802_68.png)
 
-![](img/4ebc1b232250840d5203a0299863d802_69.png)
 
 这些功能使得Lorax成为一个强大且灵活的工具，用于高效部署和服务大型语言模型。
 

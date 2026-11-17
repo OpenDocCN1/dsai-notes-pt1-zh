@@ -48,11 +48,9 @@ Scikit-Learn本身构建在NumPy之上。无论是简单项目还是复杂项目
 
 例如，当你运行一个Python脚本并希望生成图表进行可视化时，Matplotlib就是你的工具。它是一个用于创建静态、动态和交互式可视化的综合库。
 
-![](img/2fe4299e0d34742e282139e3e1a76c19_3.png)
 
 ## 环境配置与安装 ⚙️
 
-![](img/2fe4299e0d34742e282139e3e1a76c19_5.png)
 
 介绍完这些库和Jupyter Notebook后，我们将在VS Code环境中安装它们，以便我们的Python安装能够配置好这些库和Jupyter Notebook环境。
 

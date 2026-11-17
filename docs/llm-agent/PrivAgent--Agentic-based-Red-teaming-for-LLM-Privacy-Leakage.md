@@ -273,11 +273,9 @@ Yuzhou Nie¹, Zhun Wang², Ye Yu¹, Xian Wu³, Xuandong Zhao², Wenbo Guo¹, Daw
 
 ### 5.2 系统提示提取的可转移性
 
-![参见说明文字](img/2e80a912f17b3b21b81a401bd7f1bc4e.png)
 
 (a) PromptFuzz
 
-![参见说明文字](img/13f41ba0849e06136f6a32899d2cbc35.png)
 
 (b) ReAct-Leak
 

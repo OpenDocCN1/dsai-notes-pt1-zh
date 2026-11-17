@@ -2,7 +2,6 @@
 
 在本节课中，我们将学习如何使用 Hugging Face Accelerate 库来简化和加速您的 PyTorch 训练流程。Accelerate 旨在让您在各种硬件配置（如 CPU、单 GPU、多 GPU 或多台机器）上运行训练代码时，无需对核心训练循环进行大量修改。
 
-![](img/4239aa3dbfdd9db19c493b620811aed1_1.png)
 
 ## 概述：为何需要Accelerate？🤔
 
@@ -14,7 +13,6 @@ Accelerate 库的设计目标，是让您能够完全控制训练循环，同时
 
 使用 Accelerate 增强您的训练循环非常简单。以下是需要遵循的核心步骤：
 
-![](img/4239aa3dbfdd9db19c493b620811aed1_3.png)
 
 首先，您需要导入并实例化 `Accelerator` 对象。这个对象会自动检测您的训练环境并进行相应配置。
 
@@ -25,7 +23,6 @@ accelerator = Accelerator()
 
 接下来，使用 `accelerator.prepare()` 方法准备您的模型、优化器、数据加载器等组件。该方法会处理将模型放置到正确设备（如 GPU）等细节。
 
-![](img/4239aa3dbfdd9db19c493b620811aed1_5.png)
 
 ```python
 model, optimizer, train_dataloader = accelerator.prepare(model, optimizer, train_dataloader)
@@ -59,7 +56,6 @@ all_preds, all_labels = accelerator.gather_for_metrics((predictions, labels))
 
 ## 启动分布式训练脚本 🚀
 
-![](img/4239aa3dbfdd9db19c493b620811aed1_7.png)
 
 分布式训练脚本需要在多个进程上启动，例如为每个使用的 GPU 启动一个进程。虽然可以使用 PyTorch 原生的分布式工具，但 Accelerate 提供了更简单的 API。
 

@@ -4,11 +4,9 @@
 
 在本节课中，我们将学习如何设置与设备无关的代码，以便无论你的系统使用 CPU 还是 GPU，PyTorch 都能利用相应的硬件进行计算。我们还将检查 GPU 的可用性，并准备在 GPU 上运行一个包含非线性激活函数的模型。
 
-![](img/dc0cec88e0cd515c9dd232f919294ae6_2.png)
 
 ---
 
-![](img/dc0cec88e0cd515c9dd232f919294ae6_3.png)
 
 ## 检查 GPU 可用性
 
@@ -19,7 +17,6 @@
 以下是检查 GPU 是否可用的方法：
 
 
-![](img/dc0cec88e0cd515c9dd232f919294ae6_5.png)
 
 ```python
 import torch
@@ -27,7 +24,6 @@ import torch
 torch.cuda.is_available()
 ```
 
-![](img/dc0cec88e0cd515c9dd232f919294ae6_6.png)
 
 如果上述代码返回 `True`，则表示有可用的 GPU。否则，我们需要在 Google Colab 的运行时设置中选择 GPU 并重启环境。
 

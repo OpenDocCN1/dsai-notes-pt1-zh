@@ -32,9 +32,7 @@ simple_transform = transforms.Compose([
 接下来，我们使用 `ImageFolder` 类加载数据，并将其转换为 `DataLoader`，以便进行批处理。
 
 
-![](img/acb015609dcf7347e5864c619069e7ce_2.png)
 
-![](img/acb015609dcf7347e5864c619069e7ce_4.png)
 
 ```python
 import os

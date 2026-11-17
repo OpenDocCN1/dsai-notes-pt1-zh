@@ -1,6 +1,5 @@
 # 017：17_02_07_不同数据视角.zh_en - GPT中英字幕课程资源 - BV19m4y1J7dG
 
-![](img/b40a72badae7749e17aac06026db8e12_0.png)
 
 ![](img/b40a72badae7749e17aac06026db8e12_0.png)
 

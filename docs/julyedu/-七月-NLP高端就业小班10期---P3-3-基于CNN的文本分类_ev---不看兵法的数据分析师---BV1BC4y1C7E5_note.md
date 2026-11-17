@@ -1,10 +1,7 @@
 # 📘 课程名称：NLP高端就业小班10期 - P3：基于CNN的文本分类
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_0.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_2.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_4.png)
 
 ## 📋 课程概述
 在本节课中，我们将学习如何使用卷积神经网络（CNN）来处理自然语言处理（NLP）任务。课程内容分为四个部分：首先，我们将补充讲解Transformer模型的剩余部分；其次，分享一些阅读学术论文的建议；然后，深入探讨CNN的基本概念及其在文本处理中的应用；最后，我们将通过代码实践，复现一个基于CNN的文本分类模型。
@@ -34,9 +31,7 @@ y = (x - μ) / √(σ² + ε) * γ + β
 
 ![](img/4a91a162bd37b85e8f70afa9e73bd282_6.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_8.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_10.png)
 
 ![](img/4a91a162bd37b85e8f70afa9e73bd282_12.png)
 
@@ -68,20 +63,15 @@ masked_scores = attention_scores.masked_fill(mask == 0, -1e9)
 ## 📚 第二部分：阅读学术论文的建议
 在深入学习NLP的过程中，阅读原论文是理解模型细节和思想的重要途径。以下是一些阅读论文的建议。
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_16.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_18.png)
 
 ### 如何查找论文
 - 关注学术资讯网站，如知乎、公众号、CSDN等。
 - 使用专业论文网站，如Paper Weekly、Papers with Code。
 - 利用论文管理工具，如ReadPaper，方便管理和阅读论文。
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_20.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_22.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_24.png)
 
 ### 阅读论文的顺序
 1. **阅读摘要和简介**：快速了解论文的主要内容和贡献。
@@ -89,7 +79,6 @@ masked_scores = attention_scores.masked_fill(mask == 0, -1e9)
 3. **查看实验部分**：关注实验结果和消融实验，了解模型的性能。
 4. **复现代码**：如果有开源代码，可以结合代码进一步理解论文。
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_26.png)
 
 ![](img/4a91a162bd37b85e8f70afa9e73bd282_28.png)
 
@@ -104,41 +93,27 @@ masked_scores = attention_scores.masked_fill(mask == 0, -1e9)
 
 ![](img/4a91a162bd37b85e8f70afa9e73bd282_34.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_36.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_38.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_40.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_42.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_44.png)
 
 ---
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_46.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_48.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_50.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_52.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_54.png)
 
 ## 🧠 第三部分：卷积神经网络（CNN）基础
 上一节我们介绍了Transformer模型，本节中我们来看看卷积神经网络（CNN）及其在文本处理中的应用。
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_56.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_58.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_60.png)
 
 ### 什么是卷积？
 卷积是一种数学运算，用于提取局部特征。在图像处理中，卷积通过滑动窗口对局部区域进行加权求和，从而提取特征。
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_62.png)
 
 **离散卷积公式**：
 ```
@@ -146,7 +121,6 @@ masked_scores = attention_scores.masked_fill(mask == 0, -1e9)
 ```
 其中，`f` 和 `g` 是两个函数，`n` 是索引。
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_64.png)
 
 ### 卷积神经网络（CNN）
 CNN通过卷积核提取输入数据的局部特征，并通过反向传播更新卷积核的权重。在文本处理中，卷积核的第一个维度表示短语的长度，第二个维度与词向量的维度保持一致。
@@ -198,7 +172,6 @@ TextCNN使用多种不同大小的卷积核提取文本特征，然后通过池�
 ### PyTorch实现TextCNN
 以下是TextCNN的PyTorch实现代码：
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_66.png)
 
 ![](img/4a91a162bd37b85e8f70afa9e73bd282_68.png)
 
@@ -250,9 +223,7 @@ class TextCNN(nn.Module):
 
 ![](img/4a91a162bd37b85e8f70afa9e73bd282_83.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_85.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_87.png)
 
 ![](img/4a91a162bd37b85e8f70afa9e73bd282_89.png)
 
@@ -267,9 +238,7 @@ class TextCNN(nn.Module):
 3. **卷积神经网络（CNN）基础**：卷积的概念、CNN在文本处理中的应用以及相关操作（如填充、步长、池化）。
 4. **TextCNN模型实现**：使用PyTorch实现一个基于CNN的文本分类模型。
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_93.png)
 
-![](img/4a91a162bd37b85e8f70afa9e73bd282_95.png)
 
 ![](img/4a91a162bd37b85e8f70afa9e73bd282_97.png)
 

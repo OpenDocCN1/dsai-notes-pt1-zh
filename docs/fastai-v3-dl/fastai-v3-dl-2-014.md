@@ -139,11 +139,9 @@ class TrainCB(Callback):
 
 ![](img/34b01aaee34eda084bd1c25e9bd496ea_6.png)
 
-![](img/34b01aaee34eda084bd1c25e9bd496ea_8.png)
 
 这个技巧的核心是创建一个包装器数据加载器，它在每次迭代时从原始数据加载器中获取一个批次，然后将这个批次重复输出多次（例如两次）。这意味着每个训练周期（epoch）的长度会翻倍，但数据加载和增强的操作次数保持不变。
 
-![](img/34b01aaee34eda084bd1c25e9bd496ea_10.png)
 
 **代码示例：批次重复数据加载器**
 ```python
@@ -195,9 +193,7 @@ PerceptualLoss(I_gen, I_target) = Σ_i || φ_i(I_gen) - φ_i(I_target) ||^2
 ```
 其中，`φ_i` 表示预训练网络第 `i` 层的激活特征图。
 
-![](img/34b01aaee34eda084bd1c25e9bd496ea_15.png)
 
-![](img/34b01aaee34eda084bd1c25e9bd496ea_17.png)
 
 通过优化感知损失，我们可以生成在语义结构上与目标图像相似，但不必在像素级别完全一致的图像。选择不同的层（浅层或深层）可以控制我们对细节或整体结构的关注程度。
 
@@ -214,7 +210,6 @@ G = F * F^T
 
 ![](img/34b01aaee34eda084bd1c25e9bd496ea_19.png)
 
-![](img/34b01aaee34eda084bd1c25e9bd496ea_20.png)
 
 ### 完整的风格迁移
 完整的风格迁移损失是内容损失和风格损失的加权和：
@@ -223,13 +218,10 @@ TotalLoss = α * ContentLoss(I_gen, I_content) + β * StyleLoss(I_gen, I_style)
 ```
 其中，`ContentLoss` 通常使用深层特征的感知损失，`StyleLoss` 是多个层（通常是浅层和中间层）的格拉姆矩阵损失之和。通过调整 `α` 和 `β`，我们可以控制最终输出中内容与风格的比重。
 
-![](img/34b01aaee34eda084bd1c25e9bd496ea_22.png)
 
 优化过程从内容图像（或随机噪声）开始，通过梯度下降不断调整像素值，以最小化这个总损失，最终得到既保留内容结构又具有目标风格的新图像。
 
-![](img/34b01aaee34eda084bd1c25e9bd496ea_24.png)
 
-![](img/34b01aaee34eda084bd1c25e9bd496ea_25.png)
 
 ---
 

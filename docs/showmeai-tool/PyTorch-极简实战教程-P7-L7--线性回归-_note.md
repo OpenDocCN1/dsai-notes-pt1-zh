@@ -10,19 +10,15 @@
 
 以下是数据准备的具体步骤：
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_1.png)
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_2.png)
 
 1.  导入必要的库。
 2.  使用 `sklearn.datasets.make_regression` 生成包含 100 个样本、1 个特征的数据集。
 3.  将生成的 NumPy 数组转换为 `torch.Tensor`，并确保数据类型为 `float32`。
 4.  调整标签 `y` 的形状，使其成为一个列向量。
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_3.png)
 
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_5.png)
 
 ```python
 import torch
@@ -43,21 +39,17 @@ y = y.view(y.shape[0], 1)
 n_samples, n_features = x.shape
 ```
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_6.png)
 
 ---
 
 ## 步骤 1：设计模型 🏗️
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_8.png)
 
 上一节我们准备好了数据，本节中我们来看看如何设计模型。对于线性回归，模型非常简单，就是一个线性层。
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_10.png)
 
 我们可以直接使用 PyTorch 内置的 `nn.Linear` 模块来定义我们的模型。该模块需要指定输入特征的数量和输出特征的数量。
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_12.png)
 
 ```python
 # 定义模型
@@ -70,19 +62,14 @@ model = nn.Linear(input_size, output_size)
 
 ## 步骤 2：定义损失函数与优化器 ⚙️
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_14.png)
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_15.png)
 
 模型设计完成后，我们需要定义衡量模型预测好坏的损失函数，以及用于更新模型参数的优化器。
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_16.png)
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_18.png)
 
 在线性回归任务中，我们通常使用**均方误差（MSE）**作为损失函数。对于优化器，我们选择**随机梯度下降（SGD）**。
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_20.png)
 
 ```python
 # 定义损失函数和优化器
@@ -91,25 +78,19 @@ learning_rate = 0.01
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)  # 随机梯度下降优化器
 ```
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_22.png)
 
 ---
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_23.png)
 
 ## 步骤 3：训练循环 🔄
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_25.png)
 
 现在，我们进入核心的训练环节。训练循环将重复执行前向传播、计算损失、反向传播和参数更新这几个步骤。
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_27.png)
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_29.png)
 
 以下是训练循环的详细步骤：
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_31.png)
 
 1.  设置训练轮数（epochs）。
 2.  在每一轮中：
@@ -142,9 +123,7 @@ for epoch in range(num_epochs):
         print(f‘epoch: {epoch+1}, loss = {loss.item():.4f}’)
 ```
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_33.png)
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_34.png)
 
 ---
 
@@ -164,11 +143,9 @@ plt.legend()
 plt.show()
 ```
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_36.png)
 
 运行上述代码后，你将看到一条蓝色的直线拟合了红色的原始数据点，这表明我们的线性回归模型成功地学习了数据中的线性关系。
 
-![](img/ad2afccfb99dbe5b3a127586f9ddc4a3_38.png)
 
 ---
 

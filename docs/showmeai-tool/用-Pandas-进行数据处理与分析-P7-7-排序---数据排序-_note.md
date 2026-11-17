@@ -121,21 +121,16 @@ top_10_rows = df_survey.nlargest(10, 'ConvertedComp')
 print(top_10_rows)
 ```
 
-![](img/a47f317bd08c26ae1893e4491987efd6_1.png)
 
 ### 3.2 获取最小的 N 个值
 
 ![](img/a47f317bd08c26ae1893e4491987efd6_2.png)
 
-![](img/a47f317bd08c26ae1893e4491987efd6_3.png)
 
-![](img/a47f317bd08c26ae1893e4491987efd6_4.png)
 
 相应地，使用 `nsmallest()` 方法可以快速获取最小的 N 个值。
 
-![](img/a47f317bd08c26ae1893e4491987efd6_5.png)
 
-![](img/a47f317bd08c26ae1893e4491987efd6_6.png)
 
 ```python
 # 获取‘ConvertedComp’列中最小的10个值

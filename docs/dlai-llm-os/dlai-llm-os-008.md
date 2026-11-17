@@ -12,7 +12,6 @@
 
 我们期待看到你独立构建出的成果。
 
-![](img/ebec98f8fc0289e67d7adff94aba4baa_1.png)
 
 ---
 

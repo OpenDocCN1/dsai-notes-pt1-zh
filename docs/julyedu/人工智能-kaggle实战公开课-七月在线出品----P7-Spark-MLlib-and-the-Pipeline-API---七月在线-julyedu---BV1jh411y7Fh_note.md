@@ -1,10 +1,8 @@
 # 人工智能—Kaggle实战公开课（七月在线出品） - P7：Spark MLlib 与 Pipeline API 🚀
 
-![](img/c90fb486c97a503b816c8eaf199822cd_1.png)
 
 在本节课中，我们将学习如何利用 Spark MLlib 及其 Pipeline API 来处理海量数据，从而避免因采样而丢失信息。我们将重点介绍数据处理流程、特征工程以及如何在分布式环境中构建和评估模型。
 
-![](img/c90fb486c97a503b816c8eaf199822cd_3.png)
 
 ---
 
@@ -111,11 +109,9 @@ pipeline = Pipeline(stages=[indexer, encoder, assembler, lr])
 model = pipeline.fit(df)
 ```
 
-![](img/c90fb486c97a503b816c8eaf199822cd_5.png)
 
 ### 4. 模型评估与工业界实践
 
-![](img/c90fb486c97a503b816c8eaf199822cd_7.png)
 
 模型训练完成后，需要进行评估。在点击率预估等任务中，**AUC** 是一个关键指标，它是 **ROC 曲线** 下的面积。
 

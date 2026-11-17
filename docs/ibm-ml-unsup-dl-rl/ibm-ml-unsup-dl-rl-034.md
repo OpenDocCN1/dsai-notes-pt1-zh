@@ -24,7 +24,6 @@ So it will end up not changing the space， but in general。
 
 
 
-![](img/3e25e9a143eeacef2e80db98f26496fd_1.png)
 
 So if you recall our discussion during support vector machines。
 
@@ -48,7 +47,6 @@ So here we see from that original space that we saw earlier using kernel PCA pro
 
  in the figure here on the left。
 
-![](img/3e25e9a143eeacef2e80db98f26496fd_3.png)
 
 We're going to be applying PCA directly and we see this curvature in our data。
 
@@ -60,7 +58,6 @@ So instead， we apply this kernel。Which will map our data to a linear space�
 
 
 
-![](img/3e25e9a143eeacef2e80db98f26496fd_5.png)
 
 So how do we actually perform kernel PCA using Python。
 
@@ -68,7 +65,6 @@ So how do we actually perform kernel PCA using Python。
 
 
 
-![](img/3e25e9a143eeacef2e80db98f26496fd_7.png)
 
 Once we import from SKAle。 decomposition the kernel PCA， we then initiate our class。
 
@@ -80,13 +76,11 @@ As well as choosing the gamma and if you recall the gamma will identify how curv
 
 
 
-![](img/3e25e9a143eeacef2e80db98f26496fd_9.png)
 
 And then same as working with just PCA， we can call that object the dot pit transformform on our data set and we have our transform data set using the kernel PCA。
 
 
 
-![](img/3e25e9a143eeacef2e80db98f26496fd_11.png)
 
 Now let's talk briefly about manifold learning。There is going to be another class of nonlinear dimensionality reduction。
 
@@ -104,7 +98,6 @@ So the figure on the left is supposed to be a sphere in three dimensions。And u
 
 
 
-![](img/3e25e9a143eeacef2e80db98f26496fd_13.png)
 
 Now， in order to run MDS within Python， we are going to import the class containing dimensionality reduction method。
 
@@ -132,6 +125,5 @@ Now that closes out our discussion here in regards to principle component analys
 
 
 
-![](img/3e25e9a143eeacef2e80db98f26496fd_15.png)
 
 ![](img/3e25e9a143eeacef2e80db98f26496fd_16.png)

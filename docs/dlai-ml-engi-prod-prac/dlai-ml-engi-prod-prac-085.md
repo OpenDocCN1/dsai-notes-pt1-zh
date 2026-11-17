@@ -2,7 +2,6 @@
 
 ![](img/3c7951bb900db097369ed40727462f06_0.png)
 
-![](img/3c7951bb900db097369ed40727462f06_2.png)
 
 在本节课中，我们将学习如何利用云服务来轻松实现 AutoML。我们将回顾三种主流的云端 AutoML 产品：Amazon SageMaker Autopilot、Microsoft Azure Automated Machine Learning 和 Google Cloud AutoML。课程最后，你将通过练习使用 Google Cloud AutoML 来训练一个模型。
 

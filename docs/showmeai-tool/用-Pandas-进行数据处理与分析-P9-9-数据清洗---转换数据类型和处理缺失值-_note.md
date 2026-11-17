@@ -90,9 +90,7 @@ df.dtypes
 
 使用 `.astype()` 方法转换列的类型。**注意**：如果列中包含 `NaN` 值，则不能直接转换为整数 (`int`)，因为 `NaN` 是浮点类型。此时应转换为浮点数 (`float`)。
 
-![](img/f3f6adee5351ab52b6113da712018c15_1.png)
 
-![](img/f3f6adee5351ab52b6113da712018c15_2.png)
 
 ```python
 # 尝试转换为整数（若存在 NaN 会报错）
@@ -154,17 +152,12 @@ print(f"编程年限中位数: {median_years} 年")
 
 通过这个例子，我们可以看到数据清洗和类型转换是获得准确分析结果的关键步骤。
 
-![](img/f3f6adee5351ab52b6113da712018c15_7.png)
 
 ---
 
-![](img/f3f6adee5351ab52b6113da712018c15_8.png)
 
-![](img/f3f6adee5351ab52b6113da712018c15_9.png)
 
-![](img/f3f6adee5351ab52b6113da712018c15_10.png)
 
-![](img/f3f6adee5351ab52b6113da712018c15_11.png)
 
 ## 📝 总结
 

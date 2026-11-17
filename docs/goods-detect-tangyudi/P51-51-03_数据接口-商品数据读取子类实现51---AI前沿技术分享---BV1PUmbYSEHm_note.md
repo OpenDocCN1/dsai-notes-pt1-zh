@@ -10,7 +10,6 @@
 
 ![](img/114e77440eefccefc5f38fd7674e454b_6.png)
 
-![](img/114e77440eefccefc5f38fd7674e454b_8.png)
 
 ---
 
@@ -51,7 +50,6 @@ from datasets.dataset import Dataset
 
 然后，我们定义一个继承自 `Dataset` 基类的子类。
 
-![](img/114e77440eefccefc5f38fd7674e454b_16.png)
 
 ```python
 class CommodityTfrecord(Dataset):
@@ -77,11 +75,9 @@ class CommodityTfrecord(Dataset):
 
 ![](img/114e77440eefccefc5f38fd7674e454b_24.png)
 
-![](img/114e77440eefccefc5f38fd7674e454b_26.png)
 
 关键点在于，这些原本硬编码在方法内的属性（如文件匹配模式 `fpattern`、样本数 `nsamples`、类别数 `num_classes`），现在应该从传入的 `param` 配置参数中动态获取。
 
-![](img/114e77440eefccefc5f38fd7674e454b_28.png)
 
 ![](img/114e77440eefccefc5f38fd7674e454b_30.png)
 

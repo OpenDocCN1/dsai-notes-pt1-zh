@@ -16,9 +16,7 @@
 
 首先，我们需要设定正态分布的参数。根据历史数据，我们得知竞争对手的钻石价格大致围绕一个均值波动，且标准差已知。
 
-![](img/1342656f97f5dd06caa91ba8d0b8b895_1.png)
 
-![](img/1342656f97f5dd06caa91ba8d0b8b895_2.png)
 
 - **均值（Mean）**：$3932
 - **标准差（Standard Deviation）**：$750
@@ -27,12 +25,10 @@
 
 ### 2. 生成随机样本
 
-![](img/1342656f97f5dd06caa91ba8d0b8b895_4.png)
 
 使用NumPy的`random.normal`函数从正态分布中生成随机样本。该函数需要三个主要参数：`loc`（均值）、`scale`（标准差）和`size`（样本大小）。
 
 
-![](img/1342656f97f5dd06caa91ba8d0b8b895_6.png)
 
 ```python
 import numpy as np
@@ -62,13 +58,10 @@ margin_of_error = z_value * (std_dev / np.sqrt(sample_size))
 confidence_interval = (sample_mean - margin_of_error, sample_mean + margin_of_error)
 ```
 
-![](img/1342656f97f5dd06caa91ba8d0b8b895_8.png)
 
 ### 4. 重复模拟
 
-![](img/1342656f97f5dd06caa91ba8d0b8b895_9.png)
 
-![](img/1342656f97f5dd06caa91ba8d0b8b895_10.png)
 
 为了获得更可靠的结果，我们可以重复上述过程多次，例如1000次，并统计有多少次置信区间包含了真实的均值。
 
@@ -89,7 +82,6 @@ print(f"包含真实均值的区间数量: {contains_mean}")
 print(f"不包含真实均值的区间数量: {num_simulations - contains_mean}")
 ```
 
-![](img/1342656f97f5dd06caa91ba8d0b8b895_12.png)
 
 ![](img/1342656f97f5dd06caa91ba8d0b8b895_13.png)
 

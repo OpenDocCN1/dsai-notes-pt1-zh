@@ -242,7 +242,6 @@ messages = [{“role“: “user“, “content“: user_message}]
 
 ## 总结
 
-![](img/b5310884afc4d6a8eff6fced6b259846_1.png)
 
 ![](img/b5310884afc4d6a8eff6fced6b259846_2.png)
 

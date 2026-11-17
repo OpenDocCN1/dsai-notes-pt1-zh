@@ -20,12 +20,10 @@
 ## 实验步骤详解
 以下是构建仪表盘的核心步骤。
 
-![](img/9a625cea5a31ec3d46ceb359c08cfcd6_1.png)
 
 ### 第一步：连接数据源并加载数据
 首先，连接 Snowflake 并加载数据。使用您现有的、结合了客户评论的数据集。
 
-![](img/9a625cea5a31ec3d46ceb359c08cfcd6_2.png)
 
 您可以向 GenAI 提问，例如：
 > 请编写 Python 代码来连接 Snowflake，并将包含情感分析的评论表加载到 Pandas DataFrame 中。

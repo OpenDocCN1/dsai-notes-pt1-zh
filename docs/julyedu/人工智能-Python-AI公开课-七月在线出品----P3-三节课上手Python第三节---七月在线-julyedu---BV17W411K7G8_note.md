@@ -1,8 +1,6 @@
 # 人工智能—Python AI公开课（七月在线出品） - P3：三节课上手Python第三节 🧮
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_0.png)
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_2.png)
 
 在本节课中，我们将要学习Python科学计算的核心库NumPy和Pandas的简介，并重点使用NumPy来计算一个Softmax函数。我们将从NumPy的基础概念讲起，逐步深入到数组操作和运算，最后通过一个实践项目来巩固所学知识。
 
@@ -16,9 +14,7 @@
 
 NumPy是“Numerical Python”的缩写，它是Python科学计算的基础包，提供了一个强大的N维数组对象`ndarray`，以及大量的数学函数。
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_4.png)
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_5.png)
 
 要使用NumPy，我们首先需要导入它。通常，我们为其设置一个简短的别名`np`，以方便后续调用。
 
@@ -85,9 +81,7 @@ print(arr2d)
 NumPy提供了多种快速创建特殊数组的函数。
 
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_7.png)
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_8.png)
 
 ```python
 # 生成指定形状的随机数组
@@ -165,11 +159,8 @@ print(arr[5:])       # 输出：[5 6 7 8 9]
 对于多维数组，使用逗号`,`分隔不同维度的索引。
 
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_18.png)
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_19.png)
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_20.png)
 
 ```python
 arr_2d = np.arange(15).reshape(3, 5) # 将0-14重组成3行5列
@@ -222,14 +213,12 @@ print(arr[mask])  # 输出：[3 4 5]
 
 掌握了访问方法，赋值操作自然也就明白了，只需在等号左边指定索引位置即可。
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_22.png)
 
 ```python
 arr_2d[0, 0] = 99
 print(arr_2d[0, 0])  # 输出：99
 ```
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_24.png)
 
 ## 第六部分：ndarray的维度操作
 
@@ -249,7 +238,6 @@ print(arr.shape)           # 输出：(30,) 原数组未变
 直接修改数组的`shape`属性或使用`resize`方法会**改变原数组**。
 
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_26.png)
 
 ```python
 arr = np.arange(30)
@@ -261,7 +249,6 @@ arr.resize((5, 6))
 print(arr.shape)    # 输出：(5, 6)
 ```
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_28.png)
 
 **3. `flatten`或`ravel`方法**
 将多维数组“展平”为一维数组。`flatten`返回拷贝，`ravel`返回视图。
@@ -280,7 +267,6 @@ print(arr_flat)  # 输出：[ 0  1  2  3  4  5  6  7  8  9 10 11]
 
 NumPy的强大之处在于其高效的数组运算能力。
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_34.png)
 
 **1. 元素级运算（广播机制）**
 数组与标量之间的运算，会被广播到数组的每个元素上。
@@ -294,7 +280,6 @@ print(arr ** 2)  # 输出：[1 4 9]
 
 两个形状**相同**的数组之间的运算，也是对应位置的元素进行运算。
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_36.png)
 
 ```python
 a = np.array([1, 2, 3])
@@ -303,7 +288,6 @@ print(a + b)  # 输出：[5 7 9]
 print(a * b)  # 输出：[4 10 18]
 ```
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_38.png)
 
 **2. 矩阵乘法（点积）**
 使用`np.dot()`函数或`@`运算符进行矩阵乘法。这要求第一个数组的列数等于第二个数组的行数。
@@ -320,7 +304,6 @@ print(C.shape)  # 输出：(5, 2)
 **3. 通用函数（ufunc）**
 NumPy提供了许多对数组执行元素级运算的通用函数，如`np.sin`, `np.exp`, `np.log`等。
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_40.png)
 
 ```python
 arr = np.array([0, np.pi/2, np.pi])
@@ -332,20 +315,16 @@ print(np.sin(arr))  # 输出：[0.0000000e+00 1.0000000e+00 1.2246468e-16]
 **4. 聚合函数**
 沿指定轴（维度）进行统计计算，如求和、求均值、最大值、最小值等。
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_43.png)
 
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_45.png)
 
 
 ![](img/a79305cd5f95cc3ad6cdf604ba8828e8_47.png)
 
 ![](img/a79305cd5f95cc3ad6cdf604ba8828e8_48.png)
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_49.png)
 
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_51.png)
 
 ```python
 arr = np.arange(15).reshape(3, 5)
@@ -366,7 +345,6 @@ print(np.max(arr))           # 输出：14
 print(np.max(arr, axis=0))   # 输出：[10 11 12 13 14]
 ```
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_53.png)
 
 参数`axis`是关键：`axis=0`表示沿着第0轴（行方向）操作，结果数组的该维度会被“压缩”掉；`axis=1`表示沿着第1轴（列方向）操作。
 
@@ -377,11 +355,9 @@ print(np.max(arr, axis=0))   # 输出：[10 11 12 13 14]
 Softmax的公式为：
 **`S(x_i) = exp(x_i) / Σ(exp(x_j))`**，其中`j`遍历所有元素。
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_55.png)
 
 以下是实现步骤：
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_57.png)
 
 1.  给定一个输入数组（可能包含正负数）。
 2.  对每个元素求指数（`np.exp`），确保所有值为正。
@@ -389,9 +365,7 @@ Softmax的公式为：
 4.  将每个指数值除以总和，得到概率。
 
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_59.png)
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_60.png)
 
 ```python
 def softmax(x):
@@ -419,9 +393,7 @@ print(“每行概率和:”, np.sum(probs, axis=1))  # 每行和都应接近1
 
 本节课中我们一起学习了Python科学计算的核心库NumPy。我们从理解为什么需要NumPy开始，逐步掌握了`ndarray`数组的构建、属性查看、索引切片、维度变换以及各种数学运算。最后，我们通过实现Softmax函数将理论知识应用于实践。
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_62.png)
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_63.png)
 
 **本节课核心要点总结：**
 1.  NumPy的`ndarray`对象是高效数值计算的基础。
@@ -437,7 +409,6 @@ print(“每行概率和:”, np.sum(probs, axis=1))  # 每行和都应接近1
 2.  对二维输入，确保对**每一行**独立计算概率分布（即`axis=1`）。
 3.  生成一些随机测试数据（包括正负数），验证你的函数输出概率和为1。
 
-![](img/a79305cd5f95cc3ad6cdf604ba8828e8_65.png)
 
 通过完成这个作业，你将能巩固本节课关于NumPy数组操作和运算的所有关键知识。科学计算是数据科学和人工智能的基石，熟练掌握NumPy将为你的后续学习铺平道路。
 

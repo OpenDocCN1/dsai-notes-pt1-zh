@@ -1,6 +1,5 @@
 # 16：使用 NOAA 开放数据与 Jupyter Notebook 构建天气应用 🌤️
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_1.png)
 
 在本节课中，我们将学习如何利用一系列国际数据标准和网络服务，通过 Python 和 Jupyter Notebook 高效地获取、处理并可视化气象与海洋数据。我们将构建一个能够自动获取数据并生成交互式图表的简易应用。
 
@@ -8,15 +7,12 @@
 
 ## 概述：数据标准与网络服务
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_3.png)
 
 上一节我们介绍了课程目标，本节中我们来看看支撑整个应用的数据基础。为了高效地共享和使用科学数据，社区采用了一系列国际标准。
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_5.png)
 
 这些标准由开放地理空间联盟和 ISO 等组织制定。其核心目标是避免定制化解决方案，并尽可能在数据提供方层面实现标准化。
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_7.png)
 
 数据流动模型很简单：
 1.  人们运行数值模型或收集观测数据。
@@ -24,7 +20,6 @@
 3.  数据通过网络服务发布。
 4.  最终用户可以直接使用数据。
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_9.png)
 
 ---
 
@@ -32,7 +27,6 @@
 
 以下是几种关键的网络服务类型，每种服务于不同的数据类型。
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_11.png)
 
 ### 1. 传感器观测服务
 
@@ -43,14 +37,12 @@
 *   `DescribeSensor`：描述仪器。
 *   `GetObservation`：获取数据。
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_15.png)
 
 一个典型的 SOS 服务 URL 结构如下：
 ```
 http://server.com/sos?service=SOS&request=GetObservation&offering=STATION_ID
 ```
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_17.png)
 
 我们可以用 Python 轻松访问。例如，使用 `pandas` 读取 CSV 格式的数据：
 
@@ -69,13 +61,11 @@ data = pd.read_csv(url)
 
 ### 2. 网络地图服务
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_22.png)
 
 ![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_24.png)
 
 网络地图服务用于提供地理配准的图像数据，如卫星云图。它同样遵循 OGC 标准。
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_26.png)
 
 ![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_28.png)
 
@@ -84,7 +74,6 @@ data = pd.read_csv(url)
 http://mapserver.com/wms?LAYERS=sst&TIME=2023-01-01/2023-01-02&BBOX=-180,-90,180,90
 ```
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_29.png)
 
 使用此服务，我们可以轻松获取指定时间和区域的底图，并与其他数据（如台风路径）叠加，创建丰富的可视化效果。
 
@@ -102,7 +91,6 @@ ERDDAP 的核心优势在于其 RESTful API 和服务器端的数据切片功能
 
 ![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_33.png)
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_35.png)
 
 ```python
 base_url = "http://erddap.example.com/erddap/tabledap/"
@@ -114,23 +102,17 @@ df = pd.read_csv(data_url)
 ```
 ERDDAP 还提供了便捷方法，如 `to_pandas`，可以更直接地将数据转换为 DataFrame。
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_37.png)
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_39.png)
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_41.png)
 
 ---
 
 ## 统一入口：数据目录
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_43.png)
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_45.png)
 
 之前我们分别介绍了不同的服务，但每个服务都需要特定的端点地址。如何管理这些分散的端点呢？答案是通过数据目录。
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_47.png)
 
 我们使用 **pygeoapi** 目录作为统一入口。它将所有服务的端点注册到一个地方，用户无需记住每个服务的具体地址。
 
@@ -158,11 +140,9 @@ filter_dict = {
 
 ---
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_53.png)
 
 ## 实战：构建一个台风数据应用 🌀
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_55.png)
 
 现在，让我们将以上所有部分结合起来，构建一个实际的应用。这个应用仅需一个台风编号，就能自动获取并可视化相关数据。
 
@@ -191,22 +171,17 @@ hurricane_id = 'AL152023'
 
 ## 进阶：创建交互式应用界面
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_61.png)
 
 我们可以利用 Jupyter Widgets 和 Binder，将 Notebook 变成一个交互式应用界面。
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_63.png)
 
 例如，创建一个下拉菜单选择观测站，一个按钮选择变量，然后动态更新图表。对于不了解背后技术的用户来说，这就像一个专业的仪表盘应用。
 
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_65.png)
 
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_67.png)
 
 
-![](img/80ebbbc9f9e83ed9d1f30f1151a7aeba_69.png)
 
 ```python
 import ipywidgets as widgets

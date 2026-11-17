@@ -14,9 +14,7 @@
 
 如果我们查看`transforms`的图示，可以看到许多不同的方法：`Resize`可以改变图像尺寸，`CenterCrop`和`FiveCrop`可以进行裁剪，`Grayscale`可以转换色彩，还有各种随机变换，如`RandomRotation`、`RandomAffine`和`RandomCrop`等。实际上，我鼓励你亲自查看所有可用的选项。
 
-![](img/abc2badd8713baf862fe95b0edadf8ff_2.png)
 
-![](img/abc2badd8713baf862fe95b0edadf8ff_4.png)
 
 但请注意，这里还有`AutoAugment`和`RandomAugment`。这正是我之前提到的**数据增强**。你注意到原始图像是如何以不同方式被增强的吗？图像被人为地改变：轻微旋转、变暗或变亮、向上平移，或者颜色发生改变。这个过程就是数据增强。
 
@@ -113,7 +111,6 @@ plot_transformed_images(
 
 再看另一组三张图像：这张看起来被切掉了一点；那张颜色又以某种方式改变了；另一张变暗了。
 
-![](img/abc2badd8713baf862fe95b0edadf8ff_10.png)
 
 你看到我们是如何人为地为训练数据集增加多样性的吗？我们不再让所有图像都保持单一视角，而是添加了许多不同的角度，并告诉模型：“即使图像被处理过，你也必须尝试学习这些模式。”
 

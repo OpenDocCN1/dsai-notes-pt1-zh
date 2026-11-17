@@ -1,6 +1,5 @@
 # TensorFlow 教程 P5：L5 - 使用 L2 和 Dropout 添加正则化 🛡️
 
-![](img/570e3ea35b4bc49b2e498554cbeaea7c_0.png)
 
 ![](img/570e3ea35b4bc49b2e498554cbeaea7c_0.png)
 
@@ -80,7 +79,6 @@ x = layers.Dense(num_classes, activation='softmax')(x)
 
 训练完成后，我们观察到训练准确率约为82%，测试集准确率约为74.5%。与上一个视频的结果（训练准确率93%，测试准确率72%）相比，虽然训练准确率有所下降，但训练准确率与测试准确率之间的差距显著缩小。这表明模型的泛化能力得到了改善，过拟合现象减轻。
 
-![](img/570e3ea35b4bc49b2e498554cbeaea7c_2.png)
 
 ## 总结
 

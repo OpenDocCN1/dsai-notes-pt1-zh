@@ -12,7 +12,6 @@ As well as understanding some guiding principles in regards to fine tuning our t
 
 
 
-![](img/fce5fc2aa849c1041f7e8bef7765e28e_1.png)
 
 Now， generally speaking， the earlier we are within our neural network。
 
@@ -32,7 +31,6 @@ And we think back to past lectures。Those earlier layers are meant to represent
 
  such as say an edge。
 
-![](img/fce5fc2aa849c1041f7e8bef7765e28e_3.png)
 
 Now， our later layers， on the other hand， are going to be capturing those features that are particular to these specific images in our data set。
 
@@ -78,7 +76,6 @@ And this concept。Is going to be what we call transfer learning of taking those
 
 
 
-![](img/fce5fc2aa849c1041f7e8bef7765e28e_5.png)
 
 Now let's walk through a visualization of this concept of transfer learning。So what we have here。
 
@@ -106,7 +103,6 @@ Now， this idea is going to be more of an art than a science in figuring out ho
 
 
 
-![](img/fce5fc2aa849c1041f7e8bef7765e28e_7.png)
 
 All right， I'll see you there。
 

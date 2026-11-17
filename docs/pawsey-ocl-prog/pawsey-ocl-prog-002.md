@@ -1,6 +1,5 @@
 # 002：OpenCL - 第一天，第二部分 - OpenCL简介与练习
 
-![](img/5bfc396db260ff8fa2f15cbb391248fa_0.png)
 
 ![](img/5bfc396db260ff8fa2f15cbb391248fa_0.png)
 
@@ -197,6 +196,5 @@ g++ -g -O2 -I/path/to/CL/ hellodevices.cpp -o hellodevices.exe -lOpenCL
 
 本节课中我们一起学习了OpenCL的核心执行模型，包括工作项、工作组和网格的概念。我们探讨了OpenCL应用程序的架构，涵盖了平台、设备、上下文、缓冲区、程序、命令队列、内核和事件等关键组件。我们还回顾了OpenCL规范的发展历程以及各主要供应商的支持情况。最后，我们了解了如何设置编译环境，并实际编译和运行了第一个OpenCL程序`hellodevices`，它能够查询并显示系统中可用的OpenCL计算设备信息。这些基础知识为我们后续深入学习OpenCL编程，特别是进行矩阵乘法等实际案例的剖析打下了坚实的基础。
 
-![](img/5bfc396db260ff8fa2f15cbb391248fa_2.png)
 
 ![](img/5bfc396db260ff8fa2f15cbb391248fa_2.png)

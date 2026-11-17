@@ -1,8 +1,6 @@
 # 027：存储过程使用 📚➡️💾
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_0.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_1.png)
 
 在本节课中，我们将要学习**存储过程**。我们将了解存储过程是什么，使用它的好处，以及如何在DB2数据库中创建和调用存储过程。
 
@@ -14,21 +12,14 @@
 
 ## 存储过程的优势 ✨
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_3.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_4.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_5.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_6.png)
 
 以下是使用存储过程的主要好处：
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_7.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_8.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_9.png)
 
 *   **减少网络流量**：因为只需要一次调用即可执行多条语句。
 *   **提升性能**：处理过程发生在数据存储的服务器上，只有最终结果传回客户端。
@@ -43,23 +34,16 @@
 
 了解了存储过程的优势后，我们来看看如何在DB2 on Cloud上使用SQL创建一个存储过程。
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_11.png)
 
 首先，使用 `CREATE PROCEDURE` 语句，指定过程名及其所需的参数。然后声明使用的语言，并将过程逻辑包裹在 `BEGIN` 和 `END` 语句中。
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_12.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_13.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_14.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_15.png)
 
 以下是一个示例，创建了一个名为 `UPDATE_SAL` 的存储过程，它接收员工编号和评级作为参数，并根据评级更新员工的薪水：
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_16.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_17.png)
 
 ```sql
 CREATE PROCEDURE UPDATE_SAL (IN emp_id CHAR(6), IN rating INT)
@@ -85,37 +69,25 @@ END
 
 要调用我们刚刚创建的 `UPDATE_SAL` 存储过程，可以使用 `CALL` 语句，后跟存储过程的名称并传入所需的参数。
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_19.png)
 
 以下是调用示例：
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_20.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_21.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_22.png)
 
 ```sql
 CALL UPDATE_SAL('000010', 1);
 ```
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_23.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_24.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_25.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_26.png)
 
 这条语句会调用 `UPDATE_SAL` 过程，为员工ID为 `‘000010’`、评级为 `1` 的员工执行加薪逻辑。
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_27.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_28.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_29.png)
 
-![](img/40799bfe55b7df80f6f8ca82e2c15c78_30.png)
 
 ## 总结 📝
 

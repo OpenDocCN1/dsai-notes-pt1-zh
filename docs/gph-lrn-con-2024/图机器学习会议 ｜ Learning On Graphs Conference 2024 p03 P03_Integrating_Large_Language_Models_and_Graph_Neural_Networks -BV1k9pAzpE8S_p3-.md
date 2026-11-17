@@ -398,7 +398,6 @@ And that's it， so thank you so much for。😊，Yeah， for being there and I
 
 
 
-![](img/f904f356254360a95dd60e2c5f9057a2_1.png)
 
 难处的要送到。So if the participants have any questions， you can type those into chat or slacklack。And yeah。
 

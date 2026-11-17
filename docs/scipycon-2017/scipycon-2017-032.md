@@ -56,11 +56,8 @@ if __name__ == '__main__':
 将其转换为 Sacred 项目只需添加三行代码：
 
 
-![](img/e3150373a72ef181a87e224959684e8d_1.png)
 
-![](img/e3150373a72ef181a87e224959684e8d_2.png)
 
-![](img/e3150373a72ef181a87e224959684e8d_4.png)
 
 ```python
 from sacred import Experiment  # 1. 导入 Experiment
@@ -74,7 +71,6 @@ if __name__ == '__main__':
     ex.run_command_line()     # 改为使用 Sacred 的命令行运行器
 ```
 
-![](img/e3150373a72ef181a87e224959684e8d_6.png)
 
 ![](img/e3150373a72ef181a87e224959684e8d_8.png)
 

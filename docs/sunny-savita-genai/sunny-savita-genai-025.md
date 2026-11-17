@@ -8,11 +8,9 @@
 
 ![](img/ffecfd79a4dbb72e71fbc0e15e5ea21d_1.png)
 
-![](img/ffecfd79a4dbb72e71fbc0e15e5ea21d_2.png)
 
 ## 准备工作
 
-![](img/ffecfd79a4dbb72e71fbc0e15e5ea21d_3.png)
 
 以下是构建此应用所需的核心库及其简要说明。我们将逐一安装并导入它们。
 

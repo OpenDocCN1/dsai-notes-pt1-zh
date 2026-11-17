@@ -1,10 +1,7 @@
 # 050：因子打分与排序
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_0.png)
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_2.png)
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_4.png)
 
 在本节课中，我们将学习如何对筛选出的因子进行排序和打分。我们将遍历包含“越高越好”和“越低越好”两类因子的数据框，为每个因子下的股票进行排名，并根据排名赋予相应的分数，为后续的综合评分做准备。
 
@@ -21,7 +18,6 @@
 3.  对当前因子列下的股票数据进行排序。对于“越高越好”的因子，我们按降序排列（数值大的排在前面）。
 4.  使用 `inplace=True` 参数将排序结果直接应用到原始数据框中，避免额外的赋值操作。
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_6.png)
 
 对应的核心代码如下：
 ```python
@@ -33,21 +29,15 @@ for factor in up_df.columns:
 
 ## 为排序结果打分
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_8.png)
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_10.png)
 
 排序完成后，我们需要为排名赋予分数。为了简化，我们直接根据排名顺序打分：第一名得最高分，最后一名得最低分。由于共有300只股票，最高分设为300分，最低分为1分。
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_12.png)
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_14.png)
 
 我们将使用NumPy的 `linspace` 函数来生成一个等差分数序列。这个函数非常方便，可以指定起始值、终止值和元素个数。
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_16.png)
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_18.png)
 
 以下是 `numpy.linspace` 函数的基本用法：
 ```python
@@ -56,24 +46,18 @@ import numpy as np
 scores = np.linspace(start=1, stop=300, num=300)
 ```
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_20.png)
 
 对于“越高越好”的因子，排名第一（因子值最大）的股票应得最高分（300分）。因此，我们使用 `np.linspace(300, 1, 300)` 来生成一个从300递减到1的分数序列，并将其赋值给排序后的因子列。
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_22.png)
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_24.png)
 
 对于“越低越好”的因子，排名第一（因子值最小）的股票也应得最高分。因此，我们使用 `np.linspace(300, 1, 300)` 来生成分数序列（逻辑与“越高越好”因子处理后的情况一致）。
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_26.png)
 
 以下是打分的核心代码：
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_28.png)
 
 
-![](img/2b12eb5ee2b3e9dd27470ac4645da31d_30.png)
 
 ```python
 import numpy as np

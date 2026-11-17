@@ -2,7 +2,6 @@
 
 在本节课中，我们将学习如何扩展已构建的链，以及如何持续添加更多的可运行组件。我们将通过一个具体示例，演示如何将多个任务按顺序连接起来，形成一个完整的工作流。
 
-![](img/06433686ecf4cc9ba24022ee1846f2b0_1.png)
 
 ---
 
@@ -10,13 +9,11 @@
 
 我们使用与上一节相同的提示词模板，但为其赋予了一个更清晰的名称。
 
-![](img/06433686ecf4cc9ba24022ee1846f2b0_3.png)
 
 ```python
 prompt_template = PromptTemplate(...)
 ```
 
-![](img/06433686ecf4cc9ba24022ee1846f2b0_5.png)
 
 我们还添加了更多提示词。现在，让我们直接查看链的核心部分，从头开始理解其工作原理。
 
@@ -35,17 +32,12 @@ chain_part1 = prompt_template | model | StrOutputParser()
 
 在调用大语言模型之前，我们总是需要做一件事：准备一个提示词模板，用于指示模型将文本翻译成特定语言。提示词模板需要一个对象作为输入。然而，上一步的输出只是一个字符串，并非对象。因此，我们需要准备输入，使其能够传入提示词模板。
 
-![](img/06433686ecf4cc9ba24022ee1846f2b0_7.png)
 
-![](img/06433686ecf4cc9ba24022ee1846f2b0_8.png)
 
-![](img/06433686ecf4cc9ba24022ee1846f2b0_9.png)
 
 为此，我们编写了一个名为 `prepare_input_for_translation` 的可运行组件。
 
-![](img/06433686ecf4cc9ba24022ee1846f2b0_10.png)
 
-![](img/06433686ecf4cc9ba24022ee1846f2b0_11.png)
 
 ```python
 def prepare_input_for_translation(previous_output):
@@ -66,7 +58,6 @@ def prepare_input_for_translation(previous_output):
 
 例如，我们可以创建另一个可运行组件，让它调用推特API，将这条翻译后的内容作为一条推文发布出去。
 
-![](img/06433686ecf4cc9ba24022ee1846f2b0_13.png)
 
 ```python
 # 伪代码示例：发布到推特
@@ -75,15 +66,11 @@ def post_to_twitter(translated_text):
     pass
 ```
 
-![](img/06433686ecf4cc9ba24022ee1846f2b0_14.png)
 
-![](img/06433686ecf4cc9ba24022ee1846f2b0_15.png)
 
-![](img/06433686ecf4cc9ba24022ee1846f2b0_16.png)
 
 由此可见，在使用链时，可能性是无限的。我们可以持续地、按顺序在一条直线上添加越来越多的链。这就是顺序链的核心概念。
 
-![](img/06433686ecf4cc9ba24022ee1846f2b0_17.png)
 
 在下一节中，我们将探讨一种称为“并行链”的链类型。敬请期待。
 

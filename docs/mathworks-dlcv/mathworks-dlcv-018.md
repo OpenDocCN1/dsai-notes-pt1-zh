@@ -1,18 +1,14 @@
 # 工程与科学计算机视觉：18：使用特征袋进行图像分类 🖼️
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_1.png)
 
 在本节课中，我们将学习如何使用“特征袋”算法从图像集合中自动提取特征，并利用这些特征训练一个分类模型。我们将以区分“有雪”和“无雪”的路面图像为例，逐步讲解算法的核心步骤、关键参数的调整方法，以及如何在MATLAB中实现。
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_3.png)
 
 ---
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_5.png)
 
 ## 概述
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_7.png)
 
 特征袋算法通过以下步骤将图像转换为可用于机器学习的数值特征：
 1.  从图像集合中提取特征描述符。
@@ -25,17 +21,14 @@ MATLAB的 `bagOfFeatures` 函数可以一键完成所有这些步骤。
 
 ## 数据准备
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_9.png)
 
 首先，我们需要在MATLAB中准备数据。
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_11.png)
 
 使用包含地面覆盖图像的文件夹创建一个带标签的图像数据存储。随后，将数据分割为训练集和测试集。
 
 ---
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_13.png)
 
 ## 提取特征
 
@@ -53,7 +46,6 @@ bag = bagOfFeatures(trainingData);
 trainingFeatures = encode(bag, trainingData);
 ```
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_15.png)
 
 生成的矩阵每一行代表一张图像，每一列代表一个特征。默认特征数量为500个。
 
@@ -61,13 +53,11 @@ trainingFeatures = encode(bag, trainingData);
 
 在运行此代码之前，可以考虑修改一些可选参数，以使特征袋算法更适应你的数据。
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_17.png)
 
 ---
 
 ## 算法参数调整
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_19.png)
 
 ### 点选择方法
 
@@ -75,7 +65,6 @@ trainingFeatures = encode(bag, trainingData);
 *   **Detector**：利用图像特性（如高对比度区域）来寻找提取点。
 *   **Grid**：从预先指定的位置（网格点）提取描述符。
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_21.png)
 
 由于SURF特征检测会寻找具有高对比度和特定大小的区域，因此当图像中 distinct 的细节是最重要部分时，检测SURF特征效果最好。
 
@@ -89,11 +78,9 @@ trainingFeatures = encode(bag, trainingData);
 
 ### 网格步长
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_23.png)
 
 你可以通过 `GridStep` 参数设置网格的大小，从而控制收集的特征描述符的数量。
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_24.png)
 
 较小的步长适用于低分辨率图像或包含大量不同纹理的图像。在这些情况下，需要较小的步长来提取足够的描述符以充分描述图像。
 
@@ -103,7 +90,6 @@ trainingFeatures = encode(bag, trainingData);
 
 ---
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_26.png)
 
 ### 块宽度
 
@@ -125,11 +111,9 @@ trainingFeatures = encode(bag, trainingData);
 
 正如在“训练图像分类模型”视频中所做的那样，训练几个支持向量机和K近邻模型。
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_28.png)
 
 可以看到，我们最好的结果来自其中一个SVM模型。
 
-![](img/1b5d8f72a0678eaecc0f10d8e987eda4_30.png)
 
 ---
 

@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P12：L12- BETWEEN 运算符 📊
 
-![](img/0fd125c9f59bc110486d7eb215bf21b1_0.png)
 
 ![](img/0fd125c9f59bc110486d7eb215bf21b1_0.png)
 
@@ -32,15 +31,12 @@ FROM customers
 WHERE points BETWEEN 1000 AND 3000;
 ```
 
-![](img/0fd125c9f59bc110486d7eb215bf21b1_2.png)
 
 这个查询与之前的内容完全等效。`BETWEEN` 运算符是包含边界值的，这意味着它等价于 `points >= 1000 AND points <= 3000`。
 
 执行这个查询，我们得到完全相同的结果。
 
-![](img/0fd125c9f59bc110486d7eb215bf21b1_4.png)
 
-![](img/0fd125c9f59bc110486d7eb215bf21b1_2.png)
 
 ## 在日期范围中使用 BETWEEN
 
@@ -70,7 +66,6 @@ WHERE birth_date BETWEEN '1990-01-01' AND '2000-01-01';
 
 执行这个查询，我们得到三个符合这个标准的客户。
 
-![](img/0fd125c9f59bc110486d7eb215bf21b1_9.png)
 
 ![](img/0fd125c9f59bc110486d7eb215bf21b1_9.png)
 

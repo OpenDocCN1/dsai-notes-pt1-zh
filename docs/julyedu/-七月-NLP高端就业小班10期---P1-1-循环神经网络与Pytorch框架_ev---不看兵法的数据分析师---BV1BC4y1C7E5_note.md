@@ -1,19 +1,15 @@
 # 📘 课程名称：循环神经网络与Pytorch框架（课程编号：P1）
 
-![](img/8bce5c766dfd00fb1a67f9c62f08dfd4_0.png)
 
-![](img/8bce5c766dfd00fb1a67f9c62f08dfd4_2.png)
 
 ## 📋 概述
 在本节课中，我们将要学习神经网络的基础知识，并深入探讨其在自然语言处理（NLP）中的核心应用。课程将从基础的神经网络概念开始，逐步介绍循环神经网络（RNN）、长短期记忆网络（LSTM）以及卷积神经网络（CNN）的原理与应用。最后，我们将通过一个基于LSTM的文本分类实战项目，将理论知识付诸实践。
 
 ---
 
-![](img/8bce5c766dfd00fb1a67f9c62f08dfd4_4.png)
 
 ## 🧠 第一部分：神经网络基础
 
-![](img/8bce5c766dfd00fb1a67f9c62f08dfd4_6.png)
 
 上一节我们介绍了课程的整体框架，本节中我们来看看什么是神经网络。
 
@@ -102,7 +98,6 @@ LSTM通过三个门来控制信息的流动：
 ### 池化操作
 卷积后得到的特征图可能维度仍然较高。为了得到固定长度的向量表示以进行分类，通常使用池化层（如最大池化）来降维。最大池化即取每个特征通道上的最大值，它能捕捉最显著的特征。
 
-![](img/8bce5c766dfd00fb1a67f9c62f08dfd4_8.png)
 
 ![](img/8bce5c766dfd00fb1a67f9c62f08dfd4_10.png)
 
@@ -138,13 +133,10 @@ LSTM通过三个门来控制信息的流动：
 
 ![](img/8bce5c766dfd00fb1a67f9c62f08dfd4_20.png)
 
-![](img/8bce5c766dfd00fb1a67f9c62f08dfd4_22.png)
 
 ![](img/8bce5c766dfd00fb1a67f9c62f08dfd4_24.png)
 
-![](img/8bce5c766dfd00fb1a67f9c62f08dfd4_26.png)
 
-![](img/8bce5c766dfd00fb1a67f9c62f08dfd4_28.png)
 
 ```python
 import torch.nn as nn

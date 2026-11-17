@@ -484,15 +484,12 @@ MedChain附录
 
 [图 9](https://arxiv.org/html/2412.01605v1#A2.F9 "图 9 ‣ B.4 任务提示 ‣ 附录 B MedChain-Agent ‣ MedChain：通过互动式顺序基准测试架起 LLM 代理与临床实践之间的桥梁") $\sim$ \autopagereffig:prompt_task45 展示了我们 MedChain-Agent 框架中每个任务和阶段的提示。
 
-![参见说明文字](img/a701795a444bc6ce999fac0e911edcb3.png)
 
 图 9：MedChain-Agent 中任务 1 的提示。
 
-![参见说明文字](img/249a3b529b877fdd6e4ea214412e8153.png)
 
 图 10：MedChain-Agent 中任务 2 的提示。
 
-![参见说明文字](img/f14a4fc917e7b2c71a82c91d43aa361c.png)
 
 图 11：MedChain-Agent 中任务 3 的提示。
 

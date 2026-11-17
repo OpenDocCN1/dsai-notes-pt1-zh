@@ -69,7 +69,6 @@ OpenCL并非“万能钥匙”，它旨在解决一个特定问题：如何尽�
 
 ## OpenCL与CUDA
 
-![](img/8efc8e133ae6651ce5af27e63220cead_1.png)
 
 OpenCL常被拿来与NVIDIA的CUDA进行比较。CUDA是一个强大、先进的GPGPU编程接口，极大地推动了GPU计算的主流化，让开发者能够用C/C++（加上一些特殊修饰符和语义）在GPU上运行代码。
 

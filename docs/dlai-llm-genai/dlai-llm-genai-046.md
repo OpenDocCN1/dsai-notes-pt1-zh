@@ -20,7 +20,6 @@ JumpStart覆盖了此架构图中的许多部分，包括基础设施、LLM本�
 
 ## 重要注意事项
 
-![](img/f60122b31a45f4ab4fb78cc944df5fe6_3.png)
 
 与你在实验课中使用的模型相比，JumpStart中的模型需要GPU来进行微调和部署。
 
@@ -34,7 +33,6 @@ JumpStart覆盖了此架构图中的许多部分，包括基础设施、LLM本�
 
 SageMaker JumpStart可以从AWS控制台或通过SageMaker Studio访问。在这个简短的导览中，我将从Studio开始，然后从主屏幕选择JumpStart。我也可以选择左侧菜单中的JumpStart，并选择模型、笔记本和解决方案。
 
-![](img/f60122b31a45f4ab4fb78cc944df5fe6_5.png)
 
 点击JumpStart后，你会看到不同的类别，其中包括跨不同用例的端到端解决方案，以及许多支持不同模态的基础模型。你可以轻松部署这些模型，并且在“微调”选项下标记为“是”的模型还可以进行微调。
 
@@ -67,7 +65,6 @@ SageMaker JumpStart可以从AWS控制台或通过SageMaker Studio访问。在这
 
 最后，这里是另一个选项，即让JumpStart自动为你生成一个笔记本。假设你不喜欢使用下拉菜单，而更喜欢以编程方式处理这些模型。
 
-![](img/f60122b31a45f4ab4fb78cc944df5fe6_7.png)
 
 这个笔记本基本上为你提供了我们之前介绍的所有选项背后运行的代码。如果你更喜欢以编程方式在最低层级使用JumpStart，这是一个可选方案。
 
@@ -79,7 +76,6 @@ SageMaker JumpStart可以从AWS控制台或通过SageMaker Studio访问。在这
 
 除了作为包含基础模型的模型中心外，JumpStart还提供了大量资源，包括博客、视频和示例笔记本。
 
-![](img/f60122b31a45f4ab4fb78cc944df5fe6_11.png)
 
 ![](img/f60122b31a45f4ab4fb78cc944df5fe6_12.png)
 

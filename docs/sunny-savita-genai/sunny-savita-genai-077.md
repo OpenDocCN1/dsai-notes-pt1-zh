@@ -29,9 +29,7 @@ LLM可以是多模态的，这意味着它不仅能处理文本，还能处理�
 
 理解了LLM之后，我们来看看如何在其基础上构建更复杂的系统。
 
-![](img/bd6e581435ff39a5d44fac6b4ed7a803_5.png)
 
-![](img/bd6e581435ff39a5d44fac6b4ed7a803_6.png)
 
 ![](img/bd6e581435ff39a5d44fac6b4ed7a803_7.png)
 
@@ -59,17 +57,14 @@ LLM可以是多模态的，这意味着它不仅能处理文本，还能处理�
 
 ![](img/bd6e581435ff39a5d44fac6b4ed7a803_9.png)
 
-![](img/bd6e581435ff39a5d44fac6b4ed7a803_10.png)
 
 ### 应用场景
 
 多智能体系统有广泛的应用前景：
 
-![](img/bd6e581435ff39a5d44fac6b4ed7a803_12.png)
 
 ![](img/bd6e581435ff39a5d44fac6b4ed7a803_13.png)
 
-![](img/bd6e581435ff39a5d44fac6b4ed7a803_14.png)
 
 ![](img/bd6e581435ff39a5d44fac6b4ed7a803_15.png)
 

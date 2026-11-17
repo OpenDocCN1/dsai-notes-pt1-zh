@@ -22,7 +22,6 @@
 *   **评估模型**：`torchmetrics`。
 *   **改进实验**：`torch.utils.tensorboard`。
 
-![](img/ebf4b4ca6a97f804e53f1cf80b29fdba_5.png)
 
 现在，让我们更深入地了解我们构建的第一个模型。
 
@@ -30,7 +29,6 @@
 
 我们已经创建了一个模型。现在看看它内部有什么。你可能已经根据我们在构造函数和 `forward` 函数中创建的内容猜到了。
 
-![](img/ebf4b4ca6a97f804e53f1cf80b29fdba_7.png)
 
 那么，你认为我们的模型内部有什么？你又会如何查看呢？
 
@@ -94,7 +92,6 @@ model_0.state_dict()
 
 在下一节视频中，我们将在测试数据上进行一些预测，看看它们的效果如何。
 
-![](img/ebf4b4ca6a97f804e53f1cf80b29fdba_9.png)
 
 ![](img/ebf4b4ca6a97f804e53f1cf80b29fdba_10.png)
 

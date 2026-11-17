@@ -8,7 +8,6 @@
 
 ## 读取行程数据
 
-![](img/50ba23651961fb2281c83afab37bdd15_1.png)
 
 首先，我们需要导入必要的辅助函数，并定义一个专门用于读取CSV文件的函数。
 
@@ -20,9 +19,7 @@ def read_csv_file(filename):
     return data
 ```
 
-![](img/50ba23651961fb2281c83afab37bdd15_3.png)
 
-![](img/50ba23651961fb2281c83afab37bdd15_4.png)
 
 运行此函数后，我们可以读取存储行程的CSV文件。
 
@@ -31,15 +28,12 @@ itinerary = read_csv_file('itinerary.csv')
 print(itinerary)
 ```
 
-![](img/50ba23651961fb2281c83afab37bdd15_6.png)
 
 行程数据包含了我们计划访问的各个城市、国家、抵达和离开日期。
 
 ## 为单个城市生成行程
 
-![](img/50ba23651961fb2281c83afab37bdd15_8.png)
 
-![](img/50ba23651961fb2281c83afab37bdd15_9.png)
 
 我们以悉尼为例，演示如何为一个城市生成详细行程。首先，我们需要加载悉尼的餐厅数据，这些数据已保存在一个CSV文件中。
 
@@ -49,10 +43,8 @@ sydney_restaurants = read_csv_file('Sydney.csv')
 
 接下来，我们从总行程中提取悉尼的具体信息，并构建一个提示词（prompt）来调用大型语言模型。
 
-![](img/50ba23651961fb2281c83afab37bdd15_11.png)
 
 
-![](img/50ba23651961fb2281c83afab37bdd15_13.png)
 
 ```python
 city = itinerary[6]['city']
@@ -71,7 +63,6 @@ response = get_completion(prompt)
 print(response)
 ```
 
-![](img/50ba23651961fb2281c83afab37bdd15_15.png)
 
 运行以上代码，AI模型将生成一份包含具体时间安排和餐厅推荐的悉尼详细行程。
 
@@ -87,9 +78,7 @@ print(response)
 4.  为每个城市构建提示词并调用AI模型。
 5.  将生成的行程保存到字典中。
 
-![](img/50ba23651961fb2281c83afab37bdd15_17.png)
 
-![](img/50ba23651961fb2281c83afab37bdd15_18.png)
 
 ```python
 detailed_itineraries = {}
@@ -122,9 +111,7 @@ for stop in itinerary:
 
 运行此循环后，`detailed_itineraries` 字典将包含所有城市的完整行程。例如，要查看东京的行程，可以执行：
 
-![](img/50ba23651961fb2281c83afab37bdd15_20.png)
 
-![](img/50ba23651961fb2281c83afab37bdd15_21.png)
 
 ```python
 print(detailed_itineraries['Tokyo'])

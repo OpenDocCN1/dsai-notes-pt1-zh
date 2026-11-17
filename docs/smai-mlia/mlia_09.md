@@ -12,7 +12,6 @@
 
 # 引言
 
-![机器学习; 数据处理与特征工程; 引言–特征工程; 8-1](img/dab1e1938371f69b548b2bd98615117d.png)
 
 上图为大家熟悉的机器学习建模流程图，[ShowMeAI](http://www.showmeai.tech/)在前序机器学习实战文章 [**Python 机器学习算法应用实践**](http://www.showmeai.tech/article-detail/201)中和大家讲到了整个建模流程非常重要的一步，是对于数据的预处理和特征工程，它很大程度决定了最后建模效果的好坏，在本篇内容汇总，我们给大家展开对数据预处理和特征工程的实战应用细节做一个全面的解读。
 
@@ -29,15 +28,12 @@
 
 > 数据与特征工程决定了模型的上限，改进算法只不过是逼近这个上限而已。
 
-![机器学习; 数据处理与特征工程; 引言–特征工程; 特征工程的定义; 8-2](img/3ed10e036957daae3b0bf4648db95046.png)
 
 这是因为，在数据建模上，「理想状态」和「真实场景」是有差别的，很多时候原始数据并不是规矩干净含义明确充分的形态：
 
-![机器学习; 数据处理与特征工程; 引言 -特征工程; 特征工程的意义; 8-3](img/c5075b4d70f6bb0d1a02eefac090e685.png)
 
 而特征工程处理，相当于对数据做一个梳理，结合业务提取有意义的信息，以干净整齐地形态进行组织：
 
-![机器学习; 数据处理与特征工程; 引言 -特征工程; 特征工程的意义; 8-4](img/3f316fea52ed11d293ca35ccc6962a4c.png)
 
 特征工程有着非常重要的意义：
 
@@ -62,7 +58,6 @@ df_titanic = sns.load_dataset('titanic')
 
 其中数据集的数据字段描述如下图所示：
 
-![机器学习; 数据处理与特征工程; 引言 -特征工程; Titanic 数据集介绍; 8-5](img/f212faea094b79df495dbce8d1a57501.png)
 
 # 1.特征类型
 
@@ -72,7 +67,6 @@ df_titanic = sns.load_dataset('titanic')
 
 数据可以分为「结构化数据」和「非结构化数据」，比如在互联网领域，大部分存储在数据库内的表格态业务数据，都是结构化数据；而文本、语音、图像视频等就属于非结构化数据。
 
-![机器学习; 数据处理与特征工程; 特征类型; 结构化 V.S. 非结构化; 8-6](img/2c9ec9d57aecf8af5df5b0e7e4120963.png)
 
 ## 1.2 定量 vs 定性数据
 
@@ -83,11 +77,9 @@ df_titanic = sns.load_dataset('titanic')
 *   **定性数据**：指的是一些类别，用于描述物品性质。
     *   例如纹理，味道，气味，颜色等。
 
-![机器学习; 数据处理与特征工程; 特征类型; 定量 V.S. 定性; 8-7](img/9e8a75c1f5042cda4bd471bdd96aba15.png)
 
 如下图是两类数据示例以及它们常见的处理分析方法的总结：
 
-![机器学习; 数据处理与特征工程; 特征类型; 定量 V.S. 定性; 8-8](img/9b06d4130e474bbe3a97fe87b53b28d0.png)
 
 # 2.数据清洗
 
@@ -103,7 +95,6 @@ df_titanic = sns.load_dataset('titanic')
 
 数据清洗过程包括数据对齐、缺失值处理、异常值处理、数据转化等数据处理方法，如下图所示：
 
-![机器学习; 数据处理与特征工程; 数据清洗; 8-9](img/bcc4ab5f31b96961b9c48bcc20e72e76.png)
 
 下面我们注意对上述提到的处理方法做一个讲解。
 
@@ -111,7 +102,6 @@ df_titanic = sns.load_dataset('titanic')
 
 采集到的原始数据，格式形态不一，我们会对时间、字段以及相关量纲等进行数据对齐处理，数据对齐和规整化之后的数据整齐一致，更加适合建模。如下图为一些处理示例：
 
-![机器学习; 数据处理与特征工程; 数据清洗; 数据对齐; 8-10](img/8afe22aacba8408eb1bd93150c32ee3b.png)
 
 ### (1) 时间
 
@@ -138,7 +128,6 @@ df_titanic = sns.load_dataset('titanic')
 
 具体的处理方式可以展开成下图：
 
-![机器学习; 数据处理与特征工程; 数据清洗; 缺失值处理; 8-11](img/49636026f285ce3b7e80712067fe38d8.png)
 
 下面回到我们的 Titanic 数据集，我们演示一下各种方法：
 
@@ -180,13 +169,11 @@ df_titanic[df_titanic["embark_town"].isnull()]
 df_titanic.dropna(axis=0,how='any',subset=['embark_town'],inplace=True) 
 ```
 
-![机器学习; 数据处理与特征工程; 数据清洗; 缺失值处理; 8-12](img/e0f62b541fa9176de2712985493cfed2.png)
 
 ### (2) 数据填充
 
 第 2 大类是我们可以通过一些方法去填充缺失值。比如基于统计方法、模型方法、结合业务的方法等进行填充。
 
-![机器学习; 数据处理与特征工程; 数据清洗; 缺失值处理; 8-13](img/9be706dd83e30b6726a6b4a092807286.png)
 
 #### ① 手动填充
 
@@ -212,7 +199,6 @@ df_titanic['embark_town'].fillna('unknown', inplace=True)
 
 **中位数填充——fare：缺失值较多，使用中位数填充**
 
-![机器学习; 数据处理与特征工程; 数据清洗; 缺失值处理; 8-14](img/818e728217adbcac217871819e5a7641.png)
 
 ```py
 df_titanic['fare'].fillna(df_titanic['fare'].median(), inplace=True) 
@@ -251,13 +237,11 @@ def select_group_age_median(row):
 df_titanic['age'] =df_titanic.apply(lambda x: select_group_age_median(x) if np.isnan(x['age']) else x['age'],axis=1) 
 ```
 
-![机器学习; 数据处理与特征工程; 数据清洗; 缺失值处理; 8-15](img/7720a50f2146b6020f7d0e71dbdf8705.png)
 
 #### ④ 模型预测填充
 
 如果其他无缺失字段丰富，我们也可以借助于模型进行建模预测填充，将待填充字段作为 Label，没有缺失的数据作为训练数据，建立分类/回归模型，对待填充的缺失字段进行预测并进行填充。
 
-![机器学习; 数据处理与特征工程; 数据清洗; 缺失值处理; 8-16](img/e79ec3c4a44d210b1543968c7a5d4b12.png)
 
 **最近距离邻法(KNN)**
 
@@ -299,19 +283,16 @@ df_titanic.loc[df_titanic.age.isnull(), 'age'] = y_pred_age
 sns.distplot(df_titanic.age) 
 ```
 
-![机器学习; 数据处理与特征工程; 数据清洗; 缺失值处理; 8-17](img/225e468d61875ab69445273b9023812e.png)
 
 #### ⑤ 插值法填充
 
 还可以用插值法对数据填充，细分一下包括线性插值、多重插补、热平台插补、拉格朗日插值、牛顿插值等。
 
-![机器学习; 数据处理与特征工程; 数据清洗; 缺失值处理; 8-18](img/b577fab65af559b0d85735a65b567df3.png)
 
 **线性插值法**
 
 使用插值法可以计算缺失值的估计值，所谓的插值法就是通过两点 ( x 0 , y 0 ) (x_0, y_0) (x0​,y0​)， ( x 1 , y 1 ) (x_1, y_1) (x1​,y1​) 估计中间点的值。假设 y = f ( x ) y=f(x) y=f(x) 是一条直线，通过已知的两点来计算函数 f ( x ) f(x) f(x)，然后只要知道 x x x 就能求出 y y y，以此方法来估计缺失值。
 
-![机器学习; 数据处理与特征工程; 数据清洗; 缺失值处理; 8-19](img/dd9bb3016dcfdee9692763c5a47fdc36.png)
 
 `.interpolate(method = 'linear', axis)`方法将通过`linear`插值使用沿着给定`axis`的值替换 NaN 值，这个差值也就是前后或者上下的中间值
 
@@ -329,7 +310,6 @@ df_titanic['fare'].interpolate(method = 'linear', axis = 1)
 
 多值插补的思想来源于贝叶斯估计，认为待插补的值是随机的，它的值来自于已观测到的值。具体实践上通常是估计出待插补的值，然后再加上不同的噪声，形成多组可选插补值。根据某种选择依据，选取最合适的插补值。
 
-![机器学习; 数据处理与特征工程; 数据清洗; 缺失值处理; 8-20](img/cba8ab6e453cd79194fd17d60de2eeaf.png)
 
 多重插补方法分为三个步骤：
 
@@ -344,7 +324,6 @@ df_titanic['fare'].interpolate(method = 'linear', axis = 1)
 *   性别 SEX 变量，存在 male，fameal，NA（缺失）三个不同的值，可将该列转换成`IS_SEX_MALE`、`IS_SEX_FEMALE`、`IS_SEX_NA`。
 *   若某个变量存在十几个不同的值，可根据每个值的频数，将频数较小的值归为一类`other`，降低维度。此做法可最大化保留变量的信息。
 
-![机器学习; 数据处理与特征工程; 数据清洗; 缺失值处理; 8-21](img/0a9b30238dcc1a6fd737f200d392304c.png)
 
 以下为参考代码示例：
 
@@ -408,7 +387,6 @@ df_titanic.drop(["deck"],axis=1)
 *   如果数据服从正态分布，距离平均值 3 σ 3 \sigma 3σ 之外的值出现的概率为 P ( ∣ x − μ ∣ > 3 σ ) ≤ 0.003 P(\left | x-\mu \right | >3\sigma) \le 0.003 P(∣x−μ∣>3σ)≤0.003，属于极个别的小概率事件。
 *   如果数据不服从正态分布，也可以用远离平均值的多少倍标准差来描述。
 
-![机器学习; 数据处理与特征工程; 数据清洗; 异常值处理; 8-22](img/567823dd5cc16955c0cfd44d08d14f57.png)
 
 #### ③ 箱线图分析
 
@@ -420,13 +398,11 @@ df_titanic.drop(["deck"],axis=1)
 
 箱型图判断异常值的方法以四分位数和四分位距为基础，四分位数具有鲁棒性： 25 % 25 \% 25% 的数据可以变得任意远并且不会干扰四分位数，所以异常值不能对这个标准施加影响。因此箱型图识别异常值比较客观，在识别异常值时有一定的优越性。
 
-![机器学习; 数据处理与特征工程; 数据清洗; 异常值处理; 8-23](img/ee1185ee3f09c40ab7856ff3eaba51f3.png)
 
 ```py
 sns.catplot(y="fare",x="survived", kind="box", data=df_titanic,palette="Set2") 
 ```
 
-![机器学习; 数据处理与特征工程; 数据清洗; 异常值处理; 8-24](img/abdb63cf55d57debae215dcf36671ea8.png)
 
 #### ④ 基于模型检测
 
@@ -435,7 +411,6 @@ sns.catplot(y="fare",x="survived", kind="box", data=df_titanic,palette="Set2")
 *   如果模型是簇的集合，则异常是不显著属于任何簇的对象。
 *   在使用回归模型时，异常是相对远离预测值的对象。
 
-![机器学习; 数据处理与特征工程; 数据清洗; 异常值处理; 8-25](img/02857df6475896fd219d87e078c37704.png)
 
 **优点**：有坚实的统计学理论基础，当存在充分的数据和所用的检验类型的知识时，这些检验可能非常有效。
 
@@ -445,7 +420,6 @@ sns.catplot(y="fare",x="survived", kind="box", data=df_titanic,palette="Set2")
 
 我们还有基于距离的方法可以用于异常检测。这类方法基于下面这个假设：如果一个数据对象和大多数点距离都很远，那这个对象就是异常。通过定义对象之间的临近性度量，根据距离判断异常对象是否远离其他对象，主要使用的距离度量方法有绝对距离(曼哈顿距离)、欧氏距离和马氏距离等方法。
 
-![机器学习; 数据处理与特征工程; 数据清洗; 异常值处理; 8-26](img/94676c8d452cc22c47082b4de7751064.png)
 
 *   **优点**：
 *   *   基于距离的方法比基于统计类方法要简单得多；因为为一个数据集合定义一个距离的度量要比确定数据集合的分布容易的多。
@@ -459,7 +433,6 @@ sns.catplot(y="fare",x="survived", kind="box", data=df_titanic,palette="Set2")
 
 一个很直接的异常检测思路是基于分布密度来做，具体为：考察当前点周围密度，局部异常点/离群点的局部密度显著低于大部分近邻点。这类方法适用于非均匀的数据集。
 
-![机器学习; 数据处理与特征工程; 数据清洗; 异常值处理; 8-27](img/a700b526cdfa639da1ebc419f12817bf.png)
 
 *   **优点**：
     *   给出了对象是离群点的定量度量，并且即使数据具有不同的区域也能够很好的处理。
@@ -480,7 +453,6 @@ sns.catplot(y="fare",x="survived", kind="box", data=df_titanic,palette="Set2")
 *   如果存在大量小簇时一个对象是异常点，则它多半是一个真正的异常点。
 *   不利的一面是一组异常点可能形成小簇而逃避检测。
 
-![机器学习; 数据处理与特征工程; 数据清洗; 异常值处理; 8-28](img/425f0a2b5089d45a27b0e6ed54004337.png)
 
 *   **优点**：
     *   基于线性和接近线性复杂度(k 均值)的聚类技术来发现离群点可能是高度有效的；
@@ -499,7 +471,6 @@ sns.catplot(y="fare",x="survived", kind="box", data=df_titanic,palette="Set2")
 
 为了使该方案对于 K K K 的选取更具有鲁棒性，可以使用 K K K 个最近邻的平均距离。
 
-![机器学习; 数据处理与特征工程; 数据清洗; 异常值处理; 8-29](img/19e8a0bbd48d59eddd5de9d18a7a941e.png)
 
 **优点**：
 
@@ -517,7 +488,6 @@ sns.catplot(y="fare",x="survived", kind="box", data=df_titanic,palette="Set2")
 sns.scatterplot(x="fare", y="age", hue="survived",data=df_titanic,palette="Set1") 
 ```
 
-![机器学习; 数据处理与特征工程; 数据清洗; 异常值处理; 8-30](img/57774513aae5ff6909deaf3ffbab0f03.png)
 
 ### (2) 异常处理方法
 
@@ -537,7 +507,6 @@ sns.scatterplot(x="fare", y="age", hue="survived",data=df_titanic,palette="Set1"
 
 统计特征是一类非常有效的特征，尤其在时序问题场景中，以下为统计特征构建的一些思考维度和方法：
 
-![机器学习; 数据处理与特征工程; 特征构建; 统计特征构建; 8-31](img/919e17459508763279218cf9271b2d83.png)
 
 *   ① 基于业务规则、先验知识等构建新特征。
 *   ② 四分位数、中位数、平均值、标准差、偏差、偏度、偏锋、离散系统。
@@ -676,7 +645,6 @@ df_titanic['family_size'].head()
 
 在电商等场景下，数据有一定的周期规律，我们可以提取一些周期值作为有效信息。
 
-![机器学习; 数据处理与特征工程; 特征构建; 周期值; 8-32](img/796b3e69b5da07f1e3358d0312d54adb.png)
 
 时序周期的一些考虑维度如下：
 
@@ -687,7 +655,6 @@ df_titanic['family_size'].head()
 
 数据分桶，是对连续值属性处理的一种常用方法，它指的是我们把连续数值切段，并把连续值归属到对应的段中。数据分桶也叫做数据分箱或离散化。
 
-![机器学习; 数据处理与特征工程; 特征构建; 数据分桶; 8-33](img/753a21d14f2fa9e24aded821fa3ffb33.png)
 
 ### (1) 等频、等距分桶
 
@@ -701,7 +668,6 @@ df_titanic['family_size'].head()
 
 从最小值到最大值之间，均分为 N N N 等份。如果 A A A、 B B B 为最小最大值，则每个区间的长度为 W = ( B − A ) / N W=(B−A)/N W=(B−A)/N，区间边界值为 A + W A+W A+W、 A + 2 W A+2W A+2W、 c d o t s cdots cdots、 A + ( N − 1 ) W A+(N−1)W A+(N−1)W。
 
-![机器学习; 数据处理与特征工程; 特征构建; 数据分桶; 8-34](img/73750f5c9f2836b631b57b44e017b550.png)
 
 等距分箱只考虑边界，每个等份里面的实例数量可能不等。等距分桶的缺点是受到异常值的影响比较大。
 
@@ -709,7 +675,6 @@ df_titanic['family_size'].head()
 
 将数据分成几等份，每等份数据里面的个数是一样的。
 
-![机器学习; 数据处理与特征工程; 特征构建; 数据分桶; 8-35](img/9161a835da604ff13833f88a336cd65a.png)
 
 在等频分箱中，区间的边界值要经过计算获得，最终每个区间包含大致相等的实例数量。比如说 N = 5 N=5 N=5，每个区间应该包含大约 20 % 20 \% 20% 的实例。
 
@@ -772,7 +737,6 @@ pd.cut(df_titanic['age'], bins).value_counts
 
 自底向上的(即基于合并的)数据离散化方法，依赖于卡方检验：具有最小卡方值的相邻区间合并在一起，直到满足确定的停止准则。
 
-![机器学习; 数据处理与特征工程; 特征构建; 数据分桶; 8-36](img/a0c9074a9a845128f290fc197b4754f4.png)
 
 **基本思想**：
 
@@ -804,13 +768,11 @@ pd.cut(df_titanic['age'], bins).value_counts
 2.  **离散+连续**：连续特征分桶后进行笛卡尔积或基于类别特征 group by 构建统计特征。
 3.  **连续+连续**：加减乘除，多项式特征，二阶差分等。
 
-![机器学习; 数据处理与特征工程; 特征构建; 特征组合; 8-37](img/c7b94d6cafc81644831319733e8b838c.png)
 
 *   **多项式特征**
 
 针对连续值特征，我们对几个特征构建多项式特征，以达到特征组合与高阶增强的作用。
 
-![机器学习; 数据处理与特征工程; 特征构建; 特征组合; 8-38](img/a87837aad76792f174dd54cb983f39d1.png)
 
 在 Titanic 的例子中，如下为数值型特征：
 
@@ -829,7 +791,6 @@ df_titanic_numerical_poly = poly.fit_transform(df_titanic_numerical)
 pd.DataFrame(df_titanic_numerical_poly, columns=poly.get_feature_names()).head() 
 ```
 
-![机器学习; 数据处理与特征工程; 特征构建; 特征组合; 8-39](img/a56b1b22beb7b7e0d28eec1c469093ab.png)
 
 在构建完成特征后，我们查看下衍生新特征变量的相关性情况，下面的热力图 heatmap 里颜色越深相关性越大：
 
@@ -837,19 +798,16 @@ pd.DataFrame(df_titanic_numerical_poly, columns=poly.get_feature_names()).head()
 sns.heatmap(pd.DataFrame(df_titanic_numerical_poly, columns=poly.get_feature_names()).corr()) 
 ```
 
-![机器学习; 数据处理与特征工程; 特征构建; 特征组合; 8-40](img/5ac841890247022c1bfc84c6ee9f90b1.png)
 
 # 4.特征变换
 
 我们对于构建完的特征，会做一些「特征变换」的操作，以适应不同的模型，更好地完成建模。
 
-![机器学习; 数据处理与特征工程; 特征变换; 8-41](img/8c90a403f496992e201f1523a634a049.png)
 
 ## 4.1 标准化(Standardization)
 
 标准化操作也称作 Z-score 变换，它使数值特征列的算数平均为 0 0 0，方差(以及标准差)为 1 1 1，如下图所示。
 
-![机器学习; 数据处理与特征工程; 特征变换; 标准化; 8-42](img/e129a950ca82b646275f27c8a88ab87c.png)
 
 > 注意：如果数值特征列中存在数值极大或极小的 outlier(通过 EDA 发现)，应该使用更稳健(robust)的统计数据：用中位数而不是算术平均数，用分位数(quantile)而不是方差。这种标准化方法有一个重要的参数：(分位数下限，分位数上限)，最好通过 EDA 的数据可视化确定。免疫 outlier。
 
@@ -869,13 +827,11 @@ joblib.dump(Stan_scaler,'zscore.m')  #写入文件
 
 归一化操作会基于向量模长调整数据幅度大小，但并不会改变原始数据的顺序。如下图所示：
 
-![机器学习; 数据处理与特征工程; 特征变换; 归一化; 8-43](img/01ddb9769ba0f1109b4eabaa61ef3f64.png)
 
 ## 4.3 幅度缩放(scaling)
 
 幅度缩放是为了让不同特征的取值在大体一致的数量级和数据区间内，比较常用的方法是最大最小值缩放，如下图所示：
 
-![机器学习; 数据处理与特征工程; 特征变换; 幅度缩放; 8-44](img/43ef3c2696a8992f41fd57eea3a9c2af.png)
 
 下面为幅度缩放操作的参考代码：
 
@@ -923,7 +879,6 @@ log 变换属于幂变换函数簇，数学表达式为
 
 y = l o g b ( x ) y=log_{b}(x) y=logb​(x)
 
-![机器学习; 数据处理与特征工程; 特征变换; 非线性变换; 8-45](img/2206cdf08f3f67586d5ed6ffee071bc8.png)
 
 下面我们对 Titanic 数据集中的船票价格字段进行 log1p 变换，示例代码如下：
 
@@ -931,14 +886,12 @@ y = l o g b ( x ) y=log_{b}(x) y=logb​(x)
 sns.distplot(df_titanic.fare,kde=False) 
 ```
 
-![机器学习; 数据处理与特征工程; 特征变换; 非线性变换; 8-46](img/948500b3a5faecb67194784b6f250fb8.png)
 
 ```py
 df_titanic['fare_log'] = np.log((1+df_titanic['fare']))
 sns.distplot(df_titanic.fare_log,kde=False) 
 ```
 
-![机器学习; 数据处理与特征工程; 特征变换; 非线性变换; 8-47](img/10848cf3876cda9d2bbc03dd5ef10a3c.png)
 
 ### (2) box-cox 变换
 
@@ -952,7 +905,6 @@ y ( λ ) = { y λ − 1 λ , λ ≠ 0 ln ⁡ y , λ = 0 y(\lambda)=\left\{\begin
 
 生成的变换后的输出 y y y，是输入 x x x 和变换参数的函数；当 λ = 0 \lambda=0 λ=0 时，该变换就是自然对数 log 变换，前面我们已经提到过了。 λ \lambda λ 的最佳取值通常由最大似然或最大对数似然确定。
 
-![机器学习; 数据处理与特征工程; 特征变换; 非线性变换; 8-48](img/fd0752df851fff0803fd3459d2b1998b.png)
 
 下面我们对 Titanic 数据集中的船票价格字段进行 box-cox 变换，示例代码如下：
 
@@ -968,7 +920,6 @@ fare_boxcox_lambda_opt = spstats.boxcox(df_titanic[df_titanic['fare']>0]['fare']
 sns.distplot(fare_boxcox_lambda_opt,kde=Fal 
 ```
 
-![机器学习; 数据处理与特征工程; 特征变换; 非线性变换; 8-49](img/09cd23d4d904d4e1a2fd06e6341a7452.png)
 
 ## 4.6 离散变量处理
 
@@ -978,7 +929,6 @@ sns.distplot(fare_boxcox_lambda_opt,kde=Fal
 
 标签编码(label encoding)是最常见的类别型数据编码方式之一，编码值介于 0 0 0 和 n_classes-1 之间的标签。
 
-![机器学习; 数据处理与特征工程; 特征变换; 离散变量处理; 8-50](img/235934e0b91cfbca57df5f8c3c4e8eda.png)
 
 例如：比如有 [ d o g , c a t , d o g , m o u s e , r a b b i t ] [dog,cat,dog,mouse,rabbit] [dog,cat,dog,mouse,rabbit]，我们把其转换为 [ 0 , 1 , 0 , 2 , 3 ] [0,1,0,2,3] [0,1,0,2,3]。
 
@@ -1057,7 +1007,6 @@ display(df)
 pd.get_dummies(df_titanic, columns=['sex', 'class', 'pclass', 'embarked', 'who', 'family_size', 'age_bin'],drop_first=True) 
 ```
 
-![机器学习; 数据处理与特征工程; 特征变换; 离散变量处理; 8-52](img/6b2da7e582d59edc98534c81a8b1132d.png)
 
 当然，我们也可以借助 SKLearn(查看[ShowMeAI](http://www.showmeai.tech/)教程 [**SKLearn 最全应用指南**](http://www.showmeai.tech/article-detail/203) 和 [**AI 建模工具速查 | Scikit-learn 使用指南**](http://www.showmeai.tech/article-detail/108) 详细学习)，进行独热向量编码实现：
 
@@ -1122,7 +1071,6 @@ yesOrno: ['yes' 'no' 'no' 'yes' 'no2']
 *   过多的变量会妨碍模型查找规律。
 *   仅仅考虑单个变量对于目标属性的影响可能忽略变量之间的潜在关系。
 
-![机器学习; 数据处理与特征工程; 特征变换; 降维; 8-53](img/51ee462deb4ca2c8351acf6abf9ee0d1.png)
 
 通过特征降维希望达到的目的：
 
@@ -1165,7 +1113,6 @@ def draw_result(X, y):
 draw_result(X, y) 
 ```
 
-![机器学习; 数据处理与特征工程; 特征变换; 降维; 8-54](img/ffe1f8ff807a68c71606a82da427beaf.png)
 
 ### (1) PCA(Principal Component Analysis)
 
@@ -1181,7 +1128,6 @@ newX = pca.fit_transform(X)
 draw_result(newX, y) 
 ```
 
-![机器学习; 数据处理与特征工程; 特征变换; 降维–PCA; 8-55](img/c2cad01582b4fcd138fc2caf95af9f19.png)
 
 ### (2) SVD(Singular Value Decomposition)
 
@@ -1207,7 +1153,6 @@ iris_2d = TruncatedSVD(2).fit_transform(X)
 draw_result(iris_2d, y) 
 ```
 
-![机器学习; 数据处理与特征工程; 特征变换; 降维–SVD; 8-56](img/039aef13feb878f6511180f206884978.png)
 
 ### PCA vs SVD
 
@@ -1229,7 +1174,6 @@ A T A = ( X T m ) T X T m = 1 m X X T A^{T} A=\left(\frac{X^{T}}{\sqrt{m}}\right
 
 是有监督的降维，通过最小化类内离散度与最大化类间离散度来获得最优特征子集。
 
-![机器学习; 数据处理与特征工程; 特征变换; 降维–LDA; 8-57](img/95bc95d7727d02ac1c05e86228a194e3.png)
 
 > 上图解读：LD1 通过线性判定，可以很好的将呈正态分布的两个类分开。LD2 的线性判定保持了数据集的较大方差，但 LD2 无法提供关于类别的信息，因此 LD2 不是一个好的线性判定。
 
@@ -1242,7 +1186,6 @@ iris_2d = lda.fit_transform(X, y)
 draw_result(iris_2d, y) 
 ```
 
-![机器学习; 数据处理与特征工程; 特征变换; 降维–LDA; 8-58](img/5e28ce5cccc4888d3c284edd7be41170.png)
 
 ### LDA vs PCA
 
@@ -1259,7 +1202,6 @@ iris_2d = tsne.fit_transform(X)
 draw_result(iris_2d, y) 
 ```
 
-![机器学习; 数据处理与特征工程; 特征变换; 降维–T-SNE; 8-59](img/36fa1048e680555b4e46c119a85fa843.png)
 
 # 5.特征选择
 
@@ -1269,7 +1211,6 @@ draw_result(iris_2d, y)
 *   存在噪声，对模型结果有负面影响
 *   部分特征容易引起过拟合
 
-![机器学习; 数据处理与特征工程; 特征选择; 8-60](img/168c3d9e58601abf72039b746bb42b22.png)
 
 总体来说，进行特征选择有 2 个主要考虑方向：
 
@@ -1304,7 +1245,6 @@ del_list = df_titanic_numerical.columns[variancethreshold.get_support()==0].to_l
 
 卡方检验，专用于分类算法，捕捉相关性，追求 p 小于显著性水平的特征。卡方过滤是专门针对离散型标签(即分类问题)的相关性过滤。
 
-![机器学习; 数据处理与特征工程; 特征选择; 过滤式 Filter; 8-61](img/b3e05acd801c1037d276fab58990d0cf.png)
 
 p 值和取到这一个统计量的概率取值其实是正相关的： p p p 值越大，取到这个统计量的概率就越大，即越合理； p p p 值越小，取到这个统计量的概率就越小，即越不合理，此时应该拒绝原假设，接收备择假设。
 
@@ -1411,7 +1351,6 @@ perm = PermutationImportance(my_model, random_state=1).fit(val_X, val_y)
 eli5.show_weights(perm, feature_names = val_X.columns.tolist()) 
 ```
 
-![机器学习; 数据处理与特征工程; 特征选择; 包裹式 Wrapper; 8-62](img/18a694b9a9d26adbbfbd2d92dd0807f7.png)
 
 ## 5.3 嵌入式 Embedded
 
@@ -1468,7 +1407,6 @@ X_sfm_gbdt = SelectFromModel(gbdt).fit_transform(X, y)
 
 最后，[ShowMeAI](http://www.showmeai.tech/)结合实际工业应用经验，总结一些特征工程要点，如下：
 
-![机器学习; 数据处理与特征工程; 特征选择实战建议; 8-63](img/328dedf2030e57c72371c22d40299c1a.png)
 
 ## 6.1 数据理解
 
@@ -1496,7 +1434,6 @@ X_sfm_gbdt = SelectFromModel(gbdt).fit_transform(X, y)
 
 建议不要上来就做 PCA 或 LDA 降维，最好先构建特征并对特征做筛选。
 
-![机器学习; 数据处理与特征工程; 特征选择实战建议; 8-64](img/2b633b0826f1081ecaa7acd582a29f89.png)
 
 **线性组合(linear combination)**
 

@@ -8,7 +8,6 @@
 
 ![](img/d08d4083a3c5fb3cefb30569093c3a1c_1.png)
 
-![](img/d08d4083a3c5fb3cefb30569093c3a1c_2.png)
 
 ## 知识图谱构建的传统流程
 

@@ -48,7 +48,6 @@ WHERE state IN ('Virginia', 'Florida', 'Georgia');
 
 例如，如果我们想获取不在弗吉尼亚州、佛罗里达州或乔治亚州的客户，可以这样写：
 
-![](img/eab35ec39c882c6373782cbccb455f23_1.png)
 
 ```sql
 SELECT *
@@ -58,7 +57,6 @@ WHERE state NOT IN ('Virginia', 'Florida', 'Georgia');
 
 执行此查询，将获得位于其他州（如科罗拉多州、德克萨斯州等）的客户记录。
 
-![](img/eab35ec39c882c6373782cbccb455f23_2.png)
 
 当你需要将一个属性与一系列值进行比较时，使用 **IN** 运算符是高效且清晰的选择。
 

@@ -160,11 +160,9 @@ Hongying Liu    Zhubo Ruan    Peng Zhao    Chao Dong    Fanh
 
 对齐方法通过使用提取的运动信息使邻近帧明确地与目标帧对齐，然后进行后续重建。这些方法主要使用运动估计和运动补偿（MEMC）或可变形卷积，这两种是对齐帧的常见技术。接下来我们将详细介绍基于每种技术的最新方法。
 
-![参见说明](img/4a6376b4e096b8da941e8d5e15fbd06f.png)
 
 (a) 目标帧
 
-![参见说明](img/da4f1f77afee85d2356143a00ef93281.png)
 
 (b) 它的邻近帧
 

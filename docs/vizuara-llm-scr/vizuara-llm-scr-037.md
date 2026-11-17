@@ -1,6 +1,5 @@
 # 37：指令微调中的数据加载器
 
-![](img/7acd1d18a062afaeea0728d15052da84_0.png)
 
 ![](img/7acd1d18a062afaeea0728d15052da84_0.png)
 
@@ -76,10 +75,8 @@
 
 在下一讲中，我们将进入第二阶段：加载预训练的大语言模型并开始实际的微调过程，观察其性能变化。
 
-![](img/7acd1d18a062afaeea0728d15052da84_2.png)
 
 ![](img/7acd1d18a062afaeea0728d15052da84_2.png)
 
-![](img/7acd1d18a062afaeea0728d15052da84_3.png)
 
 ![](img/7acd1d18a062afaeea0728d15052da84_3.png)

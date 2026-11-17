@@ -6,21 +6,15 @@ Now let's walk through some of the important terminology that we should keep in 
 
 
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_1.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_2.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_3.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_4.png)
 
 So first off， we have our different weights and those weights will determine how do we combine each one of the different layers along our neural network。
 
 
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_6.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_7.png)
 
 So each one of these arrows that will connect x1 to each point each node within that next layer。
 
@@ -30,11 +24,8 @@ So each one of these arrows that will connect x1 to each point each node within 
 
 
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_9.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_10.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_11.png)
 
 We have our input layer， which is just going to be our input data set here just to make it especially clear。
 
@@ -42,15 +33,10 @@ We have our input layer， which is just going to be our input data set here jus
 
  x2 is feature 2 and x3 is feature 3。
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_13.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_14.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_15.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_16.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_17.png)
 
 We then have our hidden layers and those are going to be all of these purple nodes that fall between our input layer and what we will define right now as our output layer。
 
@@ -58,11 +44,8 @@ We then have our hidden layers and those are going to be all of these purple nod
 
 
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_19.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_20.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_21.png)
 
 And those hidden layers as we specified as we walk through the Python syntax， can be defined。
 
@@ -72,19 +55,12 @@ And those hidden layers as we specified as we walk through the Python syntax， 
 
  which will be our actual predictions。
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_23.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_24.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_25.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_26.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_27.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_28.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_29.png)
 
 The weights that we set are the different arrows are going to be represented by matrices。
 
@@ -94,19 +70,12 @@ The weights that we set are the different arrows are going to be represented by 
 
  and I'll walk through this in just a second。
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_31.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_32.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_33.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_34.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_35.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_36.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_37.png)
 
 Our net input will be the sum of the weighted inputs， So that's going to be your z values。
 
@@ -116,13 +85,9 @@ Our net input will be the sum of the weighted inputs， So that's going to be yo
 
 
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_39.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_40.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_41.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_42.png)
 
 And then we will have four different z values for that first layer。
 
@@ -130,11 +95,8 @@ And then we will have four different z values for that first layer。
 
 
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_44.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_45.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_46.png)
 
 We then finally have our activation values and those activation values are just going to be taking those Z values that we just discussed and passing them through our activation function。
 
@@ -148,37 +110,26 @@ We then finally have our activation values and those activation values are just 
 
  probably here through a。😊。
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_48.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_49.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_50.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_51.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_52.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_53.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_54.png)
 
 Soft max layer in order to give the predicted probabilities that we'd want output for this classification problem that we have here。
 
 
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_56.png)
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_57.png)
 
 Now if we go back to a0。
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_59.png)
 
 A0 is signifying that we want any A to be passed into the next layer。
 
 
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_61.png)
 
 Even though we're not doing anything to the x1， x2 and x3。
 
@@ -188,6 +139,5 @@ Even though we're not doing anything to the x1， x2 and x3。
 
 
 
-![](img/aa3b5855b4090025cb384f3d13520cd6_63.png)
 
 ![](img/aa3b5855b4090025cb384f3d13520cd6_64.png)

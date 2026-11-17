@@ -1,6 +1,5 @@
 # 002：LLM应用漏洞概述 🛡️
 
-![](img/a643e9941ececeae46639b7c523ac359_0.png)
 
 ![](img/a643e9941ececeae46639b7c523ac359_2.png)
 

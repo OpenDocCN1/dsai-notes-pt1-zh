@@ -51,7 +51,6 @@ gemini_model = ChatGoogleGenerativeAI(model="gemini-2.0-flash-exp")
 
 ![](img/a121718a484acc9c926595dc0273a1fa_3.png)
 
-![](img/a121718a484acc9c926595dc0273a1fa_4.png)
 
 ![](img/a121718a484acc9c926595dc0273a1fa_5.png)
 
@@ -110,7 +109,6 @@ def analysis_agent(state: AgentState):
 
 ![](img/a121718a484acc9c926595dc0273a1fa_13.png)
 
-![](img/a121718a484acc9c926595dc0273a1fa_14.png)
 
 现在，将“分析者”智能体添加为工作流的一个节点。
 
@@ -120,7 +118,6 @@ workflow.add_node("analyst", analysis_agent)
 
 接下来是“编码者”智能体，它根据计划编写代码。
 
-![](img/a121718a484acc9c926595dc0273a1fa_16.png)
 
 ![](img/a121718a484acc9c926595dc0273a1fa_17.png)
 

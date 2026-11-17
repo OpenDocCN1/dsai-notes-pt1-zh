@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P28：L28- 自然连接 🔗
 
-![](img/4ebe50c33eacf9052841b7f678d3c0a8_0.png)
 
 ![](img/4ebe50c33eacf9052841b7f678d3c0a8_0.png)
 

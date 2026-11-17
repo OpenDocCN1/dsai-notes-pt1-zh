@@ -12,9 +12,7 @@
 
 上一节我们介绍了迁移学习的基本概念。本节中，我们来看看如何加载并运行一个预训练的MobileNet模型。
 
-![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_3.png)
 
-![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_4.png)
 
 首先，我们需要导入必要的库并加载预训练的MobileNet模型及其在ImageNet数据集上训练好的权重。
 
@@ -83,7 +81,6 @@ model = models.Model(inputs=base_model.input, outputs=predictions)
 *   将对应类别的图像放入各自的文件夹中，图像格式可以是JPEG或PNG。
 
 
-![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_6.png)
 
 ```python
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -97,7 +94,6 @@ train_generator = train_datagen.flow_from_directory(
 )
 ```
 
-![](img/fea53c1ab8aaa1af63aff2f2daccb4dc_7.png)
 
 数据准备就绪后，我们就可以编译并训练模型了。由于卷积基被冻结，训练将只更新我们新添加的层，速度较快。
 

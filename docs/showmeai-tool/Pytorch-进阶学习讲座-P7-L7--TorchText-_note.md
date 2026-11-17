@@ -1,6 +1,5 @@
 # PyTorch 进阶学习讲座！P7：L7 - TorchText 🎼
 
-![](img/aaa011e1dc72912baa590f68c0c043cd_1.png)
 
 在本节课中，我们将学习 PyTorch 文本处理库 TorchText 在 2020 年的主要更新。我们将了解 TorchText 如何加速 NLP 研究、支持从研究到生产的转化，并探索其提供的新数据集、数据处理管道以及与 NLP 相关的新模块。
 
@@ -24,7 +23,6 @@
 
 ## 全新的数据集 📊
 
-![](img/aaa011e1dc72912baa590f68c0c043cd_5.png)
 
 在 TorchText 中，我们引入了新的数据集，并重写了一些现有数据集。这些更新将在夜间版本中作为原型发布，并很快正式推出。
 
@@ -37,7 +35,6 @@
 
 ---
 
-![](img/aaa011e1dc72912baa590f68c0c043cd_7.png)
 
 ## 高效的数据处理管道 ⚙️
 
@@ -93,7 +90,6 @@ attention = MultiheadAttentionContainer(nhead=num_heads,
 
 ### 本节课总结
 
-![](img/aaa011e1dc72912baa590f68c0c043cd_14.png)
 
 在本节课中，我们一起学习了 TorchText 在 2020 年的核心更新：
 1.  了解了 TorchText 致力于**加速研究**、**促进生产转化**和**社区协作**的三大目标。

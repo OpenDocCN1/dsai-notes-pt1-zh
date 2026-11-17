@@ -1,6 +1,5 @@
 # 008：课程总结
 
-![](img/ff40c1908d98d8ea866a81eb0de99dff_0.png)
 
 ![](img/ff40c1908d98d8ea866a81eb0de99dff_0.png)
 

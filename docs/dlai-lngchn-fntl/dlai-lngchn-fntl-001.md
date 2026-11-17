@@ -1,6 +1,5 @@
 # 001：课程介绍 🚀
 
-![](img/12ef998cfe6027c1749087f96791eaf7_0.png)
 
 在本节课中，我们将要学习LangChain如何利用大语言模型的新功能——函数调用，来连接传统软件系统，并构建能够使用工具和执行多步推理的智能体。
 
@@ -24,7 +23,6 @@ Harrison，你在之前的课程中介绍过LangChain，但也许可以描述一
 
 这听起来很棒，Harrison。我认为这对于许多希望学习利用这些新高级功能的人来说会非常有用。
 
-![](img/12ef998cfe6027c1749087f96791eaf7_2.png)
 
 许多人为本课程的制作付出了努力。我们感谢来自LangChain的Lance Martin和Nuno Campos。在DeepLearning.AI方面，Jeff Ladwig和Emer Gagari也为课程做出了贡献。那么，让我们进入下一个视频，开始学习吧。
 

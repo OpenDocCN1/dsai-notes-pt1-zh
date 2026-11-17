@@ -506,7 +506,6 @@ MATRIX-Gen生成的指令难度。我们使用Llama-3-8B-Instruct模型对MATRIX
 
 我们提供了MATRIX-Gen生成的合成指令数据示例，包括一般对齐数据集：MATRIX-Gen-SFT、MATRIX-Gen-DPO（如表格LABEL:tab:qualitative_example所示）以及特定领域数据集：MATRIX-Gen-Safe和MATRIX-Gen-Code（如表格LABEL:tab:qualitative_example_specific所示）。在图[7(a)](https://arxiv.org/html/2410.14251v1#A3.F7.sf1 "图 7 ‣ 附录 C 生成的指令示例 [警告：可能含有有害内容！] ‣ 通过多代理模拟合成大语言模型后训练数据")和图[7](https://arxiv.org/html/2410.14251v1#A3.F7 "图 7 ‣ 附录 C 生成的指令示例 [警告：可能含有有害内容！] ‣ 通过多代理模拟合成大语言模型后训练数据")中，我们展示了由MATRIX-Gen-SFT生成的指令的可视化，按各自的类型和根词分类。结果突出显示了我们合成指令的多样性。
 
-![参见说明](img/d3630b4a6635352bd5ffcb4553fd762c.png)
 
 (a) 此图展示了MATRIX-Gen-SFT数据集中最常见的前10种任务类别。结果显示了任务类型的多样性，反映了该数据集覆盖了多个领域。
 

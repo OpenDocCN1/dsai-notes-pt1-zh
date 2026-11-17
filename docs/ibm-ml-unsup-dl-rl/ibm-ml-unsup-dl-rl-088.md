@@ -12,7 +12,6 @@ And we're also going to want to ensure that we can reduce the total number of ac
 
 
 
-![](img/0ac75700727a5b473ece647a64c59a2d_1.png)
 
 So our solution with the inception architecture will be to turn each individual layer into branches of convolutions rather than just working with a single filter type。
 
@@ -22,7 +21,6 @@ And then each layer will concatenate the different branches to complete a single
 
 So let's see a visual of this。
 
-![](img/0ac75700727a5b473ece647a64c59a2d_3.png)
 
 So what we see here。Is we are moving through our previous layer。To the next layer。
 
@@ -48,7 +46,6 @@ Thus， we end up requiring a ton of operations to complete the calculation for 
 
 
 
-![](img/0ac75700727a5b473ece647a64c59a2d_5.png)
 
 Now， instead of what we just saw， what we can do is first。
 
@@ -80,7 +77,6 @@ So doing the one by one convolutions after the max pooling allows us to again re
 
 
 
-![](img/0ac75700727a5b473ece647a64c59a2d_7.png)
 
 And this whole block serves the function of that previous convolutional layer。
 
@@ -88,7 +84,6 @@ And this whole block serves the function of that previous convolutional layer。
 
  then we pass it through our activation function。
 
-![](img/0ac75700727a5b473ece647a64c59a2d_9.png)
 
 So to see what this looks like for a full network。We have our input coming in from the left。
 

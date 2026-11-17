@@ -15,7 +15,6 @@
 *   **检索增强生成（RAG）**：用于构建知识库。
 *   **模型微调**：平台已开放模型微调的API能力。
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_3.png)
 
 ![](img/0c1dbec9a278a3bb6c8d261588873870_5.png)
 
@@ -100,13 +99,10 @@ for chunk in response:
     print(chunk.choices[0].delta.content)
 ```
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_15.png)
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_17.png)
 
 ### GLM-4 的智能体（Agent）能力演示
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_19.png)
 
 ![](img/0c1dbec9a278a3bb6c8d261588873870_21.png)
 
@@ -147,11 +143,8 @@ response = client.chat.completions.create(
 # 从 response.choices[0].message.tool_calls 中解析出函数调用参数
 ```
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_29.png)
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_31.png)
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_33.png)
 
 **2. 知识库检索（Retrieval）**
 让模型从指定的知识库中查找信息来回答问题。
@@ -171,9 +164,7 @@ response = client.chat.completions.create(
 )
 ```
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_35.png)
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_37.png)
 
 **3. 联网搜索（Web Search）**
 让模型从互联网搜索信息来增强回答。
@@ -197,7 +188,6 @@ response = client.chat.completions.create(
 
 ### 多模态与图像模型
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_41.png)
 
 **1. 视觉模型 GLM-4V**
 GLM-4V是强大的图文理解模型，定价为 **0.1元/千Tokens**（图片有固定Token消耗）。调用方式与语言模型类似，只需在消息中传入图片。
@@ -218,7 +208,6 @@ response = client.chat.completions.create(
 ```
 应用场景示例：OCR识别、信息提取（如从发票中提取金额、日期等字段）。
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_43.png)
 
 **2. 文生图模型 CogView-3**
 CogView-3是图像生成模型，定价为 **0.25元/张**。可通过文字描述生成图像。
@@ -231,19 +220,14 @@ image_url = response.data[0].url
 ```
 提示词（Prompt）需要尽可能具体，以生成更符合预期的图像。
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_45.png)
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_47.png)
 
 **3. 角色扮演模型 Character GLM**
 Character GLM是超拟人模型，适用于情感陪伴、游戏NPC等场景，定价为 **0.015元/千Tokens**。通过设置角色元数据（metadata）来控制对话风格。
 开发者可在平台“体验中心”直接测试不同角色。
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_49.png)
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_51.png)
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_53.png)
 
 ## 应用案例实践 🛠️
 
@@ -255,7 +239,6 @@ Character GLM是超拟人模型，适用于情感陪伴、游戏NPC等场景，�
 
 ### 案例一：智能客服问答机器人
 
-![](img/0c1dbec9a278a3bb6c8d261588873870_59.png)
 
 ![](img/0c1dbec9a278a3bb6c8d261588873870_61.png)
 

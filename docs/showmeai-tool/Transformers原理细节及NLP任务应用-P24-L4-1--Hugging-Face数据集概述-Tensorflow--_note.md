@@ -92,7 +92,6 @@ tokenized_datasets = tokenized_datasets.rename_column("label", "labels")
 tokenized_datasets.set_format("tensorflow")
 ```
 
-![](img/f6041b007d37d801ffac34c82c22471c_1.png)
 
 如果需要，我们还可以使用`select`方法创建一个数据集的子集，用于快速测试或开发。
 

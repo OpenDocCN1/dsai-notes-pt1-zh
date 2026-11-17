@@ -174,7 +174,6 @@ deployment_package.zip
 
 下图展示了我们搜索工具的代码逻辑：
 
-![](img/e926649fb95c303339cafd221d4e02cf_5.png)
 
 ![](img/e926649fb95c303339cafd221d4e02cf_1.png)
 

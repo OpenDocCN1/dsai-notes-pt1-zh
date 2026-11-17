@@ -2,7 +2,6 @@
 
 在本节课中，我们将学习 Langchain 中两种基础的内存管理类：`ConversationBufferMemory` 和 `ConversationBufferWindowMemory`。我们将探讨它们的工作原理、区别以及各自的适用场景。
 
-![](img/75bb897606ab1ee96123af6db760487c_1.png)
 
 上一节我们介绍了如何在聊天机器人和 RAG 管道中维持对话记忆。本节中，我们来看看 Langchain 中更早引入的一些经典内存管理类。
 

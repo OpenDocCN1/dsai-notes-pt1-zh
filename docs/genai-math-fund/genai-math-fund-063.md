@@ -1,6 +1,5 @@
 # 063：DDIM的实现 🎼
 
-![](img/a240aa84cc1984ec9cd995bb191cdcf4_1.png)
 
 ![](img/a240aa84cc1984ec9cd995bb191cdcf4_1.png)
 
@@ -145,7 +144,6 @@ img = torch.clamp(img, -1., 1.)
 
 ## 结果与比较
 
-![](img/a240aa84cc1984ec9cd995bb191cdcf4_5.png)
 
 ![](img/a240aa84cc1984ec9cd995bb191cdcf4_30.png)
 
@@ -157,7 +155,6 @@ img = torch.clamp(img, -1., 1.)
 
 ## 总结
 
-![](img/a240aa84cc1984ec9cd995bb191cdcf4_34.png)
 
 在本节课中，我们一起学习了DDIM（去噪扩散隐式模型）的实现方法。我们回顾了DDIM采样的核心公式，并逐步解析了如何利用预训练的噪声预测模型进行推理生成图像。关键点包括：
 

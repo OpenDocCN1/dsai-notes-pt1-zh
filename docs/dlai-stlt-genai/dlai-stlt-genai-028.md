@@ -21,11 +21,9 @@ session = snowflake.snowpark.Session.builder.configs(connection_parameters).crea
 
 ## 借助生成式 AI 选择 Cortex 函数
 
-![](img/eec674bcc63f0a04d5d5d6d610065bad_1.png)
 
 现在，是时候请您的生成式 AI 助手来帮助选择用于情感评分的 Cortex 函数了。
 
-![](img/eec674bcc63f0a04d5d5d6d610065bad_2.png)
 
 ![](img/eec674bcc63f0a04d5d5d6d610065bad_3.png)
 
@@ -67,7 +65,6 @@ sentiment_df = session.sql("""
 print(sentiment_df.head())
 ```
 
-![](img/eec674bcc63f0a04d5d5d6d610065bad_5.png)
 
 生成的数据框包含原始评论文本以及每条评论的情感得分。此操作非常快速，因为 Cortex 在 Snowflake 内部进行了大规模并行处理。
 
@@ -96,9 +93,7 @@ plt.show()
 
 安装完成后，返回并重新运行上述代码块。
 
-![](img/eec674bcc63f0a04d5d5d6d610065bad_7.png)
 
-![](img/eec674bcc63f0a04d5d5d6d610065bad_8.png)
 
 ## 保存工作成果
 
@@ -120,7 +115,6 @@ session.write_pandas(sentiment_df, ‘CUSTOMER_REVIEWS_WITH_SENTIMENT‘, auto_c
 
 ## 总结
 
-![](img/eec674bcc63f0a04d5d5d6d610065bad_10.png)
 
 ![](img/eec674bcc63f0a04d5d5d6d610065bad_11.png)
 

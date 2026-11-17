@@ -1,6 +1,5 @@
 # PyTorch 进阶学习讲座！P8：L8 - TorchVision 🎯
 
-![](img/7c9cde7419cd5ccaaa7e02943dd416e4_1.png)
 
 在本节课中，我们将学习 TorchVision 库。TorchVision 是 PyTorch 生态系统中的一个重要组成部分，专门用于简化计算机视觉任务。我们将了解它的核心功能、最新特性以及如何利用它从研究快速过渡到生产环境。
 
@@ -60,7 +59,6 @@ PyTorch 通过 Torch Script 实现这一路径。Torch Script 是 PyTorch 程序
 
 ### 2. 张量友好的数据转换
 
-![](img/7c9cde7419cd5ccaaa7e02943dd416e4_11.png)
 
 TorchVision 的转换操作已从 `nn.Module` 继承，并接受与 Torch Script 兼容的 Torch 张量作为输入。
 

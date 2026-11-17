@@ -1,12 +1,8 @@
 # 【七月在线】NLP高端就业训练营10期 - P4：4.文本相似度计算与文本匹配模型 📚
 
-![](img/398942c983e0a079b7cef9fb3e214f65_0.png)
 
-![](img/398942c983e0a079b7cef9fb3e214f65_2.png)
 
-![](img/398942c983e0a079b7cef9fb3e214f65_4.png)
 
-![](img/398942c983e0a079b7cef9fb3e214f65_6.png)
 
 在本节课中，我们将要学习文本相似度计算与文本匹配模型。我们将从文本相似度的基本概念和应用场景入手，然后深入探讨基于表示学习和基于匹配模型的两种主要计算方法，并重点讲解ESIM模型的原理与实现。
 
@@ -14,9 +10,7 @@
 
 上一节我们介绍了文本分类，本节中我们来看看文本相似度。文本相似度，顾名思义，就是计算两条文本之间的相似程度。它与文本分类最大的区别在于：文本分类针对单条文本，而文本相似度计算需要同时处理两条文本。
 
-![](img/398942c983e0a079b7cef9fb3e214f65_8.png)
 
-![](img/398942c983e0a079b7cef9fb3e214f65_10.png)
 
 文本相似度在自然语言处理中有着广泛的应用场景。
 
@@ -67,9 +61,7 @@ ELMo（Embeddings from Language Models）是一个基于双层双向LSTM的预�
 
 ![](img/398942c983e0a079b7cef9fb3e214f65_22.png)
 
-![](img/398942c983e0a079b7cef9fb3e214f65_24.png)
 
-![](img/398942c983e0a079b7cef9fb3e214f65_26.png)
 
 ![](img/398942c983e0a079b7cef9fb3e214f65_28.png)
 
@@ -84,11 +76,8 @@ ELMo（Embeddings from Language Models）是一个基于双层双向LSTM的预�
 
 ![](img/398942c983e0a079b7cef9fb3e214f65_34.png)
 
-![](img/398942c983e0a079b7cef9fb3e214f65_36.png)
 
-![](img/398942c983e0a079b7cef9fb3e214f65_38.png)
 
-![](img/398942c983e0a079b7cef9fb3e214f65_40.png)
 
 以下是使用ELMo生成句子向量的代码示例：
 ```python
@@ -252,7 +241,6 @@ class ESIM(nn.Module):
 
 这种架构兼顾了效率与效果。
 
-![](img/398942c983e0a079b7cef9fb3e214f65_88.png)
 
 ![](img/398942c983e0a079b7cef9fb3e214f65_90.png)
 
@@ -270,11 +258,9 @@ class ESIM(nn.Module):
 
 ![](img/398942c983e0a079b7cef9fb3e214f65_98.png)
 
-![](img/398942c983e0a079b7cef9fb3e214f65_100.png)
 
 ![](img/398942c983e0a079b7cef9fb3e214f65_102.png)
 
-![](img/398942c983e0a079b7cef9fb3e214f65_104.png)
 
 ![](img/398942c983e0a079b7cef9fb3e214f65_106.png)
 

@@ -20,59 +20,40 @@
 *   随着图像通过层层处理，其空间维度越来越小，而通道深度（Z轴堆叠）越来越深。
 *   最终，原始的RGB图像被转换为一个抽象的向量表示。这个向量中的值代表了图像中与当前任务相关的内容。
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_4.png)
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_5.png)
 
 **核心操作**：卷积神经网络通过可训练的卷积核（滤波器）来提取特征。例如，一个3x3的滤波器会同时观察九个像素，并将它们的信息组合成一个输出像素。公式上，对于一个输入区域 **I** 和滤波器权重 **W**，输出值计算为：
 `output = sum(I[i,j] * W[i,j]) for all i, j in filter`
 在训练过程中，滤波器内的数值（权重）通过反向传播进行学习和调整。
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_7.png)
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_9.png)
 
 ## CNN的局限性
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_11.png)
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_12.png)
 
 理解了CNN如何工作后，我们现在来看看它的局限性，这些正是Transformer能够更好克服的地方。
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_14.png)
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_15.png)
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_16.png)
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_17.png)
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_18.png)
 
 CNN的核心局限在于其**归纳偏置**，特别是**局部连接性**和**平移不变性**。虽然这使得CNN能高效提取局部特征（如边缘、纹理），但也限制了其处理长距离依赖关系的能力。
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_20.png)
 
 一个3x3的卷积核每次只能看到其感受野内的像素。为了获取图像中两个遥远部分之间的关系信息，需要堆叠许多卷积层，让信息通过多层网络缓慢传递。这个过程效率较低，且可能丢失或模糊全局上下文信息。
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_22.png)
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_23.png)
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_24.png)
 
 相比之下，Transformer架构中的**自注意力机制**允许模型在单层内直接计算图像中任意两个位置（或“补丁”）之间的关系，无论它们相距多远。这使其天生擅长建模全局依赖。
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_26.png)
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_28.png)
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_30.png)
 
 ## 总结
 
-![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_32.png)
 
 ![](img/22fa39e0135e6fbfa5652e0b2de1e7eb_34.png)
 

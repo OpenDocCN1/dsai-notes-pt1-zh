@@ -623,11 +623,9 @@ WebShop 中引入的另一个度量标准（Yao et al. [2022](https://arxiv.org/
 
 表 5：特定环境评分。我们展示了每个环境名称下的ALFWorld成功率以及WebShop的平均环境奖励（详见附录[D.4](https://arxiv.org/html/2308.10144v3#A4.SS4 "D.4 WebShop奖励函数 ‣ 附录D 环境详情 ‣ ExpeL：LLM代理为体验学习者")）。
 
-![请参阅标题](img/692a0249000a4d88298011b0444da576.png)
 
 图 25：训练与评估结果细分，HotpotQA。
 
-![请参阅标题](img/7fc2c43504b163bb981cc915ad102ff7.png)
 
 图 26：训练与评估结果细分，ALFWorld。
 

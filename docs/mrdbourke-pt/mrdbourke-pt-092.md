@@ -12,9 +12,7 @@
 
 ![](img/dafe085309f0bc0ec5d17459cb39f924_2.png)
 
-![](img/dafe085309f0bc0ec5d17459cb39f924_3.png)
 
-![](img/dafe085309f0bc0ec5d17459cb39f924_4.png)
 
 有多种方法可以比较模型结果。以下是几种常见方式：
 

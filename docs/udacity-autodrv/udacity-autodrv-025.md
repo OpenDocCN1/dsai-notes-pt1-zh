@@ -8,17 +8,11 @@
 
 故事发生在2005年。当时，我们正驾驶着名为“斯坦利”的自动驾驶汽车穿越莫哈韦沙漠。最初，车上只安装了一台计算机，一切运行正常。
 
-![](img/dbd4c0b3a568fef9d6c64d9ec2fa9861_1.png)
 
-![](img/dbd4c0b3a568fef9d6c64d9ec2fa9861_2.png)
 
-![](img/dbd4c0b3a568fef9d6c64d9ec2fa9861_1.png)
 
-![](img/dbd4c0b3a568fef9d6c64d9ec2fa9861_2.png)
 
-![](img/dbd4c0b3a568fef9d6c64d9ec2fa9861_3.png)
 
-![](img/dbd4c0b3a568fef9d6c64d9ec2fa9861_3.png)
 
 后来，由于计算机负载过重，我们决定在车上加装第二台计算机。
 
@@ -32,19 +26,14 @@
 
 ## 漫长而艰难的排查
 
-![](img/dbd4c0b3a568fef9d6c64d9ec2fa9861_5.png)
 
 我们开始排查问题。在一台计算机上单独运行时，系统表现良好；但两台计算机同时运行时，故障就出现了。我们当时感到非常困惑。
 
 最终，问题根源被找到了。我们曾在软件中设置了一个**数据时效性计时器**，用于限制障碍物大小的判定边界。我们暂且接受这个设定。
 
-![](img/dbd4c0b3a568fef9d6c64d9ec2fa9861_7.png)
 
-![](img/dbd4c0b3a568fef9d6c64d9ec2fa9861_5.png)
 
-![](img/dbd4c0b3a568fef9d6c64d9ec2fa9861_8.png)
 
-![](img/dbd4c0b3a568fef9d6c64d9ec2fa9861_7.png)
 
 ![](img/dbd4c0b3a568fef9d6c64d9ec2fa9861_8.png)
 

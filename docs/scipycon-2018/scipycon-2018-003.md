@@ -1,12 +1,9 @@
 # 3：为 plotly.py 添加 ipywidgets 支持 📊
 
-![](img/79d72b306b7a0e079da4e1ec991ba409_1.png)
 
-![](img/79d72b306b7a0e079da4e1ec991ba409_3.png)
 
 在本节课中，我们将学习如何通过将 plotly.py 与 ipywidgets 框架集成，来创建高度交互式的数据可视化。这种集成使得我们能够在 Jupyter Notebook 中动态更新图表，并实现 Python 与 JavaScript 之间的双向通信。
 
-![](img/79d72b306b7a0e079da4e1ec991ba409_5.png)
 
 ---
 
@@ -14,7 +11,6 @@
 
 我是 John Mease。我在米勒斯维尔大学完成了物理学和数学的本科学习，随后在约翰斯·霍普金斯大学完成了计算机科学的研究生工作。目前，我在约翰斯·霍普金斯大学应用物理实验室担任数据科学家和软件开发员。我的一个主要兴趣是将 Python 开源数据科学生态系统中的优秀工具应用于我们最具挑战性的工程和分析问题。为此，我成为了几个开源项目的贡献者，包括 pandas、dask，以及现在的 plotly。
 
-![](img/79d72b306b7a0e079da4e1ec991ba409_7.png)
 
 ---
 
@@ -22,7 +18,6 @@
 
 上一节我们介绍了演讲者的背景，本节中我们来看看本次演讲所涉及的核心技术背景。
 
-![](img/79d72b306b7a0e079da4e1ec991ba409_9.png)
 
 **Plotly.js** 是一个基于 D3 和 WebGL 的 JavaScript 数据可视化库。它支持非常广泛的可视化类型，涵盖统计、科学、金融、地理和三维用例。该库最初由 Plotly Technologies 公司开发，作为其商业可视化产品的核心组件，但在 2015 年根据 MIT 许可证开源，此后一直在 GitHub 上积极开发。
 
@@ -32,9 +27,7 @@ Plotly.js 是一个声明式可视化库。这意味着每个可视化都由一�
 
 ---
 
-![](img/79d72b306b7a0e079da4e1ec991ba409_11.png)
 
-![](img/79d72b306b7a0e079da4e1ec991ba409_13.png)
 
 ## 🔄 Plotly.py 与 ipywidgets 的集成
 
@@ -176,9 +169,7 @@ scatter_trace.on_selection(selection_callback)
 
 ---
 
-![](img/79d72b306b7a0e079da4e1ec991ba409_15.png)
 
-![](img/79d72b306b7a0e079da4e1ec991ba409_17.png)
 
 ## 📝 总结与资源
 

@@ -41,7 +41,6 @@ source venv/bin/activate  # 在Windows上使用 `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-![](img/9b23dccec9e05a177a5d337929f2a266_3.png)
 
 ## 数据摄取流程
 现在，让我们进入核心模块的编写。首先，我们来实现数据摄取模块。该模块的目标是将原始文档转换为向量并存储到Pinecone数据库中。
@@ -54,7 +53,6 @@ pip install -r requirements.txt
 
 关键代码示例如下：
 
-![](img/9b23dccec9e05a177a5d337929f2a266_5.png)
 
 ```python
 from haystack import Pipeline

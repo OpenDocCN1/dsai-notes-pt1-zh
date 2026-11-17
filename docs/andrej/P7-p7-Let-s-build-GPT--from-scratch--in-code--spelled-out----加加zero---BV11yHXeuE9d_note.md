@@ -1,30 +1,21 @@
 # 课程 P7：从零构建 GPT 🧠
 
-![](img/d489e9697e4ec525091637b9ac0b6163_1.png)
 
 在本节课中，我们将学习如何从零开始构建一个类似 GPT 的 Transformer 语言模型。我们将使用一个简单的字符级数据集（Tiny Shakespeare），并逐步实现模型的核心组件，包括自注意力机制、多头注意力、前馈网络以及残差连接等。通过这个过程，你将深入理解现代大型语言模型（如 ChatGPT）背后的基本原理。
 
-![](img/d489e9697e4ec525091637b9ac0b6163_3.png)
 
 ---
 
-![](img/d489e9697e4ec525091637b9ac0b6163_5.png)
 
-![](img/d489e9697e4ec525091637b9ac0b6163_7.png)
 
 ## 概述 📋
 
-![](img/d489e9697e4ec525091637b9ac0b6163_9.png)
 
-![](img/d489e9697e4ec525091637b9ac0b6163_11.png)
 
-![](img/d489e9697e4ec525091637b9ac0b6163_13.png)
 
 Transformer 架构是当今许多先进 AI 系统的核心，它最初在 2017 年的论文《Attention Is All You Need》中被提出。GPT（Generative Pre-trained Transformer）正是基于此架构构建的。在本教程中，我们将专注于构建一个仅解码器的 Transformer，用于字符级语言建模任务。虽然我们无法复现 ChatGPT 那样的复杂系统，但通过构建一个微型版本，我们可以清晰地理解其工作原理。
 
-![](img/d489e9697e4ec525091637b9ac0b6163_15.png)
 
-![](img/d489e9697e4ec525091637b9ac0b6163_17.png)
 
 我们将从处理数据开始，逐步实现模型的关键部分，并在 Tiny Shakespeare 数据集上进行训练，最终生成莎士比亚风格的文本。
 
@@ -292,9 +283,7 @@ class Head(nn.Module):
 
 ---
 
-![](img/d489e9697e4ec525091637b9ac0b6163_54.png)
 
-![](img/d489e9697e4ec525091637b9ac0b6163_56.png)
 
 ## 5. 多头注意力与 Transformer 块 🧩
 
@@ -486,9 +475,7 @@ class GPTLanguageModel(nn.Module):
 
 现在，我们可以使用更大的超参数来训练我们的 GPT 模型，并观察其性能。
 
-![](img/d489e9697e4ec525091637b9ac0b6163_105.png)
 
-![](img/d489e9697e4ec525091637b9ac0b6163_107.png)
 
 ### 7.1 设置超参数与设备
 ```python

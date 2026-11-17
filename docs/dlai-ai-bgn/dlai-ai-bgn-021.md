@@ -1,6 +1,5 @@
 #  021：在Python中使用文件 📂
 
-![](img/22de409c2bebf340075c315e9cf939ae_0.png)
 
 在本节课中，我们将学习如何使用Python读取存储在计算机上的文本文件。你将了解如何打开文件、读取其内容，并将这些文本数据加载到Python变量中，以便后续使用AI模型进行处理。
 
@@ -10,9 +9,7 @@
 
 数据通常以文件形式存储在计算机上，例如文档、待办事项列表或笔记。这些笔记可能记录在类似Microsoft记事本或Mac文本编辑器的应用程序中。
 
-![](img/22de409c2bebf340075c315e9cf939ae_4.png)
 
-![](img/22de409c2bebf340075c315e9cf939ae_5.png)
 
 实际上，我使用一个名为Obsidian的应用程序来存储我的待办事项。Obsidian基本上将我的待办事项存储在文本文件中，技术上是一种称为Markdown的文件，但大致上就是文本文件。
 
@@ -30,7 +27,6 @@
 
 让我们从加载存储在文本文件中的一封电子邮件开始。
 
-![](img/22de409c2bebf340075c315e9cf939ae_9.png)
 
 ---
 
@@ -58,11 +54,9 @@ with open("email.txt", "r") as f:
 
 现在我们已经将文本加载到Python中并保存在变量 `email` 里，就可以使用大型语言模型来处理它了。
 
-![](img/22de409c2bebf340075c315e9cf939ae_11.png)
 
 例如，我很高兴读到Daniel的愉快经历，但如果我想让AI模型为我总结这封邮件，我可以编写如下提示词：
 
-![](img/22de409c2bebf340075c315e9cf939ae_13.png)
 
 ```python
 prompt = f"""
@@ -74,7 +68,6 @@ Extract bullet points from the following email and include the sender informatio
 
 这是一个f-string，它将 `email` 变量的文本内容嵌入到提示词中。然后，我可以通过调用模型来获取对这个提示词的响应，并打印出总结的要点。
 
-![](img/22de409c2bebf340075c315e9cf939ae_15.png)
 
 之后，AI模型为我总结了Daniel的邮件。
 
@@ -88,13 +81,11 @@ display(Markdown(bullet_points))
 
 你并非必须以这种更美观的格式打印输出。但如果你要向朋友展示，或者想让自己更快地阅读，这会让阅读体验更好一些。
 
-![](img/22de409c2bebf340075c315e9cf939ae_17.png)
 
 ---
 
 ## 总结
 
-![](img/22de409c2bebf340075c315e9cf939ae_19.png)
 
 本节课中，我们一起学习了：
 1.  如何使用 `with open(...) as f:` 和 `f.read()` 在Python中安全地打开和读取文本文件。
@@ -104,7 +95,6 @@ display(Markdown(bullet_points))
 
 在本视频中，你看到了如何加载一个特定的文件 `email.txt`。在下一课中，我们将了解如何对你自己的文本文件进行同样的操作。
 
-![](img/22de409c2bebf340075c315e9cf939ae_21.png)
 
 ![](img/22de409c2bebf340075c315e9cf939ae_22.png)
 

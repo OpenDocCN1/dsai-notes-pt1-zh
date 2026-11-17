@@ -40,7 +40,6 @@ image = Image.open("path_to_your_image.jpg")
 
 为了演示，我们假设加载的是一张女人和狗在海滩上的图片。
 
-![](img/c33082483f093e09bb139330a352a1ea_3.png)
 
 ## 有条件的图像描述生成
 
@@ -53,7 +52,6 @@ text = "A photograph of"
 inputs = processor(image, text, return_tensors="pt")
 ```
 
-![](img/c33082483f093e09bb139330a352a1ea_5.png)
 
 `return_tensors="pt"` 参数确保返回的是PyTorch张量。`inputs` 是一个字典，包含了 `pixel_values`、`input_ids` 和 `attention_mask` 等参数。
 
@@ -70,7 +68,6 @@ caption = processor.decode(outputs[0], skip_special_tokens=True)
 print(caption)
 ```
 
-![](img/c33082483f093e09bb139330a352a1ea_7.png)
 
 输出结果可能是：“a photograph of a woman and her dog on the beach”。
 

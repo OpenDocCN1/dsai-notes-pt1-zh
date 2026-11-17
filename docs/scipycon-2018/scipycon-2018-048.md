@@ -6,7 +6,6 @@
 
 ![](img/5f6eab589fce803a1ae2363679a6a5aa_3.png)
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_5.png)
 
 ## 图像表示：NumPy 数组 📊
 
@@ -27,7 +26,6 @@ plt.show()
 灰度图像是一个二维矩阵。对于彩色图像，我们需要不同的层来表示不同的颜色，通常是红、绿、蓝（RGB）三个通道。
 
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_7.png)
 
 ```python
 from skimage import data
@@ -97,7 +95,6 @@ print(f"找到 {len(ic)} 张图像")
 首先，我们在一维信号上理解这个概念。
 
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_9.png)
 
 ```python
 # 创建一个阶跃信号并添加噪声
@@ -111,10 +108,8 @@ smoothed_3 = np.convolve(noisy_signal, mean_kernel_3, mode='valid')
 
 NumPy 的 `convolve` 函数在边界处可能产生不理想的效果。SciPy 的 `ndimage.convolve` 提供了更多边界处理模式。
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_11.png)
 
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_13.png)
 
 ```python
 from scipy import ndimage
@@ -122,11 +117,9 @@ from scipy import ndimage
 smoothed_reflect = ndimage.convolve(noisy_signal, mean_kernel_3, mode='reflect')
 ```
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_15.png)
 
 除了均值过滤器，高斯过滤器是更优的平滑选择，它对中心像素赋予更高权重。
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_17.png)
 
 ```python
 # 创建一维高斯核
@@ -165,12 +158,9 @@ edges_sobel = filters.sobel(pixelated_camera)
 
 中值过滤器是一种非线性过滤器，它在平滑的同时能更好地保留边缘。
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_19.png)
-
-![](img/5f6eab589fce803a1ae2363679a6a5aa_20.png)
 
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_22.png)
+
 
 ```python
 from skimage.filters import median
@@ -202,11 +192,8 @@ plt.show()
 
 scikit-image 提供了多种自动确定阈值的方法，如 Otsu 法。
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_24.png)
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_25.png)
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_27.png)
 
 ```python
 from skimage.filters import threshold_otsu
@@ -215,17 +202,12 @@ thresh_otsu = threshold_otsu(text)
 binary_otsu = text > thresh_otsu
 ```
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_29.png)
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_31.png)
 
 对于更复杂的场景，我们需要更高级的方法。活动轮廓（或“蛇”模型）是一种有监督分割方法，它从一个初始轮廓开始，使其收缩并贴合到目标边缘。
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_33.png)
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_35.png)
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_37.png)
 
 ```python
 from skimage.segmentation import active_contour
@@ -257,7 +239,6 @@ segmentation = random_walker(gray_astronaut, labels, beta=400)
 对于无监督分割，SLIC 算法使用 K-means 将图像分割成外观相似的超像素区域。
 
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_39.png)
 
 ```python
 from skimage.segmentation import slic
@@ -267,9 +248,7 @@ segments_slic = slic(astronaut, n_segments=100, compactness=10)
 segments_color = label2rgb(segments_slic, astronaut, kind='avg')
 ```
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_41.png)
 
-![](img/5f6eab589fce803a1ae2363679a6a5aa_43.png)
 
 ## 实战挑战：解决 Stack Overflow 上的真实问题 🎯
 

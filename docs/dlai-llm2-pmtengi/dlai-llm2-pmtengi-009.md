@@ -72,7 +72,6 @@ data = {
 
 ### 3. 发送请求并接收响应 📡
 
-![](img/df80ea7c96e3a1fbf09b63b6f6a3f9d6_1.png)
 
 现在，将URL、请求头和请求数据传入`requests`库的`post`函数中。这个函数调用负责将你的提示词以及模型选择等信息通过互联网发送到托管的API服务。
 
@@ -81,9 +80,7 @@ import requests
 response = requests.post(url, headers=headers, json=data)
 ```
 
-![](img/df80ea7c96e3a1fbf09b63b6f6a3f9d6_3.png)
 
-![](img/df80ea7c96e3a1fbf09b63b6f6a3f9d6_4.png)
 
 让我们打印出原始的响应对象。
 
@@ -93,7 +90,6 @@ response = requests.post(url, headers=headers, json=data)
 
 初始的响应对象信息有限。为了查看具体内容，我们需要调用其`.json()`方法，将响应解析为Python字典。
 
-![](img/df80ea7c96e3a1fbf09b63b6f6a3f9d6_6.png)
 
 ```python
 response_dict = response.json()
@@ -102,9 +98,7 @@ print(response_dict)
 
 解析后的输出是一个结构复杂的字典，可能难以阅读。但仔细观察，你会发现生成的文本存储在`output`这个键下。
 
-![](img/df80ea7c96e3a1fbf09b63b6f6a3f9d6_8.png)
 
-![](img/df80ea7c96e3a1fbf09b63b6f6a3f9d6_9.png)
 
 ### 4. 提取生成的文本 📄
 
@@ -112,7 +106,6 @@ print(response_dict)
 
 首先，访问`output`键。
 
-![](img/df80ea7c96e3a1fbf09b63b6f6a3f9d6_11.png)
 
 ```python
 output = response_dict['output']
@@ -120,13 +113,11 @@ output = response_dict['output']
 
 输出仍然是一个字典。其中包含一个名为`choices`的键，我们需要访问它。
 
-![](img/df80ea7c96e3a1fbf09b63b6f6a3f9d6_13.png)
 
 ```python
 choices = output['choices']
 ```
 
-![](img/df80ea7c96e3a1fbf09b63b6f6a3f9d6_15.png)
 
 `choices`是一个Python列表。我们可以确认它是否只包含一个项目。
 
@@ -135,11 +126,9 @@ print(isinstance(choices, list))
 print(len(choices))
 ```
 
-![](img/df80ea7c96e3a1fbf09b63b6f6a3f9d6_17.png)
 
 然后，我们获取这个列表中的第一个（索引为0）也是唯一的一个项目。
 
-![](img/df80ea7c96e3a1fbf09b63b6f6a3f9d6_19.png)
 
 ```python
 first_choice = choices[0]
@@ -156,7 +145,6 @@ generated_text = first_choice['text']
 print(generated_text)
 ```
 
-![](img/df80ea7c96e3a1fbf09b63b6f6a3f9d6_24.png)
 
 至此，我们成功提取出了模型生成的文本。这个过程与你之前使用的辅助函数的输出结果完全一致。
 

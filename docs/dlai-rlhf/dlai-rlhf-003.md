@@ -20,9 +20,7 @@
     preference_data = []
     ```
 
-![](img/50f0eafdc921d2a761812321cae949a8_3.png)
 
-![](img/50f0eafdc921d2a761812321cae949a8_5.png)
 
 2.  **读取数据文件**：我们将循环读取一个名为 `sample_preference.jsonl` 的JSONL格式文件，并将每一行数据添加到列表中。
     ```python
@@ -31,7 +29,6 @@
             preference_data.append(json.loads(line))
     ```
 
-![](img/50f0eafdc921d2a761812321cae949a8_7.png)
 
 3.  **查看数据结构**：加载完成后，我们可以查看数据的具体内容。每个数据样本都是一个字典。
     ```python
@@ -40,7 +37,6 @@
     print(sample_one.keys()) # 输出: dict_keys(['input_text', 'candidate_0', 'candidate_1', 'choice'])
     ```
 
-![](img/50f0eafdc921d2a761812321cae949a8_9.png)
 
 字典包含四个键：
 *   **`input_text`**：这是提示（prompt），即需要被总结的Reddit帖子原文。所有提示都以特定的指令结尾，例如 `[总结]:`。保持训练和推理时提示格式的一致性非常重要，这样模型才能识别出任务模式。
@@ -49,23 +45,17 @@
 
 奖励模型将基于 `(input_text, 获胜候选, 失败候选)` 这样的三元组进行训练，学习为更好的摘要输出更高的标量分数。
 
-![](img/50f0eafdc921d2a761812321cae949a8_11.png)
 
 ## 探索提示数据集
 
 上一节我们介绍了偏好数据集，本节中我们来看看第二个关键数据集——提示数据集。在奖励模型训练完成后，我们将使用它在强化学习循环中微调基础大语言模型。这个过程需要一个仅包含样本提示的数据集。
 
-![](img/50f0eafdc921d2a761812321cae949a8_13.png)
 
-![](img/50f0eafdc921d2a761812321cae949a8_14.png)
 
-![](img/50f0eafdc921d2a761812321cae949a8_15.png)
 
-![](img/50f0eafdc921d2a761812321cae949a8_17.png)
 
 以下是加载和查看提示数据集的步骤：
 
-![](img/50f0eafdc921d2a761812321cae949a8_19.png)
 
 1.  **加载数据**：与之前类似，我们从一个名为 `sample_prompt.jsonl` 的小文件中加载数据。
     ```python

@@ -4,7 +4,6 @@
 
 ## 概述
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_1.png)
 
 LeNet-5是一个经典的卷积神经网络架构，最初设计用于手写字符识别。本节教程将指导你使用PyTorch框架，从零开始构建并训练一个LeNet-5模型来对MNIST数据集进行分类。我们将重点关注网络层的构建、数据流的处理以及训练循环的实现。
 
@@ -24,19 +23,14 @@ LeNet-5是一个经典的卷积神经网络架构，最初设计用于手写字�
 
 现在，让我们逐步分析在PyTorch中实现LeNet-5的代码。
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_3.png)
 
 ### 1. 环境设置与数据准备
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_5.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_6.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_7.png)
 
 首先，我们导入必要的库并设置环境。为了确保结果的可复现性，我们固定了随机种子。请注意，某些GPU算法具有非确定性，如果遇到错误，可以注释掉相关设置种子代码。
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_9.png)
 
 ```python
 import torch
@@ -53,9 +47,7 @@ torch.manual_seed(1)
 *   对像素值进行**归一化**，使其均值为0，范围在[-1, 1]之间。
 
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_11.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_12.png)
 
 ```python
 # 定义数据转换
@@ -73,9 +65,7 @@ train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle
 test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=1000, shuffle=False)
 ```
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_14.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_16.png)
 
 ### 2. 定义LeNet-5模型
 
@@ -83,9 +73,7 @@ test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=1000, shuffle
 
 以下是模型定义的核心部分：
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_18.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_20.png)
 
 ```python
 class LeNet5(nn.Module):
@@ -135,9 +123,7 @@ class LeNet5(nn.Module):
 *   **展平操作**： 在`forward`函数中，卷积层输出的特征图是四维张量（批量大小, 通道数, 高度, 宽度）。全连接层需要二维输入（批量大小, 特征数），因此我们使用`torch.flatten(x, 1)`将第1维之后的所有维度展平。
 *   **输入维度计算**： 第一个全连接层`nn.Linear(16 * 5 * 5, 120)`的输入维度`16*5*5`需要手动计算。这源于最后一个池化层输出的特征图尺寸：通道数=16，高度=5，宽度=5。如果不确定，可以在`forward`函数中先打印`x`的形状来确定。
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_22.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_23.png)
 
 ### 3. 模型初始化与设备配置
 
@@ -155,16 +141,12 @@ print(f‘Using device: {device}’)
 
 ### 4. 设置训练组件
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_25.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_27.png)
 
 我们使用交叉熵损失函数，它适用于多分类任务。优化器选择带动量的随机梯度下降（SGD），并搭配学习率调度器，以便在训练过程中动态降低学习率。
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_29.png)
 
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_31.png)
 
 ```python
 # 定义损失函数
@@ -176,27 +158,19 @@ optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.1)
 ```
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_33.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_34.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_35.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_36.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_37.png)
 
 ### 5. 训练循环
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_39.png)
 
 训练循环是模型学习的核心。我们迭代多个轮次（epoch），在每个轮次中遍历所有训练数据的小批量（mini-batch），执行前向传播、计算损失、反向传播和参数更新。
 
 以下是训练循环的简化逻辑：
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_41.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_42.png)
 
 ```python
 def train_model(model, train_loader, criterion, optimizer, scheduler, num_epochs=10):
@@ -236,26 +210,19 @@ def train_model(model, train_loader, criterion, optimizer, scheduler, num_epochs
         print(f‘Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss:.4f}, Accuracy: {epoch_acc:.2f}%’)
 ```
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_44.png)
 
 ### 6. 模型评估与预测
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_45.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_47.png)
 
 训练完成后，我们可以在测试集上评估模型性能，并可视化一些预测结果以进行定性检查。
 
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_49.png)
-
-![](img/e56dd1c8776a1e4867060fd3484f8f26_51.png)
 
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_53.png)
 
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_55.png)
+
 
 ```python
 # 评估模型
@@ -287,13 +254,10 @@ def show_examples(model, data_loader, num_examples=10):
 show_examples(model, test_loader)
 ```
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_57.png)
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_59.png)
 
 ## 总结
 
-![](img/e56dd1c8776a1e4867060fd3484f8f26_61.png)
 
 在本节课中，我们一起学习了如何在PyTorch中实现并训练LeNet-5卷积神经网络。我们涵盖了以下核心内容：
 

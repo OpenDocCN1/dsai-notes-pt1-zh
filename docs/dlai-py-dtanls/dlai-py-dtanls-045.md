@@ -12,9 +12,7 @@ Python中最常用的可视化库之一是Matplotlib。程序员尤其看重其�
 
 Matplotlib是一个可视化模块，你可以将其导入到代码中。它允许你在Pandas创建的基础图表之上进行扩展，添加诸如标题、注释、颜色、坐标轴限制、标签格式化等自定义功能。与Pandas类似，Matplotlib包含了数十万行已为你编写好的代码。当你进行探索性数据分析或为报告开发精美的可视化图表时，你很可能会用到Matplotlib。
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_1.png)
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_2.png)
 
 上一节我们介绍了Matplotlib的基本概念，本节中我们来看看它的核心组成部分。
 
@@ -23,7 +21,6 @@ Matplotlib可视化图表由几个核心组件构成。
 *   **图形（Figure）**：你可以将其想象为绘图的画布。一个图形可以容纳一个或多个绘图。它本质上是一个容器。
 *   **绘图（Axes）**：在Matplotlib中，绘图被称为“坐标轴”。每个坐标轴都有自己的一套绘图元素，如标签、数据、图例、网格等。
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_4.png)
 
 你可以直接创建一个图形，尽管这不是必须的。例如，你可能希望控制画布的大小或设置其他选项，如背景颜色。
 
@@ -41,7 +38,6 @@ Matplotlib可视化图表由几个核心组件构成。
 
 你正在处理来自点对点借贷平台Lending Tree的贷款数据集，你可能在前面的课程中还记得它。你的任务是进行探索性数据分析，以更好地了解不同风险等级贷款的特征。你需要撰写一份包含你发现的报告，与银行分享。你的计划是开发富有洞察力的可视化图表，帮助你的客户理解不同的风险状况。毕竟，一图胜千言。
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_6.png)
 
 首先，从文件 `loan_data.csv` 中导入这个数据集。请记住，这行代码之所以有效，是因为CSV文件与你的笔记本文件位于同一文件夹中。在本课程的实验中，你不需要进行任何文件管理，但你应该能够解释这行代码为何有效。
 
@@ -52,9 +48,7 @@ loans = pd.read_csv('loan_data.csv')
 
 数据整体看起来相当干净，列名格式良好。似乎没有唯一的标识符，因此你可以为此分析保留数值索引。
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_8.png)
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_9.png)
 
 ---
 
@@ -75,9 +69,7 @@ grade_counts = loans['grade'].value_counts()
 grade_counts.plot(kind='bar')
 ```
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_11.png)
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_12.png)
 
 你可以看到B级贷款最常见，其次是C级，然后是A级，而E、F和G级的贷款只有少数几笔。这个可视化可能是一个很好的选择，可以帮助你的利益相关者了解整个投资组合中风险是如何平衡的。
 
@@ -96,17 +88,12 @@ sorted_grades.plot(kind='bar')
 
 ## 使用Matplotlib增强图表
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_14.png)
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_15.png)
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_16.png)
 
 目前这是一个相当简陋的图表，你可以使用Matplotlib来增强它。首先，你需要导入 `matplotlib.pyplot` 作为 `plt`。请记住，`as plt` 创建了一个昵称，你通常会看到 `plt` 作为 `matplotlib.pyplot` 的别名。你可以在笔记本的任何位置添加导入命令，尽管你会看到许多程序员将它们分组放在顶部。只需确保你运行了它们。
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_17.png)
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_18.png)
 
 你可以从之前相同的图表开始，现在为其添加更多图层。如果你看这个图表，这里已经有一个图形（或画布）供你绘图，并且已经有一个绘图。你可以使用例如 `plot.title` 命令来增强这个绘图。这个命令将在这个图表上叠加一个标题，几乎是作为另一个图层。
 
@@ -118,11 +105,9 @@ plt.title('Frequency of Loan by Grade')
 
 你也可以使用 `plt.xlabel` 和 `plt.ylabel` 来标记你的坐标轴。“贷款等级”有点不言自明，也许标签是多余的，所以你可以添加一个空字符串（`''`）来移除X轴标签。`plt.ylabel` 可以是“频率”。
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_20.png)
 
 请注意，当你运行这段代码时，你会得到一个标签清晰的图表，但你也会得到一行输出，写着“Text(…)”之类的。在使用Matplotlib时，你还需要添加 `plt.show()` 命令。这个命令明确告诉计算机显示绘图。
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_21.png)
 
 ```python
 sorted_grades.plot(kind='bar')
@@ -144,7 +129,6 @@ plt.show()
 
 然后，我们学习了如何将Matplotlib命令叠加到图表上以增强可视化效果。我们导入了 `matplotlib.pyplot` 并使用了昵称 `plt`。接着，我们使用Pandas的 `plot` 方法创建了一个图表。之后，我们使用了Matplotlib的 `xlabel`、`ylabel` 和 `title` 函数来使我们的可视化更加清晰。
 
-![](img/21cc52ad016d25bd7b9ebe188b4fd908_23.png)
 
 ![](img/21cc52ad016d25bd7b9ebe188b4fd908_24.png)
 

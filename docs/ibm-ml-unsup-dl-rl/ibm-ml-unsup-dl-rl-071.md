@@ -14,7 +14,6 @@ Now let's go over the learning goals for this section。In this section。
 
 
 
-![](img/c485925493262b49ec12e513e267201c_1.png)
 
 So given our different data points within our data set。
 
@@ -24,7 +23,6 @@ And we went over different options on how to use that derivative to update our w
 
 
 
-![](img/c485925493262b49ec12e513e267201c_3.png)
 
 And now I want to review how often we should actually go about updating our weights。
 
@@ -32,7 +30,6 @@ As this is going to be something again that we're going to have to tune when cre
 
 
 
-![](img/c485925493262b49ec12e513e267201c_5.png)
 
 So what do I mean by how often we need to update our weights？
 
@@ -50,7 +47,6 @@ But the con will be that this contentt to be very slow。
 
  especially as that dataset set grows very large。
 
-![](img/c485925493262b49ec12e513e267201c_7.png)
 
 Now on the other end of the spectrum， we again have stochastic gradient percent。
 
@@ -74,7 +70,6 @@ This will also help in slightly regularizing your model as well。
 
 
 
-![](img/c485925493262b49ec12e513e267201c_9.png)
 
 And then we have our compromise using mini batch gradient descent。
 
@@ -90,7 +85,6 @@ And the idea of this compromise is meant to strike obviously a balance between t
 
 
 
-![](img/c485925493262b49ec12e513e267201c_11.png)
 
 Now， just to hammer this all home， let's visualize each of these approaches in comparison to one another。
 
@@ -118,7 +112,6 @@ And it's not quite as accurate as full batch， but it is more accurate than sto
 
 
 
-![](img/c485925493262b49ec12e513e267201c_13.png)
 
 Now， just to review some batching terminology， we have full batch using the entire data set to compute the gradient before updating。
 
@@ -128,9 +121,7 @@ Now， just to review some batching terminology， we have full batch using the 
 
 
 
-![](img/c485925493262b49ec12e513e267201c_15.png)
 
-![](img/c485925493262b49ec12e513e267201c_16.png)
 
 And then we have stochastic gradient descent， which just uses a single example to compute the gradient before updating。
 
@@ -142,9 +133,7 @@ And then we have stochastic gradient descent， which just uses a single example
 
 
 
-![](img/c485925493262b49ec12e513e267201c_18.png)
 
-![](img/c485925493262b49ec12e513e267201c_19.png)
 
 Now， another piece of important terminology is going to be this idea of an epoch。
 
@@ -168,7 +157,6 @@ And then with a mini batch， theres going to be n the number of rows divided by
 
  we will take 10 steps at every single epoch。
 
-![](img/c485925493262b49ec12e513e267201c_21.png)
 
 And when training， we often refer to the number of epochs that are needed for that model to be trained。
 
@@ -180,7 +168,6 @@ So that closes out this video and in the next video。
 
 
 
-![](img/c485925493262b49ec12e513e267201c_23.png)
 
 Namely data shuffling。
 

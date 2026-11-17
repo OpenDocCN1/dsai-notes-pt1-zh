@@ -1,6 +1,5 @@
 # 003：检索的陷阱 - 当简单的向量搜索失效！🔍
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_1.png)
 
 在本节课中，我们将学习向量检索的一些陷阱。我们将看到一些案例，在这些案例中，简单的向量搜索不足以让检索为你的AI应用良好工作。仅仅因为内容在特定嵌入模型下的向量语义上接近，并不总是意味着你能直接获得理想的结果。
 
@@ -59,11 +58,8 @@ projected_data = project_embeddings(all_embeddings_array, umap_transform)
 
 ![](img/d202476bf94e3ff4d82c5183d7d9d0a1_3.png)
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_4.png)
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_5.png)
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_6.png)
 
 ![](img/d202476bf94e3ff4d82c5183d7d9d0a1_7.png)
 
@@ -81,11 +77,8 @@ plt.show()
 ```
 这个散点图展示了我们数据在二维空间中的分布。语义相似的内容通常会聚集在一起，尽管二维投影无法完全保留高维空间的所有结构，但它有助于我们形成几何直觉。
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_9.png)
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_10.png)
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_11.png)
 
 ## 分析查询与检索结果
 
@@ -114,18 +107,14 @@ for i, doc in enumerate(retrieved_docs):
 接下来，我们将查询和检索到的结果一起可视化，观察它们在嵌入空间中的位置关系。
 
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_13.png)
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_14.png)
 
 
 ![](img/d202476bf94e3ff4d82c5183d7d9d0a1_15.png)
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_16.png)
 
 ![](img/d202476bf94e3ff4d82c5183d7d9d0a1_17.png)
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_18.png)
 
 ```python
 # 获取查询的嵌入向量
@@ -161,7 +150,6 @@ plt.show()
 
 ![](img/d202476bf94e3ff4d82c5183d7d9d0a1_21.png)
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_22.png)
 
 ```python
 query_ai = "what's the strategy around artificial intelligence that is AI"
@@ -171,7 +159,6 @@ query_ai = "what's the strategy around artificial intelligence that is AI"
 
 以下是关于“研发投资”的查询示例：
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_24.png)
 
 ```python
 query_rd = "What has been the investment in research and development"
@@ -179,7 +166,6 @@ query_rd = "What has been the investment in research and development"
 ```
 这个通用查询的检索结果可能会更加分散。当一个查询落在数据“云团”之外时，它找到的最近邻可能来自云团的不同部分，因此结果会显得分散，包含更多不相关的干扰项。
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_26.png)
 
 ## 处理不相关查询
 
@@ -193,15 +179,11 @@ query_irrelevant = "what has Michael Jordan done for us lately"
 ```
 不出所料，检索结果与迈克尔·乔丹毫无关系。但在RAG（检索增强生成）流程中，这些不相关的结果（全部是干扰项）会被提供给大语言模型，导致模型产生混乱或错误的输出，这种现象很难诊断和调试。
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_28.png)
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_29.png)
 
 可视化结果显示，这些结果点在空间中非常分散，印证了查询与数据集内容完全不匹配。
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_31.png)
 
-![](img/d202476bf94e3ff4d82c5183d7d9d0a1_33.png)
 
 ## 总结与下节预告
 

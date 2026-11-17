@@ -1,6 +1,5 @@
 #  008：使用 Nomic 的新嵌入模型构建开源 RAG 应用（配合 ChromaDB 和 Ollama）
 
-![](img/1dd644ff3900a6c0f46649516ea44d3f_0.png)
 
 ![](img/1dd644ff3900a6c0f46649516ea44d3f_0.png)
 

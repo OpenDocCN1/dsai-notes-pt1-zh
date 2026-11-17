@@ -32,25 +32,17 @@
 
 ---
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_1.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_3.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_5.png)
 
 ## 第二部分：创建 Python 包
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_7.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_9.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_11.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_13.png)
 
 上一节我们介绍了包的基本概念，本节我们来看看如何实际创建一个 Python 包。
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_15.png)
 
 ### Python 模块与包
 
@@ -61,27 +53,19 @@
 
 ### 为什么需要打包？
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_17.png)
 
 将代码打包可以让你：
 *   方便地使用 `pip` 等工具进行安装和管理。
 *   轻松地将代码分发给他人，无论是通过 PyPI、Conda Forge，还是直接给同事。
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_19.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_21.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_23.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_24.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_26.png)
 
 ### 标准包目录结构
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_28.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_30.png)
 
 遵循约定俗成的目录结构非常重要。一个典型的项目结构如下：
 
@@ -98,11 +82,8 @@ my_package/
     └── test_module_a.py
 ```
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_32.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_34.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_36.png)
 
 ### `setup.py` 文件
 
@@ -144,9 +125,7 @@ pip install -e .
 python setup.py develop
 ```
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_42.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_44.png)
 
 这两种方式都会在 `site-packages` 中创建一个链接（`.pth` 文件），指向你的源代码目录，使得 Python 总能找到最新的代码。
 
@@ -154,13 +133,11 @@ python setup.py develop
 
 ## 第三部分：构建并上传到 PyPI
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_46.png)
 
 上一节我们学会了如何组织代码并创建 `setup.py`，本节我们将学习如何构建发行版并分享给全世界。
 
 ### 关键术语
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_48.png)
 
 *   **PyPI**：Python 包索引，是官方的 Python 包仓库。
 *   **pip**：从 PyPI 安装包的工具。
@@ -170,7 +147,6 @@ python setup.py develop
 
 ### 构建发行版
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_50.png)
 
 以下是常见的构建任务和命令：
 
@@ -233,7 +209,6 @@ python setup.py develop
 
 构建一个二进制扩展涉及多层工具：
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_54.png)
 
 1.  **编译器**：如 GCC、Clang、MSVC，将源代码转换为机器码。
 2.  **链接器**：将多个编译后的对象文件合并成共享库（如 `.so`、`.dll`）。
@@ -241,11 +216,8 @@ python setup.py develop
 4.  **系统探测工具**：如 CMake、Autotools，用于探测系统环境并生成构建文件。
 5.  **包管理器**：如 pip 或 Conda，负责解析依赖并调用底层工具链。
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_56.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_58.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_60.png)
 
 ![](img/de3c33275b0634e99f078bacb2cc0b52_62.png)
 
@@ -255,9 +227,7 @@ python setup.py develop
 
 二进制兼容性关键在于 **C 运行时库** 的兼容性，因为操作系统和 CPython 本身都是用 C 写的。
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_66.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_68.png)
 
 ![](img/de3c33275b0634e99f078bacb2cc0b52_69.png)
 
@@ -299,9 +269,7 @@ Conda 极大地简化了二进制依赖的管理：
 *   可以轻松安装非 Python 的依赖库（如 C 库的头文件和动态库）。
 *   通过 `conda-build` 工具，可以创建包含复杂依赖关系的二进制 Conda 包。
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_79.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_80.png)
 
 ![](img/de3c33275b0634e99f078bacb2cc0b52_82.png)
 
@@ -332,7 +300,6 @@ Conda 极大地简化了二进制依赖的管理：
 
 `conda-build` 是一个自动化构建 Conda 包的工具。它的核心是一个名为 `meta.yaml` 的配方文件。
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_92.png)
 
 #### 基础 `meta.yaml` 结构
 
@@ -352,15 +319,10 @@ package:
       path: .  # 使用当前目录的源码
     ```
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_94.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_96.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_98.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_100.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_102.png)
 
 ![](img/de3c33275b0634e99f078bacb2cc0b52_103.png)
 
@@ -372,9 +334,7 @@ package:
       script: python -m pip install . --no-deps
     ```
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_105.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_107.png)
 
 3.  **`requirements`**：定义依赖关系，分为三个环境：
     *   `build`：构建时需要的**工具**（如编译器、CMake）。
@@ -394,7 +354,6 @@ package:
 
 ![](img/de3c33275b0634e99f078bacb2cc0b52_109.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_111.png)
 
 4.  **`test`**：定义自动化测试。
     ```yaml
@@ -405,7 +364,6 @@ package:
         - python -c "import my_package; print('OK')"
     ```
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_113.png)
 
 ![](img/de3c33275b0634e99f078bacb2cc0b52_115.png)
 
@@ -427,17 +385,11 @@ package:
 *   **变体（Variants）**：通过 `conda_build_config.yaml` 文件定义构建矩阵（如针对不同 Python 版本构建）。
 *   **运行导出（Run Exports）**：允许一个包声明其依赖的兼容性范围，并自动传递给依赖它的下游包。这是管理二进制兼容性的强大机制。
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_117.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_119.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_120.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_121.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_123.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_125.png)
 
 ### 分享你的 Conda 包
 
@@ -445,27 +397,19 @@ package:
 *   **你自己的 Anaconda.org 频道**：用于个人或团队分享。
 *   **Conda-Forge**：一个社区驱动的 Conda 包仓库。你可以通过提交“ feedstock”（包含配方的独立仓库）来为社区贡献包。
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_127.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_129.png)
 
 ---
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_131.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_133.png)
 
 ## 总结
 
 在本课程中，我们一起学习了 Python 打包的完整旅程：
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_135.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_137.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_139.png)
 
-![](img/de3c33275b0634e99f078bacb2cc0b52_141.png)
 
 1.  **基础**：理解了模块、包、源码发行版和二进制发行版的概念。
 2.  **创建**：学会了如何组织项目结构，编写 `setup.py`，并使用开发模式。

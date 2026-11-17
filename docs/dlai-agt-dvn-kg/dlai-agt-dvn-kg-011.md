@@ -1,32 +1,23 @@
 # 011：知识图谱构建 – 第二部分 🧠
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_0.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_2.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_4.png)
 
 在本节课中，我们将继续知识图谱的构建工作。上一节课我们根据构建计划，从CSV文件创建了领域图。现在，我们将处理Markdown文件，将其分块成词汇图，并将提取的实体整合到主题图中。
 
 ## 概述
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_6.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_8.png)
 
 本节课我们将学习如何使用Neo4j GraphRAG库进行文本分块和实体提取，并了解实体解析的技术。这并非工作流中的智能体部分，整个过程将由工具和辅助函数完成。我们将定义两个核心工具：一个用于构建知识图谱，另一个用于关联主题节点和领域节点。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_10.png)
 
 ## 环境设置与数据准备
 
 首先，我们需要导入必要的库并完成环境设置。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_12.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_13.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_15.png)
 
 ```python
 # 导入所需库
@@ -35,9 +26,7 @@ import ...
 
 确保OpenAI和Neo4j环境已准备就绪。由于Neo4j在加载本笔记本时是全新的，我们需要加载上一节课创建的产品节点。我们有一个辅助函数 `load_product_nodes` 来完成此任务。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_17.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_18.png)
 
 ```python
 # 加载产品节点
@@ -54,21 +43,16 @@ approved_entities = load_approved_entities()
 approved_fact_types = load_approved_fact_types()
 ```
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_20.png)
 
 ## 知识图谱构建管道
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_22.png)
 
 现在，我们可以开始定义处理Markdown文件、进行分块和实体提取所需的所有函数。Neo4j GraphRAG库提供了一个便捷的 `SimpleKGPipeline` 类来完成这些处理。
 
 ### 了解SimpleKGPipeline接口
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_24.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_26.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_27.png)
 
 `SimpleKGPipeline` 需要以下组件：
 *   **LLM**：用于实体提取。
@@ -81,9 +65,7 @@ approved_fact_types = load_approved_fact_types()
 
 以下是创建管道实例的示例代码结构：
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_29.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_31.png)
 
 ```python
 pipeline = SimpleKGPipeline(
@@ -97,17 +79,12 @@ pipeline = SimpleKGPipeline(
 )
 ```
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_32.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_33.png)
 
 ### 端到端工作流
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_35.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_37.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_38.png)
 
 让我们了解一下Neo4j KG构建器的端到端工作流，以帮助理解这些组件的作用：
 1.  **文档加载**：使用自定义的Markdown加载器加载每个文档。
@@ -119,33 +96,24 @@ pipeline = SimpleKGPipeline(
 7.  **图写入**：KG写入器组件将内存中的图保存到Neo4j。
 8.  **实体解析**：实体解析器组件合并可能是同一实体的节点。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_40.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_41.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_42.png)
 
 ## 定义自定义组件
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_44.png)
 
 现在，我们可以开始定义需要传入管道的自定义函数。
 
 ### 自定义文本分割器
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_46.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_47.png)
 
 首先，我们设置一个自定义文本分割器。根据我们Markdown文件的结构（以H1标题开头，用 `---` 分隔评论），我们将使用一个简单的正则表达式分割器。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_49.png)
 
 以下是扩展 `TextSplitter` 基类的实现：
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_50.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_51.png)
 
 ```python
 class CustomTextSplitter(TextSplitter):
@@ -161,9 +129,7 @@ class CustomTextSplitter(TextSplitter):
 
 类似地，我们将创建一个自定义的数据加载器来加载Markdown文件。它将扩展 `DataLoaderBase` 类，并提取文档标题作为元数据。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_53.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_55.png)
 
 以下是 `MarkdownDataLoader` 的实现：
 
@@ -186,7 +152,6 @@ class MarkdownDataLoader(DataLoaderBase):
         return doc_info, pdf_doc
 ```
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_57.png)
 
 ### 配置LLM、嵌入模型和驱动
 
@@ -200,39 +165,26 @@ embedder = OpenAIEmbedder(api_key=openai_api_key)
 driver = get_neo4j_driver()
 ```
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_59.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_60.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_61.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_62.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_63.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_64.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_65.png)
 
 ## 配置实体提取上下文
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_67.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_68.png)
 
 接下来，我们转向配置知识图谱实体提取所需的上下文，从实体模式开始。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_70.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_71.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_72.png)
 
 ### 定义实体模式
 
 Neo4j GraphRAG包所需的实体模式包含几个部分：节点类型、关系类型和模式模式。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_74.png)
 
 ```python
 # 节点类型（来自已批准的实体）
@@ -255,21 +207,15 @@ kg_schema = {
 
 ### 创建自定义提示词
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_76.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_77.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_79.png)
 
 我们将创建一个自定义提示词，它会注入每个文本块的内容、模式以及文件级别的上下文。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_81.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_83.png)
 
 首先，定义一个辅助函数来获取文件上下文（例如文件标题和简介）。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_85.png)
 
 ```python
 def get_file_context(file_text):
@@ -278,9 +224,7 @@ def get_file_context(file_text):
     return '\n'.join(lines)
 ```
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_87.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_88.png)
 
 然后，定义提示词模板。它包含LLM的角色和目标、设计说明、输出格式规范、模式定义以及文件上下文。
 
@@ -329,15 +273,12 @@ def make_kg_builder(file_path):
     return pipeline
 ```
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_90.png)
 
 ### 处理所有Markdown文件
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_92.png)
 
 现在，我们可以遍历所有已批准的文件，为每个文件创建构建器并运行处理。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_94.png)
 
 ```python
 for file_info in approved_files:
@@ -349,33 +290,25 @@ for file_info in approved_files:
     kg_builder.run(file_path)
 ```
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_96.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_98.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_100.png)
 
 此循环完成后，我们将得到一个完整的词汇图（包含相互连接且连接到文档节点的文本块）和一个主题图（包含所有提取的实体及其关系）。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_102.png)
 
 ## 关联主题图与领域图
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_104.png)
 
 现在我们已经处理了所有文件，拥有了词汇图、主题图和领域图。然而，图谱还不完整，因为主题图和领域图没有连接。领域图是从CSV文件创建的，而主题图是从Markdown文件中提取数据创建的。
 
 下一步是将我们从Markdown文件中提取的实体（主题图）与领域图连接起来。我们将定义一些工具来完成这个任务。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_106.png)
 
 ### 实体解析策略
 
 对于主题图中的每种实体类型，我们将设计一种策略来与领域图中的正确节点关联。例如，主题图中具有产品名称的产品应与领域图中的产品关联。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_108.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_109.png)
 
 为了实现这一点，我们需要做以下几件事：
 1.  查找主题图中所有唯一的实体标签。
@@ -384,19 +317,14 @@ for file_info in approved_files:
 
 ### 查找主题图中的唯一实体标签
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_111.png)
 
 首先，让我们查看主题图，看看Neo4j GraphRAG库处理后节点是什么样子。结果节点将带有一个额外的标签 `__entity__label` 来标识它们。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_112.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_113.png)
 
 我们可以运行一个Cypher查询来查找不同的实体标签。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_115.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_116.png)
 
 ```cypher
 MATCH (n)
@@ -405,13 +333,10 @@ UNWIND labels(n) AS entity_label
 RETURN DISTINCT entity_label
 ```
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_118.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_120.png)
 
 为了过滤掉下划线开头的内部标签（如 `__entity__` 和 `__kg_builder__`），我们可以优化查询：
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_122.png)
 
 ```cypher
 MATCH (n)
@@ -423,33 +348,22 @@ RETURN DISTINCT entity_label
 
 我们将这个查询包装成一个辅助函数 `get_unique_entity_labels`。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_124.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_125.png)
 
 ### 查找实体和领域节点的属性键
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_127.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_129.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_130.png)
 
 接下来，对于每个唯一的实体标签，我们还需要查找这些标签拥有的唯一属性键。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_132.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_133.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_135.png)
 
 以下是查找主题图中某个实体标签唯一键的辅助函数：
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_137.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_138.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_139.png)
 
 ```python
 def get_unique_entity_keys(entity_label):
@@ -463,11 +377,8 @@ def get_unique_entity_keys(entity_label):
     return result.data()[0]['unique_keys']
 ```
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_141.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_142.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_144.png)
 
 类似地，我们定义一个函数来查找领域图中某个标签的唯一属性键：
 
@@ -485,9 +396,7 @@ def get_unique_domain_keys(domain_label):
 
 ### 规范化属性键并关联键值对
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_146.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_147.png)
 
 为了便于比较，我们定义一个辅助函数来规范化属性键（例如，小写、去除空格、移除标签前缀）。
 
@@ -521,21 +430,16 @@ def correlate_keys(label, entity_keys, domain_keys, similarity_threshold=0.9):
     return correlated_keys
 ```
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_149.png)
 
 ### 使用Jaro-Winkler距离进行实体解析
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_151.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_152.png)
 
 最后，我们使用Cypher的 `apoc.text.jaroWinklerDistance` 函数，基于相似属性值来执行实体解析。该函数计算两个字符串之间的编辑距离，得分在0到1之间（0表示完全匹配）。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_154.png)
 
 以下是一个Cypher查询示例，它查找产品实体中 `name` 和 `product_name` 属性值高度匹配的节点对，并创建 `CORRESPONDS_TO` 关系。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_156.png)
 
 ```cypher
 MATCH (entity:Product)
@@ -553,13 +457,10 @@ RETURN count(r) AS relationships_created
 
 我们将这个查询包装成一个函数 `resolve_entities`。
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_158.png)
 
 ### 连接所有实体
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_159.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_160.png)
 
 为了完整性，我们遍历所有唯一的实体标签，尝试将主题节点与相应的领域节点关联起来。
 
@@ -579,23 +480,16 @@ for label in unique_entity_labels:
         resolve_entities(label, best_entity_key, best_domain_key, threshold=0.1)
 ```
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_166.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_167.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_168.png)
 
 ## 总结
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_170.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_172.png)
 
 在本节课中，我们一起完成了知识图谱构建的第二部分。我们学习了：
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_174.png)
 
-![](img/7479beb84ff34a83faf6d4c678d9097c_175.png)
 
 1.  **配置知识图谱构建管道**：使用Neo4j GraphRAG库的 `SimpleKGPipeline`，并为其定制了Markdown加载器、文本分割器、提取模式和提示词。
 2.  **处理非结构化文本**：遍历Markdown文件，进行分块、嵌入计算和实体/关系提取，从而构建了词汇图和主题图。

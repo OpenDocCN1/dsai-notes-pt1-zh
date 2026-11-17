@@ -10,19 +10,15 @@
 
 ---
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_1.png)
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_2.png)
 
 ## 数据准备与可视化
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_3.png)
 
 首先，我们需要导入必要的模块并将数据加载到变量`df`中。为了直观展示数据，我们将按切割等级分组，选择价格列，计算平均值，排序结果，并使用条形图进行可视化。
 
 以下是数据准备和可视化的步骤：
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_5.png)
 
 ```python
 import pandas as pd
@@ -45,14 +41,10 @@ plt.show()
 
 为了进一步探索，我们可以使用箱线图查看基于切割等级的价格分布。Seaborn库可以轻松实现这一点。
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_7.png)
-
-![](img/f56152b23dc3171d5aaac4a13b4c8748_8.png)
-
-![](img/f56152b23dc3171d5aaac4a13b4c8748_9.png)
 
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_11.png)
+
+
 
 ```python
 # 设置切割等级的显示顺序
@@ -80,18 +72,13 @@ very_good_prices = df[df['cut'] == 'Very Good']['price']
 good_prices = df[df['cut'] == 'Good']['price']
 ```
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_13.png)
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_14.png)
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_15.png)
 
 接下来，使用`ttest_ind`函数进行检验。与单样本t检验不同，这里不需要指定`popmean`参数，因为我们的目标是直接比较两个组的均值。
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_16.png)
 
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_18.png)
 
 ```python
 # 执行双样本t检验
@@ -104,15 +91,12 @@ print(test_results)
 
 ---
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_20.png)
 
 ## 结果解读
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_22.png)
 
 假设我们设定的显著性水平为0.05。我们可以编写一个简单的if语句来解读检验结果：
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_23.png)
 
 ```python
 alpha = 0.05
@@ -129,7 +113,6 @@ else:
 
 ---
 
-![](img/f56152b23dc3171d5aaac4a13b4c8748_25.png)
 
 ![](img/f56152b23dc3171d5aaac4a13b4c8748_26.png)
 

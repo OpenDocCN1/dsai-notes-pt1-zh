@@ -706,11 +706,9 @@ Transformer 架构 [120, 90] 已广泛应用于自然语言和计算机视觉研
 
 其中$R_{WB}$、$R_{HE}$和$R_{GC}$表示通过相应的预处理方法获得的精细图像。$C_{WB}$、$C_{HE}$和$C_{GC}$表示学习到的置信度图。$\odot$是逐元素乘积。MFEF [169]和 F2UIE [121]利用 WB 和对比度限制自适应直方图均衡化（CLAHE）来获得高质量的输入，具有更好的对比度。
 
-![参见说明](img/0915934e88086c9db7864c81d081797d.png)![参见说明](img/b470d6e564d4271aa258092caf46918f.png)![参见说明](img/2828e8ed817a7544be826309ebcdad15.png)![参见说明](img/7e7e48c0bc247e674ecc3aaf54c0cb35.png)![参见说明](img/e50236e40b9ca689f243eb5dadae4e1c.png)![参见说明](img/1cf4feca048b8a66201c9eb2801b0987.png)![参见说明](img/8a8008684e8361a024afb244a6ea9abc.png)![参见说明](img/2358aedba316db7c5fad377debe42ace.png)![参见说明](img/be37f24d4f38e99211adb1862ee9d3a8.png)![参见说明](img/b96e3a5bcc8e00412d5585f7df770993.png)![参见说明](img/0b5bfa5a4896aadf23e48c22a0a7f863.png)![参见说明](img/7175da679ba0e41e2bfc639ca31206e0.png)
 
 失真              UWNet              FUnIEGAN            WaterNet             ADMNNet             UColor
 
-![参见说明](img/7671d258b13a7f6919e1d35be6bb58a6.png)![参见说明](img/a1a1d86c583bcd4e450299f79d0a0f17.png)![参见说明](img/5806af330dbf636987885bcaf84f3195.png)![参见说明](img/1a6cf0389ffd9e94bc9fd919a84ad003.png)![参见说明](img/afbaa027582e8654db14fd3ebd9706ee.png)![参见说明](img/43a352dfb715334da44b3a0c86660a0a.png)![参见说明](img/db833ddb00063ad2899f7d30086cbbc7.png)![参见说明](img/670097c2f037fe17bac3f8be0192ec9e.png)![参见说明](img/2d13f0040c2bc6f296f4382e1515f21a.png)![参见说明](img/f93cc42282253a9eff0d9db7fd8baec8.png)![参见说明](img/38b913c61e618508c16a5d89a793cc81.png)![参见说明](img/afb5c52bb02b8d2445efd23af44ea212.png)
 
 UGAN              SGUIE                 UIE-WD               SCNet                 STSC                  U-Trans
 
@@ -720,7 +718,6 @@ CECF              Semi-UIR              UIE-DM     �
 
 图 8：在 UIEB 全参考测试集上获得的视觉结果。曲线图表示像素直方图。柱状图显示每个通道的平均像素值。
 
-![参见说明](img/7610932a375b2bf8838826bd87d2fe5c.png)![参见说明](img/1b5b381c7f3b5131fa3b2228250d5fe9.png)
 
 (a) Challenge-60                                                                (b) U45
 
@@ -730,11 +727,9 @@ CECF              Semi-UIR              UIE-DM     �
 
 图 9：在无参考基准数据集上的 URANKER 值。水平虚线表示所有算法获得的定量结果的均值。水平轴上的字母与算法的对应关系是：A（FUnIEGAN）、B（WaterNet）、C（ADMNNet）、D（UColor）、E（UGAN）、F（SGUIE）、G（UIE-WD）、H（SCNet）、I（STSC）、J（U-Trans）、K（CECF）、L（Semi-UIR）、M（UIE-DM）、N（HCLR-Net）和 O（GUPDM）。最佳结果用红色字体表示，第二最佳结果用蓝色字体表示。
 
-![参见说明](img/044ffddce626c178f2d3cfdf246120ff.png)![参见说明](img/1c45fbcc18253eec2fd2dfb40c6e7a23.png)![参见说明](img/363e00d3bd98615dde6e06e7e6fe82f0.png)![参见说明](img/2d4bc6dbccff270c7a63c7ea578d1fab.png)![参见说明](img/9777089af4ac16a610b3bc3633f94955.png)![参见说明](img/42ad8d93c8b829b210deb3c615f47d80.png)![参见说明](img/9aeb866eeab6e4d017f283fd684861b3.png)![参见说明](img/de0bb070b09bfe8928ac6a20c4e2712d.png)![参见说明](img/50e9bd42a8ff11a2e7ecf8e2830ca765.png)![参见说明](img/4c3a6ea50cd565c897f416a563686195.png)![参见说明](img/633c2ded4b6c623efba91379b9723ff6.png)![参见说明](img/914a55d519100847b3f660205b184e4c.png)
 
 Distortion              UWNet              PhysicalNN           FUnIEGAN           WaterNet             ADMNNet
 
-![参见说明](img/5963076e6ddc95e80cb1b7039690bc74.png)![参见说明](img/0d5ac138ad567254996a6e48ba028f24.png)![参见说明](img/efa18d17b0da8a00a8736a4ce1799759.png)![参见说明](img/3b1aa67038e23fb323558dbba3ece45e.png)![参见说明](img/c0fc43be8b25ae15c3ff89dd2a510a2f.png)![参见说明](img/2ed2dbc3568347882663e5bee5931516.png)![参见说明](img/c7c65beef56c1c41a4ca2814a2dd9030.png)![参见说明](img/517c0573381c15adfac19254177abc7e.png)![参见说明](img/9279e499654ff97154ab319b6b2197d3.png)![参见说明](img/b9804cc7f4b87cf1578cbdb2b3d5f17b.png)![参见说明](img/ca047d79938409d38ada405c8dae2664.png)![参见说明](img/6d14cf974b4ade3fc50bd23ee4ba7f87.png)
 
 UColor               UGAN               SGUIE                 UIE-WD                SCNet                 STSC
 

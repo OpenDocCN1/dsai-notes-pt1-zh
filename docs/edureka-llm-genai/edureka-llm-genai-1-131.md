@@ -61,7 +61,6 @@
 5.  将矩阵转换为数组并打印，同时打印出对应的特征名称（即词汇表）。
 
 
-![](img/22858c44e53fb9a3da29f1d398ba8689_3.png)
 
 ```python
 from sklearn.feature_extraction.text import CountVectorizer

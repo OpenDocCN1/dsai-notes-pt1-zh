@@ -1,6 +1,5 @@
 # 003：图像分割模型（SAM）入门教程 🖼️
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_0.png)
 
 在本节课中，我们将学习如何使用“Segment Anything Model”（SAM）进行图像分割。我们将探索如何通过点坐标、边界框以及正负提示来引导模型生成精确的分割掩码。这些掩码是后续图像编辑等高级视觉任务的重要输入。
 
@@ -62,7 +61,6 @@ resized_image = resize_image(image)
 
 本节我们将学习如何使用点坐标来提示模型。我们将从使用SAM模型隔离左侧的狗开始。为此，您需要在图像上定义一个点，模型将以此作为分割的起点。
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_5.png)
 
 首先，导入一个我们为您创建的实用函数，用于检查您指定的点在图像上的位置。
 
@@ -71,13 +69,10 @@ resized_image = resize_image(image)
 from utils import show_points_on_image
 ```
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_7.png)
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_8.png)
 
 由于在提示SAM模型时可以指定多个点，我们将使用嵌套列表来定义输入点。第一个坐标指X轴，第二个坐标指Y轴。我们还可以将输入标签定义为正或负。正点包含在掩码中，负点则从掩码中排除。
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_10.png)
 
 对于第一个示例，让我们使用一个正点。
 
@@ -115,7 +110,6 @@ masks = prompt_process.point_prompt(points=input_point, pointlabel=input_label)
 
 生成掩码后，您可以在原始图像上可视化它们以确保生成正确。
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_12.png)
 
 ```python
 # 可视化掩码
@@ -125,7 +119,6 @@ show_masks_on_image(resized_image, masks)
 
 ## 使用多点与正负提示 ✨
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_14.png)
 
 不过，您不必只选择一个点。如果您想获得更大的掩码，也可以指定两个点。让我们尝试为两只狗创建一个掩码，这被称为语义掩码。
 
@@ -159,7 +152,6 @@ show_masks_on_image(resized_image, masks_multi)
 
 这次，让我们在狗的夹克上选择一个带有正标签的2D坐标，在狗身上选择一个带有负标签的2D坐标，以向模型表明我们只想分割狗身上的夹克。
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_20.png)
 
 为此，我们将像之前一样传递一个2D坐标列表，但这次我们将为负标签指定0。
 
@@ -179,21 +171,16 @@ masks_jacket = prompt_process.point_prompt(points=input_point_pos_neg, pointlabe
 show_masks_on_image(resized_image, masks_jacket)
 ```
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_22.png)
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_24.png)
 
 ## 使用边界框提示 📦
 
 在使用机器学习模型时，通常使用边界框。边界框是叠加在图像上的矩形，用于突出显示对象，常用于物体检测工作流。
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_26.png)
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_27.png)
 
 这次，我们将指定一个边界框提示来突出显示右侧的狗，而不是指定一个提示点。
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_29.png)
 
 边界框的格式为 `[x_min, y_min, x_max, y_max]`，前两个坐标代表框的左上角，后两个坐标代表右下角。
 
@@ -209,7 +196,6 @@ input_box = [[700, 250, 950, 500]]  # 围绕右侧狗的示例框
 masks_box = prompt_process.box_prompt(bbox=input_box)
 ```
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_31.png)
 
 ![](img/8e34e23f06a2b146c002fceeb1a87144_32.png)
 
@@ -225,7 +211,6 @@ final_masks = [mask.cpu().numpy().astype(bool) for mask in masks_box]
 
 最后，我们在原始图像上显示掩码。
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_35.png)
 
 ```python
 show_masks_on_image(resized_image, final_masks)
@@ -241,10 +226,8 @@ show_masks_on_image(resized_image, final_masks)
 
 让我们看一下上面创建的分割掩码，但这次以其原始格式——二进制掩码的形式查看。同时，将这个二进制掩码可视化为图像。
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_37.png)
 
 
-![](img/8e34e23f06a2b146c002fceeb1a87144_39.png)
 
 ```python
 # 查看第一个掩码的原始二进制格式

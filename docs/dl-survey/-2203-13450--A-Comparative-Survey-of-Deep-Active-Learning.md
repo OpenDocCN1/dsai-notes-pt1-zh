@@ -221,31 +221,24 @@ WAAL 的表现始终优于熵方法（Entropy）和 BADGE，并且训练周期�
 
 图 3：ResNet18 在有无 ImageNet1K 预训练下的激活图。
 
-![参见说明](img/b836abd2f05cc40f8f0346959d531f7b.png)
 
 (a)
 
-![参见说明](img/55f09371a0f79c68e6a2fb655a247992.png)
 
 (b)
 
-![参见说明](img/1c574e6a7f3a2d95e9f4140995e74bbe.png)
 
 (c)
 
-![参见说明](img/f0a5ef9be7c1a35fff5b43a966611f58.png)
 
 (d)
 
-![参见说明](img/4b5fc3a6eab859590a86f7196a887c53.png)
 
 (e)
 
-![参见说明](img/ef6847d6b4529a0cc13eb7e4b53f16d2.png)
 
 (f)
 
-![参见说明](img/bbfe707a6ad0f4598df51f937a4d750a.png)
 
 (g)
 
@@ -795,23 +788,18 @@ DISTIL 库主要用于作者组提出的子模函数[37]，除了*DeepAL*和*$\t
 
 为了观察不同 DAL 方法在不同 AL 阶段的性能差异，我们提供了多个数据集上的整体准确率-预算曲线，如图 5 所示。从该图中可以观察到，由于在标记数据不足的情况下训练的损失预测不准确，LPL 在 AL 过程的早期阶段较弱。在后期，通过在更多标记数据上共同训练 LossNet 和基本分类器，LossNet 显示了增强基本分类器的能力。相比之下，WAAL 在 AL 过程的早期阶段表现更好，因为其设计的损失函数更适合 AL。它有助于区分标记和未标记样本，并在早期阶段选择更具代表性的数据样本。因此，当限制标记成本的预算时，WAAL 带来了更多的好处。
 
-![参考说明](img/6a262f3a12aa7e2787701c35c257c3db.png)
 
 (a) MNIST
 
-![参考说明](img/3b076e9f3271f9c8a92e1e69c1d76b11.png)
 
 (b) FashionMNIST
 
-![参考说明](img/4fc1155b1075c5548f6bd6e2567e7347.png)
 
 (c) SVHN
 
-![参考说明](img/7de4d6df4057d5d18a332df33d7456e2.png)
 
 (d) CIFAR10
 
-![参考说明](img/5b1a031f7616d96746ceb45f8f3a8bbc.png)
 
 (e) CIFAR10-imb
 
@@ -825,95 +813,72 @@ DISTIL 库主要用于作者组提出的子模函数[37]，除了*DeepAL*和*$\t
 
 我们展示了使用不同批量大小和训练轮次的准确率-预算曲线，如图 6 所示。对该消融研究的详细分析见主文献。
 
-![参考说明](img/4b660fbd811402351c67f4e889d6be3d.png)
 
 (a) $b=1000$, $\#e=5$
 
-![参考说明](img/d9f9bc149d15b6cc7c7dca771974139f.png)
 
 (b) $b=2000$, $\#e=5$
 
-![参考说明](img/19ddccf130e52180ac51ae2a8f2a5158.png)
 
 (c) $b=4000$, $\#e=5$
 
-![参考说明](img/596612cfddf21c51b0c11bebc3025eff.png)
 
 (d) $b=10000$, $\#e=5$
 
-![参考说明](img/6198a95b9cd9e8e2d5a7cc668c15ae64.png)
 
 (e) $b=1000$, $\#e=10$
 
-![参考说明](img/033192d9dcf3561b8fc4f6cdd4c9317f.png)
 
 (f) $b=2000$, $\#e=10$
 
-![参考说明](img/ad7d1630b8edb5ab7148dd5032796940.png)
 
 (g) $b=4000$, $\#e=10$
 
-![参考说明](img/0cf093ceb14ce548ecb362f1bac20e66.png)
 
 (h) $b=10000$，$\#e=10$
 
-![参考说明](img/f5a25f38deac5e4ada158cfcffcbf064.png)
 
 (i) $b=1000$，$\#e=15$
 
-![参考说明](img/69c82c7a00419cdaf7e8c236b96953e6.png)
 
 (j) $b=2000$，$\#e=15$
 
-![参考说明](img/b1af6eed1564f7e8ad6cbda5f614cfd8.png)
 
 (k) $b=4000$，$\#e=15$
 
-![参考说明](img/9be919672968d59e527c64b1ba87b3b3.png)
 
 (l) $b=10000$，$\#e=15$
 
-![参考说明](img/58cc7e809e3ba2f3ca9793f49d730141.png)
 
 (m) $b=1000$，$\#e=20$
 
-![参考说明](img/7a349a4b455daa94cffeb3ed53e19320.png)
 
 (n) $b=2000$，$\#e=20$
 
-![参考说明](img/b5d420d4f3f979d080e20211fffc35db.png)
 
 (o) $b=4000$，$\#e=20$
 
-![参考说明](img/f4e7ae94904cd930226c56e1b2bc31e9.png)
 
 (p) $b=10000$，$\#e=20$
 
-![参考说明](img/f2f7ee06c799358ac48fa394b616c92d.png)
 
 (q) $b=1000$，$\#e=25$
 
-![参考说明](img/4aecf3bd27a0f21fc23d66b1c90a3f3c.png)
 
 (r) $b=2000$，$\#e=25$
 
-![参考说明](img/249cc7e265a86ed660bf714c88f7cfb6.png)
 
 (s) $b=4000$，$\#e=25$
 
-![参考说明](img/74f77db68b88434273a83e14665f1014.png)
 
 (t) $b=10000$，$\#e=25$
 
-![参考说明](img/8187aa3cbb0fe268c3fd373398fec636.png)
 
 (u) $b=1000$，$\#e=30$
 
-![参考说明](img/a7b70e2f24b6e4d9fba2c177533e02fc.png)
 
 (v) $b=2000$，$\#e=30$
 
-![参考说明](img/da57b746beb8627cd52cce9278a03265.png)
 
 (w) $b=4000$，$\#e=30$
 

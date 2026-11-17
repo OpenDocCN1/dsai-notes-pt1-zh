@@ -12,7 +12,6 @@
 
 
 
-![](img/cfc139ec75116a6de43f9da5c6d5d741_1.png)
 
 ![](img/cfc139ec75116a6de43f9da5c6d5d741_1.png)
 
@@ -20,7 +19,6 @@
 
 
 
-![](img/cfc139ec75116a6de43f9da5c6d5d741_3.png)
 
 ![](img/cfc139ec75116a6de43f9da5c6d5d741_3.png)
 
@@ -30,7 +28,6 @@
 
 
 
-![](img/cfc139ec75116a6de43f9da5c6d5d741_5.png)
 
 接下来，我们具体了解报告的结构。该报告细分为七个部分，包含了关于负责任AI如何带来以下益处数据：
 *   提升产品质量。

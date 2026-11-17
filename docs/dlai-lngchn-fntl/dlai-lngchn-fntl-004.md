@@ -1,8 +1,6 @@
 # 004：结合LangChain表达式语言与OpenAI函数
 
-![](img/2023274f7ab773b8a0e09f27e62cdf7b_0.png)
 
-![](img/2023274f7ab773b8a0e09f27e62cdf7b_2.png)
 
 ## 概述
 
@@ -82,13 +80,10 @@ weather_function = convert_pydantic_to_openai_function(WeatherSearch)
 
 ## 结合LangChain表达式语言与OpenAI函数 ⚙️
 
-![](img/2023274f7ab773b8a0e09f27e62cdf7b_4.png)
 
-![](img/2023274f7ab773b8a0e09f27e62cdf7b_6.png)
 
 现在，让我们看看如何将OpenAI函数与LangChain表达式语言结合使用。
 
-![](img/2023274f7ab773b8a0e09f27e62cdf7b_8.png)
 
 首先，导入聊天模型并创建一个实例。
 

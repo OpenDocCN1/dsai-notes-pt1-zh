@@ -68,7 +68,6 @@
 
 ![](img/c63db9676fce45c082d889c9cfdefd1c_2.png)
 
-![](img/c63db9676fce45c082d889c9cfdefd1c_4.png)
 
 我们将生成一个如下所示的掩码。在这个掩码中，所有对角线以上的元素都等于0。理想情况下，这就是我们想要对注意力权重矩阵做的事情。
 
@@ -180,29 +179,21 @@ Dropout的优势在于它防止过拟合并提高泛化性能。
 
 因此，Dropout用非常简单的术语来说就是：它查看行，然后以给定的概率随机关闭注意力权重。
 
-![](img/c63db9676fce45c082d889c9cfdefd1c_21.png)
 
-![](img/c63db9676fce45c082d889c9cfdefd1c_22.png)
 
 现在，让我首先在Python中实现Dropout。在下面的代码示例中，我们将使用50%的Dropout率，这意味着我们将掩码掉一半的注意力权重。稍后，当我们训练GPT模型时，我们将使用更低的Dropout率，大约0.1或0.2。
 
 ![](img/c63db9676fce45c082d889c9cfdefd1c_24.png)
 
-![](img/c63db9676fce45c082d889c9cfdefd1c_25.png)
 
 在下面的代码中，我们将PyTorch的Dropout实现应用于一个由1组成的6x6张量，用于说明目的，然后我们将其实际应用于我们已有的注意力权重矩阵。
 
-![](img/c63db9676fce45c082d889c9cfdefd1c_27.png)
 
-![](img/c63db9676fce45c082d889c9cfdefd1c_28.png)
 
-![](img/c63db9676fce45c082d889c9cfdefd1c_30.png)
 
 假设我们有一个6x6的示例矩阵，我在这里打印出来。然后我们将实现`torch.nn.Dropout(0.5)`。这将做的是：它将查看每一行，然后平均关闭50%的权重。
 
-![](img/c63db9676fce45c082d889c9cfdefd1c_31.png)
 
-![](img/c63db9676fce45c082d889c9cfdefd1c_33.png)
 
 由于50%的权重被关闭，所有其他未被关闭的权重将按比例重新缩放。因此，所有未被关闭的其他权重将重新缩放2倍，即除以0.5或乘以2。
 

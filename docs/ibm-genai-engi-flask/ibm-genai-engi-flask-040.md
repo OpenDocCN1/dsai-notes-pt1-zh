@@ -16,11 +16,9 @@
 
 以一个价格属性为例，其范围从5000到45500。通过分箱，我们将价格分为三个类别：低价、中价和高价。
 
-![](img/e745561cb8cd6002ac2f4bddf671d6da_1.png)
 
 在实际的汽车数据集中，价格是一个数值变量，范围从5188到45400，共有201个不同的值。我们可以将它们分为三个箱子：低价车、中价车和高价车。
 
-![](img/e745561cb8cd6002ac2f4bddf671d6da_1.png)
 
 ---
 
@@ -52,11 +50,9 @@ group_names = [‘Low‘, ‘Medium‘, ‘High‘]
 price_data_binned = pd.cut(price_data, bins, labels=group_names, include_lowest=True)
 ```
 
-![](img/e745561cb8cd6002ac2f4bddf671d6da_3.png)
 
 ---
 
-![](img/e745561cb8cd6002ac2f4bddf671d6da_3.png)
 
 ### 可视化分箱结果
 
@@ -64,7 +60,6 @@ price_data_binned = pd.cut(price_data, bins, labels=group_names, include_lowest=
 
 以下是我们根据应用于价格特征的分箱结果绘制的直方图。从图中可以清楚地看出，大多数汽车属于低价类别，只有极少数汽车属于高价类别。
 
-![](img/e745561cb8cd6002ac2f4bddf671d6da_5.png)
 
 ---
 

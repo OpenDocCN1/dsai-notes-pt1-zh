@@ -8,7 +8,6 @@
 
 ## 课程内容
 
-![](img/7cd7169b4e8a04b3b4fcab5c5e2fc259_1.png)
 
 大家好，我是来自ULCF的Tom Papicuttor。今天，我们邀请到了英伟达的Bob Corbella来进行讲解。这是九部分CUDA培训系列的第二部分。
 

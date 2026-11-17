@@ -8,7 +8,6 @@
 
 ### 创建数据库
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_1.png)
 
 创建数据库的命令是 `CREATE DATABASE`。其基本语法如下：
 
@@ -19,7 +18,6 @@ CREATE DATABASE [IF NOT EXISTS] database_name
 [WITH DBPROPERTIES ('property_name'='property_value', ...)];
 ```
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_3.png)
 
 *   **`IF NOT EXISTS`**：这是一个可选关键字。如果指定，当存在同名数据库时，Hive不会报错，也不会创建新数据库。如果不存在同名数据库，则会创建它。
 *   **`LOCATION`**：这是一个可选关键字。用于指定数据库在HDFS上的存储路径。如果不指定，Hive会使用默认的仓库目录。
@@ -37,7 +35,6 @@ COMMENT ‘这是一个测试数据库’
 WITH DBPROPERTIES (‘creator’=‘admin’, ‘date’=‘2023-10-27’);
 ```
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_5.png)
 
 ### 查看数据库
 
@@ -47,7 +44,6 @@ WITH DBPROPERTIES (‘creator’=‘admin’, ‘date’=‘2023-10-27’);
 SHOW DATABASES;
 ```
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_7.png)
 
 如果想查看名称符合特定模式的数据库（例如，所有以 `‘user’` 开头的数据库），可以使用 `LIKE` 关键字：
 
@@ -57,7 +53,6 @@ SHOW DATABASES LIKE ‘user*’;
 
 ### 描述数据库
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_9.png)
 
 要查看某个数据库的详细信息，如位置、所有者、注释和属性，可以使用 `DESCRIBE DATABASE` 命令。
 
@@ -72,7 +67,6 @@ DESCRIBE DATABASE user2;
 
 如果想查看更详细的信息，包括通过 `WITH DBPROPERTIES` 设置的属性，可以使用 `DESCRIBE DATABASE EXTENDED` 命令。
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_11.png)
 
 ```sql
 DESCRIBE DATABASE EXTENDED user2;
@@ -80,7 +74,6 @@ DESCRIBE DATABASE EXTENDED user2;
 
 ### 修改数据库
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_13.png)
 
 `ALTER DATABASE` 命令用于修改数据库的属性。需要注意的是，Hive目前只允许修改 `DBPROPERTIES` 中的值，不能删除或重设所有属性，也不能修改数据库名或位置。
 
@@ -93,7 +86,6 @@ ALTER DATABASE database_name SET DBPROPERTIES (‘property_name’=‘property_v
 ALTER DATABASE user1 SET DBPROPERTIES (‘edited_by’=‘robot’);
 ```
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_15.png)
 
 ### 删除数据库
 
@@ -103,7 +95,6 @@ ALTER DATABASE user1 SET DBPROPERTIES (‘edited_by’=‘robot’);
 DROP DATABASE [IF EXISTS] database_name [RESTRICT | CASCADE];
 ```
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_17.png)
 
 *   **`IF EXISTS`**：可选。防止删除不存在的数据库时报错。
 *   **`CASCADE`**：**非常重要**。默认行为是 `RESTRICT`。如果数据库不为空（包含表），直接使用 `DROP DATABASE` 会失败。必须加上 `CASCADE` 关键字，Hive才会先删除库中的所有表，然后再删除数据库本身。
@@ -126,11 +117,9 @@ DROP DATABASE user_db CASCADE;
 
 在Hive中，表是存储数据的主要结构。我们可以创建结构复杂的表来适应不同的数据模型。
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_19.png)
 
 ### 创建表
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_21.png)
 
 创建表的命令是 `CREATE TABLE`，其语法比创建数据库更为丰富，允许定义列、数据类型、注释、表属性及存储位置。
 
@@ -148,7 +137,6 @@ CREATE [EXTERNAL] TABLE [IF NOT EXISTS] [db_name.]table_name
 [TBLPROPERTIES (‘property_name’=‘property_value’, ...)];
 ```
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_23.png)
 
 Hive支持复杂的数据类型，例如：
 *   **`ARRAY<data_type>`**：数组。
@@ -175,7 +163,6 @@ TBLPROPERTIES (‘creator’=‘admin’, ‘created_date’=‘2023-10-27’);
 CREATE TABLE new_table_name LIKE existing_table_name;
 ```
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_25.png)
 
 ### 查看表
 
@@ -196,13 +183,10 @@ SHOW TABLES IN financials;
 SHOW TABLES LIKE ‘emp*’;
 ```
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_27.png)
 
 ### 描述表
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_28.png)
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_30.png)
 
 `DESCRIBE` 命令用于查看表的列信息。
 
@@ -210,16 +194,13 @@ SHOW TABLES LIKE ‘emp*’;
 DESCRIBE [EXTENDED|FORMATTED] table_name;
 ```
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_32.png)
 
 *   `DESCRIBE table_name`：显示列名、数据类型和注释。
 *   `DESCRIBE EXTENDED table_name` 或 `DESCRIBE FORMATTED table_name`：显示详细信息，包括表属性、存储信息、创建时间、所有者等。
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_34.png)
 
 ### 修改表
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_36.png)
 
 `ALTER TABLE` 命令可以修改现有表的结构，例如重命名表、添加列、修改列名或类型。
 
@@ -228,14 +209,12 @@ DESCRIBE [EXTENDED|FORMATTED] table_name;
     ALTER TABLE old_table_name RENAME TO new_table_name;
     ```
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_38.png)
 
 *   **添加列**：
     ```sql
     ALTER TABLE table_name ADD COLUMNS (new_col_name data_type [COMMENT col_comment], ...);
     ```
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_40.png)
 
 *   **修改列**（可以修改列名、数据类型、注释或位置）：
     ```sql
@@ -249,7 +228,6 @@ DESCRIBE [EXTENDED|FORMATTED] table_name;
 
 ### 删除表
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_42.png)
 
 删除表使用 `DROP TABLE` 命令。对于**管理表**，删除操作会同时删除元数据和HDFS上的数据。
 
@@ -257,7 +235,6 @@ DESCRIBE [EXTENDED|FORMATTED] table_name;
 DROP TABLE [IF EXISTS] table_name;
 ```
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_44.png)
 
 ---
 
@@ -265,7 +242,6 @@ DROP TABLE [IF EXISTS] table_name;
 
 ## 管理表 vs 外部表
 
-![](img/0c32e57dca7a5f1d6812e832387fb93a_46.png)
 
 ### 管理表 (Managed Table)
 

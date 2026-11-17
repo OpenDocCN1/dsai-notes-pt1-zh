@@ -12,7 +12,6 @@ Welcome to our notebook here on non negative matrix factorization In this notebo
 
  which is just going to be a list of the articles。
 
-![](img/ee1882051886c705657e68b6f43676cc_1.png)
 
 Listed by topic。So at a high level， what we're going to do here is turn our BBC do matrix file into an actual sports matrix。
 
@@ -24,17 +23,13 @@ So it's already in sparse matrix form， as we'll see。 But in general。
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_3.png)
 
-![](img/ee1882051886c705657e68b6f43676cc_4.png)
 
-![](img/ee1882051886c705657e68b6f43676cc_5.png)
 
 Rather than when you have a larger， not sparse matrix with a lot of zeros。
 
  you can end up eating a lot of memory。
 
-![](img/ee1882051886c705657e68b6f43676cc_7.png)
 
 We're then going to decompose that sparse matrix， using non negative matrix factorization。
 
@@ -42,7 +37,6 @@ We're then going to decompose that sparse matrix， using non negative matrix fa
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_9.png)
 
 So the first thing that we want to do is take that bbc。mtx， which is our sparse matrix。
 
@@ -54,7 +48,6 @@ So now we have our contents and just to see what that looks like。
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_11.png)
 
 And。What we have beyond the first two values are just going to be a sparse matrix representation。
 
@@ -66,7 +59,6 @@ But first， we want to remove each of these first two values。
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_13.png)
 
 The zeroth value， and then we remove the zeroth value again。
 
@@ -76,7 +68,6 @@ So we see that the last one that I removed where was this。Value here from the 
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_15.png)
 
 Now， in part one。We're going to turn this list。 And currently。
 
@@ -84,7 +75,6 @@ Now， in part one。We're going to turn this list。 And currently。
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_17.png)
 
 So， that sparse matrix。Is going to have as that first column， the word ID。
 
@@ -102,13 +92,11 @@ What we do is this somewhat complicated looking list comprehension。
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_19.png)
 
 Let's actually， that'll just give us the exact list that we saw before。
 
  So let's just first call that split。
 
-![](img/ee1882051886c705657e68b6f43676cc_21.png)
 
 And we see that we've now split that string that originally had into the three separate values。
 
@@ -116,7 +104,6 @@ And we see that we've now split that string that originally had into the three s
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_23.png)
 
 Is map over a floatat since。It'll be difficult to get a float integer just out of that 1。0。
 
@@ -126,7 +113,6 @@ Is map over a floatat since。It'll be difficult to get a float integer just out
 
  And then we set that output as just a tuple。
 
-![](img/ee1882051886c705657e68b6f43676cc_25.png)
 
 And if we look at the output for just those first aid values， we see that we now have a list of tus。
 
@@ -136,15 +122,12 @@ And if we look at the output for just those first aid values， we see that we n
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_27.png)
 
-![](img/ee1882051886c705657e68b6f43676cc_28.png)
 
 Now we want to prepare the actual sparse matrix that we're going to be passing into our NMF into our non negative matrix factorization。
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_30.png)
 
 So we're going to import nuumpy and pandas， and we're also going to import from sippi do Sprse the COO matrix。
 
@@ -152,7 +135,6 @@ So we're going to import nuumpy and pandas， and we're also going to import fro
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_32.png)
 
 So we're going to specify what our rows are going to be。 So since these start off。
 
@@ -174,15 +156,12 @@ For x within sparse matrix that we have defined here。 And then x 0， recall t
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_34.png)
 
-![](img/ee1882051886c705657e68b6f43676cc_35.png)
 
 And then the actual values are going to be the amount of times that that shows up。
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_37.png)
 
 And when we call CO O matrix， we pass in the values。And then with that。
 
@@ -198,7 +177,6 @@ And just to make this perfectly clear， we're actually going to recreate from t
 
 😊。
 
-![](img/ee1882051886c705657e68b6f43676cc_39.png)
 
 So we're going to pull in the actual terms， and these will relate。 The0 will be the0 term。
 
@@ -212,45 +190,36 @@ So we're going to pull in the actual terms， and these will relate。 The0 will
 
 And that will be our output for words。
 
-![](img/ee1882051886c705657e68b6f43676cc_41.png)
 
 And I'll run this， and we see。The different words that come out。
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_43.png)
 
 And then we'll do the same thing for each one of our document names。
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_45.png)
 
 We can do that。All the codes the same， except we're working with a different flat file。
 
  and we can see all the different document names。
 
-![](img/ee1882051886c705657e68b6f43676cc_47.png)
 
-![](img/ee1882051886c705657e68b6f43676cc_48.png)
 
 And then I'm going to take that COO。Which we initialize here。
 
  which is just going to be a sparse matrix。
 
-![](img/ee1882051886c705657e68b6f43676cc_50.png)
 
 We're going to turn that into a numpy array。
 
-![](img/ee1882051886c705657e68b6f43676cc_52.png)
 
 Pass that into our data frame， and we're going to set our column equal to those words we pulled out and our index equal to those columns。
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_54.png)
 
-![](img/ee1882051886c705657e68b6f43676cc_55.png)
 
 So this is going to be the actual original data frame that we're working with。
 
@@ -266,13 +235,9 @@ This is going to be Article 1， business 0，01。And we see that the word ad s
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_57.png)
 
-![](img/ee1882051886c705657e68b6f43676cc_58.png)
 
-![](img/ee1882051886c705657e68b6f43676cc_59.png)
 
-![](img/ee1882051886c705657e68b6f43676cc_60.png)
 
 So now we have。A。Data frame that we want to work with。
 
@@ -282,6 +247,5 @@ So now we have。A。Data frame that we want to work with。
 
 
 
-![](img/ee1882051886c705657e68b6f43676cc_62.png)
 
 ![](img/ee1882051886c705657e68b6f43676cc_63.png)

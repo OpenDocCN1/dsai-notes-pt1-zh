@@ -50,7 +50,6 @@ Flask的轻量级设计意味着许多高级功能通过社区扩展实现。以
 
 Flask可通过Python包管理器`pip`获取。在实验环境中，`pip`已可用。但是，如果要在自己的机器上安装，建议首先使用`venv`或`Pipenv`模块创建一个虚拟环境。然后，可以安装Flask 2.2.2版本。
 
-![](img/b5877b847ffb74bd92ed6a8b7bc5c64f_1.png)
 
 ```bash
 pip install flask==2.2.2

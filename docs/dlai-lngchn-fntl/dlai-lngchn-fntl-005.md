@@ -1,8 +1,6 @@
 # 005：使用OpenAI函数进行标记与提取 📝
 
-![](img/53204a2d307e1fd62ef0c72be1c3d9cc_0.png)
 
-![](img/53204a2d307e1fd62ef0c72be1c3d9cc_2.png)
 
 在本节课中，我们将学习开发者使用OpenAI函数的一个主要应用场景：**标记**与**提取**。这使我们能够从非结构化文本中提取出结构化的数据。
 
@@ -214,7 +212,6 @@ print(f"总共提取到 {len(all_papers)} 篇论文。")
 *   我们利用**LangChain的链**和**输出解析器**（如`JsonOutputFunctionsParser`和`JsonKeyOutputFunctionsParser`）来简化调用流程并格式化输出。
 *   对于长文档，我们结合**文本拆分**和**并行映射**技术，实现了高效的大规模信息提取。
 
-![](img/53204a2d307e1fd62ef0c72be1c3d9cc_4.png)
 
 ![](img/53204a2d307e1fd62ef0c72be1c3d9cc_5.png)
 

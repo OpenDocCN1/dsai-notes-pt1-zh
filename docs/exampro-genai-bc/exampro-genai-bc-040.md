@@ -19,7 +19,6 @@
 
 ![](img/34b18b07fcad5fe62d4e26dda89e18e6_5.png)
 
-![](img/34b18b07fcad5fe62d4e26dda89e18e6_7.png)
 
 1. 在`main.py`中添加问题保存功能
 2. 将生成的问题以JSON格式保存到本地文件
@@ -97,7 +96,6 @@ polly_config = {
 
 由于JLPT听力测试包含多个说话人，我们需要确保音频能够清晰区分不同的角色。
 
-![](img/34b18b07fcad5fe62d4e26dda89e18e6_13.png)
 
 处理多说话人音频的挑战包括：
 
@@ -155,11 +153,9 @@ file 'question.mp3'
 
 ![](img/34b18b07fcad5fe62d4e26dda89e18e6_24.png)
 
-![](img/34b18b07fcad5fe62d4e26dda89e18e6_26.png)
 
 常见的错误类型包括：
 
-![](img/34b18b07fcad5fe62d4e26dda89e18e6_28.png)
 
 1. **文本解析错误**：LLM生成的文本格式不符合预期
 2. **语音合成错误**：Polly服务调用失败
@@ -190,11 +186,9 @@ def validate_conversation_format(conversation_text):
 
 ## 前端集成与用户体验
 
-![](img/34b18b07fcad5fe62d4e26dda89e18e6_34.png)
 
 最后，我们需要将音频生成功能集成到Web应用中，并提供良好的用户体验。
 
-![](img/34b18b07fcad5fe62d4e26dda89e18e6_36.png)
 
 前端集成需要考虑：
 

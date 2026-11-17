@@ -1,18 +1,13 @@
 # 2：Jupyter 交互式可视化与仪表盘构建 🎨
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_1.png)
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_3.png)
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_5.png)
 
 在本节课中，我们将学习如何利用 Jupyter 生态中的一系列工具，特别是 `bqplot` 和 `ipywidgets`，来创建无缝的交互式数据可视化和仪表盘。我们将从核心概念讲起，逐步深入到具体库的应用和高级功能。
 
 ---
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_7.png)
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_9.png)
 
 ## 概述
 
@@ -24,11 +19,9 @@ Jupyter 笔记本不仅是数据分析的工具，也是构建交互式应用和
 
 Jupyter Widgets 的初始目标是复现 Sage 和 Mathematica 中的 **Interact** 功能。Interact 利用 Python 的内省特性：你传入一个函数，它会根据参数的默认值推断类型，并自动生成一个简单的图形界面（GUI），让你能够与该函数交互，并查看不同参数值下的结果。
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_11.png)
 
 为了构建更复杂的应用，我们开发了功能更强大的 **Jupyter 交互式小部件**。它们是一种特殊对象，当在 Jupyter 笔记本中显示时，会呈现一个可交互的图形组件。其核心思想是**双向通信**：前端的状态变化会同步到后端，反之亦然。
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_13.png)
 
 以下是一个简单的交互示例，它创建了一个滑块，其值变化会触发函数重新计算并更新输出：
 
@@ -62,9 +55,7 @@ display(output)
 
 ---
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_15.png)
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_16.png)
 
 ## 核心库：bqplot 📊
 
@@ -92,12 +83,9 @@ bqplot 的强大之处在于其组件化架构。图形语法中的核心概念�
 这意味着你可以像搭积木一样自定义图表。例如，创建一个共享 Y 轴比例尺但拥有不同 X 轴比例尺的复合图表：
 
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_18.png)
-
-![](img/a25c05f31ef83315f47ebfedbfe70933_20.png)
 
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_22.png)
+
 
 ```python
 import bqplot as bq
@@ -126,13 +114,9 @@ fig
 
 bqplot 图表本身可以作为输入控件。例如，你可以添加**区间选择器**，当用户拖动选择器时，图表上被选中的数据点会高亮，并且选择器的值会同步到 Python 后端。
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_24.png)
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_26.png)
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_28.png)
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_30.png)
 
 另一个有趣的交互是**在图表上绘图**。你可以定义一个依赖于函数形状的分析，然后直接在笔记本中绘制该函数，分析结果会随之实时更新。
 
@@ -140,17 +124,12 @@ bqplot 图表本身可以作为输入控件。例如，你可以添加**区间�
 
 ## 处理大规模数据
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_32.png)
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_34.png)
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_36.png)
 
 长期以来，基于 SVG 的 bqplot 在处理超大数据集时存在性能瓶颈。这个问题正在被解决。
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_38.png)
 
-![](img/a25c05f31ef83315f47ebfedbfe70933_40.png)
 
 新版本引入了 **Mega Marks** 概念，支持渲染包含数十万甚至上百万个数据点的散点图。这得益于 widgets 基础设施开始支持二进制序列化格式，大幅提升了数据传输效率。
 

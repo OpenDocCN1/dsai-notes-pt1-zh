@@ -14,15 +14,11 @@ Streamlit Community Cloud 是一个免费平台，可以让你轻松地在线上
 
 ### 1. 登录 Streamlit Community Cloud
 
-![](img/a04bddcc18eba8bbc2f9ee8d52b37099_1.png)
 
-![](img/a04bddcc18eba8bbc2f9ee8d52b37099_2.png)
 
 首先，打开浏览器并访问 `streamlit.io/cloud`。点击“Join Community Cloud”，然后点击“Continue to sign in”选择使用 GitHub 登录。
 
-![](img/a04bddcc18eba8bbc2f9ee8d52b37099_1.png)
 
-![](img/a04bddcc18eba8bbc2f9ee8d52b37099_2.png)
 
 接下来，你将被重定向到 GitHub。当被询问是否允许 Streamlit 连接你的 GitHub 账户时，点击“Authorize”。如果是第一次操作，GitHub 会向你的邮箱发送一个验证码。请检查收件箱，复制发送的验证码并粘贴以完成登录过程。
 
@@ -61,9 +57,7 @@ Streamlit Community Cloud 是一个免费平台，可以让你轻松地在线上
 
 “View build logs”是你查找应用日志文件以进行故障排除的地方。
 
-![](img/a04bddcc18eba8bbc2f9ee8d52b37099_4.png)
 
-![](img/a04bddcc18eba8bbc2f9ee8d52b37099_4.png)
 
 应用管理功能允许你在应用出现问题时重启它、下载日志文件、完全删除应用或更新访问设置，以及管理你的密钥文件。
 
@@ -79,9 +73,7 @@ Streamlit Community Cloud 是一个免费平台，可以让你轻松地在线上
 
 想了解有多少人在查看你的应用吗？方法如下：进入你的 Streamlit Community Cloud 仪表板，在你的应用旁边，你会看到三个点，点击它们。
 
-![](img/a04bddcc18eba8bbc2f9ee8d52b37099_6.png)
 
-![](img/a04bddcc18eba8bbc2f9ee8d52b37099_6.png)
 
 选择“Analytics”。这将显示有多少人访问了你的应用以及他们何时访问。
 
@@ -95,6 +87,5 @@ Streamlit Community Cloud 是一个免费平台，可以让你轻松地在线上
 
 本节课将以一个实验结束，在那里你将运用所有学到的知识。
 
-![](img/a04bddcc18eba8bbc2f9ee8d52b37099_8.png)
 
 ![](img/a04bddcc18eba8bbc2f9ee8d52b37099_8.png)

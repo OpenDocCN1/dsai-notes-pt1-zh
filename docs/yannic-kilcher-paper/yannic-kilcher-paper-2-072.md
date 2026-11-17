@@ -39,7 +39,6 @@ r = [reward_for_right_turn, reward_for_go_straight, reward_for_left_turn]
 
 ## 强化学习基础回顾
 
-![](img/cf92f45260de8822834e9fe8a89340a2_1.png)
 
 在深入论文框架之前，我们先简要回顾一下标准强化学习的基础概念，以便更好地理解后续内容。
 
@@ -53,7 +52,6 @@ r = [reward_for_right_turn, reward_for_go_straight, reward_for_left_turn]
 
 智能体的目标是学习一个**策略 π**，它根据当前状态 `s` 决定采取哪个动作 `a`，即 `a = π(s)`。
 
-![](img/cf92f45260de8822834e9fe8a89340a2_3.png)
 
 与每个策略相关联的是一个**Q函数** `Q^π(s, a)`。它表示在状态 `s` 下执行动作 `a`，**之后**都遵循策略 `π` 的情况下，所获得的**累计期望回报**。
 

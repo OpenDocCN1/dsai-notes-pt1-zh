@@ -4,17 +4,14 @@
 
 ## 概述
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_1.png)
 
 上一节我们介绍了线性量化的基本公式 `Q = round(R / S + Z)`。本节中，我们将解决如何为给定的张量计算最优的缩放因子 `S` 和零点 `Z`。核心思想是让原始数据的最小值和最大值分别映射到量化范围的最小值和最大值。
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_3.png)
 
 ## 理论推导
 
 我们需要根据原始张量的极值来确定 `S` 和 `Z`。设原始张量 `R` 的最小值为 `R_min`，最大值为 `R_max`。设量化后的整数类型（如 `int8`）的最小值为 `Q_min`，最大值为 `Q_max`。
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_5.png)
 
 根据映射关系，我们得到两个方程：
 1.  `R_min` 映射到 `Q_min`： `Q_min = round(R_min / S + Z)`
@@ -44,22 +41,16 @@
 
 ## 代码实现
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_7.png)
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_8.png)
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_9.png)
 
 现在，让我们将理论转化为代码。我们将实现一个函数 `get_q_scale_and_zero_point` 来计算 `S` 和 `Z`，然后将其整合进一个完整的线性量化函数中。
 
 首先，实现获取缩放因子和零点的函数。
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_11.png)
-
-![](img/322cf34391c48c9a232ef1d5a2591d69_12.png)
 
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_14.png)
+
 
 ```python
 import torch
@@ -100,16 +91,12 @@ def get_q_scale_and_zero_point(tensor, dtype=torch.int8):
     return scale, zero_point
 ```
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_16.png)
 
 接下来，我们需要之前定义的量化与反量化函数。为了完整性，这里再次列出：
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_18.png)
 
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_20.png)
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_22.png)
 
 ```python
 def linear_quantize_with_scale_and_zero_point(tensor, scale, zero_point, dtype=torch.int8):
@@ -122,13 +109,10 @@ def linear_dequantize(quantized_tensor, scale, zero_point):
     return dequantized_tensor
 ```
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_24.png)
 
 现在，我们可以将这些部分组合成一个完整的线性量化函数：
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_25.png)
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_27.png)
 
 ```python
 def linear_quantization(tensor, dtype=torch.int8):
@@ -153,11 +137,8 @@ def linear_quantization(tensor, dtype=torch.int8):
 
 ## 示例与验证
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_29.png)
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_30.png)
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_31.png)
 
 让我们用一个随机张量来测试我们实现的量化器。
 
@@ -181,21 +162,15 @@ quantization_error = ((dequantized_tensor - random_tensor) ** 2).mean().item()
 print(f"\n量化误差 (MSE): {quantization_error:.6f}")
 ```
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_33.png)
 
 运行上述代码，你将看到量化后的张量、计算出的 `S` 和 `Z`，以及反量化结果。量化误差应该比使用随意选择的 `S` 和 `Z` 时小得多，这证明我们的方法是有效的。
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_35.png)
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_37.png)
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_39.png)
 
 ## 总结
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_41.png)
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_42.png)
 
 本节课中，我们一起学习了线性量化的核心步骤：**计算缩放因子与零点**。
 1.  我们从理论出发，推导了 `S` 和 `Z` 的计算公式，其核心是让数据范围匹配。
@@ -204,9 +179,7 @@ print(f"\n量化误差 (MSE): {quantization_error:.6f}")
 
 现在你已经掌握了如何为任意张量自动计算合适的量化参数。建议你暂停视频，尝试用不同的输入张量测试这个量化器，观察其表现。
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_44.png)
 
-![](img/322cf34391c48c9a232ef1d5a2591d69_45.png)
 
 ![](img/322cf34391c48c9a232ef1d5a2591d69_46.png)
 

@@ -2,9 +2,7 @@
 
 在本节课中，我们将学习如何在NoSQL数据库中进行数据查询。具体来说，我们将完成一个包含一系列任务的练习。这个练习将引导你使用MongoDB工具进行数据导入、查询和导出操作。
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_0.png)
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_1.png)
 
 ## 作业概述与准备 🛠️
 
@@ -20,17 +18,13 @@
 
 ### 任务一：数据导入与数据库查看
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_3.png)
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_4.png)
 
 首先，你需要将下载的JSON文件导入到MongoDB服务器中。具体目标是将其导入到名为 `catalog` 的数据库下的 `electronics` 集合中。
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_5.png)
 
 导入完成后，你需要执行命令来列出服务器上的所有数据库，并进一步列出 `catalog` 数据库中的所有集合。
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_6.png)
 
 以下是此任务涉及的关键命令示例：
 ```bash
@@ -45,11 +39,9 @@ use catalog
 show collections
 ```
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_8.png)
 
 ### 任务二：文档查询与数据统计
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_9.png)
 
 接下来，你需要对导入的数据进行查询。首先，列出 `electronics` 集合中的前五个文档。
 
@@ -60,12 +52,9 @@ show collections
 
 以下是此任务涉及的关键查询示例：
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_11.png)
 
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_12.png)
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_13.png)
 
 ```javascript
 // 查找前5个文档
@@ -86,7 +75,6 @@ db.electronics.aggregate([
 
 最后，你需要从 `electronics` 集合中导出特定字段的数据。你需要导出的字段包括 `_id`、`type` 和 `model`，并将它们保存为一个逗号分隔值文件，即CSV文件。
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_15.png)
 
 以下是此任务涉及的关键命令示例：
 ```bash
@@ -96,11 +84,9 @@ mongoexport --db catalog --collection electronics --type=csv --fields _id,type,m
 
 ## 作业提交要求 📤
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_17.png)
 
 在完成上述每一个任务后，你都需要对所使用的命令及其输出结果进行截图。请为每张截图起一个清晰、描述性的文件名，以便于区分和评审。
 
-![](img/b36ed5d37496646be6ab69a16931b9f6_18.png)
 
 ## 课程总结 🎯
 

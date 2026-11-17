@@ -48,7 +48,6 @@ Luca Gioacchini${}^{1,2}$, Giuseppe Siracusano${}^{1}$, Davide Sanvito${}^{1}$, 
 
 生成代理（Generative Agents）Kiela等人（[2023](https://arxiv.org/html/2404.06411v1#bib.bib5)）是利用大型语言模型（LLMs）等基础模型来执行复杂任务、做出决策、制定多步计划并使用工具（API调用、编程等）来在异质环境中构建解决方案的软件系统Wang等人（[2023](https://arxiv.org/html/2404.06411v1#bib.bib19)）；Weng（[2023](https://arxiv.org/html/2404.06411v1#bib.bib20)）。能够高自主性地解决异质任务的潜力引发了学术界和工业界的广泛兴趣。然而，目前仍不清楚现有系统在多大程度上能够成功实现其承诺。实际上，用于基准测试、评估和推进这些系统的方法仍处于初期阶段。
 
-![请参见说明文字](img/4d48acc3a24047d59d814cfc66df6ef6.png)
 
 (a) 现有的
 
@@ -253,7 +252,6 @@ AgentQuest 在这方面作出了贡献，提出了两个跨基准的指标，*�
 
 为了克服这个代理限制，我们将一个记忆组件Park等人（[2023](https://arxiv.org/html/2404.06411v1#bib.bib13)）整合到代理架构中。代理将过去的猜测存储在本地缓冲区中。然后，在每个步骤中，如果代理输出的是已经在缓冲区中的动作，它会被提示提供一个新的动作。[表3](https://arxiv.org/html/2404.06411v1#S4.T3 "Table 3 ‣ Experimental setup. ‣ 4 Insights via AgentQuest ‣ AgentQuest: Benchmarking LLM Agents Behaviours in Multi-step Intensive Reasoning Tasks")（Mastermind${}^{*}$）显示，这一简单的代理架构变化产生了巨大的影响：代理现在能够解决更多实例，最终的SR从47%提升至60%，并且避免了重复（RR${}_{60}=0\%$）。这突出了研究进展与重复率之间的相互作用如何帮助我们改进代理架构，有时即使是简单的改进也能取得显著效果。我们通过将评估扩展到更多的Mastermind实例，从15个增加到60个，并取得了相似的结果——即标准架构的SR为43%，而简单记忆架构的SR为62%（提升了19%）。
 
-![参见说明](img/9126ab7571bd637520e6706b4ec2702f.png)
 
 (a) Mastermind
 
@@ -263,7 +261,6 @@ AgentQuest 在这方面作出了贡献，提出了两个跨基准的指标，*�
 
 图2：Mastermind和LTP中的平均进展率PR${}_{t}$和重复率RR${}_{t}$。Mastermind：最初RR${}_{t}$较低，但在第22步之后开始上升，而进展率则停滞在55%。LTP：最初较高的RR${}_{t}$使代理能够通过做出小的变化来取得进展，最终实现成功，但后期这一进展趋于平稳。
 
-![参见说明文字](img/eb3e0c214e27d16b015288f8fe45534f.png)
 
 (a) Mastermind
 
@@ -349,7 +346,6 @@ LLM 代理的复杂性给理解其决策过程带来了挑战。伦理准则必�
 
 在本节中，我们报告了 ALFWorld 和数独基准测试每一步的详细度量，由于篇幅限制，主文中已省略。
 
-![参见标题](img/40ea2d9ca0914894be58198cfabb73ec.png)
 
 (a) ALFWorld
 

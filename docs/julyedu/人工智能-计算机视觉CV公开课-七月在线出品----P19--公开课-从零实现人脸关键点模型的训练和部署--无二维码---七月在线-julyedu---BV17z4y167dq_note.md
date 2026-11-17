@@ -1,10 +1,8 @@
 # 人工智能—计算机视觉CV公开课（P19）：从零实现人脸关键点模型的训练和部署 🎯
 
-![](img/830a2551ec2ccc7d6b1c82a3753e4bc7_0.png)
 
 在本节课中，我们将学习如何从零开始构建、训练并部署一个用于人脸关键点检测的深度学习模型。我们将从深度学习的基础概念讲起，逐步深入到模型搭建、训练流程，并最终完成一个可运行的实时检测应用。
 
-![](img/830a2551ec2ccc7d6b1c82a3753e4bc7_2.png)
 
 ---
 
@@ -150,7 +148,6 @@ optimizer = torch.optim.Adam(model.parameters())
 
 训练完成后，我们可以保存模型权重，并将其部署到实际应用中。
 
-![](img/830a2551ec2ccc7d6b1c82a3753e4bc7_4.png)
 
 以下是部署的核心步骤：
 1.  **加载模型**：加载训练好的权重文件。
@@ -158,15 +155,10 @@ optimizer = torch.optim.Adam(model.parameters())
 3.  **模型推理**：将处理后的图像输入模型，进行正向传播得到关键点坐标。
 4.  **结果可视化**：将预测的关键点绘制回原始图像帧上。
 
-![](img/830a2551ec2ccc7d6b1c82a3753e4bc7_6.png)
 
-![](img/830a2551ec2ccc7d6b1c82a3753e4bc7_8.png)
 
-![](img/830a2551ec2ccc7d6b1c82a3753e4bc7_10.png)
 
-![](img/830a2551ec2ccc7d6b1c82a3753e4bc7_12.png)
 
-![](img/830a2551ec2ccc7d6b1c82a3753e4bc7_14.png)
 
 ![](img/830a2551ec2ccc7d6b1c82a3753e4bc7_16.png)
 
@@ -201,7 +193,6 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-![](img/830a2551ec2ccc7d6b1c82a3753e4bc7_18.png)
 
 ---
 

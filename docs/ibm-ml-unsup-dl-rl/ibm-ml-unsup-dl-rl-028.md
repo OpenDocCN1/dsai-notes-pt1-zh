@@ -36,7 +36,6 @@ We will fit 10 different random forest classifiers。And with that。
 
 
 
-![](img/75cca1800dc21496949b12453803dec2_1.png)
 
 So in order to do so。We're going to have to first import our random forest classifier。
 
@@ -64,13 +63,11 @@ And drop the K means column。 So now we have these two different pandas data fr
 
 
 
-![](img/75cca1800dc21496949b12453803dec2_3.png)
 
 We're then going to initiate our stratified shuffle split object。
 
 
 
-![](img/75cca1800dc21496949b12453803dec2_5.png)
 
 And then we're going to define this function， which will allow us to pass in an estimator。
 
@@ -80,11 +77,8 @@ And then we're going to define this function， which will allow us to pass in a
 
 
 
-![](img/75cca1800dc21496949b12453803dec2_7.png)
 
-![](img/75cca1800dc21496949b12453803dec2_8.png)
 
-![](img/75cca1800dc21496949b12453803dec2_9.png)
 
 And then an X and a Y， so our different features and then our outcome variable。So first。
 
@@ -144,7 +138,6 @@ We could set our estimator here to random force classifier。
 
  so we have estimator equal to this object。
 
-![](img/75cca1800dc21496949b12453803dec2_11.png)
 
 We pass that in to our function that we just defined。Along with x with ks。
 
@@ -156,7 +149,6 @@ And then we're going to do the same thing， running that function to getss。Th
 
 
 
-![](img/75cca1800dc21496949b12453803dec2_13.png)
 
 And we can see。That without came means cluster。Actually did worse than with Ca means cluster。
 
@@ -164,7 +156,6 @@ And we can see。That without came means cluster。Actually did worse than with 
 
 
 
-![](img/75cca1800dc21496949b12453803dec2_15.png)
 
 Now， what I'd like to do is explore the idea of changing the number of labels that we will incorporate when we create this new feature or this now new set of features if we think about this in regards to one hot encoding。
 
@@ -176,7 +167,6 @@ So instead we want those each1 hot encoded so that there's no ordinal value to e
 
 
 
-![](img/75cca1800dc21496949b12453803dec2_17.png)
 
 And once we have our one hot encoded version of that column。
 
@@ -236,7 +226,6 @@ We're then going to plot that out， we initialize our plot。
 
  let's look down at the results。
 
-![](img/75cca1800dc21496949b12453803dec2_19.png)
 
 And we see it jumps around quite a bit as we add on and reduce some of those clusters。
 
@@ -250,7 +239,6 @@ And with that， we close out our section on clustering。 and in lecture。
 
  we will move on to dimensionality reduction。
 
-![](img/75cca1800dc21496949b12453803dec2_21.png)
 
 All right， I'll see you there。
 

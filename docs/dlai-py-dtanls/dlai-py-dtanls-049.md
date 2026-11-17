@@ -10,11 +10,8 @@
 
 以下是创建分组柱状图前需要完成的数据准备步骤。
 
-![](img/873b8f79611fdf2c939aef0914fb938e_1.png)
 
-![](img/873b8f79611fdf2c939aef0914fb938e_2.png)
 
-![](img/873b8f79611fdf2c939aef0914fb938e_3.png)
 
 1.  **筛选数据**：首先，我们需要将数据框（DataFrame）筛选到只包含我们感兴趣的三个州。
     ```python
@@ -38,7 +35,6 @@
 
 数据准备就绪后，我们可以开始绘制基础的分组柱状图。
 
-![](img/873b8f79611fdf2c939aef0914fb938e_5.png)
 
 ```python
 unstacked_data.plot(kind='bar')
@@ -51,19 +47,13 @@ plt.show()
 
 上一节我们绘制了基础图表，本节中我们来看看如何通过添加标题、调整图例和坐标轴来美化它，使其更具可读性和专业性。
 
-![](img/873b8f79611fdf2c939aef0914fb938e_7.png)
 
-![](img/873b8f79611fdf2c939aef0914fb938e_8.png)
 
-![](img/873b8f79611fdf2c939aef0914fb938e_9.png)
 
-![](img/873b8f79611fdf2c939aef0914fb938e_10.png)
 
-![](img/873b8f79611fdf2c939aef0914fb938e_11.png)
 
 以下是美化图表的关键步骤：
 
-![](img/873b8f79611fdf2c939aef0914fb938e_12.png)
 
 *   **添加标题和坐标轴标签**：使用`plt.title()`、`plt.xlabel()`和`plt.ylabel()`函数。
 *   **旋转X轴刻度标签**：使用`plt.xticks(rotation=0)`使标签水平显示。
@@ -73,12 +63,9 @@ plt.show()
 让我们将这些改进应用到图表上：
 
 
-![](img/873b8f79611fdf2c939aef0914fb938e_14.png)
 
 
-![](img/873b8f79611fdf2c939aef0914fb938e_15.png)
 
-![](img/873b8f79611fdf2c939aef0914fb938e_16.png)
 
 ```python
 # 绘制分组柱状图
@@ -101,17 +88,13 @@ plt.tight_layout()
 plt.show()
 ```
 
-![](img/873b8f79611fdf2c939aef0914fb938e_18.png)
 
-![](img/873b8f79611fdf2c939aef0914fb938e_19.png)
 
 ## 结果解读与保存
 
 完成图表美化后，我们可以对可视化结果进行解读。
 
-![](img/873b8f79611fdf2c939aef0914fb938e_21.png)
 
-![](img/873b8f79611fdf2c939aef0914fb938e_22.png)
 
 从生成的分组柱状图中，我们可以观察到一些有趣的模式：夏威夷（HI）的贷款模式与阿拉斯加（AK）和哥伦比亚特区（DC）明显不同。阿拉斯加和哥伦比亚特区主要以低风险（A级）贷款为主，而夏威夷则有大额但风险较高（如C、D级）的贷款。此外，哥伦比亚特区的A级贷款平均金额很高，这可能为你的客户提供了一个有利可图的策略线索。
 
@@ -121,7 +104,6 @@ plt.show()
 plt.savefig('grouped_bar_chart.png', dpi=300, bbox_inches='tight')
 ```
 
-![](img/873b8f79611fdf2c939aef0914fb938e_24.png)
 
 ## 总结
 

@@ -1,10 +1,7 @@
 # 003：采样过程详解 🧪
 
-![](img/9a75ada4473cacc9d609a51652223f60_0.png)
 
-![](img/9a75ada4473cacc9d609a51652223f60_2.png)
 
-![](img/9a75ada4473cacc9d609a51652223f60_3.png)
 
 在本节课中，我们将要学习扩散模型在训练完成后，如何通过一个称为“采样”的过程，从纯噪声生成高质量的图像。我们将详细拆解采样算法的每一步，并通过代码示例直观地展示其工作原理。
 
@@ -12,7 +9,6 @@
 
 上一节我们介绍了扩散模型的基本概念，本节中我们来看看模型训练后如何生成图像，即采样过程。
 
-![](img/9a75ada4473cacc9d609a51652223f60_5.png)
 
 采样过程的核心是**反向去噪**。想象一下，我们有一张被墨滴完全扩散污染的图像（纯噪声）。我们的目标是逆向这个过程，一步步地将噪声移除，最终还原出清晰的图像。训练好的神经网络在这一过程中扮演着关键角色：它负责预测当前图像中的噪声。
 
@@ -33,9 +29,7 @@
 
 首先，我们需要导入必要的库并设置一些辅助函数。
 
-![](img/9a75ada4473cacc9d609a51652223f60_7.png)
 
-![](img/9a75ada4473cacc9d609a51652223f60_8.png)
 
 ```python
 import torch
@@ -44,13 +38,10 @@ import torch.nn.functional as F
 # 导入其他必要的工具和自定义辅助函数
 ```
 
-![](img/9a75ada4473cacc9d609a51652223f60_10.png)
 
 接下来，我们定义神经网络模型的结构。这里我们暂时不深入其内部细节，只需知道它将用于预测噪声。
 
-![](img/9a75ada4473cacc9d609a51652223f60_11.png)
 
-![](img/9a75ada4473cacc9d609a51652223f60_12.png)
 
 ```python
 # 实例化噪声预测模型
@@ -61,11 +52,8 @@ print("模型加载完毕。")
 然后，我们设置采样过程所需的超参数。这包括总时间步数、图像尺寸以及 DDPM 算法中用于控制噪声添加和移除的缩放系数（由噪声调度表定义）。
 
 
-![](img/9a75ada4473cacc9d609a51652223f60_14.png)
 
-![](img/9a75ada4473cacc9d609a51652223f60_15.png)
 
-![](img/9a75ada4473cacc9d609a51652223f60_16.png)
 
 ```python
 # 定义超参数
@@ -85,13 +73,10 @@ def get_noise_schedule(T, beta1, beta2):
 sqrt_alphas_cumprod, sqrt_one_minus_alphas_cumprod = get_noise_schedule(T, beta1, beta2)
 ```
 
-![](img/9a75ada4473cacc9d609a51652223f60_18.png)
 
-![](img/9a75ada4473cacc9d609a51652223f60_20.png)
 
 以下是采样算法的核心函数 `denoise_add_noise`。它完成了单步的去噪和噪声添加操作。
 
-![](img/9a75ada4473cacc9d609a51652223f60_22.png)
 
 ```python
 def denoise_add_noise(x, t, pred_noise, z=None):
@@ -119,19 +104,15 @@ def denoise_add_noise(x, t, pred_noise, z=None):
     return x_next
 ```
 
-![](img/9a75ada4473cacc9d609a51652223f60_24.png)
 
-![](img/9a75ada4473cacc9d609a51652223f60_26.png)
 
 现在，我们执行完整的采样循环。我们从随机噪声开始，循环 T 次，逐步生成图像。
 
-![](img/9a75ada4473cacc9d609a51652223f60_28.png)
 
 
 ![](img/9a75ada4473cacc9d609a51652223f60_30.png)
 
 
-![](img/9a75ada4473cacc9d609a51652223f60_32.png)
 
 ```python
 # 加载预训练好的模型权重
@@ -158,15 +139,12 @@ final_image = sample
 
 你可能会问，为什么在减去预测噪声后，还要添加新的噪声？这是因为，经过一步去噪后，图像的分布已经偏离了神经网络训练时所见的“标准噪声分布”。直接将其输入下一步可能会导致模型表现不稳定，使生成结果模糊或趋于数据平均值（即产生毫无特征的“平均精灵”）。
 
-![](img/9a75ada4473cacc9d609a51652223f60_36.png)
 
 通过添加一个经过精心缩放（由噪声调度表和当前时间步决定）的微量随机噪声 `z`，我们可以将图像“推回”到模型期望的分布附近。这极大地提高了采样的稳定性和生成图像的质量与多样性。
 
-![](img/9a75ada4473cacc9d609a51652223f60_38.png)
 
 以下是对比实验：如果我们不添加额外噪声（即在 `denoise_add_noise` 函数中设置 `z=0`），结果会怎样？
 
-![](img/9a75ada4473cacc9d609a51652223f60_40.png)
 
 ```python
 # 不添加额外噪声的错误采样方式
@@ -179,13 +157,11 @@ for t in reversed(range(T)):
     sample_bad = denoise_add_noise(sample_bad, t_tensor, pred_noise, z=torch.zeros_like(sample_bad))
 ```
 
-![](img/9a75ada4473cacc9d609a51652223f60_42.png)
 
 运行这段代码，生成的图像很可能是一团模糊、缺乏细节的色块，而不是清晰的精灵。这证明了添加步骤噪声对于生成高质量样本至关重要。
 
 ![](img/9a75ada4473cacc9d609a51652223f60_44.png)
 
-![](img/9a75ada4473cacc9d609a51652223f60_46.png)
 
 ---
 

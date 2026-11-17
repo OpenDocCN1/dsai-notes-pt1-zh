@@ -23,9 +23,7 @@ Pandas 是 Python 中用于数据操作和分析的强大库。本节课将引�
 3.  激活我们为课程创建的环境，例如：`conda activate ml_course_sample_project`。
 4.  环境激活后，输入 `jupyter notebook` 启动 Jupyter Notebook。
 
-![](img/0ad0728607db323747f514aa7a0cd924_2.png)
 
-![](img/0ad0728607db323747f514aa7a0cd924_4.png)
 
 在 Jupyter 仪表板中，导航到项目文件夹并创建一个新的 Python 3 笔记本，将其命名为 “introduction_to_pandas”。
 

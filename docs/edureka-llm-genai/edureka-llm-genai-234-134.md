@@ -10,9 +10,7 @@ Midjourney命令是用户与Midjourney机器人交互的主要方式。这些命
 
 ![](img/7d247cde9686eb48363aa653e9e210d6_2.png)
 
-![](img/7d247cde9686eb48363aa653e9e210d6_3.png)
 
-![](img/7d247cde9686eb48363aa653e9e210d6_4.png)
 
 ## 什么是Midjourney命令
 
@@ -24,9 +22,7 @@ Midjourney命令是用户与Midjourney机器人交互的主要方式。这些命
 
 以上就是关于命令及其使用方法的介绍。我们了解到Midjourney中存在多个命令。
 
-![](img/7d247cde9686eb48363aa653e9e210d6_6.png)
 
-![](img/7d247cde9686eb48363aa653e9e210d6_7.png)
 
 ## 如何使用命令
 

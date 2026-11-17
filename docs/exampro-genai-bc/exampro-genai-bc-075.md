@@ -4,7 +4,6 @@
 
 ![](img/6dc2d2b929dadb59921c8c2b37a474ba_3.png)
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_5.png)
 
 ![](img/6dc2d2b929dadb59921c8c2b37a474ba_7.png)
 
@@ -18,7 +17,6 @@
 
 ![](img/6dc2d2b929dadb59921c8c2b37a474ba_14.png)
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_16.png)
 
 ## 环境配置与模型选择
 
@@ -26,7 +24,6 @@
 
 上一节我们介绍了课程目标，本节中我们来看看如何搭建一个用于自动语音识别的开发环境。
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_20.png)
 
 首先，我们需要创建一个新的项目目录并设置Python环境。
 
@@ -54,13 +51,9 @@ Whisper模型有不同的大小，性能与资源消耗各异。我们将使用`
 
 环境配置好后，我们来看看如何使用Hugging Face的Transformers库加载Whisper模型并进行转录。
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_28.png)
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_30.png)
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_32.png)
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_34.png)
 
 核心步骤是创建语音识别管道并指定模型。
 
@@ -68,7 +61,6 @@ Whisper模型有不同的大小，性能与资源消耗各异。我们将使用`
 
 ![](img/6dc2d2b929dadb59921c8c2b37a474ba_38.png)
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_39.png)
 
 ```python
 from transformers import pipeline
@@ -85,9 +77,7 @@ asr_pipeline = pipeline(
 )
 ```
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_41.png)
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_43.png)
 
 ![](img/6dc2d2b929dadb59921c8c2b37a474ba_45.png)
 
@@ -98,24 +88,17 @@ result = asr_pipeline(file_name, return_timestamps=True)
 print(result)
 ```
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_47.png)
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_49.png)
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_51.png)
 
 有时音频文件格式可能导致问题。如果遇到错误，可以使用FFmpeg进行转换，确保其采样率等参数符合要求。
 ```bash
 ffmpeg -i input.wav -ar 16000 -ac 1 -c:a pcm_s16le output.wav
 ```
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_53.png)
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_54.png)
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_56.png)
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_57.png)
 
 ## 探索逐字时间戳与WhisperX
 
@@ -123,13 +106,11 @@ ffmpeg -i input.wav -ar 16000 -ac 1 -c:a pcm_s16le output.wav
 
 ![](img/6dc2d2b929dadb59921c8c2b37a474ba_61.png)
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_63.png)
 
 ![](img/6dc2d2b929dadb59921c8c2b37a474ba_65.png)
 
 基础的Whisper模型返回的是句子或段落级别的时间戳。为了获得逐字时间戳，我们需要使用WhisperX。
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_67.png)
 
 然而，直接安装WhisperX可能会遇到CUDA版本不匹配等复杂的依赖问题。一个更简单的解决方案是使用Docker容器，它包含了所有预配置的环境。
 
@@ -138,7 +119,6 @@ ffmpeg -i input.wav -ar 16000 -ac 1 -c:a pcm_s16le output.wav
 docker run --gpus all -v $(pwd):/app ghcr.io/m-bain/whisperx:latest --model large-v3 --language ja --output_dir /app/output /app/wake_up_converted.wav
 ```
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_69.png)
 
 这个命令会下载WhisperX的Docker镜像，并将当前目录挂载到容器的`/app`路径，然后对指定的音频文件进行转录，结果将输出到本地目录。
 
@@ -148,7 +128,6 @@ docker run --gpus all -v $(pwd):/app ghcr.io/m-bain/whisperx:latest --model larg
 
 ## 总结
 
-![](img/6dc2d2b929dadb59921c8c2b37a474ba_75.png)
 
 ![](img/6dc2d2b929dadb59921c8c2b37a474ba_77.png)
 

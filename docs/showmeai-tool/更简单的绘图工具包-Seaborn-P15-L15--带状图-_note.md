@@ -19,13 +19,11 @@ plt.figure(figsize=(8, 5))
 
 ## 创建基础带状图
 
-![](img/aa7de4aeb2764a1b96659abb0b40556a_1.png)
 
 要创建一个基础的带状图，只需调用 `sns.stripplot()` 函数。带状图会绘制一个散点图，其中**一个变量是分类的**，用于展示所有不同的原始数据点。这有助于观察数据的实际分布，而不是像箱线图那样只展示汇总统计。
 
 以下是创建基础带状图的步骤：
 
-![](img/aa7de4aeb2764a1b96659abb0b40556a_2.png)
 
 1.  设定分类变量为 `x` 轴。
 2.  设定连续变量为 `y` 轴。
@@ -36,7 +34,6 @@ sns.stripplot(x='day', y='total_bill', data=tips)
 plt.show()
 ```
 
-![](img/aa7de4aeb2764a1b96659abb0b40556a_1.png)
 
 ![](img/aa7de4aeb2764a1b96659abb0b40556a_4.png)
 

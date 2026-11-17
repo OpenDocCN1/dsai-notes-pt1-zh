@@ -1,6 +1,5 @@
 #  078：欢迎来到第2课程 🚀
 
-![](img/4136dcd67f6eef9e13816eece13293bc_0.png)
 
 ![](img/4136dcd67f6eef9e13816eece13293bc_0.png)
 

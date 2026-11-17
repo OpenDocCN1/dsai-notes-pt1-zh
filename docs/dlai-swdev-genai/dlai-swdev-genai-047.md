@@ -54,7 +54,6 @@ pip install flask==1.0
 
 GPT回复了一系列建议，包括使用`pip-audit`，并展示了如何安装和使用它，以及其他工具如`safety`（它拥有Python软件包安全咨询数据库，可以据此检查漏洞）、使用`bandit`进行静态代码分析、使用`pip check`来检查过期或有漏洞的软件包。你也可以手动使用`pip list`和`pip install`等命令进行检查。当然，如果你使用类似GitHub Actions的CI/CD流水线，还可以实现自动化安全检查。
 
-![](img/0deb559f6ac883efbd0a8b75e73554a7_9.png)
 
 这里有很多推荐，其中第一个就是`pip-audit`，我们将在课程中探索这个工具。
 

@@ -15,7 +15,6 @@
 
 ![](img/39cc54e0e04eb93655105f2cde590172_2.png)
 
-![](img/39cc54e0e04eb93655105f2cde590172_3.png)
 
 ![](img/39cc54e0e04eb93655105f2cde590172_4.png)
 
@@ -66,7 +65,6 @@ def save_news_to_markdown(file_name: str, content: str):
 2.  （后台处理阶段，代理静默）
 3.  **代理最终确认**：“全部完成。我已将包含最新财务数据的研究报告编译并保存到 ai_research_report.md。”
 
-![](img/39cc54e0e04eb93655105f2cde590172_6.png)
 
 现在让我们看看输出。记住，这是一个后台代理，这意味着它接收了我们的指令或要求，然后在后端完成工作并保存了文件。让我们看看它保存的文件，了解它在后台进程中具体做了什么。
 
@@ -80,7 +78,6 @@ def save_news_to_markdown(file_name: str, content: str):
 
 ## 总结 📝
 
-![](img/39cc54e0e04eb93655105f2cde590172_8.png)
 
 ![](img/39cc54e0e04eb93655105f2cde590172_9.png)
 

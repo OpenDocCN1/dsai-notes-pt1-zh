@@ -61,23 +61,15 @@ outputImage[y][x] = sum;
 
 ## GPU优化实战
 
-![](img/ddbb2f489b063a2d810091cb984ab093_1.png)
 
-![](img/ddbb2f489b063a2d810091cb984ab093_2.png)
 
-![](img/ddbb2f489b063a2d810091cb984ab093_3.png)
 
 现在，我们进入核心部分，探讨如何在GPU上优化卷积算法。我们将以一个4K x 4K输出图像、16 x 16滤波器的案例进行测试。初始的朴素实现耗时约1511毫秒。
 
-![](img/ddbb2f489b063a2d810091cb984ab093_5.png)
 
-![](img/ddbb2f489b063a2d810091cb984ab093_6.png)
 
-![](img/ddbb2f489b063a2d810091cb984ab093_7.png)
 
-![](img/ddbb2f489b063a2d810091cb984ab093_8.png)
 
-![](img/ddbb2f489b063a2d810091cb984ab093_9.png)
 
 ![](img/ddbb2f489b063a2d810091cb984ab093_10.png)
 

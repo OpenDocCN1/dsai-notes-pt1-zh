@@ -20,7 +20,6 @@ df = pd.read_csv('survey_data.csv')
 3.  默认情况下，`sort_values` 不会改变原始数据框，而是创建一个新的。
 4.  你需要将排序操作的结果存储在一个变量中。
 
-![](img/53132b9402f71a27c47c0dd7e62d5c6f_1.png)
 
 以下是实现代码：
 
@@ -54,7 +53,6 @@ df_sorted_by_age = df.sort_values(by='age', ascending=False)
 
 关于 `by` 和 `ascending` 这类命名参数，其主要好处是你可以以任意顺序提供它们。例如，以下两行代码是等效的：
 
-![](img/53132b9402f71a27c47c0dd7e62d5c6f_3.png)
 
 ```python
 df_sorted = df.sort_values(by='age', ascending=False)

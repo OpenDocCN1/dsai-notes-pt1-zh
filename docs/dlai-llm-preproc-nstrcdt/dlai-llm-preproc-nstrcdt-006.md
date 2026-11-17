@@ -6,11 +6,9 @@
 
 上一节我们介绍了如何使用视觉线索从PDF和图像中提取信息。本节中，我们来看看更高级的预处理技术——提取表格内容。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_1.png)
 
 大多数RAG应用侧重于文档中的纯文本内容。然而，在一些行业中，非结构化文档中经常包含结构化信息，例如表格。这在金融和保险等行业尤为常见。表格提取使得RAG应用程序能够从非结构化文档中提取包含在表格中的关键信息。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_1.png)
 
 ## 表格提取的挑战与方法
 
@@ -28,17 +26,13 @@
 
 首先，我们来了解表格转换器。表格转换器是一个模型，它识别表格单元的边界框，然后将输出转换为HTML。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_3.png)
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_3.png)
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_5.png)
 
 这个过程分为两个步骤：
 1.  使用文档布局检测模型识别文档中的表格区域。
 2.  将识别出的表格区域传递给表格转换器模型进行处理。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_5.png)
 
 以下是表格转换器方法的优缺点：
 
@@ -48,19 +42,15 @@
 **缺点：**
 *   涉及多次昂贵的模型调用，包括文档布局检测和OCR调用。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_7.png)
 
 表格转换器模型的架构如下图所示。如果您感兴趣，可以查看相关论文。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_7.png)
 
 ## 方法二：视觉转换器
 
 您还可以使用视觉转换器从PDF和图像中提取表格内容，就像在上一课中提取JSON信息一样。但与此前不同的是，本节的目标输出是HTML。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_9.png)
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_9.png)
 
 以下是视觉转换器方法的优缺点：
 
@@ -68,7 +58,6 @@
 *   提示更加灵活。
 *   只涉及单一模型调用。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_11.png)
 
 **缺点：**
 *   属于生成式方法，容易产生“幻觉”（输出不准确的内容）。
@@ -80,7 +69,6 @@
 
 您可以用于预处理包含表格的文档的最后一种技术，是对表格进行光学字符识别（OCR）后处理。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_11.png)
 
 在这种技术中：
 1.  使用文档布局检测模型识别表格。
@@ -89,7 +77,6 @@
 
 以下是OCR后处理方法的优缺点：
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_13.png)
 
 **优点：**
 *   处理速度快。
@@ -99,23 +86,18 @@
 *   依赖于统计或基于规则的解析，比其他方法更脆弱、不够灵活。
 *   对于复杂的表格，效果可能不理想。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_15.png)
 
 下图展示了使用文档布局检测模型识别表格，并对OCR输出进行后处理，最终构造出HTML表示的示例。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_13.png)
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_17.png)
 
 ## 实践：使用非结构化API提取表格
 
 现在，您已经学会了从非结构化文档中提取表格的一些技术，接下来可以将其付诸实践。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_19.png)
 
 首先，导入在之前课程中使用过的一些辅助函数。由于表格提取是基于模型的，我们将再次使用非结构化API，因为它已经为您设置好了所有需要的模型。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_20.png)
 
 ```python
 # 导入必要的库和辅助函数
@@ -124,19 +106,12 @@ from unstructured.partition.pdf import partition_pdf
 
 在上一课中，我们处理了一些简单的PDF示例。现在，我们将预处理一个包含表格和图像的更复杂文档。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_22.png)
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_19.png)
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_20.png)
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_23.png)
 
 您可以在下面看到这个文档的样子。我们的目标是从该文档的特定页面中提取“表1”的内容。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_22.png)
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_23.png)
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_25.png)
 
 现在，开始进行预处理。要将文档传递给非结构化API，需要注意以下参数：
 
@@ -154,7 +129,6 @@ elements = partition_pdf(
 *   `infer_table_structure=True`：这个参数告诉API我们想要提取表格的结构信息。
 *   `skip_infer_table_types=[]`：这个参数指示API不要跳过任何文档类型的表格提取。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_27.png)
 
 现在，可以运行API调用了。请注意，此过程需要多个模型调用，可能需要几分钟时间。
 
@@ -167,11 +141,9 @@ tables = [el for el in elements if el.category == "Table"]
 
 ## 查看与使用提取结果
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_29.png)
 
 现在您有了表格元素，可以使用元素的`.text`属性查看表格中的文本内容。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_31.png)
 
 ```python
 # 查看第一个表格的文本内容
@@ -186,34 +158,24 @@ table_html = tables[0].metadata.html
 print(table_html)
 ```
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_33.png)
 
 您可以使用以下代码块查看元数据字段中的HTML是什么样子。如您所见，这是文档中表格的HTML表示。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_35.png)
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_33.png)
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_35.png)
 
 如果您有兴趣在Notebook中显示此表格，也可以使用IPython的`HTML`显示功能。
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_37.png)
 
 ```python
 from IPython.display import HTML, display
 display(HTML(table_html))
 ```
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_38.png)
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_40.png)
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_42.png)
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_40.png)
 
 ## 为表格生成摘要
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_42.png)
 
 一旦从文档中提取了表格内容并将其转换为HTML，为这些表格生成摘要也很有帮助。这样，在RAG架构中执行相似性搜索时，就可以搜索这些摘要。
 
@@ -238,7 +200,6 @@ summary = chain.run([table_doc])
 print(summary)
 ```
 
-![](img/9a48b00729d5f8e3427f3e9da2eb75ef_44.png)
 
 ![](img/9a48b00729d5f8e3427f3e9da2eb75ef_44.png)
 

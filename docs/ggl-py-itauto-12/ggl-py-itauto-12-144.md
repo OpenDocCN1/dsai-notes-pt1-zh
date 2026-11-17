@@ -1,6 +1,5 @@
 #  144：Bash脚本编程介绍 🐚
 
-![](img/dc43b73c9a34e25568d4d96ce0753dce_0.png)
 
 ![](img/dc43b73c9a34e25568d4d96ce0753dce_2.png)
 

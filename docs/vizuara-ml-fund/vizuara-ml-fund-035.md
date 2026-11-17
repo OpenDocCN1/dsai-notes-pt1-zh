@@ -1,6 +1,5 @@
 #  035：Python机器学习数据可视化库入门 - Matplotlib, Seaborn
 
-![](img/690eb206e9e3ff08465f71308689610e_1.png)
 
 ![](img/690eb206e9e3ff08465f71308689610e_1.png)
 
@@ -30,7 +29,6 @@
 
 我们将要看的第一个库是Matplotlib。这个库构成了Python数据可视化的基础。
 
-![](img/690eb206e9e3ff08465f71308689610e_3.png)
 
 Matplotlib是一个底层绘图库，它提供了广泛的工具来创建静态、交互式和动画可视化。你可以将其视为绘图领域的“瑞士军刀”。几乎所有其他高级可视化库（如Seaborn）都构建在Matplotlib之上。
 

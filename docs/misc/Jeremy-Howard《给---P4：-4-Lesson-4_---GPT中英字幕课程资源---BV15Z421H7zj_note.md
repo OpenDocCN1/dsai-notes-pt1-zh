@@ -65,7 +65,6 @@ print(tokens)
 
 以下是训练模型的示例代码：
 
-![](img/f77354fb6255303a63cbce2311f7c3cf_1.png)
 
 ```python
 from transformers import AutoModelForSequenceClassification, Trainer, TrainingArguments
@@ -88,7 +87,6 @@ trainer.train()
 ### 评估与预测
 训练完成后，使用模型对测试集进行预测，并提交结果到Kaggle。
 
-![](img/f77354fb6255303a63cbce2311f7c3cf_3.png)
 
 ---
 

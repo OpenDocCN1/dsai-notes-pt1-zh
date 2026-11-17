@@ -89,7 +89,6 @@ def test_text_recognize():
 
 ### 自动化工作流
 
-![](img/d294efe46382d60add6edd2f50f3188a_18.png)
 
 为了充分利用测试和代码检查实践，你需要在开发工作流中尽可能实现自动化。
 

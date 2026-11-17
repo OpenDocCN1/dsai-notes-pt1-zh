@@ -19,15 +19,11 @@
     pip install anthropic mcp
     ```
 
-![](img/ed05456c42f7b9755ec49bf455bb2780_1.png)
 
 2.  **配置Claude Desktop**：打开Claude Desktop，进入设置（Settings）的开发者（Develop）选项，编辑MCP配置文件。
-    ![](img/ed05456c42f7b9755ec49bf455bb2780_1.png)
 
-![](img/ed05456c42f7b9755ec49bf455bb2780_2.png)
 
 3.  **编辑配置文件**：在打开的JSON配置文件中，粘贴服务器的配置信息。关键点在于，需要指定研究服务器的**确切文件路径**，以便Claude Desktop启动它。
-    ![](img/ed05456c42f7b9755ec49bf455bb2780_2.png)
     配置文件示例结构如下：
     ```json
     {
@@ -46,9 +42,7 @@
 ## 探索MCP兼容的应用程序生态系统
 
 成功重启后，你可以在Claude Desktop的界面中访问已连接服务器提供的工具、资源和提示词。
-![](img/ed05456c42f7b9755ec49bf455bb2780_4.png)
 
-![](img/ed05456c42f7b9755ec49bf455bb2780_4.png)
 
 Claude Desktop只是众多支持模型上下文协议（MCP）的应用程序之一。在MCP官方文档中，你可以找到一个不断增长的支持MCP集成的应用程序列表。
 
@@ -70,9 +64,6 @@ Claude Desktop只是众多支持模型上下文协议（MCP）的应用程序之
 3.  利用Claude Desktop的 **“工件”（artifacts）** 功能，基于论文中的关键主题，生成一个带有闪卡集的Web测验应用。
 
 这个过程展示了如何组合不同服务器的工具来获取所需数据，并利用应用程序的高级功能（如可视化）构建强大的跨领域应用。
-![](img/ed05456c42f7b9755ec49bf455bb2780_6.png)
-![](img/ed05456c42f7b9755ec49bf455bb2780_7.png)
-![](img/ed05456c42f7b9755ec49bf455bb2780_8.png)
 
 虽然这只是一个简单的例子，但它启发了无数潜在用例，从摘要生成到交互式应用开发。
 
@@ -80,17 +71,12 @@ Claude Desktop只是众多支持模型上下文协议（MCP）的应用程序之
 
 本节课中，我们一起学习了如何使用像Claude Desktop这样的工具来连接MCP服务器，从而抽象掉大量的底层网络和编码工作。我们还浏览了众多不同的MCP兼容应用程序，它们可以帮助你在各种IDE、Web应用和桌面客户端中快速启动和运行。
 
-![](img/ed05456c42f7b9755ec49bf455bb2780_6.png)
 
-![](img/ed05456c42f7b9755ec49bf455bb2780_7.png)
 
-![](img/ed05456c42f7b9755ec49bf455bb2780_8.png)
 
 在下一节中，我们将更深入地探讨如何构建远程MCP服务器。
 
-![](img/ed05456c42f7b9755ec49bf455bb2780_10.png)
 
-![](img/ed05456c42f7b9755ec49bf455bb2780_12.png)
 
 我们下节课再见。
 ![](img/ed05456c42f7b9755ec49bf455bb2780_12.png)

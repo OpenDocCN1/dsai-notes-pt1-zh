@@ -1,12 +1,9 @@
 # 🧠 课程 P19：SPPNet 总结、优缺点与问题自测
 
-![](img/6c3544f7eac8536f872ad61d9b627f0b_0.png)
 
-![](img/6c3544f7eac8536f872ad61d9b627f0b_2.png)
 
 在本节课中，我们将总结 SPPNet 的核心思想、完整结构，分析其优缺点，并通过几个关键问题来检验你对 SPPNet 的理解程度。
 
-![](img/6c3544f7eac8536f872ad61d9b627f0b_4.png)
 
 ---
 
@@ -40,7 +37,6 @@ for pool_size in [(4,4), (2,2), (1,1)]:
 fixed_length_vector = concatenate(spp_output) # 拼接成固定长度向量
 ```
 
-![](img/6c3544f7eac8536f872ad61d9b627f0b_12.png)
 
 因此，SPPNet 的完整结构主要改善了两点：**大幅减少了卷积运算次数**，以及**生成了固定长度的特征向量**。
 
@@ -54,7 +50,6 @@ fixed_length_vector = concatenate(spp_output) # 拼接成固定长度向量
 
 了解了 SPPNet 的结构后，我们来系统性地分析它的优势与不足。
 
-![](img/6c3544f7eac8536f872ad61d9b627f0b_18.png)
 
 ### 优点
 
@@ -62,7 +57,6 @@ fixed_length_vector = concatenate(spp_output) # 拼接成固定长度向量
 *   **计算效率提升**：通过将候选区域映射到共享的特征图上，只需对整图进行一次卷积计算，避免了 R-CNN 中每个候选区域都独立进行卷积的重复计算。
 *   **避免图像形变**：SPP 层可以接受任意尺寸的输入并输出固定长度的特征，因此无需像 R-CNN 那样对每个候选区域进行裁剪或形变，保留了更多原始信息。
 
-![](img/6c3544f7eac8536f872ad61d9b627f0b_20.png)
 
 ### 缺点
 
@@ -92,11 +86,9 @@ fixed_length_vector = concatenate(spp_output) # 拼接成固定长度向量
 2.  **SPP 层过程**：SPP 层具体是如何操作的？“4x4, 2x2, 1x1”的池化结构是如何产生固定长度输出的？
 3.  **核心改进**：相对于 R-CNN，SPPNet 最主要的改进体现在哪里？它解决了 R-CNN 的哪些痛点？
 
-![](img/6c3544f7eac8536f872ad61d9b627f0b_30.png)
 
 ---
 
-![](img/6c3544f7eac8536f872ad61d9b627f0b_32.png)
 
 ## 📝 本节课总结
 

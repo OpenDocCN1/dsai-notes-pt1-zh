@@ -6,9 +6,7 @@ Now， we're going to start with a simple example in order to introduce this con
 
  The number of visits of that customer。
 
-![](img/95828b19000e9e2f030582f4bd36a875_1.png)
 
-![](img/95828b19000e9e2f030582f4bd36a875_2.png)
 
 Now， if we were to use clustering to segment the users of the app into two groups。
 
@@ -16,7 +14,6 @@ Now， if we were to use clustering to segment the users of the app into two gro
 
 
 
-![](img/95828b19000e9e2f030582f4bd36a875_4.png)
 
 So probably what you see here would ultimately be the best choice。 Visly， it makes a lot of sense。
 
@@ -24,11 +21,8 @@ So probably what you see here would ultimately be the best choice。 Visly， it
 
 
 
-![](img/95828b19000e9e2f030582f4bd36a875_6.png)
 
-![](img/95828b19000e9e2f030582f4bd36a875_7.png)
 
-![](img/95828b19000e9e2f030582f4bd36a875_8.png)
 
 And perhaps you find for your business objective， you need three clusters。
 
@@ -36,26 +30,21 @@ And perhaps you find for your business objective， you need three clusters。
 
 
 
-![](img/95828b19000e9e2f030582f4bd36a875_10.png)
 
 Or maybe you need five clusters and this is what your five clusters would look like。
 
 
 
-![](img/95828b19000e9e2f030582f4bd36a875_12.png)
 
 And in this course， you'll learn to use a wide variety of clustering algorithms and how to actually select the correct number of clusters that best suit your data。
 
 
 
-![](img/95828b19000e9e2f030582f4bd36a875_14.png)
 
 With this in mind， in the next video， we will introduce our first unsupervised learning model。
 
  Ka Mes。
 
-![](img/95828b19000e9e2f030582f4bd36a875_16.png)
 
-![](img/95828b19000e9e2f030582f4bd36a875_17.png)
 
 ![](img/95828b19000e9e2f030582f4bd36a875_18.png)

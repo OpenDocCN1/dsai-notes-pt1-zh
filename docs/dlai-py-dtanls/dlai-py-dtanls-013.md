@@ -1,6 +1,5 @@
 # 013：Python列表操作 📋
 
-![](img/dd405d37d84a6b888aebcdcfc9edc70e_1.png)
 
 在本节课中，我们将学习Python中列表的基本操作。列表是存储多个数据项的有序集合，是数据分析中处理数据列的核心工具。我们将通过一个图书馆收入数据的实例，探索如何访问、修改和扩展列表。
 
@@ -33,9 +32,7 @@ print(incomes[0])  # 输出1996年收入
 print(incomes[1])  # 输出1997年收入
 ```
 
-![](img/dd405d37d84a6b888aebcdcfc9edc70e_3.png)
 
-![](img/dd405d37d84a6b888aebcdcfc9edc70e_4.png)
 
 假设输出分别是434,000和439,000，那么要计算总和，只需使用加号运算符：
 
@@ -47,9 +44,7 @@ print(incomes[0] + incomes[1])
 
 ## 更新列表元素
 
-![](img/dd405d37d84a6b888aebcdcfc9edc70e_6.png)
 
-![](img/dd405d37d84a6b888aebcdcfc9edc70e_7.png)
 
 接下来，你需要将1998年的收入更新为460,000。1998年对应索引2。
 
@@ -67,9 +62,7 @@ print(incomes[2])
 incomes[2] = 460000
 ```
 
-![](img/dd405d37d84a6b888aebcdcfc9edc70e_9.png)
 
-![](img/dd405d37d84a6b888aebcdcfc9edc70e_10.png)
 
 然后在新的一行打印 `incomes[2]`，可以看到它的值确实已经改变。恭喜，你又完成了一个任务。
 

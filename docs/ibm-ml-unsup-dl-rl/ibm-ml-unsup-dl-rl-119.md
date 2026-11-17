@@ -4,7 +4,6 @@ Hello and welcome In this video， we'll be going through a quick introduction t
 
  so let's get started。😊。
 
-![](img/0799395e0118f383fd467e0b7977d81f_1.png)
 
 Even though people's tastes may vary， they generally follow patterns。By that。
 
@@ -32,11 +31,8 @@ Recommenander systems have many applications that I'm sure you're already famili
 
 
 
-![](img/0799395e0118f383fd467e0b7977d81f_3.png)
 
-![](img/0799395e0118f383fd467e0b7977d81f_4.png)
 
-![](img/0799395e0118f383fd467e0b7977d81f_5.png)
 
 Another example can be found in a daily use mobile app where a recommender engine is used to recommend anything from where to eat or what job to apply to。
 
@@ -44,7 +40,6 @@ On social media， sites like Facebook or LinkedIn regularly recommend friendshi
 
 
 
-![](img/0799395e0118f383fd467e0b7977d81f_7.png)
 
 Recommenander systems are even used to personalize your experience on the web。For example。
 
@@ -56,7 +51,6 @@ Recommenander systems are even used to personalize your experience on the web。
 
 
 
-![](img/0799395e0118f383fd467e0b7977d81f_9.png)
 
 One of the main advantages of using recommendation systems is that users get a broader exposure to many different products they might be interested in。
 
@@ -64,7 +58,6 @@ This exposure encourages users towards continual usage or purchase of their prod
 
 
 
-![](img/0799395e0118f383fd467e0b7977d81f_11.png)
 
 Not only does this provide a better experience for the user。
 
@@ -72,19 +65,16 @@ Not only does this provide a better experience for the user。
 
 
 
-![](img/0799395e0118f383fd467e0b7977d81f_13.png)
 
 There are generally two main types of recommendation systems。
 
  content based and collaborative filtering。
 
-![](img/0799395e0118f383fd467e0b7977d81f_15.png)
 
 The main difference between each can be summed up by the type of statement that a consumer might make。
 
 
 
-![](img/0799395e0118f383fd467e0b7977d81f_17.png)
 
 For instance， the main paradigm of a content based recommendation system is driven by the statement。
 
@@ -92,21 +82,17 @@ For instance， the main paradigm of a content based recommendation system is dr
 
 
 
-![](img/0799395e0118f383fd467e0b7977d81f_19.png)
 
 Content based systems try to figure out what a user's favorite aspects of an item are and then make recommendations on items that share those aspects。
 
 
 
-![](img/0799395e0118f383fd467e0b7977d81f_21.png)
 
 Collaborative filtering is based on a user saying， tell me what's popular among my neighbors because I might like it too。
 
 
 
-![](img/0799395e0118f383fd467e0b7977d81f_23.png)
 
-![](img/0799395e0118f383fd467e0b7977d81f_24.png)
 
 Collaborative filtering techniques find similar groups of users and provide recommendations based on similar tastes within that group。
 
@@ -116,7 +102,6 @@ Collaborative filtering techniques find similar groups of users and provide reco
 
 
 
-![](img/0799395e0118f383fd467e0b7977d81f_26.png)
 
 In terms of implementing recommender systems， there are two types， memory based and model based。
 
@@ -126,7 +111,6 @@ In memory based approaches， we use the entire user item data set to generate a
 
 
 
-![](img/0799395e0118f383fd467e0b7977d81f_28.png)
 
 Examples of these techniques include pearson correlation， cosine similarity。
 
@@ -138,7 +122,6 @@ Examples of these techniques include pearson correlation， cosine similarity。
 
  and so on。
 
-![](img/0799395e0118f383fd467e0b7977d81f_30.png)
 
 ![](img/0799395e0118f383fd467e0b7977d81f_31.png)
 

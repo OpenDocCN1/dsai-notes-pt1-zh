@@ -972,13 +972,11 @@ And you basically just initialize it with your experiment config， and then you
 
 
 
-![](img/d75396a625df6046ea36b19d0d582759_21.png)
 
 They also have some other stuff like you can host reports and tables is a recent product that lets you slice and dice your data and predictions in really cool ways。
 
 
 
-![](img/d75396a625df6046ea36b19d0d582759_23.png)
 
 Determined that AI also has an experiment tracking solution， which is also perfectly good。
 
@@ -1040,13 +1038,11 @@ Tracking experiments， versioning models， but also deploying models。And mon
 
 
 
-![](img/d75396a625df6046ea36b19d0d582759_29.png)
 
 But there's some other ones like gradients from paper space。 So look， look at these features， Notes。
 
  experiments， data sets， models and inference。
 
-![](img/d75396a625df6046ea36b19d0d582759_31.png)
 
 Or domino data Las， you can provision compute， you can track the experiments。
 

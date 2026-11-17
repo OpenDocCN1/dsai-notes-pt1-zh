@@ -1,6 +1,5 @@
 # 007：总结
 
-![](img/b501ea1fd84fc6404d5b3634a031e33e_0.png)
 
 ![](img/b501ea1fd84fc6404d5b3634a031e33e_0.png)
 

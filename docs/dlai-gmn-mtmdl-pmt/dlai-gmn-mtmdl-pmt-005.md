@@ -1,10 +1,8 @@
 # 005：使用图像创建用例 🖼️
 
-![](img/7c8add2d806e43a672ac5290cd15edab_0.png)
 
 在本节课中，我们将学习如何利用多模态模型处理图像和文本提示，创建实用的应用场景。我们将通过三个具体案例，学习如何从图像中提取信息、进行跨模态推理以及构建推荐系统。
 
-![](img/7c8add2d806e43a672ac5290cd15edab_2.png)
 
 ## 课程概述
 
@@ -22,12 +20,9 @@
 以下是初始化步骤的核心代码：
 
 
-![](img/7c8add2d806e43a672ac5290cd15edab_4.png)
-
-![](img/7c8add2d806e43a672ac5290cd15edab_5.png)
 
 
-![](img/7c8add2d806e43a672ac5290cd15edab_7.png)
+
 
 ```python
 # 导入必要的库
@@ -39,7 +34,6 @@ aiplatform.init(project=“your-project-id”, location=“us-central1”)
 model = GenerativeModel(“gemini-1.0-pro-vision-001”)
 ```
 
-![](img/7c8add2d806e43a672ac5290cd15edab_9.png)
 
 完成上述设置后，我们就可以开始构建和发送包含图像的提示了。
 
@@ -51,11 +45,9 @@ model = GenerativeModel(“gemini-1.0-pro-vision-001”)
 
 我们的目标是：根据一碗水果的图像和一份水果价目表的图像，回答一系列问题，例如计算制作水果沙拉还需要购买哪些水果及其总费用。
 
-![](img/7c8add2d806e43a672ac5290cd15edab_11.png)
 
 ### 步骤分解
 
-![](img/7c8add2d806e43a672ac5290cd15edab_13.png)
 
 以下是实现该用例的关键步骤：
 
@@ -90,11 +82,9 @@ model = GenerativeModel(“gemini-1.0-pro-vision-001”)
 
 ---
 
-![](img/7c8add2d806e43a672ac5290cd15edab_15.png)
 
 ## 用例二：基于图像的多模态推荐系统 🛋️
 
-![](img/7c8add2d806e43a672ac5290cd15edab_17.png)
 
 在学会了基础的信息提取后，本节我们将探索一个更贴近生活的应用：使用多模态模型作为推荐系统，为客厅挑选合适的椅子。
 
@@ -102,13 +92,10 @@ model = GenerativeModel(“gemini-1.0-pro-vision-001”)
 
 ### 步骤分解
 
-![](img/7c8add2d806e43a672ac5290cd15edab_19.png)
 
 以下是构建家具推荐系统的步骤：
 
-![](img/7c8add2d806e43a672ac5290cd15edab_21.png)
 
-![](img/7c8add2d806e43a672ac5290cd15edab_23.png)
 
 1.  **加载所有图像**：加载客厅图像和椅子图像列表。
     ```python
@@ -116,7 +103,6 @@ model = GenerativeModel(“gemini-1.0-pro-vision-001”)
     chair_images = [Image.load_from_file(f“chair_{i}.jpg”) for i in range(1, 5)]
     ```
 
-![](img/7c8add2d806e43a672ac5290cd15edab_25.png)
 
 2.  **构建组合提示**：这次我们将所有指令和图像一次性组合在一个变量中，这是一种更简洁的提示构建方式。
     ```python
@@ -130,7 +116,6 @@ model = GenerativeModel(“gemini-1.0-pro-vision-001”)
     ```
     **注意**：在构建提示时，需注意多余的空白可能会影响模型响应，因此最好打印检查一下提示的最终格式。
 
-![](img/7c8add2d806e43a672ac5290cd15edab_27.png)
 
 3.  **获取推荐结果**：发送提示并解析模型的回答。
     ```python
@@ -140,9 +125,7 @@ model = GenerativeModel(“gemini-1.0-pro-vision-001”)
 
 ### 执行结果分析
 
-![](img/7c8add2d806e43a672ac5290cd15edab_29.png)
 
-![](img/7c8add2d806e43a672ac5290cd15edab_31.png)
 
 模型对每把椅子都给出了详细评估。例如，对于一把由木头和金属制成的椅子，模型认为它“不适合”，因为房间是现代风格，具有简洁的线条。而对于另一把具有时尚现代设计、采用中性软面料的椅子，模型则认为它“非常适合”，能与房间的线条和颜色相得益彰。
 

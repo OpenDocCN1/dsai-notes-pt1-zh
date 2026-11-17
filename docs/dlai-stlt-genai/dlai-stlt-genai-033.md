@@ -10,21 +10,15 @@
 
 以下是部署步骤：
 
-![](img/c6b9f1402268f50c3ac54b1c83aa15ca_1.png)
 
-![](img/c6b9f1402268f50c3ac54b1c83aa15ca_2.png)
 
 首先，你需要获取应用代码。你已经在 Snowflake Notebook 中创建了一个可直接运行的 Streamlit 应用。该应用的代码可以在以下链接的 GitHub 仓库中找到。请下载包含情绪分析仪表板代码的 `streamlit_app.py` 文件。
 
-![](img/c6b9f1402268f50c3ac54b1c83aa15ca_3.png)
 
 接下来，登录你的 Snowflake 账户，使用 Snowsight 在内部部署应用。在左侧导航栏中选择“Projects”，然后选择“Streamlit”。在右上角，点击蓝色的“+ Streamlit App”按钮。
 
 “创建 Streamlit 应用”窗口将会打开。在弹出窗口中，为你的应用命名。在“App location”下拉菜单中，选择你在之前视频中创建的 `avalanche_db` 数据库和 `avalanche` 模式。选择默认的计算仓库。点击“Create”来初始化新的 Streamlit 应用。
 
-![](img/c6b9f1402268f50c3ac54b1c83aa15ca_1.png)
-![](img/c6b9f1402268f50c3ac54b1c83aa15ca_2.png)
-![](img/c6b9f1402268f50c3ac54b1c83aa15ca_3.png)
 
 ## 配置与运行应用
 
@@ -32,11 +26,9 @@
 
 在运行应用之前，你需要添加必要的包。这个脚本使用了 `matplotlib` 和 `snowflake-ml-python`。因此，在左上角选择“Packages”，输入 `matplotlib` 和 `snowflake-ml-python` 并选中它们。点击编辑器中的“Run”按钮来部署你的应用。
 
-![](img/c6b9f1402268f50c3ac54b1c83aa15ca_5.png)
 
 应用预览将出现在编辑器的右侧窗格中。应用加载完成后，它将在 Snowflake 内部实时运行。并排的编辑器和预览屏幕允许你在修改代码时实时查看变化。
 
-![](img/c6b9f1402268f50c3ac54b1c83aa15ca_5.png)
 
 当在 Snowflake 中运行 Streamlit 应用时，你对代码的更改会立即出现在预览窗格中。你的应用运行起来应该类似这样。
 
@@ -89,12 +81,9 @@ Snowflake 提供了多种工具来从 Snowsight 内部跟踪你的应用性能�
 *   **确保响应式设计以适应不同的屏幕尺寸**。
 *   **在推出前使用不同的用户角色和权限进行测试**。
 
-![](img/c6b9f1402268f50c3ac54b1c83aa15ca_7.png)
-![](img/c6b9f1402268f50c3ac54b1c83aa15ca_8.png)
 
 ## 总结
 
-![](img/c6b9f1402268f50c3ac54b1c83aa15ca_7.png)
 
 ![](img/c6b9f1402268f50c3ac54b1c83aa15ca_8.png)
 

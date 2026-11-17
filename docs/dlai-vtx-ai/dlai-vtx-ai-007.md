@@ -25,7 +25,6 @@ print(so_database.shape)
 print(so_database.head())
 ```
 
-![](img/5aef49958fbaddd6f175be8a1dc4e88f_4.png)
 
 这个数据框包含2000行，代表2000个不同的Stack Overflow帖子。它有三列：
 *   `input_text`：帖子的问题和标题的拼接。
@@ -45,7 +44,6 @@ model = TextEmbeddingModel.from_pretrained("textembedding-gecko")
 
 为了节省API调用，我们直接加载预先计算好的嵌入数据，这些数据保存在一个pickle文件中。
 
-![](img/5aef49958fbaddd6f175be8a1dc4e88f_6.png)
 
 ```python
 import pickle
@@ -54,9 +52,7 @@ with open('precomputed_embeddings.pkl', 'rb') as f:
 print(embeddings_array)
 ```
 
-![](img/5aef49958fbaddd6f175be8a1dc4e88f_8.png)
 
-![](img/5aef49958fbaddd6f175be8a1dc4e88f_9.png)
 
 最后，我们将这些嵌入向量作为新的一列添加到数据框中，便于后续构建问答系统。
 
@@ -66,7 +62,6 @@ so_database['embeddings'] = list(embeddings_array)
 
 ## 核心原理：相似度搜索与最近邻
 
-![](img/5aef49958fbaddd6f175be8a1dc4e88f_11.png)
 
 我们为何要嵌入所有数据？我们的Stack Overflow数据包含问题和答案。系统目标是：接收用户查询，在数据库的所有Stack Overflow问题中寻找语义相似的问题。如果找到，我们就获得了对应答案，从而可以回答用户。
 
@@ -76,11 +71,9 @@ so_database['embeddings'] = list(embeddings_array)
 *   **余弦相似度**：计算两个向量之间夹角的余弦值。其值在-1到1之间，值越接近1表示越相似。公式为：`similarity = (A·B) / (||A|| * ||B||)`。
 *   **点积**：计算两个向量的点积，等于余弦相似度乘以两个向量的模长。公式为：`dot_product = A·B = ∑(Ai * Bi)`。点积同时考虑了向量的角度和大小。
 
-![](img/5aef49958fbaddd6f175be8a1dc4e88f_13.png)
 
 在我们的例子中，我们将使用**余弦相似度**。当向量被归一化为单位长度（模长为1）时，余弦相似度和点积是等价的。
 
-![](img/5aef49958fbaddd6f175be8a1dc4e88f_15.png)
 
 接下来，我们将用户查询进行嵌入，然后计算该查询嵌入与数据库中每一个Stack Overflow问题嵌入之间的余弦相似度。完成计算后，我们可以找出哪些问题嵌入最为相似，这些被称为**最近邻**。
 
@@ -88,7 +81,6 @@ so_database['embeddings'] = list(embeddings_array)
 
 让我们在代码中实现上述流程。首先导入必要的库。
 
-![](img/5aef49958fbaddd6f175be8a1dc4e88f_17.png)
 
 ```python
 import numpy as np
@@ -112,7 +104,6 @@ similarities = cosine_similarity([query_embedding], db_embeddings_list)
 print(similarities.shape) # 输出 (1, 2000)
 ```
 
-![](img/5aef49958fbaddd6f175be8a1dc4e88f_19.png)
 
 这个数组的形状是1x2000，意味着我们计算了查询与2000个Stack Overflow嵌入中每一个的相似度得分。我们需要从中找出相似度最高的索引。
 
@@ -120,7 +111,6 @@ print(similarities.shape) # 输出 (1, 2000)
 most_similar_idx = np.argmax(similarities)
 ```
 
-![](img/5aef49958fbaddd6f175be8a1dc4e88f_21.png)
 
 现在，我们可以查看这个索引对应的问题和答案。
 
@@ -188,7 +178,6 @@ print(response.text)
 
 在结束之前，需要指出：我们计算了查询嵌入与数据库中**每一个**嵌入的相似度，这种**穷举搜索**在数据库有数亿甚至数十亿向量时是不可行的。在生产环境中，通常会使用执行**近似匹配**的算法。
 
-![](img/5aef49958fbaddd6f175be8a1dc4e88f_23.png)
 
 如果你使用向量数据库，这个功能可能已经内置。如果你想尝试这种近似最近邻算法，一个可用的开源库是`ScaNN`（可扩展最近邻）。它能大规模高效地进行向量相似性搜索。
 

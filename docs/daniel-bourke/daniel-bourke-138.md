@@ -106,7 +106,6 @@ plot_transformed_images(image_paths=image_path_list,
 
 运行上述代码后，你将看到类似下图的输出：
 
-![](img/1d03c6e99e786b706bfc81a5c336f8cc_2.png)
 
 ## 分析可视化结果
 
@@ -133,9 +132,7 @@ plot_transformed_images(image_paths=image_path_list,
 
 ## 本节总结
 
-![](img/1d03c6e99e786b706bfc81a5c336f8cc_2.png)
 
-![](img/1d03c6e99e786b706bfc81a5c336f8cc_4.png)
 
 本节课中我们一起学习了如何可视化经过 `torchvision.transforms` 处理后的图像。
 
@@ -146,9 +143,7 @@ plot_transformed_images(image_paths=image_path_list,
 4.  通过可视化结果，分析了 `Resize` 和 `RandomHorizontalFlip` 转换的具体效果及其对模型训练的意义。
 5.  简要介绍了其他可用的图像转换与数据增强方法。
 
-![](img/1d03c6e99e786b706bfc81a5c336f8cc_6.png)
 
-![](img/1d03c6e99e786b706bfc81a5c336f8cc_7.png)
 
 现在，我们已经确认了数据转换流程能按预期工作。在下一节中，我们将使用这个 `data_transform`，借助 `torchvision.datasets.ImageFolder` 来一次性加载整个数据集，为模型训练做好准备。
 

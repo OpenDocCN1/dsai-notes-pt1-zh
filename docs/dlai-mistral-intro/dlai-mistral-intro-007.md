@@ -1,6 +1,5 @@
 # 007：创建聊天界面
 
-![](img/6be1ce4ee9fa67ef005ecc312e0a81fe_1.png)
 
 ## 概述
 在本节课中，我们将学习如何创建两种简单的聊天界面，用于与Mistral模型交互以及与外部文档进行对话。
@@ -15,9 +14,7 @@
 import panel as pn
 ```
 
-![](img/6be1ce4ee9fa67ef005ecc312e0a81fe_3.png)
 
-![](img/6be1ce4ee9fa67ef005ecc312e0a81fe_4.png)
 
 导入后，我们需要运行以下代码行来加载Panel应用的自定义JavaScript和CSS扩展。
 

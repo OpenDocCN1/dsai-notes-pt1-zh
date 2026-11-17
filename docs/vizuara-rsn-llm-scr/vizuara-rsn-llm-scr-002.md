@@ -1,8 +1,6 @@
 #  002：思维链推理
 
-![](img/c7695f2fc984fcb1de303d16a38bb596_0.png)
 
-![](img/c7695f2fc984fcb1de303d16a38bb596_2.png)
 
 ![](img/c7695f2fc984fcb1de303d16a38bb596_0.png)
 

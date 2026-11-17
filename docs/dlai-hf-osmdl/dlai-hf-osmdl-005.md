@@ -6,7 +6,6 @@
 
 ### **加载库与模型**
 
-![](img/9a5bf8d5b86e34d80c94b90454ecbdad_1.png)
 
 首先，我们需要加载必要的库和模型。在本课程环境中，相关库已预先安装。如果你在自己的机器上运行，可以通过 `pip install sentence-transformers` 命令进行安装。
 

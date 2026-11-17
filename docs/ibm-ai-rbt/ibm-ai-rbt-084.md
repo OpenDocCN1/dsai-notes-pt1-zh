@@ -4,17 +4,12 @@
 
 ---
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_1.png)
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_2.png)
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_3.png)
 
 ## 理解API调用流程 🔄
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_4.png)
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_5.png)
 
 上一节我们介绍了API的基本概念，本节中我们来看看一个结合了AI服务的具体API调用流程。
 
@@ -22,66 +17,39 @@
 1.  将音频文件发送给语音转文本API进行转录。
 2.  将得到的文本发送给语言翻译API进行翻译。
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_7.png)
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_8.png)
 
 以下是这个流程的详细步骤：
 
 *   **第一步：发送音频文件**。你向语音转文本API发送一份音频文件的副本。这种发送数据的请求通常被称为 **POST请求**。
-    ![](img/e4e7812d33434f07bc02cc5bfad54562_1.png)
-    ![](img/e4e7812d33434f07bc02cc5bfad54562_2.png)
-    ![](img/e4e7812d33434f07bc02cc5bfad54562_3.png)
-    ![](img/e4e7812d33434f07bc02cc5bfad54562_4.png)
-    ![](img/e4e7812d33434f07bc02cc5bfad54562_5.png)
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_10.png)
 
 *   **第二步：接收转录文本**。API在后台处理音频，并将说话内容的文本转录结果返回给你。这个返回数据的请求可以理解为 **GET请求**。
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_11.png)
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_12.png)
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_13.png)
 
 *   **第三步：发送文本进行翻译**。你将希望翻译的文本发送给第二个API，即语言翻译API。
-    ![](img/e4e7812d33434f07bc02cc5bfad54562_7.png)
-    ![](img/e4e7812d33434f07bc02cc5bfad54562_8.png)
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_14.png)
 
 *   **第四步：接收翻译结果**。API翻译文本，并将翻译后的内容返回给你。在本例中，我们实现的是英语到西班牙语的翻译。
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_16.png)
 
 ---
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_17.png)
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_18.png)
 
 ## API密钥与端点概述 🔑
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_20.png)
 
 在开始动手实验之前，我们需要理解两个关键概念：API密钥和端点。它们是访问Watson语音转文本和翻译服务的前提。
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_21.png)
 
 *   **API密钥**：这是访问API的凭证。它是一串独特的字符，API用它来识别和授权你的身份。通常，你的第一次API调用就需要包含这个密钥。由于许多API会按调用次数收费，因此API密钥应像密码一样妥善保管，避免泄露。
-    ![](img/e4e7812d33434f07bc02cc5bfad54562_16.png)
-    ![](img/e4e7812d33434f07bc02cc5bfad54562_17.png)
-    ![](img/e4e7812d33434f07bc02cc5bfad54562_18.png)
-    ![](img/e4e7812d33434f07bc02cc5bfad54562_20.png)
-    ![](img/e4e7812d33434f07bc02cc5bfad54562_21.png)
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_23.png)
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_25.png)
 
 *   **端点**：这指的是服务的位置，用于在互联网上找到该API，就像一个网址。
-    ![](img/e4e7812d33434f07bc02cc5bfad54562_23.png)
 
 ---
 
@@ -93,7 +61,6 @@
 
 以下是实现转录的步骤：
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_27.png)
 
 1.  **导入库并设置认证**。首先，从`ibm_watson`库导入`SpeechToTextV1`模块。服务端点根据服务实例的位置而定，你需要将其存储在变量中（例如`url_s2t`）。查看服务凭证即可找到应使用的URL。同样，你也需要获取并设置你的API密钥。
     ```python
@@ -113,7 +80,6 @@
         audio_data = wav_file.read()
     ```
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_29.png)
 
 4.  **调用API并获取结果**。使用适配器对象的`recognize()`方法，这会将音频文件发送给Watson服务。参数包括音频数据（`audio`）和音频文件格式（`content_type`）。服务返回的响应存储在`response`对象中。
     ```python
@@ -127,7 +93,6 @@
 
 ---
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_31.png)
 
 ## 实践：使用Watson语言翻译API翻译文本 📝➡️🗣️
 
@@ -172,7 +137,6 @@
     french_text = translation_french[‘translations’][0][‘translation’]
     ```
 
-![](img/e4e7812d33434f07bc02cc5bfad54562_33.png)
 
 ---
 

@@ -6,7 +6,6 @@
 
 由Google开发的**双向编码器表示法（BERT）**，通过其对词语上下文和语义的深度理解，彻底改变了自然语言处理领域。它通过自监督学习在海量文本语料库上进行预训练，主要使用**掩码语言建模（MLM）**和**下一句预测（NSP）**任务。BERT的架构允许针对特定任务（如文本摘要、问答和情感分析）进行微调，从而将其广泛的知识适应到专业应用中。
 
-![](img/5fe5d72d215b48de1f7c038c050ff000_1.png)
 
 ![](img/5fe5d72d215b48de1f7c038c050ff000_1.png)
 
@@ -58,7 +57,6 @@ predicted_token_id = argmax(logits[mask_position])
 
 让我们通过一个例子来说明：85%的单词保持不变。在剩余的15%中，80%被替换为`[MASK]`，10%被替换为随机标记（如“the”），10%保持不变用于预测（如“cultivate”）。
 
-![](img/5fe5d72d215b48de1f7c038c050ff000_3.png)
 
 ![](img/5fe5d72d215b48de1f7c038c050ff000_3.png)
 
@@ -72,6 +70,5 @@ predicted_token_id = argmax(logits[mask_position])
 
 像BERT这样的编码器模型的标志是其**双向性**，这使得模型能够理解句子中任何给定单词两侧的上下文。
 
-![](img/5fe5d72d215b48de1f7c038c050ff000_5.png)
 
 ![](img/5fe5d72d215b48de1f7c038c050ff000_5.png)

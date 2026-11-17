@@ -16,9 +16,7 @@
 import requests
 ```
 
-![](img/3b9ac4cf6e8b40c6ffe43d8a87e229ed_1.png)
 
-![](img/3b9ac4cf6e8b40c6ffe43d8a87e229ed_2.png)
 
 ## 设置API基础端点
 
@@ -71,7 +69,6 @@ data = response.json()
 
 以下是每个检查包含的信息示例：
 
-![](img/3b9ac4cf6e8b40c6ffe43d8a87e229ed_4.png)
 
 *   `facility_id` 和 `facility_name`: 唯一标识每个设施。
 *   `critical_violations`: 关键违规数量。

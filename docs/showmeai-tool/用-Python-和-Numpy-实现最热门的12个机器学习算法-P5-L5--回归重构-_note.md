@@ -86,7 +86,6 @@ class LinearRegression(BaseRegression):
 
 同样地，我们创建 `LogisticRegression` 类。它的核心区别在于使用了 Sigmoid 函数。
 
-![](img/8cc66a6687567bf6ad9be22465110a63_1.png)
 
 ```python
 class LogisticRegression(BaseRegression):

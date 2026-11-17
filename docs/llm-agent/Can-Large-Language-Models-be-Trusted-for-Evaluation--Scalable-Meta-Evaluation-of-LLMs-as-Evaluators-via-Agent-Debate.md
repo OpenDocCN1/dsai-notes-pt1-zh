@@ -246,11 +246,9 @@ ODS场景测试大语言模型（LLMs）应用科学知识的能力，评估其�
 
 表 3：人类专家与 ScaleEval 元评估之间的示例级别一致性比较，及人类专家与单一 LLM 评估在四个场景和标准下的比较。
 
-![参考标题](img/d917865a84db39b38b00a0e85da6c462.png)
 
 (a) GPT-3.5-Turbo 与 Claude-Instant
 
-![参考标题](img/25d9b406729d7c32ca2dfd0ea7b15afc.png)
 
 (b) Claude-Instant 与 Gemini-Pro
 

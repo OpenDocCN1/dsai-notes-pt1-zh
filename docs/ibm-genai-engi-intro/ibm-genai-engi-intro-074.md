@@ -1,10 +1,8 @@
 # 074：HTTP请求（第2部分）📡
 
-![](img/719af6e73367f003b9ab5782f7888985_0.png)
 
 在本节课中，我们将学习如何使用Python的Requests库来处理HTTP协议。我们将重点介绍GET请求和POST请求，并通过实例演示如何发送请求、处理响应以及理解请求与响应中的关键组成部分。
 
-![](img/719af6e73367f003b9ab5782f7888985_1.png)
 
 ---
 
@@ -12,11 +10,9 @@
 
 上一节我们介绍了HTTP协议的基本概念。本节中，我们将深入探讨如何使用Python的Requests库来执行HTTP请求。我们将学习如何发送GET和POST请求，并理解响应对象中的状态码、头部和正文等信息。
 
-![](img/719af6e73367f003b9ab5782f7888985_3.png)
 
 ---
 
-![](img/719af6e73367f003b9ab5782f7888985_4.png)
 
 ## Python Requests库简介
 
@@ -34,13 +30,10 @@ import requests
 r = requests.get('https://www.ibm.com/')
 ```
 
-![](img/719af6e73367f003b9ab5782f7888985_6.png)
 
-![](img/719af6e73367f003b9ab5782f7888985_7.png)
 
 变量`r`是一个响应对象，它包含了请求的相关信息，例如请求的状态。
 
-![](img/719af6e73367f003b9ab5782f7888985_8.png)
 
 ---
 
@@ -66,7 +59,6 @@ print(r.status_code)  # 输出: 200
 print(r.text[:100])
 ```
 
-![](img/719af6e73367f003b9ab5782f7888985_10.png)
 
 ---
 
@@ -74,13 +66,11 @@ print(r.text[:100])
 
 GET方法常用于从API检索数据，我们可以在URL中添加查询字符串来修改查询结果。在实验中，我们将使用`httpbin.org`这个HTTP请求和响应服务。
 
-![](img/719af6e73367f003b9ab5782f7888985_12.png)
 
 我们向服务器发送GET请求。基础URL加上路径`/get`，表示我们希望执行一个GET操作。
 
 查询字符串是URL的一部分，用于向Web服务器发送额外信息。它以问号`?`开始，后跟一系列参数和值对。
 
-![](img/719af6e73367f003b9ab5782f7888985_14.png)
 
 以下是一个查询字符串的示例结构：
 `?name=Joseph&id=123`
@@ -105,9 +95,7 @@ r = requests.get(url, params=payload)
 *   我们使用字典`payload`来定义查询参数，其中键是参数名，值是参数值。
 *   然后，我们将这个字典传递给`get`函数的`params`参数。
 
-![](img/719af6e73367f003b9ab5782f7888985_16.png)
 
-![](img/719af6e73367f003b9ab5782f7888985_17.png)
 
 我们可以打印出最终的URL，看到参数已被正确添加：
 
@@ -127,7 +115,6 @@ print(data['args'])  # 输出: {'name': 'Joseph', 'id': '123'}
 
 ## 发送POST请求
 
-![](img/719af6e73367f003b9ab5782f7888985_19.png)
 
 与GET请求类似，POST请求也用于向服务器发送数据。但关键区别在于，POST请求将数据放在请求正文中，而不是URL里。
 
@@ -148,15 +135,11 @@ r_post = requests.post(url_post, data=payload)
 
 ## 比较GET与POST请求
 
-![](img/719af6e73367f003b9ab5782f7888985_21.png)
 
-![](img/719af6e73367f003b9ab5782f7888985_22.png)
 
 通过比较GET和POST请求的响应对象，我们可以清楚地看到两者的区别：
 
-![](img/719af6e73367f003b9ab5782f7888985_23.png)
 
-![](img/719af6e73367f003b9ab5782f7888985_24.png)
 
 1.  **URL对比**：比较从响应对象中获取的URL属性。
     *   GET请求的URL包含查询字符串：`https://httpbin.org/get?name=Joseph&id=123`
@@ -173,15 +156,11 @@ data_post = r_post.json()
 print(data_post['form'])  # 输出: {'name': 'Joseph', 'id': '123'}
 ```
 
-![](img/719af6e73367f003b9ab5782f7888985_26.png)
 
-![](img/719af6e73367f003b9ab5782f7888985_27.png)
 
 ---
 
-![](img/719af6e73367f003b9ab5782f7888985_28.png)
 
-![](img/719af6e73367f003b9ab5782f7888985_29.png)
 
 ## 总结
 

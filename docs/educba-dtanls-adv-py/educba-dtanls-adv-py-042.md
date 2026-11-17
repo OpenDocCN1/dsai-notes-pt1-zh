@@ -1,42 +1,27 @@
 # 042：零一数组的创建与应用 🧮
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_1.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_2.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_3.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_4.png)
 
 在本节课中，我们将学习如何使用NumPy库快速创建全零或全一的数组，并探讨一个结合用户输入和数组操作的实际应用问题。
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_6.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_8.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_10.png)
 
 ## 创建全零和全一数组
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_12.png)
 
 上一节我们介绍了NumPy数组的基础知识，本节中我们来看看如何快速创建具有特定形状和初始值的数组。NumPy提供了便捷的函数来创建全零或全一的数组。
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_14.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_15.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_17.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_19.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_20.png)
 
 以下是创建全一数组的代码示例：
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_22.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_23.png)
 
 ```python
 import numpy as np
@@ -45,78 +30,55 @@ print(o)
 ```
 运行上述代码，将得到一个形状为2行3列、元素全为浮点数1的数组。
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_25.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_27.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_29.png)
 
 默认情况下，`np.ones` 和 `np.zeros` 函数创建的是浮点数类型的数组。如果需要整数类型的数组，可以通过 `dtype` 参数指定。
 
 以下是创建整数类型全一数组的代码：
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_31.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_32.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_33.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_34.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_35.png)
 
 ```python
 o = np.ones((2, 3), dtype=int)
 print(o)
 ```
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_37.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_39.png)
 
 同样地，我们可以创建全零数组。以下是创建全零数组的代码示例：
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_41.png)
 
 ```python
 z = np.zeros((10, 15), dtype=int)
 print(z)
 ```
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_43.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_45.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_47.png)
 
 ## 应用实例：根据用户输入创建自定义数组
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_49.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_50.png)
 
 掌握了创建基础数组的方法后，我们来看一个综合性的应用问题。这个问题将结合用户输入、字符串处理和数组计算。
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_52.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_53.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_54.png)
 
 问题描述如下：从用户处获取一个表示数组形状的字符串（例如 “3,4”），然后创建一个该形状的数组。数组中的每个元素值等于其行号乘以列号。
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_56.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_58.png)
 
 为了清晰地理解要求，我们来看一个具体例子。如果用户输入 “3,4”，我们需要创建一个3行4列的数组。其元素值计算规则如下：
 *   第0行：所有元素值为 0 * 列号，因此是 `[0, 0, 0, 0]`
 *   第1行：元素值为 1 * 列号，因此是 `[0, 1, 2, 3]`
 *   第2行：元素值为 2 * 列号，因此是 `[0, 2, 4, 6]`
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_60.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_61.png)
 
 最终生成的数组应为：
 ```
@@ -125,50 +87,32 @@ print(z)
  [0 2 4 6]]
 ```
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_63.png)
 
 ## 问题解决方案
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_65.png)
 
 现在，我们来一步步解决这个问题。以下是实现该功能的完整代码：
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_67.png)
-
-![](img/ce15de5c0e72402ae730d998c8173ef4_68.png)
 
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_70.png)
-
-![](img/ce15de5c0e72402ae730d998c8173ef4_71.png)
-
-![](img/ce15de5c0e72402ae730d998c8173ef4_72.png)
 
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_74.png)
-
-![](img/ce15de5c0e72402ae730d998c8173ef4_75.png)
-
-![](img/ce15de5c0e72402ae730d998c8173ef4_76.png)
 
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_78.png)
-
-![](img/ce15de5c0e72402ae730d998c8173ef4_80.png)
-
-![](img/ce15de5c0e72402ae730d998c8173ef4_81.png)
 
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_83.png)
-
-![](img/ce15de5c0e72402ae730d998c8173ef4_84.png)
 
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_86.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_88.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_89.png)
+
+
+
+
+
+
+
+
 
 ```python
 import numpy as np
@@ -200,11 +144,8 @@ print(arr)
 6.  根据规则 `元素值 = 行号 * 列号`，即 `arr[i, j] = i * j`，为每个元素赋值。
 7.  打印出最终计算得到的数组。
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_91.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_92.png)
 
-![](img/ce15de5c0e72402ae730d998c8173ef4_93.png)
 
 ![](img/ce15de5c0e72402ae730d998c8173ef4_94.png)
 

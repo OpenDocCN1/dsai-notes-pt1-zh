@@ -4,9 +4,7 @@
 
 ![](img/6aaa25960e8f12f4d7ede28718c8df15_3.png)
 
-![](img/6aaa25960e8f12f4d7ede28718c8df15_5.png)
 
-![](img/6aaa25960e8f12f4d7ede28718c8df15_7.png)
 
 ![](img/6aaa25960e8f12f4d7ede28718c8df15_9.png)
 
@@ -26,9 +24,7 @@
 
 上一节我们介绍了将数据集分割并写入多个TFRecord文件的整体逻辑。本节中，我们来看看如何具体处理每一张图片及其对应的XML文件，提取必要信息，以便封装成一个`tf.train.Example`。
 
-![](img/6aaa25960e8f12f4d7ede28718c8df15_21.png)
 
-![](img/6aaa25960e8f12f4d7ede28718c8df15_23.png)
 
 ## 核心逻辑与函数定义
 
@@ -45,9 +41,7 @@
 
 ![](img/6aaa25960e8f12f4d7ede28718c8df15_31.png)
 
-![](img/6aaa25960e8f12f4d7ede28718c8df15_33.png)
 
-![](img/6aaa25960e8f12f4d7ede28718c8df15_35.png)
 
 ![](img/6aaa25960e8f12f4d7ede28718c8df15_37.png)
 
@@ -55,9 +49,7 @@
 
 ![](img/6aaa25960e8f12f4d7ede28718c8df15_39.png)
 
-![](img/6aaa25960e8f12f4d7ede28718c8df15_41.png)
 
-![](img/6aaa25960e8f12f4d7ede28718c8df15_43.png)
 
 ![](img/6aaa25960e8f12f4d7ede28718c8df15_45.png)
 
@@ -146,7 +138,6 @@ root = tree.getroot()
 
 ![](img/6aaa25960e8f12f4d7ede28718c8df15_83.png)
 
-![](img/6aaa25960e8f12f4d7ede28718c8df15_85.png)
 
 ```python
 # 获取图片尺寸

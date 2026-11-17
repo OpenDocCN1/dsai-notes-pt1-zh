@@ -6,25 +6,18 @@
 
 在本节课中，我们将学习如何构建一个用于练习日语假名（平假名和片假名）书写的交互式Web应用。我们将使用Streamlit构建前端界面，并利用一个专门的光学字符识别（OCR）模型来评估用户的书写。最后，我们会将整个应用部署到AWS云平台。
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_5.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_6.png)
 
 ---
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_8.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_10.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_11.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_13.png)
 
 ## 应用概览与架构
 
 首先，我们来了解一下这个应用的主要功能和整体架构。该应用旨在帮助用户学习和练习日语假名，包含学习、书写练习和读音练习三个主要页面。
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_15.png)
 
 以下是应用部署到AWS后的架构图：
 
@@ -32,11 +25,8 @@
 
 ![](img/ec42aceaa5cce0b1e0b76ba332614b50_1.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_19.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_21.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_23.png)
 
 核心架构组件包括：
 *   **Streamlit应用**：作为前端和后端逻辑的核心。
@@ -49,9 +39,7 @@
 
 ![](img/ec42aceaa5cce0b1e0b76ba332614b50_27.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_29.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_31.png)
 
 接下来，我们将从本地运行开始，逐步深入代码。
 
@@ -73,7 +61,6 @@
 
 ![](img/ec42aceaa5cce0b1e0b76ba332614b50_39.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_41.png)
 
 ```bash
 # 克隆代码仓库
@@ -134,9 +121,7 @@ Streamlit支持多页面应用。`app.py` 是应用的入口点，它定义了�
 
 ![](img/ec42aceaa5cce0b1e0b76ba332614b50_55.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_57.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_59.png)
 
 ```python
 import streamlit as st
@@ -167,7 +152,6 @@ with open(page) as f:
 学习页面是应用中最简单的部分，主要用于展示平假名或片假名的图表。
 
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_61.png)
 
 ```python
 import streamlit as st
@@ -194,9 +178,7 @@ st.caption("祝你学习顺利！")
 
 ![](img/ec42aceaa5cce0b1e0b76ba332614b50_64.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_66.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_68.png)
 
 书写练习页面是应用的核心，它允许用户绘制假名，并使用OCR模型进行验证。
 
@@ -216,25 +198,16 @@ st.caption("祝你学习顺利！")
 ![](img/ec42aceaa5cce0b1e0b76ba332614b50_72.png)
 
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_74.png)
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_76.png)
 
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_78.png)
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_79.png)
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_80.png)
-
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_82.png)
 
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_84.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_86.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_87.png)
+
+
+
+
 
 ```python
 import streamlit as st
@@ -381,17 +354,12 @@ CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0
 ```
 这个Dockerfile确保了应用及其所有依赖（包括预下载的OCR模型）都被打包到一个可移植的容器中。
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_94.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_95.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_96.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_97.png)
 
 ![](img/ec42aceaa5cce0b1e0b76ba332614b50_99.png)
 
-![](img/ec42aceaa5cce0b1e0b76ba332614b50_100.png)
 
 ---
 

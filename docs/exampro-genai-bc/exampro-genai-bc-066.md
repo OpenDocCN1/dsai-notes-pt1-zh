@@ -2,13 +2,11 @@
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_1.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_2.png)
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_3.png)
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_4.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_6.png)
 
 ## 概述
 在本节课中，我们将学习如何为视觉小说游戏创建和实现一个功能完整的对话框系统。我们将从加载外部故事数据开始，逐步构建对话框UI，包括对话框背景、角色名称框、对话文本显示以及“下一步”按钮。过程中会涉及数据管理、UI组件定位、文本更新逻辑等核心概念。
@@ -19,13 +17,10 @@
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_10.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_11.png)
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_12.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_14.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_16.png)
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_18.png)
 
@@ -33,7 +28,6 @@
 
 上一节我们完成了游戏基础框架的搭建，本节中我们来看看如何组织项目数据并加载外部故事文件。
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_20.png)
 
 为了将游戏数据与代码逻辑分离，我们创建一个独立的数据文件夹来存放故事内容。
 
@@ -64,13 +58,9 @@ this.load.json('story-main', 'assets/data/stories/main.json');
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_26.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_28.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_30.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_32.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_34.png)
 
 1.  修改 `DialogueManager`，使其从全局管理器（`Globals`）中获取必要的引用。
 2.  在 `DialogueManager` 中实现 `loadSceneData` 方法，该方法根据场景ID从缓存中获取对应的对话数据。
@@ -78,7 +68,6 @@ this.load.json('story-main', 'assets/data/stories/main.json');
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_36.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_38.png)
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_40.png)
 
@@ -110,7 +99,6 @@ this.load.json('story-main', 'assets/data/stories/main.json');
 }
 ```
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_56.png)
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_58.png)
 
@@ -120,11 +108,9 @@ this.load.json('story-main', 'assets/data/stories/main.json');
 
 ## 章节 3：创建基础对话框UI
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_62.png)
 
 现在，我们开始构建用户界面。首先创建对话框的基础视觉组件。
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_64.png)
 
 我们将在 `DialogueUI` 类中构建UI。第一步是创建一个位于屏幕底部的对话框背景框。
 
@@ -144,7 +130,6 @@ this.load.json('story-main', 'assets/data/stories/main.json');
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_72.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_74.png)
 
 ```javascript
 // 创建对话框背景
@@ -167,13 +152,9 @@ this.dialogBox.setDisplaySize(screenWidth - margin*2, 300); // 设置显示大�
 
 在对话框背景的上方添加一个角色名称框，并在其中显示角色名。
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_82.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_84.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_86.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_88.png)
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_90.png)
 
@@ -274,7 +255,6 @@ if (currentNode) {
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_120.png)
 
-![](img/c1179ecf1e5548b317a38a1f2c14b2f0_121.png)
 
 ![](img/c1179ecf1e5548b317a38a1f2c14b2f0_123.png)
 

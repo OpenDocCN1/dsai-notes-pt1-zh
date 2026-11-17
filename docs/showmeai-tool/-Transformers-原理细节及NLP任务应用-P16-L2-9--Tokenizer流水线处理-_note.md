@@ -72,7 +72,6 @@ print(token_ids)
 
 要了解如何处理批量输入或句子对，请参考相关的专题视频。
 
-![](img/f96aeead006553fe4505b3ad571eca03_1.png)
 
 ---
 

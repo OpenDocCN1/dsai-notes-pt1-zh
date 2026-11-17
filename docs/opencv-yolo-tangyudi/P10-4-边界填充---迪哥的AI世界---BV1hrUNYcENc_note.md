@@ -1,6 +1,5 @@
 # 课程P10：4-边界填充 🖼️
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_0.png)
 
 在本节课中，我们将要学习图像处理中的一个重要操作——边界填充。边界填充是指在图像周围添加额外的像素区域，这在许多图像处理算法（如卷积）中是一个常见的预处理步骤。
 
@@ -10,9 +9,7 @@
 
 当对图像进行变换或特征提取时，有时需要将图像扩大一圈。这个过程称为边界填充或边缘填充。例如，在卷积操作中，通常会先对图像进行填充（padding），以控制输出图像的尺寸或保留边缘信息。
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_2.png)
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_4.png)
 
 ## 填充参数
 
@@ -26,36 +23,28 @@ left = 50
 right = 50
 ```
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_6.png)
 
 ## 填充方法与效果
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_8.png)
 
 填充的核心函数是相同的，但可以通过指定不同的 `type` 参数来选择填充方法。OpenCV提供了多种填充方式。
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_10.png)
 
 以下是几种常见的填充方法及其效果描述：
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_12.png)
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_14.png)
 
 1.  **复制法 (BORDER_REPLICATE)**
     这种方法直接复制图像最边缘的像素值进行填充。例如，如果边缘像素是A，那么填充的所有像素都是A。
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_16.png)
 
 2.  **反射法 (BORDER_REFLECT)**
     这种方法以图像边缘为轴进行镜像反射。假设图像边缘像素序列是ABCDEFG，那么填充的像素序列将是GFEDCBA。
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_18.png)
 
 3.  **反射法101 (BORDER_REFLECT_101)**
     这是另一种反射方法，它使反射看起来更对称。它会忽略最边缘的像素，从次边缘开始反射。例如，序列ABCDEFGH的填充会从B开始反射。
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_20.png)
 
 4.  **外包装法 (BORDER_WRAP)**
     这种方法将图像视为可以循环重复的。例如，序列ABCDEFGH的填充会是ABCDEFGHABCDEFGH...，以此类推。
@@ -85,7 +74,6 @@ constant = cv2.copyMakeBorder(img, top, bottom, left, right, cv2.BORDER_CONSTANT
 # 使用matplotlib显示结果（此处省略具体绘图代码）
 ```
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_22.png)
 
 ## 效果对比
 
@@ -95,9 +83,7 @@ constant = cv2.copyMakeBorder(img, top, bottom, left, right, cv2.BORDER_CONSTANT
 *   **外包装法**：填充区域是图像内容的循环重复。
 *   **常量法**：填充区域是统一的颜色（如黑色），形成一个边框。
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_24.png)
 
-![](img/c960e6e9c7e737fa179eea077560cfe6_26.png)
 
 ## 总结
 

@@ -4,7 +4,6 @@
 
 ## 什么是多模态模型？🤔
 
-![](img/e3fb5e5f4f46f7eab2391a667474de8e_1.png)
 
 ![](img/e3fb5e5f4f46f7eab2391a667474de8e_2.png)
 
@@ -22,9 +21,7 @@
 # pip install transformers
 ```
 
-![](img/e3fb5e5f4f46f7eab2391a667474de8e_4.png)
 
-![](img/e3fb5e5f4f46f7eab2391a667474de8e_5.png)
 
 由于本课程环境已安装所有库，我们无需执行此命令，故将其注释。
 
@@ -54,7 +51,6 @@ from transformers import AutoProcessor
 processor = AutoProcessor.from_pretrained("Salesforce/blip-itm-base-coco")
 ```
 
-![](img/e3fb5e5f4f46f7eab2391a667474de8e_7.png)
 
 处理器的角色是为模型处理图像和文本。
 
@@ -62,7 +58,6 @@ processor = AutoProcessor.from_pretrained("Salesforce/blip-itm-base-coco")
 
 现在，让我们获取将要传递给处理器的图像和文本。处理器将以模型能够理解的方式修改图像和文本。
 
-![](img/e3fb5e5f4f46f7eab2391a667474de8e_9.png)
 
 对于图像，我们将使用以下URL链接。为了加载图像，我们将使用PIL库的Image类。安装Python时默认会安装PIL库。
 
@@ -76,19 +71,15 @@ image = Image.open(requests.get(url, stream=True).raw).convert("RGB")
 
 这段代码从指定URL下载图像，打开它，获取原始二进制数据，然后将其转换为RGB色彩模式。打印`image`对象，你应该能看到图像。
 
-![](img/e3fb5e5f4f46f7eab2391a667474de8e_11.png)
 
 现在我们有了图像，我们将检查模型是否能成功判断图像与以下文本匹配：“一张女人和狗在海滩上的图片”。
 
-![](img/e3fb5e5f4f46f7eab2391a667474de8e_13.png)
 
 ## 处理输入并运行模型 ⚙️
 
 我们需要获取模型能够理解的输入。为此，我们需要调用处理器，并传入几个参数：图像、文本，并将`return_tensors`设置为“pt”以获得PyTorch张量。
 
-![](img/e3fb5e5f4f46f7eab2391a667474de8e_15.png)
 
-![](img/e3fb5e5f4f46f7eab2391a667474de8e_17.png)
 
 ```python
 text = "一张女人和狗在海滩上的图片"
@@ -97,7 +88,6 @@ inputs = processor(images=image, text=text, return_tensors="pt")
 
 打印`inputs`以查看其结构。你会看到一个包含多个参数的字典，例如`pixel_values`、`input_ids`和`attention_mask`。
 
-![](img/e3fb5e5f4f46f7eab2391a667474de8e_19.png)
 
 现在我们已准备好获取输出，只需将我们得到的`inputs`传递给模型。注意，我们需要添加`**`，因为我们传递的是一个包含参数的字典。
 
@@ -125,7 +115,6 @@ print(probs)
 
 ## 总结 🎯
 
-![](img/e3fb5e5f4f46f7eab2391a667474de8e_21.png)
 
 ![](img/e3fb5e5f4f46f7eab2391a667474de8e_22.png)
 

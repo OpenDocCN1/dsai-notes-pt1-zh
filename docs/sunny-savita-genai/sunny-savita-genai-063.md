@@ -23,9 +23,7 @@
 
 ![](img/f7f9d7b40ba139c91074e69c05de805d_6.png)
 
-![](img/f7f9d7b40ba139c91074e69c05de805d_7.png)
 
-![](img/f7f9d7b40ba139c91074e69c05de805d_8.png)
 
 ![](img/f7f9d7b40ba139c91074e69c05de805d_9.png)
 

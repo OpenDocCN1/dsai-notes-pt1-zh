@@ -8,13 +8,11 @@
 
 在本节课中，我们将学习如何为知识图谱中的文本字段创建向量嵌入，以便在RAG系统中实现基于向量的相似性搜索。我们将从设置环境开始，逐步完成创建向量索引、生成文本嵌入以及执行向量搜索查询的完整流程。
 
-![](img/0d3010d873645f5ad19a6bc5fdffe032_4.png)
 
 ![](img/0d3010d873645f5ad19a6bc5fdffe032_5.png)
 
 RAG系统通常从使用文本的向量表示开始，将用户的提示与非结构化数据中的相关部分进行匹配。
 
-![](img/0d3010d873645f5ad19a6bc5fdffe032_6.png)
 
 为了能够以同样的方式在知识图谱中找到相关文本，你需要为图谱中的文本字段创建嵌入。让我们看看如何做到这一点。
 
@@ -169,7 +167,6 @@ RETURN movie.title AS title, movie.tagline AS tagline, score
 
 运行此查询后，我们得到了像《Joe Versus the Volcano》这样的电影标题，其标签行是“A story of love, lava, and burning desire.”。浏览所有这些标签行，可以发现它们与“关于爱情的电影”这个问题匹配得相当好。
 
-![](img/0d3010d873645f5ad19a6bc5fdffe032_8.png)
 
 ## 探索与实验 🧪
 

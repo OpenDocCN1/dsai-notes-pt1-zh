@@ -1,6 +1,5 @@
 # 009：支持数据分析洞察 📊
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_0.png)
 
 在本节课中，我们将学习如何利用AI智能体来分析支持数据，生成洞察、建议和可视化图表。我们将看到智能体如何加载数据、理解客户问题、分析团队表现，并最终生成一份包含表格、图表和建议的综合报告。
 
@@ -10,7 +9,6 @@
 
 支持数据分析用例将执行一系列操作：处理支持数据、生成改进建议、将数据组织成有意义的表格、绘制可视化图表以展示趋势，并最终将所有内容整合成一份完整的分析报告。这个用例特别之处在于，我们将首次使用能够编写并执行代码来生成图表的智能体。
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_2.png)
 
 ---
 
@@ -43,21 +41,15 @@ from crewai import Agent, Task, Crew
 
 ## 创建智能体与任务
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_4.png)
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_5.png)
 
 现在我们已经了解了智能体和任务，让我们深入代码，实际构建这个Crew。
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_7.png)
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_8.png)
 
 这个Crew将从本地的CSV文件读取支持数据。我们使用CrewAI工具包中的文件读取工具来加载`support_tickets_data.csv`文件。
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_10.png)
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_12.png)
 
 ```python
 # 使用工具读取CSV文件
@@ -65,25 +57,17 @@ from crewai_tools import FileReadTool
 csv_tool = FileReadTool(file_path='./support_tickets_data.csv')
 ```
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_14.png)
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_15.png)
 
 数据文件包含票证ID、客户ID、问题类型等信息。我们的智能体将解析这些信息。
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_16.png)
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_18.png)
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_20.png)
 
 在创建智能体时，我们为建议生成和报告生成智能体提供了访问CSV数据的工具。对于图表生成智能体，我们设置了一个新属性`allow_code_execution=True`，这允许它在受Docker保护的沙箱环境中编写和执行代码，确保与本地机器隔离。
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_22.png)
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_23.png)
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_24.png)
 
 ```python
 # 创建智能体
@@ -101,7 +85,6 @@ chart_agent = Agent(
 )
 ```
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_26.png)
 
 接下来，我们创建四个任务。注意，在最终报告任务中，我们使用了`context`属性，以便它能获取其他三个任务的结果来生成最终报告。
 
@@ -117,9 +100,7 @@ final_report_task = Task(
 
 最后，我们将所有智能体和任务组合成一个Crew。
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_28.png)
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_29.png)
 
 ```python
 # 创建Crew
@@ -130,7 +111,6 @@ analysis_crew = Crew(
 )
 ```
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_31.png)
 
 ---
 
@@ -156,7 +136,6 @@ analysis_crew.train(
 )
 ```
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_33.png)
 
 在训练过程中，每个任务完成后，系统会请求反馈。例如，我们可以要求建议更深入，或要求报告包含特定的比较表格。智能体将根据这些反馈重新执行任务并更新其输出逻辑。
 
@@ -179,19 +158,14 @@ final_result = analysis_crew.kickoff()
 *   **代理绩效分析**：通过表格和图表展示不同支持人员处理的票证数量、解决时间和客户满意度评分。
 *   ** actionable 改进建议**：基于数据分析，提出具体的产品功能或支持流程优化建议。
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_35.png)
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_36.png)
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_37.png)
 
 这份报告生动地展示了如何利用多智能体协作，将原始支持数据转化为易于理解、可指导行动的深度业务洞察。
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_39.png)
 
 ---
 
-![](img/85ab78bbb9dcdb62faab450c1c540798_41.png)
 
 ## 总结
 

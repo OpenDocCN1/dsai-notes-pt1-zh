@@ -25,7 +25,6 @@
 
 第一种方式是直接保存整个模型对象。
 
-![](img/c885dfe548f252ed653964b1bd0374b3_1.png)
 
 ```python
 # 保存整个模型
@@ -38,22 +37,16 @@ model.eval()
 
 这种方式非常简便，但有一个缺点：序列化的数据与保存时使用的特定类以及确切的目录结构绑定。如果源代码结构发生变化，加载可能会失败。
 
-![](img/c885dfe548f252ed653964b1bd0374b3_3.png)
 
 ### 方式二：仅保存模型参数（推荐方法）
 
-![](img/c885dfe548f252ed653964b1bd0374b3_4.png)
 
-![](img/c885dfe548f252ed653964b1bd0374b3_5.png)
 
-![](img/c885dfe548f252ed653964b1bd0374b3_7.png)
 
 如果我们的目标只是保存训练好的模型并在之后用于推理，那么仅保存模型参数就足够了。
 
-![](img/c885dfe548f252ed653964b1bd0374b3_9.png)
 
 
-![](img/c885dfe548f252ed653964b1bd0374b3_11.png)
 
 ```python
 # 仅保存模型的状态字典（包含参数）
@@ -66,7 +59,6 @@ loaded_model.eval()
 
 这是PyTorch官方推荐的方式，因为它只保存核心参数，不依赖于原始类定义，更加灵活和稳定。
 
-![](img/c885dfe548f252ed653964b1bd0374b3_13.png)
 
 ---
 
@@ -74,14 +66,11 @@ loaded_model.eval()
 
 让我们通过代码来具体看看这两种方式如何操作。
 
-![](img/c885dfe548f252ed653964b1bd0374b3_15.png)
 
 首先，我们定义一个简单的模型：
 
-![](img/c885dfe548f252ed653964b1bd0374b3_16.png)
 
 
-![](img/c885dfe548f252ed653964b1bd0374b3_18.png)
 
 ```python
 import torch
@@ -98,17 +87,13 @@ class SimpleModel(nn.Module):
 model = SimpleModel(6)
 ```
 
-![](img/c885dfe548f252ed653964b1bd0374b3_20.png)
 
 ### 实践1：保存与加载整个模型
 
-![](img/c885dfe548f252ed653964b1bd0374b3_22.png)
 
 以下是使用“简易方法”的完整代码示例：
 
-![](img/c885dfe548f252ed653964b1bd0374b3_24.png)
 
-![](img/c885dfe548f252ed653964b1bd0374b3_25.png)
 
 ```python
 # 保存整个模型
@@ -124,19 +109,14 @@ for param in loaded_model.parameters():
     print(param)
 ```
 
-![](img/c885dfe548f252ed653964b1bd0374b3_27.png)
 
-![](img/c885dfe548f252ed653964b1bd0374b3_28.png)
 
-![](img/c885dfe548f252ed653964b1bd0374b3_29.png)
 
 运行后，你会看到一个名为 `model.pth` 的文件，其内容是序列化的二进制数据。
 
 ### 实践2：保存与加载状态字典
 
-![](img/c885dfe548f252ed653964b1bd0374b3_31.png)
 
-![](img/c885dfe548f252ed653964b1bd0374b3_32.png)
 
 现在，让我们使用推荐的方法：
 
@@ -163,7 +143,6 @@ for param in loaded_model.parameters():
 
 ---
 
-![](img/c885dfe548f252ed653964b1bd0374b3_34.png)
 
 ## 保存训练检查点
 
@@ -171,30 +150,21 @@ for param in loaded_model.parameters():
 
 由于 `torch.save` 可以保存任何字典，我们可以轻松地创建一个包含多种信息的检查点。
 
-![](img/c885dfe548f252ed653964b1bd0374b3_36.png)
 
 以下是创建和加载训练检查点的示例：
 
-![](img/c885dfe548f252ed653964b1bd0374b3_38.png)
 
 
-![](img/c885dfe548f252ed653964b1bd0374b3_40.png)
 
 
-![](img/c885dfe548f252ed653964b1bd0374b3_41.png)
-
-![](img/c885dfe548f252ed653964b1bd0374b3_43.png)
 
 
-![](img/c885dfe548f252ed653964b1bd0374b3_45.png)
 
 
-![](img/c885dfe548f252ed653964b1bd0374b3_47.png)
 
 
-![](img/c885dfe548f252ed653964b1bd0374b3_49.png)
 
-![](img/c885dfe548f252ed653964b1bd0374b3_50.png)
+
 
 ```python
 # 假设我们有一些训练组件
@@ -225,25 +195,20 @@ loaded_optimizer.load_state_dict(loaded_checkpoint[‘optimizer_state_dict’])
 print(loaded_optimizer.state_dict())
 ```
 
-![](img/c885dfe548f252ed653964b1bd0374b3_51.png)
 
 通过这种方式，你可以完美地从第90个epoch恢复模型和优化器的状态，继续训练。
 
 ---
 
-![](img/c885dfe548f252ed653964b1bd0374b3_53.png)
 
 ## GPU与CPU设备处理
 
 当使用GPU进行训练时，保存和加载模型需要注意设备映射问题。
 
-![](img/c885dfe548f252ed653964b1bd0374b3_55.png)
 
-![](img/c885dfe548f252ed653964b1bd0374b3_56.png)
 
 以下是几种常见场景的处理方法：
 
-![](img/c885dfe548f252ed653964b1bd0374b3_57.png)
 
 **1. 在GPU上保存，在CPU上加载**
 
@@ -259,13 +224,10 @@ loaded_model = SimpleModel(6)
 loaded_model.load_state_dict(torch.load(‘model_gpu.pth’, map_location=device))
 ```
 
-![](img/c885dfe548f252ed653964b1bd0374b3_59.png)
 
-![](img/c885dfe548f252ed653964b1bd0374b3_60.png)
 
 **2. 在GPU上保存，在GPU上加载**
 
-![](img/c885dfe548f252ed653964b1bd0374b3_61.png)
 
 ```python
 # 保存（在GPU上）
@@ -282,7 +244,6 @@ loaded_model.to(device) # 将模型送到GPU
 **3. 在CPU上保存，在GPU上加载**
 
 
-![](img/c885dfe548f252ed653964b1bd0374b3_63.png)
 
 ```python
 # 保存（在CPU上，默认）
@@ -295,7 +256,6 @@ loaded_model.load_state_dict(torch.load(‘model_cpu.pth’, map_location=‘cud
 loaded_model.to(device) # 将模型送到GPU
 ```
 
-![](img/c885dfe548f252ed653964b1bd0374b3_64.png)
 
 请注意，当使用GPU进行推理时，别忘了将输入数据也发送到GPU设备上：`data = data.to(device)`。
 
@@ -303,15 +263,11 @@ loaded_model.to(device) # 将模型送到GPU
 
 ## 总结
 
-![](img/c885dfe548f252ed653964b1bd0374b3_66.png)
 
-![](img/c885dfe548f252ed653964b1bd0374b3_67.png)
 
-![](img/c885dfe548f252ed653964b1bd0374b3_68.png)
 
 本节课中我们一起学习了PyTorch中保存和加载模型的核心知识。
 
-![](img/c885dfe548f252ed653964b1bd0374b3_70.png)
 
 我们掌握了三种关键方法：`torch.save`、`torch.load` 和 `model.load_state_dict`。我们比较了保存整个模型和仅保存模型状态字典两种方式的优缺点，并明确了推荐使用后者的原因。我们还学习了如何创建包含模型、优化器和训练进度信息的完整检查点，这对于长时间训练任务至关重要。最后，我们详细探讨了在不同设备（CPU/GPU）之间迁移模型时需要注意的 `map_location` 参数设置。
 

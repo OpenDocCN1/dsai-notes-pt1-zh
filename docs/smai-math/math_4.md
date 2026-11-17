@@ -21,14 +21,12 @@
 
 > **熵越大，表征的随机变量的不确定度越大，其含有的信息量越多**。
 
-![熵 Entropy](img/328d440f1daef4510f4eee9622442f91.png)
 随机变量 X X X 可能的取值为 { x 1 , x 2 , … , x n } \left\{ x_{1},x_{2} ,\dots ,x_{n} \right\} {x1​,x2​,…,xn​}，其概率分布为 P ( X = x i ) = p i P\left( X=x_{i} \right) =p_{i} P(X=xi​)=pi​， i = 1 , 2 , … , n i = 1, 2, \dots, n i=1,2,…,n，则随机变量 X X X 的熵定义为 H ( X ) H(X) H(X)：
 
 H ( X ) = − ∑ i = 1 n P ( x i ) l o g P ( x i ) = ∑ i = 1 n P ( x i ) 1 l o g P ( x i ) H\left( X \right) =-\sum_{i=1}^{n}{P\left( x_{i} \right) logP\left( x_{i} \right) } =\sum_{i=1}^{n}{P\left( x_{i} \right) \frac{1}{logP\left( x_{i} \right) } } H(X)=−i=1∑n​P(xi​)logP(xi​)=i=1∑n​P(xi​)logP(xi​)1​
 
 # 2.联合熵（Joint Entropy ）
 
-![联合熵 Joint Entropy](img/eb0b96def30aaeafb224563dac8cb506.png)
 
 联合熵，就是度量一个联合分布的随机系统的不确定度。分布为 P ( x , y ) P(x,y) P(x,y)的一对随机变量 ( X , Y ) (X,Y) (X,Y)，其联合熵定义为：
 
@@ -42,7 +40,6 @@ Y Y Y 的条件熵是指『在随机变量 X X X 发生的前提下，随机变�
 
 H ( Y ∣ X ) = − ∑ x , y P ( x , y ) l o g P ( y ∣ x ) H\left(Y|X \right) =-\sum_{x,y}^{}{P\left( x,y \right) logP\left( y|x \right) } H(Y∣X)=−x,y∑​P(x,y)logP(y∣x)
 
-![条件熵 Conditional Entropy](img/ca11d1828eda2105e613bb1f430fbff6.png)
 
 **条件熵的物理意义**，在得知某一确定信息的基础上获取另外一个信息时所获得的信息量，用来衡量在已知随机变量的 X X X 条件下，随机变量 Y Y Y 的不确定性。
 
@@ -51,7 +48,6 @@ H ( Y ∣ X ) = − ∑ x , y P ( x , y ) l o g P ( y ∣ x ) H\left(Y|X \right)
 相对熵在信息论中用来描述两个概率分布差异的熵，叫作 KL 散度、相对熵、互熵、交叉熵、信息增益。对于一个离散随机变量的两个概率分布 P P P 和 Q Q Q 来说，它们的相对熵定义为：
 
 D ( P ∣ ∣ Q ) = ∑ i = 1 n P ( x i ) l o g P ( x i ) Q ( x i ) D\left( P||Q \right) =\sum_{i=1}^{n}{P\left( x_{i} \right) log\frac{P\left( x_{i} \right) }{Q\left( x_{i} \right) } } D(P∣∣Q)=i=1∑n​P(xi​)logQ(xi​)P(xi​)​
-![相对熵 Kullback–Leibler divergence](img/5578d836e92f2fbb070dc81eb7f4be8b.png)
 
 注意：公式中 P P P 表示真实分布， Q Q Q 表示 P P P 的拟合分布， D ( P ∣ ∣ Q ) ≠ D ( Q ∣ ∣ P ) D(P||Q) ≠ D(Q||P) D(P∣∣Q)​=D(Q∣∣P)
 
@@ -65,7 +61,6 @@ D ( P ∣ ∣ Q ) = ∑ i = 1 n P ( x i ) l o g P ( x i ) Q ( x i ) D\left( P||Q
 
 I ( X , Y ) = ∑ x ∈ X ∑ y ∈ Y P ( x , y ) l o g P ( x , y ) P ( x ) P ( y ) I\left( X,Y \right) =\sum_{x\in X}^{}{\sum_{y\in Y}^{}{P\left( x,y \right) } log\frac{P\left( x,y \right) }{P\left( x \right) P\left( y \right) } } I(X,Y)=x∈X∑​y∈Y∑​P(x,y)logP(x)P(y)P(x,y)​
 
-![互信息 Mutual Information](img/f912d8df2629de586245e47d25ffa831.png)
 
 # 6.常用等式（useful equations）
 
@@ -95,7 +90,6 @@ H ( Y ) − I ( X , Y ) = − ∑ y p ( y ) log ⁡ p ( y ) − ∑ x , y p ( x 
 
 ## 3）互信息的定义
 
-![常用等式 useful equations](img/83099f63b758f38b5b6bdec41c428c1a.png)
 由上方的两个公式
 
 *   H ( Y ∣ X ) = H ( Y ) − I ( X , Y ) H(Y|X) = H(Y) - I(X,Y) H(Y∣X)=H(Y)−I(X,Y)

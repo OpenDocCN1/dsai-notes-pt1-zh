@@ -1,6 +1,5 @@
 # 001：欢迎加入谷歌数据分析证书课程 🎉
 
-![](img/06bf98f5523d7dc5cfb9dee60aec5c69_0.png)
 
 ![](img/06bf98f5523d7dc5cfb9dee60aec5c69_0.png)
 
@@ -79,11 +78,8 @@
 
 我们开始吧！
 
-![](img/06bf98f5523d7dc5cfb9dee60aec5c69_6.png)
 
-![](img/06bf98f5523d7dc5cfb9dee60aec5c69_8.png)
 
-![](img/06bf98f5523d7dc5cfb9dee60aec5c69_10.png)
 
 ---
 

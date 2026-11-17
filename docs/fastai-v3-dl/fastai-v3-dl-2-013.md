@@ -26,23 +26,18 @@ class Dropout(nn.Module):
         return x * mask / (1 - self.p)
 ```
 
-![](img/4482419bb52ac71700af01fb533b7cec_1.png)
 
 ![](img/4482419bb52ac71700af01fb533b7cec_3.png)
 
-![](img/4482419bb52ac71700af01fb533b7cec_4.png)
 
 ![](img/4482419bb52ac71700af01fb533b7cec_5.png)
 
-![](img/4482419bb52ac71700af01fb533b7cec_6.png)
 
 在代码中，我们只在训练模式下应用Dropout。`mask` 是一个与输入 `x` 形状相同的张量，其中元素以概率 `1-p` 为1，以概率 `p` 为0。最后，我们将输出乘以 `1/(1-p)` 来在训练时保持激活值的总体期望不变。
 
-![](img/4482419bb52ac71700af01fb533b7cec_8.png)
 
 ![](img/4482419bb52ac71700af01fb533b7cec_9.png)
 
-![](img/4482419bb52ac71700af01fb533b7cec_11.png)
 
 ![](img/4482419bb52ac71700af01fb533b7cec_13.png)
 
@@ -62,11 +57,9 @@ class Dropout(nn.Module):
 
 本节中，我们来看看生成式建模的核心目标，并介绍去噪扩散概率模型的基本框架。
 
-![](img/4482419bb52ac71700af01fb533b7cec_21.png)
 
 ![](img/4482419bb52ac71700af01fb533b7cec_22.png)
 
-![](img/4482419bb52ac71700af01fb533b7cec_24.png)
 
 生成式建模的目标是学习数据分布 `P(x)`。例如，在图像生成中，`x` 是一张图片，`P(x)` 描述了看到这张图片的概率。如果我们能近似这个分布，就可以从中采样，创造出新的、类似的数据。
 
@@ -74,21 +67,15 @@ DDPM是当前流行的生成模型之一。其核心思想包含两个过程：
 1.  **前向过程**：逐步向一张干净图片 `x0` 添加高斯噪声，经过 `T` 步后，得到纯噪声 `xT`。
 2.  **反向过程**：学习一个神经网络，使其能够从噪声 `xT` 开始，逐步预测并移除噪声，最终恢复出干净图片 `x0`。
 
-![](img/4482419bb52ac71700af01fb533b7cec_26.png)
 
-![](img/4482419bb52ac71700af01fb533b7cec_27.png)
 
 在训练时，我们实际只需要学习反向过程。DDPM论文的关键简化在于，它将学习目标转化为一个简单的**噪声预测任务**。
 
-![](img/4482419bb52ac71700af01fb533b7cec_29.png)
 
-![](img/4482419bb52ac71700af01fb533b7cec_30.png)
 
 ![](img/4482419bb52ac71700af01fb533b7cec_31.png)
 
-![](img/4482419bb52ac71700af01fb533b7cec_33.png)
 
-![](img/4482419bb52ac71700af01fb533b7cec_35.png)
 
 ---
 
@@ -96,20 +83,15 @@ DDPM是当前流行的生成模型之一。其核心思想包含两个过程：
 
 ![](img/4482419bb52ac71700af01fb533b7cec_37.png)
 
-![](img/4482419bb52ac71700af01fb533b7cec_39.png)
 
 让我们深入DDPM的数学细节。首先，我们定义几个关键变量，它们将在代码中直接出现。
 
-![](img/4482419bb52ac71700af01fb533b7cec_41.png)
 
-![](img/4482419bb52ac71700af01fb533b7cec_43.png)
 
 前向过程每一步的加噪操作由以下公式定义：
 `q(xt | xt-1) = N(xt; √(1-βt) * xt-1, βt * I)`
 
-![](img/4482419bb52ac71700af01fb533b7cec_45.png)
 
-![](img/4482419bb52ac71700af01fb533b7cec_47.png)
 
 其中：
 *   `xt` 和 `xt-1` 是相邻时间步的噪声图像。
@@ -117,7 +99,6 @@ DDPM是当前流行的生成模型之一。其核心思想包含两个过程：
 *   `βt` 是一个预先定义好的、随时间 `t` 增大的方差调度参数。它控制了每一步添加的噪声量。
 *   `I` 是单位矩阵。
 
-![](img/4482419bb52ac71700af01fb533b7cec_49.png)
 
 ![](img/4482419bb52ac71700af01fb533b7cec_51.png)
 
@@ -163,9 +144,7 @@ def before_batch(self):
 
 ---
 
-![](img/4482419bb52ac71700af01fb533b7cec_55.png)
 
-![](img/4482419bb52ac71700af01fb533b7cec_57.png)
 
 ## 采样生成新图像
 
@@ -182,7 +161,6 @@ def before_batch(self):
 
 在我们的实现中，采样函数是DDPM回调的一部分。调用 `learn.ddpm_cb.sample(model, shape)` 即可生成图像。
 
-![](img/4482419bb52ac71700af01fb533b7cec_59.png)
 
 ![](img/4482419bb52ac71700af01fb533b7cec_61.png)
 

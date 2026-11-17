@@ -58,10 +58,8 @@
 
 
 
-![](img/cd39001d062ad8283a8f62461c200de0_1.png)
 
 ![](img/cd39001d062ad8283a8f62461c200de0_1.png)
 
-![](img/cd39001d062ad8283a8f62461c200de0_2.png)
 
 ![](img/cd39001d062ad8283a8f62461c200de0_2.png)

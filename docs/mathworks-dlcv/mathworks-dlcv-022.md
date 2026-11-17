@@ -12,15 +12,11 @@
 
 训练检测器的第一步是准备数据，这其中包含一项额外任务：获取图像的真实标注数据。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_1.png)
 
 这些数据包含图像列表以及每个物体对应的边界框坐标。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_1.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_3.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_3.png)
 
 在本例中，我们已经为你提供了这些数据。训练前的下一步是特征提取。
 
@@ -33,32 +29,22 @@ ACF检测器使用10个通道来帮助检测物体：
 *   1个通道使用**梯度强度**来测量边缘强度。
 *   剩余的6个通道用于测量这些**边缘的方向**。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_5.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_5.png)
 
 这10个通道共同识别物体的显著特征。例如，动物可以通过其颜色来识别，而铁路标志则可能通过其有角度的边缘来检测。
 
 然后，这些通道被组合或**聚合**成一个预测特征列表。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_7.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_7.png)
 
 真实标注数据用于识别代表包含物体的区域的**正样本**，以及不包含物体的区域的**负样本**。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_9.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_9.png)
 
 最后，训练一个检测器来区分正样本和负样本。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_11.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_11.png)
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_12.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_12.png)
 
 ## 第三步：应用训练好的检测器
 
@@ -68,9 +54,7 @@ ACF检测器使用10个通道来帮助检测物体：
 
 根据滑动窗口的大小和间距，边界框可能会重叠。因此，检测的最后一步是：如果它们相交足够多，则将其合并。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_14.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_14.png)
 
 现在你了解了ACF物体检测的原理。那么，如何在MATLAB中实现呢？
 
@@ -84,29 +68,21 @@ ACF检测器使用10个通道来帮助检测物体：
 
 训练检测器函数的输出将是一个包含已训练检测器的新变量。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_16.png)
 
 现在一切就绪，开始运行。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_16.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_18.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_18.png)
 
 训练过程中，你可以在输出中查看进度。一旦完成，训练好的模型类型为 `acfObjectDetector`，并存储在工作区中。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_20.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_20.png)
 
 要将其应用到新的测试图像上，请使用 `detect` 函数。该函数接受训练好的检测器和你想要进行检测的图像。你也可以通过使用图像数据存储，一次性对多张图像进行检测。
 
 例如，这里我们将测试图像的数据存储传递给 `detect` 函数的第二个输入。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_22.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_22.png)
 
 输出是一个表格，包含检测到的任何铁路标志的边界框坐标和分数。本例中只有10张图像，因此你可以直接在实时脚本中直观地检查结果的准确性。
 
@@ -114,25 +90,18 @@ ACF检测器使用10个通道来帮助检测物体：
 
 这个检测器在将标志从背景中分离出来方面做得很好，因为没有出现误报。然而，有几张图像中的标志没有被正确检测到。但总体而言，对于一个仅用90张图像训练的检测器来说，效果不错。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_24.png)
 
 请注意，我们保留了许多用户定义参数为默认值，例如增加模型的复杂性，或限制检测期间使用的窗口大小。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_26.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_24.png)
 
 这些参数可用于尝试提高检测器的准确性，但通常会在速度上有所权衡。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_28.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_26.png)
 
 要了解更多关于这些选项的信息，请务必查阅文档。
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_30.png)
 
-![](img/8cefc09c2a5d407cc779c1f4bd8def2b_28.png)
 
 ## 总结
 

@@ -44,20 +44,17 @@ def process_user_query(user_input):
     return final_output
 ```
 
-![](img/9f2ec839b378b1e2528afd02ca196847_1.png)
 
 ### 持续改进
 随着长期使用LLM构建复杂系统，持续改进系统至关重要。因此，本课程也将分享开发基于LLM应用程序的流程，以及一些随时间评估和改进系统的最佳实践。
 
 ---
 
-![](img/9f2ec839b378b1e2528afd02ca196847_3.png)
 
 ## 致谢 🙏
 
 我们感谢许多人为这门短课程做出的贡献。
 
-![](img/9f2ec839b378b1e2528afd02ca196847_5.png)
 
 在OpenAI方面，我们感谢Andrew、Kendrick、Joe、Palermo、Boris、Powell和Ted Sanders。
 

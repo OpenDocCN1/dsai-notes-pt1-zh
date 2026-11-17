@@ -38,19 +38,14 @@ walk_through_dir(image_path)
 
 运行结果会显示数据集的整体结构。例如，顶层目录下有一个 `train` 文件夹和一个 `test` 文件夹。每个文件夹内又包含以类别命名的子文件夹（如 `pizza`, `steak`, `sushi`），里面存放着对应的图片。
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_8.png)
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_9.png)
 
 ---
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_11.png)
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_12.png)
 
 ![](img/ea614de8b1273567bde9b0e2ab747c26_14.png)
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_16.png)
 
 ## 理解标准图像分类格式
 
@@ -73,11 +68,8 @@ print(f"测试目录: {test_dir}")
 
 仅仅知道目录结构还不够。对于视觉数据，我们需要直观地查看图片本身。本节中，我们通过编写代码来随机选择并显示一张图片。
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_18.png)
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_20.png)
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_22.png)
 
 以下是实现随机可视化图像的步骤：
 
@@ -121,31 +113,21 @@ img.show() # 这会使用系统默认图片查看器打开图片
 
 ## 使用Matplotlib可视化图像
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_24.png)
 
 上一节我们使用PIL库显示了图片。本节中，我们来看看如何使用更常用的数据科学库Matplotlib来完成同样的任务，这需要我们将图片转换为NumPy数组。
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_26.png)
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_27.png)
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_28.png)
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_30.png)
 
 以下是使用Matplotlib显示图片的代码：
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_31.png)
-
-![](img/ea614de8b1273567bde9b0e2ab747c26_33.png)
 
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_35.png)
 
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_36.png)
 
-![](img/ea614de8b1273567bde9b0e2ab747c26_37.png)
+
 
 ```python
 import numpy as np

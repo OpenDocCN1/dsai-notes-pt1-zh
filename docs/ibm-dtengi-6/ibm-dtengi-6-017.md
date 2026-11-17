@@ -30,11 +30,9 @@ command1 | command2 | command3
 
 相应地，`command1` 的输出会成为 `command2` 的输入，依此类推。顾名思义，“pipe”就是“管道”或“流水线”的意思。
 
-![](img/f208eccac22d33f44944da66d8c608b6_1.png)
 
 例如，你可以将 `ls` 命令的输出通过管道传递给带 `-r` 选项的 `sort` 命令，从而得到一个反向排序的目录内容列表。
 
-![](img/f208eccac22d33f44944da66d8c608b6_2.png)
 
 ```bash
 ls | sort -r
@@ -44,7 +42,6 @@ ls | sort -r
 
 Shell变量是其作用域仅限于创建它的Shell本身的变量。根据定义，不同的Shell进程无法看到彼此的Shell变量。你可以使用 `set` 命令来列出当前Shell可见的所有变量及其定义。
 
-![](img/f208eccac22d33f44944da66d8c608b6_4.png)
 
 ```bash
 set
@@ -52,7 +49,6 @@ set
 
 由于该命令会列出大量信息，你可以将其输出通过管道传递给 `head` 命令，以便只显示前几个变量定义。
 
-![](img/f208eccac22d33f44944da66d8c608b6_6.png)
 
 ```bash
 set | head -4
@@ -60,7 +56,6 @@ set | head -4
 
 要定义一个新的Shell变量，只需使用等号为你选择的变量名赋值。请注意，等号周围不能有空格。
 
-![](img/f208eccac22d33f44944da66d8c608b6_8.png)
 
 ```bash
 变量名=值
@@ -74,15 +69,12 @@ greetings=Hello
 
 要查看新变量 `greetings` 的内容，需要使用美元符号 `$` 来访问其值，然后通过 `echo` 命令将其回显出来。
 
-![](img/f208eccac22d33f44944da66d8c608b6_10.png)
 
 ```bash
 echo $greetings
 ```
 
-![](img/f208eccac22d33f44944da66d8c608b6_11.png)
 
-![](img/f208eccac22d33f44944da66d8c608b6_12.png)
 
 你也可以同时显示多个变量。让我们再定义一个变量 `audience`，其值为 “world”。
 
@@ -90,7 +82,6 @@ echo $greetings
 audience=world
 ```
 
-![](img/f208eccac22d33f44944da66d8c608b6_14.png)
 
 然后同时回显这两个变量，将得到 “Hello world”。
 
@@ -104,7 +95,6 @@ echo $greetings $audience
 unset audience
 ```
 
-![](img/f208eccac22d33f44944da66d8c608b6_16.png)
 
 ## 环境变量 🌍
 
@@ -112,7 +102,6 @@ unset audience
 
 你可以通过 `export` 命令将任何Shell变量扩展为环境变量。例如，`export greetings` 会使 `greetings` 成为一个环境变量。
 
-![](img/f208eccac22d33f44944da66d8c608b6_18.png)
 
 ```bash
 export greetings

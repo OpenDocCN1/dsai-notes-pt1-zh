@@ -208,7 +208,6 @@ O’Sullivan 和 Sheffrin [[9](https://arxiv.org/html/2410.00031v1#bib.bib9)] �
 
 ### B.1 额外的图表
 
-![参考标题](img/9bc917a7099d2c699c17401be1f45068.png)
 
 图 4：在一个代表性的运行中，两家公司的生产分配，其中 $c_{1,A}=c_{1,B}=c_{2,A}=c_{2,B}=40$。注意，每家公司的分配在整个博弈过程中保持相对相似。
 
@@ -397,11 +396,9 @@ Bertrand 竞争模型中，企业生产相同的商品并在价格上竞争，�
 
 我们进行了10次独立实验，以测试基于LLM的代理在多商品贝特朗设置下的行为。从这10次实验中，我们将结果分为三大类：主导、专业化和合谋，见图[11](https://arxiv.org/html/2410.00031v1#A3.F11 "Figure 11 ‣ C.3 Results and Observations ‣ Appendix C Bertrand-"Start-Up" Competition ‣ Strategic Collusion of LLM Agents: Market Division in Multi-Commodity Competitions")。在这10次实验中，有7次以主导状态结束，其中一个代理的利润远远超过另一个，以至于它能够投资并垄断两种产品，类似于图[11(b)](https://arxiv.org/html/2410.00031v1#A3.F11.sf2 "In Figure 11 ‣ C.3 Results and Observations ‣ Appendix C Bertrand-"Start-Up" Competition ‣ Strategic Collusion of LLM Agents: Market Division in Multi-Commodity Competitions")所示。2次实验以专业化状态结束，其中两家公司分别投资于不同的产品，并垄断各自的市场，类似于图[11(a)](https://arxiv.org/html/2410.00031v1#A3.F11.sf1 "In Figure 11 ‣ C.3 Results and Observations ‣ Appendix C Bertrand-"Start-Up" Competition ‣ Strategic Collusion of LLM Agents: Market Division in Multi-Commodity Competitions")所示。我们发现，某些代理的PLANS.txt中有专业化的迹象，并且我们观察到它们稳定地向理论预测的最优价格靠拢。1次实验以合谋状态结束，其中两个代理将产品定价为高于均衡价格的相同价格，如图[11(c)](https://arxiv.org/html/2410.00031v1#A3.F11.sf3 "In Figure 11 ‣ C.3 Results and Observations ‣ Appendix C Bertrand-"Start-Up" Competition ‣ Strategic Collusion of LLM Agents: Market Division in Multi-Commodity Competitions")所示，实际上形成了溢价，并且像Fish等人所见[[8](https://arxiv.org/html/2410.00031v1#bib.bib8)]那样平分利润。
 
-![参见说明](img/677ead706cd22cec0512582f1e51fe75.png)
 
 (a) 每个公司专注于不同的产品。
 
-![参见说明](img/8215f45c92a63c7577ef5e5517fc8337.png)
 
 (b) 公司2主导两种产品。
 

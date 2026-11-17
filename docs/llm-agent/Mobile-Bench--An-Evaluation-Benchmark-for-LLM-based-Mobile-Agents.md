@@ -533,7 +533,6 @@ CheckPoints 是一组词汇，包括包、关键短语和 API，分别代表应�
 
 图[10](https://arxiv.org/html/2407.00993v1#A2.F10 "Figure 10 ‣ B.4 Case study ‣ Appendix B Details of Dataset ‣ Mobile-Bench: An Evaluation Benchmark for LLM-based Mobile Agents")和图[10](https://arxiv.org/html/2407.00993v1#A2.F10 "Figure 10 ‣ B.4 Case study ‣ Appendix B Details of Dataset ‣ Mobile-Bench: An Evaluation Benchmark for LLM-based Mobile Agents")是数据集和操作历史的示例。请注意，CheckPoints 只检查操作历史中成功执行的指令。从操作历史中可以看出，模拟器通过 API 成功打开了应用程序，在携程包中执行任务，并选择了“机票”、“北京”和“上海”元素，但未能输入正确的日期。根据 1 级和 2 级 CheckPoints 的定义，1 级 CheckPoint 分数计算所覆盖的包 CheckPoints，示例的得分为 1/1，2 级 CheckPoint 分数计算所有覆盖的 CheckPoints，示例的得分为 5/6。
 
-![参考标题](img/743a0a6f23f9c497ba77932e5ffff195.png)
 
 图 9：SAMT 中的一个测试用例。
 

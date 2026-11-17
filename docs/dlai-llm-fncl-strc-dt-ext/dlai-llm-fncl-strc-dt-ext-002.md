@@ -1,6 +1,5 @@
 # 002：函数调用入门
 
-![](img/9973f6ffab604fa132f86578bc6f388a_0.png)
 
 ![](img/9973f6ffab604fa132f86578bc6f388a_0.png)
 

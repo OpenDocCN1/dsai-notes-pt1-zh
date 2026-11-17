@@ -171,7 +171,6 @@ mse_value = mse(y_test, predictions)
 print(f"模型的均方误差为: {mse_value}")
 ```
 
-![](img/489ee87a38bd1f44914c15f7c7b73e61_24.png)
 
 最后，我们可以绘制结果图，直观地查看拟合效果。
 
@@ -195,7 +194,6 @@ plt.show()
 
 ## 总结
 
-![](img/489ee87a38bd1f44914c15f7c7b73e61_26.png)
 
 ![](img/489ee87a38bd1f44914c15f7c7b73e61_27.png)
 

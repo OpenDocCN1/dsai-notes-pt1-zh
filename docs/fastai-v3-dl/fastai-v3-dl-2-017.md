@@ -82,9 +82,7 @@ val_ds = TransformDataset(TinyDataset(path, True), tfm_x, tfm_y)
 
 为了缓解过拟合，我们引入数据增强。对于小尺寸图像，常用的`RandomResizedCrop`效果不佳，因此我们采用`Pad` + `RandomCrop`的方式进行轻微位移，并配合水平翻转。
 
-![](img/8fc58659c06d04b164d91129ad13660a_1.png)
 
-![](img/8fc58659c06d04b164d91129ad13660a_3.png)
 
 ```python
 from torch import nn
@@ -106,9 +104,7 @@ train_tfms = T.Compose([
 
 ---
 
-![](img/8fc58659c06d04b164d91129ad13660a_5.png)
 
-![](img/8fc58659c06d04b164d91129ad13660a_7.png)
 
 ## 图像分类器训练
 
@@ -116,10 +112,8 @@ train_tfms = T.Compose([
 
 我们使用一个基于ResNet块构建的卷积神经网络。
 
-![](img/8fc58659c06d04b164d91129ad13660a_9.png)
 
 
-![](img/8fc58659c06d04b164d91129ad13660a_11.png)
 
 ```python
 def conv(ni, nf, ks=3, stride=1, act=True):
@@ -179,9 +173,7 @@ class PreActResBlock(nn.Module):
 以下是U-Net的关键组件：
 
 
-![](img/8fc58659c06d04b164d91129ad13660a_13.png)
 
-![](img/8fc58659c06d04b164d91129ad13660a_15.png)
 
 ```python
 class UNet(nn.Module):

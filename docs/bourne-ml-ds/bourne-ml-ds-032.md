@@ -56,9 +56,7 @@ conda create --prefix ./env pandas numpy matplotlib scikit-learn
 
 安装完成后，我们再次尝试启动Jupyter Notebook：
 
-![](img/a7a12eceb0483bbb4f365439a1a4e583_2.png)
 
-![](img/a7a12eceb0483bbb4f365439a1a4e583_3.png)
 
 ```bash
 jupyter notebook
@@ -91,10 +89,8 @@ jupyter notebook
 让我们回顾一下整个设置过程的核心命令和工作流：
 
 
-![](img/a7a12eceb0483bbb4f365439a1a4e583_5.png)
 
 
-![](img/a7a12eceb0483bbb4f365439a1a4e583_7.png)
 
 ```bash
 # 1. 在项目文件夹内创建环境并安装核心包

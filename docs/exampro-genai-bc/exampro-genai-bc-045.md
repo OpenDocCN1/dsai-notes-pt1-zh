@@ -1,6 +1,5 @@
 # 45：OPEA故障排除处理程序 🛠️
 
-![](img/dce2f3656509ffb41b42e3850720452e_1.png)
 
 在本节课中，我们将学习如何诊断和解决一个OPEA（Open Platform for Enterprise AI）Mega Service（大型服务）在运行中遇到的问题。我们将通过实际调试过程，理解服务架构、请求流程，并最终使服务正常工作。
 
@@ -26,9 +25,7 @@
 
 ### 运行LLaMA服务
 
-![](img/dce2f3656509ffb41b42e3850720452e_12.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_14.png)
 
 LLaMA模型通过Docker Compose交付。我们可以通过设置环境变量来指定服务监听的端口。
 
@@ -44,7 +41,6 @@ LLM_ENDPOINT_PORT=9000 docker-compose up
 
 ![](img/dce2f3656509ffb41b42e3850720452e_18.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_20.png)
 
 ### 验证LLaMA服务
 
@@ -58,7 +54,6 @@ LLM_ENDPOINT_PORT=9000 docker-compose up
 
 ![](img/dce2f3656509ffb41b42e3850720452e_28.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_30.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_32.png)
 
@@ -80,45 +75,32 @@ curl -X POST http://localhost:9000/api/chat/completions \
 
 ![](img/dce2f3656509ffb41b42e3850720452e_36.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_37.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_39.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_41.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_43.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_45.png)
 
 如果上述命令能返回一个完整的响应（而非流式输出块），则证明LLaMA服务运行正常。
 
-![](img/dce2f3656509ffb41b42e3850720452e_46.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_48.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_50.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_52.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_54.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_56.png)
 
 ---
 
 ## 配置并运行Mega Service
 
-![](img/dce2f3656509ffb41b42e3850720452e_58.png)
 
 上一节我们启动了LLaMA服务，本节中我们来看看如何配置和运行我们自己的Mega Service。
 
-![](img/dce2f3656509ffb41b42e3850720452e_60.png)
 
 Mega Service是我们的主应用，它负责接收外部请求，进行编排（Orchestration），并将任务调度给LLaMA等服务。
 
-![](img/dce2f3656509ffb41b42e3850720452e_62.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_64.png)
 
 ### 启动Mega Service
 
@@ -126,7 +108,6 @@ Mega Service是我们的主应用，它负责接收外部请求，进行编排�
 
 Mega Service是一个Python应用，通常通过 `app.py` 启动。
 
-![](img/dce2f3656509ffb41b42e3850720452e_68.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_70.png)
 
@@ -142,9 +123,7 @@ python app.py
 ```
 应用默认会在端口 `8000` 启动。
 
-![](img/dce2f3656509ffb41b42e3850720452e_77.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_78.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_80.png)
 
@@ -199,31 +178,22 @@ curl -X POST http://localhost:8000/ \
 
 ![](img/dce2f3656509ffb41b42e3850720452e_107.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_109.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_111.png)
 
 为了找出问题所在，我们需要在代码中添加详细的日志，以跟踪请求在系统中的流转路径。
 
-![](img/dce2f3656509ffb41b42e3850720452e_113.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_114.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_116.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_118.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_120.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_122.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_124.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_126.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_128.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_130.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_132.png)
 
@@ -241,7 +211,6 @@ curl -X POST http://localhost:8000/ \
 
 ![](img/dce2f3656509ffb41b42e3850720452e_143.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_144.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_146.png)
 
@@ -291,9 +260,7 @@ async def handle_request(self, request: Request):
 
 ![](img/dce2f3656509ffb41b42e3850720452e_170.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_172.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_174.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_176.png)
 
@@ -320,7 +287,6 @@ print("调试 - 调度器输入:", json.dumps(inputs, indent=2))
 
 经过逐步排查，我们发现几个关键问题：
 
-![](img/dce2f3656509ffb41b42e3850720452e_188.png)
 
 1.  **模型参数未传递**：调度器调用时，未将 `model` 参数放入 `llm_parameters` 中。
 2.  **消息格式错误**：直接使用了经过处理的 `prompt` 字符串，而非LLaMA所需的 `messages` 数组格式。
@@ -371,13 +337,11 @@ async def handle_request(self, request: Request):
 
 ![](img/dce2f3656509ffb41b42e3850720452e_202.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_204.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_206.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_208.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_210.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_212.png)
 
@@ -395,7 +359,6 @@ LLaMA返回的响应是OpenAI兼容格式，我们需要从结果中正确提取
 
 ![](img/dce2f3656509ffb41b42e3850720452e_221.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_223.png)
 
 ```python
 # 处理非流式响应
@@ -438,7 +401,6 @@ if not isinstance(response, StreamingResponse):
 
 ![](img/dce2f3656509ffb41b42e3850720452e_242.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_244.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_246.png)
 
@@ -482,7 +444,6 @@ self.telemetry_endpoint = "http://jaeger:4318"
 
 ![](img/dce2f3656509ffb41b42e3850720452e_260.png)
 
-![](img/dce2f3656509ffb41b42e3850720452e_262.png)
 
 ![](img/dce2f3656509ffb41b42e3850720452e_263.png)
 

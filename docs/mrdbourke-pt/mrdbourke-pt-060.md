@@ -1,6 +1,5 @@
 # 60：计算机视觉的输入与输出 🖼️➡️🤖
 
-![](img/9aef2ae99011cdea71d6c0f4c9a823f9_1.png)
 
 ![](img/9aef2ae99011cdea71d6c0f4c9a823f9_3.png)
 
@@ -20,7 +19,6 @@
 
 计算机视觉模型需要数字作为输入。因此，我们必须将图像转换为数值表示。
 
-![](img/9aef2ae99011cdea71d6c0f4c9a823f9_12.png)
 
 一个常见的例子是多类别图像分类，例如识别不同食物的照片。我们可能有一批食物图像，每张图像具有特定的高度和宽度，例如 **`width = 224`**， **`height = 224`**。此外，图像通常有三个颜色通道（RGB），分别代表红色、绿色和蓝色的强度值。
 
@@ -30,9 +28,7 @@
 
 ![](img/9aef2ae99011cdea71d6c0f4c9a823f9_14.png)
 
-![](img/9aef2ae99011cdea71d6c0f4c9a823f9_15.png)
 
-![](img/9aef2ae99011cdea71d6c0f4c9a823f9_17.png)
 
 ## 输出：模型的预测 🎯
 
@@ -68,7 +64,6 @@ output_shape = 3
 
 处理图像数据时，**卷积神经网络** 通常是性能最佳的选择，尽管Transformer架构近来也表现出色。确保张量形状匹配是机器学习的一个关键问题。
 
-![](img/9aef2ae99011cdea71d6c0f4c9a823f9_26.png)
 
 一个图像输入张量的常见形状是 **`(batch_size, height, width, color_channels)`**。在PyTorch中，默认顺序常是 **`(batch_size, color_channels, height, width)`**，即“通道在前”。
 
@@ -87,19 +82,15 @@ input_shape = (32, 224, 224, 3)
 
 ![](img/9aef2ae99011cdea71d6c0f4c9a823f9_31.png)
 
-![](img/9aef2ae99011cdea71d6c0f4c9a823f9_32.png)
 
-![](img/9aef2ae99011cdea71d6c0f4c9a823f9_33.png)
 
 输出形状则取决于类别数量。对于10分类问题，输出形状就是10。
 
 ## 另一个例子：时尚物品分类 👕👟
 
-![](img/9aef2ae99011cdea71d6c0f4c9a823f9_35.png)
 
 让我们看另一个例子：对28x28像素的灰度时尚物品图像进行分类。
 
-![](img/9aef2ae99011cdea71d6c0f4c9a823f9_37.png)
 
 流程完全相同：
 1.  将图像数值化表示。
@@ -112,7 +103,6 @@ input_shape = (32, 224, 224, 3)
 
 ## PyTorch工作流程回顾 ⚙️
 
-![](img/9aef2ae99011cdea71d6c0f4c9a823f9_41.png)
 
 我们将遵循之前学习的PyTorch工作流程来处理计算机视觉问题：
 

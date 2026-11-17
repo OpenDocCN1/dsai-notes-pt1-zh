@@ -1,6 +1,5 @@
 # Excel中级教程 - P60：61）从头开始创建 Excel 宏 - 自动调整列 ⚙️
 
-![](img/b0396bafa7c7fe03dd9fc56da1ac0d7b_0.png)
 
 ![](img/b0396bafa7c7fe03dd9fc56da1ac0d7b_0.png)
 
@@ -101,6 +100,5 @@ Visual Basic编辑器打开后，我们将为当前工作表编写一小段简�
 
 本节课中我们一起学习了在Excel中从零开始创建宏的完整过程。我们首先启用了“开发者”选项卡，然后使用VBA编写了自动调整列宽的简单代码，接着创建了一个表单按钮并将宏分配给它，最后学会了如何正确保存启用宏的工作簿。掌握这些步骤，你就为学习更复杂的Excel自动化任务打下了基础。
 
-![](img/b0396bafa7c7fe03dd9fc56da1ac0d7b_2.png)
 
 ![](img/b0396bafa7c7fe03dd9fc56da1ac0d7b_2.png)

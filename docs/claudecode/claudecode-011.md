@@ -22,7 +22,6 @@ npm run setup
 
 ![](img/76b2f61bf1300dcbf7c88eb55e4a41e1_2.png)
 
-![](img/76b2f61bf1300dcbf7c88eb55e4a41e1_3.png)
 
 ## 钩子目标
 
@@ -83,7 +82,6 @@ npm run setup
 
 以上就是整个过程。我知道这里涉及很多内容，所以让我们通过实际项目来演练连接此钩子所需的所有步骤，以理解所有这些步骤是如何结合在一起的。
 
-![](img/76b2f61bf1300dcbf7c88eb55e4a41e1_9.png)
 
 ![](img/76b2f61bf1300dcbf7c88eb55e4a41e1_9.png)
 

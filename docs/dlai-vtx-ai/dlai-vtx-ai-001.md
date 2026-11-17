@@ -34,7 +34,6 @@ embedding_vector = embed(sentence) # 例如，得到一个768维的向量
 
 ---
 
-![](img/01d1a38212f184bc0ab4aa42bc18f416_1.png)
 
 ![](img/01d1a38212f184bc0ab4aa42bc18f416_2.png)
 

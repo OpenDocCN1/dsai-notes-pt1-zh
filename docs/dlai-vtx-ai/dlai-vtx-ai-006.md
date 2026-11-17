@@ -1,8 +1,6 @@
 # 006：结合文本生成模型构建问答系统
 
-![](img/b6bb6f7e963b6187aa8856db0edfac9e_0.png)
 
-![](img/b6bb6f7e963b6187aa8856db0edfac9e_2.png)
 
 ## 概述
 
@@ -34,9 +32,7 @@ vertexai.init(project=PROJECT_ID, location=REGION)
 
 上一节我们介绍了嵌入模型，本节中我们来看看文本生成模型。我们将从Vertex AI加载一个名为`text-bison`的模型。这个模型针对多种自然语言任务进行了微调，例如情感分析、分类、摘要和提取。
 
-![](img/b6bb6f7e963b6187aa8856db0edfac9e_4.png)
 
-![](img/b6bb6f7e963b6187aa8856db0edfac9e_5.png)
 
 需要注意的是，`text-bison`模型适用于可以通过单次API响应完成的任务，而不是持续的对话。如果需要来回交互，可以使用另一个名为`chat-bison`的模型。
 
@@ -47,7 +43,6 @@ generation_model = TextGenerationModel.from_pretrained("text-bison@001")
 
 ---
 
-![](img/b6bb6f7e963b6187aa8856db0edfac9e_7.png)
 
 ## 理解提示词与生成文本
 
@@ -56,9 +51,7 @@ generation_model = TextGenerationModel.from_pretrained("text-bison@001")
 让我们从一个开放式的生成任务开始。我们将定义一个提示词，然后查看模型的响应。
 
 
-![](img/b6bb6f7e963b6187aa8856db0edfac9e_9.png)
 
-![](img/b6bb6f7e963b6187aa8856db0edfac9e_10.png)
 
 ```python
 # 定义一个开放式提示词
@@ -216,7 +209,6 @@ print(response.text)
 
 ## 总结与下一步
 
-![](img/b6bb6f7e963b6187aa8856db0edfac9e_12.png)
 
 在本节课中，我们一起学习了：
 *   如何加载和使用Vertex AI的文本生成模型（`text-bison`）。

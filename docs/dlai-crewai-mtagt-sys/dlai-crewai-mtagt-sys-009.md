@@ -14,7 +14,6 @@ from crewai import Agent, Task, Crew
 
 上一节我们导入了必要的类，本节中我们来看看如何设置模型。我们将使用 GPT-4 模型，因为它能处理更多的上下文数据。
 
-![](img/ba9f9b6091e89492008fdc13584866d0_1.png)
 
 ```python
 import os
@@ -30,7 +29,6 @@ os.environ["SERPER_API_KEY"] = "你的Serper API密钥"
 
 ---
 
-![](img/ba9f9b6091e89492008fdc13584866d0_3.png)
 
 ## 创建智能体
 
@@ -48,7 +46,6 @@ sales_rep_agent = Agent(
 )
 ```
 
-![](img/ba9f9b6091e89492008fdc13584866d0_5.png)
 
 接下来，我们创建第二个智能体：潜在客户销售代表。它的目标是为已识别的潜在客户寻找个性化内容并建立沟通。
 
@@ -70,11 +67,8 @@ lead_sales_rep_agent = Agent(
 
 ![](img/ba9f9b6091e89492008fdc13584866d0_8.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_9.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_10.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_11.png)
 
 现在，让我们看看如何为智能体配置工具。我们将使用 crewAI 工具包中的预置工具，并创建一个自定义工具。
 
@@ -106,9 +100,7 @@ search_tool = SerperDevTool()
 
 以下是创建一个简单的情感分析工具的示例：
 
-![](img/ba9f9b6091e89492008fdc13584866d0_13.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_14.png)
 
 ```python
 from crewai.tools import BaseTool
@@ -126,11 +118,9 @@ class SentimentAnalysisTool(BaseTool):
 sentiment_analysis_tool = SentimentAnalysisTool()
 ```
 
-![](img/ba9f9b6091e89492008fdc13584866d0_16.png)
 
 自定义工具需要定义 `name`、`description` 和实现 `_run` 方法。`_run` 方法是工具执行具体操作的入口。
 
-![](img/ba9f9b6091e89492008fdc13584866d0_17.png)
 
 ---
 
@@ -156,11 +146,8 @@ lead_profiling_task = Task(
 
 第二个任务是**创建个性化沟通**。该任务将使用我们自定义的情感分析工具和搜索工具，基于之前的分析结果来生成个性化的沟通邮件。
 
-![](img/ba9f9b6091e89492008fdc13584866d0_19.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_20.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_21.png)
 
 ```python
 personalized_outreach_task = Task(
@@ -175,23 +162,17 @@ personalized_outreach_task = Task(
 )
 ```
 
-![](img/ba9f9b6091e89492008fdc13584866d0_22.png)
 
 ---
 
 ## 组建并运行智能体团队
 
-![](img/ba9f9b6091e89492008fdc13584866d0_24.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_25.png)
 
 现在，我们将智能体和任务组合成一个团队（Crew），并运行它。
 
-![](img/ba9f9b6091e89492008fdc13584866d0_26.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_27.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_28.png)
 
 ```python
 crew = Crew(
@@ -216,7 +197,6 @@ result = crew.kickoff(inputs=inputs)
 print(result)
 ```
 
-![](img/ba9f9b6091e89492008fdc13584866d0_30.png)
 
 ---
 
@@ -224,21 +204,14 @@ print(result)
 
 当团队开始执行时，销售代表智能体会首先启动。它会使用搜索工具在互联网上查找关于“Deep Learning AI”的信息。
 
-![](img/ba9f9b6091e89492008fdc13584866d0_32.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_33.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_34.png)
 
 在执行过程中，你可能会观察到智能体尝试用“文件读取工具”去读取一个网页链接，这会导致错误。但 crewAI 框架会优雅地处理这个异常，将错误信息反馈给智能体，而不会中断整个执行流程。智能体随后会调整策略，继续使用搜索工具。
 
-![](img/ba9f9b6091e89492008fdc13584866d0_35.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_36.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_37.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_38.png)
 
 **关于工具异常处理的要点**：
 不同的框架对工具异常的处理方式不同。crewAI 选择让异常“优雅失败”，不中断执行，智能体可以从错误中学习。而其他框架或自定义实现可能选择让异常直接停止执行。这是设计多智能体系统时需要考虑的一个重要方面。
@@ -249,21 +222,14 @@ print(result)
 
 ---
 
-![](img/ba9f9b6091e89492008fdc13584866d0_40.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_41.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_42.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_43.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_44.png)
 
-![](img/ba9f9b6091e89492008fdc13584866d0_45.png)
 
 ## 总结
 
-![](img/ba9f9b6091e89492008fdc13584866d0_46.png)
 
 本节课中我们一起学习了如何在 crewAI 中为智能体配置和使用工具。我们涵盖了：
 1.  导入预置工具（`DirectoryReadTool`, `FileReadTool`, `SerperDevTool`）。

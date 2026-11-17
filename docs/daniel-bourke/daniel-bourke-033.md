@@ -36,9 +36,7 @@ print(“A 和 B 是否相等:”, random_tensor_A.eq(random_tensor_B).any())
 
 上一节我们看到了随机性带来的不确定性，本节中我们来看看如何使用随机种子来创造“可复现的随机”。
 
-![](img/17c993448bdbc1ce1b49d52f4e6be29f_2.png)
 
-![](img/17c993448bdbc1ce1b49d52f4e6be29f_3.png)
 
 ### 实践：使用随机种子
 

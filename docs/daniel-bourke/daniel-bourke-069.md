@@ -18,7 +18,6 @@
 
 ![](img/91be41bb0c4a9e62ab098dad3e94bb99_6.png)
 
-![](img/91be41bb0c4a9e62ab098dad3e94bb99_7.png)
 
 ```python
 print(f"X的形状: {X.shape}")
@@ -105,7 +104,6 @@ print(f"测试标签样本数: {len(y_test)}")
 1.  **数据张量化**：将NumPy数组转换为PyTorch张量，并统一数据类型（`float32`）。
 2.  **数据集划分**：使用`train_test_split`函数将数据随机划分为训练集和测试集，并设置`random_state`以确保结果可复现。
 
-![](img/91be41bb0c4a9e62ab098dad3e94bb99_9.png)
 
 ![](img/91be41bb0c4a9e62ab098dad3e94bb99_10.png)
 

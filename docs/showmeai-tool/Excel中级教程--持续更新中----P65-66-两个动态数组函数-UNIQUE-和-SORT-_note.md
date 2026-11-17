@@ -1,6 +1,5 @@
 # Excel中级教程 - P65：66）两个动态数组函数：UNIQUE 和 SORT 🎯
 
-![](img/d555e8fc2ef3f75c24ce7f925c432a31_0.png)
 
 ![](img/d555e8fc2ef3f75c24ce7f925c432a31_0.png)
 
@@ -89,6 +88,5 @@
 
 掌握这两个函数能极大地提升你处理重复数据和整理列表的效率，是Excel数据分析中非常实用的工具。
 
-![](img/d555e8fc2ef3f75c24ce7f925c432a31_2.png)
 
 ![](img/d555e8fc2ef3f75c24ce7f925c432a31_2.png)

@@ -22,7 +22,6 @@ for i in range(5):
 
 ## 后续步骤建议 🚀
 
-![](img/a9ab32ea22d3657f3388c5f82aab75a9_1.png)
 
 现在你可能想知道接下来可以做什么。有很多事情可以做。
 
@@ -30,25 +29,19 @@ for i in range(5):
 
 首先，如果你还没有这样做，请考虑在你自己的计算机上安装Jupyter。在自己的笔记本电脑上运行代码会很有趣。
 
-![](img/a9ab32ea22d3657f3388c5f82aab75a9_1.png)
 
-![](img/a9ab32ea22d3657f3388c5f82aab75a9_3.png)
 
 此外，我希望你继续学习课程，不断进步。在DeepLearning.AI平台上，有几门短期课程你可以考虑。
 
-![](img/a9ab32ea22d3657f3388c5f82aab75a9_5.png)
 
 一门是**ChatGPT Prompt Engineering for Developers**，它将教你如何以更复杂的方式提示ChatGPT。
 
-![](img/a9ab32ea22d3657f3388c5f82aab75a9_3.png)
 
 另一门是**Prompt Engineering with Llama 2**。
 
 如果你想学习更深入、更实质性的内容，可以考虑参加我们的**机器学习专项课程**。
 
-![](img/a9ab32ea22d3657f3388c5f82aab75a9_5.png)
 
-![](img/a9ab32ea22d3657f3388c5f82aab75a9_7.png)
 
 ## 开始你的项目 💡
 

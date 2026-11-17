@@ -16,9 +16,7 @@ dist_matrix <- dist(x)
 
 上述代码计算一个100x100的成对距离矩阵。`dist()`函数用于计算数据点之间的距离。
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_1.png)
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_3.png)
 
 ## 进行层次聚类
 
@@ -30,7 +28,6 @@ hc_complete <- hclust(dist_matrix, method = "complete")
 
 `method = "complete"`指定使用**完全连接**方法。该方法在决定两个簇的接近程度时，使用一个簇中任意点与另一个簇中任意点之间的最大距离。
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_5.png)
 
 ## 绘制系统树图
 
@@ -84,67 +81,50 @@ table(cluster_cut, true_labels)
 
 交叉表会显示一个大数字集中在对角线上的矩阵，表示正确分类；非对角线上的小数字则表示错误分类。在本例中，层次聚类出现了三个错误分类。
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_7.png)
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_8.png)
 
 我们还可以将其与K均值聚类的结果进行比较。K均值聚类在本数据上有两个错误分类。两种方法的结果大体一致，但在少数数据点上存在分歧。
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_9.png)
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_10.png)
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_11.png)
 
 ## 标记系统树图
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_12.png)
 
 为了更清晰地展示，我们可以根据原始簇分配为系统树图的叶子节点添加标签。
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_14.png)
 
 ```r
 plot(hc_complete, labels = true_labels)
 ```
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_15.png)
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_17.png)
 
 虽然在小图中可能不够清晰，但在更大的绘图区域中，可以清楚地看到哪些点被错误分配。
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_19.png)
 
 ## 寻求帮助与资源
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_21.png)
 
 如果您想了解更多关于`hclust()`函数或层次聚类的信息，可以使用R的帮助功能：
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_22.png)
 
 ```r
 ?hclust
 ```
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_24.png)
 
 此外，在网络上搜索R相关查询也是获取信息和解决方案的有效途径。
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_25.png)
 
 ## 生成可分享的报告
 
 最后，我们可以将整个分析过程、代码和图形整合到一个R Markdown文档中。通过“编织”该文档，可以生成一个包含结果摘要和所有图形的HTML报告，便于与同事分享或用于演示。
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_27.png)
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_28.png)
 
 ## 总结
 
-![](img/fdb2ae7fe91b8947dd137615dd3860af_29.png)
 
 ![](img/fdb2ae7fe91b8947dd137615dd3860af_31.png)
 

@@ -23,9 +23,7 @@ import scipy.stats as stats
 df = pd.read_csv('diamonds.csv')
 ```
 
-![](img/e12a0c2a770ce8028d094c2639c8e1a9_1.png)
 
-![](img/e12a0c2a770ce8028d094c2639c8e1a9_2.png)
 
 以下是数据预览，用于识别所有数值型列作为潜在的自变量。
 
@@ -45,7 +43,6 @@ df.head()
 numeric_columns = ['carat', 'depth', 'table', 'x', 'y', 'z', 'price']
 ```
 
-![](img/e12a0c2a770ce8028d094c2639c8e1a9_4.png)
 
 价格是我们的因变量，但为了分析各特征与价格的关系，我们需要将其包含在分析中。
 
@@ -79,7 +76,6 @@ print(correlation_matrix)
 *   `x`、`y`、`z` 与价格有较强的相关性。
 *   `carat`（克拉重量）与价格的相关性最强，相关系数约为0.92。
 
-![](img/e12a0c2a770ce8028d094c2639c8e1a9_6.png)
 
 这意味着，钻石的克拉重量可以解释其价格约92%的变异性。
 
@@ -87,11 +83,9 @@ print(correlation_matrix)
 
 ## 深入分析最佳特征
 
-![](img/e12a0c2a770ce8028d094c2639c8e1a9_8.png)
 
 为了更详细地观察`carat`与`price`的关系，我们绘制散点图。
 
-![](img/e12a0c2a770ce8028d094c2639c8e1a9_9.png)
 
 ```python
 plt.figure(figsize=(10, 6))
@@ -110,7 +104,6 @@ plt.show()
 
 ---
 
-![](img/e12a0c2a770ce8028d094c2639c8e1a9_11.png)
 
 ![](img/e12a0c2a770ce8028d094c2639c8e1a9_12.png)
 

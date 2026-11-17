@@ -16,11 +16,8 @@
 
 > **请注意**：我不是律师，这也不是法律建议。
 
-![](img/ebdb54cb501c1ad2ff6fdfa72631a8cb_1.png)
 
-![](img/ebdb54cb501c1ad2ff6fdfa72631a8cb_2.png)
 
-![](img/ebdb54cb501c1ad2ff6fdfa72631a8cb_3.png)
 
 ## 服务器负载考量
 
@@ -36,7 +33,6 @@
 
 例如，在这段代码中，`time.sleep(1)` 将在每个请求之间暂停代码一秒钟。
 
-![](img/ebdb54cb501c1ad2ff6fdfa72631a8cb_5.png)
 
 ```python
 import time
@@ -60,15 +56,11 @@ for url in list_of_urls:
 
 为了快速了解允许和禁止的内容，你可以使用大型语言模型。让我们使用 `Claude 3.7`。请注意，你可能可以使用更高级的模型。
 
-![](img/ebdb54cb501c1ad2ff6fdfa72631a8cb_7.png)
 
-![](img/ebdb54cb501c1ad2ff6fdfa72631a8cb_8.png)
 
 你可以编写一个提示词，要求它根据这个 `robots.txt` 文件简要解释允许哪些类型的网络爬虫，然后粘贴维基百科的文件内容。
 
-![](img/ebdb54cb501c1ad2ff6fdfa72631a8cb_9.png)
 
-![](img/ebdb54cb501c1ad2ff6fdfa72631a8cb_10.png)
 
 ![](img/ebdb54cb501c1ad2ff6fdfa72631a8cb_11.png)
 

@@ -1,10 +1,7 @@
 # 🧠 人工智能—计算机视觉CV公开课 P17：语义分割实战：人脸抠图PS
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_0.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_2.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_0.png)
 
 在本节课中，我们将要学习语义分割的基本概念，并动手实践一个具体应用：使用U-Net模型实现人脸抠图。我们将从深度学习的基础介绍开始，逐步深入到语义分割的原理，最后通过代码实战完成一个人脸分割项目。
 
@@ -79,7 +76,6 @@ U-Net的这种设计使其在医学图像分割等需要精确轮廓的任务中
 
 ![](img/0d4e0ce8ee64c02b41f5099c0f347311_11.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_13.png)
 
 ---
 
@@ -87,11 +83,8 @@ U-Net的这种设计使其在医学图像分割等需要精确轮廓的任务中
 
 ![](img/0d4e0ce8ee64c02b41f5099c0f347311_17.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_18.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_19.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_21.png)
 
 ## 💻 第五部分：人脸PS实战
 
@@ -99,32 +92,23 @@ U-Net的这种设计使其在医学图像分割等需要精确轮廓的任务中
 
 ![](img/0d4e0ce8ee64c02b41f5099c0f347311_24.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_26.png)
 
 上一节我们了解了U-Net的原理，本节中我们将使用U-Net完成人脸抠图的实战项目。我们的目标是：输入一张人像照片，输出一个掩码（Mask），将人物前景与背景分离。
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_28.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_29.png)
 
 ### 数据准备
 
 我们使用的数据集包含人像图片和对应的二值掩码标签（人物区域为1，背景为0）。为了统一输入尺寸和加速训练，我们将所有图片和标签缩放至128x128像素。
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_31.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_33.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_35.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_36.png)
 
 **问题：** 输入图片的维度是多少？输出掩码的维度是多少？
 **答案：** 输入维度是 `(128, 128, 3)`。输出是二分类掩码，维度为 `(128, 128, 1)`。
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_38.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_39.png)
 
 以下是构建数据生成器（Data Generator）的关键步骤：
 
@@ -144,25 +128,17 @@ def load_and_preprocess(image_path, mask_path):
     return img, mask
 ```
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_41.png)
 
 ### 模型构建
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_43.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_44.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_46.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_48.png)
 
 我们使用TensorFlow 2.0/Keras 来构建U-Net模型。以下是模型的核心结构：
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_49.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_50.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_51.png)
 
 ```python
 # 示例代码：U-Net模型构建（简化版）
@@ -183,11 +159,9 @@ def unet_model(input_size=(128, 128, 3)):
     return model
 ```
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_53.png)
 
 ![](img/0d4e0ce8ee64c02b41f5099c0f347311_55.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_57.png)
 
 ![](img/0d4e0ce8ee64c02b41f5099c0f347311_59.png)
 
@@ -199,11 +173,9 @@ def unet_model(input_size=(128, 128, 3)):
 
 我们使用二元交叉熵损失函数和Adam优化器来训练模型。
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_65.png)
 
 ![](img/0d4e0ce8ee64c02b41f5099c0f347311_67.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_69.png)
 
 ![](img/0d4e0ce8ee64c02b41f5099c0f347311_71.png)
 
@@ -211,11 +183,9 @@ def unet_model(input_size=(128, 128, 3)):
 
 **验证集的作用**：验证集用于在训练过程中监控模型是否出现过拟合，并作为调整超参数（如学习率、迭代次数）的依据。
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_73.png)
 
 ---
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_75.png)
 
 ![](img/0d4e0ce8ee64c02b41f5099c0f347311_77.png)
 
@@ -227,9 +197,7 @@ def unet_model(input_size=(128, 128, 3)):
 
 ![](img/0d4e0ce8ee64c02b41f5099c0f347311_83.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_84.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_86.png)
 
 本节课中我们一起学习了：
 1.  **深度学习的基本概念**，理解了神经网络尤其是全连接层的工作原理。
@@ -239,7 +207,6 @@ def unet_model(input_size=(128, 128, 3)):
 
 ![](img/0d4e0ce8ee64c02b41f5099c0f347311_88.png)
 
-![](img/0d4e0ce8ee64c02b41f5099c0f347311_90.png)
 
 ![](img/0d4e0ce8ee64c02b41f5099c0f347311_92.png)
 

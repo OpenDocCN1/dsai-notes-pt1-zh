@@ -26,7 +26,6 @@ And we'd end up with a value of 0。93。And that would be the output of this pa
 
 
 
-![](img/53797b75fcdd1e9ae30aa2ae27892972_1.png)
 
 So our node output is 0。93。So why not just use a single neuron。
 
@@ -44,7 +43,6 @@ We are able to come up with a much more complex decision boundary。
 
 
 
-![](img/53797b75fcdd1e9ae30aa2ae27892972_3.png)
 
 So in order to take our inputs and pass them through and get our different outputs as we see here。
 

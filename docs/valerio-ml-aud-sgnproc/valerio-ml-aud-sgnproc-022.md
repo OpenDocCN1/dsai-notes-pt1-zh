@@ -8,9 +8,7 @@
 
 首先，我们需要导入必要的库并加载音频文件。我们将使用两段音乐：一段是德彪西的古典乐，另一段是红辣椒乐队的摇滚乐。
 
-![](img/ad2940aecfbc2fda40b6adb746a0634a_1.png)
 
-![](img/ad2940aecfbc2fda40b6adb746a0634a_3.png)
 
 ```python
 import librosa
@@ -39,14 +37,12 @@ rhcp_spec = librosa.stft(rhcp_waveform, n_fft=frame_size, hop_length=hop_size)
 
 以下是实现此功能的步骤：
 
-![](img/ad2940aecfbc2fda40b6adb746a0634a_5.png)
 
 1.  计算频谱图覆盖的总频率范围（0 Hz 到奈奎斯特频率）。
 2.  计算相邻频点之间的频率间隔。
 3.  将给定的分割频率除以这个间隔，得到对应的浮点数索引。
 4.  使用向下取整函数，将其转换为整数索引。
 
-![](img/ad2940aecfbc2fda40b6adb746a0634a_7.png)
 
 ```python
 def calculate_split_frequency_bin(spectrogram, split_frequency, sample_rate):
@@ -71,7 +67,6 @@ def calculate_split_frequency_bin(spectrogram, split_frequency, sample_rate):
 
 以下是计算频带能量比的核心步骤：
 
-![](img/ad2940aecfbc2fda40b6adb746a0634a_9.png)
 
 1.  获取分割频点索引。
 2.  将复数频谱图转换为功率谱（取绝对值后平方）。
@@ -79,7 +74,6 @@ def calculate_split_frequency_bin(spectrogram, split_frequency, sample_rate):
 4.  遍历每一帧，分别计算低频部分和高频部分的能量和。
 5.  将低频能量和除以高频能量和，得到该帧的频带能量比值。
 
-![](img/ad2940aecfbc2fda40b6adb746a0634a_11.png)
 
 ```python
 def calculate_band_energy_ratio(spectrogram, split_frequency, sample_rate):
@@ -111,11 +105,9 @@ def calculate_band_energy_ratio(spectrogram, split_frequency, sample_rate):
     return np.array(band_energy_ratio)
 ```
 
-![](img/ad2940aecfbc2fda40b6adb746a0634a_13.png)
 
 ## 应用与可视化
 
-![](img/ad2940aecfbc2fda40b6adb746a0634a_14.png)
 
 现在，我们可以对两段音乐应用这个函数，并可视化结果以进行比较。
 

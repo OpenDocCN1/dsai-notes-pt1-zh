@@ -4,9 +4,7 @@
 
 ---
 
-![](img/288bdb2de17a3712098e16489830fae1_1.png)
 
-![](img/288bdb2de17a3712098e16489830fae1_2.png)
 
 ## 概述
 
@@ -34,9 +32,7 @@ generator_input = concatenate([noise_vector, one_hot_class])
 # 现在 generator_input 的维度是 110
 ```
 
-![](img/288bdb2de17a3712098e16489830fae1_4.png)
 
-![](img/288bdb2de17a3712098e16489830fae1_5.png)
 
 例如，当类别向量代表“哈士奇”时，生成器理想情况下会从一个噪声向量生成一只哈士奇的图像。如果你改变噪声向量，它应该生成另一只不同的哈士奇，而类别信息保持不变。
 
@@ -46,7 +42,6 @@ generator_input = concatenate([noise_vector, one_hot_class])
 
 那么，如何确保生成器真的生成哈士奇，而不是任意品种的狗呢？这看起来像魔法。原因在于判别器也会接收同样的类别信息。
 
-![](img/288bdb2de17a3712098e16489830fae1_7.png)
 
 判别器以类似的方式接收样本，但现在样本会与类别信息配对，作为输入，以判断该样本是该特定类别的真实还是虚假表示。这是关键所在。
 
@@ -60,7 +55,6 @@ generator_input = concatenate([noise_vector, one_hot_class])
 
 ## 类别信息的表示方法
 
-![](img/288bdb2de17a3712098e16489830fae1_9.png)
 
 深入探讨一下，判别器的输入是图像。那么如何添加类别信息呢？
 
@@ -78,7 +72,6 @@ generator_input = concatenate([noise_vector, one_hot_class])
 
 ---
 
-![](img/288bdb2de17a3712098e16489830fae1_11.png)
 
 ## 总结
 

@@ -1,14 +1,11 @@
 # 课程P20：轮廓检测方法 🖼️
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_1.png)
 
 在本节课中，我们将要学习图像处理中的一个重要概念——轮廓检测。我们将了解轮廓与边缘的区别，并掌握使用OpenCV库进行轮廓检测的具体步骤和方法。
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_3.png)
 
 ## 轮廓与边缘的区别
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_5.png)
 
 上一节我们介绍了图像处理的基础，本节中我们来看看轮廓检测。首先需要明确轮廓与边缘的区别。
 
@@ -24,7 +21,6 @@ contours, hierarchy = cv2.findContours(image, mode, method)
 ```
 该函数返回两个值：检测到的轮廓列表 `contours` 和轮廓之间的层次结构 `hierarchy`。
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_7.png)
 
 以下是该函数三个主要参数的解释：
 
@@ -34,11 +30,9 @@ contours, hierarchy = cv2.findContours(image, mode, method)
 
 ### 轮廓检索模式 (mode)
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_9.png)
 
 对于 `mode` 参数，有多个可选值，但最常用的是 `cv2.RETR_TREE`。该模式会检测图像中所有的轮廓，并建立一个完整的层次结构（嵌套关系）来保存它们。这样，无论你需要最外层的轮廓还是所有内部轮廓，都可以方便地获取。
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_11.png)
 
 ### 轮廓逼近方法 (method)
 
@@ -49,43 +43,33 @@ contours, hierarchy = cv2.findContours(image, mode, method)
 
 ## 轮廓检测步骤
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_13.png)
 
 上一节我们介绍了检测函数，本节中我们来看看具体如何操作。轮廓检测不能直接应用于彩色或灰度图，需要遵循特定的预处理流程。
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_15.png)
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_17.png)
 
 以下是进行轮廓检测的标准步骤：
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_19.png)
 
 1.  **读取图像**：使用 `cv2.imread()` 函数加载原始图像。
 2.  **转换为灰度图**：使用 `cv2.cvtColor()` 函数将彩色图像转换为灰度图像，这是图像处理的常见第一步。
 3.  **图像二值化**：使用 `cv2.threshold()` 函数将灰度图转换为二值图像（只有黑色0和白色255）。这是轮廓检测的关键前提，因为 `cv2.findContours()` 函数只在二值图像上工作。
 4.  **执行轮廓检测**：在得到的二值图像上调用 `cv2.findContours()` 函数，获取轮廓信息。
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_21.png)
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_23.png)
 
 ### 步骤演示
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_25.png)
 
 我们以一张汽车图片为例进行说明。
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_27.png)
 
 *   **原始图像**：一张彩色的汽车图片。
 *   **灰度图像**：将彩色图转换为灰度图。
 *   **二值图像**：对灰度图应用阈值处理（例如，大于127的设为255白色，小于等于127的设为0黑色），得到黑白分明的二值图。
 *   **检测轮廓**：最后，将这张二值图输入到 `cv2.findContours()` 函数中，即可得到汽车的所有轮廓。
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_29.png)
 
-![](img/b416c67ef726d41be7bef92ea7db4ccb_31.png)
 
 ## 总结
 

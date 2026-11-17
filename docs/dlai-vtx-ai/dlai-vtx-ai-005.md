@@ -198,9 +198,7 @@ print(“Detected outlier indices:“, outliers)
 5.  在测试集上进行预测并计算准确率。
 
 
-![](img/1b2a72fa69ebbfce1d8a3163d8d8850a_4.png)
 
-![](img/1b2a72fa69ebbfce1d8a3163d8d8850a_5.png)
 
 ```python
 from sklearn.ensemble import RandomForestClassifier

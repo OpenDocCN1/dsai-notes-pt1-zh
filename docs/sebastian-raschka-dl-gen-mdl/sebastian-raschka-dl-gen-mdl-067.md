@@ -143,9 +143,7 @@ python train_model.py settings.yaml ./results
 
 即使在交互式环境中，也可以利用这种模块化结构来保持笔记本的简洁。
 
-![](img/8c65b67232366af54983a150245b345c_9.png)
 
-![](img/8c65b67232366af54983a150245b345c_11.png)
 
 
 ![](img/8c65b67232366af54983a150245b345c_13.png)

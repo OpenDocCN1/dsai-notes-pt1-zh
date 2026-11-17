@@ -459,7 +459,6 @@ LLM 代理在金融决策中的应用。目前已有大量研究致力于开发�
 
 我们的结果表明，在FinCon中实施CVaR在所有金融指标上对两种任务类型都非常有效，如表[4](https://arxiv.org/html/2407.06567v3#S4.T4 "表4 ‣ 4.3 消融研究 ‣ 4 实验 ‣ FinCon：一个结合概念性语言强化的合成LLM多智能体系统，用于增强金融决策")和图[6](https://arxiv.org/html/2407.06567v3#A1.F6 "图6 ‣ A.7.1 通过CVaR机制实现的剧集内风险控制的有效性 ‣ A.7 详细消融研究 ‣ 附录A 附录 ‣ FinCon：一个结合概念性语言强化的合成LLM多智能体系统，用于增强金融决策")所示。对于单一资产交易任务，未采用剧集内风险控制的FinCon产生了负的CR和显著更高的MDD，表现不如“买入并持有”策略（GOOG的CR为22.42%，NIO的CR为-77.210%），突显了忽视环境风险的严重后果。在投资组合管理中，采用剧集内风险控制后，CR从14.699%大幅上升至113.836%，展示了其在风险监督中的有效性，即使在市场趋势不均的情况下。
 
-![参见标题说明](img/0c628afe2ae26fe41a38f6937917de56.png)
 
 (a) [1] 单一股票：总体看涨
 
@@ -483,7 +482,6 @@ LLM 代理在金融决策中的应用。目前已有大量研究致力于开发�
 
 表格[5](https://arxiv.org/html/2407.06567v3#S4.T5 "Table 5 ‣ 4.3 Ablation Studies ‣ 4 Experiments ‣ FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement for Enhanced Financial Decision Making")和图[7](https://arxiv.org/html/2407.06567v3#A1.F7 "Figure 7 ‣ A.7.2 The Efficacy of Over-Episode Belief Updates Using CVRF ‣ A.7 Detailed Ablation Study ‣ Appendix A Appendix ‣ FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement for Enhanced Financial Decision Making")的结果表明，跨剧集信念更新机制在增强FinCon决策过程中比剧集内风险控制更为重要。如果没有这个功能，像CR、SR和MDD这样的关键指标会低于在单一资产交易中没有剧集内风险控制的情况。尽管$28.432\%$的CR优于等权重ETF策略的$9.344\%$（在组合管理方面），$1.181$的SR也高于等权重ETF策略的$0.492$，但有了信念更新功能，性能显著进一步提高。它可以实现$113.836\%$的CR和$3.269$的SR。这些结果表明，使用CVRF在不同剧集之间更新投资信念可以有效地引导智能体的投资信念朝着更有利可图的方向发展。FinCon在多个任务中表现出色，经过四个训练剧集后即能显现出学习成果，远远少于传统RL算法交易智能体所需的剧集数。
 
-![参见标题](img/082c5d2f74aed1543099b481c53ef587.png)
 
 (a) [1] 单一股票：一般看涨
 

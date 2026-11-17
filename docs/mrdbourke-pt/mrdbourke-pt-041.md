@@ -14,13 +14,10 @@
 
 ## 编写测试循环
 
-![](img/1d8833e9c5df00cc735d9d283daa88c4_1.png)
 
 以下是编写测试循环的步骤。我们将逐步构建代码，并解释每个部分的作用。
 
-![](img/1d8833e9c5df00cc735d9d283daa88c4_3.png)
 
-![](img/1d8833e9c5df00cc735d9d283daa88c4_5.png)
 
 ### 1. 设置模型为评估模式
 
@@ -85,7 +82,6 @@ test_loss_values.append(test_loss.cpu().numpy())
 
 将以上步骤整合到我们的训练循环中，代码如下所示。我们训练模型200个epoch，并跟踪损失值。
 
-![](img/1d8833e9c5df00cc735d9d283daa88c4_10.png)
 
 ```python
 import torch
@@ -171,7 +167,6 @@ plt.show()
 
 ![](img/1d8833e9c5df00cc735d9d283daa88c4_18.png)
 
-![](img/1d8833e9c5df00cc735d9d283daa88c4_19.png)
 
 让我们用彩色幻灯片的形式回顾一下测试循环的关键步骤：
 

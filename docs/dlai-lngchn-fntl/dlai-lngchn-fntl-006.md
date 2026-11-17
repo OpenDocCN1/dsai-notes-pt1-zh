@@ -1,14 +1,11 @@
 # 006：函数工具与智能体 🛠️🤖
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_0.png)
 
 ## 概述
 
 在本节课中，我们将学习LangChain中一个重要的应用场景：工具的使用。我们将首先介绍LangChain中“工具”的概念，然后详细讲解如何使用OpenAI函数来选择并执行合适的工具。通过本课的学习，你将能够创建自定义工具，并让语言模型智能地决定何时以及如何使用它们。
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_2.png)
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_3.png)
 
 ---
 
@@ -94,7 +91,6 @@ print(result) # 输出：执行搜索：LangChain
 
 ---
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_5.png)
 
 ## 创建真实工具示例 🌡️📚
 
@@ -106,7 +102,6 @@ print(result) # 输出：执行搜索：LangChain
 
 以下是创建步骤：
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_7.png)
 
 1.  **定义输入模式**：使用Pydantic模型定义经纬度参数。
 2.  **定义函数**：使用`@tool`装饰器，并传入参数模式。
@@ -182,14 +177,10 @@ print(result) # 输出类似：当前温度是 22.9°C
 2.  使用`wikipedia` Python库进行搜索，获取页面列表。
 3.  获取前几个页面的详细信息并拼接摘要返回。
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_13.png)
 
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_14.png)
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_15.png)
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_16.png)
 
 ```python
 import wikipedia
@@ -289,7 +280,6 @@ for fn in openai_fns:
 
 ## 让语言模型选择工具 🧠➡️🛠️
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_18.png)
 
 现在，我们将展示如何使用语言模型来决定调用这些函数中的哪一个。
 
@@ -326,7 +316,6 @@ print(response.additional_kwargs) # 可能会显示它决定调用 showPetById �
 
 首先，我们为两个工具创建OpenAI函数规范列表，并绑定到模型：
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_20.png)
 
 ```python
 # 获取两个真实工具的OpenAI函数定义
@@ -376,7 +365,6 @@ chain = prompt | model_with_tools
 1.  **决定调用工具时**：我们感兴趣的是它决定调用的工具以及该工具的输入（最好不是JSON字符串，而是解析好的字典）。
 2.  **不决定调用工具时**：我们感兴趣的是`content`字段的值。
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_22.png)
 
 我们可以使用一个新的输出解析器来实现这一点：`OpenAIFunctionsAgentOutputParser`。
 
@@ -465,10 +453,8 @@ full_chain = prompt | model_with_tools | OpenAIFunctionsAgentOutputParser() | ro
 
 让我们在几个例子上测试这个完整的链：
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_24.png)
 
 
-![](img/bd93b405d9fe77708626d3f42d90cbf8_26.png)
 
 ```python
 # 示例1：询问天气

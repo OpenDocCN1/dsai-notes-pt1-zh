@@ -48,7 +48,6 @@ poetry run langchain serve
 
 服务启动后，可以在浏览器中访问 `http://localhost:8000/retrieval-agent-fireworks/playground` 进入 Playground 界面。
 
-![](img/9d12d1216ef1d202a58cbe891bbd4c75_1.png)
 
 ## 测试与观察
 
@@ -56,11 +55,9 @@ poetry run langchain serve
 
 在 Playground 提问后，我们可以同时在 LangSmith 中观察 Agent 的思考过程、工具调用和返回结果。初始的 Archive 检索工具可能无法返回最理想的答案，但这没关系，我们的目标是将其替换为自己的文档检索工具。
 
-![](img/9d12d1216ef1d202a58cbe891bbd4c75_3.png)
 
 ## 构建自定义文档检索工具
 
-![](img/9d12d1216ef1d202a58cbe891bbd4c75_4.png)
 
 上一节我们测试了初始模板，本节中我们将动手修改它，用我们自己的文档向量库替换掉 Archive 检索工具。
 
@@ -118,15 +115,12 @@ vector_store.persist()
 
 在模板的链定义文件（例如 `retrieval_agent_fireworks/chain.py`）中，我们需要进行修改。以下是关键步骤：
 
-![](img/9d12d1216ef1d202a58cbe891bbd4c75_8.png)
 
 
-![](img/9d12d1216ef1d202a58cbe891bbd4c75_10.png)
 
 
 ![](img/9d12d1216ef1d202a58cbe891bbd4c75_12.png)
 
-![](img/9d12d1216ef1d202a58cbe891bbd4c75_14.png)
 
 
 ![](img/9d12d1216ef1d202a58cbe891bbd4c75_16.png)

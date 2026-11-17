@@ -1,8 +1,6 @@
 # 人工智能—计算机视觉CV公开课（七月在线出品） - P18：基于Pytorch实战：手部姿势识别 🖐️
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_1.png)
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_3.png)
 
 在本节课中，我们将要学习如何利用深度学习模型进行手部姿势识别。课程将首先介绍一个高效的网络结构——EfficientNet，并探讨其背后的AutoML（自动机器学习）思想。随后，我们将通过一个实际的手势分类案例，演示如何使用PyTorch框架和EfficientNet模型来构建和训练一个手部姿态识别系统。
 
@@ -92,15 +90,11 @@ NAS的核心包含三个部分：
 `s.t. α · β² · γ² ≈ 2`
 `α ≥ 1, β ≥ 1, γ ≥ 1`
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_5.png)
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_7.png)
 
 其中，`α, β, γ`是通过网格搜索确定的基础放大系数。约束条件 `α · β² · γ² ≈ 2` 是为了确保FLOPS大约增加 `2^φ` 倍。
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_9.png)
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_11.png)
 
 EfficientNet的设计流程分为两步：
 1.  **固定`φ=1`**，通过网格搜索确定最优的`α, β, γ`，得到基础网络 **EfficientNet-B0**。
@@ -112,9 +106,7 @@ EfficientNet的设计流程分为两步：
 
 ![](img/fa1689b7c52f7bde49c00168de5e4814_13.png)
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_15.png)
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_17.png)
 
 上一节我们学习了EfficientNet的原理，本节中我们来看看如何将其应用于实际任务——手势识别。
 
@@ -122,15 +114,11 @@ EfficientNet的设计流程分为两步：
 
 我们将使用一个包含10类手势（如数字1-5、不同拇指朝向等）的数据集。任务目标是对输入的手部图片进行分类。
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_21.png)
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_23.png)
 
 以下是实现步骤的核心代码概述：
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_25.png)
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_27.png)
 
 **1. 导入库与定义模型**
 ```python
@@ -141,7 +129,6 @@ model = models.efficientnet_b0(pretrained=True)
 model.classifier[1] = torch.nn.Linear(model.classifier[1].in_features, 10) # 10个手势类别
 ```
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_29.png)
 
 **2. 加载与预处理数据**
 ```python
@@ -157,13 +144,9 @@ train_dataset = datasets.ImageFolder('path/to/train_data', transform=data_transf
 train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=32, shuffle=True)
 ```
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_31.png)
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_33.png)
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_35.png)
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_37.png)
 
 **3. 定义损失函数与优化器**
 ```python
@@ -171,9 +154,7 @@ criterion = torch.nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 ```
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_39.png)
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_41.png)
 
 **4. 训练模型**
 ```python
@@ -201,9 +182,7 @@ for epoch in range(num_epochs):
 
 ## 总结 🎯
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_49.png)
 
-![](img/fa1689b7c52f7bde49c00168de5e4814_51.png)
 
 本节课中我们一起学习了以下内容：
 1.  **AutoML的核心思想**：让机器自动完成特征工程、模型选择和超参数优化等流程，其中网络结构搜索是一个重要方向。

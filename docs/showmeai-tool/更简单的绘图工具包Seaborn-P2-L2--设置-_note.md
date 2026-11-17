@@ -10,17 +10,14 @@ Seaborn是一个基于Matplotlib的Python数据可视化库，它提供了更高
 
 在开始使用Seaborn之前，需要确保它已安装在你的环境中。你可以通过以下两种方式之一进行安装。
 
-![](img/1f5782138b1dd6d829937e1517a2eda6_1.png)
 
 以下是安装命令：
 *   **使用pip安装**：`pip install seaborn`
 *   **使用conda安装**：`conda install seaborn`
 
-![](img/1f5782138b1dd6d829937e1517a2eda6_2.png)
 
 ## 导入必要的库
 
-![](img/1f5782138b1dd6d829937e1517a2eda6_3.png)
 
 设置好环境后，我们需要在Python脚本或Jupyter Notebook中导入Seaborn及其常用的辅助库。
 
@@ -36,11 +33,9 @@ import seaborn as sns
 
 为了在Jupyter Notebook中直接显示图形，并启用一些便利功能，可以进行额外的配置。
 
-![](img/1f5782138b1dd6d829937e1517a2eda6_5.png)
 
 以下是可选的配置命令：
 
-![](img/1f5782138b1dd6d829937e1517a2eda6_6.png)
 
 ```python
 # 使Matplotlib图形内嵌显示在Notebook中
@@ -50,17 +45,14 @@ import seaborn as sns
 %autoreload 2
 ```
 
-![](img/1f5782138b1dd6d829937e1517a2eda6_7.png)
 
 > **注意**：这些配置步骤（特别是自动重载）不是强制性的，但能提升在Jupyter Notebook中的开发体验。
 
-![](img/1f5782138b1dd6d829937e1517a2eda6_8.png)
 
 ## 执行设置
 
 完成上述代码编写后，在Jupyter Notebook中运行该单元格（例如按`Ctrl+Enter`），即可加载所有库并应用设置，为后续的Seaborn绘图做好准备。
 
-![](img/1f5782138b1dd6d829937e1517a2eda6_10.png)
 
 ## 总结
 

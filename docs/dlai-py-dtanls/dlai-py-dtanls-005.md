@@ -1,6 +1,5 @@
 # 005：Jupyter Notebook环境导航 🧭
 
-![](img/c725580c2bddc30d04321d5adda57321_0.png)
 
 在本节课中，我们将学习Jupyter Notebook界面的基本操作。Jupyter Notebook是数据分析师日常使用的行业标准工具，我们将了解其核心组成部分和基本功能。
 

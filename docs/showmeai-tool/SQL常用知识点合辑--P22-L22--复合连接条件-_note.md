@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P22：L22- 复合连接条件 🔗
 
-![](img/53c7c09d8eb1f22d1330df77256a9f36_0.png)
 
 ![](img/53c7c09d8eb1f22d1330df77256a9f36_0.png)
 
@@ -46,7 +45,6 @@
 
 所以订单项的产品ID应该等于订单项备注的产品ID。这就是我们所说的**复合连接条件**，因此我们有多个条件来连接这两个表。
 
-![](img/53c7c09d8eb1f22d1330df77256a9f36_2.png)
 
 ## 示例SQL代码
 
@@ -62,7 +60,6 @@ JOIN order_item_notes oin
 
 ![](img/53c7c09d8eb1f22d1330df77256a9f36_2.png)
 
-![](img/53c7c09d8eb1f22d1330df77256a9f36_4.png)
 
 ![](img/53c7c09d8eb1f22d1330df77256a9f36_4.png)
 

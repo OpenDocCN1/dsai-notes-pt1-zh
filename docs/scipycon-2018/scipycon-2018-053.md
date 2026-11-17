@@ -2,7 +2,6 @@
 
 ![](img/ecde0cdfe0f093f376127969b7b1e2d1_1.png)
 
-![](img/ecde0cdfe0f093f376127969b7b1e2d1_3.png)
 
 ## 概述
 
@@ -25,7 +24,6 @@
 4.  输入命令 `jupyter notebook` 来启动Jupyter。
 5.  在打开的浏览器页面中，你应该能看到课程文件，例如 `colors.ipynb`。
 
-![](img/ecde0cdfe0f093f376127969b7b1e2d1_9.png)
 
 上一节我们介绍了如何获取课程材料，本节中我们来看看Jupyter Notebook的基本操作。
 
@@ -148,20 +146,17 @@ grid.show()
 
 ## 4. range函数与嵌套循环 🔢
 
-![](img/ecde0cdfe0f093f376127969b7b1e2d1_11.png)
 
 有时我们不想遍历所有块，而是想按行号或列号来操作。这时可以使用 `range()` 函数。
 
 ### range() 函数
 
-![](img/ecde0cdfe0f093f376127969b7b1e2d1_13.png)
 
 `range()` 生成一个整数序列。
 *   `range(5)` 生成 `0, 1, 2, 3, 4`。
 *   `range(2, 5)` 生成 `2, 3, 4`。
 *   `range(0, 10, 2)` 生成 `0, 2, 4, 6, 8` (第三个参数是步长)。
 
-![](img/ecde0cdfe0f093f376127969b7b1e2d1_15.png)
 
 ```python
 # 只改变第5行的所有列
@@ -197,7 +192,6 @@ grid.show()
 
 ---
 
-![](img/ecde0cdfe0f093f376127969b7b1e2d1_17.png)
 
 ![](img/ecde0cdfe0f093f376127969b7b1e2d1_19.png)
 

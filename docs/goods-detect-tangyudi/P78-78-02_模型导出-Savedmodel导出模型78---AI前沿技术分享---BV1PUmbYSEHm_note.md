@@ -1,10 +1,8 @@
 # 课程 P78：模型导出：SavedModel 导出模型 🚀
 
-![](img/f203abe5be8235bbbc464600d2433da2_1.png)
 
 在本节课中，我们将学习如何使用 TensorFlow 的 `SavedModelBuilder` 将训练好的模型导出为 SavedModel 格式。这种格式是用于部署和提供服务的标准格式。
 
-![](img/f203abe5be8235bbbc464600d2433da2_3.png)
 
 ## 概述
 
@@ -108,11 +106,9 @@ builder = tf.saved_model.builder.SavedModelBuilder(export_path)
 
 ### 第四步：保存模型
 
-![](img/f203abe5be8235bbbc464600d2433da2_25.png)
 
 最后，调用构建器的 `save` 方法，并传入当前的 TensorFlow 会话（Session）以及定义好的签名映射，将模型保存到指定路径。
 
-![](img/f203abe5be8235bbbc464600d2433da2_27.png)
 
 ![](img/f203abe5be8235bbbc464600d2433da2_29.png)
 

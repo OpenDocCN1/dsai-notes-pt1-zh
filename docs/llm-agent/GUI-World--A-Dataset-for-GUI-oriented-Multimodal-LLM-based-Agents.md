@@ -604,7 +604,6 @@ GPT-4V ([图 7](https://arxiv.org/html/2406.10819v1#S4.F7 "图 7 ‣ 商业图�
 
 在本节中，我们提供了每个GUI场景中QA长度分布的分析，如[图13](https://arxiv.org/html/2406.10819v1#A2.F13 "图13 ‣ 附录B 数据集分析 ‣ 第一部分附录 ‣ GUI-World：一个面向GUI的多模态LLM基础的代理数据集")和[图14](https://arxiv.org/html/2406.10819v1#A2.F14 "图14 ‣ 附录B 数据集分析 ‣ 第一部分附录 ‣ GUI-World：一个面向GUI的多模态LLM基础的代理数据集")所示。关注顺序性和预测性任务的问题比其他类型的问题稍长，而静态任务的黄金答案通常更长。各种GUI场景中的问答对长度分布相似，Android环境中的问题稍短，而XR环境中的答案则稍长。
 
-![请参阅标题](img/5b44a99ac3353b78f1c342565778ec48.png)
 
 图13：自由形式问题的长度分布。
 
@@ -1230,7 +1229,6 @@ GPT-4V ([图 7](https://arxiv.org/html/2406.10819v1#S4.F7 "图 7 ‣ 商业图�
 
 在本节中，我们提供了六种GUI场景的详细案例研究，每个场景分为两部分。[图26](https://arxiv.org/html/2406.10819v1#A6.F26 "Figure 26 ‣ Appendix F Case Study ‣ Part I Appendix ‣ GUI-World: A Dataset for GUI-oriented Multimodal LLM-based Agents")和[图27](https://arxiv.org/html/2406.10819v1#A6.F27 "Figure 27 ‣ Appendix F Case Study ‣ Part I Appendix ‣ GUI-World: A Dataset for GUI-oriented Multimodal LLM-based Agents")展示了示例框架及与之相关的各种任务。[图28](https://arxiv.org/html/2406.10819v1#A6.F28 "Figure 28 ‣ Appendix F Case Study ‣ Part I Appendix ‣ GUI-World: A Dataset for GUI-oriented Multimodal LLM-based Agents")和[图29](https://arxiv.org/html/2406.10819v1#A6.F29 "Figure 29 ‣ Appendix F Case Study ‣ Part I Appendix ‣ GUI-World: A Dataset for GUI-oriented Multimodal LLM-based Agents")适用于iOS，[图30](https://arxiv.org/html/2406.10819v1#A6.F30 "Figure 30 ‣ Appendix F Case Study ‣ Part I Appendix ‣ GUI-World: A Dataset for GUI-oriented Multimodal LLM-based Agents")和[图31](https://arxiv.org/html/2406.10819v1#A6.F31 "Figure 31 ‣ Appendix F Case Study ‣ Part I Appendix ‣ GUI-World: A Dataset for GUI-oriented Multimodal LLM-based Agents")适用于多窗口交互，[图34](https://arxiv.org/html/2406.10819v1#A6.F34 "Figure 34 ‣ Appendix F Case Study ‣ Part I Appendix ‣ GUI-World: A Dataset for GUI-oriented Multimodal LLM-based Agents")和[图35](https://arxiv.org/html/2406.10819v1#A6.F35 "Figure 35 ‣ Appendix F Case Study ‣ Part I Appendix ‣ GUI-World: A Dataset for GUI-oriented Multimodal LLM-based Agents")适用于网站，[图36](https://arxiv.org/html/2406.10819v1#A6.F36 "Figure 36 ‣ Appendix F Case Study ‣ Part I Appendix ‣ GUI-World: A Dataset for GUI-oriented Multimodal LLM-based Agents")和[图37](https://arxiv.org/html/2406.10819v1#A6.F37 "Figure 37 ‣ Appendix F Case Study ‣ Part I Appendix ‣ GUI-World: A Dataset for GUI-oriented Multimodal LLM-based Agents")适用于XR。
 
-<svg class="ltx_picture ltx_centering" height="718.55" id="A6.F26.pic1" overflow="visible" version="1.1" width="603.54"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,718.55) matrix(1 0 0 -1 0 0) translate(0,3.54)"><g transform="matrix(1.0 0.0 0.0 1.0 237 690.93)"><g class="ltx_nestedsvg" fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="matrix(1 0 0 1 0 0)"><g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 9.06 8.58)"><foreignobject color="#000000" height="13.84" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="103.66">(Part 1) Android</foreignobject></g></g></g> <g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 18.47 18.47)"><foreignobject color="#000000" height="661.87" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="563.07">![参见说明](img/98b08f2fde25252ef811218934af50e8.png) ‘描述1’: "视频开始时显示一个移动应用界面的视图，具体来说是一个包含《苏拉》列表的印尼《古兰经》应用。用户在《苏拉》列表中滚动，选择一个特定的《苏拉》，然后视图转换为显示阿拉伯语经文及其印尼语翻译的页面。用户随后返回《苏拉》列表。接下来，弹出窗口显示正在进行的配置过程，大约需要 10-20 秒。配置完成后，另一弹出窗口通知有来自 Google Play 商店的可用更新，用户可以接受或推迟更新。用户关闭该弹出窗口。主菜单显示，提供如‘Baca Quran’、‘Terakhir Baca’、‘Pencarian’、‘Jadwal Sholat’和‘Pengaturan’等选项。用户选择‘Pencarian’选项，进入搜索页面。在此，用户被要求输入关键词以在翻译数据库中进行搜索。最后，用户导航回主菜单，然后再次进入《苏拉》列表。"
 
 ‘顺序问答’: ‘问题’: ’从列表中选择特定的《苏拉》后，用户在弹出通知出现之前需要做什么？’
 
@@ -1272,7 +1270,6 @@ GPT-4V ([图 7](https://arxiv.org/html/2406.10819v1#S4.F7 "图 7 ‣ 商业图�
 
 图27：安卓案例研究（第2部分）。
 
-<svg class="ltx_picture ltx_centering" height="677.23" id="A6.F28.pic1" overflow="visible" version="1.1" width="603.54"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,677.23) matrix(1 0 0 -1 0 0) translate(0,3.54)"><g transform="matrix(1.0 0.0 0.0 1.0 250.09 649.61)"><g class="ltx_nestedsvg" fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="matrix(1 0 0 1 0 0)"><g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 9.06 8.58)"><foreignobject color="#000000" height="13.84" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="77.49">(第1部分) IOS</foreignobject></g></g></g> <g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 18.47 18.47)"><foreignobject color="#000000" height="620.55" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="563.07">![参见标题](img/74f87002f2adb240f4f61bb62ebd336c.png) ‘描述1’："该视频展示了用户在可汗学院移动应用程序中浏览‘计算’类别的过程。最初，用户滚动浏览‘计算机与互联网’部分，查看诸如‘数字信息’、‘位与字节’、‘互联网’和‘在线数据安全’等主题。然后，用户继续向下滚动，揭示了‘计算创新’部分和‘参加课程挑战’按钮。接着，用户返回到上一屏，显示了其他计算机课程章节，如‘AP®/大学计算机科学原理’和‘计算机科学理论’。用户点击进入‘计算机科学理论’界面，内容正在加载。加载完成后，显示了诸如‘密码学’和‘信息理论’等主题，用户返回到上一页并点击‘Code.org’。"
 
 ‘标题’："在可汗学院的移动应用程序中浏览计算机课程，查看各个章节，并尝试进入‘计算机科学理论’。"
 
@@ -1312,7 +1309,6 @@ GPT-4V ([图 7](https://arxiv.org/html/2406.10819v1#S4.F7 "图 7 ‣ 商业图�
 
 图 29: IOS 案例研究（第二部分）。
 
-<svg class="ltx_picture ltx_centering" height="557.76" id="A6.F30.pic1" overflow="visible" version="1.1" width="603.54"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,557.76) matrix(1 0 0 -1 0 0) translate(0,3.54)"><g transform="matrix(1.0 0.0 0.0 1.0 170.85 530.15)"><g class="ltx_nestedsvg" fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="matrix(1 0 0 1 0 0)"><g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 9.06 8.58)"><foreignobject color="#000000" height="13.84" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="235.96">(第一部分) 多窗口交互</foreignobject></g></g></g> <g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 18.47 18.47)"><foreignobject color="#000000" height="501.09" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="563.07">![参见说明文字](img/6aa896d4e058097701c47ffbf2d3c24e.png) ‘描述1’：“视频开始时，Windows桌面上显示多个打开的应用程序，包括Steam、OBS Studio和一个加载了NVIDIA官方网站的网页浏览器。用户首先点击浏览器的后退页面，这部分遮挡了OBS窗口。接着，用户点击OBS应用程序，将其带到前台。用户最小化OBS，然后将Steam窗口拖到屏幕中央并最小化。用户在Edge浏览器的导航栏打开一个新网页，并在搜索栏中输入’office’。浏览器导航至Bing搜索界面，成功搜索到’office’。”
 
 ‘说明文字’：’在Windows中导航和管理多个应用程序，包括Steam、OBS Studio和Edge浏览器’
 
@@ -1354,7 +1350,6 @@ GPT-4V ([图 7](https://arxiv.org/html/2406.10819v1#S4.F7 "图 7 ‣ 商业图�
 
 图 31：多窗口交互案例研究（第二部分）。
 
-<svg class="ltx_picture ltx_centering" height="529.74" id="A6.F32.pic1" overflow="visible" version="1.1" width="603.54"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,529.74) matrix(1 0 0 -1 0 0) translate(0,3.54)"><g transform="matrix(1.0 0.0 0.0 1.0 235.85 502.12)"><g class="ltx_nestedsvg" fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="matrix(1 0 0 1 0 0)"><g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 9.06 8.58)"><foreignobject color="#000000" height="13.84" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="105.97">(第一部分) 软件</foreignobject></g></g></g> <g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 18.47 18.47)"><foreignobject color="#000000" height="473.07" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="563.07">![参见标题](img/17ae9960564777bd28990b0c69770e54.png) ‘描述1’: "视频展示了在 Windows 系统上运行的 Python 3.7.4 Shell 窗口。用户首先输入 ’print’ 函数，并跟上了一对括号。括号内，用户输入一个字符串，’Hello World’，并用双引号括起来。按下 Enter 键后，Python Shell 执行了命令，并在命令行下方输出文本 ’Hello World’，表示代码成功运行且没有错误。"
 
 ‘标题’: "在 Python Shell 中执行 print 命令以显示 ’Hello World’"
 
@@ -1394,7 +1389,6 @@ GPT-4V ([图 7](https://arxiv.org/html/2406.10819v1#S4.F7 "图 7 ‣ 商业图�
 
 图 33: 软件案例研究（第 2 部分）。
 
-<svg class="ltx_picture ltx_centering" height="729.99" id="A6.F34.pic1" overflow="visible" version="1.1" width="603.54"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,729.99) matrix(1 0 0 -1 0 0) translate(0,3.54)"><g transform="matrix(1.0 0.0 0.0 1.0 237.94 702.38)"><g class="ltx_nestedsvg" fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="matrix(1 0 0 1 0 0)"><g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 9.06 8.58)"><foreignobject color="#000000" height="13.84" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="102.93">(第 1 部分) 网站</foreignobject></g></g></g> <g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 18.47 18.47)"><foreignobject color="#000000" height="673.32" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="563.07">![参考说明](img/7bb7d0668eaf5e1211c85bf9de50dcdd.png) ’描述1’: "视频开始时，Windows 系统浏览器上显示了 Google 搜索结果页面，展示了查询 ’燕麦粥是健康的早餐吗’。鼠标光标向下滚动页面，显示了额外的搜索结果，以及包含相关问题的 ’People also ask’ 部分。接着，用户将页面向上滚动回到顶部。随后，光标移动到搜索栏，并点击 ’X’ 按钮清除之前的搜索内容，留下一个空的搜索框。浏览器的建议搜索下拉菜单显示了各种相关搜索查询。最后，视频渐变为黑色，表示该部分结束。"
 
 ‘说明’: ’在 Windows 系统浏览器中导航 Google 搜索结果并清除搜索查询’
 
@@ -1436,7 +1430,6 @@ GPT-4V ([图 7](https://arxiv.org/html/2406.10819v1#S4.F7 "图 7 ‣ 商业图�
 
 图 35：网站案例研究（第2部分）。
 
-<svg class="ltx_picture ltx_centering" height="630.37" id="A6.F36.pic1" overflow="visible" version="1.1" width="603.54"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,630.37) matrix(1 0 0 -1 0 0) translate(0,3.54)"><g transform="matrix(1.0 0.0 0.0 1.0 251.53 602.75)"><g class="ltx_nestedsvg" fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="matrix(1 0 0 1 0 0)"><g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 9.06 8.58)"><foreignobject color="#000000" height="13.84" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="74.22">(第1部分) XR</foreignobject></g></g></g> <g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 18.47 18.47)"><foreignobject color="#000000" height="573.69" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="563.07">![参考说明](img/2a807d7546d982538af30f25baa9ad47.png) ‘描述1’：“视频展示了用户在 Windows 系统上通过 Apple Vision Pro 浏览器浏览多个页面。最初，浏览器显示带有收藏夹和阅读列表的起始页。用户随后转动头部向右，这触发了页面过渡，显示右侧的网页。接下来，用户用双手捏合退出页面，然后用双手和双手指向中间的动作扩展浏览器的多个页面。这时可以看到多个浏览器标签并排显示。用户继续左右转动头部查看每侧的不同页面。最后，用户选择并扩展一个特定的标签，使其填满屏幕，显示其中的内容。”</foreignobject></g></g></svg>
 
 ‘说明’: ’通过头部移动和手势在 Windows 系统上使用 Apple Vision Pro 浏览器浏览多个页面’
 

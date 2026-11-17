@@ -54,7 +54,6 @@ And then once the code is running， you can address the following questions。
 
 
 
-![](img/53d8b79ea2b963663d822ae1be01400a_1.png)
 
 So with that， I'd like to walk through the code that we have here。
 
@@ -80,7 +79,6 @@ So if you'd like to do a different pattern， you can just uncomment any one of 
 
 
 
-![](img/53d8b79ea2b963663d822ae1be01400a_3.png)
 
 Each one should work fine and you can look through each one of them。
 
@@ -88,7 +86,6 @@ Each one should work fine and you can look through each one of them。
 
 
 
-![](img/53d8b79ea2b963663d822ae1be01400a_5.png)
 
 But if you think about the diamond pattern that we are outputting， we have。
 
@@ -116,7 +113,6 @@ So we're saying what the actual shape is。Of our x matrix， as well as our out
 
  which should just be one dimension。
 
-![](img/53d8b79ea2b963663d822ae1be01400a_7.png)
 
 XMap full should be 500 by3 since we're including the bias term。
 
@@ -130,11 +126,9 @@ Where are y value that we defined up here？Is equal to one？And we will mark t
 
 
 
-![](img/53d8b79ea2b963663d822ae1be01400a_9.png)
 
 So you run this。And you can see our diamond here。
 
-![](img/53d8b79ea2b963663d822ae1be01400a_11.png)
 
 And you see as those values stay less than one。 So this is essentially。
 
@@ -148,7 +142,6 @@ And you see as those values stay less than one。 So this is essentially。
 
 
 
-![](img/53d8b79ea2b963663d822ae1be01400a_13.png)
 
 So we want to come up with this classification method using what we learned in regards to our neural networks。
 
@@ -160,6 +153,5 @@ So we want to come up with this classification method using what we learned in r
 
 All right， I'll see you there。
 
-![](img/53d8b79ea2b963663d822ae1be01400a_15.png)
 
 ![](img/53d8b79ea2b963663d822ae1be01400a_16.png)

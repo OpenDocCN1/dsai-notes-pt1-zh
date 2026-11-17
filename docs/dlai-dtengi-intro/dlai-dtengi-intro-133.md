@@ -1,6 +1,5 @@
 #  133：使用Airflow创建DAG 🛠️
 
-![](img/6cdb079a437cbd64bfeeb0ac76a73e35_0.png)
 
 在本节课中，我们将学习如何使用Airflow的核心概念，如DAG和操作器类，来构建一个简单的有向无环图。我们将通过一个ETL过程的例子，详细说明创建DAG的每个步骤。
 
@@ -116,7 +115,6 @@ extract_task >> transform_task >> load_task
 
 本节课中我们一起学习了如何使用Airflow构建一个简单的DAG。我们涵盖了以下步骤：
 
-![](img/6cdb079a437cbd64bfeeb0ac76a73e35_8.png)
 
 ![](img/6cdb079a437cbd64bfeeb0ac76a73e35_9.png)
 

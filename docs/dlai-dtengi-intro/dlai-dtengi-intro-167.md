@@ -1,6 +1,5 @@
 #  167：使用AWS Lake Formation和Apache Iceberg构建数据湖仓 🏗️💾
 
-![](img/ba249cff4ff6193a00391a3128278aa0_0.png)
 
 在本节课中，我们将学习如何利用AWS服务（如S3、Lake Formation）和开源格式（如Apache Iceberg）来构建一个具有“奖牌”架构的数据湖仓。我们将从原始数据摄取开始，经过处理和转换，最终创建可供分析和机器学习使用的数据表。
 

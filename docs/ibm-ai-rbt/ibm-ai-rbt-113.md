@@ -6,7 +6,6 @@
 
 ## 创建Facebook页面与应用
 
-![](img/465c4b3d1ffd333ddf980c3e87149c5c_1.png)
 
 上一节我们介绍了课程目标，本节中我们来看看部署的第一步：创建必要的Facebook资源。
 
@@ -14,7 +13,6 @@
 
 接下来，你需要创建一个Facebook公共主页，用于承载我们的Watson Assistant聊天机器人。
 
-![](img/465c4b3d1ffd333ddf980c3e87149c5c_3.png)
 
 现在，你已创建了Facebook公共主页，接下来需要创建一个Facebook应用，以便与我们的Watson Assistant聊天机器人进行集成。
 
@@ -56,13 +54,11 @@
 
 然后，记下生成的**验证令牌**。我们需要用它来正确配置我们的Messenger。
 
-![](img/465c4b3d1ffd333ddf980c3e87149c5c_8.png)
 
 我们还需要生成一个**回调URL**并记下它。这个URL同样是我们Facebook应用所需要的。
 
 ---
 
-![](img/465c4b3d1ffd333ddf980c3e87149c5c_10.png)
 
 ## 在Facebook应用中完成配置
 
@@ -74,7 +70,6 @@
 
 我们还需要选择要监控此类事件的公共主页。
 
-![](img/465c4b3d1ffd333ddf980c3e87149c5c_12.png)
 
 至此，我们的Watson Assistant聊天机器人就已与Facebook Messenger集成完毕。
 

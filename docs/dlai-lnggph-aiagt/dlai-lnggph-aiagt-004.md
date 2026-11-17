@@ -1,6 +1,5 @@
 # 004：4.智能体搜索
 
-![](img/e93b9f3eeb18cf9e8cce765b5b970e45_0.png)
 
 ![](img/e93b9f3eeb18cf9e8cce765b5b970e45_0.png)
 

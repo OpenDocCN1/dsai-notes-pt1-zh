@@ -10,7 +10,6 @@
 
 上一节我们介绍了课程目标，本节中我们来看看如何从零开始手动实现线性回归的各个步骤。我们将使用 NumPy 来完成所有计算。
 
-![](img/49d809dfcdcd868a09e2ad42202f36fc_1.png)
 
 首先，我们定义问题。假设真实的函数关系是 `y = 2 * x`。我们的目标是让模型学习出权重 `w = 2`。
 
@@ -46,7 +45,6 @@ def loss(y_pred, y):
 
 以下是该公式的实现：
 
-![](img/49d809dfcdcd868a09e2ad42202f36fc_3.png)
 
 ```python
 def gradient(x, y, y_pred):
@@ -54,7 +52,6 @@ def gradient(x, y, y_pred):
     return (2 * np.dot(x, (y_pred - y))) / x.size
 ```
 
-![](img/49d809dfcdcd868a09e2ad42202f36fc_5.png)
 
 有了梯度，我们就可以使用梯度下降算法来更新权重。更新公式为：
 `w = w - learning_rate * dL/dw`

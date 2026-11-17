@@ -1,10 +1,8 @@
 # 031：标准化处理方法 📊
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_1.png)
 
 在本节课中，我们将要学习数据预处理中一个非常重要的步骤——标准化。标准化能够调整数据，使其在不同维度上具有可比性，是许多机器学习和数据分析任务的基础。
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_3.png)
 
 ## 标准化的目的与原理
 
@@ -41,7 +39,6 @@
 
 简单来说，标准化后，数据会满足：均值为0，标准差为1。
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_5.png)
 
 ## 标准化的代码实现
 
@@ -66,25 +63,20 @@ def standardize(data_series):
     return standardized_data
 ```
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_7.png)
 
 代码说明：
 *   `data_series.mean()` 计算均值 `μ`。
 *   `data_series.std()` 计算标准差 `σ`。
 *   `(data_series - mean_val) / std_val` 对应标准化的数学公式。
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_9.png)
 
 ## 使用现成工具库
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_11.png)
 
 在实际项目中，我们通常使用成熟的机器学习库来完成标准化，这样更高效、更稳定。以下是使用 `scikit-learn` 库的实现方法：
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_13.png)
 
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_15.png)
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -101,11 +93,9 @@ standardized_df = pd.DataFrame(standardized_df, columns=df.columns)
 
 ## 效果演示
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_17.png)
 
 让我们通过一个简单的例子观察标准化的效果。假设原始数据如下（取值范围差异很大）：
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_19.png)
 
 | 特征A | 特征B |
 | :---- | :---- |
@@ -113,11 +103,9 @@ standardized_df = pd.DataFrame(standardized_df, columns=df.columns)
 | 20    | 150   |
 | 100   | 50    |
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_21.png)
 
 使用我们的 `standardize` 函数或 `StandardScaler` 处理后，数据可能变为：
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_23.png)
 
 | 特征A       | 特征B       |
 | :---------- | :---------- |
@@ -125,11 +113,9 @@ standardized_df = pd.DataFrame(standardized_df, columns=df.columns)
 | -0.63       | 0.36        |
 | 0.90        | -1.45       |
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_25.png)
 
 可以看到，处理后的数据，每个特征（列）的数值都被调整到一个相对较小的、以零为中心的范围内，不同特征之间的尺度变得可比。
 
-![](img/f653e40ba7ee8bdf29df8cf9a53f6886_27.png)
 
 ## 总结
 

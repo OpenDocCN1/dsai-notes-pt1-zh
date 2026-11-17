@@ -4,11 +4,9 @@
 
 上一节我们介绍了如何按单个特征（如子女数量）对数据进行分组。本节中，我们来看看如何同时基于两个类别特征进行分群，例如，分析每周学习编码的时间是否同时受“子女数量”和“当前是否为软件开发人员”这两个因素的影响。
 
-![](img/15fd1847f77fb905ee0c4d119bbf871c_1.png)
 
 ## 使用数据透视表进行分群
 
-![](img/15fd1847f77fb905ee0c4d119bbf871c_2.png)
 
 如果你想基于两个类别特征对数据进行分群，数据透视表是最合适的工具。
 
@@ -28,7 +26,6 @@
 在Python的Pandas库中，我们可以通过`pivot_table`方法快速实现类似的功能，其逻辑与电子表格中的数据透视表非常相似。
 
 
-![](img/15fd1847f77fb905ee0c4d119bbf871c_4.png)
 
 ```python
 import pandas as pd
@@ -84,7 +81,6 @@ pivot_multi = df.pivot_table(
 
 本节课中我们一起学习了如何使用Pandas的`pivot_table`方法进行多特征分群分析。
 
-![](img/15fd1847f77fb905ee0c4d119bbf871c_6.png)
 
 *   **核心方法**：`df.pivot_table(index, columns, values, aggfunc)`
 *   **应用场景**：当你需要基于两个或更多类别特征对数据进行分组和汇总时。

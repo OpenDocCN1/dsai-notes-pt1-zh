@@ -16,7 +16,6 @@ So we need a way of judging the converge results and rank them according to good
 
 
 
-![](img/1f0e48796c4aeda60088434067659b7a_1.png)
 
 Now， on top of that， another idea to ensure that we get to a better optimization of this Ka means algorithm is to initialize it in a smarter way。
 
@@ -30,7 +29,6 @@ So we can make an effort， therefore， to initialize with points that are far 
 
 
 
-![](img/1f0e48796c4aeda60088434067659b7a_3.png)
 
 And then for the second pick， instead of getting it randomly。
 
@@ -50,7 +48,6 @@ And then we'll repeat this process if we want three different clusters。
 
 
 
-![](img/1f0e48796c4aeda60088434067659b7a_5.png)
 
 This time the distance calculation is calculated as the minimum distance of that point to any of the two clusters。
 
@@ -64,7 +61,6 @@ And then we can do this one more time or as many more times as we need。
 
 
 
-![](img/1f0e48796c4aeda60088434067659b7a_7.png)
 
 This algorithm with this smarter initialization is called K means plus plus。
 
@@ -78,7 +74,6 @@ So here we've discussed getting a better initialization point。In the next vide
 
 
 
-![](img/1f0e48796c4aeda60088434067659b7a_9.png)
 
 All right， I'll see you there。
 

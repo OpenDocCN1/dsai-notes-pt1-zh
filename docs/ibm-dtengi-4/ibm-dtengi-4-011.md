@@ -1,6 +1,5 @@
 # 011：DB2介绍 🗄️
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_0.png)
 
 在本节课中，我们将学习IBM的DB2数据库。我们将了解DB2的历史、特性、产品家族、部署选项，以及它在云端的高可用性和可扩展性方案。
 
@@ -8,13 +7,9 @@
 
 ## DB2概述
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_2.png)
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_3.png)
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_4.png)
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_5.png)
 
 DB2，或称Database 2，是IBM在1983年首次发布的关系数据库管理系统（RDBMS）。它最初运行在IBM大型机上，但后来发展出可在多种操作系统上运行的版本，包括OS/2、Unix、Linux和Windows。
 
@@ -22,7 +17,6 @@ DB2，或称Database 2，是IBM在1983年首次发布的关系数据库管理系
 
 ---
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_7.png)
 
 ## DB2产品家族
 
@@ -44,7 +38,6 @@ DB2产品家族包含多个成员，以满足不同的数据管理需求。
 
 ## DB2的评估与特性
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_9.png)
 
 有多种方式可以免费评估DB2产品。
 
@@ -72,11 +65,9 @@ DB2产品利用AI驱动的功能来简化数据管理和查询。
 
 ## DB2的可扩展性
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_11.png)
 
 DB2通过多种方式提供可扩展性。
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_13.png)
 
 以下是DB2实现可扩展性的主要方法：
 
@@ -90,7 +81,6 @@ DB2通过多种方式提供可扩展性。
 
 Cloud Pak for Data是一个完全集成的数据和AI平台，可用于处理和管理所有数据。它运行在Red Hat OpenShift容器中，因此可以部署在任何私有、公共或混合云上。
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_15.png)
 
 使用Cloud Pak for Data，你可以连接DB2或任何其他数据源，无论其存储在哪里。你可以使用Watson知识目录来组织数据，使用一系列分析服务来获取数据洞察，并使用Watson和其他服务将AI注入你的系统。
 
@@ -98,7 +88,6 @@ Cloud Pak for Data是一个完全集成的数据和AI平台，可用于处理和
 
 ## DB2 on Cloud入门
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_17.png)
 
 DB2 on Cloud是开始使用DB2的好方法。它提供三种计划：轻量版、标准版和企业版。
 
@@ -110,19 +99,15 @@ DB2 on Cloud是开始使用DB2的好方法。它提供三种计划：轻量版�
 
 DB2 on Cloud可以部署在IBM Cloud平台或Amazon Web Services上。运行后，你可以通过CLP+命令行界面、DB2 on Cloud图形用户界面控制台或标准API（如ODBC、JDBC和REST）来访问数据库。你还可以轻松地从Excel、CSV和文本文件加载数据，或从Amazon S3对象存储加载数据。
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_19.png)
 
 ---
 
 ## DB2的高可用性
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_21.png)
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_22.png)
 
 DB2提供高可用性灾难恢复（HADR）功能来支持高可用性系统。HDR将主数据库的更改复制到多个备用服务器。
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_23.png)
 
 如果主数据库因任何原因（硬件、软件或网络问题）发生故障，你可以自动将其中一个备用数据库提升为主数据库，将客户端应用程序重定向到这个新的主数据库，并继续向组中的其他备用服务器复制数据。
 
@@ -130,7 +115,6 @@ DB2提供高可用性灾难恢复（HADR）功能来支持高可用性系统。H
 
 ---
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_25.png)
 
 ## DB2 Warehouse的可扩展性
 
@@ -138,9 +122,7 @@ DB2 Warehouse为商业智能工作负载提供大规模并行处理和数据分�
 
 DB2 Warehouse中的数据存储在数据节点中。要扩展存储容量，你只需要向部署中添加一个节点。分区及其工作负载会自动在新的节点设置中重新平衡。
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_27.png)
 
-![](img/823fc3dd29b5f0dc946aee21f83b70e2_28.png)
 
 同样，要缩减规模，你只需要移除一个节点即可恢复到原始状态。
 

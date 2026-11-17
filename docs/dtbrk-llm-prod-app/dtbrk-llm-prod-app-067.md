@@ -1,6 +1,5 @@
 # 67： Notebook 演示
 
-![](img/1a05dc05f6252edba68bb8769c9c6ec5_0.png)
 
 ![](img/1a05dc05f6252edba68bb8769c9c6ec5_0.png)
 
@@ -228,6 +227,5 @@ df_with_summary.write.mode("append").format("delta").save(output_path)
 
 我们希望这个详细的演练对你有所帮助，并期待看到你的 LLM 管道在生产环境中运行。
 
-![](img/1a05dc05f6252edba68bb8769c9c6ec5_2.png)
 
 ![](img/1a05dc05f6252edba68bb8769c9c6ec5_2.png)

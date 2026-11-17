@@ -1,6 +1,5 @@
 # 028：ACID事务特性 🧾
 
-![](img/85d4a2cce123bdf8202af57f4894446d_0.png)
 
 在本节课中，我们将要学习数据库事务的核心概念——ACID特性。我们将了解什么是事务，为什么它对于保证数据一致性至关重要，以及如何使用SQL命令来管理事务。
 
@@ -14,19 +13,14 @@
 
 例如，如果你使用银行卡进行购物，必须发生很多事情：商品必须添加到你的购物车，你的付款必须被处理，你的账户必须扣除正确的金额，商店的账户必须被记入，并且该产品的库存必须根据购买数量减少。
 
-![](img/85d4a2cce123bdf8202af57f4894446d_2.png)
 
 ## 深入示例
 
-![](img/85d4a2cce123bdf8202af57f4894446d_3.png)
 
-![](img/85d4a2cce123bdf8202af57f4894446d_4.png)
 
-![](img/85d4a2cce123bdf8202af57f4894446d_5.png)
 
 让我们更详细地看一下这个例子。如果Rose购买了一双价值200美元的靴子，那么你可以使用一个UPDATE语句来减少她的账户余额。
 
-![](img/85d4a2cce123bdf8202af57f4894446d_6.png)
 
 **代码示例：减少账户余额**
 ```sql
@@ -49,15 +43,11 @@ UPDATE inventory SET stock_level = stock_level - 1 WHERE product = 'Boots' AND s
 
 如果这些UPDATE语句中的任何一个失败，整个事务都应该失败，以保持数据处于一致的状态。
 
-![](img/85d4a2cce123bdf8202af57f4894446d_8.png)
 
-![](img/85d4a2cce123bdf8202af57f4894446d_9.png)
 
 ## ACID事务
 
-![](img/85d4a2cce123bdf8202af57f4894446d_10.png)
 
-![](img/85d4a2cce123bdf8202af57f4894446d_11.png)
 
 示例中的这类事务被称为ACID事务。ACID代表：
 
@@ -68,7 +58,6 @@ UPDATE inventory SET stock_level = stock_level - 1 WHERE product = 'Boots' AND s
 *   **隔离性**：在事务运行期间，其他进程不能更改数据。
 *   **持久性**：事务所做的更改必须持久保存。
 
-![](img/85d4a2cce123bdf8202af57f4894446d_13.png)
 
 ## 管理事务：COMMIT与ROLLBACK
 
@@ -87,7 +76,6 @@ SQL语句可以从Java、C、R和Python等语言中调用。这需要使用特�
 
 ## 总结
 
-![](img/85d4a2cce123bdf8202af57f4894446d_15.png)
 
 ![](img/85d4a2cce123bdf8202af57f4894446d_16.png)
 

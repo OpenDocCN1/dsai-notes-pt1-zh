@@ -1,6 +1,5 @@
 # 052：IBM《机器学习（无监督学习、深度学习和强化学习、毕业项目）｜machine learning》中英字幕 p52 13_梯度下降笔记本（选修部分）第1部分.zh_en -BV1eu4m1F7oz_p52-
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_0.png)
 
 Welcome to our notebook here on Grant Descent。In this notebook。
 
@@ -12,17 +11,13 @@ Welcome to our notebook here on Grant Descent。In this notebook。
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_2.png)
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_3.png)
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_4.png)
 
 So to start off， we're going to import all the necessary libraries here just importing nuumpy。
 
  pandas and Matteplotlib。
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_6.png)
 
 We're then going to generate data from a known distribution。
 
@@ -30,7 +25,6 @@ We're then going to generate data from a known distribution。
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_8.png)
 
 So if we think about just working with linear regression in general。
 
@@ -40,7 +34,6 @@ So here we have y equals B， which is just our intercept term plus theta 1 time
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_10.png)
 
 And in order to generate the data where we specify each one of the different thetas。
 
@@ -54,7 +47,6 @@ We're then going to actually set the values for B， theta 1 and theta 2， so B
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_12.png)
 
 And then from there， we can generate our y values， as well as our feature matrix。
 
@@ -62,13 +54,11 @@ And then from there， we can generate our y values， as well as our feature ma
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_14.png)
 
 We're then going to say that we want 100 observations。
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_16.png)
 
 And we're going to pass that through as our x1s and our x2s are going to be random values between 0 and 10。
 
@@ -102,13 +92,11 @@ So that we have our X matrix or our feature matrix。And we run this。
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_18.png)
 
 And then we can see what our actual y value is， and that should be some combination of if we look at this X met。
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_20.png)
 
 We should have。Something along the lines of two times this value and five times this value plus 1。
 
@@ -116,7 +104,6 @@ We should have。Something along the lines of two times this value and five time
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_22.png)
 
 So in order to get the right answer directly， we can look at the closed form version of this model rather than using something like gradientding descent。
 
@@ -126,7 +113,6 @@ That will find the maximum likelihood or the least scores estimate for our data 
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_24.png)
 
 And that's just going to be this matrix algebra here。 It's not too important。
 
@@ -140,21 +126,17 @@ Now the reason why we introduce gradient descent。Is because when we're doing d
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_26.png)
 
 So here we're going to use SK Learn's linear Russian model。
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_28.png)
 
 As well as also using the actual matrix algebra that we have defined here。
 
  which we can just pull out from Numpy。
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_30.png)
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_31.png)
 
 So from S K learn， we're going to import our linear regression model。
 
@@ -162,21 +144,17 @@ We're going to call linear regression we don't want to fit the intercept since t
 
  so we set fit intercept equal to false。
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_33.png)
 
 And then we can fit our x met and our Y and then see what our different coefficients that it comes up with are。
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_35.png)
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_36.png)
 
 And we can see that it's very close to the values that we wanted for B of 1。5。
 
  theta 1 of 2 and theta 2 of5。
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_38.png)
 
 No。S K learn， the linear Russian model， will be using this closed form matrix algebra in order to solve for it。
 
@@ -188,7 +166,6 @@ And then the dot product of that with x transpose， and then the dot product of
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_40.png)
 
 And then when we look at the solution that that comes up with again。
 
@@ -196,7 +173,6 @@ And then when we look at the solution that that comes up with again。
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_42.png)
 
 Now， that closes out this section of just getting an intro of the data that we're working with in the next section in the next video。
 
@@ -206,6 +182,5 @@ Now， that closes out this section of just getting an intro of the data that we
 
 
 
-![](img/2c2ef681c177624fe7d8dfce62b00e41_44.png)
 
 ![](img/2c2ef681c177624fe7d8dfce62b00e41_45.png)

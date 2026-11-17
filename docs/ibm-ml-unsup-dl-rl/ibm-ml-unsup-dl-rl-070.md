@@ -12,7 +12,6 @@ And then any new updates will be scaled down by a factor of the previous sum so 
 
  so let's look at what this actually means。
 
-![](img/c9db94ff1175c05cc876b9c4c47bc51b_1.png)
 
 The key difference when we do add agrad compared to our normal gradient descent。Is this term G？
 
@@ -36,7 +35,6 @@ So as we get closer and closer to the optimal value。
 
 
 
-![](img/c9db94ff1175c05cc876b9c4c47bc51b_3.png)
 
 Now I'd like to move on to another optimization method， namely RMS prop。
 
@@ -54,7 +52,6 @@ And this will allow for updates to be more adaptive to recent gradients and is u
 
 
 
-![](img/c9db94ff1175c05cc876b9c4c47bc51b_5.png)
 
 And then finally we have this concept of atom， this optimizer atom。
 
@@ -100,7 +97,6 @@ And then we do the same for VT。Which， again， is the RMS prop portion。And
 
 
 
-![](img/c9db94ff1175c05cc876b9c4c47bc51b_7.png)
 
 Now， which one should we choose between each one of the optimizers that are available to us？Now。
 
@@ -110,13 +106,11 @@ Now， which one should we choose between each one of the optimizers that are av
 
  mentioned using the at approach。
 
-![](img/c9db94ff1175c05cc876b9c4c47bc51b_9.png)
 
 Now， it can be difficult though， to predict in advance which one of these approaches will work best for a particular problem。
 
 
 
-![](img/c9db94ff1175c05cc876b9c4c47bc51b_11.png)
 
 And this is actually still an active area of inquiry in deep learning research。 Now。
 
@@ -134,9 +128,7 @@ And with that， I would say。Whether using different iterations of atom or oth
 
 
 
-![](img/c9db94ff1175c05cc876b9c4c47bc51b_13.png)
 
-![](img/c9db94ff1175c05cc876b9c4c47bc51b_14.png)
 
 So just to recap。In this section， we went over why it's so important to have regularization with deep learning models as these complex models are powerful enough to fit almost exactly to our trading data。
 
@@ -158,7 +150,6 @@ Now that closes out this set of videos in the next set of videos。
 
 
 
-![](img/c9db94ff1175c05cc876b9c4c47bc51b_16.png)
 
 All right， I look forward to seeing you there。
 

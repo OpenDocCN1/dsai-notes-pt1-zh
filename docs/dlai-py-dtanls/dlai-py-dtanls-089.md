@@ -12,11 +12,8 @@
 
 ---
 
-![](img/5051481cd4644c99dbc92501fad92cf1_1.png)
 
-![](img/5051481cd4644c99dbc92501fad92cf1_2.png)
 
-![](img/5051481cd4644c99dbc92501fad92cf1_3.png)
 
 ## 数据准备与初步观察
 
@@ -30,18 +27,14 @@ netflix_stocks.set_index('Date', inplace=True)
 
 接着，我们绘制交易量的折线图以观察整体趋势。
 
-![](img/5051481cd4644c99dbc92501fad92cf1_5.png)
 
-![](img/5051481cd4644c99dbc92501fad92cf1_6.png)
 
-![](img/5051481cd4644c99dbc92501fad92cf1_7.png)
 
 ```python
 # 绘制交易量折线图
 netflix_stocks['Volume'].plot()
 ```
 
-![](img/5051481cd4644c99dbc92501fad92cf1_8.png)
 
 从图中可以观察到，数据中大约每年出现四次显著的交易量峰值，这是一个值得关注的稳定模式。
 
@@ -65,7 +58,6 @@ netflix_stocks['month'] = netflix_stocks.index.month
 
 以下是按月份对数据进行分组并计算平均交易量的步骤：
 
-![](img/5051481cd4644c99dbc92501fad92cf1_10.png)
 
 1.  使用 `groupby` 方法按月份分组。
 2.  选择 `Volume` 列。
@@ -85,13 +77,10 @@ monthly_volume.plot(kind='bar')
 
 分析显示，Netflix发布季度财报的月份（一月、四月、七月、十月）的交易量明显高于其他月份，峰值大约高出30%至50%。
 
-![](img/5051481cd4644c99dbc92501fad92cf1_12.png)
 
-![](img/5051481cd4644c99dbc92501fad92cf1_13.png)
 
 ---
 
-![](img/5051481cd4644c99dbc92501fad92cf1_14.png)
 
 ## 使用箱线图深入分析分布
 
@@ -99,16 +88,12 @@ monthly_volume.plot(kind='bar')
 
 以下是使用Seaborn库绘制箱线图的步骤：
 
-![](img/5051481cd4644c99dbc92501fad92cf1_16.png)
 
 1.  指定 `x` 轴为月份，`y` 轴为交易量。
 2.  通过调色板参数为不同月份应用颜色，以突出显示财报发布月。
 
-![](img/5051481cd4644c99dbc92501fad92cf1_17.png)
 
-![](img/5051481cd4644c99dbc92501fad92cf1_18.png)
 
-![](img/5051481cd4644c99dbc92501fad92cf1_19.png)
 
 ```python
 import seaborn as sns
@@ -129,7 +114,6 @@ plt.ylim(0, 4e7)  # 调整y轴范围以聚焦主要数据分布
 
 本节课中我们一起学习了时间序列分群分析的核心方法：
 
-![](img/5051481cd4644c99dbc92501fad92cf1_21.png)
 
 ![](img/5051481cd4644c99dbc92501fad92cf1_22.png)
 

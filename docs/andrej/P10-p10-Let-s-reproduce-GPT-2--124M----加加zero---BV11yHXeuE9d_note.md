@@ -1,8 +1,6 @@
 # 课程 P10：从零开始重现 GPT-2 (124M) 🚀
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_1.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_3.png)
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_5.png)
 
@@ -16,9 +14,7 @@
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_11.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_12.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_14.png)
 
 GPT-2 是 OpenAI 在 2019 年发布的开创性语言模型。它属于一个包含多个尺寸的“迷你系列”，其中 124M 参数版本是一个理想的起点。本节课的目标是理解其架构，并用 PyTorch 从头实现它，最终训练一个性能接近甚至超越原版的开源模型。
 
@@ -48,7 +44,6 @@ GPT-2 是 OpenAI 在 2019 年发布的开创性语言模型。它属于一个包
 
 首先，让我们明确目标。我们将使用 Hugging Face `transformers` 库加载 OpenAI 发布的 GPT-2 (124M) 模型，并检查其权重结构。这为我们后续自己构建模型提供了参考基准。
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_36.png)
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_38.png)
 
@@ -64,7 +59,6 @@ GPT-2 是 OpenAI 在 2019 年发布的开创性语言模型。它属于一个包
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_47.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_49.png)
 
 1.  **导入模型**：从 `transformers` 库导入 `GPT2LMHeadModel`。
 2.  **加载预训练权重**：使用 `from_pretrained(‘gpt2’)` 加载 124M 参数版本（`gpt2` 即对应此版本）。
@@ -74,21 +68,17 @@ GPT-2 是 OpenAI 在 2019 年发布的开创性语言模型。它属于一个包
     *   **位置嵌入** (`transformer.wpe.weight`)：形状为 `(1024, 768)`。模型支持的最大序列长度为 1024，每个位置有独立的嵌入向量。
     *   **Transformer 层权重**：包括注意力层、前馈网络层等的权重和偏置。
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_51.png)
 
 通过分析这些权重，我们可以确认模型结构，并为后续实现提供准确的参数形状。
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_53.png)
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_55.png)
 
 ---
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_57.png)
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_59.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_61.png)
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_62.png)
 
@@ -96,7 +86,6 @@ GPT-2 是 OpenAI 在 2019 年发布的开创性语言模型。它属于一个包
 
 上一节我们查看了目标模型的结构，本节中我们来看看如何用 PyTorch 模块搭建我们自己的 GPT-2。
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_64.png)
 
 GPT-2 是一个仅解码器的 Transformer 模型。与原始 Transformer 相比，它移除了编码器部分，并调整了层归一化的位置（采用“预归一化”）。
 
@@ -205,7 +194,6 @@ class Block(nn.Module):
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_92.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_94.png)
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_96.png)
 
@@ -349,13 +337,10 @@ class MLP(nn.Module):
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_147.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_149.png)
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_151.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_153.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_155.png)
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_157.png)
 
@@ -369,7 +354,6 @@ class MLP(nn.Module):
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_163.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_165.png)
 
 ## 4. 准备数据与训练循环 🔄
 
@@ -381,7 +365,6 @@ class MLP(nn.Module):
 
 我们需要一个能够将文本数据流式转换为模型可接受的批次张量的数据加载器。
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_169.png)
 
 ```python
 class DataLoaderLite:
@@ -413,7 +396,6 @@ class DataLoaderLite:
 我们使用 AdamW 优化器，并遵循 GPT-3 论文中的设置：使用余弦衰减学习率调度，并带有预热阶段。
 
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_171.png)
 
 ```python
 def configure_optimizers(model, weight_decay, learning_rate, device_type):
@@ -451,7 +433,6 @@ def get_lr(it, warmup_iters, learning_rate, lr_decay_iters, min_lr):
 
 ### 4.3 训练步骤
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_173.png)
 
 训练循环的核心步骤包括前向传播、损失计算、反向传播和参数更新。
 
@@ -476,11 +457,9 @@ for micro_step in range(gradient_accumulation_steps):
         optimizer.zero_grad()
 ```
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_175.png)
 
 ---
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_177.png)
 
 ## 5. 高级优化与多 GPU 训练 ⚡
 
@@ -488,39 +467,28 @@ for micro_step in range(gradient_accumulation_steps):
 
 ### 5.1 性能优化技巧
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_179.png)
 
 以下是提升训练速度的关键方法：
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_181.png)
 
 *   **降低数值精度**：使用 `torch.autocast` 进行混合精度训练（BF16），这能显著减少内存占用并加速计算。
 *   **使用 `torch.compile`**：PyTorch 2.0 引入的编译器可以融合操作，减少 Python 开销和 GPU 内存读写，带来显著的性能提升。
 *   **使用 Flash Attention**：如果硬件支持，使用 PyTorch 内置的高效注意力实现，它通过算法优化避免了大型注意力矩阵的显式存储和计算。
 *   **调整“丑陋”的数字**：将词表大小等参数调整为 2 的幂（例如从 50257 调整为 50304），可以使 CUDA 内核运行更高效，因为许多内核是为 2 的幂次方块大小优化的。
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_183.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_185.png)
 
 ### 5.2 多 GPU 分布式训练
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_187.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_189.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_191.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_193.png)
 
 为了在多个 GPU 上并行训练，我们使用 PyTorch 的分布式数据并行。
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_195.png)
-
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_197.png)
 
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_199.png)
+
 
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_201.png)
@@ -555,28 +523,22 @@ model = DDP(model, device_ids=[rank])
 
 ## 6. 使用真实数据集训练与评估 📊
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_209.png)
 
 我们使用 FineWeb-Edu 数据集（一个高质量的网络文本子集）进行训练，并使用 HellaSwag 基准进行评估。
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_211.png)
 
 ### 6.1 数据集准备
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_213.png)
 
 1.  下载并预处理 FineWeb-Edu 数据集，将其标记化并保存为分片文件。
 2.  修改数据加载器以支持从多个分片中流式读取数据，并确保在多 GPU 训练中每个进程处理不同的数据块。
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_215.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_217.png)
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_219.png)
 
 ### 6.2 评估：HellaSwag
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_221.png)
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_223.png)
 
@@ -584,15 +546,10 @@ model = DDP(model, device_ids=[rank])
 
 HellaSwag 是一个句子补全任务，用于评估模型的常识推理能力。评估方法不是直接让模型选择 A/B/C/D，而是让模型为每个选项计算平均对数似然（或损失），然后选择可能性最高的选项。
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_227.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_229.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_231.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_233.png)
 
-![](img/fffe638cf84a8d1e020ce63d0efeee6e_235.png)
 
 ![](img/fffe638cf84a8d1e020ce63d0efeee6e_237.png)
 

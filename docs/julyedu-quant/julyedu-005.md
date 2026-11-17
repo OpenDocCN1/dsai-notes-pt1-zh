@@ -20,11 +20,9 @@
 *   **输入（特征）**：`X_t0 = f(原始数据[t <= t0])`
 *   **输出（目标）**：`y_t0 = g(原始数据[t > t0])`
 
-![](img/4be40c3a9c1b8ee9379fc6a249ae47b6_2.png)
 
 其中，`y` 可以是下一时刻的涨跌（分类问题），也可以是具体的价格或收益率（回归问题）。这个转换过程是建模前最关键的“脏活累活”。
 
-![](img/4be40c3a9c1b8ee9379fc6a249ae47b6_4.png)
 
 ## 特征（因子）的选择哲学
 
@@ -46,7 +44,6 @@
 计算相邻时间点价格的变化率，进行标准化。
 `x = (price_t - price_{t-1}) / price_{t-1}`
 
-![](img/4be40c3a9c1b8ee9379fc6a249ae47b6_6.png)
 
 ### 3. 滚动窗口统计特征
 计算过去一个时间窗口内的统计量，如最高价、最低价，并基于此构造新特征。
@@ -58,9 +55,7 @@ x1 = (price_t - price_{t-1}) / high_lambda
 x2 = (price_t - price_{t-1}) / low_lambda
 ```
 
-![](img/4be40c3a9c1b8ee9379fc6a249ae47b6_8.png)
 
-![](img/4be40c3a9c1b8ee9379fc6a249ae47b6_10.png)
 
 ### 4. 技术指标特征
 金融市场有大量经验总结的技术指标，它们也可以作为特征。
@@ -72,11 +67,8 @@ x2 = (price_t - price_{t-1}) / low_lambda
 
 **作业建议**：建立你自己的特征计算函数库（如 `feature_utils.py`），方便后续灵活组合和调用。
 
-![](img/4be40c3a9c1b8ee9379fc6a249ae47b6_12.png)
 
-![](img/4be40c3a9c1b8ee9379fc6a249ae47b6_14.png)
 
-![](img/4be40c3a9c1b8ee9379fc6a249ae47b6_16.png)
 
 ## 构建训练集与测试集
 
@@ -153,7 +145,6 @@ model.fit(X_train, y_train)
 
 **优点**：理论上可以逼近任何函数，适合学习难以手工构造的特征表示。
 
-![](img/4be40c3a9c1b8ee9379fc6a249ae47b6_18.png)
 
 ```python
 from keras.models import Sequential
@@ -182,7 +173,6 @@ model.fit(X_train, y_train, epochs=10, batch_size=128, validation_data=(X_test, 
     *   **回归任务**：绘制预测值与真实值的对比散点图。
     *   分析并展示模型给出的特征重要性。
 
-![](img/4be40c3a9c1b8ee9379fc6a249ae47b6_20.png)
 
 ### 作业二：股票价格预测
 1.  **任务**：在沪深300成分股中，筛选出价格在10-50元之间，且日成交量处于33%-66%分位数的股票。

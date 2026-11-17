@@ -75,13 +75,11 @@ def data_collator(data):
 
 训练完成后，是时候保存微调好的模型了。接下来，我们可以绘制PPO训练损失和PPO平均奖励随时间变化的图表。
 
-![](img/73c3fd8dce5d30f9f946bd16b20d8435_3.png)
 
 ![](img/73c3fd8dce5d30f9f946bd16b20d8435_3.png)
 
 从图表中可以看到，**损失随时间推移而下降**，同时**PPO平均奖励随时间推移而上升**。为了进行对比，我们也可以通过将`change_score`值设为`0`来训练一个专注于消极情感的模型（Model0）。
 
-![](img/73c3fd8dce5d30f9f946bd16b20d8435_5.png)
 
 ![](img/73c3fd8dce5d30f9f946bd16b20d8435_5.png)
 
@@ -96,19 +94,16 @@ def data_collator(data):
 *   **Model0**：在消极情感上训练，生成消极回复。
 *   **参考模型**：即原始模型，提供中性回复。
 
-![](img/73c3fd8dce5d30f9f946bd16b20d8435_7.png)
 
 ![](img/73c3fd8dce5d30f9f946bd16b20d8435_7.png)
 
 ## 模型比较
 
-![](img/73c3fd8dce5d30f9f946bd16b20d8435_9.png)
 
 现在让我们比较Model0和Model1。屏幕上展示了积极情感模型和消极情感模型生成的回复示例及其情感分数。
 
 可以看到，**积极模型生成积极回复并获得高分**。相反，**消极模型生成消极回复并获得低分**。
 
-![](img/73c3fd8dce5d30f9f946bd16b20d8435_9.png)
 
 ## 总结
 
@@ -120,6 +115,5 @@ def data_collator(data):
 *   在PPO中，`stats_all`列表存储每个批次的训练统计信息。
 *   绘制PPO损失和PPO平均奖励随时间变化的图表显示，**PPO损失下降，而PPO平均奖励上升**。
 
-![](img/73c3fd8dce5d30f9f946bd16b20d8435_11.png)
 
 ![](img/73c3fd8dce5d30f9f946bd16b20d8435_11.png)

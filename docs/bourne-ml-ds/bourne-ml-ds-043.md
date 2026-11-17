@@ -58,7 +58,6 @@ import matplotlib.pyplot as plt
 
 ### 绘制直方图
 
-![](img/634064f5961680f3e006573f10a631bf_2.png)
 
 直方图是查看数据分布的绝佳方式。它显示了数据在不同区间内的频率。
 ```python

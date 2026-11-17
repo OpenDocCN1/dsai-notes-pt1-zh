@@ -58,21 +58,17 @@ first_char = name[0] # 结果为 'M'
 sixth_char = name[6] # 结果为 'l' (注意：索引从0开始)
 ```
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_1.png)
 
 此外，我们还可以访问第 13 个索引。
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_2.png)
 
 ```python
 thirteenth_char = name[13] # 结果为 'o'
 ```
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_3.png)
 
 我们也可以对字符串使用负索引。最后一个元素由索引 **-1** 给出。
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_4.png)
 
 ```python
 last_char = name[-1] # 结果为 'n'
@@ -98,17 +94,14 @@ every_second = name[::2] # 结果为 'McalJcsn'
 slice_example = name[:4:2] # 结果为 'Mc'
 ```
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_6.png)
 
 我们可以使用 `len` 命令来获取字符串的长度。
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_7.png)
 
 ```python
 length = len(name) # 结果为 15
 ```
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_8.png)
 
 ---
 
@@ -124,7 +117,6 @@ greeting = "Hello" + " " + "World" # 结果为 "Hello World"
 
 结果是一个结合了双方的新字符串。
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_10.png)
 
 我们可以复制字符串的值。我们只需将字符串乘以我们希望复制的次数。
 
@@ -158,11 +150,9 @@ print("Hello\nWorld")
 # World
 ```
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_12.png)
 
 当遇到 `\n` 后，输出会换行。
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_14.png)
 
 类似地，`\t` 代表一个制表符。
 
@@ -179,11 +169,9 @@ print("Name:\tJohn")
 path = "C:\\Users\\Name" # 结果为 "C:\Users\Name"
 ```
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_16.png)
 
 转义序列后的结果是一个反斜杠。
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_17.png)
 
 我们也可以在字符串前面放一个 `r` 来创建原始字符串，忽略转义序列。
 
@@ -213,15 +201,12 @@ A = "Thriller is the seventh studio album"
 B = A.upper() # 结果为 "THRILLER IS THE SEVENTH STUDIO ALBUM"
 ```
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_19.png)
 
 B 的值与 A 相似，但所有字符都是大写的。
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_20.png)
 
 `replace` 方法将字符串的一个片段（即子字符串）替换为一个新字符串。我们输入想要更改的字符串部分。
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_21.png)
 
 ```python
 new_string = A.replace("seventh", "sixth")
@@ -232,7 +217,6 @@ new_string = A.replace("seventh", "sixth")
 
 `find` 方法用于查找子字符串。参数是您想要查找的子字符串。输出是该子序列第一次出现的索引。
 
-![](img/1c39296973d4f0c470d7f5a095625e5a_23.png)
 
 ```python
 index = A.find("studio") # 结果为 25

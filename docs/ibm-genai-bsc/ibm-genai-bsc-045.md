@@ -8,11 +8,9 @@
 
 ## 主要关切点
 
-![](img/43c1e99caf18f55eabb69cdbb978d783_1.png)
 
 以下是围绕生成式AI最普遍的几类关切。
 
-![](img/43c1e99caf18f55eabb69cdbb978d783_3.png)
 
 ### 1. 不准确性与偏见
 
@@ -51,13 +49,9 @@
 *   不要输入机密、敏感或构成知识产权侵权的信息。
 *   分析输出内容是否存在事实错误、偏见或不恰当的陈述。
 
-![](img/43c1e99caf18f55eabb69cdbb978d783_5.png)
 
-![](img/43c1e99caf18f55eabb69cdbb978d783_6.png)
 
-![](img/43c1e99caf18f55eabb69cdbb978d783_7.png)
 
-![](img/43c1e99caf18f55eabb69cdbb978d783_8.png)
 
 ## 总结
 

@@ -14,31 +14,25 @@
 
 在[ShowMeAI](http://www.showmeai.tech/)的文章 [**机器学习特征工程最全解读**](http://www.showmeai.tech/article-detail/208) 里，我们给大家详细介绍了特征工程的操作，但我们实际上有很多工具可以辅助我们更快捷地完成特征工程，在本篇内容中，[ShowMeAI](http://www.showmeai.tech/)给大家介绍 Featuretools 这个 Python 自动化特征工程的工具库。我们会借助于 BigMart Sales 数据集来演示自动化特征工程的相关应用。
 
-![Featuretools; 自动化特征工程工具; 机器学习建模流程; 9-1](img/55a5cfb29d0514b1243b61710bcd58ed.png)
 
 # 1.机器学习与特征
 
 在机器学习的背景下，特征是用来解释现象发生的单个特性或一组特性。当这些特性转换为某种可度量的形式时，它们被称为特征。
 
-![Featuretools; 自动化特征工程工具; 机器学习与特征; 9-2](img/34a0e6b0f2e767ebe69101280db10dab.png)
 
 # 2.特征工程介绍
 
 特征工程(feature engineering)：利用领域知识和现有数据，创造出新的特征，用于机器学习算法；可以手动(manual)或自动(automated)。
 
-![Featuretools; 自动化特征工程工具; 特征工程介绍; 9-3](img/c81d24dcb6d10c4cc7f873a6e98a41d4.png)
 
 数据与特征工程决定了模型的上限，改进算法只不过是逼近这个上限而已。
 
 # 3.特征工程意义
 
-![Featuretools; 自动化特征工程工具; 特征工程的意义; 9-4](img/11d7705388a7d9b0bfd676e14324571f.png)
 
-![Featuretools; 自动化特征工程工具; 特征工程的意义; 9-5](img/e426fb261b49882d73921c8c1de2c9d0.png)
 
 # 4.自动化特征工程
 
-![Featuretools; 自动化特征工程工具; 自动化特征工程; 9-6](img/9a2bf8d47017c74fc1a31029891c79b0.png)
 
 上左图显示了 20 世纪初一群人正在组装汽车，上右图显示了当今一群机器人在做同样的工作。自动化任何流程都可以使其变得更加高效和经济。同样，特征工程也是如此。而且，在机器学习中，常用特征的特征工程已经实现自动化。
 
@@ -49,7 +43,6 @@
 Featuretools 是一个 Python 自动化特征工程的工具库。它可以帮助大家快速构建丰富的数据特征，而把更多的时间聚焦于构建机器学习模型的其他方面。
 要学会使用 Featuretools，我们要先了解它的三个主要组件：
 
-![Featuretools; 自动化特征工程工具; Featuretools 简介; 9-7](img/c2584bf98fe4cff2f1081abc32f968dd.png)
 
 **实体**(**Entities**)
 
@@ -133,7 +126,6 @@ combi = train.append(test, ignore_index=True)
 combi.isnull().sum() 
 ```
 
-![Featuretools; 自动化特征工程工具; Featuretools 实践; 数据准备; 9-8](img/3c4188094e3f5acc0b10045d59bd51cb.png)
 
 我们发现字段`Item_Weight`和`Outlet_size`中有非常多的缺失值，先做一个快速处理：
 
@@ -151,7 +143,6 @@ combi['Outlet_Size'].fillna("missing", inplace = True)
 combi['Item_Fat_Content'].value_counts() 
 ```
 
-![Featuretools; 自动化特征工程工具; Featuretools 实践; 数据预处理; 9-9](img/ca153f5d8c482de511211391b261f59c.png)
 
 我们发现`Item_Fat_Content`只包含两个类别：「低脂肪」和「常规」(虽然在字段取值上有多种，但其只是格式差异)，这里我们对其进行二值化变换。
 
@@ -225,7 +216,6 @@ feature_matrix.columns
 feature_matrix.head() 
 ```
 
-![Featuretools; 自动化特征工程工具; Featuretools 实践; 特征工程; 9-12](img/fc6c35e00da7db1f3e42b0df4bc6abba.png)
 
 我们对这个 Dataframe 做一点小调整，我们根据 combi 数据框中的 id 变量对其进行排序。
 

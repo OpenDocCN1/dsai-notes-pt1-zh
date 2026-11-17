@@ -1,12 +1,10 @@
 # 007：使用语音交互的智能代理工作流 🎤
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_0.png)
 
 ## 概述
 
 在本节课中，我们将学习如何为智能代理添加语音交互功能。我们将把之前基于文本的反馈机制，升级为通过自然语言语音进行交互。你将学会如何集成音频处理模型，并创建一个能够“听懂”用户语音指令的智能代理工作流。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_2.png)
 
 ---
 
@@ -18,7 +16,6 @@
 
 以下是所有必要的导入语句和云服务密钥配置。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_4.png)
 
 ```python
 # 导入必要的库和配置密钥
@@ -26,13 +23,10 @@ import ...
 api_key = "your_api_key_here"
 ```
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_5.png)
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_6.png)
 
 这是我们上一课使用的完整工作流代码。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_7.png)
 
 ```python
 # 完整的Warag工作流定义
@@ -94,7 +88,6 @@ def store_transcription(text):
 
 当音频被捕获时，它会调用`transcribe_speech`函数处理录制的数据，并调用`store_transcription`存储结果。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_9.png)
 
 以下是定义输入、输出并运行该函数的代码。
 
@@ -114,7 +107,6 @@ interface = gr.Interface(fn=transcribe_speech, inputs=inputs, outputs=outputs)
 interface.launch()
 ```
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_11.png)
 
 在Gradio中，你进一步定义了一个包含此麦克风输入和输出的可视化界面，然后启动它。我们创建了一个Blocks界面，放入一些标签页，然后启动它。
 
@@ -138,11 +130,9 @@ print(transcription_global)
 
 现在，我们将创建一个全新的类：**TranscriptionHandler**。我将逐步讲解它的功能。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_13.png)
 
 首先，我们创建一个队列来保存我们的转录值。每次我们录制一些内容时，都会使用`store_transcription`方法将其放入队列。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_14.png)
 
 ```python
 import queue
@@ -190,7 +180,6 @@ class TranscriptionHandler:
 
 现在你有了一个转录处理器，你可以在工作流中获取人类输入时使用它，而不是键盘接口。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_16.png)
 
 ---
 
@@ -198,17 +187,13 @@ class TranscriptionHandler:
 
 我们完全不需要为了使其工作而更改工作流。因此，和之前一样，我们设置工作流，传入我们的模拟简历和模拟申请表，然后等待一个`input_required`事件。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_18.png)
 
 现在，我们不再获取键盘输入，而是调用我们的转录处理器。一旦转录处理器给我们提供了转录文本，我们就将其作为`human_response`事件发送出去。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_20.png)
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_22.png)
 
 到了关键时刻，让我们试试看。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_24.png)
 
 我做了个改动，但没有告诉你：为了让我们更清楚地了解底层发生了什么，我让它打印出它在思考时得到的每一个问题和答案。
 
@@ -216,17 +201,13 @@ class TranscriptionHandler:
 
 好的，它已经问完了所有问题。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_26.png)
 
 现在它启动了一个Gradio界面，向我们征求反馈。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_27.png)
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_29.png)
 
 从问题的答案中我们可以看到，它犯了和之前一样的错误：项目组合是候选人做过的项目列表，而不是一个URL。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_31.png)
 
 因此，让我们使用语音反馈来告诉它我们需要更改这一点。
 
@@ -238,39 +219,29 @@ LLM读取了该转录文本，并正确地判定我给出了一些反馈。
 
 现在你可以看到我们的问题和答案正在生成。每一个都附加了这个额外的反馈字段。每个问题都得到了相同的反馈：“portfolio字段应该是一个URL”，而这实际上只对其中一个问题有用。你可以思考一下，如果在一个更生产化的应用中，你会如何改进这一点。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_33.png)
 
 它再次问完了所有问题，并启动了另一个Gradio界面征求我们的反馈。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_34.png)
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_35.png)
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_36.png)
 
 让我们告诉它这次做得很好，因为它确实做得很好。项目组合是一个URL，正如我们所要求的。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_37.png)
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_38.png)
 
 我们说：“That‘s great. Good job.”
 
 LLM正确地将我的积极反馈解释为一切正常，并输出了表单。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_40.png)
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_41.png)
 
 ---
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_43.png)
 
 ## 总结 🎉
 
 恭喜你！你已经成功创建了一个能够响应人类语音反馈的AI代理。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_45.png)
 
 本节课中，我们一起学习了：
 1.  **回顾复杂工作流**：通过可视化工具理解了代理的完整执行路径。
@@ -280,7 +251,6 @@ LLM正确地将我的积极反馈解释为一切正常，并输出了表单。
 5.  **无缝替换反馈方式**：将原有的文本输入节点替换为语音输入节点，而无需改动核心工作流逻辑。
 6.  **实现语音交互循环**：代理能够接收语音反馈，理解其内容，并根据反馈调整其行为，完成多轮交互。
 
-![](img/f90e79bd9787a02bc9bfcefbd9b04124_46.png)
 
 ![](img/f90e79bd9787a02bc9bfcefbd9b04124_47.png)
 

@@ -4,7 +4,6 @@
 
 ---
 
-![](img/6365087f8ea5b2cf87b55a14cb244b6d_1.png)
 
 ### 什么是依赖库？
 
@@ -34,13 +33,11 @@ pandas.read_csv('file_path.csv')
 
 频繁输入`pandas`可能很繁琐。我们可以使用`as`语句来缩短库的名称。在这种情况下，我们使用标准缩写`pd`。
 
-![](img/6365087f8ea5b2cf87b55a14cb244b6d_3.png)
 
 ```python
 import pandas as pd
 ```
 
-![](img/6365087f8ea5b2cf87b55a14cb244b6d_4.png)
 
 现在，我们输入`pd`和一个点`.`，后跟我们想要使用的函数名。在本例中，是`read_csv`。
 
@@ -52,7 +49,6 @@ pd.read_csv('file_path.csv')
 
 ### 深入理解代码
 
-![](img/6365087f8ea5b2cf87b55a14cb244b6d_6.png)
 
 Pandas允许您使用**数据框**来处理数据。让我们详细了解一下从CSV文件到数据框的过程。
 
@@ -65,7 +61,6 @@ df = pd.read_csv(path)
 
 ### 查看数据
 
-![](img/6365087f8ea5b2cf87b55a14cb244b6d_8.png)
 
 现在我们有了数据框中的数据，就可以对其进行操作了。我们可以使用`head`方法来检查数据框的前五行。
 
@@ -75,17 +70,14 @@ df.head()
 
 ### 加载Excel文件
 
-![](img/6365087f8ea5b2cf87b55a14cb244b6d_10.png)
 
 加载Excel文件的过程类似。我们使用Excel文件的路径和`read_excel`函数。结果也是一个数据框。
 
-![](img/6365087f8ea5b2cf87b55a14cb244b6d_11.png)
 
 ```python
 df_excel = pd.read_excel('file_path.xlsx')
 ```
 
-![](img/6365087f8ea5b2cf87b55a14cb244b6d_12.png)
 
 ### 理解数据框结构
 
@@ -102,7 +94,6 @@ df_from_dict = pd.DataFrame(data)
 
 ### 选择数据列
 
-![](img/6365087f8ea5b2cf87b55a14cb244b6d_14.png)
 
 我们可以创建一个仅包含一列的新数据框。只需输入数据框名称（本例中为`df`）和用双括号括起来的列标题名。
 
@@ -112,7 +103,6 @@ new_df_single = df[['Column_Name']]
 
 结果是一个由原始列组成的新数据框。
 
-![](img/6365087f8ea5b2cf87b55a14cb244b6d_16.png)
 
 您也可以对多列执行相同的操作。只需输入数据框名称（本例中为`df`）和用双括号括起来的多个列标题名。
 
@@ -122,7 +112,6 @@ new_df_multi = df[['Column1', 'Column2']]
 
 结果是一个由指定列组成的新数据框。
 
-![](img/6365087f8ea5b2cf87b55a14cb244b6d_18.png)
 
 ---
 

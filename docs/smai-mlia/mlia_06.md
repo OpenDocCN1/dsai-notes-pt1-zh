@@ -26,7 +26,6 @@ LightGBM 作为常见的强大 Python 机器学习工具库，安装也比较简
 
 python 环境与 IDE 设置可以参考[ShowMeAI](http://www.showmeai.tech/)文章 [**图解 python | 安装与环境设置**](http://www.showmeai.tech/article-detail/65) 进行设置。
 
-![LightGBM 工具库建模应用详解; LightGBM 安装; 5-1](img/e6c7177e159c09322bce7387814f1af3.png)
 
 ## 1.2 工具库安装
 
@@ -226,7 +225,6 @@ pip install lightgbm‑3.3.2‑cp310‑cp310‑win_amd64.whl
 
 ### (1) 对树生长控制
 
-![LightGBM 工具库建模应用详解; LightGBM 参数手册; 参数影响与调参建议; 5-2](img/ced7784fffb8ec1e07609a9dc6bd0a69.png)
 
 *   `num_leaves`：叶节点的数目。它是控制树模型复杂度的主要参数。
     *   如果是`level-wise`，则该参数为 2 d e p t h 2^{depth} 2depth，其中 depth 为树的深度。但是当叶子数量相同时，leaf-wise 的树要远远深过 level-wise 树，非常容易导致过拟合。因此应该让 num_leaves 小于 2 d e p t h 2^{depth} 2depth。在 leaf-wise 树中，并不存在 depth 的概念。因为不存在一个从 leaves 到 depth 的合理映射。
@@ -236,7 +234,6 @@ pip install lightgbm‑3.3.2‑cp310‑cp310‑win_amd64.whl
 
 ### (2) 更快的训练速度
 
-![LightGBM 工具库建模应用详解; LightGBM 参数手册; 参数影响与调参建议; 5-3](img/31dcf7c3b32d951dff66d887b36e43aa.png)
 
 *   通过设置`bagging_fraction`和`bagging_freq`参数来使用 bagging 方法。
 *   通过设置`feature_fraction`参数来使用特征的子抽样。
@@ -245,7 +242,6 @@ pip install lightgbm‑3.3.2‑cp310‑cp310‑win_amd64.whl
 
 ### (3) 更好的模型效果
 
-![LightGBM 工具库建模应用详解; LightGBM 参数手册; 参数影响与调参建议; 5-4](img/e345e4db836abd1c58070238b5bf39ea.png)
 
 *   使用较大的`max_bin`(学习速度可能变慢)。
 *   使用较小的`learning_rate`和较大的`num_iterations`。
@@ -334,7 +330,6 @@ print('预估结果的 rmse 为:')
 print(mean_squared_error(y_test, y_pred) ** 0.5) 
 ```
 
-![LightGBM 工具库建模应用详解; LightGBM 内置建模; 内置建模方式官方示例; 5-6](img/0b750476f22cf54f58d09cd975bc81a5.png)
 
 ```py
 加载数据...
@@ -473,7 +468,6 @@ print('在测试集上的 rmse 为:')
 print(mean_squared_error(y_test, y_pred) ** 0.5) 
 ```
 
-![LightGBM 工具库建模应用详解; LightGBM 内置建模; 模型存储与加载; 5-7](img/6b9a5535f82595ad42f252ed80b762ef.png)
 
 ```py
 完成 10 轮训练...
@@ -527,7 +521,6 @@ gbm = lgb.train(params,
 print('逐步调整 bagging 比率完成第 30-40 轮训练...') 
 ```
 
-![LightGBM 工具库建模应用详解; LightGBM 内置建模; 继续训练; 5-8](img/53eba72ff235a3522ef3b601efdf5c92.png)
 
 ```py
 [11] valid_0's binary_logloss: 0.616177
@@ -594,7 +587,6 @@ gbm = lgb.train(params,
 print('用自定义的损失函数与评估标准完成第 40-50 轮...') 
 ```
 
-![LightGBM 工具库建模应用详解; LightGBM 内置建模; 自定义损失函数; 5-9](img/17cddb32650d640c450c6bc221413424.png)
 
 ```py
 [41] valid_0's binary_logloss: 0.614429  valid_0's error: 0.268
@@ -655,7 +647,6 @@ print('预测结果的 rmse 是:')
 print(mean_squared_error(y_test, y_pred) ** 0.5) 
 ```
 
-![LightGBM 工具库建模应用详解; LightGBM 预估器形态接口-SKLearn 形态预估器接口; 5-10](img/21b4192769d8a7496fe23ae24da9503e.png)
 
 ```py
 加载数据...
@@ -711,7 +702,6 @@ print('用网格搜索找到的最优超参数为:')
 print(gbm.best_params_) 
 ```
 
-![LightGBM 工具库建模应用详解; LightGBM 预估器形态接口-网格搜索调参; 5-11](img/f66af592776316b6347e96b87e0080bf.png)
 
 ```py
 用网格搜索找到的最优超参数为:
@@ -803,7 +793,6 @@ plt.show()
 [100]   training's l2: 0.179171 training's l1: 0.385174 valid_1's l2: 0.175321  valid_1's l1: 0.382929 
 ```
 
-![LightGBM 工具库建模应用详解; LightGBM 预估器形态接口-绘图解释; 5-13](img/32d1ed4361bed8c303b4b17e28ec98f2.png)
 
 ![LightGBM 工具库建模应用详解; LightGBM 预估器形态接口-绘图解释; 5-14](img/3422a6c433295ed7f5ae4f1810093fe1.png)
 

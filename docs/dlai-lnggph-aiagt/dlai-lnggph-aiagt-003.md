@@ -132,11 +132,9 @@ from langchain_community.tools.tavily_search import TavilySearchResults
 
 创建好智能体后，我们可以使用它了。首先，我们可以可视化刚刚创建的图，这可以通过调用`get_graph().draw_png()`自动完成。
 
-![](img/192dcc4d42d0cc2f0f8c23494520ff4b_4.png)
 
 现在，让我们调用智能体。我们需要创建一个代表用户消息的`HumanMessage`，并将其放入一个消息列表中，因为智能体状态期望的`messages`属性是一个消息列表。
 
-![](img/192dcc4d42d0cc2f0f8c23494520ff4b_6.png)
 
 然后，我们可以使用`agent_graph.invoke()`调用智能体，并传入初始状态。
 
@@ -144,7 +142,6 @@ from langchain_community.tools.tavily_search import TavilySearchResults
 
 让我们尝试几个问题：
 
-![](img/192dcc4d42d0cc2f0f8c23494520ff4b_8.png)
 
 1.  **“旧金山天气如何？”**：智能体会调用Tavily搜索工具获取天气信息，然后返回结果。
 2.  **“旧金山和洛杉矶的天气如何？”**：智能体会并行调用两次搜索工具（分别查询两个城市），然后综合信息返回答案。这展示了并行工具调用的能力。

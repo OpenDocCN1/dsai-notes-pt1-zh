@@ -76,9 +76,7 @@ demo = gr.Interface(
 demo.launch(share=True)
 ```
 
-![](img/fd94dd99b91892632d47ce5b522ddd73_3.png)
 
-![](img/fd94dd99b91892632d47ce5b522ddd73_5.png)
 
 本地测试成功后，即可将 `app.py` 文件中的代码（移除 `share=True` 参数）复制到Hugging Face Space的 `app.py` 文件中。等待Space自动构建完成后，你的应用就上线了。
 

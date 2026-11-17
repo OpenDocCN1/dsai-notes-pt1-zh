@@ -260,7 +260,6 @@ current status.
 ![参见说明](img/4aad488b78c8522ffc51e60f66a888dc.png)
 
 
-![参见说明](img/4a1336cb5ef3c33cf8af7aa9c9b2423e.png)
 
 
 ![参见说明](img/d506059ec8f4d3d990b66e55f593d4bd.png)

@@ -234,7 +234,6 @@ LLMs。我们的实验使用了一个闭源模型 GPT-4o Achiam 等人 ([2023](h
 
 自适应特征选择。我们比较了两种特征选择方法：离线基于LLM的选择和增量基于RL的选择。为了评估它们在选择最重要的前$k$个特征方面的效果，我们根据第[4.2](https://arxiv.org/html/2410.17462v1#S4.SS2 "4.2 评估下游任务中的一般注释 ‣ 4 实验 ‣ 使用LLM解码时间序列：一种跨领域注释的多代理框架")节和第[4.4](https://arxiv.org/html/2410.17462v1#S4.SS4 "4.4 特定领域注释评估 ‣ 4 实验 ‣ 使用LLM解码时间序列：一种跨领域注释的多代理框架")节的程序，评估生成的一般和特定领域注释的质量。环境被设定为目标领域，结果见图[2](https://arxiv.org/html/2410.17462v1#S4.F2 "图2 ‣ 4.5 TESSA的深入剖析 ‣ 4 实验 ‣ 使用LLM解码时间序列：一种跨领域注释的多代理框架")。结果表明，TESSA在使用任何一种选择方法时，在生成一般注释和特定领域注释方面表现相当。具体来说，如图[2](https://arxiv.org/html/2410.17462v1#S4.F2 "图2 ‣ 4.5 TESSA的深入剖析 ‣ 4 实验 ‣ 使用LLM解码时间序列：一种跨领域注释的多代理框架")(a)所示，两种方法在一般注释上都达到了大约$0.46$的MSE和$0.44$的MAE。同样，在图[2](https://arxiv.org/html/2410.17462v1#S4.F2 "图2 ‣ 4.5 TESSA的深入剖析 ‣ 4 实验 ‣ 使用LLM解码时间序列：一种跨领域注释的多代理框架")(b)中，两种方法在所有特定领域指标上得分一致较高，展示了它们在选择重要特征方面的有效性。然而，增量基于RL的选择方法通过减少对先前使用过的数据的冗余重新查询，证明了其更具成本效益。
 
-![参见标题](img/cbf3f63caf255c109c5cca363798107b.png)
 
 (a) 一般
 
@@ -632,7 +631,6 @@ LLM的领域专业化。LLM的领域专业化指的是将广泛训练的模型�
 
 各领域的附加示例。分别为合成数据集、环境数据集、能源数据集和社会公益数据集提供了附加示例。具体而言，选定的合成数据集上的时间序列的一般注释，如图[6](https://arxiv.org/html/2410.17462v1#A10.F6 "Figure 6 ‣ Appendix J Additional Details of Case Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")所示，见表[17](https://arxiv.org/html/2410.17462v1#A10.T17 "Table 17 ‣ Appendix J Additional Details of Case Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")和[18](https://arxiv.org/html/2410.17462v1#A10.T18 "Table 18 ‣ Appendix J Additional Details of Case Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")。环境数据集上选定的时间序列的领域特定注释（图[7](https://arxiv.org/html/2410.17462v1#A10.F7 "Figure 7 ‣ Appendix J Additional Details of Case Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")）见表[19](https://arxiv.org/html/2410.17462v1#A10.T19 "Table 19 ‣ Appendix J Additional Details of Case Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")和[20](https://arxiv.org/html/2410.17462v1#A10.T20 "Table 20 ‣ Appendix J Additional Details of Case Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")。能源数据集上的时间序列的领域特定注释（图[8](https://arxiv.org/html/2410.17462v1#A10.F8 "Figure 8 ‣ Appendix J Additional Details of Case Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")）见表[21](https://arxiv.org/html/2410.17462v1#A10.T21 "Table 21 ‣ Appendix J Additional Details of Case Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")和[22](https://arxiv.org/html/2410.17462v1#A10.T22 "Table 22 ‣ Appendix J Additional Details of Case Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")。类似地，社会公益数据集上的时间序列的领域特定注释（图[9](https://arxiv.org/html/2410.17462v1#A10.F9 "Figure 9 ‣ Appendix J Additional Details of Case Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")）见表[23](https://arxiv.org/html/2410.17462v1#A10.T23 "Table 23 ‣ Appendix J Additional Details of Case Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")和[24](https://arxiv.org/html/2410.17462v1#A10.T24 "Table 24 ‣ Appendix J Additional Details of Case Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")。与表[12](https://arxiv.org/html/2410.17462v1#A9.T12 "Table 12 ‣ I.2 Qualitative Examples ‣ Appendix I Additional Details of Ablation Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")和表[16](https://arxiv.org/html/2410.17462v1#A10.T16 "Table 16 ‣ Appendix J Additional Details of Case Studies ‣ Decoding Time Series with LLMs: A Multi-Agent Framework for Cross-Domain Annotation")中的观察结果类似。
 
-![参考标题](img/b9c1f596b5295e44dd9dfdc722d97c6c.png)
 
 (a) 消融研究
 
@@ -694,7 +692,6 @@ LLM的领域专业化。LLM的领域专业化指的是将广泛训练的模型�
 
 图6：来自合成数据集的更多选定时间序列数据。该时间序列数据包含120个数据点。
 
-![参见说明](img/86fae173d3b889335f354559880ed312.png)
 
 (a)
 
@@ -704,7 +701,6 @@ LLM的领域专业化。LLM的领域专业化指的是将广泛训练的模型�
 
 图7：来自环境数据集的更多选定时间序列数据。该时间序列数据包含120个数据点。
 
-![参见说明](img/55b8118f48fd356e7ee41366ca902abd.png)
 
 (a)
 
@@ -714,7 +710,6 @@ LLM的领域专业化。LLM的领域专业化指的是将广泛训练的模型�
 
 图8：来自能源数据集的更多选定时间序列数据。该时间序列数据包含36个数据点。
 
-![参见说明](img/9287cf1a84acbaa9d8fdaf9ea8032359.png)
 
 (a)
 

@@ -4,7 +4,6 @@
 
 ---
 
-![](img/cca4fdd3b171cfcc479a01c652ec0ae6_1.png)
 
 ## 概述
 
@@ -64,7 +63,6 @@ class Encoder(nn.Module):
 
 请注意，与门控循环单元仅具有隐藏状态不同，LSTM为每一层都维护一个额外的细胞状态。
 
-![](img/cca4fdd3b171cfcc479a01c652ec0ae6_3.png)
 
 ## 解码器内部结构
 
@@ -169,6 +167,5 @@ class Seq2Seq(nn.Module):
 
 通过理解这些核心组件和流程，您已经掌握了实现一个基础机器翻译模型的关键知识。
 
-![](img/cca4fdd3b171cfcc479a01c652ec0ae6_9.png)
 
 ![](img/cca4fdd3b171cfcc479a01c652ec0ae6_9.png)

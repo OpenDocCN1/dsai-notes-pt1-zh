@@ -87,7 +87,6 @@ SELECT * FROM employee WHERE F_name = ‘XYZ’;
 
 本节课中，我们一起学习了SQLite中插入数据的基本操作。我们掌握了使用`INSERT INTO`语句插入完整或部分数据，使用`SELECT *`查询全部数据，并初步了解了`WHERE`子句的筛选功能。这些是操作任何SQL数据库的基础。
 
-![](img/4f8b4d7ad0eb34e48446b15b2fe8ad16_1.png)
 
 ![](img/4f8b4d7ad0eb34e48446b15b2fe8ad16_2.png)
 

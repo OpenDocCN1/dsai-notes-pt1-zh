@@ -1,14 +1,10 @@
 # 005：作为数据分析工具的电子表格 📊
 
-![](img/acd9cbe56f1fd4e1d1c8b92b2168dec3_1.png)
 
-![](img/acd9cbe56f1fd4e1d1c8b92b2168dec3_2.png)
 
 在本节课中，我们将聆听几位数据专业人士的分享，共同探讨使用电子表格作为数据分析工具的**优势**与**局限性**。
 
-![](img/acd9cbe56f1fd4e1d1c8b92b2168dec3_3.png)
 
-![](img/acd9cbe56f1fd4e1d1c8b92b2168dec3_4.png)
 
 ---
 
@@ -35,11 +31,9 @@
 
 ## 电子表格的局限性 ⚠️
 
-![](img/acd9cbe56f1fd4e1d1c8b92b2168dec3_6.png)
 
 尽管优势显著，但电子表格并非万能。在处理复杂或大规模数据时，它会暴露出一些固有的缺点。
 
-![](img/acd9cbe56f1fd4e1d1c8b92b2168dec3_7.png)
 
 ![](img/acd9cbe56f1fd4e1d1c8b92b2168dec3_8.png)
 

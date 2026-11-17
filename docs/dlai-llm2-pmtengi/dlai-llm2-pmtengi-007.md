@@ -6,7 +6,6 @@
 
 ## 概述
 
-![](img/87d42f4432de4586d46bd987e4492e44_1.png)
 
 ![](img/87d42f4432de4586d46bd987e4492e44_3.png)
 
@@ -168,7 +167,6 @@ Is this implementation efficient? Please explain.
 
 模型正确地回答，它最初建议的递归方法是低效的，并正确解释了原因。有趣的是，它还提供了一个更高效的实现方案。
 
-![](img/87d42f4432de4586d46bd987e4492e44_5.png)
 
 为什么LLM首先输出了低效的版本？很可能是因为这种递归实现在解释高效算法重要性的课程材料中非常常见，以至于计算斐波那契数的递归版本在Llama 2模型（可能大多数其他LLM也是如此）的训练数据中出现的频率很高。
 
@@ -176,7 +174,6 @@ Is this implementation efficient? Please explain.
 
 首先，我们让Code Llama编写一个计算Python函数调用运行时间的代码。
 
-![](img/87d42f4432de4586d46bd987e4492e44_7.png)
 
 ```python
 prompt6 = """
@@ -188,12 +185,10 @@ Write code to calculate the runtime of a Python function call.
 
 它给出了使用`time`模块计算运行时的示例。我们可以用它来测试哪个函数更高效。
 
-![](img/87d42f4432de4586d46bd987e4492e44_9.png)
 
 我们设置n=40（计算第40个斐波那契数），然后分别用递归函数和高效函数进行计算并计时。
 
 
-![](img/87d42f4432de4586d46bd987e4492e44_11.png)
 
 ```python
 import time
@@ -222,7 +217,6 @@ print(f"高效函数耗时: {end - start:.6f} 秒")
 
 ---
 
-![](img/87d42f4432de4586d46bd987e4492e44_13.png)
 
 ## 超长上下文窗口
 
@@ -241,9 +235,7 @@ Code Llama可以接收更长的文本。它的输入提示容量比常规Llama�
 response = code_llama(long_text)
 ```
 
-![](img/87d42f4432de4586d46bd987e4492e44_15.png)
 
-![](img/87d42f4432de4586d46bd987e4492e44_16.png)
 
 我们得到了一个响应。因此，如果你的任务（无论是编码任务还是非编码任务）需要输入比常规Llama模型能处理的更多的文本，你可以尝试使用Code Llama。
 

@@ -210,15 +210,12 @@ Somesh Jha ¹  Patrick McDaniel ¹  Huan Sun ⁶  Bo Li ⁷  Chaowei Xia
 
 结果见表[3](https://arxiv.org/html/2410.05295v3#S4.T3 "表3 ‣ 4.3 策略迁移性 ‣ 4 实验 ‣ AutoDAN-Turbo：一种用于LLM越狱策略自我探索的终身代理")。根据结果，AutoDAN-Turbo所学的策略库展现了强大的迁移性，具体可分为两个要点：首先，策略库可以跨不同目标模型迁移。从蓝色柱状图可以看出，攻击者为Llama-2-7B-chat，目标模型不同。尽管受害者模型多样，但Harmbench的ASR始终保持较高，这表明攻击有效。这意味着攻击Llama-2-7B-chat时学到的策略对其他模型如Llama-3-8B和Gemma-7B-it也同样有效。其次，策略库可以跨不同攻击者模型迁移。从灰色柱状图中可以看出，目标模型为Llama-2-7B-chat，攻击者模型各不相同。每个攻击者模型的ASR都高于原始攻击者Llama-2-7B-chat。这表明，一个攻击者使用的策略也可以被其他LLM越狱攻击者利用。另一个重要的观察结果是，在持续学习环境下，AutoDAN-Turbo框架能够有效地通过新的攻击者和目标LLM更新策略库，从而提高Harmbench的ASR。通过比较Pre-ASR和Post-ASR，以及比较Post-TSF与原始TSF（其值为$21$），可以验证这一点。
 
-![参见说明文字](img/b03df4fc1dde6e0f4ce0d63081e90708.png)
 
 (a) 攻击者：Gemma-7B-it
 
-![参见说明文字](img/0d5b5dbd1abe0b92f338de598334718b.png)
 
 (b) 攻击者：Llama-2-13B-chat
 
-![参见说明文字](img/0374a50369fcb6374e000ee2c6f43212.png)
 
 (c) 攻击者：Llama-3-70B
 

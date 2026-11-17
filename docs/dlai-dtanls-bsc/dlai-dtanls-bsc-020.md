@@ -20,7 +20,6 @@
 
 > What is the sum of all numbers from 1 to 888.
 
-![](img/80d91b667b3bbcf6526357d393e2a582_2.png)
 
 ![](img/80d91b667b3bbcf6526357d393e2a582_3.png)
 

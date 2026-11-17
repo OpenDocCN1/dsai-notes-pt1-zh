@@ -2,7 +2,6 @@
 
 在本课程中，我们将学习如何从头开始建立一个完整的开源项目。我们将涵盖从创建代码仓库、编写测试、配置持续集成，到生成文档的整个流程。通过一个名为“HUGS”的示例项目，我们将一步步实践这些关键步骤。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_1.png)
 
 ---
 
@@ -33,17 +32,14 @@
 
 ## 2. 获取代码与本地设置 💻
 
-![](img/ae9b964cad0e2ad658805ae80041e533_3.png)
 
 上一节我们创建了在线仓库，本节中我们来看看如何将其克隆到本地并设置开发环境。
 
 首先，将远程仓库克隆到本地计算机。在终端中，使用 `git clone` 命令并粘贴你的仓库 URL。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_5.png)
 
 接下来，我们需要设置 Python 开发环境并获取示例代码。我们使用一个名为 HUGS 的示例项目。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_7.png)
 
 以下是具体步骤：
 1.  从 `github.com/jrleeman/settingupopensource` 下载或克隆示例代码。
@@ -51,14 +47,12 @@
 3.  激活之前用 Conda 创建的环境：`conda activate suos`（或 `source activate suos`）。
 4.  在仓库根目录下，以可编辑模式安装 HUGS 库：`pip install -e .`
 
-![](img/ae9b964cad0e2ad658805ae80041e533_9.png)
 
 安装成功后，将新添加的代码提交到本地 Git 仓库并推送到 GitHub：
 *   `git add -A`
 *   `git commit -m “initial commit”`
 *   `git push`
 
-![](img/ae9b964cad0e2ad658805ae80041e533_11.png)
 
 ---
 
@@ -95,21 +89,16 @@
 
 ---
 
-![](img/ae9b964cad0e2ad658805ae80041e533_13.png)
 
 ## 4. 配置持续集成 (CI) 与 Travis CI 🔄
 
-![](img/ae9b964cad0e2ad658805ae80041e533_15.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_17.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_19.png)
 
 上一节我们编写了本地测试，本节中我们来看看如何利用持续集成服务自动运行测试。
 
 持续集成（CI）的核心是每次代码提交时自动运行测试，确保主分支始终处于可工作状态。这对于处理拉取请求（Pull Request）尤其有用，可以自动验证贡献者的代码是否引入错误。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_21.png)
 
 我们将使用 Travis CI 服务。它为开源项目提供免费的 CI 服务。
 
@@ -134,9 +123,7 @@ script:
 ```
 这个配置告诉 Travis CI：我们是一个 Python 项目，在 Python 3.6 环境下，通过 `pip install .` 安装项目，然后运行 `pytest`。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_23.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_25.png)
 
 创建配置文件后，将其提交并推送到一个新的分支（例如 `add-travis`），然后针对该分支创建一个拉取请求。Travis CI 会自动开始构建并运行测试。你可以在 GitHub 的拉取请求页面上看到构建状态（黄色表示进行中，绿色表示成功，红色表示失败）。
 
@@ -144,27 +131,18 @@ script:
 
 你可以轻松扩展配置，让 Travis CI 在多个 Python 版本（如 2.7, 3.5, 3.6）上并行测试。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_27.png)
 
 ---
 
-![](img/ae9b964cad0e2ad658805ae80041e533_29.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_31.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_33.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_35.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_37.png)
 
 ## 5. 代码风格检查与 Flake8 ✨
 
-![](img/ae9b964cad0e2ad658805ae80041e533_39.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_41.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_43.png)
 
 上一节我们配置了自动化测试，本节中我们来看看如何保持代码风格的一致性。
 
@@ -182,7 +160,6 @@ ignore = F403
 ```
 这会将最大行长度放宽到 95 字符，并忽略关于星号导入（`F403`）的警告。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_45.png)
 
 修复一些明显的风格问题（如在导入间添加空行、在逗号后添加空格）后，我们需要将 `flake8` 检查也集成到 Travis CI 中。
 
@@ -192,7 +169,6 @@ ignore = F403
 
 这样，每次代码提交或拉取请求都会自动进行风格检查，确保代码库的整洁和一致。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_47.png)
 
 ---
 
@@ -200,7 +176,6 @@ ignore = F403
 
 上一节我们确保了代码风格，本节中我们来看看如何为项目创建专业的文档。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_49.png)
 
 好的文档对于开源项目至关重要。Sphinx 是 Python 社区主流的文档生成工具，它不仅能处理普通的文本文档，还能自动从代码的文档字符串（docstrings）生成 API 文档。
 
@@ -231,7 +206,6 @@ sphinx-quickstart
 ```
 Sphinx 最强大的功能是自动生成 API 文档。创建一个 `api.rst` 文件，并使用 `autofunction` 指令：
 
-![](img/ae9b964cad0e2ad658805ae80041e533_51.png)
 
 ```
 API 参考
@@ -240,48 +214,35 @@ API 参考
 ```
 为了让 Sphinx 更好地解析 NumPy 风格的文档字符串，需要在 `conf.py` 文件的 `extensions` 列表中添加 `’sphinx.ext.napoleon’`。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_53.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_55.png)
 
 最后，你也可以将文档构建添加到 Travis CI 的检查中，确保文档能够成功生成，没有语法错误。在 `.travis.yml` 的 `script` 部分添加：
 ```yaml
 - cd docs && make html
 ```
 
-![](img/ae9b964cad0e2ad658805ae80041e533_57.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_59.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_61.png)
 
 ---
 
-![](img/ae9b964cad0e2ad658805ae80041e533_63.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_65.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_67.png)
 
 ## 课程总结 🎉
 
 在本节课中，我们一起学习了建立一个完整开源项目的核心步骤。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_69.png)
 
 我们从**选择许可证和创建 GitHub 仓库**开始，为项目奠定了法律和协作基础。接着，我们学习了如何**设置本地开发环境**并获取代码。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_71.png)
 
 然后，我们深入探讨了**编写自动化测试**的重要性，并使用 `pytest` 为示例函数添加了单元测试、警告测试和异常测试。为了提升效率和质量，我们配置了 **Travis CI 持续集成服务**，实现了代码提交和拉取请求的自动测试。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_73.png)
 
-![](img/ae9b964cad0e2ad658805ae80041e533_75.png)
 
 此外，我们使用 **`flake8` 工具来强制执行代码风格规范**，确保代码库的整洁一致。最后，我们介绍了如何使用 **Sphinx 生成专业文档**，包括手动编写内容和自动从文档字符串生成 API 参考。
 
-![](img/ae9b964cad0e2ad658805ae80041e533_77.png)
 
 ![](img/ae9b964cad0e2ad658805ae80041e533_79.png)
 

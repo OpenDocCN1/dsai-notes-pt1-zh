@@ -12,9 +12,7 @@
 2.  从列表中选择或输入 `settings` 命令并发送。
 3.  在弹出的设置面板中，你会看到一个模型版本的下拉选择菜单。
 
-![](img/c69de05440826df53fffe6719d7672cd_1.png)
 
-![](img/c69de05440826df53fffe6719d7672cd_1.png)
 
 ## 可用的模型版本
 
@@ -36,15 +34,12 @@ Midjourney持续更新其模型以提升图像质量。在设置菜单中，你�
 
 为了展示不同版本间的差异，我们将使用同一个提示词在不同版本下生成图像。
 
-![](img/c69de05440826df53fffe6719d7672cd_3.png)
 
 首先，我将模型切换至 **Version 2**。接着，我输入与之前相同的提示词：`crystallized dessert oasis`。让我们观察Version 2生成的图像在质量上有何不同。
 
-![](img/c69de05440826df53fffe6719d7672cd_3.png)
 
 在生成过程中，你可以看到其他用户也在使用Midjourney，并能浏览他们生成的图像。当前设置显示后缀为“version two”，提示词是“crystallized dessert oasis”。图像生成后，点击即可查看，你也可以选择在浏览器中打开。
 
-![](img/c69de05440826df53fffe6719d7672cd_5.png)
 
 ![](img/c69de05440826df53fffe6719d7672cd_5.png)
 
@@ -64,9 +59,7 @@ Midjourney持续更新其模型以提升图像质量。在设置菜单中，你�
 
 现在，我们可以直观地比较不同版本的输出结果了。下图展示了使用相同提示词 `crystallized dessert oasis` 时，Version 1 和 Version 2 生成图像的差异。可以看到，Version 2 在细节、光影和整体质感上通常有显著提升。
 
-![](img/c69de05440826df53fffe6719d7672cd_7.png)
 
-![](img/c69de05440826df53fffe6719d7672cd_9.png)
 *Version 1 生成的图像*
 
 ![](img/c69de05440826df53fffe6719d7672cd_10.png)
@@ -76,7 +69,6 @@ Midjourney持续更新其模型以提升图像质量。在设置菜单中，你�
 
 ![](img/c69de05440826df53fffe6719d7672cd_11.png)
 
-![](img/c69de05440826df53fffe6719d7672cd_9.png)
 
 ![](img/c69de05440826df53fffe6719d7672cd_10.png)
 

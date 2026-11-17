@@ -14,27 +14,21 @@
 
 ## PyTorch网络结构编写逻辑
 
-![](img/81dfc390d09341e49f913b53cfbdf04e_1.png)
 
 这里定义了一个名为 `Darknet` 的类，它其实就是论文中的Darknet-53。因为我们的框架是用PyTorch去做的，所以在这里需要写两块逻辑。
 
-![](img/81dfc390d09341e49f913b53cfbdf04e_3.png)
 
 第一块逻辑是构造函数。在这个构造函数中，需要指定好接下来这个网络模型都用到了哪些模块。
 
-![](img/81dfc390d09341e49f913b53cfbdf04e_5.png)
 
 在我们的配置文件中，有一个 `yolov3.cfg` 文件。它就是我们整体要使用哪些结构的全部定义，包括一些参数和网络层的名字。
 
 以下是配置文件的示例内容：
 
-![](img/81dfc390d09341e49f913b53cfbdf04e_7.png)
 
 
-![](img/81dfc390d09341e49f913b53cfbdf04e_9.png)
 
 
-![](img/81dfc390d09341e49f913b53cfbdf04e_11.png)
 
 
 ![](img/81dfc390d09341e49f913b53cfbdf04e_13.png)

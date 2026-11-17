@@ -1,6 +1,5 @@
 # 015：构建完整功能的聊天机器人 🤖
 
-![](img/50b76bf8c477b208a834e72d4141c649_0.png)
 
 在本节课中，我们将学习如何构建一个功能完整的聊天机器人。我们将整合之前学到的知识——加载文档、分割文本、创建向量存储和检索信息——并加入“聊天历史”的概念，使机器人能够处理对话中的后续问题。
 
@@ -8,18 +7,14 @@
 
 ## 环境与数据准备
 
-![](img/50b76bf8c477b208a834e72d4141c649_2.png)
 
 首先，我们需要设置环境并加载数据。
 
-![](img/50b76bf8c477b208a834e72d4141c649_4.png)
 
 我们将加载环境变量，并启动LangSmith平台以便观察内部运行过程。
 
-![](img/50b76bf8c477b208a834e72d4141c649_6.png)
 
 
-![](img/50b76bf8c477b208a834e72d4141c649_8.png)
 
 ```python
 # 加载环境变量
@@ -30,16 +25,12 @@ import os
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 ```
 
-![](img/50b76bf8c477b208a834e72d4141c649_10.png)
 
 接下来，加载我们之前创建的向量存储，其中包含了所有课程材料的嵌入。
 
-![](img/50b76bf8c477b208a834e72d4141c649_12.png)
 
 
-![](img/50b76bf8c477b208a834e72d4141c649_14.png)
 
-![](img/50b76bf8c477b208a834e72d4141c649_16.png)
 
 ```python
 from langchain.vectorstores import Chroma
@@ -49,7 +40,6 @@ embeddings = OpenAIEmbeddings()
 vectorstore = Chroma(persist_directory="./chroma_db", embedding_function=embeddings)
 ```
 
-![](img/50b76bf8c477b208a834e72d4141c649_18.png)
 
 我们可以对这个向量存储进行基础的相似性搜索。
 
@@ -60,7 +50,6 @@ docs = vectorstore.similarity_search("什么是机器学习？", k=3)
 
 然后，初始化我们将要使用的语言模型。
 
-![](img/50b76bf8c477b208a834e72d4141c649_20.png)
 
 ```python
 from langchain.chat_models import ChatOpenAI
@@ -71,30 +60,23 @@ llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
 
 以上步骤与之前课程的内容一致。现在，让我们进入核心部分：为聊天机器人添加记忆能力。
 
-![](img/50b76bf8c477b208a834e72d4141c649_22.png)
 
 ---
 
-![](img/50b76bf8c477b208a834e72d4141c649_24.png)
 
 ## 添加记忆与对话能力
 
-![](img/50b76bf8c477b208a834e72d4141c649_26.png)
 
 上一节我们介绍了基础的检索问答链。本节中，我们来看看如何通过引入“记忆”来让机器人理解对话上下文。
 
-![](img/50b76bf8c477b208a834e72d4141c649_28.png)
 
 我们将使用“会话缓冲内存”。它的作用是保存一个聊天消息的历史记录列表，并在每次提问时，将这段历史与当前问题一起传递给模型。
 
-![](img/50b76bf8c477b208a834e72d4141c649_30.png)
 
 以下是初始化内存的代码：
 
-![](img/50b76bf8c477b208a834e72d4141c649_32.png)
 
 
-![](img/50b76bf8c477b208a834e72d4141c649_34.png)
 
 ```python
 from langchain.memory import ConversationBufferMemory
@@ -105,28 +87,22 @@ memory = ConversationBufferMemory(
 )
 ```
 
-![](img/50b76bf8c477b208a834e72d4141c649_36.png)
 
 这是最简单的一种内存类型。关于内存更深入的内容，可以参考本系列的第一门课程。
 
-![](img/50b76bf8c477b208a834e72d4141c649_38.png)
 
 ---
 
-![](img/50b76bf8c477b208a834e72d4141c649_40.png)
 
 ## 创建会话检索链
 
 现在，让我们创建一种新型的链——会话检索链。它在基础的检索问答链之上，增加了一个关键步骤：**将聊天历史和新问题浓缩成一个独立的、可检索的问题**。
 
-![](img/50b76bf8c477b208a834e72d4141c649_42.png)
 
 以下是创建该链的代码：
 
-![](img/50b76bf8c477b208a834e72d4141c649_44.png)
 
 
-![](img/50b76bf8c477b208a834e72d4141c649_46.png)
 
 ```python
 from langchain.chains import ConversationalRetrievalChain
@@ -138,9 +114,7 @@ qa_chain = ConversationalRetrievalChain.from_llm(
 )
 ```
 
-![](img/50b76bf8c477b208a834e72d4141c649_48.png)
 
-![](img/50b76bf8c477b208a834e72d4141c649_50.png)
 
 这个链的工作流程是：
 1.  接收用户的新问题和聊天历史。
@@ -150,15 +124,12 @@ qa_chain = ConversationalRetrievalChain.from_llm(
 
 ---
 
-![](img/50b76bf8c477b208a834e72d4141c649_52.png)
 
 ## 测试对话功能
 
-![](img/50b76bf8c477b208a834e72d4141c649_54.png)
 
 让我们来测试一下这个具有对话能力的机器人。
 
-![](img/50b76bf8c477b208a834e72d4141c649_56.png)
 
 首先，问一个没有历史背景的问题：
 
@@ -169,15 +140,12 @@ result = qa_chain({"question": question})
 print(result["answer"])
 ```
 
-![](img/50b76bf8c477b208a834e72d4141c649_58.png)
 
-![](img/50b76bf8c477b208a834e72d4141c649_60.png)
 
 假设得到的答案是：“教师假设学生对概率和统计学有基本的了解”。
 
 现在，问一个后续问题：
 
-![](img/50b76bf8c477b208a834e72d4141c649_62.png)
 
 ```python
 # 后续问题
@@ -186,50 +154,39 @@ result = qa_chain({"question": follow_up})
 print(result["answer"])
 ```
 
-![](img/50b76bf8c477b208a834e72d4141c649_64.png)
 
 此时，机器人能够理解“这些先决条件”指代的是上一个答案中提到的“概率和统计学”，并给出相关的解释。
 
-![](img/50b76bf8c477b208a834e72d4141c649_66.png)
 
 ---
 
-![](img/50b76bf8c477b208a834e72d4141c649_68.png)
 
 ## 内部机制解析
 
-![](img/50b76bf8c477b208a834e72d4141c649_70.png)
 
 我们可以通过LangSmith观察内部发生的过程。链的输入现在不仅包含问题，还包含了从内存中获取的聊天历史。
 
-![](img/50b76bf8c477b208a834e72d4141c649_72.png)
 
 在追踪日志中，你会看到两个主要步骤：
 1.  **生成独立问题**：调用一个LLM，根据对话历史将后续问题重写为独立问题。提示模板类似于：
     > 给定以下对话和后续问题，请将后续问题重写为一个独立的问题。
 2.  **检索并回答**：将独立问题送入检索器，获取相关文档，最后利用这些文档回答用户的原始问题。
 
-![](img/50b76bf8c477b208a834e72d4141c649_74.png)
 
-![](img/50b76bf8c477b208a834e72d4141c649_76.png)
 
 你可以尝试调整这个链的各个部分，例如：
 *   修改用于回答问题或重写问题的提示模板。
 *   尝试其他类型的内存（如 `ConversationSummaryMemory`）。
 
-![](img/50b76bf8c477b208a834e72d4141c649_78.png)
 
 ---
 
-![](img/50b76bf8c477b208a834e72d4141c649_80.png)
 
 ## 整合为完整应用
 
-![](img/50b76bf8c477b208a834e72d4141c649_82.png)
 
 最后，我们将所有组件整合到一个具有图形用户界面的完整应用中。虽然UI代码较多，但核心逻辑与我们上面构建的链一致。
 
-![](img/50b76bf8c477b208a834e72d4141c649_84.png)
 
 以下是核心流程的总结：
 

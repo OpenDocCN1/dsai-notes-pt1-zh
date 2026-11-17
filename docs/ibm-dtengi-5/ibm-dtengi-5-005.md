@@ -1,18 +1,14 @@
 # 005：插入语句详解
 
-![](img/c6b253dd296a8e03ec9ab2b8a5a64e95_0.png)
 
 在本节课中，我们将学习如何向关系数据库表中填充数据，即使用 `INSERT` 语句。课程结束时，你将能够识别 `INSERT` 语句的语法，并解释向表中添加数据的两种方法。
 
 ---
 
-![](img/c6b253dd296a8e03ec9ab2b8a5a64e95_2.png)
 
 ## 🗂️ 插入语句简介
 
-![](img/c6b253dd296a8e03ec9ab2b8a5a64e95_3.png)
 
-![](img/c6b253dd296a8e03ec9ab2b8a5a64e95_4.png)
 
 上一节我们介绍了如何创建表。表创建完成后，需要向其中填充数据。向表中插入数据，我们使用 `INSERT` 语句。
 
@@ -22,13 +18,10 @@
 
 ## 📝 INSERT 语句语法
 
-![](img/c6b253dd296a8e03ec9ab2b8a5a64e95_6.png)
 
 基于之前创建的作者实体示例，我们使用实体名 `author` 及其属性作为表的列创建了 `author` 表。现在，我们将通过向表中添加行来填充数据。
 
-![](img/c6b253dd296a8e03ec9ab2b8a5a64e95_7.png)
 
-![](img/c6b253dd296a8e03ec9ab2b8a5a64e95_8.png)
 
 向 `author` 表添加数据，我们使用 `INSERT`` 语句。其基本语法如下：
 
@@ -44,7 +37,6 @@ VALUES (value1, value2, value3, ...);
 
 ---
 
-![](img/c6b253dd296a8e03ec9ab2b8a5a64e95_10.png)
 
 ## 🔧 插入单行数据
 
@@ -69,7 +61,6 @@ VALUES ('A1', 'Chong', 'Raoul', 'rfc@ibm.com', 'Toronto', 'CA');
 
 以下是同时插入两行数据的示例：
 
-![](img/c6b253dd296a8e03ec9ab2b8a5a64e95_12.png)
 
 ```sql
 INSERT INTO author (author_id, last_name, first_name, email, city, country)
@@ -82,9 +73,7 @@ VALUES
 
 ## ✅ 课程总结
 
-![](img/c6b253dd296a8e03ec9ab2b8a5a64e95_14.png)
 
-![](img/c6b253dd296a8e03ec9ab2b8a5a64e95_15.png)
 
 本节课我们一起学习了 `INSERT` 语句。你现在应该能够：
 1.  识别 `INSERT INTO table_name (columns) VALUES (values);` 的基本语法。

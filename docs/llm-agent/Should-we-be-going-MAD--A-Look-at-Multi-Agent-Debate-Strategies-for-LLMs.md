@@ -102,23 +102,18 @@ Medprompt（Nori 等人，[2023](https://arxiv.org/html/2311.17371v3#bib.bib20)�
 
 表 2：每个系统在不同数据集上取得的最佳表现。列出了每个系统在每个数据集上的最高得分，并在括号中显示了各数据集上的中位表现。
 
-![参见标题说明](img/29e5b94da9bbcf7b3ae0887c56d6063a.png)
 
 (a) PubMedQA 总准确率
 
-![参见标题说明](img/f2652188e4aa0549c396f582d8f9abea.png)
 
 (b) MMLU 总准确率
 
-![参见标题说明](img/891b22e332fa918e3ef6ddadae684a63.png)
 
 (c) CosmosQA 总准确率
 
-![参见标题说明](img/0661ea573d501ded7aa03fb8f120294f.png)
 
 (d) CIAR 总准确率
 
-![参见标题说明](img/d3a6e90b04314ee76ff78199aeb2cd88.png)
 
 (e) GPQA 总准确率
 
@@ -158,7 +153,6 @@ Medprompt（Nori 等人，[2023](https://arxiv.org/html/2311.17371v3#bib.bib20)�
 
 图4：第一轮与最后一轮给出的第一代理答案之间的相对准确度提升，平均计算于所有数据集，以及与最终答案的比较。
 
-![参见说明](img/2ac7255144f0f609c5dab3b7ab1f2aca.png)![参见说明](img/514db4c00c4173fbc75db38e566be1b9.png)
 
 图5：左侧：根据提示固定的协议，Multi-Persona的准确度。右侧：根据第一轮辩论中的平均协议，Multi-Persona的准确度。
 
@@ -208,7 +202,6 @@ Multi-Persona是此方法的理想测试平台，因为它仅使用两个具有�
 
 我们评估了 GPT-4（OpenAI 等，[2024](https://arxiv.org/html/2311.17371v3#bib.bib22)）和 Mixtral 8x7B（Jiang 等，[2024](https://arxiv.org/html/2311.17371v3#bib.bib10)）在 MedQA 数据集上的能力，应用了在 USMLE 上为 Multi-Persona 与 GPT-3.5 确定的最佳一致性调节值。结果如图 [8](https://arxiv.org/html/2311.17371v3#S3.F8 "Figure 8 ‣ Evaluating using other APIs ‣ 3 Experiments ‣ Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs") 和 [9](https://arxiv.org/html/2311.17371v3#S3.F9 "Figure 9 ‣ Evaluating using other APIs ‣ 3 Experiments ‣ Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs")所示。
 
-![参考标题](img/4363f20f213a4fbd8f96598c07ae533b.png)![参考标题](img/c3ef751c2c70443f5616adb5e0a5f3fd.png)
 
 图 8：GPT-4 在 MedQA 数据集上的实验配置基准。左侧：每个问题的准确度与平均成本（$）之间的关系。点的大小反映了每个问题所需的平均 API 调用次数。右侧：按策略汇总的准确度，按平均表现（黑点）排序。
 
@@ -312,7 +305,6 @@ Multi-Persona是此方法的理想测试平台，因为它仅使用两个具有�
 
 我们为每种策略在每个数据集上提供了全面的 GPT-3 结果：MedQA、PubMedQA、MMLU、CIAR、GPQA、CosmosQA 和 Chess。对于每个场景，我们绘制了准确性与每个问题的平均回答时间、准确性与每个问题使用的平均标记数之间的关系，以及准确性与总美元成本的比较。此外，还提供了一个箱形图来总结每种策略的表现。这些结果可以在图 [10](https://arxiv.org/html/2311.17371v3#A1.F10 "Figure 10 ‣ A.1 Extended results on additional datasets ‣ Appendix A Appendix ‣ Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs")、[11](https://arxiv.org/html/2311.17371v3#A1.F11 "Figure 11 ‣ A.1 Extended results on additional datasets ‣ Appendix A Appendix ‣ Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs")、[12](https://arxiv.org/html/2311.17371v3#A1.F12 "Figure 12 ‣ A.1 Extended results on additional datasets ‣ Appendix A Appendix ‣ Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs")、[13](https://arxiv.org/html/2311.17371v3#A1.F13 "Figure 13 ‣ A.1 Extended results on additional datasets ‣ Appendix A Appendix ‣ Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs")、[14](https://arxiv.org/html/2311.17371v3#A1.F14 "Figure 14 ‣ A.1 Extended results on additional datasets ‣ Appendix A Appendix ‣ Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs") 和 [15](https://arxiv.org/html/2311.17371v3#A1.F15 "Figure 15 ‣ A.1 Extended results on additional datasets ‣ Appendix A Appendix ‣ Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs") 中查看。
 
-![参见图注](img/88ddaa85fd857be4a01ed4b94262ac52.png)
 
 (a) 准确性与每个问题的平均回答时间
 
@@ -330,7 +322,6 @@ Multi-Persona是此方法的理想测试平台，因为它仅使用两个具有�
 
 图 10：MedQA 实验结果。
 
-![参考标题](img/b5fee5120dd775d9043dbceda4ddaa00.png)
 
 (a) 准确率与每个问题的平均时间
 
@@ -348,7 +339,6 @@ Multi-Persona是此方法的理想测试平台，因为它仅使用两个具有�
 
 图 11：PubMedQA 实验结果。
 
-![参考标题](img/7bc070f91ae188727762222184930688.png)
 
 (a) 准确率与每个问题的平均时间
 
@@ -366,7 +356,6 @@ Multi-Persona是此方法的理想测试平台，因为它仅使用两个具有�
 
 图 12：MMLU 实验结果。
 
-![参考标题](img/03d97a249ef75c327f733474442ba5c8.png)
 
 (a) 准确率与每个问题的平均时间
 
@@ -384,7 +373,6 @@ Multi-Persona是此方法的理想测试平台，因为它仅使用两个具有�
 
 图 13：CosmosQA 实验结果。
 
-![参考标题](img/7e7e88b038091e5b863d222ac0ac1885.png)
 
 (a) 准确率与每个问题的平均时间
 
@@ -402,7 +390,6 @@ Multi-Persona是此方法的理想测试平台，因为它仅使用两个具有�
 
 图 14：CIAR 实验结果。
 
-![参考标题](img/95caf3e3d034b40f92468efed6fa646d.png)
 
 (a) 准确率与每个问题的平均时间
 
@@ -420,7 +407,6 @@ Multi-Persona是此方法的理想测试平台，因为它仅使用两个具有�
 
 图 15：GPQA 实验结果。
 
-![参考标题](img/081d18081ed19f82d986e953da60fcfd.png)
 
 (a) 准确率与每个问题的平均时间
 

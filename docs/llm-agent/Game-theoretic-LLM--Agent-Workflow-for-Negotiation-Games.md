@@ -1175,11 +1175,9 @@ $\text{Difficulty}(d)$越大，数据点的难度就越大。
 
 (b) 表 21b：变化 2：鹿猎博弈的支付矩阵
 
-![参考说明](img/d04f27ff3296ecbab60a4414d3bc861a.png)
 
 图 5：不同支付矩阵下代理的表现（囚徒困境）
 
-![参考说明](img/ce85d796be1a5e5e3520ac7b5696ae71.png)
 
 图 6：不同支付矩阵下代理的表现（鹿猎博弈）
 
@@ -1283,7 +1281,6 @@ Prompt 6: You must make your own choice regardless what the other player says.
 
 ```
 
-![参考说明](img/65b2263e9b3012a0deecec2628f171f0.png)
 
 图9：六个设计的提示对囚徒困境博弈的影响，不同谈判轮数的效果：1轮、2轮和3轮对应三行
 

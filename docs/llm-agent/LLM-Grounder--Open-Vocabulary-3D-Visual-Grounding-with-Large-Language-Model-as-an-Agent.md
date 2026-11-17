@@ -137,7 +137,6 @@ OpenScene 和 LERF。OpenScene [[1](#bib.bib1)] 和 LERF [[35](#bib.bib35)] 是�
 
 与基准方法相比，我们发现*LLM 代理可以提高零-shot 开放词汇定位*。如表 [I](#S2.T1 "TABLE I ‣ Tool-Using ‣ II Related Work ‣ LLM-Grounder: Open-Vocabulary 3D Visual Grounding with Large Language Model as an Agent") 所示，添加 LLM 代理后，LERF 和 OpenScene 的定位性能分别在 Accuracy$@$0.25 上分别提高了 5.0% 和 17.1%。我们将 LERF 性能提升较小的原因归因于 LERF 本身较弱的整体定位能力。性能提升较小表明，当工具向 LLM 代理提供过于嘈杂的反馈时，LLM 代理很难基于嘈杂的输入进行推理并提高性能。我们还注意到 Accuracy$@$0.5 上的性能提升较低，该指标要求预测的边界框与真实边界框的重叠度超过 50%。我们将这一现象归因于底层定位器缺乏实例分割能力。我们观察到，定位器通常会为正确定位的物体预测出过大或过小的边界框，这种预测无法被 LLM 修正，因此导致精确视觉定位的困难和性能提升较低。此外，我们发现当使用 GPT-3.5 作为 OpenScene 的代理时，性能相较于不使用 GPT 时有所下降。我们将此归因于 GPT-3.5 在工具使用、空间推理和常识推理能力方面较弱。
 
-![Refer to caption](img/b5683635dd7263019d32ce06e0f6fe98.png)
 
 图4：性能差异（有LLM - 无LLM）与查询文本复杂度的对比。当文本查询更复杂时，LLM的帮助作用更大，但在更高复杂度的情况下，帮助作用并不显著。
 

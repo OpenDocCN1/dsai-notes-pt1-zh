@@ -83,7 +83,6 @@ with torch.inference_mode():
 
 ![](img/18723e49f11d1f1ee420a0c0f1aeea99_10.png)
 
-![](img/18723e49f11d1f1ee420a0c0f1aeea99_11.png)
 
 **绘图代码：**
 ```python

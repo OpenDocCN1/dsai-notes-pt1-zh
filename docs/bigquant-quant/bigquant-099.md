@@ -1,28 +1,19 @@
 # 099：多项式回归实战天猫双十一销量预测
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_0.png)
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_2.png)
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_4.png)
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_6.png)
 
 在本节课中，我们将要学习如何运用多项式回归模型，对天猫双十一历年销售额数据进行拟合与预测。我们将从数据准备开始，逐步完成升维、模型训练与评估，最终得到一个能够描述销量增长规律的数学模型。
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_8.png)
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_10.png)
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_12.png)
 
 ## 数据背景与目标
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_14.png)
 
 上一节我们介绍了多项式回归的基本原理，本节中我们来看看如何将其应用于一个真实的数据集。
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_16.png)
 
 天猫双十一购物节自2009年首次举办以来，销售额呈现爆发式增长。这些增长数据背后是否存在某种数学规律？我们希望通过多项式回归模型来寻找答案。
 
@@ -46,11 +37,8 @@
 首先，我们需要导入必要的库并加载数据。
 
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_18.png)
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_20.png)
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_22.png)
 
 ```python
 import numpy as np
@@ -90,9 +78,7 @@ print("Scaled year features:", x_scaled)
 
 接下来，我们对缩放后的特征进行多项式升维，然后使用线性回归模型进行拟合。
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_24.png)
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_26.png)
 
 以下是构建和训练模型的核心步骤：
 
@@ -116,7 +102,6 @@ print("Model coefficients:", model.coef_)
 
 ## 模型预测与可视化
 
-![](img/1a1daf512e65c3ed0f94ef9289bcacaa_28.png)
 
 模型训练完成后，我们可以生成一个平滑的曲线来观察拟合效果，并与原始数据点进行对比。
 

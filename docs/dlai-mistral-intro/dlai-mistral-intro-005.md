@@ -122,9 +122,7 @@ print(response.choices[0].message)
 
 模型返回函数调用建议后，需要由用户端来实际执行这些函数。
 
-![](img/dad4f46f3799059de6e4db6145f3d840_3.png)
 
-![](img/dad4f46f3799059de6e4db6145f3d840_4.png)
 
 以下是执行函数并获取结果的代码：
 
@@ -150,7 +148,6 @@ for tool_call in tool_calls:
     chat_history.append(tool_message)
 ```
 
-![](img/dad4f46f3799059de6e4db6145f3d840_6.png)
 
 ### 步骤四：模型生成最终答案
 

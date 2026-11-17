@@ -44,7 +44,6 @@ def forward_diffusion(x0, t, sqrt_alphas_cumprod, sqrt_one_minus_alphas_cumprod)
 
 ---
 
-![](img/a8e7b2347da36edf510d41eef223b64d_5.png)
 
 ## 噪声分类器 🎯
 

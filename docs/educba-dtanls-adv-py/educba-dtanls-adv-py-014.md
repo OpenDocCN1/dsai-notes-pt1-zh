@@ -1,16 +1,11 @@
 # 014：与聊天机器人协作 🤖
 
-![](img/663685fc9be55e006de7cce1f6541c52_0.png)
 
-![](img/663685fc9be55e006de7cce1f6541c52_2.png)
 
-![](img/663685fc9be55e006de7cce1f6541c52_3.png)
 
 在本节课中，我们将学习如何使用Python的`socket`和`threading`模块构建一个简单的聊天机器人客户端与服务器。我们将通过创建两个独立的脚本来实现网络通信，并利用多线程技术实现同时发送和接收消息。
 
-![](img/663685fc9be55e006de7cce1f6541c52_5.png)
 
-![](img/663685fc9be55e006de7cce1f6541c52_7.png)
 
 ---
 
@@ -18,13 +13,9 @@
 
 首先，我们需要为聊天机器人应用创建一个新的项目包。我们将创建两个主要的Python文件：一个用于客户端，另一个用于服务器。
 
-![](img/663685fc9be55e006de7cce1f6541c52_9.png)
 
-![](img/663685fc9be55e006de7cce1f6541c52_10.png)
 
-![](img/663685fc9be55e006de7cce1f6541c52_11.png)
 
-![](img/663685fc9be55e006de7cce1f6541c52_12.png)
 
 以下是创建项目结构的步骤：
 
@@ -33,23 +24,18 @@
     *   `client.py`：用于实现聊天客户端。
     *   `server.py`：用于实现聊天服务器。
 
-![](img/663685fc9be55e006de7cce1f6541c52_14.png)
 
 ---
 
-![](img/663685fc9be55e006de7cce1f6541c52_15.png)
 
 ## 构建客户端
 
-![](img/663685fc9be55e006de7cce1f6541c52_17.png)
 
-![](img/663685fc9be55e006de7cce1f6541c52_18.png)
 
 上一节我们创建了项目结构，本节中我们来看看如何构建客户端。
 
 客户端的主要任务是连接到服务器，并能够同时发送和接收消息。这需要用到`socket`模块来建立网络连接，以及`threading`模块来并行处理收发操作。
 
-![](img/663685fc9be55e006de7cce1f6541c52_20.png)
 
 以下是客户端`client.py`的核心实现步骤：
 
@@ -61,13 +47,10 @@
     *   `send_data()`：一个循环，持续从用户输入获取消息，编码后发送给服务器（`client_socket.sendall()`）。
 5.  **启动线程**：创建两个线程，分别以`receive_data`和`send_data`函数为目标，并启动它们，实现同时收发。
 
-![](img/663685fc9be55e006de7cce1f6541c52_22.png)
 
-![](img/663685fc9be55e006de7cce1f6541c52_23.png)
 
 **核心代码示例**：
 
-![](img/663685fc9be55e006de7cce1f6541c52_24.png)
 
 ```python
 import socket
@@ -95,7 +78,6 @@ send_thread.start()
 
 ---
 
-![](img/663685fc9be55e006de7cce1f6541c52_26.png)
 
 ## 构建服务器
 
@@ -103,11 +85,9 @@ send_thread.start()
 
 服务器的任务是绑定到一个端口，监听客户端的连接请求，并为每个连接处理消息的收发。与客户端类似，服务器也需要使用多线程来处理并发的通信。
 
-![](img/663685fc9be55e006de7cce1f6541c52_28.png)
 
 以下是服务器`server.py`的核心实现步骤：
 
-![](img/663685fc9be55e006de7cce1f6541c52_29.png)
 
 1.  **导入模块**：导入`socket`和`threading`模块。
 2.  **创建并绑定套接字**：使用`socket.socket()`创建服务器套接字，并使用`server_socket.bind(('', port))`将其绑定到指定的端口（例如2000）。
@@ -148,13 +128,10 @@ while True:
 
 ## 总结
 
-![](img/663685fc9be55e006de7cce1f6541c52_31.png)
 
-![](img/663685fc9be55e006de7cce1f6541c52_32.png)
 
 本节课中我们一起学习了如何使用Python构建一个基础的聊天机器人通信框架。我们掌握了以下核心技能：
 
-![](img/663685fc9be55e006de7cce1f6541c52_34.png)
 
 1.  使用**`socket`模块**创建网络套接字，实现客户端与服务器之间的TCP连接。
 2.  理解**客户端-服务器模型**，包括客户端的`connect`操作和服务器端的`bind`、`listen`、`accept`操作。

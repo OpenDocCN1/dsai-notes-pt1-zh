@@ -1,6 +1,5 @@
 # 生成式AI：P10：使用LlamaIndex与Google Gemini构建问答系统 🚀
 
-![](img/89f626e553e5d228ce0f26e97f005bea_0.png)
 
 ## 概述
 
@@ -28,17 +27,12 @@
 
 在开始编码之前，理解背后的核心概念至关重要。LlamaIndex是一个用于构建**检索增强生成**应用程序的框架。
 
-![](img/89f626e553e5d228ce0f26e97f005bea_2.png)
 
 **检索增强生成**的核心思想是：当用户提出问题时，系统首先从外部知识库中检索最相关的文档片段，然后将这些片段与问题一起提供给大语言模型，从而生成更准确、更具上下文的答案。
 
-![](img/89f626e553e5d228ce0f26e97f005bea_3.png)
 
-![](img/89f626e553e5d228ce0f26e97f005bea_4.png)
 
-![](img/89f626e553e5d228ce0f26e97f005bea_5.png)
 
-![](img/89f626e553e5d228ce0f26e97f005bea_6.png)
 
 其工作流程可以概括为以下公式：
 `最终答案 = LLM(用户问题 + 检索到的相关文档)`
@@ -51,7 +45,6 @@
 
 以下是构建问答系统的具体步骤：
 
-![](img/89f626e553e5d228ce0f26e97f005bea_8.png)
 
 ![](img/89f626e553e5d228ce0f26e97f005bea_9.png)
 
@@ -63,7 +56,6 @@
 
 ![](img/89f626e553e5d228ce0f26e97f005bea_10.png)
 
-![](img/89f626e553e5d228ce0f26e97f005bea_11.png)
 
 ---
 
@@ -99,7 +91,6 @@ documents = SimpleDirectoryReader(“./data”).load_data()
 index = VectorStoreIndex.from_documents(documents, llm=llm)
 ```
 
-![](img/89f626e553e5d228ce0f26e97f005bea_13.png)
 
 ![](img/89f626e553e5d228ce0f26e97f005bea_14.png)
 

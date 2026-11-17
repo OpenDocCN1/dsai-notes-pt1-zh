@@ -108,7 +108,6 @@ Things about Fake8 is that it comes with tons of extensions and plugin so you ca
 
 
 
-![](img/d294efe46382d60add6edd2f50f3188a_18.png)
 
 ![](img/d294efe46382d60add6edd2f50f3188a_19.png)
 

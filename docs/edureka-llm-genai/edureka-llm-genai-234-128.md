@@ -1,6 +1,5 @@
 # 第二三四部分 128：Midjourney账户设置
 
-![](img/c140426a0bd76f7f71f89a657ab65f2d_0.png)
 
 在本节课中，我们将学习如何在Discord平台上设置Midjourney账户。你将了解在Discord上设置账户的目的与优势，并掌握创建账户的详细步骤。
 
@@ -40,7 +39,6 @@
 接下来是“Showcase”选项。
 
 ![](img/c140426a0bd76f7f71f89a657ab65f2d_6.png)
-![](img/c140426a0bd76f7f71f89a657ab65f2d_7.png)
 
 “Showcase”很可能指的是一个突出显示产品或服务最突出或示范性方面的部分，通常通过演示、示例或案例研究来说明其功能。您可以在这里看到所有由Midjourney生成的图片示例。
 
@@ -48,7 +46,6 @@
 
 ![](img/c140426a0bd76f7f71f89a657ab65f2d_6.png)
 
-![](img/c140426a0bd76f7f71f89a657ab65f2d_7.png)
 
 您可以看到所有这些内容。
 

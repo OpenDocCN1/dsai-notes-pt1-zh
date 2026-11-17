@@ -12,7 +12,6 @@
 
 首先，我们需要在命令行中创建一个项目目录并进入该目录。
 
-![](img/516ee568224bfeaf40e9992379310143_2.png)
 
 ```bash
 MD LlamaIndexProject
@@ -29,14 +28,12 @@ code .
 
 在VS Code中打开终端，使用以下命令创建并激活一个名为`venv`的虚拟环境。
 
-![](img/516ee568224bfeaf40e9992379310143_4.png)
 
 ```bash
 conda create -p ./venv python=3.8 -y
 conda activate ./venv
 ```
 
-![](img/516ee568224bfeaf40e9992379310143_5.png)
 
 创建虚拟环境后，我们需要安装项目所需的Python包。以下是本项目的核心依赖列表。
 
@@ -125,16 +122,12 @@ response = query_engine.query("你的问题是什么？")
 print(response)
 ```
 
-![](img/516ee568224bfeaf40e9992379310143_7.png)
 
-![](img/516ee568224bfeaf40e9992379310143_8.png)
 
 以下是完整的代码示例，整合了以上所有步骤：
 
-![](img/516ee568224bfeaf40e9992379310143_9.png)
 
 
-![](img/516ee568224bfeaf40e9992379310143_11.png)
 
 ```python
 # basic_qa.py
@@ -159,7 +152,6 @@ print(response)
 
 运行此脚本前，请确保`data`文件夹中存在文档，并且`.env`文件中的API密钥有效。
 
-![](img/516ee568224bfeaf40e9992379310143_13.png)
 
 ---
 
@@ -167,15 +159,12 @@ print(response)
 
 本节课中我们一起学习了如何从零开始搭建一个基于LlamaIndex和OpenAI API的问答系统。我们完成了以下关键步骤：
 
-![](img/516ee568224bfeaf40e9992379310143_15.png)
 
 1.  **环境搭建**：创建项目目录、虚拟环境并安装必要依赖。
 2.  **安全配置**：使用`.env`文件管理敏感的API密钥。
 3.  **系统实现**：编写代码加载文档、创建向量索引并构建一个能够回答问题的查询引擎。
 
-![](img/516ee568224bfeaf40e9992379310143_16.png)
 
-![](img/516ee568224bfeaf40e9992379310143_17.png)
 
 ![](img/516ee568224bfeaf40e9992379310143_18.png)
 

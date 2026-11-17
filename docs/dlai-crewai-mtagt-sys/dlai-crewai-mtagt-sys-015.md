@@ -8,18 +8,15 @@
 
 首先，我们需要导入必要的类并设置环境。以下是核心步骤：
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_1.png)
 
 1.  **导入核心类**：我们需要从 crewAI 导入 `Agent`、`Task` 和 `Crew` 这三个核心类。
 2.  **配置语言模型与工具**：我们将使用 GPT-4 Turbo 模型，并配置两个工具：`SerperDevTool`（用于网络搜索）和 `ScrapeWebsiteTool`（用于抓取特定网页内容）。你需要提供相应的 API 密钥。
 3.  **定义智能体**：我们将创建四个智能体，分别负责数据分析、交易策略、交易执行和风险管理。
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_2.png)
 
 以下是初始设置的代码框架：
 
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_4.png)
 
 ```python
 from crewai import Agent, Task, Crew
@@ -35,9 +32,7 @@ scrape_tool = ScrapeWebsiteTool()
 # 注意：实际代码中需要正确安装和导入相关库。
 ```
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_6.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_7.png)
 
 ---
 
@@ -64,23 +59,17 @@ scrape_tool = ScrapeWebsiteTool()
     *   **目标**：全面评估并报告潜在风险
     *   **工具**：`search_tool`, `scrape_tool`
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_9.png)
 
 **重要提示**：本教程仅为展示多智能体系统能力的示例，**不构成任何投资建议**。在实际应用中，已有大型企业使用类似技术进行金融文档分析。
 
 ---
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_11.png)
 
 ## 定义任务流程 📋
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_12.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_13.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_14.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_15.png)
 
 智能体创建好后，我们需要为它们分配具体的工作任务。任务定义了智能体需要完成的具体工作内容。
 
@@ -91,19 +80,13 @@ scrape_tool = ScrapeWebsiteTool()
 *   **交易执行计划任务**：由交易执行员执行。确定具体的价格、入场时机和退出点。
 *   **风险评估任务**：由风险管理师执行。在给出最终建议前，综合评估所有风险因素。
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_17.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_18.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_19.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_20.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_21.png)
 
 每个任务都会指定负责的智能体、任务描述和期望输出。
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_22.png)
 
 ---
 
@@ -111,27 +94,17 @@ scrape_tool = ScrapeWebsiteTool()
 
 现在，我们有了智能体和任务，需要将它们组织成一个团队（Crew）。这里我们将使用一种新的协作模式：**分层流程**。
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_24.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_25.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_26.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_27.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_28.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_29.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_30.png)
 
 与之前按顺序执行的“顺序流程”不同，分层流程会**自动创建一个管理者智能体**。这个管理者的工作是协调和委派工作给其他智能体。
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_31.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_32.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_33.png)
 
 关键代码差异如下：
 ```python
@@ -150,15 +123,10 @@ crew = Crew(
 
 ## 运行与分析 🚀
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_35.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_36.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_37.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_38.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_39.png)
 
 一切就绪后，我们可以为任务提供输入并启动整个分析流程。输入参数可以包括股票名称、初始资金、风险承受能力等。
 
@@ -183,21 +151,14 @@ print(result)
 4.  管理者根据结果，将下一步工作（如制定策略）委派给**交易策略师**，并将已获得的信息传递给它。
 5.  此模式不断重复，直到所有智能体都完成了自己的任务，最终由管理者汇总生成一份完整的报告。
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_41.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_42.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_43.png)
 
 在整个执行过程中，智能体们会不断地搜索、阅读、分析信息，并将学习到的内容在团队内传递，由管理者智能体进行全局协调。
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_44.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_45.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_46.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_47.png)
 
 ---
 
@@ -205,11 +166,8 @@ print(result)
 
 经过一系列的分析与协作，Crew 最终输出了一份关于苹果公司股票交易的**综合风险分析报告**。
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_49.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_50.png)
 
-![](img/fdddacce10a1834d4ab590dc79b82ca3_52.png)
 
 报告内容通常包括：
 *   **概述**：对股票和策略的总体看法。

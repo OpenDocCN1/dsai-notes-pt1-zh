@@ -26,9 +26,7 @@
 
 ### 1. 环境设置
 
-![](img/89f08715ad322807d0e0acad61e8a757_1.png)
 
-![](img/89f08715ad322807d0e0acad61e8a757_2.png)
 
 以下是所需的库安装代码：
 
@@ -103,7 +101,6 @@ retriever = MultiVectorRetriever(
 
 ![](img/89f08715ad322807d0e0acad61e8a757_9.png)
 
-![](img/89f08715ad322807d0e0acad61e8a757_10.png)
 
 ### 5. 数据存储流程
 
@@ -132,10 +129,8 @@ retriever.docstore.add({
 
 当用户发起查询时，系统执行以下操作：
 
-![](img/89f08715ad322807d0e0acad61e8a757_12.png)
 
 
-![](img/89f08715ad322807d0e0acad61e8a757_14.png)
 
 ```python
 # 用户查询
@@ -212,7 +207,6 @@ MultiVectorRetriever的核心思想是：
 
 ## 常见问题解决
 
-![](img/89f08715ad322807d0e0acad61e8a757_19.png)
 
 以下是实施过程中可能遇到的问题及解决方案：
 
@@ -258,7 +252,6 @@ MultiVectorRetriever的核心思想是：
 - 处理包含多种数据类型的复杂文档
 - 优化检索系统的性能和准确性
 
-![](img/89f08715ad322807d0e0acad61e8a757_21.png)
 
 ![](img/89f08715ad322807d0e0acad61e8a757_22.png)
 

@@ -8,7 +8,6 @@ And now， looking at what we had before compared to what we now have。
 
 
 
-![](img/74f38b6d820e210cffd3d736f6e58992_1.png)
 
 So now let's focus on how principle component analysis or PCA finds these lines on which to project our data。
 
@@ -50,7 +49,6 @@ This is because there's not much variance in V2's direction and if you were to p
 
 
 
-![](img/74f38b6d820e210cffd3d736f6e58992_3.png)
 
 So in order to find these singular vectors。The mathematical theory that enables us to find this is called the singular value decomposition。
 
@@ -84,7 +82,6 @@ And this singular value decomposition is going to be what PsyitLn actually uses 
 
 
 
-![](img/74f38b6d820e210cffd3d736f6e58992_5.png)
 
 So let's say our data set when decomposed， looks like what we have here。
 
@@ -130,7 +127,6 @@ That is now an M by K reduced amount of columns that's going to be a combination
 
 
 
-![](img/74f38b6d820e210cffd3d736f6e58992_7.png)
 
 Something to keep into account when we're doing principal component analysis。
 
@@ -146,7 +142,6 @@ And the effects of the distance。We'll notice that having unscaleed data would 
 
 
 
-![](img/74f38b6d820e210cffd3d736f6e58992_9.png)
 
 Now in order to do PCA。Using SKLarn， we import from SKLarn。key decomposition PCA。
 
@@ -178,6 +173,5 @@ Now that closes out our discussion here on linearar PCA in the next video we wil
 
  I'll see you there。
 
-![](img/74f38b6d820e210cffd3d736f6e58992_11.png)
 
 ![](img/74f38b6d820e210cffd3d736f6e58992_12.png)

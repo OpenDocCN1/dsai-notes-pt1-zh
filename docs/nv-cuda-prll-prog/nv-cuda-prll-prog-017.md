@@ -14,7 +14,6 @@
 
 上一节我们介绍了CUDA中的函数类型。本节中，我们来看看如何利用Makefile来管理CUDA项目的编译和运行。
 
-![](img/f7ca11280ba862f9bab5cb100f28be19_7.png)
 
 ![](img/f7ca11280ba862f9bab5cb100f28be19_9.png)
 

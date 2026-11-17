@@ -32,9 +32,7 @@ ChatGPT和GitHub Copilot都是基于大型语言模型（LLM）构建的强大�
     *   **ChatGPT**：在多样化的文本数据集上进行训练。其学习方式是**无监督学习**。
     *   **GitHub Copilot**：在代码仓库和文档上进行训练。其学习方式是**有监督学习**。
 
-![](img/5e1ea70e14b91ec1339dfab2d2db1bdf_4.png)
 
-![](img/5e1ea70e14b91ec1339dfab2d2db1bdf_5.png)
 
 *   **辅助层级**
     *   **ChatGPT**：在对话模式下进行文本生成。

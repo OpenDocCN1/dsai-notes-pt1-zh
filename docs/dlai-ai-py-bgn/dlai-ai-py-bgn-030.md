@@ -54,7 +54,6 @@ print(floor(5.7))
 2.  将函数应用于你的数据列表。
 
 
-![](img/7aaabb4b822b0151b08e462ee65c3555_1.png)
 
 ```python
 from statistics import mean, stdev
@@ -74,7 +73,6 @@ Python 的统计包还有其他一些函数，用于计算数据的中位数、�
 1.  从 `random` 包中导入 `sample` 函数。
 2.  使用该函数从列表中随机抽取样本。
 
-![](img/7aaabb4b822b0151b08e462ee65c3555_3.png)
 
 ```python
 from random import sample

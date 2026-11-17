@@ -83,7 +83,6 @@ grid_cell_output = [bbox1_coords, bbox1_confidence, bbox2_coords, bbox2_confiden
 
 本节课中我们一起学习了YOLO V1目标检测算法的核心流程，让我们再回顾一下整个过程：
 
-![](img/4e9f0d624a01a4e090b724f4ff3792ce_1.png)
 
 1.  **划分网格**：将输入图像划分为S x S的网格。
 2.  **生成候选框**：每个网格预设生成B个（V1中B=2）初始候选框。

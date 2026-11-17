@@ -1,6 +1,5 @@
 # PyTorch进阶学习讲座！P10：L10- 使用TensorBoard进行可视化 📊
 
-![](img/b5a4def1dbfd1f8e544809789db7d98b_1.png)
 
 在本节课中，我们将学习如何使用TensorBoard来可视化PyTorch模型。课程将首先概述TensorBoard API，然后深入探讨用于监控训练过程的API，以及用于模型监控的工具API。最后，我们将简要了解一些正在开发中的新功能。
 
@@ -19,9 +18,7 @@ writer = SummaryWriter(‘log_dir’)
 
 这个目录可以是本地路径，也可以是远程路径，例如Amazon S3。之后，你就可以使用`add_scalar`或`add_image`等API来记录数据。
 
-![](img/b5a4def1dbfd1f8e544809789db7d98b_5.png)
 
-![](img/b5a4def1dbfd1f8e544809789db7d98b_6.png)
 
 ## 监控训练过程 📈
 
@@ -61,11 +58,9 @@ TensorBoard还提供了其他多种API，用于记录模型的PR曲线、文本�
 
 ## 模型与监控工具 🔧
 
-![](img/b5a4def1dbfd1f8e544809789db7d98b_16.png)
 
 上一节我们介绍了如何记录训练数据，本节中我们来看看TensorBoard提供的模型监控工具。
 
-![](img/b5a4def1dbfd1f8e544809789db7d98b_18.png)
 
 图形插件允许我们可视化模型架构并识别性能瓶颈。你只需传入一个PyTorch模型和一个输入张量，模型的计算图就会自动生成并记录到TensorBoard。
 

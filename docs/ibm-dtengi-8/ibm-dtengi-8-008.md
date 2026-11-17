@@ -1,8 +1,6 @@
 # 008：使用Shell脚本进行ETL 🛠️
 
-![](img/a1404529eaec73e20408fba358ff64e3_0.png)
 
-![](img/a1404529eaec73e20408fba358ff64e3_2.png)
 
 在本节课中，我们将学习如何使用Shell脚本构建一个ETL（提取、转换、加载）数据管道，并了解如何通过调度任务使其自动化运行。
 
@@ -32,11 +30,9 @@
 touch temperature_etl.sh
 ```
 
-![](img/a1404529eaec73e20408fba358ff64e3_4.png)
 
 接下来，使用任何文本编辑器（如 `gedit`）打开该文件。在编辑器中，键入 `#!/bin/bash` 将您的文件转变为Bash Shell脚本。
 
-![](img/a1404529eaec73e20408fba358ff64e3_6.png)
 
 现在，您可以添加以下注释来帮助概述您的任务：
 *   使用提供的 `get_temp` API 从传感器提取温度读数。
@@ -44,7 +40,6 @@ touch temperature_etl.sh
 *   您只需要保留最近一小时的读数，因此缓冲最后60个读数。
 *   调用一个程序，例如名为 `get_stats.py` 的Python脚本，该脚本从60分钟的日志中计算温度统计数据，并使用提供的API将结果统计信息加载到报告系统中。
 
-![](img/a1404529eaec73e20408fba358ff64e3_7.png)
 
 编写完ETL Bash脚本后，您需要将其调度为每分钟运行一次。
 
@@ -54,15 +49,11 @@ touch temperature_etl.sh
 
 上一节我们创建了脚本框架，本节中我们来填充具体的实现细节。
 
-![](img/a1404529eaec73e20408fba358ff64e3_9.png)
 
-![](img/a1404529eaec73e20408fba358ff64e3_10.png)
 
 首先，在命令行中使用 `touch` 命令初始化您的温度日志文件。
 
-![](img/a1404529eaec73e20408fba358ff64e3_11.png)
 
-![](img/a1404529eaec73e20408fba358ff64e3_12.png)
 
 ```bash
 touch temperature.log
@@ -70,18 +61,15 @@ touch temperature.log
 
 在文本编辑器中，输入命令以调用API读取温度，并将读数追加到 `temperature.log` 中。
 
-![](img/a1404529eaec73e20408fba358ff64e3_14.png)
 
 ```bash
 # 调用API获取温度并追加到日志
 get_temp >> temperature.log
 ```
 
-![](img/a1404529eaec73e20408fba358ff64e3_16.png)
 
 现在，通过用其最后60行覆盖 `temperature.log`，仅保留最后一小时（或60行）的日志文件。这完成了数据提取步骤。
 
-![](img/a1404529eaec73e20408fba358ff64e3_17.png)
 
 ```bash
 # 仅保留最后60行数据
@@ -89,11 +77,9 @@ tail -n 60 temperature.log > temp_buffer.log
 mv temp_buffer.log temperature.log
 ```
 
-![](img/a1404529eaec73e20408fba358ff64e3_19.png)
 
 假设您已经编写了一个名为 `get_stats.py` 的Python脚本，该脚本从日志文件读取温度，计算温度统计数据，并将结果写入输出文件。输入和输出文件名被指定为命令行参数。
 
-![](img/a1404529eaec73e20408fba358ff64e3_21.png)
 
 您可以在ETL脚本中添加以下行，该行调用Python 3并调用您的Python脚本 `get_stats.py`，使用 `temperature.log` 中的读数，并将温度统计数据写入名为 `temperature_stats.csv` 的CSV文件。这完成了ETL脚本的转换组件。
 
@@ -102,13 +88,10 @@ mv temp_buffer.log temperature.log
 python3 get_stats.py temperature.log temperature_stats.csv
 ```
 
-![](img/a1404529eaec73e20408fba358ff64e3_23.png)
 
 最后，您可以通过调用API并指定温度统计CSV作为命令行参数，将结果统计信息加载到报告系统中。
 
-![](img/a1404529eaec73e20408fba358ff64e3_24.png)
 
-![](img/a1404529eaec73e20408fba358ff64e3_25.png)
 
 ```bash
 # 调用API加载数据
@@ -121,7 +104,6 @@ load_stats temperature_stats.csv
 chmod +x temperature_etl.sh
 ```
 
-![](img/a1404529eaec73e20408fba358ff64e3_27.png)
 
 ---
 
@@ -131,13 +113,11 @@ chmod +x temperature_etl.sh
 
 现在，是时候调度您的ETL作业了。打开Cron选项卡编辑器。
 
-![](img/a1404529eaec73e20408fba358ff64e3_29.png)
 
 ```bash
 crontab -e
 ```
 
-![](img/a1404529eaec73e20408fba358ff64e3_31.png)
 
 将您的作业调度为每天每分钟运行。
 
@@ -145,17 +125,14 @@ crontab -e
 * * * * * /path/to/your/temperature_etl.sh
 ```
 
-![](img/a1404529eaec73e20408fba358ff64e3_33.png)
 
 关闭编辑器并保存您的编辑。您的新ETL作业现在已被调度并在生产环境中运行。
 
-![](img/a1404529eaec73e20408fba358ff64e3_34.png)
 
 ---
 
 ## 总结
 
-![](img/a1404529eaec73e20408fba358ff64e3_36.png)
 
 ![](img/a1404529eaec73e20408fba358ff64e3_37.png)
 

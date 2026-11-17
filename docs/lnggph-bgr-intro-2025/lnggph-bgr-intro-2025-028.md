@@ -31,7 +31,6 @@ llm_with_tools = ChatOpenAI(model="gpt-4o-mini").bind_tools(tools)
 
 ## 理解工具调用机制
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_1.png)
 
 为了理解 `bind_tools` 的工作原理，我们先进行一个简单的测试。
 
@@ -55,15 +54,11 @@ print(response.tool_calls)
 
 ## 构建带工具调用的图
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_3.png)
 
 理解了机制后，我们来构建完整的图。其工作流程如下图所示：
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_1.png)
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_5.png)
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_6.png)
 
 流程解析：
 1.  用户输入进入 `chatbot` 节点（即绑定了工具的 LLM）。
@@ -75,15 +70,12 @@ print(response.tool_calls)
 5.  包含工具执行结果的完整对话历史再次被送入 `chatbot` 节点。
 6.  此时 LLM 拥有了回答问题所需的全部信息，生成最终回答并流向 `END`。
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_7.png)
 
 ### 第一步：创建 Chatbot 节点
 
 `chatbot` 节点与之前类似，但这里我们使用绑定了工具的 `llm_with_tools`。
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_9.png)
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_10.png)
 
 ```python
 def chatbot_node(state: State):
@@ -116,25 +108,17 @@ tool_node = ToolNode(tools)
 ```
 默认情况下，`ToolNode` 会在状态（State）的 `messages` 键中查找消息列表。如果你的消息列表使用不同的键名，可以通过 `messages_key` 参数指定，例如 `ToolNode(tools, messages_key=“chat_history”)`。
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_12.png)
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_13.png)
 
 ### 第四步：组装图
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_14.png)
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_15.png)
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_17.png)
 
 现在，我们将所有节点和边组合起来，构建完整的图。
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_19.png)
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_20.png)
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_22.png)
 
 以下是构建图的步骤：
 1.  创建状态图，指定状态结构。
@@ -144,16 +128,11 @@ tool_node = ToolNode(tools)
     *   从 `chatbot` 到 `tools_router` 的条件边。
     *   从 `tools` 节点回到 `chatbot` 节点的普通边（以便将工具结果返回给 LLM 进行总结）。
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_23.png)
-
-![](img/7013576fa2a5e986d25b24ae1a53158a_25.png)
 
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_27.png)
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_28.png)
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_29.png)
+
 
 ```python
 # 1. 创建图
@@ -182,11 +161,8 @@ app = workflow.compile()
 
 ## 运行与测试
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_31.png)
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_32.png)
 
-![](img/7013576fa2a5e986d25b24ae1a53158a_34.png)
 
 让我们编译并运行这个图进行测试。
 

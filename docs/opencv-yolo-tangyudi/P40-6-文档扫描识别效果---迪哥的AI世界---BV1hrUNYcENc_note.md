@@ -2,7 +2,6 @@
 
 在本节课中，我们将学习如何完成文档扫描，并使用OCR（光学字符识别）工具包将扫描图像中的文字提取出来。整个过程包括环境配置、扫描结果处理以及文字识别。
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_1.png)
 
 ---
 
@@ -12,7 +11,6 @@
 
 上一节我们介绍了工具包的安装，本节中我们来看看如何解决调用时可能遇到的路径问题。
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_1.png)
 
 你需要进入Python的安装目录。例如，在Anaconda环境中，路径可能类似于 `.../Anaconda3/`。请按照以下步骤操作：
 
@@ -35,19 +33,15 @@ tesseract_cmd = r‘C:\Program Files\Tesseract-OCR\tesseract.exe‘
 
 指定绝对路径后，可以避免大多数因路径问题导致的“命令未找到”错误。
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_3.png)
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_3.png)
 
 ---
 
 ## 文档扫描与结果保存 📸
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_5.png)
 
 完成环境配置后，我们可以开始进行文档扫描。以下步骤将演示如何执行扫描并将结果保存为图像文件。
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_7.png)
 
 以下是核心代码逻辑：
 ```python
@@ -59,27 +53,21 @@ cv2.imwrite(‘scanned_result.jpg‘, scanned_image)
 
 执行上述代码后，扫描结果将保存为 `scanned_result.jpg` 文件。
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_9.png)
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_5.png)
 
 如图所示，`scanned_result.jpg` 即为生成的扫描图像结果。
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_7.png)
 
 ---
 
 ## OCR文字识别 🔍
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_11.png)
 
 获得扫描图像后，下一步是提取其中的文字信息。我们将使用OCR工具包对图像进行处理和识别。
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_13.png)
 
 上一节我们得到了扫描图像，本节中我们来看看如何从中提取文字。
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_15.png)
 
 首先，需要读取图像并进行基本的预处理。
 
@@ -97,23 +85,17 @@ cv2.imwrite(‘scanned_result.jpg‘, scanned_image)
     print(text)
     ```
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_17.png)
 
 运行脚本，稍等片刻即可获得识别出的文本内容。
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_19.png)
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_11.png)
 
 识别完成后，可以将输出的文本与原始扫描图像进行对比验证。例如，识别出的数字和字符序列应与图像中的内容一致。
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_13.png)
 
 通过对比可以确认，OCR工具包成功地将图像中的文字准确提取了出来。
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_15.png)
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_21.png)
 
 ---
 
@@ -125,6 +107,5 @@ cv2.imwrite(‘scanned_result.jpg‘, scanned_image)
 
 与命令行操作相比，在Python环境中完成这些步骤更便于集成和后续处理，例如将识别结果直接用于程序逻辑或展示。希望本教程能帮助你掌握使用Python进行文档扫描和文字识别的基本方法。
 
-![](img/a29a406932ef1a92580c5f04acab3f3b_23.png)
 
 ![](img/a29a406932ef1a92580c5f04acab3f3b_23.png)

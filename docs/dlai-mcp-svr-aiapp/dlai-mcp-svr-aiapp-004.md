@@ -271,7 +271,6 @@ Processing invoice: invoice_002.pdf (ID: 12346)
 
 数据存入数据库后，我们可以像往常一样生成报告。
 
-![](img/db79b7df13b758b6ae212fa8761fae00_5.png)
 
 ```python
 # 重新打开数据库连接（如果已关闭）

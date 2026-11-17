@@ -4,9 +4,7 @@
 
 ---
 
-![](img/716fd5b405434f3fc88e85b85d4d16dd_1.png)
 
-![](img/716fd5b405434f3fc88e85b85d4d16dd_2.png)
 
 ## 概述 📋
 
@@ -14,7 +12,6 @@
 
 ---
 
-![](img/716fd5b405434f3fc88e85b85d4d16dd_4.png)
 
 ## Python的优势回顾 🚀
 
@@ -24,7 +21,6 @@ Python易于学习，语法简单。由于其开源特性，Python已被移植�
 
 Python支持关系型数据库系统。Python数据库API（通常称为DB API）的存在使得编写访问数据库的Python代码更加容易。与Python相关的详细文档也易于获取。
 
-![](img/716fd5b405434f3fc88e85b85d4d16dd_6.png)
 
 ---
 
@@ -47,7 +43,6 @@ Notebook界面的例子包括Mathematica Notebook、Maple Worksheet、MATLAB Not
 
 ## Python访问数据库的典型流程 🔄
 
-![](img/716fd5b405434f3fc88e85b85d4d16dd_8.png)
 
 这是用户通过编写在Jupyter Notebook（一种基于Web的编辑器）上的Python代码访问数据库的典型方式。Python程序通过一种机制与数据库管理系统（DBMS）通信。
 
@@ -57,7 +52,6 @@ Python代码使用API调用连接到数据库。我们将解释SQL API和Python 
 
 为了将SQL语句传递给DBMS，应用程序会调用API中的函数，并调用其他函数从DBMS检索查询结果和状态信息。
 
-![](img/716fd5b405434f3fc88e85b85d4d16dd_10.png)
 
 下图展示了一个典型SQL API的基本操作：
 
@@ -72,7 +66,6 @@ Python代码使用API调用连接到数据库。我们将解释SQL API和Python 
 
 现在，让我们学习一些流行的基于SQL的数据库管理系统所使用的专有API的基本概念。
 
-![](img/716fd5b405434f3fc88e85b85d4d16dd_12.png)
 
 每个数据库系统都有自己的库。如下表所示，它列出了一些应用程序及其对应的SQL API。
 

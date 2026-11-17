@@ -10,7 +10,6 @@
 
 ## 课程模块详解 📚
 
-![](img/35da022abf0119a96bf56cdf9654b736_1.png)
 
 ![](img/35da022abf0119a96bf56cdf9654b736_2.png)
 

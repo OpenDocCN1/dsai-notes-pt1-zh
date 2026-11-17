@@ -8,7 +8,6 @@ Now， getting into back propagation， what we're ultimately going to once。
 
 
 
-![](img/300c948394e0e7366937312a1638e279_1.png)
 
 Now this idea of being able to use calculus to update our parameters is going to play an important role in how our neural network models are actually constructed。
 
@@ -24,7 +23,6 @@ And we'll ultimately need to also be aware of some numerical issues that will co
 
 
 
-![](img/300c948394e0e7366937312a1638e279_3.png)
 
 Now with that in mind， we're going to think of the weights layer by layer。
 
@@ -66,19 +64,16 @@ And we will be using this in our notebook， and although it looks a bit complex
 
 
 
-![](img/300c948394e0e7366937312a1638e279_5.png)
 
 So the idea of back propagation is that we'll first run our neural network with our initialized weights。
 
 
 
-![](img/300c948394e0e7366937312a1638e279_7.png)
 
 Then moving back through our layers， we're going to take the derivative of each of our weights in our final layer with respect to our lost function。
 
 
 
-![](img/300c948394e0e7366937312a1638e279_9.png)
 
 Then use that to again， get our partial derivative in respect to our layer two of our weights。
 
@@ -88,7 +83,6 @@ And then our layer 1 weights。 Finally， and we'll use these to update our ini
 
 
 
-![](img/300c948394e0e7366937312a1638e279_11.png)
 
 Now I want to quickly touch on this concept of bench gradients that I discussed earlier。
 
@@ -120,6 +114,5 @@ Other activations such as Relo and others， which we'll touch on right after ou
 
  have become more and more common。
 
-![](img/300c948394e0e7366937312a1638e279_13.png)
 
 ![](img/300c948394e0e7366937312a1638e279_14.png)

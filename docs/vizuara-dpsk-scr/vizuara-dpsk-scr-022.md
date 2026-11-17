@@ -28,7 +28,6 @@ import torch.nn.functional as F
 
 ### 步骤3：定义专家网络
 
-![](img/ba96629377997de0426f9e778c004a04_3.png)
 
 每个专家本质上是一个前馈神经网络。它采用扩展-收缩架构：首先将输入维度扩展到四倍，然后使用ReLU激活函数，最后收缩回原始维度。
 
@@ -52,7 +51,6 @@ class Expert(nn.Module):
 
 ### 步骤4：实现路由器（Router）
 
-![](img/ba96629377997de0426f9e778c004a04_5.png)
 
 路由器是MoE中最关键的组件。它接收输入矩阵（来自多头注意力块的输出），并通过一个路由权重矩阵计算每个token应该分配给哪些专家。
 
@@ -492,7 +490,6 @@ def load_and_generate(model_path, prompt):
     return generated_text
 ```
 
-![](img/ba96629377997de0426f9e778c004a04_9.png)
 
 ### 步骤16：模型评估与分析
 
@@ -524,7 +521,6 @@ def analyze_moe_layer(model, sample_input):
         return expert_usage, aux_loss
 ```
 
-![](img/ba96629377997de0426f9e778c004a04_11.png)
 
 ## 总结
 

@@ -56,11 +56,9 @@ print(f"Using device: {device}")
 
 这段代码会检查CUDA（NVIDIA的GPU编程框架）是否可用。如果可用，设备设置为`cuda`（即GPU），否则设置为`cpu`。
 
-![](img/eaa8a4dc845d48f470dfda3d8d76eda4_2.png)
 
 ## 在Google Colab中使用GPU
 
-![](img/eaa8a4dc845d48f470dfda3d8d76eda4_4.png)
 
 如果你使用Google Colab，可以通过以下步骤启用GPU：
 

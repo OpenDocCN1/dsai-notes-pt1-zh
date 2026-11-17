@@ -18,9 +18,7 @@
 
 ![](img/0321c018d7e0dfa752d424c570792d29_4.png)
 
-![](img/0321c018d7e0dfa752d424c570792d29_5.png)
 
-![](img/0321c018d7e0dfa752d424c570792d29_6.png)
 
 以下是创建MCP服务器的步骤：
 
@@ -134,15 +132,12 @@ uv run smallagents_server.py
 
 ![](img/0321c018d7e0dfa752d424c570792d29_10.png)
 
-![](img/0321c018d7e0dfa752d424c570792d29_11.png)
 
 ## 调用集成MCP的ACP代理 📞
 
 服务器更新并运行后，我们现在可以编写客户端代码来调用新的`doctor_agent`。
 
-![](img/0321c018d7e0dfa752d424c570792d29_13.png)
 
-![](img/0321c018d7e0dfa752d424c570792d29_14.png)
 
 首先，导入必要的客户端依赖。
 
@@ -154,9 +149,7 @@ from colorama import Fore, Style
 nest_asyncio.apply() # 允许在Jupyter等环境中嵌套事件循环
 ```
 
-![](img/0321c018d7e0dfa752d424c570792d29_16.png)
 
-![](img/0321c018d7e0dfa752d424c570792d29_17.png)
 
 然后，定义一个异步函数来执行工作流。关键点在于指定要调用的代理为`doctor_agent`，并传递一个包含地点和需求的提示。
 
@@ -190,9 +183,7 @@ asyncio.run(run_doctor_workflow())
 2.  **更新ACP服务器**：我们在现有的医院ACP服务器中添加了第二个代理`doctor_agent`。该代理利用`ToolCallingAgent`和从MCP服务器动态获取的工具，扩展了服务器的功能。
 3.  **进行调用测试**：我们通过ACP SDK客户端，指定`doctor_agent`并发送查询，成功获取了基于位置的医生信息，验证了ACP与MCP的协同工作。
 
-![](img/0321c018d7e0dfa752d424c570792d29_23.png)
 
-![](img/0321c018d7e0dfa752d424c570792d29_24.png)
 
 ![](img/0321c018d7e0dfa752d424c570792d29_25.png)
 

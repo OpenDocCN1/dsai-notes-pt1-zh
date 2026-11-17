@@ -44,20 +44,15 @@ Laplacian算子的一个常见卷积核如下：
 
 了解了基本概念后，我们来看看如何在OpenCV中使用这些算子。它们的调用方式与Sobel算子类似，但各有特点。
 
-![](img/ca89d05f7c73ccdc9ba4a8f262a1de61_1.png)
 
 以下是使用OpenCV实现三种算子的核心代码：
 
-![](img/ca89d05f7c73ccdc9ba4a8f262a1de61_3.png)
 
 
-![](img/ca89d05f7c73ccdc9ba4a8f262a1de61_5.png)
 
 
-![](img/ca89d05f7c73ccdc9ba4a8f262a1de61_7.png)
 
 
-![](img/ca89d05f7c73ccdc9ba4a8f262a1de61_9.png)
 
 ```python
 import cv2
@@ -86,18 +81,15 @@ laplacian_abs = cv2.convertScaleAbs(laplacian)
 
 ## 结果分析与对比
 
-![](img/ca89d05f7c73ccdc9ba4a8f262a1de61_11.png)
 
 执行上述代码后，我们可以对比三种算子的效果：
 
-![](img/ca89d05f7c73ccdc9ba4a8f262a1de61_13.png)
 
 以下是不同算子的效果差异总结：
 1.  **Sobel算子**：能够有效检测出主要的边界信息，结果较为清晰。
 2.  **Scharr算子**：与Sobel算子相比，它能捕捉到更丰富、更细致的梯度信息。例如，在头发丝或纹理密集的区域，Scharr算子能显示出更多线条，对边缘的描绘更细致。
 3.  **Laplacian算子**：得到的结果对噪声非常敏感，边缘线条可能不够清晰或包含大量无关的噪声响应。因此，其单独使用的效果通常不理想。
 
-![](img/ca89d05f7c73ccdc9ba4a8f262a1de61_15.png)
 
 从对比中可以得出结论：Scharr算子由于其对梯度更高的敏感性，在需要检测细微边缘时可能优于Sobel算子。而Laplacian算子因其特性，更适合作为其他高级图像处理技术（如图像锐化或斑点检测）中的一个组件，而非独立的边缘检测工具。
 

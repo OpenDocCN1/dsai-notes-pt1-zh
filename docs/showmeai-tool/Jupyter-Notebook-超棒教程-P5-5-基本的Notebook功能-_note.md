@@ -80,7 +80,6 @@ Markdown功能强大，可以创建表格、链接、图片等。
 
 如果你想深入了解Markdown语法，建议搜索“Markdown cheat sheet”。一个很好的参考网站是 [markdownguide.org](https://www.markdownguide.org)，它提供了完整的语法说明和示例。
 
-![](img/3367d8727ece3a1a6aa58149b3536d89_4.png)
 
 ---
 

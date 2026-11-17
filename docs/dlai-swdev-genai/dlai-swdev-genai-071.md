@@ -86,7 +86,6 @@ class DatabaseConnection:
 
 ![](img/64b60a1146cc786911d7de736f24ec48_7.png)
 
-![](img/64b60a1146cc786911d7de736f24ec48_5.png)
 
 GPT给出的答案可能会非常详尽。我收到的回复包含了非常详细的信息，建议你花时间阅读，同时也尝试自己进行提示。
 
@@ -140,7 +139,6 @@ con = DatabaseConnection.get_instance(‘stocks.db’).get_connection()
 
 使你的提示词更加具体会有所帮助。例如，你可以修改最初的提示词，要求LLM改进你的代码时这样说：“使用四人帮模式增强以下代码。**严格遵循你所选模式的常见约定**。”
 
-![](img/64b60a1146cc786911d7de736f24ec48_13.png)
 
 这样明确的指令有助于引导它深入挖掘模式细节。当我尝试这样做时，结果好坏参半。在某些情况下，生成的代码遵循了约定，但有时仍然没有。
 
@@ -162,6 +160,5 @@ con = DatabaseConnection.get_instance(‘stocks.db’).get_connection()
 
 所以，让我们进入下一个视频，更详细地探索工厂方法模式，理解LLM为何建议它，然后与模型合作在代码中实现它。
 
-![](img/64b60a1146cc786911d7de736f24ec48_15.png)
 
 ![](img/64b60a1146cc786911d7de736f24ec48_15.png)

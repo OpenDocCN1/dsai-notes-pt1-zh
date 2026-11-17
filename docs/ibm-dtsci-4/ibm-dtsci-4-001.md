@@ -1,6 +1,5 @@
 # 001：Python数据类型入门 📊
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_0.png)
 
 在本节课中，我们将要学习Python中数据类型的基本概念。数据类型是Python用来表示不同种类数据的方式。理解数据类型是编写有效Python代码的基础。
 
@@ -30,44 +29,32 @@ type(21.213)  # 输出: <class 'float'>
 type("Hello") # 输出: <class 'str'>
 ```
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_2.png)
 
 我们可以看到有`int`（代表整数）、`float`（代表浮点数，本质上是实数）和`str`（字符串，是字符序列）。
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_3.png)
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_4.png)
 
 ## 整数类型
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_5.png)
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_6.png)
 
 整数可以是负数或正数。需要注意的是，整数的范围是有限的，但这个范围非常大。
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_7.png)
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_8.png)
 
 以下是整数的一些例子：
 *   `-5`
 *   `0`
 *   `100`
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_9.png)
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_10.png)
 
 ## 浮点数类型
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_11.png)
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_12.png)
 
 浮点数是实数。它们不仅包括整数，还包括整数之间的数字。
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_13.png)
 
 考虑0和1之间的数字，我们可以选择它们之间的数字，这些数字就是浮点数。同样，考虑0.5和0.6之间的数字，我们也可以选择它们之间的数字，这些也是浮点数。
 
@@ -88,29 +75,22 @@ type("Hello") # 输出: <class 'str'>
 float(2) # 结果是 2.0
 ```
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_15.png)
 
 但是，如果将浮点数转换为整数，则必须小心。例如，如果将浮点数`1.1`转换为整数`1`，你会丢失一些信息（小数部分）。
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_16.png)
 
 ```python
 int(1.1) # 结果是 1
 ```
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_17.png)
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_18.png)
 
 ## 字符串与其他类型的转换
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_19.png)
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_20.png)
 
 如果字符串包含一个整数值，你可以将其转换为`int`。
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_21.png)
 
 ```python
 int("123") # 结果是整数 123
@@ -118,9 +98,7 @@ int("123") # 结果是整数 123
 
 如果我们转换一个包含非整数值的字符串，就会得到一个错误。
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_23.png)
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_24.png)
 
 ```python
 int("123.4") # 这会引发 ValueError
@@ -146,34 +124,25 @@ type(True)  # 输出: <class 'bool'>
 type(False) # 输出: <class 'bool'>
 ```
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_26.png)
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_27.png)
 
 ### 布尔值的转换
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_28.png)
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_29.png)
 
 如果我们将布尔值`True`转换为整数或浮点数，会得到`1`。
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_30.png)
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_31.png)
 
 ```python
 int(True)   # 结果是 1
 float(True) # 结果是 1.0
 ```
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_32.png)
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_33.png)
 
 如果我们将布尔值`False`转换为整数或浮点数，会得到`0`。
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_34.png)
 
 ```python
 int(False)   # 结果是 0
@@ -187,13 +156,10 @@ bool(1) # 结果是 True
 bool(0) # 结果是 False
 ```
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_36.png)
 
 可以在实验部分查看更多例子，或访问Python官网（python.org）查看Python中其他类型的介绍。
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_37.png)
 
-![](img/fe6d53148d589b4502da117bd5d8bb9f_38.png)
 
 ## 总结
 

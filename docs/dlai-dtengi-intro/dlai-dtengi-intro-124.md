@@ -1,6 +1,5 @@
 #  124：与Chad Sanderson探讨数据合约 📝
 
-![](img/808e9834d39d50d2432cd422fa9275df_0.png)
 
 ![](img/808e9834d39d50d2432cd422fa9275df_2.png)
 

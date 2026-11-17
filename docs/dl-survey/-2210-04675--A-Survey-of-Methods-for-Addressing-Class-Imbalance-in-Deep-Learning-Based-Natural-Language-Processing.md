@@ -34,19 +34,16 @@ annemarie.friedrich@de.bosch.com
 
 ## 1 介绍
 
-![参考图例](img/ebd6a8a2fa52d7bbe71c05fff9f2ac6c.png)
 
 (a) 单标签关系     分类在 TACRED 上
 
 (Zhou and Chen, 2021)
 
-![参考图例](img/43e764c6e87f2f056920b28136245f4f.png)
 
 (b) 层次多标签
 
 专利分类      (Pujari et al., 2021)
 
-![参考图例](img/52575f9dbcef57bfb787837510a98dc6.png)
 
 (c) 隐含话语关系分类（PDTB）
 
@@ -66,7 +63,6 @@ annemarie.friedrich@de.bosch.com
 
 (a) 步骤不平衡，$\mu=0.4$，$\rho=10$
 
-![参见标题](img/0451941012cadd4eeb206950f81713f0.png)
 
 (b) 线性不平衡，$\rho=10$
 

@@ -302,7 +302,6 @@ cumulative_log_returns = []
 # 比较 cumulative_log_returns 和 expected_cumulative
 ```
 
-![](img/428fc014fbc5cf04e0c0ce4217cb7f10_1.png)
 
 ## 总结
 

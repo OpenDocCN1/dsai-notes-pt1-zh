@@ -4,7 +4,6 @@
 
 ## 环境准备与项目介绍
 
-![](img/b6400e1b853d001f34eab9aa33442b52_1.png)
 
 首先，你需要设置一个包含最新版PyTorch和TensorBoard的Python环境。屏幕上的命令展示了如何使用Conda和Pip进行安装。我们还将使用matplotlib来处理图像。
 
@@ -18,7 +17,6 @@
 
 对于模型，我们将使用一个经过调整以适应Fashion-MNIST数据集的LeNet-5版本。
 
-![](img/b6400e1b853d001f34eab9aa33442b52_3.png)
 
 ![](img/b6400e1b853d001f34eab9aa33442b52_3.png)
 
@@ -38,11 +36,9 @@
 
 请注意，我们还调用了summary writer对象的`flush`方法。这确保了我们通过writer记录的所有内容都已写入磁盘。
 
-![](img/b6400e1b853d001f34eab9aa33442b52_5.png)
 
 ![](img/b6400e1b853d001f34eab9aa33442b52_5.png)
 
-![](img/b6400e1b853d001f34eab9aa33442b52_7.png)
 
 现在，让我们切换到终端并启动TensorBoard。
 
@@ -160,6 +156,5 @@
 *   PyTorch教程部分 `pytorch.org/tutorials`，有关于使用TensorBoard的教程。
 *   TensorBoard文档本身，当然，提供了关于TensorBoard更详细的介绍。如果你想更深入地了解summary writer在底层做了什么，这些文档会很有帮助。
 
-![](img/b6400e1b853d001f34eab9aa33442b52_17.png)
 
 ![](img/b6400e1b853d001f34eab9aa33442b52_17.png)

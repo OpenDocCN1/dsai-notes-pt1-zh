@@ -1,8 +1,6 @@
 # 005：构建一个图像描述与生成的游戏
 
-![](img/b62b143cb25f5d934afe1333f251117f_0.png)
 
-![](img/b62b143cb25f5d934afe1333f251117f_2.png)
 
 在本节课中，我们将综合之前学到的“文本生成图像”和“图像生成文本”知识，构建一个有趣的、可以交互的应用程序。
 
@@ -73,15 +71,12 @@ with gr.Blocks() as demo_step:
 
 ## 构建流线型应用
 
-![](img/b62b143cb25f5d934afe1333f251117f_4.png)
 
 分步式应用虽然清晰，但可能需要点击多次。接下来，我们看看如何构建一个更流线型的版本，将所有步骤合并到一个函数中。
 
-![](img/b62b143cb25f5d934afe1333f251117f_5.png)
 
 以下是流线型应用的核心逻辑：
 
-![](img/b62b143cb25f5d934afe1333f251117f_7.png)
 
 ```python
 # 定义一个函数，同时完成描述和生成
@@ -108,7 +103,6 @@ with gr.Blocks() as demo_streamlined:
     btn_all.click(fn=caption_and_generate, inputs=image_input, outputs=[caption_output, image_output])
 ```
 
-![](img/b62b143cb25f5d934afe1333f251117f_9.png)
 
 在这个版本中，我们只有一个按钮`btn_all`。点击后，它会调用`caption_and_generate`函数。这个函数内部依次执行描述生成和图像生成两个任务，并一次性返回描述文本和生成的新图像。
 

@@ -132,7 +132,6 @@ print(similarity_matrix)
     vector = embeddings[0].values
     ```
 
-![](img/325c2045c73985ea705aefd71f8eb1b4_4.png)
 
 ![](img/325c2045c73985ea705aefd71f8eb1b4_5.png)
 

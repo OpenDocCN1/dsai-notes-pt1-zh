@@ -4,9 +4,7 @@
 
 ## 概述 📋
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_2.png)
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_4.png)
 
 ![](img/5289e8520d74fc4c3d52bc47334a8937_6.png)
 
@@ -14,29 +12,22 @@
 
 ![](img/5289e8520d74fc4c3d52bc47334a8937_8.png)
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_10.png)
 
 ---
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_12.png)
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_14.png)
 
 ## 环境设置与准备 ⚙️
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_16.png)
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_18.png)
 
 在开始之前，我们需要设置好编程环境。这包括导入必要的库、配置API密钥以及初始化模型。
 
 ![](img/5289e8520d74fc4c3d52bc47334a8937_20.png)
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_22.png)
 
 首先，我们需要从工具中获取API密钥。我们将使用Google的生成式AI库。
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_24.png)
 
 ```python
 import google.generativeai as palm
@@ -52,7 +43,6 @@ palm.configure(api_key='YOUR_API_KEY')
 
 然后，我们需要遍历可用的模型，并选择一个支持文本生成的模型。在本例中，我们选择 `text-bison-001` 模型。
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_28.png)
 
 ```python
 models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
@@ -88,7 +78,6 @@ response = generate_text(prompt, temperature=0.0)
 
 例如，我们有一段遍历数组并打印元素的Python代码，但写法可能不够“Pythonic”。
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_30.png)
 
 ![](img/5289e8520d74fc4c3d52bc47334a8937_32.png)
 
@@ -101,11 +90,9 @@ def print_array(array):
 
 我们可以向LLM提问：“这段Python代码是好的做法吗？如果不是，请改进它并详细解释。”
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_34.png)
 
 LLM可能会建议使用更简洁的列表推导式或 `enumerate` 函数，并解释为什么这些方法更好。
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_36.png)
 
 ```python
 # LLM可能建议的改进代码
@@ -119,7 +106,6 @@ def print_array(array):
 
 ---
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_38.png)
 
 ## 探索多种解决方案 🔍
 
@@ -145,7 +131,6 @@ LLM可能会返回多种方案，例如：
 
 例如，我们有一个手动创建节点的链表实现，代码较为冗长。
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_42.png)
 
 ```python
 # 复杂的链表初始化代码
@@ -157,19 +142,16 @@ node1.next_val = node2
 node2.next_val = node3
 ```
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_44.png)
 
 ![](img/5289e8520d74fc4c3d52bc47334a8937_46.png)
 
 我们可以请求LLM：“请简化这段Python链表代码，并详细解释你的修改。”
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_48.png)
 
 LLM可能会建议添加辅助函数来自动化节点的创建和链接过程，从而使代码更清晰、更易于管理。
 
 ![](img/5289e8520d74fc4c3d52bc47334a8937_50.png)
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_52.png)
 
 ```python
 # 简化后的代码可能包含辅助函数
@@ -189,7 +171,6 @@ def create_linked_list(values):
 
 这样，代码不仅更简洁，也更容易扩展和维护。
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_54.png)
 
 ---
 
@@ -263,9 +244,7 @@ def binary_search_efficient(arr, x):
 
 **注意**：在使用LLM的建议时，必须仔细验证其正确性，因为模型有时会产生“幻觉”，提供看似合理但不准确的信息。
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_58.png)
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_60.png)
 
 ---
 
@@ -273,7 +252,6 @@ def binary_search_efficient(arr, x):
 
 LLM可以帮助识别代码中潜在的错误，特别是那些不会立即导致崩溃的逻辑错误。
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_62.png)
 
 例如，我们有一段双向链表的代码，其中打印函数在节点为 `None` 时可能引发错误。
 
@@ -304,7 +282,6 @@ def print_list_fixed(self):
 
 ---
 
-![](img/5289e8520d74fc4c3d52bc47334a8937_66.png)
 
 ## 总结 🎯
 

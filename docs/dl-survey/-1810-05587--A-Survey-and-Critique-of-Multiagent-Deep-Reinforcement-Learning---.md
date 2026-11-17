@@ -62,15 +62,12 @@ Pablo Hernandez-Leal, Bilal Kartal 和 Matthew E. Taylor
 
 我们的目标是概述一个近期活跃的领域（即 MDRL），并激励未来研究利用多智能体学习中的丰富现有文献。我们旨在使有 DRL 或 MAL 经验的研究人员对最新工作和 MDRL 中的开放问题有共同的理解，并避免形成相互隔绝的小圈子 [2, 10, 11, 38]。
 
-![参见标题](img/05ff41b4091bf1206fa5a001eb009d06.png)
 
 (a) 产生行为的分析
 
-![参见标题](img/92d13bf4a92b65ba059ac044451f2559.png)
 
 (b) 学习沟通
 
-![参见标题](img/0552b30d046b5206bb4d8f8b4fc3798f.png)
 
 (c) 学习合作
 

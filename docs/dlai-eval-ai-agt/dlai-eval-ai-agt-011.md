@@ -15,16 +15,13 @@
 
 首先，我们需要创建用于实验的数据集。这个数据集包含输入的问题以及对应的预期输出（即“真实值”）。
 
-![](img/2dedd2f0e5beb1ddcb41809cce7a40df_1.png)
 
 以下是创建数据集的步骤：
 *   定义包含问题、预期SQL结果和预期生成SQL的数据集。
 *   使用与之前相同的语法，将这些示例转换为数据框。
 *   将数据框上传到Phoenix平台，并指定输入键和输出键。
 
-![](img/2dedd2f0e5beb1ddcb41809cce7a40df_3.png)
 
-![](img/2dedd2f0e5beb1ddcb41809cce7a40df_4.png)
 
 ```python
 # 示例：创建并上传数据集
@@ -251,9 +248,7 @@ def process_messages(messages):
 
 万事俱备，现在我们可以运行大型实验了。我们将把数据集、代理任务和所有评估器组合在一起。
 
-![](img/2dedd2f0e5beb1ddcb41809cce7a40df_6.png)
 
-![](img/2dedd2f0e5beb1ddcb41809cce7a40df_7.png)
 
 ```python
 from phoenix.experiments import run_experiment
@@ -273,7 +268,6 @@ experiment_results = run_experiment(
 )
 ```
 
-![](img/2dedd2f0e5beb1ddcb41809cce7a40df_9.png)
 
 ![](img/2dedd2f0e5beb1ddcb41809cce7a40df_11.png)
 

@@ -1,16 +1,12 @@
 # 018：分布式事件流平台组件
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_0.png)
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_1.png)
 
 在本节课中，我们将要学习分布式事件流平台的核心概念与组件。我们将了解什么是事件、常见的事件格式，以及事件流平台的作用和主要构成部分。课程内容旨在为初学者提供一个清晰、直观的理解框架。
 
 ---
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_3.png)
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_4.png)
 
 ## 🎯 什么是事件？
 
@@ -22,17 +18,14 @@
 *   一位病人的血压测量值。
 *   一个运行中应用程序的RAM使用情况。
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_6.png)
 
 ---
 
 ## 📝 事件的常见格式
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_8.png)
 
 事件作为特殊的数据类型，具有不同的格式。以下是三种最常见的格式：
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_10.png)
 
 1.  **基本类型**：事件可以是一个基本数据类型，例如纯文本、数字或日期。
     *   示例：`42`， `"error"`， `2023-10-27`
@@ -45,9 +38,7 @@
 
 ---
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_12.png)
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_13.png)
 
 ## 🌊 什么是事件流？
 
@@ -69,17 +60,12 @@
 
 ESP在各种事件源和目的地之间充当中间层，为基于事件的ETL处理提供统一接口。这样一来，所有事件源只需将事件发送给ESP，而无需分别发送给每个事件目的地。另一方面，事件目的地只需订阅ESP，并消费来自ESP的事件，而无需对接每个单独的事件源。
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_15.png)
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_16.png)
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_17.png)
 
 ---
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_18.png)
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_19.png)
 
 ## ⚙️ 事件流平台的主要组件
 
@@ -93,17 +79,12 @@ ESP在各种事件源和目的地之间充当中间层，为基于事件的ETL�
 
 ---
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_21.png)
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_22.png)
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_23.png)
 
 ## 🔧 深入理解事件代理
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_24.png)
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_25.png)
 
 事件代理是ESP的核心组件。它通常包含三个子组件：**摄取器**、**处理器**和**分发器**。
 
@@ -115,7 +96,6 @@ ESP在各种事件源和目的地之间充当中间层，为基于事件的ETL�
 
 ## 🌍 流行的事件流平台
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_27.png)
 
 市场上有许多ESP解决方案，每种都有其独特的功能和应用场景。
 
@@ -127,9 +107,7 @@ ESP在各种事件源和目的地之间充当中间层，为基于事件的ETL�
 *   Apache Storm
 *   其他，如Elastic Stack中的Logstash等。
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_29.png)
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_30.png)
 
 ---
 
@@ -145,7 +123,6 @@ ESP在各种事件源和目的地之间充当中间层，为基于事件的ETL�
 *   Apache Kafka是最流行的开源ESP之一。
 *   其他流行的ESP还包括Amazon Kinesis、Apache Flink、Apache Spark、Apache Storm等。
 
-![](img/ebe707b9a5772baeb258eb7aaa35763a_32.png)
 
 ![](img/ebe707b9a5772baeb258eb7aaa35763a_33.png)
 

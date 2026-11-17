@@ -4,11 +4,9 @@
 
 ## 概述
 
-![](img/3a63929dbd0d810cf6948bb2dd067117_2.png)
 
 在本节课中，我们将学习如何将之前学到的“使用Pydantic数据模型从LLM获取结构化响应”的知识，与一项新能力相结合：在工具定义中使用Pydantic模型，并将其传递给LLM API调用。在LLM工作流中使用Pydantic主要有两大场景：结构化响应和工具调用。本节课的目标就是结合这两者，在你的应用程序中实现可靠的结构化工具调用。
 
-![](img/3a63929dbd0d810cf6948bb2dd067117_3.png)
 
 ![](img/3a63929dbd0d810cf6948bb2dd067117_4.png)
 
@@ -41,7 +39,6 @@
 
 ### 导入与基础设置
 
-![](img/3a63929dbd0d810cf6948bb2dd067117_6.png)
 
 首先，导入所有必要的库。这基本上整合了之前课程中的所有内容。
 
@@ -356,7 +353,6 @@ def decide_next_action_with_tools(customer_query: CustomerQuery):
 
 运行这个单元格来定义`get_tool_outputs`函数，并将其用于上一次LLM响应中返回的`tool_calls`。
 
-![](img/3a63929dbd0d810cf6948bb2dd067117_10.png)
 
 ![](img/3a63929dbd0d810cf6948bb2dd067117_11.png)
 

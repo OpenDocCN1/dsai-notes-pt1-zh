@@ -47,7 +47,6 @@ ls
 
 我们将使用一个公开的心脏病数据集，它来源于UCI机器学习库，并托管在Kaggle平台上。
 
-![](img/7d77afa5bca5410549c41cf4ebbe259f_3.png)
 
 以下是获取数据集的步骤：
 
@@ -66,7 +65,6 @@ mv ~/Downloads/heart-disease-uci.csv .
 
 移动完成后，可以使用 `ls` 命令确认文件已成功放入目录。
 
-![](img/7d77afa5bca5410549c41cf4ebbe259f_5.png)
 
 ```bash
 ls

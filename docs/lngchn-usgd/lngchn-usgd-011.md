@@ -10,13 +10,10 @@
 
 ## 核心概念：Corrective RAG (CRAG) 📄
 
-![](img/c87b71a05c8f57040b45402accf7f213_1.png)
 
-![](img/c87b71a05c8f57040b45402accf7f213_3.png)
 
 我们将重点实现一篇名为 Corrective RAG 的论文中提出的方法。其核心思想相当直观。
 
-![](img/c87b71a05c8f57040b45402accf7f213_5.png)
 
 **基本流程如下：**
 1.  执行检索。
@@ -35,9 +32,7 @@
                                          -> [否] -> [查询重写] -> [网络搜索] -> [生成答案]
 ```
 
-![](img/c87b71a05c8f57040b45402accf7f213_7.png)
 
-![](img/c87b71a05c8f57040b45402accf7f213_8.png)
 
 我们的流程是：执行检索，使用一个节点来评估这些文档相对于问题的相关性。如果任何文档被判定为不相关，我们将进行查询重写和网络搜索，然后基于网络搜索结果进行生成。
 
@@ -73,7 +68,6 @@ local_llm = Ollama(model="mistral:instruct")
 以下是构建索引的代码：
 
 
-![](img/c87b71a05c8f57040b45402accf7f213_10.png)
 
 ```python
 from langchain_community.document_loaders import WebBaseLoader
@@ -110,7 +104,6 @@ print(docs[0].page_content[:200]) # 打印前200个字符
 
 以下是状态字典的示意结构：
 
-![](img/c87b71a05c8f57040b45402accf7f213_12.png)
 
 ```python
 state = {

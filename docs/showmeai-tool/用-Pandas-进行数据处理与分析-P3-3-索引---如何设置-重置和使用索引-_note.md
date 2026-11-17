@@ -108,7 +108,6 @@ print(df_survey.head())
 `df_schema` 可能有两列：`‘column‘`（列名）和 `‘question_text‘`（问题文本）。将 `‘column‘` 设置为索引后，我们可以快速查找任何列的含义。
 
 
-![](img/3dcad63db8fa7e323ad739c08e88ad23_1.png)
 
 ```python
 # 设置 schema 的索引
@@ -124,9 +123,7 @@ print(meaning)
 为了使索引更易于浏览，我们可以对其进行排序。使用 `sort_index()` 方法可以对索引按字母或数字顺序进行排列。
 
 
-![](img/3dcad63db8fa7e323ad739c08e88ad23_3.png)
 
-![](img/3dcad63db8fa7e323ad739c08e88ad23_4.png)
 
 ```python
 # 按索引升序排序（临时查看）
@@ -136,7 +133,6 @@ df_schema.sort_index(ascending=False, inplace=True)
 print(df_schema)
 ```
 
-![](img/3dcad63db8fa7e323ad739c08e88ad23_5.png)
 
 ![](img/3dcad63db8fa7e323ad739c08e88ad23_6.png)
 

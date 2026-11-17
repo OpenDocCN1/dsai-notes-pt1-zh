@@ -26,9 +26,7 @@ model.eval()
 
 接下来，我们使用`torch.inference_mode()`上下文管理器。
 
-![](img/7aa0b26b6271295a685e61077f715d1b_3.png)
 
-![](img/7aa0b26b6271295a685e61077f715d1b_4.png)
 
 ```python
 with torch.inference_mode():

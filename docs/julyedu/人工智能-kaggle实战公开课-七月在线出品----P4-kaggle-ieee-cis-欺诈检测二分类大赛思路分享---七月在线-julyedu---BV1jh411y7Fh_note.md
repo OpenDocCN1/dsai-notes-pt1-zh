@@ -85,9 +85,7 @@ data['had_id'].fillna(0, inplace=True)
 
 ## 相关性分析与特征处理
 
-![](img/4947cc6de1c2aa95bf12090c727d8cb9_5.png)
 
-![](img/4947cc6de1c2aa95bf12090c727d8cb9_6.png)
 
 完成了初步的数据探索，本节中我们来看看如何处理特征间的相关性，并优化内存。
 
@@ -291,9 +289,7 @@ for col in ['card1', 'addr1']:
 *   **项目目录模板**：规范化的目录结构（如`/data`, `/features`, `/models`）能极大提升工作效率。
 *   **Kaggle工具函数集**：积累常用的数据读取、内存优化、特征编码、验证函数等，形成自己的工具箱。
 
-![](img/4947cc6de1c2aa95bf12090c727d8cb9_27.png)
 
-![](img/4947cc6de1c2aa95bf12090c727d8cb9_29.png)
 
 ---
 

@@ -18,13 +18,10 @@
 
 例如，一个区域可能对应着R（红色）、G（绿色）、B（蓝色）三个通道的值。数值201表示在红色通道上的亮度，155表示在绿色通道上的亮度，165表示在蓝色通道上的亮度。
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_1.png)
 
 我们通常获取的图像都是这种三通道的彩色图。那么，黑白图像呢？黑白图像，或称**灰度图**，只有一个通道，仅表示亮度就足够了，不需要RGB三个通道。
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_3.png)
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_5.png)
 
 ## 总结图像结构
 
@@ -36,9 +33,7 @@
 
 公式表示彩色图像结构：`图像形状 = (高度 H, 宽度 W, 通道数 C)`，其中C通常为3（RGB）。
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_7.png)
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_9.png)
 
 ---
 
@@ -48,15 +43,12 @@
 
 无论后续要做什么处理，第一步总是需要将图像加载到计算机中。我们需要将图像转换成像素矩阵，以便计算机进行分析和识别工作。
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_11.png)
 
 以下是读取图像所需的步骤：
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_13.png)
 
 首先，导入必要的工具包。
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_15.png)
 
 ```python
 import cv2  # OpenCV库
@@ -69,7 +61,6 @@ import numpy as np  # 数值计算库
 
 读取图像非常简单，使用OpenCV的 `cv2.imread()` 函数，并指定图像文件的路径即可。
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_17.png)
 
 ```python
 img = cv2.imread(‘cat.jpg’)  # 读取名为‘cat.jpg’的图像
@@ -77,7 +68,6 @@ img = cv2.imread(‘cat.jpg’)  # 读取名为‘cat.jpg’的图像
 
 执行上述代码后，图像数据被存储在变量 `img` 中。让我们查看一下这个变量。
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_19.png)
 
 ```python
 print(img)
@@ -85,7 +75,6 @@ print(img.dtype)
 print(img.shape)
 ```
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_21.png)
 
 输出结果分析：
 *   `img` 是一个NumPy的 `ndarray`（多维数组）结构。
@@ -96,19 +85,15 @@ print(img.shape)
 
 ## 第二步：显示图像
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_23.png)
 
 在对图像进行处理的过程中，我们经常需要观察图像的变化。这里介绍如何使用OpenCV自带的函数来显示图像。
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_25.png)
 
 **注意**：OpenCV默认读取图像的格式是 **BGR**，而非常见的RGB。这与Matplotlib等库的默认格式存在冲突。因此，使用OpenCV自带的显示函数可以避免颜色通道转换的麻烦。
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_27.png)
 
 显示图像的方法如下：
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_29.png)
 
 ```python
 cv2.imshow(‘window_name‘, img)  # 创建一个窗口并显示图像
@@ -120,20 +105,17 @@ cv2.destroyAllWindows()  # 关闭所有窗口
 *   `cv2.waitKey(0)`：参数 `0` 表示程序将无限期等待，直到用户在键盘上按下任意键后，程序才会继续执行。
 *   `cv2.destroyAllWindows()`：关闭所有由OpenCV创建的窗口。
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_31.png)
 
 `waitKey` 函数的参数含义：
 *   **参数为0**：等待任意键盘按键。
 *   **参数为1000**：等待1000毫秒（即1秒），时间到后自动继续执行。
 *   **参数为10000**：等待10000毫秒（即10秒）。
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_33.png)
 
 通常，在调试和观察时，建议使用 `waitKey(0)`，这样可以有充足的时间查看图像结果，并在查看完毕后通过按键关闭窗口。
 
 ---
 
-![](img/c6bde5b37d9af64b8cf54c39acda2c27_35.png)
 
 本节课中我们一起学习了：
 1.  **图像的本质**：计算机眼中的图像是由像素点组成的矩阵，像素值在0-255之间表示亮度。彩色图像包含RGB三个颜色通道，而灰度图只有一个通道。

@@ -8,9 +8,7 @@
 
 在开始合并数据之前，我们需要先了解现有表格的结构。以下是查看表格预览的步骤。
 
-![](img/c5a79535d188131f5e1dae252a40349d_1.png)
 
-![](img/c5a79535d188131f5e1dae252a40349d_2.png)
 
 打开一个Snowflake笔记本，并运行SQL来预览`customer_reviews`和`shipping_logs`表。你可以使用类似以下的提示词向你的生成式AI助手寻求帮助：
 
@@ -66,7 +64,6 @@ df_cleaned = df_cleaned.withColumn(‘review_text_trimmed’, trim(col(‘review
 
 ![](img/c5a79535d188131f5e1dae252a40349d_4.png)
 
-![](img/c5a79535d188131f5e1dae252a40349d_5.png)
 
 以下代码行将在Snowflake中创建一个名为`cleaned_reviews`的新表来存储清理后的数据。`mode=‘overwrite’`参数意味着如果存在同名表，它将被覆盖。请谨慎使用此参数，以免意外覆盖需要保留的数据表。
 

@@ -1,36 +1,27 @@
 # 029：IBM Cloudant 概述 🗄️
 
-![](img/dffa74e137ade25912af3b448d9d76d1_0.png)
 
-![](img/dffa74e137ade25912af3b448d9d76d1_1.png)
 
 在本节课中，我们将学习IBM Cloudant的基本概念、核心特性以及如何访问它。IBM Cloudant是一个为现代应用设计的托管数据库服务。
 
-![](img/dffa74e137ade25912af3b448d9d76d1_3.png)
 
-![](img/dffa74e137ade25912af3b448d9d76d1_4.png)
 
 ## 概述
 
 IBM Cloudant是一个完全托管的数据库服务，也称为数据库即服务。它基于开源的Apache CouchDB构建，为混合云和多云应用提供数据层支持。
 
-![](img/dffa74e137ade25912af3b448d9d76d1_6.png)
 
 ## 核心特性
 
-![](img/dffa74e137ade25912af3b448d9d76d1_8.png)
 
-![](img/dffa74e137ade25912af3b448d9d76d1_9.png)
 
 上一节我们介绍了Cloudant的基本定位，本节中我们来看看它的关键特性。
 
 Cloudant旨在成为所有Web和移动应用的数据层，它使用简单但功能丰富。
 
-![](img/dffa74e137ade25912af3b448d9d76d1_11.png)
 
 以下是Cloudant的一些核心能力：
 
-![](img/dffa74e137ade25912af3b448d9d76d1_13.png)
 
 *   **内置高级功能**：Cloudant集成了在线分析、全文搜索、高级地理空间查询和复制功能，无需第三方集成。
 *   **灵活模式**：Cloudant使用灵活的模式，这意味着您可以快速迭代新功能，实现敏捷开发。
@@ -58,21 +49,16 @@ Cloudant的复制技术提供了降低可扩展性风险、成本和干扰的选
 
 ## 如何访问IBM Cloudant
 
-![](img/dffa74e137ade25912af3b448d9d76d1_15.png)
 
-![](img/dffa74e137ade25912af3b448d9d76d1_16.png)
 
 最后，我们来了解如何开始使用IBM Cloudant。
 
-![](img/dffa74e137ade25912af3b448d9d76d1_18.png)
 
 访问Cloudant托管服务非常简单。您只需登录IBM Cloud，在顶部导航栏点击“目录”，选择“服务”，然后从类别列表中选择“数据库”，最后在数据库服务列表中选择“Cloudant”。
 
 或者，您也可以直接访问 `ibm.com/cloud/cloudant` 注册免费试用。此外，您还可以下载Cloudant进行本地安装。
 
-![](img/dffa74e137ade25912af3b448d9d76d1_20.png)
 
-![](img/dffa74e137ade25912af3b448d9d76d1_21.png)
 
 ## 总结
 

@@ -1,6 +1,5 @@
 # 007：使用PyTorch实现掩码自注意力
 
-![](img/2f1973c126adbbe24fb33aa4cb4e8bf8_0.png)
 
 ![](img/2f1973c126adbbe24fb33aa4cb4e8bf8_0.png)
 
@@ -152,7 +151,6 @@ print(V)
 
 通过比较这些中间结果，你可以验证整个计算流程是否符合预期。
 
-![](img/2f1973c126adbbe24fb33aa4cb4e8bf8_4.png)
 
 ## 总结
 

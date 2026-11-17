@@ -8,11 +8,9 @@
 
 ---
 
-![](img/8409ea6aaf3ddf4d1e231ae05270bf2d_5.png)
 
 ## 概述
 
-![](img/8409ea6aaf3ddf4d1e231ae05270bf2d_7.png)
 
 上一节我们介绍了如何将数据存储为TFRecords格式。本节中，我们来看看如何高效地读取这些数据以供模型训练使用。为此，我们将引入TensorFlow Slim库，这是一个旨在简化TensorFlow代码编写的轻量级库。
 
@@ -38,7 +36,6 @@ import tensorflow.contrib.slim as slim
 
 ![](img/8409ea6aaf3ddf4d1e231ae05270bf2d_11.png)
 
-![](img/8409ea6aaf3ddf4d1e231ae05270bf2d_13.png)
 
 Slim库读取数据的流程清晰且分为两个主要步骤。以下是这两个步骤的概述：
 
@@ -71,7 +68,6 @@ Slim库读取数据的流程清晰且分为两个主要步骤。以下是这两�
 
 对于目标检测任务，Slim特别提供了对边界框（Bounding Box）的支持。需要注意的是，提供给Slim的边界框格式必须是 **[ymin, xmin, ymax, xmax]**。这与我们之前存储数据时强调的顺序是一致的。
 
-![](img/8409ea6aaf3ddf4d1e231ae05270bf2d_25.png)
 
 最终，我们会使用 `tf.example_decoder` 来完成解析。
 
@@ -94,7 +90,6 @@ Slim库读取数据的流程清晰且分为两个主要步骤。以下是这两�
 
 以下是一个简化的代码框架：
 
-![](img/8409ea6aaf3ddf4d1e231ae05270bf2d_29.png)
 
 
 ![](img/8409ea6aaf3ddf4d1e231ae05270bf2d_31.png)

@@ -20,7 +20,6 @@
 
 ![](img/bcf35c7a95c0491795650e4108198c36_2.png)
 
-![](img/bcf35c7a95c0491795650e4108198c36_3.png)
 
 ```python
 from crewai import Agent, Task, Crew

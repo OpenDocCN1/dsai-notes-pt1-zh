@@ -110,21 +110,17 @@ if __name__ == "__main__":
 
 如果你在本地运行，只需打开一个新的终端窗口（在Mac上是新的bash终端，在Windows上是新的PowerShell窗口），导航到项目目录，然后运行：
 
-![](img/c366576352466d920c8c1d93fd5a3529_5.png)
 
 ```bash
 uv run hospital_server.py
 ```
 
-![](img/c366576352466d920c8c1d93fd5a3529_7.png)
 
-![](img/c366576352466d920c8c1d93fd5a3529_8.png)
 
 如果一切正常，你将看到医院ACP服务器成功运行在 `http://localhost:8000` 上。
 
 ## 总结
 
-![](img/c366576352466d920c8c1d93fd5a3529_10.png)
 
 ![](img/c366576352466d920c8c1d93fd5a3529_11.png)
 

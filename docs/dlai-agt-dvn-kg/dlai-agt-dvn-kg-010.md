@@ -183,7 +183,6 @@ RETURN from_labels, rel_type, to_labels
 
 ## 总结
 
-![](img/03d076dbcfa1d7ad7b7ed23c7fccd839_5.png)
 
 ![](img/03d076dbcfa1d7ad7b7ed23c7fccd839_6.png)
 

@@ -1,6 +1,5 @@
 # 066：策略梯度定理 🎼
 
-![](img/d8dea5e55d7cf7a509033f56bc2477c2_1.png)
 
 ![](img/d8dea5e55d7cf7a509033f56bc2477c2_1.png)
 

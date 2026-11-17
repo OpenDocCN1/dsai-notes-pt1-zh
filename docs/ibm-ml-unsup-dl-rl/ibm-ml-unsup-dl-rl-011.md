@@ -22,11 +22,9 @@ ax off because we don't want any axes when we're just plotting an image。
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_1.png)
 
 So he run this。
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_3.png)
 
 And we see our image with our different colors and our different shades of green， red and yellow。
 
@@ -34,7 +32,6 @@ We then I we call here imaget shape， but quickly， I want to show you what th
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_5.png)
 
 And as I mentioned， it's going to be taking this image that we just plotted out。 and rather than。
 
@@ -48,13 +45,11 @@ Giving the actual picture， we're actually just representing it as an array whe
 
  again， red， green and blue it has。
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_7.png)
 
 And below to just hone in on how we have this picture representation withinumpre arrays。
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_9.png)
 
 We're going to look using R equals all these R equals 35 G equals 95 b equals 131。
 
@@ -64,7 +59,6 @@ And we will and these are all values between 200，0 and 255。Were going to cal
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_11.png)
 
 So we run this and we see that this， since it's mostly blue， will output something close to blue。
 
@@ -74,25 +68,21 @@ So we run this and we see that this， since it's mostly blue， will output som
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_13.png)
 
 If we were to set this all to 100。 so if all the values are the same should be somewhere gray。
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_15.png)
 
 Because it's equal amountuns of each。 And if we set it all to 0。What do you think will happen？
 
 I'll run that here。
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_17.png)
 
 You see that we have black。And then if they are each 255， which is the maximum value。
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_19.png)
 
 You see that we get white， so just an understanding。
 
@@ -154,7 +144,6 @@ In order to actually show this as an image using PLT IM show， we have to get i
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_21.png)
 
 And we see that we can still get a lot of our initial picture with just these eight different colors。
 
@@ -164,7 +153,6 @@ And we see that we can still get a lot of our initial picture with just these ei
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_23.png)
 
 So the next thing that we're going to want to do in order to take this a step further is create a function that will take in any image。
 
@@ -198,7 +186,6 @@ And then we're going to output from this function， both that new image with th
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_25.png)
 
 So we've created our function that will output again that new image with the replace pixels。
 
@@ -206,7 +193,6 @@ So we've created our function that will output again that new image with the rep
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_27.png)
 
 We're then going to call that function for k between 2 and 20。
 
@@ -234,7 +220,6 @@ So I'm going to run this， and this will take just a second。
 
  I'll see you as soon as it stops running。
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_29.png)
 
 So that should have taken about five minutes to run。
 
@@ -278,13 +263,11 @@ And then we will title that and then also turn off the axis and we can see。
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_31.png)
 
 As we increase the number of colors， how much of the image we are able to actually discern。
 
  given the number of colors we're using。
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_33.png)
 
 So here at the bottom， when we see that we're using 20 different colors。
 
@@ -298,7 +281,6 @@ And that was on the image。Flat。And we will say axis equals0。And let's see 
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_35.png)
 
 And you see that originally， there was 98452 unique colors to make up that picture。
 
@@ -312,6 +294,5 @@ And we can see how well we can represent that with just 20 colors here。
 
 
 
-![](img/5787c7c1167b1325e4b180a8cd7902c7_37.png)
 
 ![](img/5787c7c1167b1325e4b180a8cd7902c7_38.png)

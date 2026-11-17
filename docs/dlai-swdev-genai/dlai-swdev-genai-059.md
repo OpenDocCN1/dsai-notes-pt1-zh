@@ -17,13 +17,11 @@
 Suggest a lightweight but powerful Python setup that uses a file based database so I can practice working with databases. I want the code to be able to run in Google Colab.
 ```
 
-![](img/9e9996941a40fdfbbfec8800eb0ba679_1.png)
 
 当你运行这个提示时，LLM会给出建议。在本例中，它推荐的也是SQLAlchemy和SQLite的组合，并附带了如何安装和设置这些软件包的说明。
 
 ![](img/9e9996941a40fdfbbfec8800eb0ba679_1.png)
 
-![](img/9e9996941a40fdfbbfec8800eb0ba679_3.png)
 
 在本视频中，你将遵循一个类似的设置流程来启动和运行。
 
@@ -35,7 +33,6 @@ Suggest a lightweight but powerful Python setup that uses a file based database 
 
 首先，你需要使用以下命令安装这个包：
 
-![](img/9e9996941a40fdfbbfec8800eb0ba679_5.png)
 
 ```bash
 pip install sqlalchemy
@@ -45,7 +42,6 @@ pip install sqlalchemy
 
 ## 创建SQLite数据库引擎 🔧
 
-![](img/9e9996941a40fdfbbfec8800eb0ba679_7.png)
 
 SQLAlchemy安装完成后，你就可以设置一个示例SQLite数据库了。SQLite是一个轻量级、无服务器的关系型数据库管理系统，非常适合本课程，也非常易于使用。它包含在大多数Python设置中，因此通常不需要单独安装。
 
@@ -56,7 +52,6 @@ SQLAlchemy安装完成后，你就可以设置一个示例SQLite数据库了。S
 以下是导入必要库并创建连接到SQLite数据库引擎的代码：
 
 
-![](img/9e9996941a40fdfbbfec8800eb0ba679_9.png)
 
 ```python
 from sqlalchemy import create_engine
@@ -72,7 +67,6 @@ engine = create_engine('sqlite:///ecommerce.db', echo=True)
 
 很好，你现在已经设置好了数据库连接。当然，你应该做的第一件事是检查它是否正常工作。
 
-![](img/9e9996941a40fdfbbfec8800eb0ba679_11.png)
 
 在LLM出现之前，弄清楚如何测试这个连接可能需要搜索SQLAlchemy文档或Stack Overflow页面，而且你可能不容易找到你需要的答案。现在，你可以向LLM提供一些关于你如何设置数据库的上下文，并要求它提供检查连接是否存活的代码。
 
@@ -80,7 +74,6 @@ engine = create_engine('sqlite:///ecommerce.db', echo=True)
 
 LLM会回复一些代码，但更重要的是，它还提供了一些检查连接的常用实践指导。在本例中，通过执行一个示例SQL查询`SELECT 1`。这种洞察是学习一个软件包、库或任何代码如何工作的绝佳方式。
 
-![](img/9e9996941a40fdfbbfec8800eb0ba679_13.png)
 
 ![](img/9e9996941a40fdfbbfec8800eb0ba679_13.png)
 
@@ -88,7 +81,6 @@ LLM会回复一些代码，但更重要的是，它还提供了一些检查连�
 
 因此，在继续使用这个数据库之前，我鼓励你按照本视频中的步骤操作，无论是在你自己的设置中还是在Colab中，然后使用上面的代码或你的LLM提供的任何代码来检查连接。
 
-![](img/9e9996941a40fdfbbfec8800eb0ba679_15.png)
 
 ## 总结与展望 📝
 

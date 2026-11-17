@@ -99,18 +99,14 @@ b = 0 # 忽略截距，专注于 w1, w2
 
 绘制等高面图使用 `plt.contourf` 函数。
 
-![](img/da007b3632e63516b1dd7f7f110d51ff_1.png)
 
 ```python
 plt.subplot(2, 2, 4)
 plt.contourf(w1_grid, w2_grid, loss_grid, cmap='viridis') # cmap 指定颜色映射
 ```
 
-![](img/da007b3632e63516b1dd7f7f110d51ff_3.png)
 
-![](img/da007b3632e63516b1dd7f7f110d51ff_5.png)
 
-![](img/da007b3632e63516b1dd7f7f110d51ff_7.png)
 
 参数 `cmap` 用于指定颜色映射方案，例如 `'viridis'`, `'rainbow'`, `'gray'` 等。可以通过 `plt.colormaps()` 查看所有可用的颜色映射。
 

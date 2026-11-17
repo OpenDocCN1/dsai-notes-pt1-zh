@@ -1,20 +1,15 @@
 # 028：基于百分位去极值实例
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_1.png)
 
 在本节课中，我们将学习如何使用分位数（如Q1和Q3）来识别和处理数据集中的极端值。我们将编写一个函数，将所有低于下分位数的值设置为该分位数，将所有高于上分位数的值设置为该分位数，从而将数据规范到一个指定的范围内。
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_3.png)
 
 ## 函数定义与参数说明
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_5.png)
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_7.png)
 
 首先，我们需要定义一个函数来执行基于百分位的去极值操作。这个函数需要接收三个参数：一个Pandas Series数据序列，以及我们希望保留的最小和最大百分位值。
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_9.png)
 
 以下是函数的基本框架：
 ```python
@@ -22,11 +17,9 @@ def winsorize_by_percentile(series, low_percentile, high_percentile):
     # 函数主体将在这里实现
 ```
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_11.png)
 
 ## 数据排序与分位数计算
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_13.png)
 
 上一节我们介绍了函数的基本结构，本节中我们来看看具体的实现步骤。第一步是对数据进行排序，因为只有排序后的数据，我们才能准确地找到指定百分位对应的数值。
 
@@ -65,24 +58,18 @@ def winsorize_by_percentile(series, low_percentile, high_percentile):
 ```
 `np.clip(series, a_min, a_max)`函数会将`series`中所有小于`a_min`的值设置为`a_min`，所有大于`a_max`的值设置为`a_max`。
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_15.png)
 
 ## 函数调用与结果可视化
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_17.png)
 
 函数编写完成后，我们可以将其应用于具体的数据列，并可视化处理前后的效果，以直观地观察去极值操作的影响。
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_19.png)
 
 以下是调用函数和绘制对比图的示例代码：
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_21.png)
-
-![](img/c6ce69e40f6c428748d069f83415dbeb_23.png)
 
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_25.png)
+
 
 ```python
 # 假设`data`是一个DataFrame，`column_name`是我们要处理的列名
@@ -105,29 +92,21 @@ plt.show()
 ```
 通过对比图，可以清晰地看到，原始数据中超出边界的极端值（图中橙色线的两端）被“拉回”到了边界值（蓝色线的两端）。
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_27.png)
 
 ## 实际应用中的参数选择
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_29.png)
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_31.png)
 
 在实际的因子分析或数据处理中，我们通常不会使用像0.25和0.75这样宽泛的分位数，因为这会将过多数据视为异常值。更常见的做法是使用如0.025和0.975这样的分位数，只处理分布两端各2.5%的极端值。本示例为了更明显地展示效果，选择了较大的范围。
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_33.png)
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_35.png)
 
 你可以根据实际数据的分布特点，灵活调整`low_percentile`和`high_percentile`参数。
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_37.png)
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_39.png)
 
 ## 总结
 
-![](img/c6ce69e40f6c428748d069f83415dbeb_41.png)
 
 ![](img/c6ce69e40f6c428748d069f83415dbeb_43.png)
 

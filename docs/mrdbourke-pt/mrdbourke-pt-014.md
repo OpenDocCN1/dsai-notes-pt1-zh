@@ -12,11 +12,9 @@
 
 ![](img/42c081173a04ef411746c927b03aef4b_1.png)
 
-![](img/42c081173a04ef411746c927b03aef4b_2.png)
 
 我建议你跟随本课程学习的方式是：**边看边敲代码**。
 
-![](img/42c081173a04ef411746c927b03aef4b_3.png)
 
 ---
 
@@ -45,7 +43,6 @@
 
 我会把我的 Notebook 命名为 `video`，以便区分这是视频教程中使用的 Notebook。
 
-![](img/42c081173a04ef411746c927b03aef4b_7.png)
 
 点击“连接”后，它会为我们提供一个编写 Python 代码的空间。
 
@@ -65,7 +62,6 @@ Google Colab 的一个巨大优势是它提供了免费的硬件加速器。我�
 
 现在，让我们看看 Google Colab 的硬件加速功能。
 
-![](img/42c081173a04ef411746c927b03aef4b_9.png)
 
 ![](img/42c081173a04ef411746c927b03aef4b_10.png)
 
@@ -89,9 +85,7 @@ Colab 功能非常多，我不可能一一介绍。但我们已经涵盖了需�
 
 回到 Notebook 顶部，我将创建一个文本单元格。输入标题，例如 “00. PyTorch 基础”，并在这里链接资源 Notebook。
 
-![](img/42c081173a04ef411746c927b03aef4b_12.png)
 
-![](img/42c081173a04ef411746c927b03aef4b_13.png)
 
 你可以访问 `learnpytorch.io`，所有 Notebook 都是同步的。对于 `00` 模块，我们可以把资源链接放在这里。本视频的 Notebook 就是基于那个资源 Notebook 创建的。
 
@@ -105,7 +99,6 @@ Colab 功能非常多，我不可能一一介绍。但我们已经涵盖了需�
 
 ---
 
-![](img/42c081173a04ef411746c927b03aef4b_15.png)
 
 ## 导入必要的库
 
@@ -118,7 +111,6 @@ print(torch.__version__)
 ```
 Google Colab 的另一个优点是它**预装了 PyTorch** 以及许多其他常用的 Python 数据科学包。
 
-![](img/42c081173a04ef411746c927b03aef4b_17.png)
 
 我们也可以同时导入其他常用库：
 ```python
@@ -144,11 +136,8 @@ import matplotlib.pyplot as plt
 
 ---
 
-![](img/42c081173a04ef411746c927b03aef4b_19.png)
 
-![](img/42c081173a04ef411746c927b03aef4b_20.png)
 
-![](img/42c081173a04ef411746c927b03aef4b_21.png)
 
 ## 准备就绪
 
@@ -156,7 +145,6 @@ import matplotlib.pyplot as plt
 
 让我们在下一个视频中开始编写一些 PyTorch 代码吧。这非常令人兴奋。
 
-![](img/42c081173a04ef411746c927b03aef4b_23.png)
 
 ![](img/42c081173a04ef411746c927b03aef4b_24.png)
 

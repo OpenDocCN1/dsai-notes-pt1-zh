@@ -101,18 +101,12 @@ print(f"准确率: {accuracy:.2f}")
 
 ![](img/da6d91f8cbc62e748f3c3e7a23911ee0_1.png)
 
-![](img/da6d91f8cbc62e748f3c3e7a23911ee0_2.png)
-
-![](img/da6d91f8cbc62e748f3c3e7a23911ee0_4.png)
-
-![](img/da6d91f8cbc62e748f3c3e7a23911ee0_6.png)
-
-![](img/da6d91f8cbc62e748f3c3e7a23911ee0_7.png)
 
 
-![](img/da6d91f8cbc62e748f3c3e7a23911ee0_9.png)
 
-![](img/da6d91f8cbc62e748f3c3e7a23911ee0_11.png)
+
+
+
 
 ![](img/da6d91f8cbc62e748f3c3e7a23911ee0_13.png)
 

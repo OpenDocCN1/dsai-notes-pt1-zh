@@ -118,7 +118,6 @@ filtered_by_country = df.loc[country_mask, ‘Country’]
 
 这时，我们可以使用 Pandas 的字符串方法 `.str.contains()`。
 
-![](img/dd05cb8c181c3adeeebf376747608bf2_1.png)
 
 以下是使用字符串方法过滤的步骤：
 
@@ -139,11 +138,8 @@ python_users = df.loc[python_mask, ‘LanguageWorkedWith’]
 
 ---
 
-![](img/dd05cb8c181c3adeeebf376747608bf2_5.png)
 
-![](img/dd05cb8c181c3adeeebf376747608bf2_6.png)
 
-![](img/dd05cb8c181c3adeeebf376747608bf2_7.png)
 
 ## 总结
 

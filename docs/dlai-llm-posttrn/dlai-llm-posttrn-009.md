@@ -49,10 +49,8 @@
 
 
 
-![](img/12ef28e19801f6fb92370bfe85b7d8d1_1.png)
 
 ![](img/12ef28e19801f6fb92370bfe85b7d8d1_1.png)
 
-![](img/12ef28e19801f6fb92370bfe85b7d8d1_2.png)
 
 ![](img/12ef28e19801f6fb92370bfe85b7d8d1_2.png)

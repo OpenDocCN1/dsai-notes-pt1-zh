@@ -1,6 +1,5 @@
 #  005：用于图像分类的神经网络
 
-![](img/3c4d1b759882c29cfcbf75df921e61f0_0.png)
 
 ![](img/3c4d1b759882c29cfcbf75df921e61f0_0.png)
 
@@ -61,9 +60,7 @@ model = tf.keras.Sequential([
 
 现在，模型的层数增加了。第一层是展平层，作为输入。
 
-![](img/3c4d1b759882c29cfcbf75df921e61f0_4.png)
 
-![](img/3c4d1b759882c29cfcbf75df921e61f0_2.png)
 
 ## 总结
 

@@ -1,6 +1,5 @@
 # 生成式AI：P52：使用LangChain构建带记忆（聊天历史）的聊天机器人
 
-![](img/f9b7a486c329673c9db0abda9d74a5e2_1.png)
 
 ## 概述
 
@@ -8,9 +7,7 @@
 
 ---
 
-![](img/f9b7a486c329673c9db0abda9d74a5e2_3.png)
 
-![](img/f9b7a486c329673c9db0abda9d74a5e2_4.png)
 
 ## 环境配置与库安装
 
@@ -96,13 +93,10 @@ print(response.content)
 
 单纯的模型调用无法记住历史对话。为了实现这一点，我们需要两个关键组件：`ConversationBufferMemory`用于存储对话历史，以及`ConversationChain`将记忆与模型连接起来。
 
-![](img/f9b7a486c329673c9db0abda9d74a5e2_14.png)
 
-![](img/f9b7a486c329673c9db0abda9d74a5e2_15.png)
 
 首先，从`langchain.memory`导入记忆模块，并初始化一个对话缓冲区。
 
-![](img/f9b7a486c329673c9db0abda9d74a5e2_17.png)
 
 ```python
 from langchain.memory import ConversationBufferMemory
@@ -111,9 +105,7 @@ memory = ConversationBufferMemory()
 
 接着，使用模型和记忆对象创建一条对话链。
 
-![](img/f9b7a486c329673c9db0abda9d74a5e2_19.png)
 
-![](img/f9b7a486c329673c9db0abda9d74a5e2_20.png)
 
 ```python
 from langchain.chains import ConversationChain
@@ -126,7 +118,6 @@ conversation = ConversationChain(
 
 现在，我们可以使用这条链进行多轮对话。链会自动将当前对话和记忆中的历史记录一起发送给模型。
 
-![](img/f9b7a486c329673c9db0abda9d74a5e2_22.png)
 
 进行多轮对话的示例：
 ```python

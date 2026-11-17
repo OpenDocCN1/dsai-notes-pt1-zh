@@ -8,19 +8,14 @@
 
 
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_1.png)
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_2.png)
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_1.png)
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_2.png)
 
 ## 实践：使用免费工具生成图像
 
 接下来，我们通过一个免费的AI图像生成器FreePik来实际生成一张新图像。操作的核心是输入一段描述你想要的图像的文本提示。
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_4.png)
 
 例如，你可以输入以下提示词：“一艘船在日落时分的平静湖面上航行，周围是郁郁葱葱的绿树和宁静的天空。” 请记住，**提示词中描述图像的词语决定了生成图像的准确性和质量**。
 
@@ -28,7 +23,6 @@
 
 
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_4.png)
 
 ## 图像生成模型的进阶能力
 
@@ -54,9 +48,7 @@
 
 
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_6.png)
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_6.png)
 
 ## 主流图像生成模型
 
@@ -66,7 +58,6 @@
 *   **Stable Diffusion**：一个开源的“文生图”扩散模型。扩散模型是一类能创建高分辨率图像的生成模型。Stable Diffusion主要根据文本提示生成图像，但也支持图像到图像转换、修复和扩展。
 *   **NVIDIA的StyleGAN**：该模型将图像内容和图像风格分开建模，从而能精确控制风格，并操纵特定特征（如姿势或面部表情）。StyleGAN已进化到能生成具有更逼真细节的高分辨率图像。
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_8.png)
 
 ## 常用图像生成工具
 
@@ -82,45 +73,35 @@
 
 
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_10.png)
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_10.png)
 
 **MidJourney**是一个独特的平台，它构建了一个图像生成社区，帮助艺术家和设计师使用AI创作图像，并相互探索彼此的作品。
 
 
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_12.png)
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_12.png)
 
 ## 集成与商业应用
 
 许多生成式AI图像生成器也提供API接口，允许开发者将其功能嵌入到不同的软件程序和工具中。一些提供API的流行图像生成器包括DALL-E、MidJourney和Craiyon。
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_14.png)
 
 科技巨头也已涉足AI图像生成领域。
 
 
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_14.png)
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_16.png)
 
 *   **Microsoft Bing Image Creator**：基于DALL-E模型。你可以通过访问`Bing.com/create`或在Microsoft Edge浏览器中使用此工具。这使得Microsoft Edge成为首个集成AI图像生成器的浏览器。
 
 
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_16.png)
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_18.png)
 
 *   **Adobe Firefly**：这是一系列生成式AI工具，旨在与Adobe Creative Cloud应用程序（如Photoshop和Illustrator）集成。Firefly使用Adobe Stock图片、公开授权内容和公共领域内容进行训练。
 
 
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_18.png)
 
 Firefly支持超过100种语言的文本提示，并包含多种工具，允许你操控颜色、色调、光照、构图，以及使用生成式填充、文本效果、生成式重新着色、3D转图像和图像扩展等功能。
 
@@ -130,6 +111,5 @@ Firefly支持超过100种语言的文本提示，并包含多种工具，允许�
 
 
 
-![](img/f31f5ed304a537a34e1bc1df826525ac_20.png)
 
 ![](img/f31f5ed304a537a34e1bc1df826525ac_20.png)

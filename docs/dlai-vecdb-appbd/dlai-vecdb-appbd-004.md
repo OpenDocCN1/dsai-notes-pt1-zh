@@ -1,6 +1,5 @@
 # 004：推荐系统 📚
 
-![](img/b5af4cc71a6feac4286ee55a49056fa9_0.png)
 
 在本节课中，我们将基于之前课程所学，构建一个简单的新闻文章推荐系统。我们将使用一个新闻文章样本数据集，首先基于文章标题生成向量嵌入并构建推荐系统，然后进一步扩展到基于文章内容本身来构建推荐系统。
 
@@ -26,7 +25,6 @@ import openai
 
 接下来，设置Pinecone和OpenAI的API密钥，并连接到Pinecone服务。
 
-![](img/b5af4cc71a6feac4286ee55a49056fa9_6.png)
 
 ```python
 # 设置Pinecone和OpenAI
@@ -87,7 +85,6 @@ def get_embeddings(articles):
 以下是准备和插入数据的主要循环逻辑：
 
 
-![](img/b5af4cc71a6feac4286ee55a49056fa9_8.png)
 
 ```python
 # 分批读取数据并上传嵌入
@@ -146,15 +143,12 @@ for match in recommendations['matches']:
 
 ## 基于文章内容的推荐系统 📄
 
-![](img/b5af4cc71a6feac4286ee55a49056fa9_14.png)
 
-![](img/b5af4cc71a6feac4286ee55a49056fa9_16.png)
 
 基于标题的搜索效果很好，但有时标题不能完全反映文章内容。本节中，我们将构建一个更强大的系统，基于整篇文章的内容进行推荐。
 
 ### 重新准备索引与数据
 
-![](img/b5af4cc71a6feac4286ee55a49056fa9_18.png)
 
 首先，我们需要清除旧的索引，并创建一个新的来存储基于内容的嵌入。
 
@@ -166,7 +160,6 @@ pinecone.create_index(name=index_name, dimension=1536, metric='cosine')
 index = pinecone.Index(index_name)
 ```
 
-![](img/b5af4cc71a6feac4286ee55a49056fa9_20.png)
 
 ### 处理文章内容并分块
 
@@ -203,7 +196,6 @@ def embed_chunks(text_chunks, titles, prep_list, embed_counter):
     return embed_counter, prep_list
 ```
 
-![](img/b5af4cc71a6feac4286ee55a49056fa9_22.png)
 
 现在，遍历数据集，处理每篇文章。
 
@@ -229,7 +221,6 @@ if prep:
 
 这个过程将文章内容分块并上传了约10,500个向量嵌入。
 
-![](img/b5af4cc71a6feac4286ee55a49056fa9_24.png)
 
 ### 执行基于内容的查询
 

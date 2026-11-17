@@ -163,7 +163,6 @@ ds_test = (ds_test
 数据准备就绪后，我们可以创建一个简单的模型进行情感分类。
 
 
-![](img/fd1d96600c664ffac3a740a72c447896_5.png)
 
 ```python
 model = tf.keras.Sequential([
@@ -180,13 +179,10 @@ model.compile(
 model.fit(ds_train, validation_data=ds_test, epochs=15)
 ```
 
-![](img/fd1d96600c664ffac3a740a72c447896_6.png)
 
 ---
 
-![](img/fd1d96600c664ffac3a740a72c447896_8.png)
 
-![](img/fd1d96600c664ffac3a740a72c447896_9.png)
 
 ## 6. 处理其他数据结构的思路
 
@@ -203,11 +199,9 @@ dataset = tf.data.TextLineDataset(file_pattern)
 
 ### 情况二：多个文件需要分别预处理
 
-![](img/fd1d96600c664ffac3a740a72c447896_11.png)
 
 如果多个文件结构不同，需要分别处理后再合并。
 
-![](img/fd1d96600c664ffac3a740a72c447896_13.png)
 
 ```python
 ds1 = tf.data.TextLineDataset('file1.csv').map(preprocess1)

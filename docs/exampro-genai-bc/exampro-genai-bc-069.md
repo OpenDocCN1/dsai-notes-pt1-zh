@@ -10,9 +10,7 @@
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_5.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_7.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_9.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_11.png)
 
@@ -145,7 +143,6 @@ getDimensions() {
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_81.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_82.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_84.png)
 
@@ -183,7 +180,6 @@ getDimensions() {
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_108.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_110.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_112.png)
 
@@ -219,9 +215,7 @@ getDimensions() {
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_124.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_126.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_128.png)
 
 ---
 
@@ -229,29 +223,23 @@ getDimensions() {
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_132.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_134.png)
 
 ## 修复容器定位与原点偏移
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_136.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_138.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_140.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_142.png)
 
 在实现了各个组件的尺寸计算后，我们还需要修复容器的定位逻辑，使其能够正确考虑原点（origin）设置。
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_144.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_146.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_147.png)
 
 原来的`updateItemPositions`函数在计算子项位置时，没有考虑容器的原点偏移。例如，如果容器原点设置为(0.5, 0.5)（即中心），所有子项应该围绕中心点布局，而不是从左上角开始。
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_149.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_151.png)
 
@@ -272,7 +260,6 @@ _updateItemPositionsByOrigin() {
 }
 ```
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_157.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_159.png)
 
@@ -288,7 +275,6 @@ _updateItemPositionsByOrigin() {
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_169.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_171.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_173.png)
 
@@ -310,11 +296,8 @@ _updateItemPositionsByOrigin() {
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_187.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_189.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_191.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_193.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_194.png)
 
@@ -322,7 +305,6 @@ _updateItemPositionsByOrigin() {
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_196.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_198.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_200.png)
 
@@ -342,11 +324,8 @@ _updateItemPositionsByOrigin() {
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_215.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_217.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_219.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_221.png)
 
 即使标签文本为空，某些字段的标签高度返回值仍然不为0，这导致了额外的间距。修复方法是：在创建字段时，如果标签文本为空，则立即将标签的可见性设置为`false`；并在`getDimensions`方法中，只有当标签可见且高度大于0时，才将其高度和间距计入总高度。
 
@@ -354,23 +333,17 @@ _updateItemPositionsByOrigin() {
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_225.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_227.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_229.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_230.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_232.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_234.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_236.png)
 
 此外，我们还发现了Phaser中`width`/`height`与`displayWidth`/`displayHeight`属性的区别。前者是纹理的原始尺寸，后者是经过缩放后的显示尺寸。根据我们的使用场景（直接设置`displaySize`），选择正确的属性对计算至关重要。
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_238.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_240.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_242.png)
 
@@ -386,19 +359,13 @@ _updateItemPositionsByOrigin() {
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_253.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_255.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_257.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_258.png)
 
 ---
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_260.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_262.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_264.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_266.png)
 
@@ -408,15 +375,11 @@ _updateItemPositionsByOrigin() {
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_272.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_274.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_276.png)
 
 ## 最终成果与总结
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_278.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_280.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_282.png)
 
@@ -432,7 +395,6 @@ _updateItemPositionsByOrigin() {
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_291.png)
 
-![](img/239e4b8c25e6721741e1fb88bfd7836b_293.png)
 
 ![](img/239e4b8c25e6721741e1fb88bfd7836b_295.png)
 

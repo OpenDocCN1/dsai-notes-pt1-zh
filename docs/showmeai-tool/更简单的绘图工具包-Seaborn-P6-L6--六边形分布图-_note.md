@@ -10,7 +10,6 @@
 
 以下是创建六边形分布图的核心代码：
 
-![](img/737f808be1e5c25bde929e6d9174060d_1.png)
 
 ```python
 import seaborn as sns
@@ -20,13 +19,9 @@ sns.jointplot(x='column1', y='column2', data=your_dataframe, kind='hex')
 
 通过上述代码，你可以直观地看到数据是如何在两个维度上分布的。例如，在分析交通事故数据时，你可以用它来观察“饮酒量”和“超速程度”这两个变量之间的关系，并找出大多数事故发生时这两个因素的常见组合范围。
 
-![](img/737f808be1e5c25bde929e6d9174060d_2.png)
 
-![](img/737f808be1e5c25bde929e6d9174060d_1.png)
 
-![](img/737f808be1e5c25bde929e6d9174060d_2.png)
 
-![](img/737f808be1e5c25bde929e6d9174060d_3.png)
 
 ![](img/737f808be1e5c25bde929e6d9174060d_3.png)
 

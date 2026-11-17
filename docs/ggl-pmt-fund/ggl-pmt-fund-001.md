@@ -1,12 +1,10 @@
 #  001：欢迎来到谷歌提示词基础课程
 
-![](img/6d3282ddcf8f1eecbb4d7bff1017f5ae_1.png)
 
 在本节课中，我们将要学习谷歌提示词基础课程的概述，了解课程目标、内容结构以及你将获得的收获。
 
 🎼
 
-![](img/6d3282ddcf8f1eecbb4d7bff1017f5ae_1.png)
 
 🎼
 
@@ -24,11 +22,8 @@
 
 我们准备了许多令人兴奋的内容，让我们开始吧。
 
-![](img/6d3282ddcf8f1eecbb4d7bff1017f5ae_3.png)
 
-![](img/6d3282ddcf8f1eecbb4d7bff1017f5ae_4.png)
 
-![](img/6d3282ddcf8f1eecbb4d7bff1017f5ae_3.png)
 
 🎼
 

@@ -108,7 +108,6 @@ werkzeug==3.0.3
 
 ![](img/64cba6e6618f096efef72c1429c5cdc3_17.png)
 
-![](img/64cba6e6618f096efef72c1429c5cdc3_19.png)
 
 我可能会写一个这样的提示词：
 > 我有一个对名为 `itsdangerous` 的Python库的依赖。它是做什么的？我应该信任它吗？

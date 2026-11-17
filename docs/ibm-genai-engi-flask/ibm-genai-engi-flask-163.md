@@ -10,22 +10,17 @@ LangChain由多个组件构成，主要包括：文档、链、代理、语言�
 
 ## 语言模型
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_1.png)
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_2.png)
 
 语言模型是LangChain中LLMs的基础。它接收文本输入并生成文本输出，可用于完成任务和总结文档等。
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_3.png)
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_4.png)
 
 LangChain支持多种语言模型，例如来自IBM、OpenAI、Google和Meta的模型。例如，要使用语言模型为新的销售方案生成回复，我们可以使用IBM的Watsonx.ai平台。
 
 以下是一个使用基于Mistral 8x7B Instruct模型创建LLM的代码示例：
 
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_6.png)
 
 ```python
 # 确保已导入必要的依赖项，例如来自IBM Watson Machine Learning包的genai和model_inference
@@ -55,10 +50,8 @@ print(response)
 
 例如，要查看响应，可以向模型插入一个问题，比如“人类最好的朋友是谁？”。你可以查看针对该问题生成的示例回复。
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_8.png)
 
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_9.png)
 
 ```python
 from ibm_watson_machine_learning.foundation_models import Model
@@ -116,7 +109,6 @@ print(response)
 
 接下来，我们探讨LangChain中用于格式化输入的提示模板。提示模板将用户的问题或消息转化为清晰的指令，语言模型利用这些指令生成恰当且连贯的响应。
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_11.png)
 
 提示模板主要有以下几种类型：
 *   **字符串提示模板**：适用于简单的字符串格式化。
@@ -157,30 +149,23 @@ print(response)
 *   **最大边际相关性**：在相似性和多样性之间取得平衡。
 *   **NGram重叠**：基于文本重叠度选择示例。
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_13.png)
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_14.png)
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_15.png)
 
 以下屏幕显示了使用NGram重叠示例选择器来选择示例以形成少样本提示的过程。
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_16.png)
 
 ## 输出解析器
 
 最后，我们来了解LangChain中用于结构化输出的组件——输出解析器。输出解析器将LLM的输出转换为更合适的格式，以便生成结构化数据。
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_18.png)
 
 LangChain提供了一个输出解析器库，支持多种数据格式，包括JSON、XML、CSV和Pandas DataFrames。输出解析器允许你定制模型的输出，以满足特定的数据处理需求。
 
 例如，让我们使用逗号分隔列表输出解析器将LLM的响应转换为CSV格式。这种输出解析器能有效地构建输出结构，并简化其在电子表格应用程序中的处理和分析。
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_20.png)
 
 
-![](img/c22bd89607e337e4aabdf8dca21087fa_22.png)
 
 ```python
 from langchain.output_parsers import CommaSeparatedListOutputParser

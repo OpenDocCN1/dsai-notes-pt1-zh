@@ -14,7 +14,6 @@
 
 我会打开谷歌，输入问题：“What is a tensor in PyTorch?”。谷歌知道我们想了解PyTorch中的张量是什么。但张量是一个非常通用的概念，并非仅与PyTorch相关。
 
-![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_3.png)
 
 现在，我们可以在维基百科上找到“张量”的词条。此外，还有一个关于“什么是张量”的视频，由Dan Fleisch讲解，这可能是我最喜欢的解释视频。
 
@@ -37,7 +36,6 @@
 
 ![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_5.png)
 
-![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_6.png)
 
 ## 学习路径参考
 
@@ -51,16 +49,13 @@
 *   **本课程提供的在线书籍格式**：幸好有这个课程。
 
 ![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_8.png)
-![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_9.png)
 ![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_10.png)
 
 ![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_8.png)
 
-![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_9.png)
 
 所有课程材料都以在线书籍的形式提供，网址是 `learnpytorch.io`。我们很快就会深入这个基础部分。如果你想参考，课程材料就是基于这本书构建的。到你观看时，这里可能会有更多章节。我们正在覆盖所有基础。
 
-![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_10.png)
 
 最后，通过**梗图（memes）**，你将晋升到某种“神级”理解。我认为这就是学习机器学习的最佳方式。所以，我们将从大学课程、在线课程、YouTube、文章，甚至梗图中汲取营养。不，不完全是，但也有点像。
 
@@ -99,7 +94,6 @@
 
 图片中的科学家形象有些淡出，但这并不完全准确。我们将像厨师而不是化学家那样工作。化学家非常精确，一切都必须分毫不差。而厨师则更像：“嗯，加点这个，来点黄油。味道好吗？好的，那就行了。”但机器学习两者都有一点。
 
-![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_19.png)
 ![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_20.png)
 
 一点科学，一点艺术。这就是我们的做法。我喜欢把它想象成一个机器学习烹饪节目。欢迎来到“与Daniel一起烹饪机器学习，烹饪PyTorch”。
@@ -110,15 +104,12 @@
 
 ![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_22.png)
 
-![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_17.png)
 
 以下是步骤：
 
 **步骤 1**：准备数据。
 
-![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_19.png)
 
-![](img/bceedfa4f3ba10b5bbbfc11ac310e64f_20.png)
 
 **步骤 2**：构建或选择一个适合我们处理问题的预训练模型。
 *   **步骤 2.1**：选择损失函数和优化器。别担心它们是什么，我们很快就会讲到。

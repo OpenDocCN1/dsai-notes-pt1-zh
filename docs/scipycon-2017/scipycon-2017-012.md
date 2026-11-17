@@ -6,7 +6,6 @@
 
 上一节我们概述了课程内容，本节中我们来看看优化的基本组成部分。优化通常涉及一个目标函数或成本函数。你可以将其想象成一个表面，优化的目标是找到这个表面上的最低点（最小值），无论是局部最小值还是全局最小值。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_1.png)
 
 在回归分析中，优化用于最小化数据点与拟合线之间的距离。在分类问题中，优化则是为了找到能最好地区分不同组别的边界线。本质上，优化就是理解目标函数并试图找到其最小值。
 
@@ -24,29 +23,21 @@ from scipy.optimize import minimize
 result = minimize(objective, x0=[0.0], method='Nelder-Mead')
 ```
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_3.png)
 
 然而，优化器通常是一个“黑盒”。你提供输入，它返回一个结果，但中间过程是未知的。你无法轻易判断是否找到了真正的全局最小值，尤其是在高维或计算成本高昂的问题中。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_5.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_7.png)
 
 ## 应用约束：边界约束
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_9.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_10.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_11.png)
 
 上一节我们介绍了基本的无约束优化，本节中我们来看看如何通过约束来融入物理信息。最常见的约束类型是边界约束（或“盒子约束”），它将搜索限制在变量的特定范围内。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_13.png)
 
 例如，我们可能只想在区间 `[2, 4]` 内寻找一阶贝塞尔函数的最小值。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_15.png)
 
 ```python
 from scipy.optimize import minimize_scalar
@@ -142,31 +133,20 @@ bounds = [(-10, 10)] * 5 # 5维问题，每维边界为[-10, 10]
 result = differential_evolution(rosenbrock, bounds)
 ```
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_17.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_18.png)
 
 全局优化器的代价是通常需要大量的函数评估，计算成本很高。它们通过在整个搜索空间内随机“跳跃”来寻找更好的解，直到满足终止条件（例如，多次迭代后没有改进）。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_20.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_21.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_23.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_25.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_26.png)
 
 ## 特殊用途优化
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_28.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_30.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_31.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_33.png)
 
 优化还有许多特殊用途：
 *   **最小二乘拟合**：用于参数估计和获取协方差矩阵（误差估计）。
@@ -187,63 +167,39 @@ result = differential_evolution(rosenbrock, bounds)
 3.  检查求解器提供的收敛轨迹日志（如果可用）。
 4.  对于拟合问题，检查协方差矩阵。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_35.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_36.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_38.png)
 
 由于许多优化器是“黑盒”，缺乏内部状态信息，很难确定是否找到了全局最优解，或者求解过程是否正常终止。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_40.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_42.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_44.png)
 
 ## 引入 Mystic：更透明的优化
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_46.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_48.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_49.png)
 
 `Mystic` 库旨在解决传统优化中的一些痛点，提供更透明、可定制和诊断友好的优化环境。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_51.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_53.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_55.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_57.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_58.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_60.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_62.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_63.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_65.png)
 
 **与 SciPy 兼容的接口**
 `Mystic` 提供了与 `scipy.optimize` 类似的单行函数接口，易于上手。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_67.png)
-
-![](img/9a512611b7f4945c6d5160b215b8b8da_69.png)
-
-![](img/9a512611b7f4945c6d5160b215b8b8da_71.png)
-
-![](img/9a512611b7f4945c6d5160b215b8b8da_73.png)
-
-![](img/9a512611b7f4945c6d5160b215b8b8da_75.png)
 
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_77.png)
+
+
+
+
 
 ```python
 from mystic import fmin
@@ -255,16 +211,11 @@ result = fmin(rosenbrock, [0, 0, 0], retall=True)
 **回调函数与监控器**
 `Mystic` 允许在优化过程中插入回调函数，例如动态绘制参数变化或记录日志。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_79.png)
-
-![](img/9a512611b7f4945c6d5160b215b8b8da_81.png)
 
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_83.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_85.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_86.png)
+
 
 ```python
 from mystic.monitors import VerboseLoggingMonitor
@@ -272,39 +223,26 @@ monitor = VerboseLoggingMonitor(1, 1) # 每1次迭代打印/记录
 result = fmin(rosenbrock, [0,0,0], itermon=monitor)
 ```
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_88.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_90.png)
 
 日志文件可以通过 `mystic` 的日志阅读器进行可视化，绘制成本函数和参数随迭代的变化，直观判断收敛情况。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_92.png)
 
 **面向对象的求解器接口**
 对于高级定制，`Mystic` 提供了面向对象的接口。你可以创建求解器实例，并独立配置其各个部分：终止条件、种群初始化、变异策略等。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_94.png)
 
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_96.png)
-
-![](img/9a512611b7f4945c6d5160b215b8b8da_98.png)
-
-![](img/9a512611b7f4945c6d5160b215b8b8da_100.png)
 
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_102.png)
-
-![](img/9a512611b7f4945c6d5160b215b8b8da_103.png)
-
-![](img/9a512611b7f4945c6d5160b215b8b8da_104.png)
-
-![](img/9a512611b7f4945c6d5160b215b8b8da_105.png)
 
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_107.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_109.png)
+
+
+
+
+
 
 ```python
 from mystic.solvers import DifferentialEvolutionSolver
@@ -320,7 +258,6 @@ solver.Solve(rosenbrock)
 solution = solver.bestSolution
 ```
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_111.png)
 
 **灵活的初始点设置**
 你可以从任意概率分布中抽取初始点。
@@ -333,29 +270,20 @@ dist = Distribution(np.random.normal, 5, 1) # 均值为5，标准差为1的正�
 solver.SetSampledInitialPoints(dist)
 ```
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_113.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_115.png)
 
 **核心特性：核变换与约束算子**
 `Mystic` 最强大的特性之一是能够使用“核变换”或“约束算子”来施加复杂的非线性约束。这与传统的惩罚函数不同。惩罚函数是在违反约束的区域修改目标函数表面（添加惩罚项）。而核变换是将整个搜索空间映射到满足约束的子空间上，优化器只在这个有效的子空间内工作。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_117.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_119.png)
 
 这允许将复杂的物理或工程约束（如等式、不等式、微分约束）直接融入优化过程，大大提高了处理现实世界非线性约束问题的能力。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_121.png)
-
-![](img/9a512611b7f4945c6d5160b215b8b8da_123.png)
-
-![](img/9a512611b7f4945c6d5160b215b8b8da_124.png)
-
-![](img/9a512611b7f4945c6d5160b215b8b8da_126.png)
 
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_128.png)
+
+
+
 
 ```python
 # 概念性示例：使用 mystic 的约束
@@ -375,25 +303,17 @@ def constrained_objective(x):
 
 ## 总结
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_130.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_132.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_133.png)
 
 本节课中我们一起学习了 Python 中优化方法的基础和现代进展。我们从优化问题的基本定义开始，探讨了局部优化、全局优化以及传统的约束处理方法（如边界约束和惩罚函数）。我们指出了传统优化工具在诊断性、约束处理能力和透明度方面的局限性。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_135.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_137.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_138.png)
 
 随后，我们深入介绍了 `Mystic` 优化库，它通过提供详细的求解监控、灵活的求解器配置、可定制的终止条件以及强大的核变换约束处理能力，旨在使优化过程更加透明和强大。`Mystic` 既兼容 `SciPy` 的简单接口，也提供了面向对象的高级接口，适用于从快速原型到复杂非线性约束问题求解的各种场景。
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_140.png)
 
-![](img/9a512611b7f4945c6d5160b215b8b8da_142.png)
 
 ![](img/9a512611b7f4945c6d5160b215b8b8da_143.png)
 

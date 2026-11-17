@@ -1,42 +1,24 @@
 # 001：使用Shell、Airflow和Kafka的ETL和数据管道 🚀
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_0.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_1.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_0.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_1.png)
 
 在本课程中，我们将学习如何使用Shell、Airflow和Kafka构建ETL和数据管道。本课程适合有志于成为大数据工程师、机器学习工程师、数据仓库专家以及开发者的学员。你将掌握多种ETL和数据管道工具与技术，包括使用Bash脚本，以及Apache Airflow和Apache Kafka等前沿开源工具，在数据平台的各个系统之间构建用于处理和移动数据的数据管道。每个模块都包含实践实验室，你将通过一个受现实世界启发的最终项目来展示新掌握的技能。
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_3.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_4.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_5.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_6.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_7.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_3.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_4.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_8.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_5.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_6.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_7.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_9.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_8.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_9.png)
 
 ## 课程讲师介绍 👨‍🏫
 
@@ -47,7 +29,6 @@
 *   **Sabrina Spilner**是Skill Up Technologies的高级教学设计师和内容开发者。在过去的18年里，她一直是一位开拓者，采用新方法和技术来创建创新的学习解决方案。她曾与Orbis、剑桥大学、毕马威英国及毕马威下海湾地区合作。
 *   **Rammesh Santi**拥有Bla Institute of Technology Piolai的信息系统学士学位。他在信息技术、基础设施管理、数据管理、信息集成和自动化方面拥有25年的经验。他曾为Intergraph、GenPAact、HCL和微软等公司工作。目前，他是一名自由职业者，并致力于教学，教授数据科学、机器学习、编程和数据库。
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_11.png)
 
 ## 课程内容概述 📚
 
@@ -66,7 +47,6 @@
 *   命名数据加载技术。
 *   区分批量加载与流式加载。
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_11.png)
 
 此外，你将探索如何使用批处理Shell脚本从头开始构建一个基本的ETL数据管道，并探索数据管道工程中两种主要范式（批处理和流式数据管道）的用例。
 
@@ -86,11 +66,8 @@
 
 你还将通过探索和应用一个名为Kafka的流行开源数据管道工具来进一步巩固这些知识。
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_13.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_14.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_15.png)
 
 ### 模块3：使用Airflow构建数据管道 🪂
 
@@ -109,13 +86,10 @@
 
 ### 模块4：使用Kafka构建流式管道 🌊
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_13.png)
 
 上一节我们学习了如何编排批处理任务，本节中我们来看看如何处理实时数据流。
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_14.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_15.png)
 
 在模块4中，你将专注于构建实时数据流管道。
 
@@ -132,45 +106,28 @@
 
 你的任务将是完成一个项目，使用Airflow DAG创建一个ETL管道，并使用Kafka构建一个流式ETL管道。
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_17.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_18.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_19.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_20.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_21.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_17.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_22.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_18.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_19.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_23.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_20.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_21.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_24.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_22.png)
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_23.png)
 
 ## 学习建议 💡
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_24.png)
 
 为了从本课程中获得最大收益，请观看每一段视频并通过完成所有测验来检查学习效果。使用讨论论坛与同学和助教交流。最重要的是，确保你完成实践实验室，以练习新技能并展示你的能力。
 
 祝贺你踏上这段激动人心的旅程的下一步，祝你好运！
 
-![](img/60f1e081ca3db32cb2f9f97cf389303f_26.png)
 
 ## 总结 ✨
 

@@ -1,28 +1,18 @@
 # 078：1-归一化目的
 
-![](img/bfaf7657d1e1ec83d25eae4fb87e5996_1.png)
 
-![](img/bfaf7657d1e1ec83d25eae4fb87e5996_3.png)
 
-![](img/bfaf7657d1e1ec83d25eae4fb87e5996_5.png)
 
-![](img/bfaf7657d1e1ec83d25eae4fb87e5996_7.png)
 
 在本节课中，我们将要学习梯度下降优化中的一个重要概念——归一化。我们将探讨为什么需要对数据进行归一化处理，以及它如何帮助梯度下降算法更高效、更稳定地找到最优解。
 
-![](img/bfaf7657d1e1ec83d25eae4fb87e5996_9.png)
 
-![](img/bfaf7657d1e1ec83d25eae4fb87e5996_11.png)
 
-![](img/bfaf7657d1e1ec83d25eae4fb87e5996_13.png)
 
 ## 梯度下降回顾与问题引入
 
-![](img/bfaf7657d1e1ec83d25eae4fb87e5996_15.png)
 
-![](img/bfaf7657d1e1ec83d25eae4fb87e5996_17.png)
 
-![](img/bfaf7657d1e1ec83d25eae4fb87e5996_19.png)
 
 上一节我们介绍了梯度下降的基本原理和应用。梯度下降的目标是找到损失函数的最小值点，就像从山顶找到下山最快的路径。
 
@@ -32,7 +22,6 @@
 *   不同维度的数据大小不同。
 *   梯度下降在不同方向上的快慢不同。
 
-![](img/bfaf7657d1e1ec83d25eae4fb87e5996_21.png)
 
 ## 多维空间中的梯度下降
 

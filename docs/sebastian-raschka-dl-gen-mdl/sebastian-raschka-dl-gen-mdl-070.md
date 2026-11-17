@@ -4,15 +4,12 @@
 
 ## 概述与数据准备
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_1.png)
 
 首先，我们需要理解为什么需要自定义数据加载器。PyTorch内置的`DataLoader`和`Dataset`类为常见数据集提供了便利，但在实际研究中，我们的数据通常以自定义格式存储（例如，特定文件夹结构中的图片文件及其对应的CSV标签文件）。自定义数据加载器使我们能够灵活地处理这些数据。
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_3.png)
 
 本节使用的数据是MNIST数据集的一个小型子集，它被分成了训练集、验证集和测试集三个部分，并分别存储在对应的文件夹中。每个文件夹内包含PNG格式的图片文件，同时有一个CSV文件记录了文件名及其对应的数字标签。
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_5.png)
 
 以下是数据组织结构的示例：
 *   `mnist_train/` 文件夹包含训练图片，`mnist_train.csv` 文件包含对应的标签。
@@ -21,19 +18,13 @@
 
 这种结构代表了一种常见的数据存储方式，你可以根据自己的需求调整文件夹和文件的组织方式。
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_7.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_8.png)
 
 ## 数据探查
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_10.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_11.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_13.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_15.png)
 
 在构建数据加载器之前，先探查数据是一个好习惯。这有助于我们了解数据的格式、维度和值范围。
 
@@ -63,9 +54,7 @@ plt.show()
 
 通过探查，我们确认数据是28x28像素的灰度图，像素值在0到255之间。这些信息在后续的数据预处理中很重要。
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_17.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_19.png)
 
 接下来，我们查看一下CSV文件的内容，以确认标签与文件的对应关系。
 
@@ -77,40 +66,27 @@ train_df = pd.read_csv('./mnist_train.csv')
 print(train_df.head())
 ```
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_21.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_23.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_25.png)
 
 CSV文件通常包含`file_name`和`label`两列，分别对应图片文件名和数字标签。
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_27.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_28.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_30.png)
 
 ## 构建自定义Dataset类
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_32.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_33.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_34.png)
 
 上一节我们探查了数据的基本情况，本节中我们来看看如何构建PyTorch的`Dataset`类。`Dataset`是一个抽象类，用于表示数据集。我们需要继承它并实现三个核心方法：`__init__`、`__getitem__`和`__len__`。
 
 以下是自定义`Dataset`类的代码：
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_36.png)
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_38.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_39.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_40.png)
 
 ```python
 import torch
@@ -174,7 +150,6 @@ class MyDataset(Dataset):
 首先，我们需要定义一个简单的图像变换。这里我们使用`torchvision.transforms.ToTensor()`，它可以将PIL图像转换为PyTorch Tensor，并自动将像素值从[0, 255]范围归一化到[0.0, 1.0]范围。
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_42.png)
 
 ```python
 from torchvision import transforms
@@ -186,53 +161,32 @@ transform = transforms.Compose([
 
 现在，我们可以为训练集、验证集和测试集分别创建`Dataset`实例，然后用它们来初始化`DataLoader`。
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_44.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_45.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_47.png)
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_49.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_51.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_53.png)
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_55.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_57.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_58.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_60.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_62.png)
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_64.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_66.png)
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_68.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_69.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_71.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_73.png)
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_75.png)
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_77.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_79.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_81.png)
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```python
 from torch.utils.data import DataLoader
@@ -269,19 +223,13 @@ test_loader = DataLoader(dataset=test_dataset,
 *   `num_workers`：用于数据加载的子进程数量。大于0时可以实现并行数据加载，从而让GPU无需等待下一批数据准备完毕，提升训练效率。对于MNIST这类极小的数据集，有时设为0以避免文件句柄过多的问题。
 *   `drop_last`：当数据集样本数不能被`batch_size`整除时，是否丢弃最后一个不完整的小批量。有时丢弃它可以避免一个非常小的批次对模型更新产生噪声影响。
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_83.png)
 
 现在，我们可以迭代`DataLoader`来查看批量数据。
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_85.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_86.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_87.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_89.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_91.png)
 
 ```python
 # 模拟训练循环，查看一个epoch的数据
@@ -297,27 +245,18 @@ for epoch in range(2): # 2个epoch
             break
 ```
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_93.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_95.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_97.png)
 
 输出中，`features`的形状是`[batch_size, channels, height, width]`，对于MNIST就是`[32, 1, 28, 28]`。这正是卷积神经网络期望的输入格式。如果使用全连接网络，我们可以在模型的第一层使用`torch.nn.Flatten()`将其展平为`[32, 784]`。
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_99.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_100.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_102.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_104.png)
 
 ## 在完整模型训练中使用自定义DataLoader
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_106.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_107.png)
 
 前面我们构建了数据加载的组件，本节我们将把这些组件集成到一个完整的模型训练流程中。为了保持代码的整洁和可复用性，通常会将数据集定义、数据加载器创建、模型训练和评估等函数模块化，放在单独的`.py`文件中。
 
@@ -328,42 +267,27 @@ for epoch in range(2): # 2个epoch
 *   `eval.py`：包含计算准确率等评估函数。
 *   `model.py`：包含神经网络模型的定义。
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_109.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_111.png)
 
 在主训练脚本或Jupyter Notebook中，代码会变得非常简洁：
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_113.png)
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_115.png)
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_117.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_119.png)
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_121.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_122.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_123.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_125.png)
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_127.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_129.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_130.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_132.png)
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_134.png)
+
+
+
+
+
+
+
 
 ```python
 # 导入模块和辅助函数
@@ -397,20 +321,14 @@ test_acc = compute_accuracy(model, test_loader)
 print(f"\nFinal Test Accuracy: {test_acc:.2f}%")
 ```
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_136.png)
 
 其中，一个简化的多层感知机模型`MultilayerPerceptron`可以这样定义：
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_138.png)
-
-![](img/c68c8e32db85801c06d8ca2cb577037a_140.png)
 
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_142.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_144.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_146.png)
+
 
 ```python
 # model.py
@@ -431,33 +349,21 @@ class MultilayerPerceptron(nn.Module):
         return logits
 ```
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_148.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_150.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_151.png)
 
 通过这种方式，我们成功地将自定义数据加载流程整合到了端到端的深度学习训练管道中。模块化的设计使得代码易于维护、调试和在不同项目间复用。
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_153.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_155.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_157.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_158.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_159.png)
 
 ## 总结
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_161.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_163.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_164.png)
 
-![](img/c68c8e32db85801c06d8ca2cb577037a_166.png)
 
 本节课中我们一起学习了如何在PyTorch中创建和使用自定义数据加载器。我们从探查自定义格式的数据（PNG图片和CSV标签）开始，然后逐步构建了继承自`torch.utils.data.Dataset`的自定义类`MyDataset`，实现了数据加载的核心逻辑。接着，我们使用`torch.utils.data.DataLoader`来创建能够高效批处理、打乱和并行加载数据的迭代器。最后，我们将这些组件模块化，并集成到一个完整的模型训练示例中，演示了其在真实训练流程中的应用。
 

@@ -18,7 +18,6 @@
 
 ## 1. 项目初始化与环境搭建
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_5.png)
 
 首先，我们需要创建一个新的项目目录并设置 Python 虚拟环境，以隔离项目依赖。
 
@@ -293,7 +292,6 @@ print(response.json())
 
 ![](img/04aa32dd29565ddb6ddf93fb7c63abd3_30.png)
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_32.png)
 
 在部署到 Heroku 之前，我们需要进行几项配置，以确保应用能在生产服务器上稳定运行。
 
@@ -301,7 +299,6 @@ print(response.json())
 
 首先，我们需要一个 WSGI（Web Server Gateway Interface）服务器来替代 Flask 内置的开发服务器。这里我们使用 **Gunicorn**。
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_36.png)
 
 在项目根目录（`pytorch_flask_tutorial/`）下创建 `wsgi.py` 文件，作为 Gunicorn 的入口点。
 
@@ -312,7 +309,6 @@ if __name__ == "__main__":
     app.run()
 ```
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_38.png)
 
 接着，我们需要指定 Heroku 运行应用所需的命令。在根目录创建 `Procfile` 文件（无扩展名）。
 
@@ -322,27 +318,19 @@ web: gunicorn wsgi:app
 
 然后，我们需要固定 Python 版本。在根目录创建 `runtime.txt` 文件。
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_40.png)
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_41.png)
 
 ```
 python-3.8.13
 ```
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_43.png)
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_45.png)
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_47.png)
 
 **关键调整**：Heroku 对应用大小有限制，而完整的 PyTorch 包体积很大。因此，我们必须使用 **CPU 版本** 的 PyTorch。
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_49.png)
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_50.png)
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_52.png)
 
 更新 `requirements.txt` 文件，使用针对 Linux 的 PyTorch CPU 版本安装命令。
 
@@ -356,15 +344,12 @@ pillow
 requests
 ```
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_54.png)
 
 > **注意**：`torch` 和 `torchvision` 的版本号后必须带有 `+cpu` 后缀，并指定 PyTorch 的 wheel 文件索引链接。
 
 最后，由于项目结构变化，我们需要更新 `app/torch_utils.py` 中模型文件的加载路径，使其适应部署后的绝对路径。
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_56.png)
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_57.png)
 
 ```python
 # 将原来的相对路径改为从'app'包内查找
@@ -446,9 +431,7 @@ git push heroku master
 
 部署完成后，我们修改测试脚本，将请求发送到线上地址进行最终验证。
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_71.png)
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_72.png)
 
 更新 `test.py` 中的 URL：
 
@@ -459,11 +442,9 @@ response = requests.post('https://flask-pytorch-mnist-demo.herokuapp.com/predict
 
 运行测试脚本，如果收到正确的预测结果，恭喜你！你的 PyTorch 模型已经成功通过 Flask API 部署到了互联网上，任何人都可以通过发送 HTTP 请求来使用它进行手写数字识别。
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_74.png)
 
 ## 总结 🎉
 
-![](img/04aa32dd29565ddb6ddf93fb7c63abd3_76.png)
 
 在本节课中，我们一起学习了将一个 PyTorch 模型投入实际使用的完整流程：
 

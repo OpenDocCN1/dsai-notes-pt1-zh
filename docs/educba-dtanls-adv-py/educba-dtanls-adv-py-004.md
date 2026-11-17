@@ -10,7 +10,6 @@
 
 ---
 
-![](img/2beffa446cad0f37d8d9838cd979e4ad_1.png)
 
 ## Python基础快速回顾
 

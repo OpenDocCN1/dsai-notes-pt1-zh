@@ -48,6 +48,5 @@ Now as closes out this video and in the next video we're going to go into some o
 
  I'll see you there。
 
-![](img/35301a84e6c0f412916d674d56ad3c1c_1.png)
 
 ![](img/35301a84e6c0f412916d674d56ad3c1c_2.png)

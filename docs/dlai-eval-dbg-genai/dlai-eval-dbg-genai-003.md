@@ -2,7 +2,6 @@
 
 在本节课中，我们将训练一个扩散模型，并学习在此过程中使用的新工具。我们将从回顾扩散模型的关键概念开始，然后逐步完成一个训练笔记本的配置和运行，最后将训练好的模型注册到中央仓库。
 
-![](img/c3e7cb07ab0846c75cf1393e0a96e8f5_1.png)
 
 ## 概述：扩散模型与训练监控
 
@@ -103,21 +102,15 @@ wandb.log({"samples": [wandb.Image(img) for img in sampled_images]})
 
 ![](img/c3e7cb07ab0846c75cf1393e0a96e8f5_5.png)
 
-![](img/c3e7cb07ab0846c75cf1393e0a96e8f5_6.png)
 
 你将打开“Artifacts”选项卡，然后拉取最新的模型，即最近的版本。
 
-![](img/c3e7cb07ab0846c75cf1393e0a96e8f5_8.png)
 
-![](img/c3e7cb07ab0846c75cf1393e0a96e8f5_8.png)
 
-![](img/c3e7cb07ab0846c75cf1393e0a96e8f5_9.png)
 
 并将其链接到模型注册表。现在，我们有了“Sprite generation model”。链接模型后，你可以在模型注册表中看到结果。
 
-![](img/c3e7cb07ab0846c75cf1393e0a96e8f5_11.png)
 
-![](img/c3e7cb07ab0846c75cf1393e0a96e8f5_11.png)
 
 模型注册表为你的团队提供了一个中心位置来查看所有最佳模型版本。你还可以查看模型的来源谱系，并轻松返回到那个训练运行，查看指标、样本图像以及生成此模型的精确Git提交。
 

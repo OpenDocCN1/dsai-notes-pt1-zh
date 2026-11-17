@@ -1,42 +1,29 @@
 # 021：Kafka流处理流程
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_0.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_1.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_3.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_4.png)
 
 在本节课中，我们将学习Kafka流处理的核心概念。我们将了解什么是Kafka Streams API及其主要优势，并深入探讨Kafka流处理拓扑结构。通过一个天气数据处理的实际例子，我们将对比传统特设处理器与使用Kafka Streams API的差异，从而理解其如何简化流处理应用的开发。
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_6.png)
 
 ## 事件流处理概述
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_7.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_8.png)
 
 在事件流处理中，数据工程师不仅需要传输数据，还需要对数据进行处理。处理方式包括数据过滤、聚合和增强。任何为处理数据流而开发的应用程序都被称为流处理应用程序。
 
 ## 特设流处理应用
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_10.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_11.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_12.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_13.png)
 
 对于基于Kafka的流处理应用，一种直接的方法是实现一个特设的数据处理器。这个处理器从一个主题读取事件，进行处理，然后将结果发布到另一个主题。
 
 以下是构建此类应用的一个步骤示例：
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_15.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_16.png)
 
 1.  首先，从一个天气API请求原始的JSON数据。
 2.  启动一个天气生产者，将原始数据发布到一个原始天气主题。
@@ -46,30 +33,21 @@
 6.  生产者将数据发布到一个已处理的天气主题。
 7.  最后，处理后的天气数据由一个专门的消费者消费，并发送到仪表板进行可视化。
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_17.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_18.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_19.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_20.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_21.png)
 
 然而，如果需要处理许多不同的主题，这种特设处理器可能会变得非常复杂。Kafka提供了一个解决方案来应对这些挑战：**Streams API**。
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_23.png)
 
 ## Kafka Streams API简介
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_24.png)
 
 Kafka Streams API是一个简单的客户端库，旨在简化事件流管道中的数据处
 理。它处理和分析存储在Kafka主题中的数据，因此其输入和输出都是Kafka主题。
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_26.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_27.png)
 
 该API的核心特性包括：
 *   确保每条记录只被处理一次。
@@ -77,9 +55,7 @@ Kafka Streams API是一个简单的客户端库，旨在简化事件流管道中
 
 ## 流处理拓扑
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_29.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_30.png)
 
 Kafka Streams API基于一个称为**流处理拓扑**的计算图。在这个拓扑中：
 *   每个节点都是一个**流处理器**。
@@ -92,30 +68,22 @@ Kafka Streams API基于一个称为**流处理拓扑**的计算图。在这个�
 
 ## 使用Kafka Streams API重构应用
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_32.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_33.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_34.png)
 
 现在，让我们使用Kafka Streams API重新设计之前的天气流处理应用。假设Kafka中有一个原始天气主题和一个已处理的天气主题。
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_35.png)
 
 此时，无需花费大量精力开发特设处理器，只需在此处接入Kafka Streams API即可。
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_37.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_38.png)
 
 在Kafka流处理拓扑中，我们设计了三个流处理器：
 1.  源处理器：从原始天气主题消费原始天气流，并将天气流转发给流处理器。
 2.  流处理器：根据高温条件过滤流。
 3.  接收器处理器：接收过滤后的流，并将输出发布到已处理的天气主题。
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_39.png)
 
-![](img/a990128cb0be1d7c3c0fb69bd6b2da68_41.png)
 
 与特设数据处理器相比，这是一个更简洁的设计，尤其是在需要处理多个不同主题时。
 

@@ -59,15 +59,12 @@ processor = DetrImageProcessor.from_pretrained("facebook/detr-resnet-50")
 model = DetrForObjectDetection.from_pretrained("facebook/detr-resnet-50")
 ```
 
-![](img/3f5d352cffeac5691f3ecded0f33239c_3.png)
 
-![](img/3f5d352cffeac5691f3ecded0f33239c_4.png)
 
 ![](img/3f5d352cffeac5691f3ecded0f33239c_5.png)
 
 在量化前，我们先获取模型的内存占用并测试其性能。我们使用一张包含多人的晚餐图片进行目标检测。
 
-![](img/3f5d352cffeac5691f3ecded0f33239c_6.png)
 
 以下是运行检测并可视化结果的代码流程：
 ```python
@@ -79,7 +76,6 @@ plot_results(image, outputs)
 ```
 模型成功检测出了图片中的人物、桌子、手机、杯子等多种物体。
 
-![](img/3f5d352cffeac5691f3ecded0f33239c_8.png)
 
 ![](img/3f5d352cffeac5691f3ecded0f33239c_9.png)
 
@@ -92,9 +88,7 @@ plot_results(image, outputs)
 *   编码器和解码器中的线性层将是量化的目标。
 *   我们同样会避免量化最后的边界框预测器和分类器，以保持输出精度。
 
-![](img/3f5d352cffeac5691f3ecded0f33239c_13.png)
 
-![](img/3f5d352cffeac5691f3ecded0f33239c_14.png)
 
 调用量化函数，并指定要跳过的层：
 ```python
@@ -108,9 +102,7 @@ quantized_detr_model = quantize_model(model, skip_layers=skip_modules)
 
 使用量化后的模型再次进行目标检测可视化，结果与原始模型基本一致，成功检测到了相同的物体实例。
 
-![](img/3f5d352cffeac5691f3ecded0f33239c_18.png)
 
-![](img/3f5d352cffeac5691f3ecded0f33239c_19.png)
 
 最后，我们对比量化前后的内存占用：
 *   **量化前**：约 170 MB

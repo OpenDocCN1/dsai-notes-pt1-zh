@@ -6,7 +6,6 @@
 
 在上一节中，我们接触了`print_om_response`函数。函数允许你对数据执行计算或操作。
 
-![](img/6d5471201dcecc01b0a2ce0a617989de_1.png)
 
 你已经在本课程中遇到并使用过几个不同的Python函数。
 
@@ -16,11 +15,9 @@
 print("Hello World")
 ```
 
-![](img/6d5471201dcecc01b0a2ce0a617989de_3.png)
 
 在之前的视频中，你看到了一个更复杂的函数`print_om_response`。这个函数接收一个字符串作为输入（例如一个提问），将其发送到互联网上的大型语言模型，然后将AI的响应显示在屏幕上。
 
-![](img/6d5471201dcecc01b0a2ce0a617989de_5.png)
 
 你还见过另一个函数`type`，它可以告诉你一个值或变量的数据类型，例如字符串、浮点数或整数。
 
@@ -32,7 +29,6 @@ type(42.17)
 
 本节中，我们将更深入地探讨函数的工作原理。
 
-![](img/6d5471201dcecc01b0a2ce0a617989de_7.png)
 
 Python中有一个名为`len`的函数，代表长度。如果你输入`len(“Hello World”)`，它会将字符串“Hello World”作为输入，并计算其长度，即字符串中包括标点和空格在内的字符数量。
 
@@ -43,7 +39,6 @@ len("Hello World")
 
 这是另一个Python函数`round`的例子。它接收一个数字，例如`42.17`，并将其四舍五入到最接近的整数。
 
-![](img/6d5471201dcecc01b0a2ce0a617989de_9.png)
 
 ```python
 round(42.17)
@@ -56,11 +51,9 @@ round(42.17)
 
 ## 函数的组成部分
 
-![](img/6d5471201dcecc01b0a2ce0a617989de_11.png)
 
 让我们仔细看看当你调用`len(“Hello World”)`时具体发生了什么。
 
-![](img/6d5471201dcecc01b0a2ce0a617989de_13.png)
 
 *   `len`是函数的名称。
 *   当你调用一个函数时，使用圆括号`()`向其提供数据。在这个例子中，字符串“Hello World”就是你提供给`len`函数的数据。
@@ -69,21 +62,17 @@ round(42.17)
 
 `print`函数也是如此：`print`是函数名，圆括号内是函数的参数，即数据“Hello World”。
 
-![](img/6d5471201dcecc01b0a2ce0a617989de_15.png)
 
-![](img/6d5471201dcecc01b0a2ce0a617989de_16.png)
 
 ## 使用函数返回值
 
 在之前的例子中，我们获取函数的结果并立即打印出来。
 
-![](img/6d5471201dcecc01b0a2ce0a617989de_18.png)
 
 ```python
 print(len("Hello World"))
 ```
 
-![](img/6d5471201dcecc01b0a2ce0a617989de_20.png)
 
 但你不必立即打印函数的结果。你可以定义一个变量来存储函数的返回值。
 
@@ -93,13 +82,11 @@ print(string_length)
 # 打印出 12
 ```
 
-![](img/6d5471201dcecc01b0a2ce0a617989de_22.png)
 
 在这段代码中，`string_length`是我们创建的新变量的名称。赋值运算符`=`将`len(“Hello World”)`返回的数字12赋给这个变量。这相当于将数字12放入标签为`string_length`的盒子中。之后打印`string_length`，就会输出数字12。
 
 ## 一个综合示例
 
-![](img/6d5471201dcecc01b0a2ce0a617989de_24.png)
 
 以下是一个更复杂的例子，展示了如何将变量和函数组合起来进行更复杂的计算。
 

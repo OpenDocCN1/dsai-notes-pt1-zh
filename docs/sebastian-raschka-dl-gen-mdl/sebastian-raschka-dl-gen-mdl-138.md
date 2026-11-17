@@ -22,9 +22,7 @@ batch_size = 32
 train_loader = ... # 加载MNIST训练集
 ```
 
-![](img/7aff02ccc359cbc1973373b252640bdf_1.png)
 
-![](img/7aff02ccc359cbc1973373b252640bdf_3.png)
 
 ---
 
@@ -67,7 +65,6 @@ class ConvAutoencoder(torch.nn.Module):
 
 ---
 
-![](img/7aff02ccc359cbc1973373b252640bdf_5.png)
 
 ## 训练模型
 
@@ -92,7 +89,6 @@ def train_autoencoder(model, train_loader, num_epochs=20):
             optimizer.step()
 ```
 
-![](img/7aff02ccc359cbc1973373b252640bdf_7.png)
 
 我们使用Adam优化器，训练20个周期。由于潜在空间只有2维，模型的重建结果会显得比较模糊，但这有助于我们理解信息压缩的极限。
 
@@ -100,19 +96,14 @@ def train_autoencoder(model, train_loader, num_epochs=20):
 
 ## 可视化结果
 
-![](img/7aff02ccc359cbc1973373b252640bdf_9.png)
 
-![](img/7aff02ccc359cbc1973373b252640bdf_11.png)
 
 训练完成后，我们可以可视化原始图像与重建图像的对比，以及数据点在2维潜在空间中的分布。
 
-![](img/7aff02ccc359cbc1973373b252640bdf_13.png)
 
 以下是可视化潜在空间的代码片段：
 
-![](img/7aff02ccc359cbc1973373b252640bdf_15.png)
 
-![](img/7aff02ccc359cbc1973373b252640bdf_16.png)
 
 ```python
 def plot_latent_space(model, data_loader):
@@ -134,13 +125,9 @@ def plot_latent_space(model, data_loader):
 
 ## 使用解码器生成新图像
 
-![](img/7aff02ccc359cbc1973373b252640bdf_18.png)
 
-![](img/7aff02ccc359cbc1973373b252640bdf_20.png)
 
-![](img/7aff02ccc359cbc1973373b252640bdf_22.png)
 
-![](img/7aff02ccc359cbc1973373b252640bdf_24.png)
 
 我们可以使用训练好的解码器，从潜在空间中的任意点生成新的图像。这展示了自编码器作为一种简单生成模型的能力。
 
@@ -160,7 +147,6 @@ with torch.no_grad():
 
 ## 总结
 
-![](img/7aff02ccc359cbc1973373b252640bdf_26.png)
 
 ![](img/7aff02ccc359cbc1973373b252640bdf_28.png)
 

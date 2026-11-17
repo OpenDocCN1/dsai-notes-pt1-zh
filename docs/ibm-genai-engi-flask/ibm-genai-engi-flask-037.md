@@ -2,13 +2,11 @@
 
 在本节课中，我们将介绍数据中普遍存在的缺失值问题，并学习当你在数据中遇到缺失值时可以采取的处理策略。
 
-![](img/87a1cadfe5c4fb82274e928e0813c034_1.png)
 
 ## 概述
 
 缺失值是指针对某个特定观测样本，其某个特征没有存储数据值的情况。这通常会导致数据分析或机器学习模型训练出现问题。因此，正确处理缺失值是数据预处理的关键步骤。
 
-![](img/87a1cadfe5c4fb82274e928e0813c034_3.png)
 
 ## 什么是缺失值？
 
@@ -16,7 +14,6 @@
 
 例如，在下图所示的数据中，“normalized-losses”（标准化损失）特征就存在一个缺失值，它被表示为 `NaN`。
 
-![](img/87a1cadfe5c4fb82274e928e0813c034_1.png)
 
 ## 如何处理缺失数据？
 
@@ -37,7 +34,6 @@
 4.  **基于知识的估算**：有时数据收集者可能对缺失数据有额外了解，可以利用这些信息进行更合理的猜测。例如，他知道缺失值往往对应旧车，而旧车的标准化损失远高于平均水平。
 5.  **保留缺失值**：在某些情况下，你可能选择简单地保留缺失值。出于某些原因，即使某些特征缺失，保留该观测样本也可能有用。
 
-![](img/87a1cadfe5c4fb82274e928e0813c034_3.png)
 
 ## 在Python中处理缺失值
 
@@ -55,7 +51,6 @@
 
 这可以通过一行代码完成：
 
-![](img/87a1cadfe5c4fb82274e928e0813c034_5.png)
 
 ```python
 dataframe.dropna(subset=[“price”], axis=0, inplace=True)
@@ -67,15 +62,12 @@ dataframe.dropna(subset=[“price”], axis=0, inplace=True)
 
 **重要提示**：如果不设置 `inplace=True`，原DataFrame不会被改变。例如 `dataframe.dropna()` 只会返回一个删除了缺失值的新DataFrame，而不改变原始数据。这是一种检查操作是否正确的好方法，但要实际修改数据，必须设置 `inplace=True`。
 
-![](img/87a1cadfe5c4fb82274e928e0813c034_7.png)
 
 ### 替换缺失值
 
 要用实际值替换缺失值（如`NaN`），Pandas库提供了 `replace()` 方法，也可以用更专门的 `fillna()` 方法。它们可以用来用新计算的值填充缺失值。
 
-![](img/87a1cadfe5c4fb82274e928e0813c034_7.png)
 
-![](img/87a1cadfe5c4fb82274e928e0813c034_9.png)
 
 **示例**：假设我们想用变量的**平均值**来替换“normalized-losses”变量的缺失值。
 
@@ -86,7 +78,6 @@ dataframe.dropna(subset=[“price”], axis=0, inplace=True)
 
 使用 `fillna()` 的代码示例：
 
-![](img/87a1cadfe5c4fb82274e928e0813c034_9.png)
 
 ```python
 # 计算“normalized-losses”列的平均值（自动忽略NaN）
@@ -104,11 +95,9 @@ dataframe.replace({“normalized-losses”: np.nan}, mean_value, inplace=True)
 
 这是一种相对简化的替换方法。当然，还有其他技术，例如用**分组平均值**（而**非**整个数据集）来替换缺失值。
 
-![](img/87a1cadfe5c4fb82274e928e0813c034_11.png)
 
 ## 总结
 
-![](img/87a1cadfe5c4fb82274e928e0813c034_11.png)
 
 本节课中，我们一起学习了在Python中处理缺失数据的两种主要方法：
 
@@ -117,6 +106,5 @@ dataframe.replace({“normalized-losses”: np.nan}, mean_value, inplace=True)
 
 但请不要忘记处理缺失数据的其他途径。你始终可以尝试寻找更高质量的数据集或数据源。在某些情况下，保留缺失值本身也可能是合理的选择。选择哪种方法取决于你的具体数据、分析目标和领域知识。
 
-![](img/87a1cadfe5c4fb82274e928e0813c034_13.png)
 
 ![](img/87a1cadfe5c4fb82274e928e0813c034_13.png)

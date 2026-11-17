@@ -8,7 +8,6 @@
 
 `ls`（list）命令用于列出指定目录中的文件和子目录。
 
-![](img/b7c329e193db08d4415372fe327145b9_1.png)
 
 如果直接在终端输入`ls`，它会显示当前工作目录下的所有文件和目录。
 
@@ -22,7 +21,6 @@ ls
 ls downloads
 ```
 
-![](img/b7c329e193db08d4415372fe327145b9_3.png)
 
 ---
 
@@ -40,7 +38,6 @@ ls -l
 
 ---
 
-![](img/b7c329e193db08d4415372fe327145b9_5.png)
 
 ## 🗺️ 查看当前目录：`pwd`命令
 
@@ -54,7 +51,6 @@ pwd
 
 例如，输出可能是：`/home/yourusername`
 
-![](img/b7c329e193db08d4415372fe327145b9_7.png)
 
 ---
 
@@ -94,7 +90,6 @@ cd ~
 
 你也可以直接提供完整的绝对路径来切换目录：
 
-![](img/b7c329e193db08d4415372fe327145b9_9.png)
 
 ```bash
 cd /home/yourusername/documents/notes
@@ -122,7 +117,6 @@ find . -name a.txt
 find . -iname a.txt
 ```
 
-![](img/b7c329e193db08d4415372fe327145b9_11.png)
 
 这将找到所有名为“a.txt”或“A.txt”的文件。
 

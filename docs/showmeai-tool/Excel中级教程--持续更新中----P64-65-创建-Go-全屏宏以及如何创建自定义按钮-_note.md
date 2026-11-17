@@ -35,7 +35,6 @@ Sub GoFullScreen()
 End Sub
 ```
 
-![](img/06b57f596685e2ce645285faa53038bd_2.png)
 
 **代码解释**：
 *   `Sub GoFullScreen()` 定义了宏的开始和名称。
@@ -60,7 +59,6 @@ End Sub
 
 ---
 
-![](img/06b57f596685e2ce645285faa53038bd_4.png)
 
 ## 第四步：创建自定义按钮
 

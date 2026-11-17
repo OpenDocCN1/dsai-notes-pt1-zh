@@ -117,7 +117,6 @@ pip install sqlalchemy psycopg2-binary
 
 安装完成后，在 Python 中创建数据库连接引擎。
 
-![](img/77e06e113266309258f73542889b4603_1.png)
 
 以下是创建 PostgreSQL 数据库连接的示例：
 
@@ -157,15 +156,11 @@ print(query_df.head())
 
 ## 🌐 从 URL 读取数据
 
-![](img/77e06e113266309258f73542889b4603_3.png)
 
-![](img/77e06e113266309258f73542889b4603_4.png)
 
 Pandas 支持直接从网络 URL 读取数据，前提是 URL 指向的是有效的数据文件（如 CSV、JSON）。
 
-![](img/77e06e113266309258f73542889b4603_5.png)
 
-![](img/77e06e113266309258f73542889b4603_6.png)
 
 以下是从 GitHub URL 读取 JSON 数据的示例：
 
@@ -175,11 +170,9 @@ post_df = pd.read_json(url)
 print(post_df.head())
 ```
 
-![](img/77e06e113266309258f73542889b4603_8.png)
 
 这种方法无需先将文件下载到本地，非常方便。
 
-![](img/77e06e113266309258f73542889b4603_9.png)
 
 ## 📚 总结
 

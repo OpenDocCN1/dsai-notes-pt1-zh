@@ -1,14 +1,11 @@
 # 课程P34：4-输入数据处理方法 📊
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_1.png)
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_3.png)
 
 在本节课中，我们将学习如何对输入图像进行一系列预处理操作，以提取信用卡上的数字区域。原始图像包含背景干扰，因此需要通过形态学操作、边缘检测和阈值处理等方法，将目标区域清晰地分离出来。
 
 ## 定义形态学操作核
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_5.png)
 
 上一节我们介绍了模板图像的简单处理。本节中我们来看看如何处理更复杂的信用卡图像。首先，我们需要定义形态学操作中使用的核。
 
@@ -21,11 +18,9 @@ kernel_9x3 = cv2.getStructuringElement(cv2.MORPH_RECT, (9, 3))
 kernel_5x5 = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
 ```
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_7.png)
 
 核的大小需要根据实际任务指定，目的是为了突出特定大小的区域，例如信用卡上的数字区域。
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_9.png)
 
 ## 图像读取与初步处理
 
@@ -33,7 +28,6 @@ kernel_5x5 = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
 
 以下是读取图像并进行初步处理的步骤：
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_11.png)
 
 1.  读取原始图像数据。
 2.  使用`resize`函数将图像调整至合适大小。
@@ -43,7 +37,6 @@ kernel_5x5 = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
 
 ## 顶帽操作突出明亮区域
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_13.png)
 
 得到灰度图后，我们希望突出图像中的明亮区域（如数字），同时过滤掉背景。这可以通过形态学中的顶帽操作实现。
 
@@ -53,15 +46,12 @@ kernel_5x5 = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
 tophat = cv2.morphologyEx(gray, cv2.MORPH_TOPHAT, kernel_9x3)
 ```
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_15.png)
 
 此操作并非必需，但能有效帮助我们聚焦于数字区域。预处理方法多样，可根据实际情况选择。
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_17.png)
 
 ## 索贝尔算子边缘检测
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_19.png)
 
 突出明亮区域后，我们需要进一步检测数字的边缘。这里使用索贝尔算子计算图像在X方向的梯度。
 
@@ -71,29 +61,23 @@ tophat = cv2.morphologyEx(gray, cv2.MORPH_TOPHAT, kernel_9x3)
 2.  取计算结果的绝对值。
 3.  将结果归一化到0-255范围。
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_21.png)
 
 实验发现，在此任务中仅使用X方向梯度比结合Y方向效果更好。索贝尔算子帮助我们得到了数字的边缘信息。
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_23.png)
 
 ## 闭操作连接区域
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_25.png)
 
 边缘检测后，数字的笔画可能还是分离的。我们希望将属于同一个数字的笔画连接起来，形成一个完整的“块”。
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_27.png)
 
 形态学中的闭操作（先膨胀后腐蚀）可以实现这个目的。以下是执行闭操作的代码：
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_29.png)
 
 ```python
 closed = cv2.morphologyEx(gradX, cv2.MORPH_CLOSE, kernel_9x3)
 ```
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_31.png)
 
 执行闭操作后，原本分散的笔画被连接起来，每个数字区域更接近一个完整的白色块状结构，同时背景干扰被进一步过滤。
 
@@ -109,7 +93,6 @@ thresh = cv2.threshold(closed, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
 
 参数`0`表示让OpenCV自动判断阈值，而非使用固定值。二值化后，数字区域为白色，背景为黑色。
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_33.png)
 
 ## 二次闭操作填充空隙
 
@@ -117,17 +100,14 @@ thresh = cv2.threshold(closed, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
 
 我们可以再次使用闭操作来填充白色区域内部的黑点。以下是代码：
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_35.png)
 
 ```python
 thresh = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel_5x5)
 ```
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_37.png)
 
 经过这次操作，数字区域变得更加饱满和连续，为轮廓检测做好了准备。
 
-![](img/b27be91e6c417d6dbab1ce90f6768e92_39.png)
 
 ## 轮廓检测与筛选
 

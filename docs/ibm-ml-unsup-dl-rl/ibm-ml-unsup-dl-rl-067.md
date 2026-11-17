@@ -6,9 +6,7 @@ Let's close out this video with exercise2 over here。
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_1.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_2.png)
 
 And we're going to use the relu activation function for each one of those different hidden layers。
 
@@ -18,9 +16,7 @@ And we're going to use the relu activation function for each one of those differ
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_4.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_5.png)
 
 We're then going to use a learning rate of 0。003 and we're going to train for 1500 epos。
 
@@ -30,7 +26,6 @@ We're then going to use a learning rate of 0。003 and we're going to train for 
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_7.png)
 
 And then as we did before， we're going to graph the trajectory of the loss functions as well as the accuracy on both the train and test set。
 
@@ -38,13 +33,10 @@ And then as we did before， we're going to graph the trajectory of the loss fun
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_9.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_10.png)
 
 So we're going to initialize our model。
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_12.png)
 
 As a sequential model， so we just call sequential。And then we're just going to add on each one of our different layers。
 
@@ -62,17 +54,13 @@ As a sequential model， so we just call sequential。And then we're just going 
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_14.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_15.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_16.png)
 
 And then to get to that final output， we recall that we only want one node as we're just trying to predict one or0 for each one of the different values。
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_18.png)
 
 And we therefore have a dense layer fully connected to just one node。
 
@@ -86,7 +74,6 @@ As we want some value again between0 and 1。We're then going to compile our mod
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_20.png)
 
 So of saying we want stochastic gradient descent， feel free on your own to try atom as well as RMS prop which we imported earlier。
 
@@ -94,7 +81,6 @@ So of saying we want stochastic gradient descent， feel free on your own to try
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_22.png)
 
 Then we're going to still use binary cross entropy as we're still trying to figure out a binary zero or one value。
 
@@ -106,9 +92,7 @@ We're going to save our history as run his 2， and we get that output from call
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_24.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_25.png)
 
 And with that， we also， when we fit our model need to specify how many times we want to run through our data set。
 
@@ -116,13 +100,10 @@ And with that， we also， when we fit our model need to specify how many times
 
 500 run throughs of the entire data set。
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_27.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_28.png)
 
 So I'm going to run this。
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_30.png)
 
 And you see， we start to get each one of the different epochs。
 
@@ -132,15 +113,12 @@ And you see， we start to get each one of the different epochs。
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_32.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_33.png)
 
 So I'm going to pause here and we'll come back once it's run through those 1500 different epos。
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_35.png)
 
 So now we have run through our 1，500 epochs， as we see here， and just a quick reminder。
 
@@ -148,9 +126,7 @@ So now we have run through our 1，500 epochs， as we see here， and just a qu
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_37.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_38.png)
 
 We have our dictionary of keys with our different keys， which is the loss， the accuracy。
 
@@ -160,13 +136,11 @@ We have our dictionary of keys with our different keys， which is the loss， t
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_40.png)
 
 And on that axe。On that bounding box， we're going to plot the loss。
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_42.png)
 
 As well as the validation loss in red and blue， respectively。And then in the next subplot。
 
@@ -174,7 +148,6 @@ As well as the validation loss in red and blue， respectively。And then in the
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_44.png)
 
 We're going to call the accuracy， as well as that validation accuracy in red and blue as well。
 
@@ -182,11 +155,9 @@ We're going to call the accuracy， as well as that validation accuracy in red a
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_46.png)
 
 So you run this and here we see。
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_48.png)
 
 That's on that training set obviously continued to go down。
 
@@ -198,11 +169,8 @@ That's on that training set obviously continued to go down。
 
  we kind of see a bit of an inflection。
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_50.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_51.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_52.png)
 
 AndThen we can see that accuracy jumping up and down as it tests throughout。
 
@@ -212,11 +180,8 @@ AndThen we can see that accuracy jumping up and down as it tests throughout。
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_54.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_55.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_56.png)
 
 800 to 1000 epochs。 And that's not going to correlate perfectly。
 
@@ -226,7 +191,6 @@ AndThen we can see that accuracy jumping up and down as it tests throughout。
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_58.png)
 
 Then we can use what we did before in order to predict both the classes as well as the probabilities。
 
@@ -242,19 +206,12 @@ So you run this and we see a bit higher of accuracy， a bit higher of ROC AU。
 
 
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_60.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_61.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_62.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_63.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_64.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_65.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_66.png)
 
 That closes out our video here with the introduction to Carras。
 
@@ -270,14 +227,9 @@ That closes out our video here with the introduction to Carras。
 
  All right， I'll see you back at lecture。😊。
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_68.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_69.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_70.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_71.png)
 
-![](img/f5b529235ab6fc50e9a13f842d7f1941_72.png)
 
 ![](img/f5b529235ab6fc50e9a13f842d7f1941_73.png)

@@ -57,7 +57,6 @@
 *   **转换阶段**：通常发生在CPU上，并且可能非常消耗CPU资源。
 *   **加载阶段**：使用DMA（直接内存访问）子系统以及到加速器（可能是GPU或TPU）的连接。
 
-![](img/5fd86373798f16750f80f622bb72ae14_3.png)
 
 上图展示了一种比前一种模式高效得多的模式，尽管它仍然不是最优的。在实践中，这种模式在许多情况下可能难以进一步优化。
 
@@ -159,6 +158,5 @@ dataset = dataset.cache().map(less_expensive_function)
 
 重要的是，TF.data API为`prefetch`、`interleave`和`map`的并行参数提供了`tf.data.experimental.AUTOTUNE`选项，允许运行时自动寻找最优配置。通过合理组合运用这些技术，你可以构建出能够充分“喂饱”加速器、最大化硬件利用率的高性能数据管道，从而缩短模型训练时间。
 
-![](img/5fd86373798f16750f80f622bb72ae14_5.png)
 
 ![](img/5fd86373798f16750f80f622bb72ae14_5.png)

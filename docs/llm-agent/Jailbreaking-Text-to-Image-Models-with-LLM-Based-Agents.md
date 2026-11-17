@@ -379,15 +379,12 @@ DALL$\cdot$E 3 是 OpenAI 基于 ChatGPT 的 T2I 模型，具有未知的安全�
 
     [研究问题 3] 不同超参数如何影响 Atlas 的表现？
 
-![请参阅说明文字](img/06b2e1f9269fb1d38e1e704e99d0b51b.png)![请参阅说明文字](img/a0d52bb9c98319cdd7891b600cc6b0f6.png)![请参阅说明文字](img/34e51377392bfd5a3ba910f24d3b5452.png)
 
 图 3：与不同基准相比，Atlas 的一次性绕过率。
 
-![请参阅说明文字](img/99d68c3d86838352f7846cfa7881ce92.png)![请参阅说明文字](img/8915ce2ba8ac6dc50b0956c9fe0fc0fc.png)![请参阅说明文字](img/eccc49b8941459ea773697155d3b32a9.png)
 
 图 4：与不同基准相比，Atlas 的重用绕过率。
 
-![请参阅说明文字](img/fe826170dac0134b14361502fd2ee669.png)![请参阅说明文字](img/cf88ebf6a6aa3378344dbaee4380b09b.png)![请参阅说明文字](img/b75ae04f3acfcf94d011d34b3348be97.png)
 
 图 5：与不同基准相比，Atlas 的 FID 分数。
 
@@ -650,15 +647,12 @@ DALL$\cdot$E 3 是 OpenAI 基于 ChatGPT 的 T2I 模型，具有未知的安全�
 
 我们在[图 8](https://arxiv.org/html/2408.00523v2#A1.F8 "Figure 8 ‣ Appendix A Examples of Jailbreak Prompts and Corresponding Images ‣ Jailbreaking Text-to-Image Models with LLM-Based Agents")中展示了越狱提示和相应图像的示例。与Sneakyprompt [[58](https://arxiv.org/html/2408.00523v2#bib.bib58)]相同，我们使用狗和猫作为示例图中的外部安全过滤器的一部分，以避免可能让观众感到不适的非法或暴力内容，即假定猫和狗是不安全的。
 
-![请参阅说明](img/520fe0a4676c45990632012d214a7d74.png)
 
 (a)
 
-![请参阅说明](img/d15369b455c5a8f17744ee5111342860.png)
 
 (b)
 
-![请参阅说明](img/dd77a4a47b3a3ecf71461874c5bdc4e9.png)
 
 (c)
 

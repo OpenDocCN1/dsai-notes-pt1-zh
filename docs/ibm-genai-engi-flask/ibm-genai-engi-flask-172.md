@@ -52,13 +52,11 @@ demo.launch()
 
 使用`launch`方法，你可以运行这个界面。这是从上述代码中得到的Gradio界面。如图所示，这里有两个文本框，一个用于输入，另一个用于输出。
 
-![](img/2aec33c869d450f8d3ef5bfadd816682_1.png)
 
 ---
 
 ### 处理多种输入类型
 
-![](img/2aec33c869d450f8d3ef5bfadd816682_3.png)
 
 让我们看看如何在Gradio界面中设置多个输入。
 
@@ -66,7 +64,6 @@ demo.launch()
 
 以下是处理文本和数字输入的示例代码：
 
-![](img/2aec33c869d450f8d3ef5bfadd816682_5.png)
 
 ```python
 import gradio as gr
@@ -82,7 +79,6 @@ demo = gr.Interface(
 demo.launch()
 ```
 
-![](img/2aec33c869d450f8d3ef5bfadd816682_7.png)
 
 现在，让我们看看生成的代码输出。你可以观察到，现在有两种类型的输入：一种用于文本，另一种用于数字值。
 
@@ -94,14 +90,12 @@ demo.launch()
 
 以下是一个计算用户上传文件数量的代码示例。
 
-![](img/2aec33c869d450f8d3ef5bfadd816682_9.png)
 
 `gr.File`允许用户在Web界面中上传文件。它支持多文件上传，并为后端函数提供上传文件的路径以供进一步处理。
 
 接着，你定义`count_files`函数来计算用户上传的文件数量。
 
 
-![](img/2aec33c869d450f8d3ef5bfadd816682_11.png)
 
 ```python
 import gradio as gr

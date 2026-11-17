@@ -14,9 +14,7 @@ Again， working between negative one and one。 And we see that before it was a
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_1.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_2.png)
 
 But we can start to get an intuitive sense if the idea is。
 
@@ -58,7 +56,6 @@ Is that value using our norm that we just defined within the ball or not within 
 
 And it will return either a true or false value。
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_4.png)
 
 So just to see an example of this， we're going to use that sample data， we're going to say 4 x。
 
@@ -70,19 +67,14 @@ So just to see an example of this， we're going to use that sample data， we'r
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_6.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_7.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_8.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_9.png)
 
 So we run this。 And first， we printed out our sample data that we randomly generated with all the points being between 0 and 1。
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_11.png)
 
 And we see that all of these were actually within the circle。
 
@@ -92,9 +84,7 @@ And here were working in two dimensional space that was a bit lucky， you see i
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_13.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_14.png)
 
 Now， how would we generalize this beyond two dimensions。
 
@@ -122,7 +112,6 @@ So originally， we just did two dimensions， as we saw in our samples here。 
 
 Adding on more dimensions。
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_16.png)
 
 So what we're going to do is we're going to call in the ball。For these 10000 different values。
 
@@ -140,21 +129,15 @@ True or false can be used as one and 0 with true being  one false being 0。 If 
 
  And then we take the mean of those values。
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_18.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_19.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_20.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_21.png)
 
 And that will give us the percentage of the N cube that's in the end ball。
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_23.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_24.png)
 
 We're then going to call for dimensions ranging from 2 up till 15。 So not including 15。
 
@@ -170,7 +153,6 @@ And that will output for each one of these different values in the range。
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_26.png)
 
 嗯。You see here that we also include 2 and 3。 So we'll also be able to check compared to what we saw before。
 
@@ -180,17 +162,13 @@ And that will output for each one of these different values in the range。
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_28.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_29.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_30.png)
 
 Formulas of a sphere versus a cube and a circle versus a square。
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_32.png)
 
 So we say4 dim and percent。 So're just getting。Say start with2 and then the input for two for that data。
 
@@ -198,7 +176,6 @@ So we say4 dim and percent。 So're just getting。Say start with2 and then the 
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_34.png)
 
 So we see that 78 per cent fall within the ball at first， which 78。5， which makes sense。
 
@@ -208,9 +185,7 @@ So we see that 78 per cent fall within the ball at first， which 78。5， whic
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_36.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_37.png)
 
 And we see how that drops off quite dramatically as we keep increasing the number of dimensions。
 
@@ -220,9 +195,7 @@ And we see how that drops off quite dramatically as we keep increasing the numbe
 
  We see how many of them tend to be outliers。
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_39.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_40.png)
 
 And we can plot this finally getting a simple plot， calling PLT do plot。
 
@@ -230,19 +203,15 @@ And we can plot this finally getting a simple plot， calling PLT do plot。
 
  and all we're doing is our dimensions。
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_42.png)
 
 Versus the data， which is the percentage of。
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_44.png)
 
 The amount that falls within the ball versus not。 And we can see how it steeply drops off as we add on more and more dimensions。
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_46.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_47.png)
 
 So just do double check。Our understanding， we see that this is dropping off quite dramatically。
 
@@ -252,7 +221,6 @@ So just do double check。Our understanding， we see that this is dropping off 
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_49.png)
 
 But here we're going to generate rather than 10000， just 1000 points。
 
@@ -264,7 +232,6 @@ We can see how many of those or out of those thousand0 points， which one's clo
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_51.png)
 
 So this is just a bit more evidence to that same point。So we're going to pass in the dimension。
 
@@ -276,7 +243,6 @@ Were going to， again。Call a random sample this time， rather than 0 to 1，
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_53.png)
 
 And then we will return the min of the norm of each one of these points。 Again。
 
@@ -284,9 +250,7 @@ And then we will return the min of the norm of each one of these points。 Again
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_55.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_56.png)
 
 And then in order to estimate the closest， given that dimension。
 
@@ -296,35 +260,29 @@ We're going to do that 100 times over。 So in the same fashion that we just did
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_58.png)
 
 And then we're going to return not just the average of that data。
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_60.png)
 
 But the minimum of those minimums。
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_62.png)
 
 As well as the maximum of those minimums so that we can get a bit of a range of the values in regards to how far away they are from the origin。
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_64.png)
 
 So we're going to calculate this from values ranging from 2 to 100。
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_66.png)
 
 We're then going to map those dims into that estimate closest function that we just defined above。
 
 And we can print this out。
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_68.png)
 
 And this will take just a second to run。 And then afterwards。
 
@@ -332,7 +290,6 @@ And this will take just a second to run。 And then afterwards。
 
  four dimension 6， V。
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_70.png)
 
 Average value was 0。22。 The minimum of those minimum values was 0。1。
 
@@ -346,13 +303,11 @@ And then this PL T dot fill between。We're going to use that in order to plot b
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_72.png)
 
 So the menes data， if you recall， is going to output three different values。
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_74.png)
 
 0 is the mean。The first column is going to be， or the second first in Python is going to be the minimum。
 
@@ -360,7 +315,6 @@ So the menes data， if you recall， is going to output three different values�
 
  And we want to also see that line in between。
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_76.png)
 
 So you run this。And we can see as we increase the number of dimensions。
 
@@ -368,21 +322,17 @@ So you run this。And we can see as we increase the number of dimensions。
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_78.png)
 
 So that closes out this video。 And it gave us an opportunity to look at how we can expand up into higher dimensions。
 
 😊。
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_80.png)
 
 With all this in mind。In the next video， we will begin to show you the effects of working with high dimensional data when you are actually trying to use your different classification algorithms that we introduced in the last course。
 
 
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_82.png)
 
-![](img/966b22b6f5ab13ee64957b6ca55e10e3_83.png)
 
 All right， I'll see you there。
 

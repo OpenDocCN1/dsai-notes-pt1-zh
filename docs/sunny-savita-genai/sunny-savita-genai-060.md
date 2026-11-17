@@ -45,7 +45,6 @@ def get_weather(city: str) -> str:
 3.  **创建代理**：调用`create_react_agent`函数，传入模型和工具列表。
 4.  **运行代理**：通过代理执行器来运行代理，处理用户的查询。
 
-![](img/662f5bf89bd91b1b744087375ab43c1c_4.png)
 
 
 ![](img/662f5bf89bd91b1b744087375ab43c1c_6.png)

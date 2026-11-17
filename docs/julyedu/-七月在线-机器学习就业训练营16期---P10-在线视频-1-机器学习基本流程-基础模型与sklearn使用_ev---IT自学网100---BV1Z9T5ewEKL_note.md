@@ -1,8 +1,6 @@
 # 【七月在线】机器学习就业训练营16期 - P10：机器学习基本流程、基础模型与sklearn使用教程 📚
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_1.png)
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_3.png)
 
 在本节课中，我们将学习机器学习的基本流程，并重点介绍如何使用Python的`scikit-learn`（简称sklearn）库来构建和评估基础模型。课程内容将涵盖从数据预处理到模型训练、验证和调参的全过程。
 
@@ -10,9 +8,7 @@
 
 ## 第一部分：课程概述与实战重要性 🎯
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_5.png)
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_7.png)
 
 大家好，我是刘老师。在接下来的两周里，我将带领大家学习机器学习的实战部分。今天的课程将重点讲解机器学习的基本流程，并以`sklearn`库为核心进行演示。
 
@@ -26,7 +22,6 @@
 
 `scikit-learn`（`sklearn`）是Python环境下功能最强大的机器学习库之一。它几乎涵盖了所有常见的机器学习算法，并提供了标准化的实现流程和易于使用的API。
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_9.png)
 
 ### sklearn的核心特点：
 *   **算法覆盖全面**：包含分类、回归、聚类、降维等各类机器学习算法。
@@ -69,7 +64,6 @@ sklearn官网提供了一张非常有用的算法选择指南图。其核心思�
 *   `transform`：使用`fit`阶段计算好的参数对数据进行转换。
 *   **重要原则**：预处理器（如`StandardScaler`）只能在训练集上`fit`一次，然后在训练集和测试集上分别`transform`，以确保转换标准一致。
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_11.png)
 
 ### 3. 模型训练与评估
 选择好算法和处理好数据后，就可以进行模型训练。`sklearn`中所有模型都遵循相似的接口：
@@ -81,13 +75,9 @@ score = model.score(X_test, y_test)     # 3. 在测试集上评估
 y_pred = model.predict(X_new)           # 4. 对新数据进行预测
 ```
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_13.png)
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_15.png)
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_17.png)
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_19.png)
 
 ### 4. 模型调参与选择
 模型有许多超参数需要调整。`sklearn`的`model_selection`模块提供了自动调参工具：
@@ -140,11 +130,8 @@ print(f"模型准确率：{accuracy:.2f}")
 对于包含多个步骤的流程，可以使用`Pipeline`将其串联，使代码更简洁，并防止数据泄露。
 
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_21.png)
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_23.png)
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_25.png)
 
 ```python
 from sklearn.pipeline import make_pipeline
@@ -157,9 +144,7 @@ pipeline.fit(X_train, y_train)
 pipeline_score = pipeline.score(X_test, y_test)
 ```
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_27.png)
 
-![](img/d2e2c38a4b28a44b2fb37652665e0c84_29.png)
 
 ### 示例3：使用交叉验证与网格搜索
 ```python

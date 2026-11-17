@@ -142,23 +142,17 @@ print(f“模型准确率： {accuracy:.2%}“)
 
 （答案：结构化数据或表格型数据）
 
-![](img/28b41d1f3ad44b2f9e957b969362b3ad_1.png)
 
 对于初学者，建议的学习路径是：首先掌握Python基础，然后学习Pandas、NumPy、Matplotlib和Scikit-learn等核心库的使用。最好的学习方式是动手实践，通过具体的项目和案例来巩固知识。
 
-![](img/28b41d1f3ad44b2f9e957b969362b3ad_3.png)
 
-![](img/28b41d1f3ad44b2f9e957b969362b3ad_4.png)
 
 如果想继续深入学习，可以关注系统的机器学习课程，从原理到实战，再到项目落地，进行体系化学习。代码和更多学习资料将在课程群中分享。
 
-![](img/28b41d1f3ad44b2f9e957b969362b3ad_6.png)
 
-![](img/28b41d1f3ad44b2f9e957b969362b3ad_7.png)
 
 ---
 
-![](img/28b41d1f3ad44b2f9e957b969362b3ad_9.png)
 
 ![](img/28b41d1f3ad44b2f9e957b969362b3ad_11.png)
 

@@ -67,7 +67,6 @@ Olivier.Sigaud@isir.upmc.fr
 
 结合进化与强化学习的复兴的主要算法之一是 erl (Khadka 和 Tumer，2018)，见图 LABEL:fig:erl_cerl。它与 g2ac 和 g2ppo 算法（Chang 等人，2018）同时发布，但其影响更大。其结合机制在于将强化学习演员注入到进化种群中。
 
-![参见说明](img/ce01cd169992b805e1d685adc1cbd51a.png)
 
 ((a))
 
@@ -107,7 +106,6 @@ chdrl 架构（Zheng 等，2020）通过多种方式扩展了 erl 方法，以�
 
 ((a))
 
-![参考说明](img/f35fe6f65be8ff588ec7fedd76180623.png)
 
 ((b))
 
@@ -121,7 +119,6 @@ chdrl 架构（Zheng 等，2020）通过多种方式扩展了 erl 方法，以�
 
 ### 2.4 使用替代适应度
 
-![参见说明](img/77399daa7332fa4277c4e9761d0f27ad.png)
 
 ((a))
 

@@ -12,7 +12,6 @@ Anaconda是一个**发行版**，它捆绑了Python解释器、Jupyter Notebook�
 
 ### 如何下载与安装Anaconda？
 
-![](img/0f3e3bf98e01fac2c3239d08a3767bd5_1.png)
 
 以下是下载Anaconda的步骤：
 
@@ -29,26 +28,21 @@ Anaconda是一个**发行版**，它捆绑了Python解释器、Jupyter Notebook�
 
 除了Jupyter Notebook，我们还会使用另一个集成开发环境（IDE）——PyCharm。PyCharm由JetBrains公司开发，功能强大，尤其在版本控制等方面能提供很大帮助。
 
-![](img/0f3e3bf98e01fac2c3239d08a3767bd5_3.png)
 
 以下是获取PyCharm的说明：
 
-![](img/0f3e3bf98e01fac2c3239d08a3767bd5_4.png)
 
 *   **社区版**：这是一个免费的开源版本，完全满足科学计算和数据分析的需求。
 *   **专业版**：这是一个付费版本，提供了更多面向Web开发等专业领域的特性。
 
 对于本课程的学习，下载并安装**社区版**就足够了。其安装过程与Anaconda类似，下载安装程序后按照指引完成即可。
 
-![](img/0f3e3bf98e01fac2c3239d08a3767bd5_6.png)
 
-![](img/0f3e3bf98e01fac2c3239d08a3767bd5_8.png)
 
 ### 环境概览与后续安排
 
 至此，我们已经了解了核心的环境组件。我们将在后续视频中详细讲解具体的设置步骤。目前，我们已经可以准备就绪，进入编程环节。我们将主要使用两种工具：**Jupyter Notebook** 和 **PyCharm**。
 
-![](img/0f3e3bf98e01fac2c3239d08a3767bd5_10.png)
 
 ![](img/0f3e3bf98e01fac2c3239d08a3767bd5_11.png)
 

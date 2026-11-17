@@ -12,13 +12,10 @@ SQL 条件语句让你能够高效地在数据中创建分类。当你需要动�
 
 ---
 
-![](img/de92ba030deaabda9bf93d16cc3e244e_1.png)
 
-![](img/de92ba030deaabda9bf93d16cc3e244e_2.png)
 
 ## 数据准备与初步观察
 
-![](img/de92ba030deaabda9bf93d16cc3e244e_3.png)
 
 首先，我们执行一个简短的查询，从 `sets_with_themes` 表中选择名称和零件数量。
 
@@ -78,7 +75,6 @@ FROM sets_with_themes;
 
 条件语句非常适合高效地细分你的数据，或者减少你在分析或可视化中需要处理的不同值的数量。SQL 条件语句是在数据中创建类别的强大工具，它们还能让你有效地处理空值。
 
-![](img/de92ba030deaabda9bf93d16cc3e244e_5.png)
 
 ---
 

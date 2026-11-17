@@ -14,9 +14,7 @@
 
 ## 处理缺失值的选项
 
-![](img/6e73aec2f2fb883442be548c5308125f_1.png)
 
-![](img/6e73aec2f2fb883442be548c5308125f_2.png)
 
 为了处理缺失数据，你有几个选择。
 
@@ -36,7 +34,6 @@
 
 更复杂的方法是用描述性统计量来填充缺失值，例如均值、众数，甚至使用回归或机器学习来填充最佳值。
 
-![](img/6e73aec2f2fb883442be548c5308125f_4.png)
 
 ## 实战演练：在Notebook中处理缺失值
 
@@ -74,7 +71,6 @@ df['dogs_per_capita'] = df['dog_population'] / df['population_2023']
 df['dog_population'] = df['dog_population'].fillna(df['population_2023'] * 0.137)
 ```
 
-![](img/6e73aec2f2fb883442be548c5308125f_6.png)
 
 `fillna` 在这里很有用，因为它会保留任何现有值，只填充缺失的值。
 

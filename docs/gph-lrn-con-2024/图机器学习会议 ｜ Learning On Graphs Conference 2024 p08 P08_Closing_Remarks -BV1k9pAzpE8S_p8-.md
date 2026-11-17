@@ -34,19 +34,16 @@ And our conference cannot be made possible without the contribution and services
 
  Pear Vi Covich and Robin Walters。
 
-![](img/e5e010fa66576bf379dab371fef7ac95_1.png)
 
 We'd like to thank them for their active engagement throughout the reviewing process interaction with the reviewers and timely matter review that supports their recommendations and our decisions thank you so much for your service。
 
 😊。
 
-![](img/e5e010fa66576bf379dab371fef7ac95_3.png)
 
 We also have three area chairs， honorable mentionsions， and these go to。
 
 
 
-![](img/e5e010fa66576bf379dab371fef7ac95_5.png)
 
 Michael Kohi， Haga Marron and Michael Parramat， and we'd like to thank them for ensuring all official reviews are received in their batchs and serving as emergeies AC。
 
@@ -54,7 +51,6 @@ Thank you so much again for your service to the log。😊。
 
 
 
-![](img/e5e010fa66576bf379dab371fef7ac95_7.png)
 
 And now here comes to the top reviewers， we'd like to thank all the reviewers of our conference who volunteered to take out their time to read papers。
 
@@ -64,7 +60,6 @@ And now here comes to the top reviewers， we'd like to thank all the reviewers 
 
 😊。
 
-![](img/e5e010fa66576bf379dab371fef7ac95_9.png)
 
 So here comes to the end of our conference thank you so much again for attending and participating in our conference。
 

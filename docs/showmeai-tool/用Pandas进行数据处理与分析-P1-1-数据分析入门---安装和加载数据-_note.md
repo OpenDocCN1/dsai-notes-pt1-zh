@@ -30,11 +30,9 @@ pip install pandas
 
 ![](img/5add6d4de51b5a268a6c0097836349e4_3.png)
 
-![](img/5add6d4de51b5a268a6c0097836349e4_4.png)
 
 ### 安装Jupyter Notebook
 
-![](img/5add6d4de51b5a268a6c0097836349e4_5.png)
 
 ![](img/5add6d4de51b5a268a6c0097836349e4_6.png)
 
@@ -48,7 +46,6 @@ Jupyter Notebook是一个基于Web的交互式开发环境，特别适合数据�
 pip install jupyterlab
 ```
 
-![](img/5add6d4de51b5a268a6c0097836349e4_9.png)
 
 安装完成后，你可以在终端中通过运行`jupyter notebook`来启动它。启动后，Jupyter服务器将在你的浏览器中打开。
 
@@ -73,9 +70,7 @@ pip install jupyterlab
 
 ### 启动Jupyter并创建笔记本
 
-![](img/5add6d4de51b5a268a6c0097836349e4_15.png)
 
-![](img/5add6d4de51b5a268a6c0097836349e4_16.png)
 
 1.  在终端中，使用`cd`命令导航到你的项目文件夹。
 2.  输入`jupyter notebook`启动服务器。
@@ -170,11 +165,9 @@ schema_df
 
 ![](img/5add6d4de51b5a268a6c0097836349e4_22.png)
 
-![](img/5add6d4de51b5a268a6c0097836349e4_23.png)
 
 ---
 
-![](img/5add6d4de51b5a268a6c0097836349e4_24.png)
 
 ## 总结
 

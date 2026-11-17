@@ -51,7 +51,6 @@
 *   **数据存储与管理**：越来越多的组织使用云存储和数据管理服务，以实现更高的可访问性、便捷的分发和数据备份。
 *   **外包非核心IT管理**：IT部门将不太关键和标准化的业务平台及应用程序的管理外包给公有云提供商。
 
-![](img/cac82d351aecf91a1bb9847be14dca84_1.png)
 
 ## 总结 📝
 
@@ -61,10 +60,8 @@
 
 ![](img/cac82d351aecf91a1bb9847be14dca84_1.png)
 
-![](img/cac82d351aecf91a1bb9847be14dca84_3.png)
 
 ![](img/cac82d351aecf91a1bb9847be14dca84_3.png)
 
-![](img/cac82d351aecf91a1bb9847be14dca84_4.png)
 
 ![](img/cac82d351aecf91a1bb9847be14dca84_4.png)

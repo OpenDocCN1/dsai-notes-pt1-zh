@@ -16,7 +16,6 @@
 
 Anaconda是一个集成了Python、常用工具包和开发环境的“全家桶”。它包含了课程中所需的大部分组件，例如包管理工具`pip`和代码编写环境`Jupyter Notebook`，省去了单独配置的麻烦。
 
-![](img/8ff443fe86434ecb29922275cf2cec36_1.png)
 
 以下是安装Anaconda的步骤：
 

@@ -1,10 +1,8 @@
 # 007：部署为Web API 🚢
 
-![](img/d7ddd2e0b23b404117a2a13486b3039f_0.png)
 
 在本节课中，我们将学习如何将构建好的LangChain对话链部署为一个实时的Web API。我们将重点探讨流式响应和个性化聊天会话的实现，确保应用能够处理多用户并发请求。
 
-![](img/d7ddd2e0b23b404117a2a13486b3039f_2.png)
 
 ---
 
@@ -41,7 +39,6 @@ async function loadAndPrepareVectorStore() {
 
 现在，让我们重新构建答案合成链。我们将使用与之前相同的提示模板，但会做一个关键调整。
 
-![](img/d7ddd2e0b23b404117a2a13486b3039f_5.png)
 
 ![](img/d7ddd2e0b23b404117a2a13486b3039f_6.png)
 
@@ -126,7 +123,6 @@ function getMessageHistory(sessionId) {
 
 ![](img/d7ddd2e0b23b404117a2a13486b3039f_11.png)
 
-![](img/d7ddd2e0b23b404117a2a13486b3039f_12.png)
 
 ```javascript
 import { serve } from "http/server"; // Deno 示例，其他框架类似
@@ -153,13 +149,9 @@ serve(handler, { port });
 console.log(`Server live on http://localhost:${port}`);
 ```
 
-![](img/d7ddd2e0b23b404117a2a13486b3039f_13.png)
 
-![](img/d7ddd2e0b23b404117a2a13486b3039f_14.png)
 
-![](img/d7ddd2e0b23b404117a2a13486b3039f_15.png)
 
-![](img/d7ddd2e0b23b404117a2a13486b3039f_16.png)
 
 在实际生产部署中，您可能需要添加身份验证或输入验证中间件，但为了简单起见，这里我们暂时跳过。
 
@@ -178,10 +170,8 @@ console.log(`Server live on http://localhost:${port}`);
 以下是测试第一个问题的示例代码：
 
 
-![](img/d7ddd2e0b23b404117a2a13486b3039f_19.png)
 
 
-![](img/d7ddd2e0b23b404117a2a13486b3039f_21.png)
 
 ```javascript
 // 辅助函数：消费流式响应

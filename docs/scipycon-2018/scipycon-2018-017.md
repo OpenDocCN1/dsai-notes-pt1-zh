@@ -1,6 +1,5 @@
 # 17：为通用制图工具构建面向对象的Python接口 🗺️
 
-![](img/97e3f3febb301f3dfef86eab396082f2_1.png)
 
 在本课程中，我们将学习如何为通用制图工具构建一个面向对象的Python接口。我们将了解GMT的基本概念、项目目标、实现过程中的挑战与成功经验，以及未来的发展方向。
 
@@ -16,7 +15,6 @@
 
 本项目的首要目标是让新用户更容易接触和使用GMT。对于新手来说，学习这个项目通常非常困难，因此我们希望通过Python接口使其更易于使用。
 
-![](img/97e3f3febb301f3dfef86eab396082f2_5.png)
 
 这意味着要编写一个看起来像Python代码的包装器，而不是像C语言风格的代码。同时，我们还需要与SciPy技术栈集成，以便用户能够使用NumPy、pandas或Xarray加载数据，并将其传递给绘图库。
 
@@ -52,7 +50,6 @@ fig.show()
 
 如果你想保存图形，我们实现了一个 `savefig` 函数，试图模仿matplotlib的 `savefig`。
 
-![](img/97e3f3febb301f3dfef86eab396082f2_7.png)
 
 ```python
 fig.savefig("central_america.png")
@@ -64,17 +61,14 @@ fig.savefig("central_america.png")
 
 GMT现在包含示例数据集，这些数据集会自动下载到缓存目录中。我们通过数据集模块中的特殊函数提供对这些数据集的访问。
 
-![](img/97e3f3febb301f3dfef86eab396082f2_9.png)
 
 例如，调用以下函数将返回一个pandas DataFrame，其中包含地震目录的纬度、经度、深度和震级信息。
 
-![](img/97e3f3febb301f3dfef86eab396082f2_11.png)
 
 ```python
 quakes = gmt.datasets.load_earthquakes()
 ```
 
-![](img/97e3f3febb301f3dfef86eab396082f2_13.png)
 
 现在我们可以绘制这些数据。假设我们想制作一张全球摩尔威德投影地图。
 
@@ -85,18 +79,15 @@ fig.plot(x=quakes.longitude, y=quakes.latitude, style="c0.1i", color="yellow")
 fig.show()
 ```
 
-![](img/97e3f3febb301f3dfef86eab396082f2_15.png)
 
 我们还可以根据地震的震级调整点的大小，或者根据深度为地震点着色，甚至可以设置颜色映射。
 
-![](img/97e3f3febb301f3dfef86eab396082f2_17.png)
 
 ```python
 fig.plot(x=quakes.longitude, y=quakes.latitude, style="cc", sizes=0.02*2**quakes.magnitude, cmap="magma", color=quakes.depth)
 fig.show()
 ```
 
-![](img/97e3f3febb301f3dfef86eab396082f2_19.png)
 
 ## 处理网格数据
 
@@ -120,7 +111,6 @@ fig.grdimage(grid="@earth_relief_30m", projection="M6i", cmap="geo", shading=Tru
 fig.show()
 ```
 
-![](img/97e3f3febb301f3dfef86eab396082f2_21.png)
 
 GMT现在还能自动进行山体阴影处理。只需设置 `shading=True`，它就会根据输入网格自动生成山体阴影。
 
@@ -128,7 +118,6 @@ GMT现在还能自动进行山体阴影处理。只需设置 `shading=True`，�
 
 我们还在尝试使这些地图具有一定的交互性。目前，我们正在试验NASA的Web WorldWind库，它基本上是一个浏览器中的Google Earth。你可以获得一个交互式地球仪上的地形网格，然后进行缩放。
 
-![](img/97e3f3febb301f3dfef86eab396082f2_23.png)
 
 ## 项目进展与挑战
 
@@ -142,7 +131,6 @@ GMT现在还能自动进行山体阴影处理。只需设置 `shading=True`，�
 
 许多挑战源于我现在正在使用API中以前从未接触过的部分，并尝试了一些在命令行中未真正使用的不同配置。
 
-![](img/97e3f3febb301f3dfef86eab396082f2_25.png)
 
 从某种意义上说，我不得不深入了解GMT API C源代码。实际上，如果你能读懂C语言，这段代码的可读性相当好。代码库虽然庞大，但并非难以理解。
 

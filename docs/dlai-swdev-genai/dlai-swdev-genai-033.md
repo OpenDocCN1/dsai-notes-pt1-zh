@@ -143,13 +143,10 @@ def delete_user(user_id):
 
 ## 运行与测试应用
 
-![](img/969194bcff7913e275dcb6b0198b49fb_2.png)
 
-![](img/969194bcff7913e275dcb6b0198b49fb_3.png)
 
 代码编写完成后，我们运行这个Flask应用。
 
-![](img/969194bcff7913e275dcb6b0198b49fb_4.png)
 
 ```python
 if __name__ == '__main__':
@@ -172,7 +169,6 @@ if __name__ == '__main__':
 
 通过以上步骤，我们验证了这个简易Flask应用的CRUD功能全部运行正常。
 
-![](img/969194bcff7913e275dcb6b0198b49fb_6.png)
 
 ## 总结
 

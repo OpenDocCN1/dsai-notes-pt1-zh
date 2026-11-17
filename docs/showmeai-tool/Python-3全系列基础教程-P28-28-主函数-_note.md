@@ -1,6 +1,5 @@
 # Python 3全系列基础教程，P28：28）主函数 🚀
 
-![](img/ca405b00e88392924cbea41dd591ee0c_0.png)
 
 ![](img/ca405b00e88392924cbea41dd591ee0c_0.png)
 

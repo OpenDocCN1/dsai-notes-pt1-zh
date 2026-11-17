@@ -496,7 +496,6 @@ AutoManual 框架利用 LLM 代理，展示了对安全性的正面和负面影�
 | email-inbox-forward-nl-turk | 77.8 | 66.7 | 94.4 | 100.0 |
 | 平均值 | 60.4 | 74.1 | 80.2 | 94.5 |
 
-![参见图注](img/855c00ed5817b1877d8b8323abfe791f.png)
 
 图 5: ALFWorld的生成手册：第1部分。
 

@@ -1,6 +1,5 @@
 # 6：分类微调 🎯
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_1.png)
 
 在本章中，我们将学习如何对预训练好的GPT模型进行微调，使其能够执行文本分类任务。我们将以垃圾邮件分类为例，展示如何将通用语言模型适配到特定的下游应用。
 
@@ -8,19 +7,13 @@
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_4.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_6.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_8.png)
 
 ---
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_10.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_12.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_14.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_16.png)
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_17.png)
 
@@ -30,9 +23,7 @@
 
 ## 数据集准备 📊
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_23.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_24.png)
 
 上一节我们完成了模型的预训练。本节中，我们来看看如何为分类任务准备数据。
 
@@ -46,17 +37,12 @@
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_26.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_28.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_29.png)
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_31.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_32.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_34.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_36.png)
 
 2.  **平衡数据集**：原始数据中非垃圾邮件（ham）远多于垃圾邮件（spam）。我们进行下采样以平衡类别。
     ```python
@@ -65,7 +51,6 @@
     balanced_df = pd.concat([ham_balanced, df[df['label'] == 'spam']])
     ```
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_38.png)
 
 3.  **编码标签**：将文本标签（‘ham’, ‘spam’）转换为数字标签（0, 1）。
     ```python
@@ -95,11 +80,9 @@
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_41.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_43.png)
 
 为了解决这个问题，我们需要将所有序列填充（pad）到相同的长度。我们选择使用数据集中最长序列的长度作为标准长度，并使用特定的填充标记（pad token）进行填充。
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_45.png)
 
 以下是实现自定义数据集（Dataset）类的核心代码：
 
@@ -145,18 +128,13 @@ class SpamDataset(Dataset):
 
 ## 加载预训练模型 🏗️
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_47.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_48.png)
 
 在开始微调之前，我们需要加载基础模型。我们将复用第5章的代码，加载OpenAI发布的最小GPT-2模型（124M参数）的权重。
 
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_50.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_51.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_53.png)
 
 ```python
 from previous_chapters import GPTModel, download_and_load_gpt2
@@ -169,45 +147,30 @@ print(f"Model size: {model_size:,} parameters")
 model = download_and_load_gpt2(model, model_config, model_size)
 ```
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_55.png)
 
 加载完成后，我们可以测试模型是否工作正常。但请注意，此时的预训练模型仅能生成文本，无法直接理解指令或进行分类。
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_57.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_58.png)
 
 ---
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_60.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_61.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_63.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_64.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_66.png)
 
 ## 修改模型架构以适应分类 🛠️
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_68.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_70.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_71.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_73.png)
 
 原始的GPT模型输出层维度是词表大小（例如50,257），用于预测下一个词。对于二分类任务，我们只需要两个输出节点。
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_75.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_76.png)
 
 因此，我们需要替换模型的输出层，并冻结（freeze）大部分预训练参数，只微调最后几层，这是一种高效且能防止过拟合的策略。
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_78.png)
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_80.png)
 
@@ -239,11 +202,8 @@ model = download_and_load_gpt2(model, model_config, model_size)
         param.requires_grad = True
     ```
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_83.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_85.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_87.png)
 
 修改后，模型对于给定输入，将输出一个形状为`[batch_size, 2]`的张量，代表两个类别的原始分数（logits）。
 
@@ -251,7 +211,6 @@ model = download_and_load_gpt2(model, model_config, model_size)
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_90.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_92.png)
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_94.png)
 
@@ -267,21 +226,15 @@ model = download_and_load_gpt2(model, model_config, model_size)
 
 ## 实现评估指标：损失与准确率 📈
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_103.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_104.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_106.png)
 
 在开始训练循环前，我们需要定义如何计算分类损失和准确率。这是评估模型性能的关键。
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_108.png)
 
 **核心思想**：对于分类任务，我们只关心模型对输入序列**最后一个位置**的输出。因为得益于自注意力机制中的因果掩码（causal mask），最后一个位置的上下文向量包含了之前所有令牌的信息。
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_110.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_112.png)
 
 1.  **计算预测标签**：获取最后一个位置的logits，并找出值最大的索引，即为预测的类别。
     ```python
@@ -328,7 +281,6 @@ model = download_and_load_gpt2(model, model_config, model_size)
 
 以下是训练循环的核心步骤：
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_114.png)
 
 1.  将模型设置为训练模式（`model.train()`）。
 2.  遍历数据加载器中的每个批次（batch）。
@@ -338,7 +290,6 @@ model = download_and_load_gpt2(model, model_config, model_size)
 6.  使用优化器更新模型参数（`optimizer.step()`）。
 7.  定期在验证集上评估损失和准确率，以监控训练进度和泛化能力。
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_116.png)
 
 我们使用AdamW优化器，并设置适当的学习率和权重衰减（weight decay）来防止过拟合。
 
@@ -377,23 +328,17 @@ execution_time_minutes = (end_time - start_time) / 60
 print(f"Training completed in {execution_time_minutes:.2f} minutes.")
 ```
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_124.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_125.png)
 
 训练完成后，我们可以在独立的测试集上评估模型的最终性能，获得一个无偏的准确率估计。
 
 ---
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_127.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_129.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_131.png)
 
 ## 使用微调后的模型进行预测 🔮
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_133.png)
 
 模型训练并评估完成后，我们就可以用它来对新的文本消息进行分类了。
 
@@ -403,15 +348,10 @@ print(f"Training completed in {execution_time_minutes:.2f} minutes.")
 
 我们需要编写一个便利函数，其流程与训练时的数据处理和模型前向传播一致：
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_139.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_140.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_142.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_144.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_145.png)
 
 1.  使用相同的分词器（tokenizer）对新文本进行编码。
 2.  将编码后的序列填充（或截断）到训练时使用的固定长度（`max_length`）。
@@ -419,9 +359,7 @@ print(f"Training completed in {execution_time_minutes:.2f} minutes.")
 4.  将模型设置为评估模式（`model.eval()`），在不计算梯度的上下文（`torch.no_grad()`）中进行前向传播。
 5.  获取最后一个位置的logits，并取argmax得到预测的类别（0或1）。
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_146.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_147.png)
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_148.png)
 
@@ -456,9 +394,7 @@ print(f"Prediction: {prediction}")
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_152.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_154.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_156.png)
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_158.png)
 
@@ -466,9 +402,7 @@ print(f"Prediction: {prediction}")
 
 最后，别忘了保存微调好的模型，以便后续部署或使用。
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_161.png)
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_163.png)
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_164.png)
 
@@ -491,7 +425,6 @@ torch.save(model.state_dict(), "text_classifier.pth")
 4.  **执行微调**：使用优化器在训练集上最小化分类损失，并监控验证集性能。
 5.  **评估与使用**：在测试集上评估最终模型，并编写函数对新文本进行分类。
 
-![](img/a21651512054bcc1fc26be3f4331c4ce_167.png)
 
 ![](img/a21651512054bcc1fc26be3f4331c4ce_168.png)
 

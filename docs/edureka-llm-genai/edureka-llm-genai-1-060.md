@@ -8,7 +8,6 @@
 
 ![](img/8fbfc181c40eee8bcb557bf11ac32303_1.png)
 
-![](img/8fbfc181c40eee8bcb557bf11ac32303_2.png)
 
 ![](img/8fbfc181c40eee8bcb557bf11ac32303_3.png)
 
@@ -16,7 +15,6 @@
 
 ![](img/8fbfc181c40eee8bcb557bf11ac32303_1.png)
 
-![](img/8fbfc181c40eee8bcb557bf11ac32303_2.png)
 
 ![](img/8fbfc181c40eee8bcb557bf11ac32303_3.png)
 
@@ -54,7 +52,6 @@ Adam优化器通过基于梯度大小及其历史动量动态调整学习率，�
 
 总而言之，Adam优化器通过集成自适应学习率和历史梯度信息，结合了RMSprop和AdaGrad的优势。这使得它能够有效地平衡参数更新并加速神经网络训练，使其成为优化深度学习模型的热门选择。
 
-![](img/8fbfc181c40eee8bcb557bf11ac32303_5.png)
 
 ## 总结
 

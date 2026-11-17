@@ -12,11 +12,9 @@ NumPy 是 Python 中用于科学计算的基础库，其核心是 **n维数组�
 
 ---
 
-![](img/ffd7d16783b08ebf6d3b8aff4fe389df_2.png)
 
 ## 准备工作
 
-![](img/ffd7d16783b08ebf6d3b8aff4fe389df_4.png)
 
 首先，我们需要在正确的环境中启动 Jupyter Notebook 并导入 NumPy。
 

@@ -1,39 +1,31 @@
 # 025：获取表结构与列信息 📊
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_1.png)
 
 在本节课中，我们将学习如何在数据库中获取表及其列的信息。这对于探索不熟悉的数据库或回忆特定表和列的确切名称至关重要。
 
 ## 概述：为何需要获取表信息？ 🤔
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_3.png)
 
 有时，数据库可能包含多个表，您可能无法准确记住所有表的名称。例如，您可能不确定某个表是叫 `dog`、`dogs` 还是 `four_legged_mammals`。数据库系统通常包含系统表或目录表，您可以通过查询这些目录来获取表列表及其属性。
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_5.png)
 
 上一节我们介绍了数据库的基本查询操作，本节中我们来看看如何系统地探索数据库的结构。
 
 ## 获取数据库中的表列表 📋
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_7.png)
 
 不同的数据库管理系统（DBMS）使用不同的系统目录名称：
 *   在 **DB2** 中，目录称为 `SYSCAT.TABLES`。
 *   在 **SQL Server** 中，称为 `INFORMATION_SCHEMA.TABLES`。
 *   在 **Oracle** 中，称为 `ALL_TABLES` 或 `USER_TABLES`。
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_9.png)
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_10.png)
 
 以下是获取表列表的具体方法。
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_11.png)
 
 ### 在 DB2 中获取所有表
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_13.png)
 
 要获取 DB2 数据库中的表列表，可以运行以下查询：
 ```sql
@@ -64,28 +56,22 @@ ORDER BY CREATE_TIME DESC;
 
 ## 获取表中的列信息 🔍
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_15.png)
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_16.png)
 
 如果您记不清表中某列的确切名称（例如，是否包含小写字符或下划线），可以查询系统目录来获取列信息。
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_17.png)
 
 以下是获取列信息的具体步骤。
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_19.png)
 
 ### 在 DB2 中获取所有列
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_20.png)
 
 在 DB2 中，您可以运行以下查询来获取指定表的所有列信息：
 ```sql
 SELECT * FROM SYSCAT.COLUMNS WHERE TABNAME = 'dogs';
 ```
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_22.png)
 
 ### 在 MySQL 中获取所有列
 
@@ -94,15 +80,12 @@ SELECT * FROM SYSCAT.COLUMNS WHERE TABNAME = 'dogs';
 SHOW COLUMNS FROM dogs;
 ```
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_24.png)
 
 ### 获取特定的列属性
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_26.png)
 
 有时，您可能只关心特定的列属性，例如数据类型及其长度。
 
-![](img/e6b1bc7c812859e1d706e4d504d13586_28.png)
 
 在 DB2 中，可以执行如下语句：
 ```sql

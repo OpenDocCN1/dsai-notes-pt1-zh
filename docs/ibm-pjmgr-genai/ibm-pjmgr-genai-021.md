@@ -21,9 +21,7 @@
 
 ## 常用工具介绍
 
-![](img/5fd7cd496d6e6890a88df523d2e0e2ee_1.png)
 
-![](img/5fd7cd496d6e6890a88df523d2e0e2ee_2.png)
 
 上一节我们介绍了提示工程工具的通用功能，本节中我们来看看几款具体的常用工具。
 
@@ -53,17 +51,12 @@
 
 ### 5. 其他资源与平台
 
-![](img/5fd7cd496d6e6890a88df523d2e0e2ee_4.png)
 
 还有一些其他流行的工具和界面为提示工程提供资源或帮助你进行提示实验。
 
-![](img/5fd7cd496d6e6890a88df523d2e0e2ee_5.png)
 
-![](img/5fd7cd496d6e6890a88df523d2e0e2ee_6.png)
 
-![](img/5fd7cd496d6e6890a88df523d2e0e2ee_7.png)
 
-![](img/5fd7cd496d6e6890a88df523d2e0e2ee_8.png)
 
 以下是其他有用的资源：
 
@@ -76,9 +69,7 @@
 
 ## 总结
 
-![](img/5fd7cd496d6e6890a88df523d2e0e2ee_10.png)
 
-![](img/5fd7cd496d6e6890a88df523d2e0e2ee_11.png)
 
 ![](img/5fd7cd496d6e6890a88df523d2e0e2ee_12.png)
 

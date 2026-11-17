@@ -8,13 +8,10 @@
 
 ## 安装必要的库
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_1.png)
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_2.png)
 
 首先，我们需要安装并导入必要的Python库。这些库用于数据处理、可视化和机器学习任务。
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_3.png)
 
 以下是需要导入的库：
 ```python
@@ -39,13 +36,10 @@ y = 4 + 3 * X + np.random.randn(100, 1)
 
 ## 数据可视化
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_5.png)
 
 在训练模型之前，我们先可视化生成的数据，以观察其分布和线性趋势。
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_6.png)
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_7.png)
 
 以下是绘制散点图的代码：
 ```python
@@ -58,9 +52,7 @@ plt.show()
 
 ## 划分训练集和测试集
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_9.png)
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_10.png)
 
 为了评估模型的泛化能力，我们需要将数据划分为训练集和测试集。
 
@@ -73,7 +65,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 现在，我们初始化一个线性回归模型，并使用训练数据对其进行拟合。
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_12.png)
 
 以下是训练模型的代码：
 ```python
@@ -81,7 +72,6 @@ model = LinearRegression()
 model.fit(X_train, y_train)
 ```
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_13.png)
 
 训练完成后，我们可以查看模型的系数（斜率）和截距。
 
@@ -91,11 +81,8 @@ print(f'模型系数（斜率）: {model.coef_[0][0]}')
 print(f'模型截距: {model.intercept_[0]}')
 ```
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_15.png)
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_16.png)
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_17.png)
 
 ## 进行预测并评估模型
 
@@ -103,7 +90,6 @@ print(f'模型截距: {model.intercept_[0]}')
 
 以下是进行预测和评估的代码：
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_19.png)
 
 ```python
 y_pred = model.predict(X_test)
@@ -151,11 +137,8 @@ plt.tight_layout()
 plt.show()
 ```
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_21.png)
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_22.png)
 
-![](img/a01ffc826bad3c74daefdfce961b2f3e_23.png)
 
 ---
 

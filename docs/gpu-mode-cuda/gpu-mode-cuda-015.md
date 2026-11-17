@@ -22,11 +22,9 @@
 
 ### 类型一：主机原生通信
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_1.png)
 
 在早期，GPU之间没有点对点（P2P）访问能力。数据必须先从源GPU复制到CPU内存，再由CPU复制到目标GPU。API调用和数据路径都完全在CPU端。
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_3.png)
 
 ### 类型二：主机控制通信
 
@@ -44,7 +42,6 @@
 
 节点间通信引入了网络接口卡（NIC）。除了API和数据路径，我们还需关注**消息注册**和**触发**这两个操作由谁执行。
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_5.png)
 
 ### 类型一：主机原生通信
 
@@ -54,9 +51,7 @@
 
 GPU Direct 1.0引入了GPU与NIC之间的共享固定内存区域。GPU可以将数据放入此区域，NIC直接读取，消除了主机端的一次数据拷贝，降低了延迟。
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_7.png)
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_8.png)
 
 ### 类型三：GPU Direct RDMA通信
 
@@ -64,7 +59,6 @@ GPU Direct 1.0引入了GPU与NIC之间的共享固定内存区域。GPU可以将
 
 ### 类型四：GPU触发通信
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_10.png)
 
 此类通信优化了控制路径。CPU预先向NIC注册消息，然后由GPU触发（“按门铃”）通知NIC开始传输。这减少了CPU的参与，但仍需要一个运行在主机上的代理线程。
 
@@ -74,19 +68,15 @@ GPU Direct 1.0引入了GPU与NIC之间的共享固定内存区域。GPU可以将
 
 ## 高速互连：NVLink与NVSwitch
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_12.png)
 
 PCIe带宽有限，NVLink提供了更高的带宽和更低的延迟，可实现高效的GPU间P2P通信。然而，当GPU数量较多时，无法实现全互联。NVSwitch的引入解决了这个问题，它提供了全互联路由能力。AMD的Infinity Fabric链路与NVLink类似，但目前没有类似NVSwitch的交换设备。
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_14.png)
 
 ## 用户级通信库
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_16.png)
 
 上一节我们介绍了底层的硬件通信机制，本节中我们来看看构建在其之上的用户级通信库。
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_18.png)
 
 ### GPU感知MPI
 
@@ -104,9 +94,7 @@ UCX是一个统一的通信框架，旨在抽象底层多种传输技术（如In
 
 ### NCCL与RCCL
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_20.png)
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_21.png)
 
 NCCL（英伟达）和RCCL（AMD）是厂商提供的集合通信库，针对NVLink、PCIe、InfiniBand等进行了深度优化。与MPI的主要区别在于它们原生支持**CUDA流**，允许将通信操作放入流中并按序执行，便于实现通信与计算的重叠。MPI目前尚无原生的流支持。
 
@@ -140,7 +128,6 @@ nvshmem_float_p(signal, value, pe_target);
 nvshmem_quiet();
 ```
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_23.png)
 
 ## 通信库对比与性能考量
 
@@ -148,9 +135,7 @@ nvshmem_quiet();
 *   **MPI与NCCL**：主要使用双边（发送/接收）通信。MPI缺乏原生流支持，NCCL有流支持并提供通信操作分组以进行拥塞控制。
 *   **NVSHMEM**：使用单边（存放/获取）通信，支持细粒度重叠，但编程和调试更复杂。
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_25.png)
 
-![](img/13c8ba54c77c68c27cdfad5f823834ca_27.png)
 
 ![](img/13c8ba54c77c68c27cdfad5f823834ca_28.png)
 

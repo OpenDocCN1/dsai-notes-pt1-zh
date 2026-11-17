@@ -1,8 +1,6 @@
 # 010：创建与部署远程服务器 🚀
 
-![](img/2aba1bb08c7a0855da865a9f768b75ec_0.png)
 
-![](img/2aba1bb08c7a0855da865a9f768b75ec_2.png)
 
 在本节课中，我们将学习如何构建、测试并部署一个远程MCP服务器。我们将了解如何将本地运行的服务器转换为可通过网络访问的远程服务，并使用云平台进行部署。
 
@@ -10,11 +8,9 @@
 
 上一节我们介绍了如何在本地构建和连接MCP服务器。本节中，我们来看看如何让服务器在远程运行，以便任何地方的客户端都能连接。
 
-![](img/2aba1bb08c7a0855da865a9f768b75ec_4.png)
 
 ## 构建远程服务器
 
-![](img/2aba1bb08c7a0855da865a9f768b75ec_6.png)
 
 将本地服务器转换为远程服务器，其核心代码逻辑无需大幅改动。主要区别在于底层的通信传输方式。
 
@@ -50,7 +46,6 @@ transport = SSETransport()
 
 测试通过后，我们可以将服务器部署到云平台，使其公开可用。这里我们使用Render平台进行演示。
 
-![](img/2aba1bb08c7a0855da865a9f768b75ec_12.png)
 
 部署前需要将代码推送到GitHub仓库，以便Render拉取。
 
@@ -67,7 +62,6 @@ transport = SSETransport()
 
 代码推送到GitHub后，即可在Render平台进行部署。
 
-![](img/2aba1bb08c7a0855da865a9f768b75ec_16.png)
 
 以下是Render部署流程：
 
@@ -78,9 +72,7 @@ transport = SSETransport()
 
 部署过程需要几分钟。完成后，访问服务根URL可能会看到404错误，这是正常的。访问SSE端点（例如 `your-service.onrender.com/sse`）并看到返回的会话ID，即表示服务器已成功部署并运行。
 
-![](img/2aba1bb08c7a0855da865a9f768b75ec_18.png)
 
-![](img/2aba1bb08c7a0855da865a9f768b75ec_19.png)
 
 ---
 

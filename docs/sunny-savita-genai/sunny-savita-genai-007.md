@@ -8,7 +8,6 @@
 
 ## 什么是Google Gemini？🤖
 
-![](img/609721ce04070871bd92d0d67b0b9c8b_3.png)
 
 Google Gemini是一个聊天机器人，其前身是Bard。它本质上是一个基于对话的应用程序。
 
@@ -20,11 +19,8 @@ Gemini主要基于两个核心模型构建：**Gemini Pro** 和 **Gemini Pro Vis
 
 ## Gemini的核心特性：多模态
 
-![](img/609721ce04070871bd92d0d67b0b9c8b_7.png)
 
-![](img/609721ce04070871bd92d0d67b0b9c8b_8.png)
 
-![](img/609721ce04070871bd92d0d67b0b9c8b_9.png)
 
 Gemini是由Google DeepMind开发的多模态大语言模型。
 
@@ -32,7 +28,6 @@ Gemini是由Google DeepMind开发的多模态大语言模型。
 *   **文本到文本**：例如，文本生成、翻译、总结。
 *   **图像到文本**：例如，描述图片内容、回答关于图片的问题。
 
-![](img/609721ce04070871bd92d0d67b0b9c8b_11.png)
 
 ![](img/609721ce04070871bd92d0d67b0b9c8b_12.png)
 

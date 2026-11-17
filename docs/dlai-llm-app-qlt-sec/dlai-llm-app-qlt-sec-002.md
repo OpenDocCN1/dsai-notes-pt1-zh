@@ -1,6 +1,5 @@
 # 002：01_概述 🎯
 
-![](img/54bcd02b89e9efb5f56167fe92fbf95a_1.png)
 
 ![](img/54bcd02b89e9efb5f56167fe92fbf95a_2.png)
 
@@ -113,9 +112,7 @@ evaluator.evaluate(sorry_chats)
 
 通过这个简单方法，我们找到了所有简单的拒绝示例，但仍有更复杂的案例需要使用更高级的方法来发现。我鼓励你尝试新的筛选条件，例如筛选提示词长度超过250个字符的示例，看看能发现哪些不同类型的问题。
 
-![](img/54bcd02b89e9efb5f56167fe92fbf95a_12.png)
 
-![](img/54bcd02b89e9efb5f56167fe92fbf95a_13.png)
 
 ## 总结
 

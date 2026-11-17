@@ -20,9 +20,7 @@
 
 ### 1. 什么是NoSQL数据库
 
-![](img/9816eb8aa0c3fef82e8148ebef9aa004_1.png)
 
-![](img/9816eb8aa0c3fef82e8148ebef9aa004_2.png)
 
 NoSQL数据库是指“不仅仅是SQL”的数据库。它允许我们存储和检索数据，而无需使用SQL语言，也无需将数据强制存储在表格格式中。
 
@@ -32,11 +30,8 @@ NoSQL数据库是指“不仅仅是SQL”的数据库。它允许我们存储和
 
 ![](img/9816eb8aa0c3fef82e8148ebef9aa004_4.png)
 
-![](img/9816eb8aa0c3fef82e8148ebef9aa004_5.png)
 
-![](img/9816eb8aa0c3fef82e8148ebef9aa004_6.png)
 
-![](img/9816eb8aa0c3fef82e8148ebef9aa004_7.png)
 
 以下是NoSQL数据库的四种主要类型：
 

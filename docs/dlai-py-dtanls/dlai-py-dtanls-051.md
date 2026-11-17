@@ -14,9 +14,7 @@
 2.  使用 `plt.scatter()` 函数，并传入两个参数：`df['annual_income']` 和 `df['total_credit_limit']`。
 3.  调用 `plt.show()` 来显示图表。
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_1.png)
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_2.png)
 
 ```python
 import matplotlib.pyplot as plt
@@ -27,7 +25,6 @@ plt.scatter(df['annual_income'], df['total_credit_limit'])
 plt.show()
 ```
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_4.png)
 
 执行上述代码后，你将看到一个基础散点图，它展示了年收入与总信用额度之间的关系。
 
@@ -35,13 +32,11 @@ plt.show()
 
 ## 增强图表可读性
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_6.png)
 
 基础图表通常需要增强可读性。我们可以添加标题和坐标轴标签，让图表传达的信息更清晰。
 
 以下是增强图表可读性的方法：
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_8.png)
 
 *   使用 `plt.title()` 添加图表标题。
 *   使用 `plt.xlabel()` 和 `plt.ylabel()` 添加X轴和Y轴标签。
@@ -58,13 +53,10 @@ plt.show()
 
 ## 自定义散点标记
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_10.png)
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_11.png)
 
 对于像本例这样包含超过3000个数据点的密集图表，我们可以通过调整标记的透明度和样式来改善可视化效果。
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_12.png)
 
 以下是自定义散点标记的选项：
 
@@ -84,17 +76,12 @@ plt.show()
 
 ## 调整坐标轴范围（缩放）
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_14.png)
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_15.png)
 
 观察图表，你会发现大部分数据点集中在左下角，只有少数异常值分布在远处。为了更清晰地观察主要数据集群，我们可以调整坐标轴的范围。
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_16.png)
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_17.png)
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_18.png)
 
 使用 `plt.xlim()` 和 `plt.ylim()` 函数可以设置X轴和Y轴的显示范围，这相当于对图表的特定区域进行缩放。
 
@@ -112,13 +99,10 @@ plt.show()
 
 ---
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_20.png)
 
 ## 添加参考线
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_21.png)
 
-![](img/7ce705a4590a395873db4f9c54cf0e34_22.png)
 
 假设我们特别关注收入分布中前5%的客户。我们可以在散点图上添加一条垂直参考线，直观地将这部分客户与其他客户区分开来。
 

@@ -2,7 +2,6 @@
 
 ![](img/0aa92224498f7dfb780b8eaf2240703c_1.png)
 
-![](img/0aa92224498f7dfb780b8eaf2240703c_2.png)
 
 ![](img/0aa92224498f7dfb780b8eaf2240703c_3.png)
 
@@ -10,15 +9,12 @@
 
 ---
 
-![](img/0aa92224498f7dfb780b8eaf2240703c_5.png)
 
 ## 概述
 
-![](img/0aa92224498f7dfb780b8eaf2240703c_6.png)
 
 DALL-E 2是一个图像生成AI工具，它能够理解文本描述并创造出对应的图像。OpenAI声称，DALL-E 2相比第一代版本有大约四倍的提升，能够生成高质量图像。这得益于扩散模型的应用，使得生成的图像在细节和上下文上都非常出色。
 
-![](img/0aa92224498f7dfb780b8eaf2240703c_8.png)
 
 ## DALL-E 2的发展历程
 
@@ -48,9 +44,7 @@ DALL-E 2是一个图像生成AI工具，它能够理解文本描述并创造出�
 3.  在输入框中描述你想要生成的图像。
 4.  点击生成，等待结果。
 
-![](img/0aa92224498f7dfb780b8eaf2240703c_13.png)
 
-![](img/0aa92224498f7dfb780b8eaf2240703c_14.png)
 
 例如，输入提示词：“**3D render of a cute tropical fish in an aquarium with a dark blue background and digital art**”，DALL-E 2就会生成一张符合描述的、背景为深蓝色的可爱热带鱼3D渲染图。
 

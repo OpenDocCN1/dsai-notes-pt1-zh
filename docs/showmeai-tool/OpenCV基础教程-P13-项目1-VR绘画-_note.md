@@ -24,13 +24,11 @@
 
 首先，我们需要获取来自网络摄像头的实时视频流。我们将使用OpenCV的`VideoCapture`功能。
 
-![](img/97368d43feac0c0e171afdc6ab7e7dfc_5.png)
 
 
 ![](img/97368d43feac0c0e171afdc6ab7e7dfc_7.png)
 
 
-![](img/97368d43feac0c0e171afdc6ab7e7dfc_9.png)
 
 ```python
 import cv2
@@ -60,7 +58,6 @@ while True:
 
 上一节我们启动了摄像头，本节中我们来看看如何从画面中检测我们感兴趣的颜色。我们将创建一个通用的颜色检测函数。
 
-![](img/97368d43feac0c0e171afdc6ab7e7dfc_11.png)
 
 为了检测颜色，我们需要将图像从BGR色彩空间转换到HSV色彩空间，并设定每种颜色的HSV阈值范围。
 
@@ -83,9 +80,7 @@ myColors = [
            ]
 ```
 
-![](img/97368d43feac0c0e171afdc6ab7e7dfc_19.png)
 
-![](img/97368d43feac0c0e171afdc6ab7e7dfc_20.png)
 
 接下来，我们编写`findColor`函数。该函数接收一帧图像，遍历`myColors`列表中的每种颜色，创建对应的掩膜（mask），并返回检测到的所有颜色区域的位置信息。
 

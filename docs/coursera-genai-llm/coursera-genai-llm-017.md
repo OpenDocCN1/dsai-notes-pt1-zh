@@ -8,15 +8,11 @@
 
 首先，我们需要设置编程环境。以下是配置所需库的步骤。
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_1.png)
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_2.png)
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_1.png)
 
 我们将安装`faiss`库和`sentence-transformers`库，并导入必要的工具来生成嵌入向量和执行向量搜索。
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_2.png)
 
 ```python
 # 安装必要的库
@@ -34,13 +30,9 @@ import numpy as np
 
 上一节我们配置好了环境，本节中我们来看看如何为文档生成向量嵌入。我们将使用`sentence-transformers`模型将文本转换为数值向量。
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_4.png)
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_4.png)
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_5.png)
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_5.png)
 
 以下是生成嵌入向量的代码示例：
 
@@ -61,21 +53,15 @@ document_embeddings = model.encode(documents)
 
 ---
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_7.png)
 
 ### 使用Faiss建立向量索引 🗂️
 
 生成了文档的嵌入向量后，下一步是使用Faiss为这些向量建立索引，以实现快速相似性搜索。
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_8.png)
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_7.png)
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_9.png)
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_8.png)
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_9.png)
 
 以下是建立Faiss索引的步骤：
 
@@ -89,7 +75,6 @@ faiss.normalize_L2(document_embeddings) # 归一化向量
 index.add(document_embeddings) # 将向量添加到索引
 ```
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_11.png)
 
 ---
 
@@ -97,7 +82,6 @@ index.add(document_embeddings) # 将向量添加到索引
 
 现在，我们已经有了一个包含文档向量的Faiss索引。本节中，我们将学习如何输入一个查询，并检索出最相关的文档。
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_11.png)
 
 以下是执行查询的代码：
 
@@ -122,11 +106,9 @@ for idx in indices[0]:
 
 🎼 输出将显示与查询最匹配的文档及其相似度分数。
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_13.png)
 
 ---
 
-![](img/b3a80ba1e35d7770bafb92e1431d1bc9_14.png)
 
 ### 总结 📝
 

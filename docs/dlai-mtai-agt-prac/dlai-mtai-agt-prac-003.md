@@ -2,7 +2,6 @@
 
 在本节课中，我们将学习如何使用CrewAI构建一个自动化项目规划系统。该系统能够将项目分解为任务、估算时间并进行资源分配，这对于需要快速响应客户需求的机构（如咨询公司或网络代理）非常有用。
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_1.png)
 
 ## 概述
 
@@ -10,7 +9,6 @@
 
 ## 环境与模型设置
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_3.png)
 
 首先，我们需要导入必要的库并设置AI模型。
 
@@ -95,7 +93,6 @@ allocation_task = Task(
 为了获得可被外部系统使用的输出，我们使用Pydantic模型来定义数据结构。
 
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_5.png)
 
 ```python
 from pydantic import BaseModel
@@ -116,22 +113,16 @@ class ProjectPlan(BaseModel):
 
 `ProjectPlan` 模型将作为最终任务的输出格式，确保结果是结构化的JSON。
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_7.png)
 
 ## 组装团队并执行
 
 现在，我们将智能体和任务组合成一个“团队”，并提供项目输入信息。
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_9.png)
-
-![](img/a07ba3279deca837b31c3fe2420ffb1e_10.png)
 
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_12.png)
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_13.png)
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_14.png)
+
 
 ```python
 # 创建团队
@@ -162,22 +153,16 @@ inputs = {
 result = crew.kickoff(inputs=inputs)
 ```
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_16.png)
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_17.png)
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_18.png)
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_19.png)
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_20.png)
 
 ## 分析结果与成本
 
 执行完成后，我们可以查看结构化的输出结果，并计算本次运行的大致成本。
 
 
-![](img/a07ba3279deca837b31c3fe2420ffb1e_22.png)
 
 ```python
 # 查看原始输出（ProjectPlan对象）

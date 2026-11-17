@@ -12,15 +12,12 @@
 
 ## 导入与初始化
 
-![](img/3f57ff50926fcc9dc0154847e79ea26b_2.png)
 
 ![](img/3f57ff50926fcc9dc0154847e79ea26b_3.png)
 
-![](img/3f57ff50926fcc9dc0154847e79ea26b_4.png)
 
 ![](img/3f57ff50926fcc9dc0154847e79ea26b_5.png)
 
-![](img/3f57ff50926fcc9dc0154847e79ea26b_6.png)
 
 首先，导入必要的库。大部分内容与上一课相同，但额外从`typing`模块导入了`List`和`Literal`，用于定义新的Pydantic数据模型。然后，设置OpenAI客户端。
 
@@ -28,7 +25,6 @@
 
 ![](img/3f57ff50926fcc9dc0154847e79ea26b_8.png)
 
-![](img/3f57ff50926fcc9dc0154847e79ea26b_9.png)
 
 ![](img/3f57ff50926fcc9dc0154847e79ea26b_10.png)
 
@@ -301,11 +297,8 @@ if final_result_schema:
 
 在本节课中，我们一起学习了如何通过构建反馈循环来验证和修正LLM的结构化响应。我们首先尝试直接验证LLM的JSON输出，并处理了常见的格式错误和字段值错误。接着，我们构建了一个完整的重试系统来自动化这个过程。最后，我们探索了使用Pydantic模型的JSON模式作为提示词的一部分，以更清晰地向LLM传达我们的需求，这通常能提高首次尝试的成功率。
 
-![](img/3f57ff50926fcc9dc0154847e79ea26b_15.png)
 
-![](img/3f57ff50926fcc9dc0154847e79ea26b_16.png)
 
-![](img/3f57ff50926fcc9dc0154847e79ea26b_17.png)
 
 ![](img/3f57ff50926fcc9dc0154847e79ea26b_18.png)
 

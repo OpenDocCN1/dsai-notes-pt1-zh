@@ -10,11 +10,9 @@
 
 ![](img/7cbded7e43fbc67890475217d693476b_4.png)
 
-![](img/7cbded7e43fbc67890475217d693476b_5.png)
 
 ## 同步远程仓库更改 🔄
 
-![](img/7cbded7e43fbc67890475217d693476b_7.png)
 
 ![](img/7cbded7e43fbc67890475217d693476b_9.png)
 
@@ -54,14 +52,12 @@
 
 以下是创建和使用分支的步骤：
 
-![](img/7cbded7e43fbc67890475217d693476b_20.png)
 
 1.  首先，创建一个名为 `my-branch` 的新分支。
     ```bash
     git branch my-branch
     ```
 
-![](img/7cbded7e43fbc67890475217d693476b_22.png)
 
 2.  创建分支后，使用 `git checkout` 命令切换到新分支。
     ```bash
@@ -78,7 +74,6 @@
     git commit -m "Added work on my branch"
     ```
 
-![](img/7cbded7e43fbc67890475217d693476b_26.png)
 
 4.  首次将本地分支推送到远程仓库时，需要建立追踪关系。
     ```bash
@@ -94,7 +89,6 @@
 
 当你在分支上的工作完成后，需要将其合并回主分支（`master`）。
 
-![](img/7cbded7e43fbc67890475217d693476b_32.png)
 
 以下是合并分支的步骤：
 
@@ -103,7 +97,6 @@
     git checkout master
     ```
 
-![](img/7cbded7e43fbc67890475217d693476b_34.png)
 
 2.  然后，执行 `git merge` 命令，将 `my-branch` 分支的更改合并到当前所在的 `master` 分支。
     ```bash
@@ -111,7 +104,6 @@
     ```
     如果合并顺利，你会看到 `stuff_on_branch.txt` 文件现在也出现在了本地的 `master` 分支目录中。
 
-![](img/7cbded7e43fbc67890475217d693476b_35.png)
 
 3.  最后，将本地 `master` 分支的更新推送到远程仓库，完成整个合并过程。
     ```bash

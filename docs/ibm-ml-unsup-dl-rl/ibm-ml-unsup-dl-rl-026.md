@@ -20,13 +20,11 @@ We then call Km dot predict on those same columns， and we set that equal to it
 
 
 
-![](img/ae96c30986920be8960feeb389ad96ab_1.png)
 
 And we'll see why we do that in just a second。And once we do that， we can call data dot head。
 
 
 
-![](img/ae96c30986920be8960feeb389ad96ab_3.png)
 
 And we can see all the way here at the end that we create this new column that's either 0 or  one。
 
@@ -44,7 +42,6 @@ Now it's going to be a pandas series。 So we're just changing it to a data fram
 
  So we're just calling it number。
 
-![](img/ae96c30986920be8960feeb389ad96ab_5.png)
 
 And we run this。And we can see that for 0， the majority of them are going to be that red wine。
 
@@ -56,7 +53,6 @@ So we can see that it did a pretty good job without any labels separating out ou
 
 
 
-![](img/ae96c30986920be8960feeb389ad96ab_7.png)
 
 Now we're going to fit a Ka means model with clusters ranging from 1 to 20。And now with this。
 
@@ -72,7 +68,6 @@ So we start with an empty list， and then we range from values from 1 to 20。
 
 
 
-![](img/ae96c30986920be8960feeb389ad96ab_9.png)
 
 We call K means， and we initiate with that number。We then fit it on our float columns。
 
@@ -116,7 +111,6 @@ Markers being Os here。And then we just want our x stick to go from0 to 21 or t
 
  maybe a bit of that at。
 
-![](img/ae96c30986920be8960feeb389ad96ab_11.png)
 
 4 perhaps where it starts to decline how much it's going to be really declining as quickly。
 
@@ -134,6 +128,5 @@ Markers being Os here。And then we just want our x stick to go from0 to 21 or t
 
  All right， I'll see there。😊。
 
-![](img/ae96c30986920be8960feeb389ad96ab_13.png)
 
 ![](img/ae96c30986920be8960feeb389ad96ab_14.png)

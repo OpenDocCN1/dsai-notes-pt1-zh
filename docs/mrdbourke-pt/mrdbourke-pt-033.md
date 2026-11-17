@@ -92,7 +92,6 @@ print(list(model_0.parameters()))
 print(model_0.state_dict())
 ```
 
-![](img/827c8755acf8d7365edd106472be34ca_6.png)
 
 ![](img/827c8755acf8d7365edd106472be34ca_8.png)
 

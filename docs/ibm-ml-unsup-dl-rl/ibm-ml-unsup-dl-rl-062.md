@@ -10,15 +10,12 @@ So in this section we're going to cover a bit of an overview of the different Py
 
 
 
-![](img/68600d93efb7338c157a15e8cd893966_1.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_2.png)
 
 We're then going to show you how to set up a network structure using CAs。
 
 
 
-![](img/68600d93efb7338c157a15e8cd893966_4.png)
 
 And then finally， from A to Z how to actually build out that model， and once we are able to do that。
 
@@ -26,11 +23,8 @@ And then finally， from A to Z how to actually build out that model， and once
 
 
 
-![](img/68600d93efb7338c157a15e8cd893966_6.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_7.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_8.png)
 
 So what are some of the many Python libraries that are available to us if we want to do deep learning in general。
 
@@ -38,13 +32,9 @@ So what are some of the many Python libraries that are available to us if we wan
 
 
 
-![](img/68600d93efb7338c157a15e8cd893966_10.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_11.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_12.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_13.png)
 
 TenssorFlow was originally known as we talk through the different packages available as the more complicated steep learning curve version of a deep learning framework。
 
@@ -52,25 +42,17 @@ TenssorFlow was originally known as we talk through the different packages avail
 
  this package Theion Now Theiono is essentially。
 
-![](img/68600d93efb7338c157a15e8cd893966_15.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_16.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_17.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_18.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_19.png)
 
 Dead as development has ceased back in 2017， but many academic researchers relied on piano and pianos considered somewhat of the grandfather of deep learning frameworks。
 
 
 
-![](img/68600d93efb7338c157a15e8cd893966_21.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_22.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_23.png)
 
 And then we have Pytororch and Pytororch also has a large gathering， a large community。
 
@@ -80,11 +62,8 @@ And then we have Pytororch and Pytororch also has a large gathering， a large c
 
 
 
-![](img/68600d93efb7338c157a15e8cd893966_25.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_26.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_27.png)
 
 Pytorrchches developed by Facebook， again， also has a large community。
 
@@ -92,11 +71,9 @@ Pytorrchches developed by Facebook， again， also has a large community。
 
  with that incorporation of Keras into TensorFlow。
 
-![](img/68600d93efb7338c157a15e8cd893966_29.png)
 
 It's now also very accessible， Tensorflow at。
 
-![](img/68600d93efb7338c157a15e8cd893966_31.png)
 
 And then like we said， Karas is going to be that high level library， very accessible。
 
@@ -108,15 +85,10 @@ And then like we said， Karas is going to be that high level library， very ac
 
 
 
-![](img/68600d93efb7338c157a15e8cd893966_33.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_34.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_35.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_36.png)
 
-![](img/68600d93efb7338c157a15e8cd893966_37.png)
 
 And on this course， we'll be focusing on running specifically on Cars through Tensor flow under the hood。
 
@@ -124,6 +96,5 @@ And on this course， we'll be focusing on running specifically on Cars through 
 
 
 
-![](img/68600d93efb7338c157a15e8cd893966_39.png)
 
 ![](img/68600d93efb7338c157a15e8cd893966_40.png)

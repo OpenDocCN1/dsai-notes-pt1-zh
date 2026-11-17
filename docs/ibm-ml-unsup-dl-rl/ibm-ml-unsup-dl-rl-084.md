@@ -8,7 +8,6 @@ So the additional training that we do of a pretrain network on a specific new da
 
 
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_1.png)
 
 As mentioned earlier， understanding exactly how to fine tune in regards to how much or how far back is going to require you to think through a lot of different options。
 
@@ -16,19 +15,16 @@ Should you just train the very last layer， Should you go back a few layers。
 
 
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_3.png)
 
 Or even retrain the entire network。Using that pretrain network to just initialize the weights for your new data。
 
 
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_5.png)
 
 And for your new framework。Now， while there are no hard and fast rules for fine tuning。
 
  your transfer learning model。
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_7.png)
 
 There are going to be some guiding principles that you're going to want to keep in mind。First off。
 
@@ -36,7 +32,6 @@ There are going to be some guiding principles that you're going to want to keep 
 
 
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_9.png)
 
 The less fine tuning you'll have to do。So for example。
 
@@ -48,7 +43,6 @@ You should need relatively little fine tuning， so you don't need to go as far 
 
 
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_11.png)
 
 And that's due to the fact that IageNe was already used to distinguish between different breeds of dogs and different breeds of cats。
 
@@ -56,7 +50,6 @@ And that's due to the fact that IageNe was already used to distinguish between d
 
 
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_13.png)
 
 Also， the more data you have available about your specific problem。
 
@@ -64,7 +57,6 @@ The more the network will benefit from the longer and deeper fine tuning of your
 
 
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_15.png)
 
 So for example， if you only had 100 dogs and 100 cats in your new training set。
 
@@ -74,7 +66,6 @@ You probably want to do very little fine tuning。Maybe just remove that final l
 
 
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_17.png)
 
 On the other hand， if you have 100，000 dogs and 100，000 cats。
 
@@ -86,13 +77,11 @@ On the other hand， if you have 100，000 dogs and 100，000 cats。
 
 
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_19.png)
 
 Also， if your data is substantially different in nature。
 
  than the data the source model was trained on。
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_21.png)
 
 Transfer learning may actually be of little value。 So an obvious example is if a network that was trained on recognizing type Latin alphabet characters。
 
@@ -102,13 +91,9 @@ Transfer learning may actually be of little value。 So an obvious example is if
 
  as they are both some type of alphabet。
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_23.png)
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_24.png)
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_25.png)
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_26.png)
 
 So to recap this idea of transfer learning， we have an overview of transfer learning。
 
@@ -132,6 +117,5 @@ And in the next video we'll show you how to actually conduct transfer learning u
 
  Allright， I'll see you there。
 
-![](img/3f570b5e72859e458514eaa2ffb2dae5_28.png)
 
 ![](img/3f570b5e72859e458514eaa2ffb2dae5_29.png)

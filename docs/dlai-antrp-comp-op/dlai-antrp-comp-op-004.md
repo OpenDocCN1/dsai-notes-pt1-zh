@@ -1,6 +1,5 @@
 # 004：多模态提示与流式响应 🖼️💬
 
-![](img/7c69e983f4a2aeff16d604eeeba22da6_1.png)
 
 在本节课中，我们将学习如何构建结合图像和文本的多模态提示，并掌握如何处理API返回的流式响应。我们将从基础的消息结构讲起，逐步深入到图像处理和实时数据流。
 
@@ -50,19 +49,16 @@ content = [
 
 包含图像的消息结构如下所示：
 
-![](img/7c69e983f4a2aeff16d604eeeba22da6_3.png)
 
 如图所示，我们有一个消息列表。其中一条消息的`role`设为`user`，`content`设为一个列表。在这个`content`列表中，我们有一个新的内容块类型——`image`块。其结构是：`type`设为`image`，`source`是一个字典，其中`type`设为`base64`，`media_type`设为图像类型（如`image/jpeg`或`image/png`），`data`则包含原始的图像数据。
 
 ### 准备图像数据
 
-![](img/7c69e983f4a2aeff16d604eeeba22da6_6.png)
 
 回到我们的代码，在创建消息之前，我们需要完成几个步骤来准备图像。
 
 首先，读取图像文件。我们使用路径打开`food.png`文件。
 
-![](img/7c69e983f4a2aeff16d604eeeba22da6_6.png)
 
 然后，将图像内容读取为二进制对象。接着，使用base64对二进制数据进行编码。最后，将base64编码的数据转换为字符串。完成这些步骤后，我们就得到了一个很长的base64字符串。
 
@@ -127,7 +123,6 @@ def create_image_message(image_path):
     return image_block
 ```
 
-![](img/7c69e983f4a2aeff16d604eeeba22da6_11.png)
 
 ![](img/7c69e983f4a2aeff16d604eeeba22da6_8.png)
 
@@ -179,7 +174,6 @@ response = client.messages.create(model=MODEL_NAME, messages=messages, max_token
 print(response.content[0].text)
 ```
 
-![](img/7c69e983f4a2aeff16d604eeeba22da6_11.png)
 
 我们得到了一个JSON响应，包含公司名称、地址、发票信息、账单接收方、物品清单以及总计金额。核对原图，所有这些信息都是准确的。
 
@@ -187,7 +181,6 @@ print(response.content[0].text)
 
 ### 多图像提示
 
-![](img/7c69e983f4a2aeff16d604eeeba22da6_15.png)
 
 需要说明的是，我们可以在单条消息中提供多张图像。回想一下，我们所有的内容块在输入模型时，本质上都被视为一个提示。因此，我可以在一条用户消息中组合多个图像块和多个文本提示块。`content`是一个列表，我只需将内容块添加进去，无论其类型是`image`还是`text`。
 
@@ -234,7 +227,6 @@ for text in stream.text_stream:
 
 这是一个执行多项操作的函数。如果你仔细观察，在突出显示的文本中，我们使用本节课早先讨论过的格式，附加了一个正确格式化的图像。
 
-![](img/7c69e983f4a2aeff16d604eeeba22da6_15.png)
 
 这些图像是我们提供给模型的屏幕截图。正如我们在介绍本课程计算机使用部分时所见，模型的工作原理是获取屏幕截图、分析截图，然后决定采取操作。因此，我们需要能够向模型提供图像，而我们使用的语法与本节课已经看到的完全相同：我们创建这些图像内容块。
 

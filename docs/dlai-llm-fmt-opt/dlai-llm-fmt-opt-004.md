@@ -1,6 +1,5 @@
 # 004：基于重试的结构化输出
 
-![](img/8d9b055d3f00220de461c386aab1a0e4_0.png)
 
 ![](img/8d9b055d3f00220de461c386aab1a0e4_0.png)
 
@@ -212,6 +211,5 @@ except Exception as e:
 
 在下一节课中，你将深入了解 `outlines` 库，看看结构化生成是如何能够快速、可靠地生成结构化输出而无需任何重试的。
 
-![](img/8d9b055d3f00220de461c386aab1a0e4_4.png)
 
 ![](img/8d9b055d3f00220de461c386aab1a0e4_4.png)

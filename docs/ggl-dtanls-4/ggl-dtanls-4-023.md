@@ -1,6 +1,5 @@
 # 023：23_03_02_广泛使用的SQL查询.zh_en - GPT中英字幕课程资源 - BV19m4y1J7dG
 
-![](img/b6e91a2d062277bf75ff34884beb8ce8_0.png)
 
 ![](img/b6e91a2d062277bf75ff34884beb8ce8_0.png)
 
@@ -33,7 +32,6 @@ FROM customer_data.customer_address;
 
 因此，`SELECT`和`FROM`帮助我们指定要从数据库提取和使用的数据。
 
-![](img/b6e91a2d062277bf75ff34884beb8ce8_2.png)
 
 ## 使用INSERT INTO插入新数据
 
@@ -41,7 +39,6 @@ FROM customer_data.customer_address;
 
 ![](img/b6e91a2d062277bf75ff34884beb8ce8_2.png)
 
-![](img/b6e91a2d062277bf75ff34884beb8ce8_4.png)
 
 例如，假设我们有一个新客户想要插入到这个表中。我们可以使用`INSERT INTO`查询来输入这些信息。
 
@@ -57,7 +54,6 @@ FROM customer_data.customer_address;
 
 现在假设我们只需要更改一个客户的地址。我们可以告诉数据库为我们更新它。
 
-![](img/b6e91a2d062277bf75ff34884beb8ce8_6.png)
 
 为此，我们需要告诉它我们正在尝试更新`customer_address`表。然后我们需要让它知道我们要更改什么值。但我们还需要具体告诉它我们在哪里进行更改，以免它更改表中的每个地址。
 
@@ -77,7 +73,6 @@ FROM customer_data.customer_address;
 
 然而，如果要求你定期提取这种趋势数据，你可以创建一个表，该表将根据你编写的查询自动刷新。这样，每当需要为报告获取结果时，就可以直接下载。
 
-![](img/b6e91a2d062277bf75ff34884beb8ce8_8.png)
 
 ## 使用DROP TABLE删除表
 

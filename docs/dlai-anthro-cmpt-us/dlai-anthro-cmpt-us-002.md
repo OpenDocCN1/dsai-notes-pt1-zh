@@ -47,17 +47,12 @@ Anthropic近期取得了一项突破，发布了一个能够使用计算机的�
 
 好的，让我们开始吧！
 
-![](img/aa316efa947a5cab4bdf5ef99decf3a3_1.png)
 
-![](img/aa316efa947a5cab4bdf5ef99decf3a3_2.png)
 
-![](img/aa316efa947a5cab4bdf5ef99decf3a3_3.png)
 
 ---
 
-![](img/aa316efa947a5cab4bdf5ef99decf3a3_1.png)
 
-![](img/aa316efa947a5cab4bdf5ef99decf3a3_2.png)
 
 ![](img/aa316efa947a5cab4bdf5ef99decf3a3_3.png)
 

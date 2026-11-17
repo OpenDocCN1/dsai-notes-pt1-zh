@@ -10,9 +10,7 @@
 
 正则表达式（简称 regex）是定义搜索模式的字符序列。它们对于搜索结构化文本格式（如日期、电话号码）特别有用。
 
-![](img/31f2beeb6eaad7edbf7ca6b97a87e533_1.png)
 
-![](img/31f2beeb6eaad7edbf7ca6b97a87e533_2.png)
 
 正则表达式模式由两个主要组件构成：**要匹配的文本模式**和**该模式出现的频率**。
 
@@ -34,7 +32,6 @@
 
 ### 频率指定
 
-![](img/31f2beeb6eaad7edbf7ca6b97a87e533_4.png)
 
 频率指定模式应重复的次数。
 
@@ -47,7 +44,6 @@
 
 ## 在 Pandas 中应用正则表达式
 
-![](img/31f2beeb6eaad7edbf7ca6b97a87e533_6.png)
 
 我们可以将正则表达式与之前学过的 Pandas 字符串操作结合使用，例如 `.str.contains()` 和 `.str.replace()`。
 

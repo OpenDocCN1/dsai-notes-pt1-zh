@@ -29,7 +29,6 @@
 
 课程网页上已经列出了每周的教学计划。我将主要负责前三周左右的课程，之后由Nikola Flamon接手，最后我将负责无监督学习的部分内容。
 
-![](img/c4766ff0bad4bc7f5c1b933f34bd6a2d_3.png)
 
 ![](img/c4766ff0bad4bc7f5c1b933f34bd6a2d_5.png)
 

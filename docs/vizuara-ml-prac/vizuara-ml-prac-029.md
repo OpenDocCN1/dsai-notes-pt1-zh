@@ -1,6 +1,5 @@
 #  029：Python神经网络实践
 
-![](img/7e8fa5bcd9f2ccf07071057a77f66ecd_0.png)
 
 ![](img/7e8fa5bcd9f2ccf07071057a77f66ecd_0.png)
 
@@ -22,7 +21,6 @@
 
 例如，这里我们使用TensorFlow。你导入`tensorflow as tf`，然后记住我说过Keras已集成到TensorFlow中。因此，如果你想使用Keras中的层API，你只需要`from tensorflow.keras import layers`。然后你可以定义神经网络的层。你甚至可以导入`Sequential`。这里我们定义了一个只有10个输入特征和1个输出的神经网络。
 
-![](img/7e8fa5bcd9f2ccf07071057a77f66ecd_2.png)
 
 ```python
 import tensorflow as tf
@@ -33,16 +31,12 @@ model = Sequential([
 ])
 ```
 
-![](img/7e8fa5bcd9f2ccf07071057a77f66ecd_4.png)
 
-![](img/7e8fa5bcd9f2ccf07071057a77f66ecd_6.png)
 
 另一方面，如果我们想用PyTorch做同样的事情，实现看起来像这样。
 
 
-![](img/7e8fa5bcd9f2ccf07071057a77f66ecd_8.png)
 
-![](img/7e8fa5bcd9f2ccf07071057a77f66ecd_10.png)
 
 ```python
 import torch
@@ -56,11 +50,8 @@ class SimpleNN(nn.Module):
         return self.linear(x)
 ```
 
-![](img/7e8fa5bcd9f2ccf07071057a77f66ecd_12.png)
 
-![](img/7e8fa5bcd9f2ccf07071057a77f66ecd_14.png)
 
-![](img/7e8fa5bcd9f2ccf07071057a77f66ecd_15.png)
 
 所以PyTorch遵循一种更面向对象的方法，我们定义一个类。然后我们在类中定义两个方法，`__init__`是一个特殊方法，在创建此类的实例时自动调用。然后我们定义这个神经网络的权重：10个输入特征，1个输出。第二个方法是`forward`，它实现前向传播，然后返回神经网络的输出。
 
@@ -72,7 +63,6 @@ class SimpleNN(nn.Module):
 
 本质上，我想说的是，PyTorch在代码上更灵活，因为它是在代码运行时动态地在变量之间创建计算图。而TensorFlow以静态方式创建图，所以如果你想改变某些东西，那么我们需要重新定义函数本身，因此它不太灵活。
 
-![](img/7e8fa5bcd9f2ccf07071057a77f66ecd_17.png)
 
 总而言之，初学者都可以使用TensorFlow和PyTorch。但请记住，TensorFlow快速、稳健，但不是很灵活。因此，如果你想尝试各种东西，想将其用于研究，不太推荐TensorFlow，但它实际上非常适合生产级或工业级的机器学习框架。另一方面，PyTorch以动态方式生成这些图，因此非常灵活。所以，如果你想自己改变东西，想使用这些框架进行研究，那么PyTorch非常好。作为初学者，你可以同时使用PyTorch和TensorFlow，事实上我鼓励你两者都用，以了解两者之间的异同。
 

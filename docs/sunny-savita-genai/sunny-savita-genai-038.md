@@ -14,11 +14,8 @@
 
 ![](img/51cd14e460606fc4e7b5ed9f10d64606_1.png)
 
-![](img/51cd14e460606fc4e7b5ed9f10d64606_2.png)
 
-![](img/51cd14e460606fc4e7b5ed9f10d64606_3.png)
 
-![](img/51cd14e460606fc4e7b5ed9f10d64606_4.png)
 
 ```python
 # 安装必要库
@@ -82,7 +79,6 @@ response = (
 results = response['data']['Get']['YourCollectionName']
 ```
 
-![](img/51cd14e460606fc4e7b5ed9f10d64606_8.png)
 
 ![](img/51cd14e460606fc4e7b5ed9f10d64606_9.png)
 
@@ -125,7 +121,6 @@ for idx, r in enumerate(reranked_response.results):
     })
 ```
 
-![](img/51cd14e460606fc4e7b5ed9f10d64606_12.png)
 
 ## 完整流程整合
 
@@ -180,9 +175,7 @@ print("构建的上下文：", context)
 
 ![](img/51cd14e460606fc4e7b5ed9f10d64606_20.png)
 
-![](img/51cd14e460606fc4e7b5ed9f10d64606_21.png)
 
-![](img/51cd14e460606fc4e7b5ed9f10d64606_22.png)
 
 本节课中我们一起学习了提升RAG系统检索质量的两个高级技术。
 

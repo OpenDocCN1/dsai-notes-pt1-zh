@@ -79,7 +79,6 @@ Hugging Face的LoRA通过`target_modules`参数来增强Transformer模型的特�
 
 现在，让我们了解如何在模型中设置训练参数。为此，使用`TrainingArguments`类，它封装了训练模型所需的所有超参数和配置。这使得训练过程变得简单，并有助于管理训练过程的各个方面。
 
-![](img/4edb08c58520dcd086d5ada90d54bab2_7.png)
 
 接下来，使用`Trainer`来训练模型。`Trainer`类有助于简化Transformer模型的训练和评估，它处理训练循环并保存模型。这意味着你可以使用`Trainer`轻松地训练模型。
 

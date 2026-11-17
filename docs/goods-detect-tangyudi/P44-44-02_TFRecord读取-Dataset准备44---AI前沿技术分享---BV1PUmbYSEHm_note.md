@@ -51,7 +51,6 @@ def get_dataset(dataset_dir):
 
 第一个参数是数据源，即TFRecord文件的路径模式。我们使用通配符来匹配目录下所有相关的文件。
 
-![](img/7376838b6fac37f89f79dbaaedb141ba_12.png)
 
 ![](img/7376838b6fac37f89f79dbaaedb141ba_14.png)
 
@@ -77,10 +76,8 @@ reader = tf.TFRecordReader
 
 以下是解码器所需的核心字典定义：
 
-![](img/7376838b6fac37f89f79dbaaedb141ba_18.png)
 
 
-![](img/7376838b6fac37f89f79dbaaedb141ba_20.png)
 
 ```python
 # 定义 keys_to_features， 指定TFRecord中存储的原始数据格式
@@ -111,7 +108,6 @@ items_to_handlers = {
 }
 ```
 
-![](img/7376838b6fac37f89f79dbaaedb141ba_22.png)
 
 **关键点解释**：在`items_to_handlers`中，`BoundingBox`处理器默认只读取每个列表的第一个元素。这意味着，如果一张图片有多个标注框，这里只会返回第一个框的坐标。在实际应用中，你可能需要根据任务调整这个逻辑。
 

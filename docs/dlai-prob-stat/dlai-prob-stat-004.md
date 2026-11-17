@@ -38,19 +38,12 @@
 
 请尝试这个实验。当你准备好后，可以继续学习接下来的视频内容。
 
-![](img/9c1c3d027a01f1b3d9e001c9d02b4635_1.png)
 
-![](img/9c1c3d027a01f1b3d9e001c9d02b4635_2.png)
 
-![](img/9c1c3d027a01f1b3d9e001c9d02b4635_1.png)
 
-![](img/9c1c3d027a01f1b3d9e001c9d02b4635_3.png)
 
-![](img/9c1c3d027a01f1b3d9e001c9d02b4635_2.png)
 
-![](img/9c1c3d027a01f1b3d9e001c9d02b4635_4.png)
 
-![](img/9c1c3d027a01f1b3d9e001c9d02b4635_3.png)
 
 ## 总结
 

@@ -66,7 +66,6 @@ tracer = trace.get_tracer(__name__)
 
 以下是创建顶层追踪点的方法：
 
-![](img/f4f9da6224777a136e952f7b001aec63_1.png)
 
 ```python
 @tracer.start_as_current_span("agent_run", kind=openai.SpanKind.AGENT)

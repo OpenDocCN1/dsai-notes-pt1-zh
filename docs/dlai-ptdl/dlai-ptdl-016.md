@@ -16,7 +16,6 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 接着，创建模型并将其移动到选定的设备上。请记住，模型和数据必须位于同一设备上，否则训练过程中会出现错误。
 
-![](img/f14821c45ded90d5ed775d2592c6400e_1.png)
 
 ```python
 model = YourNeuralNetwork()

@@ -42,7 +42,6 @@ print(pst.stem('having'))
 words_to_stem = ['give', 'giving', 'given', 'gave']
 ```
 
-![](img/055ef857414a0be3de3fa1be79472a08_2.png)
 
 这行代码定义了一个待提取词干的单词列表。
 
@@ -80,7 +79,6 @@ from nltk.stem import LancasterStemmer
 
 接着，我们初始化Lancaster词干提取器。
 
-![](img/055ef857414a0be3de3fa1be79472a08_4.png)
 
 ```python
 lst = LancasterStemmer()
@@ -102,11 +100,9 @@ lst = LancasterStemmer()
 
 这就是Lancaster词干提取器的工作方式。
 
-![](img/055ef857414a0be3de3fa1be79472a08_6.png)
 
 ---
 
-![](img/055ef857414a0be3de3fa1be79472a08_7.png)
 
 ## Snowball词干提取器
 
@@ -114,7 +110,6 @@ lst = LancasterStemmer()
 
 首先，我们导入SnowballStemmer类。
 
-![](img/055ef857414a0be3de3fa1be79472a08_9.png)
 
 ```python
 from nltk.stem import SnowballStemmer
@@ -136,13 +131,10 @@ Snowball词干提取器支持多种语言。我们可以查看其支持的语言
 print(SnowballStemmer.languages)
 ```
 
-![](img/055ef857414a0be3de3fa1be79472a08_11.png)
 
-![](img/055ef857414a0be3de3fa1be79472a08_12.png)
 
 执行这行代码并打印，可以看到Snowball词干提取器支持多种语言，包括阿拉伯语、荷兰语、英语、法语、德语、意大利语、葡萄牙语、俄语、西班牙语、瑞典语等。每种语言都有针对其语言特点定制的词干提取规则和算法。
 
-![](img/055ef857414a0be3de3fa1be79472a08_13.png)
 
 Snowball词干提取器是一种支持多种语言（包括英语）的通用算法。通过指定目标语言，我们可以对该语言的文本数据进行词干提取，有助于文本分析和信息检索等自然语言处理任务。
 
@@ -158,7 +150,6 @@ print(spst.stem('having'))
 
 然后，我们对包含多个单词的列表进行词干提取。
 
-![](img/055ef857414a0be3de3fa1be79472a08_15.png)
 
 ```python
 for word in words_to_stem:

@@ -335,15 +335,12 @@ DeepSeek。DeepSeek 系列模型由 High-Flyer 发布。DeepSeek-LLM-7B [[70](ht
 
 模型在不同编程语言上的表现揭示了不同大语言模型（LLM）的有效性和稳健性。例如，GPT-4o-mini-0718和DeepSeek-Coder-V2-0724模型在所有语言中表现一致，突出显示了它们在处理多样化任务时的稳健性。相比之下，某些LLM在不同编程语言之间表现不一致。例如，DSCoder-6.7B-Ins在Java中表现优异，但在Python和C++中表现较差。这些发现突显了开发一个基准来评估在不同编程语言中调试效果的必要性，进一步支持了我们论文中构建DebugEval基准的动机。
 
-![参考标题](img/f1fbfbdd74f5acb63f2fa86ab9d087a6.png)
 
 (a) BUG定位.
 
-![参考标题](img/1cc2d06560170d76f6fca10e473953ec.png)
 
 (b) BUG识别.
 
-![参考标题](img/c2ef3b8ead27789c698d21db542fe4e9.png)
 
 (c) 代码审查.
 

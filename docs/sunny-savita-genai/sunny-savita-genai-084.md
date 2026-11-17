@@ -1,60 +1,34 @@
 生成式AI：P84：生成式与智能体AI实时问答
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_0.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_1.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_2.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_3.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_4.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_5.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_6.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_0.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_7.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_8.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_9.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_10.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_11.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_1.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_12.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_13.png)
 
 ![](img/b974c73401d01bddd9be3a87cd4be8b8_14.png)
 
 ![](img/b974c73401d01bddd9be3a87cd4b8_2.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_3.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_4.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_5.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_6.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_7.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_8.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_9.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_10.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_11.png)
 
-![](img/b974c73401d01bddd9be3a87cd4be8b8_12.png)
 
 ![](img/b974c73401d01bddd9be3a87cd4be8b8_13.png)
 

@@ -37,11 +37,9 @@ def get_completion(prompt, model="gpt-3.5-turbo"):
 
 ### 基础翻译
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_4.png)
 
 让我们从一个简单的例子开始。提示词要求将英文文本翻译成西班牙文。
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_6.png)
 
 ```python
 prompt = """
@@ -51,13 +49,10 @@ prompt = """
 response = get_completion(prompt)
 print(response)
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_8.png)
 
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_10.png)
 
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_12.png)
 
 ```
 
@@ -107,15 +102,12 @@ print(response)
 
 ---
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_14.png)
 
 ## 构建通用翻译器 🔄
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_16.png)
 
 假设我们负责一家跨国电子商务公司的IT支持，用户会用各种语言提交问题。我们需要一个通用翻译器来处理这些消息。
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_18.png)
 
 首先，我们创建一个包含多种语言用户消息的列表。
 
@@ -129,11 +121,9 @@ user_messages = [
 ]
 ```
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_20.png)
 
 接下来，我们循环处理每条消息，首先让模型识别语言，然后将其翻译成英语和韩语。
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_21.png)
 
 ```python
 for issue in user_messages:
@@ -154,21 +144,16 @@ for issue in user_messages:
     print("-" * 50)
 ```
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_23.png)
 
 通过这个循环，我们为每条消息获得了语言识别结果以及英、韩双语翻译，从而构建了一个简易的通用翻译器。你可以尝试在列表中添加更多语言进行测试。
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_24.png)
 
 ---
 
 ## 语气转换 ✍️
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_26.png)
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_27.png)
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_28.png)
 
 写作风格会根据目标受众而有所不同。例如，写给同事或教授的邮件与发给弟弟的短信在语气上会有明显差异。ChatGPT可以帮助生成不同语气的文本。
 
@@ -224,19 +209,15 @@ display(HTML(response))
 
 ## 拼写检查与语法校正 ✅
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_30.png)
 
 这是ChatGPT一个非常流行的用途，尤其适用于非母语写作者。它可以帮助纠正常见的语法和拼写错误。
 
 ### 基础校对
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_32.png)
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_33.png)
 
 我们首先创建一个包含一些错误句子的列表，然后让模型进行校对和纠正。
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_35.png)
 
 ```python
 texts = [
@@ -255,10 +236,8 @@ for text in texts:
     print(f"纠正后: {response}")
     print()
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_37.png)
 
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_39.png)
 
 ```
 模型能够成功纠正这些句子中的语法错误。
@@ -280,7 +259,6 @@ so I got to play with it myself before I gave it \
 to her.
 """
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_41.png)
 
 prompt = f"""
 针对以下产品评论：
@@ -290,11 +268,8 @@ prompt = f"""
 4. 面向高级读者。
 请以Markdown格式输出最终结果。
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_42.png)
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_43.png)
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_44.png)
 
 产品评论：```{review}```
 """
@@ -313,9 +288,7 @@ print(response)
 from redlines import Redlines
 from IPython.display import display, Markdown
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_48.png)
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_49.png)
 
 ![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_50.png)
 
@@ -327,13 +300,10 @@ display(Markdown(diff.output_markdown))
 
 ---
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_52.png)
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_54.png)
 
 ## 总结 📝
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_56.png)
 
 在本节课中，我们一起探索了大型语言模型在**转换任务**上的多种应用。我们学习了如何利用提示词引导模型完成：
 *   **翻译**：包括基础翻译、语言识别、多语言翻译以及区分正式与非正式语气。
@@ -341,7 +311,6 @@ display(Markdown(diff.output_markdown))
 *   **格式转换**：例如将JSON数据转换为HTML表格。
 *   **拼写与语法校正**：从基础纠错到结合特定风格（如APA）的高级润色。
 
-![](img/6792a7b5e0d0cf628d9bb69dcb94b26e_57.png)
 
 通过这些示例，我们可以看到，过去需要复杂编程才能实现的功能，现在通过精心设计的提示词和大型语言模型就能轻松完成。掌握这些转换技巧，能极大提升你在处理多语言内容、调整文本风格或格式化数据时的工作效率。
 

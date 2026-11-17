@@ -62,17 +62,14 @@ learn.fine_tune(4)
 
 模型训练完成后，我们可以使用 `ClassificationInterpretation` 类。
 
-![](img/db648937386866e30f85c95de73d0b35_1.png)
 
 ![](img/db648937386866e30f85c95de73d0b35_2.png)
 
 ![](img/db648937386866e30f85c95de73d0b35_4.png)
 
-![](img/db648937386866e30f85c95de73d0b35_6.png)
 
 ![](img/db648937386866e30f85c95de73d0b35_7.png)
 
-![](img/db648937386866e30f85c95de73d0b35_9.png)
 
 以下是分析模型错误的主要步骤：
 1.  **查看混淆矩阵**：了解模型在哪些类别间容易混淆。
@@ -95,7 +92,6 @@ learn.fine_tune(4)
     for idx in cleaner.delete(): (cleaner.fns[idx]).unlink()
     ```
 
-![](img/db648937386866e30f85c95de73d0b35_11.png)
 
 ![](img/db648937386866e30f85c95de73d0b35_13.png)
 
@@ -129,11 +125,8 @@ learn.fine_tune(4)
 
 在Kaggle或Google Colab等免费GPU平台上训练模型后，使用 `export` 方法保存模型。
 
-![](img/db648937386866e30f85c95de73d0b35_35.png)
 
-![](img/db648937386866e30f85c95de73d0b35_37.png)
 
-![](img/db648937386866e30f85c95de73d0b35_39.png)
 
 ```python
 learn.export(‘model.pkl’)
@@ -142,9 +135,7 @@ learn.export(‘model.pkl’)
 下载导出的 `model.pkl` 文件到本地。现在，我们可以在不需要GPU的本地环境中加载模型并进行预测。
 
 
-![](img/db648937386866e30f85c95de73d0b35_41.png)
 
-![](img/db648937386866e30f85c95de73d0b35_42.png)
 
 ```python
 # 在本地脚本或笔记本中
@@ -174,9 +165,7 @@ print(f‘Prediction: {pred}; Probability: {probs[pred_idx]:.04f}’)
 
 现在，我们将模型变成一个任何人都可以通过网页访问的应用程序。我们将使用Hugging Face Spaces（免费托管平台）和Gradio（快速创建UI的库）。
 
-![](img/db648937386866e30f85c95de73d0b35_54.png)
 
-![](img/db648937386866e30f85c95de73d0b35_55.png)
 
 ![](img/db648937386866e30f85c95de73d0b35_57.png)
 
@@ -205,19 +194,14 @@ print(f‘Prediction: {pred}; Probability: {probs[pred_idx]:.04f}’)
     ```
 3.  **推送代码到Space**：将 `model.pkl` 和 `app.py` 文件推送到Git仓库。Hugging Face会自动构建并部署你的应用。几分钟后，你就获得了一个可公开访问的URL。
 
-![](img/db648937386866e30f85c95de73d0b35_60.png)
 
 ![](img/db648937386866e30f85c95de73d0b35_62.png)
 
-![](img/db648937386866e30f85c95de73d0b35_64.png)
 
-![](img/db648937386866e30f85c95de73d0b35_65.png)
 
 ---
 
-![](img/db648937386866e30f85c95de73d0b35_67.png)
 
-![](img/db648937386866e30f85c95de73d0b35_69.png)
 
 ![](img/db648937386866e30f85c95de73d0b35_71.png)
 
@@ -227,7 +211,6 @@ print(f‘Prediction: {pred}; Probability: {probs[pred_idx]:.04f}’)
 
 ![](img/db648937386866e30f85c95de73d0b35_75.png)
 
-![](img/db648937386866e30f85c95de73d0b35_77.png)
 
 ![](img/db648937386866e30f85c95de73d0b35_79.png)
 
@@ -264,11 +247,8 @@ query(formData).then((response) => {
 });
 ```
 
-![](img/db648937386866e30f85c95de73d0b35_87.png)
 
-![](img/db648937386866e30f85c95de73d0b35_89.png)
 
-![](img/db648937386866e30f85c95de73d0b35_91.png)
 
 你可以用简单的HTML和JavaScript编写前端，并使用GitHub Pages（配合FastPages模板可以简化流程）免费托管这个静态网站。这样，你就拥有了一个完全独立、界面自定义的深度学习应用。
 

@@ -42,9 +42,7 @@ IDF的计算公式为：
 ![](img/b88ac1418bb1dd4486f344863b616131_3.png)
 
 
-![](img/b88ac1418bb1dd4486f344863b616131_5.png)
 
-![](img/b88ac1418bb1dd4486f344863b616131_6.png)
 
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -71,13 +69,9 @@ print(vectorizer.get_feature_names_out())
 
 为了单独查看IDF值，我们可以访问向量化器的`idf_`属性。
 
-![](img/b88ac1418bb1dd4486f344863b616131_8.png)
 
-![](img/b88ac1418bb1dd4486f344863b616131_9.png)
 
-![](img/b88ac1418bb1dd4486f344863b616131_10.png)
 
-![](img/b88ac1418bb1dd4486f344863b616131_11.png)
 
 ```python
 # 第一部分 获取并打印每个词语的IDF值

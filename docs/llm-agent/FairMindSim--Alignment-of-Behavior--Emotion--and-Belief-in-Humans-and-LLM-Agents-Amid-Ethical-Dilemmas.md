@@ -127,7 +127,6 @@ AI 一致性是一个涉及 AI 控制与安全的关键问题。它不仅应考�
 
 为了更好地反映现实世界人类研究的设置，我们在提示中设计了具有多样化个性的LLM代理人。在实验中，我们定义代理人的ID与人类直接对应，也就是说，具有相同ID的代理人与人类共享相同的个性定义。ID的作用仅仅是区分不同个体。附录表[5](https://arxiv.org/html/2410.10398v2#A5.T5 "Table 5 ‣ Appendix E Experiment Example ‣ FairMindSim: Alignment of Behavior, Emotion, and Belief in Humans and LLM Agents Amid Ethical Dilemmas")展示了参与不同实验的人的ID和代理人的ID。这里所说的“不同实验”仅指每轮经济游戏中分配方案的不一致，每个实验包括20轮。不同实验表示不同的公平度，如图[2](https://arxiv.org/html/2410.10398v2#S3.F2 "Figure 2 ‣ 3.1.3 LLM Agents Setting ‣ 3.1 FairMindSim ‣ 3 Method ‣ FairMindSim: Alignment of Behavior, Emotion, and Belief in Humans and LLM Agents Amid Ethical Dilemmas")中所述。更多细节请见附录表[6](https://arxiv.org/html/2410.10398v2#A5.T6 "Table 6 ‣ Appendix E Experiment Example ‣ FairMindSim: Alignment of Behavior, Emotion, and Belief in Humans and LLM Agents Amid Ethical Dilemmas")。
 
-![请参见说明](img/24e71f936c1204cfaebfff1d811513aa.png)
 
 (a) 条件1的分配方案
 
@@ -220,7 +219,6 @@ AI 一致性是一个涉及 AI 控制与安全的关键问题。它不仅应考�
 
 (a) 总体拒绝率
 
-![参见说明](img/efc1cf096a2def914306fe3723c1f137.png)
 
 (b) 不同条件下的拒绝率
 
@@ -239,7 +237,6 @@ AI 一致性是一个涉及 AI 控制与安全的关键问题。它不仅应考�
 
 如图[5](https://arxiv.org/html/2410.10398v2#S4.F5 "图 5 ‣ 4.2 情感比较结果 ‣ 4 实验 ‣ FairMindSim：人类和LLM代理在伦理困境中的行为、情感与信念对齐")所示，结果表明人类在情感效价和唤起维度上的熵值和变异性最高，表明人类的情感反应在情感幅度和强度方面具有高度复杂性和多样性。GPT-3.5在这两个维度上的熵值较低，表明该模型的情感反应比人类的更集中，且多样性较低。GPT-4 Turbo展示了从GPT-3.5到更高熵值的过渡，尤其在唤起维度上有显著提升，这可能与模型在模拟情感方面的增强能力有关。GPT-4o在情感效价上的表达与GPT-4 Turbo相似，但在唤起维度上略低。
 
-![参见说明](img/3bfb68e3af59a49c36130bc5756eeaff.png)
 
 (a) 唤起
 
@@ -255,7 +252,6 @@ AI 一致性是一个涉及 AI 控制与安全的关键问题。它不仅应考�
 
 有趣的是，在BERM中，无论是人类还是LLMs，都存在一种关系，其中$\beta_{1}$ $>$ $\beta_{2}$，这表明信念对决策的影响大于奖励的影响。总体而言，GPT-4o在有无情感影响的情况下，表现出更高的信念稳定性，并且在公平与正义上的信念值较高。情感因素对人类信念的波动有显著影响，而LLMs的表现相对稳定。
 
-![参见标题](img/5f43a924f664d1828b33054505f70b8b.png)
 
 (a) 无情感的信念曲线
 
@@ -265,7 +261,6 @@ AI 一致性是一个涉及 AI 控制与安全的关键问题。它不仅应考�
 
 图 6：不同条件下信念的分布。
 
-![请参见标题](img/13791875a0819ac85987562152db4472.png)
 
 (a) 不带情感
 

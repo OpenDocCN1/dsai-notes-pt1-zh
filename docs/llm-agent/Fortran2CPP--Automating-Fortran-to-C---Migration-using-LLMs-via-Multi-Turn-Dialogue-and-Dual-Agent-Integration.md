@@ -364,7 +364,6 @@ LLMs 在高性能计算（HPC）（Chen 等，[2023b](https://arxiv.org/html/241
 
 ### A.1 Fortran-CPP 数据分析
 
-![请参阅说明](img/f691b6033dd5f96c18000c3f0de42a79.png)
 
 (a) C++ 源文件行数分布。
 
@@ -374,17 +373,14 @@ LLMs 在高性能计算（HPC）（Chen 等，[2023b](https://arxiv.org/html/241
 
 图3：C++ 和 Fortran 源文件行数分布比较。
 
-![请参阅说明](img/4957644f837f16c54cc263e5dd343030.png)
 
 (a) Fortran 关键字直方图。
 
-![请参阅说明](img/4e09402dd4183d52904854d8abe052f6.png)
 
 (b) C++ 关键字直方图
 
 图4：C++ 和 Fortran 关键字直方图比较。
 
-![请参阅说明](img/2d1ca7bf136e5f53369538f9373767ab.png)
 
 (a) Fortran 前20个关键字直方图。
 

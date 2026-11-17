@@ -62,7 +62,6 @@ def to_markdown(text):
 
 ![](img/b73ec43354818ef51294bff8b60f2c7c_6.png)
 
-![](img/b73ec43354818ef51294bff8b60f2c7c_7.png)
 
 ![](img/b73ec43354818ef51294bff8b60f2c7c_8.png)
 
@@ -70,7 +69,6 @@ def to_markdown(text):
 
 ![](img/b73ec43354818ef51294bff8b60f2c7c_9.png)
 
-![](img/b73ec43354818ef51294bff8b60f2c7c_10.png)
 
 在开始调用API之前，需要先使用保存的密钥配置生成式AI库，并初始化指定的模型。
 

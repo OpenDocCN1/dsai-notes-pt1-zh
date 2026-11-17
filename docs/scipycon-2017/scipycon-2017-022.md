@@ -8,41 +8,29 @@
 
 大家好。我是Maxim Belkin，今天将由我来教授这个教程。
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_1.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_3.png)
 
 这个教程遵循软件工匠（Software Carpentry）的标准，旨在让大家通过亲手实践来学习。通常，这类研讨会会有很多助教，但今天我们只有一两位助教，Heather Rose会尽力为大家提供帮助。
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_5.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_7.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_9.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_11.png)
 
 由于我们现场有超过70位学员，而通常软件工匠的标准是每位助教对应10-15位学员，这对我们来说是一个挑战。因此，我希望大家能互相帮助，共同学习。
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_13.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_15.png)
 
 为了了解大家的基础，我创建了一个Slack频道用于互动和投票。请大家加入，以便我能更好地掌握大家的学习进度和遇到的问题。
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_17.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_19.png)
 
 ---
 
 ## 第一部分：为什么需要Shell？ 💻
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_21.png)
 
 在开始Python学习之前，我们需要掌握一些命令行（Shell）的基础知识。虽然现代操作系统都有图形用户界面（GUI），但在处理大量科学数据文件时，命令行提供了更高效、可扩展的操作方式。
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_23.png)
 
 命令行界面（CLI）允许我们通过输入命令来与计算机交互，这与图形用户界面（GUI）形成对比。例如，当你有数百万个数据文件时，在图形界面中滚动查找特定文件会非常困难，而使用命令行工具则可以快速定位和处理。
 
@@ -54,7 +42,6 @@
 
 你可以通过输入`PS1='$ '`来简化提示符，这只改变显示，不影响系统。
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_25.png)
 
 要查看当前所在目录，使用`pwd`命令（Print Working Directory）。
 
@@ -148,17 +135,13 @@ rm -i results.dat
 
 首先，我们需要启动Python。在终端中输入`python`或`python3`（如果你安装了Anaconda Python 3）。你应该会看到类似`>>>`的提示符，这表明你已进入Python交互式解释器。
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_27.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_29.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_31.png)
 
 ---
 
 ### 基本数据类型
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_33.png)
 
 Python支持多种基本数据类型：
 
@@ -174,25 +157,16 @@ Python支持多种基本数据类型：
 
 ### 变量和赋值
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_35.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_37.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_39.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_40.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_42.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_43.png)
 
 使用等号`=`可以将值赋给变量：
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_45.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_46.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_48.png)
 
 ```python
 a = 1
@@ -293,13 +267,10 @@ conversions['yards'] = 0.9144
 
 ---
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_50.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_52.png)
 
 ### 函数（Functions）
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_54.png)
 
 函数是可重用的代码块。使用`def`关键字定义函数：
 
@@ -310,23 +281,17 @@ def multiply(x, y):
     return result
 ```
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_56.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_57.png)
 
 函数可以包含文档字符串（docstring），用于说明函数的功能。可以使用`help()`函数或`?`（在Jupyter中）查看文档字符串。
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_59.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_60.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_62.png)
 
 ---
 
 ## 第三部分：使用NumPy和Matplotlib进行数据分析 📊
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_64.png)
 
 上一节我们学习了Python的核心语法，本节我们将利用NumPy和Matplotlib这两个强大的库来处理和可视化科学数据。
 
@@ -411,13 +376,10 @@ plt.show()
 
 ## 总结 🎯
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_66.png)
 
 在本课程中，我们一起学习了：
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_68.png)
 
-![](img/f42857e0a4fd472d9d6acd4cddc2000b_69.png)
 
 1.  **Shell基础**：包括导航文件系统、操作文件和目录、使用通配符、重定向和管道，这些是高效管理数据文件的必备技能。
 2.  **Python核心概念**：包括变量、基本数据类型（整数、浮点数、字符串、布尔值）、数据结构（列表、元组、字典）以及如何定义和调用函数。

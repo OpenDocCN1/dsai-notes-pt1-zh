@@ -31,7 +31,6 @@
 
 在PyCharm安装的同时，我们启动Anaconda的安装程序。
 
-![](img/961e9148653ced06df52df4cedcab3c7_5.png)
 
 以下是安装步骤：
 
@@ -39,7 +38,6 @@
 2.  确保不覆盖任何旧版本，以避免冲突。
 3.  完成安装后，我们可以在开始菜单中找到Anaconda Navigator和Anaconda Prompt。
 
-![](img/961e9148653ced06df52df4cedcab3c7_7.png)
 
 至此，PyCharm和Anaconda都已安装完毕。接下来，我们将学习如何使用它们。
 

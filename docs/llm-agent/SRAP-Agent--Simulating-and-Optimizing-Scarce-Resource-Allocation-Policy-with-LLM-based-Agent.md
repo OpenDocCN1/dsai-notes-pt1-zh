@@ -446,31 +446,24 @@ SRAP-Agent 中的 LLMs 并非针对政策执行模拟进行定制。本研究不
 
 根据方程[2](https://arxiv.org/html/2410.14152v1#S3.E2 "In Decision-Making Behavior Simulation ‣ 3.2 LLM Agent-based Participant Simulation ‣ 3 SRAP-Agent ‣ SRAP-Agent: Simulating and Optimizing Scarce Resource Allocation Policy with LLM-based Agent")，$p_{j}$ 通过函数 $D$ 从资源子集 $V(p_{j})$ 中选择资源。在该框架中，$D$ 的过程包含四个不同的阶段：（1）选择房屋社区；（2）根据特定房屋属性（主要包括朝向、生活面积、租金等）选择房屋类型；（3）选择所需房屋。在房屋选择过程之后，系统通过向$p_{i}$发送关于所选房屋 $r_{i}$ 的未公开信息，来模拟现实世界的看房体验。随后，$p_{i}$ 可以自由地向其他人广播信息，这些信息可能包括他们对选择过程的记忆、未公开的信息以及他们记忆中的内容。
 
-![参见说明文字](img/f8e2522928856c98d4cdcdd0a777d30a.png)
 
 (a) $\{V\}$：租金权重
 
-![参考说明文字](img/1058564a38bb32698c9c43818f0709fa.png)
 
 (b) $\{NV\}$: 租金权重
 
-![参考说明文字](img/5bdee03ce9a6275b65ea46005f3fbfbd.png)
 
 (c) $\{V\}$: 尺寸权重
 
-![参考说明文字](img/c63a199099218eeb241c58356da34554.png)
 
 (d) $\{NV\}$: 尺寸权重
 
-![参考说明文字](img/6e9d6d6f55b93fe3961a362182a99a26.png)
 
 (e) $\{V\}$: 朝向权重
 
-![参考说明文字](img/bbaccafcfa0369f845dcbc43d6d8b93e.png)
 
 (f) $\{NV\}$: 朝向权重
 
-![参考说明文字](img/7d132880ac0ea0a9d84dc7b783cfd1f7.png)
 
 (g) $\{V\}$: 楼层权重
 

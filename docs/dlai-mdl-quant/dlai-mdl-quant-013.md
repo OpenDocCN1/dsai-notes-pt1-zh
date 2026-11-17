@@ -10,13 +10,10 @@
 
 ## 步骤一：在大实例上量化并上传模型
 
-![](img/63fbdb15855afd369b0191026eadec20_1.png)
 
-![](img/63fbdb15855afd369b0191026eadec20_2.png)
 
 首先，我们假设处在一个拥有足够RAM的大实例中，可以在此量化模型。以下是为演示目的加载一个小模型（如OPT-125M）并进行量化的代码示例。
 
-![](img/63fbdb15855afd369b0191026eadec20_4.png)
 
 ```python
 # 加载原始模型
@@ -38,9 +35,7 @@ torch.save(quant_state_dict, "opt125m_quantized.pt")
 
 接下来，使用Hugging Face Hub库的工具方法将这些量化权重推送到Hub上。
 
-![](img/63fbdb15855afd369b0191026eadec20_6.png)
 
-![](img/63fbdb15855afd369b0191026eadec20_7.png)
 
 以下是使用API的示例代码：
 
@@ -60,9 +55,7 @@ api.upload_file(
 
 这样，你就在拥有GPU或大内存CPU的大实例上量化了模型，并将其推送到了Hugging Face Hub。
 
-![](img/63fbdb15855afd369b0191026eadec20_9.png)
 
-![](img/63fbdb15855afd369b0191026eadec20_10.png)
 
 ## 步骤二：在本地机器上加载量化模型
 
@@ -80,7 +73,6 @@ api.upload_file(
 首先，加载模型配置以获取架构细节，然后在 `torch.device(‘meta’)` 的上下文管理器中初始化模型。
 
 
-![](img/63fbdb15855afd369b0191026eadec20_12.png)
 
 ```python
 from transformers import AutoConfig
@@ -92,11 +84,8 @@ with torch.device('meta'):
 
 此时，如果尝试打印模型参数，你会看到类似下面的输出：
 
-![](img/63fbdb15855afd369b0191026eadec20_14.png)
 
-![](img/63fbdb15855afd369b0191026eadec20_15.png)
 
-![](img/63fbdb15855afd369b0191026eadec20_16.png)
 
 ```
 Parameter containing:
@@ -105,13 +94,10 @@ tensor(..., device='meta', dtype=torch.float32)
 
 所有参数都是未初始化的元张量（metatensors），不占用任何RAM。你拥有了关于模型架构的所有信息（骨架），唯独没有权重。
 
-![](img/63fbdb15855afd369b0191026eadec20_18.png)
 
-![](img/63fbdb15855afd369b0191026eadec20_19.png)
 
 接着，我们将线性层替换为量化层（注意，这里不是调用量化函数，而是替换层类型）。
 
-![](img/63fbdb15855afd369b0191026eadec20_20.png)
 
 ```python
 from bitsandbytes.nn import Linear8bitLt
@@ -132,9 +118,7 @@ model = replace_linear_with_quant(model)
 现在，下一步是加载量化状态字典。我们同样使用Hugging Face Hub库来下载文件。
 
 
-![](img/63fbdb15855afd369b0191026eadec20_22.png)
 
-![](img/63fbdb15855afd369b0191026eadec20_23.png)
 
 ```python
 from huggingface_hub import hf_hub_download
@@ -148,15 +132,12 @@ quant_state_dict = torch.load(model_path, map_location='cpu')
 
 由于模型加载在meta device上，我们需要以特定方式加载状态字典。
 
-![](img/63fbdb15855afd369b0191026eadec20_25.png)
 
-![](img/63fbdb15855afd369b0191026eadec20_26.png)
 
 ```python
 model.load_state_dict(quant_state_dict, strict=True, assign=True)
 ```
 
-![](img/63fbdb15855afd369b0191026eadec20_28.png)
 
 如果看到“All keys matched successfully”的提示，说明模型已成功加载，准备就绪。
 
@@ -175,7 +156,6 @@ print(tokenizer.decode(outputs[0]))
 
 本节课中，我们一起学习了一种高效的模型量化部署工作流。我们利用大机器完成量化，将权重上传至Hugging Face Hub，然后在本地通过 **PyTorch meta device** 加载模型骨架并注入量化权重，从而实现了低内存消耗的模型加载。
 
-![](img/63fbdb15855afd369b0191026eadec20_30.png)
 
 ![](img/63fbdb15855afd369b0191026eadec20_31.png)
 

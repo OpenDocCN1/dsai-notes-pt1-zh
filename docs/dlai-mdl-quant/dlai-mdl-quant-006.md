@@ -1,6 +1,5 @@
 # 006：更细粒度带来更高精度
 
-![](img/04e505da2a72aaf16baeee85ef146cdb_0.png)
 
 ## 概述
 在本节课中，我们将要学习量化粒度对模型精度的影响。我们将了解到，更细的量化粒度可以带来更高的精度，但也会占用更多内存。我们将通过一个简单的例子，回顾对称量化的过程，并比较不同粒度下的量化误差。
@@ -20,11 +19,9 @@
 quantized_tensor, scale = linear_q_symmetric(test_tensor)
 ```
 
-![](img/04e505da2a72aaf16baeee85ef146cdb_2.png)
 
 我们将得到量化后的张量 `quantized_tensor` 和缩放因子 `scale`。这个 `linear_q_symmetric` 函数，我们只需要传入测试张量 `test_tensor`。
 
-![](img/04e505da2a72aaf16baeee85ef146cdb_3.png)
 
 为了进行总结，你还需要将其反量化。我们将使用上一个实验中的 `linear_dequantization` 函数。
 
@@ -34,7 +31,6 @@ dequantized_tensor = linear_dequantization(quantized_tensor, scale, zero_point=0
 
 我们需要传入量化张量 `quantized_tensor`、缩放因子 `scale` 和零点 `zero_point`。但如你所记，对于对称量化，零点等于0。
 
-![](img/04e505da2a72aaf16baeee85ef146cdb_5.png)
 
 现在我们有了绘制总结所需的一切。
 

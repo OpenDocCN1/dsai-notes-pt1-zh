@@ -24,7 +24,6 @@
 
 在本篇文章中，我们将讲解到以下内容：
 
-![](img/ec7586837d66581df599ff6cfc943777.png)
 
 *   问题抽象与理解
 *   数据准备与处理(预处理、特征提取、特征工程等)
@@ -34,7 +33,6 @@
 
 我们会覆盖到的机器学习算法包括：KNN、朴素贝叶斯、逻辑回归、SVM、决策树、随机森林、感知机、前馈神经网络、卷积神经网络。
 
-![](img/ffee9e0b01d22edd61016a9fe51dfee5.png)
 
 # 1.环境准备
 
@@ -70,7 +68,6 @@ $ pip install --upgrade imutils
 
 第一个数据集是 iris(鸢尾花)数据集，它是一个入门级数据集。整个数据集都是数值型的数据，是一个结构化的表格数据，每一行代表一个样本，然后每一列就是不同的属性。
 
-![](img/dc4af255b74190591a66a649d511258f.png)
 
 这个数据集主要是收集了三种不同的鸢尾花的数据，分别为：
 
@@ -95,13 +92,11 @@ $ pip install --upgrade imutils
 *   森林(Forest)：328
 *   高速公路(Highway)：260
 
-![](img/ec68838d5faf1a7f11d96d559c521b10.png)
 
 # 3.机器学习应用步骤
 
 我们在不同场景下应用机器学习算法，都有大致的步骤，比如下面是一个典型的机器学习应用流程：
 
-![](img/9d57a32de0db151ae57be8dd6d698a96.png)
 
 当然，并不是其中的每一步都是必须的，我们也可能会调整其中某些步骤中的细节。
 
@@ -120,7 +115,6 @@ $ pip install --upgrade imutils
 
 数据准备与处理，包括数据预处理以及特征工程了。一般这一步，包括了加载数据、检查数据、探索性数据分析(EDA)、数据预处理，进而决定需要做的特征提取或者特征工程。
 
-![](img/2641ae0abe5632414190fe6599e48a59.png)
 
 特征提取是应用某种算法通过某种方式来量化数据的过程。比如，对于图像数据，我们可以采用计算直方图的方法来统计图像中像素强度的分布，通过这种方式，我们就得到描述图像颜色的特征。
 
@@ -143,7 +137,6 @@ $ pip install --upgrade imutils
 
 下图为 [**scikit-learn 工具库**](http://www.showmeai.tech/article-detail/108) 官方给的一个模型选择思路参考：
 
-![](img/bb251baa23ab6a2c88999a765a194ebd.png)
 
 # 4.构建机器学习流程并实验分析
 
@@ -225,7 +218,6 @@ print(classification_report(testY, predictions, target_names=dataset.target_name
 
 ## 4.2 图像数据建模
 
-![](img/fc70bc75f0288a15467f9ba258c1ada7.png)
 
 类似的过程对三场景图像数据集构建代码`image_classifier.py`：
 
@@ -380,7 +372,6 @@ print(classification_report(testY, predictions, target_names=le.classes_))
 
 K-Nearest Neighbors 分类器最简单的分类算法之一。该算法依赖于特征向量之间的距离。简单地说，KNN 算法通过在 k 个最接近的样本中最多的类别来对未知数据点进行分类。关于 KNN 的详细讲解可以阅读[ShowMeAI](http://www.showmeai.tech/)的文章 [**图解机器学习 | KNN 算法及其应用**](http://www.showmeai.tech/article-detail/187)。
 
-![](img/f18c7c0b31ab9ad816b6574656d64dc3.png)
 
 这里我们先运行下`image_classifier.py`，调用默认的模型`knn`，看下`KNN`在`iris`数据集上的实验结果，如下所示：
 
@@ -428,7 +419,6 @@ ps：实际上，运行这个算法，不同次数会有不同的结果，其主
 
 接着是朴素贝叶斯算法，关于朴素贝叶斯算法的详细讲解可以阅读[ShowMeAI](http://www.showmeai.tech/)的文章 [**图解机器学习 | 朴素贝叶斯算法详解**](http://www.showmeai.tech/article-detail/189)。
 
-![](img/852bbba74bbea4ff578f6fde52dbf200.png)
 
 分别测试两个数据集，结果如下：
 
@@ -473,7 +463,6 @@ weighted avg       0.66      0.65      0.64       237
 
 接着是逻辑回归算法，关于逻辑回归算法的详细讲解可以阅读[ShowMeAI](http://www.showmeai.tech/)的文章 [**图解机器学习 | 逻辑回归算法详解**](http://www.showmeai.tech/article-detail/188)。
 
-![](img/2b2129a458e5dea9489985ddca6e8faa.png)
 
 分别测试两个数据集，结果如下：
 
@@ -515,7 +504,6 @@ weighted avg       0.69      0.70      0.69       237
 
 接着是 SVM 算法，关于 SVM 算法的详细讲解可以阅读[ShowMeAI](http://www.showmeai.tech/)的文章 [**图解机器学习 | 支持向量机模型详解**](http://www.showmeai.tech/article-detail/196)。
 
-![](img/d4e1826c6ba2c6d7ac0174cc8d83bbe0.png)
 
 分别测试两个数据集，结果如下：
 
@@ -556,7 +544,6 @@ $ !python image_classifier.py --model svm
 
 接着是决策树算法，关于决策树算法的详细讲解可以阅读[ShowMeAI](http://www.showmeai.tech/)的文章 [**图解机器学习 | 决策树模型详解**](http://www.showmeai.tech/article-detail/190)。
 
-![](img/339a81f9d597ca2cd7f3bab51831590a.png)
 
 分别测试两个数据集，结果如下：
 
@@ -598,7 +585,6 @@ weighted avg       0.74      0.74      0.74       237
 
 接着是随机森林算法，关于随机森林算法的详细讲解可以阅读[ShowMeAI](http://www.showmeai.tech/)的文章 [**图解机器学习 | 随机森林分类模型详解**](http://www.showmeai.tech/article-detail/191)。
 
-![](img/f999afab5c4250a4d218b7ae2e3e744e.png)
 
 分别测试两个数据集，结果如下：
 
@@ -640,7 +626,6 @@ weighted avg       0.84      0.83      0.83       237
 
 ### (7) 多层感知机
 
-![](img/868c340daada8b5548ed356fc32e78e2.png)
 
 最后是多层感知机算法，分别测试两个数据集，结果如下：
 
@@ -680,7 +665,6 @@ weighted avg       0.81      0.80      0.80       237
 
 ### (8) 神经网络
 
-![](img/eec977a5e219b81eb6c0e7f8351b3627.png)
 
 最后是实现深度学习的算法，也就是`nn_iris.py`和`basic_cnn.py`这两份代码。
 

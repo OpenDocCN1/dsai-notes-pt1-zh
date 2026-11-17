@@ -4,13 +4,11 @@ Welcome to our lab here on Ka meanss clustering， our first lab for Cose4。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_1.png)
 
 In this course， we're going to learn how to use K means using SK learn。 So throughout this lab。
 
  we will run a K means algorithm。
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_3.png)
 
 Understand what parameters are customizable within the algorithm and then know how to use the inertia curve that we discuss in lecture to determine the optimal number of clusters。
 
@@ -20,11 +18,8 @@ Now， a quick overview， K means is one of the most basic clustering algorithm
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_5.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_6.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_7.png)
 
 So first things first， we're going to import all the necessary libraries。 We bring in nuumpy， pandas。
 
@@ -36,43 +31,33 @@ So first things first， we're going to import all the necessary libraries。 We
 
  and we'll see that later on。😊。
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_9.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_10.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_11.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_12.png)
 
 We then going to just set a bunch of our parameters for our visualizations。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_14.png)
 
 And then， we are going to。
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_16.png)
 
 Get started with creating our first simple data set here。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_18.png)
 
 So in order to do this。We're going to first， create our function。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_20.png)
 
 Where we have， and I'll break this down step by step。 We have our color。
 
  and this is similar to thinking of it as a list。
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_22.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_23.png)
 
 Where our color equals B， R， G， C， M， K， we can think of it looping through of B for blue。
 
@@ -80,9 +65,7 @@ Where our color equals B， R， G， C， M， K， we can think of it looping 
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_25.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_26.png)
 
 We're going to call this PLT dot GcaA， which stands for get current axes and set the aspect equal to equal。
 
@@ -98,11 +81,8 @@ You see here just in quotes， has this string equal。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_28.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_29.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_30.png)
 
 We then say， if we have no clusters， so we're not clustering at all。
 
@@ -110,21 +90,17 @@ We then say， if we have no clusters， so we're not clustering at all。
 
  We're going to say all rows per column1。
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_32.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_33.png)
 
 All rows for column 2。 The color is going to be equal to just that first color。 So that be。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_35.png)
 
 Our alpha is going to be equal to 0。5， and our size equal to 20。Now， if we have。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_37.png)
 
 A number of clusters。 What we want to do is for each one of our different clusters， plot these out。
 
@@ -134,15 +110,12 @@ A number of clusters。 What we want to do is for each one of our different clus
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_39.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_40.png)
 
 Whatever that we're looping through the number of clusters here。 So for the first one。
 
  then the second one and so on。
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_42.png)
 
 Then we're going to say we want that first column， and then we're going to say for all those equal to I again。
 
@@ -156,7 +129,6 @@ And then we are also going to plot the actual cluster centers so we can see wher
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_44.png)
 
 So we just say cluster I related to the cluster that we are currently on。
 
@@ -170,11 +142,8 @@ So we just say cluster I related to the cluster that we are currently on。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_46.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_47.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_48.png)
 
 So to see what this looks like。We're going to crate our a here。In order to do that。
 
@@ -182,13 +151,11 @@ So to see what this looks like。We're going to crate our a here。In order to d
 
  and it's going to be 20 equally spaced points。
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_50.png)
 
 And we're saying we don't want the end point。 So it's going to be up to。
 
  but not including two times pi。
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_52.png)
 
 We're then going to append。Two different values together to create our x。
 
@@ -198,47 +165,38 @@ We're then going to append。Two different values together to create our x。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_54.png)
 
 And the second one's going to be the sign of our angle。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_56.png)
 
 And this0 is just to say that we want to append these across the zero axis so that we have them。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_58.png)
 
 1 alongside the other。 And then we transpose this so that we have two different columns。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_60.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_61.png)
 
 So I'm going to show you quickly。 First， I will run this。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_63.png)
 
 So and we display the cluster， and we see our perfect circle here。
 
 And just to take a quick look what X looks like。
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_65.png)
 
 X is just going to be these two different columns with one of them being the cosine of the angle and the other one being the signine of that angle。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_67.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_68.png)
 
 And now we have0 clusters because our default above was setting the number of clusters equal to 0。
 
@@ -246,9 +204,7 @@ And now we have0 clusters because our default above was setting the number of cl
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_70.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_71.png)
 
 Now we're going to group this data into two clusters to see what it looks like。
 
@@ -258,7 +214,6 @@ And to see how we come up with different results， depending on how we initiali
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_73.png)
 
 So we set number of clusters equal to 2。We say K means。
 
@@ -266,7 +221,6 @@ So we set number of clusters equal to 2。We say K means。
 
  And we're saying we only want to initialize once。
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_75.png)
 
 Generally， speaking， Kas couldn't initialize a number of times and then just choose the one with the best inertia。
 
@@ -280,13 +234,9 @@ Generally， speaking， Kas couldn't initialize a number of times and then just
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_77.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_78.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_79.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_80.png)
 
 Or to if well， I guess either way you're going to initialize a number of times， if you do more times。
 
@@ -294,13 +244,11 @@ Or to if well， I guess either way you're going to initialize a number of times
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_82.png)
 
 So we call a K means on those hyperparameters that we've passed。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_84.png)
 
 We call K M dot fit on x。 So now we have our Kmings model fit。
 
@@ -308,9 +256,7 @@ And then we can using that K means that we fit， be able to display the cluster
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_86.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_87.png)
 
 And you can see using that K M that we came up with。
 
@@ -318,7 +264,6 @@ And you can see using that K M that we came up with。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_89.png)
 
 So that's now available and we can create this scatter plot。So， we run this。And we see。
 
@@ -338,13 +283,11 @@ So we see that here and we have the x marking where those centroids actually lie
 
 Now setting the random state equal to 20 here。
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_91.png)
 
 We can see that it comes up with a very different clustering。
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_93.png)
 
 And if we think about it， coming back to lecture。Why are these clusters different when we run the K means twice？
 
@@ -360,14 +303,11 @@ And again， these also are going to be clusters that don't actually probably ex
 
 
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_95.png)
 
 So I'm going to pause here。And we will continue to figure out the optimum number of clusters and how we'd actually do that using Python code。
 
  All right， I'll see in a bit。
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_97.png)
 
-![](img/d4aff438c72d06a49a0aeac5e43e9970_98.png)
 
 ![](img/d4aff438c72d06a49a0aeac5e43e9970_99.png)

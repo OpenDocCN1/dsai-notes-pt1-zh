@@ -1,6 +1,5 @@
 # 001：让 Flux 模型运行得更快 - PyTorch 编译器系列
 
-![](img/dd8da4ad4f29aef01c7769499a635e63_0.png)
 
 ![](img/dd8da4ad4f29aef01c7769499a635e63_0.png)
 
@@ -227,6 +226,5 @@ wrapped_transformer = CUDAGraphWrapper(loaded_model)
 
 这套优化方案具有很强的通用性，可以作为加速其他基于 Transformer 的 PyTorch 模型的参考流程。核心在于识别计算瓶颈（通常是矩阵乘法和注意力），并系统性地应用数据类型优化、编译器融合、硬件专用内核以及部署期优化。
 
-![](img/dd8da4ad4f29aef01c7769499a635e63_2.png)
 
 ![](img/dd8da4ad4f29aef01c7769499a635e63_2.png)

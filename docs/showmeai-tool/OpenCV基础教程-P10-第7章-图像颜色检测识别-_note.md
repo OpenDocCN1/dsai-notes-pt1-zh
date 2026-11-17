@@ -4,7 +4,6 @@
 
 ![](img/07947795d9caed2cc20e4ef5ab09c052_1.png)
 
-![](img/07947795d9caed2cc20e4ef5ab09c052_0.png)
 
 在本节课中，我们将学习如何使用OpenCV检测和识别图像中的特定颜色。我们将通过将图像转换到HSV色彩空间，并使用滑块动态调整颜色范围来创建一个颜色掩码，最终提取出目标颜色的区域。
 
@@ -112,9 +111,7 @@ while True:
 
 `cv2.bitwise_and`函数对两幅图像进行按位与操作。这里，我们使用同一个原始图像，并传入我们创建的掩码。操作的结果是，只有在掩码中为白色的像素位置，原始图像的像素才会被保留在新图像中。
 
-![](img/07947795d9caed2cc20e4ef5ab09c052_3.png)
 
-![](img/07947795d9caed2cc20e4ef5ab09c052_5.png)
 
 ## 使用图像堆叠函数整理显示
 
@@ -157,20 +154,16 @@ def stackImages(scale, imgArray):
     return ver
 ```
 
-![](img/07947795d9caed2cc20e4ef5ab09c052_7.png)
 
-![](img/07947795d9caed2cc20e4ef5ab09c052_9.png)
 
 在主循环中，使用该函数堆叠图像：
 
-![](img/07947795d9caed2cc20e4ef5ab09c052_11.png)
 
 ```python
     img_stack = stackImages(0.6, ([img, img_hsv], [mask, img_result]))
     cv2.imshow('Stacked Images', img_stack)
 ```
 
-![](img/07947795d9caed2cc20e4ef5ab09c052_13.png)
 
 现在，所有图像都整齐地排列在一个窗口中，方便我们同时观察和调整。
 

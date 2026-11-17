@@ -413,7 +413,6 @@ $\pi^{*}$ 是我们目标的最优解（方程 [1](https://arxiv.org/html/2411.0
 
 其中，$d(s)$ 是状态的分布。选择使用公式[11](https://arxiv.org/html/2411.02337v2#A1.E11 "在 A.1 推导 ‣ 附录 A WebRL 中策略更新算法的详细信息 ‣ WebRL: 通过自我演化的在线课程强化学习训练 LLM Web 代理")而不是公式[13](https://arxiv.org/html/2411.02337v2#A1.E13 "在 A.1 推导 ‣ 附录 A WebRL 中策略更新算法的详细信息 ‣ WebRL: 通过自我演化的在线课程强化学习训练 LLM Web 代理")作为优化目标，可以通过以下方式解释：（1）公式[13](https://arxiv.org/html/2411.02337v2#A1.E13 "在 A.1 推导 ‣ 附录 A WebRL 中策略更新算法的详细信息 ‣ WebRL: 通过自我演化的在线课程强化学习训练 LLM Web 代理")对训练数据施加了更强的限制。具体来说，它要求训练数据符合$\pi_{\text{ref}}$的分布。
 
-![参见标题](img/7db89439f5e995ba9e26a7d6e5a537f3.png)
 
 图 9：使用公式[11](https://arxiv.org/html/2411.02337v2#A1.E11 "在 A.1 推导 ‣ 附录 A WebRL 中策略更新算法的详细信息 ‣ WebRL: 通过自我演化的在线课程强化学习训练 LLM Web 代理")和公式[13](https://arxiv.org/html/2411.02337v2#A1.E13 "在 A.1 推导 ‣ 附录 A WebRL 中策略更新算法的详细信息 ‣ WebRL: 通过自我演化的在线课程强化学习训练 LLM Web 代理")作为目标的对比。
 
@@ -746,7 +745,6 @@ WebArena-Lite 提供了 1,186 个训练样本，每个样本包含指令、轨�
 
 图 24：Gitlab 示例。
 
-![参见标题](img/bcb787d5b93aa6a192ae4455e1accbd0.png)
 
 图 25：MAP 示例。
 

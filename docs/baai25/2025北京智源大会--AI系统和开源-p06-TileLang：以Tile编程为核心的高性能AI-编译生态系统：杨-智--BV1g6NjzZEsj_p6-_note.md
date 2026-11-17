@@ -2,33 +2,22 @@
 
 在本节课中，我们将学习TileLang这一新兴的高性能AI编译生态系统的核心设计理念。TileLang旨在解决当前AI算子开发中面临的编程效率与硬件性能难以兼顾的挑战。
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_1.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_2.png)
 
 ## 为什么需要TileLang？
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_3.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_4.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_5.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_6.png)
 
 当前AI算子开发面临两大难题。一方面，新算法（如注意力机制、量化、稀疏化）需要深入考虑硬件体系结构，算法开发者不能再将硬件视为黑盒。另一方面，硬件本身（如GPU）变得越来越复杂，引入了张量核心（Tensor Core）和各类Tile级指令，使得编写底层硬件代码的难度剧增。
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_7.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_8.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_10.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_11.png)
 
 因此，开发者在编写算子时面临一个权衡。使用高级编程语言（如Triton）可以快速实现算法，但将硬件视为黑盒，在新算法上的性能问题日益严重。而直接编写CUDA或PTX代码虽然能获得极致性能，但开发周期过长，无法满足业界快速迭代模型的需求。
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_12.png)
 
 TileLang旨在提供一种新的折中方案。它允许用户以相对便捷的方式进行编程，同时在关键性能路径上向用户暴露可控的硬件细节，从而在保证编程便利性的同时，提升最终性能。
 
@@ -38,13 +27,10 @@ TileLang的核心设计理念是暴露一个称为**Tile虚拟机**的抽象层�
 *   **Tile任务**：代表需要执行的计算。
 *   **Tile硬件**：代表执行Tile任务的硬件抽象。
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_14.png)
 
 Tile任务的关键特性是**多级Tile抽象**。每一级Tile对应Tile硬件中的一个内存层级。相应地，Tile硬件也按照Tile的粒度来搬运和计算数据。
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_15.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_17.png)
 
 以GPU为例，这种映射非常直观：
 *   **全局内存** 层级操作的是**张量**。
@@ -53,35 +39,24 @@ Tile任务的关键特性是**多级Tile抽象**。每一级Tile对应Tile硬件
     *   **Warp级Tile**：可以直接使用Tensor Core进行计算。
     *   **线程级Tile**：可以映射到CUDA Core上执行。
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_19.png)
 
 有了Tile虚拟机，TileLang本质上就是提供一系列操控该虚拟机的API。
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_21.png)
 
 ## TileLang的关键API
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_23.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_24.png)
 
 以下是操控Tile虚拟机的几个关键API，它们构成了TileLang编程的基础。
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_25.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_26.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_27.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_29.png)
 
 ### Tile的声明与放置
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_30.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_32.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_34.png)
 
 首先，我们需要声明Tile并指定其所在的内存层级。
 
@@ -110,15 +85,10 @@ Tile任务的关键特性是**多级Tile抽象**。每一级Tile对应Tile硬件
 
 ## TileLang程序示例
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_36.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_37.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_38.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_39.png)
 
-![](img/d1ac29ee5561883b050d1aafc85818ad_40.png)
 
 为了更直观地理解，我们来看一个简单的矩阵乘法在Tile虚拟机上的执行流程。
 

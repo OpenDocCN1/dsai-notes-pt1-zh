@@ -2,13 +2,10 @@
 
 在本节课中，我们将要学习SQL中的**内部连接**。我们将了解什么是内部连接，何时使用它，并掌握其基本语法。通过学习，你将能够描述内部连接的工作原理，并运用它从多个关联表中提取匹配的数据。
 
-![](img/0ef554ab623642b70ac76720b99eaac9_1.png)
 
 ---
 
-![](img/0ef554ab623642b70ac76720b99eaac9_2.png)
 
-![](img/0ef554ab623642b70ac76720b99eaac9_3.png)
 
 ## 什么是连接操作？
 
@@ -20,19 +17,14 @@
 
 ---
 
-![](img/0ef554ab623642b70ac76720b99eaac9_5.png)
 
-![](img/0ef554ab623642b70ac76720b99eaac9_6.png)
 
 ## 内部连接的语法
 
-![](img/0ef554ab623642b70ac76720b99eaac9_7.png)
 
-![](img/0ef554ab623642b70ac76720b99eaac9_8.png)
 
 上一节我们介绍了连接操作的基本概念，本节中我们来看看内部连接的具体语法。
 
-![](img/0ef554ab623642b70ac76720b99eaac9_9.png)
 
 以下是一个内部连接SELECT语句的语法示例：
 
@@ -57,21 +49,15 @@ ON B.borrower_id = L.borrower_id;
 
 ---
 
-![](img/0ef554ab623642b70ac76720b99eaac9_11.png)
 
-![](img/0ef554ab623642b70ac76720b99eaac9_12.png)
 
 ## 结果集说明
 
-![](img/0ef554ab623642b70ac76720b99eaac9_13.png)
 
-![](img/0ef554ab623642b70ac76720b99eaac9_14.png)
 
 以下是内部连接查询的结果集特点：
 
-![](img/0ef554ab623642b70ac76720b99eaac9_15.png)
 
-![](img/0ef554ab623642b70ac76720b99eaac9_16.png)
 
 结果集仅显示两个表中具有相同`borrower_id`的行。
 
@@ -79,7 +65,6 @@ ON B.borrower_id = L.borrower_id;
 
 只有当`borrower_id`匹配时，相应的行才会被显示出来。
 
-![](img/0ef554ab623642b70ac76720b99eaac9_18.png)
 
 ---
 

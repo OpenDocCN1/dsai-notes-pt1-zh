@@ -403,9 +403,7 @@ Shao 等人[8]提出了一种技术，该技术通过这些稀疏的目的地位
 | b) NEAT |
 | ![参考标题](img/7e812c2a17e075895a32c9edc3e20d09.png) |
 | (c) TCP |
-| ![参考说明](img/6a112e3e2a0caee3f00229131c193b39.png) |
 | (d) LAV |
-| ![参考说明](img/b17323a3f2721171ba6af5bcf237a2cf.png) |
 | (e) UniAD |
 | ![参考说明](img/114fb18b8a661aec75251768f9e37b0d.png) |
 | (f) ST-P3 |
@@ -3393,7 +3391,6 @@ H-Divergence 框架 [101] 通过对抗性地同时学习领域分类器和检测
 | ![参见说明](img/7e482e7104608cf902e9dda39219152b.png) |
 | --- |
 | (a) InterFuser |
-| ![参见说明](img/2c722b6cf4caad6a3014c8f939ed3035.png) |
 | (b) KING 车道合并场景 |
 | ![参见说明](img/ca697c32435f144ff38b060d49603eb3.png) |
 | (c) KING 碰撞避免 |

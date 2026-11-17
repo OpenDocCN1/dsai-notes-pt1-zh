@@ -2,9 +2,7 @@
 
 ![](img/5f74b276ff6acfa27f19d9aee04d03d9_0.png)
 
-![](img/5f74b276ff6acfa27f19d9aee04d03d9_2.png)
 
-![](img/5f74b276ff6acfa27f19d9aee04d03d9_4.png)
 
 在本节课中，我们将学习如何为大语言模型定义和计算损失函数。这是训练模型使其预测更准确的关键一步。
 

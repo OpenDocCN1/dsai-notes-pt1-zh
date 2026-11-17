@@ -1,6 +1,5 @@
 # 003：LangChain表达式语言（LCEL）详解 🚀
 
-![](img/cfc189b4a524cfd9ef4def785f13990a_0.png)
 
 ![](img/cfc189b4a524cfd9ef4def785f13990a_2.png)
 
@@ -10,7 +9,6 @@
 
 LCEL和可运行协议（Runnable Protocol）是LangChain的核心新特性。它们定义了一套标准接口，允许我们以统一、灵活的方式组合各种组件，并原生支持异步、批处理、流式输出和故障回退等高级功能。
 
-![](img/cfc189b4a524cfd9ef4def785f13990a_4.png)
 
 ## 什么是LCEL与可运行协议？
 
@@ -176,9 +174,7 @@ LCEL的一个强大功能是可以轻松附加故障回退，不仅针对单个�
 
 让我们看一个例子：尝试让语言模型输出JSON。我们将故意使用一个旧版模型，它不太擅长输出JSON，然后为其设置回退到更擅长此任务的新模型。
 
-![](img/cfc189b4a524cfd9ef4def785f13990a_6.png)
 
-![](img/cfc189b4a524cfd9ef4def785f13990a_8.png)
 
 ```python
 from langchain.llms import OpenAI

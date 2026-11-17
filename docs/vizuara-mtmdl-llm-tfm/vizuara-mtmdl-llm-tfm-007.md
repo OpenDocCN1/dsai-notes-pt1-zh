@@ -72,7 +72,6 @@ Data-efficient Image Transformer在此基础上引入了额外的蒸馏令牌（
 
 ## 架构图示意
 
-![](img/87dfdb6cae0b813d77630435ac27c0f2_4.png)
 
 （注：此处应有一张展示Swin Transformer层级结构、窗口划分及移位机制的示意图。图中通常会显示特征图尺寸逐渐减小、通道数增加的金字塔结构，以及相邻层之间窗口的偏移。）
 

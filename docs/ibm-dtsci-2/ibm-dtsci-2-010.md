@@ -1,12 +1,10 @@
 # 010：商业数据科学工具
 
-![](img/c36d342e29a5b94d96a51b6f69980154_1.png)
 
 在本节课中，我们将学习企业环境中常用的商业数据科学工具。我们将探讨数据管理、集成、可视化、机器学习模型构建与部署，以及数据资产管理等关键任务所对应的商业解决方案。
 
 
 
-![](img/c36d342e29a5b94d96a51b6f69980154_3.png)
 
 上一节我们介绍了开源数据科学工具。本节中，我们来看看在企业项目中常见的商业选项。
 
@@ -23,9 +21,7 @@
 
 
 
-![](img/c36d342e29a5b94d96a51b6f69980154_5.png)
 
-![](img/c36d342e29a5b94d96a51b6f69980154_6.png)
 
 ## 🔄 数据集成工具
 
@@ -35,7 +31,6 @@
 *   Informatica PowerCenter
 *   IBM Infosphere DataStage
 
-![](img/c36d342e29a5b94d96a51b6f69980154_8.png)
 
 紧随其后的产品来自SAP、Oracle、SAS、Talend和Microsoft。这些工具通过图形界面支持ETL数据处理管道的设计和部署，并为大多数商业和开源目标信息系统提供连接器。
 
@@ -52,21 +47,16 @@
 *   Microsoft Power BI
 *   IBM Cognos Analytics
 
-![](img/c36d342e29a5b94d96a51b6f69980154_10.png)
 
-![](img/c36d342e29a5b94d96a51b6f69980154_11.png)
 
-![](img/c36d342e29a5b94d96a51b6f69980154_12.png)
 
 另一种可视化工具则面向数据科学家而非普通用户，例如探索数据表中不同列之间关系的问题。这类功能包含在Watson Studio Desktop中。
 
 
 
-![](img/c36d342e29a5b94d96a51b6f69980154_13.png)
 
 ## 🤖 机器学习建模工具
 
-![](img/c36d342e29a5b94d96a51b6f69980154_15.png)
 
 如果你想使用商业工具构建机器学习模型，可以考虑使用数据挖掘产品。这类产品中最突出的是：
 *   SPSS Modeler
@@ -78,7 +68,6 @@
 
 ## 🚀 模型部署
 
-![](img/c36d342e29a5b94d96a51b6f69980154_17.png)
 
 在商业软件中，模型部署与模型构建过程紧密集成。下图展示了SPSS协作与部署服务的示例，该服务用于部署由SPSS软件工具套件创建的任何类型的资产。其他供应商也使用类似的过程。
 
@@ -100,7 +89,6 @@
 *   Informatica Enterprise Data Governance
 *   IBM
 
-![](img/c36d342e29a5b94d96a51b6f69980154_19.png)
 
 IBM Infosphere Information Governance Catalog涵盖了以下功能：
 *   **数据字典**：便于发现数据资产。
@@ -112,27 +100,22 @@ IBM Infosphere Information Governance Catalog涵盖了以下功能：
 
 ## 💻 集成开发环境
 
-![](img/c36d342e29a5b94d96a51b6f69980154_21.png)
 
 Watson Studio是一个为数据科学家打造的完全集成的开发环境。它通常通过云平台使用，我们将在后续课程中详细讨论。它也有桌面版本可用。
 
 Watson Studio Desktop将Jupyter Notebook与图形化工具相结合，以最大化数据科学家的工作效率。
 
-![](img/c36d342e29a5b94d96a51b6f69980154_23.png)
 
 Watson Studio与Watson OpenScale一起，构成了一个覆盖完整数据科学生命周期以及我们之前讨论的所有任务的完全集成工具。我们将在下一课中详细讨论两者，但请记住，它们可以部署在本地数据中心，基于Kubernetes或Red Hat OpenShift运行。
 
 
 
-![](img/c36d342e29a5b94d96a51b6f69980154_24.png)
 
 另一个完全集成的商业工具例子是**H2O Driverless AI**，它也涵盖了完整的数据科学生命周期。
 
 
 
-![](img/c36d342e29a5b94d96a51b6f69980154_26.png)
 
-![](img/c36d342e29a5b94d96a51b6f69980154_27.png)
 
 ## 📝 总结
 

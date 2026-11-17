@@ -1,6 +1,5 @@
 # 018：W3_V2 练习
 
-![](img/00ab45f4cfc1b5ccc8817da57aa3d54d_0.png)
 
 ![](img/00ab45f4cfc1b5ccc8817da57aa3d54d_0.png)
 
@@ -48,7 +47,6 @@
 
 感谢参与，祝你练习愉快！😊
 
-![](img/00ab45f4cfc1b5ccc8817da57aa3d54d_2.png)
 
 ## ✨ 总结
 

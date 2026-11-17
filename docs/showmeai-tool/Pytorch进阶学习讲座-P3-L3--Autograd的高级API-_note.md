@@ -38,9 +38,7 @@
 
 这个新API主要包含两大部分。
 
-![](img/ae640e7b46aaf17bba8e02172f49117e_7.png)
 
-![](img/ae640e7b46aaf17bba8e02172f49117e_8.png)
 
 ### 一阶梯度计算
 
@@ -71,7 +69,6 @@
 再次以雅可比函数为例。现在你不需要从旧的代码中复制粘贴，可以直接从`torch.autograd.functional`导入。
 
 
-![](img/ae640e7b46aaf17bba8e02172f49117e_14.png)
 
 ```python
 import torch

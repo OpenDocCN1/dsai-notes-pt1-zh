@@ -1,6 +1,5 @@
 # 019：使用SQL清洗数据 🧹
 
-![](img/21f6d479da1fce1f0fdabbb142e51a96_0.png)
 
 ![](img/21f6d479da1fce1f0fdabbb142e51a96_0.png)
 
@@ -10,7 +9,6 @@
 
 
 
-![](img/21f6d479da1fce1f0fdabbb142e51a96_2.png)
 
 ![](img/21f6d479da1fce1f0fdabbb142e51a96_2.png)
 

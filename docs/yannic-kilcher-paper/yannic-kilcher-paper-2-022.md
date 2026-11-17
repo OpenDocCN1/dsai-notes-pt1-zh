@@ -1,58 +1,36 @@
 # 022：动态感知的无监督技能发现 🧠
 
-![](img/bbe75fccced54f07faf698943b720504_1.png)
 
-![](img/bbe75fccced54f07faf698943b720504_2.png)
 
-![](img/bbe75fccced54f07faf698943b720504_3.png)
 
 在本节课中，我们将要学习一篇名为《Dynamics-Aware Unsupervised Discovery of Skills》的论文。这篇论文提出了一种新颖的方法，让智能体在没有任何外部奖励指导的情况下，自主发现并学习一系列基础技能（如行走、跳跃），然后在测试阶段，通过组合这些已学技能来完成特定任务，而无需额外的训练。
 
-![](img/bbe75fccced54f07faf698943b720504_5.png)
 
-![](img/bbe75fccced54f07faf698943b720504_6.png)
 
-![](img/bbe75fccced54f07faf698943b720504_7.png)
 
-![](img/bbe75fccced54f07faf698943b720504_8.png)
 
-![](img/bbe75fccced54f07faf698943b720504_9.png)
 
-![](img/bbe75fccced54f07faf698943b720504_10.png)
 
 ## 论文核心思想概述
 
-![](img/bbe75fccced54f07faf698943b720504_11.png)
 
-![](img/bbe75fccced54f07faf698943b720504_12.png)
 
-![](img/bbe75fccced54f07faf698943b720504_13.png)
 
-![](img/bbe75fccced54f07faf698943b720504_15.png)
 
-![](img/bbe75fccced54f07faf698943b720504_16.png)
 
 上一节我们介绍了课程的基本信息，本节中我们来看看这篇论文要解决的核心问题。传统的强化学习通常需要环境提供明确的奖励信号来指导智能体学习。然而，这篇论文探索了一种无监督的技能发现方式。智能体在训练阶段不接收任何任务相关的奖励，而是自主探索并学习一系列有用的基础动作模式（即“技能”）。随后，在测试阶段，当给定一个具体目标（如走到某个检查点）时，智能体能够通过规划，组合运用这些已学技能来达成目标，整个过程无需针对新目标进行再训练。
 
-![](img/bbe75fccced54f07faf698943b720504_17.png)
 
 ## 方法详解：结合模型与无模型学习
 
-![](img/bbe75fccced54f07faf698943b720504_19.png)
 
-![](img/bbe75fccced54f07faf698943b720504_20.png)
 
-![](img/bbe75fccced54f07faf698943b720504_21.png)
 
-![](img/bbe75fccced54f07faf698943b720504_22.png)
 
 上一节我们了解了论文的目标，本节中我们来看看其实现方法的关键。论文的核心在于结合了**模型基础**和**无模型**两种强化学习范式的优点。
 
-![](img/bbe75fccced54f07faf698943b720504_23.png)
 
-![](img/bbe75fccced54f07faf698943b720504_25.png)
 
-![](img/bbe75fccced54f07faf698943b720504_26.png)
 
 ### 两种强化学习范式
 

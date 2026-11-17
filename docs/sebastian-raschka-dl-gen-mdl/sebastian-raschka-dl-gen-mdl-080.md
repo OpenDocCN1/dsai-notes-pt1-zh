@@ -1,8 +1,6 @@
 # 080：PyTorch中的Dropout 🧠
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_0.png)
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_2.png)
 
 在本节课中，我们将学习如何在PyTorch中实现Dropout。Dropout是一种在训练神经网络时防止过拟合的有效技术。我们将了解其核心概念“反向Dropout”，并通过代码示例展示如何在PyTorch模型中添加Dropout层。
 
@@ -25,7 +23,6 @@
 
 ## 在PyTorch中使用Dropout
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_4.png)
 
 理解了反向Dropout后，我们来看看如何在PyTorch模型中具体实现它。
 
@@ -65,14 +62,11 @@ class MultilayerPerceptron(nn.Module):
 
 ## 训练与评估模式切换 🔄
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_6.png)
 
 在PyTorch中使用Dropout时，一个至关重要的步骤是正确切换模型的模式。这通过 `model.train()` 和 `model.eval()` 方法实现。
 
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_8.png)
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_9.png)
 
 ```python
 model = MultilayerPerceptron(...)
@@ -95,7 +89,6 @@ with torch.no_grad():  # 同时关闭梯度计算以节省内存和计算
     # ... 计算准确率等指标
 ```
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_10.png)
 
 **模式的作用：**
 *   **`model.train()`**：告知模型处于训练模式。此时，`nn.Dropout` 层会按照设定的概率 `p` 随机丢弃神经元。
@@ -103,13 +96,9 @@ with torch.no_grad():  # 同时关闭梯度计算以节省内存和计算
 
 这是一个必须养成的好习惯，即使模型中没有Dropout层，明确指定模式也可以避免其他具有不同训练/测试行为的层（如BatchNorm）出现意外问题。
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_12.png)
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_13.png)
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_14.png)
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_15.png)
 
 ---
 
@@ -120,9 +109,7 @@ with torch.no_grad():  # 同时关闭梯度计算以节省内存和计算
 *   **无Dropout的模型**：训练后期，训练准确率持续上升，但验证准确率停滞甚至下降，出现了明显的过拟合现象（训练与验证准确率曲线间存在较大“间隙”）。
 *   **添加了50% Dropout的模型**：过拟合得到了有效抑制，训练与验证准确率曲线更加接近。但需要注意的是，测试集准确率可能略有下降（例如从97.5%降至96.5%），这可能是由于正则化强度过大，略微损害了模型的表示能力。
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_17.png)
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_18.png)
 
 基于以上实践，以下是一些使用Dropout的实用建议：
 
@@ -134,17 +121,13 @@ with torch.no_grad():  # 同时关闭梯度计算以节省内存和计算
 
 ---
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_20.png)
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_21.png)
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_23.png)
 
 ## 相关概念：DropConnect
 
 在了解了Dropout之后，你可能会想到一个相关的思路：既然可以随机丢弃激活值，那么是否可以随机丢弃网络中的**权重**呢？
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_25.png)
 
 这个想法已经被研究并命名为 **DropConnect**。你可以将其视为Dropout的一种泛化形式。在DropConnect中，随机被置零的是权重矩阵中的元素，而非激活值。
 
@@ -154,11 +137,9 @@ with torch.no_grad():  # 同时关闭梯度计算以节省内存和计算
 
 ---
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_27.png)
 
 ## 总结与延伸阅读
 
-![](img/98f8cf9813ad07874e8d0dd60e872dce_29.png)
 
 本节课中我们一起学习了如何在PyTorch中实现和使用Dropout。
 

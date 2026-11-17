@@ -6,9 +6,7 @@
 
 ## 🔍 查询语言
 
-![](img/e587b360f1d0cb4fc120d7ced8bfcebc_1.png)
 
-![](img/e587b360f1d0cb4fc120d7ced8bfcebc_2.png)
 
 查询语言主要用于访问和操作数据库中的数据。例如，**SQL**。
 

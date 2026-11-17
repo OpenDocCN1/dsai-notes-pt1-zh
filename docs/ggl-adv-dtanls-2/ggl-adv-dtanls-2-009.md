@@ -1,6 +1,5 @@
 # 009：变量与数据类型 📊
 
-![](img/a6adf6109a15146d6afa2ac45efe0c87_0.png)
 
 ![](img/a6adf6109a15146d6afa2ac45efe0c87_0.png)
 
@@ -99,7 +98,6 @@ age_difference = max_age_int - min_age
 print(age_difference)
 ```
 
-![](img/a6adf6109a15146d6afa2ac45efe0c87_2.png)
 
 ## 总结 📝
 

@@ -347,7 +347,6 @@ $\bullet$ Transformer: Transformer 块是在处理顺序数据学习任务中深
 
 (a) 同步 SGD
 
-![参见说明](img/557b3bbee3e96d946575eae6f3e52dba.png)
 
 (b) 异步 SGD
 

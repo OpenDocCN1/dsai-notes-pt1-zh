@@ -1,6 +1,5 @@
 # 011：总结
 
-![](img/5beec93375e3d08b1b7ba860c69e49b5_0.png)
 
 ![](img/5beec93375e3d08b1b7ba860c69e49b5_0.png)
 

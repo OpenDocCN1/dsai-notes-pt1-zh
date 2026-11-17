@@ -19,7 +19,6 @@ food_preferences_tommy = {
 }
 ```
 
-![](img/5f6d54b04b4ddbf2827a23be75cf7d88_1.png)
 
 这个字典包含四个键值对：
 *   `"dietary_restrictions"` 对应字符串 `"vegetarian"`。
@@ -36,7 +35,6 @@ print(food_preferences_tommy.values())
 
 ## 生成基础菜谱提示词
 
-![](img/5f6d54b04b4ddbf2827a23be75cf7d88_3.png)
 
 现在，如果我们想为Tommy推荐一个菜谱，可以使用一个提示词。我们将使用f-string来动态插入字典中的值。
 
@@ -50,7 +48,6 @@ Please provide a two-sentence description.
 """
 ```
 
-![](img/5f6d54b04b4ddbf2827a23be75cf7d88_5.png)
 
 在这个f-string中，我们使用方括号 `[]` 来查找字典中特定键对应的值。运行这段代码后，`prompt` 变量中的花括号内容会被替换为字典中相应的数据。
 
@@ -60,17 +57,14 @@ Please provide a two-sentence description.
 
 您可以暂停视频，尝试输入您自己喜欢的食材、饮食限制等，看看是否能得到您喜欢的结果。
 
-![](img/5f6d54b04b4ddbf2827a23be75cf7d88_7.png)
 
 ## 进一步定制提示词
 
 上一节我们介绍了如何利用字典中的基本信息生成菜谱。本节中，我们来看看如何结合更多数据来进一步定制提示词。
 
-![](img/5f6d54b04b4ddbf2827a23be75cf7d88_9.png)
 
 例如，Tommy告诉我们他的厨房香料快用完了，目前只有这四种：cumin（孜然）、turmeric（姜黄）、oregano（牛至）、paprika（红椒粉）。我们可以创建一个列表来存储这些可用的香料。
 
-![](img/5f6d54b04b4ddbf2827a23be75cf7d88_10.png)
 
 ```python
 available_spices = ["cumin", "turmeric", "oregano", "paprika"]
@@ -93,17 +87,14 @@ Please provide a two-sentence description.
 
 这种代码的优点是，如果Tommy用完了某种香料（比如牛至），您只需从 `available_spices` 列表中删除 `"oregano"`，然后重新运行代码，就能生成基于新香料组合的菜谱。
 
-![](img/5f6d54b04b4ddbf2827a23be75cf7d88_12.png)
 
 我鼓励您尝试不同的变化，例如在提示词中要求提供分步烹饪说明，或者在字典中添加一个 `"favorite_cuisine"`（最喜欢的菜系）键值对，看看能否推荐符合您口味菜系的食谱。
 
 ## 使用布尔值优化数据存储
 
-![](img/5f6d54b04b4ddbf2827a23be75cf7d88_14.png)
 
 到目前为止，我们学习了如何用字典和列表存储数据并定制提示词。作为下一节课的预览，我们来看一种优化数据存储的方式。
 
-![](img/5f6d54b04b4ddbf2827a23be75cf7d88_15.png)
 
 之前，我们将 `"dietary_restrictions"` 的值存储为字符串 `"vegetarian"`。其实还有另一种存储方式，即使用布尔值（True/False）。
 

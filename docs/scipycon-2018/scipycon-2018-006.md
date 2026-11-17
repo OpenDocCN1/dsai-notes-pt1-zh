@@ -1,44 +1,28 @@
 # 6：Jupyter 中的交互式 3D 可视化 🚀
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_1.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_3.png)
 
 在本节课中，我们将学习如何在 Jupyter Notebook 环境中使用 IPyvolume 库进行交互式 3D 数据可视化。我们将了解其开发动机、核心功能、基本用法以及未来的发展方向。
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_5.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_7.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_9.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_10.png)
 
 ## 概述与背景
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_12.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_14.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_16.png)
 
 大家好，我是 Matt Bredos。我将讨论 Jupyter 中的交互式 3D 可视化。我是一名天文学家，曾从事大数据和可视化软件方面的工作。现在，我是一名自由顾问，专注于 Python 和 Jupyter 生态系统中的数据科学工作。我也是 Jupyter 的核心开发者，以及 IPyvolume 和 effects 库的作者。
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_17.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_19.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_20.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_22.png)
 
 我创建 IPyvolume 的动机源于处理 3D 科学数据的需求。例如，在分析银河系晕的模拟数据时，2D 视图无法充分揭示其内部复杂的团块结构，这凸显了 3D 可视化的重要性。
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_24.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_26.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_28.png)
 
 ## IPyvolume 的诞生与发展
 
@@ -57,7 +41,6 @@
 
 ## 核心 API 与基础绘图
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_30.png)
 
 对于笔记本环境，一个简单直观的 API 至关重要。IPyvolume 的设计遵循了这一原则，只需几行代码即可创建图表。
 
@@ -94,9 +77,7 @@ IPyvolume 构建于 IPyWidgets 之上，因此可以轻松创建图形用户界�
 
 **体绘制**：这是 IPyvolume 的核心功能之一，用于渲染 3D 体数据（如一个数据立方体）。用户可以交互式地调整传输函数等参数来探索数据内部结构。
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_32.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_34.png)
 
 **等值面**：从 3D 数据中提取并渲染出特定值的等值面。计算在内核端完成，当调整等值水平时，三角面片数量会动态变化。
 
@@ -108,23 +89,17 @@ IPyvolume 性能出色，可以流畅交互地处理百万级数据点。对于�
 
 对于非表格型的大数据（如天文数据立方体），同样可以采用这种“按需加载”的策略，在网络条件有限时，先显示降采样的整体视图，在用户缩放时再传输局部的高清数据。
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_36.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_38.png)
 
 ## 高级功能：选择与动画
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_40.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_42.png)
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_44.png)
 
 **数据选择**：IPyvolume 支持基础的选择功能（如套索选择）。当前端进行选择时，相关信息会发送回内核，内核可以据此计算被选数据的统计信息（如平均坐标），实现了真正的双向交互。
 
 **时间序列动画**：如果数据包含时间维度（例如，粒子的轨迹数据），IPyvolume 会自动将第一维识别为时间。通过控制“序列索引”，可以在不同时间步之间切换，查看动态演变过程。结合 IPyWidgets 的播放控件，可以创建平滑的动画。
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_46.png)
 
 **虚拟现实与特殊投影**：可视化结果可以导出为 HTML，并在手机结合 Google Cardboard 等设备上实现 VR 体验。此外，还支持穹顶投影等特殊显示方式，用于天文馆演示或制作 3D 电影。
 
@@ -132,11 +107,9 @@ IPyvolume 性能出色，可以流畅交互地处理百万级数据点。对于�
 
 利用 `ipyvolume.pylab` 子包，可以访问底层 Three.js 的相机、场景和动画支持。用户可以添加关键帧来定义相机路径，创建复杂的漫游动画。
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_48.png)
 
 更进一步，可以使用 `ipywebrtc` 包来录制这些动画，生成视频文件用于分享或演示。这展示了将不同小部件（如视频、摄像头）作为纹理融入 IPyvolume 场景的强大能力，虽然这更多是技术演示，但体现了 Jupyter 小部件框架的灵活性。
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_49.png)
 
 ## 未来展望
 
@@ -144,7 +117,6 @@ IPyvolume 的未来版本将更深度地集成 Three.js，让用户能完全控�
 
 ## 总结
 
-![](img/f6efcd6e1f4edb53ad9377f7e60054ac_51.png)
 
 ![](img/f6efcd6e1f4edb53ad9377f7e60054ac_53.png)
 

@@ -4,7 +4,6 @@
 
 ---
 
-![](img/3b7d938d64853307677f19cd2e9f625c_1.png)
 
 ## 概述
 
@@ -25,13 +24,10 @@ import os
 chat = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.7)
 ```
 
-![](img/3b7d938d64853307677f19cd2e9f625c_3.png)
 
-![](img/3b7d938d64853307677f19cd2e9f625c_4.png)
 
 接下来，我们创建一个列表来动态存储对话历史。对话总是以一个**系统消息**开始，用于设定AI的角色。
 
-![](img/3b7d938d64853307677f19cd2e9f625c_5.png)
 
 ```python
 # 初始化一个空列表来存储对话历史
@@ -42,7 +38,6 @@ system_message = SystemMessage(content="你是一个乐于助人的助手。")
 chat_history.append(system_message)
 ```
 
-![](img/3b7d938d64853307677f19cd2e9f625c_7.png)
 
 程序的核心是一个`while`循环，它持续运行直到用户输入退出指令。
 
@@ -90,7 +85,6 @@ while True:
 
 ## 总结
 
-![](img/3b7d938d64853307677f19cd2e9f625c_9.png)
 
 ![](img/3b7d938d64853307677f19cd2e9f625c_10.png)
 

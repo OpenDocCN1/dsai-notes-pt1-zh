@@ -330,7 +330,6 @@ The first mention I saw feature stores were was in this blog post from Uber desc
 
  and they had feature stores for both。
 
-![](img/b504e8b4a14df6fda034b1e6930892f7_5.png)
 
 That had to be insane sync。Teecon is probably the leading SaS。Solution to a feature stores。
 
@@ -542,7 +541,6 @@ Diffgramra is something I've come across， but I haven't used it personally。
 
  they claim to be better than label Studio。
 
-![](img/b504e8b4a14df6fda034b1e6930892f7_13.png)
 
 And it looks pretty good。An interesting feature that that I've seen some software offerings have is evaluate your current model on your data。
 
@@ -552,7 +550,6 @@ And then explore how it performed such that you can easily select subsets of dat
 
 
 
-![](img/b504e8b4a14df6fda034b1e6930892f7_15.png)
 
 Snorkel， you might have heard about。And it's using this idea of weak supervision where if you have a lot of data to label。
 
@@ -570,7 +567,6 @@ And I recently came across rubrics， which is a very similar idea that's fully 
 
 
 
-![](img/b504e8b4a14df6fda034b1e6930892f7_17.png)
 
 So in conclusion for labeling， first， think about how you can do self supervised learning and avoid labeling。
 

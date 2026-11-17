@@ -14,7 +14,6 @@
 
 **公式**：`项目目标 = f(X, Y)`
 
-![](img/9ddde5f1f01fa04e9ed5f175ecea7fbf_2.png)
 
 ---
 

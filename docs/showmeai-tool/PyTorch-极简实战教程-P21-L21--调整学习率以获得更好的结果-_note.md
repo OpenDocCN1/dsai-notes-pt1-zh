@@ -140,7 +140,6 @@ for epoch in range(100):
 2.  **StepLR/MultiStepLR**：在固定的训练阶段进行衰减。
 3.  **ReduceLROnPlateau**：根据模型在验证集上的表现动态调整。
 
-![](img/4ac8ae1274e2571af0e178a8cbc54a12_12.png)
 
 ![](img/4ac8ae1274e2571af0e178a8cbc54a12_13.png)
 

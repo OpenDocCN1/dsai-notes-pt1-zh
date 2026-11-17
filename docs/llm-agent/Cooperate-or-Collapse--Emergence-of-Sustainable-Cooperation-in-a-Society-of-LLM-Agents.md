@@ -181,7 +181,6 @@ GovSim 环境作为可持续性基准，用于评估 LLM 代理是否能有效�
 
 我们使用GPT-4o——[表1](https://arxiv.org/html/2404.16698v4#S3.T1 "在LLMs基准测试中 ‣ 3.1 实验设置 ‣ 3 实验结果 ‣ 合作或崩溃：LLM代理社会中可持续合作的出现")中表现最好的模型，跨所有场景执行此实验。在五个种子条件下，生存率从$53.3\rightarrow 33.3$下降，生存时间从$9.3\rightarrow 6.6$下降，收益从$66.0\rightarrow 34.8$下降，效率从$55.0\rightarrow 31.3$下降，平等性从$94.4\rightarrow 71.7$下降，过度使用从$10.8\rightarrow 15.7$上升。[图3(b)](https://arxiv.org/html/2404.16698v4#S3.F3.sf2 "在图3中 ‣ 3.3 标准鲁棒性：一个贪婪的新来者 ‣ 3 实验结果 ‣ 合作或崩溃：LLM代理社会中可持续合作的出现")展示了新来者干扰的一个模拟轨迹示例，其中一切顺利。新来者最初收获了大量共享资源（见第4个月），但在随后的几个月中调整了较低的收获率。这个调整是由于与最初的四个代理的动态互动，他们使新来者随着时间的推移逐步适应更加可持续的规范。在[附录G](https://arxiv.org/html/2404.16698v4#A7 "附录G 对话示例 ‣ 合作或崩溃：LLM代理社会中可持续合作的出现")中，我们提供了这些互动的定性示例，说明新来者如何通过社区讨论学会减少收获资源的数量，并遵守可持续规范。总体而言，还需要更多工作来提高对这种类型干扰的鲁棒性。
 
-![请参见说明](img/8dc8bf45fa1ff76c3c3d142f76d5c494.png)
 
 (a) 基准条件下的资源变化。
 
@@ -199,7 +198,6 @@ GovSim 环境作为可持续性基准，用于评估 LLM 代理是否能有效�
 
 我们报告了普适化对不同LLM（由于API费用原因，Claude-3 Opus除外）模型的影响，详细描述请见[3.1节](https://arxiv.org/html/2404.16698v4#S3.SS1.SSS0.Px2 "LLMs Benchmarked ‣ 3.1 Experimental Setup ‣ 3 Experimental Results ‣ Cooperate or Collapse: Emergence of Sustainable Cooperation in a Society of LLM Agents")。我们发现，普适化（除去两个已经达到最大生存时间的组合）显著提高了平均生存时间$4$个月（t检验；$p<0.001$），共享资源的总增益$29$单位（t检验；$p<0.001$），以及效率$24\%$（t检验；$p<0.001$）。有关这些改进在不同模型中的详细分解，请参见[附录D.3节](https://arxiv.org/html/2404.16698v4#A4.SS3 "D.3 Experiment Universalization ‣ Appendix D Experiments Details ‣ Cooperate or Collapse: Emergence of Sustainable Cooperation in a Society of LLM Agents")。
 
-![参见说明](img/f5bc76f5caef5098856a8d5a6031454e.png)
 
 (a) 有沟通和没有沟通的场景中共享资源的过度使用情况。
 
@@ -601,27 +599,21 @@ GovSim)基准的Web界面旨在促进与仿真环境的交互，如[图7](https:
 
 #### D.2.1 渔业
 
-![参见标题](img/7033331ca5bbbb779515e2fa11d25c50.png)
 
 (a) Claude-3
 
-![参见标题](img/553b72c1d6dfa6d896dba31ef13a3af5.png)
 
 (b) GPT
 
-![参见标题](img/ba5ce98dfed849016004cc013e30d4a3.png)
 
 (c) Llama-2
 
-![参见标题](img/18845adbcecfda9ae76ab0e9337a2d25.png)
 
 (d) Llama-3
 
-![参见标题](img/9daf004ad138732c50f4d3559c6ca03b.png)
 
 (e) Mistral
 
-![参见标题](img/9c472e09a3879815aab87537fffb8a89.png)
 
 (f) Qwen
 
@@ -653,27 +645,21 @@ GovSim)基准的Web界面旨在促进与仿真环境的交互，如[图7](https:
 
 #### D.2.2 牧场
 
-![参见标题](img/97fb140666d215dd56371a64ba3db9da.png)
 
 (a) Claude-3
 
-![参见标题](img/f11bd5f5e424b1209a2b6a835030aa11.png)
 
 (b) GPT
 
-![参见标题](img/015019b3bcc172357a6ccf2c9d09ba30.png)
 
 (c) Llama-2
 
-![参见标题](img/0d3596051db024b29e98e9f3fa26a336.png)
 
 (d) Llama-3
 
-![参见标题](img/d9ed8060219704434e3ee6389cb25294.png)
 
 (e) Mistral
 
-![参见标题](img/04069cc26d5b6f8a19a4745a9aaea84a.png)
 
 (f) Qwen
 
@@ -705,23 +691,18 @@ GovSim)基准的Web界面旨在促进与仿真环境的交互，如[图7](https:
 
 #### D.2.3 污染
 
-![参考说明](img/c385b5466c13f5735d55a0f58a627cd8.png)
 
 (a) Claude-3
 
-![参考说明](img/8f4b81e4fc052e2619c9ce22fee54126.png)
 
 (b) GPT
 
-![参考说明](img/a9532fda0754984025213fa87e987a1b.png)
 
 (c) Llama-2
 
-![参考说明](img/b186e39ab50045d840a7fd559b9e7a2b.png)
 
 (d) Llama-3
 
-![参考说明](img/bab1504307491e6eb41396b422d3c982.png)
 
 (e) Mistral
 
@@ -1125,7 +1106,6 @@ GovSim)基准的Web界面旨在促进与仿真环境的交互，如[图7](https:
 
 #### F.2.1 渔业
 
-![请参阅标题](img/19f4ec324e0ef266293ebd161f12c66f.png)
 
 图 12：散点图显示了默认渔业模拟中推理测试得分与平均生存时间之间的相关性。x 轴表示推理测试的得分，y 轴表示平均生存时间。
 
@@ -1154,7 +1134,6 @@ GovSim)基准的Web界面旨在促进与仿真环境的交互，如[图7](https:
 
 #### F.2.2 牧场
 
-![请参见说明文字](img/2ef408981ccc6066ca034c34f5f9f72d.png)
 
 图 13：散点图展示了推理测试分数与默认牧场模拟中平均生存时间之间的相关性。横轴表示推理测试分数，纵轴表示平均生存时间。
 

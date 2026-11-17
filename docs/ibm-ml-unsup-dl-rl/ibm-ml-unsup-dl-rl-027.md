@@ -56,7 +56,6 @@ And we're going to add that in as another column within our data， so we had K 
 
 
 
-![](img/041489455cafaee473a2e0fb191a0551_1.png)
 
 And we see again that the red and white wines were able to group them appropriately。
 
@@ -72,7 +71,6 @@ And that was a similar story when we worked with K means， as well。
 
 
 
-![](img/041489455cafaee473a2e0fb191a0551_3.png)
 
 Now the numbers are a bit flipped， so it doesn't really matter whether's 01 that's arbitrary。
 
@@ -84,9 +82,7 @@ Now the numbers are a bit flipped， so it doesn't really matter whether's 01 th
 
 
 
-![](img/041489455cafaee473a2e0fb191a0551_5.png)
 
-![](img/041489455cafaee473a2e0fb191a0551_6.png)
 
 And then if we want to look at both of these in total， this will be a little bit difficult to read。
 
@@ -102,13 +98,9 @@ And then if we want to look at both of these in total， this will be a little b
 
 
 
-![](img/041489455cafaee473a2e0fb191a0551_8.png)
 
-![](img/041489455cafaee473a2e0fb191a0551_9.png)
 
-![](img/041489455cafaee473a2e0fb191a0551_10.png)
 
-![](img/041489455cafaee473a2e0fb191a0551_11.png)
 
 So again， though the clusters are not identical， the clusters are very consistent within a single wine variety。
 
@@ -116,7 +108,6 @@ So again， though the clusters are not identical， the clusters are very consi
 
 
 
-![](img/041489455cafaee473a2e0fb191a0551_13.png)
 
 And I don't want to walk through all a different pieces of code。
 
@@ -132,7 +123,6 @@ We're going to initiate our figure and our axes， we're going to create the col
 
 
 
-![](img/041489455cafaee473a2e0fb191a0551_15.png)
 
 And。Set the link color palette。 So how we're going to link each of these。
 
@@ -144,7 +134,6 @@ And then we call hierarchy， which is what we imported here。
 
 
 
-![](img/041489455cafaee473a2e0fb191a0551_17.png)
 
 Created just here above。Some important arguments。 First。
 
@@ -186,7 +175,6 @@ Now， we're going to stop here。 And in the next video。
 
 
 
-![](img/041489455cafaee473a2e0fb191a0551_19.png)
 
 Seeing the performance of each and then closing out this video with another walking through of the performance with different levels of。
 
@@ -194,6 +182,5 @@ Seeing the performance of each and then closing out this video with another walk
 
 
 
-![](img/041489455cafaee473a2e0fb191a0551_21.png)
 
 ![](img/041489455cafaee473a2e0fb191a0551_22.png)

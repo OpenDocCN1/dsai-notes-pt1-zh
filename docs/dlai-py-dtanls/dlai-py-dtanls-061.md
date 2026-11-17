@@ -9,13 +9,10 @@
 
 上一节我们介绍了数据可视化的多种工具。本节中我们来看看如何为你的探索性数据分析创建一个附录，其中包含多个分布图，以便客户能自行寻找洞察。
 
-![](img/6dde672a2c5bcc3dd155d84c09ad804d_1.png)
 
 你可以使用Seaborn的`pairplot`工具来快速创建大量图表。首先，需要导入必要的模块并将数据加载到变量中。
 
-![](img/6dde672a2c5bcc3dd155d84c09ad804d_2.png)
 
-![](img/6dde672a2c5bcc3dd155d84c09ad804d_3.png)
 
 以下是导入模块和加载数据的示例代码：
 ```python
@@ -57,7 +54,6 @@ plt.suptitle('Pairplot of Loan Amount, Annual Income, Interest Rate, and Paid In
 
 ### 自定义与保存图表
 
-![](img/6dde672a2c5bcc3dd155d84c09ad804d_5.png)
 
 由于`pairplot`包含多种图表类型和多个子图，你无法像平常自定义单个图表那样（如颜色、线条样式等）进行统一设置。但你始终可以与你的LLM（大语言模型）协作，探索更多格式化选项。
 

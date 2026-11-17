@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P35：L35- 创建表的副本 📋
 
-![](img/635946abf0739e20a34437b943210825_0.png)
 
 ![](img/635946abf0739e20a34437b943210825_0.png)
 
@@ -35,9 +34,7 @@ SELECT * FROM orders;
 1.  使用 `TRUNCATE TABLE` 清空目标表。
 2.  编写 `INSERT INTO ... SELECT` 语句，在 `SELECT` 部分定义筛选条件。
 
-![](img/635946abf0739e20a34437b943210825_2.png)
 
-![](img/635946abf0739e20a34437b943210825_4.png)
 
 ```sql
 -- 首先清空目标表
@@ -98,7 +95,6 @@ WHERE i.payment_date IS NOT NULL;
 
 执行成功后，将创建一个包含客户姓名且仅有已付款发票记录的 `invoices_archive` 表。请注意，如果同名表已存在，再次执行 `CREATE TABLE` 会报错，需要先删除旧表。
 
-![](img/635946abf0739e20a34437b943210825_6.png)
 
 ---
 

@@ -1,6 +1,5 @@
 # 18：19-大语言模型架构鸟瞰图
 
-![](img/ae5d990a2b43531d0b95b4c1f05bde76_0.png)
 
 ![](img/ae5d990a2b43531d0b95b4c1f05bde76_0.png)
 

@@ -1,10 +1,8 @@
 # 019：数据分箱
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_0.png)
 
 在本节课中，我们将学习数据分箱这一数据预处理方法。数据分箱能够将数值分组到不同的区间中，有时可以提升预测模型的准确性，并帮助我们更好地理解数据分布。
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_2.png)
 
 ---
 
@@ -16,19 +14,14 @@
 
 ## 数据分箱示例：汽车价格 🚗
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_4.png)
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_5.png)
 
 以汽车价格为例，价格属性的范围从5000到45500。
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_6.png)
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_7.png)
 
 使用分箱方法，我们将价格分为三个区间：低价、中价和高价。
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_9.png)
 
 在实际的汽车数据集中，价格是一个数值变量，范围从5188到45400，共有201个不同的值。我们可以将它们分为三个区间：低价车、中价车和高价车。
 
@@ -47,21 +40,16 @@ bins = np.linspace(min_price, max_price, 4)
 
 接着，我们创建一个列表`group_names`，其中包含不同的箱子名称。
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_11.png)
 
 ```python
 group_names = ['Low', 'Medium', 'High']
 ```
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_12.png)
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_13.png)
 
 然后，我们使用Pandas的`cut`函数将数据值分段并排序到各个箱子中。
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_14.png)
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_15.png)
 
 ```python
 import pandas as pd
@@ -72,9 +60,7 @@ df['price-binned'] = pd.cut(df['price'], bins, labels=group_names, include_lowes
 
 ## 可视化分箱后的数据分布 📈
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_17.png)
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_18.png)
 
 分箱完成后，你可以使用直方图来可视化数据在分箱后的分布情况。
 
@@ -91,9 +77,7 @@ plt.show()
 
 ---
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_20.png)
 
-![](img/df2571d8325ab29b715e4a4a1773fc0a_21.png)
 
 ## 总结 🎯
 

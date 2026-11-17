@@ -42,7 +42,6 @@ RGB 引导的 ToF 成像，深度学习，深度超分辨率，深度完成，�
 | --- |
 | \begin{overpic}[width=203.80193pt]{x1.pdf} \put(62.0,18.0){\color[rgb]{1,0,0}\line(2,0){12.0}} \put(62.0,1.0){\color[rgb]{1,0,0}\line(2,0){12.0}} \put(62.0,1.0){\color[rgb]{1,0,0}\line(0,2){17.0}} \put(74.0,1.0){\color[rgb]{1,0,0}\line(0,2){17.0}} \end{overpic} |
 | 375$\times$1242 |
-| ![参考说明](img/013bc4fdcabf6596cfcb777209621a65.png) | ![参考说明](img/81595a0deffdaac750e1b352a825fe7d.png) | ![参考说明](img/ada06ad6eb9ad2efbcc35ea7e78d66e9.png) |
 | 375$\times$1242 | $\times 0.5$ | $\times 0.25$ |
 | ![参考说明](img/dcc951b7651079dab30c042d1587ee69.png) | ![参考说明](img/a6c42ea4d02244353fc0249ec8e703da.png) | ![参考说明](img/ad08bec223554d03e671e7d7b5ac3ecc.png) |
 | 375$\times$1242 | $\times 2$ | $\times 4$ |

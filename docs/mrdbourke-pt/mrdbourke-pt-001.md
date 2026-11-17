@@ -26,7 +26,6 @@
 
 
 
-![](img/10ec7d7ffbaba1e7f520606614d1bce4_6.png)
 
 ![](img/10ec7d7ffbaba1e7f520606614d1bce4_4.png)
 

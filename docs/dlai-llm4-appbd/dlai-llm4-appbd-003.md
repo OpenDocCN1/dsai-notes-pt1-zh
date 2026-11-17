@@ -1,10 +1,8 @@
 # 003：Llama 4 与 API 快速入门 🚀
 
-![](img/e6fdb33d75f1d2b79262a33ecab1f8ba_0.png)
 
 在本节课中，我们将学习如何通过 Meta 的官方 API 快速开始使用 Llama 4。我们将了解如何设置 API 客户端、发送提示词、处理文本和图像输入，并构建一个支持多语言的翻译聊天机器人。
 
-![](img/e6fdb33d75f1d2b79262a33ecab1f8ba_2.png)
 
 ## 导入密钥与库
 
@@ -96,9 +94,7 @@ print(response)
 
 ## 多图像处理
 
-![](img/e6fdb33d75f1d2b79262a33ecab1f8ba_4.png)
 
-![](img/e6fdb33d75f1d2b79262a33ecab1f8ba_5.png)
 
 与 Llama 3.2 不同，Llama 4 原生支持处理多张图像，在最多五张图像的评估中表现良好。让我们使用两张不同的羊驼图片。
 
@@ -118,7 +114,6 @@ print(response)
 
 ## 超长上下文处理
 
-![](img/e6fdb33d75f1d2b79262a33ecab1f8ba_7.png)
 
 Llama 4 Maverick 和 Sc 模型分别支持高达 100 万和 1000 万 tokens 的上下文长度，这比之前的 Llama 模型有巨大提升。让我们用一本约 19.3 万 tokens 的免费电子书《双城记》来测试。
 
@@ -134,11 +129,9 @@ response = llama_4_function(prompt, model="llama-4-maverick")
 print(response)
 ```
 
-![](img/e6fdb33d75f1d2b79262a33ecab1f8ba_9.png)
 
 模型能够从超长上下文中准确找到并回答这个问题。在后面的课程中，我们将处理更多长上下文用例。
 
-![](img/e6fdb33d75f1d2b79262a33ecab1f8ba_11.png)
 
 ## 多语言理解与翻译
 
@@ -150,11 +143,9 @@ response = llama_4_function(prompt)
 print(response)
 ```
 
-![](img/e6fdb33d75f1d2b79262a33ecab1f8ba_13.png)
 
 响应列出了 Llama 4 能够理解的 12 种语言。
 
-![](img/e6fdb33d75f1d2b79262a33ecab1f8ba_15.png)
 
 现在，让我们利用这个能力构建一个快速的多语言翻译聊天机器人。
 

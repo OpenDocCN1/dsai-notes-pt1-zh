@@ -1,6 +1,5 @@
 # 001：课程介绍 🎯
 
-![](img/944fd3b9aff0569b3c6b1a5fe08ff94e_0.png)
 
 在本节课中，我们将要学习大型语言模型后训练的基本概念、主要方法及其应用场景。课程由华盛顿大学助理教授、Nexus S联合创始人Ban Hua Z讲授，他将分享其在训练和微调众多模型方面的丰富经验。
 
@@ -22,9 +21,7 @@
 
 许多人为创建本课程提供了帮助，特别感谢Alex、来自UC Berkeley的Tntaohao，以及来自DeepSeek AI的Gegari。
 
-![](img/944fd3b9aff0569b3c6b1a5fe08ff94e_2.png)
 
-![](img/944fd3b9aff0569b3c6b1a5fe08ff94e_3.png)
 
 ![](img/944fd3b9aff0569b3c6b1a5fe08ff94e_5.png)
 

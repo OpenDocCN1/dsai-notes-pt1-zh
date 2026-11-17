@@ -1,12 +1,9 @@
 # 002：核心构建模块 🧱
 
-![](img/4728a587025b2ed35ea3f3edbeadc8b9_0.png)
 
-![](img/4728a587025b2ed35ea3f3edbeadc8b9_2.png)
 
 在本节课中，我们将学习LLM应用的一些基本构建模块，即**提示模板**、**模型**和**输出解析器**。同时，你将了解如何使用LangChain表达式语言将它们组合在一起，创建功能链。
 
-![](img/4728a587025b2ed35ea3f3edbeadc8b9_4.png)
 
 ---
 
@@ -132,11 +129,9 @@ const prompt = ChatPromptTemplate.fromMessages([
 
 运行`format`会得到完全相同的输出。这在后面传递历史记录时很有用，因为你可以直接将历史消息注入提示中。
 
-![](img/4728a587025b2ed35ea3f3edbeadc8b9_6.png)
 
 ---
 
-![](img/4728a587025b2ed35ea3f3edbeadc8b9_8.png)
 
 ## 使用LCEL组合链 🔄
 

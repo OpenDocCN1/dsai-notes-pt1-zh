@@ -198,9 +198,7 @@ FSDL 的推荐是：可以继续使用 Notebooks，但建议使用 **VS Code 内
 *   **Weights & Biases Sweeps**：W&B 提供的超参优化工具。你只需定义一个描述搜索空间和算法的 YAML 配置文件，然后启动代理程序即可自动运行实验。
 *   **其他集成方案**：如 SageMaker, Determined AI 也都内置了超参搜索功能。通常，选择你正在使用的实验跟踪工具所配套的超参优化功能即可。
 
-![](img/d75396a625df6046ea36b19d0d582759_21.png)
 
-![](img/d75396a625df6046ea36b19d0d582759_23.png)
 
 ### 一体化平台（All-in-One Platforms）
 
@@ -216,9 +214,7 @@ FSDL 的推荐是：可以继续使用 Notebooks，但建议使用 **VS Code 内
 
 在决定采用某个一体化平台前，建议先了解后续关于数据管理和部署的课程内容。
 
-![](img/d75396a625df6046ea36b19d0d582759_29.png)
 
-![](img/d75396a625df6046ea36b19d0d582759_31.png)
 
 ## 总结
 

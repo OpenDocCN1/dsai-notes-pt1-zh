@@ -18,7 +18,6 @@ LangChain是一个非常流行的、用于LLM应用的开源编排器，它将�
 
 本课程的讲师是Jacob Lee，他是LangChain的创始软件工程师，也是开源项目LangChain.js的维护者。
 
-![](img/baeb7cf254ba9cbe20db46f356e3c511_1.png)
 
 ![](img/baeb7cf254ba9cbe20db46f356e3c511_1.png)
 
@@ -46,20 +45,16 @@ Jacob曾与许多开发者合作，帮助他们将语言模型集成到Web和移
 
 ## 课程贡献者
 
-![](img/baeb7cf254ba9cbe20db46f356e3c511_3.png)
 
 许多人共同促成了这门课程。我们感谢LangChain的创始人兼首席执行官Harrison Chase，以及同样来自LangChain的Noa Comfor。在DeepLearning.AI方面，Jeff Ludwig和Ashwin Gagari也为本课程做出了贡献。
 
 这里有很多很棒的内容值得学习。完成本课程后，我希望你能够用JavaScript构建出一些非常酷的基于语言模型的应用。
 
-![](img/baeb7cf254ba9cbe20db46f356e3c511_5.png)
-![](img/baeb7cf254ba9cbe20db46f356e3c511_6.png)
 
 Jacob，LangChain标志里的鹦鹉是怎么回事？Andrew，我也不太确定，但它已经成为我们标志性的一部分了。
 
 ---
 
-![](img/baeb7cf254ba9cbe20db46f356e3c511_5.png)
 
 ![](img/baeb7cf254ba9cbe20db46f356e3c511_6.png)
 

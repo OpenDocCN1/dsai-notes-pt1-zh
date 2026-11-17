@@ -188,7 +188,6 @@ def concat_2d(A: hl.Tensor, B: hl.Tensor, dim: int) -> hl.Tensor:
 
 ## 7：高级技巧：以 RMSNorm 为例
 
-![](img/1cbf083772e2b20a56bd8eb6ecd623ae_5.png)
 
 上一节我们看了几个基础内核，本节中我们以 RMSNorm 为例，探讨一些更高级的 Helion 编程技巧。
 

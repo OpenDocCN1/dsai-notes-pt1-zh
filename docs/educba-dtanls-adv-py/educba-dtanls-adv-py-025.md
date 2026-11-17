@@ -65,15 +65,11 @@ if data:
 
 让我们在 Jupyter notebook 中快速测试一下字符串分割的逻辑。假设这是你将收到的字符串：`"姓名:XYZ,电子邮件:XYZ@company.com"`。
 
-![](img/e0e1f080bbca1b65b5e3c9524b731c47_1.png)
 
-![](img/e0e1f080bbca1b65b5e3c9524b731c47_2.png)
 
 我们将检查如何分割。首先，在逗号处分割得到列表：`["姓名:XYZ", "电子邮件:XYZ@company.com"]`。然后，遍历列表中的每个元素，在冒号处再次分割，以提取键值对。
 
-![](img/e0e1f080bbca1b65b5e3c9524b731c47_4.png)
 
-![](img/e0e1f080bbca1b65b5e3c9524b731c47_6.png)
 
 ---
 

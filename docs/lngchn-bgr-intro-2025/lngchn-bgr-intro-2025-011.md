@@ -20,7 +20,6 @@
 
 以下是设置 Firebase Firestore 数据库的步骤。
 
-![](img/a6fa3d359a56e7641624f5fff3b06483_7.png)
 
 ### 1. 创建 Firebase 项目
 首先，访问 [Firebase 控制台](https://console.firebase.google.com/) 并创建一个新项目。例如，将项目命名为 `la-chain`。创建过程中可以暂时禁用 Google Analytics。

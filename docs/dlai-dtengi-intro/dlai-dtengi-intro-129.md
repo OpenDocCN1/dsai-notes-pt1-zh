@@ -43,7 +43,6 @@ Airflow由Maxime Beauchemin和Airbnb的其他合作者开发。他们主要致�
 *   **Dagster** 和 **Mage**：在其他功能中，为数据质量测试和数据转换提供了内置能力。
 *   **其他工具**：专注于为流式处理管道提供更好的编排支持。
 
-![](img/c4fd65b9ec7dd3262eacd7136704d031_1.png)
 
 ## 总结与建议
 

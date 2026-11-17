@@ -1,6 +1,5 @@
 # 003：3. Transformer-Mamba混合LLM架构
 
-![](img/1a6cbcd26fca378318f7de3108f230f6_0.png)
 
 ![](img/1a6cbcd26fca378318f7de3108f230f6_0.png)
 
@@ -199,6 +198,5 @@ display(HTML(response_with_docs.choices[0].message.content))
 
 在下一节课中，您将学习关于Jamba模型的工具调用功能。我们下节课见。
 
-![](img/1a6cbcd26fca378318f7de3108f230f6_4.png)
 
 ![](img/1a6cbcd26fca378318f7de3108f230f6_4.png)

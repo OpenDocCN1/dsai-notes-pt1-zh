@@ -38,7 +38,6 @@ loss_fn = nn.L1Loss()
 
 ![](img/40af8424a5ecd2697055f24d8b2e2c76_10.png)
 
-![](img/40af8424a5ecd2697055f24d8b2e2c76_12.png)
 
 PyTorch的优化器位于 `torch.optim` 模块。随机梯度下降（SGD）是一种基础且常用的优化算法。
 

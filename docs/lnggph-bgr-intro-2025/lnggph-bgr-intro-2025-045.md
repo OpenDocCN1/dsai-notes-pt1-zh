@@ -111,7 +111,6 @@ async def event_generator():
 
 ### 流式处理图事件
 
-![](img/9f5d601be9cc36a5ffa968d54eebe559_3.png)
 
 ![](img/9f5d601be9cc36a5ffa968d54eebe559_4.png)
 
@@ -210,7 +209,6 @@ FastAPI 自动提供了交互式 API 文档（Swagger UI），可以通过访问
 
 ![](img/9f5d601be9cc36a5ffa968d54eebe559_17.png)
 
-![](img/9f5d601be9cc36a5ffa968d54eebe559_19.png)
 
 在测试界面中，你可以：
 1.  点击 “Try it out”。
@@ -222,11 +220,8 @@ FastAPI 自动提供了交互式 API 文档（Swagger UI），可以通过访问
 
 在开发过程中，你可能会遇到工具调用（如网络搜索）时的 SSL 证书错误。一个常见的解决方法是使用 `certifi` 库并提供正确的证书路径。
 
-![](img/9f5d601be9cc36a5ffa968d54eebe559_21.png)
 
-![](img/9f5d601be9cc36a5ffa968d54eebe559_22.png)
 
-![](img/9f5d601be9cc36a5ffa968d54eebe559_23.png)
 
 ```bash
 pip install certifi
@@ -252,11 +247,8 @@ os.environ['SSL_CERT_FILE'] = certifi.where()
 
 ![](img/9f5d601be9cc36a5ffa968d54eebe559_27.png)
 
-![](img/9f5d601be9cc36a5ffa968d54eebe559_28.png)
 
-![](img/9f5d601be9cc36a5ffa968d54eebe559_29.png)
 
-![](img/9f5d601be9cc36a5ffa968d54eebe559_30.png)
 
 ![](img/9f5d601be9cc36a5ffa968d54eebe559_31.png)
 

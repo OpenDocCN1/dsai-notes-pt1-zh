@@ -1,6 +1,5 @@
 # 005：Llama 4 提示词格式详解 🧩
 
-![](img/a350c817c2fb02ebf3e5982f6b0f566d_0.png)
 
 在本节课中，我们将学习 Llama 4 模型如何解析提示词，包括纯文本和多模态提示中的特殊标记。理解这些格式有助于我们更好地构建基于 Llama 4 的应用。
 
@@ -18,7 +17,6 @@ Llama 4 SC 和 Maverick 是多模态模型，在文本和图像理解方面表�
 
 Llama 4 支持以下通用特殊标记：
 
-![](img/a350c817c2fb02ebf3e5982f6b0f566d_2.png)
 
 *   **`<|begin_of_text|>`**：指定提示词开始。
 *   **`<|start_header_id|>`**：特定消息角色的开始。
@@ -90,7 +88,6 @@ print(raw_prompt_llama33)
 1.  **特殊标记的变化**：Llama 4 中，部分特殊标记的名称发生了变化。例如，Llama 3 中的 `<|start_header_id|>` 和 `<|end_header_id|>` 在 Llama 4 中保持不变，但 `<|eot_id|>` 在 Llama 3 中可能是其他形式。
 2.  **默认系统提示词**：在 Llama 3 模型中，默认情况下会有一个系统消息被添加到原始提示词中。而 Llama 4 的原始提示词默认不包含系统提示词。
 
-![](img/a350c817c2fb02ebf3e5982f6b0f566d_4.png)
 
 为了验证第二点，让我们在提示词中添加一个系统规则：“用法语回答”，然后再次查看原始提示词。
 
@@ -111,7 +108,6 @@ raw_prompt_llama33_sys = processor_llama33.apply_chat_template(message_with_syst
 
 了解了文本格式后，我们接下来看看图像输入的提示词是如何构造的。
 
-![](img/a350c817c2fb02ebf3e5982f6b0f566d_6.png)
 
 让我们加载并显示一张在前几节课中见过的图片。
 

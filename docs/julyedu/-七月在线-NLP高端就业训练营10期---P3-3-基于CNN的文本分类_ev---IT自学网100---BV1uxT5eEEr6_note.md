@@ -1,10 +1,7 @@
 # 【七月在线】NLP高端就业训练营10期 - P3：3. 基于CNN的文本分类教程 📚
 
-![](img/30cc1fd08333411df1f429aca431b8df_0.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_2.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_4.png)
 
 在本节课中，我们将学习如何使用卷积神经网络来处理自然语言处理任务，特别是文本分类。我们将从Transformer模型的补充知识开始，然后介绍如何阅读学术论文，最后深入探讨CNN的原理及其在文本处理中的应用。
 
@@ -31,9 +28,7 @@
 
 ![](img/30cc1fd08333411df1f429aca431b8df_6.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_8.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_10.png)
 
 ### 位置编码
 
@@ -60,25 +55,19 @@
 
 ## 第二部分：如何阅读学术论文 📄
 
-![](img/30cc1fd08333411df1f429aca431b8df_16.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_18.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_20.png)
 
 在深入技术细节之前，掌握高效阅读论文的方法至关重要。以下是阅读NLP领域论文的一些建议。
 
-![](img/30cc1fd08333411df1f429aca431b8df_22.png)
 
 ### 论文查找与筛选
 
-![](img/30cc1fd08333411df1f429aca431b8df_24.png)
 
 *   **关注经典**：初学者应优先阅读领域内的经典论文（如Transformer、TextCNN），打好基础。
 *   **利用资源**：可以使用如 **arXiv**、**Papers with Code**、**PaperWeekly** 等网站或社区来发现和跟踪论文。
 *   **管理工具**：推荐使用 **ReadPaper** 等在线工具来管理和阅读论文，它能高亮重要内容并提取图表。
 
-![](img/30cc1fd08333411df1f429aca431b8df_26.png)
 
 ![](img/30cc1fd08333411df1f429aca431b8df_28.png)
 
@@ -88,25 +77,17 @@
 
 ![](img/30cc1fd08333411df1f429aca431b8df_34.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_36.png)
 
 ### 阅读顺序与重点
 
-![](img/30cc1fd08333411df1f429aca431b8df_38.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_40.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_42.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_44.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_46.png)
 
 阅读一篇论文时，建议遵循以下顺序：
 
-![](img/30cc1fd08333411df1f429aca431b8df_48.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_50.png)
 
 1.  **标题与摘要**：快速了解论文的核心贡献。
 2.  **引言**：理解研究背景和动机。
@@ -114,25 +95,18 @@
 4.  **实验部分**：关注实验设置、数据集和结果分析，特别是与基线模型的对比。
 5.  **结论**：总结工作并展望未来。
 
-![](img/30cc1fd08333411df1f429aca431b8df_52.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_54.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_56.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_58.png)
 
 对于复现，首先查看作者是否开源了代码。复现时要注意论文描述与代码实现可能存在的差异。
 
-![](img/30cc1fd08333411df1f429aca431b8df_60.png)
 
 ---
 
-![](img/30cc1fd08333411df1f429aca431b8df_62.png)
 
 ## 第三部分：卷积神经网络基础 🖼️
 
-![](img/30cc1fd08333411df1f429aca431b8df_64.png)
 
 上一节我们介绍了处理序列的RNN和Transformer。本节中，我们来看看如何利用CNN来捕捉文本中的局部特征（如短语）。
 
@@ -181,7 +155,6 @@ TextCNN是用于文本分类的经典CNN模型，其结构非常简单：
 
 以下是使用PyTorch框架构建TextCNN模型的核心代码：
 
-![](img/30cc1fd08333411df1f429aca431b8df_66.png)
 
 ![](img/30cc1fd08333411df1f429aca431b8df_68.png)
 
@@ -243,9 +216,7 @@ class TextCNN(nn.Module):
 
 ![](img/30cc1fd08333411df1f429aca431b8df_75.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_77.png)
 
-![](img/30cc1fd08333411df1f429aca431b8df_79.png)
 
 ---
 
@@ -257,7 +228,6 @@ class TextCNN(nn.Module):
 3.  **卷积神经网络的基础**：理解了卷积的概念及其在文本处理中的应用方式。
 4.  **TextCNN模型实战**：掌握了使用PyTorch构建一个用于文本分类的简单CNN模型。
 
-![](img/30cc1fd08333411df1f429aca431b8df_81.png)
 
 ![](img/30cc1fd08333411df1f429aca431b8df_83.png)
 

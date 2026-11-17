@@ -2,21 +2,17 @@
 
 在本节课中，我们将要学习图像处理在工程与科学领域的广泛应用及其重要性，并了解MathWorks提供的系列课程结构。
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_1.png)
 
 从图像中提取信息对于众多应用至关重要。
 
 
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_1.png)
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_3.png)
 
 这些应用包括诊断医疗状况、研究气候变化的影响、设计自主系统以及改善农业。
 
 
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_3.png)
 
 无论您身处哪个领域，分析图像都是当今许多工作所必需的技能。这就是MathWorks创建《工程与科学图像处理》系列课程的原因。
 
@@ -24,9 +20,7 @@
 
 
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_5.png)
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_5.png)
 
 MATLAB专为工程师和科学家设计，包含许多应用程序，使您能够快速测试不同方法并可视化结果。这些应用程序会自动生成代码，以便您可以复现和扩展您的工作。
 
@@ -36,17 +30,13 @@ MATLAB专为工程师和科学家设计，包含许多应用程序，使您能�
 
 
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_7.png)
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_7.png)
 
 例如，您将使用颜色信息来识别成熟的蓝莓。
 
 
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_9.png)
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_9.png)
 
 并从卫星图像中计算冰川融化的量。在第二门课程中，您将解决图像分割中的常见挑战。
 
@@ -54,7 +44,6 @@ MATLAB专为工程师和科学家设计，包含许多应用程序，使您能�
 
 
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_11.png)
 
 ![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_11.png)
 
@@ -62,7 +51,6 @@ MATLAB专为工程师和科学家设计，包含许多应用程序，使您能�
 
 
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_13.png)
 
 ![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_13.png)
 
@@ -70,23 +58,18 @@ MATLAB专为工程师和科学家设计，包含许多应用程序，使您能�
 
 
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_15.png)
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_15.png)
 
 在第三门课程中，您将自动化您的算法以处理数千张图像，从而节省时间和精力。
 
 
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_17.png)
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_17.png)
 
 当您拥有大量图像时，目视检查所有图像是不可行的。您将练习分析结果，以识别需要进一步调查的异常值。
 
 
 
-![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_19.png)
 
 ![](img/deadb9b3ed667c66bfaeb16d2cad8a3f_19.png)
 

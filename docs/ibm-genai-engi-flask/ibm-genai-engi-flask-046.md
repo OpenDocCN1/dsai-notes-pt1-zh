@@ -29,7 +29,6 @@ P值用于评估我们计算出的相关系数的可靠性（确定性）。
 ### 实例分析
 理解了基本概念后，我们通过一个具体例子来看如何应用。以下图表展示了具有不同相关系数值的数据分布。
 
-![](img/cade0e8e766f3d0177faeda912abfc57_1.png)
 
 假设我们想分析汽车“马力”与“价格”两个变量之间的相关性。使用Python的`scipy.stats`包可以轻松计算皮尔逊相关系数。
 
@@ -39,7 +38,6 @@ from scipy import stats
 correlation_coefficient, p_value = stats.pearsonr(horsepower, car_price)
 ```
 
-![](img/cade0e8e766f3d0177faeda912abfc57_1.png)
 
 计算结果显示，相关系数约为**0.8**（接近1），表明存在**强正相关**。同时，P值非常小（远小于0.001），因此我们可以确信这种强正相关关系是 statistically significant 的。
 
@@ -48,7 +46,6 @@ correlation_coefficient, p_value = stats.pearsonr(horsepower, car_price)
 
 以下是综合考虑所有变量后生成的热力图，它展示了每对变量之间的皮尔逊相关系数。颜色深浅代表相关性的强弱。
 
-![](img/cade0e8e766f3d0177faeda912abfc57_3.png)
 
 我们可以观察到一条深红色的对角线。这条线上的值均为1，代表每个变量与自身的完全相关，这符合逻辑。这张热力图清晰地概括了不同变量之间的相互关系，最重要的是，它直观地展示了各个变量与目标变量（如“价格”）的相关性。
 

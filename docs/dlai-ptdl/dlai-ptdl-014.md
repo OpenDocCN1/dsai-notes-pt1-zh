@@ -25,7 +25,6 @@ import torch
 torch.cuda.is_available()
 ```
 
-![](img/0ce479dbfcc968b78e620de1cdeb39fc_1.png)
 
 如果上述代码返回`True`，则PyTorch可以使用GPU来加速计算。
 
@@ -61,11 +60,9 @@ for batch in dataloader:
     # ... 后续训练步骤
 ```
 
-![](img/0ce479dbfcc968b78e620de1cdeb39fc_3.png)
 
 ## 如何检查设备位置？
 
-![](img/0ce479dbfcc968b78e620de1cdeb39fc_4.png)
 
 如果你不确定某个对象在哪个设备上，可以随时检查。
 
@@ -151,7 +148,6 @@ for epoch in range(num_epochs):
 4.  可以通过 `.device` 属性检查张量或模型参数所在的设备。
 5.  需要注意GPU的内存限制，合理设置批次大小。
 
-![](img/0ce479dbfcc968b78e620de1cdeb39fc_6.png)
 
 早期就正确处理设备管理，可以帮助你避免PyTorch中最令人沮丧的一类错误。当出现问题时，你也将确切地知道该检查什么。
 

@@ -575,7 +575,6 @@ Wall time: 162 ms
 plt.scatter(preds, y_valid, alpha=0.05)
 ```
 
-![](img/296362b55926d59abb5a22c586cd3787.png)
 
 这是我的 R²。
 

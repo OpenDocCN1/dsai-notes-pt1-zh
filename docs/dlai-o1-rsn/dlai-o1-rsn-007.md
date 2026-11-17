@@ -2,15 +2,11 @@
 
 ![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_0.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_2.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_3.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_4.png)
 
 ![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_5.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_6.png)
 
 ![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_7.png)
 
@@ -26,14 +22,11 @@
 
 我们以一份航班取消与改签政策为例。这份政策是为人类客服设计的，内容分散，没有明确告知LLM哪些是外部操作，哪些可以直接执行。我们的第一步是使用o1来重写这份政策，使其指令更清晰、更易于LLM可靠地遵循。
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_9.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_11.png)
 
 以下是用于转换的提示词，它定义了目标并给出了转换过程的指令：
 
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_13.png)
 
 ```python
 conversion_prompt = """
@@ -50,17 +43,11 @@ conversion_prompt = """
 """
 ```
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_15.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_16.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_17.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_19.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_20.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_22.png)
 
 我们定义一个函数来执行此转换：
 
@@ -89,7 +76,6 @@ def generate_routine(policy):
 *   **客户信息**：用于模拟客户在对话中提供的信息。
 *   **预期响应**：正确的最终响应（包括调用的工具和参数）。
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_24.png)
 
 我们设计多轮评估是因为客户服务通常是多回合的。流程如下：
 1.  将o1生成的规程作为策略提供给GPT-4o智能体。
@@ -98,11 +84,8 @@ def generate_routine(policy):
 4.  对话持续进行，直到智能体调用一个“退出工具”（如退款、改签），此时对话终止。
 5.  对于每个评估记录，我们评估两点：**是否正确调用了工具**，以及**是否提供了正确的参数**。
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_25.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_27.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_29.png)
 
 以下是评估循环中处理单行评估数据的核心函数逻辑：
 
@@ -135,9 +118,7 @@ def process_row(row, policy, model):
     return None  # 超过最大轮数，评估失败
 ```
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_31.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_32.png)
 
 运行基线评估后，我们得到了一个准确率（例如65%）。通过查看错误案例，我们可以发现智能体在遵循规程时出现的问题，例如错误地提供了航班积分而非部分退款，或者在多轮对话中未能成功获取必要信息。
 
@@ -147,11 +128,8 @@ def process_row(row, policy, model):
 
 元提示工程的核心是让更智能的o1模型分析评估结果，找出规程中的问题，并生成改进后的新规程。我们将进行多次迭代。
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_34.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_35.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_37.png)
 
 首先，我们定义向o1发送的元提示词。这个提示词需要包含：
 1.  o1的角色定义（优化指令的智能体）。
@@ -213,25 +191,17 @@ for i in range(NUM_ITERATIONS):
 
 ## 总结
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_39.png)
 
 本节课中我们一起学习了元提示工程的完整流程。
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_41.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_42.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_43.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_44.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_45.png)
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_46.png)
 
 我们首先从一个为人类客服编写的知识库策略出发，使用o1将其转换为适合LLM执行的规程。接着，我们创建了一个多轮对话评估框架，模拟AI客户与基于规程的AI智能体之间的交互，并得到了基线评估分数。
 
-![](img/0a4ffbd0d05c5d5d2bf4b76113738b83_48.png)
 
 由于对基线结果不满意，我们进行了第三步——元提示工程。通过多次迭代，让o1分析评估结果并优化规程，最终成功将评估准确率从基线水平显著提升。
 

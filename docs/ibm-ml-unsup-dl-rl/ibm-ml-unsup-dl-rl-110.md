@@ -16,7 +16,6 @@ If the police are too good， then perhaps they won't have any motivation to bui
 
 
 
-![](img/418016f101085753dc782ea7d9f71078_1.png)
 
 So there's going to be this balance that we also want to take into account。Now。
 
@@ -42,7 +41,6 @@ And if the discriminator is too lenient， on the other hand。
 
 
 
-![](img/418016f101085753dc782ea7d9f71078_3.png)
 
 So what you should be doing。To train gangs yourself。Since GNs are fairly new。
 
@@ -58,13 +56,11 @@ Age interpolation or making people in images look older or younger than they act
 
 
 
-![](img/418016f101085753dc782ea7d9f71078_5.png)
 
 And here we have some links and some examples of Gs being used for generating fake images of people and learning lip sync from audio。
 
 
 
-![](img/418016f101085753dc782ea7d9f71078_7.png)
 
 Now， just to Ricap。In this section， we discuss an overview of generative adversarial networks or GNs and the idea of how we can leverage adversarial examples to generate more realistic samples。
 
@@ -76,6 +72,5 @@ Now that closes out our video here on GANS， in the next video we're going to d
 
 
 
-![](img/418016f101085753dc782ea7d9f71078_9.png)
 
 ![](img/418016f101085753dc782ea7d9f71078_10.png)

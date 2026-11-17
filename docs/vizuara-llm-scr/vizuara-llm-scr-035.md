@@ -1,6 +1,5 @@
 # 35：指令微调简介、数据集加载与提示词格式化
 
-![](img/8439fe0f3efcc1bf6ca464804ba9b72f_0.png)
 
 ![](img/8439fe0f3efcc1bf6ca464804ba9b72f_0.png)
 
@@ -217,6 +216,5 @@ Validation set size: 55
 
 请尝试跟随课程并做好笔记。如果你是第一次观看本课程，我鼓励你观看之前的所有课程以巩固理解。感谢大家，我们下节课再见！
 
-![](img/8439fe0f3efcc1bf6ca464804ba9b72f_8.png)
 
 ![](img/8439fe0f3efcc1bf6ca464804ba9b72f_8.png)

@@ -204,7 +204,6 @@ OMOP ADE 任务的目标是为每一对($C$, $H$)分配三种标签之一（“�
 
 表 [1](https://arxiv.org/html/2408.01869v1#S5.T1 "表 1 ‣ 5.2 RQ1: MALADE 有效识别 ADE ‣ 5 实验 ‣ MALADE：使用检索增强生成技术的 LLM 驱动代理在药物监测中的协同工作") 中的结果表明，模型输出的置信度得分已经很好地进行了校准。我们观察到，MALADE 在区分 ADE 和非 ADE 以及识别效应的存在/缺失方面都表现良好。我们在附录 [B](https://arxiv.org/html/2408.01869v1#A2 "附录 B MALADE 实施的详细描述 ‣ MALADE：使用检索增强生成技术的 LLM 驱动代理在药物监测中的协同工作") 的图 [11](https://arxiv.org/html/2408.01869v1#A2.F11 "图 11 ‣ B.4 使用 GPT-4 Turbo 的标签后处理效果 ‣ 附录 B MALADE 实施的详细描述 ‣ MALADE：使用检索增强生成技术的 LLM 驱动代理在药物监测中的协同工作") 和图 [12](https://arxiv.org/html/2408.01869v1#A2.F12 "图 12 ‣ B.4 使用 GPT-4 Turbo 的标签后处理效果 ‣ 附录 B MALADE 实施的详细描述 ‣ MALADE：使用检索增强生成技术的 LLM 驱动代理在药物监测中的协同工作") 中包括了 ROC 曲线和敏感度与特异性曲线。我们还进行了额外评分函数的实验，特别是模型对 $C$ 会导致或防止 $H$ 的概率估计；详见附录 [B.1](https://arxiv.org/html/2408.01869v1#A2.SS1.SSS0.Px3 "步骤 3：标注每个药物类别与每个结果之间的关联。 ‣ B.1 提示给每个代理 ‣ 附录 B MALADE 实施的详细描述 ‣ MALADE：使用检索增强生成技术的 LLM 驱动代理在药物监测中的协同工作")。
 
-![参考说明](img/3991994cad9195a8ccfc25d7bf1fb962.png)
 
 ((a))
 
@@ -564,7 +563,6 @@ OMOP ADE 任务的真实数据如图[8](https://arxiv.org/html/2408.01869v1#A2.F
 
 ((a))
 
-![参见说明](img/a30b7058389fe7590f2be44aa02a50cd.png)
 
 ((b))
 
@@ -574,17 +572,14 @@ OMOP ADE 任务的真实数据如图[8](https://arxiv.org/html/2408.01869v1#A2.F
 
 图 10：在GPT-4o上运行的MALADE的预测结果。
 
-![参见说明](img/a3f0f45986ca137e275d9f60c694f104.png)
 
 ((a))
 
-![参见说明](img/e1a4d576f5728fbcfb57122680d8ed9a.png)
 
 ((b))
 
 图 11：MALADE在OMOP上的ROC曲线
 
-![参见说明](img/d7e4df83bff5ffa32d69d23941ff8275.png)
 
 ((a))
 

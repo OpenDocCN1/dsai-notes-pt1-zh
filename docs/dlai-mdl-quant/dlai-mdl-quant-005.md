@@ -74,7 +74,6 @@ quantized_tensor, scale = linear_q_symmetric(test_tensor)
 为了评估量化效果，我们需要将量化后的张量反量化回浮点数，并计算量化误差。
 
 
-![](img/78127bb1bfe604fb9d096eddc16a8aa7_4.png)
 
 ```python
 # 反量化
@@ -97,11 +96,8 @@ print("量化误差：", error)
 2.  **实现复杂度**：对称模式更简单，因为它不需要计算和存储零点。
 3.  **内存占用**：对称量化不需要存储零点，因此在内存上略有优势。
 
-![](img/78127bb1bfe604fb9d096eddc16a8aa7_6.png)
 
-![](img/78127bb1bfe604fb9d096eddc16a8aa7_7.png)
 
-![](img/78127bb1bfe604fb9d096eddc16a8aa7_8.png)
 
 在实践中，当我们进行8位量化时，通常使用对称模式。而当量化到更低的位数，如2、3或4位时，为了更充分地利用有限的表示范围，我们更常使用非对称量化。
 

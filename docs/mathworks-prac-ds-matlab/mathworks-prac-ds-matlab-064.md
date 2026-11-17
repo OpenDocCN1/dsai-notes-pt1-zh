@@ -1,24 +1,20 @@
 24：标准化数据示例
 
-![](img/47a874e5802de7faa493cacf87758730_1.png)
 
 在本节课中，我们将学习如何在MATLAB中对数据进行标准化处理。我们将了解标准化的重要性，并实践几种不同的标准化方法，包括Z分数、范围缩放和稳健Z分数，以处理不同分布类型的数据。
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_3.png)
 
 上一节我们了解了标准化对于比较不同单位和量纲的变量的重要性。本节中，我们将学习如何在MATLAB中执行不同类型的标准化。
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_5.png)
 
 首先，我们从航班数据集中加载九月份的数据，并筛选出从旧金山飞往洛杉矶国际机场的航班子集。
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_7.png)
 
 以下是加载和筛选数据的示例代码：
 ```matlab
@@ -48,7 +44,6 @@ ylabel('Frequency');
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_9.png)
 
 以下是移除异常值的代码：
 ```matlab
@@ -62,15 +57,12 @@ sf_to_lax_clean = rmoutliers(sf_to_lax, 'DataVariables', 'Airtime');
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_11.png)
 
 为了标准化`airtime`数据，我们使用`normalize`函数。该函数以表格中的一列作为输入，并返回其标准化版本。
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_13.png)
 
-![](img/47a874e5802de7faa493cacf87758730_14.png)
 
 以下是使用默认方法（Z分数）进行标准化的代码：
 ```matlab
@@ -86,7 +78,6 @@ sf_to_lax_clean.AirtimeNormalized = normalize(sf_to_lax_clean.Airtime);
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_16.png)
 
 这种标准化很有用，因为你可以将这些值理解为以**标准差**为单位。例如，一个标准化后的飞行时间值为+1，意味着原始值比平均值高一个标准差；而值为-2，则意味着原始值比平均值低两个标准差。
 
@@ -96,9 +87,7 @@ sf_to_lax_clean.AirtimeNormalized = normalize(sf_to_lax_clean.Airtime);
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_18.png)
 
-![](img/47a874e5802de7faa493cacf87758730_19.png)
 
 以下是标准化延误并绘制散点图的代码：
 ```matlab
@@ -112,7 +101,6 @@ title('Normalized Airtime vs. Departure Delay');
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_21.png)
 
 `departure delay`的值并非正态分布，因此Y轴上的范围有所不同。尽管如此，两个变量标准化后的值都具有均值为0、标准差为1的特性。这就引出了一个问题：如何对非正态分布的值进行标准化？
 
@@ -122,13 +110,11 @@ title('Normalized Airtime vs. Departure Delay');
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_23.png)
 
 让我们从一个具有明确定义范围的均匀分布开始。我们使用`hour`函数和计划的起飞时间变量来创建`departure hour`（起飞小时）变量。
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_25.png)
 
 以下是创建起飞小时变量的代码：
 ```matlab
@@ -158,15 +144,12 @@ sf_to_lax_clean.DepHourNormalized = normalize(sf_to_lax_clean.DepHour, 'range');
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_27.png)
 
 现在让我们回到像起飞延误这样既非均匀也非正态分布的变量。除了标准Z分数，一个选择是通过在`‘zscore’`后添加`‘robust’`标志来计算其稳健版本。
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_29.png)
 
-![](img/47a874e5802de7faa493cacf87758730_30.png)
 
 这个标志将使用**中位数绝对偏差**而不是标准差来缩放数据的范围。你可能记得，中位数绝对偏差是MATLAB中一种异常值检测方法。这是因为与标准差相比，这个统计量受异常值造成的扭曲影响较小，因此对于此类非正态分布是一个很好的选择。
 
@@ -180,9 +163,7 @@ depdelay_robustz = normalize(sf_to_lax_clean.DepDelay, 'zscore', 'robust', true)
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_32.png)
 
-![](img/47a874e5802de7faa493cacf87758730_34.png)
 
 标准化后，你可能会注意到值的范围变小了，但仍然比之前使用标准Z分数时看到的范围大得多。这是因为大的正异常值对缩放的影响较小，所以即使标准化后，值仍然很大。
 
@@ -192,7 +173,6 @@ depdelay_robustz = normalize(sf_to_lax_clean.DepDelay, 'zscore', 'robust', true)
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_36.png)
 
 以下是先移除异常值再标准化的代码：
 ```matlab
@@ -203,13 +183,11 @@ depdelay_clean_normalized = normalize(sf_to_lax_nooutliers.DepDelay, 'zscore', '
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_38.png)
 
 让我们再次检查直方图。现在看起来好多了，意味着标准化后的值具有合理的范围。现在，这个变量可以更容易地与其他变量进行比较，例如之前的飞行时间值。
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_40.png)
 
 你可以查看`normalize`函数的文档页面，了解其他标准化数据的方法。根据数据分布方式的不同，你可能需要对不同的变量使用不同的方法。
 
@@ -222,7 +200,6 @@ depdelay_clean_normalized = normalize(sf_to_lax_nooutliers.DepDelay, 'zscore', '
 
 
 
-![](img/47a874e5802de7faa493cacf87758730_42.png)
 
 ![](img/47a874e5802de7faa493cacf87758730_44.png)
 

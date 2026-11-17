@@ -1,6 +1,5 @@
 # 067：生成式AI在商业领域的崛起 🚀
 
-![](img/e808a2e13f0ddff35226a011c9cda894_0.png)
 
 ![](img/e808a2e13f0ddff35226a011c9cda894_1.png)
 

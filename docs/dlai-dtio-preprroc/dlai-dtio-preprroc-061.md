@@ -1,6 +1,5 @@
 #  061：SQL空值处理指南 🧩
 
-![](img/28e60e00eaecc92ad9119977a6e2c911_0.png)
 
 在本节课中，我们将学习如何在SQL中正确处理数据中的空值（Null）。空值是数据集中常见的缺失值，掌握其处理方法对于数据清洗和分析至关重要。
 
@@ -14,9 +13,7 @@
 
 ## 查看空值数据
 
-![](img/28e60e00eaecc92ad9119977a6e2c911_2.png)
 
-![](img/28e60e00eaecc92ad9119977a6e2c911_3.png)
 
 首先，让我们查看包含空值的具体数据行，以便更好地理解数据结构。
 
@@ -30,19 +27,16 @@ SELECT * FROM sets_with_themes WHERE parent_theme_id IS NULL;
 
 ## 方法一：过滤空值行
 
-![](img/28e60e00eaecc92ad9119977a6e2c911_5.png)
 
 处理空值的一种直接方法是排除包含空值的行。
 
 我们可以使用`IS NOT NULL`条件来筛选出`parent_theme_id`不为空的行：
 
-![](img/28e60e00eaecc92ad9119977a6e2c911_7.png)
 
 ```sql
 SELECT * FROM sets_with_themes WHERE parent_theme_id IS NOT NULL;
 ```
 
-![](img/28e60e00eaecc92ad9119977a6e2c911_8.png)
 
 这种方法将数据集从约11，600行减少到约8，000行。虽然有效，但可能会丢失大量有效数据，因此并非总是最佳选择。
 

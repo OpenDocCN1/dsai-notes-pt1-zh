@@ -1,12 +1,10 @@
 # 016：L7 构建定制求职申请的智能体团队
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_0.png)
 
 ## 概述
 
 在本节课中，我们将构建一个完整的智能体团队，其目标是帮助用户提高获得特定职位面试的机会。我们将通过分析职位描述、匹配个人技能、优化简历，并准备面试要点来实现这一目标。这个案例将综合运用我们之前学到的所有关于智能体、任务和工具的知识。
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_2.png)
 
 ---
 
@@ -50,7 +48,6 @@ os.environ["OPENAI_MODEL_NAME"] = "gpt-4-turbo"
 让我们创建这些工具并查看简历文件。
 
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_4.png)
 
 ![](img/21e20c9e15fb7f73e3acf247dbc2600b_5.png)
 
@@ -72,7 +69,6 @@ resume_search_tool = MDXSearchTool(mdx=‘./fake_resume.md‘)
 
 ![](img/21e20c9e15fb7f73e3acf247dbc2600b_6.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_7.png)
 
 ---
 
@@ -80,13 +76,9 @@ resume_search_tool = MDXSearchTool(mdx=‘./fake_resume.md‘)
 
 在继续之前，我们先看一下 `fake_resume.md` 文件的内容，了解智能体将要处理的信息。
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_9.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_10.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_11.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_12.png)
 
 这份伪造简历属于一个名叫 **Noah Williams** 的人。简历显示：
 *   **个人简介**：他拥有MBA学位，擅长领导力，自称软件工程领导者，在领导远程和现场工程团队方面表现出色。这更像是一个申请管理职位的简历。
@@ -180,9 +172,7 @@ research_task = Task(
 )
 ```
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_14.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_15.png)
 
 **2. 档案分析工作**
 此任务由档案分析员智能体执行，负责分析求职者的GitHub、个人简介等信息。
@@ -206,16 +196,12 @@ profiling_task = Task(
 )
 ```
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_17.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_18.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_19.png)
 
 **3. 简历策略工作**
 此任务由简历策略师智能体执行，负责生成定制化的新简历文件。**注意**：此任务需要等待前两个任务完成，以获取它们的输出作为上下文。
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_21.png)
 
 ```python
 resume_strategy_task = Task(
@@ -235,11 +221,8 @@ resume_strategy_task = Task(
 )
 ```
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_23.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_24.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_25.png)
 
 **4. 面试准备工作**
 此任务由面试准备员智能体执行，负责生成面试准备材料文件。
@@ -262,21 +245,15 @@ interview_prep_task = Task(
 
 ---
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_27.png)
 
 ## 组装团队并设置执行流程
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_29.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_30.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_31.png)
 
 现在，我们将所有智能体和任务组装成一个团队，并理解其执行流程。
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_33.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_34.png)
 
 ```python
 # 创建团队
@@ -289,15 +266,10 @@ job_application_crew = Crew(
 
 在启动团队之前，我们需要提供所有任务中定义的输入变量。
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_36.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_37.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_38.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_39.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_40.png)
 
 ```python
 # 定义输入
@@ -315,21 +287,14 @@ inputs = {
 
 ---
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_42.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_43.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_44.png)
 
 ## 运行团队并查看结果
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_45.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_46.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_47.png)
 
-![](img/21e20c9e15fb7f73e3acf247dbc2600b_48.png)
 
 ![](img/21e20c9e15fb7f73e3acf247dbc2600b_49.png)
 

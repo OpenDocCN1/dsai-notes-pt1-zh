@@ -20,9 +20,7 @@
 
 ### 人工智能方法
 
-![](img/39ac3ebf16dbb3eec9c2cf3489d1ce2f_1.png)
 
-![](img/39ac3ebf16dbb3eec9c2cf3489d1ce2f_2.png)
 
 ![](img/39ac3ebf16dbb3eec9c2cf3489d1ce2f_3.png)
 

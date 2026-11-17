@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P16：L16- ORDER BY 运算符 📊
 
-![](img/23e7e024eacd8fc2fbd5216b1f322792_0.png)
 
 ![](img/23e7e024eacd8fc2fbd5216b1f322792_0.png)
 
@@ -116,6 +115,5 @@ ORDER BY total_price DESC;
 
 在本节课中，我们一起学习了 SQL 中 `ORDER BY` 运算符的使用方法。我们了解了默认排序规则，掌握了按单列、多列、表达式和别名进行排序的技巧，并明白了避免按列位置排序的重要性。通过实践练习，你已能够运用这些知识对查询结果进行有效的排序。
 
-![](img/23e7e024eacd8fc2fbd5216b1f322792_8.png)
 
 ![](img/23e7e024eacd8fc2fbd5216b1f322792_8.png)

@@ -479,7 +479,6 @@ TUM Gait from Audio, Image, and Depth (GAID) (Hofmann 等，2014) 数据库，�
 
 数据集 A、B 和 C 的轮廓图可以免费下载⁵⁵5http://www.cbsr.ia.ac.cn/english/Gait%20Databases.asp。关于数据获取，申请者需填写表格并等待数据集所有者的批准。
 
-| ![参考说明](img/7392657dedac751622e650b0515e173b.png) | ![参考说明](img/0be4b0fb416757eda5b55374bdf00800.png) |
 | --- | --- |
 | (a) | (b) |
 | ![参考说明](img/f49ac6bf0100e0ec9960291c76a1361d.png) |
@@ -491,7 +490,6 @@ TUM Gait from Audio, Image, and Depth (GAID) (Hofmann 等，2014) 数据库，�
 
 图 9\. CASIA B 数据集中的示例帧。每张图像对应$11$个角度之一。图像摘自 [`www.cbsr.ia.ac.cn/users/szheng/?page_id=71.`](http://www.cbsr.ia.ac.cn/users/szheng/?page_id=71.)
 
-| ![参考说明](img/50eecb507242f5f6ca8f0c3d61575182.png) | ![参考说明](img/a2f0f2d6beaf2b3a15e0a072cc91d781.png) |
 | --- | --- |
 | (a) | (b) |
 | ![参考说明](img/a92572586adc174391f6bd908677cdf0.png) |
@@ -603,7 +601,6 @@ AVA 多视角步态识别数据集（AVAMVG）⁷⁷7 更多信息见： [`www.
 
     数据集 A（直线）：它由沿直线轨迹行走的人的连续 3D 模型和图像序列组成。图 14(a) 展示了轨迹，描述为红色箭头。图 14(b) 描述了多个 3D 重建模型。
 
-    | ![参见说明](img/a3fba47323a23aee5fd38b7dd03de02c.png) | ![参见说明](img/157937db7a7b56811195a6fbc83787de.png) |
     | --- | --- |
     | (a) | (b) |
 

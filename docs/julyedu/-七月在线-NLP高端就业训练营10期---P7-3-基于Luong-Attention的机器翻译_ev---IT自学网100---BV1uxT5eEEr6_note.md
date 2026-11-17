@@ -1,6 +1,5 @@
 # 【七月在线】NLP高端就业训练营10期 - P7：3.基于Luong Attention的机器翻译教程 🧠➡️🗣️
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_0.png)
 
 在本节课中，我们将学习如何使用Sequence-to-Sequence模型进行机器翻译，并训练一个简单的聊天机器人。我们将从基础的Encoder-Decoder模型开始，逐步引入Luong Attention机制，以提升翻译效果。课程内容将涵盖模型原理、代码实现以及实际应用。
 
@@ -8,17 +7,13 @@
 
 ## 模型回顾 📚
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_2.png)
 
 上一节我们介绍了语言模型的基本概念。本节中，我们来看看用于机器翻译的Sequence-to-Sequence模型。
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_4.png)
 
 ![](img/7ca84620974cefb70e6f3332d9f1ff93_6.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_8.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_10.png)
 
 ![](img/7ca84620974cefb70e6f3332d9f1ff93_12.png)
 
@@ -41,9 +36,7 @@
 *   不再只使用最后一个隐藏状态作为句子表示，而是认为**每个隐藏状态**都是句子表示的一部分。
 *   在解码时，对于当前要生成的单词，计算一个**加权和**（Weighted Sum）作为当前的上下文向量（Context Vector），并将其与解码器的输入结合。
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_14.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_16.png)
 
 这个加权和的权重（即Attention分数）通过以下方式计算：
 1.  计算解码器上一个时刻的隐藏状态 **s<sub>t-1</sub>** 与编码器所有隐藏状态 **h<sub>j</sub>** 的相似度得分 **e<sub>tj</sub>**。
@@ -54,9 +47,7 @@
 **α<sub>tj</sub> = softmax(e<sub>tj</sub>)**
 **c<sub>t</sub> = Σ<sub>j</sub> α<sub>tj</sub> h<sub>j</sub>**
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_18.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_20.png)
 
 ### Luong Attention
 
@@ -71,23 +62,17 @@
 
 本节我们将使用Luong Attention的**双线性（General）** 方法来构建我们的机器翻译模型。
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_22.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_24.png)
 
 ---
 
 ## 代码实现 💻
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_26.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_28.png)
 
 理解了模型原理后，本节我们来看看如何用PyTorch实现一个基于Luong Attention的机器翻译模型。由于数据集较小，训练出的模型效果可能有限，但足以帮助我们理解整个过程。
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_30.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_32.png)
 
 ### 环境与数据准备
 
@@ -122,9 +107,7 @@ train_data = read_data('train.txt')
 dev_data = read_data('dev.txt')
 ```
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_34.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_36.png)
 
 ### 构建词表
 
@@ -216,15 +199,11 @@ class Attention(nn.Module):
 
 #### 3. 解码器（Decoder with Attention）
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_38.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_40.png)
 
 解码器在每一步使用Attention计算出的上下文向量。
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_42.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_44.png)
 
 ```python
 class Decoder(nn.Module):
@@ -261,17 +240,13 @@ class Decoder(nn.Module):
         return outputs, hidden
 ```
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_46.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_48.png)
 
 #### 4. Seq2Seq模型
 
 最后，将编码器和解码器组合成完整的Sequence-to-Sequence模型。
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_50.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_52.png)
 
 ```python
 class Seq2Seq(nn.Module):
@@ -301,15 +276,11 @@ class Seq2Seq(nn.Module):
         return trg_indices[1:] # 去掉<bos>
 ```
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_54.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_56.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_58.png)
 
 ### 训练与评估
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_60.png)
 
 定义好模型后，我们需要编写训练和评估循环。
 
@@ -346,13 +317,9 @@ def evaluate(model, iterator, criterion):
 现在，我们可以初始化模型并开始训练。
 
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_62.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_64.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_66.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_68.png)
 
 ```python
 # 超参数
@@ -381,17 +348,12 @@ for epoch in range(N_EPOCHS):
     print(f'\t Val. Loss: {valid_loss:.3f}')
 ```
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_70.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_72.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_74.png)
 
 ### 测试翻译
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_76.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_78.png)
 
 训练完成后，我们可以用模型进行翻译测试。
 
@@ -415,13 +377,10 @@ print(f"输入: {test_sentence}")
 print(f"翻译: {translation}")
 ```
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_80.png)
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_82.png)
 
 ---
 
-![](img/7ca84620974cefb70e6f3332d9f1ff93_84.png)
 
 ## 聊天机器人简介 🤖
 

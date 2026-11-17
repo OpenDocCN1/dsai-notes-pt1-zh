@@ -1,89 +1,59 @@
 # 161：奇异值分解代码实现 📊
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_0.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_2.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_4.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_6.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_8.png)
 
 在本节课中，我们将学习使用奇异值分解（SVD）来实现PCA降维算法。我们将从PCA的基本原理回顾开始，然后深入探讨SVD的数学概念，最后通过代码实现，将理论应用于实践。
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_10.png)
 
 ## 概述
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_12.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_14.png)
 
 上一节我们介绍了基于特征值和特征向量的PCA实现方法。本节中，我们来看看另一种实现PCA降维的途径——奇异值分解。我们将详细解释SVD的数学原理，并通过代码演示如何利用SVD得到与特征值分解相同的结果。
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_16.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_18.png)
 
 ## 核心概念回顾与深入
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_20.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_22.png)
 
 ### 样本标准差与总体标准差
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_24.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_26.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_28.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_30.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_32.png)
 
 在数据处理中，我们需要区分样本标准差和总体标准差。总体标准差公式为：
 `σ = sqrt( Σ(xi - μ)² / N )`
 其中，`N`是总体数据量。
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_34.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_36.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_38.png)
 
 样本标准差公式为：
 `s = sqrt( Σ(xi - x̄)² / (n-1) )`
 其中，`n`是样本数据量，分母使用`n-1`（即自由度`ddof=1`）。
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_40.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_42.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_44.png)
 
 样本是总体的一部分，使用`n-1`作为分母是为了进行无偏估计，减少因样本不能完全代表总体而产生的误差。在NumPy中，`np.std()`函数的`ddof`参数即用于控制此分母的调整量（`n - ddof`）。PCA算法在进行标准化时，默认采用`ddof=1`。
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_46.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_48.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_50.png)
 
 ### 协方差与散度矩阵
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_52.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_54.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_56.png)
 
 两个样本属性X和Y之间的协方差计算公式为：
 `Cov(X, Y) = Σ[(xi - x̄)(yi - ȳ)] / (n-1)`
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_58.png)
 
 当计算属性自身的协方差时（如Cov(X, X)），其结果就是该属性的方差。因此，方差是协方差的一种特殊形式。
 
@@ -97,9 +67,7 @@ PCA算法除了基于特征值分解的实现外，还可以通过奇异值分�
 
 ### 什么是奇异值分解（SVD）？
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_60.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_62.png)
 
 奇异值分解是一种矩阵因子分解运算，它将一个矩阵`A`分解为三个矩阵的乘积：
 `A ≈ U * Σ * V^T`
@@ -108,44 +76,29 @@ PCA算法除了基于特征值分解的实现外，还可以通过奇异值分�
 *   `Σ`是一个对角矩阵，其对角线上的元素称为奇异值。
 *   `V^T`是右奇异矩阵`V`的转置，也是正交矩阵。
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_64.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_66.png)
 
 奇异值的大小代表了其对应成分的重要性，这与特征值分解中特征值的意义类似。
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_68.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_70.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_72.png)
 
 ### 代码实现步骤
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_74.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_76.png)
 
 以下是使用SVD实现PCA降维的核心代码步骤：
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_78.png)
-
-![](img/24928dee5d8ddcf3a55531d477a06d76_80.png)
 
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_82.png)
-
-![](img/24928dee5d8ddcf3a55531d477a06d76_84.png)
 
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_86.png)
-
-![](img/24928dee5d8ddcf3a55531d477a06d76_88.png)
 
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_90.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_92.png)
+
+
+
 
 ```python
 # 1. 导入必要的库
@@ -174,11 +127,8 @@ X_reduced_svd = U_k * s[:k]  # 注意：这里是对应元素相乘，因为s是
 X_reduced_svd_normalized = (X_reduced_svd - np.mean(X_reduced_svd, axis=0)) / np.std(X_reduced_svd, axis=0, ddof=1)
 ```
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_94.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_96.png)
 
-![](img/24928dee5d8ddcf3a55531d477a06d76_97.png)
 
 ### 关键步骤解析
 

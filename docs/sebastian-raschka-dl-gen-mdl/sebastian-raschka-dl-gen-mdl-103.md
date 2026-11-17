@@ -2,7 +2,6 @@
 
 在本节课中，我们将探讨深度学习中一个术语上的细节：卷积神经网络（CNN）中实际执行的操作与信号处理中定义的“卷积”之间的区别。我们将明确互相关与卷积在数学定义和实际操作上的不同，并解释为何在深度学习中我们通常使用“卷积”这一术语。
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_1.png)
 
 ## 概述
 
@@ -10,7 +9,6 @@
 
 ## 互相关与卷积的数学定义
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_3.png)
 
 上一节我们介绍了卷积层通过滑动窗口和点积提取特征。本节中，我们来看看这个操作在数学上的两种形式化定义：互相关和卷积。
 
@@ -29,7 +27,6 @@
 
 注意卷积公式中滤波器 `W` 的索引 `-m, -n`，这代表了翻转操作。
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_5.png)
 
 ## 通过图示理解区别
 
@@ -39,9 +36,7 @@
 
 
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_1.png)
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_7.png)
 
 在互相关中，我们直接将滤波器覆盖在输入上对应位置进行逐元素相乘并求和。这与我们实现卷积层时的直觉完全相符。
 
@@ -49,13 +44,9 @@
 
 
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_9.png)
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_11.png)
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_7.png)
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_13.png)
 
 你可以看到，滤波器的角标顺序发生了颠倒。简而言之：
 *   在**互相关**中，我们按 `(左上->右下)` 的顺序对齐相乘。
@@ -63,7 +54,6 @@
 
 
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_13.png)
 
 ## 代码验证
 
@@ -124,7 +114,6 @@ print(f"PyTorch (翻转权重后) 结果: {result_pytorch_flipped.item():.4f}")
 # 输出应与 SciPy 数学卷积结果相同，例如: -0.26
 ```
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_15.png)
 
 ## 为何在深度学习中这并不重要
 
@@ -139,9 +128,7 @@ print(f"PyTorch (翻转权重后) 结果: {result_pytorch_flipped.item():.4f}")
 
 
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_17.png)
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_17.png)
 
 ## 总结
 
@@ -156,8 +143,6 @@ print(f"PyTorch (翻转权重后) 结果: {result_pytorch_flipped.item():.4f}")
 
 
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_19.png)
 
-![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_20.png)
 
 ![](img/943a8b56e7d0c3bcc448beb5f35b8eb6_19.png)

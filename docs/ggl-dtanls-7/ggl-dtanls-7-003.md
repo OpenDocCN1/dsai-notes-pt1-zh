@@ -1,6 +1,5 @@
 # 003：谷歌数据分析师课程第七课《使用R编程进行数据分析》📊
 
-![](img/5f94402a3c1eea14f4238d70394d942f_0.png)
 
 ## 课程概述
 
@@ -37,7 +36,6 @@ cleaned_data <- raw_data %>%
   summarise(mean_value = mean(value))
 ```
 
-![](img/5f94402a3c1eea14f4238d70394d942f_2.png)
 
 ![](img/5f94402a3c1eea14f4238d70394d942f_3.png)
 

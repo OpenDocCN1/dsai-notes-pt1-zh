@@ -70,6 +70,5 @@ SELECT * FROM `bigquery-public-data.sunroof_solar.solar_potential_by_postal_code
 
 ---
 
-![](img/3af15a3c09545b36c6b224fb86c86505_2.png)
 
 ![](img/3af15a3c09545b36c6b224fb86c86505_2.png)

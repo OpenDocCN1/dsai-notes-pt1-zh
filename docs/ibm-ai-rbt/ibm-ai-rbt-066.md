@@ -16,21 +16,15 @@
 *   **浮点数**：表示实数，包含小数部分，例如 `21.213`。
 *   **字符串**：表示文本，是一个字符序列，例如 `"Hello"`。
 
-![](img/303a0366888242373ccefcdcf900da58_1.png)
 
-![](img/303a0366888242373ccefcdcf900da58_2.png)
 
 ## 使用 `type()` 命令
 
-![](img/303a0366888242373ccefcdcf900da58_3.png)
 
-![](img/303a0366888242373ccefcdcf900da58_4.png)
 
 我们可以使用 Python 内置的 `type()` 命令来查看任何数据或变量的具体类型。
 
-![](img/303a0366888242373ccefcdcf900da58_5.png)
 
-![](img/303a0366888242373ccefcdcf900da58_6.png)
 
 ```python
 type(11)    # 输出：<class 'int'>
@@ -38,23 +32,16 @@ type(21.213) # 输出：<class 'float'>
 type("Hello") # 输出：<class 'str'>
 ```
 
-![](img/303a0366888242373ccefcdcf900da58_7.png)
 
-![](img/303a0366888242373ccefcdcf900da58_8.png)
 
-![](img/303a0366888242373ccefcdcf900da58_9.png)
 
 ### 整数类型
 
-![](img/303a0366888242373ccefcdcf900da58_10.png)
 
-![](img/303a0366888242373ccefcdcf900da58_11.png)
 
 整数可以是正数或负数。虽然计算机中整数的表示范围是有限的，但这个范围通常足够大，能满足大多数应用场景。
 
-![](img/303a0366888242373ccefcdcf900da58_12.png)
 
-![](img/303a0366888242373ccefcdcf900da58_13.png)
 
 ```python
 # 整数示例
@@ -76,29 +63,21 @@ small_number = 0.00001
 
 在 Python 中，你可以改变一个值的数据类型，这个过程称为**类型转换**或**类型铸造**。
 
-![](img/303a0366888242373ccefcdcf900da58_15.png)
 
-![](img/303a0366888242373ccefcdcf900da58_16.png)
 
 ### 整数与浮点数互转
 
-![](img/303a0366888242373ccefcdcf900da58_17.png)
 
-![](img/303a0366888242373ccefcdcf900da58_18.png)
 
 你可以将一个整数转换为浮点数。
 
-![](img/303a0366888242373ccefcdcf900da58_19.png)
 
-![](img/303a0366888242373ccefcdcf900da58_20.png)
 
 ```python
 float(2)  # 结果是 2.0
 ```
 
-![](img/303a0366888242373ccefcdcf900da58_21.png)
 
-![](img/303a0366888242373ccefcdcf900da58_22.png)
 
 将浮点数转换为整数时需谨慎，因为转换会直接舍弃小数部分，可能导致信息丢失。
 
@@ -107,11 +86,9 @@ int(1.1)  # 结果是 1
 int(1.9)  # 结果也是 1，并非四舍五入
 ```
 
-![](img/303a0366888242373ccefcdcf900da58_24.png)
 
 ### 字符串与其他类型互转
 
-![](img/303a0366888242373ccefcdcf900da58_26.png)
 
 如果字符串的内容是一个有效的整数，可以将其转换为 `int` 类型。
 
@@ -134,13 +111,10 @@ str(78.9)    # 结果是字符串 "78.9"
 
 ## 布尔类型
 
-![](img/303a0366888242373ccefcdcf900da58_28.png)
 
 布尔类型是 Python 中另一个重要的数据类型，它只有两个可能的值：`True` 和 `False`（注意首字母大写）。
 
-![](img/303a0366888242373ccefcdcf900da58_29.png)
 
-![](img/303a0366888242373ccefcdcf900da58_30.png)
 
 ```python
 is_active = True
@@ -148,11 +122,8 @@ is_finished = False
 type(True)  # 输出：<class 'bool'>
 ```
 
-![](img/303a0366888242373ccefcdcf900da58_31.png)
 
-![](img/303a0366888242373ccefcdcf900da58_32.png)
 
-![](img/303a0366888242373ccefcdcf900da58_33.png)
 
 布尔类型与数字类型之间可以相互转换：
 *   将 `True` 转换为整数或浮点数，会得到 `1`。
@@ -160,9 +131,7 @@ type(True)  # 输出：<class 'bool'>
 *   将数字 `1` 转换为布尔值，会得到 `True`。
 *   将数字 `0` 转换为布尔值，会得到 `False`。
 
-![](img/303a0366888242373ccefcdcf900da58_34.png)
 
-![](img/303a0366888242373ccefcdcf900da58_35.png)
 
 ```python
 int(True)   # 结果是 1
@@ -172,13 +141,10 @@ bool(0)     # 结果是 False
 bool(3)     # 结果是 True（任何非零数字转换为布尔值均为 True）
 ```
 
-![](img/303a0366888242373ccefcdcf900da58_36.png)
 
-![](img/303a0366888242373ccefcdcf900da58_37.png)
 
 ## 总结
 
-![](img/303a0366888242373ccefcdcf900da58_38.png)
 
 ![](img/303a0366888242373ccefcdcf900da58_39.png)
 

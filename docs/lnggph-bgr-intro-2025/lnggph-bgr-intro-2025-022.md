@@ -2,7 +2,6 @@ LangGraph初学者入门2025：P22：构建ReAct节点
 
 在本节课中，我们将学习如何构建LangGraph中ReAct代理的两个核心节点：推理节点和执行节点。我们将基于上一节创建的Runnable，具体实现这两个节点的功能。
 
-![](img/31552e247b4ea484c2167364ced784f9_1.png)
 
 ---
 
@@ -38,11 +37,9 @@ new_state = {“agent_outcome”: reason_node_output}
 
 当推理节点的结果是`AgentAction`时，流程会进入执行节点。该节点的职责是执行指定的工具调用，并将结果记录下来。
 
-![](img/31552e247b4ea484c2167364ced784f9_3.png)
 
 以下是执行节点的实现步骤：
 
-![](img/31552e247b4ea484c2167364ced784f9_4.png)
 
 1.  **提取动作**：从`agent_outcome`中获取需要执行的`AgentAction`。
 2.  **执行工具**：使用`ToolExecutor`来调用该动作对应的工具。
@@ -66,7 +63,6 @@ new_intermediate_step = (agent_action, str(tool_output))
 
 ### 总结
 
-![](img/31552e247b4ea484c2167364ced784f9_6.png)
 
 ![](img/31552e247b4ea484c2167364ced784f9_7.png)
 

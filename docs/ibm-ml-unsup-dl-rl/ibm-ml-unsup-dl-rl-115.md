@@ -8,13 +8,11 @@ Welcome back。 Here。 we're in part 1。 In our first video。
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_1.png)
 
 And start to observe and gather data on what type of actions actually lead to rewards。
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_3.png)
 
 So some things to keep in mind is we're going to want to store each one of the different run throughs we're going to name each one of those episodes right we discussed earlier how from start to finish will be a single episode we start again that'll be the second episode and so on and so forth we're going to do that for  a thousand00 or more episodes here we're actually going do it for 40。
 
@@ -24,7 +22,6 @@ The action taken from that observation。And then the current reward。
 
  whether or not we've reached a reward state。
 
-![](img/df55a7efc076a9b003a6fcc93368e430_5.png)
 
 And some things to keep in mind as we go through this。
 
@@ -40,7 +37,6 @@ We saw before how we output this tuple of new observation， reward。
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_7.png)
 
 And we saw how we did that up above。And then some things that we can work with if we think about M doaspace。
 
@@ -50,7 +46,6 @@ And we saw how we did that up above。And then some things that we can work with
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_9.png)
 
 That's going to be that random step and that's what we're going to be doing as we gather data。
 
@@ -64,17 +59,13 @@ And then if we want to know how many possible states are on the environment。
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_11.png)
 
-![](img/df55a7efc076a9b003a6fcc93368e430_12.png)
 
-![](img/df55a7efc076a9b003a6fcc93368e430_13.png)
 
 So walking through what we have here。We're going to reinstate our environment。
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_15.png)
 
 We're saying that we want to go through 40，000 full episodes， so resetting up until the end。
 
@@ -86,15 +77,12 @@ And are going to save all of them in this life memory。So then we say four I th
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_17.png)
 
 So this is the entire for loop that I'm going to pull out and put into a separate cell。
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_19.png)
 
-![](img/df55a7efc076a9b003a6fcc93368e430_20.png)
 
 So we have the old observation， so starting off our old observation will'll be starting at 0。0。
 
@@ -104,9 +92,7 @@ Whether or not it's done， we're starting at false。 The total reward at this 
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_22.png)
 
-![](img/df55a7efc076a9b003a6fcc93368e430_23.png)
 
 And while not done。We take a new action。And that new action just going to be a random action？
 
@@ -130,17 +116,14 @@ We can then get using that new action and using MD dot step。
 
  This is still all within this while loop。
 
-![](img/df55a7efc076a9b003a6fcc93368e430_25.png)
 
 And we keep doing this until we hit done。
 
-![](img/df55a7efc076a9b003a6fcc93368e430_27.png)
 
 So let's actually just run this portion， I'm going to put this in the cell below。
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_29.png)
 
 So we've run now one episode。And we said I， let's just see what our Is from a different for loop we have I is equal to4。
 
@@ -148,9 +131,7 @@ So we've run now one episode。And we said I， let's just see what our Is from 
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_31.png)
 
-![](img/df55a7efc076a9b003a6fcc93368e430_32.png)
 
 We see that we took a few steps observation zero， the actions that we took until we hit the end of the game。
 
@@ -162,7 +143,6 @@ And we hit the end of the game by falling in a hole。
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_34.png)
 
 And then when we're saving these episode memories， we also want to save when we put this into a panda's data frame。
 
@@ -174,7 +154,6 @@ And then when we're saving these episode memories， we also want to save when w
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_36.png)
 
 Which is just going to be those values that we added up as new rewards came in。
 
@@ -182,7 +161,6 @@ Which is just going to be those values that we added up as new rewards came in�
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_38.png)
 
 And then we want to look at this value i times total rewards divided by number of steps。
 
@@ -196,21 +174,17 @@ And what that does。 And we'll look at this a little bit later on once we actua
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_40.png)
 
-![](img/df55a7efc076a9b003a6fcc93368e430_41.png)
 
 So we're going to extend that life memory using this。
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_43.png)
 
 Oh we life memory size。Up here， and I pulled that out of the for loop。
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_45.png)
 
 But we can add on that episode memory and let's just look at what that episode memory looks like。
 
@@ -220,7 +194,6 @@ And you see that it's going to be the same as before。
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_47.png)
 
 So that's going to be everything here within the for loop。
 
@@ -228,11 +201,9 @@ So that's going to be everything here within the for loop。
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_49.png)
 
 Which is our list here。
 
-![](img/df55a7efc076a9b003a6fcc93368e430_51.png)
 
 And then at the end， we're going to take that life memory and put that into a panda's data frame。
 
@@ -242,7 +213,6 @@ So let's run this and this will take just a bit to run as we' running through 40
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_53.png)
 
 And we see for each one of our features that we have the number of observations or what where we were and the average space where we were。
 
@@ -252,11 +222,8 @@ And we see for each one of our features that we have the number of observations 
 
 4。
 
-![](img/df55a7efc076a9b003a6fcc93368e430_55.png)
 
-![](img/df55a7efc076a9b003a6fcc93368e430_56.png)
 
-![](img/df55a7efc076a9b003a6fcc93368e430_57.png)
 
 And what's going to be even or make this a bit clear， well， first， let's look at the shape。
 
@@ -264,7 +231,6 @@ We see that we have 306，997 different rows。And if we look at。A couple of v
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_59.png)
 
 Let's say memory D F。Such that the memory。DF is， or let's say。Let's just look at the first episode。
 
@@ -272,7 +238,6 @@ Let's say memory D F。Such that the memory。DF is， or let's say。Let's just
 
  and I'll explain why in just a second。
 
-![](img/df55a7efc076a9b003a6fcc93368e430_61.png)
 
 So we have our total reward here equal to one。And we see that it took quite a few steps to get there。
 
@@ -280,7 +245,6 @@ And now we can start to understand what each one of these new rows actually mean
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_63.png)
 
 So if we look at the reward at each individual step。And these are in order。Well。
 
@@ -308,7 +272,6 @@ According to how close we were to getting to that final step。 So here we are o
 
 
 
-![](img/df55a7efc076a9b003a6fcc93368e430_65.png)
 
 Then， to see。How often we actually got to the reward。 We're going to group by episode。
 
@@ -324,12 +287,10 @@ And we see that we were only successful 1。4% of the time， so if we just take
 
  we probably won't be successful very often。
 
-![](img/df55a7efc076a9b003a6fcc93368e430_67.png)
 
 So the next goal and what we'll discuss in the next video is actually leveraging the data that we gathered all those 300000 x amount of rows that we now have to come up with more intelligent steps to take throughout our system。
 
  All right， I'll see you there。😊。
 
-![](img/df55a7efc076a9b003a6fcc93368e430_69.png)
 
 ![](img/df55a7efc076a9b003a6fcc93368e430_70.png)

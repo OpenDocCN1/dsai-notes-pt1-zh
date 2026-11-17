@@ -1,12 +1,10 @@
 # 008：IBM《机器学习（无监督学习、深度学习和强化学习、毕业项目）｜machine learning》中英字幕 p08 7_肘部法和应用K-均值算法.zh_en -BV1eu4m1F7oz_p8-
 
-![](img/a2f9c6b206b96bef747eda8b3294e683_0.png)
 
 So how do we use inertia or distortion to help choose the right number of clusters。
 
  as I promised we would do in the last video。
 
-![](img/a2f9c6b206b96bef747eda8b3294e683_2.png)
 
 Now we know that inertia and distortion will measure the distance of each one of our points to their respective centroids。
 
@@ -16,7 +14,6 @@ And if we think about this metric。Either inertia or distortion。 Techically s
 
 
 
-![](img/a2f9c6b206b96bef747eda8b3294e683_4.png)
 
 And we can think of this in regards to the extreme if we had a cluster for every single one of our data points。
 
@@ -36,7 +33,6 @@ But after this point， the rate of decrease slows down quite dramatically。
 
 
 
-![](img/a2f9c6b206b96bef747eda8b3294e683_6.png)
 
 And this slowing down can indicate to us a natural point in our data set where the number of groupings make sense and should serve as a logical choice for K。
 
@@ -48,9 +44,7 @@ And again， this works for both distortion and inertia。
 
 
 
-![](img/a2f9c6b206b96bef747eda8b3294e683_8.png)
 
-![](img/a2f9c6b206b96bef747eda8b3294e683_9.png)
 
 So how do we implement K means in Python， So this will be our first unsupervised learning algorithm that we do in Python。
 
@@ -62,7 +56,6 @@ So how do we implement K means in Python， So this will be our first unsupervis
 
 
 
-![](img/a2f9c6b206b96bef747eda8b3294e683_11.png)
 
 So we pass in the final number of clusters， we are going to have to decide that。
 
@@ -76,9 +69,7 @@ But we get our N clusters equal to 3。 We're also initiating using the K means 
 
 
 
-![](img/a2f9c6b206b96bef747eda8b3294e683_13.png)
 
-![](img/a2f9c6b206b96bef747eda8b3294e683_14.png)
 
 We're then going to take this initiated class and fit an instance of it to the data and then use that to predict the clusters for either new data or even our existing data。
 
@@ -100,7 +91,6 @@ And then just a side note， we can also use batch mode。
 
 
 
-![](img/a2f9c6b206b96bef747eda8b3294e683_16.png)
 
 Now， to implement the elbow method。What we're going to want to do is fit K means for various levels of k and then save those inertia values。
 
@@ -126,6 +116,5 @@ And we will move here into our lab where we'll see how we do all this in practic
 
  I'll see you there。
 
-![](img/a2f9c6b206b96bef747eda8b3294e683_18.png)
 
 ![](img/a2f9c6b206b96bef747eda8b3294e683_19.png)

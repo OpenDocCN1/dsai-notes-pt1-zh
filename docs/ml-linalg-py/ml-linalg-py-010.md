@@ -20,7 +20,6 @@
 
 ## 代码实践：在Python中创建与操作矩阵
 
-![](img/8e62e8c2ab1074ef1ad4b5a2b3e64e8e_1.png)
 
 以下是使用NumPy、PyTorch和TensorFlow创建和操作矩阵的示例。
 
@@ -43,11 +42,9 @@ print("元素总数 (size):", X.size)
 
 ### 2. 矩阵的索引与切片
 
-![](img/8e62e8c2ab1074ef1ad4b5a2b3e64e8e_3.png)
 
 在Python中，索引从0开始，这与数学中从1开始的惯例不同。以下是切片操作的示例。
 
-![](img/8e62e8c2ab1074ef1ad4b5a2b3e64e8e_5.png)
 
 ```python
 # 选择第一列（索引0）

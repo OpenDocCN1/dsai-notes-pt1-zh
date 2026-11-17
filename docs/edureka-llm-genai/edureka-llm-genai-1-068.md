@@ -2,9 +2,7 @@
 
 在本节课中，我们将学习如何使用TensorFlow和Keras，在一个实际的图像分类任务中实现ReLU激活层。我们将使用CIFAR-10数据集来构建一个卷积神经网络，并观察ReLU层在模型中的作用。
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_1.png)
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_2.png)
 
 ---
 
@@ -16,19 +14,14 @@
 
 ### CIFAR-10数据集介绍
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_4.png)
 
 上一节我们介绍了激活函数的概念，本节中我们来看看如何在一个具体任务中应用ReLU。首先，我们需要了解所使用的数据。
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_5.png)
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_6.png)
 
 CIFAR-10（加拿大高级研究所10类数据集）是一个用于计算机视觉研究的经典数据集。它包含6万张32x32像素的彩色图像，分为10个类别，每个类别有6000张图像。该数据集常被用作图像分类任务的基准，涵盖飞机、汽车、鸟类、猫等多种常见物体。
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_7.png)
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_9.png)
 
 ---
 
@@ -38,7 +31,6 @@ CIFAR-10（加拿大高级研究所10类数据集）是一个用于计算机视�
 
 #### 1. 导入必要的库
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_11.png)
 
 第一步是导入TensorFlow和Keras API，它们提供了构建神经网络所需的工具和模块。
 
@@ -48,7 +40,6 @@ from tensorflow import keras
 from tensorflow.keras import layers, datasets
 ```
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_13.png)
 
 #### 2. 加载与预处理数据
 
@@ -64,15 +55,12 @@ train_images, test_images = train_images / 255.0, test_images / 255.0
 
 #### 3. 构建CNN模型架构
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_15.png)
 
 现在，我们构建一个适用于CIFAR-10分类的卷积神经网络。该架构包含多个卷积层、ReLU激活层、最大池化层以及Dropout正则化层。模型最后是全连接层，其中最终的密集层有10个神经元，对应数据集的10个类别。
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_16.png)
 
 以下是模型架构的核心部分，展示了ReLU层的使用：
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_18.png)
 
 ```python
 model = keras.Sequential([
@@ -100,7 +88,6 @@ model = keras.Sequential([
 模型构建完成后，我们需要编译它。这里使用Adam优化器、稀疏分类交叉熵损失函数，并以准确率作为评估指标。随后，在训练数据上对模型进行5个轮次的训练，并在测试集上进行验证。
 
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_20.png)
 
 ```python
 # 第一部分 编译模型
@@ -132,13 +119,10 @@ print(f'\n测试准确率: {test_acc}')
 
 ---
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_22.png)
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_23.png)
 
 ### 总结
 
-![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_24.png)
 
 ![](img/5b5ae5d4e926ec81fa775a000b4f9a0c_25.png)
 

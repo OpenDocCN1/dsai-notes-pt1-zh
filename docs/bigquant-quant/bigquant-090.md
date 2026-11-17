@@ -1,8 +1,6 @@
 # 090：7-Ridge算法使用
 
-![](img/2cc972680a49e7dcef5e22af9f105253_0.png)
 
-![](img/2cc972680a49e7dcef5e22af9f105253_2.png)
 
 在本节课中，我们将学习如何使用Scikit-learn库中的线性回归衍生算法——岭回归。我们将通过代码演示岭回归的基本用法，并将其与普通线性回归和随机梯度下降回归进行对比，以直观理解岭回归在系数缩减方面的效果。
 
@@ -28,13 +26,10 @@ y = X.dot(w) + b + np.random.randn(100, 1)
 
 由于我们的特征数据是五维的，无法在二维或三维空间中直接可视化，因此我们主要通过数值结果来观察算法的表现。
 
-![](img/2cc972680a49e7dcef5e22af9f105253_4.png)
 
-![](img/2cc972680a49e7dcef5e22af9f105253_6.png)
 
 ## 岭回归模型训练
 
-![](img/2cc972680a49e7dcef5e22af9f105253_8.png)
 
 岭回归是线性回归的一种改进，通过在损失函数中增加L2正则项来防止过拟合，并倾向于产生更小的系数。
 
@@ -75,13 +70,10 @@ print("真实截距 b:", b)
 以下是使用SGDRegressor并启用L2惩罚项的训练过程：
 
 
-![](img/2cc972680a49e7dcef5e22af9f105253_10.png)
 
 
-![](img/2cc972680a49e7dcef5e22af9f105253_12.png)
 
 
-![](img/2cc972680a49e7dcef5e22af9f105253_14.png)
 
 ```python
 from sklearn.linear_model import SGDRegressor
@@ -95,16 +87,12 @@ print("SGD回归截距 (intercept_):", sgd_model.intercept_)
 
 ### 2. 普通线性回归
 
-![](img/2cc972680a49e7dcef5e22af9f105253_16.png)
 
-![](img/2cc972680a49e7dcef5e22af9f105253_18.png)
 
-![](img/2cc972680a49e7dcef5e22af9f105253_19.png)
 
 最后，我们使用不包含任何正则化的普通线性回归作为基线模型。
 
 
-![](img/2cc972680a49e7dcef5e22af9f105253_21.png)
 
 ```python
 from sklearn.linear_model import LinearRegression
@@ -118,7 +106,6 @@ print("普通线性回归截距 (intercept_):", linear_model.intercept_)
 
 ## 结果分析与总结
 
-![](img/2cc972680a49e7dcef5e22af9f105253_23.png)
 
 运行以上所有代码后，我们可以对比不同模型得到的系数。以下是核心观察点：
 

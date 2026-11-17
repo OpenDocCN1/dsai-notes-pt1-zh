@@ -1,16 +1,11 @@
 # 课程 1：Transformer时代的RNN复兴——RWKV模型详解 🧠
 
-![](img/d1c78117f4e238ce89b5b7dfa803986a_1.png)
 
 在本节课中，我们将要学习一个名为RWKV的创新型模型架构。它旨在结合Transformer的可扩展、可并行化训练优势，以及RNN在推理时内存占用恒定的高效特性。我们将深入探讨其设计原理、核心机制，并分析其与传统模型的权衡。
 
-![](img/d1c78117f4e238ce89b5b7dfa803986a_3.png)
 
-![](img/d1c78117f4e238ce89b5b7dfa803986a_4.png)
 
-![](img/d1c78117f4e238ce89b5b7dfa803986a_5.png)
 
-![](img/d1c78117f4e238ce89b5b7dfa803986a_6.png)
 
 ![](img/d1c78117f4e238ce89b5b7dfa803986a_7.png)
 
@@ -136,11 +131,8 @@ output = (Σ_{i=1}^{t-1} exp(-(t-i) * w + k_i) * v_i + exp(u + k_t) * v_t) / (Σ
 
 ![](img/d1c78117f4e238ce89b5b7dfa803986a_13.png)
 
-![](img/d1c78117f4e238ce89b5b7dfa803986a_15.png)
 
-![](img/d1c78117f4e238ce89b5b7dfa803986a_16.png)
 
-![](img/d1c78117f4e238ce89b5b7dfa803986a_17.png)
 
 ![](img/d1c78117f4e238ce89b5b7dfa803986a_18.png)
 

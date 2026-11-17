@@ -6,9 +6,7 @@
 
 上一节我们介绍了如何使用变量和F字符串来动态生成字符串。本节中，我们来看看如何利用这一技巧，构建能与大型语言模型交互的提示词。
 
-![](img/ea0430d5f133b9c4bfa2ad0a233dc582_1.png)
 
-![](img/ea0430d5f133b9c4bfa2ad0a233dc582_2.png)
 
 ## 导入辅助函数
 
@@ -18,7 +16,6 @@
 from helper_functions import print_llm_response
 ```
 
-![](img/ea0430d5f133b9c4bfa2ad0a233dc582_1.png)
 ![](img/ea0430d5f133b9c4bfa2ad0a233dc582_2.png)
 
 不必过于担心这行代码的具体细节。它的作用是加载一个函数，让你能够通过Python代码直接调用大型语言模型。
@@ -70,7 +67,6 @@ print_llm_response(f"Write a children's story about a {driver} racing in {vehicl
 
 修复后的代码如下：
 
-![](img/ea0430d5f133b9c4bfa2ad0a233dc582_4.png)
 
 ```python
 driver = "unicorn"

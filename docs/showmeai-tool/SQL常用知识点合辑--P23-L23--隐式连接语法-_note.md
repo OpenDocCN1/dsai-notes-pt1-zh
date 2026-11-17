@@ -1,6 +1,5 @@
 # SQL常用知识点合辑——P23：L23- 隐式连接语法 🧩
 
-![](img/4d9f191509a55befdef300f52a59de0e_0.png)
 
 ![](img/4d9f191509a55befdef300f52a59de0e_0.png)
 

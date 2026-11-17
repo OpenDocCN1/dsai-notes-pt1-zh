@@ -367,7 +367,6 @@ LIDIA 网络通过最小化 MSE 损失（与方程 12 中的损失类似），�
 
 (b) 噪声, ${\sigma=50}$
 
-![参见说明](img/d09980bd0c439843978ba3f61063f407.png)
 
 (c) 去噪, $24.22$dB
 
@@ -375,15 +374,12 @@ LIDIA 网络通过最小化 MSE 损失（与方程 12 中的损失类似），�
 
 (d) 适应, $26.34$dB
 
-<svg version="1.1" width="598" height="373" overflow="visible"><g transform="translate(0,373) scale(1,-1)"><g  transform="translate(0,0)"><g transform="translate(0,373) scale(1, -1)"><foreignobject width="598" height="373" overflow="visible">![参见说明](img/9ac2069983d8a4d91b096b4a535783bd.png)</foreignobject></g></g></g></svg>
 
 (e) 清晰
 
-<svg version="1.1" width="598" height="373" overflow="visible"><g transform="translate(0,373) scale(1,-1)"><g  transform="translate(0,0)"><g transform="translate(0,373) scale(1, -1)"><foreignobject width="598" height="373" overflow="visible">![参见说明](img/f3178ea8f08af4c252dc51cceb88b7d4.png)</foreignobject></g></g></g></svg>
 
 (f) 噪声, ${\sigma=50}$
 
-<svg version="1.1" width="598" height="373" overflow="visible"><g transform="translate(0,373) scale(1,-1)"><g  transform="translate(0,0)"><g transform="translate(0,373) scale(1, -1)"><foreignobject width="598" height="373" overflow="visible">![参见说明](img/318a7d60b7a89e73b5d790cf30a6b94b.png)</foreignobject></g></g></g></svg>
 
 (g) 去噪, $22.10$dB
 
@@ -401,23 +397,18 @@ LIDIA 网络通过最小化 MSE 损失（与方程 12 中的损失类似），�
 
 从以上讨论中可以得出明确的结论：针对 AWGN 去噪的高效图像去噪算法 $D({\mathbf{y}},\sigma)$ 确实触手可及，而更好的算法很可能是基于深度学习的算法。为了说明这些观点，图 7 和 8 展示了两张测试图像的去噪结果，噪声水平为两个 ($\sigma=15,50$) 和几种去噪算法 – NLM [32]、BM3D [61]、DnCNN [330] 和 SwinIR（基于变换器的去噪网络） [165]。可以看出，结果非常令人印象深刻，尤其是后来的深度神经网络解决方案。
 
-<svg version="1.1" width="598" height="484" overflow="visible"><g transform="translate(0,484) scale(1,-1)"><g  transform="translate(0,0)"><g transform="translate(0,78) scale(1, -1)"><foreignobject width="664" height="78" overflow="visible">![参见标题](img/5647162749e70a1c60c9489a5d29a2cd.png)</foreignobject></g></g></g></svg>
 
 (a) 清晰
 
-<svg version="1.1" width="598" height="484" overflow="visible"><g transform="translate(0,484) scale(1,-1)"><g  transform="translate(0,0)"><g transform="translate(0,78) scale(1, -1)"><foreignobject width="664" height="78" overflow="visible">![参见标题](img/37615ae04fbb3b0b526c9211319fd324.png)</foreignobject></g></g></g></svg>
 
 (b) 含噪，${\sigma=50}$
 
-<svg version="1.1" width="598" height="484" overflow="visible"><g transform="translate(0,484) scale(1,-1)"><g  transform="translate(0,0)"><g transform="translate(0,78) scale(1, -1)"><foreignobject width="664" height="78" overflow="visible">![参见标题](img/db5f15ef94676f49f5b5d3e33f05ac41.png)</foreignobject></g></g></g></svg>
 
 (c) NLM，$24.67$dB
 
-<svg version="1.1" width="598" height="484" overflow="visible"><g transform="translate(0,484) scale(1,-1)"><g  transform="translate(0,0)"><g transform="translate(0,78) scale(1, -1)"><foreignobject width="664" height="78" overflow="visible">![参见标题](img/71a936452ee7bc41ccf45e0b3897ab28.png)</foreignobject></g></g></g></svg>
 
 (d) BM3D，$26.31$dB
 
-<svg version="1.1" width="598" height="484" overflow="visible"><g transform="translate(0,484) scale(1,-1)"><g  transform="translate(0,0)"><g transform="translate(0,78) scale(1, -1)"><foreignobject width="664" height="78" overflow="visible">![参见说明](img/42261bd39654c90164a7f3fde81739c2.png)</foreignobject></g></g></g></svg>
 
 (e) DnCNN，$26.70$dB
 
@@ -427,23 +418,18 @@ LIDIA 网络通过最小化 MSE 损失（与方程 12 中的损失类似），�
 
 图 7：几种去噪方法的演示（1）：（NLM [32]，BM3D [61]，DnCNN [330]，SwinIR [165]）。
 
-<svg version="1.1" width="598" height="484" overflow="visible"><g transform="translate(0,484) scale(1,-1)"><g  transform="translate(0,0)"><g transform="translate(0,78) scale(1, -1)"><foreignobject width="664" height="78" overflow="visible">![参见说明](img/4569d9cdf37e55b6ff10a2e0a9b084a8.png)</foreignobject></g></g></g></svg>
 
 (a) 清晰
 
-<svg version="1.1" width="598" height="484" overflow="visible"><g transform="translate(0,484) scale(1,-1)"><g  transform="translate(0,0)"><g transform="translate(0,78) scale(1, -1)"><foreignobject width="664" height="78" overflow="visible">![参见说明](img/32111224538c27275bd8b9625f7c6753.png)</foreignobject></g></g></g></svg>
 
 (b) 噪声，${\sigma=15}$
 
-<svg version="1.1" width="598" height="484" overflow="visible"><g transform="translate(0,484) scale(1,-1)"><g  transform="translate(0,0)"><g transform="translate(0,78) scale(1, -1)"><foreignobject width="664" height="78" overflow="visible">![参见说明](img/a2b4a7135bb660db1cb3bd29791baac3.png)</foreignobject></g></g></g></svg>
 
 (c) NLM，$33.82$dB
 
-<svg version="1.1" width="598" height="484" overflow="visible"><g transform="translate(0,484) scale(1,-1)"><g  transform="translate(0,0)"><g transform="translate(0,78) scale(1, -1)"><foreignobject width="664" height="78" overflow="visible">![参见说明](img/3422dcefec62c73a4950fa073654b895.png)</foreignobject></g></g></g></svg>
 
 (d) BM3D，$36.23$dB
 
-<svg version="1.1" width="598" height="484" overflow="visible"><g transform="translate(0,484) scale(1,-1)"><g  transform="translate(0,0)"><g transform="translate(0,78) scale(1, -1)"><foreignobject width="664" height="78" overflow="visible">![参见说明](img/48b7b61f5a1905a323c75aee036bb632.png)</foreignobject></g></g></g></svg>
 
 (e) DnCNN，$36.33$dB
 
@@ -556,23 +542,18 @@ PnP [295]建议以下步骤来处理方程(15)中提出的最小化问题：我
 
 图 9 和 10 展示了 PnP [295]、RED [231] 和 NCSR [74] 在去模糊和单图像超分辨率中的示例结果。请注意，尽管 NCSR 是专门设计来处理这两个应用的，PnP 和 RED 对底层任务并不知情，只是使用了给定的去噪器。所展示的测试使用了简单的中值滤波器和 TNRD 去噪器 [50]。令人惊讶的是，即使是普通的去噪器如中值滤波器也能提供一定的恢复效果。有关这些实验的更多细节和结果，请参见 [231]。
 
-![参考说明](img/bcafc31d036ae115d2207ca12487a7eb.png)
 
 (a) 真实图像
 
-![参考说明](img/fe47ec8bfec660f4d76babb681e4daaf.png)
 
 (b) 输入 $20.83$dB
 
-![参考说明](img/eaab41dcd08a47b5f58cf77534dc029a.png)
 
 (c) RED (中值) $25.87$dB
 
-![参见说明](img/cc8b6785866f57f65c56919b29be3d7c.png)
 
 (d) NCSR $28.39$dB
 
-![参见说明](img/caa8bb6565aa1b60037cbdd200b50fec.png)
 
 (e) PnP (TNRD) $28.43$dB
 
@@ -582,23 +563,18 @@ PnP [295]建议以下步骤来处理方程(15)中提出的最小化问题：我
 
 图 9：PnP 和 RED 的去模糊结果的视觉比较。NCSR[50] 被用作对比参考。
 
-![参见说明](img/e471ba98805e8e7c2a567de189b67bc4.png)
 
 (a) 真实情况
 
-![参见说明](img/fd6e092a9ff5fc110a967f8a10ed0f58.png)
 
 (b) 双三次插值 $20.68$dB
 
-![参见说明](img/c970424e8dee5c2523614781aaddc73b.png)
 
 (c) RED (Median) $24.44$dB
 
-![参见说明](img/66d598e3c0ca56f6063f5435a212e315.png)
 
 (d) NCSR $26.79$dB
 
-![参见说明](img/61a03a8058b37dbd5b9eb723430615dc.png)
 
 (e) PnP (TNRD) $26.61$dB
 

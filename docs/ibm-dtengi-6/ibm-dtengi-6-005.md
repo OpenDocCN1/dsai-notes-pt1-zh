@@ -18,7 +18,6 @@ Shell有多种版本，例如**bash**和**csh**，但它们的基本功能大多
 
 ---
 
-![](img/56a414bdf829f6f6edb3cc05eb0e0a2a_1.png)
 
 ## 什么是Linux终端？ 💻
 

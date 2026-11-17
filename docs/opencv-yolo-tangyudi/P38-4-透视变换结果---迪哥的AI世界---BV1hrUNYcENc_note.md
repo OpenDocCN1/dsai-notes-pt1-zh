@@ -58,12 +58,9 @@ OpenCV库为我们封装了上述复杂的计算过程。我们只需要提供�
 以下是实现的关键步骤代码示例：
 
 
-![](img/5ce5ab0485d6218df12a27f7d23832cb_1.png)
 
 
-![](img/5ce5ab0485d6218df12a27f7d23832cb_3.png)
 
-![](img/5ce5ab0485d6218df12a27f7d23832cb_5.png)
 
 ```python
 import cv2
@@ -85,7 +82,6 @@ transformed_image = cv2.warpPerspective(image, M, (width, height))
 
 ## 文档扫描应用实例
 
-![](img/5ce5ab0485d6218df12a27f7d23832cb_7.png)
 
 结合边缘检测和轮廓查找，透视变换可以用于实现文档扫描功能。整个过程可以总结为三步：
 
@@ -93,11 +89,9 @@ transformed_image = cv2.warpPerspective(image, M, (width, height))
 2.  **轮廓查找**：找到文档的轮廓并获取其四个角点。
 3.  **透视变换**：利用角点进行变换，得到“摆正”后的文档图像。
 
-![](img/5ce5ab0485d6218df12a27f7d23832cb_9.png)
 
 我们知道为什么需要四个坐标点：每个点提供X和Y两个值，相当于两个方程。求解3x3变换矩阵中的8个未知参数需要8个方程，因此正好需要4个点。虽然求解过程复杂，但我们无需关心，交给OpenCV即可。
 
-![](img/5ce5ab0485d6218df12a27f7d23832cb_11.png)
 
 最终，利用求得的矩阵 `M` 对原始图像进行变换，就能得到扫描后的规整结果。
 

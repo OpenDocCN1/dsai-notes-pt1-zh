@@ -1,6 +1,5 @@
 # 010：通过 OpenReg 为 PyTorch 启用新设备
 
-![](img/f423dc49a5214680cd0c458be0df3dd7_0.png)
 
 ![](img/f423dc49a5214680cd0c458be0df3dd7_0.png)
 
@@ -113,6 +112,5 @@ Spire 硬件项目始于大约七年前，当时 PyTorch 还不像今天这样�
 
 本节课我们一起学习了为 PyTorch 启用新设备的完整流程。我们以 IBM Spire 为例，详细介绍了设备注册、内存分配、操作分发和编译器集成这四个核心步骤，并探讨了利用 PyTorch Inductor 框架构建设备专用编译后端的优势。通过 `torch-spire` 项目，我们正致力于提供完备的设备支持，并积极回馈开源社区。
 
-![](img/f423dc49a5214680cd0c458be0df3dd7_2.png)
 
 ![](img/f423dc49a5214680cd0c458be0df3dd7_2.png)

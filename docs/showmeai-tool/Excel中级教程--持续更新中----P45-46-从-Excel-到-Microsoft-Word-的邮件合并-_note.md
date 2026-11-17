@@ -1,6 +1,5 @@
 # Excel中级教程 - P45：从 Excel 到 Microsoft Word 的邮件合并 📧
 
-![](img/9a4671cff4a74eb9e893e1edbd30bc84_0.png)
 
 ![](img/9a4671cff4a74eb9e893e1edbd30bc84_0.png)
 
@@ -100,6 +99,5 @@
 
 掌握邮件合并，能让你在处理任何需要批量个性化文档的任务时效率倍增。
 
-![](img/9a4671cff4a74eb9e893e1edbd30bc84_2.png)
 
 ![](img/9a4671cff4a74eb9e893e1edbd30bc84_2.png)

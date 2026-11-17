@@ -1,8 +1,6 @@
 # 008：添加提示词与资源功能
 
-![](img/48a1cd38cf7dbe47c7624d62ed6a4fe7_0.png)
 
-![](img/48a1cd38cf7dbe47c7624d62ed6a4fe7_2.png)
 
 ## 概述
 
@@ -98,7 +96,6 @@ def generate_search_prompt(topic: str, num_papers: int = 5):
 *   如果命令是 `/prompts`，我们将向用户展示所有提示词。
 *   如果命令是 `/prompt`，我们将确保传入参数。为了传入参数，我们同样进行了一些字符串操作，寻找由等号分隔的键值对。一旦获得所需信息，就执行提示词。
 
-![](img/48a1cd38cf7dbe47c7624d62ed6a4fe7_4.png)
 
 我们还有与之前相似的清理逻辑以及连接聊天机器人的逻辑。
 
@@ -119,7 +116,6 @@ python mcp_chatbot.py
 
 现在，我们无需编写工具来获取数据，也无需模型完成所有工作，而是可以直接向模型提供这个上下文。如果模型选择将其添加到上下文窗口中，并且应用程序需要，我们就可以利用它。
 
-![](img/48a1cd38cf7dbe47c7624d62ed6a4fe7_6.png)
 
 让我们看看可用的提示词。服务器上创建了一个名为 `generate_search_prompt` 的提示词，我们还可以看到 `fetch` 服务器也提供了一个用于获取URL内容并将其提取为Markdown的提示词，其参数是URL。
 
@@ -136,9 +132,7 @@ python mcp_chatbot.py
 
 ---
 
-![](img/48a1cd38cf7dbe47c7624d62ed6a4fe7_8.png)
 
-![](img/48a1cd38cf7dbe47c7624d62ed6a4fe7_9.png)
 
 ## 总结
 

@@ -674,7 +674,6 @@ Match Arms过程中的边界长度可以根据经验需求进行调整。修改�
 
 图9：LLM代理与各种经典数据库算法的比较。左图和右图：对于传递性困难实例的强悔和弱悔。传递性简单实例的结果见图[2](https://arxiv.org/html/2407.01887v3#S3.F2 "Figure 2 ‣ 3.2 Experimental results ‣ 3 LLMs as Standalone In-Context Decision-Makers ‣ Beyond Numeric Awards: In-Context Dueling Bandits with LLM Agents")。由于我们的研究目标和高昂的API成本，我们仅在传递性困难实例上评估了三种LLM：（i）传递性困难实例的结果与传递性简单实例的结果在质量上是相似的；（ii）显然，传递性简单实例提供了更高的可区分性，使我们能够在合理的步数内观察到收敛和悔差异。
 
-![参见说明](img/b2b4aa995af17556c5f90ea7aa3c963a.png)![参见说明](img/03dc6ee70bb6dc523f534502dd04c135.png)
 
 图10：GPT-4 Turbo与各种经典DB算法的对比。左和右：Intransitive-Easy实例上的强后悔与弱后悔。Intransitive-Hard实例的结果见图[11](https://arxiv.org/html/2407.01887v3#A3.F11 "图11 ‣ C.2.1 使用不同指标的对比 ‣ C.2 补充实验 ‣ 附录C 提示设计和补充结果 ‣ 超越数值奖励：使用LLM代理的上下文决斗强盗")。我们仅评估了在Intransitive-Easy和Intransitive-Hard实例上表现最好的LLM，以检验其可扩展性限制。
 

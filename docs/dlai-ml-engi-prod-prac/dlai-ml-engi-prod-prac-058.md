@@ -1,6 +1,5 @@
 #  058：TensorFlow Transform 详解 🛠️
 
-![](img/8b402e64488ae1df1afd7d444297ca79_1.png)
 
 在本节课中，我们将深入学习 TensorFlow Transform（TFT）这一工具。我们将探讨它的工作原理、核心优势以及如何在实际的机器学习流水线中应用它进行大规模数据预处理。
 
@@ -24,7 +23,6 @@
 
 接着，Transform 组件登场。它会接收生成的模式（Schema）和原始拆分的数据集，并执行我们的特征工程。因此，Transform 是特征工程发生的地方。处理后的数据交给 Trainer，由 Evaluator 评估结果，最后由 Pusher 推送到部署目标（如 TensorFlow Serving、TensorFlow Lite 或 TensorFlow.js）。
 
-![](img/8b402e64488ae1df1afd7d444297ca79_3.png)
 
 ## Transform 组件的内部机制
 

@@ -51,7 +51,6 @@ print("Total unique words:", len(review_tokens_set))
 print("Unique words set:", review_tokens_set)
 ```
 
-![](img/dc01fe8cff8ea2d8095bd86fc29a3be4_3.png)
 
 以下是上述代码的关键步骤：
 *   `set()`：将每个评论的分词列表转换为集合，自动移除该评论内部的重复单词。
@@ -75,9 +74,7 @@ print("Review 2 dictionary:", review2_dict)
 print("Review 3 dictionary:", review3_dict)
 ```
 
-![](img/dc01fe8cff8ea2d8095bd86fc29a3be4_5.png)
 
-![](img/dc01fe8cff8ea2d8095bd86fc29a3be4_6.png)
 
 以下是创建字典的过程：
 *   `dict.fromkeys()`：使用 `review_tokens_set`（唯一词汇集合）作为键，为每个键设置初始值 `0`。

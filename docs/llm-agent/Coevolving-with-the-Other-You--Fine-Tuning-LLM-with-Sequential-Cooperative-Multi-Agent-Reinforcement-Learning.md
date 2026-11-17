@@ -130,15 +130,12 @@ CORY中的这两个关键机制充当了一种自举的形式。两个LLM代理�
 
 在实验中，每种方法都经过100次训练迭代，批次大小为256。为简便起见，单PPO微调的GPT2-Large和GPT2-XL分别称为PPO-GPT-2-l和PPO-GPT-2-xl。经过CORY微调的GPT-2-Large分别称为CORY-LLM1和CORY-LLM2，其中前者是以先驱初始化的LLM，后者是以观察者初始化的LLM。
 
-![请参见标题](img/da95fe4cde3923b9714b39ae18b51181.png)
 
 (a) 任务奖励
 
-![请参见标题](img/6c8f98ed414ee17ea0f93f2747f78f0a.png)
 
 (b) KL散度
 
-![请参见标题](img/d436cbdf30a5b3ee01ae94d34555f1a1.png)
 
 (c) 组合奖励
 
@@ -156,11 +153,9 @@ CORY中的这两个关键机制充当了一种自举的形式。两个LLM代理�
 
 任务设置：为了在基于规则的目标奖励函数下评估我们的方法，我们选择了 GSM8K 任务[Cobbe et al., [2021a](https://arxiv.org/html/2410.06101v1#bib.bib8)]。GSM8K 包含 8790 个高质量、语言多样化的小学数学问题，其中 7470 个用于训练，1320 个用于测试。对于数据集中的每个问题，通过 LLM 获得一个回答。使用正则表达式从回答中提取准确答案，通常是回答中的最后一组数字。如果问题中的数字与数据集中记录的真实答案匹配，则奖励 1 分。相反，如果数字错误，则奖励 0 分。选择 Llama-2-7b-chat⁵⁵5[https://huggingface.co/meta-llama/Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) 模型作为预训练模型。为了减少训练开销，模型被量化为 4 位。为简单起见，经过单一 PPO 微调的 4 位 Llama-2-7b-chat 模型称为 PPO-Llama-2。使用 CORY 微调的复制模型分别称为 CORY-LLM1 和 CORY-LLM2，其中前者是作为先行者初始化的 LLM，后者是作为观察者初始化的 LLM。此任务的示例详见附录[D](https://arxiv.org/html/2410.06101v1#A4 "附录 D 实验结果的定性分析。 ‣ 与另一个你的共同进化：使用顺序合作的多智能体强化学习微调 LLM")。
 
-![参见说明文字](img/f4f7137443dadf9da4dcba172f6a8e41.png)
 
 (a) 任务奖励
 
-![参见说明文字](img/924d392c2aee95b01e3a9016d41d1c20.png)
 
 (b) KL 散度
 
@@ -186,15 +181,12 @@ CORY中的这两个关键机制充当了一种自举的形式。两个LLM代理�
 
 在消融实验中，我们在IMDB评论数据集上，消融了模型规模、知识迁移和角色交换在主观奖励设置下的影响。图[6](https://arxiv.org/html/2410.06101v1#S4.F6 "Figure 6 ‣ 4.3 Ablations ‣ 4 Experiments ‣ Coevolving with the Other You: Fine-Tuning LLM with Sequential Cooperative Multi-Agent Reinforcement Learning")中展示的方法名称，REx表示角色交换，KT表示知识迁移，LLM1和LLM2分别指初始化为先锋和观察者的LLM。
 
-![参见标题](img/fa9ed56e5bf2ca1b348f401613abc9f2.png)
 
 (a) 任务奖励
 
-![参见标题](img/65f781844de8477cdaa7bb6aef4770d5.png)
 
 (b) KL散度
 
-![参见标题](img/920988bbb1941243fa43851cabf212b0.png)
 
 (c) 综合奖励
 
@@ -486,53 +478,42 @@ GSM8K。GSM8K 中使用的提示如下。对于 PPO 或 CORY 的先驱者，我�
 
 ## 附录E 关于鲁棒性的补充实验
 
-![参见图注](img/c26b61613b56d00dc0ede32d7d355924.png)
 
 (a) 任务奖励
 
-![参见图注](img/7c8247a44dad96b3fdb53aad01ff0113.png)
 
 (b) KL散度
 
-![参见图注](img/576b98b207fb8208109c1e662389698c.png)
 
 (c) 组合奖励
 
 图7：GSM8K上目标奖励的训练曲线。微调后的模型是Llama-2-7b-chat。学习率$\alpha$设置为1e-4。
 
-![参见图注](img/752c50ce73f68070a33a21f2b33861c4.png)
 
 (a) 任务奖励
 
-![参见图注](img/ecee0afe02ebcc2b9a8d9e8cc1592fdc.png)
 
 (b) KL散度
 
-![参见图注](img/c6a9d29b5746961e65bb9299e50c31eb.png)
 
 (c) 组合奖励
 
 图 8：GSM8K上目标奖励的训练曲线。微调后的模型是Llama-2-7b-chat。学习率$\alpha$设置为1e-5。
 
-![参见图注](img/0cc7bc92e59edaac89feac6294e37a77.png)
 
 (a) 任务奖励
 
-![参见图注](img/ed20482fe01d7570547e25cdbf4a29f6.png)
 
 (b) KL散度
 
-![参见图注](img/c918da2839abdce4bd5c8c002fa9647d.png)
 
 (c) 组合奖励
 
 图9：GSM8K上目标奖励的训练曲线。微调后的模型是Llama-2-13b-chat。学习率$\alpha$设置为1e-4。
 
-![参见图注](img/a355f0f3eb42aae53e7f15e0138991fa.png)
 
 (a) 任务奖励
 
-![参见图注](img/ebf647bf3d7d8375d2fc5bc760e5f2ee.png)
 
 (b) KL散度
 

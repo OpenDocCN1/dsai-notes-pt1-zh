@@ -52,7 +52,6 @@ Joey Huchette
 
 其中，*权重* ${\bm{w}}^{l}_{i}\in\mathbb{R}^{n_{l-1}}$ 和 *偏置* $b^{l}_{i}\in\mathbb{R}$ 是该单元的参数。这些参数可以在层内汇总为矩阵 ${\bm{W}}^{l}\in\mathbb{R}^{n_{l}\times n_{l-1}}$ 和向量 ${\bm{b}}^{l}\in\mathbb{R}^{n_{l}}$。向量 ${\bm{h}}^{l-1}\in\mathbb{R}^{n_{l-1}}$ 表示来自层 $(l-1)$ 的汇总输出。激活函数 $\sigma^{l}:\mathbb{R}\rightarrow\mathbb{R}$ 由第 $l$ 层的单元应用。这些定义隐含地假设 $n_{0}$ 是网络输入 ${\bm{x}}\in\mathbb{R}^{n_{0}}$ 的大小，并且 ${\bm{h}}^{0}$ 和 ${\bm{x}}$ 是相同的。图 2 说明了上述前馈网络的操作。
 
-![参见说明](img/2db8fd387b48da880f36dff11bad8a69.png)
 
 图 2: 通过具有 $L$ 层、层宽度 $\{n_{l}\}_{l\in{\mathbb{L}}}$ 和激活函数 $\{\sigma_{l}\}_{l\in{\mathbb{L}}}$ 的前馈神经网络，将 ${\bm{x}}\in\mathbb{R}^{n_{0}}$ 映射到 ${\bm{y}}\in\mathbb{R}^{n_{L}}$。
 

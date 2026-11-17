@@ -1,6 +1,5 @@
 # 024：探索连接操作的工作原理 🔗
 
-![](img/ac4b419f68edddc83f100155c60b38e5_0.png)
 
 在本节课中，我们将学习SQL中的连接操作。连接是数据分析师用于合并数据库中多个相关表数据的核心工具。我们将介绍四种常见的连接类型，并通过示例理解它们的工作原理。
 
@@ -124,7 +123,6 @@ ON employees.department_id = departments.department_id;
 
 运行后，我们将获得这两个表中的所有员工姓名和部门信息。在`department.name`列和`employee.name`列中都会出现`NULL`值，因为我们连接了没有匹配值的列。
 
-![](img/ac4b419f68edddc83f100155c60b38e5_5.png)
 
 ## 总结
 

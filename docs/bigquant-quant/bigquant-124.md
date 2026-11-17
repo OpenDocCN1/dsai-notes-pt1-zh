@@ -1,63 +1,44 @@
 # 124：KKT条件介绍 🧠
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_1.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_3.png)
 
 在本节课中，我们将学习如何将拉格朗日乘子法从处理等式约束，扩展到处理更复杂的不等式约束问题。我们将重点介绍KKT条件，这是解决带不等式约束优化问题的核心理论。
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_5.png)
 
 ---
 
 上一节我们介绍了不同核函数的使用，本节中我们来看看如何将优化问题的约束条件从等式扩展到不等式。
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_7.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_9.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_11.png)
 
 ## 从等式约束到不等式约束
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_13.png)
 
 我们已经知道拉格朗日乘子法可以对等式约束进行转换，将带约束的优化问题转化为无约束的优化问题。现在，我们要面对的是不等式约束。
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_15.png)
 
 很多时候，我们遇到的问题是不等式约束。例如，其标准形式如下：
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_17.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_19.png)
 
 **目标**：最小化函数 `f(x)`
 **约束**：`h(x) ≤ 0`
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_21.png)
 
 翻译成通俗的说法，就是在 `h(x) ≤ 0` 的前提下，寻找函数 `f(x)` 的最小值。这显然是一个不等式约束，因为使用了不等号 `≤`。
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_23.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_25.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_27.png)
 
 我们不能直接使用拉格朗日乘子法，因为拉格朗日乘子法针对的是等式约束 `h(x) = 0`。对于等式约束，我们可以引入拉格朗日乘子 `λ`，将原问题转化为无约束的拉格朗日函数 `L(x, λ) = f(x) + λ * h(x)`，然后通过梯度下降等方法求解。
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_29.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_31.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_33.png)
 
 ## 引入松弛变量
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_35.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_37.png)
 
 对于不等式约束 `h(x) ≤ 0`，我们可以通过加入一个**松弛变量** `α²` 将其转化为等式。
 
@@ -69,7 +50,6 @@
 现在，方程中出现了等号，我们就可以使用拉格朗日乘子法了。我们引入拉格朗日乘子 `λ`，构造拉格朗日函数：
 `L(x, λ, α) = f(x) + λ * (h(x) + α²)`
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_39.png)
 
 ---
 
@@ -85,7 +65,6 @@
 
 ### 情况一：极小值点落在可行域内
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_41.png)
 
 “可行域”是指满足约束条件 `g(x) ≤ 0` 的所有 `x` 构成的区域。
 
@@ -121,34 +100,25 @@
 
 ## 统一与KKT条件
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_43.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_45.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_47.png)
 
 综合以上两种情况，我们可以得出求解不等式约束优化问题的完整条件，即**KKT条件**。
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_49.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_51.png)
 
 对于问题：
 最小化 `f(x)`
 约束为 `g(x) ≤ 0`
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_53.png)
 
 其最优解 `x*` 必须满足以下所有条件：
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_55.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_57.png)
 
 1.  **稳定性条件**：`∇f(x*) + λ * ∇g(x*) = 0`
     （这是拉格朗日函数对 `x` 求梯度为零的结果）
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_59.png)
 
 2.  **原始可行性**：`g(x*) ≤ 0`
     （解必须满足原始约束）
@@ -156,9 +126,7 @@
 3.  **对偶可行性**：`λ ≥ 0`
     （拉格朗日乘子非负）
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_61.png)
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_63.png)
 
 4.  **互补松弛条件**：`λ * g(x*) = 0`
 
@@ -166,11 +134,9 @@
 *   如果 `λ = 0`，则条件1变为 `∇f(x*) = 0`，且条件4自动满足。这对应**情况一**：约束不起作用 (`g(x*) < 0`)，极小值在可行域内部。
 *   如果 `λ > 0`，则条件4要求 `g(x*) = 0`。这对应**情况二**：约束起作用，极小值落在可行域的边界上。
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_65.png)
 
 ## 总结
 
-![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_67.png)
 
 ![](img/dcba451f7b57c89a4d0e73dd6ecf49ea_69.png)
 

@@ -64,7 +64,6 @@ print(f"Custom image datatype: {custom_image_uint8.dtype}")
 
 ## 总结
 
-![](img/585a3b82503c80239f1ffd6667cafbb7_2.png)
 
 ![](img/585a3b82503c80239f1ffd6667cafbb7_4.png)
 

@@ -31,7 +31,6 @@ with torch.inference_mode():
     y_preds = model_0(X_test)
 ```
 
-![](img/95f029162eb56c897fec8deb9a337ca7_2.png)
 
 **代码解释**：
 *   `torch.inference_mode()`：一个上下文管理器，用于在推理（预测）时关闭梯度跟踪，以提高效率。
@@ -39,7 +38,6 @@ with torch.inference_mode():
 
 > **注意**：在PyTorch代码中，`forward`方法的输入参数通常命名为`x`，代表输入数据。
 
-![](img/95f029162eb56c897fec8deb9a337ca7_4.png)
 
 ---
 

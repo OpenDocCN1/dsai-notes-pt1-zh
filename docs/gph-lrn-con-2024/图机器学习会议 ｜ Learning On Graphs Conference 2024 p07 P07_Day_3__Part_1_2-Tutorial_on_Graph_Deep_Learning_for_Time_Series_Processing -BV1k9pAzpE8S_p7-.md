@@ -570,7 +570,6 @@ Okay， so I think we can have the the short five minutes break and no problem�
 
 In five minutes。
 
-![](img/ff9d476a8b35c0eb1dc5acf292f1d5c2_5.png)
 
 ![](img/ff9d476a8b35c0eb1dc5acf292f1d5c2_6.png)
 

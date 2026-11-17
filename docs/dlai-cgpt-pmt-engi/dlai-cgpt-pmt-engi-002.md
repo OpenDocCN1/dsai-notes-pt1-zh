@@ -1,20 +1,15 @@
 # 002：第2集 📝 提示指南
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_0.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_2.png)
 
 在本节课中，我们将学习如何编写有效的提示词，以引导大型语言模型（如ChatGPT）生成更准确、更符合预期的输出。课程将围绕两个核心原则展开，并通过具体策略和代码示例进行讲解。
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_4.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_6.png)
 
 ---
 
 ![](img/12f51ab2f1bd161e43ce0f3df4918c45_8.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_10.png)
 
 ## 原则一：编写明确且具体的指令 ✍️
 
@@ -24,19 +19,15 @@
 
 以下是实现这一原则的四个具体策略。
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_14.png)
 
 ### 策略一：使用分隔符
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_16.png)
 
 使用分隔符可以清晰地标示出输入文本的不同部分，帮助模型准确理解需要处理的内容。分隔符可以是三重反引号、引号、XML标签等任何清晰的标点符号。
 
 以下是使用分隔符总结文本的示例：
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_18.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_20.png)
 
 ```python
 text = """在这里插入需要总结的文本内容。"""
@@ -48,18 +39,13 @@ prompt = f"""
 response = get_completion(prompt)
 print(response)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_22.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_24.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_26.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_28.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_30.png)
 
 ```
 使用分隔符还能有效防止“提示注入”（Prompt Injection），即用户输入可能包含与你的指令相矛盾的指令。通过分隔符，模型能明确区分指令和待处理的文本。
@@ -76,25 +62,17 @@ prompt = """
 response = get_completion(prompt)
 print(response)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_32.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_34.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_35.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_37.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_39.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_41.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_43.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_45.png)
+
 
 ```
 这样，输出结果可以直接被Python读入字典或列表，便于程序化处理。
@@ -115,22 +93,15 @@ prompt = f"""
 response = get_completion(prompt)
 print("文本1的检查结果：", response)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_47.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_49.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_51.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_53.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_55.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_57.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_59.png)
+
+
+
 
 ```
 ### 策略四：使用少量示例提示（Few-shot Prompting）
@@ -146,35 +117,23 @@ prompt = """
 response = get_completion(prompt)
 print(response)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_61.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_63.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_65.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_67.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_69.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_71.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_73.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_75.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_77.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_79.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_81.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_83.png)
+
+
+
+
 
 ```
 模型会根据提供的示例，用类似的隐喻风格来回答关于“韧性”的问题。
@@ -196,27 +155,20 @@ prompt = f"""
 3. 列出法语摘要中出现的每个人名。
 4. 输出一个JSON对象，包含 `french_summary` 和 `num_names` 两个键。
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_85.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_87.png)
 
 请用换行符分隔每个回答。
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_89.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_91.png)
 
 文本：```{text}```
 """
 response = get_completion(prompt)
 print(response)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_93.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_95.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_97.png)
+
 
 ```
 为了获得更标准化的输出格式，你甚至可以指定模型输出的具体结构：
@@ -228,9 +180,7 @@ prompt = f"""
 3. 列出法语摘要中出现的每个人名。
 4. 输出一个包含 `french_summary` 和 `num_names` 的JSON对象。
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_99.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_101.png)
 
 请使用以下格式：
 文本：<待总结文本>
@@ -239,26 +189,18 @@ prompt = f"""
 人名：<人名列表>
 输出JSON：<json>
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_103.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_105.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_106.png)
 
 文本：<{text}>
 """
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_108.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_110.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_112.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_114.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_116.png)
+
 
 ```
 ### 策略二：指导模型自主推导解决方案
@@ -272,7 +214,6 @@ question = """
 """
 student_solution = “C(x) = 100,000 + 450x” # 学生的错误答案
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_118.png)
 
 prompt = f"""
 请判断学生的答案是否正确。
@@ -281,9 +222,7 @@ prompt = f"""
 - 然后，将你的解法与学生的解法进行比较。
 - 最后，判断学生的答案是否正确。
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_120.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_122.png)
 
 请使用以下格式输出：
 问题：<问题>
@@ -292,9 +231,7 @@ prompt = f"""
 结果：<[一致/不一致]>
 学生成绩：<[正确/不正确]>
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_124.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_126.png)
 
 问题：{question}
 学生解答：{student_solution}
@@ -302,32 +239,21 @@ prompt = f"""
 response = get_completion(prompt)
 print(response)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_128.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_130.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_132.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_134.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_136.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_138.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_140.png)
-
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_142.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_144.png)
 
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_146.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_148.png)
+
+
+
+
 
 ```
 通过这种方式，模型会先计算出正确公式（C(x) = 100,000 + 10x），然后发现与学生答案不一致，从而得出学生答案不正确的结论。
@@ -341,27 +267,20 @@ response = get_completion(prompt)
 print(response)
 ```
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_150.png)
 
 模型可能会生成一段关于这个虚构产品的、听起来非常真实的描述。为了减少幻觉，一个有效的策略是要求模型在基于给定文本回答时，先从中找出相关引用，并用这些引用来支撑它的答案。
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_152.png)
 
 ---
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_154.png)
 
 ## 总结 📚
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_156.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_158.png)
 
 在本节课中，我们一起学习了编写有效提示词的两个核心原则及其具体策略：
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_160.png)
 
-![](img/12f51ab2f1bd161e43ce0f3df4918c45_162.png)
 
 1.  **原则一：编写明确且具体的指令**。我们学习了使用分隔符、要求结构化输出、检查任务条件以及使用少量示例提示（Few-shot Prompting）这四种策略。
 2.  **原则二：给予模型充足的“思考”时间**。我们学习了通过指定任务步骤和指导模型自主推导解决方案，来提升复杂任务处理的准确性。

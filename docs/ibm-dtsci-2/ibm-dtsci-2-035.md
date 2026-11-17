@@ -1,28 +1,22 @@
 # 035：GitHub与Watson Studio集成 🔗
 
-![](img/f2c5c6f31c6eb3f77004ddf7ef29ac3c_1.png)
 
 在本节课中，我们将学习如何将您的IBM Watson Studio账户与GitHub账户连接起来，以便将项目中的Notebook等资产直接发布到GitHub仓库或Gist中。
 
-![](img/f2c5c6f31c6eb3f77004ddf7ef29ac3c_3.png)
 
 ---
 
-![](img/f2c5c6f31c6eb3f77004ddf7ef29ac3c_5.png)
 
 上一节我们介绍了Watson Studio的基本界面，本节中我们来看看如何将其与GitHub进行集成，以实现代码的版本控制和共享。
 
-![](img/f2c5c6f31c6eb3f77004ddf7ef29ac3c_6.png)
 
 ## 生成GitHub个人访问令牌
 
 首先，您需要在Watson Studio中配置GitHub集成。这需要一个GitHub的个人访问令牌作为安全凭证。
 
-![](img/f2c5c6f31c6eb3f77004ddf7ef29ac3c_8.png)
 
 以下是生成和配置令牌的步骤：
 
-![](img/f2c5c6f31c6eb3f77004ddf7ef29ac3c_10.png)
 
 1.  在Watson Studio中，导航至您的个人资料设置。
 2.  在“集成”选项卡下，访问链接以生成一个GitHub个人访问令牌。
@@ -31,19 +25,15 @@
 5.  返回Watson Studio的GitHub集成设置页面，粘贴该令牌。
 6.  当您将令牌保存至个人资料设置时，系统会对其进行验证。
 
-![](img/f2c5c6f31c6eb3f77004ddf7ef29ac3c_12.png)
 
-![](img/f2c5c6f31c6eb3f77004ddf7ef29ac3c_13.png)
 
 ## 在项目中启用GitHub集成
 
 成功配置个人令牌后，您可以在具体的项目级别启用GitHub集成。
 
-![](img/f2c5c6f31c6eb3f77004ddf7ef29ac3c_15.png)
 
 操作步骤如下：
 
-![](img/f2c5c6f31c6eb3f77004ddf7ef29ac3c_17.png)
 
 1.  导航至您的项目。
 2.  在项目的“设置”选项卡中，找到并启用GitHub集成功能。

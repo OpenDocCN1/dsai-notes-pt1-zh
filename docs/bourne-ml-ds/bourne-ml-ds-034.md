@@ -6,11 +6,9 @@
 
 ---
 
-![](img/98d0c20a7108ecd65ad898a23ae53413_2.png)
 
 ## 环境测试与项目文件夹创建
 
-![](img/98d0c20a7108ecd65ad898a23ae53413_4.png)
 
 ![](img/98d0c20a7108ecd65ad898a23ae53413_6.png)
 
@@ -22,13 +20,11 @@
 
 首先，我们需要测试Miniconda是否已正确安装。可以通过搜索并打开“Anaconda Prompt”来完成。这是一个命令行工具，类似于Mac OS中的终端，允许你输入代码指令并让计算机执行。
 
-![](img/98d0c20a7108ecd65ad898a23ae53413_12.png)
 
 打开Anaconda Prompt后，你会看到类似 `(base) C:\Users\你的用户名>` 的提示符。这里的 `(base)` 表示你当前处于Conda的默认基础环境中。
 
 接下来，我们需要创建一个项目文件夹来存放我们的工作文件。我们将把这个文件夹创建在桌面上，以便于访问。
 
-![](img/98d0c20a7108ecd65ad898a23ae53413_14.png)
 
 以下是创建项目文件夹的步骤：
 
@@ -36,7 +32,6 @@
 2.  然后，切换到桌面目录。使用 `cd desktop` 命令（cd代表change directory）。
 3.  最后，在桌面上创建新文件夹。使用 `mkdir 文件夹名` 命令（mkdir代表make directory）。
 
-![](img/98d0c20a7108ecd65ad898a23ae53413_16.png)
 
 例如，我们将创建一个名为“sample_project_one”的文件夹。
 
@@ -81,7 +76,6 @@ cd sample_project_one
 
 环境就像是一个独立的工作区，里面包含了项目所需的所有特定版本的软件包，而不会影响你计算机上的其他项目。我们将创建一个名为 `env`（environment的缩写）的环境。
 
-![](img/98d0c20a7108ecd65ad898a23ae53413_35.png)
 
 我们将使用以下命令来创建环境并一次性安装多个核心库：
 
@@ -96,7 +90,6 @@ conda create --prefix ./env pandas numpy matplotlib scikit-learn
 *   `--prefix ./env`： 指定环境的创建路径。`./` 表示当前目录（即 `sample_project_one`），`env` 是环境文件夹的名称。
 *   `pandas numpy matplotlib scikit-learn`： 这是我们要在新环境中安装的软件包列表。它们分别是数据处理、数值计算、图表绘制和机器学习的核心库。
 
-![](img/98d0c20a7108ecd65ad898a23ae53413_39.png)
 
 运行命令后，Conda会分析这些包的依赖关系，并列出所有需要下载和安装的组件。确认无误后，输入 `y` 并按回车开始安装。这个过程可能需要几分钟，取决于你的网速。
 
@@ -157,9 +150,7 @@ import sklearn
 print("所有库导入成功！环境已就绪。")
 ```
 
-![](img/98d0c20a7108ecd65ad898a23ae53413_45.png)
 
-![](img/98d0c20a7108ecd65ad898a23ae53413_47.png)
 
 3.  按 `Shift + Enter` 运行这个单元格。
 

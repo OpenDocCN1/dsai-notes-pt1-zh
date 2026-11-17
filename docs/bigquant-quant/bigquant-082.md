@@ -77,7 +77,6 @@ x_test_norm = mms.transform(x_test)
 操作步骤与最大值最小值归一化类似：
 
 
-![](img/20bfdbe5d9e4d674202678d0b49c3ca4_1.png)
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -92,15 +91,12 @@ y_train_norm_z = scaler.fit_transform(y_train[['target']]) # 同样处理目标�
 x_test_norm_z = scaler.transform(x_test)
 ```
 
-![](img/20bfdbe5d9e4d674202678d0b49c3ca4_3.png)
 
 使用Z-Score归一化后的数据训练模型并预测，将结果保存为 `result3.csv` 并提交。
 
 ## 最终效果总结
 
-![](img/20bfdbe5d9e4d674202678d0b49c3ca4_5.png)
 
-![](img/20bfdbe5d9e4d674202678d0b49c3ca4_7.png)
 
 提交后，我们得到了三种情况下的最终得分对比：
 
@@ -110,11 +106,9 @@ x_test_norm_z = scaler.transform(x_test)
 | **最大值最小值归一化** | 1.348 | 性能显著提升。 |
 | **Z-Score归一化** | 约1.34x (具体值视运行结果) | 性能与最大值最小值归一化相近，同样有大幅提升。 |
 
-![](img/20bfdbe5d9e4d674202678d0b49c3ca4_9.png)
 
 通过排行榜可以观察到，顶级选手的得分可以达到 **0.056** 左右。我们的初步归一化模型得分约为 **0.115**，虽然与顶尖成绩还有差距，但相比未归一化的模型已有巨大进步。这清晰地证明了**归一化是数据预处理中至关重要的一步，能有效提升模型的训练效率和最终性能**。
 
-![](img/20bfdbe5d9e4d674202678d0b49c3ca4_11.png)
 
 ![](img/20bfdbe5d9e4d674202678d0b49c3ca4_13.png)
 

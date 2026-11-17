@@ -8,9 +8,7 @@
 
 ## 大型语言模型基础
 
-![](img/2c9ab63d6d1dd0edb8eea5eb748cbeec_1.png)
 
-![](img/2c9ab63d6d1dd0edb8eea5eb748cbeec_2.png)
 
 上一节我们介绍了生成式AI的基本概念，本节中我们来看看文本生成的核心引擎——大型语言模型。
 
@@ -23,7 +21,6 @@
 
 ## 主流文本生成工具
 
-![](img/2c9ab63d6d1dd0edb8eea5eb748cbeec_4.png)
 
 了解了基础模型后，我们通过两个流行工具来具体了解它们的能力：ChatGPT和Bard。
 

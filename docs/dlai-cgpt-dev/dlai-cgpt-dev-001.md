@@ -26,7 +26,6 @@
 
 因此，本课程将重点介绍指令调优LLM的最佳实践，这也是我们建议你在大多数应用中使用的模型类型。
 
-![](img/8105121271f5c4e686d0a5784df02b6a_1.png)
 
 在继续之前，我想感谢来自OpenAI和DeepLearning.AI的团队，他们为Isa和我将要展示的材料做出了贡献。特别感谢OpenAI的Andrew Main、Joe Palermo、Boris Power、Ted Sanders和Lillian Weng，他们与我们共同构思、审查材料，为这门短期课程制定了教学大纲。同时，也感谢DeepLearning.AI的Jeff Ludwig、Eddie Shu和Tommy Nelson的辛勤工作。
 

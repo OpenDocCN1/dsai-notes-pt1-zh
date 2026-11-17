@@ -20,7 +20,6 @@
 
 客户端会被我们的Web服务器包裹或托管。外部用户的请求首先到达Web服务器，然后被传递到客户端。客户端随后请求TensorFlow Serving服务器，服务器处理请求后将结果返回。
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_1.png)
 
 以下是完整的请求路径：
 1.  用户请求发送到Web服务器。
@@ -38,31 +37,24 @@
 
 ## 接口选择 ⚙️
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_13.png)
 
 TensorFlow Serving客户端通常提供两种接口形式。我们会选择gRPC配合Protocol Buffers的接口，主要考虑是其性能非常出色。
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_5.png)
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_15.png)
 
 由于这种接口面向用户提供，在具体场景中需要权衡。如果不是特别追求卓越的性能，也可以使用REST接口的方式去请求。
 
 ![](img/4e747b19ef4c94d560fa328895ca3a38_7.png)
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_17.png)
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_19.png)
 
 ---
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_21.png)
 
 ## 环境配置与Docker 🐳
 
 我们将Web服务器程序和TensorFlow Serving客户端程序所需的环境整合在一起。
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_23.png)
 
 ![](img/4e747b19ef4c94d560fa328895ca3a38_9.png)
 
@@ -86,9 +78,7 @@ TensorFlow Serving客户端通常提供两种接口形式。我们会选择gRPC�
     ```
     你可以看到名为`tf-serving-web`的容器镜像，以及之前可能已经拉取好的`tensorflow/serving`镜像。
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_31.png)
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_23.png)
 
 环境配置至关重要。如果环境有问题，后续的请求发送和处理都会出现错误。
 
@@ -96,15 +86,12 @@ TensorFlow Serving客户端通常提供两种接口形式。我们会选择gRPC�
 
 ---
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_35.png)
 
 ## 项目结构 📁
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_37.png)
 
 我们的Web项目主要包裹着TensorFlow Serving客户端。在项目结构中，有一个名为`web_code`的目录。
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_33.png)
 
 ![](img/4e747b19ef4c94d560fa328895ca3a38_39.png)
 
@@ -116,7 +103,6 @@ TensorFlow Serving客户端通常提供两种接口形式。我们会选择gRPC�
     2.  `preprocess.py`：封装了数据预处理逻辑的文件。
     3.  `postprocess.py`：封装了结果后处理（如标签标记）逻辑的文件。
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_41.png)
 
 ![](img/4e747b19ef4c94d560fa328895ca3a38_37.png)
 
@@ -147,7 +133,6 @@ TensorFlow Serving客户端通常提供两种接口形式。我们会选择gRPC�
 
 Web服务的相关代码（主要是`main.py`）基于Flask框架编写。它的职责非常明确：
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_43.png)
 
 *   提供默认的页面接口。
 *   提供一个用于预测的路由函数（例如`/predict`）。
@@ -156,11 +141,9 @@ Web服务的相关代码（主要是`main.py`）基于Flask框架编写。它的
 
 ![](img/4e747b19ef4c94d560fa328895ca3a38_43.png)
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_47.png)
 
 **请注意**：这部分Flask框架的Web代码我们不需要深入掌握或修改，只需理解其作为“桥梁”的作用即可。我们的开发重点在于`prediction.py`、`preprocess.py`和`postprocess.py`这三个构成Serving客户端的文件。
 
-![](img/4e747b19ef4c94d560fa328895ca3a38_45.png)
 
 ---
 

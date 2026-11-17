@@ -1,33 +1,25 @@
 # 011：文档分割 📄✂️
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_0.png)
 
 ## 概述
 在本节课中，我们将要学习如何将加载好的文档分割成更小的“块”。文档分割是构建高效检索系统（RAG）的关键步骤，它直接影响后续信息检索的质量。我们将探讨分割的重要性、不同分割策略的原理，并通过代码示例学习如何使用LangChain中的各种文本分割器。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_2.png)
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_3.png)
 
 ---
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_5.png)
 
 ## 为什么文档分割既重要又棘手？
 上一节我们介绍了如何将文档加载为标准格式。本节中我们来看看如何将它们分割成更小的块。这听起来可能很简单，但其中有很多微妙之处，对未来步骤有巨大影响。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_7.png)
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_9.png)
 
 将数据加载为文档格式后，在它进入向量存储之前，需要进行文档分割。一个简单的想法是根据固定字符长度来分割块。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_11.png)
 
 但为什么这既棘手又非常重要呢？请看以下例子：
 > 我们有一个关于丰田凯美瑞的句子和一些规格。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_13.png)
 
 如果我们进行简单的分割，可能会将句子的一部分放在一个块中，另一部分放在另一个块中。当我们试图回答“凯美瑞的规格是什么？”这个问题时，实际上在这两个块中都没有完整的正确信息。因此，如何分割块，使得语义上相关的内容能保持在一起，具有很多细微差别和重要性。
 
@@ -36,16 +28,13 @@
 ## LangChain文本分割器基础
 LangChain中所有文本分割器的基础都涉及几个核心概念：**块大小** 和 **块重叠**。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_15.png)
 
 *   **块大小**：指每个块的大小，可以用几种不同的方法来测量（例如字符数或令牌数）。我们通过 `length_function` 参数来指定测量方式。
 *   **块重叠**：指相邻两个块之间保留的重叠部分，就像一个滑动窗口。这允许相同的上下文出现在一个块的末尾和下一个块的开头，有助于保持语义的连贯性。
 
 文本分割器通常有 `create_documents`（接收文本列表）和 `split_documents`（接收文档列表）两种方法，它们底层的分割逻辑相同，只是接口略有不同。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_17.png)
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_19.png)
 
 LangChain中有多种类型的文本分割器，它们在以下几个维度上有所不同：
 1.  **分割依据**：根据什么字符或规则进行分割。
@@ -53,23 +42,17 @@ LangChain中有多种类型的文本分割器，它们在以下几个维度上�
 3.  **元数据处理**：如何在所有块中维护原始元数据，并在适当时添加新的元数据（例如块在文档中的位置）。
 4.  **文档类型特异性**：分割方式通常可以针对特定文档类型进行优化，这在代码分割上尤为明显。例如，有专门的 `Language` 文本分割器，针对Python、Ruby、C等不同编程语言使用不同的分隔符。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_21.png)
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_23.png)
 
 ---
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_25.png)
 
 ## 实践：两种基础分割器
 现在，让我们通过代码来了解具体如何使用这些分割器。首先，我们设置环境并导入两种最常见的文本分割器。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_27.png)
 
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_29.png)
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_31.png)
 
 ```python
 # 设置环境（例如OpenAI API密钥）
@@ -79,16 +62,12 @@ os.environ[‘OPENAI_API_KEY‘] = ‘your-api-key-here‘
 from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter
 ```
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_33.png)
 
 我们将先讨论一些简单的用例，以了解这些分割器的工作原理。设置一个较小的块大小（26）和块重叠（4）。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_35.png)
-
-![](img/ebe398bb25bacc9df35d89337a0c9403_37.png)
 
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_39.png)
+
 
 ```python
 # 初始化分割器
@@ -98,9 +77,7 @@ r_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap
 c_splitter = CharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
 ```
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_41.png)
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_43.png)
 
 以下是几个不同的用例：
 
@@ -112,7 +89,6 @@ print(r_splitter.split_text(text1))
 ```
 字符串长度为26个字符，与指定的块大小一致，因此无需分割。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_45.png)
 
 **用例2：长度超过块大小的字符串**
 ```python
@@ -130,7 +106,6 @@ print(r_splitter.split_text(text3))
 ```
 由于空格也占用字符位置，现在分成了三个块。注意重叠部分：“i j k l”同时出现在第一和第二个块的末尾/开头。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_47.png)
 
 现在尝试使用 `CharacterTextSplitter`。默认情况下，它在换行符(`\n`)上分割。
 ```python
@@ -144,25 +119,19 @@ print(c_splitter.split_text(text3))
 # 输出与r_splitter类似
 ```
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_49.png)
 
 **建议**：在此处暂停视频，尝试自己编造不同的字符串，并交换分割器、调整块大小和块重叠，观察会发生什么。通过几个简单例子建立直觉，有助于理解后续更真实的场景。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_51.png)
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_53.png)
 
 ---
 
 ## 处理真实文本
 现在，让我们用一些更真实的例子来尝试。这里有一段较长的文本，其中包含典型的段落分隔符——双换行符(`\n\n`)。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_55.png)
-
-![](img/ebe398bb25bacc9df35d89337a0c9403_57.png)
 
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_59.png)
+
 
 ```python
 some_text = “““
@@ -171,7 +140,6 @@ some_text = “““
 print(len(some_text)) # 大约500
 ```
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_61.png)
 
 定义两个文本分割器：
 ```python
@@ -186,9 +154,7 @@ r_splitter = RecursiveCharacterTextSplitter(
 )
 ```
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_63.png)
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_65.png)
 
 观察它们对上述文本的处理：
 *   `c_splitter` 在空格上分割，可能导致句子从中间被切断。
@@ -204,27 +170,20 @@ r_splitter = RecursiveCharacterTextSplitter(
 # 运行后，文本将在句子结尾处被正确分割。
 ```
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_67.png)
 
 ---
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_69.png)
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_71.png)
 
 ## 应用于真实文档
 让我们使用在文档加载课程中用过的PDF文件进行实践。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_73.png)
 
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_75.png)
 
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_77.png)
 
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_79.png)
 
 ```python
 from langchain.document_loaders import PyPDFLoader
@@ -252,30 +211,22 @@ print(“---“)
 print(docs[1].page_content) # 查看分割后第二个块的内容
 ```
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_81.png)
 
 **建议**：这是一个很好的暂停点，可以尝试用不同的块大小和重叠值进行实验。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_83.png)
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_85.png)
 
 ---
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_87.png)
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_89.png)
 
 ## 基于令牌的分割
 到目前为止，我们都是基于字符进行分割。但还有另一种重要方法：基于**令牌**进行分割。LLM通常有由令牌数定义的上下文窗口，因此基于令牌分割能更准确地反映模型对文本的“看法”。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_91.png)
 
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_93.png)
 
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_95.png)
 
 ```python
 from langchain.text_splitter import TokenTextSplitter
@@ -287,7 +238,6 @@ print(token_splitter.split_text(text))
 ```
 这个例子展示了在字符上拆分和在令牌上拆分的区别。令牌“bazzy”被拆分成了“baz”和“zy”。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_97.png)
 
 让我们将其应用到之前加载的PDF文档上：
 ```python
@@ -299,7 +249,6 @@ print(token_docs[0].metadata) # 查看元数据
 ```
 可以看到，`metadata`（如`source`和`page`）被正确地传递到了每个分割后的块中。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_99.png)
 
 ---
 
@@ -308,17 +257,13 @@ print(token_docs[0].metadata) # 查看元数据
 
 一个具体的例子是 `MarkdownHeaderTextSplitter`。它会根据标题（如`# Header1`, `## Header2`）来分割Markdown文件，并将这些标题作为元数据添加到每个块中。
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_101.png)
 
 首先看一个玩具示例：
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_103.png)
 
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_105.png)
 
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_107.png)
 
 ```python
 from langchain.text_splitter import MarkdownHeaderTextSplitter
@@ -345,13 +290,10 @@ print(md_header_splits[2])
 # 输出内容包含 “Hi, I‘m Harry.“，其元数据为 {‘Header 1‘: ‘Title‘, ‘Header 2‘: ‘Chapter 2‘, ‘Header 3‘: ‘Section 2.1‘}
 ```
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_109.png)
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_111.png)
 
 现在，让我们在一个真实世界的Markdown文档上尝试（使用之前加载Confluence目录的示例）：
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_113.png)
 
 ```python
 from langchain.document_loaders import ConfluenceLoader
@@ -366,11 +308,9 @@ for split in md_header_splits[:2]:
     print(“---“)
 ```
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_115.png)
 
 ---
 
-![](img/ebe398bb25bacc9df35d89337a0c9403_117.png)
 
 ![](img/ebe398bb25bacc9df35d89337a0c9403_119.png)
 

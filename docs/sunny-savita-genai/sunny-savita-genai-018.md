@@ -4,9 +4,7 @@
 
 ---
 
-![](img/1bcfb4bfcfed053bb7d997c75a372f70_1.png)
 
-![](img/1bcfb4bfcfed053bb7d997c75a372f70_2.png)
 
 ## 环境配置与安装
 
@@ -19,9 +17,7 @@
 !pip install llama-index
 ```
 
-![](img/1bcfb4bfcfed053bb7d997c75a372f70_4.png)
 
-![](img/1bcfb4bfcfed053bb7d997c75a372f70_5.png)
 
 ![](img/1bcfb4bfcfed053bb7d997c75a372f70_6.png)
 
@@ -86,7 +82,6 @@ Your answers should be concise, accurate, and helpful.
 
 然后，我们初始化Hugging Face上的Mistral-7B模型。这里我们直接将模型加载到内存中，而不是通过API调用。
 
-![](img/1bcfb4bfcfed053bb7d997c75a372f70_16.png)
 
 ![](img/1bcfb4bfcfed053bb7d997c75a372f70_17.png)
 
@@ -100,9 +95,7 @@ llm = HuggingFaceLLM(
 )
 ```
 
-![](img/1bcfb4bfcfed053bb7d997c75a372f70_19.png)
 
-![](img/1bcfb4bfcfed053bb7d997c75a372f70_20.png)
 
 ---
 

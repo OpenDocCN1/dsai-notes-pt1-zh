@@ -6,17 +6,12 @@
 
 上一节我们介绍了代理执行的基本流程。本节中，我们来看看如何手动处理工具调用，以替代已弃用的 `ToolExecutor`。核心在于从代理动作中提取信息，并直接调用对应的工具函数。
 
-![](img/09a62e9689e195ba91a03ac440492a92_1.png)
 
-![](img/09a62e9689e195ba91a03ac440492a92_2.png)
 
 ## 从代理动作中提取信息
 
-![](img/09a62e9689e195ba91a03ac440492a92_3.png)
 
-![](img/09a62e9689e195ba91a03ac440492a92_4.png)
 
-![](img/09a62e9689e195ba91a03ac440492a92_5.png)
 
 第一步是从语言模型返回的代理动作中，获取它想要调用的具体工具名称和输入参数。
 
@@ -37,19 +32,13 @@ tool_input = agent_action.tool_input  # 获取工具输入参数
 2.  遍历这个列表，将每个工具的名称与从 `agent_action` 中提取出的 `tool_name` 进行比较。
 3.  当找到名称匹配的工具时，获取对该工具函数本身的引用。
 
-![](img/09a62e9689e195ba91a03ac440492a92_7.png)
 
-![](img/09a62e9689e195ba91a03ac440492a92_8.png)
 
 这个过程的核心代码如下：
 
-![](img/09a62e9689e195ba91a03ac440492a92_9.png)
 
-![](img/09a62e9689e195ba91a03ac440492a92_10.png)
 
-![](img/09a62e9689e195ba91a03ac440492a92_11.png)
 
-![](img/09a62e9689e195ba91a03ac440492a92_12.png)
 
 ```python
 def find_tool(tool_name, available_tools):
@@ -61,7 +50,6 @@ target_tool = find_tool(tool_name, available_tools)
 ```
 这样，`target_tool` 变量就指向了我们真正需要调用的那个函数（例如 `get_time` 或 `search`）。
 
-![](img/09a62e9689e195ba91a03ac440492a92_13.png)
 
 ## 执行工具并处理结果
 
@@ -76,17 +64,12 @@ tool_output = target_tool.invoke(tool_input)  # 或者使用 target_tool(**tool_
 
 采用这种手动执行的方式有两个主要优点：一是代码更简单直观，不依赖可能发生变更的框架内部类；二是能更好地理解底层机制，当框架更新引入破坏性变更时，我们的核心逻辑受影响更小，更适合生产环境。
 
-![](img/09a62e9689e195ba91a03ac440492a92_15.png)
 
-![](img/09a62e9689e195ba91a03ac440492a92_16.png)
 
 ## 总结
 
-![](img/09a62e9689e195ba91a03ac440492a92_17.png)
 
-![](img/09a62e9689e195ba91a03ac440492a92_18.png)
 
-![](img/09a62e9689e195ba91a03ac440492a92_19.png)
 
 ![](img/09a62e9689e195ba91a03ac440492a92_20.png)
 

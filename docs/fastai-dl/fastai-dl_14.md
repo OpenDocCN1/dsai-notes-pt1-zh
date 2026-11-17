@@ -242,7 +242,6 @@ for i,(x,y) in enumerate(batches):
     show_img(y,idx, ax=axes.flat[i*2+1])
 ```
 
-![](img/14-7.webp)
 
 ## 模型[[21:48](https://youtu.be/nG3tT31nPmQ?t=21m48s)]
 
@@ -456,7 +455,6 @@ idx=4
 show_img(y,idx,normed=False)
 ```
 
-![](img/14-19.webp)
 
 这是我们的输出。
 
@@ -480,7 +478,6 @@ preds = learn.model(VV(x))
 show_img(y,idx,normed=False)
 ```
 
-![](img/14-22.webp)
 
 ```py
 show_img(preds,idx,normed=False);
@@ -1515,7 +1512,6 @@ ay.shape
 show_img(ay[0]);
 ```
 
-![](img/14-50.webp)
 
 这是 96%准确的版本。所以当你看到它时，你会意识到“哦，是的，准确地获取 96%的像素实际上很容易，因为所有外部部分都不是汽车，所有内部部分都是汽车，而真正有趣的部分是边缘。所以我们需要做得更好。
 
@@ -1523,7 +1519,6 @@ show_img(ay[0]);
 show_img(py[0]>0);
 ```
 
-![](img/14-51.webp)
 
 让我们解冻，因为到目前为止我们只训练了自定义头部。让我们做更多。
 
@@ -1573,7 +1568,6 @@ ax = show_img(denorm(x)[0])
 show_img(py[0]>0, ax=ax, alpha=0.5);
 ```
 
-![](img/14-52.webp)
 
 ```py
 ax = show_img(denorm(x)[0])
@@ -1698,7 +1692,6 @@ ax = show_img(denorm(x)[0])
 show_img(py[0]>0, ax=ax, alpha=0.5);
 ```
 
-![](img/14-57.webp)
 
 ```py
 ax = show_img(denorm(x)[0])
@@ -1837,20 +1830,17 @@ ax = show_img(denorm(x)[0])
 show_img(py[0][0]>0, ax=ax, alpha=0.5);
 ```
 
-![](img/14-61.webp)
 
 ```py
 ax = show_img(denorm(x)[0])
 show_img(y[0,...,-1], ax=ax, alpha=0.5);
 ```
 
-![](img/14-62.webp)
 
 ```py
 show_img(py[0][0]>0);
 ```
 
-![](img/14-63.webp)
 
 ```py
 show_img(y[0,...,-1]);
@@ -2064,7 +2054,6 @@ py = to_np(learn.model(V(x)))
 show_img(py[0]>0);
 ```
 
-![](img/14-68.webp)
 
 ```py
 show_img(y[0]);
@@ -2894,7 +2883,6 @@ py = to_np(learn.model(V(x)))
 show_img(py[0]>0);
 ```
 
-![](img/14-74.webp)
 
 ```py
 show_img(y[0]);
@@ -2987,7 +2975,6 @@ py = to_np(learn.model(V(x)))
 show_img(py[0]>0);
 ```
 
-![](img/14-76.webp)
 
 ```py
 show_img(y[0]);
@@ -3091,7 +3078,6 @@ py = to_np(learn.model(V(x)))
 show_img(py[0]>0);
 ```
 
-![](img/14-79.webp)
 
 ```py
 show_img(y[0]);

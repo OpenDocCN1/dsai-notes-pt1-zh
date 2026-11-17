@@ -28,9 +28,7 @@
 
 ![](img/5c777fe3fbcc933c6a593192d974aaa9_10.png)
 
-![](img/5c777fe3fbcc933c6a593192d974aaa9_11.png)
 
-![](img/5c777fe3fbcc933c6a593192d974aaa9_12.png)
 
 ![](img/5c777fe3fbcc933c6a593192d974aaa9_14.png)
 

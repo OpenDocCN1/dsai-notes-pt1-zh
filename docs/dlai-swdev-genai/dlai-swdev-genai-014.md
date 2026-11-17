@@ -1,8 +1,6 @@
 # 14：13_专业角色用于专门知识
 
-![](img/7dab675bd2cdbcc7e7c08af5f6d4d0b1_0.png)
 
-![](img/7dab675bd2cdbcc7e7c08af5f6d4d0b1_0.png)
 
 在本节课中，我们将学习如何通过为大型语言模型（LLM）指定专业角色，来获取更具深度和针对性的反馈。我们将看到，通过让AI扮演特定专家角色，可以使其超越简单的代码生成，成为开发团队中提供专业见解的关键成员。
 
@@ -16,7 +14,6 @@
 
 我们的第一个示例指导模型执行一次Python库的代码审查。你将使用一个数据可视化库的示例设计，并提示ChatGPT对其进行批判性评估，提出改进建议，使其达到行业标准。
 
-![](img/7dab675bd2cdbcc7e7c08af5f6d4d0b1_2.png)
 
 以下是初始代码：
 
@@ -40,7 +37,6 @@ class SimplePlotter:
 
 在GPT中运行这个提示后，模型会给出对代码的深度剖析，随后是改进建议。你可以花时间阅读这些内容，或者自己用LLM尝试相同的提示。
 
-![](img/7dab675bd2cdbcc7e7c08af5f6d4d0b1_4.png)
 
 模型的回答非常详细，并包含了许多可操作的改进项。例如，在最后的“关键改进”部分，LLM总结了它建议实施的更改，包括灵活的数据输入、更多的图表类型、自定义选项等等。
 
@@ -52,7 +48,6 @@ class SimplePlotter:
 
 我们从以下代码开始，并赋予GPT“NLP专家”的角色来分析它。
 
-![](img/7dab675bd2cdbcc7e7c08af5f6d4d0b1_6.png)
 
 ```python
 # 示例：一个基础的文本处理应用
@@ -86,7 +81,6 @@ def safe_divide(numerator, denominator):
     return numerator / denominator
 ```
 
-![](img/7dab675bd2cdbcc7e7c08af5f6d4d0b1_10.png)
 
 你将赋予模型软件测试员的角色，看看它如何帮助你识别和缓解这里的边界情况。通过关注软件的健壮性，你引导AI不仅要考虑正常操作，还要考虑可能导致故障的异常或极端条件。
 
@@ -96,13 +90,10 @@ def safe_divide(numerator, denominator):
 
 这里最重要的收获是，当你指定软件测试员角色时，模型理解了你的需求。它识别出许多潜在的边界情况，描述了它们，然后提出了处理这些情况的策略。
 
-![](img/7dab675bd2cdbcc7e7c08af5f6d4d0b1_12.png)
 
-![](img/7dab675bd2cdbcc7e7c08af5f6d4d0b1_12.png)
 
 它甚至还编写了一个包含针对这些边界情况测试的Python脚本。
 
-![](img/7dab675bd2cdbcc7e7c08af5f6d4d0b1_14.png)
 
 ![](img/7dab675bd2cdbcc7e7c08af5f6d4d0b1_14.png)
 

@@ -2,7 +2,6 @@
 
 在本节课中，我们将学习如何利用嵌入向量进行语义搜索，即根据含义进行搜索。上一节我们介绍了嵌入向量的概念，本节中我们来看看如何将其应用于搜索任务。
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_1.png)
 
 本节课分为两部分。第一部分，我们将连接到第一课中使用过的数据库，但不再使用关键词搜索，而是利用嵌入向量进行向量搜索以实现语义搜索。第二部分，在熟悉了如何查询一个已准备好的向量数据库后，我们将从头开始处理文本，学习如何从零构建一个向量索引。
 
@@ -10,36 +9,26 @@
 
 首先，我们加载API密钥并设置环境，这与之前的操作一致。
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_3.png)
 
 ```python
 import cohere
 co = cohere.Client('YOUR_API_KEY')
 ```
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_5.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_7.png)
 
 接下来，我们设置Weaviate客户端并连接到同一个数据库。到目前为止，这些步骤都是熟悉的。
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_9.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_11.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_13.png)
 
 在深入搜索代码之前，让我们基于嵌入课程的知识，理解其背后的原理。假设查询是“what is the capital of Canada”，而我们的档案库中有五个可能的句子。通过嵌入模型，我们可以将这些句子和查询投射到同一个向量空间中。语义相似的句子在空间中的位置会更接近。一个为搜索优化的嵌入模型会使查询的向量最接近其答案的向量。这就是我们利用嵌入的相似性和距离属性进行搜索的方式，也就是**稠密检索**。
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_15.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_16.png)
 
 以下是使用Weaviate进行稠密检索的代码。它与第一课的关键词搜索代码很相似，主要区别在于我们使用 `near_text` 参数进行向量搜索，而不是 `BM25`。
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_18.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_19.png)
 
 ![](img/db00d5bef4906711cee3eb00bb5bc65e_21.png)
 
@@ -55,39 +44,26 @@ response = (
 
 ![](img/db00d5bef4906711cee3eb00bb5bc65e_23.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_24.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_25.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_26.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_28.png)
 
 执行此代码后，我们可以发送查询并查看结果。
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_29.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_31.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_33.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_35.png)
 
 让我们运行几个查询来比较稠密检索和关键词搜索的效果。
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_37.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_39.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_40.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_42.png)
 
 **查询示例 1: “who wrote Hamlet”**
 *   **稠密检索结果**：返回的文本提到了莎士比亚创作《哈姆雷特》，这是最相关的结果。
 *   **关键词搜索对比**：我们导入第一课的函数进行对比。
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_44.png)
 
 **查询示例 2: “what is the capital of Canada”**
 *   **稠密检索结果**：返回关于渥太华（加拿大首都）的维基百科页面。
@@ -97,19 +73,13 @@ response = (
 *   **稠密检索结果**：正确返回了历史上最高的人“Robert Wadlow”的相关记录。
 *   **关键词搜索结果**：返回了关于日本历史、“7 summits”等不相关的内容。
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_46.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_48.png)
 
 此外，稠密检索还支持**多语言搜索**，因为使用的嵌入模型是多语言的。例如，用阿拉伯语输入“历史上最高的人”，依然能返回正确的结果。
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_50.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_51.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_52.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_53.png)
 
 另一个强大的应用是**探索性搜索**。例如，查询“film about a time travel paradox”，可以返回《About Time》、《The Time Machine》等相关电影，帮助你探索数据集。
 
@@ -117,13 +87,10 @@ response = (
 
 ![](img/db00d5bef4906711cee3eb00bb5bc65e_55.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_57.png)
 
 ## 第二部分：从头构建向量搜索索引
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_59.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_60.png)
 
 首先，我们导入必要的库，包括近似最近邻库 `Annoy`。
 
@@ -134,21 +101,14 @@ import numpy as np
 import textwrap
 ```
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_62.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_63.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_64.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_66.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_67.png)
 
 我们将使用电影《星际穿越》的维基百科页面文本作为示例数据。
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_69.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_71.png)
 
 构建语义搜索系统的一个关键步骤是**文本分块**。如何分块取决于具体任务。常见方法包括按句号分割句子或按段落分割。对于维基百科这类结构清晰的文本，按句号分割是一个简单选择。但需要注意，单独的句子可能缺乏上下文。一个改进方法是**为每个块添加标题作为上下文**，例如在每个句子前加上“Interstellar (film): ”。
 
@@ -156,9 +116,7 @@ import textwrap
 
 以下是分块和添加上下文的示例代码：
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_75.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_77.png)
 
 ```python
 # 假设 text 包含维基百科全文
@@ -167,13 +125,10 @@ title = "Interstellar (film)"
 chunks = [f"{title}: {sentence}." for sentence in sentences]
 ```
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_79.png)
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_81.png)
 
 完成分块后，下一步是**为每个文本块生成嵌入向量**。
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_83.png)
 
 ```python
 embeds = co.embed(texts=chunks).embeddings
@@ -181,7 +136,6 @@ embeds = np.array(embeds) # 转换为NumPy数组以便处理
 # embeds 的维度为 (句子数量, 嵌入向量维度)
 ```
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_85.png)
 
 现在，我们将这些嵌入向量存入一个搜索索引。这里使用 `Annoy` 库来构建一个近似最近邻索引。
 
@@ -210,11 +164,9 @@ def search(query):
         print("\n")
 ```
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_87.png)
 
 让我们测试一下。查询“how much did the film make”，即使句子中没有直接出现“make”这个词，系统也能返回关于电影全球票房（gross）的正确句子。
 
-![](img/db00d5bef4906711cee3eb00bb5bc65e_88.png)
 
 ## 稠密检索、向量搜索库与向量数据库
 

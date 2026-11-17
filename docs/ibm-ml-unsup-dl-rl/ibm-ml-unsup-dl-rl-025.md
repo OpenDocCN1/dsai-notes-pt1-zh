@@ -26,7 +26,6 @@ First thing that we want to do is import all the necessary libraries。
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_1.png)
 
 We call data dot head， and we take the first four rows。 And you see here that we transpose it。
 
@@ -42,7 +41,6 @@ We call data dot head， and we take the first four rows。 And you see here tha
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_3.png)
 
 We then look at the shape of our data， and we see that we have 6497 rows， with just 13 columns。
 
@@ -62,7 +60,6 @@ We are fortunate to see that all of our values， again。
 
  or even imagestegers。😊。
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_5.png)
 
 We're then going to check the value counts for our different wine colors。
 
@@ -70,9 +67,7 @@ We're then going to check the value counts for our different wine colors。
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_7.png)
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_8.png)
 
 So we check the color， and we see the majority of our data set is going to be white wine。
 
@@ -82,9 +77,7 @@ A bit over 75% of our data set is going to be white wine， whereas of 24。6 is
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_10.png)
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_11.png)
 
 And then we can check this out in terms of the value counts for the quality。
 
@@ -94,13 +87,11 @@ And then we can check this out in terms of the value counts for the quality。
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_13.png)
 
 Now we want to look at a histogram breaking down the quality by red and white one。
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_15.png)
 
 Given our data set。So we're going to。First。Initiate these colors red and white。 Now。
 
@@ -110,9 +101,7 @@ Given our data set。So we're going to。First。Initiate these colors red and w
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_17.png)
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_18.png)
 
 We're then going to。Explicitly tell our histogram what our bin range is going to be。
 
@@ -124,11 +113,9 @@ We're then going to。Explicitly tell our histogram what our bin range is going 
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_20.png)
 
 With those different objects created。
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_22.png)
 
 We're then going to initiate our axis， so our bounding box using PLt。axxes。
 
@@ -144,7 +131,6 @@ And that will be color for the string in plot color for these different objects 
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_24.png)
 
 We are then going to take a subset of our data。So we say data dot Lo。
 
@@ -168,7 +154,6 @@ And then the color that we're going to use is going to be that plot color。
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_26.png)
 
 And then we're just going to create a label for our legend later on。
 
@@ -176,7 +161,6 @@ And then we're just going to create a label for our legend later on。
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_28.png)
 
 We then won our legend。 We want our X label， and Y label。We set our x limits。
 
@@ -186,7 +170,6 @@ We then won our legend。 We want our X label， and Y label。We set our x limi
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_30.png)
 
 And we can see here our different breakdown of red and white wine。 and see that。
 
@@ -198,7 +181,6 @@ Red is slightly more centered around this 5，6。嗯。Ands the white wine has 
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_32.png)
 
 We're then going to， in question 2， examine the correlation and skew of our relevant variables。
 
@@ -232,13 +214,11 @@ So we're specifying here that our float columns are going to be all of our colum
 
  except for color and quality。
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_34.png)
 
 We're then going to create our correlation matrix by just specifying that we only want those columns。
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_36.png)
 
 And calling dot Cor。And then finally， just to make sure that we are not getting。
 
@@ -254,7 +234,6 @@ And if you think each these values being the same。That we are going to be zero
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_38.png)
 
 So let's see what this looks like。Again， you see that 0，0 for fixed acidity。
 
@@ -264,7 +243,6 @@ And we can see here it's a little bit difficult to quickly visualize what those 
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_40.png)
 
 So to get that pairwise maximal correlations， we're going to call coremat dot abs sorting the absolute value。
 
@@ -272,7 +250,6 @@ So to get that pairwise maximal correlations， we're going to call coremat dot 
 
 And then we call dot IDX max。
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_42.png)
 
 And we see that fixed acidity is most highly correlated with density。
 
@@ -296,7 +273,6 @@ But that is the reason why we'd want to start to investigate how high the correl
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_44.png)
 
 We're now going to look at the skew of each one of our columns。
 
@@ -310,7 +286,6 @@ So we can just call for those float columns。We're looking at the skew， we ju
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_46.png)
 
 And then we're going to sort those values from highest to lowest。
 
@@ -328,15 +303,12 @@ So we look at that and we see that each one of these values。 we are saying tha
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_48.png)
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_49.png)
 
 We're going to change that data to the log version of itself。
 
 And that will help normalize our features。
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_51.png)
 
 So we run this and we've replaced all of our different columns。And then on top of that。
 
@@ -352,19 +324,16 @@ We call fit transform on all of our float column data。
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_53.png)
 
 And then we're going to investigate this briefly and see that our values are now all are on a similar scale。
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_55.png)
 
 Finally， just to make sure that we get a visual of what these actually look like。
 
  we're going to run the pair plot。
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_57.png)
 
 In order to run our pair plot， we want all of our columns。All of our float columns， as well as color。
 
@@ -376,7 +345,6 @@ In order to run our pair plot， we want all of our columns。All of our float c
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_59.png)
 
 We're just ordering it white than red。 And then we're just saying our palette here。
 
@@ -390,7 +358,6 @@ We're just ordering it white than red。 And then we're just saying our palette 
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_61.png)
 
 Now， we ran this parapo， and we did that to see the relationship between each one of our different features。
 
@@ -402,15 +369,12 @@ But on top of that， because we're also looking at the breakdown between red an
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_63.png)
 
 So we can see that there probably will be a pretty clean classification given our data that will show us which wines are red and which are white without actually having those labels available。
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_65.png)
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_66.png)
 
 Now that closes out this question number two in our video here in question number three。
 
@@ -418,8 +382,6 @@ Now that closes out this question number two in our video here in question numbe
 
 
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_68.png)
 
-![](img/1b4e949a27cfd5be57f33ec4b388c67c_69.png)
 
 ![](img/1b4e949a27cfd5be57f33ec4b388c67c_70.png)

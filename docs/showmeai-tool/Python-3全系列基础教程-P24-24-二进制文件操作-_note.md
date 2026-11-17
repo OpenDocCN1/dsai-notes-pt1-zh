@@ -1,6 +1,5 @@
 # Python 3全系列基础教程，P24：二进制文件操作 📁➡️💾
 
-![](img/9d5ec0a5f39426c11f3410b240354eea_0.png)
 
 ![](img/9d5ec0a5f39426c11f3410b240354eea_0.png)
 
@@ -113,13 +112,10 @@ read_file_safely(filename)
 ```
 输出将显示文件包含10行文本：前5行是“Hello World”，后5行是“Hello Again”。
 
-![](img/9d5ec0a5f39426c11f3410b240354eea_5.png)
 
-![](img/9d5ec0a5f39426c11f3410b240354eea_6.png)
 
 ## 总结
 
-![](img/9d5ec0a5f39426c11f3410b240354eea_5.png)
 
 ![](img/9d5ec0a5f39426c11f3410b240354eea_6.png)
 

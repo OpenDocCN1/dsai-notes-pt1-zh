@@ -2,138 +2,100 @@
 
 在本节课中，我们将学习机器学习工作流程中的下一个重要步骤：探索性数据分析（EDA）。我们将讨论进行EDA的不同方法，包括统计和可视化技术，并学习如何使用抽样来初步了解数据，以及如何在实际进行EDA时生成有用的可视化图表。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_1.png)
 
 ---
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_3.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_5.png)
 
 ## 什么是探索性数据分析？ 🤔
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_7.png)
 
 探索性数据分析（EDA）是一种分析数据集以总结其主要特征的方法，通常使用可视化方法，以及我们将会看到的统计摘要。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_9.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_10.png)
 
 为什么EDA有用？你可以将其视为在开始之前与数据的初步对话。这是与数据集“相互了解”的阶段。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_11.png)
 
 EDA将帮助我们确定正在查看的数据是否实际有意义，或者是否需要进一步清理，或者是否实际需要更多数据。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_13.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_14.png)
 
 EDA将帮助我们在实际数据集中识别模式和趋势。有时，这可能与建模的实际发现同等重要，甚至更为重要。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_16.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_17.png)
 
 ---
 
 ## EDA中常用的统计摘要 📊
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_19.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_20.png)
 
 以下是我们在EDA中通常进行的一些统计摘要：
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_22.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_23.png)
 
 *   查看平均值、中位数、最小值、最大值。
 *   查看不同列之间的相关性。
 
 ---
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_25.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_26.png)
 
 ## EDA中常用的可视化技术 📈
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_28.png)
 
 根据我们的数据列，我们可以查看以下可视化图表：
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_29.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_31.png)
 
 *   **直方图**：用于查看数据分布。
 *   **散点图**：用于查看两个不同列之间的相关性或关系。
 *   **箱线图**：再次用于查看分布并识别异常值，以及其他许多图表。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_33.png)
 
 ---
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_34.png)
 
 ## 进行EDA的工具 🛠️
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_36.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_37.png)
 
 当我们进行数据整理或查看那些统计摘要时，我们通常会使用**Pandas**库。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_39.png)
 
 对于可视化，我们将依赖**Matplotlib**和**Seaborn**库。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_40.png)
 
 ---
 
 ## EDA示例：求职者数据 📝
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_42.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_43.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_44.png)
 
 假设我们想要检查求职者的特征。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_45.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_47.png)
 
 我们可以查看所有面试分数的平均值，或者可能按城市或职位职能进行细分，以便将申请人的分数与其直接竞争对手的平均值进行比较。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_49.png)
 
 你可以查看最大值，或者更常见的是查看众数值，以了解在申请材料中所有申请人最常用的词语是哪些。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_51.png)
 
 最后，我们可以查看相关性。我们可以查看技术评估与申请人工作经验年限之间的不同相关性，或许再次按经验类型进行细分，以便与他们的直接竞争对手进行比较。这使我们能够看到不同列之间是否存在任何值得立即注意的初始关系。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_53.png)
 
 在进行任何建模之前，这些都是有价值的洞察。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_54.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_55.png)
 
 ---
 
 ## 数据框抽样 📋
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_57.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_58.png)
 
 现在，让我们简要讨论一下从数据框中抽样。
 
@@ -141,21 +103,15 @@ EDA将帮助我们在实际数据集中识别模式和趋势。有时，这可�
 
 我们可能希望在数据的随机样本上训练模型，并留出另一部分用于后续测试。稍后我们将看到比左侧代码更有效的方法。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_60.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_61.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_62.png)
 
 我们还可能希望一个样本能够反映我们结果变量不同观测值的比例。这是什么意思？假设你正在处理一个旨在确定某人是否患有某种严重疾病的数据，而整个人口中只有1%患有该疾病。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_64.png)
 
 如果你想要一个样本，你也希望确保（假设只有1%的人患有该疾病）在你的样本数据集中保持这个比例。你希望它是一个相似的比例，你希望确保最终不会得到一个没有感染者的样本（这是可能的），或者该疾病的比例过高。这就是所谓的**分层抽样**可能发挥作用的地方。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_66.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_67.png)
 
 现在，看看左侧的代码，它将为我们做什么？
 
@@ -167,25 +123,17 @@ EDA将帮助我们在实际数据集中识别模式和趋势。有时，这可�
 
 我们得到了右侧看到的输出，包含`petal_length`、`petal_width`和`species`，这是最后三列，以及通过我们的样本随机出现的五行。
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_69.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_70.png)
 
 ---
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_71.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_72.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_73.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_74.png)
 
 ## 总结 📚
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_75.png)
 
-![](img/28fa620a2f937ffc1cedf22e88e35c1d_76.png)
 
 ![](img/28fa620a2f937ffc1cedf22e88e35c1d_77.png)
 

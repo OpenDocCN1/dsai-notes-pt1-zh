@@ -6,13 +6,9 @@
 
 ## 🎨 文本样式控制
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_1.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_2.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_3.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_5.png)
 
 上一节我们介绍了如何创建和自定义 Matplotlib 图表。本节中，我们来看看如何控制图表中文本元素的样式，例如标题和坐标轴标签。
 
@@ -32,11 +28,8 @@ plt.title('Loan Grades Frequency', fontsize=16, fontweight='bold', pad=15)
 plt.ylabel('Frequency', fontsize=14)
 ```
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_7.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_8.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_9.png)
 
 应用这些样式后，图表文本的辨识度会显著提高。
 
@@ -50,13 +43,9 @@ plt.ylabel('Frequency', fontsize=14)
 
 使用 `plt.annotate()` 函数添加标注。该函数包含多个参数，核心参数如下：
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_11.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_12.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_13.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_14.png)
 
 *   `text`：标注的文本内容。
 *   `xy`：标注所指向的数据点坐标（元组形式）。
@@ -75,21 +64,15 @@ plt.annotate(text='Loans grade E and below\nare very high risk',
 
 ## 🎯 调整标注位置与箭头
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_16.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_17.png)
 
 为了使标注更清晰，我们需要将文本移动到合适的位置，并可以添加箭头指向具体数据点。
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_18.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_19.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_20.png)
 
 我们可以将 `xytext` 参数视为相对于 `xy` 点的偏移量，并通过设置 `textcoords='offset points'` 来明确这一点。同时，使用 `arrowprops` 参数添加箭头。
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_22.png)
 
 **优化后的代码示例：**
 ```python
@@ -101,25 +84,19 @@ plt.annotate(text='Loans grade E and below\nare very high risk',
 ```
 为了让标注更易读，还可以调浅网格线颜色：`plt.grid(alpha=0.3)`。
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_23.png)
 
 ---
 
 ## 🔢 为柱状图添加数据标签
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_25.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_26.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_27.png)
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_28.png)
 
 在柱状图中，一个常见的需求是在每个柱子的顶部显示其具体数值。这可以通过循环和 `plt.text()` 函数实现。
 
 以下是实现方法：
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_30.png)
 
 1.  遍历每个柱子的位置和高度。
 2.  在每个柱子的顶部中心位置添加文本标签。
@@ -142,7 +119,6 @@ for i, height in enumerate(heights):
 
 本节课中我们一起学习了如何美化 Matplotlib 图表的文本并添加信息标注。
 
-![](img/3c05b23a7682fe44091c599e2cfa8ae5_32.png)
 
 ![](img/3c05b23a7682fe44091c599e2cfa8ae5_33.png)
 

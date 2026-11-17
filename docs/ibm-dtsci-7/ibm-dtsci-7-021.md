@@ -4,11 +4,9 @@
 
 ---
 
-![](img/32e8835271a54932e3a95afa82dbb07c_1.png)
 
 ## 🎯 什么是探索性数据分析？
 
-![](img/32e8835271a54932e3a95afa82dbb07c_2.png)
 
 探索性数据分析，简称EDA，是一种分析数据的方法，旨在总结数据的主要特征，更好地理解数据集，揭示不同变量之间的关系，并提取对我们试图解决的问题至关重要的变量。
 
@@ -33,11 +31,9 @@ summary = df.describe()
 print(summary)
 ```
 
-![](img/32e8835271a54932e3a95afa82dbb07c_4.png)
 
 ---
 
-![](img/32e8835271a54932e3a95afa82dbb07c_5.png)
 
 ## 🔍 数据分组（Group By）
 
@@ -73,9 +69,7 @@ correlation_matrix = df.corr()
 print(correlation_matrix)
 ```
 
-![](img/32e8835271a54932e3a95afa82dbb07c_7.png)
 
-![](img/32e8835271a54932e3a95afa82dbb07c_8.png)
 
 ---
 
@@ -91,7 +85,6 @@ print(correlation_matrix)
 
 为了更直观地解读庞大的相关系数矩阵，我们可以使用**热力图（Heatmap）**进行可视化。热力图使用颜色深浅来代表相关系数的大小，使得强相关和弱相关的变量对一目了然。我们可以使用Seaborn库来绘制：
 
-![](img/32e8835271a54932e3a95afa82dbb07c_10.png)
 
 ```python
 import seaborn as sns
@@ -105,11 +98,9 @@ plt.title(‘Correlation Heatmap’)
 plt.show()
 ```
 
-![](img/32e8835271a54932e3a95afa82dbb07c_11.png)
 
 ---
 
-![](img/32e8835271a54932e3a95afa82dbb07c_12.png)
 
 ## ✅ 总结
 

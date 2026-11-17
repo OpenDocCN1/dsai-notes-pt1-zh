@@ -419,11 +419,9 @@ Alireza Ghafarollahi 和 Markus J. Buehler
 
 图 S1：展示用于训练和验证的成分（三角图，红色）以及用于测试的新未见成分（蓝色）。  
 
-![请参阅标题](img/1e83c6bb0aa42d740ed783699839f195.png)  
 
 图 S2：在验证集上评估 GNN 模型在潜能能量变化预测中的表现。  
 
-![请参阅标题](img/be90ebc258844bef5f9d9dbdd2be3ffc.png)  
 
 图 S3：在验证集上评估 GNN 模型在 Peierls 屏障预测中的表现。  
 

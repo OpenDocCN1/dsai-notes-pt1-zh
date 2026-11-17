@@ -1,6 +1,5 @@
 #  135：Airflow TaskFlow API 🚀
 
-![](img/81f3f481df36d8b22de1aa957f4545a0_0.png)
 
 在本节课中，我们将学习Airflow的TaskFlow API。这是一种新的编程范式，旨在让编写DAG（有向无环图）变得更简单、更简洁，特别是当DAG大量使用Python函数时。我们将通过对比传统的操作符范式，来理解TaskFlow API的优势和用法。
 
@@ -50,9 +49,7 @@ dag_instance = my_dag()
 2.  函数名将自动用作任务ID。
 3.  装饰器会隐式调用PythonOperator，从而简化代码。
 
-![](img/81f3f481df36d8b22de1aa957f4545a0_2.png)
 
-![](img/81f3f481df36d8b22de1aa957f4545a0_3.png)
 
 ```python
 @dag(...)
@@ -100,7 +97,6 @@ def my_pipeline():
     extract_data() >> transform_data() >> load_data()
 ```
 
-![](img/81f3f481df36d8b22de1aa957f4545a0_5.png)
 
 这种方式与传统范式达到的结果相同，但TaskFlow API让你的代码更简洁。
 
@@ -137,19 +133,14 @@ def my_pipeline():
 
 你仍然可以在TaskFlow任务中显式使用`xcom_pull`和`xcom_push`，例如通过访问Airflow上下文，但这通常不是必需的。
 
-![](img/81f3f481df36d8b22de1aa957f4545a0_7.png)
 
-![](img/81f3f481df36d8b22de1aa957f4545a0_8.png)
 
 ---
 
-![](img/81f3f481df36d8b22de1aa957f4545a0_9.png)
 
-![](img/81f3f481df36d8b22de1aa957f4545a0_10.png)
 
 ## 混合使用传统范式与TaskFlow API
 
-![](img/81f3f481df36d8b22de1aa957f4545a0_11.png)
 
 需要特别注意的是，`@task`装饰器并不能替代所有类型的操作符。因此，根据你的用例，你可能仍然需要在同一份代码中结合使用两种范式。
 
@@ -183,11 +174,9 @@ def mixed_dag():
 
 ## 总结
 
-![](img/81f3f481df36d8b22de1aa957f4545a0_13.png)
 
 本节课中，我们一起学习了Airflow的TaskFlow API。我们了解到：
 
-![](img/81f3f481df36d8b22de1aa957f4545a0_14.png)
 
 ![](img/81f3f481df36d8b22de1aa957f4545a0_15.png)
 

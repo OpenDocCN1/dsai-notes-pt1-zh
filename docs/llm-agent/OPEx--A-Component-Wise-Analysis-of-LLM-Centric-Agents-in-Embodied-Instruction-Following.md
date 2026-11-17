@@ -355,7 +355,6 @@ ALFRED基准包括训练集、验证集和测试集。验证集和测试集都�
 
 完成“探索房间，了解环境概况”的提示示例如图[5](https://arxiv.org/html/2403.03017v1#A3.F5 "Figure 5 ‣ LLM-based Executor. ‣ Appendix C Prompt Examples ‣ OPEx: A Component-Wise Analysis of LLM-Centric Agents in Embodied Instruction Following")所示。具体而言，基于LLM的执行器的提示也以设定开始，确立执行任务并指示期望的输出格式。然后，设定后跟着输入给基于LLM的执行器，输入包括观察：呈现由基于LLM的观察者生成的当前语言描述的世界状态、发现的物体：追踪智能体检测到的所有物体、当前观察中看到的物体：记录当前自我中心视觉观察中检测到的物体、先前步骤：追踪当前子任务采取的步骤、当前目标：指定需要完成的当前子任务。受到ReAct启发，我们要求基于LLM的执行器不仅生成最终的技能行动计划Action，还要首先生成推理路径Thought。
 
-![参见标题](img/c35e7dbdad8feded02d2512dd7432b68.png)
 
 图 3：基于 LLM 的规划者提示示例。设置对于所有输入测试用例都是固定的，任务是输入到基于 LLM 的规划者的内容，会根据不同的输入测试用例有所变化，任务类型、思路和计划是基于 LLM 的规划者需要生成的内容。相同的颜色模式适用于其他图示。
 

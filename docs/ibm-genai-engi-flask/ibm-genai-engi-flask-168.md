@@ -48,11 +48,9 @@ splitter = CharacterTextSplitter(separator=" ", chunk_size=200, chunk_overlap=20
 chunks = splitter.split_text(your_text)
 ```
 
-![](img/3ecc769afe3582dff902ec70f8192455_1.png)
 
 这意味着当字符数达到 200 时，文本将被分割。分割后，您可以看到文本如何被分成两个块，每个块之间有一些用黄色显示的字符重叠。
 
-![](img/3ecc769afe3582dff902ec70f8192455_3.png)
 
 #### 递归字符文本分割器
 
@@ -79,16 +77,13 @@ chunks = splitter.split_text(your_text)
 *   Java
 *   ...
 
-![](img/3ecc769afe3582dff902ec70f8192455_5.png)
 
 分割策略基于递归字符文本分割器。
 
-![](img/3ecc769afe3582dff902ec70f8192455_7.png)
 
 以下是分割 Python 代码的示例。虽然它基于递归字符文本分割器，但当应用于代码分割器时，您需要在调用 `RecursiveCharacterTextSplitter` 类后添加 `from_language`，并在其中指定您要分割的语言。
 
 
-![](img/3ecc769afe3582dff902ec70f8192455_9.png)
 
 ```python
 # 示例代码：使用代码文本分割器（以Python为例）
@@ -103,18 +98,15 @@ chunks = splitter.split_text(your_python_code)
 
 #### Markdown 标题文本分割器
 
-![](img/3ecc769afe3582dff902ec70f8192455_11.png)
 
 分块的目标是保持具有共同上下文的文本在一起。考虑到这一点，您可能希望尊重文档结构。Markdown 文件按标题组织，在特定标题组内创建块是一个直观的想法。您可以使用 Markdown 标题文本分割器来应对这一挑战，它将按指定的标题集分割 Markdown 文件。
 
-![](img/3ecc769afe3582dff902ec70f8192455_12.png)
 
 例如，如果您有这样的 Markdown 原始文本，您可以使用 Markdown 标题文本分割器按任何标题（在本例中是 `## Bar` 和 `### BS`）来分割内容。
 
 以下是实现按标题分割 Markdown 文件的代码。
 
 
-![](img/3ecc769afe3582dff902ec70f8192455_14.png)
 
 ```python
 # 示例代码：使用Markdown标题文本分割器
@@ -130,7 +122,6 @@ chunks = splitter.split_text(your_markdown_text)
 
 ---
 
-![](img/3ecc769afe3582dff902ec70f8192455_16.png)
 
 ### 总结
 

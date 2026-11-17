@@ -6,7 +6,6 @@
 
 LangGraph 提供了一个检查点机制，可以在每次执行时保存图的状态。这使得智能体能够从之前中断的地方恢复，并记住所有先前的交互。一个典型的应用场景是为智能体赋予“记忆”能力。
 
-![](img/e17288511ae078adb97e7126c3048823_1.png)
 
 ## 创建基础智能体
 
@@ -15,11 +14,8 @@ LangGraph 提供了一个检查点机制，可以在每次执行时保存图的�
 以下是设置环境和创建智能体的核心代码：
 
 
-![](img/e17288511ae078adb97e7126c3048823_3.png)
 
-![](img/e17288511ae078adb97e7126c3048823_4.png)
 
-![](img/e17288511ae078adb97e7126c3048823_5.png)
 
 ```python
 # 设置 API 密钥
@@ -45,23 +41,15 @@ model_with_tools = model.bind_tools([search_tool])
 接下来，我们定义智能体节点和工具调用节点，并将它们连接成一个图。
 
 
-![](img/e17288511ae078adb97e7126c3048823_7.png)
-
-![](img/e17288511ae078adb97e7126c3048823_8.png)
 
 
-![](img/e17288511ae078adb97e7126c3048823_9.png)
-
-![](img/e17288511ae078adb97e7126c3048823_10.png)
-
-![](img/e17288511ae078adb97e7126c3048823_11.png)
 
 
-![](img/e17288511ae078adb97e7126c3048823_12.png)
 
-![](img/e17288511ae078adb97e7126c3048823_13.png)
 
-![](img/e17288511ae078adb97e7126c3048823_14.png)
+
+
+
 
 ```python
 from langgraph.graph import MessageGraph, END
@@ -97,14 +85,12 @@ graph.add_conditional_edges("agent", should_continue)
 graph.add_edge("tools", "agent")
 ```
 
-![](img/e17288511ae078adb97e7126c3048823_15.png)
 
 ## 添加持久化检查点
 
 这是本节课的核心。我们将通过添加一个 SQLite 检查点器来实现持久化。
 
 
-![](img/e17288511ae078adb97e7126c3048823_17.png)
 
 ```python
 from langgraph.checkpoint.sqlite import SqliteSaver
@@ -119,16 +105,13 @@ app = graph.compile(checkpointer=memory)
 
 ## 使用持久化智能体
 
-![](img/e17288511ae078adb97e7126c3048823_19.png)
 
 当我们调用智能体时，需要指定一个 `thread_id`。这个 ID 用于标识和检索特定的会话状态。
 
 以下是调用智能体的示例：
 
 
-![](img/e17288511ae078adb97e7126c3048823_21.png)
 
-![](img/e17288511ae078adb97e7126c3048823_22.png)
 
 ```python
 # 第一次交互，线程 ID 为 2
@@ -147,11 +130,9 @@ result = app.invoke(inputs, config=new_config)
 print(result["messages"][-1].content)  # 输出: I don't have that information.
 ```
 
-![](img/e17288511ae078adb97e7126c3048823_24.png)
 
 通过使用不同的 `thread_id`，我们可以管理多个独立的会话流。相同的 `thread_id` 可以恢复会话，而新的 `thread_id` 则会开始一个全新的、没有记忆的会话。
 
-![](img/e17288511ae078adb97e7126c3048823_26.png)
 
 ## 总结
 

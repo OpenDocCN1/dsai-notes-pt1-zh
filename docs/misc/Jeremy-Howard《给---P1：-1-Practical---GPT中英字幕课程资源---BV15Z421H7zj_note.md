@@ -10,7 +10,6 @@
 
 深度学习不仅在图像识别领域取得了突破，还在艺术生成、自然语言处理等多个领域展现出惊人的能力。例如，DALL-E 2和Midjourney等模型可以根据文本描述生成高质量的图像，而Google的Pathways语言模型能够理解并解释复杂的文本问题。
 
-![](img/e814b3da0bf06c15c82fcf1959bf4df5_1.png)
 
 这些进展表明，深度学习已经从一个高不可攀的技术，变成了一个易于上手且功能强大的工具。接下来，我们将通过实际案例，一步步展示如何构建一个深度学习模型。
 
@@ -18,7 +17,6 @@
 
 ## 构建鸟类识别系统 🐦
 
-![](img/e814b3da0bf06c15c82fcf1959bf4df5_3.png)
 
 上一节我们了解了深度学习的快速发展，本节中我们来看看如何实际构建一个鸟类识别系统。我们将使用Python和FastAI库，通过简单的代码实现这一目标。
 
@@ -33,26 +31,18 @@
 3. **训练模型**：使用预训练的ResNet模型，并通过微调（fine-tuning）适应我们的数据。
 4. **测试模型**：用一张鸟类图片测试模型，查看其预测结果。
 
-![](img/e814b3da0bf06c15c82fcf1959bf4df5_9.png)
 
 以下是核心代码示例：
 
-![](img/e814b3da0bf06c15c82fcf1959bf4df5_11.png)
 
 
-![](img/e814b3da0bf06c15c82fcf1959bf4df5_13.png)
-
-![](img/e814b3da0bf06c15c82fcf1959bf4df5_15.png)
-
-![](img/e814b3da0bf06c15c82fcf1959bf4df5_17.png)
-
-![](img/e814b3da0bf06c15c82fcf1959bf4df5_19.png)
 
 
-![](img/e814b3da0bf06c15c82fcf1959bf4df5_21.png)
 
 
-![](img/e814b3da0bf06c15c82fcf1959bf4df5_23.png)
+
+
+
 
 ```python
 from fastai.vision.all import *

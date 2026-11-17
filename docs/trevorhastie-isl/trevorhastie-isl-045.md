@@ -1,6 +1,5 @@
 # 45：使用glmnet进行岭回归与Lasso回归模型选择 🧮
 
-![](img/6537424cd6dc8319098030c36780daa2_0.png)
 
 在本节课中，我们将学习如何使用R语言中的`glmnet`包来拟合岭回归和Lasso回归模型。这两种方法都是通过引入惩罚项来控制模型复杂度，从而防止过拟合。我们将通过实际代码演示如何拟合模型、绘制系数路径图、使用交叉验证选择最优参数，并最终在验证集上评估模型性能。
 
@@ -8,37 +7,25 @@
 
 ## 准备工作与环境设置
 
-![](img/6537424cd6dc8319098030c36780daa2_2.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_3.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_4.png)
 
 首先，我们需要加载`glmnet`包。这个包由Jerome Friedman、Trevor Hastie和Robert Tibshirani共同开发，专门用于拟合包括岭回归、Lasso回归以及弹性网络在内的一系列正则化模型。
 
-![](img/6537424cd6dc8319098030c36780daa2_5.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_6.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_7.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_8.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_10.png)
 
 ```r
 library(glmnet)
 ```
 
-![](img/6537424cd6dc8319098030c36780daa2_12.png)
 
 `glmnet`包不使用R中常见的公式语言（如`y ~ x`），而是要求我们提供一个预测变量矩阵`X`和一个响应变量向量`y`。因此，我们需要先准备好数据。
 
-![](img/6537424cd6dc8319098030c36780daa2_14.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_15.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_17.png)
 
 ```r
 # 假设我们已有数据框‘data’，其中包含预测变量和响应变量‘y’
@@ -46,43 +33,30 @@ x <- model.matrix(y ~ ., data)[, -1] # 创建预测变量矩阵，并移除截�
 y <- data$y # 创建响应变量向量
 ```
 
-![](img/6537424cd6dc8319098030c36780daa2_18.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_20.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_21.png)
 
 ---
 
 ## 拟合岭回归模型
 
-![](img/6537424cd6dc8319098030c36780daa2_23.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_24.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_25.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_26.png)
 
 岭回归通过在损失函数中添加一个与系数平方和成正比的惩罚项来收缩系数。其优化目标为：
 
-![](img/6537424cd6dc8319098030c36780daa2_28.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_29.png)
 
 **公式：** 最小化 `RSS + λ * Σ(βj²)`
 
-![](img/6537424cd6dc8319098030c36780daa2_31.png)
 
 其中，`RSS`是残差平方和，`λ`是控制惩罚力度的调节参数。当`λ`很大时，系数会被强烈收缩趋向于0。
 
-![](img/6537424cd6dc8319098030c36780daa2_33.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_34.png)
 
 在`glmnet`中，通过设置参数`alpha = 0`来指定岭回归。
 
-![](img/6537424cd6dc8319098030c36780daa2_36.png)
 
 ```r
 ridge_mod <- glmnet(x, y, alpha = 0)
@@ -102,7 +76,6 @@ plot(ridge_mod, xvar = "lambda", label = TRUE)
 
 我们需要一种方法来选择最优的`λ`值。`glmnet`提供了内置的交叉验证函数`cv.glmnet`。
 
-![](img/6537424cd6dc8319098030c36780daa2_38.png)
 
 ```r
 cv_ridge <- cv.glmnet(x, y, alpha = 0)
@@ -136,29 +109,20 @@ plot(lasso_mod, xvar = "lambda", label = TRUE)
 plot(lasso_mod, xvar = "dev", label = TRUE)
 ```
 
-![](img/6537424cd6dc8319098030c36780daa2_40.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_42.png)
 
 这张图显示，模型的大部分解释力（R²）在系数被较大程度收缩时就已经获得，而在路径末端，系数大幅增长却只带来R²的微小提升，这可能意味着过拟合。
 
 ---
 
-![](img/6537424cd6dc8319098030c36780daa2_44.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_45.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_46.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_47.png)
 
 ## 使用交叉验证选择Lasso的λ
 
-![](img/6537424cd6dc8319098030c36780daa2_49.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_51.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_53.png)
 
 同样，我们使用交叉验证为Lasso选择最优的`λ`。
 
@@ -176,7 +140,6 @@ coef(cv_lasso, s = best_lambda)
 
 `coef`函数会以稀疏矩阵格式输出结果，只列出非零系数，这使得变量选择的结果一目了然。
 
-![](img/6537424cd6dc8319098030c36780daa2_55.png)
 
 ---
 
@@ -197,7 +160,6 @@ y_val <- y[-train]
 
 然后，在训练集上拟合Lasso路径。
 
-![](img/6537424cd6dc8319098030c36780daa2_57.png)
 
 ```r
 lasso_train <- glmnet(x_train, y_train, alpha = 1)
@@ -211,60 +173,43 @@ pred <- predict(lasso_train, s = lasso_train$lambda, newx = x_val)
 rmse <- sqrt(apply((y_val - pred)^2, 2, mean))
 ```
 
-![](img/6537424cd6dc8319098030c36780daa2_59.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_61.png)
 
 绘制RMSE随`λ`变化的验证曲线。
 
-![](img/6537424cd6dc8319098030c36780daa2_63.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_65.png)
 
 ```r
 plot(log(lasso_train$lambda), rmse, type = "l", xlab = "log(Lambda)", ylab = "RMSE on Validation Set")
 ```
 
-![](img/6537424cd6dc8319098030c36780daa2_67.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_69.png)
 
 曲线通常会先下降后上升，最低点对应在验证集上表现最好的模型复杂度。
 
-![](img/6537424cd6dc8319098030c36780daa2_71.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_72.png)
 
 找出使验证集RMSE最小的`λ`值。
 
-![](img/6537424cd6dc8319098030c36780daa2_74.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_75.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_77.png)
 
 ```r
 best_lambda_val <- lasso_train$lambda[order(rmse)[1]]
 best_lambda_val
 ```
 
-![](img/6537424cd6dc8319098030c36780daa2_78.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_80.png)
 
 提取并查看对应于该`λ`值的系数。
 
-![](img/6537424cd6dc8319098030c36780daa2_82.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_83.png)
 
 ```r
 coef(lasso_train, s = best_lambda_val)
 ```
 
-![](img/6537424cd6dc8319098030c36780daa2_85.png)
 
-![](img/6537424cd6dc8319098030c36780daa2_87.png)
 
 ---
 

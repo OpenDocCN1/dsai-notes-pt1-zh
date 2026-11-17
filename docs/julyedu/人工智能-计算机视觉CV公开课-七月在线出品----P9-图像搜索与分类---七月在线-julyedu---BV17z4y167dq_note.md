@@ -2,15 +2,10 @@
 
 ![](img/3c7bbd1d101c86d682cc909cbbaecdb6_0.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_2.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_4.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_6.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_8.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_10.png)
 
 在本节课中，我们将要学习图像搜索与分类的核心概念，涵盖卷积神经网络、目标检测、变分自编码器以及车辆重识别等关键主题。我们将从基础原理入手，逐步深入到实际应用，确保初学者能够轻松理解。
 
@@ -20,11 +15,9 @@
 
 上一节我们介绍了课程概述，本节中我们来看看卷积神经网络（CNN）。CNN是深度学习在计算机视觉领域的基石，主要用于解决目标识别或分类问题。
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_12.png)
 
 ### 什么是卷积神经网络？
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_14.png)
 
 卷积神经网络主要解决目标识别问题。目标识别是指当看到一张照片时，能够识别出照片的主体是什么，例如区分照片中是猫、狗、建筑还是人。这个问题统称为分类问题。
 
@@ -60,11 +53,9 @@ CNN的核心组件是卷积层，其核心操作是卷积，依赖于卷积核�
 *   **填充**：在图像外围填充像素（通常为0），以确保卷积核能扫描到图像边缘的每一个像素。
 *   **步长**：卷积核每次滑动的像素距离。步长越大，扫描速度越快，但可能忽略细节；步长越小，特征提取越精细，但计算量越大。
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_16.png)
 
 ### 池化层
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_18.png)
 
 在卷积层之后，通常会连接一个池化层。
 
@@ -77,13 +68,10 @@ CNN的核心组件是卷积层，其核心操作是卷积，依赖于卷积核�
 
 ![](img/3c7bbd1d101c86d682cc909cbbaecdb6_22.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_24.png)
 
 ### 从特征到分类
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_26.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_28.png)
 
 经过多层卷积和池化后，网络会输出一个三维特征图。为了进行分类，需要将这个三维特征图“拉平”成一维向量，然后连接一个或多个全连接层。
 
@@ -102,25 +90,16 @@ CNN的应用非常广泛，包括：
 
 ![](img/3c7bbd1d101c86d682cc909cbbaecdb6_30.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_31.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_33.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_35.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_37.png)
 
 ---
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_39.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_41.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_43.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_45.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_47.png)
 
 ## 🔍 第二部分：目标检测与定位
 
@@ -143,7 +122,6 @@ CNN的应用非常广泛，包括：
 
 ![](img/3c7bbd1d101c86d682cc909cbbaecdb6_51.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_53.png)
 
 近年来，一些新算法（如CornerNet-Lite）致力于结合两者的优点，在保持高速度的同时提升精度。
 
@@ -178,7 +156,6 @@ CNN的应用非常广泛，包括：
 
 VAE使我们能够通过操纵潜在空间中的点，来生成具有特定特征的、全新的图像。
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_59.png)
 
 ---
 
@@ -210,13 +187,9 @@ VAE使我们能够通过操纵潜在空间中的点，来生成具有特定特�
 
 ### 关键技术：如何应对模糊车牌？
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_65.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_66.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_67.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_69.png)
 
 当车牌清晰时，直接进行字符识别即可匹配。但当车牌模糊时，可以采用“验证”而非“识别”的策略：
 1.  使用目标检测模型截取出候选车辆的车牌区域。
@@ -228,15 +201,11 @@ VAE使我们能够通过操纵潜在空间中的点，来生成具有特定特�
 
 ---
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_71.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_73.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_75.png)
 
 ## 📚 课程总结
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_77.png)
 
 本节课中我们一起学习了计算机视觉中图像搜索与分类的四个核心主题：
 
@@ -245,9 +214,7 @@ VAE使我们能够通过操纵潜在空间中的点，来生成具有特定特�
 3.  **变分自编码器**：一种生成模型，通过编码-解码结构和潜在空间约束，能够学习数据分布并生成新的图像样本。
 4.  **车辆重识别**：一个综合性的应用实例，结合了时空信息、外观过滤、车牌验证（尤其是应对模糊情况的孪生网络技术）来解决跨摄像头、跨时间的车辆追踪难题。
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_79.png)
 
-![](img/3c7bbd1d101c86d682cc909cbbaecdb6_80.png)
 
 ![](img/3c7bbd1d101c86d682cc909cbbaecdb6_82.png)
 

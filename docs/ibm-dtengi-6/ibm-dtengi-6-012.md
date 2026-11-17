@@ -4,7 +4,6 @@
 
 ---
 
-![](img/d3e49e43a52c9e1b95cd02921af7b99b_1.png)
 
 ## 🖨️ 使用 `cat` 命令查看完整文件
 
@@ -30,7 +29,6 @@ cat numbers.txt
 
 你可以使用 `head` 命令来打印文件的前 10 行。输入 `head numbers.txt` 会返回前 10 行，即数字 0 到 9。
 
-![](img/d3e49e43a52c9e1b95cd02921af7b99b_3.png)
 
 你可以使用 `-n` 选项来指定 `head` 命令返回的行数。例如，输入：
 
@@ -52,7 +50,6 @@ head -n 3 numbers.txt
 tail -n 3 numbers.txt
 ```
 
-![](img/d3e49e43a52c9e1b95cd02921af7b99b_5.png)
 
 你将得到 `numbers.txt` 文件的最后三行：97, 98, 99。
 
@@ -72,7 +69,6 @@ tail -n 3 numbers.txt
 *   要仅查看单词数，可以使用 `-w` 选项。
 *   要仅查看字符数，可以使用 `-c` 选项。
 
-![](img/d3e49e43a52c9e1b95cd02921af7b99b_7.png)
 
 ---
 

@@ -74,13 +74,10 @@ LLM生成的图表通常包含以下元素：
 
 ![](img/84f73d0ee4e8d1fb53a0f65c41f78eec_4.png)
 
-![](img/84f73d0ee4e8d1fb53a0f65c41f78eec_5.png)
 
-![](img/84f73d0ee4e8d1fb53a0f65c41f78eec_6.png)
 
 为了深入理解置信区间的性质，我们可以提出一个后续问题：如果改变置信水平，结果会如何变化？
 
-![](img/84f73d0ee4e8d1fb53a0f65c41f78eec_7.png)
 
 以下是相应的提示词示例：
 ```

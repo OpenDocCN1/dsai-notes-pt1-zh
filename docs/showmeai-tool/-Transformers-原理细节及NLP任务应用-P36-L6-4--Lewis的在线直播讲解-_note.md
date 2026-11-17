@@ -4,7 +4,6 @@
 
 ---
 
-![](img/a1136557282a500704797139dc43d7b8_1.png)
 
 ## 📚 课程回顾与本章概述
 
@@ -17,7 +16,6 @@
 
 我们当前的生态系统围绕几个核心组件构建：使用 `hub` 加载模型、分词器和数据集；`transformers` 库与 `datasets` 库交互以训练模型；训练完成后，可以将模型推送回 `hub` 进行分享和部署。
 
-![](img/a1136557282a500704797139dc43d7b8_3.png)
 
 ---
 
@@ -25,11 +23,9 @@
 
 `datasets` 库是一个用于处理各种类型数据集的通用库。它最初专注于 NLP 文本数据，现已扩展到支持图像、音频等多种格式。其主要优势在于提供了一套统一的 API，可以快速加载和处理大规模数据集（甚至达到 TB 级别），这得益于其底层使用的 Apache Arrow 格式，实现了高效的懒加载内存管理。
 
-![](img/a1136557282a500704797139dc43d7b8_5.png)
 
 ### 加载与查看数据集
 
-![](img/a1136557282a500704797139dc43d7b8_6.png)
 
 以下是使用 `datasets` 库的基本步骤。
 
@@ -95,9 +91,7 @@ print(tokenized_datasets["train"][0])
 *   操作不是就地（in-place）的，需要将结果赋值给新变量。
 *   所有操作都会被缓存，重新运行时无需重复计算。
 
-![](img/a1136557282a500704797139dc43d7b8_8.png)
 
-![](img/a1136557282a500704797139dc43d7b8_10.png)
 
 ---
 
@@ -141,11 +135,8 @@ print({k: v.shape for k, v in batch.items()})
 ![](img/a1136557282a500704797139dc43d7b8_17.png)
 
 
-![](img/a1136557282a500704797139dc43d7b8_19.png)
 
-![](img/a1136557282a500704797139dc43d7b8_20.png)
 
-![](img/a1136557282a500704797139dc43d7b8_22.png)
 
 ```python
 from transformers import AutoModelForSequenceClassification, TrainingArguments
@@ -161,11 +152,8 @@ training_args = TrainingArguments(
 )
 ```
 
-![](img/a1136557282a500704797139dc43d7b8_24.png)
 
-![](img/a1136557282a500704797139dc43d7b8_26.png)
 
-![](img/a1136557282a500704797139dc43d7b8_28.png)
 
 ### 定义评估指标
 
@@ -226,7 +214,6 @@ print(predictions.predictions.shape, predictions.label_ids.shape)
 
 ![](img/a1136557282a500704797139dc43d7b8_30.png)
 
-![](img/a1136557282a500704797139dc43d7b8_31.png)
 
 ```python
 from torch.utils.data import DataLoader
@@ -249,17 +236,13 @@ eval_dataloader = DataLoader(
 
 ![](img/a1136557282a500704797139dc43d7b8_33.png)
 
-![](img/a1136557282a500704797139dc43d7b8_34.png)
 
 ![](img/a1136557282a500704797139dc43d7b8_36.png)
 
 
-![](img/a1136557282a500704797139dc43d7b8_38.png)
-
-![](img/a1136557282a500704797139dc43d7b8_40.png)
 
 
-![](img/a1136557282a500704797139dc43d7b8_42.png)
+
 
 ![](img/a1136557282a500704797139dc43d7b8_44.png)
 
@@ -363,7 +346,6 @@ for epoch in range(num_epochs):
 *   在 Google Colab 上尝试使用免费的 TPU 资源，通过 `accelerate` 库加速你的训练。
 *   探索 `TrainingArguments` 中的其他参数，如学习率调度、权重衰减、日志策略等，以优化模型性能。
 
-![](img/a1136557282a500704797139dc43d7b8_46.png)
 
 ![](img/a1136557282a500704797139dc43d7b8_47.png)
 

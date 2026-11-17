@@ -34,7 +34,6 @@
 
 我们首先创建提示模板的实例。
 
-![](img/4e011407932763d406e03bbf499ec55c_4.png)
 
 ```python
 # 导入必要的库（假设使用LangChain）
@@ -54,7 +53,6 @@ summary_prompt = PromptTemplate(
 
 然后，我们可以为具体的文章生成格式化的提示。
 
-![](img/4e011407932763d406e03bbf499ec55c_6.png)
 
 ```python
 # 假设我们有一篇具体的文章

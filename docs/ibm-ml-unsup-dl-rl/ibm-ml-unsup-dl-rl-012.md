@@ -8,19 +8,16 @@ So let's take a step back and discuss different distant metrics that are availab
 
 
 
-![](img/595c039383950c12b0d1d3d485333ae9_1.png)
 
 In these videos， the main topic of discussion will be different measures of distance between different points。
 
 
 
-![](img/595c039383950c12b0d1d3d485333ae9_3.png)
 
 And with that， we will discuss the different applications of these different distance measures and how they relate to clustering。
 
 
 
-![](img/595c039383950c12b0d1d3d485333ae9_5.png)
 
 And the different measures that we're going to discuss are going to be the Euclidean distance。
 
@@ -30,7 +27,6 @@ As well as the Manhattan distance， the cosine similarity， and the Jaar dista
 
 
 
-![](img/595c039383950c12b0d1d3d485333ae9_7.png)
 
 Now， our choice of distance metric will be incredibly important when discussing any of our clustering algorithms。
 
@@ -38,19 +34,16 @@ As these clustering algorithms will all be dependent on some type of measure of 
 
  how similar one point is with the next。
 
-![](img/595c039383950c12b0d1d3d485333ae9_9.png)
 
 Now there are several choices of distance metrics， and they all have their strengths and more appropriate use cases。
 
 
 
-![](img/595c039383950c12b0d1d3d485333ae9_11.png)
 
 But at times， we may also need to use empirical evaluation to determine which one of our distance metrics works best in achieving our goals。
 
 
 
-![](img/595c039383950c12b0d1d3d485333ae9_13.png)
 
 Now， the most intuitive distance metric that we are hopefully already somewhat familiar with。
 
@@ -62,13 +55,11 @@ Now another name for this is the L2 distance。So in order to highlight how Eucl
 
 
 
-![](img/595c039383950c12b0d1d3d485333ae9_15.png)
 
 So we remove all the other points so we can just look at these two points and hopefully you remember parts of this from math class back Men day。
 
 
 
-![](img/595c039383950c12b0d1d3d485333ae9_17.png)
 
 But in order to find this distance， D。We need to first find our change in visits。
 
@@ -76,7 +67,6 @@ But in order to find this distance， D。We need to first find our change in vi
 
 
 
-![](img/595c039383950c12b0d1d3d485333ae9_19.png)
 
 And then if you think back to that math class example。
 
@@ -96,7 +86,6 @@ So that math equation that I was hinting towards was a squared plus B squared eq
 
 😊。
 
-![](img/595c039383950c12b0d1d3d485333ae9_21.png)
 
 Another distance metric that you may already be familiar with is the L1 distance or the Manhattan distance。
 
@@ -118,6 +107,5 @@ As high dimensionality often leads to difficulty in distinguishing distances bet
 
  All right， I'll see you there。
 
-![](img/595c039383950c12b0d1d3d485333ae9_23.png)
 
 ![](img/595c039383950c12b0d1d3d485333ae9_24.png)

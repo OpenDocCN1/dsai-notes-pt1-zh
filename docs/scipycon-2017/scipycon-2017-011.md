@@ -55,11 +55,9 @@ return sentiment_score
 
 ---
 
-![](img/ba39adce9a632fb554bcd12424e47000_1.png)
 
 ## 第二部分：三大设计原则 ✨
 
-![](img/ba39adce9a632fb554bcd12424e47000_3.png)
 
 现在你已经学会了如何创建功能强大的可视化，接下来我们看看如何设计出吸引人的可视化，让你的观众愿意反复使用。
 
@@ -124,11 +122,9 @@ return sentiment_score
 1.  在 TabPy 中使用 Python 脚本查询数据。
 2.  在 TabPy 中调用已部署的模型。
 
-![](img/ba39adce9a632fb554bcd12424e47000_9.png)
 
 ### 示例演示
 
-![](img/ba39adce9a632fb554bcd12424e47000_11.png)
 
 本例的**受众**是 Airbnb 的产品经理。作为产品经理，他们希望提供更好的用户体验。因此，识别哪些房源持续获得较低的情感评分及其原因非常重要。基于此，我为他们创建了一个数据可视化来探索数据并发现问题。
 
@@ -144,7 +140,6 @@ return sentiment_score
 
 ---
 
-![](img/ba39adce9a632fb554bcd12424e47000_15.png)
 
 ## 总结 📝
 

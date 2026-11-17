@@ -1,6 +1,5 @@
 #  029：Python入门基础
 
-![](img/97d0d5b0882b84bcc0559be3db0a9abb_0.png)
 
 ![](img/97d0d5b0882b84bcc0559be3db0a9abb_0.png)
 
@@ -14,7 +13,6 @@
 
 下图显示了从2019年2月到2020年2月，教程搜索中哪些语言最突出。Python位居榜首，其次是Java等。因为在Web开发中Java也被广泛使用，所以你会看到这种趋势。但很明显，Python是世界上最受欢迎的编程语言。
 
-![](img/97d0d5b0882b84bcc0559be3db0a9abb_2.png)
 
 ## Python库简介 📚
 

@@ -10,7 +10,6 @@
 
 假设在加载数据并创建了一个按年龄排序的新数据框后，你可能想进一步研究每个年龄段中学习时间最长的人。例如，你想先按年龄降序排列，再按每周学习编码的小时数降序排列，以找出每个年龄段中学习最刻苦的人。
 
-![](img/4e0436c3d82e188ba4dbb8605e8df701_1.png)
 
 以下是实现多列排序的步骤：
 
@@ -56,7 +55,6 @@ sorted_df = df.sort_values(by=columns, ascending=order)
 
 `sort_values`方法会创建一个新的数据框，所以你将其保存到新变量`sorted_by_age_and_hours`中。
 
-![](img/4e0436c3d82e188ba4dbb8605e8df701_3.png)
 
 ## 总结
 
@@ -66,6 +64,5 @@ sorted_df = df.sort_values(by=columns, ascending=order)
 
 关于排序的出色工作就到这里。接下来，你将学习如何过滤数据，以仅选择你感兴趣的行。我们下个视频再见。
 
-![](img/4e0436c3d82e188ba4dbb8605e8df701_5.png)
 
 ![](img/4e0436c3d82e188ba4dbb8605e8df701_5.png)

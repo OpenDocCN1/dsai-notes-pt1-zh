@@ -4,13 +4,10 @@
 
 ## 缺失值处理
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_1.png)
 
 上一节我们介绍了数据预处理的重要性，本节中我们来看看如何处理缺失值。模型无法直接接受空白值，因为空白值不包含任何信息。因此，我们需要决定如何确保数据集中的每个特征和标签都有信息。
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_3.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_4.png)
 
 以下是处理缺失值的三种主要方法：
 
@@ -18,30 +15,22 @@
 
 第一种选择是直接删除数据。为此，我们必须删除整行或整列。假设所有列都有用，我们选择删除行。
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_6.png)
 
 **删除整行的优缺点分析：**
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_8.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_9.png)
 
 *   **优点**：可以快速清理数据，无需猜测合适的替换值。如果缺失值的行数较少，影响不大。
 *   **缺点**：如果某些列在许多行中都有缺失值，我们可能会丢失过多信息，或者因为数据未收集特定字段的某种原因而使数据集产生偏差。如果缺失行数很多，可能会对我们试图预测的模型造成数据偏差。
 
 ### 2. 数据填补
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_11.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_12.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_13.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_14.png)
 
 我们可以对数据进行填补，这意味着用均值、中位数甚至更复杂的估计值来替换空值。
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_16.png)
 
 **数据填补的优缺点分析：**
 
@@ -50,34 +39,24 @@
 
 ### 3. 将缺失值标记为独立类别
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_18.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_19.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_20.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_21.png)
 
 我们拥有的最后一个选项是将数据标记，使所有缺失值成为它们自己的类别。这基于一个假设：缺失值实际上指示了有用的信息。
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_23.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_24.png)
 
 **将缺失值作为独立类别的优缺点分析：**
 
 *   **优点**：同样，不会丢失可能对模型重要的任何行或列。
 *   **缺点**：我们再次为模型增加了另一层不确定性，因为它现在基于所有缺失值都相似的假设。
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_26.png)
 
 你可以根据自己数据的具体情况，查看缺失值，并决定处理缺失值的最佳方式。
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_27.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_28.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_29.png)
 
 ## 异常值处理
 
@@ -87,37 +66,26 @@
 
 ### 如何发现异常值
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_31.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_32.png)
 
 我们可以使用图表来发现异常值。以下是几种常用的方法：
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_33.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_34.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_35.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_36.png)
 
 *   **直方图和密度图**：可视化数据的分布，观察是否有远离主体的数据点。
 *   **箱线图**：用于查看四分位距、中位数以及定义的最小值和最大值，超出此范围的值将被视为异常值。
 *   **残差分析**：使用标准化残差、删除残差和学生化残差来识别异常值。
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_38.png)
 
 以下是使用Seaborn库创建这些图的示例代码：
 
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_40.png)
 
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_41.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_42.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_43.png)
 
 ```python
 import seaborn as sns
@@ -127,16 +95,13 @@ sns.displot(data, bins=20)
 sns.boxplot(data)
 ```
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_45.png)
 
 ### 如何数学定义异常值
 
 那么，我们如何从数学上得到箱线图中显示的异常值点呢？方法如下：
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_47.png)
 
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_49.png)
 
 ```python
 import numpy as np
@@ -158,9 +123,7 @@ outliers = [x for x in data if x < min_boundary or x > max_boundary]
 
 箱线图中的线应代表定义的最小值和最大值边界，任何超出最小或最大边界（本例中只有最大值）的值都将被视为异常值。
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_51.png)
 
-![](img/5f0a9d0d46818dade54dc1f6cd7f67dc_53.png)
 
 ### 使用残差检测异常值
 

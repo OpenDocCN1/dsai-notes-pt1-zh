@@ -6,9 +6,7 @@
 
 在本节课中，我们将学习如何利用大语言模型来理解和处理软件开发中的“技术债务”。我们将通过一个具体的Swift代码示例，演示如何使用LLM来解释复杂代码并自动生成技术文档。
 
-![](img/915f4e03e9426f118b05e783568bb8c3_4.png)
 
-![](img/915f4e03e9426f118b05e783568bb8c3_6.png)
 
 ## 概述
 
@@ -41,7 +39,6 @@ for model in models:
 
 ![](img/915f4e03e9426f118b05e783568bb8c3_14.png)
 
-![](img/915f4e03e9426f118b05e783568bb8c3_16.png)
 
 我们将使用文本生成模型，例如 `models/text-bison-001`。为了获得确定性的输出，我们创建一个辅助函数并将温度参数设置为0。
 
@@ -59,19 +56,15 @@ def generate_text(prompt, model=None, temperature=0.0):
 
 ![](img/915f4e03e9426f118b05e783568bb8c3_18.png)
 
-![](img/915f4e03e9426f118b05e783568bb8c3_20.png)
 
 ## 分析复杂代码示例
 
-![](img/915f4e03e9426f118b05e783568bb8c3_22.png)
 
 现在，我们准备开始探索代码。这里有一段非常复杂的Swift代码，它摘自一本关于在移动设备上创建机器学习模型的书籍。这段代码的作用是从iOS设备获取图像，将其传递给TensorFlow Lite模型进行分类。
 
-![](img/915f4e03e9426f118b05e783568bb8c3_24.png)
 
 其复杂性在于需要进行图像转换，这涉及到读取图像的底层内存。在移动开发中，直接访问内存可能触发操作系统的安全机制，因此代码使用了复杂且安全的API来安全地访问iPhone的设备内存。
 
-![](img/915f4e03e9426f118b05e783568bb8c3_26.png)
 
 ![](img/915f4e03e9426f118b05e783568bb8c3_28.png)
 
@@ -81,22 +74,17 @@ def generate_text(prompt, model=None, temperature=0.0):
 
 ## 使用LLM解释代码
 
-![](img/915f4e03e9426f118b05e783568bb8c3_32.png)
 
 我们可以使用大语言模型来帮助理解这段代码。以下是操作步骤：
 
-![](img/915f4e03e9426f118b05e783568bb8c3_34.png)
 
-![](img/915f4e03e9426f118b05e783568bb8c3_36.png)
 
 首先，我们构建一个提示词模板，要求模型解释代码的工作原理。
 
 ![](img/915f4e03e9426f118b05e783568bb8c3_38.png)
 
 
-![](img/915f4e03e9426f118b05e783568bb8c3_40.png)
 
-![](img/915f4e03e9426f118b05e783568bb8c3_42.png)
 
 ```python
 prompt_template = """
@@ -108,28 +96,23 @@ prompt_template = """
 code_explanation_prompt = prompt_template.format(code_block=complex_swift_code)
 ```
 
-![](img/915f4e03e9426f118b05e783568bb8c3_44.png)
 
 然后，我们调用生成函数来获取解释。
 
-![](img/915f4e03e9426f118b05e783568bb8c3_46.png)
 
 ```python
 explanation = generate_text(prompt=code_explanation_prompt, model=selected_model, temperature=0.0)
 print(explanation)
 ```
 
-![](img/915f4e03e9426f118b05e783568bb8c3_48.png)
 
 模型会输出非常详细的解释。例如，它会说明`ModelDataProcessor`是一个TensorFlow模型处理器，列出其属性和初始化器，并解释各个方法的功能。它甚至能识别出Swift特有的扩展方法（`extension`），并解释这些扩展如何安全地复制内存缓冲区，以及为何这种方式能通过应用商店的审核。
 
-![](img/915f4e03e9426f118b05e783568bb8c3_50.png)
 
 ## 使用LLM生成技术文档
 
 ![](img/915f4e03e9426f118b05e783568bb8c3_52.png)
 
-![](img/915f4e03e9426f118b05e783568bb8c3_54.png)
 
 除了解释代码，大语言模型还可以帮助我们自动生成技术文档。这对于减少技术债务至关重要。
 
@@ -143,7 +126,6 @@ print(explanation)
 ![](img/915f4e03e9426f118b05e783568bb8c3_58.png)
 
 
-![](img/915f4e03e9426f118b05e783568bb8c3_60.png)
 
 ```python
 documentation_prompt_template = """
@@ -153,7 +135,6 @@ documentation_prompt_template = """
 doc_prompt = documentation_prompt_template.format(code_block=complex_swift_code)
 ```
 
-![](img/915f4e03e9426f118b05e783568bb8c3_62.png)
 
 ![](img/915f4e03e9426f118b05e783568bb8c3_64.png)
 

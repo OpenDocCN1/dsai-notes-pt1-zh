@@ -441,19 +441,15 @@ Bingchen Li  Xin Li²²2通讯作者  Yiting Lu  Zhibo Chen
 | 2500 | 3.06 | 3.47 | 3.36 | 4.52 | 3.65 | 3.61 |
 | 5000 | 3.07 | 3.48 | 3.41 | 4.53 | 3.65 | 3.63 |
 
-| 10000 | 3.02 | 3.45 | 3.35 | 4.49 | 3.65 | 3.59 | ![参见说明文字](img/bb76cc1c82e5f9bb52fcaaf1da43f62b.png)
 
 (a) NIQE
 
-![参见说明文字](img/f50cf4bc6054da6f08b8c3610c89346c.png)
 
 (b) MANIQA
 
-![参见说明文字](img/15ca05af2c6ebab3ae7a2bf70f25cdb1.png)
 
 (c) CLIPIQA
 
-![参见说明文字](img/26f2d74444f7a082923fd200a9f21b51.png)
 
 (d) Q-Align
 

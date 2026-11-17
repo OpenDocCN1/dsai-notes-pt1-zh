@@ -1,6 +1,5 @@
 生成式人工智能工程：033：在Python中导入和导出数据 📊
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_1.png)
 
 在本节课中，我们将学习如何使用Python的Pandas包来读取数据。一旦数据被导入Python，我们就能执行所有后续需要的数据分析流程。
 
@@ -11,9 +10,7 @@
 
 在我们的案例中，我们从幻灯片上显示的网址获取了一个二手车数据集。当Jerry在网页浏览器中输入该网址时，他看到了类似下图的内容。
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_3.png)
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_3.png)
 
 每一行代表一个数据点，每个数据点关联着大量属性。由于属性之间用逗号分隔，我们可以推测数据格式是**CSV**，即逗号分隔值。目前，这些只是数字，对人类来说意义不大。但一旦我们读入这些数据，就可以尝试理解它。
 
@@ -26,47 +23,34 @@
 
 然而，`read_csv`默认假设数据包含表头。我们的二手车数据没有列标题，因此需要通过设置`header=None`来指定`read_csv`不分配表头。
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_5.png)
 
 读取数据集后，最好查看一下数据框，以获得更好的直观感受，并确保一切按预期进行。由于打印整个数据集可能耗时耗资源，为了节省时间，我们可以使用`dataframe.head()`来显示数据框的前N行。类似地，`dataframe.tail()`显示数据框的底部N行。
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_5.png)
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_7.png)
 
 这里我们打印出了前五行数据。看起来数据集读取成功。我们可以看到，由于我们在读取数据时设置了`header=None`，Pandas自动将列标题设置为整数列表。
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_7.png)
 
 😊
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_9.png)
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_9.png)
 
 然而，没有有意义的列名，处理数据框会很困难。我们可以在Pandas中分配列名。在我们当前的案例中，我们发现列名存储在一个单独的在线文件中。
 
 我们首先将列名放入一个名为`headers`的列表中。然后，我们设置`df.columns = headers`，用这个列表替换默认的整数标题。如果我们使用上一张幻灯片介绍的`head`方法来检查数据集，会看到正确的标题已插入每列的顶部。
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_11.png)
 
 在某个时间点，当你对数据框进行操作后，你可能希望将Pandas数据框导出到一个新的CSV文件。
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_11.png)
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_13.png)
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_13.png)
 
 你可以使用`to_csv`方法来实现。为此，需要指定文件路径，其中包含你想要写入的文件名。例如，如果你想将数据框`df`保存为`automobile.csv`到你的计算机，可以使用语法`df.to_csv()`。
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_15.png)
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_15.png)
 
 对于本课程，我们只读取和保存CSV文件。然而，Pandas也支持导入和导出大多数具有不同数据集格式的数据文件类型。读取和保存其他数据格式的代码语法与读取或保存CSV文件非常相似。下表显示了读取和保存不同格式文件的不同方法。
 
-![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_17.png)
 
 ![](img/8ca1eebc02c6b5df3fdd90f1f76eff82_17.png)
 

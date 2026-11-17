@@ -1,6 +1,5 @@
 # 017：使用scikit-learn处理表格数据（第1部分）📊
 
-![](img/8ca103f82e3ab65453e1e01472fdd5b4_0.png)
 
 在本节课中，我们将学习如何应用数据预处理步骤来处理一个示例数据集。我们将使用开源机器学习库scikit-learn，并重点演示如何对数值列进行标准化以及对分类列进行独热编码。
 
@@ -19,7 +18,6 @@ data = pd.read_csv('customer_churn.csv')
 
 检查数据形状，可以看到它包含约440，000行和11列。
 
-![](img/8ca103f82e3ab65453e1e01472fdd5b4_2.png)
 
 ```python
 data.shape
@@ -41,13 +39,10 @@ data.describe()
 
 可以看到客户的平均年龄接近40岁，客服电话数量范围是0到10，总花费的中位数是661美元。还可以看到每个特征的计数比总行数少1，这表明每个特征中都存在一个空值。
 
-![](img/8ca103f82e3ab65453e1e01472fdd5b4_4.png)
 
 ## 数据清洗：处理缺失值
 
-![](img/8ca103f82e3ab65453e1e01472fdd5b4_5.png)
 
-![](img/8ca103f82e3ab65453e1e01472fdd5b4_6.png)
 
 你可以使用`isnull`方法验证这些数值列中确实存在缺失值。
 
@@ -57,9 +52,7 @@ data.isnull().sum()
 
 从输出中可以看到，表中包含一整行的缺失条目。由于只有一行，并且该客户的所有列都是空值，我将使用`dropna`方法将其从数据集中删除。
 
-![](img/8ca103f82e3ab65453e1e01472fdd5b4_8.png)
 
-![](img/8ca103f82e3ab65453e1e01472fdd5b4_9.png)
 
 ```python
 data = data.dropna()
@@ -77,23 +70,18 @@ data.isnull().sum().sum()
 
 以下是需要执行的步骤：
 
-![](img/8ca103f82e3ab65453e1e01472fdd5b4_11.png)
 
-![](img/8ca103f82e3ab65453e1e01472fdd5b4_12.png)
 
 1.  对`subscription_type`列使用`value_counts`。
 2.  对`contract_length`列使用`value_counts`。
 
-![](img/8ca103f82e3ab65453e1e01472fdd5b4_13.png)
 
 ```python
 print(data['subscription_type'].value_counts(normalize=True))
 print(data['contract_length'].value_counts(normalize=True))
 ```
 
-![](img/8ca103f82e3ab65453e1e01472fdd5b4_15.png)
 
-![](img/8ca103f82e3ab65453e1e01472fdd5b4_16.png)
 
 可以看到每个分类列都有三个唯一值。由于唯一值的数量较少，可以使用独热编码将这些分类列转换为数值列。
 
@@ -122,7 +110,6 @@ print(labels.head())
 *   对分类列执行独热编码。
 *   训练集和测试集应以Parquet文件格式存储。
 
-![](img/8ca103f82e3ab65453e1e01472fdd5b4_18.png)
 
 根据这些要求，以下是准备训练数据将遵循的步骤：
 

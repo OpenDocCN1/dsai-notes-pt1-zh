@@ -2,7 +2,6 @@
 
 在本节课中，我们将深入探讨Transformer架构的核心工作原理。我们将从一个完全初学者的视角出发，通过追踪单个“Token”在模型中的旅程，来理解Transformer如何运作。无论您之前是否了解Transformer，本节课的内容都将为您打下坚实的基础。
 
-![](img/bf315ea23662a598e3ac3200e18413ad_1.png)
 
 ![](img/bf315ea23662a598e3ac3200e18413ad_2.png)
 

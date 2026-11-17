@@ -33,7 +33,6 @@ Shell脚本是一个可执行的文本文件，其第一行通常是一个解释
 Shebang指令的形式如下：
 `#! interpreter [optional-argument]`
 
-![](img/a4ff9c15c8be42974f583dd0d4fb6a95_1.png)
 
 其中：
 *   `interpreter` 是一个可执行程序的绝对路径。
@@ -51,7 +50,6 @@ Shebang指令不仅限于Shell程序。例如，你可以创建一个Python脚�
 
 上一节我们介绍了Shebang指令，本节中我们来看看如何创建一个简单的“Hello World”Shell脚本并运行它。
 
-![](img/a4ff9c15c8be42974f583dd0d4fb6a95_3.png)
 
 ![](img/a4ff9c15c8be42974f583dd0d4fb6a95_4.png)
 
@@ -72,7 +70,6 @@ Shebang指令不仅限于Shell程序。例如，你可以创建一个Python脚�
     echo ‘echo “Hello world”’ >> hello_world.sh
     ```
 
-![](img/a4ff9c15c8be42974f583dd0d4fb6a95_6.png)
 
 4.  **设置执行权限**：在运行脚本之前，需要使其可执行。首先，使用`ls -l`命令检查脚本当前的权限设置。
     ```bash
@@ -91,11 +88,9 @@ Shebang指令不仅限于Shell程序。例如，你可以创建一个Python脚�
     ./hello_world.sh
     ```
 
-![](img/a4ff9c15c8be42974f583dd0d4fb6a95_9.png)
 
 ---
 
-![](img/a4ff9c15c8be42974f583dd0d4fb6a95_10.png)
 
 ## 总结
 

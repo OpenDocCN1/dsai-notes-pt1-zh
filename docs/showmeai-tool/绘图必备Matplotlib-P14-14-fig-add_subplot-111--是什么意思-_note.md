@@ -2,7 +2,6 @@
 
 在本节课中，我们将要学习Matplotlib中一个常见但可能令人困惑的写法：`fig.add_subplot(111)`。我们将详细解释它的作用、参数含义以及它与创建子图的其他方式有何不同。
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_1.png)
 
 ---
 
@@ -10,14 +9,12 @@
 
 首先，我们需要理解`fig.add_subplot()`的核心功能。它的作用是为一个已经存在的图形（`Figure`）对象添加一个坐标轴（`Axes`）对象。
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_3.png)
 
 坐标轴是实际绘制图表（如折线图、柱状图）的区域。没有坐标轴，图形只是一个空白的画布。
 
 为了演示这一点，我们先创建一个没有任何坐标轴的空白图形。
 
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_7.png)
 
 ```python
 import matplotlib.pyplot as plt
@@ -25,13 +22,11 @@ fig = plt.figure()  # 创建一个空白图形
 plt.show()
 ```
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_8.png)
 
 运行上述代码，你会看到一个空白的窗口。这是因为图形虽然存在，但内部没有可以绘图的坐标轴。
 
 ---
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_10.png)
 
 ## 使用 `add_subplot` 添加坐标轴
 
@@ -39,7 +34,6 @@ plt.show()
 
 现在，我们使用`add_subplot`方法来为这个图形添加一个坐标轴。
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_12.png)
 
 ```python
 import matplotlib.pyplot as plt
@@ -49,11 +43,9 @@ ax = fig.add_subplot(111)  # 添加一个坐标轴
 plt.show()
 ```
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_14.png)
 
 运行代码后，你会看到图形中出现了带有刻度的坐标轴。我们可以打印`ax`的类型来验证。
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_16.png)
 
 ```python
 print(type(ax))
@@ -62,19 +54,16 @@ print(type(ax))
 
 这证实了`add_subplot`方法返回的是一个坐标轴对象。这就是它的第一步核心功能：**向现有图形添加坐标轴**。
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_18.png)
 
 ---
 
 ## 解读参数：`111` 代表什么？
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_20.png)
 
 理解了`add_subplot`的基本作用后，我们面临最核心的问题：参数`111`究竟是什么意思？这确实容易让人困惑。
 
 `add_subplot`的参数用于定义子图的网格布局和选择激活哪个位置。它主要有两种调用方式：
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_22.png)
 
 1.  **三个独立参数**：`add_subplot(nrows, ncols, index)`
     *   `nrows`: 子图网格的行数。
@@ -90,22 +79,17 @@ print(type(ax))
 
 ---
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_24.png)
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_25.png)
 
 ## 更复杂的布局示例
 
 为了加深理解，我们来看一个更复杂的例子。假设我们想在一个图形中创建多个子图，但只想先初始化其中的一个。
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_27.png)
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_28.png)
 
 以下代码创建了一个2行3列（共6个位置）的网格布局，并在第2个位置（索引2）创建一个坐标轴。
 
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_30.png)
 
 ```python
 import matplotlib.pyplot as plt
@@ -120,16 +104,12 @@ plt.show()
 
 我们甚至可以继续添加其他子图：
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_32.png)
 
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_34.png)
 
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_36.png)
 
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_38.png)
 
 ```python
 import matplotlib.pyplot as plt
@@ -146,7 +126,6 @@ plt.tight_layout() # 调整布局，防止标签重叠
 plt.show()
 ```
 
-![](img/5f2ab3c17c0f8a480827c5087baec5a2_40.png)
 
 这段代码会在一个图形窗口中显示两个图表：一个占据整个窗口的单图，另一个则位于2x3网格布局的特定位置。
 

@@ -14,9 +14,7 @@ JSON（JavaScript Object Notation）是一种用于应用程序之间通信的�
 
 JSON的结构看起来与Python的字典非常相似，它由键值对组成，但本质上它是一个字符串。
 
-![](img/cdc4be9700a94b410345eb831146ec73_2.png)
 
-![](img/cdc4be9700a94b410345eb831146ec73_3.png)
 
 ## 导入JSON模块
 

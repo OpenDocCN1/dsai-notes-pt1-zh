@@ -120,6 +120,5 @@
 
 ![](img/3aa4c14aac3456673fd5b3bc445e7d0b_4.png)
 
-![](img/3aa4c14aac3456673fd5b3bc445e7d0b_5.png)
 
 ![](img/3aa4c14aac3456673fd5b3bc445e7d0b_5.png)

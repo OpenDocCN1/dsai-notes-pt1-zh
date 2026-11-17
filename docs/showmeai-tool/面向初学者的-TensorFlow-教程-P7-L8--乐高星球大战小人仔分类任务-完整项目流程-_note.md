@@ -1,6 +1,5 @@
 # TensorFlow 教程 P7：L8 - 乐高星球大战小人仔分类项目完整流程 🧩
 
-![](img/7956a7f6b5a10c99728c67c08635cf0e_0.png)
 
 ![](img/7956a7f6b5a10c99728c67c08635cf0e_0.png)
 
@@ -20,7 +19,6 @@
 ![](img/7956a7f6b5a10c99728c67c08635cf0e_2.png)
 
 
-![](img/7956a7f6b5a10c99728c67c08635cf0e_4.png)
 
 ```python
 import os

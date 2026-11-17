@@ -29,7 +29,6 @@
 
 ## 模块目标总结
 
-![](img/f250faaa9501a92bf60c33fd413c45e5_1.png)
 
 ![](img/f250faaa9501a92bf60c33fd413c45e5_2.png)
 

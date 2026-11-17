@@ -6,7 +6,6 @@ Here we will be discussing our final clustering algorithm， the mean shift algo
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_1.png)
 
 In this section， we're going to cover the mean shift clustering algorithm and how we use the concept of moving towards the highest density to help determine our different clusters。
 
@@ -14,21 +13,17 @@ And then we're also going to discuss the strengths and weaknesses of working wit
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_3.png)
 
 Now the meanshift algorithm will work similarly to K means in that we will be partitioning our points according to their nearest cluster centroid。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_5.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_6.png)
 
 For Ca means， though， the centroid represented the mean of all points within that cluster。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_8.png)
 
 While with mean shift， that centroid is going to be the most dense point within the cluster。
 
@@ -36,51 +31,41 @@ While with mean shift， that centroid is going to be the most dense point withi
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_10.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_11.png)
 
 And the algorithm will assign points to a cluster by moving to the densest points within a certain window。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_13.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_14.png)
 
 So how do we calculate this local density to say where the highest density point is？
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_16.png)
 
 In order to do so， we're going to calculate the weighted mean around each point。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_18.png)
 
 So what do we mean here when we are asking for the weighted mean。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_20.png)
 
 We can think of the weighted mean as assigning more weight to those points closer to the original point within our window。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_22.png)
 
 So say we select this black point to start。
 
-![](img/247ed1d3351f828416859ad35779ab7f_24.png)
 
 We calculate the weighted neme in the local neighborhood or within this window， this pink square。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_26.png)
 
 And it would find that the densest point。Given the weighted mean would be here in pink。
 
@@ -88,13 +73,11 @@ And note on the side that the new mean does not have to be at a data point。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_28.png)
 
 And can be somewhere else within this window。So how do we go about using this to create our different clusters？
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_30.png)
 
 So the steps are going to be that you choose a point and a window。
 
@@ -104,7 +87,6 @@ We calculate that weighted mean within that window。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_32.png)
 
 And then we shift the centroid of the window to the new mean。 So we shift that square。
 
@@ -112,9 +94,7 @@ And then we shift the centroid of the window to the new mean。 So we shift that
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_34.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_35.png)
 
 We then continuously repeat steps 2 and 3 until convergence until there's no shift。
 
@@ -122,11 +102,8 @@ We then continuously repeat steps 2 and 3 until convergence until there's no shi
 
  So when the mode is reached。
 
-![](img/247ed1d3351f828416859ad35779ab7f_37.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_38.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_39.png)
 
 And then we steps 1 through 4 for all data points。 until finally。
 
@@ -134,19 +111,15 @@ And then we steps 1 through 4 for all data points。 until finally。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_41.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_42.png)
 
 So let's visualize how this is done in practice。
 
-![](img/247ed1d3351f828416859ad35779ab7f_44.png)
 
 So let's visualize how this actually works in practice。So we start with a centroid at a given point。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_46.png)
 
 And then given that window， we sample that local density。
 
@@ -158,15 +131,12 @@ And then given that window， we sample that local density。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_48.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_49.png)
 
 Until ultimately， we find that local density be maximal and we stop there。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_51.png)
 
 We can do this again， starting at another point。We can sample the local density and again。
 
@@ -178,13 +148,11 @@ And we see that we move along towards that densest direction。 And again。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_53.png)
 
 We can do this again， starting at another point， this time， starting further away。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_55.png)
 
 At a point that will probably lie outside this cluster。
 
@@ -192,7 +160,6 @@ At a point that will probably lie outside this cluster。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_57.png)
 
 And you see that it moves along as we move towards that denser direction。
 
@@ -200,15 +167,12 @@ And you see that it moves along as we move towards that denser direction。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_59.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_60.png)
 
 And to keep going， we can start at each one of the different points， sample that local density。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_62.png)
 
 Follow the gradient towards that denser direction。 And here again。
 
@@ -218,9 +182,7 @@ Follow the gradient towards that denser direction。 And here again。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_64.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_65.png)
 
 And we keep going like this。And eventually， it's going to find for us4 unique local maxima。
 
@@ -228,7 +190,6 @@ And we keep going like this。And eventually， it's going to find for us4 uniqu
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_67.png)
 
 And is going to assign the points to the centroids that they fall into。
 
@@ -240,7 +201,6 @@ We see all the teal values falling next to that teal centroid and all the blue v
 
  And we have our four different clusters。
 
-![](img/247ed1d3351f828416859ad35779ab7f_69.png)
 
 And no cluster numbers needed or any distance parameters need to be defined。
 
@@ -248,9 +208,7 @@ And no cluster numbers needed or any distance parameters need to be defined。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_71.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_72.png)
 
 Now， let's hone in a bit into what we mean here by this weighted mean。
 
@@ -258,9 +216,7 @@ Now， let's hone in a bit into what we mean here by this weighted mean。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_74.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_75.png)
 
 So that new mean is going to be calculated using the sum over points within the window。
 
@@ -268,7 +224,6 @@ So that new mean is going to be calculated using the sum over points within the 
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_77.png)
 
 We're also going to have this weighting or this kernel function that's going to allow us to give a certain weight。
 
@@ -276,11 +231,8 @@ We're also going to have this weighting or this kernel function that's going to 
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_79.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_80.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_81.png)
 
 And we see that in the numerator， we weight this according to each point。
 
@@ -288,9 +240,7 @@ And we see that in the numerator， we weight this according to each point。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_83.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_84.png)
 
 And the common kernel that's used is going to be the RBF kernel。
 
@@ -302,15 +252,12 @@ And the common kernel that's used is going to be the RBF kernel。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_86.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_87.png)
 
 Now let's talk about some strengths and weaknesses of working with a mean shift。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_89.png)
 
 The mean shift is model free。 It does not assume the number or the shape of each one of our clusters。
 
@@ -318,9 +265,7 @@ The mean shift is model free。 It does not assume the number or the shape of ea
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_91.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_92.png)
 
 We can use just one parameter。 we don't have to tune over more than one parameter like we did with D scan。
 
@@ -328,7 +273,6 @@ We can use just one parameter。 we don't have to tune over more than one parame
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_94.png)
 
 And it will be robust to outliers。 We have that window size， and it won't be affected。
 
@@ -336,13 +280,10 @@ And it will be robust to outliers。 We have that window size， and it won't be
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_96.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_97.png)
 
 Some weaknesses。
 
-![](img/247ed1d3351f828416859ad35779ab7f_99.png)
 
 The results will heavily depend on our window size。
 
@@ -358,13 +299,9 @@ And also， finally， can be slow to implement。The the complexity is going to
 
  this may take a while to converge。
 
-![](img/247ed1d3351f828416859ad35779ab7f_101.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_102.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_103.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_104.png)
 
 Now let's walk through the syntax that you need in order to perform mean shift using Python。
 
@@ -374,17 +311,14 @@ Now let's walk through the syntax that you need in order to perform mean shift u
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_106.png)
 
 We then create an instance of this class。Setting M S equal to mean shift。
 
  And we pass in our parameter bandwidth equals 2。
 
-![](img/247ed1d3351f828416859ad35779ab7f_108.png)
 
 So again， our window here will be equal to two。
 
-![](img/247ed1d3351f828416859ad35779ab7f_110.png)
 
 And then we fit the instance on the data， and we can use that to predict clusters for new data。
 
@@ -392,13 +326,11 @@ And then we fit the instance on the data， and we can use that to predict clust
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_112.png)
 
 And then we can call MS dot predict on x2 to see which clusters they fall under given the new data。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_114.png)
 
 So to recap。In this video， we talked about the meanshift clustering algorithm and how we use the concept of using a window。
 
@@ -406,9 +338,7 @@ So to recap。In this video， we talked about the meanshift clustering algorith
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_116.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_117.png)
 
 And we discussed the algorithm's strengths and weaknesses。
 
@@ -418,9 +348,7 @@ And we discussed the algorithm's strengths and weaknesses。
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_119.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_120.png)
 
 So with that， we close out our different clustering methods， And in the next video。
 
@@ -428,8 +356,6 @@ So with that， we close out our different clustering methods， And in the next
 
 
 
-![](img/247ed1d3351f828416859ad35779ab7f_122.png)
 
-![](img/247ed1d3351f828416859ad35779ab7f_123.png)
 
 ![](img/247ed1d3351f828416859ad35779ab7f_124.png)

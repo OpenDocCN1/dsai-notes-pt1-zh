@@ -185,7 +185,6 @@ ReConcile实现了一个由多个LLM驱动的智能体圆桌讨论。它通过�
 
 ### 6.2 在较弱的LLM中通过强大的LLM支持增强智能体
 
-![参见标题说明](img/79f9bb79eac7656377728ffb0f2630a4.png)
 
 (a) ReConcile（讨论）
 

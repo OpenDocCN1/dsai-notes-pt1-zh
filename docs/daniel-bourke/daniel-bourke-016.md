@@ -8,9 +8,7 @@
 
 ![](img/5f8e3caa3545675d7ad4444c7b051cea_1.png)
 
-![](img/5f8e3caa3545675d7ad4444c7b051cea_2.png)
 
-![](img/5f8e3caa3545675d7ad4444c7b051cea_3.png)
 
 我将介绍一个在本课程中会一直使用的主要工具：Google Colab。
 
@@ -29,7 +27,6 @@
 
 ## 创建你的第一个笔记本
 
-![](img/5f8e3caa3545675d7ad4444c7b051cea_5.png)
 
 我将在这里放大界面。
 
@@ -45,7 +42,6 @@ print("Hello, I'm excited to learn PyTorch.")
 
 ## Google Colab 的优势
 
-![](img/5f8e3caa3545675d7ad4444c7b051cea_7.png)
 
 Google Colab 的一个显著优势是它提供了免费的硬件加速器。我个人使用的是专业版，每月约 10 美元，价格可能因地区而异。我使用专业版是因为我经常使用 Colab。然而，**你完全不需要付费版本也能完成本课程**。Google Colab 提供免费版本，足以满足本课程的需求。
 
@@ -60,7 +56,6 @@ Google Colab 的一个显著优势是它提供了免费的硬件加速器。我�
 
 我们可以运行 `!nvidia-smi` 命令来确认是否可以访问 GPU。在我的例子中，我获得了一个 Tesla P100 GPU。付费用户通常会获得更好的 GPU，而免费用户也能获得 GPU，只是速度可能不如付费版本提供的。请记住这一点。
 
-![](img/5f8e3caa3545675d7ad4444c7b051cea_9.png)
 
 ## 笔记本的结构与资源
 

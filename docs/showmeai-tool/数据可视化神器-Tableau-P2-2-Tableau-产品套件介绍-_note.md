@@ -1,12 +1,10 @@
 # 数据可视化神器 Tableau！P2：Tableau 产品套件介绍 📊
 
-![](img/ad13eef316705bda2e297b95df2e7067_0.png)
 
 在本节课中，我们将系统性地了解 Tableau 产品家族。Tableau 提供了一系列工具，以满足从数据准备、可视化开发到报告共享的完整工作流程需求。我们将这些工具分为两大类：**开发工具**和**共享工具**。
 
 ---
 
-![](img/ad13eef316705bda2e297b95df2e7067_2.png)
 
 ## 🛠️ 开发工具
 
@@ -18,7 +16,6 @@ Tableau Desktop 允许用户创建视图和仪表板，并支持高度自定义�
 
 Tableau Desktop 根据其连接和发布选项，分为两种类型：
 
-![](img/ad13eef316705bda2e297b95df2e7067_4.png)
 
 *   **Tableau Desktop 专业版**：可以完全访问所有数据源和数据类型。专业版还允许你将仪表板通过 Tableau Server 在线共享。
 *   **Tableau Desktop 个人版**：与专业版相比，个人版限制更多。它仅能连接平面文件（如 Excel 和 CSV），且其仪表板不能发布到 Tableau Server，但可以保存在本地或发布到 Tableau Public 网站。
@@ -48,9 +45,7 @@ Tableau Prep 是一个自助数据准备工具，提供了一种直观且直接�
 
 Tableau Reader 是一款免费的桌面应用程序，允许最终用户查看打包的工作簿或基于提取数据源的仪表板。在应用程序中，可视化仍然是交互式的，但由于它是只读的，因此无法进行修改。用户仍可以使用 Reader 导出视图和数据，并将视图呈现为幻灯片。**注意：不建议使用此应用程序共享公司的内部仪表板，因为它没有安全级别控制。**
 
-![](img/ad13eef316705bda2e297b95df2e7067_10.png)
 
-![](img/ad13eef316705bda2e297b95df2e7067_11.png)
 
 ### Tableau Server
 
@@ -62,7 +57,6 @@ Tableau Online 是 Tableau Server 的托管 SaaS（软件即服务）版本。�
 
 ### Tableau Mobile
 
-![](img/ad13eef316705bda2e297b95df2e7067_13.png)
 
 Tableau Server 和 Tableau Online 都可以与 Tableau Mobile 配合使用。Tableau Mobile 是一款在 iOS 和 Android 上均可用的免费应用程序，可以让你随时随地访问和监控仪表板与 KPI。它经过优化，以便快速直观地访问数据。其功能包括：
 

@@ -205,21 +205,17 @@ Chengguang Gan¹  Qinghao Zhang²  Tatsunori Mori¹ ¹横滨国立大学，�
 
 最后，LLaMA2-7B/13B 模型进行了微调，并取得了显著的提升，具体成果见表[4](https://arxiv.org/html/2401.08315v2#S5.T4 "表 4 ‣ 5 结果 ‣ LLM 代理在招聘中的应用：一种新的简历筛选框架")。具体来说，精细调整后的 LLaMA2-13B 模型在 ROUGE-1/2/L 指标中分别取得了 37.30、13.90 和 33.93 的优秀成绩。这一表现显著超过了 0-shot GPT-3.5 Turbo 模型在测试集评估中的成绩。此外，表[5](https://arxiv.org/html/2401.08315v2#S5.T5 "表 5 ‣ 5 结果 ‣ LLM 代理在招聘中的应用：一种新的简历筛选框架")展示了 BLEU 成绩的提升，其中 LLaMA2-7B 和 LLaMA2-13B 模型分别达到了 8.45 和 8.62 的增幅。与之相应，成绩准确率也有显著提高，分别为 76.19 和 81.35。这些结果清楚表明，在有足够的简历数据集进行微调的情况下，选择开源的 LLaMA2-7B/13B 模型作为人力资源代理系统的基础，是一个更有效的策略。
 
-![参考说明](img/09d0add64296c7b0b34080cb6ab32d1e.png)
 
 (a) LLaMA2-7B 的成绩分布
 
-![参考说明](img/bdb554087f38131e75e6e77dd9e7bfe8.png)
 
 (b) LLaMA2-13B 的成绩分布
 
-![参考说明](img/2c3ef6187d18877edfc5d4c5a33a8972.png)
 
 (c) LLaMA2-70B 的成绩分布
 
 图 9：比较 LLaMA2-7B/13B/70B 模型的成绩分布。
 
-![参考说明](img/329b0b8dddc420f4bff66a64cf75d703.png)
 
 (a) GPT-3.5-Turbo 的成绩分布
 

@@ -32,13 +32,11 @@ from langchain_community.chat_models import ChatOllama # 示例，可使用其�
 
 ![](img/88159b28d72a1a82222a19d82ff5de9b_3.png)
 
-![](img/88159b28d72a1a82222a19d82ff5de9b_4.png)
 
 首先，我们构建一个最简单的聊天机器人架构。它接收用户输入，通过一个函数（节点）调用语言模型，然后直接返回输出。
 
 我们定义一个名为 `call_model` 的函数作为聊天节点。这个函数接收一个状态（State），从中获取用户消息，调用语言模型，并将模型的回复添加到状态中。
 
-![](img/88159b28d72a1a82222a19d82ff5de9b_6.png)
 
 ![](img/88159b28d72a1a82222a19d82ff5de9b_7.png)
 

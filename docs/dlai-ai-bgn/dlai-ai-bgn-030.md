@@ -2,15 +2,11 @@
 
 在本节课中，我们将要学习如何使用Python内置的包。Python自带了许多功能强大的工具和函数，例如处理CSV文件、进行数学运算、统计分析以及绘制简单图形等。这些内置包由Python语言的支持团队维护，你无需一次性掌握所有，可以根据代码需求选择性地导入。本节课我们将重点学习如何导入和使用数学、统计以及随机数相关的包，为下一课学习第三方包打下基础。
 
-![](img/b879da940b47054bbb462790ca8245ff_1.png)
 
-![](img/b879da940b47054bbb462790ca8245ff_2.png)
 
 ---
 
-![](img/b879da940b47054bbb462790ca8245ff_3.png)
 
-![](img/b879da940b47054bbb462790ca8245ff_4.png)
 
 ## 导入与使用数学包 🧮
 
@@ -34,7 +30,6 @@ print(pi)  # 输出圆周率π的近似值
 
 在上面的代码中，我们从`math`包中导入了余弦函数`cos`、正弦函数`sin`以及常数`pi`。常数`pi`是一个高精度的浮点数，代表圆的周长与直径之比。
 
-![](img/b879da940b47054bbb462790ca8245ff_10.png)
 
 接下来，我们可以计算不同角度的余弦值：
 
@@ -98,14 +93,10 @@ proteins = ["Chicken", "Beef", "Tofu", "Salmon"]
 然后，我们从每个列表中随机抽取指定数量的食材：
 
 
-![](img/b879da940b47054bbb462790ca8245ff_16.png)
-
-![](img/b879da940b47054bbb462790ca8245ff_17.png)
 
 
-![](img/b879da940b47054bbb462790ca8245ff_19.png)
 
-![](img/b879da940b47054bbb462790ca8245ff_21.png)
+
 
 ```python
 from random import sample
@@ -119,7 +110,6 @@ print(random_protein)
 
 每次运行这段代码，你都会得到一组不同的随机食材组合。接下来，你可以将这些随机食材组合成一个提示词，发送给大语言模型来生成一个全新的食谱创意。
 
-![](img/b879da940b47054bbb462790ca8245ff_23.png)
 
 ```python
 prompt = f"Suggest a recipe using {random_spices}, {random_vegetables}, and {random_protein}."
@@ -131,15 +121,11 @@ print(prompt)
 
 ---
 
-![](img/b879da940b47054bbb462790ca8245ff_25.png)
 
 ## 总结 ✨
 
-![](img/b879da940b47054bbb462790ca8245ff_26.png)
 
-![](img/b879da940b47054bbb462790ca8245ff_27.png)
 
-![](img/b879da940b47054bbb462790ca8245ff_28.png)
 
 ![](img/b879da940b47054bbb462790ca8245ff_29.png)
 

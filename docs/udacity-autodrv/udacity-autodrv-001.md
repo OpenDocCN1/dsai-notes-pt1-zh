@@ -12,91 +12,56 @@
 
 大家好，我是安东尼，是优达学城“无人驾驶汽车入门”课程的产品负责人。我很高兴能帮助你开启成为无人驾驶汽车工程师的旅程。打造这个优秀的纳米学位项目需要大量工作，我们想花点时间向你介绍为此做出贡献的团队。
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_1.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_2.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_1.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_2.png)
 
 大家好，我是安迪，是本项目的课程负责人。我在优达学城从事教学与学习已有五年。无人驾驶汽车是一项改变世界的技术，其背后的数学和计算机科学原理非常迷人。我迫不及待地想带你进入这个精彩的世界。
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_4.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_5.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_4.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_5.png)
 
 大家好，我是卡桑·卡马乔，是优达学城的内容开发专家。我专攻计算机视觉，这是像无人驾驶汽车这样的机器如何视觉感知并响应世界的方式。我很高兴能教你关于视觉，以及其他所有无人驾驶汽车在路上做决策时所依赖的基础编程和数学概念。
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_7.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_8.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_7.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_8.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_9.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_9.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_10.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_10.png)
 
 大家好，我是艾丽西亚·怀特，是一名拥有超过20年跨行业经验的嵌入式系统工程师。我为O‘Reilly编写嵌入式系统，并主持一档名为“嵌入式.FM”的播客，探讨工程的各个方面。我在这里帮助你理解为什么C++对于无人驾驶汽车的开发如此重要。
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_12.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_13.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_14.png)
 
 ![](img/38db401d91e3ea4bcda8a9d25a840f44_12.png)
 
 ![](img/38db401d91e3ea4da8a9d25a840f44_13.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_16.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_14.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_17.png)
 
 大家好，我是特兰，是Voyage公司的人工智能总监。我非常高兴能加入课堂，教授你关于机器学习和计算机视觉的知识。
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_16.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_19.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_17.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_20.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_21.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_22.png)
 
 大家好，我是杰西卡，是你的纳米学位项目以及无人驾驶汽车工程师纳米学位项目的项目经理。我非常期待你加入这个项目，并对你开启这段旅程感到兴奋。如果你有任何需要，可以在Slack社区中找到我。
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_19.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_24.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_20.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_26.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_21.png)
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_22.png)
 
 大家好，我是埃里卡，是学生体验协调员。欢迎随时在Slack上联系我或发送邮件至 support@udacity.com。
 
-![](img/38db401d91e3ea4bcda8a9d25a840f44_24.png)
 
 幕后还有更多人在尽一切努力使这个项目变得出色。现在，我们开始吧？
 

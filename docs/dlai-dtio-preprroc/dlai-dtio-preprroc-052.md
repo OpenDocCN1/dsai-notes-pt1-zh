@@ -12,23 +12,17 @@ SQL 提供了强大的功能来组织查询结果中的信息。本节视频将�
 
 ## 基础排序：使用 `ORDER BY`
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_1.png)
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_2.png)
 
 首先，我们来看一个基础查询，它从 `tracks` 表中选择了名称、毫秒数和字节数。
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_3.png)
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_4.png)
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_5.png)
 
 ```sql
 SELECT name, milliseconds, bytes FROM tracks;
 ```
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_7.png)
 
 这个查询会返回 `tracks` 表中的所有行和三列数据。`bytes` 列表示文件在计算机上占用的存储空间大小。你会发现这些曲目的大小差异很大。
 
@@ -38,15 +32,11 @@ SELECT name, milliseconds, bytes FROM tracks;
 SELECT name, milliseconds, bytes FROM tracks ORDER BY bytes;
 ```
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_9.png)
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_10.png)
 
 默认情况下，SQL 会按**升序**排序。对于数字，这意味着从小到大；对于日期，从早到晚；对于文本，则按字母顺序。因此，执行上述查询后，结果集中最先显示的是数据集中最小的文件。
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_11.png)
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_12.png)
 
 ---
 
@@ -62,27 +52,19 @@ SELECT name, milliseconds, bytes FROM tracks ORDER BY bytes DESC;
 
 ---
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_14.png)
 
 ## 按多列排序
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_15.png)
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_16.png)
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_17.png)
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_18.png)
 
 有时，你可能希望按多个条件组织数据。例如，你可能想先按流派对曲目进行分组，然后在每个流派内按文件大小降序排列。
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_19.png)
 
 这可以通过在 `ORDER BY` 子句中指定多个列来实现，列名之间用逗号分隔。
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_21.png)
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_22.png)
 
 ```sql
 SELECT name, genre_id, bytes FROM tracks ORDER BY genre_id ASC, bytes DESC;
@@ -100,7 +82,6 @@ SELECT name, genre_id, bytes FROM tracks ORDER BY genre_id ASC, bytes DESC;
 
 例如，为了让输出对业务方更清晰，可以这样写：
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_24.png)
 
 ```sql
 SELECT
@@ -111,21 +92,15 @@ FROM tracks
 ORDER BY genre_id, bytes DESC;
 ```
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_25.png)
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_26.png)
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_27.png)
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_28.png)
 
 这样，输出的列标题将显示为 `track_title`、`length_in_ms` 和 `size_in_bytes`，更易于理解。
 
 以下是关于排序和列别名的一些关键点总结：
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_30.png)
 
-![](img/2cefbe0c93a03259e1a64cc9576cc4c6_31.png)
 
 *   **`ORDER BY` 子句**用于对结果排序，应放在 `FROM` 子句之后。
 *   **默认排序**是升序（`ASC`）。

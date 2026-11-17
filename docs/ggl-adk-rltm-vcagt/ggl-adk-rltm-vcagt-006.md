@@ -8,9 +8,7 @@
 
 ![](img/69fb07beecb4a3a11a3a668d5118ee54_1.png)
 
-![](img/69fb07beecb4a3a11a3a668d5118ee54_2.png)
 
-![](img/69fb07beecb4a3a11a3a668d5118ee54_3.png)
 
 ![](img/69fb07beecb4a3a11a3a668d5118ee54_4.png)
 
@@ -135,7 +133,6 @@ agent_instructions = """
 
 启动终端，`cd` 到正确的文件夹，运行 `adk web` 命令以启动我们的Web界面。我们还将运行一小段代码，它应该会给我们提供访问Web界面的代理URL。
 
-![](img/69fb07beecb4a3a11a3a668d5118ee54_6.png)
 
 让我们与智能体互动：
 *   **用户**：`你能给我最新的AI新闻吗？`
@@ -147,7 +144,6 @@ agent_instructions = """
 
 ## 总结
 
-![](img/69fb07beecb4a3a11a3a668d5118ee54_8.png)
 
 本节课到此结束。你构建了一个生产就绪的控制系统，结合了指令微调和编程式回调。你的智能体现在还能持续拒绝偏离主题的请求，并阻止从某些域名获取信息。
 

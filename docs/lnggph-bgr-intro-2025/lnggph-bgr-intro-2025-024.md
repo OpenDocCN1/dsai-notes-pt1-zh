@@ -10,13 +10,9 @@
 
 ## 构建最终图
 
-![](img/ceec77458f324f848615f4bc8002352e_1.png)
 
-![](img/ceec77458f324f848615f4bc8002352e_2.png)
 
-![](img/ceec77458f324f848615f4bc8002352e_3.png)
 
-![](img/ceec77458f324f848615f4bc8002352e_4.png)
 
 首先，我们需要导入所有必要的模块和之前定义的节点与状态。
 
@@ -39,13 +35,10 @@ ACT_NODE = "act"
 
 ### 创建图并添加节点
 
-![](img/ceec77458f324f848615f4bc8002352e_6.png)
 
-![](img/ceec77458f324f848615f4bc8002352e_7.png)
 
 接下来，我们使用 `StateGraph` 创建图，并添加我们的节点。我们将 `AgentState` 作为图的状态蓝图。
 
-![](img/ceec77458f324f848615f4bc8002352e_8.png)
 
 ```python
 # 使用StateGraph创建图，并指定状态结构
@@ -62,7 +55,6 @@ workflow.add_node(ACT_NODE, act_node)
 
 为此，我们需要一个 `should_continue` 函数来判断控制流的方向。
 
-![](img/ceec77458f324f848615f4bc8002352e_10.png)
 
 ```python
 def should_continue(state: AgentState) -> str:
@@ -80,16 +72,12 @@ def should_continue(state: AgentState) -> str:
         return ACT_NODE
 ```
 
-![](img/ceec77458f324f848615f4bc8002352e_11.png)
 
-![](img/ceec77458f324f848615f4bc8002352e_12.png)
 
-![](img/ceec77458f324f848615f4bc8002352e_13.png)
 
 现在，我们将这个条件逻辑添加到图中。
 
 
-![](img/ceec77458f324f848615f4bc8002352e_15.png)
 
 ```python
 # 设置推理节点为入口点

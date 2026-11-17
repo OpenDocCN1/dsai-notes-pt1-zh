@@ -1,6 +1,5 @@
 # 085：REST API与HTTP请求详解（第一部分）🌐
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_0.png)
 
 在本节课中，我们将深入探讨HTTP协议，特别是统一资源定位符（URL）以及HTTP请求与响应的基本结构。这是理解REST API如何工作的基础。
 
@@ -8,31 +7,21 @@
 
 ## HTTP请求与响应流程 🔄
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_2.png)
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_3.png)
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_4.png)
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_5.png)
 
 当你（客户端）访问一个网页时，你的浏览器会向托管该网页的服务器发送一个HTTP请求。服务器会尝试查找所请求的资源（默认是`index.html`）。如果请求成功，服务器会在HTTP响应中将目标对象发送回客户端。响应中包含了资源类型、资源长度等信息。
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_6.png)
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_7.png)
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_8.png)
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_9.png)
 
 下图中的表格代表了Web服务器上存储的资源列表，例如一个HTML文件、一个PNG图像和一个文本文件。当请求信息时，Web服务器会发送所请求的文件。
 
 ## 理解URL 🧭
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_11.png)
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_12.png)
 
 统一资源定位符（URL）是在网络上定位资源最常用的方式。我们可以将URL分解为三个部分：
 *   **协议**：这是使用的协议。在本实验中，它始终是 `http://`。
@@ -52,13 +41,9 @@ Host: www.example.com
 *   **请求头**：传递HTTP请求的附加信息。在GET方法中，请求头可能为空。某些请求会包含**请求体**，我们稍后会举例。
 *   **请求体**：在GET请求中通常为空。
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_14.png)
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_15.png)
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_16.png)
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_17.png)
 
 **响应消息示例：**
 ```
@@ -74,9 +59,7 @@ Content-Length: 1234
 
 ## HTTP状态码分类 📊
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_19.png)
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_20.png)
 
 让我们看看其他的状态码。状态码前缀表明了其类别：
 *   **1xx（信息响应）**：例如`100`，表示一切正常，请求正在继续处理。
@@ -84,7 +67,6 @@ Content-Length: 1234
 *   **4xx（客户端错误）**：表示请求有问题。例如`401`表示请求未授权。
 *   **5xx（服务器错误）**：表示服务器处理请求时出错。例如`501`表示功能未实现。
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_22.png)
 
 ## HTTP方法概述 ⚙️
 
@@ -94,19 +76,14 @@ Content-Length: 1234
 *   **PUT**：更新服务器上的资源。
 *   **DELETE**：删除服务器上的资源。
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_24.png)
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_25.png)
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_26.png)
 
 在下一个视频中，我们将使用Python来实践**GET**方法（从服务器检索数据）和**POST**方法（向服务器发送数据）。
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_27.png)
 
 ## 总结 📝
 
-![](img/b6072f7eba7da1694d66e955d3b9f0b1_29.png)
 
 ![](img/b6072f7eba7da1694d66e955d3b9f0b1_30.png)
 

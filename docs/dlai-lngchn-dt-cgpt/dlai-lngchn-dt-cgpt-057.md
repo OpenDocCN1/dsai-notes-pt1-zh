@@ -1,34 +1,26 @@
 # 057：构建与大语言模型交互的聊天应用 🚀
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_0.png)
 
 在本节课中，我们将学习如何使用开源大语言模型（LLM）构建一个功能完整的聊天应用。我们将从简单的模型调用开始，逐步引入对话历史管理、流式响应和高级参数控制，最终打造一个强大的聊天界面。
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_2.png)
 
 ---
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_4.png)
 
 ## 概述
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_6.png)
 
 与像 ChatGPT 这样的闭源模型聊天可能成本高昂且缺乏定制性。本课程将指导你使用开源模型 Falcon-7B-Instruct，通过推理端点或本地部署，构建一个可定制、能理解上下文对话的聊天应用。我们将使用 Gradio 库来创建用户界面。
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_8.png)
 
 ---
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_10.png)
 
 ## 1. 选择与设置模型 🤖
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_12.png)
 
 上一节我们介绍了课程目标，本节中我们来看看如何选择并设置我们将要使用的开源大语言模型。
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_14.png)
 
 我们将使用 Falcon-7B-Instruct，这是目前最佳的开源大型语言模型之一。你可以通过云端的推理端点来运行它，这样成本更低，也便于定制。当然，你也可以使用 `text-generation-inference` 库在本地轻松运行它。
 
@@ -44,24 +36,19 @@ HF_TOKEN = os.getenv('HF_TOKEN', 'your_huggingface_token_here')
 client = Client("huggingface-projects/llama-2-7b-chat")
 ```
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_16.png)
 
 ---
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_18.png)
 
 ## 2. 实现基础问答功能 💬
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_20.png)
 
 现在我们已经设置了模型，本节中我们来实现一个基础的单轮问答功能。
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_22.png)
 
 首先，我们创建一个简单的函数来向模型发送提示并获取回复。这还不是“聊天”，因为模型没有记忆，无法理解对话的上下文。
 
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_24.png)
 
 ```python
 def generate_response(prompt, max_tokens=256):
@@ -83,31 +70,24 @@ answer = generate_response(question, max_tokens=256)
 print(answer)
 ```
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_26.png)
 
 使用这个函数，我们可以通过更新 `prompt` 变量来问不同的问题。但是，如果你尝试问一个后续问题，比如“为什么？”，模型将无法理解，因为它不知道之前的对话内容。
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_28.png)
 
 ---
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_30.png)
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_32.png)
 
 ## 3. 引入对话历史管理 📚
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_34.png)
 
 上一节我们构建了基础问答，但模型缺乏记忆。本节中我们来看看如何管理对话历史，使模型能够进行多轮对话。
 
 为了实现真正的聊天，我们需要在每次请求时，将整个对话历史（包括用户的问题和模型的回答）都发送给模型。手动构建这个上下文很麻烦，而 Gradio 的 `Chatbot` 组件可以简化这个过程。
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_36.png)
 
 首先，我们初始化一个简单的聊天界面：
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_38.png)
 
 ```python
 import gradio as gr
@@ -136,18 +116,14 @@ demo.launch()
 
 ## 4. 格式化聊天提示与上下文 🔧
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_40.png)
 
 为了启用上下文感知的对话，我们需要定义一个函数来格式化聊天历史。
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_42.png)
 
 这个函数会将对话历史转换成模型能理解的格式，通常是在每轮对话前加上“用户：”或“助手：”的标签。
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_44.png)
 
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_46.png)
 
 ```python
 def format_chat_prompt(message, chat_history, system_message=""):
@@ -171,13 +147,11 @@ def respond_with_history(message, chat_history):
     return "", chat_history
 ```
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_48.png)
 
 现在，我们的聊天应用可以回答后续问题了。例如，先问“生命的意义是什么？”，再问“为什么？”，模型能够基于上下文给出合理的回答。
 
 ---
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_50.png)
 
 ## 5. 处理长对话与停止序列 ⏹️
 
@@ -185,16 +159,13 @@ def respond_with_history(message, chat_history):
 
 为了解决这些问题，我们可以采取以下措施：
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_52.png)
 
 1.  **限制最大新令牌数**：确保单次回复不会过长，为后续对话留出空间。
 2.  **使用停止序列**：告诉模型在生成到特定字符串（如“\n用户：”）时停止，防止它冒充用户提问。
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_54.png)
 
 以下是更新后的生成函数，包含了停止序列：
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_56.png)
 
 ```python
 def generate_response_with_stop(prompt, max_new_tokens=124, stop_sequence="\n用户："):
@@ -211,38 +182,29 @@ def generate_response_with_stop(prompt, max_new_tokens=124, stop_sequence="\n用
     return result['generated_text']
 ```
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_58.png)
 
 ---
 
 ## 6. 添加高级功能与流式响应 ⚙️
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_60.png)
 
 我们已经构建了一个能进行上下文对话的聊天应用。本节中我们为其添加更多高级功能，以提升用户体验和可控性。
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_62.png)
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_64.png)
 
 一个功能完善的聊天UI通常包括：
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_66.png)
 
 *   **系统消息**：用于设定AI的角色和行为（例如，“你是一名律师”或“请用幽默的语气回答”）。
 *   **温度参数**：控制回复的随机性和创造性。公式表示为：`温度 → 0` 时输出确定性高，`温度 → 1` 时创造性高。
 *   **流式响应**：让回复像打字一样逐个令牌实时显示，无需等待整个答案生成完毕。
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_68.png)
 
 以下是整合了这些功能的最终版应用代码框架：
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_70.png)
 
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_72.png)
 
-![](img/c5085f6fba93a29cffdf7a5983252bef_74.png)
 
 ```python
 def format_chat_prompt_advanced(message, chat_history, system_message="你是一个有帮助的助手。"):

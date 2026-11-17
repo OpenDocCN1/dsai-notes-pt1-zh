@@ -8,7 +8,6 @@ So the first thing that we're going to want to do is to actually build out that 
 
 
 
-![](img/b7b204a8b4206c62411db24bb0653c07_1.png)
 
 And then we're going to compile that model that we create， however many layers it is。
 
@@ -20,7 +19,6 @@ And then we're going to compile that model that we create， however many layers
 
 
 
-![](img/b7b204a8b4206c62411db24bb0653c07_3.png)
 
 Different metrics that we want to track maybe accuracy， maybe loss functions， things of that sort。
 
@@ -30,9 +28,7 @@ Different metrics that we want to track maybe accuracy， maybe loss functions�
 
 
 
-![](img/b7b204a8b4206c62411db24bb0653c07_5.png)
 
-![](img/b7b204a8b4206c62411db24bb0653c07_6.png)
 
 We're then going to fit the model onto our training data。
 
@@ -42,9 +38,7 @@ And when we fit that model we'll specify the batch size as well as the number of
 
 
 
-![](img/b7b204a8b4206c62411db24bb0653c07_8.png)
 
-![](img/b7b204a8b4206c62411db24bb0653c07_9.png)
 
 Once we do that， we'll be able to predict on new data once it's fit。
 
@@ -52,21 +46,17 @@ Once we do that， we'll be able to predict on new data once it's fit。
 
 
 
-![](img/b7b204a8b4206c62411db24bb0653c07_11.png)
 
 And then we can evaluate our results。
 
-![](img/b7b204a8b4206c62411db24bb0653c07_13.png)
 
 Now， when we work with Cars。
 
-![](img/b7b204a8b4206c62411db24bb0653c07_15.png)
 
 CAS is going to provide two approaches to building the structure of our model。
 
 
 
-![](img/b7b204a8b4206c62411db24bb0653c07_17.png)
 
 We'll have the sequential model， which allows for an easy to use linear stack of layers。
 
@@ -76,11 +66,8 @@ We'll have the sequential model， which allows for an easy to use linear stack 
 
 
 
-![](img/b7b204a8b4206c62411db24bb0653c07_19.png)
 
-![](img/b7b204a8b4206c62411db24bb0653c07_20.png)
 
-![](img/b7b204a8b4206c62411db24bb0653c07_21.png)
 
 And then there's also the functional API， and that's going to be a bit more detailed and complex。
 
@@ -88,15 +75,12 @@ And then there's also the functional API， and that's going to be a bit more de
 
 
 
-![](img/b7b204a8b4206c62411db24bb0653c07_23.png)
 
-![](img/b7b204a8b4206c62411db24bb0653c07_24.png)
 
 Now， probably given that you're watching this course， you're just learning this for the first time。
 
 
 
-![](img/b7b204a8b4206c62411db24bb0653c07_26.png)
 
 Everything that the sequential model is going to provide for you will probably cover everything that you need to know so far。
 

@@ -6,7 +6,6 @@
 
 ![](img/0cbfd8e13fa46536f8f4deebb52f7dcf_4.png)
 
-![](img/0cbfd8e13fa46536f8f4deebb52f7dcf_6.png)
 
 在本节课中，我们将要学习图像识别领域的核心背景知识。我们将了解图像识别的三大核心任务，并探讨其在实际应用中的两种主要发展模式。
 
@@ -48,7 +47,6 @@
 
 ---
 
-![](img/0cbfd8e13fa46536f8f4deebb52f7dcf_14.png)
 
 ![](img/0cbfd8e13fa46536f8f4deebb52f7dcf_16.png)
 

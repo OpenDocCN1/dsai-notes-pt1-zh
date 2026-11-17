@@ -38,31 +38,22 @@ conda install -c pyviz pyviz
 
 如果没有便利贴，请举手示意。
 
-![](img/190d87563ac45eb3d5c723751a2e345f_1.png)
 
 ---
 
-![](img/190d87563ac45eb3d5c723751a2e345f_3.png)
 
 ## 2. 开始使用 📖
 
-![](img/190d87563ac45eb3d5c723751a2e345f_5.png)
 
 现在，让我们开始介绍部分。为了本教程，你应该从我们为 SciPy 准备的特定索引页开始。启动软件后，你会看到类似这样的页面。
 
-![](img/190d87563ac45eb3d5c723751a2e345f_7.png)
 
-![](img/190d87563ac45eb3d5c723751a2e345f_9.png)
 
-![](img/190d87563ac45eb3d5c723751a2e345f_11.png)
 
-![](img/190d87563ac45eb3d5c723751a2e345f_13.png)
 
 如果你在运行 Jupyter Notebook 后看到类似页面，并且贴上了绿色便利贴，那么说明一切正常。在 Windows 上，如果默认浏览器不是合适的浏览器，你可能需要从启动 Jupyter Notebook 的命令行中复制 URL，然后粘贴到你实际使用的浏览器中。
 
-![](img/190d87563ac45eb3d5c723751a2e345f_15.png)
 
-![](img/190d87563ac45eb3d5c723751a2e345f_17.png)
 
 **不建议在 Internet Explorer 上运行任何内容**。建议使用 Firefox、Chrome 或 Safari。
 
@@ -78,7 +69,6 @@ conda install -c pyviz pyviz
 *   有多少人使用 Plotly？
 *   有多少人使用其他绘图工具？
 
-![](img/190d87563ac45eb3d5c723751a2e345f_19.png)
 
 根据回答，只有少数人使用其他工具，这很有趣。
 

@@ -76,10 +76,8 @@ model3 = MyModel()
 训练模型后，使用 `model.save_weights()` 方法将权重保存到指定目录。
 
 
-![](img/7bff5e62ed405731be5e5da8c2b7bfb9_4.png)
 
 
-![](img/7bff5e62ed405731be5e5da8c2b7bfb9_5.png)
 
 ```python
 # 编译并训练模型

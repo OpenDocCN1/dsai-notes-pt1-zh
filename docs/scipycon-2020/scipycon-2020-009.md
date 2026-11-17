@@ -12,13 +12,11 @@
 
 **公式**：`V: X -> {True, False}`，且 `∃ x1, x2 ∈ X` 使得 `V(x1) = True` 和 `V(x2) = False`。
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_1.png)
 
 ---
 
 ## 为什么需要数据验证？
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_3.png)
 
 上一节我们介绍了数据验证的基本概念，本节中我们来看看为什么在实际工作中需要它。
 
@@ -34,7 +32,6 @@
 
 了解了数据验证的必要性后，我们可以从不同角度对验证规则进行分类。
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_5.png)
 
 一种分类方式是将其分为**技术性检查**和**领域特定检查**。
 
@@ -74,39 +71,30 @@ invalid_data = pd.DataFrame({“column_a”: [-1, 0, 1]})
 # schema.validate(invalid_data) # 会抛出 SchemaError
 ```
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_7.png)
 
 这种设计支持组合性。对于一个数据处理函数 **F**，我们可以用多种方式将模式验证组合进去：在 **F** 处理前验证原始数据，验证 **F** 的输出，或者在处理前后都进行验证（“数据验证三明治”模式）。
 
 ---
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_9.png)
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_11.png)
 
 ## 案例研究：分析“致命遭遇”数据集
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_13.png)
 
 理论部分介绍完毕，让我们通过一个真实案例来具体学习 Pandera 的应用。我们将使用“致命遭遇”（Fatal Encounters）数据集，这是一个记录美国执法过程中导致死亡的遭遇的数据库。
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_15.png)
 
 本分析的核心问题是：**哪些因素最能预测法院将案件裁定为“意外”？**
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_17.png)
 
 以下是分析的主要步骤：
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_19.png)
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_21.png)
 
 ### 1. 数据读取与初步探索
 
 首先，我们读取数据并查看其结构。
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_23.png)
 
 **代码示例**：
 ```python
@@ -118,18 +106,14 @@ print(df_raw.head())
 
 ### 2. 定义基础模式并清理列名
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_25.png)
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_27.png)
 
 在进一步分析前，我们先清理列名，并定义一个最小化的模式来确保我们关心的列存在。
 
 **代码示例**：
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_29.png)
 
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_31.png)
 
 ```python
 import pandera as pa
@@ -149,7 +133,6 @@ def clean_columns(df: pd.DataFrame) -> pd.DataFrame:
     return df_clean
 ```
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_33.png)
 
 ### 3. 探索数据并定义详细模式
 
@@ -168,7 +151,6 @@ training_schema = pa.DataFrameSchema({
 training_schema.to_yaml(“training_schema.yaml”)
 ```
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_35.png)
 
 ### 4. 数据清洗与“验证三明治”
 
@@ -176,9 +158,7 @@ training_schema.to_yaml(“training_schema.yaml”)
 
 **代码示例**：
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_37.png)
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_39.png)
 
 ```python
 from pandera import check_input, check_output
@@ -195,15 +175,12 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
 
 ### 5. 数据拆分与模型构建
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_41.png)
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_43.png)
 
 将数据拆分为训练集和测试集，并构建一个机器学习模型（例如随机森林分类器）。Pandera 的 `SeriesSchema` 和模式修改方法（如 `remove_columns`）在这里非常有用。
 
 **代码示例**：
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_45.png)
 
 ```python
 target_schema = pa.SeriesSchema(int, checks=pa.Check.isin([0, 1]))
@@ -219,7 +196,6 @@ def split_training_data(df):
 
 我们甚至可以利用定义好的 `feature_schema` 来帮助构建 `sklearn` 的 `ColumnTransformer`。
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_47.png)
 
 ### 6. 模型评估与解释
 
@@ -236,7 +212,6 @@ model_audit_schema = pa.DataFrameSchema({
 # model_audit_schema.validate(shap_values_df)
 ```
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_49.png)
 
 ---
 
@@ -244,7 +219,6 @@ model_audit_schema = pa.DataFrameSchema({
 
 在案例中我们体验了 Pandera 的核心功能，本节简要介绍一些实验性功能和未来规划。
 
-![](img/beb71aeeb52dd5c0a2770f5ccfe3ff83_51.png)
 
 *   **模式推断**：可以从一个现有的 DataFrame 自动推断出一个模式。
     ```python

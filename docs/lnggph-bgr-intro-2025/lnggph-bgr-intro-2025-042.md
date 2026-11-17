@@ -16,7 +16,6 @@
 
 ## 流式传输的核心方法
 
-![](img/79c36f32328d8dc57c85fdc3c90ec7af_6.png)
 
 LangGraph提供了`stream`和`astream`方法（分别对应同步和异步）来从图运行中流式输出结果。调用这些方法时可以指定几种模式。
 
@@ -38,7 +37,6 @@ graph.astream(input_state, config, stream_mode="values")
 *   节点2执行后：`[‘b’]`
 *   节点3执行后：`[‘c’]`
 
-![](img/79c36f32328d8dc57c85fdc3c90ec7af_8.png)
 
 当使用 **`values`** 模式时，我们会看到每一步执行后的完整状态快照：
 *   节点1执行后：`[‘a’]`

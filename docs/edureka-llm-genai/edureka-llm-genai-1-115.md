@@ -1,6 +1,5 @@
 # 第一部分 115：使用NLTK进行词形还原 🧠
 
-![](img/064eac5b6c02a8f04f54770e8f474e52_1.png)
 
 在本节课中，我们将学习词形还原的概念，并通过NLTK库进行实践操作。我们将了解词形还原与词干提取的区别，并掌握如何使用WordNet词形还原器将单词还原为其基本形式。
 
@@ -17,7 +16,6 @@ from nltk.stem import WordNetLemmatizer
 wordnet_lemmatizer = WordNetLemmatizer()
 ```
 
-![](img/064eac5b6c02a8f04f54770e8f474e52_4.png)
 
 第一行代码从NLTK导入了`WordNetLemmatizer`类，这个类用于执行词形还原。`WordNetLemmatizer`是一个基于英语词汇数据库WordNet的自然语言处理工具。第二行代码初始化了词形还原器的一个实例。
 
@@ -34,21 +32,14 @@ print(lemma)
 
 为了更清晰地展示词形还原的效果，我们可以对比它与词干提取的区别。以下是几个例子。
 
-![](img/064eac5b6c02a8f04f54770e8f474e52_6.png)
 
-![](img/064eac5b6c02a8f04f54770e8f474e52_7.png)
 
-![](img/064eac5b6c02a8f04f54770e8f474e52_8.png)
 
 以下是使用词形还原和词干提取处理不同单词的对比：
 
-![](img/064eac5b6c02a8f04f54770e8f474e52_9.png)
 
-![](img/064eac5b6c02a8f04f54770e8f474e52_10.png)
 
-![](img/064eac5b6c02a8f04f54770e8f474e52_11.png)
 
-![](img/064eac5b6c02a8f04f54770e8f474e52_12.png)
 
 *   **mice**:
     *   词形还原输出：`mouse`
@@ -61,7 +52,6 @@ print(lemma)
 
 ---
 
-![](img/064eac5b6c02a8f04f54770e8f474e52_14.png)
 
 现在，让我们对一个包含动词不同形式的列表进行词形还原。
 

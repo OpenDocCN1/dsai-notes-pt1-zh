@@ -401,15 +401,12 @@ HPE 已被应用于多种领域，如动作分析 [1]、人机交互 [2]、游�
 
 一般来说，书目计量数据可以从各种数据库中获取。在本文中，我们选择了 Scopus 数据库²²2[`en.wikipedia.org/wiki/Scopus`](https://en.wikipedia.org/wiki/Scopus)进行文献检索。Scopus 是由 Elsevier 发布的最大同行评审文献的摘要/引用数据库。与 PubMed、Web of Science 和 Google Scholar 等其他替代数据库相比，Scopus 的资源更准确、更全面[138]。重要的是，Elsevier 提供了一个 Python 库³³3[`github.com/pybliometrics-dev/pybliometrics`](https://github.com/pybliometrics-dev/pybliometrics)来从 Scopus 数据库中检索所需主题的数据[139]。在这项工作中，我们通过检索 Scopus 数据库中的“标题、摘要和关键词”来回顾基于视觉的 HPE 的深度学习文章。我们呈现了从文献中观察到的四个方面的趋势：多人姿态估计、3D HPE、高效的基于深度学习的 HPE 和多模态学习。为了清晰观察趋势，我们检索了 2012 年至 2022 年的每年数据。我们从四个方面检索了 Scopus 数据中的出版物数量，如图 4 所示，其中红色虚线为 2012 年至 2021 年的出版物数量的拟合（不包括 2022 年）。
 
-![参考说明](img/663d286169155eb6cfdf39eaa1b24ee8.png)
 
 (a)
 
-![参考说明](img/48c6dc26b282602fcf3396c3547e9284.png)
 
 (b)
 
-![参考说明](img/bf95aad6eb2b300b60700a3bf95ec62a.png)
 
 (c)
 

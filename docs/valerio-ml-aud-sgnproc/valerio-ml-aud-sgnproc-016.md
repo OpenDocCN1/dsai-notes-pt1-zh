@@ -102,7 +102,6 @@ print(scale_spectrogram.shape)  # 输出: (1025, 342)
 print(type(scale_spectrogram[0, 0]))  # 输出: <class ‘numpy.float64’>
 ```
 
-![](img/8343f2f0f3e30e585ab346fce5e9f394_1.png)
 
 现在，我们有了一个实数矩阵，代表每个频率和时间点上的能量。
 
@@ -112,7 +111,6 @@ print(type(scale_spectrogram[0, 0]))  # 输出: <class ‘numpy.float64’>
 
 有了频谱图数据，我们现在可以尝试将其可视化。Librosa提供了一个方便的函数`librosa.display.specshow`。
 
-![](img/8343f2f0f3e30e585ab346fce5e9f394_3.png)
 
 首先，我们创建一个辅助函数来绘制频谱图。
 
@@ -131,7 +129,6 @@ def plot_spectrogram(Y, sr, hop_length, y_axis=“linear”):
 plot_spectrogram(scale_spectrogram, sr_scale, hop_size, y_axis=“linear”)
 ```
 
-![](img/8343f2f0f3e30e585ab346fce5e9f394_5.png)
 
 您可能会注意到图像非常暗，大部分区域是黑色的。这是因为人耳对声音强度的感知是对数式的，而非线性的。
 
@@ -148,15 +145,12 @@ scale_log_spectrogram = librosa.power_to_db(scale_spectrogram)
 
 现在，再次绘制频谱图，这次使用对数幅度。
 
-![](img/8343f2f0f3e30e585ab346fce5e9f394_7.png)
 
 ```python
 plot_spectrogram(scale_log_spectrogram, sr_scale, hop_size, y_axis=“linear”)
 ```
 
-![](img/8343f2f0f3e30e585ab346fce5e9f394_9.png)
 
-![](img/8343f2f0f3e30e585ab346fce5e9f394_10.png)
 
 现在图像看起来好多了！我们可以看到音阶中每个音符的能量爆发。较低的部分是基频，较高的部分是谐波成分。
 
@@ -164,7 +158,6 @@ plot_spectrogram(scale_log_spectrogram, sr_scale, hop_size, y_axis=“linear”)
 
 ## 转换为对数频率频谱图
 
-![](img/8343f2f0f3e30e585ab346fce5e9f394_12.png)
 
 除了幅度，我们对频率的感知也是对数式的。因此，一个更符合感知的表示是同时使用对数幅度和对数频率。
 

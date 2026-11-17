@@ -25,7 +25,6 @@ plot_loss_curves(results=model_1_results)
 
 ---
 
-![](img/5f3945e95db4c2a48c34617d5d98e4de_2.png)
 
 ## 分析模型状态：欠拟合与过拟合
 
@@ -33,7 +32,6 @@ plot_loss_curves(results=model_1_results)
 
 对于损失曲线（此处特指损失值，而非准确率），理想的方向是随时间下降。目前，我们的模型似乎存在欠拟合，因为损失值仍有下降空间。同时，模型也表现出过拟合的迹象，因为测试损失远高于训练损失，这表明模型未能很好地泛化到新数据。
 
-![](img/5f3945e95db4c2a48c34617d5d98e4de_4.png)
 
 ---
 

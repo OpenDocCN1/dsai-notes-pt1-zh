@@ -1177,22 +1177,16 @@ LSTM 可以扩展为多层结构，以增强捕捉高阶关系的能力。Donahu
 | Show, Attend and Tell^† [42] |  | Flickr30K |  | 65.6 | 23.6 | 19.2 | 45.4 | 49.1 | 13.3 |  |  | 0.045 | 0.096 | 454 | 90.1 |  |  | 11.8 | 0.089 | 64.1 |  |  | 53.4 | 92.1 | 0.679 | 0.717 |
 | Up-Down^‡ [58] |  | Flickr30K |  | 72.4 | 28.3 | 21.6 | 49.5 | 63.3 | 15.9 |  |  | 0.061 | 0.155 | 587 | 95.6 |  |  | 13.1 | 0.119 | 65.5 |  |  | 53.5 | 92.7 | 0.720 | 0.755 |
 | ORT [77] |  | Flickr30K |  | 72.2 | 30.1 | 22.8 | 50.4 | 68.8 | 16.9 |  |  | 0.072 | 0.171 | 738 | 96.1 |  |  | 13.7 | 0.129 | 67.2 |  |  | 53.5 | 92.7 | 0.728 | 0.760 |
-| $\mathcal{M}^{2}$ Transformer [81] |  | Flickr30K |  | 72.4 | 29.8 | 22.4 | 50.6 | 68.4 | 16.2 |  |  | 0.079 | 0.196 | 728 | 93.8 |  |  | 13.6 | 0.120 | 65.0 |  |  | 53.6 | 92.9 | 0.724 | 0.763 |  | ![参考字幕](img/ed00a182cb129d9e124d7b9c96017455.png) |
-| ![参考字幕](img/9bbd181eec893a0f164e5aaf4abea649.png) |
-| ![参考字幕](img/6b15613efa7e851545893e1c02aa5c9f.png) |
 
 图 11：来自八种流行字幕模型在 COCO 测试图像上的附加定性示例。
 
-| ![参考字幕](img/fbf9005e6823e993a64922abba6e6f6c.png) |
 | --- |
-| ![参考字幕](img/535215756c59a41fd863801c4dffc9b1.png) |
 | ![参考字幕](img/659d95a3ea0101fcc8569f8069cd0d1b.png) |
 
 图 12：来自八种流行字幕模型在 COCO 测试图像上的附加定性示例。
 
 | Up-Down [58] |
 | --- |
-| ![参考字幕](img/c7fa9ce5db800d51584cb543df85dd53.png) | ![参考字幕](img/e400654d5e9d23176d3642d428b826b6.png) | ![参考字幕](img/c831120ff2413cbdb0c31ea6634cabf8.png) | ![参考字幕](img/739879922d4f6349ddc7a976ac9a9617.png) | ![参考字幕](img/a9e484b17e063e59337a4cb1552f86c3.png) | ![参考字幕](img/ebf924b0b873c17872c55c349b90bc15.png) | ![参考字幕](img/fea81ffea1ac777286a454aab3f818a0.png) | ![参考字幕](img/f848d6f72107fa3619514d29057623f6.png) |
 | $\mathbf{\mathcal{M}^{2}}$ Transformer [81] |
 | ![参考字幕](img/2c38e04c8d737b0d3ce5cab205c39bd4.png) | ![参考字幕](img/fb483a68e03624a00fd505dbbee529f9.png) | ![参考字幕](img/dfdff53c973a2d1e8c9a58956db2f16c.png) | ![参考字幕](img/cb5b3e1919f00befd01ea83432e305cd.png) | ![参考字幕](img/021a8ed94a7c4d04266c7497fbb7c7c0.png) | ![参考字幕](img/c2be0a7385e2aa3fe0480b556c4ec9e4.png) | ![参考字幕](img/0d08df5adf8c2af3f9fcda63dd379e66.png) | ![参考字幕](img/df5713a89f0bc30ccbe3fd29ef428f04.png) |
 | Up-Down [58] |
@@ -1200,7 +1194,6 @@ LSTM 可以扩展为多层结构，以增强捕捉高阶关系的能力。Donahu
 | $\mathbf{\mathcal{M}^{2}}$ Transformer [81] |
 | ![参见说明](img/4fa3858c1a50b7393a16b751f6f78a59.png) | ![参见说明](img/36c0e3128d1d41805eb7af606f9a80e7.png) | ![参见说明](img/411b81e26cb40e4cc576ccc89eefa313.png) | ![参见说明](img/6b5fdcc586ef179d6122291d9b4461f8.png) | ![参见说明](img/0445a791ce92a6f917e535e94a39bda4.png) | ![参见说明](img/c0040e66a8e090507a6403ac352d2626.png) | ![参见说明](img/9f18e7bc3750a76bfdfbf792e05ae338.png) | ![参见说明](img/d774c5b04d07e33b60205eb016efa20a.png) |
 | Up-Down [58] |
-| ![参见说明](img/7a498e0d184a07525434c12d5bbf7937.png) | ![参见说明](img/6797e0fbd1c90afd6e59ad0e5476575e.png) | ![参见说明](img/272955280f29879fbd757b464d634b34.png) | ![参见说明](img/97347f62805bbf804955b39a037cf48d.png) | ![参见说明](img/5813006be150f20be1e007c08bdecc4a.png) | ![参见说明](img/f6035e2d1bb1d938351eeba06fb437de.png) | ![参见说明](img/4c715c7b54290b92030b6151c2f89a09.png) | ![参见说明](img/a561c3a1094cb3cf89f8c7489d3f120e.png) |
 | $\mathbf{\mathcal{M}^{2}}$ Transformer [81] |
 | ![参见说明](img/b55e8f14e3701a6d02a125c595a4dfd6.png) | ![参见说明](img/1e7469d65e4e74efb5184e256599e1e5.png) | ![参见说明](img/8d6dc6b42d8c8f661756958ea4ff43fd.png) | ![参见说明](img/0f3953be61456b3d18858b62bd8f2806.png) | ![参见说明](img/664c6f4fe4dbb0d500792d473616d34b.png) | ![参见说明](img/5a4f3483e75755713678ff9a703eb23b.png) | ![参见说明](img/736b5f824ad516140040d99870d18422.png) | ![参见说明](img/fb9ea405cbf8ee093d20778996e8f3b4.png) |
 | Up-Down [58] |
@@ -1208,7 +1201,6 @@ LSTM 可以扩展为多层结构，以增强捕捉高阶关系的能力。Donahu
 | $\mathbf{\mathcal{M}^{2}}$ Transformer [81] |
 | ![参考说明](img/8610e30d9a218317375a614675415e81.png) | ![参考说明](img/a2e854b7544a8eae79e9c16e92ab675b.png) | ![参考说明](img/5241838e6979fbfc3382a99bf594d655.png) | ![参考说明](img/4445fc2c60da808e4e1ae157ed48d889.png) | ![参考说明](img/6d2480dcc33367274a2f86d4da803a1b.png) | ![参考说明](img/6f18b3d914899ff733c3ad31d3459d38.png) | ![参考说明](img/bfbb35ca971bf5def1de9cdaec727a8f.png) | ![参考说明](img/4ae471c51f2b6169965d60700924ffa8.png) |
 | Up-Down [58] |
-| ![参考说明](img/0cb0cb5640f2a3dde73db95850ffe9f1.png) | ![参考说明](img/14cad532146e889afef62c2c7f41fe4e.png) | ![参考说明](img/c302d520e15c1bb33538735e85712c5d.png) | ![参考说明](img/9029035755fd48f0607b94dc7377de63.png) | ![参考说明](img/5c3dd1e0ee20524f1c386fe40f28bc02.png) | ![参考说明](img/3004af1e4e7ba028e483ce753c36ee72.png) | ![参考说明](img/318af55aa4fcf44c2abe8c5c11eb02e4.png) | ![参考说明](img/9a99880ff9320a524dd3e6a5d2abf3b2.png) |
 | $\mathbf{\mathcal{M}^{2}}$ Transformer [81] |
 | ![参考说明](img/777bb9ab0c681035ab8f1afdd13488b8.png) | ![参考说明](img/0a9fa5422774b6233fd98f31007f289f.png) | ![参考说明](img/c5cca027fdeb0164f5306a108d685710.png) | ![参考说明](img/bdde6429844aa52107356e8b23f63702.png) | ![参考说明](img/1278a059d15a6fdb344e12a7c9efd3b1.png) | ![参考说明](img/2a82a45e1cc9f4a9f2b4b27133bad068.png) | ![参考说明](img/3338131ddd2d664af1c3c31c84dd70de.png) | ![参考说明](img/58d17ed396eaebb3ce0d944eeafaecf1.png) |
 

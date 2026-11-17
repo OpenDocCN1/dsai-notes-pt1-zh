@@ -1,8 +1,6 @@
 # 001：课程介绍
 
-![](img/2028f5dfda8f246674a8d92f386fba4a_0.png)
 
-![](img/2028f5dfda8f246674a8d92f386fba4a_0.png)
 
 欢迎来到与微软合作构建的《利用AutoGen的人工智能智能体设计模式》课程。
 
@@ -40,7 +38,6 @@
 
 许多人已经完成了这门课程，我要感谢微软的每一位成员以及DeepLearning.AI的团队。
 
-![](img/2028f5dfda8f246674a8d92f386fba4a_2.png)
 
 ![](img/2028f5dfda8f246674a8d92f386fba4a_2.png)
 

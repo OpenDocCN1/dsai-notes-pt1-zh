@@ -22,41 +22,28 @@
 
 启用完成后，在左侧导航菜单中找到“Compute Engine”条目。
 
-![](img/196e14b840b9afa1b78c6871be344a15_2.png)
 
-![](img/196e14b840b9afa1b78c6871be344a15_4.png)
 
 如果Compute Engine尚未启用，请务必点击相应按钮启用它。此过程可能需要一些时间。
 
-![](img/196e14b840b9afa1b78c6871be344a15_4.png)
-![](img/196e14b840b9afa1b78c6871be344a15_6.png)
-![](img/196e14b840b9afa1b78c6871be344a15_7.png)
 
-![](img/196e14b840b9afa1b78c6871be344a15_6.png)
 
 ## 创建Notebook实例
 
-![](img/196e14b840b9afa1b78c6871be344a15_7.png)
 
 服务启用后，返回导航菜单中的“AI平台”条目，找到“Notebooks”。
 
-![](img/196e14b840b9afa1b78c6871be344a15_9.png)
 
-![](img/196e14b840b9afa1b78c6871be344a15_9.png)
 
 页面打开后，您会看到一个Notebook列表（初始可能为空）。点击顶部的“新实例”按钮。
 
 选择“Python 3”环境。
 
-![](img/196e14b840b9afa1b78c6871be344a15_11.png)
 
-![](img/196e14b840b9afa1b78c6871be344a15_11.png)
 
 接受默认设置并点击“创建”。列表中会出现一个新条目，需要等待片刻使其准备就绪。
 
-![](img/196e14b840b9afa1b78c6871be344a15_13.png)
 
-![](img/196e14b840b9afa1b78c6871be344a15_13.png)
 
 当实例状态变为就绪后，您会看到一个“打开JupyterLab”的链接。点击它，Jupyter环境将打开并提供多个选项。
 
@@ -93,19 +80,15 @@ model.fit(X_train, y_train)
 model.save_model('saved_model.pb')
 ```
 
-![](img/196e14b840b9afa1b78c6871be344a15_15.png)
 
 ## 部署模型到GCP
 
-![](img/196e14b840b9afa1b78c6871be344a15_15.png)
 
 现在可以将模型部署到Google Cloud Platform。请注意，您需要一个GCP项目。项目ID可以通过点击控制台顶部的项目选择器，从您拥有的项目列表中找到。
 
-![](img/196e14b840b9afa1b78c6871be344a15_17.png)
 
 模型存储桶是一个云存储桶，您可以用变量`model_bucket`为其命名。创建存储桶后，您可以将保存的模型复制到其中。
 
-![](img/196e14b840b9afa1b78c6871be344a15_17.png)
 
 您可以在云存储中浏览以找到该存储桶，并在其中看到保存的模型文件。
 
@@ -127,7 +110,6 @@ gcloud ai-platform versions create [VERSION_NAME] --model=[MODEL_NAME] --origin=
 
 现在，我们可以将一些模拟数据写入文件，并使用已部署的端点来获取预测结果。
 
-![](img/196e14b840b9afa1b78c6871be344a15_19.png)
 
 预测调用的示例代码如下：
 ```python

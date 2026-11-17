@@ -4,15 +4,11 @@
 
 ![](img/27a826f8bd3fd6122bbbb8cce0ce2b0e_1.png)
 
-![](img/27a826f8bd3fd6122bbbb8cce0ce2b0e_2.png)
 
-![](img/27a826f8bd3fd6122bbbb8cce0ce2b0e_3.png)
 
 上一节我们介绍了AI项目的开发环境设置。本节中，我们来看看如何通过安装扩展来增强VSCode的功能，使其更适合AI开发工作。
 
-![](img/27a826f8bd3fd6122bbbb8cce0ce2b0e_5.png)
 
-![](img/27a826f8bd3fd6122bbbb8cce0ce2b0e_6.png)
 
 ![](img/27a826f8bd3fd6122bbbb8cce0ce2b0e_7.png)
 

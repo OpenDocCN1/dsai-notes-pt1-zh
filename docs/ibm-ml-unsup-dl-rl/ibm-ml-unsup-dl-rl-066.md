@@ -50,7 +50,6 @@ So you run that， we've initialized our model and we can call model 1。t summa
 
 
 
-![](img/20a3fbbefc6942305107276c413ad3bc_1.png)
 
 And get some of these nice details about our actual layers and how many weights there are going to be。
 
@@ -78,7 +77,6 @@ And then to get to the next layer， again， you're going from 12 down to  one�
 
 
 
-![](img/20a3fbbefc6942305107276c413ad3bc_3.png)
 
 We're then going to compile our actual model。And this is going to be our first time seeing how to actually compile that model using this specified optimizer。
 
@@ -112,7 +110,6 @@ And then we set the number of epochs， the number of times we want to run throu
 
 And at each one of the different steps。
 
-![](img/20a3fbbefc6942305107276c413ad3bc_5.png)
 
 It's going to say each one of the different epochs。
 
@@ -126,7 +123,6 @@ Oh， it's done running。It's only 200 epochs that we're able to run through。
 
 
 
-![](img/20a3fbbefc6942305107276c413ad3bc_7.png)
 
 And then like we did for random force， we're going to generate two kinds of predictions。
 
@@ -142,9 +138,7 @@ So we have our different predictions and we can see for our different classes。
 
  we either have zeros or ones。
 
-![](img/20a3fbbefc6942305107276c413ad3bc_9.png)
 
-![](img/20a3fbbefc6942305107276c413ad3bc_10.png)
 
 And for our probabilities， we have some value between zero and1。And that differentiator。
 
@@ -152,7 +146,6 @@ And for our probabilities， we have some value between zero and1。And that dif
 
 
 
-![](img/20a3fbbefc6942305107276c413ad3bc_12.png)
 
 With that。We can then create our R O AU curve。 We created a function earlier that will allow us to do this。
 
@@ -166,9 +159,7 @@ So let's see how we did compare to our baseline model， we see if you recall ea
 
 
 
-![](img/20a3fbbefc6942305107276c413ad3bc_14.png)
 
-![](img/20a3fbbefc6942305107276c413ad3bc_15.png)
 
 So that's going to be our first neural network model and there may be some variations due to， again。
 
@@ -182,7 +173,6 @@ And then when we save that history from that fitting of the model。
 
 
 
-![](img/20a3fbbefc6942305107276c413ad3bc_17.png)
 
 What we actually did is we were able to get this dictionary。So run hisist1。
 
@@ -204,9 +194,7 @@ And that's only because we specified that we want to track accuracy when we firs
 
  when we compiled it here。
 
-![](img/20a3fbbefc6942305107276c413ad3bc_19.png)
 
-![](img/20a3fbbefc6942305107276c413ad3bc_20.png)
 
 Otherwise， accuracy would not be available within this dictionary。
 
@@ -228,7 +216,6 @@ And then our validation loss， hopefully was getting smaller， but could have 
 
  meaning that we overfit our data set。
 
-![](img/20a3fbbefc6942305107276c413ad3bc_22.png)
 
 And here we see that they're both kind of still going down on both the training set and the validation set。
 
@@ -238,7 +225,6 @@ So with that in mind， let's train the model a little bit more and see what hap
 
 
 
-![](img/20a3fbbefc6942305107276c413ad3bc_24.png)
 
 And something to note is that it will pick up from where it left off so it'll continue to train given where it left off at these 200 epochs。
 
@@ -250,7 +236,6 @@ I will run this and then again I am going to actually pause a video here and wel
 
 
 
-![](img/20a3fbbefc6942305107276c413ad3bc_26.png)
 
 All right， that may have taken a couple minutes to run。
 
@@ -284,9 +269,7 @@ And then we're going to do the same thing for the validation loss， so before w
 
 
 
-![](img/20a3fbbefc6942305107276c413ad3bc_28.png)
 
-![](img/20a3fbbefc6942305107276c413ad3bc_29.png)
 
 So we plot this out。And we see it continued to decrease after 200。
 
@@ -296,7 +279,6 @@ So we plot this out。And we see it continued to decrease after 200。
 
 
 
-![](img/20a3fbbefc6942305107276c413ad3bc_31.png)
 
 So that closes out our first neuralNe model， playing around with running it through different epochs。
 
@@ -308,6 +290,5 @@ And see what kind of effect that'll have on overall accuracy as well as how fast
 
  I'll see you there。
 
-![](img/20a3fbbefc6942305107276c413ad3bc_33.png)
 
 ![](img/20a3fbbefc6942305107276c413ad3bc_34.png)

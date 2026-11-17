@@ -88,7 +88,6 @@ RNN 模型并非最近提出，但它们极大地解决了上述问题，一些�
 
 1982 年，Hopfield 引入了早期的 RNN 家族来解决模式识别任务（Hopfield，1982）。Jordan（1986）和 Elman（1990）分别介绍了两种 RNN 架构。一般来说，现代 RNN 可以分为 Jordan 类型 RNN 和 Elman 类型 RNN。
 
-![参考说明](img/129d8bcf18fd55212511419a63d52492.png)
 
 (a) Jordan 类型 RNN
 

@@ -8,11 +8,9 @@ LangChain 通过文档加载器从网站、文件和数据库等多种来源收�
 
 如果你正在处理纯文本文件，可以利用 LangChain 中的 `TextLoader` 类来高效加载它们。LangChain 的 `load` 方法专门设计用于从配置好的源加载数据为文档对象。
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_1.png)
 
 以下是使用该方法加载文本数据的代码示例。加载后，每个包含元数据和页面内容属性的文档对象会被存储在一个列表中。
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_2.png)
 
 ```python
 from langchain.document_loaders import TextLoader
@@ -40,19 +38,15 @@ documents = loader.load()
 
 这个加载器能快速处理每一页，并提供关于 PDF 及其页面的详细元数据，每页返回一个文档对象。让我们用这个加载器重新加载上一张幻灯片中的论文。
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_4.png)
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_5.png)
 
 `PyMuPDFLoader` 与 `PyPDFLoader` 的关键区别在于，它包含了更全面的元数据。
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_6.png)
 
 ## 加载 Markdown 文件
 
 如果你正在处理 Markdown 文件，LangChain 提供了 `UnstructuredMarkdownLoader` 类来加载它。
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_8.png)
 
 请注意，内容可能包含许多换行符。
 
@@ -60,7 +54,6 @@ documents = loader.load()
 
 处理 JSON 文件时，需要考虑其独特的键值对结构。让我们看一个例子。
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_10.png)
 
 我们将使用以下代码来加载和显示一个 JSON 文件。
 
@@ -80,14 +73,10 @@ LangChain 提供了专门设计用于加载 JSON 文件的 `JSONLoader` 类。�
 
 以下是一个示例。
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_12.png)
-
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_13.png)
-
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_14.png)
 
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_15.png)
+
+
 
 ```python
 from langchain.document_loaders import CSVLoader
@@ -97,11 +86,9 @@ documents = loader.load()
 
 如果你想将所有数据加载到一个文档对象中，可以使用 `UnstructuredCSVLoader`。
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_17.png)
 
 与将每一行视为一个单独文档（由表头定义数据）的 `CSVLoader` 不同，`UnstructuredCSVLoader` 将整个 CSV 文件视为一个单一的非结构化表格元素。
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_19.png)
 
 这在将数据作为表格而非单个条目进行分析时非常有用。
 
@@ -117,7 +104,6 @@ documents = loader.load()
 
 你可以看到，`BeautifulSoup` 加载了网页内容，并包含了一些 H 标签和外部链接，这些内容是不必要的，甚至在你只想加载网页文本内容时会成为负担。
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_21.png)
 
 `BeautifulSoup` 有其局限性。有更好的方法吗？是的。
 
@@ -129,9 +115,7 @@ LangChain 中的 `WebBaseLoader` 旨在高效地从 HTML 网页中提取所有�
 
 ## 加载 Word 文档
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_23.png)
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_24.png)
 
 LangChain 还提供了 `Docx2txtLoader` 来帮助将 Word (.docx) 文件加载为文档内容，类似于文本加载器。
 
@@ -144,7 +128,6 @@ loader = Docx2txtLoader("example.docx")
 documents = loader.load()
 ```
 
-![](img/a8dde27b13f24c346cd1be5aeb2f6091_26.png)
 
 ## 使用通用文件加载器
 

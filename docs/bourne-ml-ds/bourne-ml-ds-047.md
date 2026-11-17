@@ -43,21 +43,15 @@ jupyter notebook
 
 ---
 
-![](img/2f0c384e057b8ac7a1bf6c2780025441_4.png)
 
-![](img/2f0c384e057b8ac7a1bf6c2780025441_6.png)
 
 上一节我们介绍了本地运行的方法。本节中，我们来看看一个更快捷的在线替代方案：使用 Google Colab。
 
-![](img/2f0c384e057b8ac7a1bf6c2780025441_8.png)
 
-![](img/2f0c384e057b8ac7a1bf6c2780025441_10.png)
 
-![](img/2f0c384e057b8ac7a1bf6c2780025441_12.png)
 
 如果你希望更快地开始，可以使用 Google 提供的 Colab 工具。它本质上是运行在 Google Drive 中的 Jupyter Notebook。
 
-![](img/2f0c384e057b8ac7a1bf6c2780025441_14.png)
 
 以下是使用 Colab 的步骤：
 
@@ -69,9 +63,7 @@ jupyter notebook
 
 请注意，首次打开来自 GitHub 的 Notebook 时，可能会看到安全提示，建议你审阅代码后再执行。
 
-![](img/2f0c384e057b8ac7a1bf6c2780025441_16.png)
 
-![](img/2f0c384e057b8ac7a1bf6c2780025441_18.png)
 
 ---
 

@@ -1,6 +1,5 @@
 #  067：利用 LLM 与 MCP 构建 LangGraph 应用
 
-![](img/50b57cc94108856575295e7ec6f3832f_1.png)
 
 ## 概述
 在本节课中，我们将学习如何利用 `lm.text` 文件和模型上下文协议（MCP），为 Cursor、Windsurf 和 Claude Desktop 等应用提供结构化的文档指引，从而高效地构建 LangGraph 应用。我们将从实际演示开始，逐步剖析其背后的原理与实现方法。
@@ -66,7 +65,6 @@
 
 ---
 
-![](img/50b57cc94108856575295e7ec6f3832f_9.png)
 
 ## 为 LLM 添加上下文的通用方法 📚
 
@@ -133,7 +131,6 @@ npx -y @modelcontextprotocol/server-adapter-langgraph-docs https://example.com/l
 
 以 Cursor 作为一个主机。转到设置，转到 MCP，添加新的 MCP 服务器，只需粘贴这个（这在 README 中有提供）。这只是运行我们刚刚运行的相同命令，但在这种特定情况下，主机应用程序 Cursor 将为我们运行它，启动它并连接到它。完成后，返回 MCP，你会看到它确实通过这个绿色图标连接了。转到聊天，选择代理。
 
-![](img/50b57cc94108856575295e7ec6f3832f_14.png)
 
 现在，我们这里的指令需要更有意义一些：“调用 `list_doc_sources` 工具以获取可用的 `lm.text` 文件。调用 `fetch_docs` 来读取它。调用 `fetch_docs` 来读取任何与回答问题相关的 URL。” 所有这些，你可以添加到 Cursor 规则中作为示例，这样你就不必实际将其添加到聊天中，但为了最大透明度，我把所有内容都放在这里。
 

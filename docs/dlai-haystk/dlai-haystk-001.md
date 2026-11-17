@@ -18,7 +18,6 @@
 results = vector_store.query(query_embedding=embedding, top_k=10)
 ```
 
-![](img/342055bf697e4ccb063138099eb39fe5_1.png)
 
 此外，框架可以直接提供通用功能，从而加快开发过程。例如，Haystack支持管道中的分支和循环。通过分支，你的管道可以在初始步骤未能提供足够信息时，运行网络搜索等备用方案。
 

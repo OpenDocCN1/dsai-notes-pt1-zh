@@ -1,25 +1,18 @@
 # 119：PyTorch中的ResNet-34代码示例 🧠💻
 
-![](img/04f4e9ff792401422c961a2d284ec86d_1.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_2.png)
 
 在本节课中，我们将学习如何在PyTorch中实现残差网络。我们将从两个角度进行探讨：首先，我会展示一个我自己编写的、用于理解原理的简单实现；然后，我们将查看并分析PyTorch社区提供的、更成熟的ResNet-34实现代码。
 
-![](img/04f4e9ff792401422c961a2d284ec86d_4.png)
 
 ## 概述
 残差网络通过引入“跳跃连接”解决了深度神经网络中的梯度消失和网络退化问题。本节将通过代码实践，帮助你理解残差块的结构以及如何构建一个深层残差网络。
 
-![](img/04f4e9ff792401422c961a2d284ec86d_6.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_8.png)
 
 ---
 
-![](img/04f4e9ff792401422c961a2d284ec86d_10.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_11.png)
 
 ## 1. 简单残差网络实现
 
@@ -27,7 +20,6 @@
 
 首先，我们导入必要的库并准备数据。为了专注于网络结构本身，这里使用MNIST数据集，因为它简单且易于加载。
 
-![](img/04f4e9ff792401422c961a2d284ec86d_13.png)
 
 ```python
 import torch
@@ -35,17 +27,12 @@ import torch.nn as nn
 import torch.nn.functional as F
 ```
 
-![](img/04f4e9ff792401422c961a2d284ec86d_15.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_16.png)
 
 以下是实现一个基础残差块的代码。这个块对应输入与残差部分输出维度相同的情况。
 
-![](img/04f4e9ff792401422c961a2d284ec86d_18.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_20.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_22.png)
 
 ```python
 class ResidualBlock(nn.Module):
@@ -77,9 +64,7 @@ class ResidualBlock(nn.Module):
         return out
 ```
 
-![](img/04f4e9ff792401422c961a2d284ec86d_24.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_26.png)
 
 **代码解析**：
 *   `inplace=True` 参数让ReLU激活函数直接修改输入张量，而不是创建副本，这能略微提升内存使用效率。
@@ -88,13 +73,9 @@ class ResidualBlock(nn.Module):
 
 接着，我们用一个简单的网络结构来测试这个残差块。
 
-![](img/04f4e9ff792401422c961a2d284ec86d_28.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_29.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_30.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_32.png)
 
 ```python
 class SimpleResNet(nn.Module):
@@ -121,33 +102,23 @@ class SimpleResNet(nn.Module):
         return x
 ```
 
-![](img/04f4e9ff792401422c961a2d284ec86d_34.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_36.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_38.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_39.png)
 
 训练这个简单网络后，在MNIST测试集上能达到约92%的准确率。这验证了我们残差块实现的基本正确性。
 
-![](img/04f4e9ff792401422c961a2d284ec86d_41.png)
 
 ---
 
-![](img/04f4e9ff792401422c961a2d284ec86d_43.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_45.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_47.png)
 
 ## 2. 更通用的残差块实现
 
 理解了基础结构后，我们来看一个更通用、功能更完整的残差块实现。这个实现可以灵活地改变通道数和特征图尺寸。
 
-![](img/04f4e9ff792401422c961a2d284ec86d_49.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_51.png)
 
 以下是改进后的残差块代码，它明确区分了块内的两条路径。
 
@@ -182,19 +153,13 @@ class BasicBlock(nn.Module):
         return out
 ```
 
-![](img/04f4e9ff792401422c961a2d284ec86d_53.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_54.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_55.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_57.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_58.png)
 
 在这个网络中，我们可以堆叠多个这样的基础块来增加深度。
 
-![](img/04f4e9ff792401422c961a2d284ec86d_60.png)
 
 ```python
 class DeeperResNet(nn.Module):
@@ -227,19 +192,12 @@ class DeeperResNet(nn.Module):
 
 这个实现允许我们通过传入不同的 `num_blocks` 列表（例如 `[2, 2, 2, 2]`）来方便地构建不同深度的网络。
 
-![](img/04f4e9ff792401422c961a2d284ec86d_62.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_63.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_64.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_65.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_66.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_67.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_68.png)
 
 ---
 
@@ -258,45 +216,32 @@ num_ftrs = model.fc.in_features
 model.fc = nn.Linear(num_ftrs, 10)
 ```
 
-![](img/04f4e9ff792401422c961a2d284ec86d_70.png)
 
 以下是使用官方ResNet-34在CIFAR-10数据集上进行训练的核心步骤：
 
-![](img/04f4e9ff792401422c961a2d284ec86d_72.png)
 
 1.  **数据准备**：加载并标准化CIFAR-10数据集。
 2.  **模型定义**：如上述代码所示，实例化ResNet-34并修改最后一层。
 3.  **训练循环**：定义损失函数（如交叉熵损失）和优化器（如SGD或Adam），然后进行标准的训练迭代。
 
-![](img/04f4e9ff792401422c961a2d284ec86d_74.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_75.png)
 
 在训练过程中，我们观察到ResNet-34相比之前的简单网络，在更短的时间内达到了更好的性能（例如在CIFAR-10上约48%的准确率），这体现了深度残差网络的有效性。当然，针对小数据集可能出现过拟合，可以考虑添加Dropout等正则化技术来提升泛化能力。
 
-![](img/04f4e9ff792401422c961a2d284ec86d_77.png)
 
 **核心建议**：在学习和理解原理时，从零开始实现是有价值的。但在实际应用中，应优先考虑使用像PyTorch官方模型库这样成熟、高效的代码库，这可以节省大量时间并避免不必要的错误。
 
-![](img/04f4e9ff792401422c961a2d284ec86d_79.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_81.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_83.png)
 
 ---
 
 ## 总结
 
-![](img/04f4e9ff792401422c961a2d284ec86d_85.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_86.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_87.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_88.png)
 
-![](img/04f4e9ff792401422c961a2d284ec86d_89.png)
 
 本节课中我们一起学习了残差网络在PyTorch中的实现。
 *   我们首先实现了一个简单的残差块，理解了跳跃连接和快捷路径的代码形式。

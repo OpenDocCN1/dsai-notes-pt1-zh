@@ -4,13 +4,11 @@ Hello and welcome In this video we'll be covering a recommender system technique
 
  so let's get started。
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_1.png)
 
 Collaborative filtering is based on the fact that relationships exist between products and people's interests。
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_3.png)
 
 Many recommendation systems use collaborative filtering to find these relationships and to give an accurate recommendation of a product that the user might like or be interested in Collabor filtering has basically two approaches。
 
@@ -18,7 +16,6 @@ Many recommendation systems use collaborative filtering to find these relationsh
 
 😊。
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_5.png)
 
 Item based collaborative filtering is based on similarity among items。
 
@@ -26,7 +23,6 @@ Let's first look at the intuition behind the user based approach。
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_7.png)
 
 In user based collaborative filtering， we have an active user for whom the recommendation is aimed。
 
@@ -40,7 +36,6 @@ Collaborative filtering bases this similarity on things like history。
 
  movies that similar users have rated highly。
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_9.png)
 
 Then it uses the ratings from these similar users to predict the possible ratings by the active user for a movie that she had not previously watched。
 
@@ -50,13 +45,11 @@ Then it uses the ratings from these similar users to predict the possible rating
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_11.png)
 
 Now， let's dive into the algorithm to see how all of this works。
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_13.png)
 
 Assume that we have a simple user item matrix， which shows the ratings of four users for five different movies。
 
@@ -66,7 +59,6 @@ Let's find out which of the two movies that our active user hasn't watched shoul
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_15.png)
 
 The first step is to discover how similar the active user is to the other users。 How do we do this？
 
@@ -86,7 +78,6 @@ These numbers represent similarity weights or proximity of the active user to ot
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_17.png)
 
 The next step is to create a weighted rating matrix。
 
@@ -96,13 +87,11 @@ The next step is to create a weighted rating matrix。
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_19.png)
 
 This is achieved by multiplying the similarity weights to the user ratings。
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_21.png)
 
 It results in a weighted ratings matrix， which represents the user's neighbor's opinion about our two candidate movies for recommendation。
 
@@ -110,13 +99,11 @@ In fact， it incorporates the behavior of other users and gives more weight to 
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_23.png)
 
 Now we can generate the recommendation matrix by aggregating all of the weighted rates。
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_25.png)
 
 However， as three users rated the first potential movie and two users rated the second movie。
 
@@ -124,7 +111,6 @@ However， as three users rated the first potential movie and two users rated th
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_27.png)
 
 The result is the potential rating that our active user will give to these movies based on her similarity to other users。
 
@@ -132,13 +118,11 @@ The result is the potential rating that our active user will give to these movie
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_29.png)
 
 Now， let's examine what's different between user based and item based collaborative filtering。
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_31.png)
 
 In the user based approach， the recommendation is based on users of the same neighborhood with whom he or she shares common preferences。
 
@@ -148,7 +132,6 @@ In the user based approach， the recommendation is based on users of the same n
 
  which is positively rated by user one to user3。
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_33.png)
 
 In the item based approach， similar items build neighborhoods on the behavior of users。 Please note。
 
@@ -158,7 +141,6 @@ In the item based approach， similar items build neighborhoods on the behavior 
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_35.png)
 
 So item1 can be recommended to user3 as he has already shown interest in item 3， therefore。
 
@@ -166,9 +148,7 @@ So item1 can be recommended to user3 as he has already shown interest in item 3�
 
 
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_37.png)
 
-![](img/1ab4db28142935a0427ff299d8c59b7c_38.png)
 
 Collaborative filtering is a very effective recommendation system， however。
 

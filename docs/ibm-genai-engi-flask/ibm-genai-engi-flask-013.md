@@ -91,7 +91,6 @@ def search_response():
 
 ## Flask应用级错误处理
 
-![](img/6d7b18bceba939cc9da3426e23e38364_1.png)
 
 Flask提供了一种在应用级别处理错误消息的方法。这里我们看到一个处理**404**错误的方法，它返回消息“API未找到”和状态码**404**。
 
@@ -103,9 +102,7 @@ def not_found(error):
 
 同样，这段代码片段为**500**错误创建了一个错误处理器，并返回消息“服务器端出错了”。
 
-![](img/6d7b18bceba939cc9da3426e23e38364_3.png)
 
-![](img/6d7b18bceba939cc9da3426e23e38364_4.png)
 
 ```python
 @app.errorhandler(500)

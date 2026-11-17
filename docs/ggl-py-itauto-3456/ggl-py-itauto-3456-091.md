@@ -12,13 +12,11 @@
 
 让我们检查一下，这个页面是否对我们同样失效。
 
-![](img/7995eed14aa83dc096130a7d9d743f79_5.png)
 
 ![](img/7995eed14aa83dc096130a7d9d743f79_1.png)
 
 问题出现了，服务器返回了 **500错误**。
 
-![](img/7995eed14aa83dc096130a7d9d743f79_3.png)
 
 这个错误通常意味着应用程序的服务器端有东西崩溃了。但我们不知道具体是什么。我们需要进行调查以获取更多信息。
 
@@ -146,7 +144,6 @@ ls -l /var/log/site.log*
 
 叮！叮！看来我们找到了问题的根本原因。让我们更改 `site.log` 文件的所有者来解决眼前的问题。
 
-![](img/7995eed14aa83dc096130a7d9d743f79_11.png)
 
 ```bash
 sudo chown www-data:www-data /var/log/site.log
@@ -156,7 +153,6 @@ sudo chown www-data:www-data /var/log/site.log
 
 ![](img/7995eed14aa83dc096130a7d9d743f79_11.png)
 
-![](img/7995eed14aa83dc096130a7d9d743f79_13.png)
 
 成功了！日志现在是空的，因为应用程序之前无法写入它，但如果我们持续刷新，就会看到它被我们的访问记录填满。
 

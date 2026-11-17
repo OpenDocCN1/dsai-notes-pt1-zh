@@ -268,7 +268,6 @@ font=, innertopmargin=2pt, innerbottommargin=2pt, innerleftmargin=8pt, innerrigh
 
 (a) 没有沟通的情况下。
 
-![参见说明文字](img/0f6e00169429930481f98a6de1ef1718.png)
 
 (b) 有沟通的情况下。
 
@@ -654,31 +653,24 @@ font=, innertopmargin=2pt, innerbottommargin=2pt, innerleftmargin=8pt, innerrigh
 | --- | --- | --- | --- |
 |  |  |  |  |
 
-![参见说明文字](img/bf7342bb9f44bb8d2f980461db3907d1.png)
 
 (a) Gemini 在位置 $(1,3)$
 
-![参见说明文字](img/3886f6c0c1ea06f69604319bffc665dc.png)
 
 (b) GPT-3.5 在位置 $(1,3)$
 
-![参见说明文字](img/3fac450f62efdd7f932273e2945f90af.png)
 
 (c) GPT-4 在位置 $(1,3)$
 
-![参见说明文字](img/fc30af1a7230856b5f716ff4de3454a7.png)
 
 (d) Claude 2 在位置 $(1,3)$
 
-![参见说明文字](img/87601702090fff2d1c882c8e9d1e4bca.png)
 
 (e) Gemini 在位置 $(2,6)$
 
-![参见说明文字](img/c988314b83bc0e4d7086073506aab409.png)
 
 (f) GPT-3.5 在位置 $(2,6)$
 
-![参见说明文字](img/0b6b6fbee680f67819374258724d9c18.png)
 
 (g) GPT-4 在位置 $(2,6)$
 
@@ -688,7 +680,6 @@ font=, innertopmargin=2pt, innerbottommargin=2pt, innerleftmargin=8pt, innerrigh
 
 图12：GPT-4、GPT-3.5、Gemini Pro和Claude 2在EE中的初步测试。绿色线表示每种设置下到最近出口的最短路线。当代理的起始位置为(2, 6)时，Gemini和GPT-3.5在多次模拟中选择了不同的路线。我们报告称，LLM在选择不同路线时相对均匀。
 
-![参考说明](img/95a3c34f1d6ad0cebdd74cb67a03a741.png)
 
 (a) 无通信。
 
@@ -732,7 +723,6 @@ font=, innertopmargin=2pt, innerbottommargin=2pt, innerleftmargin=8pt, innerrigh
 
 我们进行了敏感性分析，观察到在不同设置下，代理人在改写提示下始终保持对任务的准确理解，并且在竞争中的自发合作保持稳定。
 
-![参见说明文字](img/67841bd8bc6141c6d2d912cc6a8d11bd.png)
 
 (a) 有通信情况下。
 
@@ -784,7 +774,6 @@ font=, innertopmargin=2pt, innerbottommargin=2pt, innerleftmargin=8pt, innerrigh
 
 (a) 温度 = 0
 
-![参考说明](img/3868ce74ca3bf9e7d6786cfb73bf3c9a.png)
 
 (b) 温度 = 0.7
 

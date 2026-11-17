@@ -4,7 +4,6 @@
 
 ![](img/faf823c2bc8039ccf99eff970f54c538_3.png)
 
-![](img/faf823c2bc8039ccf99eff970f54c538_5.png)
 
 在本节课中，我们将学习如何在PyTorch中处理数据。所有输入模型的数据都需要是张量（Tensor）格式。因此，我们需要了解数据存储在哪里、如何获取，以及如何将其组织成批次（batches）以供模型训练。本节将重点介绍**数据集（Dataset）**和**数据加载器（DataLoader）**这两个核心概念。
 
@@ -45,7 +44,6 @@ import matplotlib.pyplot as plt
 数据集通常分为**训练集**和**测试集**。训练集用于学习输入与输出之间的关系，测试集用于评估学习到的关系。我们可以如下加载Fashion-MNIST数据：
 
 
-![](img/faf823c2bc8039ccf99eff970f54c538_15.png)
 
 ```python
 # 加载训练数据
@@ -91,9 +89,7 @@ test/cat.2.jpg,0
 
 为了创建自定义数据集，我们需要继承PyTorch的`torch.utils.data.Dataset`类，并实现两个必要的方法：`__len__`和`__getitem__`。
 
-![](img/faf823c2bc8039ccf99eff970f54c538_21.png)
 
-![](img/faf823c2bc8039ccf99eff970f54c538_23.png)
 
 以下是创建自定义数据集类的代码框架：
 

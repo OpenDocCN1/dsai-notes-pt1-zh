@@ -1,6 +1,5 @@
 # 第一部分 117：停用词演示 🧹
 
-![](img/1a5a97a84bd2b74d7a0a50cb59257062_1.png)
 
 在本节课中，我们将学习自然语言处理中的一个重要预处理步骤：停用词移除。我们将通过具体的代码示例，演示如何识别并移除文本中的停用词和标点符号，从而简化文本数据，为后续的分析任务做好准备。
 
@@ -54,7 +53,6 @@ filtered_tokens = [word for word in tokens if word.lower() not in stop_words]
 
 完成停用词移除后，我们可以计算剩余词汇的频率分布。
 
-![](img/1a5a97a84bd2b74d7a0a50cb59257062_3.png)
 
 以下是计算词频的代码：
 ```python
@@ -66,9 +64,7 @@ print(top_10)
 *   `FreqDist(filtered_tokens)` 函数根据过滤后的词元创建一个频率分布对象，用于统计每个唯一单词的出现次数。
 *   `most_common(10)` 方法用于从频率分布对象中检索出现频率最高的10个单词及其频次。
 
-![](img/1a5a97a84bd2b74d7a0a50cb59257062_5.png)
 
-![](img/1a5a97a84bd2b74d7a0a50cb59257062_6.png)
 
 执行上述代码后，控制台将打印移除停用词后最常见的10个单词。与原始文本相比，你可以感受到数据精简带来的变化。
 
@@ -78,7 +74,6 @@ print(top_10)
 
 我们使用另一段包含标点和停用词的样本文本。
 
-![](img/1a5a97a84bd2b74d7a0a50cb59257062_8.png)
 
 以下是包含标点的样本：
 ```python
@@ -117,17 +112,13 @@ print(final_filtered)
 
 ---
 
-![](img/1a5a97a84bd2b74d7a0a50cb59257062_10.png)
 
-![](img/1a5a97a84bd2b74d7a0a50cb59257062_11.png)
 
-![](img/1a5a97a84bd2b74d7a0a50cb59257062_12.png)
 
 为了量化预处理的效果，我们可以比较各处理阶段列表的长度。
 
 以下是计算和比较长度的代码：
 
-![](img/1a5a97a84bd2b74d7a0a50cb59257062_14.png)
 
 ```python
 original_length = len(gold_word_tokenized)

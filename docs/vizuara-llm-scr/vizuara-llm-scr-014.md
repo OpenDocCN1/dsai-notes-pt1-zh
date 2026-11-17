@@ -1,6 +1,5 @@
 # 14：使用键、查询和值矩阵编写自注意力机制
 
-![](img/ea3255f3accb2abafa78c4956cf43d27_0.png)
 
 ![](img/ea3255f3accb2abafa78c4956cf43d27_0.png)
 
@@ -173,10 +172,8 @@ class SelfAttentionV2(nn.Module):
 
 我们还将整个过程封装成了一个PyTorch模块。理解这个流程是掌握Transformer模型的基础。下一节课，我们将学习因果注意力，这是一种修改，用于防止模型在生成文本时“看到”未来的信息。
 
-![](img/ea3255f3accb2abafa78c4956cf43d27_2.png)
 
 ![](img/ea3255f3accb2abafa78c4956cf43d27_2.png)
 
-![](img/ea3255f3accb2abafa78c4956cf43d27_3.png)
 
 ![](img/ea3255f3accb2abafa78c4956cf43d27_3.png)

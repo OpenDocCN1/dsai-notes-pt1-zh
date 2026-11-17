@@ -1,6 +1,5 @@
 # 030：深入理解Amazon EMR 🚀
 
-![](img/b48d1bcbd18a438826c55c280e45b696_0.png)
 
 在本节课中，我们将深入学习Amazon EMR，这是一个支持多种处理框架的大数据处理工具。我们将探讨其工作原理、核心特性，并通过一个简单的示例演示如何在EMR Studio笔记本中运行Spark作业。
 
@@ -26,15 +25,12 @@
 
 ---
 
-![](img/b48d1bcbd18a438826c55c280e45b696_2.png)
 
 ## EMR支持的大数据框架
 
-![](img/b48d1bcbd18a438826c55c280e45b696_4.png)
 
 EMR支持众多流行的大数据框架，包括Apache Spark、Hadoop、Hive、Presto、Flink、HBase以及许多其他支持数据分析任务的工具和框架。
 
-![](img/b48d1bcbd18a438826c55c280e45b696_6.png)
 
 EMR提供了一个托管环境，简化了这些框架的设置和扩展，并原生集成了其他AWS服务。因此，使用EMR，你可以更专注于数据工作流，而不是底层基础设施。
 
@@ -46,7 +42,6 @@ EMR提供了一个托管环境，简化了这些框架的设置和扩展，并�
 
 其工作方式是，当你启动集群时，EMR会将数据从S3流式传输到集群中的每个实例，并开始处理。
 
-![](img/b48d1bcbd18a438826c55c280e45b696_8.png)
 
 将数据存储在S3的另一个优势是，你可以使用多个EMR集群以不同方式处理相同的数据。EMR还可以与其他AWS数据源集成，例如Amazon DynamoDB、Amazon RDS和Amazon Redshift。
 
@@ -58,7 +53,6 @@ EMR提供了一个托管环境，简化了这些框架的设置和扩展，并�
 
 让我们通过一个使用笔记本的基本示例，为你完成实验做好准备。
 
-![](img/b48d1bcbd18a438826c55c280e45b696_10.png)
 
 以下是使用EMR Studio运行Spark作业的基本步骤：
 
@@ -70,14 +64,10 @@ EMR提供了一个托管环境，简化了这些框架的设置和扩展，并�
 例如，你可以运行一个简单的PySpark脚本来分析S3桶中的数据。以下是一个计算特定日期范围内出租车行程平均费用的示例代码片段：
 
 
-![](img/b48d1bcbd18a438826c55c280e45b696_12.png)
-
-![](img/b48d1bcbd18a438826c55c280e45b696_13.png)
 
 
-![](img/b48d1bcbd18a438826c55c280e45b696_15.png)
 
-![](img/b48d1bcbd18a438826c55c280e45b696_16.png)
+
 
 ```python
 from pyspark.sql import SparkSession

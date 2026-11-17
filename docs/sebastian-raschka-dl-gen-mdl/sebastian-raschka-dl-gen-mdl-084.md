@@ -1,10 +1,8 @@
 # 084：PyTorch中的BatchNorm——代码示例 📘
 
-![](img/aeb25691e121006a98ee99d0231958bf_0.png)
 
 在本节课中，我们将学习如何在PyTorch中实际使用批归一化（Batch Normalization），并简要讨论在模型推理阶段批归一化是如何工作的。
 
-![](img/aeb25691e121006a98ee99d0231958bf_2.png)
 
 ## 概述
 
@@ -47,7 +45,6 @@ class MultilayerPerceptron(nn.Module):
         return x
 ```
 
-![](img/aeb25691e121006a98ee99d0231958bf_4.png)
 
 **代码说明：**
 *   `nn.BatchNorm1d`：这是用于全连接层的批归一化。对于卷积层，我们会使用`nn.BatchNorm2d`。
@@ -72,7 +69,6 @@ class MultilayerPerceptron(nn.Module):
 
 在训练函数中，我们必须正确设置模型的模式：
 
-![](img/aeb25691e121006a98ee99d0231958bf_6.png)
 
 ```python
 def train(model, data_loader, ...):
@@ -90,7 +86,6 @@ def evaluate(model, data_loader, ...):
 
 ## 推理时的处理机制
 
-![](img/aeb25691e121006a98ee99d0231958bf_8.png)
 
 那么，在推理时使用的 `running_mean` 和 `running_var` 是如何计算的呢？
 
@@ -107,9 +102,7 @@ def evaluate(model, data_loader, ...):
 
 ## 总结
 
-![](img/aeb25691e121006a98ee99d0231958bf_10.png)
 
-![](img/aeb25691e121006a98ee99d0231958bf_11.png)
 
 本节课中我们一起学习了：
 1.  如何在PyTorch中通过添加 `nn.BatchNorm1d` 或 `nn.BatchNorm2d` 层来实现批归一化。
@@ -118,7 +111,6 @@ def evaluate(model, data_loader, ...):
 4.  必须通过 `model.train()` 和 `model.eval()` 正确管理模型模式，这对批归一化至关重要。
 5.  在推理阶段，批归一化使用训练时通过指数移动平均计算得到的运行均值和方差，从而能够处理单个数据点的预测。
 
-![](img/aeb25691e121006a98ee99d0231958bf_13.png)
 
 ![](img/aeb25691e121006a98ee99d0231958bf_14.png)
 

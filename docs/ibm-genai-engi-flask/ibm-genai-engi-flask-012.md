@@ -2,11 +2,9 @@
 
 在本节课中，我们将学习如何在 Flask 框架中调用外部 API，以及如何通过动态路由向 URL 传递参数。掌握这些技能对于构建能够与外部服务交互、并能处理不同请求的 RESTful API 至关重要。
 
-![](img/a340d947f491c24ab6874605b1f9e155_1.png)
 
 ## 调用外部 API 📡
 
-![](img/a340d947f491c24ab6874605b1f9e155_2.png)
 
 在 Flask 应用中，调用外部 API 是一种常见需求。最简单的方法是使用 Python 的 `requests` 库。你可以将外部 API 返回的 JSON 数据直接发送给客户端，也可以在发送前对结果进行处理。
 
@@ -29,7 +27,6 @@ def get_author():
 
 然后，将响应存储在变量 `res` 中。检查来自 Open Library API 的响应状态码是否为 200。
 
-![](img/a340d947f491c24ab6874605b1f9e155_4.png)
 
 ```python
     if res.status_code == 200:
@@ -38,7 +35,6 @@ def get_author():
 
 如果响应状态码恰好是 404，则发送一条“出错了”的消息。
 
-![](img/a340d947f491c24ab6874605b1f9e155_6.png)
 
 ```python
     elif res.status_code == 404:
@@ -54,13 +50,11 @@ def get_author():
 
 ## 动态路由参数 🔄
 
-![](img/a340d947f491c24ab6874605b1f9e155_8.png)
 
 上一节我们介绍了如何调用外部 API，本节中我们来看看如何让路由变得更灵活。在开发 RESTful API 时，你可以将一些资源 ID 作为请求 URL 的一部分发送。例如，你想创建一个通过国际标准书号（ISBN）返回图书信息的端点，但你不希望硬编码 ISBN，而是希望客户端将其作为 URL 的一部分发送。Flask 为此提供了动态路由功能。
 
 现在让我们看一个具体例子。在 URL 中添加一个名为 `isbn` 的变量作为动态部分，然后将这个变量传递给 Open Library API，最后将结果发送回客户端。
 
-![](img/a340d947f491c24ab6874605b1f9e155_10.png)
 
 ```python
 @app.route('/book/<isbn>')
@@ -78,7 +72,6 @@ Flask 还允许你设置参数类型。框架会利用这些信息来验证传�
 
 同样地，在上一个例子中，你可以指定 `isbn` 必须是一个数字。
 
-![](img/a340d947f491c24ab6874605b1f9e155_12.png)
 
 ```python
 @app.route('/book/<int:isbn>')
@@ -96,9 +89,7 @@ def get_book_by_int_isbn(isbn):
 *   **`path`**： 类似 `string`，但接受斜杠，常用于表示路径。
 *   **`uuid`**： 接受 UUID 字符串，用于表示全局唯一标识符。
 
-![](img/a340d947f491c24ab6874605b1f9e155_14.png)
 
-![](img/a340d947f491c24ab6874605b1f9e155_16.png)
 
 虽然 `string`、`int` 和 `float` 是简单参数，但你也可以使用复杂的类型，如 `path` 来表示网页路径或文件夹路径，或者使用 `uuid` 来表示像 GUID 这样的唯一 ID。
 
@@ -108,7 +99,6 @@ def get_book_by_int_isbn(isbn):
 
 你可以这样编写代码：路由期望一个类型为 `uuid` 的变量 `network_id`，该 UUID 会作为参数传递给方法。如果找到该 UUID，则返回成功消息；否则，返回带有相应消息的错误代码。
 
-![](img/a340d947f491c24ab6874605b1f9e155_18.png)
 
 ```python
 import uuid
@@ -124,7 +114,6 @@ def get_network(network_id):
 
 ## 总结 📝
 
-![](img/a340d947f491c24ab6874605b1f9e155_20.png)
 
 ![](img/a340d947f491c24ab6874605b1f9e155_22.png)
 

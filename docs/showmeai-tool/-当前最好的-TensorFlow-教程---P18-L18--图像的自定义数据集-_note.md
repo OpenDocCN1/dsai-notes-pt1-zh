@@ -8,7 +8,6 @@
 
 ## 概述 📋
 
-![](img/5a48387aad10b0cf4a2d2bc3dacad647_4.png)
 
 加载自定义图像数据是深度学习项目中的常见任务。我们将探讨三种主流方法，分别适用于不同的数据组织格式：按子文件夹分类、使用CSV文件索引以及从单一文件夹中解析文件名。每种方法都将通过代码示例进行详细说明。
 
@@ -27,7 +26,6 @@
 首先，我们导入必要的库并设置基本参数。
 
 
-![](img/5a48387aad10b0cf4a2d2bc3dacad647_7.png)
 
 ```python
 import tensorflow as tf
@@ -39,7 +37,6 @@ image_width = 28
 batch_size = 2
 ```
 
-![](img/5a48387aad10b0cf4a2d2bc3dacad647_9.png)
 
 接下来，我们使用 `tf.keras.utils.image_dataset_from_directory` 函数来创建数据集。该函数会自动根据子文件夹名称推断标签。
 
@@ -78,7 +75,6 @@ ds_validation = tf.keras.utils.image_dataset_from_directory(
 创建数据集后，我们可以方便地应用数据增强并训练模型。
 
 
-![](img/5a48387aad10b0cf4a2d2bc3dacad647_11.png)
 
 ```python
 # 定义一个简单的数据增强函数
@@ -108,7 +104,6 @@ model.fit(ds_train, validation_data=ds_validation, epochs=10)
 
 ## 方法二：使用 `ImageDataGenerator` 与目录流 📂
 
-![](img/5a48387aad10b0cf4a2d2bc3dacad647_13.png)
 
 上一节我们介绍了使用内置API直接加载数据集。本节中我们来看看另一种传统但灵活的方法：使用 `ImageDataGenerator` 从目录流式读取数据。这种方法在Keras的早期版本中非常流行，允许在数据加载时进行复杂的实时增强。
 
@@ -184,9 +179,7 @@ model.fit(
 
 ## 方法三：使用CSV文件或文件名解析索引数据 📄
 
-![](img/5a48387aad10b0cf4a2d2bc3dacad647_17.png)
 
-![](img/5a48387aad10b0cf4a2d2bc3dacad647_18.png)
 
 如果你的所有图像都存放在一个文件夹中，并通过一个CSV文件或特定的文件名格式来关联图像和标签，那么这种方法非常适合你。
 
@@ -229,7 +222,6 @@ def read_and_preprocess(image_path, label):
 ds_train = ds.map(read_and_preprocess).batch(batch_size)
 ```
 
-![](img/5a48387aad10b0cf4a2d2bc3dacad647_21.png)
 
 ### 情况B：从文件名解析标签
 

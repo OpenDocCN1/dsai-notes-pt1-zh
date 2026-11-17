@@ -55,7 +55,6 @@ close_price.columns.name = 'code'  # 设置列名称为‘股票代码’
 
 该函数接收我们上一步转换好的完整数据作为输入，并返回计算好的IC值序列。IC值是一个时间序列，展示了因子在不同日期的预测能力。
 
-![](img/78a22dc08208d27f0678f012931a3d43_1.png)
 
 ```python
 from quant_analysis.performance import factor_information_coefficient
@@ -64,7 +63,6 @@ from quant_analysis.performance import factor_information_coefficient
 ic_series = factor_information_coefficient(formatted_data)
 ```
 
-![](img/78a22dc08208d27f0678f012931a3d43_3.png)
 
 计算完成后，`ic_series` 就是一个 `DataFrame`，其中包含一列名为 **IC** 的值，这就是我们需要的IC指标值序列。我们可以通过 `ic_series.head()` 来查看前几天的IC值。
 

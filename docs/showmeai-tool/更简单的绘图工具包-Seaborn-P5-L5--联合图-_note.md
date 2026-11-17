@@ -12,7 +12,6 @@
 
 我们可以使用 `sns.jointplot()` 函数来创建联合图。假设我们有一个数据集，想在 X 轴上分析“人员是否超速”的数据，在 Y 轴上分析“人员是否酒后驾驶”的数据。
 
-![](img/282d6cd4f3216bcb6ed4714dc449dabd_1.png)
 
 以下是创建基础联合图的代码示例：
 
@@ -46,13 +45,11 @@ plt.show()
 
 ### 2. 核密度估计图
 
-![](img/282d6cd4f3216bcb6ed4714dc449dabd_3.png)
 
 核密度估计是一种用于估计数据概率密度函数的非参数方法。在联合图中，我们可以用等高线图来展示双变量的核密度估计。
 
 以下是创建 KDE 图的代码：
 
-![](img/282d6cd4f3216bcb6ed4714dc449dabd_4.png)
 
 ```python
 sns.jointplot(data=df, x='speeding', y='alcohol', kind='kde')
@@ -63,13 +60,11 @@ plt.show()
 
 ### 3. 六边形图
 
-![](img/282d6cd4f3216bcb6ed4714dc449dabd_5.png)
 
 当数据点非常密集时，散点图可能难以解读。六边形图将平面划分为多个六边形，用颜色深浅表示每个六边形区域内数据点的数量，适用于展示大量数据的分布。
 
 以下是创建六边形图的代码：
 
-![](img/282d6cd4f3216bcb6ed4714dc449dabd_6.png)
 
 ```python
 sns.jointplot(data=df, x='speeding', y='alcohol', kind='hex')

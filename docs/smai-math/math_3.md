@@ -17,7 +17,6 @@
 
 **概率论**（Probability Theory），是研究随机现象数量规律的数学分支，度量事物的不确定性。
 
-![概率论&应用 Probability Theory](img/6b74b2898462d57171bd51e614ea6c9d.png)
 
 机器学习大部分时候处理的都是不确定量或随机量。因此，相对计算机科学的其他许多分支而言，机器学习会更多地使用概率论。很多典型的机器学习算法模型也是基于概率的，比如朴素贝叶斯（Naive Bayesian）等。
 
@@ -32,7 +31,6 @@
 
 *   例如， X X X 为随机变量， x 1 x_{1} x1​、 x 2 x_{2} x2​、 x i x_{i} xi​是随机变量 X X X 可能的取值。
 
-![随机变量 Random Variable](img/8727dff5dd694f01e1e72613254bb5aa.png)
 
 随机变量可以分为『离散型随机变量』和『连续型随机变量』：
 
@@ -42,7 +40,6 @@
 
 # 3.随机向量（Random Vector）
 
-![随机向量 Random Vector](img/2a2cff834ae6a6edb910c0ac9fde3170.png)
 
 将几个随机变量按顺序放在一起，组成向量的形式，就是随机向量。
 
@@ -56,7 +53,6 @@
 
 狭义地，概率分布指随机变量地概率分布函数，也称累积分布函数（Cumulative Distribution Function，CDF）。
 
-![概率分布 Probability Distribution](img/b9be039b741c55dc70d9dfdc1d224604.png)
 
 **离散型随机变量的概率分布**：
 
@@ -74,7 +70,6 @@
 
 # 5.条件概率（Conditional Probability）
 
-![条件概率 Conditional Probability](img/d8a9b262b2b44011dda013cd134ae510.png)
 
 很多情况下我们感兴趣的是，某个事件在给定其它事件发生时出现的概率，这种概率叫条件概率。
 
@@ -88,7 +83,6 @@
 
 > **后验概率**：该疾病的检测准确率为 95%，即该病患者检测显示阳性的概率为 95%（检测显示阴性的概率为 5%），即 P (  显示阳性|患病  ) = 95 % P(\text { 显示阳性|患病 })=95\% P( 显示阳性|患病 )=95%；或者说未患病的检测者，检测结果显示阴性的概率为 95%，检测显示阳性的概率为 5%。那么，检测显示为阳性时，此人的患病概率 P (  患病| 显示阳性 ) P(\text { 患病| 显示阳性}) P( 患病| 显示阳性)就叫做『后验概率』。
 
-![贝叶斯公式 Bayes' Theorem](img/93c9f93d390ed72785451487decd97fa.png)
 
 **贝叶斯公式：贝叶斯提供了一种利用『先验概率』计算『后验概率』的方法**：
 
@@ -113,7 +107,6 @@ P (  患病  ∣  显示阳性  ) = P (  显示阳性|患病  ) P (  患�
 
 在概率论和统计学中，数学期望是试验中每次可能结果的概率乘以其结果的总和。期望是最基本的数学特征之一，反映随机变量平均值的大小。
 
-![期望 Expectation](img/f0e6290fece4a5bbcf3af1d574c8b4f8.png)
 
 假设 X X X 是一个离散型随机变量，其可能的取值有 { x 1 , x 2 , … , x n } \left\{x_{1}, x_{2}, \ldots, x_{n}\right\} {x1​,x2​,…,xn​}，各取值对应的概率取值为 P ( x k ) P\left(x_{k}\right) P(xk​)， k = 1 , 2 , … , n k=1, 2, \ldots, n k=1,2,…,n。其数学期望被定义为：
 
@@ -127,7 +120,6 @@ E ( x ) = ∫ − ω + w x f ( x ) d x E(x)=\int_{-\boldsymbol{\omega}}^{+\bolds
 
 在概率论和统计学中，样本方差，是各个样本数据分别与其平均数之差的平方和的平均数。方差用来衡量随机变量与其数学期望之间的偏离程度。
 
-![方差 Variance](img/90c85885e9a3e0e711a4ec7867f30c37.png)
 
 **离散型**：（ μ \mu μ表示期望）
 
@@ -143,7 +135,6 @@ D ( x ) = ∫ ( x − μ ) 2 f ( x ) d x D(x)=\int(x-\mu)^{2} f(x) d x D(x)=∫(
 
 # 9.协方差（Covariance）
 
-![协方差 Covariance](img/9c385149856293423227f3aaa848e4bc.png)
 
 在概率论和统计学中，协方差被用于衡量两个随机变量 X X X 和 Y Y Y 之间的总体误差。期望值分别为 E [ X ] E[X] E[X]与 E [ Y ] E[Y] E[Y]的两个实随机变量 X X X 与 Y Y Y 之间的协方差为：
 
@@ -157,7 +148,6 @@ C o v ( X , Y ) = E ( X Y ) − E ( X ) E ( Y ) Cov(X, Y)=E(X Y)-E(X) E(Y) Cov(X
 
 # 10.相关系数（Correlation coefficient）
 
-![相关系数 Correlation Coefficient](img/b4af867989c0c00af0cbb4a7ef4e291b.png)
 
 相关系数是最早由统计学家卡尔·皮尔逊设计的统计指标，用以研究变量之间线性相关程度。相关系数有多种定义方式，较为常用的是皮尔逊相关系数。从协方差中会得到引申，就是关联系数，即：（ σ \sigma σ是标准差）
 
@@ -169,13 +159,11 @@ C o v ( X , Y ) = E ( X Y ) − E ( X ) E ( Y ) Cov(X, Y)=E(X Y)-E(X) E(Y) Cov(X
 
 # 11.常见分布函数
 
-![常见分布函数 Distribution Function](img/adb089f472de8b3f1a7076786eb3f0ab.png)
 
 ## 1）伯努利分布（Bernoulli Distribution）（离散型）
 
 在概率论和统计学中，伯努利分布也叫 0-1 分布，是单个二值型离散随机变量的分布。
 
-![伯努利分布 Bernoulli Distribution](img/627367ebf5ec5a497e9c96aaf13d2a16.png)
 
 *   概率分布函数： P ( X = k ) = p k ( 1 − p ) 1 − k P(X=k)=p^{k}(1-p)^{1-k} P(X=k)=pk(1−p)1−k
 *   期望： E ( X ) = p E(X)=p E(X)=p
@@ -184,7 +172,6 @@ C o v ( X , Y ) = E ( X Y ) − E ( X ) E ( Y ) Cov(X, Y)=E(X Y)-E(X) E(Y) Cov(X
 ## 2）几何分布（Geometric Distribution）（离散型）
 
 在概率论和统计学中，几何分布是离散型概率分布，数学符号为 X ∼ G ( p ) X\sim G(p) X∼G(p)。其定义为：在 n n n 次伯努利试验中，试验 k k k 次才得到第一次成功的机率（即前 k − 1 k-1 k−1 次皆失败，第 k k k 次成功的概率）
-![几何分布 Geometric Distribution](img/22eb716acb31396a1de5eb660f270cdf.png)
 
 *   概率分布函数： P ( X = k ) = ( 1 − p ) k − 1 p P(X=k)=(1-p)^{k-1} p P(X=k)=(1−p)k−1p
 *   期望： E ( X ) = 1 p E(X)=\frac{1}{p} E(X)=p1​
@@ -194,7 +181,6 @@ C o v ( X , Y ) = E ( X Y ) − E ( X ) E ( Y ) Cov(X, Y)=E(X Y)-E(X) E(Y) Cov(X
 
 在概率论和统计学中，二项分布即重复 n n n 次伯努利试验，各次试验之间都相互独立，并且每次试验中只有两种可能的结果，而且这两种结果发生与否相互对立，数学符号为 X ∼ B ( n , p ) X∼B(n,p) X∼B(n,p)。
 
-![二项分布 Binomial Distribution](img/d6851f60a229d93deb0ac19739c745d4.png)
 如果每次试验时，事件发生的概率为 p p p，不发生的概率为 1 − p 1-p 1−p，则 n n n 次重复独立试验中发生 k k k 次的概率为： P ( X = k ) = C n k p k ( 1 − p ) n − k P(X=k)=C_{n}^{k} p^{k}(1-p)^{n-k} P(X=k)=Cnk​pk(1−p)n−k
 
 *   期望： E ( X ) = n p E(X)=n p E(X)=np
@@ -205,7 +191,6 @@ C o v ( X , Y ) = E ( X Y ) − E ( X ) E ( Y ) Cov(X, Y)=E(X Y)-E(X) E(Y) Cov(X
 
 在概率论和统计学中，泊松分布是一种统计与概率学里常见到的离散概率分布，用于描述某段时间内事件具体的发生概率，数学符号为 X ∼ π ( λ ) X∼\pi \left ( \lambda \right ) X∼π(λ)。
 
-![泊松分布 Poisson Distribution](img/fbbf2d4e8ad8587d7e961981858dc773.png)
 泊松分布的参数 λ \lambda λ表示单位时间(或单位面积)内随机事件的平均发生次数，其概率分布函数为： P ( X = k ) = ( λ ) k e − λ k ! P(X=k)=\frac{(\lambda )^{k} e^{-\lambda}}{k !} P(X=k)=k!(λ)ke−λ​
 
 *   期望： E ( X ) = λ E(X)=\lambda E(X)=λ
@@ -229,7 +214,6 @@ C o v ( X , Y ) = E ( X Y ) − E ( X ) E ( Y ) Cov(X, Y)=E(X Y)-E(X) E(Y) Cov(X
 
 在概率论和统计学中，正态分布又叫高斯分布（Gaussian Distribution），其曲线呈钟型，两头低，中间高，左右对称因其曲线呈钟形。数学符号为 X ∼ N ( μ , σ 2 ) X∼N\left(\mu, \sigma^{2}\right) X∼N(μ,σ2)。
 
-![正态分布 Normal Distribution](img/8700b03020dfa94c874cc80669743f89.png)
 若随机变量 X X X 服从一个数学期望为 μ \mu μ、方差为 σ 2 \sigma^{2} σ2 的正态分布，其概率分布函数： f ( x ) = 1 2 π σ e − ( x − μ ) 2 2 σ 2 f(x)=\frac{1}{\sqrt{2 \pi} \sigma} e ^{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}} f(x)=2π  ​σ1​e−2σ2(x−μ)2​
 
 *   期望： E ( X ) = μ E(X)=\mu E(X)=μ
@@ -241,7 +225,6 @@ C o v ( X , Y ) = E ( X Y ) − E ( X ) E ( Y ) Cov(X, Y)=E(X Y)-E(X) E(Y) Cov(X
 
 均匀分布由两个参数 a a a 和 b b b 定义，数学符号为 X ∼ U ( a , b ) X∼U (a, b) X∼U(a,b)（其中， a a a 为数轴上较小值， b b b 为数轴上较大值）。
 
-![均匀分布 Gaussian Distribution](img/36a3ec9660ad180c4e2a487485b9ee56.png)
 其概率分布函数：$f(x)=\frac{1}{b-a} , a
 
 *   期望： E ( X ) = a + b 2 E(X)=\frac{a+b}{2} E(X)=2a+b​
@@ -251,7 +234,6 @@ C o v ( X , Y ) = E ( X Y ) − E ( X ) E ( Y ) Cov(X, Y)=E(X Y)-E(X) E(Y) Cov(X
 
 在概率论和统计学中，指数分布与其他分布的最大不同之处在于，随机变量 X X X 指的是不同独立事件发生的时间间隔值，时间越长事件发生的概率指数型增大(减小)，数学符号为 X ∼ E ( λ ) X∼E(\lambda) X∼E(λ)。
 
-![指数分布 Exponential Distribution](img/a333966087101eb827a6444749aff572.png)
 指数分布的参数 λ \lambda λ表示单位时间(或单位面积)内随机事件的平均发生次数，其概率分布函数为： f ( x ) = λ e − λ x , x ≥ 0 f(x) = \lambda e^{-\lambda x}, x\ge 0 f(x)=λe−λx,x≥0
 
 *   期望： E ( X ) = 1 λ E(X)=\frac{1}{\lambda} E(X)=λ1​
@@ -266,9 +248,7 @@ C o v ( X , Y ) = E ( X Y ) − E ( X ) E ( Y ) Cov(X, Y)=E(X Y)-E(X) E(Y) Cov(X
 
 一些总结：
 
-![常见分布函数 Distribution Function](img/a5cdc7431f00970f8894bf970f293e29.png)
 
-![常见分布函数 Distribution Function](img/5c87cecb662e38a26663b2e27b5dafbb.png)
 
 # 12.拉格朗日乘子法（Lagrange Multiplier）
 
@@ -280,7 +260,6 @@ m a x f ( x , y ） s . t . g ( x , y ) = 0 maxf(x,y）s.t. \quad g(x,y)=0 maxf(
 此时我们可以构造 L ( x , y , λ ) = f ( x , y ) − λ ( g ( x , y ) − c ) L(x,y,\lambda )=f(x,y) − \lambda \left ( g(x,y) -c \right ) L(x,y,λ)=f(x,y)−λ(g(x,y)−c)，其中 λ \lambda λ称为拉格朗日乘子。接下来要对拉格朗日函数 L ( x , y , λ ) L(x,y,\lambda ) L(x,y,λ)求导，令其为 0，解方程即可。
 
 以下是图文解释：
-![拉格朗日乘子法 Lagrange Multiplier](img/095c0befc842f9896cf4b8ba6ad3f5ae.png)
 
 > 红线标出的是约束 g ( x , y ) = c g(x,y)=c g(x,y)=c 的点的轨迹。蓝线是 f ( x , y ) f(x,y) f(x,y)的等高线。箭头表示斜率，和等高线的法线平行，从梯度的方向上来看显然有 d 1 > d 2 d_{1}>d_{2} d1​>d2​。
 

@@ -20,7 +20,6 @@ sns.countplot(x='column_name', data=df)
 
 上一节我们介绍了计数图的基本用法，本节中我们来看看如何通过参数来定制图表的外观和展示维度。`countplot` 函数提供了丰富的参数选项。
 
-![](img/1e01839902a44c247e317b96b48ed9df_1.png)
 
 以下是 `countplot` 函数的一些关键参数及其作用：
 
@@ -30,39 +29,27 @@ sns.countplot(x='column_name', data=df)
 *   **`saturation`**: 此参数控制颜色的饱和度，取值范围通常在0到1之间。
 *   **`dodge`**: 当使用了 `hue` 参数时，`dodge` 参数控制是否将不同 `hue` 类别的条形并排显示（`dodge=True`）还是堆叠显示（`dodge=False`）。
 
-![](img/1e01839902a44c247e317b96b48ed9df_2.png)
 
 你可以将鼠标光标放在函数名后，按下 `Shift` 和 `Tab` 键来查看所有可用的额外选项和参数的详细说明。
 
 ## 图表示例
 
-![](img/1e01839902a44c247e317b96b48ed9df_3.png)
 
 以下是一些计数图的示例，展示了不同参数设置下的效果：
 
-![](img/1e01839902a44c247e317b96b48ed9df_1.png)
 
-![](img/1e01839902a44c247e317b96b48ed9df_4.png)
 
-![](img/1e01839902a44c247e317b96b48ed9df_2.png)
 
-![](img/1e01839902a44c247e317b96b48ed9df_3.png)
 
-![](img/1e01839902a44c247e317b96b48ed9df_5.png)
 
-![](img/1e01839902a44c247e317b96b48ed9df_4.png)
 
-![](img/1e01839902a44c247e317b96b48ed9df_5.png)
 
-![](img/1e01839902a44c247e317b96b48ed9df_6.png)
 
-![](img/1e01839902a44c247e317b96b48ed9df_6.png)
 
 ## 总结
 
 本节课中我们一起学习了Seaborn中的计数图。我们了解到计数图是用于展示分类数据频次分布的有效工具，其核心是 `sns.countplot()` 函数。我们探讨了其基本用法，并介绍了如何通过 `hue`, `order`, `palette` 等参数来增强图表的表达能力和美观性。
 
-![](img/1e01839902a44c247e317b96b48ed9df_8.png)
 
 好的，关于计数图的内容就介绍到这里。接下来，我们将开始学习箱形图。
 

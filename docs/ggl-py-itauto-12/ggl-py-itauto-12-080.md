@@ -8,7 +8,6 @@
 
 ---
 
-![](img/36e2a5cce5e653ae97ad0d3302da9c29_3.png)
 
 ## 检查 Python 安装情况
 

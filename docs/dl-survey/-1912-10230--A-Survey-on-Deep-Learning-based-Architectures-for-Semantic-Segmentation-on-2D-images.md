@@ -227,11 +227,9 @@ IoU 及其变体，加上 AP，是最流行的语义分割挑战中最常用的�
 
 尽管前深度学习时代提到的方法不再被优先作为分割方法，但一些图形模型，尤其是条件随机场（CRFs），目前被最先进的方法用作后处理（细化）层，目的是提高语义分割性能，具体细节将在以下部分讨论。
 
-![参见标题](img/7ab09c7412fcf601c948f1a3da29cf8d.png)
 
 (a) 输入图像
 
-![参见标题](img/f1716e7db046c8fc17e82b8fac78f293.png)
 
 (b) 分割图像
 
@@ -361,35 +359,27 @@ FCN 架构在许多方面被认为是具有革命性的。首先，由于 FCNs �
 
 (a) 图像
 
-![参见说明](img/c87c59642172e095519349471ee0036c.png)
 
 (b) 参考
 
-![参见说明](img/bc9fc884b3a09df3123cd736bc5434a7.png)
 
 (c) FCN-32S
 
-![参见说明](img/eba7b34561b5680f27e8736f58e7037b.png)
 
 (d) FCN-8S
 
-![参见说明](img/f82fc5d19719873916352e6fbceaf239.png)
 
 (e) CMSA
 
-![参见说明](img/724899ee55cec8d26f93a6b9e95cc480.png)
 
 (f) DeepLabv1
 
-![参见说明](img/1eb07e79f0b7c2bd7404db2bd1923f1c.png)
 
 (g) CRF-as-RNN
 
-![参见说明](img/42e2f2696458767611b0ee5a29df3d60.png)
 
 (h) DeepLab.v2
 
-![参见说明](img/dc8056f4cda54dcd25d9a48af0c376c2.png)
 
 (i) DeepLab.v2+CRF
 

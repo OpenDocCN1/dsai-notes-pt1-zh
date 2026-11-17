@@ -141,10 +141,8 @@ int sumDivisibleBy(int n, int divisor) {
 
 谷歌以及很多公司的面试题并没有固定套路，题目往往很灵活。多总结、多思考、多归纳，才能培养出解决问题的“感觉”。希望本课的内容能对大家的面试准备有所帮助。祝大家好运！
 
-![](img/dede538c71ec04cd7fe8e89d3c3f6d36_1.png)
 
 ![](img/dede538c71ec04cd7fe8e89d3c3f6d36_1.png)
 
-![](img/dede538c71ec04cd7fe8e89d3c3f6d36_2.png)
 
 ![](img/dede538c71ec04cd7fe8e89d3c3f6d36_2.png)

@@ -1,6 +1,5 @@
 # TensorFlow 初学者教程 P8：L9 - 迁移学习 🚀
 
-![](img/61fab98aab26950654922e0fb57a2416_0.png)
 
 ![](img/61fab98aab26950654922e0fb57a2416_0.png)
 
@@ -21,9 +20,7 @@
 首先，我们需要从 Keras 中加载一个预训练模型。Keras 提供了许多流行的模型，例如 VGG16。
 
 
-![](img/61fab98aab26950654922e0fb57a2416_2.png)
 
-![](img/61fab98aab26950654922e0fb57a2416_3.png)
 
 ```python
 from tensorflow.keras.applications import VGG16
@@ -52,11 +49,9 @@ for layer in model.layers:
 model.summary()
 ```
 
-![](img/61fab98aab26950654922e0fb57a2416_5.png)
 
 转换后，模型摘要将不再显示原来的最后一层，并且所有参数都被标记为“不可训练”。
 
-![](img/61fab98aab26950654922e0fb57a2416_6.png)
 
 ### 3. 添加新的分类层
 

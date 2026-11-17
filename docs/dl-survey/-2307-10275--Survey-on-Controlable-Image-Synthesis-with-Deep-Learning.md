@@ -42,7 +42,6 @@ Shixiong Zhang Shixiong Zhang 在中国电子科技大学自动化工程学院�
 
 ## II 数据集和评价指标用于 3D 可控图像合成
 
-![参见说明](img/8931656b6f720111418b05f7c9cf0a2e.png)
 
 (a) 原始图像
 
@@ -82,7 +81,6 @@ Shixiong Zhang Shixiong Zhang 在中国电子科技大学自动化工程学院�
 
     RealEstate10K 是一个用于视图合成的数据集，包含与 1 千万帧相机姿势对应的相机数据，这些帧来自大约 80,000 个从 YouTube 视频收集的视频片段。该数据集还提供了下载原始视频的链接。RealEstate10K 是一个大规模且多样化的数据集，覆盖了各种类型的场景，如房屋、公寓、办公室和风景。RealEstate10K 对立体放大、光场渲染和新视图合成等任务很有用。然而，RealEstate10K 也面临一些挑战，如视频质量较低、相机姿势不一致以及缺乏深度信息[28]。
 
-![参见说明](img/04953b95d6123d887831d87c2e8a3423.png)
 
 (a) 原始图像
 
@@ -146,7 +144,6 @@ Shixiong Zhang Shixiong Zhang 在中国电子科技大学自动化工程学院�
 
 ### II-B 评估指标
 
-![参见说明](img/82fa2fae2bb4ef55a10c8da3cdbb5873.png)
 
 (a) 原始图像
 
@@ -154,7 +151,6 @@ Shixiong Zhang Shixiong Zhang 在中国电子科技大学自动化工程学院�
 
 (b) 更改光源后的图像
 
-![参见说明](img/05eb08214b583bff8d71c49231b2c41d.png)
 
 (c) 原始图像
 

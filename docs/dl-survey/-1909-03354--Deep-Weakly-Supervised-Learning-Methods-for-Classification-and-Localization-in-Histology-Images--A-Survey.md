@@ -1070,15 +1070,12 @@ WSOL 中的模型选择问题在（Choe et al., 2020）中被强调，包括其�
 
 在本节中，我们提供了使用 ResNet50 主干网络的不同方法的定位的视觉结果： 图 12 和 图 13 用于 GlaS 测试集； 图 14 和 图 15 用于 CAMELYON16 测试集。
 
-![参见说明文字](img/c572ff962318bfa65dde782ed39cb927.png)![参见说明文字](img/0bc19a9cc5dda40381ed9ef2df963b52.png)![参见说明文字](img/b2fd46414e4d944dbfef685a21a81863.png)![参见说明文字](img/e78a9dc24066fb738b02a89c00e329b2.png)![参见说明文字](img/7c1b45957296bb6e283698cd42e3783d.png)![参见说明文字](img/1ab7623f91e6e742a8be385e58977b8d.png)![参见说明文字](img/36335d5cf4f973ad27efabb792e31421.png)
 
 图 12：GlaS 的良性测试样本预测。地面真实区域（ROIs）用红色面罩标出，突出显示腺体。在所有预测中，强烈的 CAM 激活表明腺体。骨干网络：ResNet50。
 
-![参见说明文字](img/fcfc744c7d415e1db715b845cae495d6.png)![参见说明文字](img/ff8c7050d3e149c203cb53a86648b799.png)![参见说明文字](img/7fce24a1b39311aa79f2e87d06444882.png)![参见说明文字](img/9a7d2dd49a792a11c7d27d671f80b8d7.png)![参见说明文字](img/76417fe852ad2813818ebe052af109e7.png)![参见说明文字](img/04c0bb3f3417469a72d3b3d65f7b9ebd.png)![参见说明文字](img/36335d5cf4f973ad27efabb792e31421.png)
 
 图 13：GlaS 的恶性测试样本预测。地面真实区域（ROIs）用红色面罩标出，突出显示腺体。在所有预测中，强烈的 CAM 激活表明腺体。骨干网络：ResNet50。
 
-![参见说明文字](img/9b8e119944f42bdd3d57d8920177087a.png)![参见说明文字](img/21016c117f7b3c22c6dbf077bb13b464.png)![参见说明文字](img/acc505fe2823bfb8aed60dcb80751d6f.png)![参见说明文字](img/e0e7538b3195d4594181a4bd83e5579c.png)![参见说明文字](img/0cedddf273715383632046173d2fec1f.png)![参见说明文字](img/236fdf889d71aec5b8c43e393e225f08.png)![参见说明文字](img/46709b431f4e7127711e0944cd7243a3.png)
 
 图 14：CAMELYON16 的正常测试样本预测。地面真实区域（ROIs）用红色面罩标出，突出显示转移区域。在所有预测中，强烈的 CAM 激活表明转移区域。骨干网络：ResNet50。
 

@@ -1,6 +1,5 @@
 #  058：IT自动化与问题解决 🚀
 
-![](img/efad5ff24d423329c04fb7bfe177e295_1.png)
 
 ![](img/efad5ff24d423329c04fb7bfe177e295_2.png)
 

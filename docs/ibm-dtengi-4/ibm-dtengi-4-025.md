@@ -16,7 +16,6 @@ MySQL是一个流行的开源关系数据库管理系统（RDBMS）。MariaDB是
 
 ---
 
-![](img/4bca8eefde1161505d70d94457ac6fe8_1.png)
 
 ## 常用MySQL工具 🛠️
 
@@ -29,7 +28,6 @@ MySQL是一个流行的开源关系数据库管理系统（RDBMS）。MariaDB是
 *   **MySQL Workbench**：一个适用于Windows、Linux和Mac OS的桌面应用程序。
 *   **PHPMyAdmin**：一个流行的第三方Web界面。
 
-![](img/4bca8eefde1161505d70d94457ac6fe8_3.png)
 
 ---
 
@@ -39,7 +37,6 @@ MySQL命令行界面使你能够向MySQL服务器和数据发出命令。这些�
 
 此截图展示了以交互方式运行 `SHOW DATABASES;` 命令，以列出当前可用的数据库。
 
-![](img/4bca8eefde1161505d70d94457ac6fe8_5.png)
 
 ```sql
 SHOW DATABASES;
@@ -51,11 +48,9 @@ SHOW DATABASES;
 
 ### MySQL Workbench 🖥️
 
-![](img/4bca8eefde1161505d70d94457ac6fe8_7.png)
 
 MySQL Workbench是一个可视化数据库设计工具，它将SQL开发、管理、数据库设计、创建和维护集成到一个统一的MySQL数据库系统开发环境中。
 
-![](img/4bca8eefde1161505d70d94457ac6fe8_9.png)
 
 在管理页面，你可以查看连接详情和服务器功能，并执行管理任务，例如导入和导出数据，以及查看服务器日志和性能报告。
 
@@ -65,7 +60,6 @@ MySQL Workbench是一个可视化数据库设计工具，它将SQL开发、管�
 
 PHPMyAdmin是一个图形化的Web界面，你可以用它来与你的MySQL数据库进行交互。当你首次连接到服务器时，会看到服务器信息和系统数据库。然后，你可以创建自己的用户数据库，并使用不同的选项卡与它们进行交互。
 
-![](img/4bca8eefde1161505d70d94457ac6fe8_11.png)
 
 以下是你可以通过PHPMyAdmin执行的主要操作：
 

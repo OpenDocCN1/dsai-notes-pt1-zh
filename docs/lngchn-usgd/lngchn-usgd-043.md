@@ -61,7 +61,6 @@ remote_graph = RemoteGraph(
 5.  传递给 Whisper API 进行转录。
 6.  将得到的文本转录添加到图的状态（state）中。
 
-![](img/c731c17557fa196fbf3f547045f11e2c_1.png)
 
 ```python
 def record_audio_till_stop(state):
@@ -103,7 +102,6 @@ def play_audio(state):
 在 LangGraph 中，我们可以轻松地将已部署的远程图作为子图嵌入，无需重新定义其内部复杂的节点和边。这样做的好处是，我们可以直接利用部署时已配置好的功能，例如内置的长期记忆存储（基于 PostgreSQL）。
 
 
-![](img/c731c17557fa196fbf3f547045f11e2c_3.png)
 
 ```python
 from langgraph.graph import StateGraph, END
@@ -128,7 +126,6 @@ app = workflow.compile()
 
 运行这个图时，它会首先启动音频输入节点，等待用户说话并转录；然后将转录文本传递给嵌入的核心智能体子图进行处理；最后将智能体的文本响应通过音频输出节点转换为语音播放给用户。
 
-![](img/c731c17557fa196fbf3f547045f11e2c_5.png)
 
 ## 第五节：验证与总结
 

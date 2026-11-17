@@ -12,13 +12,11 @@
 
 ## 1. 格式转换工具：nbconvert
 
-![](img/fada9b10c7f63ddff8bee1e0b3c83e54_1.png)
 
 上一节我们介绍了Jupyter的核心功能，本节中我们来看看如何将笔记本转换为其他格式。`nbconvert` 是 Jupyter 安装的一部分，它能帮助你将 `.ipynb` 笔记本文件转换为多种通用格式。
 
 以下是 `nbconvert` 支持的一些主要输出格式：
 
-![](img/fada9b10c7f63ddff8bee1e0b3c83e54_3.png)
 
 *   **PDF**：生成可直接打印或分享的PDF文档。
 *   **LaTeX**：转换为LaTeX源代码，便于进行学术出版或进一步排版。
@@ -45,10 +43,8 @@ jupyter nbconvert --to html my_notebook.ipynb
 
 核心概念是使用 `nbformat` 库来操作代表笔记本的Python字典结构。以下是一个创建简单笔记本的代码示例：
 
-![](img/fada9b10c7f63ddff8bee1e0b3c83e54_5.png)
 
 
-![](img/fada9b10c7f63ddff8bee1e0b3c83e54_7.png)
 
 ```python
 import nbformat as nbf
@@ -72,7 +68,6 @@ with open('generated_notebook.ipynb', 'w') as f:
 
 ## 3. 参数化与执行工具：Papermill
 
-![](img/fada9b10c7f63ddff8bee1e0b3c83e54_9.png)
 
 `nbformat` 能帮你创建笔记本，而 `papermill` 则能帮你自动化地运行它们。`papermill` 是一个需要单独安装的第三方库，它主要提供两大功能：**参数化笔记本**和**批量执行笔记本**。
 
@@ -83,10 +78,8 @@ with open('generated_notebook.ipynb', 'w') as f:
 1.  **在笔记本中定义参数**：通常使用一个标记为“参数”的代码单元格，里面通过 `parameters` 字典定义默认值。
 2.  **通过命令行执行**：使用 `papermill` 命令指定输入笔记本、输出笔记本和要传入的参数。
 
-![](img/fada9b10c7f63ddff8bee1e0b3c83e54_11.png)
 
 
-![](img/fada9b10c7f63ddff8bee1e0b3c83e54_12.png)
 
 ```bash
 # 基本命令格式
@@ -97,11 +90,9 @@ papermill model_experiment.ipynb results/experiment_alpha_0.5.ipynb -p alpha 0.5
 
 你可以将 `nbformat` 和 `papermill` 结合使用，实现强大的自动化流程：用 `nbformat` 动态生成定制化的实验笔记本，然后用 `papermill` 传入不同参数并执行它们，最后再用 `nbconvert` 将结果批量转换为报告。
 
-![](img/fada9b10c7f63ddff8bee1e0b3c83e54_13.png)
 
 ---
 
-![](img/fada9b10c7f63ddff8bee1e0b3c83e54_14.png)
 
 ## 4. 功能扩展库：Jupyter Notebook Extensions
 
@@ -109,7 +100,6 @@ papermill model_experiment.ipynb results/experiment_alpha_0.5.ipynb -p alpha 0.5
 
 安装后，你可以在 Jupyter Notebook 的 `Nbextensions` 标签页中启用或禁用各种扩展。
 
-![](img/fada9b10c7f63ddff8bee1e0b3c83e54_16.png)
 
 以下是一些常用且实用的扩展功能：
 

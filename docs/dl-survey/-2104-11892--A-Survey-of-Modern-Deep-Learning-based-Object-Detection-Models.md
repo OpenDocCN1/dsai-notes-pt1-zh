@@ -46,7 +46,6 @@ Nadia Kanwal, Mamoona Asghar 和 Brian Lee S.S.A. Zaidi, N. Kanwal, M Asghar 和
 
 图 1：论文结构。
 
-![参见图注](img/dde13522b1ecb0584652542ec808d393.png)
 
 (a) PASCAL VOC 12
 

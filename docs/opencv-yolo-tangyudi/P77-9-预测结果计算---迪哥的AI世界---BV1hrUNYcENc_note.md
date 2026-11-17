@@ -1,8 +1,6 @@
 # 课程P77：9-预测结果计算 📊
 
-![](img/1ea137e8f745b5e5e3f51b5df975f840_1.png)
 
-![](img/1ea137e8f745b5e5e3f51b5df975f840_3.png)
 
 在本节课中，我们将深入YOLO层的前向传播过程，学习如何将网络输出的特征图转换为具体的边界框预测。我们将重点关注数据的维度变换、预测值的分解以及核心计算步骤。
 
@@ -10,7 +8,6 @@
 
 ## 进入YOLO层
 
-![](img/1ea137e8f745b5e5e3f51b5df975f840_5.png)
 
 上一节我们介绍了模型的前向传播流程，本节中我们来看看核心的YOLO层内部是如何工作的。我们通过设置断点，跳入到YOLO层的前向传播函数中。
 
@@ -69,7 +66,6 @@ prediction = prediction.permute(0, 1, 3, 4, 2).contiguous()
 
 对于80个类别概率的预测，YOLOv3使用了 **Sigmoid函数** 而非Softmax。
 
-![](img/1ea137e8f745b5e5e3f51b5df975f840_7.png)
 
 ```python
 # 伪代码示意
@@ -82,7 +78,6 @@ class_pred = torch.sigmoid(prediction[..., 5:])
 
 ---
 
-![](img/1ea137e8f745b5e5e3f51b5df975f840_9.png)
 
 ![](img/1ea137e8f745b5e5e3f51b5df975f840_11.png)
 

@@ -1121,7 +1121,6 @@ NetHack 学习环境 (NLE) [Küttler 等，[2020](https://arxiv.org/html/2411.13
 
 NetHack 语言封装器 [Goodger 等，[2023](https://arxiv.org/html/2411.13543v1#bib.bib19)] 是一个设计用来与 NLE 和 MiniHack 接口的工具，它通过将非语言观察转化为基于文本的表示来工作。这个封装器将各种 NLE 观察（如 `glyphs`、`blstats`、`tty_chars`、`inv_letters`、`inv_strs` 和 `tty_cursor`）转换为可读的文本等价物。例如，它将游戏环境的视觉显示转化为文本描述，包括关于周围环境、物品栏和玩家统计的细节。该封装器还支持基于文本的操作，允许用户使用命令（如 `wait`、`apply` 和 `north`）与环境互动，这些命令随后会转换为 NLE 所需的离散动作。这一功能使得与 NetHack 环境的互动更加简便，尤其是对语言模型而言。
 
-![请参见说明文字](img/9d7738a6e2e1c4b935a21d1f7accec17.png)
 
 (a) NetHack 按地下城层级推进
 

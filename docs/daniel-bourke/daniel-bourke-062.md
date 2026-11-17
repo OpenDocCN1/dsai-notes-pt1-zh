@@ -94,7 +94,6 @@ print(torch.allclose(y_preds, loaded_model_1_preds))
 *   在推理模式下 (`torch.inference_mode()`) 对测试数据 `X_test` 进行预测。
 *   使用 `torch.allclose()` 比较原始模型预测结果 `y_preds` 和加载模型预测结果 `loaded_model_1_preds`。如果输出为 `True`，则证明两个模型的预测在数值上几乎完全相同，加载成功。
 
-![](img/6c2efc5ff9ee8eb233e294382e1dfb09_2.png)
 
 ![](img/6c2efc5ff9ee8eb233e294382e1dfb09_4.png)
 

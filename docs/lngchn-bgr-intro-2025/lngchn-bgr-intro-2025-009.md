@@ -23,25 +23,17 @@ print(response.content)
 
 这段代码你应该已经熟悉。它包含一个系统消息和一条人类消息，并使用`ChatOpenAI`类进行调用。
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_1.png)
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_2.png)
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_3.png)
 
 ## 切换至其他模型
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_4.png)
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_5.png)
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_6.png)
 
 上一节我们介绍了OpenAI模型的基本用法。本节中，我们来看看如何将代码中的模型替换为其他提供商的模型，例如Google Gemini或Anthropic Claude。Langchain为不同的模型提供商提供了相应的封装类，这使得切换模型就像更换一个类名和模型参数一样简单。
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_7.png)
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_8.png)
 
 以下是切换模型的关键步骤：
 
@@ -67,17 +59,12 @@ print(response.content)
 
 ### 使用Google Gemini模型
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_10.png)
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_11.png)
 
 类似地，要使用Google的Gemini模型，你需要安装`langchain-google-genai`包。以下是相应的代码示例：
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_12.png)
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_13.png)
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_14.png)
 
 ```python
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -103,11 +90,9 @@ Langchain使得根据这些因素灵活调整模型变得非常容易。你可�
 
 ## 总结
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_16.png)
 
 本节课中我们一起学习了在Langchain中切换不同聊天模型的方法。核心在于理解Langchain通过统一的接口（如`.invoke(messages)`）封装了不同模型提供商的API，使得开发者只需更换模型类的导入和初始化参数，即可无缝切换使用OpenAI、Google Gemini或Anthropic Claude等模型。这为构建灵活、可维护的AI应用提供了极大的便利。
 
-![](img/09fd67f0f53f1558743fbcdec4d1ae66_17.png)
 
 ![](img/09fd67f0f53f1558743fbcdec4d1ae66_18.png)
 

@@ -14,7 +14,6 @@
 
 ![](img/6ef868bced1caf894dc6c3693158099a_5.png)
 
-![](img/6ef868bced1caf894dc6c3693158099a_7.png)
 
 以下是初始模板目录中的关键文件：
 *   `README.md`: 模板的描述文档。

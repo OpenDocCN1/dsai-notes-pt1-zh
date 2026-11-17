@@ -107,9 +107,7 @@ def train(model: torch.nn.Module,
           device: torch.device = device):
 ```
 
-![](img/21dd14bc554e4d944d1a74a8a5195b36_4.png)
 
-![](img/21dd14bc554e4d944d1a74a8a5195b36_5.png)
 
 以下是 `train` 函数的具体步骤：
 

@@ -298,7 +298,6 @@ AgileCoder（Nguyen et al., [2024](https://arxiv.org/html/2404.04834v3#bib.bib10
 
 我们向ChatDev提供以下提示，以指导生成俄罗斯方块游戏：
 
-<svg class="ltx_picture" height="158.78" id="S4.SS2.p2.pic1" overflow="visible" version="1.1" width="600"><g fill="#000000" stroke="#000000" stroke-width="0.4pt" transform="translate(0,158.78) matrix(1 0 0 -1 0 0)"><g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 21.65 140.73)"><foreignobject color="#FFFFFF" height="12.15" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="556.69">俄罗斯方块游戏提示</foreignobject></g> <g fill-opacity="1.0" transform="matrix(1.0 0.0 0.0 1.0 21.65 13.78)"><foreignobject color="#000000" height="109.24" overflow="visible" transform="matrix(1 0 0 -1 0 16.6)" width="556.69">“设计并实现一个俄罗斯方块游戏。游戏开始时随机选择一个方块从顶部掉落。允许玩家使用箭头键控制方块的移动（左、右、下）和旋转。启用可调速度的自动下落。处理与边界和现有方块的碰撞，当方块无法继续移动时，将其固定在位置上。每次放置后检查是否有完整的行，并移除它们。如果由于棋盘已满无法生成新的方块，则结束游戏并显示游戏结束信息。”</foreignobject></g></g></svg>![参见说明文字](img/8eabcab1990d4ccbde0f8dcc264c4b24.png)![参见说明文字](img/595f04f9d2116ec2ed253fe9eba382e2.png)![参见说明文字](img/9cd49e757db3ea251815c9f993dcab5a.png)![参见说明文字](img/a1c06f63a9c0c61837153bdaebba58bd.png)
 
 图2. ChatDev生成的俄罗斯方块游戏截图。
 

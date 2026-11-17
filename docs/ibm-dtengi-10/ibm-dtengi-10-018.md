@@ -1,18 +1,14 @@
 # 018：从Python访问MongoDB 🐍
 
-![](img/7603e49e2ca8e75f35e37ac602741823_0.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_1.png)
 
 在本节课中，我们将学习如何使用Python与MongoDB数据库进行交互。具体来说，我们将了解什么是MongoClient，并学习如何使用Python对校园管理数据库执行基本的CRUD（创建、读取、更新、删除）操作。
 
-![](img/7603e49e2ca8e75f35e37ac602741823_3.png)
 
 ## 🧩 理解MongoClient
 
 MongoClient是一个帮助您与MongoDB交互的类。要使用它，我们首先需要从`pymongo`导入它，`pymongo`是Python的官方MongoDB驱动程序。
 
-![](img/7603e49e2ca8e75f35e37ac602741823_5.png)
 
 以下是建立连接并获取集合引用的基本步骤：
 
@@ -24,12 +20,9 @@ MongoClient是一个帮助您与MongoDB交互的类。要使用它，我们首�
 这个过程可以用以下代码概括：
 
 
-![](img/7603e49e2ca8e75f35e37ac602741823_7.png)
 
 
-![](img/7603e49e2ca8e75f35e37ac602741823_8.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_9.png)
 
 ```python
 from pymongo import MongoClient
@@ -42,15 +35,11 @@ db = client['campus_management']
 students_collection = db['students']
 ```
 
-![](img/7603e49e2ca8e75f35e37ac602741823_10.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_11.png)
 
 现在，我们已经获得了对`students`集合的引用，可以开始执行数据操作了。
 
-![](img/7603e49e2ca8e75f35e37ac602741823_12.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_13.png)
 
 ## ➕ 创建（Create）操作
 
@@ -60,9 +49,7 @@ students_collection = db['students']
 
 使用`insert_one`函数插入一个文档。该函数以要插入的文档字典作为输入。
 
-![](img/7603e49e2ca8e75f35e37ac602741823_15.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_16.png)
 
 ```python
 new_student = {
@@ -74,13 +61,10 @@ result = students_collection.insert_one(new_student)
 print(f"插入的文档ID: {result.inserted_id}")
 ```
 
-![](img/7603e49e2ca8e75f35e37ac602741823_17.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_18.png)
 
 ### 批量插入文档
 
-![](img/7603e49e2ca8e75f35e37ac602741823_20.png)
 
 使用`insert_many`函数一次性插入多个文档。该函数接受一个文档字典的列表作为输入。
 
@@ -95,9 +79,7 @@ print(f"插入的文档ID列表: {result.inserted_ids}")
 
 ## 🔍 读取（Read）操作
 
-![](img/7603e49e2ca8e75f35e37ac602741823_22.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_23.png)
 
 从集合中查询数据是常见的操作。MongoDB提供了多种查询方法。
 
@@ -105,9 +87,7 @@ print(f"插入的文档ID列表: {result.inserted_ids}")
 
 使用`find_one`函数。如果不提供过滤条件，它将返回集合中自然顺序下的第一个文档（即数据库在磁盘上引用文档的顺序）。
 
-![](img/7603e49e2ca8e75f35e37ac602741823_25.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_26.png)
 
 ```python
 # 获取第一个文档
@@ -119,9 +99,7 @@ student_by_email = students_collection.find_one({"email": "john.doe@example.com"
 print(student_by_email)
 ```
 
-![](img/7603e49e2ca8e75f35e37ac602741823_28.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_29.png)
 
 > **注意**：即使有多个文档匹配条件，`find_one`也只会返回第一个。
 
@@ -129,16 +107,13 @@ print(student_by_email)
 
 使用`find`函数可以获取匹配条件的所有文档。它返回一个**游标（Cursor）**对象。
 
-![](img/7603e49e2ca8e75f35e37ac602741823_31.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_32.png)
 
 ```python
 # 查找所有姓氏为‘Doe’的学生
 cursor = students_collection.find({"last_name": "Doe"})
 ```
 
-![](img/7603e49e2ca8e75f35e37ac602741823_33.png)
 
 ### 理解游标（Cursor）
 
@@ -151,41 +126,32 @@ for student in all_does:
     print(student)
 ```
 
-![](img/7603e49e2ca8e75f35e37ac602741823_35.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_36.png)
 
 ### 统计文档数量
 
-![](img/7603e49e2ca8e75f35e37ac602741823_37.png)
 
 如果只想统计匹配条件的文档数量，可以使用`count_documents`函数。计数操作在MongoDB服务器端完成，只将数字结果返回给客户端。
 
-![](img/7603e49e2ca8e75f35e37ac602741823_39.png)
 
 ```python
 count = students_collection.count_documents({"last_name": "Doe"})
 print(f"姓氏为Doe的学生数量: {count}")
 ```
 
-![](img/7603e49e2ca8e75f35e37ac602741823_40.png)
 
 ## ✏️ 更新（Update）操作
 
-![](img/7603e49e2ca8e75f35e37ac602741823_42.png)
 
 更新文档有两种主要方式：替换整个文档或进行局部更新。
 
 ### 替换整个文档
 
-![](img/7603e49e2ca8e75f35e37ac602741823_44.png)
 
 首先检索一个文档，在本地修改后，使用`replace_one`函数将其替换回数据库。第一个参数是过滤条件，第二个参数是更新后的Python字典对象。
 
-![](img/7603e49e2ca8e75f35e37ac602741823_45.png)
 
 
-![](img/7603e49e2ca8e75f35e37ac602741823_47.png)
 
 ```python
 # 1. 检索一个学生文档
@@ -199,9 +165,7 @@ result = students_collection.replace_one({"last_name": "Doe"}, student_to_update
 print(f"匹配到的文档数: {result.matched_count}, 修改的文档数: {result.modified_count}")
 ```
 
-![](img/7603e49e2ca8e75f35e37ac602741823_48.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_49.png)
 
 对于大型文档，这种方式会在客户端和数据库之间传输大量数据，可能效率较低。
 
@@ -209,9 +173,7 @@ print(f"匹配到的文档数: {result.matched_count}, 修改的文档数: {resu
 
 对于小的更改，可以使用MongoDB的原地更新操作符（如`$set`）。这不需要先检索整个文档，只需构造一个描述更改的文档。
 
-![](img/7603e49e2ca8e75f35e37ac602741823_51.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_52.png)
 
 ```python
 # 定义要更新的字段
@@ -229,13 +191,10 @@ print(f"匹配到的文档数: {result.matched_count}, 修改的文档数: {resu
 
 ### 更新多个文档
 
-![](img/7603e49e2ca8e75f35e37ac602741823_54.png)
 
 使用`update_many`函数可以一次性更新所有匹配过滤条件的文档。
 
-![](img/7603e49e2ca8e75f35e37ac602741823_55.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_56.png)
 
 ```python
 # 例如，由于封锁，将所有学生更新为仅在线学习
@@ -243,19 +202,15 @@ result = students_collection.update_many({}, {"$set": {"on_campus": False}})
 print(f"所有学生已更新为仅在线模式。修改的文档数: {result.modified_count}")
 ```
 
-![](img/7603e49e2ca8e75f35e37ac602741823_57.png)
 
 ## 🗑️ 删除（Delete）操作
 
 与更新和查找类似，删除操作也提供了删除单个或多个文档的函数。
 
-![](img/7603e49e2ca8e75f35e37ac602741823_59.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_60.png)
 
 ### 删除单个文档
 
-![](img/7603e49e2ca8e75f35e37ac602741823_61.png)
 
 使用`delete_one`函数，其第一个参数是过滤条件，用于找到要删除的文档。
 
@@ -266,13 +221,10 @@ print(f"删除的文档数量: {result.deleted_count}")
 
 ### 删除多个文档
 
-![](img/7603e49e2ca8e75f35e37ac602741823_63.png)
 
-![](img/7603e49e2ca8e75f35e37ac602741823_64.png)
 
 使用`delete_many`函数，删除所有匹配给定条件的文档。
 
-![](img/7603e49e2ca8e75f35e37ac602741823_65.png)
 
 ```python
 result = students_collection.delete_many({"on_campus": False})

@@ -6,7 +6,6 @@ You've been able to think through how we would move forward through our neural n
 
 
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_1.png)
 
 As well as how we'd use that back propagation and the output from our function。
 
@@ -14,17 +13,13 @@ As well as how we'd use that back propagation and the output from our function�
 
 
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_3.png)
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_4.png)
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_5.png)
 
 How we would actually go about using those outputs， iterating over a number of iterations。
 
 
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_7.png)
 
 And updating our model。So with that in mind， hopefully you were thinking through it。
 
@@ -64,9 +59,7 @@ Both a prediction， as well as our gradient values and that gradient value outp
 
  if you recall from last video。
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_9.png)
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_10.png)
 
 Is going to be。A tuple of two different values， so we're going to pull them out separately as JW1 grad and JW2 grad。
 
@@ -106,19 +99,16 @@ And we continue to update that and get closer and closer to that correct， to t
 
 
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_12.png)
 
 So we're going to run this。And we can see the outputs as we do。
 
 
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_14.png)
 
 Different sets of 200 values， 20040 600，800 and so on。
 
 
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_16.png)
 
 And we can see that that log loss。Goes down further and further。
 
@@ -128,7 +118,6 @@ And we can see that that log loss。Goes down further and further。
 
 
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_18.png)
 
 And you can play around with changing the learning rate。
 
@@ -136,11 +125,9 @@ And you can play around with changing the learning rate。
 
 I'm going to run this。
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_20.png)
 
 And we see that it is updating a bit too slowly。
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_22.png)
 
 As we set that， learning rate incredibly small。And maybe even， yeah。
 
@@ -148,13 +135,10 @@ So we don't want to set it too small or too large。 we'll set this back to what
 
 
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_24.png)
 
 Which was。Zero，01。
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_26.png)
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_27.png)
 
 And then we can actually plot out where we got it correct and where we got it incorrect to see where on our diamonds。
 
@@ -162,7 +146,6 @@ We were more likely to have errors。So we run this and these plots should be si
 
 
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_29.png)
 
 And we see the false positives and false negatives all tend to be right around these edges。
 
@@ -170,7 +153,6 @@ And we see the false positives and false negatives all tend to be right around t
 
  perhaps some or correct or incorrect。😊。
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_31.png)
 
 Now feel free to play around with different shapes to look at what type of errors come out。
 
@@ -190,6 +172,5 @@ And then we discuss also that you can play around with the different activation 
 
 
 
-![](img/76d116d521d4afb41a1820330ea2a5e0_33.png)
 
 ![](img/76d116d521d4afb41a1820330ea2a5e0_34.png)

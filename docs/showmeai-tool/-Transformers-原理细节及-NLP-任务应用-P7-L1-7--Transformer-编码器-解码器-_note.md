@@ -94,7 +94,6 @@ encoder_output = Encoder(input_sequence)
 
 在实践中，你可以根据特定任务，选择并加载在该任务上表现优异的预训练编码器和解码器。
 
-![](img/cce5d73b05cbf648b5982557ff9b6810_1.png)
 
 ---
 

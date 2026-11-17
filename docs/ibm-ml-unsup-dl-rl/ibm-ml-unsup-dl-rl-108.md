@@ -16,7 +16,6 @@ And then we'll discuss some key hyperparameters that govern howganNs train and w
 
 
 
-![](img/2adff2f1a94731fc294c4c41a3182980_1.png)
 
 Now， part of the motivation of GNS is the realization that the means by which neural networks interpret a new example make them vulnerable to adversarial examples。
 
@@ -44,7 +43,6 @@ And then focus on adjusting our original images in that backward pass in relatio
 
 
 
-![](img/2adff2f1a94731fc294c4c41a3182980_3.png)
 
 So the invention of GANS was connected to the neural networks' of vulnerability to these adversarial examples。
 
@@ -60,7 +58,6 @@ And they would have a neural network， the discriminator。
 
 
 
-![](img/2adff2f1a94731fc294c4c41a3182980_5.png)
 
 The researchers realized they could solve this by having the discriminator continually improve at distinguishing between real and fake speech。
 
@@ -86,7 +83,6 @@ And as both networks try to beat the other， they continue to improve。
 
 
 
-![](img/2adff2f1a94731fc294c4c41a3182980_7.png)
 
 So with this in mind。What exactly are GANs or generative adversarial networks？
 
@@ -106,7 +102,6 @@ And then that produces an image which is fed through the discriminator。
 
 
 
-![](img/2adff2f1a94731fc294c4c41a3182980_9.png)
 
 Now。Going back to Gs in their original paper。Gens was established as a training network in 2014 in a paper by Ian Goodfeelow。
 
@@ -122,13 +117,11 @@ There was also no dropout and no regularization using either the generator or th
 
 
 
-![](img/2adff2f1a94731fc294c4c41a3182980_11.png)
 
 And the results were what we see here below where the images produced were nearly indistinguishable from the handwritten values in our training set。
 
 
 
-![](img/2adff2f1a94731fc294c4c41a3182980_13.png)
 
 And again， none of the images just shown existed in that original data set。
 
@@ -142,7 +135,6 @@ Now that closes out this video and the next video we dive a bit deeper into the 
 
 
 
-![](img/2adff2f1a94731fc294c4c41a3182980_15.png)
 
 All right， I'll see you there。
 

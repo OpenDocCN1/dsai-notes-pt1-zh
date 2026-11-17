@@ -1,14 +1,11 @@
 # 018：使用scikit-learn处理表格数据（第2部分）📊
 
-![](img/54b9d0f6979da2d05132e094051b573b_0.png)
 
 在本节课中，我们将学习如何使用scikit-learn库对表格数据进行预处理，具体包括将数据分割为训练集和测试集、对数值型特征进行标准化缩放、对分类型特征进行独热编码，并将处理后的数据保存为文件。这些步骤是为后续训练经典机器学习算法准备数据的关键环节。
 
 ## 数据分割
 
-![](img/54b9d0f6979da2d05132e094051b573b_2.png)
 
-![](img/54b9d0f6979da2d05132e094051b573b_3.png)
 
 上一节我们介绍了数据预处理的整体计划，本节中我们来看看具体如何实施。首先，我们需要将原始数据集分割为训练集和测试集。这有助于我们在未见过的数据上评估模型的性能。
 
@@ -27,7 +24,6 @@ X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=
 
 该方法返回训练集和测试集的特征（`X_train`, `X_test`）与标签（`y_train`, `y_test`）。
 
-![](img/54b9d0f6979da2d05132e094051b573b_5.png)
 
 ## 预处理训练集：数值型特征缩放
 
@@ -35,9 +31,7 @@ X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=
 
 以下是使用`StandardScaler`对数值型特征进行标准化的步骤：
 
-![](img/54b9d0f6979da2d05132e094051b573b_7.png)
 
-![](img/54b9d0f6979da2d05132e094051b573b_8.png)
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -64,7 +58,6 @@ X_train_scaled_df = pd.DataFrame(scaled_features, index=X_train.index, columns=n
 *   `fit`方法：计算训练数据中每个数值列的均值和标准差。
 *   `transform`方法：使用计算出的统计量（均值和标准差）来缩放数据，使每个特征的值都转换为均值为0、标准差为1的分布。
 
-![](img/54b9d0f6979da2d05132e094051b573b_10.png)
 
 现在，我们得到了一个包含缩放后数值列的数据框，所有特征都处于相似的数值范围内。
 
@@ -75,14 +68,10 @@ X_train_scaled_df = pd.DataFrame(scaled_features, index=X_train.index, columns=n
 以下是使用`OneHotEncoder`对分类型特征进行独热编码的步骤：
 
 
-![](img/54b9d0f6979da2d05132e094051b573b_12.png)
-
-![](img/54b9d0f6979da2d05132e094051b573b_13.png)
-
-![](img/54b9d0f6979da2d05132e094051b573b_14.png)
 
 
-![](img/54b9d0f6979da2d05132e094051b573b_16.png)
+
+
 
 ```python
 from sklearn.preprocessing import OneHotEncoder
@@ -118,11 +107,8 @@ X_train_encoded_df = pd.DataFrame(encoded_matrix.toarray(), index=X_train.index,
 
 最后一步，我们将客户ID、处理后的数值型特征和编码后的分类型特征合并成一个完整的数据集。
 
-![](img/54b9d0f6979da2d05132e094051b573b_18.png)
 
-![](img/54b9d0f6979da2d05132e094051b573b_19.png)
 
-![](img/54b9d0f6979da2d05132e094051b573b_20.png)
 
 以下是使用Pandas的`concat`方法进行水平合并的步骤：
 
@@ -137,9 +123,7 @@ processed_X_train = pd.concat([X_train[['customer_id']], X_train_scaled_df, X_tr
 
 对于测试集，**关键点**在于我们**不能**重新拟合（`fit`）在训练集上使用的`scaler`和`encoder`。我们必须使用相同的、由训练集拟合好的对象来转换（`transform`）测试集数据。这确保了测试集数据与训练集数据使用相同的缩放标准（相同的均值和标准差）和相同的编码映射。
 
-![](img/54b9d0f6979da2d05132e094051b573b_22.png)
 
-![](img/54b9d0f6979da2d05132e094051b573b_23.png)
 
 以下是处理测试集的简化流程：
 

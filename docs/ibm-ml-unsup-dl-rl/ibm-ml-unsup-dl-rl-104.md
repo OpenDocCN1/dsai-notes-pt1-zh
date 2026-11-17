@@ -12,7 +12,6 @@ And if we recall variational autoencodederrs are specifically creating that late
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_1.png)
 
 So again， just at a high level， the first neural network is going to be that encoder where we're going to predict two vectors for each one of our images。
 
@@ -22,7 +21,6 @@ And that can be sampled and used to pull out something from the normal distribut
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_3.png)
 
 The second neural network will be the decoder that takes the results of our encoder to reconstruct our original image。
 
@@ -42,7 +40,6 @@ And then the entire system is going to be trained using back propagation at each
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_5.png)
 
 So we're going to import many of the。Libraries that we need， many of these we've seen。
 
@@ -50,7 +47,6 @@ So we're going to import many of the。Libraries that we need， many of these w
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_7.png)
 
 So recall that when we're trying to create our input from the encoded output。
 
@@ -66,7 +62,6 @@ So recall that when we're trying to create our input from the encoded output。
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_9.png)
 
 So to create that sample， we're going to create this sampling function here。And we pass in as。
 
@@ -94,11 +89,9 @@ We then set the epsilon equal to juice a random value with a mean of 0 standard 
 
  that randomly sampled value。
 
-![](img/826c2c281b4be47532e1eb20955fa28a_11.png)
 
 So that's going to be our sampling function。
 
-![](img/826c2c281b4be47532e1eb20955fa28a_13.png)
 
 Now we're going to create our actual encoder network。We have our inputs same as before。
 
@@ -120,7 +113,6 @@ To a dense layer here and a different dense layer here。
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_15.png)
 
 And then to get that final output that we're looking for。We're going to call Lambda。
 
@@ -134,7 +126,6 @@ And then to get that final output that we're looking for。We're going to call L
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_17.png)
 
 And then at the end of our encoder model， we pass in our model， the inputs going to be input。
 
@@ -146,7 +137,6 @@ And then at the end of our encoder model， we pass in our model， the inputs g
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_19.png)
 
 So now we've set up the encoder model。Then we're going to build out our decoder model。
 
@@ -164,7 +154,6 @@ Decoder here we're doing that again。 So we're expanding that out up to the hid
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_21.png)
 
 And then we can just say that the model is going to take in those latent inputs。
 
@@ -174,7 +163,6 @@ And then we can just say that the model is going to take in those latent inputs�
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_23.png)
 
 That third value。Recall that we actually are outputting in the encoder model three different values。
 
@@ -186,11 +174,9 @@ That third value。Recall that we actually are outputting in the encoder model t
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_25.png)
 
 Now， just to take a quick dive in。
 
-![](img/826c2c281b4be47532e1eb20955fa28a_27.png)
 
 We can look at our model and we're going to look here at each one of the different layers that are involved and within that layer。
 
@@ -200,9 +186,7 @@ We can look at our model and we're going to look here at each one of the differe
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_29.png)
 
-![](img/826c2c281b4be47532e1eb20955fa28a_30.png)
 
 And that's just going to have no weights that are being learned。It's going be of dimension 784。
 
@@ -210,7 +194,6 @@ And that's just going to have no weights that are being learned。It's going be 
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_32.png)
 
 Then in our actual encoder layer outside just the input。We have the input being 784 and the output。
 
@@ -220,9 +203,7 @@ Then in our actual encoder layer outside just the input。We have the input bein
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_34.png)
 
-![](img/826c2c281b4be47532e1eb20955fa28a_35.png)
 
 And then within this encoder， still in layer 2。Our first weights are going to be our dense layer。
 
@@ -230,7 +211,6 @@ And then within this encoder， still in layer 2。Our first weights are going t
 
  which is just going to be 256 different weights。
 
-![](img/826c2c281b4be47532e1eb20955fa28a_37.png)
 
 We're then going to get our actual mean values， which is 256 by 2。
 
@@ -246,7 +226,6 @@ And then we have our mean bias and that's just going to be two values。
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_39.png)
 
 And then in layer 3， we have our decoder starting off with the input of two output of 784。
 
@@ -254,19 +233,14 @@ And then in layer 3， we have our decoder starting off with the input of two ou
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_41.png)
 
-![](img/826c2c281b4be47532e1eb20955fa28a_42.png)
 
-![](img/826c2c281b4be47532e1eb20955fa28a_43.png)
 
 Now， again， if we want to start or go ahead and actually compile this model that we built out。
 
 
 
-![](img/826c2c281b4be47532e1eb20955fa28a_45.png)
 
-![](img/826c2c281b4be47532e1eb20955fa28a_46.png)
 
 We need to actually reproduce that loss function that we need。
 
@@ -274,6 +248,5 @@ We need to actually reproduce that loss function that we need。
 
  Allright， I'll see you there。
 
-![](img/826c2c281b4be47532e1eb20955fa28a_48.png)
 
 ![](img/826c2c281b4be47532e1eb20955fa28a_49.png)

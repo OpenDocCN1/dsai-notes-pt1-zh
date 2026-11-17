@@ -21,7 +21,6 @@ Richmond和Nacho将引导你学习如何使用数据库、LangChain以及一个�
 
 许多人共同参与了本课程的创作。我要感谢来自Oracle AI团队的Sema Bajalu，以及来自DeepLearning.AI的Brendan Brown。
 
-![](img/961f86396ea425dbfbbef022f04b3dfe_1.png)
 
 第一课将概述AI智能体及其为何需要记忆。我们将分析无状态智能体的失败模式，并介绍本课程后续内容所基于的“记忆优先”架构。
 
@@ -29,7 +28,6 @@ Richmond和Nacho将引导你学习如何使用数据库、LangChain以及一个�
 
 ![](img/961f86396ea425dbfbbef022f04b3dfe_1.png)
 
-![](img/961f86396ea425dbfbbef022f04b3dfe_3.png)
 
 ---
 

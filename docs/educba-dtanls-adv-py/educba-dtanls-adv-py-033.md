@@ -16,15 +16,11 @@ import numpy as np
 print("Hello")
 ```
 
-![](img/14738f3bf8f0040728f0e0c019eceaa6_1.png)
 
-![](img/14738f3bf8f0040728f0e0c019eceaa6_2.png)
 
-![](img/14738f3bf8f0040728f0e0c019eceaa6_3.png)
 
 ## NumPy数组与Python列表的对比
 
-![](img/14738f3bf8f0040728f0e0c019eceaa6_4.png)
 
 现在，我们来探讨一个核心问题：既然Python已经提供了列表，为什么还需要使用NumPy数组？
 

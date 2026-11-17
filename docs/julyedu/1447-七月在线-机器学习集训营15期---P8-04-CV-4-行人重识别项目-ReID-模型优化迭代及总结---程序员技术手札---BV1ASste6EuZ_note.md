@@ -162,9 +162,7 @@ model.compile(
 
 数据生成器的输出需要与模型定义的两个输出严格对应。
 
-![](img/4cdf97d14f14dc14644fa7a1d76bd151_6.png)
 
-![](img/4cdf97d14f14dc14644fa7a1d76bd151_8.png)
 
 ## 学习率调度策略
 
@@ -173,9 +171,7 @@ model.compile(
 以下是使用Keras回调函数实现学习率调度的示例：
 
 
-![](img/4cdf97d14f14dc14644fa7a1d76bd151_10.png)
 
-![](img/4cdf97d14f14dc14644fa7a1d76bd151_11.png)
 
 ```python
 from tensorflow.keras.callbacks import LearningRateScheduler, ModelCheckpoint

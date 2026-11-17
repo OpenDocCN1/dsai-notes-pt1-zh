@@ -106,7 +106,6 @@ void nvr_allreduce(void* message, size_t msg_size, int gpus_per_node, int num_no
 
 ![](img/c3cc434c25c319c90a8e12bfbd7d8e9c_5.png)
 
-![](img/c3cc434c25c319c90a8e12bfbd7d8e9c_7.png)
 
 **理论模型**：我们的递归倍增算法具有`O(log N_nodes) * α_inter`的延迟项，而NCCL的树算法为`O(log N_nodes) * 2 * α_inter`。在中等消息大小下，这个因子2的差异会体现为明显的性能差距。
 
@@ -122,7 +121,6 @@ void nvr_allreduce(void* message, size_t msg_size, int gpus_per_node, int num_no
 7.  **数据分块与参数调优至关重要**：分块大小和线程块数量对性能有极大影响，需要针对具体配置进行调优。
 8.  **注意传输后端优化**：某些NVSHMEM传输后端（如libfabric）可能尚未充分利用硬件特性，性能有待优化。
 
-![](img/c3cc434c25c319c90a8e12bfbd7d8e9c_9.png)
 
 ![](img/c3cc434c25c319c90a8e12bfbd7d8e9c_11.png)
 

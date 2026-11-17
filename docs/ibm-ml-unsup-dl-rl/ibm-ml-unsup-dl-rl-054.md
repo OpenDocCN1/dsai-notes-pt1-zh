@@ -12,15 +12,12 @@ Welcome back to our notebook here on gradient Descent in this video we're going 
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_1.png)
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_2.png)
 
 So first for dochastic gradient descents， much of the function will look similar to our gradient descent function。
 
  will set theta equal to this initial theta。
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_4.png)
 
 We will have our zeros which are going to be the same size as not just here the number of iterations。
 
@@ -36,9 +33,7 @@ If our number of beerations is equal to 100 and our number of observations equal
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_6.png)
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_7.png)
 
 And this will become more and more familiar as when we work with our deep learning models later on in this course。
 
@@ -50,13 +45,9 @@ And this will become more and more familiar as when we work with our deep learni
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_9.png)
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_10.png)
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_11.png)
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_12.png)
 
 So we're going to have zeros for the theta path， that's going to be the size of the number of iterations。
 
@@ -66,13 +57,11 @@ We're then going to set theta initial equal to the first value and our loss vect
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_14.png)
 
 Then for the main stochastic gradient descent loop。
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_16.png)
 
 We're saying4 I in range number of iterations。 But now we're also saying4 J in range the number of our observations。
 
@@ -94,7 +83,6 @@ And then with that new gradient vector， we'll use that to update our theta val
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_18.png)
 
 And then we update the theta path， according to the counts。
 
@@ -104,9 +92,7 @@ And then we update the theta path， according to the counts。
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_20.png)
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_21.png)
 
 If we were looking at the number of observations zero to 100， or just the number of iterations。
 
@@ -116,7 +102,6 @@ If we were looking at the number of observations zero to 100， or just the numb
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_23.png)
 
 And then we'll just return， as we did before， the theta path， as well as the loss factor。
 
@@ -134,11 +119,9 @@ And are they initials going to be this 333 again。So we can call stochastic gra
 
  the number of iterations， and the initial theta。
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_25.png)
 
 So he'd run this。
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_27.png)
 
 And we can see the path that was taken and if we look at this bottom left graph。
 
@@ -146,13 +129,11 @@ And we can see the path that was taken and if we look at this bottom left graph�
 
  so it's a bit more random。
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_29.png)
 
 Now， something to note is if you are doing something like stochastic gradient descent or mini batch gradient descents。
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_31.png)
 
 Each one of our updates as we go through each one of the values。
 
@@ -164,7 +145,6 @@ So rather than do that， we're going to make this a bit more random and at each
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_33.png)
 
 Need a NP。The dot random dot random ins。Some value the size of the number of observations。
 
@@ -172,7 +152,6 @@ Need a NP。The dot random dot random ins。Some value the size of the number of
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_35.png)
 
 And we run this and now rather than that ordering， we have a bit more randomness。
 
@@ -180,11 +159,8 @@ And we run this and now rather than that ordering， we have a bit more randomne
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_37.png)
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_38.png)
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_39.png)
 
 Now we can play around with this。As we see here， we can increase the number of iterations and I'll run this because this will take a second and now again we're making 10。
 
@@ -194,7 +170,6 @@ Now we can play around with this。As we see here， we can increase the number 
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_41.png)
 
 That may have taken just a second to run， but as we see here。
 
@@ -202,7 +177,6 @@ That may have taken just a second to run， but as we see here。
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_43.png)
 
 At that final point， at the finish that we'd hoped for with thee。
 
@@ -210,9 +184,7 @@ Theta 2 equal to5 if we look at the bottom left and theta 1 equal to2。
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_45.png)
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_46.png)
 
 And we see that we have this sharp decrease right at the beginning at the number of iterations and very very slight amount of improvement along the way。
 
@@ -224,9 +196,7 @@ And we see that we have this sharp decrease right at the beginning at the number
 
 
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_48.png)
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_49.png)
 
 The gradient is going to get smaller and smaller as it approaches that optimum value。
 
@@ -242,6 +212,5 @@ Now， that closes out our section here on gradient descent。 And with that。
 
  I'll see you there。
 
-![](img/2547dd3c2a664ad13ff385fcaac2b334_51.png)
 
 ![](img/2547dd3c2a664ad13ff385fcaac2b334_52.png)

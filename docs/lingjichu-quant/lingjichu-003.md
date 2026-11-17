@@ -17,11 +17,9 @@ data = yf.download(stock_symbol)
 
 执行上述代码后，我们会得到一个包含多个指标的 `DataFrame`。数据中包含了日期（`Date`）、开盘价（`Open`）、收盘价（`Close`）等。我们主要关注的是收盘价（`Close`），这是我们后续要预测的目标变量。
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_1.png)
 
 为了确保代码正常运行，请检查是否已正确安装 `yfinance`、`pandas` 和 `matplotlib` 库。如果代码报错，通常是因为缺少这些库，需要先安装它们。
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_3.png)
 
 ## 数据预处理
 
@@ -88,12 +86,9 @@ plt.show()
 除了收盘价，我们还可以同时可视化多个指标，例如交易量（`Volume`）和每日价格变化（`daily_change`）。
 
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_5.png)
 
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_7.png)
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_9.png)
 
 ```python
 # 绘制交易量和每日价格变化
@@ -113,22 +108,17 @@ plt.title('Microsoft Stock: Daily Change and Volume')
 plt.show()
 ```
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_11.png)
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_13.png)
 
 通过这张图，我们可以同时观察股票的价格变化和交易量。例如，在某些日期，交易量会突然增加，这可能与市场事件相关。
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_15.png)
 
 ## 模拟投资收益
 
 为了增加趣味性，我们可以模拟一个简单的投资场景：假设在某个起始日期买入股票，在终止日期卖出，计算收益情况。
 
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_17.png)
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_19.png)
 
 ```python
 def calculate_profit(data, start_date, end_date, shares=100):
@@ -148,25 +138,18 @@ profit = calculate_profit(data, start_date, end_date, shares=100)
 print(f"总收益: ${profit:.2f}")
 ```
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_21.png)
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_23.png)
 
 这个函数可以帮助我们快速计算在不同时间段内投资的收益情况。例如，如果在1986年买入微软股票并持有到2018年，收益会非常可观。
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_25.png)
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_27.png)
 
 ## 总结
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_29.png)
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_31.png)
 
 本节课中，我们一起学习了如何获取股票数据、进行预处理、计算统计信息以及绘制可视化图表。通过以上步骤，我们可以对时间序列数据有一个初步的了解，并为后续的预测分析打下基础。
 
-![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_33.png)
 
 ![](img/2eb30f8c9cdc0b3203a61ba75f69c1ef_35.png)
 

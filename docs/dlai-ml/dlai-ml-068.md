@@ -1,6 +1,5 @@
 # 68：Softmax 的改进实现 🚀
 
-![](img/0aa0bdd1eb7b415a93646cf54b9b34ed_1.png)
 
 在本节课中，我们将学习如何更稳定地实现 Softmax 输出层。我们将探讨数值舍入误差的问题，并介绍一种能减少这些误差的改进实现方法。
 
@@ -8,7 +7,6 @@
 
 ## 数值舍入误差问题
 
-![](img/0aa0bdd1eb7b415a93646cf54b9b34ed_3.png)
 
 上一节我们介绍了带有 Softmax 层的神经网络的基本实现。本节中，我们来看看该实现可能存在的问题以及如何改进。
 
@@ -30,7 +28,6 @@ x = (1 + 1/10000) - (1 - 1/10000)
 print(f"{x:.20f}")  # 输出：0.00019999999999997797
 ```
 
-![](img/0aa0bdd1eb7b415a93646cf54b9b34ed_5.png)
 
 虽然我们之前计算 Softmax 损失函数的方式在数学上是正确的，但存在一种不同的公式化方法，可以减少这类数值舍入误差，从而在 TensorFlow 中进行更精确的计算。
 
@@ -92,7 +89,6 @@ loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)(y_true, o
 
 这样做的原理是：当某些 `z_j` 的值非常大或非常小时，`e^{z_j}` 可能产生极大或极小的数值，容易导致计算不稳定（上溢或下溢）。通过将 Softmax 计算整合进损失函数，TensorFlow 可以在内部重新排列数学项，避免直接计算这些极值，从而得到更精确的损失值。
 
-![](img/0aa0bdd1eb7b415a93646cf54b9b34ed_7.png)
 
 ---
 
@@ -114,7 +110,6 @@ predicted_class = np.argmax(probabilities)
 
 ---
 
-![](img/0aa0bdd1eb7b415a93646cf54b9b34ed_9.png)
 
 ## 总结
 

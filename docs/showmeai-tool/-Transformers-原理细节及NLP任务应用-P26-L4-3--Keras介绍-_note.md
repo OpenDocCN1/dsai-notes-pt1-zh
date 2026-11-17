@@ -1,8 +1,6 @@
 # Transformers 原理细节及NLP任务应用！P26：L4.3- Keras介绍 🧠
 
-![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_0.png)
 
-![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_0.png)
 
 在本节课中，我们将学习 Transformer 模型如何与 TensorFlow 和 Keras 协同工作。我们将了解 Keras 模型的基本概念、其优势以及如何通过统一的 API 与各种模型进行交互。
 
@@ -22,9 +20,7 @@
 
 ## 什么是 Keras 模型？ 🤔
 
-![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_2.png)
 
-![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_2.png)
 
 因此，你的模型基本上包含了整个网络。
 
@@ -52,9 +48,7 @@
 
 ## 统一的 Keras API 优势 ⚙️
 
-![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_4.png)
 
-![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_4.png)
 
 当我早些时候提到 Keras API 时，它的优势在于，无论你是从头开始编写自己的模型，还是加载一个预训练的模型，你都通过相同的 API 与模型互动。
 
@@ -66,13 +60,10 @@
 
 因为你以完全相同的方式与之互动，使用完全相同的方法。
 
-![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_6.png)
 
 无论是一个巨大的预训练语言模型，还是你手动编写的简单模型。
 
-![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_8.png)
 
-![](img/eb8701c93d4ca852bec8b5e00e0fc6a1_6.png)
 
 ## 总结 📝
 

@@ -14,11 +14,8 @@
 
 因此，下一步是建模季节性。
 
-![](img/a14ae58f4dc86b33af0074aaf315b881_1.png)
 
-![](img/a14ae58f4dc86b33af0074aaf315b881_2.png)
 
-![](img/a14ae58f4dc86b33af0074aaf315b881_3.png)
 
 ---
 
@@ -66,13 +63,10 @@ X = pd.get_dummies(df_predictors, columns=['season'], drop_first=True, dtype=int
 
 之前仅包含趋势的模型 R 平方为 **0.007**。因此，同时建模趋势和季节性的回归模型比仅建模趋势的模型能预测更多的温度变化。这很合理，因为从图中可以看出，温度随季节的变化远大于随周数的变化。
 
-![](img/a14ae58f4dc86b33af0074aaf315b881_5.png)
 
-![](img/a14ae58f4dc86b33af0074aaf315b881_6.png)
 
 你可能还想理解系数。
 
-![](img/a14ae58f4dc86b33af0074aaf315b881_7.png)
 
 索引（趋势）的系数仍然不显著。模型仍然没有足够的数据来识别显著的趋势。
 
@@ -110,7 +104,6 @@ X = pd.get_dummies(df_predictors, columns=['season'], drop_first=True, dtype=int
 
 我们了解到，即使趋势不显著，仍然可以使用多重线性回归来建模数据中的季节性。我们还学习了如何使用比模型训练数据更高的索引值来预测新的一周。由于预测的本质是处理原始数据之外的值，因此需要仔细解释结果。
 
-![](img/a14ae58f4dc86b33af0074aaf315b881_9.png)
 
 ![](img/a14ae58f4dc86b33af0074aaf315b881_10.png)
 

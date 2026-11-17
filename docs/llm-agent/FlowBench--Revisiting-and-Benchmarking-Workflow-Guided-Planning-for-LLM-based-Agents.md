@@ -310,11 +310,9 @@ FlowBench的统计数据如表[2](https://arxiv.org/html/2406.14884v1#S4.T2 "表
 
 (iv)-总体而言，流程图格式通常能产生最佳表现。在静态回合级评估中，对于不同LLM工具调用的F1分数，它显示了6.4%、6.5%和5.6%的显著优势。对于会话级别，流程图在任务完成评估上与其他格式表现相当，但在工具调用上仍表现最佳。我们推测，这种优势源于其组织性和可理解性，这使得LLMs能够方便地确定当前状态，从而更好地进行规划。更多分析见附录[B](https://arxiv.org/html/2406.14884v1#A2 "Appendix B Additional Experimental Results ‣ FlowBench: Revisiting and Benchmarking Workflow-Guided Planning for LLM-based Agents")。
 
-![请参阅说明](img/66f849353cd63d4740660c47cf72008e.png)
 
 (a) 单一场景。
 
-![请参阅说明](img/417f12db22dfc4d8932acf723393e92c.png)
 
 (b) 跨场景。
 
@@ -483,11 +481,9 @@ FlowBench的统计数据如表[2](https://arxiv.org/html/2406.14884v1#S4.T2 "表
 
 ## 附录 B 额外实验结果
 
-![参见标题](img/f78097b6cda02ed47005794f6dc8f4f9.png)
 
 (a) 单场景。
 
-![参见标题](img/779806fe9de55cd4c38f8fa20ab7ff2c.png)
 
 (b) 跨场景。
 
@@ -543,7 +539,6 @@ FlowBench的统计数据如表[2](https://arxiv.org/html/2406.14884v1#S4.T2 "表
 
 由于流程图具有特殊的图结构性质，可能得出更多的分析结果。对于流程图引导的规划，每一步都涉及移动到一个状态节点。我们提供了回合级流程图引导规划的节点准确性指标，如表[9](https://arxiv.org/html/2406.14884v1#A2.T9 "表 9 ‣ B.2 失败原因分析 ‣ 附录 B 额外实验结果 ‣ FlowBench: 重新审视并基准化基于LLM的工作流引导规划")所示。从中可以看出，最强大的LLM GPT-4o能够实现令人满意的性能，而不同能力的LLM之间存在显著差异，这表明它们在理解结构化流程图方面的能力差异很大。
 
-![参考标题](img/d15c51ad24b6bc0ab6870b1963d91bd5.png)
 
 (a) 单场景。
 

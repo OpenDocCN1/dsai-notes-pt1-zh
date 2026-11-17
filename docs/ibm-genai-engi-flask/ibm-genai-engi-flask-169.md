@@ -37,15 +37,11 @@
 1.  从 `langchain.vectorstores` 导入 `Chroma` 类。
 2.  使用这个 `Chroma` 类，传入数据块和嵌入模型。
 
-![](img/3e4a4d84efa8d7e975dc7eba7bdcabde_1.png)
 
-![](img/3e4a4d84efa8d7e975dc7eba7bdcabde_2.png)
 
-![](img/3e4a4d84efa8d7e975dc7eba7bdcabde_3.png)
 
 ChromaDB 将自动处理其余工作，使过程无缝且高效。
 
-![](img/3e4a4d84efa8d7e975dc7eba7bdcabde_4.png)
 
 ```python
 # 示例代码结构
@@ -65,7 +61,6 @@ vectorstore = Chroma.from_documents(documents=documents, embedding=embedding_mod
 3.  **计算相似度**：这些相似性计算可以基于**欧几里得距离**、**余弦相似度**、曼哈顿距离等。本质上，它将查询向量与存储中的所有向量进行比较，以找到与查询最相似的向量。
 4.  **返回结果**：相似性搜索的结果是检索到与查询最相关的内容。这个输出就是最终的答案。
 
-![](img/3e4a4d84efa8d7e975dc7eba7bdcabde_6.png)
 
 ## 执行相似性搜索的代码
 
@@ -73,7 +68,6 @@ vectorstore = Chroma.from_documents(documents=documents, embedding=embedding_mod
 
 例如，这里的查询是关于邮件政策的，搜索返回的内容如下所示。
 
-![](img/3e4a4d84efa8d7e975dc7eba7bdcabde_8.png)
 
 ```python
 # 执行相似性搜索

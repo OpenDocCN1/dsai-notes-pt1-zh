@@ -94,11 +94,9 @@ counter()
 
 内部函数 `show` 只在 `counter` 函数的作用域内有效。在外部尝试调用 `show()` 会导致 `NameError`。
 
-![](img/4aa7c1ed1cd904b8a1a262791e1fffd2_8.png)
 
 ***
 
-![](img/4aa7c1ed1cd904b8a1a262791e1fffd2_10.png)
 
 ## 可变长度参数
 

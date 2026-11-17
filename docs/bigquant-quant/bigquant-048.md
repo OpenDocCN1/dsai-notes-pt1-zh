@@ -83,12 +83,10 @@ print("模型系数（斜率）:", coefficients)
 
 有时我们会发现，使用`sklearn`的`LinearRegression`计算出的系数，与我们手动用正规方程算出的结果不一致。这通常是因为`LinearRegression`默认会计算一个截距项（`intercept`）。
 
-![](img/6042ad0db4eb90ad8622a77dcfc2b252_1.png)
 
 *   **截距（Intercept）**：在直线方程 **`y = wx + b`** 中，`b`就是截距。
 *   我们之前手动计算的八元一次方程组，其对应的线性模型形式是 **`y = w1*x1 + w2*x2 + ... + w8*x8`**，其中没有单独的常数项`b`，或者说其截距为0。
 
-![](img/6042ad0db4eb90ad8622a77dcfc2b252_3.png)
 
 `LinearRegression`类有一个参数叫`fit_intercept`，用于控制是否计算截距。
 *   当`fit_intercept=True`（默认值）时，模型会计算截距`b`。

@@ -87,7 +87,6 @@ import numpy as np
 2.  使用 `dilate` 函数，传入图像（如Canny边缘图像）和定义好的内核。
 3.  指定迭代次数以控制膨胀程度。
 
-![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_3.png)
 
 ```python
 kernel = np.ones((5,5), np.uint8)
@@ -98,15 +97,12 @@ cv2.waitKey(0)
 
 增加 `iterations` 参数的值会使边缘变得更粗。
 
-![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_5.png)
 
 ## 图像腐蚀
 
-![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_7.png)
 
 与膨胀相反的操作是腐蚀，它可以使图像中的白色区域（如边缘）变细。本节我们将学习如何实现腐蚀。
 
-![](img/3a662d2ccf5ce137c1313fc44d7c5a0c_9.png)
 
 腐蚀操作使用与膨胀相同的内核。
 

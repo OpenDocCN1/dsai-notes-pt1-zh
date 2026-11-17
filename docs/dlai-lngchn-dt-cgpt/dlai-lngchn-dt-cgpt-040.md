@@ -62,7 +62,6 @@ answer = llm.generate(prompt_template(query=user_query, context=retrieved_docs))
 
 ---
 
-![](img/3d5c4cf173e014529c23a10b1aa19c82_2.png)
 
 ## 总结
 

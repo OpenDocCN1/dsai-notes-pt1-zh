@@ -31,13 +31,11 @@ sns.jointplot(x=‘X‘, y=‘Y‘, data=df)
 
 上节课我们还讲解了散点图。散点图通常用于分析两个变量之间的相关性。
 
-![](img/de2a70fa1c99013d7819915dbbc13eea_1.png)
 
 `jointplot`默认就会绘制一个散点图，展示X和Y的分布关系，同时将X和Y各自的直方图画在两侧。
 
 但是，散点图在处理大量数据点时存在局限性。例如，当你有20万甚至200万个数据点时，绘制散点图会非常耗时，并且最终图形会因点过于密集而难以辨认。
 
-![](img/de2a70fa1c99013d7819915dbbc13eea_3.png)
 
 ## 六边形分箱图 🐝
 
@@ -51,9 +49,7 @@ sns.jointplot(x=‘X‘, y=‘Y‘, data=df, kind=‘hex‘)
 
 颜色越深，表示该区域的数据点越集中。通过结合两侧的分布图，你同样可以清晰地判断两个变量之间的相关性。例如，如果数据点集中分布在一条斜线附近，则说明两个变量相关性较强。
 
-![](img/de2a70fa1c99013d7819915dbbc13eea_5.png)
 
-![](img/de2a70fa1c99013d7819915dbbc13eea_6.png)
 
 ## 核密度估计图 🗺️
 
@@ -61,13 +57,9 @@ sns.jointplot(x=‘X‘, y=‘Y‘, data=df, kind=‘hex‘)
 
 以下是绘制核密度估计图的代码：
 
-![](img/de2a70fa1c99013d7819915dbbc13eea_8.png)
 
-![](img/de2a70fa1c99013d7819915dbbc13eea_9.png)
 
-![](img/de2a70fa1c99013d7819915dbbc13eea_10.png)
 
-![](img/de2a70fa1c99013d7819915dbbc13eea_11.png)
 
 ```python
 sns.jointplot(x=‘X‘, y=‘Y‘, data=df, kind=‘kde‘)
@@ -77,17 +69,13 @@ sns.jointplot(x=‘X‘, y=‘Y‘, data=df, kind=‘kde‘)
 
 ## 增强可视化效果 ✨
 
-![](img/de2a70fa1c99013d7819915dbbc13eea_13.png)
 
-![](img/de2a70fa1c99013d7819915dbbc13eea_14.png)
 
 Seaborn允许你以多种方式增强可视化效果，以便更清楚地了解数据分布。
 
-![](img/de2a70fa1c99013d7819915dbbc13eea_16.png)
 
 你可以将原始数据点（实例）标记在图形边缘，作为分布的辅助参考。这类似于单变量分布图中的`rug`参数。
 
-![](img/de2a70fa1c99013d7819915dbbc13eea_17.png)
 
 ```python
 # 绘制核密度估计图，并在边缘标注数据点
@@ -133,7 +121,6 @@ sns.pairplot(iris, kind=‘kde‘)
 
 ---
 
-![](img/de2a70fa1c99013d7819915dbbc13eea_19.png)
 
 ![](img/de2a70fa1c99013d7819915dbbc13eea_20.png)
 

@@ -1,6 +1,5 @@
 # Python 3全系列基础教程，P6：Python字符串操作 🧵
 
-![](img/09ef0dc5bcb480ff88b22238827c1783_0.png)
 
 ![](img/09ef0dc5bcb480ff88b22238827c1783_0.png)
 
@@ -148,6 +147,5 @@ print(substring)  # 输出：Hello world
 
 记住，字符串在Python中是“一等对象”，拥有丰富的内置方法，使得文本处理变得非常高效和直观。掌握这些基础知识，将为你的编程之旅打下坚实的根基。
 
-![](img/09ef0dc5bcb480ff88b22238827c1783_5.png)
 
 ![](img/09ef0dc5bcb480ff88b22238827c1783_5.png)

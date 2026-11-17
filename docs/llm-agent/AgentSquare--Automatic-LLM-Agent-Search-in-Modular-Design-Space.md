@@ -420,11 +420,9 @@ AgentSquare设置。我们实现了AgentSquare，并使用GPT-3.5-turbo-0125和G
 
 表 A.6：在六个任务中，AgentSquare 使用 GPT-3.5 和 GPT-4o 每次搜索的平均 API 成本和直到终止的总迭代次数。
 
-![参见标题说明](img/8c55849119dea98f9c2a969bcbe42550.png)
 
 图 A.7：ALFWorld 任务的性能与 API 成本可视化。
 
-![参见标题说明](img/13564ee4f14a79a95306b8680d7f7759.png)
 
 图 A.8：网上商店的性能与 API 成本可视化。
 
@@ -432,11 +430,9 @@ AgentSquare设置。我们实现了AgentSquare，并使用GPT-3.5-turbo-0125和G
 
 图 A.9：Sciworld 的性能与 API 成本可视化。
 
-![参见标题说明](img/d60e8c46a8846229da3a0e1682695751.png)
 
 图 A.10：M3tool 的性能与 API 成本可视化。
 
-![参见标题说明](img/e765c2c4ff551a5b964d296698e96ec2.png)
 
 图 A.11：旅行规划器的性能与 API 成本可视化。
 
@@ -444,7 +440,6 @@ AgentSquare设置。我们实现了AgentSquare，并使用GPT-3.5-turbo-0125和G
 
 图 A.12：PDDL 的性能与 API 成本可视化。
 
-![参见标题说明](img/5c71e9a6bfa4cb19ea6294bef7db204d.png)
 
 图 A.13：AgentSquare 搜索轨迹在 M3tool 和 PDDL 上（更多手工制作的代理，超越最佳手工制作代理时的特定模块组合以及最终演化的代理，其他搜索基准）。
 

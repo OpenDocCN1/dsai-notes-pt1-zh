@@ -1,38 +1,26 @@
 # 132：SVM支持向量机网格搜索参数优化 📊
 
-![](img/2913454af0346aef9da69f68b0cb8532_1.png)
 
-![](img/2913454af0346aef9da69f68b0cb8532_3.png)
 
-![](img/2913454af0346aef9da69f68b0cb8532_5.png)
 
-![](img/2913454af0346aef9da69f68b0cb8532_7.png)
 
 在本节课中，我们将学习如何使用网格搜索（Grid Search）与交叉验证（Cross-Validation）来优化支持向量机（SVM）模型的参数，从而提升模型的预测准确率。
 
-![](img/2913454af0346aef9da69f68b0cb8532_9.png)
 
-![](img/2913454af0346aef9da69f68b0cb8532_11.png)
 
 ---
 
-![](img/2913454af0346aef9da69f68b0cb8532_13.png)
 
 上一节我们介绍了SVM的基本原理和代码实现。本节中，我们来看看如何通过系统化的方法寻找模型的最优参数。
 
 ## 数据加载与预处理
 
-![](img/2913454af0346aef9da69f68b0cb8532_15.png)
 
-![](img/2913454af0346aef9da69f68b0cb8532_17.png)
 
-![](img/2913454af0346aef9da69f68b0cb8532_19.png)
 
 首先，我们需要加载训练数据和测试数据。数据文件位于当前目录下，分别是 `train_data` 和 `test_data`。我们将定义一个函数来读取这些数据。
 
-![](img/2913454af0346aef9da69f68b0cb8532_21.png)
 
-![](img/2913454af0346aef9da69f68b0cb8532_23.png)
 
 ```python
 import numpy as np
@@ -58,11 +46,9 @@ def load_data(file_path):
 3.  使用列表生成式去除每行首尾空格并按空格分割。
 4.  将列表转换为NumPy数组，并分离特征 `X` 和目标值 `y`。
 
-![](img/2913454af0346aef9da69f68b0cb8532_25.png)
 
 现在，我们调用这个函数来加载数据。
 
-![](img/2913454af0346aef9da69f68b0cb8532_27.png)
 
 ```python
 # 加载训练数据和测试数据
@@ -103,11 +89,9 @@ print(f"kernel='linear'时准确率: {svm_model_linear.score(X_test, y_test.rave
 ```
 手动调整效率低下且不系统。接下来，我们将使用网格搜索来自动化这个过程。
 
-![](img/2913454af0346aef9da69f68b0cb8532_29.png)
 
 ## 网格搜索与交叉验证
 
-![](img/2913454af0346aef9da69f68b0cb8532_31.png)
 
 网格搜索（`GridSearchCV`）可以系统地遍历多种参数组合，并通过交叉验证评估每种组合的性能，最终找到最优参数。
 
@@ -119,25 +103,18 @@ print(f"kernel='linear'时准确率: {svm_model_linear.score(X_test, y_test.rave
 3.  计算5次验证结果的平均值，作为该参数组合的性能指标。
 这种方法充分利用了数据，使评估结果更稳健。
 
-![](img/2913454af0346aef9da69f68b0cb8532_33.png)
 
 ### 实施网格搜索
 
-![](img/2913454af0346aef9da69f68b0cb8532_35.png)
 
-![](img/2913454af0346aef9da69f68b0cb8532_37.png)
 
 我们将使用 `GridSearchCV` 来优化SVM的 `C`（惩罚系数）和 `tol`（容忍度/收敛阈值）参数。
 
-![](img/2913454af0346aef9da69f68b0cb8532_39.png)
 
-![](img/2913454af0346aef9da69f68b0cb8532_41.png)
 
-![](img/2913454af0346aef9da69f68b0cb8532_43.png)
 
 首先，导入必要的模块并定义参数网格。
 
-![](img/2913454af0346aef9da69f68b0cb8532_45.png)
 
 ```python
 from sklearn.model_selection import GridSearchCV
@@ -150,14 +127,11 @@ param_grid = {
 ```
 **公式说明**：`np.logspace(-3, 3, 50)` 生成一个等比数列，首项为 $10^{-3}$，末项为 $10^{3}$，共50项。这涵盖了从0.001到1000的一个广泛范围。
 
-![](img/2913454af0346aef9da69f68b0cb8532_47.png)
 
-![](img/2913454af0346aef9da69f68b0cb8532_49.png)
 
 然后，创建 `GridSearchCV` 对象并进行拟合。
 
 
-![](img/2913454af0346aef9da69f68b0cb8532_51.png)
 
 ```python
 # 创建GridSearchCV对象
@@ -178,12 +152,9 @@ grid_search.fit(X_train, y_train.ravel())
 
 搜索完成后，我们可以查看找到的最优参数和对应的最佳模型。
 
-![](img/2913454af0346aef9da69f68b0cb8532_53.png)
 
 
-![](img/2913454af0346aef9da69f68b0cb8532_55.png)
 
-![](img/2913454af0346aef9da69f68b0cb8532_57.png)
 
 ```python
 # 输出最优参数组合

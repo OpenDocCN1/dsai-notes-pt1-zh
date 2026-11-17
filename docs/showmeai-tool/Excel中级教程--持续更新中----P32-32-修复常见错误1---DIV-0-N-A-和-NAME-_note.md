@@ -1,6 +1,5 @@
 # Excel中级教程 - P32：修复常见错误1 - DIV/0、N/A 和 NAME 🔧
 
-![](img/a4c5d4348b8f0db6a99a8f0818bc7cea_0.png)
 
 ![](img/a4c5d4348b8f0db6a99a8f0818bc7cea_0.png)
 
@@ -63,6 +62,5 @@
 
 掌握这些错误的排查与修复技巧，能让你创建出更健壮、更美观的电子表格。在下一节课中，我们将继续学习其他类型的错误，如 `#NULL!`、`#NUM!`、`#REF!` 和 `#VALUE!`。
 
-![](img/a4c5d4348b8f0db6a99a8f0818bc7cea_2.png)
 
 ![](img/a4c5d4348b8f0db6a99a8f0818bc7cea_2.png)

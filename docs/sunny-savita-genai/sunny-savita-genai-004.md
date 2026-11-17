@@ -44,7 +44,6 @@ Transformer模型的核心是**自注意力**机制。其公式可以简化为�
 
 **`Attention(Q, K, V) = softmax(QK^T / √d_k) V`**
 
-![](img/914d0aa74d2ff44f2b820d4d4e9c68f2_1.png)
 
 其中：
 *   **Q (Query)**：代表当前需要计算注意力的位置。
@@ -56,7 +55,6 @@ Transformer模型本身也采用编码器-解码器结构，但内部的编码�
 
 ## 从Transformer到大型语言模型
 
-![](img/914d0aa74d2ff44f2b820d4d4e9c68f2_3.png)
 
 Transformer架构的出现是自然语言处理领域的分水岭。基于Transformer的编码器部分，诞生了如**BERT**这样的模型，它通过掩码语言建模进行预训练，擅长理解任务。
 
@@ -78,7 +76,6 @@ ChatGPT是GPT系列模型在对话任务上的成功应用。它的训练过程�
 
 ---
 
-![](img/914d0aa74d2ff44f2b820d4d4e9c68f2_5.png)
 
 ![](img/914d0aa74d2ff44f2b820d4d4e9c68f2_6.png)
 

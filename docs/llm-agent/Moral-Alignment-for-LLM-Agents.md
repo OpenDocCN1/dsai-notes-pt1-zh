@@ -124,7 +124,6 @@ LLM代理和对手进行重复的囚徒困境博弈。在每一个时间步，�
 
 ### 4.2 学习动态
 
-a) ![参见说明](img/7c920cc67ee40ba844686e6a1adc5927.png) ![参见说明](img/3bd74d81fc6107c242f4bb7e9499ccf1.png) ![参见说明](img/805ffc635f1a98caa08239894b84d116.png) ![参见说明](img/e84b158c0ebdad440f0e8f1a313f5c27.png)
 
 b) ![参见说明](img/eddfc636b7765cf6f572ce4647603b06.png) ![参见说明](img/8b62aa2e86c547c240eb59b96763bdd2.png) ![参见说明](img/0f53c430be7c4db1c169b8740159bcc3.png) ![参见说明](img/8a9383064e4c7781dd2f83e58a693c39.png)
 
@@ -409,7 +408,6 @@ IPD 测试时提示的排列组合：
 
 排列组合 1：
 
-![参见说明](img/ab5d49823e253cac4545f9a7452d081d.png)
 
 排列组合 2：
 
@@ -669,13 +667,11 @@ IPD 提示或 Action + Game + State 提示：
 
 核心分析（道德后悔），使用原始行动令牌（如微调时使用的）：
 
-![参考说明](img/ce57dda9c783180660fc0ddbf9981a8c.png) ![参考说明](img/e9f5e7e6e144092a6e4aa1513052e4ba.png)
 
 图 20：对微调代理的学习道德在其他矩阵博弈环境中的泛化分析，提示中的行动令牌的含义与原始训练过程中的一致（此处，action1=合作，action2=背叛）（即，图 [8](https://arxiv.org/html/2410.01639v2#S8.F8 "图 8 ‣ 8.2 训练与评估提示 ‣ 8 附录 ‣ LLM 代理的道德对齐") 中的提示 a）。
 
 核心分析（道德后悔），原始行动令牌的含义被反转：
 
-![参考说明](img/b8ea07547f83d46e6619aeaf787811ae.png) ![参考说明](img/053333648952eaedcafe32c2ed5670a6.png)
 
 图 21：对微调代理的学习道德在其他矩阵博弈环境中的泛化分析，提示中的行动令牌的含义被反转（此处，action2=合作，action1=背叛，即，图 [8](https://arxiv.org/html/2410.01639v2#S8.F8 "图 8 ‣ 8.2 训练与评估提示 ‣ 8 附录 ‣ LLM 代理的道德对齐") 中的提示 b）。
 
@@ -687,15 +683,12 @@ IPD 提示或 Action + Game + State 提示：
 
 排列 1：
 
-![参考标题](img/598b2f8d35fe7377c884f33b26be9aef.png) ![参考标题](img/d3ee642220b4d21ec4f56f1678206b5c.png)
 
 排列 2：
 
-![参考标题](img/5f87b91f0b6d256dfcb5fca6c0bfcaff.png) ![参考标题](img/8db4efe8619058a73b44639299660250.png)
 
 排列 3：
 
-![参考标题](img/0c410261395564cfb9f3b3d5078efaba.png) ![参考标题](img/f55995f21710472681a75bc36e178200.png)
 
 排列 4：
 
@@ -705,15 +698,12 @@ IPD 提示或 Action + Game + State 提示：
 
 排列1：
 
-![参见说明](img/666b4b4392de0c27ea9bc01f500a55f7.png)
 
 排列2：
 
-![参见说明](img/ef9adc86b1f95e7bd80c04f297e90b3d.png)
 
 排列3：
 
-![参见说明](img/33a0a581e6ece53ac116d6204d511a15.png)
 
 排列4：
 

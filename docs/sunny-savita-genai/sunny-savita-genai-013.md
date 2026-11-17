@@ -2,7 +2,6 @@
 
 ![](img/0b76bb00d7bee3c8307f3f17bb725371_1.png)
 
-![](img/0b76bb00d7bee3c8307f3f17bb725371_2.png)
 
 ## 概述
 
@@ -22,9 +21,7 @@
 
 使用RAG主要基于以下几个原因：
 
-![](img/0b76bb00d7bee3c8307f3f17bb725371_6.png)
 
-![](img/0b76bb00d7bee3c8307f3f17bb725371_7.png)
 
 ![](img/0b76bb00d7bee3c8307f3f17bb725371_8.png)
 

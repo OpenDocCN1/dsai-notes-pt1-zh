@@ -2,7 +2,6 @@
 
 在本节课中，我们将要学习如何创建和运行一个带有基本路由的Flask应用程序，解释如何从服务器向客户端返回JSON响应，并描述Flask中可用的各种配置选项。
 
-![](img/8a955da5588ed111bdb13066f7133571_1.png)
 
 ---
 
@@ -28,7 +27,6 @@ app = Flask(__name__)
 
 让我们看一下代码。`@app` 装饰器定义在 `hello_world` 方法上。它接受参数 `/`，并返回加粗的HTML消息“我的第一个Flask应用程序正在运行”。
 
-![](img/8a955da5588ed111bdb13066f7133571_3.png)
 
 ```python
 @app.route('/')
@@ -38,11 +36,9 @@ def hello_world():
 
 ---
 
-![](img/8a955da5588ed111bdb13066f7133571_5.png)
 
 ## 运行你的应用程序
 
-![](img/8a955da5588ed111bdb13066f7133571_6.png)
 
 下一步是运行你的应用程序。第一步是创建几个系统环境变量。你需要一个名为 `FLASK_APP` 的变量，它包含主服务器文件的名称。此外，你还需要一个 `FLASK_ENV` 变量来定义开发或生产环境。这个变量在Flask 2.3中将被弃用。
 
@@ -54,11 +50,9 @@ export FLASK_ENV=development
 flask run
 ```
 
-![](img/8a955da5588ed111bdb13066f7133571_8.png)
 
 Flask应用程序默认在5000端口上运行。你可以浏览 `http://localhost:5000` 来查看你的消息。让我们也使用浏览器开发者工具来查看从服务器返回的信息。请求的URL是 `http://localhost:5000`，请求方法是 `HTTP GET`。响应的状态码为200，表示成功响应。响应头中的内容类型是 `text/html`，服务器正在运行，Python版本为3.6.15。
 
-![](img/8a955da5588ed111bdb13066f7133571_9.png)
 
 恭喜你成功运行了第一个Flask应用程序。
 
@@ -74,13 +68,11 @@ Flask应用程序默认在5000端口上运行。你可以浏览 `http://localhos
 
 ---
 
-![](img/8a955da5588ed111bdb13066f7133571_11.png)
 
 ## 从Flask应用程序返回JSON
 
 有多种方法可以从Flask应用程序返回JSON。一种方法是返回一个可序列化的对象，如字典或列表。在给定的代码中，你返回一个Python字典，Flask将使用Python的 `json` 模块将JSON返回给客户端。
 
-![](img/8a955da5588ed111bdb13066f7133571_13.png)
 
 ```python
 @app.route('/data')
@@ -94,13 +86,10 @@ def return_data():
 
 第二种方法是使用Flask提供的 `jsonify` 方法。此方法接受键值对作为输入，并返回相应的JSON。让我们看一个例子。
 
-![](img/8a955da5588ed111bdb13066f7133571_15.png)
 
 你首先从Flask导入 `jsonify`，然后将键值对传递给 `jsonify`。
 
-![](img/8a955da5588ed111bdb13066f7133571_16.png)
 
-![](img/8a955da5588ed111bdb13066f7133571_17.png)
 
 ```python
 from flask import jsonify
@@ -133,9 +122,7 @@ def return_data_jsonify():
 
 ## 应用程序结构
 
-![](img/8a955da5588ed111bdb13066f7133571_19.png)
 
-![](img/8a955da5588ed111bdb13066f7133571_20.png)
 
 随着应用程序的增长，你应该创建一个目录结构，而不是使用单个Python文件。构建应用程序的方式有很多种，这里是一个例子：
 *   将主要源代码存储在其模块目录中。
@@ -145,7 +132,6 @@ def return_data_jsonify():
 *   将所有测试文件放在测试目录中。
 *   拥有一个可以激活的虚拟环境，以安装正确版本的依赖项。
 
-![](img/8a955da5588ed111bdb13066f7133571_21.png)
 
 ---
 

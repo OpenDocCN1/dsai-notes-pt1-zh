@@ -186,11 +186,9 @@ LLM 代理扮演变体的捐赠者游戏，正如系统提示中所描述的那�
 
 当我们检查每次独立运行的结果时，可以区分出更细粒度的效果（图 [4](https://arxiv.org/html/2412.10270v1#S4.F4 "图 4 ‣ 4.1 捐赠者博弈 ‣ 4 结果 ‣ LLM 代理的合作文化演化")）。特别需要注意的是，Claude 3.5的成功并非有保障，实际上，它似乎对初始条件（即第一代样本中所选择的策略）具有一定的敏感依赖。我们假设，初始合作的某个阈值以下，LLM 代理社会将注定走向相互背叛。实际上，对于Claude未能生成合作的两次运行（图 [4(a)](https://arxiv.org/html/2412.10270v1#S4.F4.sf1 "图 4 ‣ 4.1 捐赠者博弈 ‣ 4 结果 ‣ LLM 代理的合作文化演化")中的玫瑰色和绿色），第一代的平均捐赠率分别为44%和47%，而对于Claude成功生成合作的三次运行，第一代的平均捐赠率分别为50%、53%和54%。
 
-![参见标题](img/eaea97abf1c33aa591e7db7210ecc862.png)
 
 (a) Claude 3.5 Sonnet
 
-![参见标题](img/813ff57162e0b1ecec06b7ab4067347e.png)
 
 (b) Gemini 1.5 Flash
 
@@ -323,7 +321,6 @@ LLM 代理扮演变体的捐赠者游戏，正如系统提示中所描述的那�
 
 ## 补充材料
 
-![参考标题](img/3a7286f2241a6cdc131a354d1bca3b3a.png)
 
 (a) Claude 3.5 Sonnet
 
@@ -337,39 +334,31 @@ LLM 代理扮演变体的捐赠者游戏，正如系统提示中所描述的那�
 
 图7：1.5倍捐赠乘数。
 
-![参考标题](img/d141aa89dacc6c2c780992990f960375.png)
 
 (a) Claude 3.5 Sonnet
 
-![参考标题](img/9880ec22422d35229f4698d8fd9b689d.png)
 
 (b) Gemini 1.5 Flash
 
-![参考标题](img/aae487c266219d9c3d348a704d2c6e5d.png)
 
 (c) GPT-4o
 
 图8：3倍捐赠乘数。
 
-![参考标题](img/bd2027a9fe184235deb7913602d1176c.png)
 
 (a) Claude 3.5 Sonnet
 
-![参考标题](img/4c4f6d8dfd687dc4e4817299ae642705.png)
 
 (b) Gemini 1.5 Flash
 
-![参考标题](img/5a3e3650a02fcc1b7753d6d662829d5a.png)
 
 (c) GPT-4o
 
 图9：长度为1的轨迹。
 
-![参考标题](img/fcd36c6223fb85de97f73ad270accd40.png)
 
 (a) Claude 3.5 Sonnet
 
-![参考标题](img/189b78563bcd26b9cb001bc87b7854ea.png)
 
 (b) Gemini 1.5 Flash
 

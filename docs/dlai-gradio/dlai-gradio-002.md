@@ -40,9 +40,7 @@ def summarize(input_text):
 
 然后，我们使用Gradio的`Interface`函数来创建界面。传入我们刚刚定义的`summarize`函数，将输入和输出都设置为文本类型，最后调用`launch`来启动用户界面。
 
-![](img/5841c1f3f73242cc0c285140adabc54f_3.png)
 
-![](img/5841c1f3f73242cc0c285140adabc54f_4.png)
 
 ```python
 demo = gr.Interface(fn=summarize, inputs="text", outputs="text")

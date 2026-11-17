@@ -10,7 +10,6 @@ In this demo we're going to be using recurrent neural nets to classify the senti
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_1.png)
 
 And we're also going to have with it 25000 test sequences that we can test how well we're able to train our data。
 
@@ -18,7 +17,6 @@ And we're also going to have with it 25000 test sequences that we can test how w
 
  and we have those。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_3.png)
 
 Those will be labeled for us。So Cars provides a convenient interface to load in this data and this is actually built into Cars as its dataset set and will immediately encode those words as integers。
 
@@ -36,9 +34,7 @@ So first things first， we import all the necessary libraries， so cars。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_5.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_6.png)
 
 The embedding will have vectors that are very similar to one another。
 
@@ -54,11 +50,8 @@ The embedding will have vectors that are very similar to one another。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_8.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_9.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_10.png)
 
 We're then going to initialize the length of our features and we see that max features is 20，000。
 
@@ -68,11 +61,8 @@ We're then going to initialize the length of our features and we see that max fe
 
  the most common 20000 words。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_12.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_13.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_14.png)
 
 We're then going to， and we discuss this in lecture a bit。 set the maximum length of the sequence。
 
@@ -86,13 +76,9 @@ And then we'll decide our batch size here as well when we do our deep learning�
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_16.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_17.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_18.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_19.png)
 
 We're then going to load in our data and when we load in our data， we just call an imdb。
 
@@ -102,9 +88,7 @@ load data and the only parameter we needed to pass here or that we did pass here
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_21.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_22.png)
 
 And that will output our X train and our Y train as well as our X test and our Y test。
 
@@ -114,23 +98,18 @@ And we can look at the length of each and they should be equal to that 25，000 
 
 000 test sequences。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_24.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_25.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_26.png)
 
 Now， as mentioned， we're also going to pad or tranquaate each of our sequences using that max length that we discussed earlier。
 
  which was equal to 30 as we see right over here。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_28.png)
 
 So we set sequence。Pulling in that sequence that we've pulled here。In terms of。
 
 From that pre processingcess library。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_30.png)
 
 We have the functionality of padding our sequences。
 
@@ -140,9 +119,7 @@ So KaRS has something built in in order to quickly pad or truncate our sequences
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_32.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_33.png)
 
 And now， when we look at the shape of those sequences。
 
@@ -150,9 +127,7 @@ And now， when we look at the shape of those sequences。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_35.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_36.png)
 
 Where each one of those examples is of length 30。And if we want to see what one of those examples look like。
 
@@ -160,9 +135,7 @@ Where each one of those examples is of length 30。And if we want to see what on
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_38.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_39.png)
 
 Now， our goal is to build out a recurrent neural net。And in order to do so。
 
@@ -170,25 +143,19 @@ Now， our goal is to build out a recurrent neural net。And in order to do so�
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_41.png)
 
 So rather than using pre trained word vectors， we're going to learn what those vectors actually are using this embedding layer。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_43.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_44.png)
 
 Now， when I say that again， that embedding will allow you to have that context so that similar words will have vectors close to each other so if we're talking about X dimensional space。
 
  let's see what was our dimensional space here。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_46.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_47.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_48.png)
 
 啊。We put in word bedding of 50， we see it down here。
 
@@ -198,15 +165,12 @@ Then we are going to have a vector that has 50 numbers。 and in 50 dimensional 
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_50.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_51.png)
 
 And we're going to learn whether they're similar in meaning using this embedding layer。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_53.png)
 
 So the layer maps each integer into a distinct dense word vector of length output dim as we just mentioned。
 
@@ -224,7 +188,6 @@ Take whatever data set and automatically use that embedding and come up with vec
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_55.png)
 
 We then are going to have， again， that input dimension should be the size of our vocabulary。
 
@@ -234,17 +197,12 @@ We then are going to have， again， that input dimension should be the size of
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_57.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_58.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_59.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_60.png)
 
 We then have our。Simple R&N layer。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_62.png)
 
 Which we're going to pass in the number of units so we can think again to our diagram that we saw earlier and we can say how many units we want that to output。
 
@@ -254,7 +212,6 @@ Which we're going to pass in the number of units so we can think again to our di
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_64.png)
 
 And then we have our kernel initializer and our recurrent initializer。
 
@@ -264,11 +221,8 @@ Which are going to be the initial values for our weight matrices。 again。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_66.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_67.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_68.png)
 
 Here we're actually going to change the activation to reu if you see。
 
@@ -282,15 +236,11 @@ Here we're actually going to change the activation to reu if you see。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_70.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_71.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_72.png)
 
 X train， Dutcht shape。1。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_74.png)
 
 And we see that that's going to be of shape 30， and that doesn't matter how many examples we have in general。
 
@@ -298,23 +248,19 @@ And we see that that's going to be of shape 30， and that doesn't matter how ma
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_76.png)
 
 So let's build out our first R&M。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_78.png)
 
 So our R and N hidden dim is going to be equal to 5。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_80.png)
 
 Our wood embedding dimension is going to be 50。 So again， we're going to take those。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_82.png)
 
 Integers that we currently have。And given their context。
 
@@ -322,21 +268,17 @@ Integers that we currently have。And given their context。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_84.png)
 
 We're then going to initialize our model， add on our embedding layer。Passing the max features。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_86.png)
 
 As well as the word embedding dim that max features is going to be what we have here。
 
  20000 to give us what the actual。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_88.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_89.png)
 
 Input dimension is。And then our word embedding is going to tell us our new dimensions。
 
@@ -344,9 +286,7 @@ Input dimension is。And then our word embedding is going to tell us our new dim
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_91.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_92.png)
 
 Our new embedding and our data ready to be fed forward。 We can pass that through our simple。
 
@@ -358,7 +298,6 @@ We then call out our kernel initializer， as well as our recurrent initializer�
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_94.png)
 
 What this is is just random normal with very tight standard deviation around that zero for random values。
 
@@ -366,7 +305,6 @@ What this is is just random normal with very tight standard deviation around tha
 
  we're going to have a bunch of ones。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_96.png)
 
 This shouldn't make that large of a difference starting off。
 
@@ -376,11 +314,8 @@ This shouldn't make that large of a difference starting off。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_98.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_99.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_100.png)
 
 We then set our activation to Relo。Input shape equal to that Xtrain dot shape that we just saw。
 
@@ -390,29 +325,23 @@ We then set our activation to Relo。Input shape equal to that Xtrain dot shape 
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_102.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_103.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_104.png)
 
 So now we have our model and we can look at the summary。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_106.png)
 
 And we see we have to train a bunch of parameters for that embedding layer。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_108.png)
 
 Then for the simple Rn N。If we think about it， we're going to have in that initial matrix going from our input to our state layer。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_110.png)
 
 We should have a 50。 We have。 we're trying to。 we have 50 as input。
 
@@ -424,7 +353,6 @@ We should have a 50。 We have。 we're trying to。 we have 50 as input。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_112.png)
 
 So that's going to be another 25 weights that we learn and that's how we get 280 parameters that we are currently learning and finally that dense layer。
 
@@ -432,15 +360,12 @@ So that's going to be another 25 weights that we learn and that's how we get 280
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_114.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_115.png)
 
 We can then call our optimizer， we're going to use RMS Pro with a learning rate of 0。0001。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_117.png)
 
 We're going to use binary cross entropy since we're deciding between 0 and 1。
 
@@ -448,7 +373,6 @@ We're going to use binary cross entropy since we're deciding between 0 and 1。
 
  and we're going to track that accuracy as well。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_119.png)
 
 And then finally， in order to fit that model， we can pass that in， pass in our X train， our Y train。
 
@@ -458,7 +382,6 @@ We pass in our batch size， which should we defined early as 32， the number o
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_121.png)
 
 So you run this and this will take just a bit， so I'm going to pause the video here。
 
@@ -466,9 +389,7 @@ And we'll come back when this is done running and discuss the results。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_123.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_124.png)
 
 So now our model has run， went through the10 epochs。
 
@@ -478,9 +399,7 @@ So now our model has run， went through the10 epochs。
 
 
 
-![](img/b83542af3177ccc035d17db1e3cde1da_126.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_127.png)
 
 Now we're going to call model RnN。 evaluatevalu and we're going to evaluate on our test set。
 
@@ -492,13 +411,9 @@ Now we're going to call model RnN。 evaluatevalu and we're going to evaluate on
 
 45 and then a test accuracy of 0。78。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_129.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_130.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_131.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_132.png)
 
 So that closes out this video and in the next video we're going to briefly touch on different ways that we can manipulate the models that we just went to trying different parameters and hyperparameter we're not going to go through all possible different parameters and hyperparameter。
 
@@ -506,12 +421,8 @@ So that closes out this video and in the next video we're going to briefly touch
 
  I'll see you there。
 
-![](img/b83542af3177ccc035d17db1e3cde1da_134.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_135.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_136.png)
 
-![](img/b83542af3177ccc035d17db1e3cde1da_137.png)
 
 ![](img/b83542af3177ccc035d17db1e3cde1da_138.png)

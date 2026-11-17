@@ -4,7 +4,6 @@
 
 ## 概述
 
-![](img/d528bbe79ab9311652a0df94988f7255_1.png)
 
 上一节我们介绍了模型的基本加载。本节中，我们来看看如何利用CLIP模型执行零样本图像分类任务。CLIP是由OpenAI开发的多模态视觉-语言模型，它能够理解图像和文本之间的关联，从而实现无需特定训练的分类。
 
@@ -30,7 +29,6 @@ processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
 
 现在，让我们准备一张待分类的图像。我们将使用PIL库来加载图像。
 
-![](img/d528bbe79ab9311652a0df94988f7255_3.png)
 
 ```python
 from PIL import Image
@@ -39,9 +37,7 @@ image = Image.open("path/to/your/image.jpg")
 
 假设我们加载的图像是两只可爱的小猫。接下来，我们需要定义一组候选标签供模型选择。例如，我们可以创建以下两个标签：
 
-![](img/d528bbe79ab9311652a0df94988f7255_5.png)
 
-![](img/d528bbe79ab9311652a0df94988f7255_7.png)
 
 *   `a photo of a cat`
 *   `a photo of a dog`

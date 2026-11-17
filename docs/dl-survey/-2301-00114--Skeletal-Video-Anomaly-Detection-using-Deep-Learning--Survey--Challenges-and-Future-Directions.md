@@ -132,7 +132,6 @@ Rodrigues 等人 [28] 提出异常的人类活动可以在不同的时间尺度�
 
 \stackunder
 
-[2pt]![参见标题](img/7c219f4ba3f69d2582210ec922c1d4bc.png)CUHK 大道（正常） \stackunder[2pt]![参见标题](img/6c6725ac7f364708baf2227228043f48.png)IITB 走廊（正常） \stackunder[2pt]![参见标题](img/53d71e38d50dbe0fedd48c7a5e8d0fe1.png)上海科技大学（正常）
 
 \stackunder
 
@@ -178,7 +177,6 @@ Alphapose [71] 和 Openpose [72] 是提取场景中人物骨架的最常用的�
 
 \stackunder
 
-[2pt]![参考说明](img/4caf21ef66d1b89a8e9c2ad61666dbdd.png) \stackunder[2pt]![参考说明](img/0d2f57c6d185aca906c6a75a116a436b.png) \stackunder[2pt]![参考说明](img/99826a09e93e28be6b2def1a74454090.png)
 
 \stackunder
 

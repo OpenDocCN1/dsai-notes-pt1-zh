@@ -1,6 +1,5 @@
 # 005：查询翻译之多查询方法 🎯
 
-![](img/4c2a1503d2ec4e613d590a9544eb592d_0.png)
 
 在本节课中，我们将要学习 RAG 流水线中的一个重要环节——查询翻译。具体来说，我们会深入探讨“多查询”方法，了解它如何通过重写用户问题来提升文档检索的准确性和可靠性。
 
@@ -48,9 +47,7 @@ retriever = vectorstore.as_retriever()
 
 接下来，我们定义一个提示模板，指导大语言模型将原始问题重写为多个不同角度的问题。
 
-![](img/4c2a1503d2ec4e613d590a9544eb592d_2.png)
 
-![](img/4c2a1503d2ec4e613d590a9544eb592d_3.png)
 
 ```python
 from langchain.prompts import PromptTemplate
@@ -93,7 +90,6 @@ def multi_query_retrieval(original_question):
     return unique_docs
 ```
 
-![](img/4c2a1503d2ec4e613d590a9544eb592d_5.png)
 
 以下是该流程的关键步骤：
 1.  **问题生成**：将原始问题输入到 `generate_queries_chain`，得到一系列重写后的问题。

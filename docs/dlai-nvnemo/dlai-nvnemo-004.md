@@ -1,12 +1,8 @@
 # 004：使用工具为智能体增添智能 🛠️
 
-![](img/47fa27f98d62c1c5d7ea110ece7c4253_1.png)
 
-![](img/47fa27f98d62c1c5d7ea110ece7c4253_3.png)
 
-![](img/47fa27f98d62c1c5d7ea110ece7c4253_4.png)
 
-![](img/47fa27f98d62c1c5d7ea110ece7c4253_5.png)
 
 在本节课中，我们将学习如何扩展之前的实体工作流，使其成为一个能够“推理-行动”的智能体。我们将通过为分析NOAA气候数据的Python函数添加工具支持，将简单的聊天机器人转变为能够采取智能、数据驱动行动的智能体。
 
@@ -145,9 +141,7 @@ nat workflow create climate_assistant
 ```
 这将创建一个包含正确结构的标准Python项目，你可以在此基础上添加自己的工具和逻辑。
 
-![](img/47fa27f98d62c1c5d7ea110ece7c4253_7.png)
 
-![](img/47fa27f98d62c1c5d7ea110ece7c4253_9.png)
 
 ## 总结
 

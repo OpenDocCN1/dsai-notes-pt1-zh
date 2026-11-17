@@ -1,6 +1,5 @@
 # 003：幻觉检测 🧠
 
-![](img/678034c4b665b668d781c2b8d40b54b2_1.png)
 
 在本节课中，我们将学习如何检测数据中的幻觉。幻觉是指模型对提示词产生了不准确或不相关的回答。
 
@@ -127,7 +126,6 @@ low_bert_score_examples = annotated_chats[annotated_chats['response.bert_score']
 ### 代码实现
 
 
-![](img/678034c4b665b668d781c2b8d40b54b2_3.png)
 
 ```python
 from sentence_transformers import SentenceTransformer, util
@@ -157,7 +155,6 @@ def response_self_similarity(text):
 ### 结果分析
 回答自相似度分数的分布是左偏的，大部分值集中在0.7到1之间。**低自相似度分数**可能更准确地指示了模型本身的不一致性，从而更可能是真正的幻觉。
 
-![](img/678034c4b665b668d781c2b8d40b54b2_5.png)
 
 ---
 
@@ -210,17 +207,12 @@ def llm_self_similarity(data_row):
 *   **请求示例数据**：当提示词要求生成示例数据（如“生成一些样本用户数据”）时，不同回答给出的数据自然不同，导致自相似度低。
 *   **真正的幻觉**：例如，提示词要求将代码翻译成一个不存在的编程语言。一个回答可能拒绝执行，而其他回答则生成了截然不同的虚构代码。这种情况下，自相似度得分可能为0，这清晰地表明了幻觉。
 
-![](img/678034c4b665b668d781c2b8d40b54b2_7.png)
 
-![](img/678034c4b665b668d781c2b8d40b54b2_9.png)
 
 ---
 
-![](img/678034c4b665b668d781c2b8d40b54b2_11.png)
 
-![](img/678034c4b665b668d781c2b8d40b54b2_12.png)
 
-![](img/678034c4b665b668d781c2b8d40b54b2_14.png)
 
 ## 总结
 

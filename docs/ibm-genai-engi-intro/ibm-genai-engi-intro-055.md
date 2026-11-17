@@ -1,10 +1,8 @@
 # 055：表达式与变量 🧮
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_1.png)
 
 在本节课中，我们将学习Python编程中的两个基础概念：**表达式**和**变量**。理解它们是编写任何程序的第一步。
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_3.png)
 
 ## 概述
 
@@ -28,7 +26,6 @@
 ```
 在这种情况下，结果是一个负数（-2）。
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_5.png)
 
 我们可以使用星号（`*`）执行乘法运算：
 ```python
@@ -46,7 +43,6 @@
 ```
 25除以6约等于4.167。在本课程使用的Python 3版本中，这两种除法运算的结果都是**浮点数**。
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_7.png)
 
 我们可以使用双斜杠（`//`）进行**整数除法**，结果会被取整：
 ```python
@@ -72,23 +68,16 @@ Python可以进行更多种类的运算，实验部分提供了更多示例。�
 
 ---
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_9.png)
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_10.png)
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_11.png)
 
 ## 引入变量 📦
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_12.png)
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_13.png)
 
 上一节我们介绍了表达式，本节中我们来看看如何使用变量来存储值。
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_14.png)
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_16.png)
 
 我们可以使用变量来存储值。例如，我们使用赋值运算符（即等号 `=`）将值1赋给变量 `my_variable`：
 ```python
@@ -126,29 +115,20 @@ X = X / 60
 
 我们也可以在变量上使用 `type()` 命令来查看其数据类型。
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_18.png)
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_19.png)
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_20.png)
 
 ---
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_21.png)
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_22.png)
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_23.png)
 
 ## 变量命名最佳实践 ✨
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_24.png)
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_25.png)
 
 为变量使用有意义的名称是一种良好实践，这样你就不必费力记住每个变量的用途。
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_26.png)
 
 假设我们想将以下音乐数据集中高亮示例的分钟数转换为小时数。我们称包含总分钟数的变量为 `total_min`。通常使用下划线来分隔单词：
 ```python
@@ -166,15 +146,11 @@ total_hour = total_min / 60
 
 ---
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_28.png)
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_29.png)
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_30.png)
 
 ## 总结
 
-![](img/7ba9204dcdfe516b7562fbab70d837fb_31.png)
 
 ![](img/7ba9204dcdfe516b7562fbab70d837fb_32.png)
 

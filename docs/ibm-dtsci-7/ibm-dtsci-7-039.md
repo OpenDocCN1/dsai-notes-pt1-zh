@@ -1,36 +1,26 @@
 # 039：样本内评估指标
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_0.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_2.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_3.png)
 
 在本节课中，我们将学习如何通过数值指标来评估回归模型的性能。我们将重点介绍两个核心的样本内评估指标：均方误差（MSE）和决定系数（R²）。这些指标能帮助我们量化模型对数据的拟合程度。
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_5.png)
 
 上一节我们介绍了通过可视化方法评估模型，本节中我们来看看如何用数值进行更精确的评估。
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_7.png)
 
 ## 📈 数值评估指标概述
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_9.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_10.png)
 
 这些指标是一种数值化方法，用于确定模型对数据的拟合程度。
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_12.png)
 
 以下是两个常用的重要指标：
 *   **均方误差（Mean Squared Error, MSE）**
 *   **决定系数（R-squared）**
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_13.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_15.png)
 
 ## 🔢 均方误差（MSE）
 
@@ -40,20 +30,15 @@ MSE衡量的是预测值与实际值之间的平均平方误差。计算步骤�
 2.  将每个误差值平方。
 3.  对所有平方误差求平均值。
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_17.png)
 
 其公式为：
 **MSE = (1/n) * Σ (Yᵢ - Ŷᵢ)²**
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_18.png)
 
 例如，若某点的实际值为150，预测值为50，则误差为100，平方后为10000。MSE是所有此类平方误差的平均值。
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_20.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_21.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_22.png)
 
 在Python中，我们可以使用`scikit-learn`库中的函数来计算MSE。
 
@@ -73,25 +58,17 @@ R²也称为判定系数，用于衡量数据点与拟合回归线的接近程�
 
 R²的值通常在0到1之间。
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_24.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_25.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_26.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_27.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_28.png)
 
 *   **R²接近1**：表示回归线对数据的拟合很好，模型解释了大量方差。
 *   **R²接近0**：表示回归线的拟合效果与仅使用数据均值差不多，模型性能不佳。
 *   **R²为负值**：可能表明模型存在过拟合问题（我们将在后续模块讨论）。
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_29.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_30.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_31.png)
 
 在Python中，我们可以使用线性回归对象的`.score()`方法来获取R²值。
 
@@ -106,19 +83,14 @@ r_squared = lm.score(X, y)
 
 ## 🎯 本节总结
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_33.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_34.png)
 
 本节课中我们一起学习了用于回归模型样本内评估的两个核心数值指标：
 1.  **均方误差（MSE）**：衡量预测误差的平均大小，值越小表示模型拟合越好。
 2.  **决定系数（R²）**：衡量模型相对于简单均值模型的解释能力，值越接近1表示模型拟合度越高。
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_35.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_36.png)
 
-![](img/fbd10015b13eef8df3bd4b0cc62becdf_37.png)
 
 ![](img/fbd10015b13eef8df3bd4b0cc62becdf_38.png)
 

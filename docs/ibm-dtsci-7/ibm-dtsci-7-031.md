@@ -2,11 +2,9 @@
 
 在本节课中，我们将学习如何通过模型开发来预测汽车价格。我们将探讨线性回归、模型评估方法以及如何利用数据特征提升预测准确性。
 
-![](img/9eecaef5db083a4c2d15adeaacba1939_1.png)
 
 ---
 
-![](img/9eecaef5db083a4c2d15adeaacba1939_2.png)
 
 ## 🎯 模型开发概述
 
@@ -16,13 +14,10 @@
 
 通常，数据越相关，模型预测越准确。
 
-![](img/9eecaef5db083a4c2d15adeaacba1939_4.png)
 
 ---
 
-![](img/9eecaef5db083a4c2d15adeaacba1939_5.png)
 
-![](img/9eecaef5db083a4c2d15adeaacba1939_6.png)
 
 ## 🔍 数据的重要性
 
@@ -30,7 +25,6 @@
 
 如果您模型的独立变量或特征中不包含颜色信息，模型将为这两辆车预测相同的价格，而实际上粉色汽车可能售价低得多。
 
-![](img/9eecaef5db083a4c2d15adeaacba1939_8.png)
 
 因此，除了收集更多数据，尝试不同类型的模型也是提高预测准确性的关键。
 
@@ -40,7 +34,6 @@
 
 在本课程中，您将学习以下三种回归模型：
 
-![](img/9eecaef5db083a4c2d15adeaacba1939_10.png)
 
 1.  **简单线性回归**
 2.  **多元线性回归**
@@ -54,9 +47,7 @@
 
 对于样本内评估，一个常用的指标是**均方误差**，其公式为：
 
-![](img/9eecaef5db083a4c2d15adeaacba1939_12.png)
 
-![](img/9eecaef5db083a4c2d15adeaacba1939_13.png)
 
 \[
 MSE = \frac{1}{n} \sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2
@@ -72,7 +63,6 @@ MSE = \frac{1}{n} \sum_{i=1}^{n} (Y_i - \hat{Y}_i)^2
 
 ---
 
-![](img/9eecaef5db083a4c2d15adeaacba1939_15.png)
 
 ## ✅ 课程总结
 

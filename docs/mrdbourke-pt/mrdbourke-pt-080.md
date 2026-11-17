@@ -28,9 +28,7 @@
 
 我们需要的核心转换是将JPEG图像转换为张量表示。
 
-![](img/07478d5f49dd9940550eb5c6ca5b80e2_2.png)
 
-![](img/07478d5f49dd9940550eb5c6ca5b80e2_4.png)
 
 以下是创建转换的步骤：
 
@@ -115,9 +113,7 @@ plot_transformed_images(image_path_list, transform=data_transform, n=3, seed=42)
 
 运行上述代码，我们可以看到原始图像（如512x512）和转换后图像（64x64）的对比。转换后的图像虽然更像素化，但关键信息得以保留。调整图像大小可以加快模型计算速度，但可能会因信息损失而影响性能。图像大小是一个可以调整的超参数。
 
-![](img/07478d5f49dd9940550eb5c6ca5b80e2_6.png)
 
-![](img/07478d5f49dd9940550eb5c6ca5b80e2_8.png)
 
 我们还可以看到`RandomHorizontalFlip`的效果，部分图像被水平翻转了。这就是`torch.transforms`的强大之处。`torchvision.transforms`库中还有许多其他转换（如裁剪、色彩抖动、灰度化等），鼓励大家进行探索。
 

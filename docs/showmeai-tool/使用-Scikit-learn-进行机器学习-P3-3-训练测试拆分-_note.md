@@ -1,6 +1,5 @@
 # 机器学习入门：使用 Scikit-learn (P3) - 模型评估与验证 🧪
 
-![](img/816ece20f67a7bafdafc76312ab6259f_0.png)
 
 在本节课中，我们将学习如何正确地评估机器学习模型的性能。我们将重点介绍如何避免模型“记忆”数据（过拟合），并学习几种关键的评估指标，以确保我们的模型能够真正地泛化到新数据上。
 
@@ -8,7 +7,6 @@
 
 ## 回顾：训练-测试拆分 🧩
 
-![](img/816ece20f67a7bafdafc76312ab6259f_2.png)
 
 上一节我们介绍了在同一份数据上训练和评估模型会导致过拟合的问题。本节中，我们来看看如何使用 `Scikit-learn` 的 `train_test_split` 函数来解决这个问题。
 
@@ -28,7 +26,6 @@ from sklearn.model_selection import train_test_split
 train_df, test_df = train_test_split(df, test_size=0.2)
 ```
 
-![](img/816ece20f67a7bafdafc76312ab6259f_4.png)
 
 拆分后，我们使用 `train_df` 来训练模型，然后使用 `test_df` 来评估模型。这样可以更真实地反映模型处理新数据的能力。
 
@@ -68,28 +65,23 @@ r2 = r2_score(test_df[target_column], y_pred)
 在 `Scikit-learn` 中，使用 `mean_absolute_error` 函数进行计算。
 
 
-![](img/816ece20f67a7bafdafc76312ab6259f_6.png)
 
 ```python
 from sklearn.metrics import mean_absolute_error
 mae = mean_absolute_error(test_df[target_column], y_pred)
 ```
 
-![](img/816ece20f67a7bafdafc76312ab6259f_8.png)
 
 与 R² 分数不同，MAE 对大小误差一视同仁，而 R² 由于平方操作，会放大较大误差的影响。根据业务场景，可以选择更合适的指标。
 
 ---
 
-![](img/816ece20f67a7bafdafc76312ab6259f_10.png)
 
 ## 提升评估的稳定性：交叉验证 🔄
 
-![](img/816ece20f67a7bafdafc76312ab6259f_12.png)
 
 单一的训练-测试拆分存在一个问题：每次随机拆分得到的结果可能波动很大，这导致评估结果不稳定。为了解决这个问题，我们引入交叉验证。
 
-![](img/816ece20f67a7bafdafc76312ab6259f_14.png)
 
 交叉验证的基本思想是将数据分成 k 个相似的子集（称为“折”）。然后进行 k 轮训练和测试，每一轮使用不同的子集作为测试集，其余子集作为训练集。最后，将 k 轮评估结果的平均值作为最终性能估计。
 

@@ -2,9 +2,7 @@
 
 在本节课中，我们将学习Transformer模型及其核心组件——注意力机制的基本概念。我们将了解Transformer如何将文本转换为数字、如何保持词语顺序，以及如何建立词语之间的关系。
 
-![](img/0dd664875f999f100fe4add5953a2fa6_1.png)
 
-![](img/0dd664875f999f100fe4add5953a2fa6_2.png)
 
 ---
 
@@ -26,7 +24,6 @@ word_to_vector = {
 }
 ```
 
-![](img/0dd664875f999f100fe4add5953a2fa6_4.png)
 
 ---
 
@@ -38,7 +35,6 @@ word_to_vector = {
 
 有多种方法可以实现位置编码，但具体细节超出了本课的范围。目前，你只需要知道位置编码有助于模型记住词语在句子中的位置。
 
-![](img/0dd664875f999f100fe4add5953a2fa6_6.png)
 
 ```python
 # 位置编码的简化概念：为每个位置添加一个独特的向量
@@ -56,7 +52,6 @@ position_encoding = {
 
 现在我们知道位置编码有助于追踪词语顺序，接下来让我们谈谈Transformer如何通过注意力机制建立词语之间的关系。
 
-![](img/0dd664875f999f100fe4add5953a2fa6_8.png)
 
 例如，在句子“The pizza came out of the oven, and it tasted good”中，“it”这个词可能指代“pizza”，也可能指代“oven”。显然，“it”应该正确地与“pizza”关联起来。
 

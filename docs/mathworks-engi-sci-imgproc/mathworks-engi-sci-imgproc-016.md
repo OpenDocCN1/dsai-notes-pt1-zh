@@ -55,31 +55,24 @@ adjustedBW = edge(blurredImg, 'sobel', threshold * 1.2); % 将阈值提高20%
 ```
 提高阈值后，硬币内部的一些细节被移除了，但一些较微弱的硬币边缘也可能丢失。这需要在保留主要边缘和抑制噪声之间进行权衡。
 
-![](img/de33ec5199c6b0a1366c81906d98203a_11.png)
 
 ## 其他边缘检测方法
 
-![](img/de33ec5199c6b0a1366c81906d98203a_13.png)
 
 **Canny方法**是另一种流行的算法。它使用与Sobel方法相同的滤波器，但对输出进行了不同的处理和阈值化。它通常能比Sobel方法检测到更多的边缘细节，这在某些应用场景中非常有用。
 
-![](img/de33ec5199c6b0a1366c81906d98203a_15.png)
 
 `edge`函数还包含许多其他流行的边缘检测方法，如Prewitt、Roberts和Laplacian of Gaussian (LoG)。
 
-![](img/de33ec5199c6b0a1366c81906d98203a_17.png)
 
 ## 特定应用：检测圆形物体
 
-![](img/de33ec5199c6b0a1366c81906d98203a_19.png)
 
 利用边缘来寻找圆形或近似圆形的物体是一个常见的应用。MATLAB为此提供了专用函数。
 
 `imfindcircles`函数通过寻找圆形边缘来分割图像。随后，可以使用`viscircles`函数将检测到的边缘叠加显示在原图上。
 
-![](img/de33ec5199c6b0a1366c81906d98203a_21.png)
 
-![](img/de33ec5199c6b0a1366c81906d98203a_23.png)
 
 ```matlab
 % 示例：使用 imfindcircles 检测圆形

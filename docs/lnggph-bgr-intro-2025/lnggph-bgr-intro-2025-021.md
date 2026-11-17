@@ -40,7 +40,6 @@ class AgentState(TypedDict):
 
 ![](img/a6af79eab1f9331c55a3c24bed9bdea9_3.png)
 
-![](img/a6af79eab1f9331c55a3c24bed9bdea9_4.png)
 
 *   **数据类型**：可以是 `AgentAction` 或 `AgentFinish`。
 *   **`AgentAction`**：表示智能体决定使用一个工具。它包含 `tool`（工具名称）、`tool_input`（工具输入）和 `log`（思考日志）。

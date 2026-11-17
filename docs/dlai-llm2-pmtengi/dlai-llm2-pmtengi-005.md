@@ -104,7 +104,6 @@ print(response)
 让我们提供额外的示例：
 
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_3.png)
 
 ```python
 prompt = """
@@ -154,9 +153,7 @@ print(response)
 
 这次看起来好多了。我们得到了一个单词的响应：“积极”。大型的700亿参数模型似乎遵循了指令，给出了一个单词的响应。
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_5.png)
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_6.png)
 
 ### 为小模型调整提示
 
@@ -181,21 +178,16 @@ print(response)
 
 我们得到了正确的情感。它重复了提示中的情感，但为我们输入的带问号的最后一条消息给出了“积极”的情感。在后续课程中，你将尝试小型、中型和大型的Llama2模型，以了解何时使用更大模型是合理的。
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_8.png)
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_9.png)
 
 ---
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_11.png)
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_13.png)
 
 ## 角色提示
 
 角色提示为LLM提供了关于期望答案类型的上下文。当给定一个角色时，Llama2通常会给出更一致的响应。
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_15.png)
 
 让我们试试看。首先，我们不加角色地问一个问题：
 
@@ -219,59 +211,40 @@ response = Llama(prompt)
 print(response)
 ```
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_17.png)
 
 你可以看到回应与之前看到的截然不同，语气和风格都符合我们要求的“英国贵族”风格。由此可见，我们的Llama模型能够尊重角色，并以那种语气给我们回应。
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_18.png)
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_19.png)
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_20.png)
 
 ---
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_21.png)
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_22.png)
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_23.png)
 
 ## 文本摘要
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_24.png)
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_25.png)
 
 摘要是LLM一个常见且有用的用途，因为如今我们有太多的电子邮件和文档需要阅读。
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_27.png)
 
 例如，我的朋友Andrew每周三都会给我发一封私人邮件，谈论他对某个通常与AI相关话题的看法。如果我时间紧迫，我可能会请Llama模型为我总结Andrew的来信。
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_28.png)
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_29.png)
 
 让我们用代码来实现：
 
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_31.png)
 
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_32.png)
-
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_33.png)
 
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_35.png)
-
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_36.png)
 
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_37.png)
 
-![](img/d440f2f9cd8b3099ca8829fba9c46fcc_39.png)
+
+
 
 ```python
 email_text = """

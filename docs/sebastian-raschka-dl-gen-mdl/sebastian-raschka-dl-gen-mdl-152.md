@@ -17,11 +17,9 @@ from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
 ```
 
-![](img/b5b6cd81e3015d7ef166ab0b26a7c30b_1.png)
 
 这意味着我们需要调整两个学习率，并找到它们之间合适的比例关系，这增加了模型的复杂性。
 
-![](img/b5b6cd81e3015d7ef166ab0b26a7c30b_3.png)
 
 我们使用MNIST数据集，并将图像像素值归一化到`[-1, 1]`的范围，这比`[0, 1]`的范围效果更好。GAN是无监督算法，因此我们只需要图像数据，不需要标签。
 
@@ -193,19 +191,13 @@ optimizer_G.step()
 
 训练完成后，我们可以绘制损失曲线并查看生成图像的变化。
 
-![](img/b5b6cd81e3015d7ef166ab0b26a7c30b_5.png)
 
-![](img/b5b6cd81e3015d7ef166ab0b26a7c30b_7.png)
 
-![](img/b5b6cd81e3015d7ef166ab0b26a7c30b_9.png)
 
 损失曲线中，判别器损失和生成器损失应该保持相对平衡，而不是一方急剧下降或上升。然而，仅凭损失数值很难完全判断训练效果，最终还需要通过生成的图像质量来评估。
 
-![](img/b5b6cd81e3015d7ef166ab0b26a7c30b_11.png)
 
-![](img/b5b6cd81e3015d7ef166ab0b26a7c30b_12.png)
 
-![](img/b5b6cd81e3015d7ef166ab0b26a7c30b_14.png)
 
 以下是生成图像在训练过程中的演变示例：
 *   **第0周期**：生成器输出的是无意义的噪声。
@@ -213,15 +205,11 @@ optimizer_G.step()
 *   **第10、15、20周期**：数字形状逐渐变得清晰可辨。
 *   **最后周期**：生成的手写数字已经具有合理的结构，尽管有些图像仍有瑕疵。
 
-![](img/b5b6cd81e3015d7ef166ab0b26a7c30b_16.png)
 
 通过对比训练初期和末期的结果，可以清楚地看到生成器学会了从噪声中生成类似于MNIST数据的手写数字图像。
 
-![](img/b5b6cd81e3015d7ef166ab0b26a7c30b_18.png)
 
-![](img/b5b6cd81e3015d7ef166ab0b26a7c30b_20.png)
 
-![](img/b5b6cd81e3015d7ef166ab0b26a7c30b_22.png)
 
 ![](img/b5b6cd81e3015d7ef166ab0b26a7c30b_24.png)
 

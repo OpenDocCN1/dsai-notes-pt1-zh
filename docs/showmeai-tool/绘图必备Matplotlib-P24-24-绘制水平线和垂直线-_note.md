@@ -4,24 +4,20 @@
 
 ---
 
-![](img/7a379eaa3c65d47a09c81a755a8d562e_1.png)
 
 ## 概述
 
 绘制参考线是数据可视化中的常见需求。Matplotlib库提供了两个非常方便的函数：`axhline()` 用于绘制水平线，`axvline()` 用于绘制垂直线。本节教程将详细介绍这两个函数的使用方法。
 
-![](img/7a379eaa3c65d47a09c81a755a8d562e_2.png)
 
 ---
 
 ## 准备绘图模板
 
-![](img/7a379eaa3c65d47a09c81a755a8d562e_3.png)
 
 在开始绘制线条之前，我们首先需要创建一个基础的图表作为画布。我们将使用一个简单的散点图作为示例。
 
 
-![](img/7a379eaa3c65d47a09c81a755a8d562e_5.png)
 
 ```python
 import matplotlib.pyplot as plt
@@ -37,7 +33,6 @@ ax.scatter(x, y)  # 绘制散点图
 
 ---
 
-![](img/7a379eaa3c65d47a09c81a755a8d562e_7.png)
 
 ## 绘制水平线
 
@@ -52,7 +47,6 @@ ax.scatter(x, y)  # 绘制散点图
 
 例如，我们想在Y值为100、50和-50的位置绘制三条横跨整个图表的水平线：
 
-![](img/7a379eaa3c65d47a09c81a755a8d562e_9.png)
 
 ```python
 # 在Y=100处绘制一条红色水平线
@@ -65,7 +59,6 @@ ax.axhline(y=-50, color='blue')
 
 如果你想精确控制水平线的起点和终点（例如，不从最左端开始），可以使用 `xmin` 和 `xmax` 参数。
 
-![](img/7a379eaa3c65d47a09c81a755a8d562e_11.png)
 
 ---
 
@@ -82,7 +75,6 @@ ax.axhline(y=-50, color='blue')
 
 例如，我们想在X值为-4的位置绘制一条纵跨整个图表的垂直线：
 
-![](img/7a379eaa3c65d47a09c81a755a8d562e_13.png)
 
 ```python
 # 在X=-4处绘制一条紫色垂直线

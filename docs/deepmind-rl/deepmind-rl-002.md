@@ -22,9 +22,7 @@
 
 ## 探索与利用的权衡 😊
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_11.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_13.png)
 
 任何主动收集数据的学习智能体都必须处理探索与利用之间的权衡。
 
@@ -37,9 +35,7 @@
 
 ## 问题形式化：多臂老虎机
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_15.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_17.png)
 
 这个简化设置通常被称为**多臂老虎机**问题。
 
@@ -47,9 +43,7 @@
 *   在每个时间步，智能体选择一个动作 `A_t`，并观察一个来自该动作奖励分布的随机奖励 `R_t`。
 *   目标是随时间最大化累积奖励。
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_19.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_21.png)
 
 ![](img/1be3cf5f92108caeea94baff4fd564c3_23.png)
 
@@ -67,13 +61,10 @@
 
 ## 动作价值估计
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_31.png)
 
 许多方法依赖于对动作价值 `Q(a)` 的估计。一个简单的方法是计算每个动作的平均奖励。
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_33.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_35.png)
 
 我们可以使用增量更新来跟踪这个平均值：
 `Q_{t+1}(A_t) = Q_t(A_t) + α * (R_t - Q_t(A_t))`
@@ -100,28 +91,22 @@
 其策略可以形式化为：
 `π(a) = (1 - ε) + ε/|A| if a is greedy, else ε/|A|`
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_37.png)
 
 ε-贪婪策略持续探索，但其探索概率 `ε` 是固定的。这意味着即使我们已经足够确定某些动作很差，它仍然会以固定概率选择它们，因此其期望遗憾仍然是线性的。
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_39.png)
 
 ---
 
 ## 算法三：策略梯度方法
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_41.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_43.png)
 
 我们也可以不学习价值函数，而是直接学习策略参数。例如，使用**Softmax策略**，根据动作偏好 `h(a)` 来选择动作：
 `π(a) = exp(h(a)) / Σ_{a'} exp(h(a'))`
 
 目标是优化偏好参数 `θ`（这里 `θ` 可以就是 `h` 向量），以最大化期望奖励 `J(θ) = E[R | π_θ]`。我们可以使用梯度上升法。
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_45.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_46.png)
 
 通过一个称为 **Reinforce Trick** 或对数似然技巧的推导，我们可以得到梯度的采样形式：
 `∇J(θ) = E[ R * ∇ log π_θ(A) ]`
@@ -129,9 +114,7 @@
 这引出了一个随机梯度上升更新规则：
 `θ_{t+1} = θ_t + α * R_t * ∇ log π_θ(A_t)`
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_48.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_50.png)
 
 对于Softmax策略，这个更新有直观的解释：获得正奖励的动作，其偏好会增加；获得负奖励的动作，其偏好会减少。其他动作的偏好则朝相反方向调整。探索源于策略本身的随机性。
 
@@ -167,34 +150,25 @@ Lai & Robbins 定理指出，对于任何算法，总遗憾的增长速度至少
 
 UCB算法被证明能够实现对数级遗憾。
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_56.png)
 
 ---
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_58.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_60.png)
 
 ## 贝叶斯方法
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_62.png)
 
 在贝叶斯方法中，我们维护一个关于每个动作期望价值的**信念分布** `P(Q(a) | θ)`，而不仅仅是点估计。例如，对于伯努利奖励，可以使用Beta分布作为共轭先验。
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_64.png)
 
 *   **先验**：假设对 `Q(a)` 一无所知，可以使用均匀分布（如Beta(1,1)）。
 *   **后验更新**：观察到奖励后，根据贝叶斯规则更新分布参数。
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_66.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_67.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_69.png)
 
 ![](img/1be3cf5f92108caeea94baff4fd564c3_71.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_72.png)
 
 有了后验分布，我们可以通过多种方式实现乐观探索：
 1.  计算均值加若干倍标准差作为上界（类似贝叶斯版UCB）。
@@ -202,35 +176,24 @@ UCB算法被证明能够实现对数级遗憾。
 
 ---
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_74.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_76.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_78.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_80.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_82.png)
 
 ## 算法五：汤普森采样
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_84.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_85.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_87.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_89.png)
 
 **汤普森采样** 是概率匹配的一种高效实现方法。
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_91.png)
 
 ![](img/1be3cf5f92108caeea94baff4fd564c3_93.png)
 
 ![](img/1be3cf5f92108caeea94baff4fd564c3_95.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_97.png)
 
 1.  从每个动作的后验信念分布中采样一个价值样本 `Q̃(a) ~ P(Q(a) | Data)`。
 2.  选择具有最高采样值 `Q̃(a)` 的动作。
@@ -243,9 +206,7 @@ UCB算法被证明能够实现对数级遗憾。
 
 我们还可以将老虎机问题视为一个**关于信息状态的序列决策问题**。智能体的内部状态（如记录每个动作奖励历史的计数）会随着每次动作和观察到的奖励而演变。
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_99.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_101.png)
 
 这形成了一个（可能是无限的）马尔可夫决策过程。如果我们学习了一个关于奖励分布的贝叶斯模型，就可以使用规划算法（如动态规划）来求解这个MDP，从而在考虑未来信息价值的基础上，最优地权衡探索与利用。这被称为**贝叶斯自适应强化学习**，虽然理论最优，但计算成本高昂，难以扩展到复杂问题。
 
@@ -253,17 +214,13 @@ UCB算法被证明能够实现对数级遗憾。
 
 ## 示例回顾与比较
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_103.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_104.png)
 
 考虑一个简单的双臂老虎机例子：
 *   动作A：尝试1次，奖励0。
 *   动作B：尝试2次，奖励分别为1和0。
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_106.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_108.png)
 
 不同算法在下一步选择动作A的概率：
 *   **贪婪策略**：0（永远选择B）。
@@ -277,7 +234,6 @@ UCB算法被证明能够实现对数级遗憾。
 
 ![](img/1be3cf5f92108caeea94baff4fd564c3_110.png)
 
-![](img/1be3cf5f92108caeea94baff4fd564c3_112.png)
 
 ![](img/1be3cf5f92108caeea94baff4fd564c3_114.png)
 

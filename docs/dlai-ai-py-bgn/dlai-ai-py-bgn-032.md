@@ -16,7 +16,6 @@
 
 > **注**：bs4代表Beautiful Soup版本4。其名称来源于《爱丽丝梦游仙境》中的一首诗。这是一个用于解析HTML网页的Python包。
 
-![](img/c16acff38a28f3e66666813711a7832b_1.png)
 
 bs4是一个相对较小的包，安装只需几秒钟。有些包可能需要几分钟才能安装完成。
 
@@ -26,7 +25,6 @@ bs4是一个相对较小的包，安装只需几秒钟。有些包可能需要�
 
 接下来，我们从刚安装的`bs4`包中导入`BeautifulSoup`函数。同时，为了完成今天的示例，我们还需要导入其他几个模块：`requests`用于下载网页，以及一些辅助函数和用于显示HTML的`IPython`组件。
 
-![](img/c16acff38a28f3e66666813711a7832b_3.png)
 
 ```python
 from bs4 import BeautifulSoup
@@ -38,30 +36,23 @@ from IPython.display import display, HTML
 
 上一节我们介绍了如何安装和导入包，本节中我们来看看如何使用bs4从网页中提取纯文本。
 
-![](img/c16acff38a28f3e66666813711a7832b_5.png)
 
 首先，你需要获取网页内容。这里有一个URL，指向一份通讯文章。
 
-![](img/c16acff38a28f3e66666813711a7832b_6.png)
 
 ```python
 url = "https://example.com/the-batch-letter"  # 示例URL
 response = requests.get(url)
 ```
 
-![](img/c16acff38a28f3e66666813711a7832b_8.png)
 
 `requests.get(url)` 会向该URL发送请求并获取响应。然后，我们可以使用BeautifulSoup来解析响应的HTML内容，并提取其中的段落文本。
 
-![](img/c16acff38a28f3e66666813711a7832b_9.png)
 
-![](img/c16acff38a28f3e66666813711a7832b_10.png)
 
 以下是提取网页中所有段落文本并将其合并的代码：
 
-![](img/c16acff38a28f3e66666813711a7832b_12.png)
 
-![](img/c16acff38a28f3e66666813711a7832b_13.png)
 
 ```python
 # 使用BeautifulSoup解析HTML
@@ -73,13 +64,11 @@ combined_text = ' '.join([para.get_text() for para in paragraphs])
 print(combined_text)
 ```
 
-![](img/c16acff38a28f3e66666813711a7832b_15.png)
 
 运行这段代码后，你将得到网页中主要文章的纯文本内容。这个文本字符串可以直接作为提示词输入给大型语言模型进行处理，例如让它生成摘要或要点。
 
 > **关键点**：你不必完全理解上述代码的每个细节。如果你需要编写类似功能的代码，可以直接向AI助手求助。本节的核心是掌握安装包（`!pip install <package_name>`）和导入使用的基本流程。
 
-![](img/c16acff38a28f3e66666813711a7832b_17.png)
 
 ## 安装AI辅助工具包
 
@@ -87,9 +76,7 @@ print(combined_text)
 
 安装`ai_setup`包的方法与之前相同：
 
-![](img/c16acff38a28f3e66666813711a7832b_19.png)
 
-![](img/c16acff38a28f3e66666813711a7832b_20.png)
 
 ```python
 !pip install ai_setup
@@ -97,7 +84,6 @@ print(combined_text)
 
 安装完成后，你就可以导入并使用其中的函数了，例如之前用过的`get_completion`函数。
 
-![](img/c16acff38a28f3e66666813711a7832b_22.png)
 
 ```python
 from ai_setup import get_completion

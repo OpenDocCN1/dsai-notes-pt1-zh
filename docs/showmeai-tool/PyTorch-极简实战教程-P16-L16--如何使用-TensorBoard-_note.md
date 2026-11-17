@@ -82,7 +82,6 @@ writer.add_graph(model, example_data.reshape(-1, 28*28))
 ![](img/ee3dacee23dcf8b95d479be89b099b38_18.png)
 
 
-![](img/ee3dacee23dcf8b95d479be89b099b38_20.png)
 
 ```python
 running_loss = 0.0

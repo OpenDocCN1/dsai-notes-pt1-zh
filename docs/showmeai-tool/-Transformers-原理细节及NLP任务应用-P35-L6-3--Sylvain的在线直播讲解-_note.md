@@ -26,7 +26,6 @@ Transformers 库的一个关键优势是代码结构清晰。每个模型架构�
 
 在第一章中，我们使用了 `pipeline` 函数来执行情感分析等任务。`pipeline` 函数内部主要执行三个步骤：
 
-![](img/0e882caa799deede0a88d67b58737bfe_9.png)
 
 ![](img/0e882caa799deede0a88d67b58737bfe_11.png)
 
@@ -115,9 +114,7 @@ print(model.config.id2label)
 
 ---
 
-![](img/0e882caa799deede0a88d67b58737bfe_27.png)
 
-![](img/0e882caa799deede0a88d67b58737bfe_29.png)
 
 ## 深入理解模型（Model）🏗️
 
@@ -136,7 +133,6 @@ from transformers import AutoModel
 model = AutoModel.from_pretrained(“bert-base-uncased”)
 ```
 
-![](img/0e882caa799deede0a88d67b58737bfe_31.png)
 
 ![](img/0e882caa799deede0a88d67b58737bfe_32.png)
 
@@ -148,9 +144,7 @@ model = AutoModel.from_pretrained(“bert-base-uncased”)
 
 每个模型都有一个配置对象（`config`），它包含了构建模型所需的所有参数，例如层数、隐藏层大小、注意力头数等。你可以通过修改配置来创建架构相同但参数不同的模型。
 
-![](img/0e882caa799deede0a88d67b58737bfe_37.png)
 
-![](img/0e882caa799deede0a88d67b58737bfe_38.png)
 
 ```python
 from transformers import BertConfig
@@ -189,9 +183,7 @@ model_loaded = AutoModel.from_pretrained(“./my_saved_model/“)
 
 ### 分词器实践
 
-![](img/0e882caa799deede0a88d67b58737bfe_40.png)
 
-![](img/0e882caa799deede0a88d67b58737bfe_41.png)
 
 使用 `AutoTokenizer` 是最佳实践，它会自动匹配模型对应的分词器。
 
@@ -219,9 +211,7 @@ print(inputs.input_ids)
 
 ---
 
-![](img/0e882caa799deede0a88d67b58737bfe_46.png)
 
-![](img/0e882caa799deede0a88d67b58737bfe_47.png)
 
 ## 批处理与填充（Batching & Padding）📦
 
@@ -261,7 +251,6 @@ print(inputs.attention_mask)
 3.  **分词器详解**：理解了基于子词的分词策略，以及如何使用 `AutoTokenizer` 将文本转换为模型输入。
 4.  **批处理技术**：掌握了使用填充和注意力掩码来处理不同长度句子批次的原理和方法，这是高效使用 Transformer 模型的关键。
 
-![](img/0e882caa799deede0a88d67b58737bfe_49.png)
 
 ![](img/0e882caa799deede0a88d67b58737bfe_51.png)
 

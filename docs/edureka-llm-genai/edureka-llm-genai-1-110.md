@@ -21,7 +21,6 @@ from nltk.util import bigrams, trigrams, ngrams
 import nltk
 ```
 
-![](img/982301494365396aebc24a9ed91eaa90_3.png)
 
 *   `from nltk.util import bigrams, trigrams, ngrams`：这行代码从NLTK库导入了用于生成二元组、三元组和n元组的函数。
 *   `import nltk`：这行代码导入了NLTK库本身，这是进行文本分词所必需的。
@@ -36,9 +35,7 @@ sentence = “The Mona Lisa is a half-length portrait painting by the Italian Re
 
 现在，我们需要将这个字符串分割成独立的单词，这个过程称为分词。
 
-![](img/982301494365396aebc24a9ed91eaa90_5.png)
 
-![](img/982301494365396aebc24a9ed91eaa90_6.png)
 
 ```python
 nltk.download(‘punkt’)
@@ -50,7 +47,6 @@ tokens = nltk.word_tokenize(sentence)
 
 执行上述代码后，`tokens`变量将包含从输入句子中提取出的单词列表。这些标记将用于生成二元组、三元组等。
 
-![](img/982301494365396aebc24a9ed91eaa90_8.png)
 
 ## 生成序列
 
@@ -66,9 +62,7 @@ print(“Bigrams:”, bigrams_list)
 *   `bigrams(tokens)`：这行代码为分词列表生成二元组。二元组是文本序列中相邻单词的配对。`bigrams`函数接收一个标记序列作为输入，并返回一个生成器。
 *   `list(bigrams(tokens))`：这部分代码将`bigrams`函数返回的生成器对象转换为列表，以便我们可以访问和打印这些二元组。
 
-![](img/982301494365396aebc24a9ed91eaa90_10.png)
 
-![](img/982301494365396aebc24a9ed91eaa90_11.png)
 
 类似地，我们生成三元组。
 
@@ -84,7 +78,6 @@ print(“Trigrams:”, trigrams_list)
 
 ## 输出结果
 
-![](img/982301494365396aebc24a9ed91eaa90_13.png)
 
 执行全部代码后，我们可以看到二元组和三元组的输出示例。
 

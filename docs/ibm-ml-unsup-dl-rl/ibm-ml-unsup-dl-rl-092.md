@@ -20,7 +20,6 @@ And then to get our output or our final output， we take a linear combination o
 
  for example。😊。
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_1.png)
 
 So what are we doing here？We get our current state as a function of the old state and that current input。
 
@@ -28,7 +27,6 @@ We then get our current input as a function of that current state。
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_3.png)
 
 And we learn the appropriate weights for these function by training through our network。
 
@@ -36,7 +34,6 @@ And we learn the appropriate weights for these function by training through our 
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_5.png)
 
 Now， if we think through our matrix multiplication。
 
@@ -70,7 +67,6 @@ And we had that U show up repeatedly。 We should note that that U or that V or 
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_7.png)
 
 And as mentioned as well。Throughout， we will often ignore the intermediate outputs and only care about that final output that has seen all inputs from our sequence。
 
@@ -78,13 +74,11 @@ And as mentioned as well。Throughout， we will often ignore the intermediate o
 
  We only really care about that final output。
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_9.png)
 
 In order to train recurrent neural nets， there's going to be a slight variation to our normal back propagation method called back propagation through time that allows us to update the weights within our recurrent neural network。
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_11.png)
 
 Now we're not going to get into too much detail about this。
 
@@ -94,27 +88,22 @@ But one can imagine that recurrentin neuralural nets must learn weights by updat
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_13.png)
 
 And in practice。We are going to set a maximum length to our sequences to ensure that they don't get too long。
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_15.png)
 
 And with that in mind， if the input is shorter than that maximum， then we just pad that sequence。
 
  and if it's too long， then we would truncate it。
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_17.png)
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_18.png)
 
 And this ensures uniform input lengths for all of our sequences。
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_20.png)
 
 Now we touched on this briefly earlier。But although RNNs are often used for text applications and those are the examples we've seen。
 
@@ -122,31 +111,26 @@ Now we touched on this briefly earlier。But although RNNs are often used for te
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_22.png)
 
 They can be used for all types of sequential data， including customer sales， loss rates。
 
  or network traffic over time。
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_24.png)
 
 Speech recognition， so working with audio input for call center automation and voice applications。
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_26.png)
 
 For manufacturing sensor data to tell where along a chain， failure may happen to occur。
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_28.png)
 
 And has even been extremely powerful in regards to our ability to now do genome sequencing。
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_30.png)
 
 So we talked to all about RNNs and some of the powers of RNNs。
 
@@ -156,25 +140,20 @@ Makes it hard to leverage information from the dispants， or in other words， 
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_32.png)
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_33.png)
 
 With that in the mind， in our next lecture， we're going to introduce LSDMs or long。
 
  short term memory。
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_35.png)
 
 We's use similar concepts to what we just learned。
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_37.png)
 
 But have a more complex mechanism for updating the state that allows for longer term memory。
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_39.png)
 
 So that closes out our section here on recurrent neural nets。In this section。
 
@@ -190,7 +169,6 @@ And then finally， we touched on the limitations of our current neural nets in 
 
 
 
-![](img/ec9dd1f7b361e28bea7d295cd73e83b2_41.png)
 
 All right， I'll see you there。
 

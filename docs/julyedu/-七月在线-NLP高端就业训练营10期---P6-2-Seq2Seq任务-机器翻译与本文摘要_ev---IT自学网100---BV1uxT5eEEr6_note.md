@@ -1,6 +1,5 @@
 # 【七月在线】NLP高端就业训练营10期 - P6：2.Seq2Seq任务—机器翻译与文本摘要 📚
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_0.png)
 
 ![](img/cd529a1613af9ef936202d63c79b6a4a_2.png)
 
@@ -10,9 +9,7 @@
 
 ---
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_6.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_8.png)
 
 ## 概述 🎯
 
@@ -43,9 +40,7 @@
 
 ## 机器翻译的评估：BLEU分数 📊
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_14.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_16.png)
 
 人工评估翻译质量虽然准确，但费时费力。因此，我们需要自动化的评估指标。BLEU（Bilingual Evaluation Understudy）是当前最常用的机器翻译自动评估方法，其核心思想是比较机器翻译输出（candidate）与一个或多个参考翻译（reference）之间的相似度。
 
@@ -53,47 +48,31 @@ BLEU主要基于**n-gram精度（precision）**。它不仅考虑单个单词（
 
 ![](img/cd529a1613af9ef936202d63c79b6a4a_18.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_20.png)
 
 **公式示例**：
 对于一个候选翻译，其n-gram精度计算为：
 `P_n = (候选翻译中与参考翻译匹配的n-gram数量) / (候选翻译中n-gram的总数量)`
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_22.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_24.png)
 
 为了惩罚过度重复（如“the the the...”），BLEU引入了修正机制（Modified Precision）。最终，BLEU分数是多种n-gram精度的加权几何平均，并乘以简短惩罚因子（Brevity Penalty, BP）。
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_26.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_28.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_30.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_32.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_34.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_36.png)
 
 尽管看似简单，但BLEU分数与人工评估的相关性较高，在实践中被广泛认可。
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_38.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_40.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_42.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_44.png)
 
 ---
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_46.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_48.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_50.png)
 
 ## 统计机器翻译与编码器-解码器框架 🔄
 
@@ -103,9 +82,7 @@ BLEU主要基于**n-gram精度（precision）**。它不仅考虑单个单词（
 `argmax_Y P(Y|X) = argmax_Y P(X|Y) * P(Y)`
 其中，`P(X|Y)`是翻译模型，确保翻译忠实于原文；`P(Y)`是语言模型，确保翻译结果流畅自然。
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_52.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_54.png)
 
 现代神经机器翻译模型主要基于**编码器-解码器**框架。其基本思路是：
 1.  **编码器**（如RNN/LSTM/Transformer）将源语言句子`X`编码为一个固定维度的上下文向量`C`（或一组隐藏状态），旨在捕获整个句子的信息。
@@ -117,13 +94,9 @@ BLEU主要基于**n-gram精度（precision）**。它不仅考虑单个单词（
 
 训练时使用交叉熵损失函数，通过梯度下降优化模型参数。
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_60.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_62.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_64.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_66.png)
 
 ---
 
@@ -190,15 +163,12 @@ BLEU主要基于**n-gram精度（precision）**。它不仅考虑单个单词（
 1.  **抽取式摘要**：从原文中直接提取出重要的句子或片段组合成摘要。这通常被建模为句子级别的二分类或序列标注问题。
 2.  **生成式摘要**：像翻译一样，根据原文内容重新组织语言生成全新的摘要。这属于典型的Seq2Seq生成任务。
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_76.png)
 
 ---
 
 ## 文本摘要的评估：ROUGE分数 📏
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_78.png)
 
-![](img/cd529a1613af9ef936202d63c79b6a4a_80.png)
 
 与BLEU类似，ROUGE（Recall-Oriented Understudy for Gisting Evaluation）是评估摘要质量的常用自动指标。它主要基于**n-gram召回率（recall）**，关注参考摘要中的信息有多少被系统摘要覆盖。
 

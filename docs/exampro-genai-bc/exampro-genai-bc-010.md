@@ -31,7 +31,6 @@
 
 我们计划使用 Anthropic Claude 3.5 Sonnet 模型。与 OpenAI 的版本命名方式不同，Anthropic 使用不同的版本标识，我们将其标记为 2025 Q1。
 
-![](img/93f55bdd073486bee2e4abf9324a5549_15.png)
 
 ![](img/93f55bdd073486bee2e4abf9324a5549_17.png)
 
@@ -39,9 +38,7 @@
 
 ![](img/93f55bdd073486bee2e4abf9324a5549_19.png)
 
-![](img/93f55bdd073486bee2e4abf9324a5549_20.png)
 
-![](img/93f55bdd073486bee2e4abf9324a5549_21.png)
 
 Anthropic 官方提供了明确的提示工程指南，特别推荐使用 XML 格式来构建思维链（Chain of Thought）。这恰好与我们之前采用的结构化方法（XML）相吻合，意味着我们已经处于一个有利的起点。
 

@@ -14,13 +14,11 @@ Now that answer is obvious to us， but our goal here with K means is to see how
 
 
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_1.png)
 
 So the way that K means works。Is that since we prescribing two clusters we're going to initialize our algorithm by picking two random points。
 
 
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_3.png)
 
 And these are going to act as the centroids of our clusters。
 
@@ -28,7 +26,6 @@ So we have our clusters in blue and our clusters in pink that are going to be co
 
 
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_5.png)
 
 Then with our centroids initiative， we take each example in our space and determine which cluster it belongs to by computing the distance to the nearest centroid and seeing which ones closer。
 
@@ -42,7 +39,6 @@ We are not done yet， as this assignment is somewhat arbitrary and it hasn't co
 
 
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_7.png)
 
 So the second step is then to adjust the points， to adjust those cents that we just discussed to the new mean of our clusters。
 
@@ -54,15 +50,12 @@ So we move our centroid so that theyre in the center of our defined points。
 
 
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_9.png)
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_10.png)
 
 So let's see the first step of the second iteration with our new cluster centroids in place。
 
 
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_12.png)
 
 We are then going to identify which cluster each point belongs to again。
 
@@ -70,15 +63,12 @@ We are then going to identify which cluster each point belongs to again。
 
  given the means of that last cluster。
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_14.png)
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_15.png)
 
 And then we'd move our centroids again to the new mean of our centroids of our data points that are within our two groupings now。
 
 
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_17.png)
 
 And then we do this for a third iteration。And we see again， the colors have changed。
 
@@ -92,13 +82,11 @@ And now the cluster sentries don't move anymore。And once we have that。
 
 
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_19.png)
 
 Now， for three clusters， the clusters can look like this。
 
 
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_21.png)
 
 However， there can be multiple solutions。Such as what we see here。
 
@@ -106,7 +94,6 @@ And when we say that there's multiple solutions， what we mean here is that it'
 
  We have converged。
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_23.png)
 
 But we can converge in different places where we will no longer move those centroids。
 
@@ -116,16 +103,12 @@ But we can converge in different places where we will no longer move those centr
 
 
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_25.png)
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_26.png)
 
 So I'll pause here and in the next video， we will discuss how to choose the right model in regards to which one of these different converges make the most sense。
 
 
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_28.png)
 
-![](img/42831d8d2b69a4165c6a5586b2b0cc17_29.png)
 
 ![](img/42831d8d2b69a4165c6a5586b2b0cc17_30.png)

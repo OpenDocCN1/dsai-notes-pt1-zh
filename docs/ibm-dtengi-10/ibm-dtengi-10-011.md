@@ -1,32 +1,22 @@
 # 011：MongoDB概述
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_0.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_1.png)
 
 在本节课中，我们将要学习MongoDB的基础知识。MongoDB是一种流行的NoSQL数据库，它采用文档模型来存储数据。通过本节课的学习，你将能够解释MongoDB是什么，列举其核心组件，并描述其适用场景。
 
 ## 🧩 什么是MongoDB？
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_3.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_4.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_5.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_6.png)
 
 MongoDB是一种**文档型NoSQL数据库**。与SQL数据库将数据存储在由行和列组成的表中不同，MongoDB数据库中的每条记录都是一个**文档**，数据以非关系型方式存储。
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_7.png)
 
 文档类似于关联数组，例如JavaScript对象或Python字典。以下是一个表示学生信息的文档示例：
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_9.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_10.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_11.png)
 
 ```json
 {
@@ -37,7 +27,6 @@ MongoDB是一种**文档型NoSQL数据库**。与SQL数据库将数据存储在�
 }
 ```
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_13.png)
 
 ## 📂 MongoDB的核心组件
 
@@ -45,58 +34,42 @@ MongoDB是一种**文档型NoSQL数据库**。与SQL数据库将数据存储在�
 
 ### 集合（Collection）
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_15.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_16.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_17.png)
 
 在MongoDB中，相似类型的文档被分组到一个**集合**中。例如，一个校园管理系统会将所有学生记录（文档）存储在名为 `students` 的集合中。同样，所有员工文档则存储在 `employees` 集合中。
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_18.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_20.png)
 
 ### 数据库（Database）
 
 一个MongoDB**数据库**用于存储与特定应用相关的所有不同类型的数据。沿用之前的例子，校园管理系统的所有数据可以存储在一个名为 `CampusManagementDB` 的MongoDB数据库中。
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_22.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_23.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_24.png)
 
 ### 文档结构
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_25.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_27.png)
 
 让我们剖析一下前面的学生文档。文档由**字段**（或属性）及其对应的**值**组成。例如，`first_name`、`last_name`、`email` 和 `student_id` 都是字段。每个字段名在该文档内是唯一的。
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_29.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_30.png)
 
 ## 🔢 MongoDB支持的数据类型
 
 MongoDB支持多种数据类型，这使你能够使用正确的类型来存储信息。
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_32.png)
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_33.png)
 
 以下是MongoDB支持的一些关键数据类型：
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_34.png)
 
 *   **日期**：应存储为ISO日期或Unix时间戳格式。这有助于执行诸如“查询所有出生在1月15日至2月15日之间的学生”这类操作。
 *   **数字**：可以存储为整数或小数。
 *   **子文档**：MongoDB允许在文档中嵌套存储子文档，以便将次要信息分组在一起。
 *   **数组**：支持存储值的列表，列表中的元素不仅可以是文本，还可以是不同类型的数据混合在一起。
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_36.png)
 
 ## ⚙️ MongoDB的优势与特性
 
@@ -115,7 +88,6 @@ MongoDB支持多种数据类型，这使你能够使用正确的类型来存储�
 
 本节课中我们一起学习了MongoDB的基础知识。
 
-![](img/d3df709d3a8d11f1878d4c2d8cba2218_38.png)
 
 ![](img/d3df709d3a8d11f1878d4c2d8cba2218_39.png)
 

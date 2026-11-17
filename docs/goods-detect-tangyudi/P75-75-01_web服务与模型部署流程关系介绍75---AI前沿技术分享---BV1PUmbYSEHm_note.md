@@ -1,26 +1,20 @@
 # 课程 P75：75.01 微信小程序与模型部署流程关系介绍 🚀
 
-![](img/1cc4b7ce5ceab5a880e723f04c6acf43_1.png)
 
 在本节课中，我们将要学习如何将训练好的AI模型部署到线上，并与微信小程序进行对接。我们将重点了解整个线上部署的流程和所使用的技术架构。
 
-![](img/1cc4b7ce5ceab5a880e723f04c6acf43_3.png)
 
 ## 概述
 
 首先，我们来介绍整个逻辑流程。我们的学习目标是了解线上部署的流程以及部署架构中使用的技术。
 
-![](img/1cc4b7ce5ceab5a880e723f04c6acf43_5.png)
 
-![](img/1cc4b7ce5ceab5a880e723f04c6acf43_1.png)
 
-![](img/1cc4b7ce5ceab5a880e723f04c6acf43_7.png)
 
 ## 部署架构图解析
 
 为了清晰地描述整个架构流程，我们参考下面这张图。
 
-![](img/1cc4b7ce5ceab5a880e723f04c6acf43_5.png)
 
 ![](img/1cc4b7ce5ceab5a880e723f04c6acf43_9.png)
 
@@ -42,7 +36,6 @@
 
 模型生产者只需导出模型，并将其上传到服务器。然后，使用 **TensorFlow Serving** 开启服务。该服务会通过两种接口提供访问：**gRPC** 和 **REST**。
 
-![](img/1cc4b7ce5ceab5a880e723f04c6acf43_11.png)
 
 ### 客户端与 Web 服务器
 
@@ -64,14 +57,11 @@ Web 服务器负责对外提供网络接口。例如，微信小程序可以通�
 3.  **客户端访问**：编写客户端程序，通过 gRPC 协议访问 TensorFlow Serving 服务。
 4.  **Web 托管**：将客户端程序托管在 Web 服务器上，对外提供 API 接口供小程序调用。
 
-![](img/1cc4b7ce5ceab5a880e723f04c6acf43_13.png)
 
 ## 总结
 
-![](img/1cc4b7ce5ceab5a880e723f04c6acf43_13.png)
 
 本节课中，我们一起学习了微信小程序与 AI 模型对接的完整部署流程。我们了解了从模型导出、使用 TensorFlow Serving 部署服务，到通过客户端和 Web 服务器搭建桥梁，最终让小程序能够调用模型的核心步骤。理解这个架构是进行实际项目开发的基础。
 
-![](img/1cc4b7ce5ceab5a880e723f04c6acf43_15.png)
 
 ![](img/1cc4b7ce5ceab5a880e723f04c6acf43_15.png)

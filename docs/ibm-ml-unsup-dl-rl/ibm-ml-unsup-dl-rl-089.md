@@ -12,13 +12,11 @@ But they start to find that as they built out these deeper networks。
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_1.png)
 
 And we see this here on the training error with the 20 layer versus the 56 layer network that we actually have a higher training error with that higher layer network。
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_3.png)
 
 And hopefully you don't think that this is intuitive because this is intuitive as we see here for perhaps the test error on our holdout set。
 
@@ -28,23 +26,18 @@ And hopefully you don't think that this is intuitive because this is intuitive a
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_5.png)
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_6.png)
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_7.png)
 
 And this is surprising again， because deeper networks should overfit more and should do better on the training set。
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_9.png)
 
 So what was happening？Earlier layers of deep networks were very slow to adjust so it was hard to adjust those earlier layers within the network。
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_11.png)
 
 Analogous to that vanishing gradient issue as we move towards the front。
 
@@ -52,7 +45,6 @@ Analogous to that vanishing gradient issue as we move towards the front。
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_13.png)
 
 And this is happening that we are having this lower performance on the training set when， in theory。
 
@@ -66,7 +58,6 @@ And this is happening that we are having this lower performance on the training 
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_15.png)
 
 So the assumption that will make resnet possible， so resnet is the solution to this problem will be that the best transformation over multiple layers will be close to F of x plus x。
 
@@ -84,13 +75,11 @@ As well as the added on initial weights that x and pass them through that curren
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_17.png)
 
 And this shortcut allows for the information from those earlier layers to easily pass through our network。
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_19.png)
 
 And we can continue to do this throughout the network to ensure that prior layers， say two layers。
 
@@ -100,9 +89,7 @@ And we can continue to do this throughout the network to ensure that prior layer
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_21.png)
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_22.png)
 
 And the idea basically is keep passing that initial information unchanged to the next layer。
 
@@ -110,9 +97,7 @@ And the idea basically is keep passing that initial information unchanged to the
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_24.png)
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_25.png)
 
 Now， this will actually allow you to continue to pass through pass information。
 
@@ -132,7 +117,6 @@ Then we can hold on to that value from that earlier layer。Add again。
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_27.png)
 
 Now to recap。In this section， we discuss many different common architectures that we should be aware of when we're working with convolutional neural nets。
 
@@ -142,7 +126,6 @@ We started off with Lette， which was an earlier version where we saw the frame
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_29.png)
 
 Then we discussed Alexnet， which was。Introducing we lose into the equation。
 
@@ -150,7 +133,6 @@ Then we discussed Alexnet， which was。Introducing we lose into the equation�
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_31.png)
 
 We then discussed VGG and how that allowed for a simpler。
 
@@ -158,13 +140,11 @@ We then discussed VGG and how that allowed for a simpler。
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_33.png)
 
 We discussed the inception model which allowed us to include multiple layer types within a single layer while maintaining computational efficiency。
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_35.png)
 
 Then finally， we discussed ResNe， which allowed for maintaining information from earlier in the network to ensure that we can build out incredibly deep networks while still continuing to reduce training error。
 
@@ -176,6 +156,5 @@ Now that closes out discussion on convolutional neural networks。
 
 
 
-![](img/a7e74b883f1727f04e633e2cc3915de7_37.png)
 
 ![](img/a7e74b883f1727f04e633e2cc3915de7_38.png)

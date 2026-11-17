@@ -10,11 +10,8 @@
 
 你选择学习的语言将取决于你需要完成的任务和需要解决的问题。它还会受到你所在的公司、你的职位角色以及现有应用程序的“年龄”（技术栈新旧）的影响。
 
-![](img/3d62f4fb7b7fa7e00c0b6e0a1cede1bb_1.png)
 
-![](img/3d62f4fb7b7fa7e00c0b6e0a1cede1bb_2.png)
 
-![](img/3d62f4fb7b7fa7e00c0b6e0a1cede1bb_3.png)
 
 随着我们深入探讨数据科学行业的流行语言，我们将探索这个问题的答案。
 
@@ -30,11 +27,8 @@
 
 以下是本课涵盖的内容要点：
 
-![](img/3d62f4fb7b7fa7e00c0b6e0a1cede1bb_5.png)
 
-![](img/3d62f4fb7b7fa7e00c0b6e0a1cede1bb_6.png)
 
-![](img/3d62f4fb7b7fa7e00c0b6e0a1cede1bb_7.png)
 
 *   **Python**
 *   **R**
@@ -42,9 +36,7 @@
 *   **其他值得注意的数据科学语言**
 *   **练习测验**
 
-![](img/3d62f4fb7b7fa7e00c0b6e0a1cede1bb_8.png)
 
-![](img/3d62f4fb7b7fa7e00c0b6e0a1cede1bb_9.png)
 
 ---
 

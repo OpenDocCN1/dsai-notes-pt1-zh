@@ -1,12 +1,9 @@
 #  110：课程 52: 处理困难问题 🧩
 
-![](img/fed6aba369aad6887123ad213c2cff95_1.png)
 
-![](img/fed6aba369aad6887123ad213c2cff95_2.png)
 
 在本节课中，我们将探讨为何调试工作有时会异常困难，并学习一些实用的策略来更有效地应对和解决复杂的技术问题。
 
-![](img/fed6aba369aad6887123ad213c2cff95_4.png)
 
 ![](img/fed6aba369aad6887123ad213c2cff95_6.png)
 

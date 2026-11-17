@@ -4,34 +4,21 @@
 
 在本节课中，我们将学习一篇名为《LambdaNetworks：无需注意力的远距离交互建模》的论文。这篇论文提出了一种名为“Lambda层”的新方法，旨在高效地捕获输入与上下文信息之间的长距离交互，而无需使用传统的、计算成本高昂的注意力机制。我们将探讨其核心思想、工作原理，以及它如何在图像分类任务上实现比EfficientNets和ResNets更优的速度-精度权衡。
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_1.png)
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_2.png)
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_3.png)
 
 ## 论文背景与动机
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_4.png)
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_6.png)
 
 机器学习领域在ImageNet数据集上不断刷新着最佳结果。这一次的突破来自一种名为Lambda ResNets的模型。如图所示，它不仅在一项准确率上超越了EfficientNets和ResNets，而且在准确率与训练时间的权衡上也表现出色。数据显示，Lambda ResNets的训练速度比EfficientNets快约4.5倍，并在不同规模的图像分类模型上显著改善了速度-精度权衡。
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_1.png)
-![](img/2845f16556ffb8dc88c9dbcd398d7084_2.png)
-![](img/2845f16556ffb8dc88c9dbcd398d7084_3.png)
-![](img/2845f16556ffb8dc88c9dbcd398d7084_4.png)
 
 近年来，我们看到Transformer等模型在图像分类等领域占据主导地位，但它们通常需要对图像进行下采样（如切成16x16的图块）或依赖海量的数据和计算资源。这篇论文承诺提供一种更高效的方法，能够在相同效率下达到更好的精度，或者在达到相同精度时更高效。
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_6.png)
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_8.png)
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_9.png)
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_10.png)
 
 ## 核心思想：Lambda层
 
@@ -41,7 +28,6 @@ Lambda层非常灵活，可以建模全局、局部或掩码上下文中的基�
 
 ![](img/2845f16556ffb8dc88c9dbcd398d7084_8.png)
 ![](img/2845f16556ffb8dbcd398d7084_9.png)
-![](img/2845f16556ffb8dc88c9dbcd398d7084_10.png)
 
 ## 与注意力机制的对比
 
@@ -55,8 +41,6 @@ Lambda层非常灵活，可以建模全局、局部或掩码上下文中的基�
 
 然而，当处理像图像这样的数据时，如果将其视为像素序列，那么对于一张200x200的图像（共40,000个像素），注意力矩阵将是40,000 x 40,000的大小，这在计算和内存上都是不可行的。
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_12.png)
-![](img/2845f16556ffb8dc88c9dbcd398d7084_13.png)
 
 为了解决这个问题，人们引入了“局部注意力”，即一个像素只关注其邻近区域的其他像素。这类似于卷积操作，但局部注意力是动态的卷积核，而标准卷积是固定的卷积核。Lambda层在处理高分辨率图像时，也会采用类似的思路，将上下文限制在感兴趣像素周围的局部区域内，而不是进行全局计算。
 
@@ -89,14 +73,8 @@ lambda_matrix = generate_lambda(context_features) # 形状 [output_dim, feature_
 output = input_features @ lambda_matrix.T # 矩阵乘法，形状 [input_length, output_dim]
 ```
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_15.png)
-![](img/2845f16556ffb8dc88c9dbcd398d7084_17.png)
-![](img/2845f16556ffb8dc88c9dbcd398d7084_18.png)
-![](img/2845f16556ffb8dc88c9dbcd398d7084_20.png)
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_12.png)
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_13.png)
 
 ## 优势与权衡
 
@@ -107,13 +85,10 @@ output = input_features @ lambda_matrix.T # 矩阵乘法，形状 [input_length,
 
 当然，这种效率提升也带来了权衡：
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_15.png)
 
 *   **表达能力限制**：与标准的注意力机制相比，Lambda层是一种更“参数化”或“静态”的交互方式。注意力机制为每对位置动态生成权重，非常灵活。而Lambda层为所有位置共享一个由上下文生成的变换，其动态性和细粒度程度可能不如注意力机制。可以理解为，注意力是“每个输入自己决定看哪里、看多少”，而Lambda层是“根据整体情况制定一个规则，然后所有输入都按这个规则办”。
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_17.png)
 
-![](img/2845f16556ffb8dc88c9dbcd398d7084_18.png)
 
 ## 总结
 

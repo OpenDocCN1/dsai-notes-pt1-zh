@@ -18,14 +18,12 @@ A = [[a, b, c],
      [c, e, f]]
 ```
 
-![](img/5dee9f19719bc70da3e193cf67eac29d_1.png)
 
 其中，`A.T == A`。
 
 以下是使用NumPy创建和验证对称矩阵的代码示例：
 
 
-![](img/5dee9f19719bc70da3e193cf67eac29d_3.png)
 
 ```python
 import numpy as np
@@ -54,7 +52,6 @@ print("\nA 是否等于 A^T?", np.array_equal(symmetric_matrix, transpose_of_A))
 
 单位矩阵是一种特殊的对称矩阵，其主对角线上的所有元素均为1，其余所有元素均为0。一个n阶单位矩阵记作 **I_n**。
 
-![](img/5dee9f19719bc70da3e193cf67eac29d_5.png)
 
 例如，一个4阶单位矩阵 **I_4** 如下：
 

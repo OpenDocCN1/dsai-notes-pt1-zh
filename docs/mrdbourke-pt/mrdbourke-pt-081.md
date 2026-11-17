@@ -1,30 +1,20 @@
 # 81：136. 创建图像数据加载器 📂
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_0.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_0.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_2.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_4.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_6.png)
 
 在本节课中，我们将学习如何将自定义数据集转换为PyTorch的`DataLoader`。这是PyTorch工作流程中的关键一步，它能让我们的数据变成可迭代的批次，便于模型高效训练。
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_8.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_10.png)
 
 ## 概述：从数据集到数据加载器
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_12.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_14.png)
 
 上一节我们介绍了如何将图像数据转换为`Dataset`。本节中，我们来看看如何将`Dataset`转换为`DataLoader`。`DataLoader`能帮助我们将数据集批量化，让模型一次处理一批数据，这对于管理内存和提升训练效率至关重要。
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_16.png)
 
 ## 什么是DataLoader？
 
@@ -42,11 +32,8 @@ train_dataloader = DataLoader(dataset=train_data,
 
 ## 创建训练和测试数据加载器
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_18.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_19.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_20.png)
 
 现在，让我们将训练和测试数据集转换为数据加载器。这个过程不仅适用于图像数据，也适用于文本、音频等各种类型的数据。
 
@@ -59,15 +46,11 @@ train_dataloader = DataLoader(dataset=train_data,
 
 以下是具体的实现代码：
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_22.png)
 
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_24.png)
 
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_26.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_28.png)
 
 ```python
 import os
@@ -84,31 +67,22 @@ test_dataloader = DataLoader(dataset=test_data,
                              shuffle=False)
 ```
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_29.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_31.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_32.png)
 
 ## 检查数据加载器
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_34.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_36.png)
 
 创建完成后，我们可以检查数据加载器的长度和其中数据的形状。
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_38.png)
 
 当我们使用`batch_size=1`时，数据加载器的长度与原始数据集相同。如果我们将`batch_size`改为32，长度会相应减少，因为数据被分成了多个批次。
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_40.png)
 
 更重要的是，`DataLoader`会为数据添加一个批次维度。我们可以通过迭代数据加载器来查看数据的形状：
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_42.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_44.png)
 
 ```python
 # 从训练数据加载器中获取一个批次
@@ -119,32 +93,22 @@ print(f"图像形状: {image_batch.shape} -> [批次大小, 颜色通道数, 高
 print(f"标签形状: {label_batch.shape} -> [批次大小]")
 ```
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_46.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_47.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_49.png)
 
 当`batch_size=1`时，输出形状为`[1, 3, 64, 64]`和`[1]`。当`batch_size=32`时，输出形状变为`[32, 3, 64, 64]`和`[32]`。这意味着每个批次包含32张图像和对应的32个标签。
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_51.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_52.png)
 
 ## 总结与展望
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_54.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_56.png)
 
 本节课中我们一起学习了如何创建图像`DataLoader`。我们回顾一下整个流程：首先下载自定义数据集，然后使用`ImageFolder`将其加载为`Dataset`，接着使用数据转换将其转为张量，最后使用`DataLoader`进行批量化处理。
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_58.png)
 
 现在，我们已经拥有了可以用于训练卷积神经网络（CNN）的批量化数据。在下一节课中，我们将做一个有趣的假设：如果没有`torchvision.datasets.ImageFolder`这个现成的工具，我们该如何从头开始构建一个自定义的数据加载功能，使其与`DataLoader`兼容？这将帮助我们更深入地理解PyTorch数据加载的内部机制。
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_60.png)
 
-![](img/255bbae857c3c7b4f016bf873cf0c331_61.png)
 
 ![](img/255bbae857c3c7b4f016bf873cf0c331_51.png)

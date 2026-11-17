@@ -20,23 +20,19 @@
 
 同时，请记得安装 Spark 连接器的 JAR 文件，并将其上传到你的 Databricks 集群。
 
-![](img/a830e3d47f741758971a56c2befb6a6e_2.png)
 
 你可以暂停视频，在准备就绪后继续。
 
 现在，课堂设置脚本已经运行完毕。
 
-![](img/a830e3d47f741758971a56c2befb6a6e_4.png)
 
 我们可以开始设置 Weaviate 网络。
 
-![](img/a830e3d47f741758971a56c2befb6a6e_6.png)
 
 首先，你需要访问 Weaviate 官网。
 
 然后点击“免费开始”。点击后，你应会被自动引导至控制台页面。
 
-![](img/a830e3d47f741758971a56c2befb6a6e_8.png)
 
 ![](img/a830e3d47f741758971a56c2befb6a6e_9.png)
 

@@ -28,7 +28,6 @@
 
 作为实践示例，下图展示了文档布局检测的结果。模型成功地在标题、叙述性文本和表格等元素周围绘制了边界框。在确定并标记这些边界框之后，就可以进行文本提取。
 
-![](img/c5386cc91b06b9ebb1d64c5d29cf96a7_1.png)
 
 ## 视觉转换器
 
@@ -40,19 +39,16 @@
 
 下图展示了Donut模型的架构。模型处理图像后，会输出一个字符串。
 
-![](img/c5386cc91b06b9ebb1d64c5d29cf96a7_3.png)
 
 该字符串是一个有效的JSON，其中每个元素都包含文本内容及其类别信息。获得这个字符串后，我们可以将其转换为我们期望的规范化文档元素格式。
 
 ## 技术选型：如何选择？
 
-![](img/c5386cc91b06b9ebb1d64c5d29cf96a7_1.png)
 
 那么，在实际应用中，应该何时使用视觉转换器，何时使用文档布局检测模型呢？每种模型都有其优缺点。
 
 以下是文档布局检测模型的优缺点：
 
-![](img/c5386cc91b06b9ebb1d64c5d29cf96a7_3.png)
 
 *   **优点**：
     1.  模型针对一组固定的元素类型进行训练，对这些元素的识别精度通常非常高。
@@ -76,7 +72,6 @@
 
 我们将处理的文档是CNN发布的一篇关于厄尔尼诺气象模式的新闻文章。
 
-![](img/c5386cc91b06b9ebb1d64c5d29cf96a7_5.png)
 
 首先，导入必要的依赖项。由于处理PDF是基于模型的工作负载，我们将通过API进行调用。
 
@@ -84,7 +79,6 @@
 
 首先，我们处理文档的HTML表示形式。使用`partition_html`函数（来自`unstructured`开源库）来处理HTML文件。
 
-![](img/c5386cc91b06b9ebb1d64c5d29cf96a7_5.png)
 
 ```python
 from unstructured.partition.html import partition_html
@@ -98,7 +92,6 @@ elements_html = partition_html(filename="document.html")
 
 接下来，预处理相同文档的PDF表示形式。首先使用`unstructured`库中的`FAST`策略。该策略直接从PDF文档中提取文本，适用于像新闻文章这样布局简单的PDF。
 
-![](img/c5386cc91b06b9ebb1d64c5d29cf96a7_7.png)
 
 ```python
 from unstructured.partition.pdf import partition_pdf
@@ -119,7 +112,6 @@ elements_pdf_yolox = partition_pdf(filename="document.pdf", strategy="hi_res", m
 
 这个过程是基于模型的，可能需要一些时间。完成后，查看输出。模型同样识别出了标题和叙述文本，输出结果与HTML和快速策略的输出非常类似。
 
-![](img/c5386cc91b06b9ebb1d64c5d29cf96a7_7.png)
 
 ### 步骤四：结果对比
 
@@ -140,6 +132,5 @@ elements_pdf_yolox = partition_pdf(filename="document.pdf", strategy="hi_res", m
 
 在下一课中，您将学习如何预处理包含更复杂布局（如表格）的PDF文档。
 
-![](img/c5386cc91b06b9ebb1d64c5d29cf96a7_9.png)
 
 ![](img/c5386cc91b06b9ebb1d64c5d29cf96a7_9.png)

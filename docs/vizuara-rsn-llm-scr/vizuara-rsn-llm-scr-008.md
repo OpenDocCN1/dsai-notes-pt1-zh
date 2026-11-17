@@ -1,6 +1,5 @@
 #  008：动态规划与强化学习阶段
 
-![](img/6d8ef586ec92f4d74b651fd65c5c173b_0.png)
 
 ![](img/6d8ef586ec92f4d74b651fd65c5c173b_0.png)
 

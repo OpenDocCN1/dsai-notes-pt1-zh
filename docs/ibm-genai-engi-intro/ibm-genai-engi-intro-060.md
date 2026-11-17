@@ -6,9 +6,7 @@
 
 上一节我们介绍了课程概述，本节中我们来看看比较操作。比较操作会对比两个值或操作数，然后基于某个条件产生一个布尔值（`True` 或 `False`）。
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_1.png)
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_2.png)
 
 例如，我们给变量 `a` 赋值为 `6`。我们可以使用由两个等号 `==` 表示的相等运算符来判断两个值是否相等。
 
@@ -59,11 +57,9 @@ print(“继续。”)
 
 继续使用音乐会类比：如果用户 17 岁，他们不能去 ACDC 音乐会，但可以去 Meatloaf 音乐会（用紫色方块表示）。
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_4.png)
 
 `else` 语句的语法如下：
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_5.png)
 
 ```python
 if condition:
@@ -85,9 +81,7 @@ print(“继续。”)
 
 当 `age` 为 `17` 时，`if` 条件为 `False`，程序会执行 `else` 块中的代码，输出“去看 Meatloaf 音乐会吧。”。当 `age` 为 `19` 时，`if` 条件为 `True`，程序执行 `if` 块中的代码，输出“你可以进入 ACDC 音乐会。”，并跳过 `else` 块。
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_7.png)
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_8.png)
 
 ## Elif 语句
 
@@ -97,11 +91,8 @@ print(“继续。”)
 
 `elif` 语句的语法如下：
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_10.png)
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_11.png)
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_12.png)
 
 ```python
 if condition1:
@@ -127,13 +118,10 @@ print(“继续。”)
 
 当 `age` 为 `18` 时，第一个条件 `age > 18` 为 `False`，程序检查 `elif` 条件 `age == 18`，该条件为 `True`，因此输出“去看 Pink Floyd 音乐会吧。”。
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_14.png)
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_15.png)
 
 ## 逻辑运算符
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_16.png)
 
 为了构建更复杂的条件，我们需要逻辑运算符。逻辑运算符对布尔值进行运算，并产生新的布尔值。主要有三种：`not`、`or` 和 `and`。
 
@@ -144,11 +132,8 @@ print(“继续。”)
 以下是使用逻辑运算符的示例：
 
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_18.png)
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_19.png)
 
-![](img/de0b8c5aec1c570c8c7e2ca2d3ed8af9_20.png)
 
 ```python
 # 使用 or 运算符

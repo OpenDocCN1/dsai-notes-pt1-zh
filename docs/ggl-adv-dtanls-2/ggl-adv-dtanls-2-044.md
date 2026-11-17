@@ -1,6 +1,5 @@
 # 044：分组与聚合 📊
 
-![](img/40b513f0edbe4c30abb363b9067ab7d9_0.png)
 
 ![](img/40b513f0edbe4c30abb363b9067ab7d9_0.png)
 
@@ -52,7 +51,6 @@
 
 请注意，我们可以将 `mean` 作为字符串输入，因为它是 `groupby` 对象的现有方法；但我们需要将 `percentile_90` 函数作为对象输入，因为它是自定义的。
 
-![](img/40b513f0edbe4c30abb363b9067ab7d9_2.png)
 
 ![](img/40b513f0edbe4c30abb363b9067ab7d9_2.png)
 

@@ -479,11 +479,9 @@ Elshamli *等人* [94] 首次将 DANN 概念引入高光谱图像分类任务�
 
 图 10：每个类别样本数量变化对准确度的影响。 10 PaviaU. 10 Salinas. 10 KSC.
 
-![参见说明](img/457af78222db50938fbf59246aa04851.png)![参见说明](img/0c422b45dbb99a47fe8818abaa9a3879.png)![参见说明](img/79be6492ac53069022d2deda479fbeb8.png)![参见说明](img/234d6333038b37f01c264dc204d8ea48.png)![参见说明](img/be9d1b5bbb273db4bce02c800b2eb878.png)![参见说明](img/4cd2c9522f788b687e95aafbf8a1e21d.png)![参见说明](img/21c2936dc0be3018615d7038412f5e26.png)![参见说明](img/97dde8237dd40ec84f311976a9c82111.png)![参见说明](img/2fbf03b337299db99905d2b6b8766d07.png)
 
 图 11：PaviaU 数据集上的分类图（每类 10 个样本）。 11 原始。 11 S-DMM。 11 3DCAE。 11 SSDL。 11 TwoCnn。 11 3DVSCNN。 11 SSLstm。 11 CNN_HSI。 11 SAE_LR。
 
-![参见说明](img/53210bbe28e3269788ae65e7f8383140.png)![参见说明](img/2e5d9057629e38657b69bbd1ddead6f9.png)![参见说明](img/5f28e554f52eda3dac9789320aa6283c.png)![参见说明](img/7eaf321881768657931cb971003bed7c.png)![参见说明](img/54b2b9d40e8b1e99628ea10e4a2c3134.png)![参见说明](img/45d3317fa95c44f835cf911bdb9d54b3.png)![参见说明](img/a2bd0045490d2c7022a5f4c6d55fe3d9.png)![参见说明](img/825426001b1254f6e45aa612ac28ada3.png)![参见说明](img/14c842b14a5a9b63f7fee0d21c1c3deb.png)
 
 图 12: PaviaU 数据集上的分类图（每类 50 个样本）。 12 原始。 12 S-DMM。 12 3DCAE。 12 SSDL。 12 TwoCnn。 12 3DVSCNN。 12 SSLstm。 12 CNN_HSI。 12 SAE_LR。
 
@@ -491,11 +489,9 @@ Elshamli *等人* [94] 首次将 DANN 概念引入高光谱图像分类任务�
 
 图 13：PaviaU 数据集上的分类图（每类 100 个样本）。 13 原始。 13 S-DMM。 13 3DCAE。 13 SSDL。 13 TwoCnn。 13 3DVSCNN。 13 SSLstm。 13 CNN_HSI。 13 SAE_LR。
 
-![参见说明](img/45f3f33aff344f770282e858b6b081e9.png)![参见说明](img/242379d2501a01c140fcbff386baefdc.png)![参见说明](img/eb768fabec326ef59daa82f5d4c3b7d4.png)![参见说明](img/ca86cd6e1e9027023bc4b40ebe489a2b.png)![参见说明](img/8ebd28a970b41f23cb1ce8a3eebc3dc3.png)![参见说明](img/439af2f5c20f569f00bf4aef8dcca610.png)![参见说明](img/905bb4c3080b1df23a7ab060c65c6be9.png)![参见说明](img/ffaa74c07706ffb9ee72c8241a89705c.png)![参见说明](img/a38fe27b7ce0d8705579d4b2e1f6915c.png)
 
 图 14：Salinas 数据集上的分类图（每类 10 个样本）。 14 原始。 14 S-DMM。 14 3DCAE。 14 SSDL。 14 TwoCnn。 14 3DVSCNN。 14 SSLstm。 14 CNN_HSI。 14 SAE_LR。
 
-![参见说明](img/2e54fc7491f1ad912af2746de63e9674.png)![参见说明](img/a7ea03cfa709e3633938258288b9c95f.png)![参见说明](img/63a7eb0f2bf96cc0324d45239304ad44.png)![参见说明](img/0fcf4987788c27d206b8674175963d8a.png)![参见说明](img/d90a130e74206516e326a60845970635.png)![参见说明](img/ac353133206ebe2e7ea6e071f2bb5583.png)![参见说明](img/a543deb9002e7dc3aea22ad62b7a7e12.png)![参见说明](img/76e7608b9347d8dc920fb7ef4ab45ca8.png)![参见说明](img/11eae55fc0f61baf7601ab865f5130ad.png)
 
 图 15：Salinas 数据集上的分类图（每类 50 个样本）。 15 原始。 15 S-DMM。 15 3DCAE。 15 SSDL。 15 TwoCnn。 15 3DVSCNN。 15 SSLstm。 15 CNN_HSI。 15 SAE_LR。
 
@@ -503,11 +499,9 @@ Elshamli *等人* [94] 首次将 DANN 概念引入高光谱图像分类任务�
 
 图 16：Salinas 数据集上的分类图（每类 100 个样本）。16 原始。16 S-DMM。16 3DCAE。16 SSDL。16 TwoCnn。16 3DVSCNN。16 SSLstm。16 CNN_HSI。16 SAE_LR。
 
-![参考说明](img/130655677ba4dc1b690dc23b7b16c9e6.png)![参考说明](img/0e0dee93ddec946989c833e4455c2dd6.png)![参考说明](img/8ddf84d4743f60deaa1c747a68b515da.png)![参考说明](img/e24515612a1c1d0cc588e93e19bd8adf.png)![参考说明](img/ba8d01cac7fe4fe0917e5b18cefa0ebd.png)![参考说明](img/cf5418fcca5c4b0525b8941da92137c9.png)![参考说明](img/8df95f2cebc9d6ac8e19f77ba4e24feb.png)![参考说明](img/b5c9b1730a2d46fe8155f36f5d14c94c.png)![参考说明](img/8032aae21ea33c850ea46afcaabd5d64.png)
 
 图 17：KSC 数据集上的分类地图（每类 10 个样本）。17 原始图像。17 S-DMM。17 3DCAE。17 SSDL。17 TwoCnn。17 3DVSCNN。17 SSLstm。17 CNN_HSI。17 SAE_LR。
 
-![参考标题](img/0265b16b8037b38b2834f536f94418e7.png)![参考标题](img/4fd942dbdf13abfcf772862bd3a68f4b.png)![参考标题](img/88d11be55d09ef23769e40a392f3f64c.png)![参考标题](img/245a69d4fc6fe8c92a9033e5647a060f.png)![参考标题](img/8ef8f782c257d0ccaf7559e5b484658c.png)![参考标题](img/c59378f92391d212ba10465dd1b76b75.png)![参考标题](img/d19f74eb09888632ff365893fc58b37b.png)![参考标题](img/24c70588a75199fcc3c5307360ac6069.png)![参考标题](img/e97b56a307863e8b2c05ca07c54fdd8d.png)
 
 图 18：KSC 数据集上的分类图（每类 50 个样本）。 18 原始。 18 S-DMM。 18 3DCAE。 18 SSDL。 18 TwoCnn。 18 3DVSCNN。 18 SSLstm。 18 CNN_HSI。 18 SAE_LR。
 
@@ -536,11 +530,9 @@ Elshamli *等人* [94] 首次将 DANN 概念引入高光谱图像分类任务�
 
 此外，我们根据每组实验中前 200 个周期的训练损失变化来比较模型的收敛速度（见图 20$\sim$22）。由于 3DCAE 的自编码器和分类器是分开训练的，并且在训练自编码器时使用了所有数据，这使得它与其他模型不可比。因此，此处未列出。在所有数据集中，S-DMM 具有最快的收敛速度。由于其参数较少，经过大约 3 个周期后，训练损失趋于稳定。尽管 CNN_HSI 具有类似于 S-DMM 的性能且参数较少，但 CNN_HSI 的收敛率学习曲线比 S-DMM 慢，有时还伴有波动。第二名的性能由 TwoCnn 保持，这主要得益于迁移学习更好地定位了初始参数，实际上它需要训练的参数更少。因此，只需在目标数据集上进行几个周期的微调。此外，大多数模型的训练曲线在 100 个周期后稳定。SSLstm 的训练损失在所有数据集中都有严重的波动。这在 SeLstm 中尤为明显，其中损失有时难以减少。当序列非常长时，挑战可能是递归神经网络更容易出现梯度消失或爆炸。此外，高光谱图像的像素通常包含数百个波段，这也是为什么 SeLstm 的训练损失难以减少或出现波动的原因。在空间分支中，由于空间序列的长度（取决于补丁大小）比光谱序列短，因此没有这种严重的情况。在训练期间，基于 LSTM 的模型花费了相当多的时间，因为它不能并行训练。
 
-![参见说明](img/92ff38140d8432c58a271ba8ff5dd534.png)![参见说明](img/202d1fa3f6ae3cd4333adad1bd58fa2d.png)![参见说明](img/8aefb9fed52ddb72415634ddecd17138.png)
 
 图 20: PaviaU 数据集上的训练损失。 20 每类 10 个样本。 20 每类 50 个样本。 20 每类 100 个样本。
 
-![参见说明](img/ad9c41242f4700eb1518939a53c404e3.png)![参见说明](img/4156238aa0edc5095f71ea494659f4a5.png)![参见说明](img/37243663eecf46a8fe843691f75780b1.png)
 
 图 21: Salinas 数据集上的训练损失。 21 每类 10 个样本。 21 每类 50 个样本。 21 每类 100 个样本。
 

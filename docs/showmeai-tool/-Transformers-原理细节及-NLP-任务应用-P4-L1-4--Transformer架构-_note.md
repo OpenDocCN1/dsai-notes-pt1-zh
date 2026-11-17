@@ -49,11 +49,8 @@ Transformer 架构源自论文《Attention Is All You Need》。我们将从该�
 
 为了全面掌握编码器-解码器的工作细节，请务必观看相关的专题讲解视频。
 
-![](img/d08fc3568a2c2da170bab8fd128110ce_1.png)
 
-![](img/d08fc3568a2c2da170bab8fd128110ce_1.png)
 
-![](img/d08fc3568a2c2da170bab8fd128110ce_2.png)
 
 ![](img/d08fc3568a2c2da170bab8fd128110ce_2.png)
 

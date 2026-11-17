@@ -1,28 +1,22 @@
 # 036：样本内评估指标
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_0.png)
 
 在本节课中，我们将学习如何通过数值指标来评估回归模型的性能。我们将重点介绍两个核心的样本内评估指标：**均方误差**和**R平方**。这些指标能帮助我们量化模型对数据的拟合程度。
 
 
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_2.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_3.png)
 
 上一节我们介绍了如何通过可视化方法评估模型。本节中，我们来看看如何用数值指标进行更精确的评估。
 
 
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_5.png)
 
 这些指标是一种数值化方法，用于确定模型对数据的拟合程度。
 
 
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_7.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_8.png)
 
 以下是两个常用于确定模型拟合度的重要指标：
 
@@ -31,21 +25,16 @@
 
 
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_10.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_11.png)
 
 ## 📏 均方误差
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_13.png)
 
 均方误差衡量的是模型预测值与实际值之间的平均平方差。其计算公式为：
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_14.png)
 
 **MSE = (1/n) * Σ (Y_i - Ŷ_i)²**
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_16.png)
 
 其中：
 *   `Y_i` 是第 `i` 个样本的实际值。
@@ -67,9 +56,7 @@ from sklearn.metrics import mean_squared_error
 mse = mean_squared_error(y_actual, y_predicted)
 ```
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_18.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_19.png)
 
 `mean_squared_error` 函数接收两个输入参数：目标变量的实际值数组和目标变量的预测值数组。
 
@@ -77,11 +64,8 @@ mse = mean_squared_error(y_actual, y_predicted)
 
 ## 🔢 R平方
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_21.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_22.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_23.png)
 
 R平方，也称为**决定系数**，用于衡量数据点与拟合回归线的接近程度。它本质上是在比较我们的回归模型与一个简单模型（即数据点的平均值）的优劣。
 
@@ -103,28 +87,20 @@ R平方的值通常在0到1之间。
 
 ### 理解R平方的值
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_25.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_26.png)
 
 *   **R² 接近 1**：表示回归线对数据的拟合非常好。此时，回归线的MSE远小于平均值的MSE，公式中的比值很小，使得R²接近1。
 *   **R² 接近 0**：表示回归线的拟合效果不佳，其预测能力与直接使用数据平均值差不多。此时，回归线的MSE与平均值的MSE大小相近，比值接近1，导致R²接近0。
 
 
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_27.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_28.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_29.png)
 
 在Python中，我们可以通过线性回归模型的 `score` 方法来获取R平方值：
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_30.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_31.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_32.png)
 
 ```python
 from sklearn.linear_model import LinearRegression
@@ -143,24 +119,17 @@ r_squared = lm.score(X, y)
 
 ## 📝 总结
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_34.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_35.png)
 
 本节课中，我们一起学习了用于回归模型样本内评估的两个核心数值指标：
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_36.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_37.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_38.png)
 
 1.  **均方误差**：衡量预测值与实际值之间的平均平方误差，值越小表示模型拟合越好。
 2.  **R平方**：衡量模型解释数据变异性的比例，值越接近1表示模型拟合度越高。
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_39.png)
 
-![](img/f98857c9abb8c8236dd754529b69e1a8_40.png)
 
 ![](img/f98857c9abb8c8236dd754529b69e1a8_41.png)
 

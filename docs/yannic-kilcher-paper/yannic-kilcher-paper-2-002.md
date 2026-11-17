@@ -1,14 +1,10 @@
 # 002：Jukebox音乐生成模型（论文解读）
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_0.png)
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_2.png)
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_4.png)
 
 在本节课中，我们将要学习OpenAI提出的Jukebox模型。这是一种能够生成包含人声演唱的音乐的生成模型。其生成音乐的质量和整首歌曲的音乐连贯性都令人印象深刻。我们将解析其核心架构——基于VQ-VAE的层次化模型，并理解其工作原理。
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_6.png)
 
 ## 模型概述与背景
 
@@ -40,40 +36,29 @@ VQ-VAE的训练包含三个损失函数：
 
 ## Jukebox 的层次化架构
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_8.png)
 
 理解了VQ-VAE之后，我们现在可以看看Jukebox如何利用它来生成音乐。
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_10.png)
 
 Jukebox采用了一个层次化的自编码器架构。它从原始的音乐样本开始，目标是通过训练重建这个样本。模型的核心是使用了**三个不同尺度**的VQ-VAE，分别处理音乐信号的不同层次信息。
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_12.png)
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_13.png)
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_14.png)
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_15.png)
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_16.png)
 
 以下是其工作流程的简要说明：
 1.  原始音频首先经过一个编码器，被下采样并转换成一系列潜在表示。
 2.  这些表示会在三个不同的层次（粗糙、中等、精细）上分别进行**向量量化**。每一层都对应一个独立的VQ-VAE，并拥有自己的码本。
 3.  量化后的离散编码被送入对应的解码器，尝试重建原始音频。
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_18.png)
 
 由于音乐是连续的时序信号，不能简单地编码整个片段，因此模型实际上处理的是音频的序列化片段。每一层的VQ-VAE都是独立训练的，分别捕捉音乐中从整体结构（粗糙层）到细节纹理（精细层）的不同特征。
 
 ## 总结
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_20.png)
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_21.png)
 
-![](img/4ea3a2f65a8a29da70ade8223cfcd52c_23.png)
 
 ![](img/4ea3a2f65a8a29da70ade8223cfcd52c_25.png)
 

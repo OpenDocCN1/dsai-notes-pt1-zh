@@ -41,7 +41,6 @@
 
 在深入代码之前，理解“交接”机制至关重要。下图展示了整体流程：
 
-![](img/d6aed3aedacd70b52822b46022a646a5_1.png)
 
 让我们仔细分析这个流程：
 
@@ -105,13 +104,11 @@ supervisor = create_supervisor(
 
 ![](img/d6aed3aedacd70b52822b46022a646a5_1.png)
 
-![](img/d6aed3aedacd70b52822b46022a646a5_2.png)
 
 1.  **监督者启动**：我们从监督者开始。查看 OpenAI 模型调用，可以看到监督者基本上有两个交接工具：`transfer_to_research_expert` 和 `transfer_to_math_expert`。它收到了我们指定的系统提示词和用户输入，并决定调用 `transfer_to_research_expert` 工具。这对应了流程图中的第一步。
 
     ![](img/d6aed3aedacd70b52822b46022a646a5_2.png)
 
-![](img/d6aed3aedacd70b52822b46022a646a5_4.png)
 
 2.  **进入研究专家智能体**：工具被调用，输出一个“交接”指令，指示前往研究专家。现在我们进入了研究专家智能体内部。智能体模型接收到的输入包括：原始的用户输入、来自监督者的“前往研究专家”的工具调用信息、以及实际执行交接的工具消息。然后，研究专家决定调用其搜索工具，并启动了针对几家科技公司的查询。
 
@@ -125,9 +122,7 @@ supervisor = create_supervisor(
 
     ![](img/d6aed3aedacd70b52822b46022a646a5_9.png)
 
-![](img/d6aed3aedacd70b52822b46022a646a5_6.png)
 
-![](img/d6aed3aedacd70b52822b46022a646a5_7.png)
 
 5.  **监督者进行下一步决策**：现在我们回到了监督者这里，并收到了确认返回成功的工具消息。监督者可以决定下一步做什么。查看 LLM 调用，它决定应该 `transfer_to_math_expert`。交接像之前一样完成。
 
@@ -137,7 +132,6 @@ supervisor = create_supervisor(
 
 7.  **最终完成**：数学专家完成计算后，将结果交回给监督者。监督者随后结束流程，并向用户的问题提供最终答案。
 
-    ![](img/d6aed3aedacd70b52822b46022a646a5_13.png)
 
 ![](img/d6aed3aedacd70b52822b46022a646a5_9.png)
 
@@ -157,7 +151,6 @@ supervisor = create_supervisor(
 ![](img/d6aed3aedacd70b52822b46022a646a5_13.png)
 
 
-![](img/d6aed3aedacd70b52822b46022a646a5_14.png)
 
 ![](img/d6aed3aedacd70b52822b46022a646a5_15.png)
 
@@ -175,7 +168,6 @@ ceo_supervisor = create_supervisor(model=llm, agents=[math_supervisor, weather_s
 
 通过这种方式，你可以构建出复杂且结构清晰的多智能体协作系统。
 
-![](img/d6aed3aedacd70b52822b46022a646a5_17.png)
 
 ---
 

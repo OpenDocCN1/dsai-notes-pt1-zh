@@ -12,7 +12,6 @@
 
 以下是实现快速迁移的三个关键步骤：
 
-![](img/af5fac66acc8cd8fa0b71023d3a05a5a_3.png)
 
 1.  **修改API密钥**：将OpenAI的API密钥替换为智谱AI平台的API Key。你需要提前将智谱API Key设置到环境变量中。
 2.  **修改API基础地址**：将OpenAI的调用端点（`api.openai.com`）替换为智谱AI开放平台的地址（`open.bigmodel.cn`）。
@@ -48,7 +47,6 @@ print(response.choices[0].message.content)
 
 在成功迁移后，了解两个平台之间的主要差异和GLM的特色优势，有助于你更好地规划业务。
 
-![](img/af5fac66acc8cd8fa0b71023d3a05a5a_5.png)
 
 以下是ChatGLM与GPT的一些关键差异点，请注意提前规划：
 
@@ -72,7 +70,6 @@ print(response.choices[0].message.content)
 
 上一节我们对比了差异，本节我们来了解可用的开发资源和最新的GLM-4模型系列。
 
-![](img/af5fac66acc8cd8fa0b71023d3a05a5a_7.png)
 
 **开发者资源中心**：
 你可以访问[智谱AI开放平台](https://open.bigmodel.cn/)获取所有开发资源。此外：

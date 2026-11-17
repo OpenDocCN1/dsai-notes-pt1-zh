@@ -6,11 +6,9 @@
 
 ---
 
-![](img/37a30bf89cd30fd80ff29cbf3ef5b9d8_1.png)
 
 ## 分组操作简介
 
-![](img/37a30bf89cd30fd80ff29cbf3ef5b9d8_2.png)
 
 SQL 提供了工具，让你能够基于一个或多个属性对数据进行分组，从而创建数据的子集。
 
@@ -18,9 +16,7 @@ SQL 提供了工具，让你能够基于一个或多个属性对数据进行分�
 
 
 
-![](img/37a30bf89cd30fd80ff29cbf3ef5b9d8_1.png)
 
-![](img/37a30bf89cd30fd80ff29cbf3ef5b9d8_2.png)
 
 ## 使用 GROUP BY 进行分组
 
@@ -56,7 +52,6 @@ ORDER BY set_count;
 
 
 
-![](img/37a30bf89cd30fd80ff29cbf3ef5b9d8_4.png)
 
 ## 使用 COUNT DISTINCT
 
@@ -64,7 +59,6 @@ ORDER BY set_count;
 
 例如，你之前可能注意到有些主题名称对应多个唯一的 ID。你可以使用以下查询来检查每个主题名称关联了多少个 ID：
 
-![](img/37a30bf89cd30fd80ff29cbf3ef5b9d8_4.png)
 
 ```sql
 SELECT theme_name, COUNT(DISTINCT theme_id) AS theme_count
@@ -94,7 +88,6 @@ LIMIT 10;
 
 
 
-![](img/37a30bf89cd30fd80ff29cbf3ef5b9d8_6.png)
 
 ## 总结
 

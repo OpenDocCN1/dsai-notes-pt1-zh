@@ -1,24 +1,19 @@
 # 025：输出结果解析 🧠
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_1.png)
 
 在本节课中，我们将探索三种强大的生成式模型：变分自编码器、生成对抗网络和扩散模型。每种模型都有其独特的应用场景。我们将通过具体的代码示例和结果可视化，来理解它们的工作原理和输出特点。
 
 ## 变分自编码器 (VAEs) 🎨
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_3.png)
 
 变分自编码器擅长生成与训练集相似的新数据。我们将使用心电图数据来演示其应用。
 
 首先，我们下载并配对ECG数据，对特征进行归一化处理，并分离标签。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_5.png)
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_6.png)
 
 接下来，定义VAE的架构。它包括一个用于压缩数据的**编码器**和一个用于重建数据的**解码器**。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_8.png)
 
 ```python
 # VAE架构示例
@@ -28,21 +23,17 @@ decoder = Decoder(latent_dim, output_dim)
 
 现在，我们使用ECG数据训练VAE模型。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_10.png)
 
 训练完成后，在测试数据上评估模型的性能，观察其重建ECG信号的效果。该模型预测正确的比例约为59%。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_12.png)
 
 尽管其ROC AUC分数高达0.95，但模型更擅长识别正常情况（精确率0.50），而对异常情况的识别精确率更高（0.90）。然而，它在找出所有异常情况方面存在困难（召回率0.33）。
 
 最后，我们通过可视化原始和重建的ECG信号来理解模型的性能。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_14.png)
 
 该图表显示，蓝色线条代表原始ECG信号，橙色线条代表重建的信号。两条线之间的巨大差异表明模型难以准确重建原始信号。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_16.png)
 
 ## 生成对抗网络 (GANs) 🖼️
 
@@ -52,7 +43,6 @@ decoder = Decoder(latent_dim, output_dim)
 
 以下是定义GAN架构的步骤：
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_18.png)
 
 ```python
 # GAN架构示例
@@ -60,25 +50,19 @@ generator = Generator(latent_dim, output_dim)
 discriminator = Discriminator(input_dim)
 ```
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_20.png)
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_22.png)
 
 现在，我们使用少数类数据训练生成器。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_24.png)
 
 生成器训练完成后，生成合成的少数类观测数据。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_26.png)
 
 最后，可视化包含合成少数类观测的增强数据集。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_27.png)
 
 该图表显示了三个点群：蓝点代表多数类，橙点代表原始少数类，绿点代表GAN生成的合成少数类样本。绿点与橙点很好地混合在一起，表明GAN创建了与原始样本相似的新少数类样本，有助于平衡数据集。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_29.png)
 
 ## 扩散模型 ⏳
 
@@ -86,28 +70,22 @@ discriminator = Discriminator(input_dim)
 
 我们将模拟患者轨迹数据来演示扩散模型的用例。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_31.png)
 
 首先，为扩散模型准备噪声调度。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_33.png)
 
 然后，定义去噪扩散模型的架构。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_35.png)
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_36.png)
 
 ```python
 # 扩散模型架构示例
 model = DenoisingDiffusionModel(noise_schedule)
 ```
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_38.png)
 
 接着，向数据添加噪声并训练模型。
 
-![](img/686b204777e9ac960c9407ba2f1f3bbc_40.png)
 
 现在，使用反向扩散采样未来的患者结果。
 

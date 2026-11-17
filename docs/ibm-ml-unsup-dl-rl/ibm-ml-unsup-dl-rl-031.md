@@ -24,7 +24,6 @@ To preserve it， and we'll be using that later on and we'll see how in a bit。
 
  we import our data using pandas。readcsv。
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_1.png)
 
 We look at the shape and we see that we have 440 rows and eight columns and recall the number of columns is going to be important as our goal here with PCA is to reduce that number of columns that we're working with when we create our models or whatever it is that we want to do with our data。
 
@@ -36,7 +35,6 @@ We look at the shape and we see that we have 440 rows and eight columns and reca
 
 
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_3.png)
 
 And we look at the data types， we see that they're each integers。
 
@@ -46,7 +44,6 @@ And we look at the data types， we see that they're each integers。
 
 
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_5.png)
 
 Now we have them all as floats and then as mentioned。
 
@@ -56,7 +53,6 @@ Now we have them all as floats and then as mentioned。
 
 
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_7.png)
 
 Here in part two。We need to again， ensure that our data is scaled and relatively normally distributed。
 
@@ -82,7 +78,6 @@ We're then going to view the pairwise correlation plots using our pair plot just
 
  looking across that diagonal of the pair plot。
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_9.png)
 
 So the first thing that we want to do is call data。
 
@@ -106,7 +101,6 @@ For every single numeric value for the range of our matrix， we're going to tak
 
  so 00，1，1，2，2， and replace that one with a0。
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_11.png)
 
 And we can see now our correlation matrix has a correlation between fresh and milk and grocery。
 
@@ -114,7 +108,6 @@ And we can see now our correlation matrix has a correlation between fresh and mi
 
 
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_13.png)
 
 Now， we're going to call the absolute value on that full correlation。
 
@@ -126,7 +119,6 @@ Now， we're going to call the absolute value on that full correlation。
 
  so on and so forth。
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_15.png)
 
 We're then going to examine the eew。For each one of our different values and then take the long transformation if necessary。
 
@@ -142,9 +134,7 @@ We sort them from largest to smallest， and those are going to be our log colum
 
 75。
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_17.png)
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_18.png)
 
 Those that have a higher sw， and we see here we have these values that tend to have a higher skuw。
 
@@ -162,13 +152,11 @@ And for those， we're going to take the log transformation of each。
 
 
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_20.png)
 
 So we're going to place those columns in place with the log transformation of those columns。
 
 
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_22.png)
 
 We can then also call the Minmac Scalar， so we import from Scalalar do preprocessing the Minmac Scalar。
 
@@ -192,15 +180,10 @@ The next thing that we want to do is we're going to visualize everything that we
 
  you see that high correlation。
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_24.png)
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_25.png)
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_26.png)
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_27.png)
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_28.png)
 
 Now， in part 3， we want to introduce how we can do this all in one step。
 
@@ -228,7 +211,6 @@ So now we have a log transformer object。Which is going to be a log transformer
 
 
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_30.png)
 
 And once we do that， we can pass it into our pipeline。 So first， within our pipeline。
 
@@ -258,12 +240,10 @@ With a bit of possible rounding error， many decimal points down the line。 So
 
 
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_32.png)
 
 Now， that closes out part 3 in part 4， we're going to start working with PC A on this transformed data that we've been working with and see how much of the variance can we explain with different numbers of these principal components。
 
  All right， I'll see you there。
 
-![](img/1b519be00c7eb0ca642a7ba7f5716ef5_34.png)
 
 ![](img/1b519be00c7eb0ca642a7ba7f5716ef5_35.png)

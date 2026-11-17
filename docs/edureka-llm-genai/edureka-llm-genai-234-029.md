@@ -8,7 +8,6 @@
 
 首先探讨Transformer模型。Transformer模型是一种为处理序列数据而设计的新型神经网络架构。它依赖**自注意力机制**来捕捉上下文关系。与传统序列模型不同，Transformer利用并行化和注意力机制来实现高效学习。
 
-![](img/b8e38d17e3cbac1bfc6547537cfb0db4_1.png)
 
 想象一个教室，每个学生根据相关性关注其他同学。Transformer的运作方式类似，序列中的每个元素根据重要性关注其他元素。自注意力机制使Transformer能有效理解上下文依赖。
 
@@ -41,9 +40,7 @@ Transformer通过捕捉长距离依赖和上下文细微差别，重塑了自然
 *   风险评估
 *   决策制定
 
-![](img/b8e38d17e3cbac1bfc6547537cfb0db4_3.png)
 
-![](img/b8e38d17e3cbac1bfc6547537cfb0db4_4.png)
 
 使用贝叶斯模型具有以下优势：
 *   **不确定性量化**
@@ -78,9 +75,7 @@ Transformer通过捕捉长距离依赖和上下文细微差别，重塑了自然
 *   **未登录词问题**
 *   **上下文歧义**
 
-![](img/b8e38d17e3cbac1bfc6547537cfb0db4_6.png)
 
-![](img/b8e38d17e3cbac1bfc6547537cfb0db4_7.png)
 
 ---
 

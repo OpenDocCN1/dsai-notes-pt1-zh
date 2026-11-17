@@ -16,7 +16,6 @@ But rather， we're interested in finding structures within our data set and per
 
 
 
-![](img/46dc7761bc74a86037d160a0d4303af1_1.png)
 
 Now there can be a couple of use cases for this unsupervised learning。
 
@@ -40,7 +39,6 @@ And then in regards to dimensionality reduction， we'll be covering principal c
 
 
 
-![](img/46dc7761bc74a86037d160a0d4303af1_3.png)
 
 Now， just to give you some intuition as to why dimensionality reduction will be important。
 
@@ -112,7 +110,6 @@ So far we have seen feature selection as a way of achieving this， and in this 
 
  which we just discussed our PCA。
 
-![](img/46dc7761bc74a86037d160a0d4303af1_5.png)
 
 Now， to think about this in a real life example， now this curse of dimensionality comes up often in applications。
 
@@ -120,7 +117,6 @@ So if we consider that customer churn example that we discussed in earlier cours
 
 
 
-![](img/46dc7761bc74a86037d160a0d4303af1_7.png)
 
 The original data set had 54 different columns， so 54 different features。
 
@@ -144,7 +140,6 @@ And then dimensionality reduction can improve both the performance because it ca
 
 
 
-![](img/46dc7761bc74a86037d160a0d4303af1_9.png)
 
 Now， just a high level overview。So when we're working with unsupervised learning。
 
@@ -162,7 +157,6 @@ And then use that to predict our new groupings that we now have or the new dimen
 
 
 
-![](img/46dc7761bc74a86037d160a0d4303af1_11.png)
 
 So an example for clustering， if we want to group news articles by topics and we don't have those topics as labels。
 
@@ -184,6 +178,5 @@ And then we can use that again， that model took certain words。
 
 
 
-![](img/46dc7761bc74a86037d160a0d4303af1_13.png)
 
 ![](img/46dc7761bc74a86037d160a0d4303af1_14.png)

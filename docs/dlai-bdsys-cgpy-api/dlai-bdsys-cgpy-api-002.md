@@ -1,12 +1,9 @@
 # 002：大语言模型工作原理与API基础
 
-![](img/c6d28489d200af8b872622dd4fabc9b7_0.png)
 
-![](img/c6d28489d200af8b872622dd4fabc9b7_2.png)
 
 在本节课中，我们将要学习大语言模型（LLM）的基本工作原理，包括其训练过程、核心概念如“分词器”，以及如何使用ChatGPT API的聊天格式来构建系统。我们将通过简单的示例和代码来理解这些概念。
 
-![](img/c6d28489d200af8b872622dd4fabc9b7_3.png)
 
 ## 大语言模型概述
 
@@ -130,9 +127,7 @@ openai.api_key = os.getenv(‘OPENAI_API_KEY’)
 OPENAI_API_KEY=‘你的-api-密钥-在这里’
 ```
 
-![](img/c6d28489d200af8b872622dd4fabc9b7_5.png)
 
-![](img/c6d28489d200af8b872622dd4fabc9b7_7.png)
 
 这样，你的密钥就不会以明文形式出现在代码中。
 

@@ -1,6 +1,5 @@
 # 163：Transformer架构详解 🧠
 
-![](img/05f0d4563b2b09f68e11af8c882b8f6f_0.png)
 
 在本节课中，我们将详细解析Transformer架构。Transformer是“Attention Is All You Need”论文中提出的革命性模型，它完全基于注意力机制，摒弃了传统的循环和卷积结构，在机器翻译等序列任务上取得了巨大成功。
 

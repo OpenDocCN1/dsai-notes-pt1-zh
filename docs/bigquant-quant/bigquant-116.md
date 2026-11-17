@@ -1,8 +1,6 @@
 # 116：SVM二分类最大间隔线绘制 🧠
 
-![](img/4b7a4d9230e02fa97c1610d7b6e35c77_1.png)
 
-![](img/4b7a4d9230e02fa97c1610d7b6e35c77_3.png)
 
 在本节课中，我们将学习如何使用Python代码实现支持向量机（SVM）算法，并可视化其核心概念——最大间隔分类超平面及其边界。我们将从创建数据开始，训练一个线性SVM模型，然后手动推导并绘制出决策边界和支持向量边界。
 
@@ -32,9 +30,7 @@ from sklearn import datasets
 X, y = datasets.make_blobs(n_samples=100, n_features=2, centers=2, random_state=3)
 ```
 
-![](img/4b7a4d9230e02fa97c1610d7b6e35c77_5.png)
 
-![](img/4b7a4d9230e02fa97c1610d7b6e35c77_7.png)
 
 我们可以查看数据的形状和目标值的类别，并用散点图将其可视化。
 

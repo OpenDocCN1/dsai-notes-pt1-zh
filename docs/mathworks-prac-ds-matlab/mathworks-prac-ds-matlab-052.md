@@ -1,6 +1,5 @@
 # 12：处理日期和时间 📅
 
-![](img/a0ca081d26d79d1516047be85d996abd_1.png)
 
 在本节课中，我们将学习如何处理数据集中常见的日期和时间信息。许多数据集记录了随时间推移的观测值，这些数据不仅包含观测结果，还记录了观测发生的具体日期或时间。我们将学习如何从分散的变量中创建统一的日期时间变量，并利用它们进行计算。
 
@@ -27,7 +26,6 @@ T.DateTime = datetime(T.year, T.month, T.day, T.hour, T.minute, T.second);
 
 创建 `datetime` 变量要求所有输入具有相同的数据类型（数值型或字符串型）。由于时间变量值包含冒号，无法直接转换为数值。
 
-![](img/a0ca081d26d79d1516047be85d996abd_3.png)
 
 在这种情况下，可以先将前三个数值列转换为字符串，然后构造自己的日期字符串。
 
@@ -51,17 +49,14 @@ T.DateTime.Format = 'dd-MMM-yyyy HH:mm:ss';
 
 ## 使用日期时间变量进行计算
 
-![](img/a0ca081d26d79d1516047be85d996abd_5.png)
 
 现在我们已经知道如何创建日期时间变量，接下来看看如何用它们进行计算。
 
 假设有两个变量描述两个时间点，例如同一天晚上8点的航班起飞时间和晚上11点的到达时间。
 
-![](img/a0ca081d26d79d1516047be85d996abd_7.png)
 
 要计算飞行时长，只需用到达时间减去起飞时间。
 
-![](img/a0ca081d26d79d1516047be85d996abd_9.png)
 
 ```matlab
 departure = datetime('2023-10-27 20:00:00');
@@ -69,7 +64,6 @@ arrival = datetime('2023-10-27 23:00:00');
 flightDuration = arrival - departure;
 ```
 
-![](img/a0ca081d26d79d1516047be85d996abd_11.png)
 
 当你像上面那样对 `datetime` 变量进行减法运算时，结果的数据类型将是 **`duration`**。
 
@@ -97,18 +91,15 @@ totalMinutes = minutes(flight1_min) + minutes(flight2_min); % 结果为 250分�
 
 通常，你可能希望结果以不同的格式显示，例如小时和分钟。你无需手动转换，只需改变其显示方式即可。
 
-![](img/a0ca081d26d79d1516047be85d996abd_13.png)
 
 ```matlab
 totalMinutes.Format = 'h:mm'; % 将显示格式设置为“小时:分钟”
 disp(totalMinutes) % 显示为 4:10 (即4小时10分钟)
 ```
 
-![](img/a0ca081d26d79d1516047be85d996abd_15.png)
 
 ## 更多日期时间函数
 
-![](img/a0ca081d26d79d1516047be85d996abd_17.png)
 
 MATLAB 为 `datetime` 和 `duration` 变量提供了更多函数。使用这些函数，你可以在进行计算时无需考虑日期和时间的各个组成部分及其相关单位。
 
@@ -119,7 +110,6 @@ MATLAB 为 `datetime` 和 `duration` 变量提供了更多函数。使用这些�
 *   计算日期之间的差异或进行日期偏移
 *   将它们转换为数字和字符串
 
-![](img/a0ca081d26d79d1516047be85d996abd_19.png)
 
 ![](img/a0ca081d26d79d1516047be85d996abd_21.png)
 

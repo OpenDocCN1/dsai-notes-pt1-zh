@@ -1,10 +1,8 @@
 # 052：完成策略交易展示结果 📈
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_1.png)
 
 在本节课中，我们将继续完成一个量化交易策略的核心函数。我们将学习如何根据新的股票排名，计算需要买入和卖出的股票，并执行相应的交易操作。整个过程将涉及持仓管理、集合运算和订单执行。
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_3.png)
 
 ## 计算当前持仓 🧾
 
@@ -45,15 +43,11 @@ def get_holdings(context):
 
 以下是执行交易的代码框架：
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_5.png)
 
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_7.png)
-
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_9.png)
 
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_11.png)
+
 
 ```python
 # 首先，执行卖出操作
@@ -76,23 +70,17 @@ for stock in to_buy:
     order_target_value(stock, average_cash)
 ```
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_13.png)
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_15.png)
 
 ## 策略流程整合与调试 🔧
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_17.png)
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_19.png)
 
 现在，我们将以上所有步骤整合到每月调仓的主函数中，并处理可能出现的错误。
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_21.png)
 
 整个策略的月度调仓流程如下：
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_23.png)
 
 1.  获取新的股票排名 (`stocks`)。
 2.  获取当前持仓 (`holdings`)。
@@ -100,22 +88,17 @@ for stock in to_buy:
 4.  先执行卖出操作。
 5.  再执行买入操作。
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_25.png)
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_27.png)
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_29.png)
 
 在代码整合过程中，需要注意细节，例如确保使用英文标点、正确处理集合类型数据等。如果遇到报错，应逐步检查：
 *   标点符号是否正确（避免中文逗号）。
 *   变量类型是否匹配（如对列表使用集合运算前先转换为 `set`）。
 *   函数调用参数是否完整。
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_31.png)
 
 ## 总结 🎯
 
-![](img/8ec0a8494bc71aac3ba88cc16fdf6faa_33.png)
 
 本节课中我们一起学习了如何完成一个量化交易策略的调仓部分。我们掌握了三个关键环节：
 1.  **获取持仓**：编写函数遍历投资组合，筛选出当前持有的股票。

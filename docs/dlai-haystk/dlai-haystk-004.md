@@ -17,7 +17,6 @@
 3.  `run` 方法必须返回一个字典。
 4.  必须通过装饰器指定组件的输出类型（这在后续的管道连接和验证中非常重要）。
 
-![](img/6cea076a3a98fad6ef463a34b795dfca_1.png)
 
 例如，以下是一个有效的翻译组件代码框架：
 
@@ -32,7 +31,6 @@ class Translator:
         return {"documents": translated_documents}
 ```
 
-![](img/6cea076a3a98fad6ef463a34b795dfca_3.png)
 
 这个组件告诉Haystack：它将输出一个类型为 `List[Document]` 的 `documents`。其 `run` 方法接收三个输入参数，并返回一个包含 `"documents"` 键的字典。
 
@@ -46,7 +44,6 @@ class Translator:
 
 实验结束时，你将拥有一个能够提供Hacker News上Top K热门帖子摘要的功能性管道。
 
-![](img/6cea076a3a98fad6ef463a34b795dfca_5.png)
 
 ---
 
@@ -68,7 +65,6 @@ from haystack.components.builders import PromptBuilder
 # ... 其他导入 ...
 ```
 
-![](img/6cea076a3a98fad6ef463a34b795dfca_7.png)
 
 完成这些步骤后，我们就可以开始编写代码了。
 

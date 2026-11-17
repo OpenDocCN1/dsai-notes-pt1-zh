@@ -6,19 +6,13 @@
 
 首先，我们需要导入必要的库并加载数据。这里我们使用鸢尾花数据集，它是一个经典的三分类数据集。
 
-![](img/e2570b5dfb6dc99b78b9fb2d94eeec7a_1.png)
-
-![](img/e2570b5dfb6dc99b78b9fb2d94eeec7a_3.png)
 
 
-![](img/e2570b5dfb6dc99b78b9fb2d94eeec7a_5.png)
-
-![](img/e2570b5dfb6dc99b78b9fb2d94eeec7a_7.png)
 
 
-![](img/e2570b5dfb6dc99b78b9fb2d94eeec7a_9.png)
 
-![](img/e2570b5dfb6dc99b78b9fb2d94eeec7a_11.png)
+
+
 
 ```python
 import numpy as np
@@ -70,14 +64,12 @@ b_ = model.intercept_  # 形状为 (3,)，对应三个截距
 
 在代码中，我们可以用一行简洁地实现它：
 
-![](img/e2570b5dfb6dc99b78b9fb2d94eeec7a_13.png)
 
 ```python
 def softmax(z):
     return np.exp(z) / np.sum(np.exp(z), axis=1, keepdims=True)
 ```
 
-![](img/e2570b5dfb6dc99b78b9fb2d94eeec7a_15.png)
 
 **注意：** 参数 `axis=1` 表示对每一行（即每个样本）的分数分别进行求和，`keepdims=True` 是为了保持二维数组形状，便于后续的广播计算。
 

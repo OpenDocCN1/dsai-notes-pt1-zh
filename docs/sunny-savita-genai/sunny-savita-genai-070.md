@@ -41,7 +41,6 @@ class AgentState(TypedDict):
 
 ![](img/7751fea551bb2ab275481605c74ea89a_3.png)
 
-![](img/7751fea551bb2ab275481605c74ea89a_4.png)
 
 现在，我们创建两个简单的节点函数。第一个节点 `node_one` 负责生成问候语。
 
@@ -61,7 +60,6 @@ def node_two(state: AgentState):
     return {"messages": state["messages"] + [{"role": "assistant", "content": response}]}
 ```
 
-![](img/7751fea551bb2ab275481605c74ea89a_6.png)
 
 ## 方法一：自定义人工干预逻辑
 

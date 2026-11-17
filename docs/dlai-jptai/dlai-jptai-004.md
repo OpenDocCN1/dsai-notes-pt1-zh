@@ -1,6 +1,5 @@
 # 004：探索股票市场数据
 
-![](img/4f573eb493bfe2c23400666022fe75e5_0.png)
 
 在本节课中，我们将学习如何使用 Jupyter AI 进行数据分析和可视化。具体来说，我们将通过 API 调用获取股票数据，并利用 Jupyter AI 协助完成分析与可视化任务。
 
@@ -14,31 +13,20 @@
 
 
 
-![](img/4f573eb493bfe2c23400666022fe75e5_2.png)
 
-![](img/4f573eb493bfe2c23400666022fe75e5_3.png)
 
-![](img/4f573eb493bfe2c23400666022fe75e5_2.png)
 
-![](img/4f573eb493bfe2c23400666022fe75e5_4.png)
 
-![](img/4f573eb493bfe2c23400666022fe75e5_3.png)
 
-![](img/4f573eb493bfe2c23400666022fe75e5_6.png)
 
-![](img/4f573eb493bfe2c23400666022fe75e5_4.png)
 
-![](img/4f573eb493bfe2c23400666022fe75e5_7.png)
 
-![](img/4f573eb493bfe2c23400666022fe75e5_8.png)
 
 在聊天窗口中，我将附加这个 Markdown 文件，然后要求 Jupyter AI 使用 `yfinance` 下载我感兴趣时间段内的苹果股票数据，并将结果保存到一个数据框中。
 
 
 
-![](img/4f573eb493bfe2c23400666022fe75e5_6.png)
 
-![](img/4f573eb493bfe2c23400666022fe75e5_7.png)
 
 ![](img/4f573eb493bfe2c23400666022fe75e5_8.png)
 

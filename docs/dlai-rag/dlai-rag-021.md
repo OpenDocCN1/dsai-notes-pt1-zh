@@ -25,7 +25,6 @@
 
 完成这些步骤后，你就可以运行实际的搜索了。
 
-![](img/51eb28de2cab9ec2da07bd4dfdcb4f1e_1.png)
 
 ## Weaviate 操作示例
 
@@ -35,7 +34,6 @@
 
 使用Weaviate的第一步是创建一个数据库实例或连接到现有的一个。你将在非评分实验中看到如何完成此操作的示例。
 
-![](img/51eb28de2cab9ec2da07bd4dfdcb4f1e_3.png)
 
 ### 第二步：创建集合
 
@@ -55,7 +53,6 @@ client.collections.create(
 
 ### 第三步：插入数据
 
-![](img/51eb28de2cab9ec2da07bd4dfdcb4f1e_5.png)
 
 配置好集合后，就可以向其中添加数据了。这段代码使用集合的批处理方法添加数据。`batch.add_object` 实际上是将对象添加到集合中，但它也会计数和跟踪错误，从而可以在之后纠正错误，或者在遇到太多错误时中断循环。数据插入后，你就可以执行向量搜索了。
 
@@ -73,11 +70,9 @@ response = client.query.get(
 }).with_additional(["distance"]).with_limit(3).do()
 ```
 
-![](img/51eb28de2cab9ec2da07bd4dfdcb4f1e_7.png)
 
 这个距离将是查询向量与每个对象向量之间的距离。
 
-![](img/51eb28de2cab9ec2da07bd4dfdcb4f1e_9.png)
 
 ### 第五步：关键词搜索与混合搜索
 
@@ -98,13 +93,11 @@ response = client.query.get(
 ).with_limit(3).do()
 ```
 
-![](img/51eb28de2cab9ec2da07bd4dfdcb4f1e_11.png)
 
 ### 第六步：应用过滤器
 
 你还可以在此基础上应用过滤器。例如，这里可以有一个应用于特定属性的过滤器，并检查该属性的值。如果匹配，对象通过过滤器并可以被返回。如果不匹配，则不会被返回。
 
-![](img/51eb28de2cab9ec2da07bd4dfdcb4f1e_13.png)
 
 ```python
 # 示例：在搜索中应用过滤器
@@ -125,7 +118,6 @@ response = client.query.get(
 
 从开始到结束的整个循环大致如下：你配置数据库，然后加载并索引数据，最后编写一个包含混合搜索和过滤器的特定查询。
 
-![](img/51eb28de2cab9ec2da07bd4dfdcb4f1e_15.png)
 
 这就是如何使用向量数据库的一个很好的概述。请查看非评分实验，亲自动手实践所有这些步骤。
 

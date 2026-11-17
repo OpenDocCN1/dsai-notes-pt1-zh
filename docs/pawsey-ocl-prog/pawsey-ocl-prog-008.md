@@ -1,6 +1,5 @@
 # 008：内存管理
 
-![](img/c7adfa0669851f49bec97b34029b396e_0.png)
 
 ## 概述
 在本节课中，我们将要学习OpenCL中的内存管理。我们将探讨不同的内存空间、如何创建和操作缓冲区，以及如何高效地在主机和设备之间传输数据。
@@ -111,6 +110,5 @@ clEnqueueFillBuffer(queue, B_d, &one, sizeof(cl_float), 0, n_bytes_B, 0, NULL, N
 ## 总结
 在本节课中，我们一起学习了OpenCL中的内存管理。我们探讨了不同的内存空间（主机、全局、局部、私有、常量）及其访问方式。我们学习了如何使用各种标志（如 `CL_MEM_USE_HOST_PTR`、`CL_MEM_ALLOC_HOST_PTR`）创建缓冲区，以及如何通过 `clEnqueueWriteBuffer`、`clEnqueueReadBuffer` 和 `clEnqueueCopyBuffer` 在主机和设备之间复制内存。我们还了解了矩形复制和缓冲区映射的高级技术，这些技术可以优化数据传输和同步。最后，我们看到了如何使用 `clEnqueueFillBuffer` 初始化缓冲区内容。掌握这些概念对于编写高效的OpenCL程序至关重要。
 
-![](img/c7adfa0669851f49bec97b34029b396e_2.png)
 
 ![](img/c7adfa0669851f49bec97b34029b396e_2.png)

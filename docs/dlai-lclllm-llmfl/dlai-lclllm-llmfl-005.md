@@ -20,7 +20,6 @@ CC dash O， hello。This would be the output and the C file will be hello do C 
 
 
 
-![](img/d149a238f273efdb24959662fbafdb77_2.png)
 
 That I'm going to set up and in this lab what I'll first do is create a hello world file。
 
@@ -60,9 +59,7 @@ And we can go and compile pretty straightforward， and now we can just run it�
 
 
 
-![](img/d149a238f273efdb24959662fbafdb77_4.png)
 
-![](img/d149a238f273efdb24959662fbafdb77_5.png)
 
 Here， which allows you to run and distribute large language models。
 
@@ -72,6 +69,5 @@ Here， which allows you to run and distribute large language models。
 
 
 
-![](img/d149a238f273efdb24959662fbafdb77_7.png)
 
 ![](img/d149a238f273efdb24959662fbafdb77_8.png)

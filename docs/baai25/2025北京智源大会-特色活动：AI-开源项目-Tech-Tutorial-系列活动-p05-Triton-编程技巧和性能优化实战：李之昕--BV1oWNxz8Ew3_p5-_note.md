@@ -7,17 +7,12 @@
 
 ## Flash MQA 简介 🧠
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_1.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_3.png)
 
 上一节我们介绍了 Triton 的定位和适用场景，本节中我们来看看本次优化的具体对象——Flash MQA 算法。
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_5.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_7.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_8.png)
 
 Flash MQA 基于 MQA（Multi-Query Attention）结构，主要具有两个特征：
 1.  **低秩压缩**：为了节省存储空间，对输入的高维键值矩阵通过一个特定的线性变换矩阵投影到低维空间。在低维空间中进行计算和处理，可以节省大量计算和存储数据量。之后，再通过一个线性变换矩阵将其投影回原始维度，完成整个 MQA 过程。
@@ -31,63 +26,40 @@ Flash MQA 基于 MQA（Multi-Query Attention）结构，主要具有两个特征
 
 ---
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_10.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_11.png)
 
 ## Flash MQA 的 Triton 实现结构 ⚙️
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_13.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_14.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_15.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_17.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_18.png)
 
 了解了算法背景后，我们进入核心部分，看看 Flash MQA 在 Triton 中是如何实现的。
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_20.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_21.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_22.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_24.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_26.png)
 
 在 Triton 实现的 Flash MQA 中，对 KV 的序列长度维度进行了分块处理，这是其最重要的特征。KV 序列被分块成 32 个部分，并使用一个名为 `attention_logits` 的中间结果张量来存储第一部分的临时结果，用于第二部分的进一步处理。
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_28.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_29.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_31.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_32.png)
 
 整个计算分为两个阶段：
 1.  **MQA Attention**：处理分块内部的计算。
 2.  **MQA Softmax Reduce V**：处理分块之间的规约操作。
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_34.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_35.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_36.png)
 
 以下是实现的核心代码结构概览：
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_38.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_39.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_40.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_42.png)
 
 ```python
 # MQA Attention Kernel 是运行在 GPU 上的核心结构
@@ -100,9 +72,7 @@ def mqa_attention_kernel(...):
     ...
 ```
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_44.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_46.png)
 
 一个 Kernel 的执行流程可以概括为以下几个步骤：
 1.  根据 `program_id` 确定当前线程块（graded）需要处理的数据块。
@@ -116,17 +86,12 @@ def mqa_attention_kernel(...):
     *   更新 `m`、`s`、`acc` 状态矩阵。
 6.  循环结束后，通过 `acc / s` 得到结果，存入 `attention_logits` 张量。
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_48.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_49.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_50.png)
 
 每个 KV 序列块被分配到 32 个不同的计算元素上，这些元素需要在第二阶段进行一次规约（Reduce）。
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_51.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_52.png)
 
 第二阶段 `MQA Softmax Reduce V Kernel` 的逻辑与 Flash Attention 类似，将上一步得到的信息，通过 `m`、`s`、`acc` 的在线更新模式，再次进行数值更新，最终通过 `acc / s` 得到最终输出。
 
@@ -136,7 +101,6 @@ def mqa_attention_kernel(...):
 
 在初步实现后，我们发现其性能远不及 CUDA 版本的实现。本节我们将分析性能瓶颈，并介绍三种有效的优化策略。
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_54.png)
 
 ### 优化目标与数据特征
 首先，我们需要明确优化所针对的具体数据形状。以一组典型测试参数为例：
@@ -147,24 +111,17 @@ def mqa_attention_kernel(...):
 *   `num_heads_kv = 1`
 *   `head_dim = 576` (512 + 64)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_56.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_58.png)
 
 对应的输入张量维度为：
 *   `Q`: `[128, 1, 128, 576]`
 *   `KV Cache`: `[2560, 64, 1, 576]`
 *   `Block Table`: `[128, 20]`
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_59.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_60.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_61.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_62.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_63.png)
 
 在原始 Triton 实现中，Kernel 的并行设置 (`grid`) 为：
 `grid = (num_heads_q / BLOCK_H, batch_size, NUM_SPLITS_K)`
@@ -172,30 +129,21 @@ def mqa_attention_kernel(...):
 1.  每个 SM 工作量不饱和，资源浪费。
 2.  线程块间数据与经验无法复用，启动开销大。
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_65.png)
 
 ### 策略一：减少并行度，合并计算任务
 核心思路是减少线程块数量，让每个线程块处理更多工作。我们需要在三个并行维度（`num_heads_q`, `batch_size`, `NUM_SPLITS_K`）中选择一个进行收缩。
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_67.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_69.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_70.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_71.png)
 
 以下是选择收缩 `NUM_SPLITS_K`（KV 序列分块）维度的原因：
 1.  该维度涉及后续的规约操作，合并后可以消除规约开销。
 2.  `KV Cache` 是数据量最大、访存需求最高的张量。收缩此维度可以提高对 `KV Cache` 数据访问的局部性，收益更高。
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_72.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_74.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_75.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_76.png)
 
 优化后，`grid` 变为 `(8, 128, 1)`，线程块数量降至 `1024`。代码上的主要变化是：
 *   第一阶段 Kernel 不再需要区分处理哪个 KV 块，而是每个线程块处理其对应 Batch 和 Head 的全部 KV 序列。
@@ -206,7 +154,6 @@ def mqa_attention_kernel(...):
 
 选择优先收缩 `num_heads_q` 维度的原因在于，它在 Q 张量中处于更内层的位置，提高其连续性对存储访问更有利。我们可以通过调整 `BLOCK_H` 参数来控制头数量维度的并行度。
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_78.png)
 
 我们采用自动调优（Auto-Tune）的方式，对 `BLOCK_H`、`BLOCK_N`（循环处理的序列长度）、`num_warps`、`num_stages` 等所有可能影响性能的参数进行组合测试，选择最佳配置。
 
@@ -223,27 +170,18 @@ Triton 中 `tl.load` 指令的 `mask` 参数如果不是 `None`，执行速度�
 
 这样可以显著减少慢速内存访问指令的数量。
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_80.png)
 
 ---
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_82.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_83.png)
 
 ## 其他优化技巧参考 💡
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_84.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_85.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_86.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_87.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_88.png)
 
-![](img/14b8a1e5c3cf742229e296a5531e73a7_89.png)
 
 除了上述三种策略，Triton 还提供了一些高级特性可用于优化，例如 **Work Specialization**。
 

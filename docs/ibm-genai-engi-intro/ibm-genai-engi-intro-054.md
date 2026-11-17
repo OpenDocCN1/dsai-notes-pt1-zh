@@ -34,24 +34,18 @@ print(type("Hello")) # 输出: <class 'str'>
 
 ---
 
-![](img/7c0436a20fbdbbaec18d123678c8bcbb_1.png)
 
 ## 浮点数类型 (float) 📊
 浮点数代表实数。它们不仅包括整数，还包括整数之间的数字。
 
-![](img/7c0436a20fbdbbaec18d123678c8bcbb_2.png)
 
-![](img/7c0436a20fbdbbaec18d123678c8bcbb_3.png)
 
 考虑0和1之间的数字。我们可以选择它们之间的数字，这些数字就是浮点数。同样地，考虑0.5和0.6之间的数字，我们也可以选择它们之间的数字，这些也是浮点数。
 
-![](img/7c0436a20fbdbbaec18d123678c8bcbb_4.png)
 
-![](img/7c0436a20fbdbbaec18d123678c8bcbb_5.png)
 
 我们可以继续这个过程，为不同的数字进行“放大”观察。当然，这个过程存在精度限制，但这个限制非常小。
 
-![](img/7c0436a20fbdbbaec18d123678c8bcbb_6.png)
 
 ---
 
@@ -86,11 +80,9 @@ int_num = int(str_num)
 print(int_num) # 输出: 123
 ```
 
-![](img/7c0436a20fbdbbaec18d123678c8bcbb_8.png)
 
 如果我们尝试转换一个包含非整数值的字符串，将会得到一个错误。
 
-![](img/7c0436a20fbdbbaec18d123678c8bcbb_9.png)
 
 ```python
 # 包含非整数的字符串转换会报错
@@ -98,7 +90,6 @@ print(int_num) # 输出: 123
 # int_num = int(str_num) # 这会引发 ValueError
 ```
 
-![](img/7c0436a20fbdbbaec18d123678c8bcbb_10.png)
 
 你也可以将一个整数或浮点数转换为字符串。
 
@@ -133,7 +124,6 @@ print(int(True))   # 输出: 1
 print(float(True)) # 输出: 1.0
 ```
 
-![](img/7c0436a20fbdbbaec18d123678c8bcbb_12.png)
 
 如果我们把布尔值`False`转换为整数或浮点数，会得到`0`。
 
@@ -151,7 +141,6 @@ print(bool(1)) # 输出: True
 print(bool(0)) # 输出: False
 ```
 
-![](img/7c0436a20fbdbbaec18d123678c8bcbb_14.png)
 
 ---
 

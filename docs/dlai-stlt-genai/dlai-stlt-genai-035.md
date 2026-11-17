@@ -20,9 +20,7 @@
 
 点击“运行”来启动你的原型。
 
-![](img/72711f22ded40c0579862765fc9af6fe_1.png)
 
-![](img/72711f22ded40c0579862765fc9af6fe_2.png)
 
 你的应用现已上线，并可在Snowflake内部查看。
 
@@ -94,7 +92,6 @@ snowflake_schema = "avalanche"
 
 ## 总结
 
-![](img/72711f22ded40c0579862765fc9af6fe_4.png)
 
 ![](img/72711f22ded40c0579862765fc9af6fe_5.png)
 

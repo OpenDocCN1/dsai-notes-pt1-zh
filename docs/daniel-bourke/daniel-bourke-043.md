@@ -42,7 +42,6 @@ class LinearRegressionModel(nn.Module):
 
 ![](img/d17ccab8843865089256526996dc53e8_4.png)
 
-![](img/d17ccab8843865089256526996dc53e8_5.png)
 
 *   **随机初始值**：模型开始时使用随机值作为权重和偏置，例如通过`torch.randn()`生成。
 *   **梯度跟踪**：通过设置`requires_grad=True`，PyTorch会自动跟踪这些参数的梯度，以便在反向传播中使用。

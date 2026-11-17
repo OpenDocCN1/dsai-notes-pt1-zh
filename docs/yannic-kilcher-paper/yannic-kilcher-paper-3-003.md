@@ -1,8 +1,6 @@
 # 003：重新思考注意力机制 🔍
 
-![](img/86f40c83819026b6cc0859d3d50fbb9d_1.png)
 
-![](img/86f40c83819026b6cc0859d3d50fbb9d_2.png)
 
 在本节课中，我们将学习一种名为“Performers”的新型模型。它旨在解决Transformer模型在处理长序列时遇到的计算瓶颈问题。我们将探讨其核心思想、工作原理以及它如何通过一种名为FAVOR+的技术来近似标准注意力机制，从而实现线性复杂度。
 
@@ -10,9 +8,7 @@
 
 ## 问题背景：Transformer的瓶颈
 
-![](img/86f40c83819026b6cc0859d3d50fbb9d_4.png)
 
-![](img/86f40c83819026b6cc0859d3d50fbb9d_5.png)
 
 上一节我们介绍了Performers模型的目标。本节中，我们来看看它要解决的核心问题。
 
@@ -59,26 +55,20 @@ Performers通过一种名为**FAVOR+**（Fast Attention Via positive Orthogonal 
 
 以下是Performers相较于其他近似注意力方法的几个关键特点：
 
-![](img/86f40c83819026b6cc0859d3d50fbb9d_7.png)
 
 1.  **理论保证**：FAVOR+提供了对原始注意力矩阵的**无偏或近似无偏估计**，并具有**均匀收敛性**和**低估计方差**。这意味着随着随机特征数量 **m** 的增加，近似结果会可靠地接近真实值。
 2.  **完全兼容性**：Performers与标准Transformer架构完全兼容。理论上，你可以将预训练好的Transformer权重加载到Performer框架中，只需进行少量微调即可使用。
 3.  **通用性**：FAVOR+算法不仅限于近似Softmax注意力。论文中指出，它可以用于近似更广泛的核函数，这可能对可扩展的核方法领域具有独立价值。
 4.  **突破潜力**：就像ReLU激活函数取代Sigmoid/Tanh一样，用更高效、更通用的近似（如FAVOR+）替换Transformer中固定的Softmax非线性操作，可能为模型设计带来新的突破。事实上，论文中已经展示了使用ReLU等非线性函数的变体。
 
-![](img/86f40c83819026b6cc0859d3d50fbb9d_9.png)
 
 ---
 
-![](img/86f40c83819026b6cc0859d3d50fbb9d_10.png)
 
-![](img/86f40c83819026b6cc0859d3d50fbb9d_11.png)
 
 ## 总结
 
-![](img/86f40c83819026b6cc0859d3d50fbb9d_13.png)
 
-![](img/86f40c83819026b6cc0859d3d50fbb9d_14.png)
 
 ![](img/86f40c83819026b6cc0859d3d50fbb9d_16.png)
 

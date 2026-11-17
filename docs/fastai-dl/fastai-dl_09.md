@@ -764,7 +764,6 @@ fig, ax = plt.subplots(figsize=(7,7))
 torch_gt(ax, ima, bbox, clas)
 ```
 
-![](img/9-18.webp)
 
 以上是一个地面真相。这是我们最终卷积层的`4x4`网格单元[[54:44](https://youtu.be/0frKXR-2PBY?t=54m44s)]：
 
@@ -1669,21 +1668,14 @@ def show_nmf(idx):
 
 ![](img/9-43.webp)
 
-![](img/9-44.webp)
 
 ![](img/9-45.webp)
 
-![](img/9-46.webp)
 
-![](img/9-47.webp)
 
-![](img/9-48.webp)
 
-![](img/9-49.webp)
 
-![](img/9-50.webp)
 
-![](img/9-51.webp)
 
 ![](img/9-52.webp)
 

@@ -4,7 +4,6 @@ Hello and welcome In this video we'll be covering content based recommender syst
 
  so let's get started。
 
-![](img/2d04f62bdf9021ab669730ee36c48f8c_1.png)
 
 A content based recommendation system tries to recommend items to users based on their profile。
 
@@ -28,7 +27,6 @@ For example， if we have four movies and if the user likes or ratess the first 
 
 
 
-![](img/2d04f62bdf9021ab669730ee36c48f8c_3.png)
 
 Let's assume we have a data set of only six movies。
 
@@ -46,7 +44,6 @@ Let's assume we have a data set of only six movies。
 
 
 
-![](img/2d04f62bdf9021ab669730ee36c48f8c_5.png)
 
 To achieve this， we have to build the user profile。First。
 
@@ -56,7 +53,6 @@ To achieve this， we have to build the user profile。First。
 
  genre of movies are used here as a feature set。
 
-![](img/2d04f62bdf9021ab669730ee36c48f8c_7.png)
 
 We use the first three movies to make this matrix， which represents the movie feature set matrixtrix。
 
@@ -64,7 +60,6 @@ If we multiply these two matrices， we can get the weighted feature set for the
 
 
 
-![](img/2d04f62bdf9021ab669730ee36c48f8c_9.png)
 
 Let's take a look at the result。 This matrix is also called the weighted genre matrix and represents the interests of the user for each genre based on the movies that she's watched。
 
@@ -78,7 +73,6 @@ It clearly indicates that she likes superhero movies more than other genres。
 
 
 
-![](img/2d04f62bdf9021ab669730ee36c48f8c_11.png)
 
 Recall that we also had three candidate movies for recommendation that haven't been watched by the user。
 
@@ -86,7 +80,6 @@ Recall that we also had three candidate movies for recommendation that haven't b
 
 
 
-![](img/2d04f62bdf9021ab669730ee36c48f8c_13.png)
 
 To do this， we simply multiply the user profile matrix by the candidate movie matrix。
 
@@ -102,7 +95,6 @@ Now， if we aggregate these weighted ratings， we get the active users possibl
 
 
 
-![](img/2d04f62bdf9021ab669730ee36c48f8c_15.png)
 
 So to recap what we've discussed so far， the recommendation in a content based system is based on users taste and the content or feature set items。
 

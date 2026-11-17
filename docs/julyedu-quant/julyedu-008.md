@@ -1,6 +1,5 @@
 # 008：自然语言处理入门与事件驱动回测系统
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_1.png)
 
 ## 概述
 在本节课中，我们将学习两个核心内容。首先，我们将探讨如何利用自然语言处理技术对新闻文本进行情感或趋势分类，并应用于量化交易。其次，我们将深入理解并搭建一个基于事件驱动的量化交易回测系统框架，这是构建专业量化策略平台的基础。
@@ -62,9 +61,7 @@
 
 ---
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_7.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_9.png)
 
 ## 第二部分：事件驱动回测系统
 
@@ -110,9 +107,7 @@ while True:
 
 ![](img/1c534e8b280bd17dca0485a54ffb0ae2_11.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_13.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_15.png)
 
 1.  **DataHandler**：负责所有与数据源的交互，包括历史数据的读取、实时数据的更新以及特征计算。这是策略所需数据的唯一入口。
 2.  **Strategy**：策略类。它接收`DataHandler`提供的数据，运行模型（如机器学习模型或技术指标计算），并生成交易信号（例如：“买入”、“卖出”、“持有”）。
@@ -120,42 +115,27 @@ while True:
 4.  **ExecutionHandler**：订单执行类。在回测中，它模拟订单成交；在实盘中，它负责与真实的交易所或经纪商API对接，执行订单。
 5.  **Backtest**：回测引擎类。它封装了上述所有组件，并包含了核心的**事件循环**，驱动整个回测过程按时间顺序推进。
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_17.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_19.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_21.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_23.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_25.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_27.png)
 
 ![](img/1c534e8b280bd17dca0485a54ffb0ae2_29.png)
 
 ![](img/1c534e8b280bd17dca0485a54ffb0ae2_31.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_33.png)
 
 **工作流程**：
 `DataHandler`提供市场数据（`MARKET`事件） -> `Strategy`处理数据并产生信号（`SIGNAL`事件） -> `Portfolio`处理信号，决定下单（生成`ORDER`事件） -> `ExecutionHandler`执行订单，返回成交结果（`FILL`事件） -> `Portfolio`更新持仓和资金。
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_35.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_37.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_39.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_41.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_42.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_44.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_46.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_48.png)
 
 ### 如何使用该系统
 对于使用者而言，最重要的任务是实现自己的`Strategy`类。你需要：
@@ -163,13 +143,9 @@ while True:
 2.  实现`calculate_signals`方法，在这里编写你的策略逻辑。
 3.  （可选）如果你的策略涉及机器学习模型，可以实现`build_model`等方法进行模型训练。
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_50.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_52.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_54.png)
 
-![](img/1c534e8b280bd17dca0485a54ffb0ae2_56.png)
 
 系统其他部分（`DataHandler`, `Portfolio`, `Backtest`）一旦搭建完成，通常不需要频繁修改。你只需要将自定义的`Strategy`实例传入回测引擎，即可运行回测并得到绩效报告。
 

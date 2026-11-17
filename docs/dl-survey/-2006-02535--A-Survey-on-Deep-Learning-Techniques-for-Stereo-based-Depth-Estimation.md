@@ -798,14 +798,11 @@ Pang *et al.* [137] 还使用类似于[129, 138]的方法来解决泛化问题�
 
 请注意，SegStereo [68] 是一种自监督方法，其性能与许多监督方法相当或更好。此外，Tonioni *et al.* [129] 提出的无监督自适应方法，将基于 KITTI 2012 训练的 DispNet-Corr1D 网络 [22] 适配到 KITTI2015 和 Middlebury 2014，在前景区域实现了最佳性能之一。
 
-| ![参见说明](img/ce7eb8921bd7d9014164e59d8522b055.png) | ![参见说明](img/a75310f3dd91c3d1680007cc9da1fadd.png) | ![参见说明](img/184bf118de495b271b498737930021a8.png) | ![参见说明](img/7bb0f3f9377a9116e885398debb15ba5.png) | ![参见说明](img/040764ab56d19d299b0a48e640e6fe50.png) | ![参见说明](img/12a94cf3469c6f6583735f3bbef27630.png) |
 | --- | --- | --- | --- | --- | --- |
 | AnyNet (Kitti2012) | AnyNet (Kitti2015) | DeepPruner (fast) | DispNet3 (css) | GANet (Kittit2015) | Unsup.Adapt (Kitti) |
-| ![参见说明](img/7bf58590d3eee444a74b1fee64ef90dc.png) | ![参见说明](img/a9d106d7a62b3f2a75297fc7679f43db.png) | ![参见说明](img/a3922c235ee795402226f7f815f08018.png) | ![参见说明](img/d1151e3ec50e7d1d8ec3a5f39050a5ff.png) | ![参见说明](img/f949650509aabf375bd4ba4f41026bbb.png) | ![参见说明](img/d0ce84bec16fccc1d77342dde6e63853.png) |
 | iResNet (Kitti2015) | iResNet (ROB) | PSMNet (Kitti2012) | PSMNet (Kitti2015) | SegStereo | Unsup.Adapt |
 |  |  |  |  |  | (shadowsontruck) |
 | (a) 图中的结果见 8-(a)。 |
-| ![参见说明](img/67a0d29509cdd07efde38d0677e8dd04.png) | ![参见说明](img/3774f5aab19b7b9e75fd558ef8c970fb.png) | ![参见说明](img/6d2c5dccb69cfbae1bad33ef48661acf.png) | ![参见说明](img/749d43771444e18c6c704f47c1cca416.png) | ![参见说明](img/23a56666ed3d929a3f60d98d6cfc1cd9.png) | ![参见说明](img/3bfbf8e8371d8e7a113dafe22a5cdfd6.png) |
 | AnyNet (Kitti2012) | AnyNet (Kitti2015) | DeepPruner (fast) | DispNet3 (css) | GANet (Kittit2015) | Unsup.Adapt (Kitti) |
 | ![参见说明](img/6fd1c2367f38981d4bf6c1f530e4a637.png) | ![参见说明](img/a14ea61e1f272980068d03bd31863822.png) | ![参见说明](img/14cba94081c3ddcfec657925edfbebe6.png) | ![参见说明](img/2ccf61259b936e000f474ff36c82c554.png) | ![参见说明](img/88583835d361a976e0b12266fcd5a4e0.png) | ![参见说明](img/efeac9434b2526ebf78e9310ddeadc03.png) |
 | iResNet (Kitti2015) | iResNet (ROB) | PSMNet (Kitti2012) | PSMNet (Kitti2015) | SegStereo | Unsup.Adapt |

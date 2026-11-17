@@ -1,12 +1,10 @@
 # 022：IBM《机器学习（无监督学习、深度学习和强化学习、毕业项目）｜machine learning》中英字幕 p22 21_可视化DBSCAN.zh_en -BV1eu4m1F7oz_p22-
 
-![](img/497c0acda7c4462cb2f949aec4b46030_0.png)
 
 So as promised， let's start to visualize how DB scan actually works。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_2.png)
 
 And as we have in our past clustering algorithms， we're going to start with this two dimensional data set and we're going to come up with clusters depending on the visits and the recency and how far away each point is from one another。
 
@@ -26,13 +24,9 @@ And then we look at the radius epsilon around that point and we'll have to defin
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_4.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_5.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_6.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_7.png)
 
 And then we process each new point in the same way。
 
@@ -42,9 +36,7 @@ So we move on to our next point here and anything within that radius。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_9.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_10.png)
 
 And we keep moving along。And then here we see that this point， while it is part of the cluster。
 
@@ -60,13 +52,11 @@ And we keep moving along。And then here we see that this point， while it is p
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_12.png)
 
 So we elite that as part of a lighter pink。And we keep going down this chain， adding on points。
 
  according to those that fall within epsilon。
 
-![](img/497c0acda7c4462cb2f949aec4b46030_14.png)
 
 Keep running through and we see these are all core points because they all have at least four points including themselves in there。
 
@@ -76,19 +66,15 @@ And we move along and then this point only has three。 So this one again。
 
  so it will count as part of the cluster still。
 
-![](img/497c0acda7c4462cb2f949aec4b46030_16.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_17.png)
 
 But we see we highlight that in light pink， and we see we can keep moving along。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_19.png)
 
 And eventually， we have。
 
-![](img/497c0acda7c4462cb2f949aec4b46030_21.png)
 
 All of our points within the cluster， we s to search along all the points。
 
@@ -98,19 +84,16 @@ All of our points within the cluster， we s to search along all the points。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_23.png)
 
 And when we do that。Here we start with the blue， we we to check。
 
  is this going to be a core point once again？
 
-![](img/497c0acda7c4462cb2f949aec4b46030_25.png)
 
 So we check again with an epsilon of this new random point that we sought out。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_27.png)
 
 We see that it is a core point， now we have started our new cluster。
 
@@ -120,13 +103,11 @@ Now this point again is going to be that density reachable point。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_29.png)
 
 And we can continue to move along to build out our cluster here。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_31.png)
 
 And you see again， we have a density reachable point， we've had a couple so far。
 
@@ -134,7 +115,6 @@ And you see again， we have a density reachable point， we've had a couple so 
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_33.png)
 
 Part of our cluster。And then， we see here。That we have with n clue equal to equal to 4。
 
@@ -142,7 +122,6 @@ Part of our cluster。And then， we see here。That we have with n clue equal t
 
  but not a core point。
 
-![](img/497c0acda7c4462cb2f949aec4b46030_35.png)
 
 And then when we move over to this point over here， we see that the only one within that radius。
 
@@ -150,7 +129,6 @@ Is going to be that density reachable point。 So there's no core points within 
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_37.png)
 
 So if theres no points within this radius that are not core points， then this becomes a noise point。
 
@@ -158,11 +136,8 @@ So if theres no points within this radius that are not core points， then this 
 
  which is why we haven't marked it here in gray。
 
-![](img/497c0acda7c4462cb2f949aec4b46030_39.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_40.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_41.png)
 
 Now， I want you to take a moment。 and given that DB scan method that we just walked through。
 
@@ -170,7 +145,6 @@ Now， I want you to take a moment。 and given that DB scan method that we just
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_43.png)
 
 Which ones were those density reachable points， which are still part of our cluster。
 
@@ -178,11 +152,9 @@ Which ones were those density reachable points， which are still part of our cl
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_45.png)
 
 And then which point we have labeled as outlier？
 
-![](img/497c0acda7c4462cb2f949aec4b46030_47.png)
 
 Now that we understand how the DB scan algorithm works。
 
@@ -190,23 +162,18 @@ Now that we understand how the DB scan algorithm works。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_49.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_50.png)
 
 So as we saw with the DV scan algorithm， we not need to specify the number of clusters as DV scan will automatically determine the clusters dependent on how close points are from one another。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_52.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_53.png)
 
 It also allows for noise and will not automatically determine that outliers are part of a particular cluster。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_55.png)
 
 They'll also do a strong job of handling arbitrary shapes。
 
@@ -216,27 +183,21 @@ They'll also do a strong job of handling arbitrary shapes。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_57.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_58.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_59.png)
 
 Now some weaknesses。
 
-![](img/497c0acda7c4462cb2f949aec4b46030_61.png)
 
 It's going to require two parameters， which means we need to search over more possible values to find that optimal solution。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_63.png)
 
 Also， those hyperparameter can be very difficult to fine tune in higher dimensional space。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_65.png)
 
 And then finally will not do well with clusters of different density。
 
@@ -244,11 +205,8 @@ And then finally will not do well with clusters of different density。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_67.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_68.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_69.png)
 
 Depending on that distance between our two clusters that are on average five units away or one unit away。
 
@@ -256,11 +214,8 @@ Depending on that distance between our two clusters that are on average five uni
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_71.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_72.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_73.png)
 
 Now let's walk through how the DB scan algorithm can actually be used using Python。
 
@@ -268,7 +223,6 @@ Now let's walk through how the DB scan algorithm can actually be used using Pyth
 
  so from SKLn dot cluster we import DB scan。
 
-![](img/497c0acda7c4462cb2f949aec4b46030_75.png)
 
 We then create an instance of that class and pass in the necessary hyper parameters。 Here。
 
@@ -280,15 +234,12 @@ We then create an instance of that class and pass in the necessary hyper paramet
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_77.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_78.png)
 
 We're then going to Fibit instance on the data。So just calling Db。fit。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_80.png)
 
 And then we can't call DB。predict because of the way that the algorithm actually works。
 
@@ -298,7 +249,6 @@ And then we can't call DB。predict because of the way that the algorithm actual
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_82.png)
 
 If you wanted to fit on a larger data set， then you just include it in that fit。
 
@@ -306,7 +256,6 @@ If you wanted to fit on a larger data set， then you just include it in that fi
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_84.png)
 
 And just to note， for those labels， we're going to have class zero， class1。
 
@@ -316,7 +265,6 @@ And just to note， for those labels， we're going to have class zero， class1
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_86.png)
 
 Now let's recap what we learned here in this section。In this section。
 
@@ -324,7 +272,6 @@ Now let's recap what we learned here in this section。In this section。
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_88.png)
 
 We then discuss the inputs and their importance， especially that of the epsilon and N clue chosen。
 
@@ -334,11 +281,8 @@ We then discuss the inputs and their importance， especially that of the epsilo
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_90.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_91.png)
 
-![](img/497c0acda7c4462cb2f949aec4b46030_92.png)
 
 And finally， we discussed some of the algorithms strengths and weaknesses such as it being able to better determine clusters of arbitrary shapes。
 
@@ -350,6 +294,5 @@ Now this closes out our discussion on DB scan and in the next video we'll introd
 
 
 
-![](img/497c0acda7c4462cb2f949aec4b46030_94.png)
 
 ![](img/497c0acda7c4462cb2f949aec4b46030_95.png)

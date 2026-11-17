@@ -50,7 +50,6 @@ A = Q \Sigma Q^T
 \]
 这个分解在数学和物理中极为重要。
 
-![](img/b7a52e61cca0f4f59b8ec16ce808c1c2_1.png)
 
 这种分解的一个直接应用是快速计算矩阵的幂。例如：
 \[
@@ -81,11 +80,8 @@ SVD 具有深刻的几何和统计意义。在统计学中，主成分分析本�
 
 ---
 
-![](img/b7a52e61cca0f4f59b8ec16ce808c1c2_3.png)
 
-![](img/b7a52e61cca0f4f59b8ec16ce808c1c2_5.png)
 
-![](img/b7a52e61cca0f4f59b8ec16ce808c1c2_7.png)
 
 ## 应用于量化金融：资产组合权重分配
 
@@ -118,9 +114,7 @@ w^* = \frac{\Sigma^{-1} \mathbf{1}}{\mathbf{1}^T \Sigma^{-1} \mathbf{1}}
 \]
 其中 \(\mathbf{1}\) 是元素全为1的列向量。
 
-![](img/b7a52e61cca0f4f59b8ec16ce808c1c2_9.png)
 
-![](img/b7a52e61cca0f4f59b8ec16ce808c1c2_11.png)
 
 ### 方法三：基于随机矩阵理论的滤波法
 协方差矩阵 \(\Sigma\) 中既包含真实的信号，也包含随机噪声。随机矩阵理论研究了纯随机矩阵特征值的分布（如 Marcenko-Pastur 分布）。我们可以利用这一理论对 \(\Sigma\) 进行滤波：
@@ -131,11 +125,9 @@ w^* = \frac{\Sigma^{-1} \mathbf{1}}{\mathbf{1}^T \Sigma^{-1} \mathbf{1}}
 
 研究表明，这种滤波方法能够有效提升投资组合在样本外的表现。
 
-![](img/b7a52e61cca0f4f59b8ec16ce808c1c2_13.png)
 
 ---
 
-![](img/b7a52e61cca0f4f59b8ec16ce808c1c2_15.png)
 
 ## 论文研读与行业实践要点
 
@@ -149,13 +141,9 @@ w^* = \frac{\Sigma^{-1} \mathbf{1}}{\mathbf{1}^T \Sigma^{-1} \mathbf{1}}
 *   **实践工具**：熟练掌握 Python（NumPy, Pandas）、深度学习框架（如 TensorFlow）、并行计算（GPU）等。
 *   **求职准备**：量化岗位面试常涉及数学、统计、编程和金融知识。可以进行模拟面试来准备。
 
-![](img/b7a52e61cca0f4f59b8ec16ce808c1c2_17.png)
 
-![](img/b7a52e61cca0f4f59b8ec16ce808c1c2_19.png)
 
-![](img/b7a52e61cca0f4f59b8ec16ce808c1c2_21.png)
 
-![](img/b7a52e61cca0f4f59b8ec16ce808c1c2_23.png)
 
 ---
 

@@ -19,11 +19,9 @@
 
 然后，根据LLM给出的建议，您可以深入探讨具体问题。
 
-![](img/e9230ebda2ad54ac522bda904ab5a1c4_1.png)
 
 GPT-4对此提示给出了非常详细的回答，列举了许多应考虑的事项。既然您已经设计了数据库模式，让我们跳过模式设计，直接看下一个建议：**索引**。
 
-![](img/e9230ebda2ad54ac522bda904ab5a1c4_5.png)
 
 ## 索引优化
 
@@ -38,7 +36,6 @@ GPT-4对此提示给出了非常详细的回答，列举了许多应考虑的事
 
 以下是关于索引的一些核心建议：
 
-![](img/e9230ebda2ad54ac522bda904ab5a1c4_7.png)
 
 *   **选择要索引的列**：最好从那些您可能用于`WHERE`或`JOIN`操作的列开始。
 *   **考虑索引大小**：对于更大、更多样化的数据库，需要考虑索引的大小，并避免为包含大型复杂数据类型（如全局唯一标识符GUID）的列建立索引。
@@ -55,7 +52,6 @@ CREATE INDEX IX_products_name ON products(name);
 
 ## 查询缓存
 
-![](img/e9230ebda2ad54ac522bda904ab5a1c4_9.png)
 
 现在让我们回到LLM给出的建议列表，另一个技巧是**缓存**，特别是**查询缓存**。这可以通过存储昂贵查询的结果来帮助减少数据库负载。
 
@@ -66,7 +62,6 @@ CREATE INDEX IX_products_name ON products(name);
 这一切都很好。但如果您不知道从何开始怎么办？在这些示例中，我使用的是SQLAlchemy，您可能在使用其他工具，但基本原理是相同的。您可以直接通过类似以下的提示寻求帮助：
 > 如何在SQLAlchemy中实现查询缓存？
 
-![](img/e9230ebda2ad54ac522bda904ab5a1c4_11.png)
 
 ![](img/e9230ebda2ad54ac522bda904ab5a1c4_11.png)
 
@@ -78,7 +73,6 @@ CREATE INDEX IX_products_name ON products(name);
 
 好处是您无需更改函数的内容，只需添加装饰器即可。
 
-![](img/e9230ebda2ad54ac522bda904ab5a1c4_13.png)
 
 ![](img/e9230ebda2ad54ac522bda904ab5a1c4_13.png)
 
@@ -86,7 +80,6 @@ CREATE INDEX IX_products_name ON products(name);
 
 这是一个暂停视频、尝试运行代码并查看是否能成功运行缓存查询的好时机。一旦成功，您可以使用Python或您正在使用的任何语言中可用的计时工具来验证缓存查询的运行速度确实快得多。
 
-![](img/e9230ebda2ad54ac522bda904ab5a1c4_15.png)
 
 ![](img/e9230ebda2ad54ac522bda904ab5a1c4_15.png)
 
@@ -97,7 +90,6 @@ CREATE INDEX IX_products_name ON products(name);
 您的高级模式、表、连接等可能不会改变，但对于特定列中的数据，您应该始终仔细考虑。为此，您可以提示您的LLM获取有关此方面的详细信息。例如，使用一个简单的提示：
 > 在SQL数据库中选择数据类型的最佳实践是什么？
 
-![](img/e9230ebda2ad54ac522bda904ab5a1c4_17.png)
 
 ![](img/e9230ebda2ad54ac522bda904ab5a1c4_17.png)
 

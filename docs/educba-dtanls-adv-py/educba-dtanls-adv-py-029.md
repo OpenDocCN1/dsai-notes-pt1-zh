@@ -16,7 +16,6 @@
 2.  创建一个包含 `name` 和 `email` 字段的新表。
 3.  插入一些示例客户端数据。
 
-![](img/4f9fe4cf7407c9a2e9f6cc11aae5be8b_1.png)
 
 ```python
 # 假设 conn 是数据库连接，cursor 是游标
@@ -28,9 +27,7 @@ cursor.executemany("INSERT INTO clients VALUES (?, ?)", clients_data)
 conn.commit()
 ```
 
-![](img/4f9fe4cf7407c9a2e9f6cc11aae5be8b_3.png)
 
-![](img/4f9fe4cf7407c9a2e9f6cc11aae5be8b_4.png)
 
 ## 修改服务器消息处理逻辑
 

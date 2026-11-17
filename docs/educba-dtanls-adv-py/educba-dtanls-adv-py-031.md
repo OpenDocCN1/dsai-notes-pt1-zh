@@ -4,9 +4,7 @@
 
 ---
 
-![](img/9fba4a617e085eb7d129a04aef050e05_1.png)
 
-![](img/9fba4a617e085eb7d129a04aef050e05_2.png)
 
 ## 连接Jupyter Notebook到PyCharm
 
@@ -22,7 +20,6 @@
 4.  在开发者工具中，你可以找到Jupyter Notebook的令牌。
 5.  复制该令牌。
 
-![](img/9fba4a617e085eb7d129a04aef050e05_4.png)
 
 复制令牌后，返回PyCharm。
 

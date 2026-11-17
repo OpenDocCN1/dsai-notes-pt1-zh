@@ -4,11 +4,9 @@
 
 ---
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_1.png)
 
 ## SSD简介
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_3.png)
 
 上一节我们介绍了YOLO模型，其速度表现优异。那么，是否存在一种算法能同时兼顾速度与准确度呢？答案是肯定的，那就是SSD。
 
@@ -19,25 +17,20 @@ SSD，英文全称为 **Single Shot MultiBox Detector**，是一种在项目中�
 *   理解其中“Detector”和“Classifier”组件的作用。
 *   说明SSD的主要优点。
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_5.png)
 
 SSD于2016年发表。其核心特点是**结合了YOLO的回归思想与Faster R-CNN的Anchor机制**，从而在保持较高检测速度的同时，也保证了精度。
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_7.png)
 
 因此，SSD**兼顾了速度与精度**。请注意，这里的SSD并非指固态硬盘，虽然名称相同。
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_9.png)
 
 ---
 
 ## SSD网络结构
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_11.png)
 
 了解了SSD的基本概念后，本节我们来看看它的具体网络结构。
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_13.png)
 
 对于SSD模型，输入图片有固定要求：**必须是300×300像素的大小**。如果处理的图片不是此尺寸，则需要进行相应的缩放或裁剪。
 
@@ -49,7 +42,6 @@ SSD于2016年发表。其核心特点是**结合了YOLO的回归思想与Faster 
 
 ## SSD工作流程
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_15.png)
 
 ![](img/ad0d455f01f67d1cf6c49b3eca7969c7_17.png)
 
@@ -57,13 +49,11 @@ SSD于2016年发表。其核心特点是**结合了YOLO的回归思想与Faster 
 
 当一个300×300×3的图片输入网络后，数据从左向右流动。在网络结构的多个特定层级（图中向下的箭头处），都会进行一项关键操作：**Detector & Classify**。
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_19.png)
 
 每一个“Detector & Classify”模块都会输出一系列预测框。所有这些来自不同层级的预测框会被汇集起来，最后通过**NMS（非极大值抑制）** 算法进行筛选，最终得到图片中物体的预测结果。
 
 由此可见，整个流程的核心就是**Detector & Classify**模块。我们的重点也将放在理解这个模块上。
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_21.png)
 
 ---
 
@@ -71,7 +61,6 @@ SSD于2016年发表。其核心特点是**结合了YOLO的回归思想与Faster 
 
 ## Detector & Classify 详解
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_25.png)
 
 上一节我们指出了流程中的核心模块，本节中我们来详细剖析“Detector & Classify”。
 
@@ -79,7 +68,6 @@ SSD引入了 **Default Box** 的概念，这与Faster R-CNN中的Anchor Box机�
 
 以下是对其结构的说明：
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_27.png)
 
 以网络中某个输出为38×38的特征图为例。在该特征图的**每一个像素点**上，SSD会预测**4个**默认框（Default Box）。
 
@@ -87,11 +75,9 @@ SSD引入了 **Default Box** 的概念，这与Faster R-CNN中的Anchor Box机�
 
 观察网络结构图可以发现，不同层级的特征图（如19×19， 10×10， 5×5等），其每个像素点对应的Default Box数量是不同的（可能是4个或6个）。
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_29.png)
 
 最终，SSD将所有层级的Default Box数量相加，总共会生成**8732个**候选框。这些框将作为后续分类和位置修正的基础。
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_31.png)
 
 那么，这个结构是如何进行训练和预测的呢？“Detector & Classify”模块**融合了YOLO的边界框回归思想和Faster R-CNN的Anchor机制**。
 
@@ -108,11 +94,9 @@ SSD引入了 **Default Box** 的概念，这与Faster R-CNN中的Anchor Box机�
 
 ## 三个核心组件解析
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_36.png)
 
 我们已经知道了“Detector & Classify”的三个组成部分，现在来逐一深入理解。
 
-![](img/ad0d455f01f67d1cf6c49b3eca7969c7_38.png)
 
 我们以网络中一个5×5×256的特征图输出为例进行说明。
 

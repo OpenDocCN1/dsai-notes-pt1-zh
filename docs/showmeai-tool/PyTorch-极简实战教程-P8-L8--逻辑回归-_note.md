@@ -6,17 +6,13 @@
 
 ## 数据准备 📊
 
-![](img/d4aae67709503eb865c057216c0046f3_1.png)
 
 上一节我们介绍了课程目标，本节中我们来看看如何为逻辑回归准备数据。我们将使用一个经典的二分类数据集——乳腺癌数据集，并进行必要的预处理。
 
-![](img/d4aae67709503eb865c057216c0046f3_3.png)
 
 首先，导入所需的库。
 
-![](img/d4aae67709503eb865c057216c0046f3_5.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_6.png)
 
 ```python
 import torch
@@ -27,13 +23,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 ```
 
-![](img/d4aae67709503eb865c057216c0046f3_8.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_10.png)
 
 以下是数据加载与预处理的步骤：
 
-![](img/d4aae67709503eb865c057216c0046f3_12.png)
 
 1.  加载乳腺癌数据集。
 2.  划分训练集和测试集。
@@ -41,15 +34,11 @@ from sklearn.model_selection import train_test_split
 4.  将数据转换为 PyTorch 张量，并调整标签的形状。
 
 
-![](img/d4aae67709503eb865c057216c0046f3_14.png)
 
 
-![](img/d4aae67709503eb865c057216c0046f3_16.png)
 
 
-![](img/d4aae67709503eb865c057216c0046f3_18.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_20.png)
 
 ```python
 # 1. 加载数据
@@ -73,21 +62,16 @@ y_train = y_train.view(y_train.shape[0], 1)
 y_test = y_test.view(y_test.shape[0], 1)
 ```
 
-![](img/d4aae67709503eb865c057216c0046f3_22.png)
 
 ---
 
-![](img/d4aae67709503eb865c057216c0046f3_23.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_25.png)
 
 ## 构建模型 🏗️
 
 数据准备完成后，接下来我们构建逻辑回归模型。逻辑回归模型本质上是线性层与 Sigmoid 激活函数的组合。
 
-![](img/d4aae67709503eb865c057216c0046f3_27.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_29.png)
 
 我们通过继承 `nn.Module` 类来定义自己的模型。
 
@@ -102,66 +86,49 @@ class LogisticRegression(nn.Module):
         return y_predicted
 ```
 
-![](img/d4aae67709503eb865c057216c0046f3_31.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_32.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_33.png)
 
 模型创建如下，输入特征数为30。
 
-![](img/d4aae67709503eb865c057216c0046f3_35.png)
 
 ```python
 model = LogisticRegression(n_features)
 ```
 
-![](img/d4aae67709503eb865c057216c0046f3_37.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_38.png)
 
 ---
 
-![](img/d4aae67709503eb865c057216c0046f3_40.png)
 
 ## 定义损失函数与优化器 ⚙️
 
-![](img/d4aae67709503eb865c057216c0046f3_41.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_43.png)
 
 模型构建好后，需要定义衡量预测好坏的损失函数和用于更新模型参数的优化器。对于二分类问题，我们使用二元交叉熵损失（BCELoss）。
 
 优化器我们选择随机梯度下降（SGD）。
 
-![](img/d4aae67709503eb865c057216c0046f3_45.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_46.png)
 
 ```python
 criterion = nn.BCELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 ```
 
-![](img/d4aae67709503eb865c057216c0046f3_47.png)
 
 ---
 
 ## 训练循环 🔁
 
-![](img/d4aae67709503eb865c057216c0046f3_49.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_50.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_51.png)
 
 现在进入核心的训练环节。我们将进行多次迭代（epoch），每次迭代包含前向传播、损失计算、反向传播和参数更新四个步骤。
 
-![](img/d4aae67709503eb865c057216c0046f3_52.png)
 
 以下是训练循环的代码结构：
 
-![](img/d4aae67709503eb865c057216c0046f3_54.png)
 
 1.  前向传播计算预测值。
 2.  计算预测值与真实标签之间的损失。
@@ -191,17 +158,13 @@ for epoch in range(num_epochs):
         print(f'epoch: {epoch+1}, loss = {loss.item():.4f}')
 ```
 
-![](img/d4aae67709503eb865c057216c0046f3_57.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_58.png)
 
 ---
 
-![](img/d4aae67709503eb865c057216c0046f3_61.png)
 
 ## 模型评估 ✅
 
-![](img/d4aae67709503eb865c057216c0046f3_64.png)
 
 训练完成后，我们需要在测试集上评估模型的性能。评估时不需要计算梯度，因此使用 `torch.no_grad()` 上下文管理器。
 
@@ -216,19 +179,14 @@ with torch.no_grad():
     print(f'准确率 = {acc:.4f}')
 ```
 
-![](img/d4aae67709503eb865c057216c0046f3_67.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_70.png)
 
 运行上述代码，模型在测试集上达到了约 0.89 的准确率。你可以通过调整迭代次数 (`num_epochs`)、学习率 (`lr`) 或尝试不同的优化器来进一步提升模型性能。
 
 ---
 
-![](img/d4aae67709503eb865c057216c0046f3_74.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_75.png)
 
-![](img/d4aae67709503eb865c057216c0046f3_76.png)
 
 ## 总结 📝
 

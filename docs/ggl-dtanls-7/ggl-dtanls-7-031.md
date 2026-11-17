@@ -31,13 +31,11 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 
 创建图表后，在“Plots”标签页中点击“Export”按钮。你可以选择将图表保存为图像文件（如PNG、JPEG）或PDF文件。选择PNG格式，为文件命名，然后点击保存。保存后，你可以在“Files”标签页的文件列表中找到它。
 
-![](img/8d8e084a8c0a95f81149fe7edde3d17d_2.png)
 
 ## 方法二：使用`ggsave()`函数
 
 接下来，我们学习使用`ggplot2`包提供的`ggsave()`函数来保存图表，这种方法更便于在脚本中自动化执行。
 
-![](img/8d8e084a8c0a95f81149fe7edde3d17d_6.png)
 
 `ggsave()`函数默认保存你显示的最后一个图表，并默认使用当前图形设备的大小。
 

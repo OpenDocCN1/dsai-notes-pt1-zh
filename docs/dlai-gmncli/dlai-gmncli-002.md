@@ -1,6 +1,5 @@
 # 002：什么是Gemini CLI 🚀
 
-![](img/d513597d1754b8f9da24eae62e4890ba_1.png)
 
 在本节课中，我们将学习什么是Gemini CLI，了解其工作原理、核心优势以及它能完成的各种任务。我们还将探讨为什么命令行界面比网页界面更强大。
 
@@ -12,17 +11,12 @@ Gemini CLI是一个设计用于处理本地文件和多种工具任务的智能�
 
 ---
 
-![](img/d513597d1754b8f9da24eae62e4890ba_3.png)
 
-![](img/d513597d1754b8f9da24eae62e4890ba_4.png)
 
-![](img/d513597d1754b8f9da24eae62e4890ba_5.png)
 
 ## Gemini CLI能做什么？💡
 
-![](img/d513597d1754b8f9da24eae62e4890ba_6.png)
 
-![](img/d513597d1754b8f9da24eae62e4890ba_7.png)
 
 Gemini CLI的应用范围非常广泛。以下是它的一些主要用例：
 
@@ -82,7 +76,6 @@ Gemini CLI是一个**驻留在终端中的智能体**。这意味着你可以轻
 
 ---
 
-![](img/d513597d1754b8f9da24eae62e4890ba_9.png)
 
 ## 总结
 

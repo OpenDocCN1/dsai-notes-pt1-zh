@@ -14,7 +14,6 @@ ReAct（推理-行动）是一种智能体模式，它通过结合推理和与�
 
 ![](img/5f666672e8384a851e6e8e62898d8e30_3.png)
 
-![](img/5f666672e8384a851e6e8e62898d8e30_4.png)
 
 ReAct的工作流程可以概括为以下几个步骤：
 1.  **输入**：接收用户的问题或指令。
@@ -34,13 +33,10 @@ while not task_complete:
 answer = generate_final_output(history)
 ```
 
-![](img/5f666672e8384a851e6e8e62898d8e30_6.png)
 
-![](img/5f666672e8384a851e6e8e62898d8e30_7.png)
 
 ## 构建ReAct智能体的准备工作
 
-![](img/5f666672e8384a851e6e8e62898d8e30_8.png)
 
 在开始编码之前，需要确保开发环境已正确设置。以下是必要的准备工作：
 
@@ -48,9 +44,7 @@ answer = generate_final_output(history)
 *   **导入模块**：在代码开头导入必要的类和方法。
 *   **工具准备**：定义智能体可以使用的工具，例如金融数据查询、计算等。
 
-![](img/5f666672e8384a851e6e8e62898d8e30_10.png)
 
-![](img/5f666672e8384a851e6e8e62898d8e30_11.png)
 
 ![](img/5f666672e8384a851e6e8e62898d8e30_12.png)
 
@@ -75,7 +69,6 @@ answer = generate_final_output(history)
     *   `tool_node`: 负责执行“行动”，即调用工具并返回“观察”结果。
     *   `router`: 负责判断流程是继续循环还是结束。
 
-![](img/5f666672e8384a851e6e8e62898d8e30_16.png)
 
 ![](img/5f666672e8384a851e6e8e62898d8e30_17.png)
 

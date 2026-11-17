@@ -1,14 +1,11 @@
 # 绘图必备Matplotlib，P19：19）旋转轴刻度标签文本 📐
 
-![](img/b5c80dad07160454805cc2db46a4e1ab_1.png)
 
 在本节课中，我们将学习如何旋转Matplotlib图表中的轴刻度标签文本。当刻度标签文本过长、相互重叠导致难以辨认时，旋转标签是一个有效的解决方案。
 
-![](img/b5c80dad07160454805cc2db46a4e1ab_2.png)
 
 上一节我们介绍了如何调整刻度参数，本节中我们来看看如何利用这些参数来旋转刻度标签。
 
-![](img/b5c80dad07160454805cc2db46a4e1ab_4.png)
 
 ## 问题背景
 
@@ -16,16 +13,13 @@
 
 ## 旋转X轴刻度标签
 
-![](img/b5c80dad07160454805cc2db46a4e1ab_6.png)
 
 我们将使用`tick_params`方法来旋转X轴刻度标签。以下是具体步骤：
 
 首先，创建一个基本的图表。
 
-![](img/b5c80dad07160454805cc2db46a4e1ab_8.png)
 
 
-![](img/b5c80dad07160454805cc2db46a4e1ab_9.png)
 
 ```python
 import matplotlib.pyplot as plt
@@ -44,7 +38,6 @@ plt.show()
 ax.tick_params(axis='x', rotation=45)
 ```
 
-![](img/b5c80dad07160454805cc2db46a4e1ab_11.png)
 
 执行上述代码后，X轴刻度标签将旋转45度。这样，即使标签很长，它们也不会相互重叠，从而提高了图表的可读性。
 

@@ -1,6 +1,5 @@
 # 004：Lab 3 - 查询扩展 🧠
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_1.png)
 
 在本节课中，我们将学习如何利用大型语言模型来增强查询，从而提升基于向量检索系统的结果相关性。我们将重点介绍两种查询扩展技术：**基于生成答案的扩展**和**基于多查询的扩展**。
 
@@ -41,9 +40,7 @@ reducer = umap.UMAP()
 
 ![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_4.png)
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_5.png)
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_6.png)
 
 ```python
 def augment_query_generated(query, model="gpt-3.5-turbo"):
@@ -65,9 +62,7 @@ def augment_query_generated(query, model="gpt-3.5-turbo"):
     return joint_query
 ```
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_7.png)
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_8.png)
 
 让我们看一个实践例子。假设原始查询是：“高管团队是否有重大人员变动？”
 
@@ -77,7 +72,6 @@ def augment_query_generated(query, model="gpt-3.5-turbo"):
 
 为了直观展示效果，我们可以比较原始查询嵌入向量和联合查询嵌入向量在空间中的位置。可视化结果显示，联合查询的嵌入向量（橙色X）与原始查询（红色X）位于不同区域，并成功召回了更相关的文档簇（绿色圆点）。
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_3.png)
 
 ## 基于多查询的扩展 🔄
 
@@ -121,14 +115,10 @@ def augment_query_multiple(query, model="gpt-3.5-turbo"):
 以下是执行多查询检索的步骤：
 
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_10.png)
 
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_12.png)
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_13.png)
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_14.png)
 
 ```python
 # 1. 构建查询数组：原始查询 + 生成的扩展查询
@@ -146,7 +136,6 @@ unique_documents = remove_duplicates(results['documents'])
 
 可视化显示，原始查询（红色X）和多个扩展查询（橙色点）在嵌入空间中指向不同区域，并召回了更广泛的相关信息（绿色圆点）。这大大增加了我们为复杂问题找到所有相关信息的几率。
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_16.png)
 
 ## 总结与展望 📝
 
@@ -154,11 +143,8 @@ unique_documents = remove_duplicates(results['documents'])
 
 ![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_17.png)
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_18.png)
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_19.png)
 
-![](img/2a5173f0f8ddcf8e889ddf4656c9a7cb_20.png)
 
 本节课中我们一起学习了两种利用LLM进行查询扩展的技术：
 1.  **基于生成答案的扩展**：通过让LLM“幻想”一个答案来丰富查询语义。

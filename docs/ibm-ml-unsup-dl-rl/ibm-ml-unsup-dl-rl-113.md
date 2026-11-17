@@ -10,13 +10,11 @@ Then finally， we'll introduce reinforcement learning implementation using Pyth
 
 
 
-![](img/add1ba67c7302e22a2b8280609b8f685_1.png)
 
 So let's start off with a reinforcement learning overview as we promised。
 
 
 
-![](img/add1ba67c7302e22a2b8280609b8f685_3.png)
 
 Now in reinforcement learning， the idea is that agents will be interacting with an environment。
 
@@ -62,7 +60,6 @@ And this process again repeat dynamically so agents continuously learn how to es
 
 
 
-![](img/add1ba67c7302e22a2b8280609b8f685_5.png)
 
 Now， advances in deep learning have led to many recent reinforcement learning developments。
 
@@ -74,7 +71,6 @@ And in 2017， the Alpha Go system defeated the world champion in Go。 So for t
 
  using reinforcement learning。
 
-![](img/add1ba67c7302e22a2b8280609b8f685_7.png)
 
 Now， in general， reinforcement learning algorithms have been limited due to significant data and computational requirements。
 
@@ -92,7 +88,6 @@ Now， in general， reinforcement learning algorithms have been limited due to 
 
 
 
-![](img/add1ba67c7302e22a2b8280609b8f685_9.png)
 
 It lead to us needing a lot of data to train our reinforcement learning models。Now， more recently。
 
@@ -100,7 +95,6 @@ It lead to us needing a lot of data to train our reinforcement learning models�
 
 
 
-![](img/add1ba67c7302e22a2b8280609b8f685_11.png)
 
 And examples include recommendation engines where recommending correctly could perhaps be a reward marketing with higher revenues or higher clicks。
 
@@ -108,7 +102,6 @@ And examples include recommendation engines where recommending correctly could p
 
 
 
-![](img/add1ba67c7302e22a2b8280609b8f685_13.png)
 
 Now the idea here。Is that the agent， again， if you think about reinforcement learning。
 
@@ -124,7 +117,6 @@ And then feedback from that environment is passed back to the agent in terms of 
 
 
 
-![](img/add1ba67c7302e22a2b8280609b8f685_15.png)
 
 Now， reinforcement learning problems will vary significant。
 
@@ -146,7 +138,6 @@ And this differs from typical machine learning problems because unlike with labe
 
 
 
-![](img/add1ba67c7302e22a2b8280609b8f685_17.png)
 
 Whereas with typical machine learning problems， the solutions remain static。
 
@@ -160,7 +151,6 @@ With reinforcement learning， as actions impact the environment， the state ch
 
 
 
-![](img/add1ba67c7302e22a2b8280609b8f685_19.png)
 
 Now just a quick introduction， we will get into a notebook， but in Python。
 
@@ -174,7 +164,6 @@ And then end dot render now that we've created that environment object will show
 
 
 
-![](img/add1ba67c7302e22a2b8280609b8f685_21.png)
 
 Now， just to recap in this section， we discuss reinforcement learning overview with an understanding of that feedback loop。
 
@@ -194,6 +183,5 @@ Then finally， we closed out with a quick introduction to reinforcement learnin
 
 
 
-![](img/add1ba67c7302e22a2b8280609b8f685_23.png)
 
 ![](img/add1ba67c7302e22a2b8280609b8f685_24.png)

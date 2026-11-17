@@ -1,10 +1,8 @@
 # 095：4.L3-密集检索 🎯
 
-![](img/18d2321a55b6af9786231ba4a7dfd8a4_0.png)
 
 ## 概述
 
-![](img/18d2321a55b6af9786231ba4a7dfd8a4_2.png)
 
 在本节课中，我们将学习**密集检索**，这是利用嵌入向量进行语义搜索的核心技术。我们将首先回顾如何使用向量数据库进行搜索，然后从零开始构建一个简单的向量搜索索引，并探讨其背后的原理与应用。
 
@@ -57,7 +55,6 @@ def dense_retrieval(query):
     return response['data']['Get']['Document']
 ```
 
-![](img/18d2321a55b6af9786231ba4a7dfd8a4_6.png)
 
 ### 搜索示例与比较
 
@@ -115,7 +112,6 @@ import cohere
 
 ### 准备文本数据
 
-![](img/18d2321a55b6af9786231ba4a7dfd8a4_20.png)
 
 我们以电影《星际穿越》的维基百科页面文本为例。
 
@@ -137,7 +133,6 @@ The film is set in a dystopian future...
 *   **按句子分割**：在每个句号处分割。
 *   **按段落分割**：在每个换行处分割。
 
-![](img/18d2321a55b6af9786231ba4a7dfd8a4_24.png)
 
 选择哪种方式取决于你的应用场景。通常，我们希望每个块包含一个完整的想法。
 
@@ -157,7 +152,6 @@ chunks_with_context = [f"{title}: {chunk}" for chunk in chunks]
 
 接下来，我们使用嵌入模型为每个文本块生成向量表示。
 
-![](img/18d2321a55b6af9786231ba4a7dfd8a4_28.png)
 
 ```python
 co = cohere.Client('YOUR_API_KEY')

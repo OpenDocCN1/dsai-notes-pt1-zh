@@ -1,21 +1,16 @@
 # PySpark 大数据处理入门，2：L2 - PySpark 数据帧 🚀
 
-![](img/064c89eed1f0032152a18a66a64a8949_1.png)
 
 在本节课中，我们将学习 PySpark 的核心数据结构——数据帧。我们将从如何创建和读取数据开始，逐步学习如何检查数据结构、选择列、查看数据摘要，以及如何添加、删除和重命名列。这些是进行任何数据处理前的基础操作。
 
 ## 构建 Spark 会话
 
-![](img/064c89eed1f0032152a18a66a64a8949_3.png)
 
-![](img/064c89eed1f0032152a18a66a64a8949_4.png)
 
 首先，要使用 PySpark，我们需要创建一个 Spark 会话。这是所有 PySpark 操作的起点。
 
 
-![](img/064c89eed1f0032152a18a66a64a8949_6.png)
 
-![](img/064c89eed1f0032152a18a66a64a8949_7.png)
 
 ```python
 from pyspark.sql import SparkSession

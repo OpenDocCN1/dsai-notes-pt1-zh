@@ -12,9 +12,7 @@
 
 ## 获取网页内容
 
-![](img/a9c91968d5b63ed3de14e87490524854_1.png)
 
-![](img/a9c91968d5b63ed3de14e87490524854_2.png)
 
 首先，导入`pandas`库。你可以使用练习项目来跟随演示。
 
@@ -28,7 +26,6 @@ import pandas as pd
 url = "https://www.seasky.org/astronomy/astronomy-calendar-2030.html"
 ```
 
-![](img/a9c91968d5b63ed3de14e87490524854_4.png)
 
 你可能会首先尝试使用`pd.read_html`。
 
@@ -38,11 +35,9 @@ tables = pd.read_html(url)
 
 但你会遇到一个错误。请务必滚动到错误信息的底部查看最新问题，你会看到`ValueError: No tables found`。这是预料之中的，因为检查网站后你会发现页面上并没有表格。所以，`pd.read_html`在处理表格时很好用，但没有表格时就几乎无用。对于这个网站，你需要进行适当的网络抓取。
 
-![](img/a9c91968d5b63ed3de14e87490524854_6.png)
 
 ## 引入新的工具
 
-![](img/a9c91968d5b63ed3de14e87490524854_7.png)
 
 为了抓取所需数据，你需要两个新模块：
 *   `requests`：用于获取网页。
@@ -73,9 +68,7 @@ print(response.status_code)
 
 现在，你可以打印`response.content`来查看网站发回了什么信息。
 
-![](img/a9c91968d5b63ed3de14e87490524854_9.png)
 
-![](img/a9c91968d5b63ed3de14e87490524854_10.png)
 
 ```python
 print(response.content)
@@ -87,7 +80,6 @@ print(response.content)
 
 在这段文本中，埋藏着你需要的所有数据。注意，这个`response.content`以`<!DOCTYPE html>`这样的文本和尖括号开头。这个响应是一个HTML文档。换句话说，它是一个`.html`文件的内容。
 
-![](img/a9c91968d5b63ed3de14e87490524854_12.png)
 
 **一个小提示**：如果你对笔记本中显示的大量文本感到困扰，可以随时向AI助手寻求缩短显示的建议，例如：“如何只显示这个字符串`response.content`的前1000个字符？”
 

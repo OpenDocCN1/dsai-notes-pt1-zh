@@ -88,13 +88,10 @@ print(words[:50]) # 打印前50个单词
 4.  `words = brown.words(categories='news')`：从布朗语料库的特定类别（本例中为‘news’）中检索单词。
 5.  `print(words[:50])`：打印‘news’类别中布朗语料库的前50个单词。
 
-![](img/9ff2357ae6e5cab4e996d363ec71e5b1_6.png)
 
 **执行结果**：代码会输出布朗语料库中包含的类别列表（如 `['adventure', 'belles_lettres', 'editorial', ...]`），以及‘news’类别下的前50个单词，这些单词构成一个新闻句子的开头部分。
 
-![](img/9ff2357ae6e5cab4e996d363ec71e5b1_8.png)
 
-![](img/9ff2357ae6e5cab4e996d363ec71e5b1_10.png)
 
 布朗语料库通常包含来自多种体裁的文本样本，包括新闻文章、社论、散文、小说、评论和学术文章等。它主要关注跨体裁的通用语言使用，因此通常不包含如天气报告、体育数据或科学文献等高度专业化的类别。
 
@@ -104,9 +101,7 @@ print(words[:50]) # 打印前50个单词
 
 以下是访问电影评论语料库的代码：
 
-![](img/9ff2357ae6e5cab4e996d363ec71e5b1_12.png)
 
-![](img/9ff2357ae6e5cab4e996d363ec71e5b1_13.png)
 
 ```python
 nltk.download('movie_reviews')
@@ -128,7 +123,6 @@ print(words_positive[:20]) # 打印第一篇正面评论的前20个单词
 print(words_negative[:20]) # 打印第一篇负面评论的前20个单词
 ```
 
-![](img/9ff2357ae6e5cab4e996d363ec71e5b1_15.png)
 
 **代码解释**：
 1.  `nltk.download('movie_reviews')`：下载电影评论语料库数据。

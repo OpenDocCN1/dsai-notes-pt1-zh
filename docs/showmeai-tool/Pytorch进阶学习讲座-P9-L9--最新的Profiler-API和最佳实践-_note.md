@@ -94,7 +94,6 @@ print(prof.key_averages(group_by_stack_n=5).table())
 
 ---
 
-![](img/8ecf516795c50978f573dce9c644f972_11.png)
 
 ## 📝 总结
 

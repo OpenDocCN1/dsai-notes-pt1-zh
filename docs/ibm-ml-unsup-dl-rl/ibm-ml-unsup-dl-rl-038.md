@@ -24,7 +24,6 @@ So in order to do non negative matrix factorization。
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_1.png)
 
 And this will allow us to later on compare to see how related the new topics are to the actual topics that we had within each one of the different articles。
 
@@ -36,7 +35,6 @@ We're going to pass in our sparse matrix。Calling model fit transform on that s
 
  and that will output this doc topic。
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_3.png)
 
 Which is just going to be a data frame that's going to be of shape 2225。
 
@@ -48,15 +46,12 @@ Which is just going to be a data frame that's going to be of shape 2225。
 
  we have reduced it down to five topics。
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_5.png)
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_6.png)
 
 Now we want to look at the components of this model。
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_8.png)
 
 And when we look at the components， all that is is going to be the different words。
 
@@ -64,7 +59,6 @@ And how they make up each one of the different topics that we now have。
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_10.png)
 
 So we're going to create a new data frame， which is we're going to call here topic word。
 
@@ -78,17 +72,14 @@ And then the columns are going to be those words that we pulled in earlier。 An
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_12.png)
 
 We can see that。
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_14.png)
 
 We have。For each one of the different topics， how much each one of the different words contribute to that particular topic。
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_16.png)
 
 Now， just to make further sense of how this relates the topics and the words。
 
@@ -96,9 +87,7 @@ Now， just to make further sense of how this relates the topics and the words�
 
  entertainment， politics， sports and tech。
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_18.png)
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_19.png)
 
 Now I'm going to do topics per dock， and we're going to again pass in the。
 
@@ -108,7 +97,6 @@ We're then going to set as our index rather than if we recall what the docs actu
 
  this is going to be the different articles。
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_21.png)
 
 It's going to be each one of these different values， business dot 001， business do 002。
 
@@ -116,7 +104,6 @@ That first word before that dot is going to tell us which topic we're working wi
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_23.png)
 
 So we're just going to call i dot split on that dot。
 
@@ -124,19 +111,16 @@ And then we're just going to take the first value， so we'll have all business�
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_25.png)
 
 Or later on， all entertainment， so on and so forth。
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_27.png)
 
 And then our columns will be topic one， topic two， so on and so forth。
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_29.png)
 
 And when we look at this， we can see that we have that。
 
@@ -148,7 +132,6 @@ And we see that repeatedly for every one of the different business topics and th
 
  we see that topic four， I believe。
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_31.png)
 
 What we'll see in just a second， what we're going to do here is order to reset the index so that this indexes its own column。
 
@@ -164,9 +147,7 @@ And when we do that， we can see that topic one， the max value is politics。
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_33.png)
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_34.png)
 
 And that's how we end up with these different groups。And then to make this perfectly clear。
 
@@ -174,13 +155,11 @@ And that's how we end up with these different groups。And then to make this per
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_36.png)
 
 That we saw up here。We're going to transpose that so that each one of the different topics are going to be the columns。
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_38.png)
 
 And then we will sort by first topic one。With the highest values on top， so ascending goes false。
 
@@ -188,9 +167,7 @@ And then we will sort by first topic one。With the highest values on top， so 
 
  which makes sense。
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_40.png)
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_41.png)
 
 And if we did topic three， which was sport。We can see that game， play， so on and so forth。
 
@@ -202,7 +179,6 @@ So we see that with this unsupervised model， if perhaps you don't actually hav
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_43.png)
 
 That closes out our video here and our notebook on non negative matrix factorization。
 
@@ -210,6 +186,5 @@ That closes out our video here and our notebook on non negative matrix factoriza
 
 
 
-![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_45.png)
 
 ![](img/1bfb8c88d0e83e174f3276f7c0cbb2bb_46.png)

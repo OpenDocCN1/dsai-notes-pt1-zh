@@ -130,7 +130,6 @@ kernel void vec_add(__global const float* a,
 
 让我们将以上概念整合到一个完整的、简化的主机端代码流程中，实现向量加法。
 
-![](img/6ae83480be5553072b13ec1e6a5e6ada_3.png)
 
 ![](img/6ae83480be5553072b13ec1e6a5e6ada_4.png)
 
@@ -147,7 +146,6 @@ kernel void vec_add(__global const float* a,
 
 ![](img/6ae83480be5553072b13ec1e6a5e6ada_8.png)
 
-![](img/6ae83480be5553072b13ec1e6a5e6ada_10.png)
 
 **简化代码流程**：
 

@@ -30,17 +30,11 @@ i > 5
 
 我们可以用数轴来可视化这个过程。当 `i` 的值大于 5 时，在数轴上标记为绿色（真）；否则标记为红色（假）。
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_1.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_2.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_3.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_1.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_2.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_3.png)
 
 如果我们设置 `i = 6`，可以看到 6 大于 5，因此结果为 `True`。这些操作同样适用于浮点数。
 
@@ -50,7 +44,6 @@ i >= 5
 ```
 此时，条件在 `i` 大于或等于 5 时为真。在数轴上，数字 5 本身也会被包含在绿色区域中。
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_5.png)
 
 如果 `i = 5`，运算符产生 `True`。如果 `i = 2`，因为 2 小于 5，所以结果为 `False`。
 
@@ -60,7 +53,6 @@ i < 6
 ```
 如果左边操作数 `i` 的值小于右边操作数 6，则条件为真。
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_5.png)
 
 “不等于”运算符使用感叹号加等号表示 `!=`。如果两个操作数不相等，则条件为真。
 ```python
@@ -95,7 +87,6 @@ if condition:
 ```
 `condition` 是一个可以评估为真或假的表达式。括号不是必须的，但冒号 `:` 和缩进是必需的。无论 `if` 条件真假，`if` 语句块之后的代码都会继续执行。
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_7.png)
 
 **以下是具体案例：**
 
@@ -138,11 +129,8 @@ print(“继续前进”)
 ```
 `if` 语句条件为 `False`，因此程序执行 `else` 语句块，打印“去看 Meatloaf 演唱会吧”，然后继续执行后续代码。
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_9.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_10.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_11.png)
 
 当年龄为 19 时：
 ```python
@@ -163,13 +151,9 @@ print(“继续前进”)
 
 一个 18 岁的人进入：他不超过 19 岁，所以不能看 AC/DC。但因为他是 18 岁，所以去看 Pink Floyd。看完后离开。
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_13.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_14.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_9.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_10.png)
 
 `elif` 语句的语法如下：
 ```python
@@ -181,7 +165,6 @@ else:
     # 执行语句3
 ```
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_11.png)
 
 **以下是具体案例：**
 
@@ -208,15 +191,10 @@ print(“继续前进”)
 *   如果输入是 `True`，结果是 `False`。
 *   如果输入是 `False`，结果是 `True`。
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_16.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_13.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_14.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_17.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_18.png)
 
 ### `or` 运算符
 
@@ -244,41 +222,26 @@ else:
 第一个条件 `album_year < 1980`（1990 < 1980）为假（红）。
 第二个条件 `album_year > 1989`（1990 > 1989）为真（绿）。
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_16.png)
 
 在最终的数轴上，绿色区域表示**至少有一个**语句为真的区域。1990 落在这个区域，因此条件为真，执行 `print` 语句。
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_17.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_18.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_20.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_21.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_22.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_23.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_24.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_25.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_26.png)
 
 ### `and` 运算符
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_20.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_21.png)
 
 `and` 运算符也接受两个布尔值，并产生一个新的布尔值。其真值表如下：
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_22.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_23.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_24.png)
 
 | A | B | A and B |
 |---|---|--------|
@@ -287,9 +250,7 @@ else:
 | False | True | False |
 | False | False | False |
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_25.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_26.png)
 
 可以看到，`and` 运算符只有在**所有**布尔值都为 `True` 时，才产生 `True`。
 
@@ -308,31 +269,18 @@ else:
 
 在最终的数轴上，绿色区域表示**两个**语句都为真的区域。1983 落在这个区域，因此条件为真，执行 `print` 语句。
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_28.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_29.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_30.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_31.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_32.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_28.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_29.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_30.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_33.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_31.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_32.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_35.png)
 
-![](img/74cb98a165d2f57e8bec9804e19532fe_33.png)
 
 ## 总结
 

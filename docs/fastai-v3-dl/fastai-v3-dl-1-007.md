@@ -1,12 +1,8 @@
 # 深度学习实践课程：7：神经网络内部机制与多目标模型
 
-![](img/9790e5fe5cae4197004209600cae6f7e_1.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_3.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_5.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_7.png)
 
 ## 概述
 
@@ -50,9 +46,7 @@ for x, y in data_loader:
 
 ---
 
-![](img/9790e5fe5cae4197004209600cae6f7e_9.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_11.png)
 
 ## 多目标模型：同时预测疾病和品种 🌾
 
@@ -60,19 +54,12 @@ for x, y in data_loader:
 
 ### 数据准备
 
-![](img/9790e5fe5cae4197004209600cae6f7e_13.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_15.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_17.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_19.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_21.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_23.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_25.png)
 
 首先，我们需要创建一个包含两个因变量的数据加载器。使用FastAI的`DataBlock`可以轻松实现：
 
@@ -87,7 +74,6 @@ dblock = DataBlock(
 )
 ```
 
-![](img/9790e5fe5cae4197004209600cae6f7e_27.png)
 
 ### 模型架构与损失函数
 
@@ -95,26 +81,18 @@ dblock = DataBlock(
 
 **输出层**：模型需要输出20个激活值，其中前10个对应10种疾病的概率，后10个对应10个品种的概率。
 
-![](img/9790e5fe5cae4197004209600cae6f7e_29.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_31.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_33.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_35.png)
 
 **损失函数**：我们需要为每个目标分别计算损失，然后求和作为总损失。
 
 以下是自定义损失函数和评估指标的代码：
 
-![](img/9790e5fe5cae4197004209600cae6f7e_37.png)
-
-![](img/9790e5fe5cae4197004209600cae6f7e_39.png)
 
 
-![](img/9790e5fe5cae4197004209600cae6f7e_41.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_43.png)
+
 
 ```python
 def disease_loss(preds, targs):
@@ -134,66 +112,44 @@ def combined_loss(preds, targs):
 
 对于分类任务，我们使用交叉熵损失。它衡量的是模型预测的概率分布与真实标签的“距离”。
 
-![](img/9790e5fe5cae4197004209600cae6f7e_45.png)
 
 **Softmax函数**：首先将模型的原始输出转换为概率分布。
 公式：`softmax(z_i) = exp(z_i) / Σ_j exp(z_j)`
 
-![](img/9790e5fe5cae4197004209600cae6f7e_47.png)
 
 **交叉熵计算**：对于真实类别`k`，交叉熵损失为 `-log(p_k)`，其中`p_k`是模型预测该类别属于`k`的概率。
 
-![](img/9790e5fe5cae4197004209600cae6f7e_49.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_51.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_53.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_55.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_57.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_58.png)
 
 **多目标训练的优势**：有时，让模型同时学习相关的辅助任务（如预测品种），反而能提升其主要任务（如预测疾病）的性能，因为模型可以学习到更有泛化能力的特征表示。
 
-![](img/9790e5fe5cae4197004209600cae6f7e_60.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_62.png)
 
 ---
 
-![](img/9790e5fe5cae4197004209600cae6f7e_64.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_66.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_68.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_70.png)
 
 ## 协同过滤：从零构建推荐系统 🎬
 
-![](img/9790e5fe5cae4197004209600cae6f7e_72.png)
 
 最后，我们探索深度学习的第四个主要应用领域——协同过滤，它是推荐系统的核心。
 
-![](img/9790e5fe5cae4197004209600cae6f7e_74.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_76.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_78.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_80.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_82.png)
 
 ### 问题定义
 
-![](img/9790e5fe5cae4197004209600cae6f7e_84.png)
 
 我们使用MovieLens数据集，其中包含用户对电影的评分。我们的目标是预测用户对未观看电影的评分，从而进行推荐。
 
-![](img/9790e5fe5cae4197004209600cae6f7e_86.png)
 
 ### 潜在因子模型
 
@@ -201,11 +157,8 @@ def combined_loss(preds, targs):
 
 **嵌入层（Embedding）**：在深度学习中，我们使用“嵌入层”来学习这些因子。嵌入层本质上是一个查找表，将用户ID或电影ID映射到一个低维向量。
 
-![](img/9790e5fe5cae4197004209600cae6f7e_88.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_90.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_92.png)
 
 ```python
 # 用户嵌入矩阵：n_users x n_factors
@@ -214,11 +167,9 @@ user_factors = torch.randn(n_users, n_factors)
 movie_factors = torch.randn(n_movies, n_factors)
 ```
 
-![](img/9790e5fe5cae4197004209600cae6f7e_94.png)
 
 ### 从零构建模型
 
-![](img/9790e5fe5cae4197004209600cae6f7e_96.png)
 
 我们可以从零开始构建一个点积协同过滤模型：
 
@@ -236,25 +187,18 @@ class DotProduct(Module):
 
 ### 模型改进
 
-![](img/9790e5fe5cae4197004209600cae6f7e_98.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_100.png)
 
 基础点积模型可以进一步改进：
 
-![](img/9790e5fe5cae4197004209600cae6f7e_102.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_104.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_106.png)
 
 1.  **偏置项**：添加用户偏置（反映用户打分严苛程度）和电影偏置（反映电影普遍受欢迎程度）。
 2.  **激活函数**：使用Sigmoid函数将输出限制在评分范围内（如0-5分）。
 3.  **权重衰减**：在损失函数中添加L2正则化项（权重衰减），防止过拟合。这通过惩罚过大的权重，鼓励模型学习更简单、泛化更好的模式。
 
-![](img/9790e5fe5cae4197004209600cae6f7e_108.png)
 
-![](img/9790e5fe5cae4197004209600cae6f7e_109.png)
 
 ---
 

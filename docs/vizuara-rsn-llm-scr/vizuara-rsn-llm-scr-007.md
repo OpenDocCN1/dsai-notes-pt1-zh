@@ -1,6 +1,5 @@
 #  007：价值函数
 
-![](img/bc656f914f6d908bbfcba89f76d6598a_0.png)
 
 ![](img/bc656f914f6d908bbfcba89f76d6598a_0.png)
 
@@ -40,7 +39,6 @@
 动作价值函数用符号 **Q<sub>π</sub>(s, a)** 表示。其公式与状态价值函数类似，但条件包含了所采取的动作：
 **Q<sub>π</sub>(s, a) = E<sub>π</sub>[G<sub>t</sub> | S<sub>t</sub> = s, A<sub>t</sub> = a] = E<sub>π</sub>[ Σ<sub>k=0</sub><sup>∞</sup> γ<sup>k</sup> R<sub>t+k+1</sub> | S<sub>t</sub> = s, A<sub>t</sub> = a ]**
 
-![](img/bc656f914f6d908bbfcba89f76d6598a_2.png)
 
 ## 两种价值函数的关系与重要性
 

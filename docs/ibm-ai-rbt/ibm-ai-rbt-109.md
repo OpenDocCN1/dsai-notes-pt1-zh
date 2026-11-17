@@ -8,7 +8,6 @@
 
 本模块包含两个实验。第一个实验中，我们将为学生顾问创建一个基础的聊天机器人。第二个实验中，我们将为这个聊天机器人集成Watson Discovery的响应功能。本视频将展示你在第一个实验中需要完成的操作。现在，请专注于理解视频内容，你将在实际实验环节中执行相同的步骤。
 
-![](img/ece64811129603ad91df25924e6aa21a_1.png)
 
 ---
 
@@ -16,7 +15,6 @@
 
 首先，我们需要启动Watson Assistant服务实例。
 
-![](img/ece64811129603ad91df25924e6aa21a_1.png)
 
 ---
 
@@ -30,7 +28,6 @@
 
 ## 添加对话技能
 
-![](img/ece64811129603ad91df25924e6aa21a_3.png)
 
 创建好助手后，我们需要为其添加一个对话技能。
 
@@ -40,7 +37,6 @@
 
 ## 选择内容目录
 
-![](img/ece64811129603ad91df25924e6aa21a_5.png)
 
 创建对话技能后，我们选择内容目录。
 
@@ -54,7 +50,6 @@
 
 接下来，让我们创建自己的意图。
 
-![](img/ece64811129603ad91df25924e6aa21a_3.png)
 
 我们将创建一个名为 **#enrollment_cost** 的意图，并添加一些学生可能提出的关于课程费用的查询示例。
 
@@ -65,21 +60,16 @@
 which data Science certificate?
 ```
 
-![](img/ece64811129603ad91df25924e6aa21a_7.png)
 
-![](img/ece64811129603ad91df25924e6aa21a_8.png)
 
-![](img/ece64811129603ad91df25924e6aa21a_5.png)
 
 ---
 
 ## 创建实体
 
-![](img/ece64811129603ad91df25924e6aa21a_10.png)
 
 处理完意图后，我们现在可以专注于添加一些实体，以捕获用户输入中的具体信息。
 
-![](img/ece64811129603ad91df25924e6aa21a_11.png)
 
 我们将创建一个名为 **@professional_certificate** 的实体。毕竟，可用的专业证书数量有限，我们可以通过实体来识别它们。
 
@@ -93,8 +83,6 @@ which data Science certificate?
 
 目前，我们有了闲聊意图、关于费用的意图、关于专业证书的意图，以及一个用于区分不同证书的实体。
 
-![](img/ece64811129603ad91df25924e6aa21a_7.png)
-![](img/ece64811129603ad91df25924e6aa21a_8.png)
 
 但我们还缺少一个用于课程推荐的意图。让我们来创建它。
 
@@ -107,8 +95,6 @@ I want to learn Python.
 recommend me a course on nutrition.
 ```
 
-![](img/ece64811129603ad91df25924e6aa21a_10.png)
-![](img/ece64811129603ad91df25924e6aa21a_11.png)
 
 ---
 
@@ -137,7 +123,6 @@ Hello, I'm a student advisor chatbot. I can help you with your questions about o
 
 ## 添加特定领域节点
 
-![](img/ece64811129603ad91df25924e6aa21a_13.png)
 
 折叠闲聊文件夹后，我们将能够选择 **Welcome** 节点并在其下方添加节点。
 
@@ -146,15 +131,12 @@ Hello, I'm a student advisor chatbot. I can help you with your questions about o
 *   **注册费用节点**：这个节点将处理注册费用查询，因此其条件是 **#enrollment_cost** 意图，并在其响应中提供适当的解释。
 *   **专业证书节点**：接下来，我们选择刚刚创建的 **Enrollment Cost** 节点，在其下方创建另一个节点。这个节点将处理专业证书的推荐和请求。节点执行的条件是 **#professional_certificate_recommendation** 意图。
 
-![](img/ece64811129603ad91df25924e6aa21a_13.png)
 
-![](img/ece64811129603ad91df25924e6aa21a_15.png)
 
 响应将取决于用户询问的专业证书类型。因此，我们需要将节点从常规文本响应自定义为条件多响应。
 
 启用多响应后，我们将能够为每个可用的专业证书实体值提供特定的响应。
 
-![](img/ece64811129603ad91df25924e6aa21a_15.png)
 
 最后，我们将设置一个条件为 **true** 的响应，它将作为我们的后备情况。这个响应将提供一个指向Coursera网站上列出所有专业证书页面的链接。
 
@@ -171,15 +153,10 @@ Can you recommend a professional certificate?
 
 现在轮到你了。在下一个实验中，你将亲自重复这些步骤。到实验结束时，你将拥有一个与本视频中看到的相同的基础聊天机器人。祝你好运。
 
-![](img/ece64811129603ad91df25924e6aa21a_17.png)
-![](img/ece64811129603ad91df25924e6aa21a_18.png)
-![](img/ece64811129603ad91df25924e6aa21a_19.png)
 
 ---
 
-![](img/ece64811129603ad91df25924e6aa21a_17.png)
 
-![](img/ece64811129603ad91df25924e6aa21a_18.png)
 
 ## 总结
 

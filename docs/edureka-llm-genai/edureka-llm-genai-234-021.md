@@ -1,6 +1,5 @@
 # 第二三四部分 21：基本GAN架构
 
-![](img/8ec059c3bbda80a1f821dd5ecb816681_0.png)
 
 ![](img/8ec059c3bbda80a1f821dd5ecb816681_2.png)
 

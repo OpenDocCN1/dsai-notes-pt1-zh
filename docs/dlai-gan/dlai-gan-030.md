@@ -4,7 +4,6 @@
 
 ---
 
-![](img/e94b4036484479daf2f2c7321fc65e05_1.png)
 
 ## 概述
 
@@ -29,7 +28,6 @@ z_modified = modify_feature_in_z(z_original, feature_index=0, delta=0.5)
 image_modified = generator(z_modified) # 生成蓝发人像
 ```
 
-![](img/e94b4036484479daf2f2c7321fc65e05_3.png)
 
 在后续课程中，你将学习如何精确地调整 `Z` 向量。但首先，为了更好地理解可控生成，我们将其与条件生成进行快速比较。
 

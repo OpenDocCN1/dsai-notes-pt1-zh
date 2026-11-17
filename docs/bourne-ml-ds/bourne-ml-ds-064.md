@@ -31,9 +31,7 @@ plt.style.use('seaborn')
 
 首先，我们需要加载和探索数据。通常，我们会使用 `pandas` 库来处理数据：
 
-![](img/cd9829c86d2fe630c1a325ed55b1fbb7_2.png)
 
-![](img/cd9829c86d2fe630c1a325ed55b1fbb7_3.png)
 
 ```python
 import pandas as pd
@@ -76,7 +74,6 @@ plt.grid(True)
 plt.show()
 ```
 
-![](img/cd9829c86d2fe630c1a325ed55b1fbb7_5.png)
 
 ---
 

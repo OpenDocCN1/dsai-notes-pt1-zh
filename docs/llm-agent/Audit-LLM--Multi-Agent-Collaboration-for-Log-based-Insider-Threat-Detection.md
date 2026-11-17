@@ -342,7 +342,6 @@ yanglin61s@126.com
 
 ### V-C 基础LLM的影响
 
-![参见标题说明](img/338f95a95980dbc3c67ce619006d96a5.png)
 
 (a) 在CERT r4.2s上的性能。
 

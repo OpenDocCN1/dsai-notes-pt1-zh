@@ -2,17 +2,14 @@
 
 在本节课中，我们将学习如何使用Python访问数据库。数据库是数据科学家的重要工具。完成本模块后，你将能够解释使用Python连接数据库的基本概念，然后使用Jupyter Notebook创建表、加载数据、执行SQL查询，并最终分析数据。
 
-![](img/63f9220f38ffbbea6b231cc2b83fa773_1.png)
 
 ---
 
-![](img/63f9220f38ffbbea6b231cc2b83fa773_2.png)
 
 ## Python连接数据库的优势
 
 上一节我们介绍了课程目标，本节中我们来看看使用Python连接数据库的一些好处。Python是一种流行的脚本语言，其生态系统非常丰富，为数据科学提供了易于使用的工具。
 
-![](img/63f9220f38ffbbea6b231cc2b83fa773_4.png)
 
 以下是Python的一些主要优势：
 
@@ -26,7 +23,6 @@
 
 ## Jupyter Notebook简介
 
-![](img/63f9220f38ffbbea6b231cc2b83fa773_6.png)
 
 了解了Python的优势后，我们来看看数据科学中另一个非常流行的工具：Jupyter Notebook。Notebook运行在一个允许创建和共享包含实时代码、公式、可视化和说明性文本的文档的环境中。
 
@@ -49,13 +45,11 @@ Notebook界面是一种用于编程的虚拟笔记本环境。其示例包括Mat
 
 Python程序通过一种机制与数据库管理系统（DBMS）通信。Python代码使用API调用来连接数据库。接下来，我们将解释SQL API和Python DB-API的基础知识。
 
-![](img/63f9220f38ffbbea6b231cc2b83fa773_8.png)
 
 ---
 
 ## SQL API基础
 
-![](img/63f9220f38ffbbea6b231cc2b83fa773_10.png)
 
 应用程序编程接口（API）是一组你可以调用的函数，用于获取某种服务的访问权限。SQL API由库函数调用组成，作为DBMS的应用程序编程接口。
 
@@ -72,7 +66,6 @@ Python程序通过一种机制与数据库管理系统（DBMS）通信。Python�
 
 ## 流行的SQL DBMS专有API
 
-![](img/63f9220f38ffbbea6b231cc2b83fa773_12.png)
 
 上一节我们介绍了SQL API的基本概念，本节中我们来看看一些流行的基于SQL的数据库管理系统所使用的专有API。
 

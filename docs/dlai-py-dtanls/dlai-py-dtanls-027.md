@@ -10,19 +10,15 @@
 
 当你在Notebook中工作时，你当然可以访问该Notebook内的所有代码。
 
-![](img/275ac3fcc19178a50e16bae73d39375d_1.png)
 
 但你也可以通过从其他文件引入代码来增强你的程序。
 
 这些文件可以是你自己编写的，也可以是他人编写的。除了你已编写的代码，你还可以自动访问许多内置函数，例如 `sum` 和 `len`。
 
-![](img/275ac3fcc19178a50e16bae73d39375d_1.png)
 
-![](img/275ac3fcc19178a50e16bae73d39375d_3.png)
 
 你也可以借用其他程序员的代码，包括你自己以前编写的代码，这需要使用 `import` 命令。
 
-![](img/275ac3fcc19178a50e16bae73d39375d_3.png)
 
 ---
 
@@ -73,7 +69,6 @@ Python中有几种不同的导入选项。
 
 **1. 导入特定函数**
 
-![](img/275ac3fcc19178a50e16bae73d39375d_5.png)
 
 `from module import function` 这个选项允许你选择想要导入的函数。
 
@@ -81,19 +76,16 @@ Python中有几种不同的导入选项。
 from helper_functions import get_restaurant_list
 ```
 
-![](img/275ac3fcc19178a50e16bae73d39375d_7.png)
 
 **2. 导入整个模块**
 
 你也可以通过使用 `import helper_functions` 来导入此模块中的所有函数。
 
-![](img/275ac3fcc19178a50e16bae73d39375d_5.png)
 
 所以，使用 `import module`。
 
 现在，你可以尝试使用文件中的其他函数，比如 `print_pythons`。
 
-![](img/275ac3fcc19178a50e16bae73d39375d_7.png)
 
 嘿，这个错误是什么？`print_pythons` 未定义。
 
@@ -112,7 +104,6 @@ helper_functions.print_pythons()
 
 ---
 
-![](img/275ac3fcc19178a50e16bae73d39375d_9.png)
 
 ## 使用别名简化代码
 
@@ -124,7 +115,6 @@ import helper_functions as hf
 
 现在你可以说 `hf.print_pythons()`，这样就完成了。这个昵称只是让你的代码更短。
 
-![](img/275ac3fcc19178a50e16bae73d39375d_9.png)
 
 ---
 
@@ -141,7 +131,6 @@ import helper_functions as hf
     *   如果你使用这种风格的命令，调用特定函数时也必须使用模块名称，例如 `helper_functions.get_restaurant_list()`。
     *   你也可以使用 `as` 给模块起一个昵称，这样可以节省一些输入。例如，你可以使用 `import helper_functions as hf` 来给 `helper_functions` 一个更短的昵称。
 
-![](img/275ac3fcc19178a50e16bae73d39375d_11.png)
 
 ---
 

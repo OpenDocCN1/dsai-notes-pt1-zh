@@ -35,7 +35,6 @@
 
 ## 例题一：验证二叉树的前序序列化 (LeetCode 331) 🔍
 
-![](img/8a89c40317c2f773690c820d56b32704_3.png)
 
 **问题概述**：给定一个用逗号分隔的字符串，表示二叉树的前序遍历序列（空节点用 `#` 表示），判断该序列是否是一个合法的二叉树前序序列。
 
@@ -50,7 +49,6 @@
 
 以下是实现该思路的代码：
 
-![](img/8a89c40317c2f773690c820d56b32704_5.png)
 
 ```cpp
 bool isValidSerialization(string preorder) {
@@ -74,7 +72,6 @@ bool isValidSerialization(string preorder) {
 
 ---
 
-![](img/8a89c40317c2f773690c820d56b32704_7.png)
 
 ## 例题二：递归框架应用（三题合一） 🔄
 
@@ -104,9 +101,7 @@ bool isSameTree(TreeNode* p, TreeNode* q) {
 
 **递归逻辑**：空树深度为0。非空树的最大深度等于其左右子树最大深度的较大值加1（加1代表根节点自身）。
 
-![](img/8a89c40317c2f773690c820d56b32704_9.png)
 
-![](img/8a89c40317c2f773690c820d56b32704_10.png)
 
 ```cpp
 int maxDepth(TreeNode* root) {
@@ -142,7 +137,6 @@ int minDepth(TreeNode* root) {
 
 ---
 
-![](img/8a89c40317c2f773690c820d56b32704_12.png)
 
 ## 例题三：实现 Trie (前缀树/字典树) (LeetCode 208) 📖
 
@@ -209,7 +203,6 @@ public:
 
 ## 总结 📝
 
-![](img/8a89c40317c2f773690c820d56b32704_14.png)
 
 本节课中我们一起学习了树结构的实战应用。
 

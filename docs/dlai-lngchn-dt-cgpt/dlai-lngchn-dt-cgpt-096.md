@@ -1,14 +1,11 @@
 # 096：5.L4-rerank.zh - 吴恩达大模型 - BV1gLeueWE5N
 
-![](img/709df9db9d27a239246c862b7eaac697_0.png)
 
 ![](img/709df9db9d27a239246c862b7eaac697_0.png)
 
-![](img/709df9db9d27a239246c862b7eaac697_2.png)
 
 ## 概述 📖
 
-![](img/709df9db9d27a239246c862b7eaac697_4.png)
 
 在本节课中，我们将要学习一种名为“重新排名”的技术。这是一种改进关键词搜索和密集检索结果的方法，也是构建高效语义搜索系统的第二个关键组成部分。我们将通过实例了解其工作原理，并学习如何应用它来提升检索质量。
 
@@ -77,7 +74,6 @@ import cohere
 ![](img/709df9db9d27a239246c862b7eaac697_8.png)
 
 
-![](img/709df9db9d27a239246c862b7eaac697_10.png)
 
 ```python
 # 示例查询
@@ -136,7 +132,6 @@ print_results(reranked_dense_results)
 
 
 
-![](img/709df9db9d27a239246c862b7eaac697_12.png)
 
 ![](img/709df9db9d27a239246c862b7eaac697_12.png)
 

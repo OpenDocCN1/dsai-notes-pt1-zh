@@ -10,7 +10,6 @@
 
 以下是绘制基础条形图的代码示例：
 
-![](img/a061d5edff4ad08bf4f5732b742b97fe_1.png)
 
 ```python
 import seaborn as sns
@@ -24,11 +23,8 @@ plt.show()
 ```
 这段代码将生成一个条形图，展示男性和女性在总账单金额上的差异。默认情况下，条形的高度代表每个性别组`total_bill`的平均值。
 
-![](img/a061d5edff4ad08bf4f5732b742b97fe_1.png)
 
-![](img/a061d5edff4ad08bf4f5732b742b97fe_2.png)
 
-![](img/a061d5edff4ad08bf4f5732b742b97fe_2.png)
 
 ---
 
@@ -44,13 +40,9 @@ plt.show()
 ```
 通过将`estimator`设置为`np.median`，条形图现在展示的是每个性别组总账单的中位数。
 
-![](img/a061d5edff4ad08bf4f5732b742b97fe_4.png)
 
-![](img/a061d5edff4ad08bf4f5732b742b97fe_4.png)
 
-![](img/a061d5edff4ad08bf4f5732b742b97fe_5.png)
 
-![](img/a061d5edff4ad08bf4f5732b742b97fe_5.png)
 
 `estimator`参数非常灵活，它不仅可以接受NumPy中的统计函数（如`np.std`计算标准差，`np.var`计算方差），也允许你传入自定义的函数。
 
@@ -65,11 +57,8 @@ plt.show()
 ```
 这样，条形图展示的就是每个性别组总账单的极差（最大值与最小值之差）。
 
-![](img/a061d5edff4ad08bf4f5732b742b97fe_7.png)
 
-![](img/a061d5edff4ad08bf4f5732b742b97fe_7.png)
 
-![](img/a061d5edff4ad08bf4f5732b742b97fe_8.png)
 
 ![](img/a061d5edff4ad08bf4f5732b742b97fe_8.png)
 

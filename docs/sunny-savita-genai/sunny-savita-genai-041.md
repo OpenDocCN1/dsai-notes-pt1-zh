@@ -2,7 +2,6 @@
 
 在本节课中，我们将学习如何实现重排序，特别是使用交叉编码器和Cohere API的方法。我们将从零开始构建一个重排序流程，并比较不同方法的效果。
 
-![](img/8dd20e2ae20630ef0a2c66fea63df61b_1.png)
 
 上一节我们介绍了重排序的基本概念和重要性，并使用Sentence Transformers和BM25 API进行了初步实现。本节中，我们来看看如何使用更高级的交叉编码器模型和Cohere的API来进一步提升重排序的效果。
 
@@ -38,9 +37,7 @@ query_embedding = model.encode(query)
 
 以下是使用Sentence Transformers库中的交叉编码器进行重排序的步骤：
 
-![](img/8dd20e2ae20630ef0a2c66fea63df61b_3.png)
 
-![](img/8dd20e2ae20630ef0a2c66fea63df61b_4.png)
 
 1.  从`sentence_transformers`导入`CrossEncoder`类。
 2.  选择一个预训练的交叉编码器模型。
@@ -84,7 +81,6 @@ response = co.rerank(
 
 ![](img/8dd20e2ae20630ef0a2c66fea63df61b_8.png)
 
-![](img/8dd20e2ae20630ef0a2c66fea63df61b_9.png)
 
 ![](img/8dd20e2ae20630ef0a2c66fea63df61b_11.png)
 

@@ -1,12 +1,9 @@
 # 5：编写你的第一个内核 🚀
 
-![](img/74a26ba8101bf8d14b5973c5d3a3c1dc_1.png)
 
 在本节课中，我们将学习CUDA编程的核心概念，包括如何编写和启动你的第一个CUDA内核。我们将从了解GPU硬件规格开始，逐步深入到CUDA的软件抽象层次、内存管理、内核编写以及性能分析工具的使用。
 
-![](img/74a26ba8101bf8d14b5973c5d3a3c1dc_3.png)
 
-![](img/74a26ba8101bf8d14b5973c5d3a3c1dc_5.png)
 
 ## 概述：从硬件规格到软件抽象
 
@@ -101,15 +98,11 @@ vectorAdd<<<numBlocks, blockSize>>>(d_a, d_b, d_c, n);
 
 ## 深入：矩阵乘法内核 ⚡
 
-![](img/74a26ba8101bf8d14b5973c5d3a3c1dc_7.png)
 
-![](img/74a26ba8101bf8d14b5973c5d3a3c1dc_9.png)
 
 矩阵乘法是许多科学计算和机器学习应用的核心。我们首先实现一个基础（朴素）版本。
 
-![](img/74a26ba8101bf8d14b5973c5d3a3c1dc_11.png)
 
-![](img/74a26ba8101bf8d14b5973c5d3a3c1dc_13.png)
 
 一个 M x K 的矩阵 A 与一个 K x N 的矩阵 B 相乘，得到一个 M x N 的矩阵 C。CPU的朴素实现使用三层嵌套循环：
 ```cpp
@@ -124,13 +117,9 @@ for (int i = 0; i < M; i++) {
 }
 ```
 
-![](img/74a26ba8101bf8d14b5973c5d3a3c1dc_15.png)
 
-![](img/74a26ba8101bf8d14b5973c5d3a3c1dc_17.png)
 
-![](img/74a26ba8101bf8d14b5973c5d3a3c1dc_19.png)
 
-![](img/74a26ba8101bf8d14b5973c5d3a3c1dc_21.png)
 
 ![](img/74a26ba8101bf8d14b5973c5d3a3c1dc_23.png)
 

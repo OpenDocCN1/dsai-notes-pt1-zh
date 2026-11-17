@@ -10,9 +10,7 @@
 
 ---
 
-![](img/9054b12ae9a1d08045e9fdcb00ccdcf6_1.png)
 
-![](img/9054b12ae9a1d08045e9fdcb00ccdcf6_2.png)
 
 ## 什么是重采样？ 🔄
 
@@ -24,11 +22,9 @@
 
 **升采样**则涉及增加数据的频率，通过在现有时间段之间创建新的时间段来实现。这种技术不太常用，但你需要了解这个术语。
 
-![](img/9054b12ae9a1d08045e9fdcb00ccdcf6_4.png)
 
 ---
 
-![](img/9054b12ae9a1d08045e9fdcb00ccdcf6_5.png)
 
 ## 实践：降采样操作
 
@@ -52,9 +48,7 @@ nike_weekly = df.resample('W').mean()
 
 为了解决这个错误，我们需要确保只对数值列进行平均计算。以下是两种解决方法：
 
-![](img/9054b12ae9a1d08045e9fdcb00ccdcf6_7.png)
 
-![](img/9054b12ae9a1d08045e9fdcb00ccdcf6_8.png)
 
 **方法一：选择数值列**
 使用 `select_dtypes()` 方法仅选择数值类型的列，然后再进行重采样和平均计算。
@@ -64,14 +58,11 @@ numeric_df = df.select_dtypes(include='number')
 nike_weekly = numeric_df.resample('W').mean()
 ```
 
-![](img/9054b12ae9a1d08045e9fdcb00ccdcf6_10.png)
 
-![](img/9054b12ae9a1d08045e9fdcb00ccdcf6_11.png)
 
 **方法二：使用其他聚合函数**
 如果你需要在分析中包含分类数据，可以使用像 `first()` 这样的聚合函数，它只取每个时间段内的第一个值，这样就能处理非数值列。
 
-![](img/9054b12ae9a1d08045e9fdcb00ccdcf6_13.png)
 
 ```python
 nike_weekly = df.resample('W').first()
@@ -79,7 +70,6 @@ nike_weekly = df.resample('W').first()
 
 ---
 
-![](img/9054b12ae9a1d08045e9fdcb00ccdcf6_15.png)
 
 ## 其他重采样频率选项
 

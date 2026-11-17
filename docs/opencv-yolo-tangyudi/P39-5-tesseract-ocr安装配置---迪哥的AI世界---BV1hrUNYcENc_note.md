@@ -10,7 +10,6 @@
 
 以下是安装Tesseract-OCR的步骤。
 
-![](img/f70fa03c0b444ef5c0605fdb6812e206_1.png)
 
 1.  **访问下载页面**：首先，需要访问Tesseract的GitHub页面或Windows版本的下载地址。建议下载最新的4.0版本，该版本集成了递归神经网络，识别效果更佳。
 2.  **运行安装程序**：下载完成后，双击`.exe`文件进行安装。安装过程中，请记住选择的安装路径。
@@ -24,11 +23,9 @@
     ```
     如果命令行显示出版本信息（例如`tesseract 4.0.0`），则表明安装和环境变量配置成功。
 
-![](img/f70fa03c0b444ef5c0605fdb6812e206_3.png)
 
 ## 使用Tesseract进行OCR识别
 
-![](img/f70fa03c0b444ef5c0605fdb6812e206_5.png)
 
 ![](img/f70fa03c0b444ef5c0605fdb6812e206_7.png)
 
@@ -36,7 +33,6 @@
 
 ![](img/f70fa03c0b444ef5c0605fdb6812e206_9.png)
 
-![](img/f70fa03c0b444ef5c0605fdb6812e206_11.png)
 
 以下是基本的使用命令格式。
 ```bash
@@ -48,13 +44,10 @@ tesseract E:\opencv.png E:\result
 ```
 执行后，Tesseract会生成`result.txt`文件，其中包含了识别出的文本内容。
 
-![](img/f70fa03c0b444ef5c0605fdb6812e206_13.png)
 
 ## 在Python中调用Tesseract
 
-![](img/f70fa03c0b444ef5c0605fdb6812e206_15.png)
 
-![](img/f70fa03c0b444ef5c0605fdb6812e206_17.png)
 
 在实际项目中，我们更倾向于在Python程序中集成OCR功能。这需要安装Python的Tesseract封装库。
 
@@ -64,7 +57,6 @@ tesseract E:\opencv.png E:\result
 
 ![](img/f70fa03c0b444ef5c0605fdb6812e206_21.png)
 
-![](img/f70fa03c0b444ef5c0605fdb6812e206_23.png)
 
 1.  **安装Python库**：在命令行中使用pip安装`pytesseract`。
     ```bash
@@ -72,7 +64,6 @@ tesseract E:\opencv.png E:\result
     ```
     > **注意**：如果你有多个Python环境，请确保在目标环境的`Scripts`目录下执行此命令，或使用`conda`进行安装。
 
-![](img/f70fa03c0b444ef5c0605fdb6812e206_25.png)
 
 2.  **在Python代码中使用**：安装完成后，即可在Python脚本中调用Tesseract。
     ```python
@@ -90,7 +81,6 @@ tesseract E:\opencv.png E:\result
     ```
     这段代码会打开名为`opencv.png`的图片，并打印出识别出的文字。
 
-![](img/f70fa03c0b444ef5c0605fdb6812e206_27.png)
 
 ## 总结
 

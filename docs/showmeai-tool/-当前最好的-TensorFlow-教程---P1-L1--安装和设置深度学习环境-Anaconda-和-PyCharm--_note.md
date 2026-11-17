@@ -136,7 +136,6 @@ print(tf.__version__)
 7.  勾选 **“Make available to all projects（可用于所有项目）”**。
 8.  点击 **OK（确定）**，然后点击 **Create（创建）**。
 
-![](img/2574d2149dde062e31f512c14cdc5dab_18.png)
 
 如果无法在下拉菜单中找到环境，你可以通过以下路径手动添加：
 *   进入 **File（文件）** -> **Settings（设置）**（Windows/Linux）或 **PyCharm** -> **Preferences（偏好设置）**（macOS）。

@@ -8,9 +8,7 @@
 
 有多种图像提示技术可用于改善图像效果。接下来，我们将逐一了解这些技术。
 
-![](img/e40b554e111b9c27c4937bd7051ada60_1.png)
 
-![](img/e40b554e111b9c27c4937bd7051ada60_2.png)
 
 ## 风格修饰词 🖌️
 
@@ -24,17 +22,12 @@
 *   **提示词**：`A portrait of a wise old wizard, rendered in the manner of a classical oil painting from the Renaissance period.`
 *   **提示词**：`A serene mountain lake at sunrise, captured with a long exposure photography technique, creating a misty, ethereal effect.`
 
-![](img/e40b554e111b9c27c4937bd7051ada60_4.png)
 
-![](img/e40b554e111b9c27c4937bd7051ada60_5.png)
 
-![](img/e40b554e111b9c27c4937bd7051ada60_6.png)
 
-![](img/e40b554e111b9c27c4937bd7051ada60_7.png)
 
 ## 质量提升词 📈
 
-![](img/e40b554e111b9c27c4937bd7051ada60_8.png)
 
 高质量的图像比低质量的图像更具说服力和可信度。低分辨率图像常常显得模糊和有像素感，使观看者难以辨别其中的细节。另一方面，高分辨率图像则能保证基本的可见性和可读性。使用高质量的图形设计可以提升图像的感知价值。
 
@@ -44,16 +37,12 @@
 
 让我们看一些例子来理解如何在图像提示词中使用质量提升词（示例中已高亮显示质量提升词）：
 
-![](img/e40b554e111b9c27c4937bd7051ada60_10.png)
 
-![](img/e40b554e111b9c27c4937bd7051ada60_11.png)
 
 *   **提示词**：`A close-up of a bee on a flower, **hyper detailed**, **sharp focus**, **highlighting the texture** of its wings and the pollen.`
 *   **提示词**：`An abstract artwork featuring **complementary colors** of blue and orange, with **fine lines** and a **blurred background** to make the central shape **stand out**.`
 
-![](img/e40b554e111b9c27c4937bd7051ada60_12.png)
 
-![](img/e40b554e111b9c27c4937bd7051ada60_13.png)
 
 ## 重复强调法 🔁
 
@@ -66,9 +55,7 @@
 *   **提示词**：`A **tiny**, **tiny** fairy in a **dense**, **dense** forest of **enormous**, **vast** mushrooms.`
 *   **提示词**：`A **serene**, **clear** mountain lake reflecting the **lush**, **lush** green pine trees under a blue sky.`
 
-![](img/e40b554e111b9c27c4937bd7051ada60_15.png)
 
-![](img/e40b554e111b9c27c4937bd7051ada60_16.png)
 
 ## 加权术语 ⚖️
 
@@ -82,7 +69,6 @@
 *   **提示词**：`A **shimmering:6** city skyline at night, **neon lit:8**.` （模型应更侧重于“霓虹灯照亮”。）
 *   **提示词**：`An **exotic:10** bird with **colorful:-6** feathers.` （模型必须强调“异国情调”一词，并弱化“色彩鲜艳”一词。）
 
-![](img/e40b554e111b9c27c4937bd7051ada60_18.png)
 
 ## 修复畸形生成 🛠️
 
@@ -90,9 +76,7 @@
 
 以下是图像提示词中使用修复畸形生成技术的一些例子（示例中使用了负面提示词来缓解图像畸形问题）：
 
-![](img/e40b554e111b9c27c4937bd7051ada60_20.png)
 
-![](img/e40b554e111b9c27c4937bd7051ada60_21.png)
 
 *   **提示词**：`A professional full-body portrait of a businessperson, sharp suit, confident pose.` **负面提示词**：`deformed hands, extra fingers, blurry face.`
 *   **提示词**：`A majestic eagle in flight against a clear blue sky, detailed feathers.` **负面提示词**：`distorted wings, pixelated background, unnatural colors.`

@@ -211,7 +211,6 @@ connections:
 cis run photosynthesis_model.yaml growth_model.yaml new_connections.yaml
 ```
 
-![](img/e6a1e43a2961f7e25970f062060afd22_27.png)
 
 这样，两个模型就会并行运行，并通过 CIS Interface 自动交换数据。
 
@@ -223,7 +222,6 @@ CIS Interface 并非只是理论工具，它已在真实科研项目中发挥作
 
 在伊利诺伊大学的 Crops in Silico 项目中，已有 9 个模型正在被连接。其中一个成功的连接整合了“基因对 CO2 的响应模型”和“光合作用代谢物模型”。这次整合不仅复现了实验中观察到的“CO2 驯化”现象（即高 CO2 下光合效率意外降低），还识别出两个可能调控光合作用的新候选基因，取得了新的科学发现。
 
-![](img/e6a1e43a2961f7e25970f062060afd22_31.png)
 
 ## 技术细节与包信息
 

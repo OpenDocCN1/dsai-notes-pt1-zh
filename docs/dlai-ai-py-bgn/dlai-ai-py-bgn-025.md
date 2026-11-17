@@ -16,7 +16,6 @@
 
 ---
 
-![](img/124a331f8fefe0be80ebf55d56a98d80_1.png)
 
 ## 读取CSV文件
 
@@ -26,12 +25,10 @@
 
 如果你在计算机上有这样一个CSV文件，你可以将这些数据加载到Python中。
 
-![](img/124a331f8fefe0be80ebf55d56a98d80_3.png)
 
 以下是加载数据的代码：
 
 
-![](img/124a331f8fefe0be80ebf55d56a98d80_5.png)
 
 ```python
 import csv
@@ -54,15 +51,12 @@ with open('itinerary.csv', mode='r') as file:
 
 为了更清晰地查看数据，我们可以使用一个辅助函数来美观地打印表格。运行`display_table(itinerary)`会以更易读的表格形式显示数据。
 
-![](img/124a331f8fefe0be80ebf55d56a98d80_7.png)
 
 ---
 
 ## 筛选结构化数据
 
-![](img/124a331f8fefe0be80ebf55d56a98d80_9.png)
 
-![](img/124a331f8fefe0be80ebf55d56a98d80_10.png)
 
 上一节我们介绍了如何将CSV数据加载到Python中。本节中我们来看看如何基于特定条件筛选这些结构化数据。
 
@@ -84,12 +78,10 @@ display_table(filtered_data)
 
 在能够读取和筛选数据之后，现在让我们利用这些数据来生成个性化的行程建议。
 
-![](img/124a331f8fefe0be80ebf55d56a98d80_12.png)
 
 我们将从行程中检索第一个目的地（例如，美国纽约市），然后使用AI语言模型为其生成详细的每日活动安排。
 
 
-![](img/124a331f8fefe0be80ebf55d56a98d80_14.png)
 
 ```python
 # 获取第一个目的地
@@ -119,7 +111,6 @@ print(response)
 2.  **筛选数据**：通过循环和条件判断，从数据集中提取出符合特定条件（如国家等于“日本”）的子集。
 3.  **结合AI生成内容**：利用从CSV中提取的具体信息（如地点、日期），构建精准的提示词，从而获得个性化的AI生成内容（如旅行行程）。
 
-![](img/124a331f8fefe0be80ebf55d56a98d80_16.png)
 
 ![](img/124a331f8fefe0be80ebf55d56a98d80_17.png)
 

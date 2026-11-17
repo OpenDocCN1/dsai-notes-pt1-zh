@@ -86,7 +86,6 @@ def detect_topics(text, topics, threshold):
 
 ## 实现话题验证器
 
-![](img/233976ccb526499a3b61ece201c0f889_4.png)
 
 有了话题检测函数，我们现在用它来实现一个验证器，我们称之为“受限话题验证器”。
 

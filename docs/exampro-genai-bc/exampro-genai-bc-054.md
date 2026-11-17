@@ -18,15 +18,11 @@
 
 上一节我们介绍了课程背景，本节中我们来看看如何开始使用Gemini。谷歌提供了不同的入口。
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_4.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_5.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_6.png)
 
 Vertex AI是谷歌云平台的一部分。要使用它，你需要创建一个谷歌云账户，在控制台中启用Vertex AI及相关API，并可能使用Google Colab或Vertex AI Studio。这需要提前准备谷歌云账户，可能涉及提供信用卡信息。
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_8.png)
 
 相比之下，**Google AI Studio** (aistudio.google.com) 的使用门槛更低。你可以直接访问并使用，无需谷歌云账户，摩擦更小。它的界面与OpenAI Playground或Azure AI Studio（现称Azure Foundry）非常相似。
 
@@ -44,7 +40,6 @@ Gemini是谷歌的AI模型系列，与其他竞争对手（如xAI、OpenAI）的
 *   **Gemini Flash Thinking (实验版)**: 这是最具特色的模型之一。它在较小的模型上集成了“思维链”或推理能力，非常适合需要深度思考、研究和分析的任务。其定价也极具竞争力。
 *   **Gemini 2.0 Expressive (实验版)**: 这个模型擅长数字原生流媒体，在视觉和多模态理解方面表现良好，适合与AI工具集成。
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_10.png)
 
 ![](img/369a0d6cb27d9aa8238386a4ec8ddd66_11.png)
 
@@ -52,21 +47,15 @@ Gemini是谷歌的AI模型系列，与其他竞争对手（如xAI、OpenAI）的
 
 除了这些，谷歌还有开源的**Gemma**模型系列，它们是Gemini模型的开源版本，功能相对有限，但允许用户在本地或自有基础设施上运行。
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_14.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_15.png)
 
 AI Studio还提供了便捷的工具，如**函数调用**和**结构化输出**，你无需进行复杂的微调即可使用。
 
 ## 实战演示：多模态与视频分析
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_17.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_18.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_19.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_20.png)
 
 了解了模型类型后，让我们通过实际操作来感受Gemini的能力。首先看看它的多模态理解，特别是视频分析功能。
 
@@ -74,11 +63,8 @@ AI Studio还提供了便捷的工具，如**函数调用**和**结构化输出**
 
 ![](img/369a0d6cb27d9aa8238386a4ec8ddd66_23.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_24.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_25.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_26.png)
 
 AI Studio提供了“样本媒体”功能，你可以直接使用预加载的视频进行测试。例如，我们选择一段10分钟的《夏洛克·福尔摩斯》短片，并添加到提示中。
 
@@ -100,9 +86,7 @@ AI Studio提供了“样本媒体”功能，你可以直接使用预加载的�
 
 上一节我们体验了视频分析，本节中我们来看看如何通过系统指令更精细地控制模型的行为。
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_35.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_36.png)
 
 在AI Studio中，你可以设置“系统指令”，从而定义模型的角色、语气和风格。例如，你可以指示模型“扮演一位严厉刻薄的老师”。
 
@@ -124,25 +108,18 @@ AI Studio提供了“样本媒体”功能，你可以直接使用预加载的�
 
 ![](img/369a0d6cb27d9aa8238386a4ec8ddd66_41.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_42.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_43.png)
 
 这种透明化的推理过程对于复杂问题研究和理解模型的决策路径非常有帮助。
 
 ## 代码生成与API集成
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_45.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_46.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_47.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_48.png)
 
 除了对话和分析，Gemini在辅助开发方面同样强大。本节我们来看看它的代码生成能力。
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_50.png)
 
 在AI Studio中，你可以轻松获取API密钥，并将Gemini集成到你自己的应用程序中。你可以直接要求模型为你生成使用Gemini API的示例代码。
 
@@ -150,13 +127,10 @@ AI Studio提供了“样本媒体”功能，你可以直接使用预加载的�
 
 你可以将这些代码复制到VS Code、Cursor或Windsurf等IDE中，并进一步指示AI助手（如Cursor）基于此框架完善整个应用程序。这是一种利用免费Gemini Flash模型进行快速原型开发的强大方式。
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_52.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_53.png)
 
 ## 开源选择：Gemma模型
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_54.png)
 
 我们主要讨论了云端API服务，但有时你需要在本地或私有环境中部署模型。这时，开源模型就派上了用场。
 
@@ -172,53 +146,36 @@ AI Studio提供了“样本媒体”功能，你可以直接使用预加载的�
 
 ![](img/369a0d6cb27d9aa8238386a4ec8ddd66_59.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_61.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_62.png)
 
 Gemini不仅限于文本。本节我们来体验它的实时交互和视觉识别功能。
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_63.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_64.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_66.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_67.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_69.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_70.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_71.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_73.png)
 
 在AI Studio中，你可以进入“实时”模式，与Gemini进行语音对话，或者分享你的摄像头、屏幕画面，让它实时分析视觉内容。
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_75.png)
 
 例如，你可以用摄像头展示房间内的物品，然后问：“你看到我屏幕上的摄像头了吗？它是什么型号的？” 模型能够识别物体并描述其颜色等特征。
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_77.png)
 
 更强大的是，你可以直接分享整个电脑屏幕，然后询问关于屏幕上代码的问题，比如：“我该如何运行这段代码？” 或者“如何在这里使用Gemini API密钥？” 模型能够分析屏幕内容，理解上下文，并提供针对性的指导步骤。
 
 这种实时多模态交互能力，特别是视觉理解（Gemini Vision），非常出色，为辅助学习、故障排查等场景提供了新的可能。
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_79.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_80.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_82.png)
 
 ## 高级功能与示例应用
 
 AI Studio还包含许多其他高级功能和示例应用，可以帮助你快速上手。
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_84.png)
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_85.png)
 
 ![](img/369a0d6cb27d9aa8238386a4ec8ddd66_86.png)
 
@@ -236,7 +193,6 @@ AI Studio还包含许多其他高级功能和示例应用，可以帮助你快�
 
 ## 课程总结与建议
 
-![](img/369a0d6cb27d9aa8238386a4ec8ddd66_90.png)
 
 本节课中我们一起学习了谷歌Gemini模型的核心知识。
 

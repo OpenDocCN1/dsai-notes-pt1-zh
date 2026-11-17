@@ -170,7 +170,6 @@ print(result)
 
 ## 总结
 
-![](img/bd656c5a557f7bbc8d2da4be0b7a9140_41.png)
 
 ![](img/bd656c5a557f7bbc8d2da4be0b7a9140_43.png)
 

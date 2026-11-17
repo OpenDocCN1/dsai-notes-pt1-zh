@@ -19,7 +19,6 @@
 
 ![](img/c3f9a3f0d6940a35d7ed355ae2c72101_24.png)
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_25.png)
 
 
 ## 概述与目标
@@ -221,12 +220,10 @@ class Block(nn.Module):
 
 ### 多头自注意力
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_142.png)
 
 
 我们实现了一个高效的多头自注意力模块，它使用矩阵操作来并行处理所有注意力头。
 
-![](img/c3f9a3f0d6940a35d7ed355ae2c72101_146.png)
 
 ```python
 class CausalSelfAttention(nn.Module):

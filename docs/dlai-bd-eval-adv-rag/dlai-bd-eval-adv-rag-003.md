@@ -47,7 +47,6 @@ service_context = ServiceContext.from_defaults(
 index = GPTVectorStoreIndex.from_documents(documents, service_context=service_context)
 ```
 
-![](img/582ab0ef8bd1dc8860717ce406d29269_4.png)
 
 接着，我们设置句子窗口引擎，这将作为我们高级RAG应用的查询引擎。
 
@@ -60,7 +59,6 @@ query_engine = index.as_query_engine(
 )
 ```
 
-![](img/582ab0ef8bd1dc8860717ce406d29269_6.png)
 
 现在，让我们通过提出一个问题来查看它的实际效果。
 
@@ -88,7 +86,6 @@ from trulens_eval import OpenAI as TruOpenAI
 provider = TruOpenAI(model_engine="gpt-3.5-turbo")
 ```
 
-![](img/582ab0ef8bd1dc8860717ce406d29269_8.png)
 
 现在，让我们深入了解RAG三元组的每一项评估。
 
@@ -96,7 +93,6 @@ provider = TruOpenAI(model_engine="gpt-3.5-turbo")
 
 首先，我们将讨论答案相关性。答案相关性检查最终响应是否与用户提出的查询相关。
 
-![](img/582ab0ef8bd1dc8860717ce406d29269_10.png)
 
 为了给你一个具体的例子，用户提出的问题是：“利他主义如何有益于职业发展？” RAG应用给出了一个回答。答案相关性评估产生两部分输出：一个0到1的分数（例如0.9），以及支持该分数的理由或思维链推理。
 
@@ -112,10 +108,8 @@ provider = TruOpenAI(model_engine="gpt-3.5-turbo")
 
 以下是如何在代码中定义问答相关性反馈函数。
 
-![](img/582ab0ef8bd1dc8860717ce406d29269_12.png)
 
 
-![](img/582ab0ef8bd1dc8860717ce406d29269_14.png)
 
 ```python
 from trulens_eval import Feedback

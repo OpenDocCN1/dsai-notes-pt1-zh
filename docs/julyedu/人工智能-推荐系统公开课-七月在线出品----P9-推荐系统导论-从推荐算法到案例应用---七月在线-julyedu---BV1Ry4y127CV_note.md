@@ -202,28 +202,19 @@ min_{P,Q} Σ_{(u,i)∈已知评分} (r_{ui} - p_u · q_i^T)^2 + λ(||p_u||^2 + |
 
 以下是两个简化示例：
 
-![](img/460d2baf695d4ca0cb3814830da81f59_1.png)
 
-![](img/460d2baf695d4ca0cb3814830da81f59_3.png)
 
 ### 示例1：User-Based 协同过滤（Python手写示例）
 
-![](img/460d2baf695d4ca0cb3814830da81f59_4.png)
 
-![](img/460d2baf695d4ca0cb3814830da81f59_6.png)
 
 这个示例演示了如何计算用户相似度并做出推荐。
 
 
-![](img/460d2baf695d4ca0cb3814830da81f59_8.png)
 
-![](img/460d2baf695d4ca0cb3814830da81f59_9.png)
 
-![](img/460d2baf695d4ca0cb3814830da81f59_11.png)
 
-![](img/460d2baf695d4ca0cb3814830da81f59_13.png)
 
-![](img/460d2baf695d4ca0cb3814830da81f59_15.png)
 
 ```python
 # 计算用户相似度（以欧氏距离为例）

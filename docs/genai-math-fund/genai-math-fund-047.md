@@ -1,6 +1,5 @@
 # 047：DDPM的实现 🎼
 
-![](img/c2c3aeb7b3b3badd1c6059c608068f11_1.png)
 
 在本教程中，我们将动手实现最先进的扩散模型（Diffusion Model）的核心思想。我们将从理论回顾开始，逐步讲解前向过程、反向过程、训练流程以及代码实现，最终生成图像样本。
 
@@ -66,7 +65,6 @@
 
 ![](img/c2c3aeb7b3b3badd1c6059c608068f11_15.png)
 
-![](img/c2c3aeb7b3b3badd1c6059c608068f11_17.png)
 
 ![](img/c2c3aeb7b3b3badd1c6059c608068f11_19.png)
 
@@ -195,9 +193,7 @@ def forward_diffusion(x0, t, sqrt_alphas_bar, sqrt_one_minus_alphas_bar):
 
 ![](img/c2c3aeb7b3b3badd1c6059c608068f11_69.png)
 
-![](img/c2c3aeb7b3b3badd1c6059c608068f11_71.png)
 
-![](img/c2c3aeb7b3b3badd1c6059c608068f11_72.png)
 
 在训练循环中，我们执行以下操作：
 

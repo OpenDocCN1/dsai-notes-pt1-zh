@@ -2,23 +2,17 @@
 
 在本节课中，我们将学习如何使用Python和Librosa库从零开始提取音频信号的振幅包络特征。我们将加载音频文件、绘制波形图，并实现计算振幅包络的算法。
 
-![](img/391cbaece27f64c284238d800f2bc1c4_1.png)
 
-![](img/391cbaece27f64c284238d800f2bc1c4_2.png)
 
 ## 概述
 
-![](img/391cbaece27f64c284238d800f2bc1c4_4.png)
 
-![](img/391cbaece27f64c284238d800f2bc1c4_5.png)
 
 我们将使用Librosa库加载音频文件，并实现一个函数来计算振幅包络。振幅包络是音频信号在每个时间帧内振幅的最大值，它能有效反映信号的整体能量变化。我们还将学习如何可视化波形和振幅包络。
 
-![](img/391cbaece27f64c284238d800f2bc1c4_7.png)
 
 ## 导入必要的库
 
-![](img/391cbaece27f64c284238d800f2bc1c4_8.png)
 
 首先，我们需要导入处理音频和绘图所需的库。
 
@@ -71,39 +65,26 @@ duration = sample_duration * len(bach)
 print(f“Duration of signal: {duration:.2f} seconds”)
 ```
 
-![](img/391cbaece27f64c284238d800f2bc1c4_10.png)
 
 ## 可视化波形
 
-![](img/391cbaece27f64c284238d800f2bc1c4_11.png)
 
-![](img/391cbaece27f64c284238d800f2bc1c4_13.png)
 
 为了直观比较不同音乐的波形，我们将使用Matplotlib绘制它们的波形图。
 
 
-![](img/391cbaece27f64c284238d800f2bc1c4_15.png)
-
-![](img/391cbaece27f64c284238d800f2bc1c4_16.png)
-
-![](img/391cbaece27f64c284238d800f2bc1c4_17.png)
-
-![](img/391cbaece27f64c284238d800f2bc1c4_18.png)
 
 
-![](img/391cbaece27f64c284238d800f2bc1c4_19.png)
 
 
-![](img/391cbaece27f64c284238d800f2bc1c4_21.png)
 
 
-![](img/391cbaece27f64c284238d800f2bc1c4_22.png)
 
-![](img/391cbaece27f64c284238d800f2bc1c4_23.png)
 
-![](img/391cbaece27f64c284238d800f2bc1c4_24.png)
 
-![](img/391cbaece27f64c284238d800f2bc1c4_26.png)
+
+
+
 
 ```python
 # 创建图形，设置大小
@@ -137,7 +118,6 @@ plt.show()
 这种方法通过循环遍历每个帧来计算振幅包络，易于理解。
 
 
-![](img/391cbaece27f64c284238d800f2bc1c4_28.png)
 
 ```python
 def amplitude_envelope(signal, frame_size, hop_length):
@@ -156,7 +136,6 @@ ae_bach = amplitude_envelope(bach, FRAME_SIZE, HOP_LENGTH)
 print(f“Amplitude envelope size: {ae_bach.size}”)
 ```
 
-![](img/391cbaece27f64c284238d800f2bc1c4_30.png)
 
 ### 进阶实现方法
 
@@ -177,7 +156,6 @@ print(np.array_equal(ae_bach, fancy_ae_bach))  # 应输出 True
 现在，我们可以在波形图上叠加绘制振幅包络，以更直观地观察信号的能量变化。
 
 
-![](img/391cbaece27f64c284238d800f2bc1c4_32.png)
 
 ```python
 # 计算其他音频的振幅包络
@@ -214,15 +192,11 @@ plt.ylim(-1, 1)
 plt.show()
 ```
 
-![](img/391cbaece27f64c284238d800f2bc1c4_34.png)
 
 从图中可以看出，振幅包络（红色曲线）紧密跟随波形的轮廓。在摇滚乐中，振幅包络的峰值通常对应鼓点，而古典音乐的振幅包络则表现出更大幅度的起伏。
 
-![](img/391cbaece27f64c284238d800f2bc1c4_36.png)
 
-![](img/391cbaece27f64c284238d800f2bc1c4_37.png)
 
-![](img/391cbaece27f64c284238d800f2bc1c4_38.png)
 
 ## 总结
 

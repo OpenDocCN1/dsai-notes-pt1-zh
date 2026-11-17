@@ -6,11 +6,8 @@
 
 ---
 
-![](img/daf5c46e5ca52a07ab0efad2395bec83_1.png)
 
-![](img/daf5c46e5ca52a07ab0efad2395bec83_2.png)
 
-![](img/daf5c46e5ca52a07ab0efad2395bec83_3.png)
 
 ### IBM的AI伦理原则与实践
 
@@ -26,9 +23,7 @@ IBM为AI技术的负责任使用制定了以下指导方针：
 
 上一节我们了解了IBM的伦理原则，本节中我们来看看其具体的实践工具。
 
-![](img/daf5c46e5ca52a07ab0efad2395bec83_5.png)
 
-![](img/daf5c46e5ca52a07ab0efad2395bec83_6.png)
 
 以下是IBM为实现其AI伦理原则而开发的关键工具：
 
@@ -41,9 +36,7 @@ IBM为AI技术的负责任使用制定了以下指导方针：
 
 Google的指导原则涵盖以下方面：
 
-![](img/daf5c46e5ca52a07ab0efad2395bec83_8.png)
 
-![](img/daf5c46e5ca52a07ab0efad2395bec83_9.png)
 
 *   **社会效益**：AI必须为社会福祉做出贡献，并避免制造或强化不公平的偏见。
 *   **安全设计**：AI系统应优先考虑安全与保障，避免造成伤害。
@@ -57,14 +50,12 @@ Google开发了多种工具，以帮助开发者和用户识别并解决生成�
 
 以下是Google为实现其AI伦理目标而采取的具体策略和工具：
 
-![](img/daf5c46e5ca52a07ab0efad2395bec83_11.png)
 
 *   **Fairness Turnaround**：旨在帮助开发者识别并消除这些模型中的偏见。
 *   **Explainable AI**：旨在阐明生成式AI模型如何进行预测。
 *   **Differential Privacy**：是一种能够在收集和分析数据时不损害个体用户隐私的方法。
 *   **Safety Net**：旨在识别并防止生成式AI模型的恶意使用。
 
-![](img/daf5c46e5ca52a07ab0efad2395bec83_12.png)
 
 ---
 
@@ -76,7 +67,6 @@ OpenAI的安全指导方针构成了一套原则与实践框架，旨在确保�
 
 以下是OpenAI安全指导方针的核心组成部分：
 
-![](img/daf5c46e5ca52a07ab0efad2395bec83_14.png)
 
 *   **对齐研究**：OpenAI致力于使生成式AI与人类价值观对齐。公司大力投资于研究，以开发安全、可靠且有益的生成式AI系统。
 *   **防止滥用**：OpenAI积极致力于防止生成式AI技术的滥用，通过开发能够检测和防止恶意AI系统创建的工具来实现。公司开发了一个名为“GPT分类器”的工具，可用于检测由AI系统生成的文本。
@@ -104,7 +94,6 @@ OpenAI的安全指导方针构成了一套原则与实践框架，旨在确保�
 
 ### 总结
 
-![](img/daf5c46e5ca52a07ab0efad2395bec83_16.png)
 
 ![](img/daf5c46e5ca52a07ab0efad2395bec83_17.png)
 

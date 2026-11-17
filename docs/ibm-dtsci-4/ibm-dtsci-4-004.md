@@ -8,7 +8,6 @@
 
 元组是一种有序序列。以下是创建一个名为`ratings`的元组的示例。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_1.png)
 
 元组用圆括号括起来，其中的元素用逗号分隔。
 
@@ -34,7 +33,6 @@ ratings = (1, 2, 3, 4, 5)
 
 第一个元素可以通过元组名称后跟方括号和索引号来访问，索引从0开始。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_3.png)
 
 ```python
 first_element = ratings[0] # 结果为 1
@@ -42,7 +40,6 @@ first_element = ratings[0] # 结果为 1
 
 我们可以这样访问第二个元素。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_5.png)
 
 ```python
 second_element = ratings[1] # 结果为 2
@@ -50,7 +47,6 @@ second_element = ratings[1] # 结果为 2
 
 我们也可以访问最后一个元素。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_7.png)
 
 ```python
 last_element = ratings[4] # 结果为 5
@@ -72,11 +68,9 @@ last_element = ratings[4] # 结果为 5
 last_element_negative = ratings[-1] # 结果为 5
 ```
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_9.png)
 
 我们可以通过相加来连接或组合元组。结果如下。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_10.png)
 
 ```python
 tuple1 = (1, 2, 3)
@@ -86,7 +80,6 @@ combined_tuple = tuple1 + tuple2 # 结果为 (1, 2, 3, 4, 5, 6)
 
 新元组的索引如下。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_12.png)
 
 | 索引 | 元素 |
 | :--- | :--- |
@@ -105,7 +98,6 @@ first_three = ratings[0:3] # 结果为 (1, 2, 3)
 
 请注意，结束索引（3）比我们想要的最后一个元素的索引（2）大1。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_14.png)
 
 类似地，如果我们想要最后两个元素，我们使用以下命令。
 
@@ -115,7 +107,6 @@ last_two = ratings[3:5] # 结果为 (4, 5)
 
 请注意，结束索引（5）比元组的长度（5）大1。实际上，`ratings[3:]` 或 `ratings[-2:]` 是更常见的写法。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_16.png)
 
 我们可以使用`len`命令来获取元组的长度。
 
@@ -132,7 +123,6 @@ ratings = (1, 2, 3, 4, 5)
 ratings1 = ratings
 ```
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_18.png)
 
 每个变量并不包含一个元组，而是引用了同一个不可变的元组对象。关于对象的更多信息，请参见对象和类模块。
 
@@ -144,7 +134,6 @@ ratings1 = ratings
 
 因此，`ratings1`不会因为`ratings`的改变而受到影响，因为元组是不可变的。也就是说，我们不能改变它。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_20.png)
 
 我们可以为`ratings`变量分配一个不同的元组。
 
@@ -164,7 +153,6 @@ sorted_ratings = sorted(ratings) # 输入是原始元组，输出是一个新的
 
 一个元组可以包含其他元组，以及其他复杂的数据类型。这被称为**嵌套**。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_22.png)
 
 我们可以使用标准的索引方法来访问这些元素。
 
@@ -174,19 +162,16 @@ NT = (1, 2, ("a", "b"), (3, ("c", "d")))
 
 如果我们选择一个包含元组的索引，同样的索引约定也适用。因此，我们可以访问该元组中的值。例如，我们可以访问第二个元素（索引为2的元组）。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_24.png)
 
 ```python
 element = NT[2] # 结果为 ("a", "b")
 ```
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_25.png)
 
 我们可以直接将此索引应用于元组变量`NT`。将其可视化为一棵树会很有帮助。
 
 我们可以将这种嵌套可视化为一棵树。该元组具有以下索引。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_27.png)
 
 如果我们考虑包含其他元组的索引，我们看到索引2包含一个具有两个元素的元组。我们可以访问这两个索引。
 
@@ -202,9 +187,7 @@ deep_element = NT[3][1][0] # 结果为 "c"
 
 我们甚至可以通过添加另一个方括号来访问树的更深层次。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_29.png)
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_30.png)
 
 我们可以访问字符串中的不同字符或第二个元组中包含的各种元素。
 
@@ -220,7 +203,6 @@ deep_element = NT[3][1][0] # 结果为 "c"
 L = ["Michael Jackson", 10.1, 1982]
 ```
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_32.png)
 
 列表用方括号表示。在许多方面，列表类似于元组。一个关键区别是它们是**可变的**。
 
@@ -238,7 +220,6 @@ L = ["Michael Jackson", 10.1, 1982]
 
 第一个元素可以通过列表名称后跟方括号和索引号来访问，索引从0开始。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_34.png)
 
 ```python
 first_element = L[0] # 结果为 "Michael Jackson"
@@ -256,7 +237,6 @@ second_element = L[1] # 结果为 10.1
 last_element = L[2] # 结果为 1982
 ```
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_36.png)
 
 在Python中，我们可以使用负索引，其对应关系如下。
 
@@ -282,7 +262,6 @@ last_two_elements = L[1:3] # 结果为 [10.1, 1982]
 
 我们可以通过相加来连接或组合列表。结果如下。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_38.png)
 
 ```python
 L1 = ["Michael Jackson", 10.1]
@@ -294,7 +273,6 @@ L3 = L1 + L2 # 结果为 ["Michael Jackson", 10.1, 1982]
 
 列表是可变的。因此，我们可以改变它们。例如，我们应用`extend`方法，通过添加一个点后跟方法名，然后是括号。括号内的参数是我们要连接到原始列表的新列表。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_40.png)
 
 ```python
 L = ["Michael Jackson", 10.1]
@@ -312,7 +290,6 @@ L.append(["Thriller"])
 # 现在 L 变为 ["Michael Jackson", 10.1, 1982, ["Thriller"]]
 ```
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_42.png)
 
 如果我们查看索引，只多了一个元素。索引3包含我们追加的列表。
 
@@ -359,7 +336,6 @@ A[0] = "banana"
 print(B[0]) # 输出 "banana" 而不是 "hard rock"
 ```
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_44.png)
 
 `A`和`B`引用同一个列表，因此，如果我们改变`A`，列表`B`也会改变。如果在更改列表`A`后检查`B`的第一个元素，我们得到的是`"banana"`而不是`"hard rock"`。
 
@@ -374,7 +350,6 @@ B = A[:] # 创建 A 的一个新副本
 
 我们可以使用`help`命令获取关于列表、元组和Python中许多其他对象的更多信息。只需传入列表、元组或任何其他Python对象。
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_46.png)
 
 ```python
 help(list)
@@ -385,7 +360,6 @@ help(tuple)
 
 ---
 
-![](img/8ac7ae2f1e35be3627b2fdeea6ec49f3_48.png)
 
 ## 总结 ✨
 

@@ -44,11 +44,8 @@ Transformers在计算机视觉中的应用非常丰富。你将学习如何检�
 
 ---
 
-![](img/c9eca9b53b27c837d7d919661f36b40d_1.png)
 
-![](img/c9eca9b53b27c837d7d919661f36b40d_2.png)
 
-![](img/c9eca9b53b27c837d7d919661f36b40d_3.png)
 
 ![](img/c9eca9b53b27c837d7d919661f36b40d_4.png)
 

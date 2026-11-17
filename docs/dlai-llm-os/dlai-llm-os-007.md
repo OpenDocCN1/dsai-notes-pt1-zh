@@ -1,6 +1,5 @@
 # 007：多智能体编排实验
 
-![](img/ff2ff475f2532bc4bb67f0537feba1ea_1.png)
 
 在本节课中，我们将学习如何在Let框架中实现多智能体协作。我们将通过使用工具进行跨智能体通信以及共享内存块，来构建一个模拟的招聘工作流。这个工作流将包含三个不同的智能体：招聘专员、评估专员和外联专员。
 
@@ -124,12 +123,9 @@ eval_agent = client.create_agent(
 
 外联专员负责向候选人发送定制化邮件。为了简化，我们这里只是打印出邮件内容。
 
-![](img/ff2ff475f2532bc4bb67f0537feba1ea_5.png)
 
 
-![](img/ff2ff475f2532bc4bb67f0537feba1ea_7.png)
 
-![](img/ff2ff475f2532bc4bb67f0537feba1ea_8.png)
 
 ```python
 def email_candidate(candidate_name, email_body):
@@ -162,19 +158,16 @@ outreach_agent = client.create_agent(
 )
 ```
 
-![](img/ff2ff475f2532bc4bb67f0537feba1ea_10.png)
 
 现在，我们有了两个通过消息发送和共享组织记忆连接起来的智能体。
 
 ---
 
-![](img/ff2ff475f2532bc4bb67f0537feba1ea_12.png)
 
 ## 测试智能体协作
 
 让我们通过用户直接与评估专员对话来启动流程。评估专员拥有触发其他智能体的能力，因为它可以向其他智能体发送消息。
 
-![](img/ff2ff475f2532bc4bb67f0537feba1ea_14.png)
 
 ```python
 # 用户告诉评估专员评估候选人“Tony Stark”
@@ -234,7 +227,6 @@ print(response)
 2.  **考虑候选人**：这个工具会创建一个Let客户端，并向评估专员发送消息，触发其对指定候选人的评估流程。
 
 
-![](img/ff2ff475f2532bc4bb67f0537feba1ea_16.png)
 
 ```python
 # 模拟的候选人数据库

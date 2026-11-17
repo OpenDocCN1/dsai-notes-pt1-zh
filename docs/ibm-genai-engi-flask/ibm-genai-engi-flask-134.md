@@ -25,7 +25,6 @@ Transformer模型（如BERT、LLaMA、GPT）凭借其基于注意力的架构和
 
 ---
 
-![](img/361f33b100d84b4999b36b03345cdf89_3.png)
 
 ## 什么是微调及其优势
 

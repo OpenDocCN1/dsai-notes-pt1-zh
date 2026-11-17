@@ -12,7 +12,6 @@
 
 ![](img/9690e8afd3e19d1a8271c15ecf74e27e_1.png)
 
-![](img/9690e8afd3e19d1a8271c15ecf74e27e_2.png)
 
 ![](img/9690e8afd3e19d1a8271c15ecf74e27e_3.png)
 
@@ -20,7 +19,6 @@
 
 ![](img/9690e8afd3e19d1a8271c15ecf74e27e_1.png)
 
-![](img/9690e8afd3e19d1a8271c15ecf74e27e_2.png)
 
 ![](img/9690e8afd3e19d1a8271c15ecf74e27e_3.png)
 
@@ -125,12 +123,10 @@ Idea 3: [第三个故事创意文本]
 
 你已经获得了必要的技能，可以在你的项目和应用程序中利用GPT-3的能力。
 
-![](img/9690e8afd3e19d1a8271c15ecf74e27e_5.png)
 
 感谢你的参与，祝你在未来的项目和探索中继续发掘GPT-3的无限可能。我们将在接下来的视频中涵盖下一节内容。
 
 ![](img/9690e8afd3e19d1a8271c15ecf74e27e_5.png)
 
-![](img/9690e8afd3e19d1a8271c15ecf74e27e_7.png)
 
 ![](img/9690e8afd3e19d1a8271c15ecf74e27e_7.png)

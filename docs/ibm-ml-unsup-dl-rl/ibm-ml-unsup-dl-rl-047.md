@@ -38,6 +38,5 @@ Now that closes our introduction to neural networks。In the next video。
 
  I'll see you there。😊。
 
-![](img/34837fe836fa9f9ce0469278ffe70d4c_1.png)
 
 ![](img/34837fe836fa9f9ce0469278ffe70d4c_2.png)

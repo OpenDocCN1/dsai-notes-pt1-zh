@@ -24,7 +24,6 @@ from tensorflow import keras
 
 ## 加载并准备MNIST数据 🖼️
 
-![](img/4ac584cb0266e891e866be51a63581af_2.png)
 
 接下来，我们需要加载数据集并进行预处理。以下是相关步骤：
 
@@ -49,7 +48,6 @@ test_images = test_images[..., np.newaxis].astype(np.float32)
 
 ## 构建神经网络模型 🧠
 
-![](img/4ac584cb0266e891e866be51a63581af_4.png)
 
 数据准备就绪后，现在我们来定义一个神经网络模型。以下是模型结构：
 
@@ -104,11 +102,9 @@ model.fit(train_images, train_labels, epochs=5)
 
 ---
 
-![](img/4ac584cb0266e891e866be51a63581af_6.png)
 
 ## 保存模型 💾
 
-![](img/4ac584cb0266e891e866be51a63581af_7.png)
 
 模型训练完成后，我们需要将其保存到磁盘，以便将来使用。以下是保存模型的代码：
 

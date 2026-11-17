@@ -18,29 +18,22 @@ import matplotlib.pyplot as plt
 
 接下来，我们进行设备配置。这段代码会检查是否有可用的GPU，并据此设置运行设备。
 
-![](img/ee06be2433f88c7e880533bc41c954a0_1.png)
 
-![](img/ee06be2433f88c7e880533bc41c954a0_3.png)
 
 ```python
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 ```
 
-![](img/ee06be2433f88c7e880533bc41c954a0_5.png)
 
-![](img/ee06be2433f88c7e880533bc41c954a0_7.png)
 
 ---
 
-![](img/ee06be2433f88c7e880533bc41c954a0_9.png)
 
 ## 2. 定义超参数 ⚙️
 
-![](img/ee06be2433f88c7e880533bc41c954a0_11.png)
 
 在开始构建模型之前，我们需要定义一些超参数。这些参数决定了模型的结构和训练过程。
 
-![](img/ee06be2433f88c7e880533bc41c954a0_13.png)
 
 *   **输入大小**：MNIST图像尺寸为28x28，展平后为784。
 *   **隐藏层大小**：我们设置为100个神经元。
@@ -49,9 +42,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 *   **批量大小**：设置为100。
 *   **学习率**：设置为0.001。
 
-![](img/ee06be2433f88c7e880533bc41c954a0_14.png)
 
-![](img/ee06be2433f88c7e880533bc41c954a0_15.png)
 
 ```python
 input_size = 784
@@ -62,15 +53,12 @@ batch_size = 100
 learning_rate = 0.001
 ```
 
-![](img/ee06be2433f88c7e880533bc41c954a0_17.png)
 
 ---
 
 ## 3. 加载与准备数据 📦
 
-![](img/ee06be2433f88c7e880533bc41c954a0_19.png)
 
-![](img/ee06be2433f88c7e880533bc41c954a0_21.png)
 
 上一节我们定义了超参数，本节中我们来看看如何加载和准备MNIST数据集。
 
@@ -83,24 +71,18 @@ test_dataset = datasets.MNIST(root='./data', train=False, transform=transforms.T
 
 接着，我们创建数据加载器，用于在训练和测试时按批次提供数据。
 
-![](img/ee06be2433f88c7e880533bc41c954a0_23.png)
 
-![](img/ee06be2433f88c7e880533bc41c954a0_24.png)
 
 ```python
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
 ```
 
-![](img/ee06be2433f88c7e880533bc41c954a0_25.png)
 
-![](img/ee06be2433f88c7e880533bc41c954a0_26.png)
 
-![](img/ee06be2433f88c7e880533bc41c954a0_28.png)
 
 为了直观了解数据，我们可以查看一个批次的样本。
 
-![](img/ee06be2433f88c7e880533bc41c954a0_30.png)
 
 ```python
 examples = iter(train_loader)
@@ -108,24 +90,19 @@ samples, labels = examples.next()
 print(samples.shape, labels.shape) # 输出: torch.Size([100, 1, 28, 28]) torch.Size([100])
 ```
 
-![](img/ee06be2433f88c7e880533bc41c954a0_31.png)
 
 ---
 
 ## 4. 构建神经网络模型 🏗️
 
-![](img/ee06be2433f88c7e880533bc41c954a0_33.png)
 
 数据准备就绪后，现在我们来构建核心的前馈神经网络模型。
 
-![](img/ee06be2433f88c7e880533bc41c954a0_35.png)
 
 我们的网络结构包含一个输入层、一个带有ReLU激活函数的隐藏层，以及一个输出层。
 
-![](img/ee06be2433f88c7e880533bc41c954a0_37.png)
 
 
-![](img/ee06be2433f88c7e880533bc41c954a0_39.png)
 
 ```python
 class NeuralNet(nn.Module):
@@ -143,23 +120,18 @@ class NeuralNet(nn.Module):
 model = NeuralNet(input_size, hidden_size, num_classes).to(device)
 ```
 
-![](img/ee06be2433f88c7e880533bc41c954a0_40.png)
 
 **注意**：在输出层我们没有使用Softmax激活函数，因为后续使用的交叉熵损失函数会内部处理它。
 
 ---
 
-![](img/ee06be2433f88c7e880533bc41c954a0_42.png)
 
 ## 5. 定义损失函数与优化器 🎯
 
-![](img/ee06be2433f88c7e880533bc41c954a0_43.png)
 
 模型构建完成后，我们需要定义如何衡量模型的错误（损失函数）以及如何根据错误来更新模型参数（优化器）。
 
-![](img/ee06be2433f88c7e880533bc41c954a0_45.png)
 
-![](img/ee06be2433f88c7e880533bc41c954a0_47.png)
 
 我们使用交叉熵损失函数，它适用于多分类问题。优化器选择Adam，它是一种高效且常用的优化算法。
 
@@ -168,7 +140,6 @@ criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 ```
 
-![](img/ee06be2433f88c7e880533bc41c954a0_49.png)
 
 ---
 
@@ -176,7 +147,6 @@ optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
 现在进入核心环节：训练循环。我们将遍历数据多个轮次，不断优化模型参数。
 
-![](img/ee06be2433f88c7e880533bc41c954a0_51.png)
 
 以下是训练循环的步骤：
 1.  将数据转移到指定设备（CPU/GPU）。
@@ -185,7 +155,6 @@ optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 4.  反向传播：计算梯度。
 5.  优化器步骤：更新模型参数。
 
-![](img/ee06be2433f88c7e880533bc41c954a0_52.png)
 
 ```python
 n_total_steps = len(train_loader)

@@ -59,11 +59,9 @@ Anthropic已经构建了许多非常出色的模型，我本人也经常使用�
 
 好的，让我们开始吧。
 
-![](img/f94ae85c98b6a4c2eab0dc36680e810f_1.png)
 
 ---
 
-![](img/f94ae85c98b6a4c2eab0dc36680e810f_2.png)
 
 ![](img/f94ae85c98b6a4c2eab0dc36680e810f_3.png)
 

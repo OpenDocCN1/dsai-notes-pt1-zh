@@ -8,41 +8,26 @@
 
 当你构建完一个应用程序的机器学习或生成式AI部分后，你可能想快速构建一个演示程序展示给他人。也许是为了获取反馈并推动系统改进，或者仅仅是因为你觉得这个系统很酷，想要展示它。Gradio让你可以通过Python接口快速做到这一点，而无需编写任何前端、Web或JavaScript代码。
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_1.png)
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_2.png)
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_3.png)
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_1.png)
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_2.png)
 
 在本课程中，你将看到包括文本摘要、命名实体识别、图像描述、使用扩散模型的图像生成以及基于LLM的聊天机器人在内的多个示例。对于每一个应用，Polly都将展示，在你构建好其机器学习部分后，如何利用Gradio快速构建一个非常酷的演示，并让他人能够交互和体验你所构建的内容。
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_3.png)
 
 第一课我们将为简单的NLP任务构建一个应用程序，包括摘要和命名实体识别。
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_5.png)
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_6.png)
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_7.png)
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_5.png)
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_8.png)
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_6.png)
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_7.png)
 
 我们感谢许多人为这门短期课程付出的辛勤努力。来自Hugging Face团队的Omar Sanseviero、Pedro Cuenca、Philipp Schmid、Amy Roberts、Sylvain Gugger、Patrick von Platen和Suraj Patil，以及来自DeepLearning.AI的Eddy Shyu和Dina Boon。
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_8.png)
 
-![](img/07c87beb96489db5665e5a4e8b05e94b_10.png)
 
 接下来，让我们进入下一个视频，正式开始学习。
 

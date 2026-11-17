@@ -8,7 +8,6 @@ And with that， bring together an example， using dimensionality reduction to 
 
 
 
-![](img/26db2006947d05793670556800169028_1.png)
 
 Now， we're going to walk through how we can use dimensionality reduction in real life practice。
 
@@ -36,7 +35,6 @@ So frequently， we want to use dimensionality reduction when we end up with a l
 
 😊。
 
-![](img/26db2006947d05793670556800169028_3.png)
 
 So in this example。We're going to see how PCA is going to be used for image compression。
 
@@ -44,7 +42,6 @@ We're going to reduce this image's dimensions， but hopefully retain most of th
 
 
 
-![](img/26db2006947d05793670556800169028_5.png)
 
 So to see this image as a data set， we put on a grid on top of this image。
 
@@ -60,7 +57,6 @@ Something to note is that this grid is just for visual representation， but in 
 
 
 
-![](img/26db2006947d05793670556800169028_7.png)
 
 So each square， again， is a single observation that is 12 by 12， So a total of 144 pixels。
 
@@ -70,7 +66,6 @@ And putting those 144 pixels side by size， we can end up with just one row vec
 
 
 
-![](img/26db2006947d05793670556800169028_9.png)
 
 So we see here we take that 12 by 12 and we unravel it to have 144 different features。
 
@@ -92,7 +87,6 @@ And those new columns will be projections of some special combination of those o
 
 
 
-![](img/26db2006947d05793670556800169028_11.png)
 
 So to see this in action， we see here reducing from 1 and 44 down to 60 dimensions。 So each square。
 
@@ -110,7 +104,6 @@ So after PCA。You will get these top 16 components， and these will be the 16 
 
 
 
-![](img/26db2006947d05793670556800169028_13.png)
 
 We can reduce this further down to just four dimensions。
 
@@ -126,7 +119,6 @@ And we can see that for quite some time we don't have that high of a relative er
 
 
 
-![](img/26db2006947d05793670556800169028_15.png)
 
 Now we see here just the top four principal components。 And again。
 
@@ -134,7 +126,6 @@ Now we see here just the top four principal components。 And again。
 
 
 
-![](img/26db2006947d05793670556800169028_17.png)
 
 And something to note， as we recall when we are working with PCA in the PCA notebook。
 
@@ -142,7 +133,6 @@ And something to note， as we recall when we are working with PCA in the PCA no
 
 
 
-![](img/26db2006947d05793670556800169028_19.png)
 
 So reducing to 16 and then selecting from the top is the same as just reducing down to our top4。
 
@@ -150,7 +140,6 @@ So no matter what we always have， the first most important principle component
 
  second， so on and so forth。
 
-![](img/26db2006947d05793670556800169028_21.png)
 
 And then here we can see what that image actually looks like， reduced down to one dimension。
 

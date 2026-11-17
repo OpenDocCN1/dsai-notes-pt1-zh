@@ -28,11 +28,9 @@ result = cv2.matchTemplate(img, template, method)
 min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
 ```
 
-![](img/f0d0ea371a5719703e00e64a79418a31_1.png)
 
 匹配任务类似于检测任务，我们需要将最佳匹配位置用矩形框标注出来。我们已经通过模板的宽高（`w, h`）和最佳位置坐标确定了矩形框。
 
-![](img/f0d0ea371a5719703e00e64a79418a31_3.png)
 
 以下是绘制矩形的代码：
 ```python
@@ -43,37 +41,22 @@ cv2.rectangle(img, top_left, bottom_right, color, thickness)
 
 下面展示了不同匹配方法的效果对比图：
 
-![](img/f0d0ea371a5719703e00e64a79418a31_5.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_1.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_7.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_3.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_5.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_9.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_7.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_11.png)
 
 观察发现，只要方法名称中带有“归一化”（`_NORMED`）后缀的，匹配结果通常更稳定、更准确。
 
-![](img/f0d0ea371a5719703e00e64a79418a31_13.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_9.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_11.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_15.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_13.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_15.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_17.png)
 
 因此，建议在实际使用中优先选择归一化的方法。
 
@@ -83,11 +66,8 @@ cv2.rectangle(img, top_left, bottom_right, color, thickness)
 
 我们已经学会了如何匹配单个最佳对象。但新的问题来了：如果图像中有多个相似对象（例如，一张图中有两张人脸），而我们有一个模板，如何找到所有匹配的位置，而不是仅仅一个？
 
-![](img/f0d0ea371a5719703e00e64a79418a31_19.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_17.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_21.png)
 
 这就需要用到多对象模板匹配。其核心思想是：不再只取一个最小值或最大值，而是自己设定一个阈值，找出所有符合该阈值的匹配位置。
 
@@ -110,7 +90,6 @@ threshold = 0.8
 
 使用 `np.where` 函数在 `result` 矩阵中找出所有匹配度大于该阈值的位置。
 
-![](img/f0d0ea371a5719703e00e64a79418a31_23.png)
 
 ```python
 locations = np.where(result >= threshold)
@@ -118,42 +97,30 @@ locations = np.where(result >= threshold)
 
 最后，遍历这些找到的所有位置，并在每个位置绘制矩形框。
 
-![](img/f0d0ea371a5719703e00e64a79418a31_25.png)
 
 ```python
 for pt in zip(*locations[::-1]):
     cv2.rectangle(img, pt, (pt[0] + w, pt[1] + h), (0, 0, 255), 2)
 ```
 
-![](img/f0d0ea371a5719703e00e64a79418a31_27.png)
 
 让我们看一个具体例子。我们的模板是一个金币：
 
-![](img/f0d0ea371a5719703e00e64a79418a31_29.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_29.png)
 
 输入图像是《超级玛丽》的游戏画面，其中包含多个金币：
 
-![](img/f0d0ea371a5719703e00e64a79418a31_31.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_31.png)
 
 应用多对象匹配后，我们可以将所有的金币都框选出来：
 
-![](img/f0d0ea371a5719703e00e64a79418a31_33.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_33.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_35.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_35.png)
 
-![](img/f0d0ea371a5719703e00e64a79418a31_37.png)
 
 ---
 
-![](img/f0d0ea371a5719703e00e64a79418a31_37.png)
 
 ## 课程总结 📝
 
@@ -161,7 +128,6 @@ for pt in zip(*locations[::-1]):
 
 我们首先对比了六种不同匹配方法的效果，了解到归一化方法（如 `TM_CCOEFF_NORMED`）通常能提供更稳定的结果。其原理是从图像左上角开始滑动窗口，计算模板与图像局部区域的差异程度。
 
-![](img/f0d0ea371a5719703e00e64a79418a31_39.png)
 
 `cv2.matchTemplate` 函数返回一个结果矩阵，我们可以通过 `cv2.minMaxLoc` 找到单个最佳匹配位置（`min_loc` 或 `max_loc`）。
 

@@ -1,6 +1,5 @@
 #  131：Airflow核心组件 🧩
 
-![](img/54ee07aa51c7c1f9b8be0a84bcbddd13_0.png)
 
 在本节课中，我们将学习Apache Airflow的核心架构与组件。理解这些组件如何协同工作，是构建和运行可靠数据管道的基础。
 
@@ -14,9 +13,7 @@
 
 下图展示了Airflow的主要组件，包括运行Airflow用户界面的Web服务器、调度器、工作节点、元数据数据库以及DAG目录。
 
-![](img/54ee07aa51c7c1f9b8be0a84bcbddd13_2.png)
 
-![](img/54ee07aa51c7c1f9b8be0a84bcbddd13_0.png)
 
 当你创建Airflow环境时，无论是直接安装Airflow还是使用Airflow托管服务，所有这些组件都将存在于你的设置中。你将主要与DAG目录和用户界面交互，其余组件将在后台运行。
 
@@ -56,12 +53,8 @@ if task.dependencies_met and (task.schedule_triggered or event_triggered):
 
 你可以在架构图中看到Amazon MWAA如何在云上组织Airflow的核心组件。
 
-![](img/54ee07aa51c7c1f9b8be0a84bcbddd13_4.png)
-![](img/54ee07aa51c7c1f9b8be0a84bcbddd13_5.png)
 
-![](img/54ee07aa51c7c1f9b8be0a84bcbddd13_4.png)
 
-![](img/54ee07aa51c7c1f9b8be0a84bcbddd13_5.png)
 
 例如，它使用Amazon S3存储桶作为DAG目录，使用Aurora PostgreSQL数据库作为元数据数据库。其他组件包括AWS网络组件和支持数据安全、环境日志记录与监控的额外AWS服务。
 
@@ -69,7 +62,6 @@ if task.dependencies_met and (task.schedule_triggered or event_triggered):
 
 在本周的实验中，你将首先被引导设置Airflow环境。然后，你将使用Cloud9 IDE将DAG编写为Python脚本，将它们上传到S3存储桶，最后打开UI来查看创建的DAG。
 
-![](img/54ee07aa51c7c1f9b8be0a84bcbddd13_7.png)
 
 ![](img/54ee07aa51c7c1f9b8be0a84bcbddd13_7.png)
 

@@ -1,6 +1,5 @@
 # Excel中级教程 - P36：使用新的IFS函数 📊
 
-![](img/ee8b3e4d42ee82516ef1fc26ea7d4a36_0.png)
 
 ![](img/ee8b3e4d42ee82516ef1fc26ea7d4a36_0.png)
 
@@ -62,6 +61,5 @@
 
 `IFS`函数是Excel中一个强大的工具，可以显著提高数据处理的效率和可读性。希望本教程对你有所帮助！
 
-![](img/ee8b3e4d42ee82516ef1fc26ea7d4a36_2.png)
 
 ![](img/ee8b3e4d42ee82516ef1fc26ea7d4a36_2.png)

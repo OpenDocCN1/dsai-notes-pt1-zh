@@ -9,11 +9,9 @@
 
 让我们开始吧。
 
-![](img/b5a9dc15a5e629af15850e6c5b444bdd_1.png)
 
 ## 实验准备与数据上传
 
-![](img/b5a9dc15a5e629af15850e6c5b444bdd_2.png)
 
 上一节我们介绍了实验的目标和数据背景，本节中我们来看看如何准备环境并上传数据。
 
@@ -86,7 +84,6 @@ df_cleaned.write.mode("overwrite").save_as_table("cleaned_shipping_logs")
 
 如果你遇到困难，解决方案在课程 GitHub 仓库的 `M2_lab_1` 中。祝你好运，我们下个视频见。
 
-![](img/b5a9dc15a5e629af15850e6c5b444bdd_4.png)
 
 ![](img/b5a9dc15a5e629af15850e6c5b444bdd_5.png)
 

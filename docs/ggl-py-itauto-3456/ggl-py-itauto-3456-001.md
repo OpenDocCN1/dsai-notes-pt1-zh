@@ -1,6 +1,5 @@
 #  001：Git与版本控制入门 🚀
 
-![](img/899e14d4ca30f08830fe0396dcc9c1fc_0.png)
 
 ![](img/899e14d4ca30f08830fe0396dcc9c1fc_2.png)
 

@@ -1,6 +1,5 @@
 #  123：Great Expectations 工作流示例 🧪
 
-![](img/72435659aa1093ae39f80c7f55dc8205_0.png)
 
 在本节课中，我们将通过一个具体示例，学习如何使用 Great Expectations 来验证数据质量。我们将以 DVD 租赁数据库中的 `payment` 表为例，检查其 `payment_id` 列的唯一性、`customer_id` 列的非空性以及 `amount` 列的非负性。
 
@@ -32,7 +31,6 @@ great_expectations init
 
 ![](img/72435659aa1093ae39f80c7f55dc8205_4.png)
 
-![](img/72435659aa1093ae39f80c7f55dc8205_5.png)
 
 ## 连接数据源与创建数据资产
 

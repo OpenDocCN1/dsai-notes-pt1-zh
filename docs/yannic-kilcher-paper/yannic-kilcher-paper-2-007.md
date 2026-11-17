@@ -2,7 +2,6 @@
 
 在本节课中，我们将要学习一篇名为《Concept Learning with Energy-Based Models》的论文。这篇论文由OpenAI的Igor Mordatch等人撰写，探讨了如何使用能量函数来学习抽象概念，例如从数据点中学习“圆形”或“方形”的概念。我们将从理解能量函数的基本概念开始，逐步深入到论文的核心思想。
 
-![](img/ee52b623bc5a180ac15a2dd2478b7640_1.png)
 
 ## 概述
 

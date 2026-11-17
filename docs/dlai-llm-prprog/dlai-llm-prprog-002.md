@@ -90,7 +90,6 @@ models = [m for m in palm.list_models() if 'generateText' in m.supported_generat
 
 ![](img/4ce8a3260213f54001809fc50607d9d3_13.png)
 
-![](img/4ce8a3260213f54001809fc50607d9d3_14.png)
 
 ## 代码生成的第一步 💻
 
@@ -144,7 +143,6 @@ prompt = "Write code to iterate across a list in Python"
 
 所以，像这样非常非常简单的代码会工作，但我们在课程中将大量讨论的一件事是，输出代码容易出现幻觉，所以在任何严肃或生产环境中使用之前，你真的应该彻底测试你的代码。
 
-![](img/4ce8a3260213f54001809fc50607d9d3_18.png)
 
 ---
 

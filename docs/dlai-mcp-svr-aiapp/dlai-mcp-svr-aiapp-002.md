@@ -12,7 +12,6 @@
 
 我们将构建一个简单的发票处理应用。整个过程分为几个步骤：首先从本地 PDF 文件中提取文本，然后利用 Gemini 大语言模型从文本中解析出结构化的数据（如客户名称、发票金额、产品名称），最后将这些数据存储到本地 SQLite 数据库中并生成汇总报告。
 
-![](img/3e3dacdd89b9051c0d0d861f7fadcade_4.png)
 
 ---
 
@@ -230,7 +229,6 @@ conn.close()
 
 第一份报告显示发票的总数以及所有发票的总金额。
 
-![](img/3e3dacdd89b9051c0d0d861f7fadcade_6.png)
 
 ```python
 conn = sqlite3.connect(‘invoices.db’)

@@ -54,7 +54,6 @@ def tri_pulse(t, tau):
 X(f) = ∫ x(t) * e^(-j2πft) dt
 ```
 
-![](img/9631fbccd5c6a1cc9d9f8d6f050258d0_1.png)
 
 在离散时间中，我们使用快速傅里叶变换（FFT）进行计算。
 
@@ -72,7 +71,6 @@ y[n] = Σ b[k] * x[n-k] - Σ a[k] * y[n-k]
 ```
 其中，`x[n]`是输入信号，`y[n]`是输出信号，`b[k]`和`a[k]`是系数。
 
-![](img/9631fbccd5c6a1cc9d9f8d6f050258d0_3.png)
 
 ### 滤波器设计
 
@@ -105,11 +103,9 @@ def callback(in_data, frame_count, time_info, status):
 
 ### 音频特效：镶边效果
 
-![](img/9631fbccd5c6a1cc9d9f8d6f050258d0_5.png)
 
 镶边效果是一种音频特效，通过混合原始信号和经过时变延迟的信号实现。这可以产生类似多普勒效应的声音效果。
 
-![](img/9631fbccd5c6a1cc9d9f8d6f050258d0_7.png)
 
 **时变延迟实现**：
 ```python
@@ -120,13 +116,10 @@ def time_varying_delay(signal, delay_function):
 
 ## 第四部分：通信系统与软件定义无线电 📻
 
-![](img/9631fbccd5c6a1cc9d9f8d6f050258d0_9.png)
 
 通信系统涉及信号的调制、传输和解调。软件定义无线电（SDR）允许我们通过软件实现无线电功能。
 
-![](img/9631fbccd5c6a1cc9d9f8d6f050258d0_11.png)
 
-![](img/9631fbccd5c6a1cc9d9f8d6f050258d0_13.png)
 
 ### 调频（FM）解调
 

@@ -20,7 +20,6 @@ import PyPDF2
 
 ![](img/ee44de1989e2d3575bc138687216799f_1.png)
 
-![](img/ee44de1989e2d3575bc138687216799f_2.png)
 
 ![](img/ee44de1989e2d3575bc138687216799f_3.png)
 

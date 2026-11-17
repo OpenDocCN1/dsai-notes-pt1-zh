@@ -1,8 +1,6 @@
 # 027：对数损失优化第二部分
 
-![](img/b1444e75704abc43fcc1eb75ea8fddc5_0.png)
 
-![](img/b1444e75704abc43fcc1eb75ea8fddc5_0.png)
 
 ## 概述
 

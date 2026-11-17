@@ -1,6 +1,5 @@
 生成式人工智能工程：19：REST API：HTTP请求（第1部分）🚀
 
-![](img/7612fefac07a150f0ed89ba21d98971b_0.png)
 
 在本节课中，我们将要学习HTTP协议的基础知识，特别是统一资源定位符（URL）、HTTP请求与响应的结构，以及常见的HTTP方法和状态码。理解这些概念是使用REST API进行数据交互的关键。
 
@@ -18,19 +17,14 @@ HTTP消息通常包含一个JSON文件。当你（客户端）访问一个网页
 
 
 
-![](img/7612fefac07a150f0ed89ba21d98971b_0.png)
 
 
 
-![](img/7612fefac07a150f0ed89ba21d98971b_2.png)
 
-![](img/7612fefac07a150f0ed89ba21d98971b_3.png)
 
 统一资源定位符（URL）是在网络上查找资源最常用的方式。我们可以将URL分解为三个部分。
 
-![](img/7612fefac07a150f0ed89ba21d98971b_4.png)
 
-![](img/7612fefac07a150f0ed89ba21d98971b_5.png)
 
 以下是URL的三个组成部分：
 
@@ -40,7 +34,6 @@ HTTP消息通常包含一个JSON文件。当你（客户端）访问一个网页
 
 
 
-![](img/7612fefac07a150f0ed89ba21d98971b_7.png)
 
 让我们回顾一下请求和响应的过程。以下是一个使用GET请求方法的请求消息示例。我们还可以使用其他HTTP方法。
 
@@ -48,7 +41,6 @@ HTTP消息通常包含一个JSON文件。当你（客户端）访问一个网页
 
 
 
-![](img/7612fefac07a150f0ed89ba21d98971b_9.png)
 
 
 
@@ -60,13 +52,10 @@ HTTP消息通常包含一个JSON文件。当你（客户端）访问一个网页
 
 
 
-![](img/7612fefac07a150f0ed89ba21d98971b_12.png)
 
 
 
-![](img/7612fefac07a150f0ed89ba21d98971b_9.png)
 
-![](img/7612fefac07a150f0ed89ba21d98971b_10.png)
 
 现在，让我们看看其他状态码。
 
@@ -83,13 +72,10 @@ HTTP消息通常包含一个JSON文件。当你（客户端）访问一个网页
 
 
 
-![](img/7612fefac07a150f0ed89ba21d98971b_12.png)
-
-![](img/7612fefac07a150f0ed89ba21d98971b_16.png)
 
 
 
-![](img/7612fefac07a150f0ed89ba21d98971b_14.png)
+
 
 当发起一个HTTP请求时，会发送一个HTTP方法，它告诉服务器要执行什么操作。
 
@@ -102,17 +88,14 @@ HTTP消息通常包含一个JSON文件。当你（客户端）访问一个网页
 
 
 
-![](img/7612fefac07a150f0ed89ba21d98971b_16.png)
 
 在下一个视频中，我们将使用Python来应用**GET方法**（从服务器检索数据）和**POST方法**（向服务器发送数据）。
 
 
 
-![](img/7612fefac07a150f0ed89ba21d98971b_18.png)
 
 
 
-![](img/7612fefac07a150f0ed89ba21d98971b_18.png)
 
 ![](img/7612fefac07a150f0ed89ba21d98971b_19.png)
 

@@ -1,6 +1,5 @@
 #  107：第29讲 - Amazon Kinesis Data Streams 详解 🚀
 
-![](img/aa881a645e080905b8d2c41a6005c413_0.png)
 
 在本节课中，我们将学习 Amazon Kinesis Data Streams 的核心工作原理。我们将了解其基本架构、关键概念（如分片、分区键）以及两种容量管理模式。通过本教程，你将能够理解如何根据数据读写需求来规划和配置一个 Kinesis 数据流。
 

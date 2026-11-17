@@ -6,7 +6,6 @@
 
 词性标注旨在为句子中的每个单词分配一个特定的词性标签，例如名词、动词、形容词等。这有助于我们更深入地分析句子的结构和含义。本节我们将使用NLTK库中的预训练模型来完成这一任务。
 
-![](img/032ca9ad892cf5f0ea661c592ca4962c_1.png)
 
 ## 代码实现步骤
 
@@ -33,7 +32,6 @@ nltk.download('averaged_perceptron_tagger')
 
 我们定义一个示例句子：“Mary is driving a big car.”，然后使用`word_tokenize`函数将其分割成独立的单词（即分词）。
 
-![](img/032ca9ad892cf5f0ea661c592ca4962c_3.png)
 
 ```python
 sentence = "Mary is driving a big car."
@@ -47,7 +45,6 @@ print(sent_tokens)
 
 现在，我们对分词后的单词列表进行词性标注。我们使用`nltk.pos_tag`函数，它接收一个单词列表并返回每个单词及其对应的词性标签。
 
-![](img/032ca9ad892cf5f0ea661c592ca4962c_5.png)
 
 ```python
 pos_tags = nltk.pos_tag(sent_tokens)
@@ -72,7 +69,6 @@ print(pos_tags)
 *   **NN**: 名词，单数。例如“car”。
 *   **.**: 标点符号。例如句号“.”。
 
-![](img/032ca9ad892cf5f0ea661c592ca4962c_7.png)
 
 ![](img/032ca9ad892cf5f0ea661c592ca4962c_8.png)
 

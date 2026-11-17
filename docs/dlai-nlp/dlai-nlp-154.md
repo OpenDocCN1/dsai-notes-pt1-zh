@@ -1,6 +1,5 @@
 #  154：吴恩达《自然语言处理》P154 - 与Oren Etzioni的对话 🎙️
 
-![](img/fdb08ad5ed67babda8afaaf8466306e3_0.png)
 
 ## 概述
 

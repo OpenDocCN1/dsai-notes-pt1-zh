@@ -44,11 +44,9 @@ Hello world
 
 你可以使用工具栏顶部的 “保存” 按钮来保存你的 Jupyter Notebook。点击保存并为你的文件命名，例如 `hello.ipynb`。
 
-![](img/0c5f1ef618398e80857dcc0e49f9dd1d_2.png)
 
 如果你想下载你的 Notebook 文件，可以使用左上角的 “文件” 菜单，然后选择 “下载” 选项。
 
-![](img/0c5f1ef618398e80857dcc0e49f9dd1d_3.png)
 
 ![](img/0c5f1ef618398e80857dcc0e49f9dd1d_4.png)
 

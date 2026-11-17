@@ -138,7 +138,6 @@ class Perceptron:
 
 ![](img/e09199f446a4dd628a8febad29061362_13.png)
 
-![](img/e09199f446a4dd628a8febad29061362_14.png)
 
 ```python
 # 测试代码示例

@@ -6,7 +6,6 @@
 
 ## 系统流程图概览 📊
 
-![](img/6b3084f1f6e267d7e6580fd84e9afae1_3.png)
 
 在深入代码之前，我们先通过流程图来了解整个系统的运作流程。虽然它看起来有些复杂，但原理其实很简单。
 
@@ -26,7 +25,6 @@
 
 
 
-![](img/6b3084f1f6e267d7e6580fd84e9afae1_5.png)
 
 此时，我们不能单独使用“那周末呢？”这个字符串去检索，因为它本身缺乏上下文，单独看没有意义。它必须结合整个对话历史才能被理解。因此，我们需要对这个问题进行重写，使其包含所有必要的上下文信息，这样检索器才有足够的信息去获取相关的文档片段。
 
@@ -288,7 +286,6 @@ def retrieval_grader(state: AgentState):
 
 ![](img/6b3084f1f6e267d7e6580fd84e9afae1_31.png)
 
-![](img/6b3084f1f6e267d7e6580fd84e9afae1_32.png)
 
 ```python
 def proceed_router(state: AgentState):
@@ -389,17 +386,13 @@ def off_topic_response(state: AgentState):
 
 ![](img/6b3084f1f6e267d7e6580fd84e9afae1_47.png)
 
-![](img/6b3084f1f6e267d7e6580fd84e9afae1_48.png)
 
 我们已经定义了所有节点，现在需要将它们组装成图，并添加检查点（Checkpointer）以支持多轮对话的记忆功能。
 
 
-![](img/6b3084f1f6e267d7e6580fd84e9afae1_50.png)
 
 
-![](img/6b3084f1f6e267d7e6580fd84e9afae1_51.png)
 
-![](img/6b3084f1f6e267d7e6580fd84e9afae1_52.png)
 
 
 ![](img/6b3084f1f6e267d7e6580fd84e9afae1_54.png)
@@ -507,13 +500,11 @@ app = workflow.compile(checkpointer=memory)
 2.  后续流程检索到相关文档（例如包含“成立于2015年”的文档）。
 3.  生成最终答案：“它成立于2015年。”
 
-![](img/6b3084f1f6e267d7e6580fd84e9afae1_67.png)
 
 ![](img/6b3084f1f6e267d7e6580fd84e9afae1_68.png)
 
 ![](img/6b3084f1f6e267d7e6580fd84e9afae1_69.png)
 
-![](img/6b3084f1f6e267d7e6580fd84e9afae1_70.png)
 
 ## 总结 📝
 

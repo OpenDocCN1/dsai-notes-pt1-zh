@@ -32,21 +32,15 @@ Gemini CLI 拥有一个庞大的扩展生态系统，目前有超过 200 个扩�
 
 ![](img/d9f7cdcded271b22d565eb8c029ccfc5_2.png)
 
-![](img/d9f7cdcded271b22d565eb8c029ccfc5_3.png)
 
 点击扩展卡片将带我们到一键安装命令。
 
-![](img/d9f7cdcded271b22d565eb8c029ccfc5_5.png)
 
-![](img/d9f7cdcded271b22d565eb8c029ccfc5_5.png)
 
 运行该命令会提示你确认是否要安装此扩展。扩展成功安装后，你可以打开 Gemini CLI。启动时会再次触发 OAuth 流程。请登录你的邮箱，选择“全部接受”以授予权限。这将允许它访问你的日历和 Google 文档等。
 
-![](img/d9f7cdcded271b22d565eb8c029ccfc5_7.png)
 
-![](img/d9f7cdcded271b22d565eb8c029ccfc5_7.png)
 
-![](img/d9f7cdcded271b22d565eb8c029ccfc5_8.png)
 
 ![](img/d9f7cdcded271b22d565eb8c029ccfc5_8.png)
 
@@ -54,7 +48,6 @@ Gemini CLI 拥有一个庞大的扩展生态系统，目前有超过 200 个扩�
 
 现在，让我们要求 Gemini CLI 读取我们的会议日程 Google 文档，并列出会议日程。Google Workspace 扩展会查询工具以了解当前登录的用户以及稍后在其工具中使用的时区。
 
-![](img/d9f7cdcded271b22d565eb8c029ccfc5_10.png)
 
 ![](img/d9f7cdcded271b22d565eb8c029ccfc5_10.png)
 
@@ -62,7 +55,6 @@ Gemini CLI 已经读取了我们的 Google 文档，获取了会议日程信息�
 
 接下来，我们让 Gemini CLI 将这些时间块添加到我的日历中。我们确保日历邀请的标题是“预留 - [会话标题]”。
 
-![](img/d9f7cdcded271b22d565eb8c029ccfc5_12.png)
 
 ![](img/d9f7cdcded271b22d565eb8c029ccfc5_12.png)
 
@@ -70,7 +62,6 @@ Gemini CLI 已经遍历了我们的日程，并通知我将创建 39 个日历�
 
 于是，Gemini CLI 继续操作，安排了所有 39 个事件。它会在这里给我们一个快速摘要。让我们看看，看起来是轻松的几天，好在早餐和午餐是空闲时间。
 
-![](img/d9f7cdcded271b22d565eb8c029ccfc5_14.png)
 
 ## 总结与展望
 
@@ -80,6 +71,5 @@ Gemini CLI 已经遍历了我们的日程，并通知我将创建 39 个日历�
 
 现在你已经了解了扩展 Gemini CLI 能力的各种方法，让我们更进一步，开始聚焦于你可以使用 Gemini CLI 完成的具体任务，例如软件开发。
 
-![](img/d9f7cdcded271b22d565eb8c029ccfc5_16.png)
 
 ![](img/d9f7cdcded271b22d565eb8c029ccfc5_16.png)

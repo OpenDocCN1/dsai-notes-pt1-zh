@@ -46,7 +46,6 @@ Isaac 想感谢 OpenAI 和 DeepLearning.AI 的团队，他们帮助准备和展�
 
 
 
-![](img/e5e5470802ecd565245edb116b53bae7_4.png)
 
 ![](img/e5e5470802ecd565245edb116b53bae7_4.png)
 

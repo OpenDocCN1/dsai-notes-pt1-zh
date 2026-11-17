@@ -1,12 +1,9 @@
 # 005：工具使用与会话式国际象棋 🏆
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_1.png)
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_2.png)
 
 在本节课中，我们将学习如何在智能体之间的消息聊天中使用工具。你将构建一个会话式国际象棋游戏，两个AI棋手都可以调用工具，并在棋盘上做出合法的移动。
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_4.png)
 
 ## 概述
 
@@ -110,7 +107,6 @@ board_agent = ConversableAgent(
 
 ## 第三步：向智能体注册工具
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_6.png)
 
 现在我们已经定义了所有智能体，可以向智能体注册工具了。为此，我们将从`autogen`导入一个名为`register_function`的函数。
 
@@ -157,9 +153,7 @@ player_white.register_nested_chats(
 
 类似地，我们也可以为`player_black`注册一个嵌套聊天。这次的触发者是`player_white`，内部聊天是在`board_proxy`和`player_black`之间。
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_8.png)
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_9.png)
 
 ```python
 player_black.register_nested_chats(
@@ -168,15 +162,12 @@ player_black.register_nested_chats(
 )
 ```
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_10.png)
 
 ## 第五步：运行游戏
 
 好了，这就是我们需要做的所有工作。让我们准备好开始游戏。我们将首先调用`chess.Board()`函数创建一个新棋盘，然后调用`player_black.initiate_chat`方法，并附带初始消息“让我们下棋吧，该你走了”。我们将`clear_history`设置为`True`。
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_12.png)
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_14.png)
 
 ```python
 board = chess.Board()
@@ -197,20 +188,16 @@ player_black.initiate_chat(
 
 同样的模式将再次发生，`player_white`将获取合法移动并选择它将走的另一步棋。这就是这两个回合对话的结束。
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_16.png)
 
 ## 第六步：增加趣味性
 
 我们如何让这个游戏更有趣呢？我们注意到在这个游戏中，玩家只谈论他们正在走的棋步。我们如何增加一点乐趣，让聊天不仅仅局限于这些棋步呢？
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_18.png)
 
 我们可以修改关于这些玩家智能体的定义。现在我们可以更改这条消息，说在走了一步棋之后，闲聊一下让游戏变得有趣。这是我们添加的一个额外指令。对`player_black`也做同样的操作。我们将需要重复关于工具使用的注册，以及那个聊天。
 
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_20.png)
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_21.png)
 
 ```python
 player_white = ConversableAgent(
@@ -227,9 +214,7 @@ player_black = ConversableAgent(
 )
 ```
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_23.png)
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_24.png)
 
 最后，我们将重新创建棋盘并重新开始对话。顺便说一下，我们还在嵌套聊天中添加了一个标志`summary_method="last_msg"`，所以这次我们不需要检查内部对话，我们只想看到两个玩家智能体之间的外部对话。
 
@@ -241,7 +226,6 @@ player_black = ConversableAgent(
 
 ## 总结
 
-![](img/8aaa8cc480962a8e98e354e7fc6e3106_28.png)
 
 在本节课中，我们一起学习了如何在AutoGen中使用工具。我们构建了一个会话式国际象棋游戏，演示了在嵌套聊天中使用工具的一种特定方式。这并非唯一的方式，但一般来说，当你使用工具时，你需要一个能够提议使用工具的智能体，和另一个能够执行该工具的智能体。如果你想将这种提议和使用工具隐藏在嵌套聊天内部，你可以以类似的方式进行。当我们这样做时，从外部看，我们不一定需要知道涉及两个智能体，我们可以简单地创建一个智能体的体验，该智能体能够利用工具并在其他应用程序中执行某些功能。在其他应用程序中，你可能希望明确展示这种工具提议和工具执行的分离。
 

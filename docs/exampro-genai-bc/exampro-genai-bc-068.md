@@ -2,19 +2,13 @@
 
 在本节课中，我们将专注于优化视觉小说项目的UI布局流程。我们将重构容器系统，引入UIItem概念，并解决组件尺寸计算和背景设置等问题，使UI元素的组织和管理更加清晰和灵活。
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_1.png)
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_3.png)
 
 ---
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_5.png)
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_6.png)
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_7.png)
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_9.png)
 
 ## 重构容器命名与结构
 
@@ -32,7 +26,6 @@
 
 首先，我们将项目中所有名为 `UI Fields` 的组件重命名为 `UI Container`，以更准确地反映其作为容器的功能。
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_21.png)
 
 ![](img/cf58d24fb032f7dfe84b0c364c3e3aae_23.png)
 
@@ -46,17 +39,11 @@ this.uiFields = new UIFields(scene, options);
 this.uiContainer = new UIContainer(scene, options);
 ```
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_27.png)
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_29.png)
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_31.png)
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_33.png)
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_34.png)
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_36.png)
 
 ![](img/cf58d24fb032f7dfe84b0c364c3e3aae_38.png)
 
@@ -98,7 +85,6 @@ class UIPanel extends UIContainer {
 
 ![](img/cf58d24fb032f7dfe84b0c364c3e3aae_44.png)
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_46.png)
 
 ![](img/cf58d24fb032f7dfe84b0c364c3e3aae_48.png)
 
@@ -163,7 +149,6 @@ class UIMessage extends UIItem {
 
 ## 统一组件接口：引入UIItem
 
-![](img/cf58d24fb032f7dfe84b0c364c3e3aae_60.png)
 
 ![](img/cf58d24fb032f7dfe84b0c364c3e3aae_62.png)
 

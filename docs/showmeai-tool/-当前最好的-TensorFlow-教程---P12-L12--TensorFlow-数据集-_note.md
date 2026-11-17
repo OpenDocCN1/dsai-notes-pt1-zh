@@ -42,9 +42,7 @@ import tensorflow_datasets as tfds
 print(ds_info)
 ```
 
-![](img/7bf38e208736fe558252a86bf7cde851_6.png)
 
-![](img/7bf38e208736fe558252a86bf7cde851_7.png)
 
 加载后，我们需要对数据进行归一化和流水线优化。
 

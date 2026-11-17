@@ -1,6 +1,5 @@
 # 004：为代理添加RAG能力
 
-![](img/725831658f122b151a7f425149a61914_0.png)
 
 ## 概述
 在本节课中，我们将学习如何为智能代理添加检索增强生成（RAG）能力。我们将使用LlamaParse解析一份简历文档，将其信息加载到向量存储中，并构建一个能够查询这些信息的RAG工具。最后，我们会将这个工具封装成一个可复用的工作流。
@@ -12,7 +11,6 @@
 
 ![](img/725831658f122b151a7f425149a61914_3.png)
 
-![](img/725831658f122b151a7f425149a61914_4.png)
 
 首先，导入必要的库和模块。
 
@@ -55,11 +53,8 @@ parser = LlamaParse(
 
 然后，使用解析器加载我们的假简历文件。
 
-![](img/725831658f122b151a7f425149a61914_6.png)
 
-![](img/725831658f122b151a7f425149a61914_7.png)
 
-![](img/725831658f122b151a7f425149a61914_8.png)
 
 ```python
 # 解析简历文档
@@ -73,7 +68,6 @@ documents = parser.load_data("./fake_resume.pdf")
 print(documents[2].text)
 ```
 
-![](img/725831658f122b151a7f425149a61914_10.png)
 
 解析器会以Markdown格式输出简历内容，包含项目标题、公司名称以及用项目符号列出的工作职责描述。
 
@@ -101,7 +95,6 @@ index = VectorStoreIndex.from_documents(
 
 现在，我们有了一个包含简历信息的索引。为了进行查询，我们需要基于这个索引创建一个查询引擎。
 
-![](img/725831658f122b151a7f425149a61914_12.png)
 
 ## 创建查询引擎并进行测试
 索引构建完成后，我们可以创建一个查询引擎来回答关于简历的问题。
@@ -113,7 +106,6 @@ index = VectorStoreIndex.from_documents(
 llm = OpenAI(model="gpt-4o-mini")
 ```
 
-![](img/725831658f122b151a7f425149a61914_14.png)
 
 然后，从索引创建查询引擎。我们可以设置 `similarity_top_k` 参数，它决定了引擎在回答问题时返回的最相关上下文片段的数量。
 
@@ -140,7 +132,6 @@ print(response)
 
 保存索引非常简单，只需调用 `persist` 方法并指定存储目录。
 
-![](img/725831658f122b151a7f425149a61914_16.png)
 
 ```python
 # 将索引持久化到磁盘
@@ -171,13 +162,9 @@ print(response)
 
 首先，定义一个执行RAG查询的普通Python函数。为函数提供描述性的名称、输入输出类型以及详细的文档字符串非常重要，因为这些元数据会被提供给LLM，帮助它决定是否以及如何使用这个工具。
 
-![](img/725831658f122b151a7f425149a61914_18.png)
 
-![](img/725831658f122b151a7f425149a61914_19.png)
 
-![](img/725831658f122b151a7f425149a61914_20.png)
 
-![](img/725831658f122b151a7f425149a61914_21.png)
 
 ```python
 def query_resume(query: str) -> str:
@@ -192,12 +179,10 @@ def query_resume(query: str) -> str:
     return str(response)
 ```
 
-![](img/725831658f122b151a7f425149a61914_22.png)
 
 然后，使用 `FunctionTool.from_defaults` 方法将这个函数转换为代理可用的工具。
 
 
-![](img/725831658f122b151a7f425149a61914_24.png)
 
 ```python
 from llama_index.core.tools import FunctionTool
@@ -218,11 +203,8 @@ agent = FunctionCallingAgent.from_tools(
 )
 ```
 
-![](img/725831658f122b151a7f425149a61914_26.png)
 
-![](img/725831658f122b151a7f425149a61914_27.png)
 
-![](img/725831658f122b151a7f425149a61914_28.png)
 
 创建代理后，我们可以与它对话。
 
@@ -234,19 +216,15 @@ print(response)
 
 当 `verbose=True` 时，控制台会输出详细的步骤信息，包括代理何时调用 `query_resume` 工具、传递了什么参数以及最终的回答。
 
-![](img/725831658f122b151a7f425149a61914_30.png)
 
-![](img/725831658f122b151a7f425149a61914_31.png)
 
 ## 构建可复用的RAG工作流
 最后，我们将之前的所有步骤整合封装成一个整洁、可复用的工作流类。这个工作流类会处理文档解析、索引创建/加载以及查询响应。
 
-![](img/725831658f122b151a7f425149a61914_32.png)
 
 以下是工作流类的定义。
 
 
-![](img/725831658f122b151a7f425149a61914_34.png)
 
 ```python
 from llama_index.core.workflow import (

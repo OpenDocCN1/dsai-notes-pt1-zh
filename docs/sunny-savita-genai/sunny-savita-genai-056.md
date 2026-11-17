@@ -10,7 +10,6 @@
 
 ---
 
-![](img/13f8bf9858e6ca56584a3b5fa4519679_1.png)
 
 ## 核心概念：为何需要摘要记忆？
 
@@ -30,9 +29,7 @@
 
 ![](img/13f8bf9858e6ca56584a3b5fa4519679_11.png)
 
-![](img/13f8bf9858e6ca56584a3b5fa4519679_4.png)
 
-![](img/13f8bf9858e6ca56584a3b5fa4519679_5.png)
 
 ---
 
@@ -71,7 +68,6 @@ os.environ["LANGCHAIN_PROJECT"] = "your_project_name_here"
 
 ### 工作原理
 
-![](img/13f8bf9858e6ca56584a3b5fa4519679_9.png)
 
 假设我们有以下三轮对话：
 1.  人类：你好，我叫小明。
@@ -126,7 +122,6 @@ print(memory.buffer)
 
 ## 类二：ConversationSummaryBufferMemory
 
-![](img/13f8bf9858e6ca56584a3b5fa4519679_11.png)
 
 了解了基础的摘要记忆后，我们来看一个更灵活的变体：`ConversationSummaryBufferMemory`。它结合了“缓冲”和“摘要”两种策略。
 

@@ -251,7 +251,6 @@ CosFace CosFace 和 ArcFace Arcface 是 2018 年开发的另外两种有前景�
 
 Ring-Loss RingLoss 是另一个专注于设计新损失函数的工作，该函数应用了软归一化，它逐渐学习将范数约束到缩放的单位圆，同时保持凸性，从而得到更强健的特征。通过常规软最大值和 Ring-loss 函数学习到的特征的比较见图 10。
 
-![参见说明](img/3203cb722b1e7df3cf4fa17e0d23905e.png)
 
 图 10：使用 (a) Softmax 和 (b) Ring loss 训练的 MNIST 特征样本。感谢 RingLoss 提供。
 

@@ -1,12 +1,8 @@
 # 20：使用AI编写后端API与前后端技术规范 📝
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_1.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_2.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_4.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_5.png)
 
 在本节课中，我们将学习如何从零开始，利用AI辅助工具（如Windsurf）来编写一个完整的后端API技术规范。我们将重点关注如何清晰地定义业务目标、技术需求、数据库模式以及API端点，为后续的代码生成打下坚实基础。
 
@@ -24,17 +20,13 @@
 
 本教程的目标是重建一个语言学习门户的后端。我们将使用Go语言和Gin框架，数据库采用SQLite。整个过程将完全从零开始，通过编写详细的技术规范来指导AI生成代码。
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_14.png)
 
 ![](img/b1e2bb7066de98c5786115c0dc7edc75_16.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_18.png)
 
 ![](img/b1e2bb7066de98c5786115c0dc7edc75_20.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_22.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_24.png)
 
 ![](img/b1e2bb7066de98c5786115c0dc7edc75_26.png)
 
@@ -48,27 +40,18 @@
 
 ![](img/b1e2bb7066de98c5786115c0dc7edc75_33.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_35.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_37.png)
 
 ![](img/b1e2bb7066de98c5786115c0dc7edc75_39.png)
 
 ![](img/b1e2bb7066de98c5786115c0dc7edc75_40.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_42.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_44.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_46.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_48.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_50.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_52.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_54.png)
 
 首先，我们需要明确项目的核心目标和技术栈选择。
 
@@ -76,9 +59,7 @@
 
 ![](img/b1e2bb7066de98c5786115c0dc7edc75_57.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_59.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_61.png)
 
 ![](img/b1e2bb7066de98c5786115c0dc7edc75_62.png)
 
@@ -91,13 +72,9 @@
 
 ![](img/b1e2bb7066de98c5786115c0dc7edc75_65.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_66.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_68.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_70.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_72.png)
 
 **技术需求**：
 *   **后端语言**：使用 **Go** 语言构建。
@@ -107,35 +84,23 @@
 *   **数据格式**：API始终返回 **JSON** 格式数据。
 *   **用户管理**：暂不实现身份验证和授权，所有操作视为单一用户。
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_74.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_76.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_78.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_80.png)
 
 ## 第二步：设计数据库模式
 
 清晰的数据库模式是API设计的基础。以下是本系统所需的表结构：
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_82.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_84.png)
 
 以下是核心数据表及其字段描述：
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_86.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_88.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_90.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_92.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_93.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_95.png)
 
 *   **words（单词表）**
     *   `id`：整数，主键。
@@ -168,41 +133,26 @@
     *   `correct`：布尔值，回答是否正确。
     *   `created_at`：时间戳，创建时间。
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_97.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_99.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_101.png)
 
 ## 第三步：分析前端页面以确定API端点
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_103.png)
 
 为了设计出符合实际需求的API，我们需要分析前端每个页面的功能和所需数据。通过截图和描述每个页面，我们可以反向推导出后端需要提供哪些API端点。
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_105.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_107.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_109.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_111.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_113.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_115.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_117.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_119.png)
 
 以下是各页面的分析：
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_121.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_123.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_125.png)
 
 *   **仪表盘 (`/dashboard`)**
     *   **目的**：展示学习概览。
@@ -249,50 +199,34 @@
     *   **组件**：主题选择（亮色/暗色/系统）、重置历史按钮、重载种子数据按钮。
     *   **所需API端点**：`DELETE /api/study-sessions` (重置历史), `POST /api/seed` (重载数据)。
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_127.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_129.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_130.png)
 
 **额外的核心API**：
 *   `POST /api/words/:id/review`：提交一个单词的复习结果。请求体需包含 `study_session_id` 和 `correct` 参数。
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_132.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_134.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_136.png)
 
 ## 第四步：整理与提交技术规范
 
 将上述所有内容整理到两个文档中：`backend-technical-spec.md` (包含业务目标、技术需求、数据库模式、API端点列表) 和 `frontend-technical-spec.md` (包含每个页面的详细分析)。使用Git工具（如SmartGit/GitX）将这两个文档以及相关的页面截图提交到版本库中。
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_138.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_140.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_142.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_143.png)
 
 至此，我们已经拥有了一份详尽的技术规范，可以用于指导AI生成初始代码，或在团队中作为开发蓝图。
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_145.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_146.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_148.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_150.png)
 
 ## 总结
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_152.png)
 
 ![](img/b1e2bb7066de98c5786115c0dc7edc75_154.png)
 
-![](img/b1e2bb7066de98c5786115c0dc7edc75_155.png)
 
 ![](img/b1e2bb7066de98c5786115c0dc7edc75_157.png)
 

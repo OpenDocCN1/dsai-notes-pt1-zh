@@ -1,8 +1,6 @@
 # 🧠 七月在线-深度学习集训营 第三期[2022] - P4：当下最好的语言模型BERT介绍
 
-![](img/e38887d0cfad027411d3837bd0fd0102_0.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_2.png)
 
 在本节课中，我们将要学习当下效果卓越的语言模型BERT。课程将从Attention机制开始，逐步深入到Transformer的核心结构，并最终详细解析BERT模型的原理、预训练任务以及如何在实际任务中进行微调。我们将确保内容简单直白，让初学者能够跟上。
 
@@ -24,13 +22,9 @@ Sequence-to-Sequence模型包含编码器（Encoder）和解码器（Decoder）�
 
 其中，`Q`（Query）代表解码器的当前状态，`K`（Key）和`V`（Value）通常代表编码器的所有隐藏状态。通过计算`Q`和`K`的相似度得到权重，再对`V`进行加权求和。
 
-![](img/e38887d0cfad027411d3837bd0fd0102_4.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_5.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_7.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_9.png)
 
 ---
 
@@ -38,25 +32,19 @@ Sequence-to-Sequence模型包含编码器（Encoder）和解码器（Decoder）�
 
 理解了Attention机制后，本节我们来看看Transformer模型。Transformer完全基于Attention机制构建，是BERT模型的核心。
 
-![](img/e38887d0cfad027411d3837bd0fd0102_11.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_13.png)
 
 Transformer同样采用编码器-解码器架构。其编码器由N个相同的层堆叠而成，每层包含两个子层：
 1.  **多头自注意力机制（Multi-Head Self-Attention）**
 2.  **前馈神经网络（Feed-Forward Network）**
 
-![](img/e38887d0cfad027411d3837bd0fd0102_15.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_17.png)
 
 每个子层后都接有残差连接（Residual Connection）和层归一化（Layer Normalization），这有助于缓解梯度消失和过拟合。
 
 解码器结构类似，但在其第一个多头注意力子层中加入了掩码（Mask），以防止在训练时“看到”未来的信息，确保自回归生成的正确性。
 
-![](img/e38887d0cfad027411d3837bd0fd0102_19.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_21.png)
 
 ---
 
@@ -72,9 +60,7 @@ Transformer中使用的Attention变体是Scaled Dot-Product Attention。其计�
 
 ### 2.2 多头注意力机制（Multi-Head Attention）
 
-![](img/e38887d0cfad027411d3837bd0fd0102_23.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_25.png)
 
 单一的Attention机制可能只关注到一种模式的信息。为了让模型能够同时关注来自不同表示子空间的信息，Transformer引入了多头注意力机制。
 
@@ -83,13 +69,9 @@ Transformer中使用的Attention变体是Scaled Dot-Product Attention。其计�
 2.  对每一组分别进行Scaled Dot-Product Attention计算，得到多个输出。
 3.  将多个输出拼接起来，再通过一个线性变换层进行整合和降维。
 
-![](img/e38887d0cfad027411d3837bd0fd0102_27.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_29.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_31.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_33.png)
 
 **代码示意：**
 ```python
@@ -128,17 +110,13 @@ BERT是一个预训练模型，其应用分为两个阶段：**预训练（Pre-t
 
 ---
 
-![](img/e38887d0cfad027411d3837bd0fd0102_35.png)
 
 ### 3.1 BERT的预训练任务
 
-![](img/e38887d0cfad027411d3837bd0fd0102_37.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_39.png)
 
 BERT通过两个无监督任务在海量文本上进行预训练，从而学习通用的语言表示。
 
-![](img/e38887d0cfad027411d3837bd0fd0102_41.png)
 
 **任务一：掩码语言模型（Masked Language Model, MLM）**
 类似于完形填空。随机掩盖输入序列中15%的Token，然后让模型预测被掩盖的Token。为了防止[MASK]标记在微调阶段从未出现，BERT采用以下策略：
@@ -146,9 +124,7 @@ BERT通过两个无监督任务在海量文本上进行预训练，从而学习�
 *   10%的概率替换为随机Token
 *   10%的概率保持不变
 
-![](img/e38887d0cfad027411d3837bd0fd0102_43.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_45.png)
 
 **任务二：下一句预测（Next Sentence Prediction, NSP）**
 判断句子B是否是句子A的下一句。训练数据中，50%的句子B是A的实际下一句（正例），50%是随机选取的（负例）。这个任务帮助模型理解句子间关系。
@@ -160,13 +136,9 @@ BERT的输入由三部分嵌入相加而成：
 
 输入序列以`[CLS]`标记开头，句子间用`[SEP]`标记分隔。`[CLS]`标记的最终输出常被用作整个序列的聚合表示，用于分类任务。
 
-![](img/e38887d0cfad027411d3837bd0fd0102_47.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_49.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_51.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_53.png)
 
 ---
 
@@ -247,9 +219,7 @@ class MyProcessor(DataProcessor):
 
 ![](img/e38887d0cfad027411d3837bd0fd0102_93.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_95.png)
 
-![](img/e38887d0cfad027411d3837bd0fd0102_97.png)
 
 在BERT之后，研究者们提出了诸多改进模型，如：
 *   **GPT系列**：使用Transformer解码器，采用单向语言模型进行预训练。

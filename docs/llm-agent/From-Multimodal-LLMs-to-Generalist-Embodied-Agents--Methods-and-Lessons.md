@@ -215,7 +215,6 @@ RL 相较于 SFT 的比较效益。使用 RL 训练对于取得这些强大的�
 
 多领域数据的影响。我们评估了在来自所有不同领域的数据上训练通用模型，与仅在特定目标领域数据上训练模型之间的差异。具体而言，我们将较小的 LLaVA-OneVision-500m 模型分别在单一领域的数据（“领域特定”）或跨所有领域的数据（“GEA-Base”）上进行训练。在[表 4](https://arxiv.org/html/2412.08442v1#S6.T4 "In 6.1 GEA Generalization Capabilities ‣ 6 Empirical Evaluation ‣ From Multimodal LLMs to Generalist Embodied Agents: Methods and Lessons")中的对比显示，在所有基准测试中，使用所有数据进行训练都是有益的。然而，在一些领域（如 Android 控制和 Procgen）中的提升较小，可能是因为这些领域与其他训练领域的重叠较少，而我们使用了大量的操控数据进行训练。[Section G.4](https://arxiv.org/html/2412.08442v1#A7.SS4 "G.4 Domain Transfer Analysis ‣ Appendix G Further Results ‣ From Multimodal LLMs to Generalist Embodied Agents: Methods and Lessons")包含了关于每个数据集之间成对迁移性的更细致研究，并进一步支持了这一结论：GEA 从多领域数据中受益。
 
-![请参见标题](img/e29fdab2d3d8efc3269423e39a4ed900.png)
 
 图 4：Habitat Pick 中的在线学习。MLLM 方法对 LLaVA-OV 进行微调，而其他方法则对 GEA-Base 进行微调。
 

@@ -184,7 +184,6 @@ zhewei@ruc.edu.cn，yongchao.ly@antgroup.com 通讯作者。
 
 随着节点数量的增加，图形结构变得更加复杂，使得图形问题的解决变得越来越困难。为了研究模型在问题复杂度增加时的性能变化，我们在循环检测和最短路径问题上进行了实验，逐渐将节点数量从5增加到100。结果如图[4](https://arxiv.org/html/2410.05130v1#S5.F4 "图4 ‣ 5.1 实验 1：GraphInstruct上的性能 ‣ 5 实验 ‣ 基于LLM的多代理的可扩展和准确图形推理")所示。
 
-![参见说明文字](img/8ecbe9b151774b21b498c89fc7abfcfd.png)
 
 (a) 循环检测
 
@@ -326,7 +325,6 @@ zhewei@ruc.edu.cn，yongchao.ly@antgroup.com 通讯作者。
 
 连通性: 参见图[7](https://arxiv.org/html/2410.05130v1#A1.F7 "Figure 7 ‣ A.1 Example of distributed algorithms in distributed algorithm library ‣ Appendix A Distributed algorithms under the distributed paradigm ‣ Scalable and Accurate Graph Reasoning with LLM-based Multi-Agents")。
 
-![请参见标题](img/2ed14e1d84045c77d48d6b2c49b42c2a.png)
 
 图 6: 分布式范式下的最短路径问题的分布式算法。
 

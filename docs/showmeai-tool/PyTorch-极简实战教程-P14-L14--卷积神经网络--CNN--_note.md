@@ -49,7 +49,6 @@
 首先，我们导入必要的库，并检查是否有可用的GPU支持。
 
 
-![](img/bdf3154fd8a3cad04eb6fed3d8610645_5.png)
 
 ![](img/bdf3154fd8a3cad04eb6fed3d8610645_6.png)
 

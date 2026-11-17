@@ -1,6 +1,5 @@
 #  121：与Abe Gong关于数据质量与Great Expectations的对话 🎙️🔍
 
-![](img/a11a1b301a593d017abfc8b9a052040b_0.png)
 
 ## 概述
 

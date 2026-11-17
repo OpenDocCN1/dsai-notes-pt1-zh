@@ -1,6 +1,5 @@
 #  183：使用Amazon托管服务部署Apache Flink Studio笔记本 🚀
 
-![](img/c0fb5059f2908e524a82b867dfc74c0c_0.png)
 
 ## 概述
 
@@ -17,13 +16,11 @@
 *   可以使用**Amazon Kafka**连接器来处理Apache Kafka主题的流数据。
 *   Flink连接器还通过**JDBC**支持关系型数据库，允许与运行在Amazon RDS上的MySQL或PostgreSQL等数据库集成。
 
-![](img/c0fb5059f2908e524a82b867dfc74c0c_2.png)
 
 这些连接器使Flink能够与不同的数据源和目的地交互，帮助你在不同平台和服务之间构建实时数据处理管道。
 
 ---
 
-![](img/c0fb5059f2908e524a82b867dfc74c0c_4.png)
 
 现在，让我们使用Amazon Managed Service for Apache Flink创建一个Studio Notebook，以便了解部署笔记本与部署应用程序之间的区别。
 

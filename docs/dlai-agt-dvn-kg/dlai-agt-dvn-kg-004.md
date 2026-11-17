@@ -4,7 +4,6 @@
 
 ![](img/9cf63628deb6dd810a9fcd14f79ece2e_2.png)
 
-![](img/9cf63628deb6dd810a9fcd14f79ece2e_0.png)
 
 在本节课中，我们将学习如何使用 Google 的 Agent Development Kit (ADK) 来构建多智能体系统。ADK 是一个用于开发智能体的框架。我们将从创建一个简单的智能体开始，逐步了解其核心组件和工作原理。
 
@@ -218,7 +217,6 @@ import asyncio
 asyncio.run(run_conversation())
 ```
 
-![](img/9cf63628deb6dd810a9fcd14f79ece2e_4.png)
 
 ## 总结
 

@@ -396,7 +396,6 @@ _MESSAGE和INFER_HUMAN_WITH_RECEIVE_MESSAGE用于控制代理是否可以向人�
 
 为了回答RQ1（MToM过程如何影响HATs的整体团队表现？），我们首先分析了两个独立变量对团队表现的影响，使用最佳表现作为因变量。最佳表现是指重复测量的最大值，这可以消除在学习效应存在且任务复杂时，低级异常值对结果的影响。在Bi-Comm组中，没有ToM的代理的平均得分为163.75（标准差 = 26.17），而有ToM的代理得分为165.00（标准差 = 35.02）。在A-Comm组中，代理没有ToM时的平均表现得分为168.53（标准差 = 22.83），有ToM时的得分为169.71（标准差 = 27.18）。在H-Comm组中，代理没有ToM时的平均得分为175.59（标准差 = 19.19），有ToM时的得分为168.53（标准差 = 22.76）。在No-Comm组中，代理没有ToM时的平均得分为177.22（标准差 = 25.62），而有ToM时的代理得分更高，平均得分为180.83（标准差 = 18.09）。每个条件下受试者最佳表现的中位数和标准差如图[13(a)](https://arxiv.org/html/2409.08811v1#S6.F13.sf1 "Figure 13(a) ‣ Figure 13 ‣ 6.1\. Team Performance ‣ 6\. Results ‣ Mutual Theory of Mind in Human-AI Collaboration: An Empirical Study with LLM-driven AI Agents in a Real-time Shared Workspace Task")所示。关于沟通因素，No-Comm组得分最高，Bi-Comm组得分最低，H-Comm组和A-Comm组之间几乎没有差异。在每个组内，基于MToM是否存在（即，代理是否有ToM）对最佳表现没有显著影响。
 
-![参见说明](img/8f2a7c8dd12e45a85f0fecc725edcbf6.png)
 
 (a) 最佳团队表现。
 
@@ -424,47 +423,36 @@ _MESSAGE和INFER_HUMAN_WITH_RECEIVE_MESSAGE用于控制代理是否可以向人�
 
 ### 6.3. 人类对AI代理的偏好和感知
 
-![参见图注](img/3459b99598390273dd1c80bb69950976.png)
 
 (a) 偏好与代理互动。
 
-![参见图注](img/21bf7f3e27b6de2dda0f00d929ed5a4a.png)
 
 (b) 偏好更好地理解人类。
 
-![参见图注](img/edd427751c7a2e3b9736a8225d3f2b2b.png)
 
 (c) 偏好更好的协作。
 
-![参见图注](img/fbd0e317862fe806cde3508a745a65ae.png)
 
 (d) 偏好与代理互动。
 
-![参见图注](img/faff4f992990ef759a334d60447d35cb.png)
 
 (e) 偏好更好地理解人类。
 
-![参见图注](img/b637d03368ad977b27d22e88a11e729a.png)
 
 (f) 偏好更好的协作。
 
-![参见图注](img/9e2557c0c7ac6a55cf70cc0fff205706.png)
 
 (g) 偏好与代理互动。
 
-![参见图注](img/ebd3718b5fa160e8377512e15956ec9a.png)
 
 (h) 偏好更好地理解人类。
 
-![参见图注](img/72f2da87da77671062f93b10bd7be417.png)
 
 (i) 偏好更好的协作。
 
-![参见图注](img/65569be78a75220d477b93a9fc75f91c.png)
 
 (j) 偏好与代理互动。
 
-![参见图注](img/4568a5c4d3a3c61ec5b50db484080a33.png)
 
 (k) 偏好更好地理解人类。
 

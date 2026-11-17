@@ -12,15 +12,11 @@ scikit-image 是一个基于 NumPy 和 SciPy 构建的图像处理库，旨在�
 
 ## 图像表示：NumPy 数组 📊
 
-![](img/fadcfcd874e6debee6afba46d402bc48_1.png)
 
-![](img/fadcfcd874e6debee6afba46d402bc48_2.png)
 
-![](img/fadcfcd874e6debee6afba46d402bc48_3.png)
 
 在 scikit-image 中，图像使用标准的 NumPy 数组来表示。本节我们将学习如何创建和操作这些数组。
 
-![](img/fadcfcd874e6debee6afba46d402bc48_5.png)
 
 ### 灰度图像
 
@@ -110,7 +106,6 @@ print(type(image), image.dtype, image.shape)
 
 `ImageCollection` 可以高效地加载多个图像，仅在需要时加载到内存。
 
-![](img/fadcfcd874e6debee6afba46d402bc48_7.png)
 
 ```python
 from skimage import io

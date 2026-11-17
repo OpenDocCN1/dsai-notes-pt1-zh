@@ -1,6 +1,5 @@
 # 046：DDPM中的推理 🎼
 
-![](img/aee77eead19d88f62978572802a254ae_1.png)
 
 ![](img/aee77eead19d88f62978572802a254ae_1.png)
 

@@ -58,15 +58,12 @@ gregory.palmer@baesystems.com    \fnmChris \surParry    \fnmDaniel \surH
 
 以下我们提供本调查中依赖的定义和符号。首先，我们将正式定义描述 RL 智能体与环境交互的不同类型模型。我们将在本调查中遇到每种类型（参见\autoreffig:rl_problems_overview 以获取概述）。
 
-![参见说明](img/43637374482f4a3abf1a6f8f35a49577.png)
 
 (a) MDP
 
-![参见说明](img/1d85724e79681b07e47c190596be0f40.png)
 
 (b) POMDP
 
-![参见说明](img/ebbfd0fec31dc083e482f01ecefd0f6b.png)
 
 (c) 马尔可夫博弈（MG）
 
@@ -305,19 +302,15 @@ HOMER 被设计为学习一种称为*运动学不可分离性*的无奖励状态
 
 上述标准提供了评估方法对我们目标领域适用性的轴线。通过回顾高维动作空间的文献，我们能够识别出五种类别，这些类别方便地聚集了这些方法：i.) *原型动作* 基于的方法；ii.) *动作分解*；iii.) *动作消除*；iv.) *层次化* 方法；v.) *课程学习*。\autoreffig:high_level_action_approaches_categories 提供了每个类别的示例和简短描述。在 \autoreftab:high_dim_action_approaches 和 \autorefappendix:action_approaches 中，我们提供了文献概述和简短的贡献总结。
 
-![参见说明](img/f1d9e71cb4b4beee60dbe3444a6ca027.png)
 
 (a) 原型动作
 
-![参见说明](img/414fef6f2db3c433ae0f69ea055e0d21.png)
 
 (b) 动作分解
 
-![参见说明](img/c4c0d679b3c04289aa5c00e543e0a0d8.png)
 
 (c) 动作消除
 
-![参见说明](img/e4a97e078506f29a85659f0c00c52df2.png)
 
 (d) 层次化
 
@@ -360,11 +353,9 @@ Wolpertinger 已应用于：边缘设备的缓存以减少下一代无线网络�
 
 合作 MA(D)RL 的训练方案分为三类（如 \autoreffig:marl_approaches_overview 所示）：独立学习者（ILs），他们将彼此视为环境的一部分；集中控制器方法，这种方法不随智能体数量的增加而扩展；以及集中训练用于分散执行（CTDE）。
 
-![参见标题](img/c2c64afea7152c8a4399c8dbbca17049.png)
 
 (a) 独立学习者
 
-![参见标题](img/1c46e9fd8bf129cdbabfc6a1fbf29700.png)
 
 (b) 集中训练用于分散执行
 

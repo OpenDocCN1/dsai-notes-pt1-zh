@@ -46,7 +46,6 @@ def extract_info(paper_id: str):
 
 这样就在我们的MCP服务器上定义了两个可以运行和测试的工具。
 
-![](img/77e4f3a33fad61c7073dd52fa90d758d_5.png)
 
 最后，我们需要确保有正确的命令来启动这个服务器。我们将添加一段标准的Python代码。
 
@@ -65,7 +64,6 @@ if __name__ == "__main__":
 
 以下是设置步骤：
 
-![](img/77e4f3a33fad61c7073dd52fa90d758d_7.png)
 
 1.  使用`uv`包管理器初始化项目并创建虚拟环境。
 2.  激活虚拟环境。
@@ -89,7 +87,6 @@ npx @modelcontextprotocol/inspector uv run research_server.py
 
 MCP Inspector对于构建服务器或测试他人编写的服务器来说，是一个非常有价值的沙箱环境。
 
-![](img/77e4f3a33fad61c7073dd52fa90d758d_9.png)
 
 测试完成后，我们可以返回终端，使用`Ctrl+C`来停止服务器进程。如果需要再次启动，可以使用上箭头键调出之前的命令。
 

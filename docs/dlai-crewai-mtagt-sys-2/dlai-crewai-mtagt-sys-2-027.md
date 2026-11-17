@@ -8,9 +8,7 @@
 
 ---
 
-![](img/06097eeba151a78ac8e4e4161bb29cae_3.png)
 
-![](img/06097eeba151a78ac8e4e4161bb29cae_4.png)
 
 ## 概述
 
@@ -218,7 +216,6 @@ crewai run
 3.  **构建模式**：从开始对话、分析路由、执行不同路径（简单回答/深度研究），到最终汇总输出的完整模式。
 4.  **可视化与持久化**：使用 `crewai flow plot` 可视化流程，利用 `@persist` 实现跨对话的状态保持。
 
-![](img/06097eeba151a78ac8e4e4161bb29cae_6.png)
 
 ![](img/06097eeba151a78ac8e4e4161bb29cae_7.png)
 

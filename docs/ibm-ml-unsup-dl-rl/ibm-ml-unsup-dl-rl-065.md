@@ -16,13 +16,9 @@ The goal here is going to be to use CARS to build and train neural networks。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_1.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_2.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_3.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_4.png)
 
 We're also going to start off。By having a random forest in order to just get a baseline value for what the actual accuracy should be around。
 
@@ -32,25 +28,19 @@ We're also going to start off。By having a random forest in order to just get a
 
  But often， obviously will。
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_6.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_7.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_8.png)
 
 Be the answer sometimes， so don't say just because here it's not answer that we should never use neural nets。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_10.png)
 
 So the first step is going to be import here in this first cell are going to be libraries that we're already familiar with。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_12.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_13.png)
 
 And then in this second cell here。You see that we're importing。 And again。
 
@@ -68,13 +58,9 @@ And then in this second cell here。You see that we're importing。 And again。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_15.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_16.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_17.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_18.png)
 
 We're then going to import our actual file that we're going to be working with and that's going to be this diabetes data frame。
 
@@ -84,11 +70,8 @@ We're then going to import our actual file that we're going to be working with a
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_20.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_21.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_22.png)
 
 We can then get the shape and。As anticipated， there's going to be nine columns。
 
@@ -104,9 +87,7 @@ We're then going to set x equal to diabetes df do IO。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_24.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_25.png)
 
 We're then going to use that train test split with a 75 to 25% split。
 
@@ -116,9 +97,7 @@ We're then going to use that train test split with a 75 to 25% split。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_27.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_28.png)
 
 We pull out the mean value for y and1 minus y here。 again， those are just going to be zeros or ones。
 
@@ -126,13 +105,10 @@ We pull out the mean value for y and1 minus y here。 again， those are just go
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_30.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_31.png)
 
 Is already going to be a positive value。
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_33.png)
 
 So because we see that 35% of the patients have diabetes whereas 65% do not。
 
@@ -142,9 +118,7 @@ So because we see that 35% of the patients have diabetes whereas 65% do not。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_35.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_36.png)
 
 So we're going to get our baseline using random forest。
 
@@ -154,9 +128,7 @@ So we're going to get our baseline using random forest。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_38.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_39.png)
 
 So RF model and we initiate our model random force classifier， this is a classification problem。
 
@@ -164,9 +136,7 @@ So RF model and we initiate our model random force classifier， this is a class
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_41.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_42.png)
 
 Now our models fit。And we're going to want to predict the actual values。
 
@@ -176,17 +146,13 @@ Now our models fit。And we're going to want to predict the actual values。
 
  that ROC curve in the next cell。
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_44.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_45.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_46.png)
 
 So we call RF model dot predictdict on our excess as well as RF model dot predictic Praba in order to get the different probabilities。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_48.png)
 
 And then we can get what our actual accuracy is by passing in the Y tests and the predicted value。
 
@@ -194,35 +160,27 @@ And then we can get what our actual accuracy is by passing in the Y tests and th
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_50.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_51.png)
 
 And here we say that we that will output the predicted probabilities for each one of the classes we want just for the positive class。
 
  which is why we say one here。
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_53.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_54.png)
 
 So we see that our accuracy is about 77。6 better than just predicting not for everything。
 
  right that was 65%。
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_56.png)
 
 And our ROC AUC is going to be 83。6。
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_58.png)
 
 We're then going to create this function to plot our ROC curve and we'll use this later on so we create our function so that we can use it again later on。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_60.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_61.png)
 
 We get our false positive rate and our true positive rate。
 
@@ -230,21 +188,16 @@ We get our false positive rate and our true positive rate。
 
 😊。
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_63.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_64.png)
 
 And that's just going to be whatever we pass in as our YP and we should pass in those probabilities。
 
  not actual predictions。
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_66.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_67.png)
 
 As well as the actual model that we'll be using。
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_69.png)
 
 We're then going to or the model name of what we're using so that we can specify this as random forest versus our neural nets。
 
@@ -260,9 +213,7 @@ We're then going to or the model name of what we're using so that we can specify
 
  So we'll see a smaller line there。
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_71.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_72.png)
 
 Keeping our grid， and then we can set our title as well as our x limit。
 
@@ -270,25 +221,21 @@ Keeping our grid， and then we can set our title as well as our x limit。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_74.png)
 
 Then once that function has been created， we just call plot R O C on our Y test。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_76.png)
 
 And our wide pre probabilities， again， specifying that we just want the positive values。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_78.png)
 
 And then we're saying that this is a random force for Ar。
 
 
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_80.png)
 
 And we see here the ROC curve for RF on that piMma diabetes problem。
 
@@ -302,8 +249,6 @@ So that's going to close out our baseline values so you can remember these value
 
  I'll see you in the next video。
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_82.png)
 
-![](img/c989c3970ba6f5f7cc0b31125e4668ff_83.png)
 
 ![](img/c989c3970ba6f5f7cc0b31125e4668ff_84.png)

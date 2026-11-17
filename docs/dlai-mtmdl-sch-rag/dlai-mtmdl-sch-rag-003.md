@@ -217,12 +217,9 @@ for obj in response.objects:
 3.  使用散点图绘制降维后的向量，相似内容会聚集在一起。
 
 
-![](img/0909184594c1cab49f74de44e0dbd5e0_5.png)
-
-![](img/0909184594c1cab49f74de44e0dbd5e0_6.png)
 
 
-![](img/0909184594c1cab49f74de44e0dbd5e0_8.png)
+
 
 
 ![](img/0909184594c1cab49f74de44e0dbd5e0_10.png)

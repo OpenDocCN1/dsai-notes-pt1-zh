@@ -1,22 +1,16 @@
 # 005：列式NoSQL数据库类别
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_0.png)
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_1.png)
 
 在本节课中，我们将学习列式NoSQL数据库。我们将了解其架构、核心概念以及主要应用场景。
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_3.png)
 
 ---
 
 ## 🏗️ 列式数据库的起源与架构
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_5.png)
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_6.png)
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_7.png)
 
 列式数据库源自谷歌创建的名为**Big Table**的架构。因此，这些数据库通常也被称为**Big Table克隆**、**列式数据库**或**宽列数据库**。
 
@@ -28,13 +22,10 @@
 
 列族由若干行组成，每一行都有一个唯一的键或标识符，并且属于一个或多个列。这些列被分组在一起形成列族，因为它们经常被一起访问。
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_9.png)
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_10.png)
 
 需要特别指出的是，**列族中的行并不要求共享相同的列**。它们可以共享所有列、一个子集的列，或者完全不共享任何列。此外，列可以被添加到任意数量的行中，而不必添加到所有行。
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_12.png)
 
 ---
 
@@ -42,11 +33,8 @@
 
 以下是列式NoSQL数据库的一些典型应用场景。
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_14.png)
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_15.png)
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_16.png)
 
 ### 优势场景
 
@@ -69,7 +57,6 @@
 
 ## 🛠️ 流行的列式NoSQL数据库实现
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_18.png)
 
 一些更流行的列式NoSQL数据库实现包括：
 *   **Cassandra**
@@ -77,23 +64,17 @@
 *   **HyTable**
 *   **Accumulo**
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_19.png)
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_20.png)
 
 ---
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_22.png)
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_23.png)
 
 ## 📝 课程总结
 
 本节课中，我们一起学习了列式NoSQL数据库。
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_25.png)
 
-![](img/3b95e9a9a1fe19ca9db7e357a5adefbd_26.png)
 
 我们了解到，列式数据库源自谷歌的**Big Table**存储系统架构。这类数据库将数据存储在**列**或**列组**中。
 

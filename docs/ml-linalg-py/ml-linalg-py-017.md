@@ -4,9 +4,7 @@
 
 ## 点积的定义与计算
 
-![](img/521085ebfdbded71f981b5b94b9ec242_1.png)
 
-![](img/521085ebfdbded71f981b5b94b9ec242_2.png)
 
 点积是两个长度相同的向量之间的一种运算，其结果是一个标量。假设我们有两个向量 **x** 和 **y**，它们的长度均为 **n**，则它们的点积可以表示为：
 
@@ -28,9 +26,7 @@
 
 以下是使用NumPy库计算点积的步骤：
 
-![](img/521085ebfdbded71f981b5b94b9ec242_4.png)
 
-![](img/521085ebfdbded71f981b5b94b9ec242_5.png)
 
 ```python
 import numpy as np
@@ -52,12 +48,9 @@ print(f"NumPy计算的点积结果: {numpy_dot}")
 
 在PyTorch中计算点积时，需要注意张量的数据类型：
 
-![](img/521085ebfdbded71f981b5b94b9ec242_7.png)
-
-![](img/521085ebfdbded71f981b5b94b9ec242_8.png)
 
 
-![](img/521085ebfdbded71f981b5b94b9ec242_10.png)
+
 
 ```python
 import torch
@@ -78,12 +71,9 @@ print(f"PyTorch张量用NumPy计算的结果: {torch_via_numpy}")
 
 TensorFlow的计算方式略有不同，通常需要两步操作：
 
-![](img/521085ebfdbded71f981b5b94b9ec242_12.png)
-
-![](img/521085ebfdbded71f981b5b94b9ec242_14.png)
 
 
-![](img/521085ebfdbded71f981b5b94b9ec242_15.png)
+
 
 ```python
 import tensorflow as tf
@@ -99,7 +89,6 @@ tf_dot = tf.reduce_sum(elementwise_product)
 print(f"TensorFlow计算的点积结果: {tf_dot}")
 ```
 
-![](img/521085ebfdbded71f981b5b94b9ec242_17.png)
 
 ## 总结
 

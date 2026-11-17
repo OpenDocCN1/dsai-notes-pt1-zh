@@ -1,6 +1,5 @@
 # 164：一些流行的Transformer模型——BERT、GPT与BART概述 🧠
 
-![](img/f1620c31ecbf93e92ce810dc77b434ca_0.png)
 
 在本节课中，我们将学习基于Transformer架构的几种流行模型，包括BERT、GPT和BART。我们将了解它们的基本概念、核心差异以及它们如何利用自监督学习在大规模无标签数据上进行预训练。
 

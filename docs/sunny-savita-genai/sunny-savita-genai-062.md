@@ -62,7 +62,6 @@ class ChatBot:
 
 智能体需要能够被“调用”。我们定义一个 `__call__` 方法，它接收用户输入并触发智能体的执行流程。
 
-![](img/9afc9e9f79bd3ecaf5b4a10f9d6ca35e_4.png)
 
 ![](img/9afc9e9f79bd3ecaf5b4a10f9d6ca35e_5.png)
 

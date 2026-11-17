@@ -2,21 +2,17 @@
 
 在本节课中，我们将学习如何从一个时间序列数据中，循环获取指定日期区间内每一天的数据，并将这些数据整理成一个结构化的表格。我们将使用循环遍历日期，提取每日数据，并最终将所有数据拼接成一个完整的 `DataFrame`。
 
-![](img/53a7be47c113b45c16681f78e26045ab_1.png)
 
 ---
 
-![](img/53a7be47c113b45c16681f78e26045ab_3.png)
 
 ## 核心思路与准备工作
 
 上一节我们介绍了如何获取单日数据。本节中我们来看看如何获取一个连续时间段内的所有数据。
 
-![](img/53a7be47c113b45c16681f78e26045ab_5.png)
 
 核心思路是：**遍历日期序列中的每一天，分别获取当天的数据，然后将所有日期的数据汇总到一个表格中**。
 
-![](img/53a7be47c113b45c16681f78e26045ab_7.png)
 
 首先，我们需要明确数据源。假设我们有一个日期序列，它代表了我们想要查询的所有交易日。
 
@@ -44,7 +40,6 @@ for i in range(len(date_series)):
 
 在循环体内，我们需要获取第 `i` 天的实际数据。根据之前的知识，获取数据的函数通常会返回一个多维数组。
 
-![](img/53a7be47c113b45c16681f78e26045ab_9.png)
 
 ```python
 # 假设 get_data_by_index(i) 函数能获取第 i 天的数据
@@ -58,11 +53,9 @@ daily_data = get_data_by_index(i)
 useful_data = daily_data[0, 2, :]  # 这是一个示例索引，具体根据数据结构调整
 ```
 
-![](img/53a7be47c113b45c16681f78e26045ab_11.png)
 
 这样，我们就得到了单日的有用数据 `useful_data`。
 
-![](img/53a7be47c113b45c16681f78e26045ab_13.png)
 
 ---
 
@@ -99,11 +92,9 @@ for i in range(len(date_series)):
     # 注意：这里还缺少‘stock_name’列，需要根据实际情况从数据中提取或添加
 ```
 
-![](img/53a7be47c113b45c16681f78e26045ab_15.png)
 
 现在，`daily_df` 就是一个包含两列（‘factor_value’和‘date’）的每日数据表。
 
-![](img/53a7be47c113b45c16681f78e26045ab_17.png)
 
 ---
 
@@ -115,7 +106,6 @@ for i in range(len(date_series)):
 
 在循环内部，每次生成 `daily_df` 后，就执行一次拼接操作：
 
-![](img/53a7be47c113b45c16681f78e26045ab_19.png)
 
 ```python
     # ... 创建 daily_df ...
@@ -124,7 +114,6 @@ for i in range(len(date_series)):
     total_df = pd.concat([total_df, daily_df], ignore_index=True)
 ```
 
-![](img/53a7be47c113b45c16681f78e26045ab_21.png)
 
 **关键点**：必须将 `concat` 的结果重新赋值给 `total_df`，否则总表的内容不会更新。
 
@@ -138,25 +127,21 @@ for i in range(len(date_series)):
 
 我们可以查看表格的前几行，以确认数据格式是否正确：
 
-![](img/53a7be47c113b45c16681f78e26045ab_23.png)
 
 ```python
 print(total_df.head())
 ```
 
-![](img/53a7be47c113b45c16681f78e26045ab_25.png)
 
 输出应该包含我们指定的列，例如 `date` 和 `factor_value`，每一行对应特定日期和股票的数据。
 
 ---
 
-![](img/53a7be47c113b45c16681f78e26045ab_27.png)
 
 ## 总结
 
 本节课中我们一起学习了如何获取一个时间区间内的全部数据。
 
-![](img/53a7be47c113b45c16681f78e26045ab_29.png)
 
 1.  **核心方法**是使用 `for` 循环遍历日期序列。
 2.  在循环内，**获取单日数据**并提取有用部分。

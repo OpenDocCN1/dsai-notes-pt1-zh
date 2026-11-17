@@ -8,9 +8,7 @@
 
 ---
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_4.png)
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_5.png)
 
 在上一节的理论介绍中，我们了解了微调的基本概念。本节我们将通过OpenAI API进行实际演示，展示如何调整模型参数和指令，以定制模型的行为。
 
@@ -18,10 +16,8 @@
 
 首先，我们来看如何使用OpenAI API进行基础的文本生成。以下是核心代码示例：
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_7.png)
 
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_8.png)
 
 ```python
 import openai
@@ -40,15 +36,11 @@ print(response.choices[0].message.content)
 
 这段代码通过API调用GPT-3.5模型，并获取对“什么是生成式AI？”这个问题的回答。系统角色定义了助手的基本行为。
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_10.png)
 
 为了使代码更具交互性，我们可以将其修改为接受用户输入：
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_11.png)
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_12.png)
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_13.png)
 
 ```python
 user_message = input("请输入您的问题：")
@@ -59,15 +51,12 @@ user_message = input("请输入您的问题：")
 
 ## 基于参数的微调
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_15.png)
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_16.png)
 
 上一节我们介绍了基础调用，本节中我们来看看如何通过调整模型参数来微调其输出。这些参数控制着模型生成文本的“风格”。
 
 以下是调整了关键参数的代码示例：
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_18.png)
 
 ```python
 response = openai.ChatCompletion.create(
@@ -87,19 +76,13 @@ response = openai.ChatCompletion.create(
 
 ## 基于指令的微调
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_20.png)
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_21.png)
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_22.png)
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_23.png)
 
 除了调整参数，我们还可以通过修改系统指令来更根本地改变模型的行为和领域。这种方法称为基于指令的微调。
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_25.png)
 
-![](img/a07934e321a2e6dea43864e4f1fd407c_27.png)
 
 以下是一个将模型角色限定为法律信息助理的示例：
 

@@ -1,10 +1,8 @@
 # 004：构建一个简单的流水线 🛠️
 
-![](img/8f4b26dedca0380480f5bc7630bfd6d0_0.png)
 
 在本节课中，我们将构建第一个流水线，即一个仅使用三个 Airflow 特定模块的简单 Airflow DAG。构建完成后，我们将在 Airflow 用户界面中手动探索并运行这个 DAG。
 
-![](img/8f4b26dedca0380480f5bc7630bfd6d0_2.png)
 
 ## 访问 Airflow 环境 🖥️
 

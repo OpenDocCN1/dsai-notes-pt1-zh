@@ -20,11 +20,9 @@
 python --version
 ```
 
-![](img/8a0d4701239b8dee19f7199a5d751aad_3.png)
 
 根据计算机上已安装的内容，可能会出现几种不同的情况。
 
-![](img/8a0d4701239b8dee19f7199a5d751aad_5.png)
 
 *   它可能提示无法识别该命令，这意味着你没有安装Python。
 *   它可能返回一个以数字2开头的版本号，这表示你安装的是Python 2。
@@ -32,9 +30,7 @@ python --version
 
 ## 确保使用Python 3
 
-![](img/8a0d4701239b8dee19f7199a5d751aad_7.png)
 
-![](img/8a0d4701239b8dee19f7199a5d751aad_8.png)
 
 在本课程中，我们将使用Python 3。我们涵盖的某些内容在Python 2和Python 3上是相同的，但有些可能截然不同。因此，请确保你安装了Python 3。
 

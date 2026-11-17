@@ -1,18 +1,14 @@
 # 005：表单解析与智能代理工作流 🧩
 
-![](img/e6b4d53e376424cc47ec1204df83337c_0.png)
 
 在本节课中，我们将学习如何让智能代理处理更复杂的任务。具体来说，我们将指导代理解析一份职位申请表，将解析出的表单内容转化为一系列简单问题，并利用这些问题来查询RAG（检索增强生成）管道。我们将再次使用LlamaParse来提取需要填写的字段，然后生成对RAG系统的查询。
 
 ---
 
-![](img/e6b4d53e376424cc47ec1204df83337c_2.png)
 
 ## 导入必要库与设置
 
-![](img/e6b4d53e376424cc47ec1204df83337c_3.png)
 
-![](img/e6b4d53e376424cc47ec1204df83337c_4.png)
 
 首先，我们需要导入必要的库并进行基础设置。这与上一节课的步骤类似。
 
@@ -42,9 +38,7 @@ llamaparse_key = get_llamaparse_key()
 
 首先，设置我们的解析器。我们要求结果类型为Markdown，但这次我们提供两套指令：内容指导指令和格式指令。
 
-![](img/e6b4d53e376424cc47ec1204df83337c_6.png)
 
-![](img/e6b4d53e376424cc47ec1204df83337c_7.png)
 
 ```python
 parser = LlamaParse(
@@ -93,17 +87,12 @@ json_output = response.choices[0].message.content
 print(json_output)
 ```
 
-![](img/e6b4d53e376424cc47ec1204df83337c_9.png)
 
-![](img/e6b4d53e376424cc47ec1204df83337c_10.png)
 
-![](img/e6b4d53e376424cc47ec1204df83337c_11.png)
 
 你可以看到它返回了JSON。现在我们可以解析这个JSON并以编程方式打印字段列表。
 
-![](img/e6b4d53e376424cc47ec1204df83337c_12.png)
 
-![](img/e6b4d53e376424cc47ec1204df83337c_13.png)
 
 ```python
 import json
@@ -114,7 +103,6 @@ print(fields_list)
 
 完美。我们现在获得了一个清晰的字段数组，可以在后续的编程工作中使用。
 
-![](img/e6b4d53e376424cc47ec1204df83337c_15.png)
 
 ---
 
@@ -166,7 +154,6 @@ class RAGWorkflow:
 
 工作流的其余部分暂时保持不变，我们稍后再处理。让我们执行这个工作流看看效果。
 
-![](img/e6b4d53e376424cc47ec1204df83337c_17.png)
 
 ```python
 workflow = RAGWorkflow(storage_dir="./storage", llm=client, query_engine=None)
@@ -174,7 +161,6 @@ workflow.setup()
 # 假设有一个事件循环来驱动工作流
 ```
 
-![](img/e6b4d53e376424cc47ec1204df83337c_19.png)
 
 它执行了与工作流外部代码完全相同的操作，这正是我们需要的。现在，工作流知道了它需要为哪些字段寻找答案。
 
@@ -224,13 +210,10 @@ workflow.setup()
         self.emit_event("stop")
 ```
 
-![](img/e6b4d53e376424cc47ec1204df83337c_21.png)
 
 `collect_events`方法（假设在工作流引擎中实现）会等待特定数量的事件被触发。我们将之前存储的字段总数`total_fields`保存在上下文中，以便跨步骤使用。
 
-![](img/e6b4d53e376424cc47ec1204df83337c_22.png)
 
-![](img/e6b4d53e376424cc47ec1204df83337c_23.png)
 
 现在，让我们执行这个完整的工作流。
 
@@ -241,7 +224,6 @@ workflow.run(resume_path="./fake_resume.pdf", form_path="./fake_application_form
 
 这次可能会花费一点时间，因为它需要询问一系列问题。
 
-![](img/e6b4d53e376424cc47ec1204df83337c_25.png)
 
 完成之后，你可以看到LLM已经解释了它的操作，并给出了所有字段及其答案的编号列表。你的工作流提取了表单中的所有字段，并为它们生成了合理的答案。
 
@@ -257,7 +239,6 @@ workflow.run(resume_path="./fake_resume.pdf", form_path="./fake_application_form
 3.  **集成与并发**：将解析步骤集成到事件驱动的工作流中，并为每个字段触发并发查询。
 4.  **答案聚合**：通过收集所有并发查询的响应，并使用LLM合成最终的回答来填写申请表。
 
-![](img/e6b4d53e376424cc47ec1204df83337c_27.png)
 
 ![](img/e6b4d53e376424cc47ec1204df83337c_28.png)
 

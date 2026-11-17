@@ -42,9 +42,7 @@
 首先，回顾一下我们已有的工具设置代码框架：
 
 
-![](img/f3109b2f1d9db23aa7c5e6caacadb3f6_3.png)
 
-![](img/f3109b2f1d9db23aa7c5e6caacadb3f6_4.png)
 
 ```python
 # 示例结构：初始化工具
@@ -59,11 +57,8 @@ custom_tool = create_custom_tool(...)
 
 ![](img/f3109b2f1d9db23aa7c5e6caacadb3f6_5.png)
 
-![](img/f3109b2f1d9db23aa7c5e6caacadb3f6_6.png)
 
-![](img/f3109b2f1d9db23aa7c5e6caacadb3f6_7.png)
 
-![](img/f3109b2f1d9db23aa7c5e6caacadb3f6_8.png)
 
 接下来，我们将在此框架内添加第四个工具：一个RAG工具。这个工具能够从我们自定义的知识库中检索相关信息来回答问题。
 
@@ -145,7 +140,6 @@ print(response["output"])
 代码结构如下：
 
 
-![](img/f3109b2f1d9db23aa7c5e6caacadb3f6_21.png)
 
 ![](img/f3109b2f1d9db23aa7c5e6caacadb3f6_22.png)
 

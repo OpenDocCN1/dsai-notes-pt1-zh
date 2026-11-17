@@ -24,7 +24,6 @@
 2.  输入安装命令：`pip install tensorflow`。
 3.  等待安装完成。
 
-![](img/bb62afea1f41dc8b70a5ccf587ce444b_3.png)
 
 ## Windows系统GPU支持配置
 
@@ -71,7 +70,6 @@ conda activate tf
 pip install tensorflow
 ```
 
-![](img/bb62afea1f41dc8b70a5ccf587ce444b_10.png)
 
 ## 验证安装
 

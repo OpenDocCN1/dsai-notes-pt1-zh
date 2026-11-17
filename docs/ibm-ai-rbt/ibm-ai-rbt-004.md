@@ -1,32 +1,22 @@
 # 004：生成式AI概述与用例 🧠
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_0.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_1.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_3.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_4.png)
 
 在本节课中，我们将要学习生成式人工智能（Generative AI）的基本定义、其重要性以及它在不同领域中的实际应用案例。通过本课，你将能够清晰地定义生成式AI，并理解它如何超越传统AI模型，创造出全新的数据与体验。
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_5.png)
 
 ---
 
 ## 什么是生成式AI？🤖
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_7.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_8.png)
 
 上一节我们介绍了课程目标，本节中我们来看看生成式AI的核心定义。
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_10.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_11.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_12.png)
 
 人工智能（AI）被定义为一种增强智能，它使专家能够扩展其能力，同时让机器处理诸如语音识别、玩游戏和决策等耗时的任务。
 
@@ -34,21 +24,16 @@
 
 与传统AI模型依赖预定义规则和模式不同，生成式AI模型使用深度学习技术，并依赖海量数据集来生成全新的数据，具有广泛的应用前景。
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_14.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_15.png)
 
 ---
 
 ## 生成式AI与大语言模型（LLM）的关系 🔗
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_17.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_18.png)
 
 理解了基本定义后，我们进一步探讨生成式AI与当前热门的大语言模型之间的关系。
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_19.png)
 
 生成式AI模型也可以利用**大语言模型**（LLM）。LLM是一种基于深度学习技术的人工智能，旨在处理和生成自然语言。
 
@@ -58,25 +43,16 @@
 
 ---
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_21.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_22.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_23.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_24.png)
 
 ## 生成式AI的优势 ✨
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_25.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_26.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_27.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_28.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_29.png)
 
 在了解了其技术基础后，我们来看看生成式AI为何被视为一项战略性技术，它主要具备以下六大优势：
 
@@ -92,19 +68,13 @@
 
 ## 生成式AI的多样化用例 🌍
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_31.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_32.png)
 
 掌握了生成式AI的优势后，本节我们将通过具体案例，看看它如何在各行各业中发挥作用。
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_33.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_34.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_35.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_36.png)
 
 以下是生成式AI在不同领域的应用示例：
 1.  **医疗保健与精准医疗**：协助医生识别导致疾病的基因突变并提供定制化治疗方案；生成医学图像、模拟手术、预测新药特性以辅助医生练习和开发疗法。
@@ -119,19 +89,14 @@
 10. **教育**：创建适应学生学习风格和进度的定制化学习材料和交互式学习环境。
 11. **数据增强**：为机器学习模型生成新的训练数据，提高其准确性和性能。
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_37.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_38.png)
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_39.png)
 
 ---
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_41.png)
 
 ## 总结 📝
 
-![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_42.png)
 
 ![](img/9a0e54b9d88e5d0bd786ab51f1947eeb_44.png)
 

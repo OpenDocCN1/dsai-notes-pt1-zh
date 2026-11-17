@@ -22,7 +22,6 @@ We also have this C of T， which is our cell state at time T。
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_1.png)
 
 We're also going to have that hidden state， which is something similar to what we saw in the recurrent neural net。
 
@@ -30,9 +29,7 @@ We're also going to have that hidden state， which is something similar to what
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_3.png)
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_4.png)
 
 And then we have our output， which will be the same as the H subt that we are passing along to the next cell。
 
@@ -42,39 +39,32 @@ And similar to that recurtin neural net where each one of the cells will have an
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_6.png)
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_7.png)
 
 So let's focus now on this new cell state that we're working with。
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_9.png)
 
 The cell states going to get updated in two stages。We have our。
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_11.png)
 
 Forget gate。Whose purpose is to give us an easy mechanism to decide what information from that prior cell state。
 
  as well as the current input coming in to forget。
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_13.png)
 
 And then we have the add new information portion， which tells us what new information is worth maintaining。
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_15.png)
 
 So let's start off with that mechanism built to help us decide what we should forget。
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_17.png)
 
 So， here。Our cell is looking at values Ht minus1， so that input of Ht 1 from the prior cell。
 
@@ -86,7 +76,6 @@ We cancatenate these two vectors together。The x of T and the Ht minus1。
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_19.png)
 
 As we see here， so we have a single vector。And once we have that single vector looking back at our equation of F subt。
 
@@ -96,13 +85,11 @@ As we see here， so we have a single vector。And once we have that single vect
 
  so it'll output some value between0 and1。
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_21.png)
 
 Now let's walk through the portion built for adding in new information。
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_23.png)
 
 So that's this add in new information， and here we are again calculating that same function of sigmoid of a weight matrix。
 
@@ -114,7 +101,6 @@ Of the concatenation of our input。Except T as well as H T minus-1 here， of c
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_25.png)
 
 With that， we're also going to be computing at this point a 10h of another weight matrix。
 
@@ -138,7 +124,6 @@ The idea being that the 10h is the actual information you are deciding whether o
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_27.png)
 
 Now， if we've been looking at this diagram throughout。
 
@@ -150,7 +135,6 @@ And our new cell state then will be a function of each of these outputs。
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_29.png)
 
 The F I that we calculated， which is， again， that value between 0 and 1。
 
@@ -158,7 +142,6 @@ The F I that we calculated， which is， again， that value between 0 and 1。
 
  how much to keep and how much to forget。
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_31.png)
 
 And then from there， we can add on the output of our last calculation of that 10 H and sigmoid multiply together。
 
@@ -172,9 +155,7 @@ Multiplied by that C subT that we just calculated to figure out how much extra i
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_33.png)
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_34.png)
 
 Now。Let's close out by looking at that output。 So we have that similar function again。
 
@@ -184,13 +165,11 @@ Now。Let's close out by looking at that output。 So we have that similar funct
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_36.png)
 
 And then net value。Will be multiplied by the 10 H of our new updated cell state。
 
  that cell state that we just calculated。
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_38.png)
 
 And again， we just computed this C subT so there's no new weights that are needed here。
 
@@ -204,7 +183,6 @@ And again， we just computed this C subT so there's no new weights that are nee
 
 
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_40.png)
 
 And we see that process here， how that cell state and the H subTs persist as we input each value into the sequence。
 
@@ -216,6 +194,5 @@ In the next video， we're going to start off by discussing GRUs。
 
  Allright， I'll see you there。
 
-![](img/5f3164e022c4d844c5b5a49d8e01b9d7_42.png)
 
 ![](img/5f3164e022c4d844c5b5a49d8e01b9d7_43.png)

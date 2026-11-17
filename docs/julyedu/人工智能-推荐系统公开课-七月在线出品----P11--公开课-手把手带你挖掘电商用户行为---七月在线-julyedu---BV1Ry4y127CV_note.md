@@ -2,17 +2,12 @@
 
 ![](img/677c9dd01023194b2539282794d7064c_1.png)
 
-![](img/677c9dd01023194b2539282794d7064c_3.png)
 
-![](img/677c9dd01023194b2539282794d7064c_4.png)
 
-![](img/677c9dd01023194b2539282794d7064c_6.png)
 
 在本节课中，我们将学习如何对一个电商平台的用户行为数据进行完整的分析和挖掘。我们将遵循数据挖掘的标准流程，从目标定义、数据探索、特征工程到模型构建与评估，一步步完成一个预测用户购买行为的项目。
 
-![](img/677c9dd01023194b2539282794d7064c_8.png)
 
-![](img/677c9dd01023194b2539282794d7064c_9.png)
 
 ## 概述：数据挖掘的基本流程 📊
 
@@ -103,7 +98,6 @@ X_train, X_test, y_train, y_test = train_test_split(features, label, test_size=0
 *   **类别特征**：商品类目、用户年龄段（需从其他数据衍生）等。
 *   **交叉特征**：用户对特定商品类目的偏好程度。
 
-![](img/677c9dd01023194b2539282794d7064c_11.png)
 
 **3. 模型选择与训练**
 我们选择两个经典模型进行尝试和对比：逻辑回归（LR）和梯度提升树（GBDT）。
@@ -112,7 +106,6 @@ X_train, X_test, y_train, y_test = train_test_split(features, label, test_size=0
 
 ![](img/677c9dd01023194b2539282794d7064c_14.png)
 
-![](img/677c9dd01023194b2539282794d7064c_15.png)
 
 ```python
 from sklearn.linear_model import LogisticRegression
@@ -131,7 +124,6 @@ model_gbdt.fit(X_train, y_train)
 
 ![](img/677c9dd01023194b2539282794d7064c_17.png)
 
-![](img/677c9dd01023194b2539282794d7064c_19.png)
 
 ```python
 from sklearn.metrics import f1_score

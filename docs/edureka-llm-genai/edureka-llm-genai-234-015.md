@@ -1,6 +1,5 @@
 # 第二三四部分 15：探索性数据分析演示
 
-![](img/19551fbead4605cec90f3bc34a33fd84_0.png)
 
 在本节课中，我们将学习如何对数据集进行探索性数据分析。我们将从检查数据的基本信息开始，逐步深入到分析数据分布、处理缺失值与重复值，并最终进行趋势分析。
 
@@ -22,29 +21,20 @@ for col in categorical_columns:
     print(f"列 '{col}' 的唯一值: {unique_vals}")
 ```
 
-![](img/19551fbead4605cec90f3bc34a33fd84_2.png)
 
-![](img/19551fbead4605cec90f3bc34a33fd84_3.png)
 
 这里的结果是分类列的唯一值，例如性别、购买物品、类别、位置、尺寸等。
 
-![](img/19551fbead4605cec90f3bc34a33fd84_4.png)
 
-![](img/19551fbead4605cec90f3bc34a33fd84_5.png)
 
-![](img/19551fbead4605cec90f3bc34a33fd84_6.png)
 
 ---
 
-![](img/19551fbead4605cec90f3bc34a33fd84_7.png)
 
-![](img/19551fbead4605cec90f3bc34a33fd84_8.png)
 
 ## 可视化数值列分布
 
-![](img/19551fbead4605cec90f3bc34a33fd84_9.png)
 
-![](img/19551fbead4605cec90f3bc34a33fd84_10.png)
 
 接下来，他们提供了部分关键数值列的分布可视化。他们重点关注了年龄、购买金额、评分和先前购买次数。
 
@@ -71,17 +61,13 @@ plt.tight_layout()
 plt.show()
 ```
 
-![](img/19551fbead4605cec90f3bc34a33fd84_12.png)
 
-![](img/19551fbead4605cec90f3bc34a33fd84_13.png)
 
 你可以看到可视化的输出。这里是所选数值列的分布图：购买金额的分布、评分的分布以及先前购买次数的分布。这些可视化提供了对客户数据特征和行为的洞察。
 
-![](img/19551fbead4605cec90f3bc34a33fd84_14.png)
 
 你希望继续EDA的其他步骤，还是专注于任何特定的分析？
 
-![](img/19551fbead4605cec90f3bc34a33fd84_16.png)
 
 ---
 
@@ -99,15 +85,11 @@ plt.show()
 
 **数据类型验证**：现在你可以看到相关的代码。
 
-![](img/19551fbead4605cec90f3bc34a33fd84_18.png)
 
 以下是检查缺失值的代码：
 
-![](img/19551fbead4605cec90f3bc34a33fd84_19.png)
 
-![](img/19551fbead4605cec90f3bc34a33fd84_20.png)
 
-![](img/19551fbead4605cec90f3bc34a33fd84_21.png)
 
 ```python
 # 第二三四部分 检查缺失值
@@ -116,9 +98,7 @@ print("缺失值统计:")
 print(missing_values)
 ```
 
-![](img/19551fbead4605cec90f3bc34a33fd84_22.png)
 
-![](img/19551fbead4605cec90f3bc34a33fd84_23.png)
 
 结果显示有零个缺失值。
 
@@ -139,19 +119,14 @@ print(data_types)
 
 ## 进行趋势分析
 
-![](img/19551fbead4605cec90f3bc34a33fd84_25.png)
 
 现在我告诉它继续进行其他分析。
 
-![](img/19551fbead4605cec90f3bc34a33fd84_26.png)
 
-![](img/19551fbead4605cec90f3bc34a33fd84_27.png)
 
 我们得到了解决方案，因为我提到要进行其他分析。它提供了我们可以执行的各种分析：客户细分、趋势分析、基于位置、评分、支付方式的表现分析、流失分析和相关性分析。
 
-![](img/19551fbead4605cec90f3bc34a33fd84_28.png)
 
-![](img/19551fbead4605cec90f3bc34a33fd84_29.png)
 
 对于这些细节，我想了解趋势分析。所以我提到了趋势分析。它询问：请告诉我你想深入研究哪种分析，或者你是否有任何具体的问题或分析想法。我选择了趋势分析。
 
@@ -166,7 +141,6 @@ print(data_types)
 以下是按季节和购买物品分组并统计出现次数的代码：
 
 
-![](img/19551fbead4605cec90f3bc34a33fd84_31.png)
 
 ```python
 # 第二三四部分 按季节和物品分组，统计购买次数
@@ -176,13 +150,10 @@ most_popular_by_season = popular_items_by_season.loc[popular_items_by_season.gro
 print(most_popular_by_season)
 ```
 
-![](img/19551fbead4605cec90f3bc34a33fd84_32.png)
 
-![](img/19551fbead4605cec90f3bc34a33fd84_33.png)
 
 这里还有一个演示：在秋季，最受欢迎的商品是夹克，有54次购买；在春季是运动衫；在夏季是裤子；在冬季是太阳镜。
 
-![](img/19551fbead4605cec90f3bc34a33fd84_34.png)
 
 现在它询问：了解到像夹克在秋季很受欢迎是很有趣的，这是由于天气较冷所预期的。然而，太阳镜在冬季最受欢迎是令人惊讶的，可能受到其他因素或促销活动的影响。
 

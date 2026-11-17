@@ -91,7 +91,6 @@ Gemini CLI 会再次发现完成任务需要调用的工具。它会去获取设
 
 ![](img/a4aaa124f1c578bc4eeb975fc9fd6513_12.png)
 
-![](img/a4aaa124f1c578bc4eeb975fc9fd6513_13.png)
 
 ## 总结
 
@@ -99,7 +98,6 @@ Gemini CLI 会再次发现完成任务需要调用的工具。它会去获取设
 
 Gemini CLI 可以代表你完成相当复杂的任务。我鼓励你尝试给 Gemini CLI 分配复杂的任务，你可能会对它能完成的事情感到惊讶。
 
-![](img/a4aaa124f1c578bc4eeb975fc9fd6513_15.png)
 
 ![](img/a4aaa124f1c578bc4eeb975fc9fd6513_16.png)
 

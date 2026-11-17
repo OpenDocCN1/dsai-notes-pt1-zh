@@ -33,7 +33,6 @@
 
 ![](img/2046f66a286980505ac67a79d97c5eb7_3.png)
 
-![](img/2046f66a286980505ac67a79d97c5eb7_4.png)
 
 现在，如果我们希望这个RAG系统能记住对话历史，就需要在流程中加入记忆管理。这意味着每次对话时，系统不仅考虑当前问题，还要考虑之前的问题和答案，以保持对话的连贯性。
 
@@ -41,7 +40,6 @@
 
 理解了理论架构后，本节我们将进入实际的代码实现环节。我们将使用LangChain等库来构建这个系统。
 
-![](img/2046f66a286980505ac67a79d97c5eb7_6.png)
 
 首先，我们需要安装必要的库并设置环境。
 
@@ -79,7 +77,6 @@ llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro-latest")
 3.  生成嵌入并存入向量数据库。
 
 
-![](img/2046f66a286980505ac67a79d97c5eb7_8.png)
 
 ```python
 from langchain_community.document_loaders import TextLoader
@@ -111,10 +108,8 @@ retriever = vectorstore.as_retriever(search_kwargs={"k": 4}) # 检索最相关�
 
 ![](img/2046f66a286980505ac67a79d97c5eb7_11.png)
 
-![](img/2046f66a286980505ac67a79d97c5eb7_12.png)
 
 
-![](img/2046f66a286980505ac67a79d97c5eb7_13.png)
 
 ```python
 from langchain_core.prompts import ChatPromptTemplate
@@ -160,7 +155,6 @@ memory = ConversationBufferMemory(memory_key="chat_history", return_messages=Tru
 ![](img/2046f66a286980505ac67a79d97c5eb7_18.png)
 
 
-![](img/2046f66a286980505ac67a79d97c5eb7_19.png)
 
 ```python
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
@@ -187,7 +181,6 @@ rag_chain_with_memory = create_retrieval_chain(history_aware_retriever, question
 现在，我们有了一个具备记忆功能的RAG链。但是，要使用它，我们需要手动管理记忆的输入和输出。更优雅的方式是将其封装成一个可交互的对话流程。
 
 
-![](img/2046f66a286980505ac67a79d97c5eb7_21.png)
 
 ```python
 from langchain.chains import ConversationalRetrievalChain

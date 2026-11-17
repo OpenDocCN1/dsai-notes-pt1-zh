@@ -1,20 +1,14 @@
 # 22：使用R进行逻辑回归分类 📊
 
-![](img/da3ed8d603e153897db71c57bb0ef529_0.png)
 
-![](img/da3ed8d603e153897db71c57bb0ef529_2.png)
 
 在本节课中，我们将学习如何在R语言中使用`glm`函数拟合逻辑回归模型。我们将使用`ISLR`包中的`Smarket`数据集，通过一个预测股市涨跌方向的实例，演示数据加载、模型拟合、预测和评估的全过程。
 
-![](img/da3ed8d603e153897db71c57bb0ef529_3.png)
 
 ---
 
-![](img/da3ed8d603e153897db71c57bb0ef529_5.png)
 
-![](img/da3ed8d603e153897db71c57bb0ef529_6.png)
 
-![](img/da3ed8d603e153897db71c57bb0ef529_7.png)
 
 ## 数据加载与探索 🔍
 
@@ -26,24 +20,18 @@ require(ISLR)
 
 加载完成后，`Smarket`数据集便可供使用。我们可以使用`names`函数查看数据框中的变量名，并使用`summary`函数获取每个变量的简要统计信息。
 
-![](img/da3ed8d603e153897db71c57bb0ef529_9.png)
 
 ```r
 names(Smarket)
 summary(Smarket)
 ```
 
-![](img/da3ed8d603e153897db71c57bb0ef529_10.png)
 
-![](img/da3ed8d603e153897db71c57bb0ef529_11.png)
 
-![](img/da3ed8d603e153897db71c57bb0ef529_12.png)
 
-![](img/da3ed8d603e153897db71c57bb0ef529_13.png)
 
 `Smarket`数据集中包含多个滞后变量（`Lag1`至`Lag5`）、交易量（`Volume`）、当日价格（`Today`）以及我们将用作响应变量的方向（`Direction`），它表示市场相较于前一日是上涨（Up）还是下跌（Down）。
 
-![](img/da3ed8d603e153897db71c57bb0ef529_14.png)
 
 ![](img/da3ed8d603e153897db71c57bb0ef529_15.png)
 

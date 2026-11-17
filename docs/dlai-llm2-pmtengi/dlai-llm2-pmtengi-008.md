@@ -109,19 +109,15 @@ print(response3) # Llama Guard应能判定此输出为“unsafe”
 
 ![](img/7d0426c5c5f392d0c3c7bbd0d6ec9d26_3.png)
 
-![](img/7d0426c5c5f392d0c3c7bbd0d6ec9d26_4.png)
 
-![](img/7d0426c5c5f392d0c3c7bbd0d6ec9d26_6.png)
 
 为了加深理解，建议你暂停视频，尝试进行一些修改练习。例如，将查询中的“偷战斗机”改为“偷光剑”或“偷心”，观察Llama Guard和主LLM的不同反应。通过实践，你将更好地掌握如何利用这个工具来构建更负责任、更安全的AI应用。
 
 ![](img/7d0426c5c5f392d0c3c7bbd0d6ec9d26_8.png)
 
-![](img/7d0426c5c5f392d0c3c7bbd0d6ec9d26_10.png)
 
 ---
 
-![](img/7d0426c5c5f392d0c3c7bbd0d6ec9d26_12.png)
 
 ![](img/7d0426c5c5f392d0c3c7bbd0d6ec9d26_14.png)
 

@@ -4,7 +4,6 @@
 
 在本节课中，我们将学习如何使用OpenCV库对图像进行基本操作，包括重塑形状、调整尺寸以及转换为灰度图。这些是计算机视觉任务中图像预处理的关键步骤。
 
-![](img/0bccad5da1b0b3bddae6aec7d28f8673_2.png)
 
 ## 概述
 
@@ -16,7 +15,6 @@
 
 ## 步骤详解
 
-![](img/0bccad5da1b0b3bddae6aec7d28f8673_6.png)
 
 ### 步骤1：导入OpenCV
 
@@ -31,7 +29,6 @@ import numpy as np
 
 我们使用`cv2.imread`函数来加载图像。该函数接受一个参数，即要加载的图像文件路径。
 
-![](img/0bccad5da1b0b3bddae6aec7d28f8673_8.png)
 
 ```python
 image = cv2.imread(‘/content/Ronaldo.jpg’)
@@ -52,9 +49,7 @@ cv2_imshow(image)
 
 这行代码用于提取存储在变量`image`中的图像的高度和宽度维度。在OpenCV中，图像通常表示为NumPy数组，其形状为`(高度， 宽度， 通道数)`。
 
-![](img/0bccad5da1b0b3bddae6aec7d28f8673_10.png)
 
-![](img/0bccad5da1b0b3bddae6aec7d28f8673_11.png)
 
 ```python
 original_height, original_width = image.shape[:2]
@@ -82,7 +77,6 @@ flattened_image = gray_image.reshape(-1)
 
 ### 步骤7：转换回原始形状
 
-![](img/0bccad5da1b0b3bddae6aec7d28f8673_13.png)
 
 这行代码逆转了上一步的扁平化过程，将一维数组转换回其原始的二维形状，从而恢复其原始的高度和宽度维度。
 

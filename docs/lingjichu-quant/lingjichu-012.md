@@ -1,29 +1,20 @@
 # 012：买点与卖点可视化分析 📈
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_0.png)
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_2.png)
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_4.png)
 
 在本节课中，我们将学习如何利用Python进行股票数据的可视化分析，核心是计算短期与长期移动平均线，并基于它们的交叉点来识别潜在的买入和卖出信号。我们将从数据预处理开始，逐步完成计算、标记和可视化，最终理解双均线策略的基本原理。
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_6.png)
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_8.png)
 
 ## 数据准备与预处理
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_10.png)
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_12.png)
 
 首先，我们需要导入必要的工具包并加载数据。以下是实现这一步骤的代码：
 
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_14.png)
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_16.png)
 
 ```python
 import pandas as pd
@@ -32,19 +23,15 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('data.csv', index_col=0, parse_dates=True)
 ```
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_18.png)
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_20.png)
 
 数据加载后，我们选择苹果公司的股票数据作为分析案例，并处理数据中可能存在的缺失值，以确保后续计算的准确性。
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_22.png)
 
 以下是具体操作步骤：
 1.  **选择特定股票数据**：从数据集中提取苹果公司的股价列。
 2.  **处理缺失值**：使用 `dropna()` 方法移除包含缺失值的行。
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_24.png)
 
 ```python
 # 选择苹果公司的股价数据
@@ -54,17 +41,13 @@ apple_data = apple_data.dropna()
 print(apple_data.head())
 ```
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_26.png)
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_28.png)
 
 ## 计算移动平均线
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_30.png)
 
 上一节我们准备好了干净的数据，本节中我们来看看如何计算关键的短期和长期移动平均线。移动平均线是技术分析中常用的指标，用于平滑股价波动，识别趋势。
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_32.png)
 
 首先，我们需要定义短期和长期的时间窗口。考虑到我们的数据集时间跨度较长（约7-8年），为了在图表中更清晰地观察交叉点，我们将窗口设置得比通常的5日和20日更大一些。
 
@@ -74,11 +57,9 @@ short_window = 40
 long_window = 100
 ```
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_34.png)
 
 接下来，我们使用 `rolling()` 和 `mean()` 方法计算移动平均线，并将结果作为新列添加到数据框中。
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_36.png)
 
 ```python
 # 计算短期移动平均线 (SMA)
@@ -89,25 +70,18 @@ apple_data['SMA_long'] = apple_data['AAPL'].rolling(window=long_window).mean()
 print(apple_data.tail())
 ```
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_38.png)
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_40.png)
 
 ## 可视化均线与交叉点
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_42.png)
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_44.png)
 
 计算完移动平均线后，我们可以通过绘图直观地观察股价与两条均线的关系，并识别交叉点。
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_46.png)
 
 以下是生成可视化图表的代码：
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_48.png)
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_50.png)
 
 ```python
 # 绘制股价与移动平均线
@@ -122,40 +96,31 @@ plt.legend()
 plt.show()
 ```
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_52.png)
 
 在生成的图表中，我们可以分析：
 *   **黄金交叉**：当短期均线从下方上穿长期均线时，通常被视为**买入信号**📈。
 *   **死亡交叉**：当短期均线从上方下穿长期均线时，通常被视为**卖出信号**📉。
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_54.png)
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_56.png)
 
 图表中的这些交叉点，就是我们策略中需要关注的关键位置。
 
 ## 标记买卖信号位置
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_58.png)
 
 为了量化分析，我们需要在数据中明确标记出短期均线相对于长期均线的位置关系。这有助于我们程序化地识别买卖点。
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_60.png)
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_62.png)
 
 首先，由于计算移动平均线时，前 `long_window-1` 个数据点没有值，我们需要再次清理数据中的缺失值。
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_64.png)
 
 ```python
 # 去除因计算移动平均线产生的缺失值
 apple_data_clean = apple_data.dropna()
 ```
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_66.png)
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_68.png)
 
 接着，我们创建一个新的标志列。当短期均线高于长期均线时，标记为1（可能持有或考虑买入）；否则标记为0（可能卖出或观望）。
 
@@ -165,17 +130,13 @@ apple_data_clean['Position'] = np.where(apple_data_clean['SMA_short'] > apple_da
 print(apple_data_clean[['AAPL', 'SMA_short', 'SMA_long', 'Position']].head())
 ```
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_70.png)
 
 我们也可以将股价和这个买卖位置标志在同一张图上进行可视化，以便更直观地对照。
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_72.png)
 
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_74.png)
 
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_76.png)
 
 ```python
 # 创建带有次坐标轴的可视化
@@ -196,7 +157,6 @@ plt.title('Stock Price, Moving Averages, and Trading Signals')
 plt.show()
 ```
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_78.png)
 
 ## 理解双均线策略逻辑
 
@@ -208,7 +168,6 @@ plt.show()
 
 通过这种方式，策略试图在主要上涨趋势中持有股票，而在主要下跌趋势中离场或做空，从而规避大的下跌风险，捕捉主要的上涨波段。即使无法买在最低、卖在最高，但长期坚持纪律性的操作，理论上可以超越简单的“买入并持有”策略。
 
-![](img/ae39b333fa402f920d4f8b356c6bb31e_80.png)
 
 ---
 

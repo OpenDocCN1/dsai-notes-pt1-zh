@@ -149,7 +149,6 @@ while True:
 
 ---
 
-![](img/e0b00ce3fbe3d08ecf73e3ff7dfcad38_1.png)
 
 ### 用例二：预填充回复
 
@@ -227,9 +226,7 @@ print(response.content[0].text)
 
 重要的是，如果我们查看响应对象，我们还会看到嵌套在其中的输出令牌数正好是100。它达到了这个限制并停止了。但我们也看到这次的`stop_reason`是`max_tokens`。所以模型没有自然停止，因为`stop_reason`被设置为`max_tokens`，这就是我们知道模型因为我们的`max_tokens`参数而被切断的原因。
 
-![](img/e0b00ce3fbe3d08ecf73e3ff7dfcad38_3.png)
 
-![](img/e0b00ce3fbe3d08ecf73e3ff7dfcad38_4.png)
 
 所以这并不影响模型的生成方式。我们不是在告诉模型“给我一个简短的回复，写一篇完整的文章，但要控制在100个令牌内”。相反，我们所做的是告诉模型“为我写一篇关于大语言模型的文章”，然后我们在100个令牌处切断了它。
 
@@ -247,7 +244,6 @@ print(response.content[0].text)
 
 这是一个没有使用停止序列的例子。
 
-![](img/e0b00ce3fbe3d08ecf73e3ff7dfcad38_6.png)
 
 ```python
 prompt = "生成一个编号的有序列表，列出如果我想从事大语言模型工作应该学习的技术主题。"
@@ -278,7 +274,6 @@ response = client.messages.create(
 print(response.content[0].text)
 ```
 
-![](img/e0b00ce3fbe3d08ecf73e3ff7dfcad38_8.png)
 
 它包含字符串。在我的例子中，假设我想在它生成“4.”之后停止。让我们再试一次。
 
@@ -290,7 +285,6 @@ print(response.content[0].text)
 
 ### 温度
 
-![](img/e0b00ce3fbe3d08ecf73e3ff7dfcad38_10.png)
 
 下一个参数是`temperature`。这个参数用于控制生成响应的随机性或创造性。
 
@@ -303,9 +297,7 @@ print(response.content[0].text)
 这里有一个你可以运行的函数来演示这一点。
 
 
-![](img/e0b00ce3fbe3d08ecf73e3ff7dfcad38_12.png)
 
-![](img/e0b00ce3fbe3d08ecf73e3ff7dfcad38_13.png)
 
 ```python
 def generate_planet_name(temperature):
@@ -343,7 +335,6 @@ for i in range(3):
 
 所以，与我们之前看到的聊天机器人非常相似，当然，要复杂得多。它使用了计算机。涉及截图、工具和一大堆交互，但基本概念相同。我们向模型发送一些消息，然后获取助理的回复。我们将其附加到我们的消息中。
 
-![](img/e0b00ce3fbe3d08ecf73e3ff7dfcad38_15.png)
 
 如果我向上滚动得足够高，我们可以看到它全部嵌套在一个`while True`循环中。当然，还有很多其他逻辑，但它归结为向API发送请求，使用我们的客户端，提供诸如`max_tokens`和`messages`之类的参数，然后随着新响应的返回更新我们的消息列表，并每次提供这个不断更新的、持续增长的消息列表。
 

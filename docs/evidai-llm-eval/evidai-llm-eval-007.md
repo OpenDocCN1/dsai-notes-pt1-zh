@@ -1,6 +1,5 @@
 # 007：追踪与实验设计 🧪
 
-![](img/c2c6a22e9f5aaf795e5d11cff1fe1633_0.png)
 
 ![](img/c2c6a22e9f5aaf795e5d11cff1fe1633_2.png)
 

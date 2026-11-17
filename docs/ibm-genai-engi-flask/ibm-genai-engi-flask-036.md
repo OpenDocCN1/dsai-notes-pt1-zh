@@ -46,15 +46,12 @@ pandas提供了多种方法来统一数据格式：
     *   **最小-最大缩放公式**：`X_scaled = (X - min(X)) / (max(X) - min(X))`
     *   **标准化公式**：`X_standardized = (X - mean(X)) / std(X)`
 
-![](img/8adfb354c514fb14c585b5b021945ddd_1.png)
 
 在Python中，可以使用 `sklearn.preprocessing` 模块中的 `StandardScaler` 或 `MinMaxScaler` 轻松实现这些操作。
 
-![](img/8adfb354c514fb14c585b5b021945ddd_2.png)
 
 归一化处理后的数据，更适合许多机器学习算法的输入要求。
 
-![](img/8adfb354c514fb14c585b5b021945ddd_3.png)
 
 ---
 
@@ -85,7 +82,6 @@ pandas提供了多种方法来统一数据格式：
 
 完成分类变量的转换后，数据集就基本完成了数值化预处理，可以输入给模型进行训练了。
 
-![](img/8adfb354c514fb14c585b5b021945ddd_5.png)
 
 ---
 
@@ -95,7 +91,6 @@ pandas提供了多种方法来统一数据格式：
 
 你可以通过指定列名来访问某一列，例如访问 `symboling` 和 `body-style` 列。这些列都是pandas序列。
 
-![](img/8adfb354c514fb14c585b5b021945ddd_7.png)
 
 ```python
 # 访问列

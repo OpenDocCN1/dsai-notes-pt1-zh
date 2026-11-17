@@ -1,10 +1,7 @@
 #  026：从零实现RMSprop梯度下降法
 
-![](img/6edd44b1078884daa9f4ad652e1584c3_0.png)
 
-![](img/6edd44b1078884daa9f4ad652e1584c3_2.png)
 
-![](img/6edd44b1078884daa9f4ad652e1584c3_0.png)
 
 ![](img/6edd44b1078884daa9f4ad652e1584c3_2.png)
 

@@ -1,40 +1,32 @@
 # 036：IBM WatsonX Orchestrate工具 🚀
 
-![](img/07eb80f8c1cf873bc38262aeb15f1b41_0.png)
 
-![](img/07eb80f8c1cf873bc38262aeb15f1b41_2.png)
 
-![](img/07eb80f8c1cf873bc38262aeb15f1b41_4.png)
 
 在本节课中，我们将学习IBM WatsonX Orchestrate工具。这是一个由AI驱动的平台，旨在自动化和简化业务流程与工作流。我们将探讨其用例、优势，以及它如何与日常应用程序集成，从而为人力资源专业人员节省时间并提升效率。
 
 ## 什么是IBM WatsonX Orchestrate？🤖
 
-![](img/07eb80f8c1cf873bc38262aeb15f1b41_6.png)
 
 上一节我们介绍了课程概述，本节中我们来看看IBM WatsonX Orcheste究竟是什么。
 
 IBM WatsonX Orcheste是一个由AI驱动的平台，旨在自动化和简化业务流程与工作流。它利用生成式AI和自动化技术，通过自动化复杂、重复的任务来解放人力资源部门的时间。它使用自然语言处理来理解请求，并利用一个庞大的预构建技能库来完成这些请求。Orcheste可以与Salesforce和Gmail等各种应用程序集成，实现跨不同工具的自动化任务，从而让HR有更多时间专注于战略性工作。
 
-![](img/07eb80f8c1cf873bc38262aeb15f1b41_8.png)
 
 ## 为何使用IBM WatsonX Orchestrate？💡
 
 了解了其基本定义后，你可能会想，为什么要使用IBM WatsonX Orcheste呢？
 
-![](img/07eb80f8c1cf873bc38262aeb15f1b41_10.png)
 
 原因在于，使用IBM WatsonX Orcheste可以节省大量时间。过去需要数小时的工作现在只需几分钟。只需分配你想要Orcheste处理的任务，例如发送电子邮件、安排会议或面试、或加快请求处理，剩下的工作它将自动完成。此外，它能与你已经使用的工具和应用程序（如Outlook、LinkedIn、SAP SuccessFactors等）无缝协作。你们合作得越多，它就越智能，你的体验也就越个性化。
 
 ## IBM WatsonX Orchestrate的优势 ✨
 
-![](img/07eb80f8c1cf873bc38262aeb15f1b41_12.png)
 
 现在，让我们具体分析一下使用Orcheste处理人力资源职能的几大好处。
 
 以下是其主要优势：
 
-![](img/07eb80f8c1cf873bc38262aeb15f1b41_14.png)
 
 *   **提升效率**：Orcheste自动化复杂、重复的任务，使人力资源部门能够专注于战略计划。
 *   **改善业务成果**：它运用自然语言与人互动，并通过创建智能助手来完成任务，从而简化工作流程。
@@ -70,7 +62,6 @@ IBM WatsonX Orcheste是一个由AI驱动的平台，旨在自动化和简化业�
 *   **与Anaplan的业务规划与绩效管理**
 *   **与Microsoft Power BI的数据可视化**
 
-![](img/07eb80f8c1cf873bc38262aeb15f1b41_16.png)
 
 让我们看一个具体案例，其中ThisWay Global和IBM WatsonX Orcheste结合了数字员工的价值与一个引擎，帮助你增加人才库的多样性并识别合格的候选人。
 

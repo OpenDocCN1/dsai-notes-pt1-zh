@@ -2,9 +2,7 @@
 
 在本节课中，我们将学习如何将准备好的Excel数据集导入Power BI Desktop，并建立正确的数据模型关系。这是创建交互式仪表板的第一步。
 
-![](img/20d20314fa9b5be30f8b4c1bdf6cb0d1_1.png)
 
-![](img/20d20314fa9b5be30f8b4c1bdf6cb0d1_3.png)
 
 ## 概述
 
@@ -55,7 +53,6 @@ Power Query编辑器的主要特点是每一步操作都会被记录为“应用
 
 数据加载后，Power BI会进入报告视图。为了查看和管理数据模型，我们需要切换到“模型”视图。
 
-![](img/20d20314fa9b5be30f8b4c1bdf6cb0d1_5.png)
 
 在这里，我们可以看到已加载的三个表：`Orders`、`Returns`和`Table1`。Power BI自动检测到了`Orders`表和`Table1`（`Manager`）之间通过`Region`列建立的关系。
 
@@ -80,19 +77,16 @@ Power Query编辑器的主要特点是每一步操作都会被记录为“应用
 
 重命名操作需要在Power Query编辑器中进行。点击“主页”选项卡下的“转换数据”，再次打开编辑器。
 
-![](img/20d20314fa9b5be30f8b4c1bdf6cb0d1_7.png)
 
 在左侧“查询”窗格中，右键点击`Table1`，选择“重命名”，将其改为`Managers`。完成后，点击“关闭并应用”。
 
 系统会提示保存Power BI文件（`.pbix`文件），请选择一个位置进行保存。至此，数据导入和模型建立阶段完成。
 
-![](img/20d20314fa9b5be30f8b4c1bdf6cb0d1_9.png)
 
 ## 了解仪表板蓝图（Mockup）
 
 在商业项目中，开始创建可视化之前，通常会有一个称为“Mockup”（蓝图或线框图）的设计稿。
 
-![](img/20d20314fa9b5be30f8b4c1bdf6cb0d1_11.png)
 
 我们的Mockup展示了最终仪表板应有的样子，它包含以下关键元素：
 

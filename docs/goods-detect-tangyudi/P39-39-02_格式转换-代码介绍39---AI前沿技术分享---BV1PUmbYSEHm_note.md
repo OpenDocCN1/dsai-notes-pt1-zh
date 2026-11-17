@@ -34,7 +34,6 @@
 
 在开始编写代码之前，我们需要了解一些将要用到的核心 API。
 
-![](img/bc7191b073671f697e9ed4554b3bb7ab_13.png)
 
 ![](img/bc7191b073671f697e9ed4554b3bb7ab_15.png)
 
@@ -55,7 +54,6 @@
 
 以下是实现格式转换的核心步骤：
 
-![](img/bc7191b073671f697e9ed4554b3bb7ab_19.png)
 
 1.  **设定分片大小**：首先确定每个 TFRecord 文件包含的样本数量（例如 N=200）。这决定了最终会生成多少个文件。
 2.  **读取与配对**：循环遍历数据集目录，确保每张图片都能找到其对应的 XML 标注文件，并一一配对。
@@ -68,7 +66,6 @@
 
 ## 代码结构说明
 
-![](img/bc7191b073671f697e9ed4554b3bb7ab_23.png)
 
 现在，让我们深入到代码的具体实现。我们的代码将组织在 `dataset` 目录下，结构清晰，便于维护。
 
@@ -83,7 +80,6 @@
 
 ---
 
-![](img/bc7191b073671f697e9ed4554b3bb7ab_27.png)
 
 ## 核心代码逻辑详解
 
@@ -96,10 +92,8 @@
 首先，代码会检查输入的数据集目录是否存在，并获取所有 XML 标注文件的列表。
 
 
-![](img/bc7191b073671f697e9ed4554b3bb7ab_31.png)
 
 
-![](img/bc7191b073671f697e9ed4554b3bb7ab_33.png)
 
 ```python
 import os
@@ -114,12 +108,10 @@ annotation_files = sorted(glob.glob(os.path.join(annotation_dir, ‘*.xml’)))
 
 ### 2. 循环处理与文件写入
 
-![](img/bc7191b073671f697e9ed4554b3bb7ab_35.png)
 
 接着，代码进入主循环，遍历排序后的 XML 文件列表。
 
 
-![](img/bc7191b073671f697e9ed4554b3bb7ab_37.png)
 
 ```python
 import tensorflow as tf
@@ -159,14 +151,12 @@ if writer:
 
 以下是 `add_to_tfrecord` 函数的关键操作：
 
-![](img/bc7191b073671f697e9ed4554b3bb7ab_43.png)
 
 1.  **解析 XML**：从 XML 文件中提取文件名、图片尺寸、以及每个对象的边界框 (`xmin, ymin, xmax, ymax`) 和类别名称。
 2.  **读取图片**：根据 XML 中记录的文件名，找到对应的图片文件（通常位于 `JPEGImages` 目录下），并读取为二进制格式。
 3.  **构建 Features**：将图片二进制数据、图片尺寸、所有边界框坐标、所有类别标签（转换为整数索引）等，分别封装为 `tf.train.Feature`。
 4.  **创建 Example**：将所有的 `Feature` 放入一个 `tf.train.Features` 字典，最终生成一个 `tf.train.Example` 对象。
 
-![](img/bc7191b073671f697e9ed4554b3bb7ab_45.png)
 
 ```python
 def add_to_tfrecord(annotation_path, dataset_dir):

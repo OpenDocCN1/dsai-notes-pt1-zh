@@ -176,7 +176,6 @@ __global__ void bankConflict(float* output) {
 
 ![](img/fe6f14585acd6e9a70d02305c3769a23_104.png)
 
-![](img/fe6f14585acd6e9a70d02305c3769a23_106.png)
 
 1.  **声明纹理引用**：使用`texture`类型声明一个变量。
     ```cuda
@@ -195,7 +194,6 @@ __global__ void bankConflict(float* output) {
     cudaBindTextureToArray(texRef, cuArray);
     ```
 
-![](img/fe6f14585acd6e9a70d02305c3769a23_112.png)
 
 ![](img/fe6f14585acd6e9a70d02305c3769a23_113.png)
 
@@ -216,13 +214,11 @@ float value = tex2D(texRef, x, y);
 
 ![](img/fe6f14585acd6e9a70d02305c3769a23_123.png)
 
-![](img/fe6f14585acd6e9a70d02305c3769a23_125.png)
 
 ![](img/fe6f14585acd6e9a70d02305c3769a23_126.png)
 
 ![](img/fe6f14585acd6e9a70d02305c3769a23_128.png)
 
-![](img/fe6f14585acd6e9a70d02305c3769a23_130.png)
 
 ### 应用示例：图像旋转
 
@@ -258,7 +254,6 @@ __global__ void transformKernel(float* output, int width, int height, float thet
 
 **重要提示**：纹理内存是只读的。计算结果需要写入到全局内存（如`output`数组）中。
 
-![](img/fe6f14585acd6e9a70d02305c3769a23_140.png)
 
 ![](img/fe6f14585acd6e9a70d02305c3769a23_142.png)
 

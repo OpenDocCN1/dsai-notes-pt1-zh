@@ -38,7 +38,6 @@ Now I'm going to break this down step by step， so I'm going to actually create
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_1.png)
 
 We're going to import from ecalar。 decomposition。We're going to import PCA。
 
@@ -48,7 +47,6 @@ We're going to import from ecalar。 decomposition。We're going to import PCA�
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_3.png)
 
 And then for n and range 1 through 6。 So one through 5， if including 5。
 
@@ -58,13 +56,11 @@ A PCA model with a number of components equal to wherever we are within that ran
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_5.png)
 
 And then we're going to fit it to our data that we have now done the transformations to to ensure that it is on the same scale and mostly normal data。
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_7.png)
 
 We're then going to take the explained variance of each and append that to PCA list。
 
@@ -80,7 +76,6 @@ So let's start off by looking at just this step here。So we're going to create 
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_9.png)
 
 We actually are also going to need， of course， to initiate our model。
 
@@ -90,9 +85,7 @@ We actually are also going to need， of course， to initiate our model。
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_11.png)
 
-![](img/124a8840146140ca5da6fceb391402e2_12.png)
 
 So we set n equals2， and then let's see what this series is that we're going to be outputting。
 
@@ -104,7 +97,6 @@ So we set n equals2， and then let's see what this series is that we're going t
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_14.png)
 
 So run this。And you can see that it explained 72% of the overall variance。Now。
 
@@ -112,7 +104,6 @@ So run this。And you can see that it explained 72% of the overall variance。No
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_16.png)
 
 And we can see that it says if you set n equal to2。
 
@@ -156,7 +147,6 @@ So that we see that the weights are 62 for that first component and 38 for that 
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_18.png)
 
 So this will become clear in just a second。The next thing that we're going to see is this PCA dot components。
 
@@ -164,13 +154,11 @@ So what was important here？For the PCA components is this is going to be the b
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_20.png)
 
 How each one of the components is actually comprised。So let's first strip away。
 
 Everything besides PCA components。
 
-![](img/124a8840146140ca5da6fceb391402e2_22.png)
 
 And we can see here that we have。For the first components。
 
@@ -208,13 +196,11 @@ And then we use 70 per here in the second feature。 in the second PC A for a di
 
  Let's just copy and paste that。
 
-![](img/124a8840146140ca5da6fceb391402e2_24.png)
 
 And we can see the overall contribution。For each one of the different components。
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_26.png)
 
 And then we're going to take the sum。Access equals zero。
 
@@ -222,7 +208,6 @@ So that we can see now that we've weighted each one of them。
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_28.png)
 
 How much each one， these different features。With their weights。
 
@@ -232,7 +217,6 @@ Whatever feature it is， the fit feature was the most important in the first tw
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_30.png)
 
 We're then going to divide that value down here。 So we have the absolute features values。
 
@@ -258,7 +242,6 @@ And then we're going to have for each one of those different values。
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_32.png)
 
 So I'm going to run this and the first thing that outputs is the number of explained variants for each one of our different principal components。
 
@@ -268,7 +251,6 @@ So I'm going to run this and the first thing that outputs is the number of expla
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_34.png)
 
 We're then going to concatenate if you recall， let's look actually at this feature wait list that we created。
 
@@ -276,7 +258,6 @@ This is going to be a bunch of data frames， so let's just look at the first on
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_36.png)
 
 And we see this is going to be for a number of components equals to one。
 
@@ -288,7 +269,6 @@ We set this equal to one。We can see for the first two。
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_38.png)
 
 We're going to concatenate all these different data frames together so that we have one long data frame。
 
@@ -308,9 +288,7 @@ And then we can just have our values as the values。
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_40.png)
 
-![](img/124a8840146140ca5da6fceb391402e2_41.png)
 
 Now we're going to plot。The overall variance， just using a bar plot。
 
@@ -318,11 +296,8 @@ Now we're going to plot。The overall variance， just using a bar plot。
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_43.png)
 
-![](img/124a8840146140ca5da6fceb391402e2_44.png)
 
-![](img/124a8840146140ca5da6fceb391402e2_45.png)
 
 And we just set our X label， our Y label， and our title。
 
@@ -330,15 +305,12 @@ And we just set our X label， our Y label， and our title。
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_47.png)
 
 And then finally， we have plotting the features D F。 And we're going to see。
 
  as we have each one of the different number of。
 
-![](img/124a8840146140ca5da6fceb391402e2_49.png)
 
-![](img/124a8840146140ca5da6fceb391402e2_50.png)
 
 Dimenssions that we're working with。How much does each one of the different features contribute to all of our principal components so we see here for detergent's paper at first it explained most of the variance it was the most important feature。
 
@@ -350,9 +322,7 @@ Now that closes out our section here on Que 4， showing you how to see use PCA�
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_52.png)
 
-![](img/124a8840146140ca5da6fceb391402e2_53.png)
 
 In the next section， we will discuss how we can actually use grid search to fine tune our PCA model。
 
@@ -360,6 +330,5 @@ In the next section， we will discuss how we can actually use grid search to fi
 
 
 
-![](img/124a8840146140ca5da6fceb391402e2_55.png)
 
 ![](img/124a8840146140ca5da6fceb391402e2_56.png)

@@ -11,9 +11,7 @@ Python中有许多不同的数据类型，例如整数、浮点数、字符串�
 *   **内部表示**：对象在内存中的存储方式。
 *   **方法**：一组用于与对象数据交互的函数。
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_1.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_2.png)
 
 一个对象是某个特定类型的**实例**。例如，我们可以有类型1和类型2。类型1可以有多个黄色的对象，每个对象都是类型1的一个实例。同样，类型2可以有多个绿色的对象，每个对象都是类型2的实例。
 
@@ -21,15 +19,12 @@ Python中有许多不同的数据类型，例如整数、浮点数、字符串�
 
 
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_4.png)
 
 每次我们创建一个整数，我们都是在创建**整数类型的一个实例**，或者说是在创建一个**整数对象**。例如，`1`， `2`， `3`， `4`， `5` 就是五个整数类型的实例，即五个整数对象。
 
 
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_6.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_7.png)
 
 同样，每次我们创建一个列表，我们都是在创建**列表类型的一个实例**，或者说是在创建一个**列表对象**。例如，`[1, 2]`， `[3, 4, 5]`， `[6]`， `[7, 8, 9, 10]`， `[11, 12]` 就是五个列表类型的实例，即五个列表对象。
 
@@ -50,11 +45,8 @@ type({'a': 1})    # 输出：<class 'dict'>
 
 考虑列表 `ratings`，其数据是包含在列表中的一系列数字。`sort` 方法会改变对象内部的数据。我们通过在对象名称后加上一个点 `.`，然后是方法名和括号 `()` 来调用方法。
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_9.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_10.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_11.png)
 
 ```python
 ratings = [2, 5, 3, 1, 4]
@@ -74,17 +66,12 @@ print(ratings)  # 输出：[1, 2, 3, 4, 5]
 
 
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_13.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_14.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_15.png)
 
 ### 定义类的数据属性
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_16.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_17.png)
 
 类的数据属性定义了该类。让我们创建两个类：第一个类是**圆形**，第二个类是**矩形**。
 
@@ -96,13 +83,11 @@ print(ratings)  # 输出：[1, 2, 3, 4, 5]
 
 
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_19.png)
 
 ### 编写类定义
 
 要创建 `Circle` 类，你需要包含类定义。这告诉Python你正在创建自己的类。
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_21.png)
 
 ```python
 class Circle(object):
@@ -113,7 +98,6 @@ class Circle(object):
 
 对于 `Rectangle` 类，我们改变类名，但其余部分保持不变。
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_23.png)
 
 ```python
 class Rectangle(object):
@@ -132,15 +116,11 @@ class Rectangle(object):
 
 
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_25.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_26.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_27.png)
 
 ## 构建Circle类：构造函数与数据属性 ⚙️
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_28.png)
 
 让我们继续在Python中构建 `Circle` 类。我们定义类，然后使用类构造函数为每个类实例初始化数据属性 `radius` 和 `color`。
 
@@ -153,7 +133,6 @@ class Circle(object):
         self.color = color
 ```
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_30.png)
 
 *   `self` 参数指的是新创建的类实例。
 *   `radius` 和 `color` 参数用于初始化类实例的 `radius` 和 `color` 数据属性。在构造函数体内，我们可以将这些参数的值赋给 `self.radius` 和 `self.color`。
@@ -168,13 +147,11 @@ class Rectangle(object):
         self.width = width
 ```
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_32.png)
 
 这次，类的数据属性是 `color`， `height` 和 `width`。
 
 
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_34.png)
 
 ### 创建对象
 
@@ -188,15 +165,12 @@ red_circle = Circle(10, "red")
 
 
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_36.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_37.png)
 
 将 `self` 想象成一个包含对象所有数据属性的盒子是很有帮助的。
 
 
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_39.png)
 
 ### 访问和修改数据属性
 
@@ -207,7 +181,6 @@ print(red_circle.radius)  # 输出：10
 print(red_circle.color)   # 输出：red
 ```
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_41.png)
 
 我们可以看到 `self` 参数和对象之间的关系。在Python中，我们也可以直接设置或更改数据属性：输入对象名称，后跟一个点 `.` 和数据属性名称，并将其设置为相应的值。
 
@@ -216,13 +189,10 @@ red_circle.color = "yellow"
 print(red_circle.color)   # 输出：yellow
 ```
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_43.png)
 
 我们验证了颜色数据属性已经改变。通常，为了改变对象中的数据，我们在类中定义方法。
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_45.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_46.png)
 
 ## 类的方法 🛠️
 
@@ -244,9 +214,7 @@ class Circle(object):
 
 在这个例子中，我们将一个值 `r` 加到数据属性 `radius` 上。
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_48.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_49.png)
 
 让我们看看当我们创建一个对象并调用 `add_radius` 方法时，这部分代码是如何工作的。
 
@@ -260,7 +228,6 @@ my_circle = Circle(2, "red")
 
 我们通过添加一个点 `.`，后跟方法名和括号 `()` 来调用方法。在这种情况下，函数的参数是我们想要添加的量。
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_51.png)
 
 ```python
 my_circle.add_radius(8)
@@ -268,15 +235,12 @@ my_circle.add_radius(8)
 
 调用方法时，我们不需要担心 `self` 参数，就像构造函数一样，Python会为我们处理。在许多情况下，除了 `self` 之外，方法的定义中可能没有指定任何参数，因此我们在调用函数时不传递任何参数。
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_53.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_54.png)
 
 在内部，该方法以值 `8` 和正确的 `self` 对象被调用。该方法为 `self.radius` 分配一个新值。
 
 
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_56.png)
 
 这改变了对象，特别是 `radius` 数据属性。当我们调用 `add_radius` 方法时，它通过改变 `radius` 数据属性的值来改变对象。
 
@@ -290,17 +254,13 @@ my_circle.add_radius(8)
 
 类似地，我们可以创建一个新的 `Circle` 类型对象，访问其数据属性，并使用 `draw_circle` 方法绘制它。
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_58.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_59.png)
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_60.png)
 
 总结一下，我们创建了一个名为 `red_circle` 的 `Circle` 类对象，其半径属性为3，颜色属性为红色。
 
 
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_62.png)
 
 我们还创建了一个名为 `blue_circle` 的 `Circle` 类对象，其半径属性为10，颜色属性为蓝色。
 
@@ -316,13 +276,11 @@ my_circle.add_radius(8)
 
 被下划线包围的属性是供内部使用的，你不需要担心它们。那些看起来常规的属性才是你应该关注的，这些是对象的方法和数据属性。
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_64.png)
 
 关于Python中的对象，你还可以做更多事情。请查看 Python.org 获取更多信息。
 
 
 
-![](img/0faf5d0f20829df3de4b9d43b617d73d_65.png)
 
 ## 本节课总结 📚
 

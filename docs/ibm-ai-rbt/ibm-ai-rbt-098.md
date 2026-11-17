@@ -14,7 +14,6 @@
 
 如果该模块文件与我们的脚本在同一目录下，我们可以导入它并使用其中的函数。
 
-![](img/b06f2100b2dcab7c34fe884ee5677777_1.png)
 
 一个**Python包**则是将多个Python模块组织在一个包含`__init__.py`文件的目录中。这个特殊的文件将该目录标识为一个Python包，而不仅仅是一个普通的文件夹。
 
@@ -28,7 +27,6 @@ my_package/
 
 当你导入一个模块或包时，Python创建的对象类型始终是`module`。模块和包之间的区别主要在于文件系统层面。
 
-![](img/b06f2100b2dcab7c34fe884ee5677777_3.png)
 
 一个**库**是一个或多个包的集合。例如，NumPy或PyTorch都可以被称为库。值得注意的是，“包”和“库”这两个术语经常互换使用，因此PyTorch和NumPy也常被称为包。
 
@@ -50,19 +48,14 @@ my_package/
 
 ## 验证与使用你的包 ✅
 
-![](img/b06f2100b2dcab7c34fe884ee5677777_5.png)
 
 创建好包之后，我们需要验证它是否能正常工作，并学习如何使用它。
 
-![](img/b06f2100b2dcab7c34fe884ee5677777_6.png)
 
-![](img/b06f2100b2dcab7c34fe884ee5677777_7.png)
 
-![](img/b06f2100b2dcab7c34fe884ee5677777_8.png)
 
 验证包的通用结构是：`包名.模块名.函数名(参数)`。
 
-![](img/b06f2100b2dcab7c34fe884ee5677777_9.png)
 
 例如，使用我们创建的`my_package`：
 ```python
@@ -72,20 +65,17 @@ result = my_package.module1.square_function(5)
 
 一旦包创建成功，并且包文件夹与脚本在同一目录下，我们就可以在其他脚本中使用它。
 
-![](img/b06f2100b2dcab7c34fe884ee5677777_11.png)
 
 假设在父目录中有一个`test.py`文件，我们可以这样导入包中的函数：
 ```python
 from my_package import module1
 ```
 
-![](img/b06f2100b2dcab7c34fe884ee5677777_12.png)
 
 然后，我们可以运行这些函数并检查是否得到正确的结果。
 
 ---
 
-![](img/b06f2100b2dcab7c34fe884ee5677777_14.png)
 
 ## 总结 🎯
 

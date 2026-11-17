@@ -10,18 +10,15 @@
 
 目标工具包要求的数据格式是多维结构。例如，有五只股票（A, B, C, D, E）在多个交易日（如2019-01-01, 2019-01-02）的指标数据。其理想结构是：第一层索引为日期（`date`），第二层索引为股票代码，对应的值是指标数值。
 
-![](img/cebada88ae8cbabe0f5244a53b3e9b2c_1.png)
 
 我们当前的数据格式并非如此，因此需要进行转换。
 
 ---
 
-![](img/cebada88ae8cbabe0f5244a53b3e9b2c_3.png)
 
 ## 设置多级索引
 要将数据转换为目标格式，首先需要重新设置索引。
 
-![](img/cebada88ae8cbabe0f5244a53b3e9b2c_5.png)
 
 以下是设置多级索引的核心步骤：
 1.  将 `date` 列设置为第一层索引。
@@ -31,7 +28,6 @@
 对应的关键代码如下：
 
 
-![](img/cebada88ae8cbabe0f5244a53b3e9b2c_7.png)
 
 ```python
 # 假设 df 是当前的DataFrame，其中包含‘date’列和多列股票指标数据
@@ -44,18 +40,14 @@ formatted_data = df.stack()
 
 执行上述代码后，`formatted_data` 将成为一个具有多级索引（日期， 股票代码）的Series，其值即为对应的指标数据，这与目标格式要求一致。
 
-![](img/cebada88ae8cbabe0f5244a53b3e9b2c_9.png)
 
 ---
 
-![](img/cebada88ae8cbabe0f5244a53b3e9b2c_11.png)
 
 ## 数据预处理
 数据格式转换完成后，通常还需要进行预处理以保证后续分析的稳健性。以下是两个关键步骤：
 
-![](img/cebada88ae8cbabe0f5244a53b3e9b2c_13.png)
 
-![](img/cebada88ae8cbabe0f5244a53b3e9b2c_15.png)
 
 ### 1. 去除异常值
 去除异常值（去极值）的目的是防止极端值对整体分析产生过大影响。常用方法是使用分位数进行截断。
@@ -72,7 +64,6 @@ def winsorize(series):
 ### 2. 数据标准化
 标准化（Z-Score标准化）可以将数据转换为均值为0、标准差为1的分布，便于不同指标间的比较。
 
-![](img/cebada88ae8cbabe0f5244a53b3e9b2c_17.png)
 
 ```python
 def standardize(series):
@@ -81,15 +72,12 @@ def standardize(series):
     return (series - mean) / std
 ```
 
-![](img/cebada88ae8cbabe0f5244a53b3e9b2c_19.png)
 
 在实际操作中，我们需要对**每个交易日**的数据分别应用去除异常值和标准化操作，以保证处理是基于横截面数据进行的。
 
-![](img/cebada88ae8cbabe0f5244a53b3e9b2c_21.png)
 
 ---
 
-![](img/cebada88ae8cbabe0f5244a53b3e9b2c_23.png)
 
 ## 总结
 本节课中我们一起学习了为满足特定分析工具包要求而进行的数据格式转换。

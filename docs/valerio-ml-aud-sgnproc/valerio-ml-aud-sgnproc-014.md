@@ -8,13 +8,10 @@
 ## 准备工作
 首先，我们需要导入必要的Python库。
 
-![](img/6000dface9786386ad5429527a097199_1.png)
 
 ![](img/6000dface9786386ad5429527a097199_3.png)
 
-![](img/6000dface9786386ad5429527a097199_5.png)
 
-![](img/6000dface9786386ad5429527a097199_6.png)
 
 以下是所需的库及其用途：
 *   `numpy`：用于数值计算，特别是执行快速傅里叶变换。
@@ -22,7 +19,6 @@
 *   `librosa`：用于加载音频文件。
 *   `IPython.display`：用于在Jupyter笔记本中直接播放音频。
 
-![](img/6000dface9786386ad5429527a097199_8.png)
 
 ```python
 import numpy as np

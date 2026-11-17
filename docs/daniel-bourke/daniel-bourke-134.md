@@ -80,15 +80,12 @@ data/
 
 在我们的案例中，`class_1`、`class_2` 等被替换为了 `pizza`、`steak` 和 `sushi`。这种格式的优势在于，图像的标签（即类别）直接由其所在的文件夹名称决定。这使得数据加载过程变得非常直观和高效。
 
-![](img/352d8afa7522b0b0070861d086268ebf_8.png)
 
 许多深度学习框架（如 PyTorch 的 `torchvision`）都内置了能够自动处理这种格式数据集的加载器。例如，`torchvision.datasets.ImageFolder` 就是为此设计的。
 
-![](img/352d8afa7522b0b0070861d086268ebf_10.png)
 
 为了后续处理，我们可以定义训练和测试数据的路径：
 
-![](img/352d8afa7522b0b0070861d086268ebf_11.png)
 
 ![](img/352d8afa7522b0b0070861d086268ebf_13.png)
 
@@ -97,7 +94,6 @@ train_dir = "data/pizza_steak_sushi/train"
 test_dir = "data/pizza_steak_sushi/test"
 ```
 
-![](img/352d8afa7522b0b0070861d086268ebf_15.png)
 
 ## 可视化数据
 

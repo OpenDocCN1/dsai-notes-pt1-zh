@@ -4,11 +4,9 @@
 
 在本节课中，我们将学习如何配置GPU并编写设备无关的代码，确保我们的PyTorch模型能够在不同硬件上运行。
 
-![](img/8c82edd2c2d9284bcb40732168f39f03_2.png)
 
 ---
 
-![](img/8c82edd2c2d9284bcb40732168f39f03_3.png)
 
 上一节我们介绍了如何构建和训练一个基线模型。本节中，我们来看看如何利用GPU加速计算，并编写能够自动适应不同硬件环境的代码。
 
@@ -25,9 +23,7 @@ torch.cuda.is_available()
 
 ## 在Google Colab中激活GPU
 
-![](img/8c82edd2c2d9284bcb40732168f39f03_5.png)
 
-![](img/8c82edd2c2d9284bcb40732168f39f03_6.png)
 
 如果你在Google Colab中运行代码，需要手动激活GPU。以下是激活步骤：
 

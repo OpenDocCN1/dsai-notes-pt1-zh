@@ -99,7 +99,6 @@ Harrison 几天前发布了一个关于记忆的概念视频，建议你观看�
 
 ![](img/c914388972f6f15955eaee1c76e6edc4_9.png)
 
-![](img/c914388972f6f15955eaee1c76e6edc4_10.png)
 
 在本节课中，我们一起学习了 LangChain 中后台记忆系统的构建。
 

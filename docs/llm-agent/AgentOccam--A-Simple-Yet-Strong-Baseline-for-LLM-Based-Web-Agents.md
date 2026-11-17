@@ -372,23 +372,18 @@ iii) 错误使用 fuzzy_match 函数，将关键词列表拆分成一个列表�
 
 我们包括了将 AgentOccam 与其他复合代理策略（如 SteP 的策略和我们新提出的 Judge 角色）结合的实验统计。具体来说，[9](https://arxiv.org/html/2410.13825v1#A2.T9 "表 9 ‣ B.2 细节 ‣ 附录 B 评估者修正 ‣ AgentOccam: 基于 LLM 的 Web 代理的一个简单而强大的基准") 显示，这些表现良好的代理在环境探索方面同样开放，积极发出改变环境的操作，如点击和输入。毫不奇怪，AgentOccam + SteP 代理经常发出非交互性操作，如悬停。根据表 [10](https://arxiv.org/html/2410.13825v1#A2.T10 "表 10 ‣ B.2 细节 ‣ 附录 B 评估者修正 ‣ AgentOccam: 基于 LLM 的 Web 代理的一个简单而强大的基准")，我们可以观察到 AgentOccam 以最少的步骤完成任务，通常完成的任务结果是 9 步。最后，根据表 [11](https://arxiv.org/html/2410.13825v1#A2.T11 "表 11 ‣ B.2 细节 ‣ 附录 B 评估者修正 ‣ AgentOccam: 基于 LLM 的 Web 代理的一个简单而强大的基准")，这三种代理的令牌消耗处于相近的数量级。
 
-![参考说明](img/2f95f54e1e33c35aea02fcd87a368318.png)
 
 (a) 购物。
 
-![参考说明](img/e1ab14307f3be450a16543172f73ec07.png)
 
 (b) 购物管理。
 
-![参考说明](img/980681a796463372b6a9e961dcab49ec.png)
 
 (c) GitLab。
 
-![参考说明](img/b3d91bb373ab3e41e1d465af66ae2a45.png)
 
 (d) 地图。
 
-![参考说明](img/f2fd48a4d0b669fbca38fb8db09d273e.png)
 
 (e) Reddit。
 

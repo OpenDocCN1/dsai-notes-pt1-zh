@@ -1,6 +1,5 @@
 # 32：LLM分类微调中的数据加载器 | Python编码 | 动手实践LLM
 
-![](img/ef2da96de1e3232e70719ed8d2f64b98_0.png)
 
 ![](img/ef2da96de1e3232e70719ed8d2f64b98_0.png)
 

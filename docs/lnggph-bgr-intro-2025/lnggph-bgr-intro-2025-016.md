@@ -8,16 +8,13 @@
 
 在LangGraph中，状态是一种在AI系统处理数据时维护和跟踪信息的方式。你可以将其视为系统的记忆，允许它在工作流或图的不同阶段记住和更新信息。
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_1.png)
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_2.png)
 
 我们将涵盖以下核心概念：
 *   什么是StateGraph
 *   基本状态结构
 *   状态更新的不同方式（手动与声明式）
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_4.png)
 
 首先，我们将通过一个简单的计数器示例来演示StateGraph的基本用法。
 
@@ -25,22 +22,17 @@
 
 我们将构建一个简单的图，它包含一个名为`count`的状态属性，初始值为0。图包含一个“递增”节点和一个“条件判断”节点，`count`会不断递增，直到达到5为止。
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_6.png)
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_8.png)
 
 以下是实现此图所需的步骤。
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_10.png)
 
 ### 步骤1：定义状态蓝图（Schema）
 
 首先，我们需要定义状态的“蓝图”，即规定状态对象应包含哪些属性及其数据类型。我们使用`TypedDict`来实现。
 
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_12.png)
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_13.png)
 
 ```python
 from typing import TypedDict
@@ -65,9 +57,7 @@ def increment(state: SimpleState) -> SimpleState:
 **条件判断节点（Should Continue Node）**
 这个节点根据`count`的值决定图的下一步走向。
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_15.png)
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_16.png)
 
 ```python
 from langgraph.graph import END
@@ -81,19 +71,14 @@ def should_continue(state: SimpleState) -> str:
 
 ### 步骤3：组装StateGraph
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_18.png)
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_19.png)
 
 定义了节点后，我们将它们组装成一个完整的图。
 
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_21.png)
-
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_22.png)
 
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_24.png)
+
 
 ```python
 from langgraph.graph import StateGraph
@@ -122,16 +107,13 @@ graph.set_entry_point("increment")
 app = graph.compile()
 ```
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_25.png)
 
 ### 步骤4：运行图
 
 最后，我们使用初始状态来运行这个图。
 
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_27.png)
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_28.png)
 
 ```python
 # 定义初始状态
@@ -151,11 +133,8 @@ print(result) # 输出：{'count': 5}
 3.  **不可变更新**：节点通过返回一个**新的状态对象**来更新状态，而不是直接修改原对象，这符合函数式编程的最佳实践。
 4.  **工作流程**：我们掌握了构建StateGraph的标准流程：定义状态 -> 创建节点 -> 组装图（添加节点、边、入口点）-> 编译 -> 运行。
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_30.png)
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_31.png)
 
-![](img/7a12b0fcfd9eaf164ea74d37281f76c0_32.png)
 
 ![](img/7a12b0fcfd9eaf164ea74d37281f76c0_34.png)
 

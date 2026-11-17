@@ -1,6 +1,5 @@
 # 机器学习实战课程 P16：📂 从 CSV 加载数据
 
-![](img/eaeaf4ad726c9b2e0b9997653405989f_0.png)
 
 ![](img/eaeaf4ad726c9b2e0b9997653405989f_0.png)
 
@@ -214,6 +213,5 @@ df.fillna(9999, inplace=True)  # 将 NaN 替换为 9999
 
 对于初学者，建议从 Numpy 的 `genfromtxt` 或 Pandas 的 `read_csv` 开始，它们是进行机器学习数据准备最常用和高效的工具。
 
-![](img/eaeaf4ad726c9b2e0b9997653405989f_9.png)
 
 ![](img/eaeaf4ad726c9b2e0b9997653405989f_9.png)

@@ -402,15 +402,12 @@ XLA 对于完整模型（ResNet、DenseNet 和 VGG 系列）和轻量级模型�
 
 为了进一步比较深度学习编译器的后端优化能力，我们评估了在 V100 GPU 和 Broadwell CPU（单线程，因为 Glow 缺乏多线程支持）上的 ResNet50 和 MobileNetV2$\_$1.0 的每层（卷积层，因为它们主导了推理时间）性能。
 
-![参考说明](img/b79c412dd420b4baa0c6baeef9408c52.png)
 
 图 6\. 在 V100 GPU 上，TVM、TC、Glow 和 XLA 在 MobileNetV2$\_$1.0 中的卷积层性能比较
 
-![参考说明](img/6205b3a72615e3eafcc799e8fac7de42.png)
 
 图 7\. MobileNetV2$\_$1.0 中卷积层在 TVM、nGraph 和 Glow 上的性能比较，测试平台为 Broadwell CPU。
 
-![参见说明](img/21fcf2de0bcd9e4217039daefc9d6b68.png)
 
 图 8\. ResNet50 中卷积层在 TVM、TC 和 Glow 上的性能比较，测试平台为 V100 GPU。
 

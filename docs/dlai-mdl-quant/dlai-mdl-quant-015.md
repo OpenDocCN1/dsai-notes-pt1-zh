@@ -28,9 +28,7 @@ def pack_weights(unpacked_tensor, num_bits):
     """
 ```
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_1.png)
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_3.png)
 
 为了简化处理，我们使用无符号整数类型，这样可以避免处理符号位。
 
@@ -38,7 +36,6 @@ def pack_weights(unpacked_tensor, num_bits):
 
 ## 输入形状检查
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_5.png)
 
 为了确保算法正确运行，输入张量的形状最好是4的倍数。我们添加一个检查条件。
 
@@ -48,7 +45,6 @@ def pack_weights(unpacked_tensor, num_bits):
         raise ValueError(f"输入形状需要是 {8 // num_bits} 的倍数。")
 ```
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_7.png)
 
 这个检查确保了我们可以将整数个低比特值完整地打包进8比特单元中。
 
@@ -88,13 +84,11 @@ def pack_weights(unpacked_tensor, num_bits):
 
 ---
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_9.png)
 
 ## 初始化与循环
 
 现在，我们初始化打包后的张量，并开始核心的打包循环。
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_11.png)
 
 以下是实现打包算法的步骤：
 
@@ -102,9 +96,7 @@ def pack_weights(unpacked_tensor, num_bits):
 2.  **外层循环**：遍历每一个即将生成的打包值。
 3.  **内层循环**：对于每个打包值，循环处理`num_steps_per_pack`个低比特值。
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_13.png)
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_14.png)
 
 ```python
     # 初始化打包后的张量
@@ -131,7 +123,6 @@ def pack_weights(unpacked_tensor, num_bits):
 
 ---
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_16.png)
 
 ## 算法原理图解
 
@@ -152,10 +143,8 @@ def pack_weights(unpacked_tensor, num_bits):
 
 现在，让我们测试我们编写的函数。
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_18.png)
 
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_19.png)
 
 ```python
 # 创建一个示例张量，包含四个2比特值：1, 0, 3, 2
@@ -166,17 +155,14 @@ packed = pack_weights(unpacked, num_bits=2)
 print(f"打包后的值: {packed.item()}")  # 预期输出: 177
 ```
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_21.png)
 
 运行上述代码，如果得到177，则证明我们的打包函数工作正常。你可以尝试将177转换为二进制 (`10110001`)，验证其是否对应 `[1, 0, 3, 2]` 的2比特表示。
 
 ---
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_23.png)
 
 ## 扩展与练习
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_24.png)
 
 为了加深理解，你可以尝试以下练习：
 
@@ -184,9 +170,7 @@ print(f"打包后的值: {packed.item()}")  # 预期输出: 177
 *   **边界测试**：测试一些边界情况，例如所有值都为3（2比特最大值 `11`），看看打包结果是否为255。
 *   **优化代码**：思考是否可以用更向量化的方式（减少显式循环）来实现这个功能。
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_26.png)
 
-![](img/8718d8bd0cd512d09dbd6b4e95db5806_27.png)
 
 ---
 

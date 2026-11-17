@@ -44,7 +44,6 @@ trading_dates = get_trading_date('2019-01-01', '2020-01-01')
 
 获取日期后，下一步是确定我们要分析哪些股票。在本例中，我们选择分析A股市场的所有股票。
 
-![](img/462e0239cd0e28035d1776a01112078b_1.png)
 
 以下是构建股票池的代码：
 
@@ -53,7 +52,6 @@ trading_dates = get_trading_date('2019-01-01', '2020-01-01')
 stock_pool = get_all_securities(['stock'], 'A')
 ```
 
-![](img/462e0239cd0e28035d1776a01112078b_3.png)
 
 变量`stock_pool`现在包含了我们当前要分析的所有股票。
 
@@ -61,13 +59,10 @@ stock_pool = get_all_securities(['stock'], 'A')
 
 有了日期和股票池，现在我们可以查询具体的因子指标数据。我们将以`P`指标为例进行查询。
 
-![](img/462e0239cd0e28035d1776a01112078b_5.png)
 
 以下是构建查询语句的步骤。查询基于`fundamentals`数据，我们需要指定要查询的指标和过滤条件。
 
-![](img/462e0239cd0e28035d1776a01112078b_7.png)
 
-![](img/462e0239cd0e28035d1776a01112078b_9.png)
 
 ```python
 # 初始化查询对象
@@ -80,9 +75,7 @@ q = q.filter(fundamentals.income_statement.code.in_(stock_pool))
 
 ## 执行查询并获取数据
 
-![](img/462e0239cd0e28035d1776a01112078b_11.png)
 
-![](img/462e0239cd0e28035d1776a01112078b_13.png)
 
 定义好查询语句后，我们需要执行它来获取数据。查询时需要传入具体的日期。
 

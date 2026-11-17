@@ -4,11 +4,9 @@
 
 上一节我们介绍了SQLite的基本概念和命令行工具，本节中我们来看看如何使用SQL命令来定义和创建数据表。
 
-![](img/ed9676e4b64ca5a944fdf2c8517b247c_1.png)
 
 ## 创建表格的基础语法
 
-![](img/ed9676e4b64ca5a944fdf2c8517b247c_3.png)
 
 创建表格的核心命令是 `CREATE TABLE`。其基本语法结构如下：
 
@@ -30,13 +28,10 @@ CREATE TABLE table_name (
 
 以下是创建一个名为 `employee` 的员工表的详细步骤。
 
-![](img/ed9676e4b64ca5a944fdf2c8517b247c_5.png)
 
-![](img/ed9676e4b64ca5a944fdf2c8517b247c_7.png)
 
 首先，我们尝试一个不完整的命令，以理解错误信息：
 
-![](img/ed9676e4b64ca5a944fdf2c8517b247c_9.png)
 
 ```sql
 CREATE TABLE employee;
@@ -45,7 +40,6 @@ CREATE TABLE employee;
 
 接下来，我们创建一个包含基本列定义的表：
 
-![](img/ed9676e4b64ca5a944fdf2c8517b247c_11.png)
 
 ```sql
 CREATE TABLE employee (
@@ -61,7 +55,6 @@ CREATE TABLE employee (
 
 ## 为表格添加约束
 
-![](img/ed9676e4b64ca5a944fdf2c8517b247c_13.png)
 
 约束用于定义关于列中数据的规则，确保数据的准确性和可靠性。以下是几个重要的约束：
 
@@ -78,7 +71,6 @@ DROP TABLE employee;
 
 然后，创建新表：
 
-![](img/ed9676e4b64ca5a944fdf2c8517b247c_15.png)
 
 ```sql
 CREATE TABLE employee (

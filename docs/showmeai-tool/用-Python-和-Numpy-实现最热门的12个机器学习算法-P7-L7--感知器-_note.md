@@ -125,7 +125,6 @@ class Perceptron:
 
 ![](img/47427fb8775e23c1bec39e64630a9c33_14.png)
 
-![](img/47427fb8775e23c1bec39e64630a9c33_15.png)
 
 ```python
 # 1. 生成模拟数据

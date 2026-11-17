@@ -1,6 +1,5 @@
 # 课程名称：CogVideoX视频生成模型详解与部署指南 - P1
 
-![](img/ebeee9ddf8cee16b44d90abc5d46c69d_1.png)
 
 ## 概述 📖
 
@@ -10,7 +9,6 @@
 
 ## 第一部分：算法核心解析 🧠
 
-![](img/ebeee9ddf8cee16b44d90abc5d46c69d_3.png)
 
 上一节我们概述了课程内容，本节中我们来看看CogVideoX模型背后的核心技术。
 
@@ -75,7 +73,6 @@ CogVideoX使用一个特殊的3D Transformer进行文生视频的生成。其核
 
 了解了算法和训练后，本节我们来看看如何快速上手运行模型。推荐使用**Diffusers**库，它提供了标准化的接口。
 
-![](img/ebeee9ddf8cee16b44d90abc5d46c69d_5.png)
 
 ![](img/ebeee9ddf8cee16b44d90abc5d46c69d_7.png)
 
@@ -120,17 +117,14 @@ CogVideoX使用一个特殊的3D Transformer进行文生视频的生成。其核
 
 ![](img/ebeee9ddf8cee16b44d90abc5d46c69d_13.png)
 
-![](img/ebeee9ddf8cee16b44d90abc5d46c69d_15.png)
 
 ![](img/ebeee9ddf8cee16b44d90abc5d46c69d_17.png)
 
 ## 第三部分：开源计划与社区共建 🌱
 
-![](img/ebeee9ddf8cee16b44d90abc5d46c69d_19.png)
 
 ![](img/ebeee9ddf8cee16b44d90abc5d46c69d_21.png)
 
-![](img/ebeee9ddf8cee16b44d90abc5d46c69d_23.png)
 
 上一节我们完成了模型的部署教学，本节中我们将一起了解CogVideoX的未来发展路线和社区参与方式。
 
@@ -151,7 +145,6 @@ CogVideoX使用一个特殊的3D Transformer进行文生视频的生成。其核
 
 CogVideoX的成功离不开社区的共同努力。
 
-![](img/ebeee9ddf8cee16b44d90abc5d46c69d_27.png)
 
 以下是鼓励社区参与的方向：
 *   **算法与性能**：
@@ -165,7 +158,6 @@ CogVideoX的成功离不开社区的共同努力。
     *   开发**ControlNet**等可控生成功能。
     *   探索**图生视频**等扩展任务。
 
-![](img/ebeee9ddf8cee16b44d90abc5d46c69d_29.png)
 
 团队欢迎所有形式的贡献，并将优秀贡献展示在项目首页。遇到问题或有好建议，推荐在GitHub仓库提交Issue或Pull Request。
 

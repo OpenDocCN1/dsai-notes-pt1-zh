@@ -1,14 +1,10 @@
 # 105：损失函数立体化呈现（一） 📊
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_0.png)
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_2.png)
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_4.png)
 
 在本节课中，我们将学习如何通过代码将逻辑斯蒂回归的损失函数进行立体化呈现，直观地观察其形状，并理解梯度下降过程所对应的函数特性。
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_6.png)
 
 ---
 
@@ -25,13 +21,10 @@ from mpl_toolkits.mplot3d import Axes3D
 from sklearn.preprocessing import StandardScaler
 ```
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_8.png)
 
 ---
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_10.png)
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_12.png)
 
 ## 加载与处理数据
 
@@ -72,11 +65,9 @@ model.fit(X, y)
 
 ## 提取模型参数
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_14.png)
 
 模型训练完成后，我们可以提取其中的关键参数，即线性方程的系数和截距。
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_16.png)
 
 以下是提取参数的代码：
 *   使用 `model.coef_` 获取特征系数。
@@ -93,13 +84,10 @@ print(“方程的截距 b:”, b)
 
 ---
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_18.png)
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_20.png)
 
 ## 定义 Sigmoid 函数
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_22.png)
 
 逻辑斯蒂回归的核心是将线性方程的输出通过 Sigmoid 函数转换为概率。现在我们来定义这个函数。
 
@@ -115,25 +103,20 @@ def sigmoid(x, w1, w2, b):
     return 1 / (1 + np.exp(-z))
 ```
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_24.png)
 
 ---
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_26.png)
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_28.png)
 
 ## 定义损失函数
 
 定义了Sigmoid函数后，我们需要根据逻辑斯蒂回归的损失函数公式来计算整体损失。
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_30.png)
 
 逻辑斯蒂回归的损失函数（对数损失）公式为：
 **`J(θ) = -1/m * Σ [y⁽ⁱ⁾ * log(hθ(x⁽ⁱ⁾)) + (1 - y⁽ⁱ⁾) * log(1 - hθ(x⁽ⁱ⁾))]`**
 其中 `hθ(x)` 即 Sigmoid 函数的输出。
 
-![](img/5514eba0bd6b5d3d47392abe7e86ed2d_32.png)
 
 ```python
 def loss_function(X, y, w1, w2, b):

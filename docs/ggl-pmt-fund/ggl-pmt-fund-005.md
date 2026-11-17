@@ -1,16 +1,13 @@
 #  005：将提示词框架付诸实践 🚀
 
-![](img/864260ca6229d96c97efd1089c979218_1.png)
 
 在本节课中，我们将通过一个具体的案例，学习如何将提示词框架（任务、上下文、格式、参考）付诸实践，以生成更高质量、更符合需求的AI输出。我们将以构思一款高性能运动鞋产品线为例，逐步优化我们的提示词。
 
 ---
 
-![](img/864260ca6229d96c97efd1089c979218_3.png)
 
 ## 概述
 
-![](img/864260ca6229d96c97efd1089c979218_4.png)
 
 我们将登录Gemini工具，并尝试让它帮助我们为一个新的高性能运动鞋系列进行头脑风暴。通过逐步应用提示词框架的各个要素，我们将看到提示词从简单到复杂的演变过程，以及每一次优化如何显著提升输出结果的质量和相关性。
 
@@ -18,38 +15,29 @@
 
 ## 从简单任务开始
 
-![](img/864260ca6229d96c97efd1089c979218_6.png)
 
-![](img/864260ca6229d96c97efd1089c979218_7.png)
 
 首先，我们从一个最基本的任务型提示词开始。
 
-![](img/864260ca6229d96c97efd1089c979218_9.png)
 
 **提示词：**
 ```
 Generate five ideas for a new, high performance sneaker line.
 ```
 
-![](img/864260ca6229d96c97efd1089c979218_11.png)
 
 这个提示词只包含了任务，没有其他任何信息。Gemini生成了五个带有独特名称和描述的想法。虽然这是一个不错的起点，但结果可能过于宽泛，实用性有限。
 
-![](img/864260ca6229d96c97efd1089c979218_13.png)
 
 上一节我们介绍了提示词框架的四个核心要素。本节中我们来看看，如何通过添加更多要素来优化结果。
 
-![](img/864260ca6229d96c97efd1089c979218_15.png)
 
 ---
 
 ## 添加格式要求
 
-![](img/864260ca6229d96c97efd1089c979218_17.png)
 
-![](img/864260ca6229d96c97efd1089c979218_18.png)
 
-![](img/864260ca6229d96c97efd1089c979218_19.png)
 
 为了让输出更结构化、更易于使用，我们可以在提示词中明确指定期望的格式。
 
@@ -58,13 +46,10 @@ Generate five ideas for a new, high performance sneaker line.
 List five concepts for a new, high performance sneaker line. For each sneaker, list the concepts and materials in an outline.
 ```
 
-![](img/864260ca6229d96c97efd1089c979218_21.png)
 
 现在，我们不仅要求生成想法，还指定了输出格式（大纲形式）和更具体的任务（列出概念和材料）。结果得到了显著改善，我们获得了一套包含每款鞋所用材料的独特想法，并且是以我们喜欢的大纲格式呈现的。
 
-![](img/864260ca6229d96c97efd1089c979218_22.png)
 
-![](img/864260ca6229d96c97efd1089c979218_23.png)
 
 ---
 
@@ -72,9 +57,7 @@ List five concepts for a new, high performance sneaker line. For each sneaker, l
 
 为了使想法更具针对性，我们需要为AI工具提供更多背景信息，即添加上下文。
 
-![](img/864260ca6229d96c97efd1089c979218_25.png)
 
-![](img/864260ca6229d96c97efd1089c979218_26.png)
 
 **进一步优化的提示词：**
 ```
@@ -83,7 +66,6 @@ List five concepts for a new, high performance sneaker line. For each sneaker, l
 
 通过添加“适用于进行交叉训练运动员”这一上下文，Gemini生成的五个新运动鞋想法更加贴合我们的特定目标。这表明，提供更多细节和上下文有助于生成更有用的结果。
 
-![](img/864260ca6229d96c97efd1089c979218_28.png)
 
 ---
 
@@ -98,7 +80,6 @@ List five concepts for a new, high performance sneaker line. For each sneaker, l
 
 现在，让我们为运动鞋构思任务加入两个现有鞋款的描述作为参考。
 
-![](img/864260ca6229d96c97efd1089c979218_30.png)
 
 **最终优化的提示词：**
 ```
@@ -115,24 +96,18 @@ Keep the five ideas generated, but refine them using these two examples as refer
 
 评估输出和迭代改进是提示词框架的最后环节，也是我们进行实验和发挥创造力的地方。每一次新的输出都是进一步优化提示词的机会，直到获得满意的回应。
 
-![](img/864260ca6229d96c97efd1089c979218_32.png)
 
 事实上，在整个实践过程中，我们一直在进行评估和迭代：
 1.  我们评估了第一个提示词生成的鞋款想法。
 2.  我们通过添加上下文进行了迭代。
 3.  我们再次评估输出，并通过添加参考示例进行了迭代。
 
-![](img/864260ca6229d96c97efd1089c979218_33.png)
 
-![](img/864260ca6229d96c97efd1089c979218_34.png)
 
-![](img/864260ca6229d96c97efd1089c979218_35.png)
 
 我们始终可以**添加细节**或**调整措辞**来改变输出。记住这个口诀：**ABI（Always Be Iterating，持续迭代）**。
 
-![](img/864260ca6229d96c97efd1089c979218_36.png)
 
-![](img/864260ca6229d96c97efd1089c979218_37.png)
 
 ---
 
@@ -146,7 +121,6 @@ Keep the five ideas generated, but refine them using these two examples as refer
 *   **适时回溯**：如果输出质量开始下降，可能需要返回并简化你的提示词，这很正常。
 *   **不断学习**：了解什么有效、什么无效是整个学习过程的一部分。
 
-![](img/864260ca6229d96c97efd1089c979218_39.png)
 
 ![](img/864260ca6229d96c97efd1089c979218_41.png)
 

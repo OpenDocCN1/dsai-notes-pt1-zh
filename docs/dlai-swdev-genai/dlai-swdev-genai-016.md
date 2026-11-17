@@ -1,6 +1,5 @@
 # 16：15_生产环境中的数据结构
 
-![](img/c16e3fca8b7439dc8f27c7c1356b2ecf_0.png)
 
 ![](img/c16e3fca8b7439dc8f27c7c1356b2ecf_0.png)
 

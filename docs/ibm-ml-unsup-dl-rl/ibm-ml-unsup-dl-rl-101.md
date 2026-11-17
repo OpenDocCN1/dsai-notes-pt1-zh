@@ -1,6 +1,5 @@
 # 101：IBM《机器学习（无监督学习、深度学习和强化学习、毕业项目）｜machine learning》中英字幕 p101 62_自编码器笔记本（选修部分）第1部分.zh_en -BV1eu4m1F7oz_p101-
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_0.png)
 
 Welcome to our lab here on autoencors in this lab， we're going to be going over Diality reduction techniques on the MNIS data set。
 
@@ -12,7 +11,6 @@ And we're going to perform dimensionality reduction using first PCA as a baselin
 
  auto encoders and variational autoenrs。
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_2.png)
 
 And with each one of these models， we're going to use the appropriate scoring metrics so that we can compare the performance across each。
 
@@ -42,7 +40,6 @@ And were working with 28 by 28 images。 And if you're recall， because it's bl
 
  And if we look at just a single image。
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_4.png)
 
 We can see that each one of these different pixels are going to be some number between zero and 255。
 
@@ -50,7 +47,6 @@ We can see that each one of these different pixels are going to be some number b
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_6.png)
 
 So this takes a lot of space， I'm just going to clear that out。
 
@@ -58,19 +54,16 @@ Now we want to make sure that they're all between0 and 1， so we're just going 
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_8.png)
 
 And then。If you think about it， the max number is 255， we divide by 255， the max number is now one。
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_10.png)
 
 We're going to use now PCA as a baseline with which we can compare against our deep learning models。
 
  which we'll do later on。
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_12.png)
 
 So for PCA， we're going to have to teach each image， treat each image like a row of data。
 
@@ -78,7 +71,6 @@ So for PCA， we're going to have to teach each image， treat each image like a
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_14.png)
 
 In order to do that， all we have to do is call that xtrain。 reshape。
 
@@ -94,7 +86,6 @@ That's one through dot shape1 through is going to be that 28。
 
  And we see those results here。
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_16.png)
 
 Now， just a quick one sentence reminder on how PCA works。
 
@@ -102,7 +93,6 @@ Now， just a quick one sentence reminder on how PCA works。
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_18.png)
 
 To find the eigenvalues and these eigenvalues will end up being the principal components of our data or those latent features that describe the maximum amount of variance in the data。
 
@@ -110,7 +100,6 @@ To find the eigenvalues and these eigenvalues will end up being the principal co
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_20.png)
 
 So just to ensure that it's scaled， we already got it between 0 and1。
 
@@ -120,15 +109,12 @@ So just to ensure that it's scaled， we already got it between 0 and1。
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_22.png)
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_23.png)
 
 And then we call transform on that Xtrain flat， and now we have our xtrain scales。
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_25.png)
 
 Now， the function that we're going to use for PCA。It's going to take in some data。
 
@@ -176,7 +162,6 @@ So that's going to be all the data。 And when I run this， recall。
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_27.png)
 
 And with all 784 components being taken into account， all of the features being taken into account。
 
@@ -186,7 +171,6 @@ And with all 784 components being taken into account， all of the features bein
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_29.png)
 
 If I run this。This is going to be an array that says， for each principal component。
 
@@ -198,7 +182,6 @@ So the first component explained this much of the variance， the second one。
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_31.png)
 
 Will be 784。And if we actually plot this out， we can take that cumulative sum across all 784 components。
 
@@ -208,13 +191,11 @@ And we can see how much of the variance is explained as we add on more and more 
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_33.png)
 
 And we can see that we need about 250 components to explain about 90% of our variances there。
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_35.png)
 
 Now for visualization purposes。Let's try reducing it down the number of features down to two。
 
@@ -226,13 +207,11 @@ Now for visualization purposes。Let's try reducing it down the number of featur
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_37.png)
 
 So you run this。And we get our output of both the model， as well as our transform data。
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_39.png)
 
 Now I'm going to get to this in just a second， that's just an example of how to explain what we have here。
 
@@ -256,7 +235,6 @@ Which is just saying does y train equal that number where we currently are， So
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_41.png)
 
 We'll just put that out。6000， right， So it's going to be for each one of the different examples。
 
@@ -284,13 +262,11 @@ And then we're going to do the same thing to get our y data or a second axis by 
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_43.png)
 
 We can see for each one of the different values， whether or not we create clumps in this two dimensional space representing that 0。
 
 1，2， and so on。
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_45.png)
 
 And we can see， for example， the ones here in orange are already disentangled and grouped together on their own。
 
@@ -302,9 +278,7 @@ And we can see， for example， the ones here in orange are already disentangle
 
 😊。
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_47.png)
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_48.png)
 
 But we can already see that these latent features within PCA。
 
@@ -312,13 +286,11 @@ Are learning somewhat how to disentangle our features and perhaps a neural netwo
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_50.png)
 
 So now we want to score our PCA again， we're going to want to come up with some actual function to decide whether or not we are improving how well we are performing in regards to working with the PCA versus working with our network models。
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_52.png)
 
 So the number that we're going to be using， the latent features。
 
@@ -330,9 +302,7 @@ So we call that NNS PCA function that we defined earlier。We call 64 dimensions
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_54.png)
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_55.png)
 
 We're then going to take our X test flat that we defined earlier and scale it。
 
@@ -340,23 +310,19 @@ We're then going to take our X test flat that we defined earlier and scale it。
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_57.png)
 
 Here are X trains， so we are're using that same S。
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_59.png)
 
 To transform our X test。We're then going to use that PCA 64 that we just fit on our training set。
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_61.png)
 
 To transform our X test scaled。So that's going to give us x test flat in 64 dimensions。
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_63.png)
 
 And then we're going to reconstruct that same image。
 
@@ -370,7 +336,6 @@ transform。So this is that reconstruction that we're trying to do we're reconst
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_65.png)
 
 We can look at the shape here and as expected， given that we have the test set， there's 10。
 
@@ -382,7 +347,6 @@ We're then just going to call this true and reconstructed。
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_67.png)
 
 We're then going to come up with the mean squared error of that reconstruction。
 
@@ -394,7 +358,6 @@ And we can call that on our now true and reconstructed that we just defined abov
 
 
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_69.png)
 
 And we see that we have an average mean squared error about 90。5 when you use 64 components for PCA。
 
@@ -406,6 +369,5 @@ So that's going to be the baseline that we're working with。 We see a mean squa
 
 6。 All right， I'll see you there。
 
-![](img/bd5c1072f3686db1d6139b88aa4db153_71.png)
 
 ![](img/bd5c1072f3686db1d6139b88aa4db153_72.png)

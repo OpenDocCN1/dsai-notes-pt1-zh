@@ -1,6 +1,5 @@
 # 040：基本数组操作 📊
 
-![](img/9da555b9e6ef441a9c6235ad32f74309_0.png)
 
 ![](img/9da555b9e6ef441a9c6235ad32f74309_0.png)
 
@@ -128,7 +127,6 @@ print(np.floor(arr))  # 输出向下取整结果
 print(np.ceil(arr))   # 输出向上取整结果
 ```
 
-![](img/9da555b9e6ef441a9c6235ad32f74309_2.png)
 
 NumPy非常强大，你可以用它做很多事情，我们在这里只能简要介绍。
 

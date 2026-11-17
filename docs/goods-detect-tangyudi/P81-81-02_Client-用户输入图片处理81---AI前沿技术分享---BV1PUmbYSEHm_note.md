@@ -1,13 +1,11 @@
 # TensorFlow Serving 客户端开发教程 🚀
 
-![](img/aa74e9abe1d80e5eaaf241ae2e9f9e48_1.png)
 
 ## 课程概述
 在本节课中，我们将学习如何构建一个TensorFlow Serving的客户端。这个客户端的主要功能是接收用户输入的图片数据，将其转换为模型所需的格式，发送预测请求，并对返回的结果进行处理和标记。
 
 ---
 
-![](img/aa74e9abe1d80e5eaaf241ae2e9f9e48_3.png)
 
 ## 客户端流程分析
 
@@ -105,7 +103,6 @@ def convert_image_to_array(image_data):
     return image_array
 ```
 
-![](img/aa74e9abe1d80e5eaaf241ae2e9f9e48_25.png)
 
 在 `make_prediction` 函数中应用：
 ```python

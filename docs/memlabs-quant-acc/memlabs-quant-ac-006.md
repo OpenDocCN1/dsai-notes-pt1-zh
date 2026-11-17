@@ -100,16 +100,11 @@ for epoch in range(epochs):
 
 训练完成后，我们在测试集上进行预测并评估模型性能。
 
-![](img/c6237729f481becbaf919661fb72b37d_1.png)
-
-![](img/c6237729f481becbaf919661fb72b37d_3.png)
-
-![](img/c6237729f481becbaf919661fb72b37d_4.png)
-
-![](img/c6237729f481becbaf919661fb72b37d_5.png)
 
 
-![](img/c6237729f481becbaf919661fb72b37d_7.png)
+
+
+
 
 ```python
 # 在测试集上预测
@@ -122,7 +117,6 @@ accuracy = (predictions == torch.tensor(y_test, dtype=torch.float32)).float().me
 print(f'测试集方向准确率: {accuracy.item():.2%}')
 ```
 
-![](img/c6237729f481becbaf919661fb72b37d_9.png)
 
 仅仅看准确率是不够的，我们还需要评估模型的盈利能力。
 
@@ -183,15 +177,11 @@ print(f'年化夏普比率: {sharpe_ratio:.2f}')
 
 以下是计算混淆矩阵和相关指标的方法。
 
-![](img/c6237729f481becbaf919661fb72b37d_11.png)
 
 
-![](img/c6237729f481becbaf919661fb72b37d_13.png)
 
 
-![](img/c6237729f481becbaf919661fb72b37d_15.png)
 
-![](img/c6237729f481becbaf919661fb72b37d_17.png)
 
 ```python
 from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve
@@ -211,15 +201,11 @@ print(f'ROC-AUC 分数: {auc_score:.3f}')
 # AUC > 0.5 表示优于随机猜测
 ```
 
-![](img/c6237729f481becbaf919661fb72b37d_19.png)
 
-![](img/c6237729f481becbaf919661fb72b37d_21.png)
 
-![](img/c6237729f481becbaf919661fb72b37d_23.png)
 
 ROC-AUC分数量化了模型的判别能力。我们还可以绘制ROC曲线进行可视化。
 
-![](img/c6237729f481becbaf919661fb72b37d_25.png)
 
 ```python
 fpr, tpr, _ = roc_curve(y_test, probabilities.numpy())
@@ -263,7 +249,6 @@ plt.grid(True)
 plt.show()
 ```
 
-![](img/c6237729f481becbaf919661fb72b37d_27.png)
 
 正值表示模型预测能力优于随机猜测。
 
@@ -289,7 +274,6 @@ plt.show()
 5.  **引入高级指标**：使用超额可预测性（Gco统计量）量化模型相对于随机基准的优越性。
 6.  **了解收益分解**：认识到将收益率分解为方向和幅度两部分，为后续构建更强大的混合模型奠定了基础。
 
-![](img/c6237729f481becbaf919661fb72b37d_29.png)
 
 ![](img/c6237729f481becbaf919661fb72b37d_31.png)
 

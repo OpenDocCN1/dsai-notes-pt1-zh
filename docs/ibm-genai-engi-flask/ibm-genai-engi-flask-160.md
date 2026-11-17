@@ -1,6 +1,5 @@
 生成式人工智能工程：160：LangChain简介
 
-![](img/f308d77a51a8148be82dd5760ec0620a_1.png)
 
 在本节课中，我们将学习LangChain的基本概念，包括其定义、重要性、核心组件以及典型应用场景。
 
@@ -14,7 +13,6 @@ LangChain为LLMs提供了一个通用接口，并创建了一个环境，用于�
 
 ### 为什么LangChain很重要？💡
 
-![](img/f308d77a51a8148be82dd5760ec0620a_3.png)
 
 LangChain简化了如GPT-4等语言模型的集成过程，使开发者能够更便捷地构建自然语言处理（NLP）应用程序。它为开发者提供了无缝访问先进人工智能和机器学习技术的能力。
 
@@ -22,7 +20,6 @@ LangChain帮助开发者将AI功能无缝地实施到他们的项目中，从而
 
 ### LangChain的核心组件 🧩
 
-![](img/f308d77a51a8148be82dd5760ec0620a_5.png)
 
 现在，我们来了解一下LangChain的组成部分。LangChain框架由多个开源库构成。
 
@@ -32,7 +29,6 @@ LangChain帮助开发者将AI功能无缝地实施到他们的项目中，从而
 *   **LangChain Core**：这是LangChain的表达式语言，也是所有抽象概念的基础。
 *   **LangChain Community**：这是第三方集成库。它包含合作伙伴包，例如`langchain-ibm`、`langchain-openai`和`langchain-anthropic`。它还将多个集成拆分到依赖于LangChain Core的轻量级包中。
 
-![](img/f308d77a51a8148be82dd5760ec0620a_7.png)
 
 ### LangChain的应用场景 🌐
 

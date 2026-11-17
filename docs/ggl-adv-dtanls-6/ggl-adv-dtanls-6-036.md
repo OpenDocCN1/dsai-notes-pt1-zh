@@ -1,6 +1,5 @@
 # 036：欢迎来到模块4 🌳
 
-![](img/7cacf5c0e78a0bcbc4c5f012ae2d64e8_0.png)
 
 ![](img/7cacf5c0e78a0bcbc4c5f012ae2d64e8_0.png)
 
@@ -50,7 +49,6 @@ model = DecisionTreeClassifier(max_depth=5)
 
 ![](img/7cacf5c0e78a0bcbc4c5f012ae2d64e8_2.png)
 
-![](img/7cacf5c0e78a0bcbc4c5f012ae2d64e8_4.png)
 
 ---
 

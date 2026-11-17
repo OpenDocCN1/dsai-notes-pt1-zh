@@ -1,12 +1,9 @@
 # 003：如何使用结构化输出
 
-![](img/d60853dbc7bc496de8d365f719f8436c_0.png)
 
-![](img/d60853dbc7bc496de8d365f719f8436c_0.png)
 
 在本节课中，我们将学习如何使用OpenAI的结构化输出API构建一个简单的社交媒体管理助手。同时，我们还将学习使用Pydantic库来指定期望的输出结构的基础知识。
 
-![](img/d60853dbc7bc496de8d365f719f8436c_2.png)
 
 ## 概述：什么是结构化输出与JSON Schema
 
@@ -22,7 +19,6 @@
 ```
 我们可以看到，左边是键（如`name`、`age`、`email`），右边是它们的值。
 
-![](img/d60853dbc7bc496de8d365f719f8436c_2.png)
 
 让我们看一个描述“人”的JSON Schema示例。它同样是JSON格式，包含了所有键及其类型定义。例如，`"title": "name"`和`"type": "string"`。
 
@@ -222,6 +218,5 @@ DataFrame将包含`product`、`sentiment`、`needs_response`、`response`、`sup
 
 通过将非结构化的文本转换为结构化的数据，我们可以更可靠、更高效地将大语言模型集成到我们的应用程序和工作流中。
 
-![](img/d60853dbc7bc496de8d365f719f8436c_4.png)
 
 ![](img/d60853dbc7bc496de8d365f719f8436c_4.png)

@@ -52,7 +52,6 @@ curl -X POST "http://localhost:7775/v1/audio/speech" -H "Content-Type: applicati
 
 ## 集成 TTS 服务接口
 
-![](img/fd6775a7d532057fed50cc63301cb671_17.png)
 
 为了解决 API 调用问题，我们需要部署 `tts-service`。这个服务作为一个 FastAPI 包装器，提供了标准的 HTTP 端点，并可能集成了日志和追踪功能，这正是 OPEA 企业级能力的体现。
 
@@ -74,17 +73,13 @@ tts-service:
     - TTS_ENDPOINT=http://speecht5-service:7775
 ```
 
-![](img/fd6775a7d532057fed50cc63301cb671_23.png)
 
 ![](img/fd6775a7d532057fed50cc63301cb671_25.png)
 
-![](img/fd6775a7d532057fed50cc63301cb671_27.png)
 
 ![](img/fd6775a7d532057fed50cc63301cb671_29.png)
 
-![](img/fd6775a7d532057fed50cc63301cb671_31.png)
 
-![](img/fd6775a7d532057fed50cc63301cb671_32.png)
 
 ![](img/fd6775a7d532057fed50cc63301cb671_34.png)
 

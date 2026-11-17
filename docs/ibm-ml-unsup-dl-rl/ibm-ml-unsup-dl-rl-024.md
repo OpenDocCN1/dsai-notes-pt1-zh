@@ -16,7 +16,6 @@ As well as providing some guidelines for choosing which approach is best。
 
 
 
-![](img/5f418950e19f7e6b28f744868891fd58_1.png)
 
 So let's review the clustering algorithms discussed in this course so far。First， we have k meanss。
 
@@ -64,7 +63,6 @@ But we'll dive a bit deeper into what can make DB scan a bit more difficult and 
 
 
 
-![](img/5f418950e19f7e6b28f744868891fd58_3.png)
 
 So let's dive deeper starting with K means。With K means if we use mini batch to find our centroids and clusters。
 
@@ -86,7 +84,6 @@ And it's not going to work well with non spherical cluster shapes。
 
 
 
-![](img/5f418950e19f7e6b28f744868891fd58_5.png)
 
 Next， we have mean shift， and with mean shift， we do not have to guess Ka that number of clusters will be determined for us。
 
@@ -118,7 +115,6 @@ And it will be limited to using the Euclidean distance within its formulation。
 
 
 
-![](img/5f418950e19f7e6b28f744868891fd58_7.png)
 
 Now we move to hierarchical clustering here with ward。
 
@@ -140,7 +136,6 @@ And it can end up being very slow to calculate as a number of observations incre
 
  So this also will have fairly high complexity。
 
-![](img/5f418950e19f7e6b28f744868891fd58_9.png)
 
 Now with DB scan， it seems you can often get the best of both worlds if you choose the right parameters。
 
@@ -166,7 +161,6 @@ Now there is a danger if you choose too small of an epsilon， that you will hav
 
 
 
-![](img/5f418950e19f7e6b28f744868891fd58_11.png)
 
 Now to bring it all together， I would say take a look at this page if you're ever trying to decide which one of the different clustering approaches to use。
 
@@ -228,7 +222,6 @@ And then finally， DB scan that's often used for computer vision applications�
 
 
 
-![](img/5f418950e19f7e6b28f744868891fd58_13.png)
 
 So just to quickly summarize， what we went through here were different clustering techniques where clustering is just unsupervised learning。
 

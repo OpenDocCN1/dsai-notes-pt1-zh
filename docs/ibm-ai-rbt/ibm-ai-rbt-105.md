@@ -1,16 +1,12 @@
 # 105：错误处理 🛠️
 
-![](img/0d442c07f10592afc0d0b256a515de85_1.png)
 
 在本节课中，我们将要学习API开发中的错误处理机制。你将了解HTTP状态码的不同类别，掌握如何在Flask框架中处理和返回错误，从而构建出更健壮、更友好的Web服务。
 
-![](img/0d442c07f10592afc0d0b256a515de85_3.png)
 
-![](img/0d442c07f10592afc0d0b256a515de85_4.png)
 
 ---
 
-![](img/0d442c07f10592afc0d0b256a515de85_5.png)
 
 ## HTTP状态码概述
 
@@ -25,13 +21,11 @@
 
 本课程中编写的API将遵循此规范。例如，当客户端请求一个不存在的资源时，你可以返回一个**404**状态码；对于格式错误的请求，可以返回**400**状态码。
 
-![](img/0d442c07f10592afc0d0b256a515de85_7.png)
 
 ---
 
 ## Flask中的默认状态码
 
-![](img/0d442c07f10592afc0d0b256a515de85_9.png)
 
 Flask服务器在从 `@app.route` 装饰的方法返回时，默认会自动返回**200 OK**状态。当你使用 `jsonify` 方法响应请求时，默认也会返回200。
 
@@ -40,13 +34,10 @@ Flask服务器在从 `@app.route` 装饰的方法返回时，默认会自动返�
 return jsonify({"message": "Success"})
 ```
 
-![](img/0d442c07f10592afc0d0b256a515de85_11.png)
 
-![](img/0d442c07f10592afc0d0b256a515de85_12.png)
 
 ---
 
-![](img/0d442c07f10592afc0d0b256a515de85_13.png)
 
 ## 如何返回自定义状态码
 
@@ -57,7 +48,6 @@ return jsonify({"message": "Success"})
 return "<h2>My first application in action</h2>", 200
 ```
 
-![](img/0d442c07f10592afc0d0b256a515de85_15.png)
 
 你也可以使用 `make_response` 方法来显式设置状态码。下面的代码返回与上一段代码相同的HTML消息和HTTP状态码200，但这里使用了 `make_response` 方法：
 ```python
@@ -84,13 +74,11 @@ return resp
 *   **405**：表示请求的方法（如GET， POST）不被支持。
 *   **500**：表示服务器内部发生错误。
 
-![](img/0d442c07f10592afc0d0b256a515de85_17.png)
 
 ---
 
 ## 在API端点中返回错误
 
-![](img/0d442c07f10592afc0d0b256a515de85_19.png)
 
 既然你了解了不同的HTTP状态码，作为开发者，你需要从服务中返回正确的代码。让我们看一个例子。
 
@@ -100,9 +88,7 @@ return resp
 1.  如果资源存在，代码会将资源返回给客户端，服务器会隐式返回**200**状态码。
 2.  如果资源未找到，则返回**404**状态码。
 
-![](img/0d442c07f10592afc0d0b256a515de85_21.png)
 
-![](img/0d442c07f10592afc0d0b256a515de85_22.png)
 
 现在，让我们使用 `curl` 程序来调用这个端点。
 1.  调用路由时不提供查询参数：`curl` 程序返回消息“input parameter missing”，状态码为**422**。
@@ -120,11 +106,8 @@ def not_found(error):
     return jsonify({"error": "API not found"}), 404
 ```
 
-![](img/0d442c07f10592afc0d0b256a515de85_24.png)
 
-![](img/0d442c07f10592afc0d0b256a515de85_25.png)
 
-![](img/0d442c07f10592afc0d0b256a515de85_26.png)
 
 同样，这段代码创建了一个处理**500**错误的处理器，并返回消息“something went wrong on the server”。
 ```python
@@ -137,7 +120,6 @@ def internal_error(error):
 
 ## 总结
 
-![](img/0d442c07f10592afc0d0b256a515de85_28.png)
 
 本节课中我们一起学习了Web API错误处理的核心知识。
 

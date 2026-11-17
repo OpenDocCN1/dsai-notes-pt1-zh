@@ -14,15 +14,12 @@ We're also going to run it for a few more epochs and see if we can get a lower r
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_1.png)
 
 So again， our final encoding dimension will be 64， but this time we're going to be including a hidden dimension of 256。
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_3.png)
 
-![](img/789f7d287ba1673f50ac73d01a208020_4.png)
 
 And this even't work very similarly to what we just did。
 
@@ -44,7 +41,6 @@ And this is the function itself， it's going to be another dense layer now redu
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_6.png)
 
 And then to just create the model， we just say model and we're going from inputs。
 
@@ -52,7 +48,6 @@ All the way out to the encoded outputs。And it doesn't you don't have to write 
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_8.png)
 
 And then we do our decoder model and again， our decoder model should start off with that encoding dimension of 64。
 
@@ -66,7 +61,6 @@ And passes out this reconstruction that we have here。
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_10.png)
 
 And that's going to be our decoder model that just as before we create our outputs by passing in the encoder model with the inputs as its input。
 
@@ -74,7 +68,6 @@ Into the decoder model。That will be that final output to allow us to go all th
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_12.png)
 
 And then the full model， we can just say the inputs。
 
@@ -82,7 +75,6 @@ And then the full model， we can just say the inputs。
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_14.png)
 
 We can look at that full model summary， we looked at the summary before now it doesn't show it's just showing the different models。
 
@@ -92,13 +84,9 @@ We can look at that full model summary， we looked at the summary before now it
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_16.png)
 
-![](img/789f7d287ba1673f50ac73d01a208020_17.png)
 
-![](img/789f7d287ba1673f50ac73d01a208020_18.png)
 
-![](img/789f7d287ba1673f50ac73d01a208020_19.png)
 
 So again， we have our full model just going from inputs that we defined to the outputs we defined。
 
@@ -106,9 +94,7 @@ So again， we have our full model just going from inputs that we defined to the
 
  which metrics we want to track。
 
-![](img/789f7d287ba1673f50ac73d01a208020_21.png)
 
-![](img/789f7d287ba1673f50ac73d01a208020_22.png)
 
 And this time， we're going to run it for5 epochs。 So we have the batch size equal to 32。
 
@@ -120,7 +106,6 @@ And this time， we're going to run it for5 epochs。 So we have the batch size 
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_24.png)
 
 So you run this and this can be for five epochs and it may take a bit of time。
 
@@ -128,9 +113,7 @@ So you run this and this can be for five epochs and it may take a bit of time。
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_26.png)
 
-![](img/789f7d287ba1673f50ac73d01a208020_27.png)
 
 So now our model has been fit to， again， our X train flat and our X train flat。
 
@@ -148,9 +131,7 @@ So'll run that and then again， get that mean squared error of that reconstruct
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_29.png)
 
-![](img/789f7d287ba1673f50ac73d01a208020_30.png)
 
 Now， let's see if we can improve even further。 We noticed that so far we're only using so many epochs。
 
@@ -162,19 +143,15 @@ Loss continued to go down and it hadn't plateaued yet， and the accuracy contin
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_32.png)
 
-![](img/789f7d287ba1673f50ac73d01a208020_33.png)
 
 So this function that we have here。
 
-![](img/789f7d287ba1673f50ac73d01a208020_35.png)
 
 We'll actually just be putting together all the steps that we have here above。
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_37.png)
 
 So this you can imagine was just copied and pasted。
 
@@ -182,7 +159,6 @@ So this you can imagine was just copied and pasted。
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_39.png)
 
 Function， and then we just say the number of epochs that we want to run through。
 
@@ -194,7 +170,6 @@ Function， and then we just say the number of epochs that we want to run throug
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_41.png)
 
 For the entire range of epochs， it's going to pick up the training where the last one left off。
 
@@ -206,7 +181,6 @@ We will append that to this list that we have initiated up here。
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_43.png)
 
 And we will say the reconstruction loss after each number of epochs is so on and so forth to see whether or not we continue to improve。
 
@@ -216,7 +190,6 @@ So we initiate that function， and then we're going to run this now for 10 epoc
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_45.png)
 
 We run this for 10 epochs。And this will take just a bit of time to run。
 
@@ -226,7 +199,6 @@ We run this for 10 epochs。And this will take just a bit of time to run。
 
 
 
-![](img/789f7d287ba1673f50ac73d01a208020_47.png)
 
 So now we see the results。After 10 epochs， we are able to， for the most part。
 
@@ -244,6 +216,5 @@ So that closes out our video here in regards to just working with the auto encod
 
  I'll see you there。
 
-![](img/789f7d287ba1673f50ac73d01a208020_49.png)
 
 ![](img/789f7d287ba1673f50ac73d01a208020_50.png)

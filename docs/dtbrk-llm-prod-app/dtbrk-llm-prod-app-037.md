@@ -79,7 +79,6 @@ agent = initialize_agent(
 
 ### 测试三：二次尝试与成本考量
 
-![](img/cf75f461bd75a6ce4d2aa6d6e2fc6bc3_2.png)
 
 再次运行时，Dacey找到了一些关于该赛季的口述分析，并开始传递信息。请记住，每次运行这类命令时，Dacey都会使用API令牌来访问搜索API以及OpenAI LLM命令或Hugging Face命令，因此请注意你让智能体做什么，以及你对令牌使用的容忍度。
 

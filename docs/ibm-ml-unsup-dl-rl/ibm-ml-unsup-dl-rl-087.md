@@ -8,45 +8,36 @@ Now let's discuss Alexnett now Alex Net is named after Alex Sevsky， one of its
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_1.png)
 
-![](img/77809e2417c3643fe38d34270f860690_2.png)
 
 And that was due to the fact that it won the competition here on ImageNe。
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_4.png)
 
 The goal of this competition was to predict the correct label from among a thousand different classes。
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_6.png)
 
 And this was amongst 1。2 million different images， so we're working with a very large data set or a large classification problem in general。
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_8.png)
 
-![](img/77809e2417c3643fe38d34270f860690_9.png)
 
 Now， again， Alexnet is considered the flashpoint for modern deep learning in general。
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_11.png)
 
 This is due to the fact that it demolished the competition at a top five air rate of 15。4%。
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_13.png)
 
 Whereas the next best was 26。2%。
 
-![](img/77809e2417c3643fe38d34270f860690_15.png)
 
 So let's dive into Alex under the hood。Now here we have an actual diagram that Alex Matt。
 
@@ -56,11 +47,8 @@ So let's dive into Alex under the hood。Now here we have an actual diagram that
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_17.png)
 
-![](img/77809e2417c3643fe38d34270f860690_18.png)
 
-![](img/77809e2417c3643fe38d34270f860690_19.png)
 
 What they actually did was split it up into two parallel paths。
 
@@ -70,9 +58,7 @@ What they actually did was split it up into two parallel paths。
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_21.png)
 
-![](img/77809e2417c3643fe38d34270f860690_22.png)
 
 Where that depth of 96 is split into two parallel paths。
 
@@ -84,13 +70,11 @@ And when we look at this large network， along with those dense fully connected
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_24.png)
 
 There was actually 60 million different parameters that had to be learned。
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_26.png)
 
 So that parallelization was very important and also this would take weeks to actually learn。
 
@@ -98,17 +82,13 @@ So that parallelization was very important and also this would take weeks to act
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_28.png)
 
-![](img/77809e2417c3643fe38d34270f860690_29.png)
 
-![](img/77809e2417c3643fe38d34270f860690_30.png)
 
 So now I want to go over just a few details， a few more details in regards to Alex Smith。
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_32.png)
 
 So first off。The AlexNet developers performed data augmentation before feeding through these images through the network。
 
@@ -124,7 +104,6 @@ And they did things such as cropping， horizontal flipping and other manipulati
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_34.png)
 
 Now， the basic template， which we just saw in the last slide。
 
@@ -134,11 +113,8 @@ Is that we'll have convolutions with relo？And。Re lose as those activation fu
 
 😊。
 
-![](img/77809e2417c3643fe38d34270f860690_36.png)
 
-![](img/77809e2417c3643fe38d34270f860690_37.png)
 
-![](img/77809e2417c3643fe38d34270f860690_38.png)
 
 And with that， they would sometimes add on that max pooling layer after convolutional layers。
 
@@ -146,11 +122,8 @@ And with that， they would sometimes add on that max pooling layer after convol
 
 
 
-![](img/77809e2417c3643fe38d34270f860690_40.png)
 
-![](img/77809e2417c3643fe38d34270f860690_41.png)
 
-![](img/77809e2417c3643fe38d34270f860690_42.png)
 
 Now that closes out Alex Ne。
 

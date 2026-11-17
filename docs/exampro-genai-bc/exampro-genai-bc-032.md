@@ -1,13 +1,11 @@
 # 32：多模态应用开发 🎯
 
-![](img/a9b3147697529d2d2c58f32f90520322_1.png)
 
 ## 概述
 在本节课中，我们将学习如何构建一个结合多种模态（如文本、语音）的生成式AI应用。我们将创建一个语言听力理解学习应用，它能够从YouTube获取转录文本，利用大型语言模型进行分析和生成，并整合语音合成功能。我们将使用Python、Streamlit、ChromaDB向量数据库以及Amazon Bedrock等工具。
 
 ---
 
-![](img/a9b3147697529d2d2c58f32f90520322_3.png)
 
 ## 课程开场与提醒
 
@@ -35,9 +33,7 @@
 
 我们还有赞助商Torque，他们是一个帮助开发者连接工作机会的平台。我与Torque的Ken Collins进行了一次非常精彩的职业分享，讨论了“AI应用工程师”的定义，以及公司在匹配这些技能时面临的挑战。基于那次反馈，我可能会录制一系列视频，包括“GenAI Essentials”课程。
 
-![](img/a9b3147697529d2d2c58f32f90520322_9.png)
 
-![](img/a9b3147697529d2d2c58f32f90520322_10.png)
 
 此外，我们还有Code Rabbit。在开发者周期间，我提到想涵盖代码审查，而Code Rabbit正好是这方面的工具。随着我们的项目越来越复杂，使用AI进行代码审查将非常有用。
 
@@ -77,26 +73,21 @@
 
 ---
 
-![](img/a9b3147697529d2d2c58f32f90520322_12.png)
 
-![](img/a9b3147697529d2d2c58f32f90520322_13.png)
 
 ## 项目介绍：语言听力理解学习应用
 
 ![](img/a9b3147697529d2d2c58f32f90520322_15.png)
 
-![](img/a9b3147697529d2d2c58f32f90520322_17.png)
 
 ![](img/a9b3147697529d2d2c58f32f90520322_19.png)
 
 现在，让我们开始构建本周的项目。
 
-![](img/a9b3147697529d2d2c58f32f90520322_21.png)
 
 ### 业务目标
 你是一名AI应用工程师，任务是构建一个**语言听力理解学习应用**。
 
-![](img/a9b3147697529d2d2c58f32f90520322_23.png)
 
 ### 应用功能
 该应用将：
@@ -140,9 +131,7 @@
 ### 1. 项目初始化与代码获取
 我们首先克隆项目仓库并设置开发环境。
 
-![](img/a9b3147697529d2d2c58f32f90520322_33.png)
 
-![](img/a9b3147697529d2d2c58f32f90520322_35.png)
 
 ```bash
 git clone <repository-url>
@@ -152,9 +141,7 @@ cd language-learning-assistant
 ### 2. 使用Conda创建虚拟环境
 为了避免依赖冲突，我们使用Conda创建独立的Python环境。
 
-![](img/a9b3147697529d2d2c58f32f90520322_37.png)
 
-![](img/a9b3147697529d2d2c58f32f90520322_39.png)
 
 ```bash
 conda create -n listening-learning-app python=3.10
@@ -177,7 +164,6 @@ pip install -r backend/requirements.txt
 
 ![](img/a9b3147697529d2d2c58f32f90520322_45.png)
 
-![](img/a9b3147697529d2d2c58f32f90520322_46.png)
 
 **将ChromaDB添加到依赖：**
 在 `backend/requirements.txt` 中添加：
@@ -186,22 +172,16 @@ chromadb
 boto3
 ```
 
-![](img/a9b3147697529d2d2c58f32f90520322_48.png)
 
-![](img/a9b3147697529d2d2c58f32f90520322_50.png)
 
 ![](img/a9b3147697529d2d2c58f32f90520322_52.png)
 
 **ChromaDB基本用法：**
 
-![](img/a9b3147697529d2d2c58f32f90520322_54.png)
-
-![](img/a9b3147697529d2d2c58f32f90520322_56.png)
 
 
-![](img/a9b3147697529d2d2c58f32f90520322_58.png)
 
-![](img/a9b3147697529d2d2c58f32f90520322_59.png)
+
 
 ![](img/a9b3147697529d2d2c58f32f90520322_61.png)
 
@@ -245,9 +225,7 @@ results = collection.query(
 
 ![](img/a9b3147697529d2d2c58f32f90520322_67.png)
 
-![](img/a9b3147697529d2d2c58f32f90520322_69.png)
 
-![](img/a9b3147697529d2d2c58f32f90520322_70.png)
 
 ![](img/a9b3147697529d2d2c58f32f90520322_72.png)
 
@@ -258,7 +236,6 @@ results = collection.query(
 
 ![](img/a9b3147697529d2d2c58f32f90520322_74.png)
 
-![](img/a9b3147697529d2d2c58f32f90520322_76.png)
 
 **后端代码 (`backend/chat.py`) 核心：**
 ```python
@@ -320,9 +297,7 @@ if stage == "聊天":
 # ... 其他阶段
 ```
 
-![](img/a9b3147697529d2d2c58f32f90520322_80.png)
 
-![](img/a9b3147697529d2d2c58f32f90520322_82.png)
 
 **解决导入问题：**
 在Streamlit中运行前端时，可能会遇到模块导入错误。这是因为Python路径问题。解决方案是在 `frontend/main.py` 开头添加路径设置：
@@ -338,11 +313,9 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 ### 3. 获取YouTube转录文本
 我们实现一个类，使用 `youtube-transcript-api` 下载指定视频的转录。
 
-![](img/a9b3147697529d2d2c58f32f90520322_86.png)
 
 **后端代码 (`backend/get_transcript.py`) 核心：**
 
-![](img/a9b3147697529d2d2c58f32f90520322_88.png)
 
 ```python
 from youtube_transcript_api import YouTubeTranscriptApi
@@ -364,7 +337,6 @@ class YouTubeTranscriptDownloader:
 **前端集成：**
 在Streamlit的“原始转录”阶段，添加一个文本框用于输入YouTube URL，并调用上述类来下载和保存转录。
 
-![](img/a9b3147697529d2d2c58f32f90520322_90.png)
 
 ### 4. 分析转录并生成练习
 获取转录后，我们可以让LLM分析其结构，并基于此生成新的练习。
@@ -377,7 +349,6 @@ class YouTubeTranscriptDownloader:
 请分析这个听力问题的格式和结构。然后，基于相同的格式，创建一个关于“男人和女人讨论周末计划”的新听力理解问题（包括介绍、对话片段、问题及四个选项）。全部使用日语。
 ```
 
-![](img/a9b3147697529d2d2c58f32f90520322_92.png)
 
 通过这种方式，我们利用“上下文学习”，让LLM在提示中学习示例的格式，并生成符合要求的新内容。
 

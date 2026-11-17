@@ -1,6 +1,5 @@
 # 009：📚 构建与数据对话的聊天机器人（一）—— 介绍
 
-![](img/e8d0be9d5f1da6d4ce9efdc3b4bb66c4_0.png)
 
 ![](img/e8d0be9d5f1da6d4ce9efdc3b4bb66c4_0.png)
 
@@ -36,7 +35,6 @@ LangChain 是一个用于构建 LLM 应用程序的开源开发者框架。LangC
 
 这将是一个激动人心的短期课程。我们感谢 Ankura、Lance Martin，感谢 LangChain 团队为 Harrison 提供的所有材料，以及 DeepLearning.AI 的方杰夫。
 
-![](img/e8d0be9d5f1da6d4ce9efdc3b4bb66c4_2.png)
 
 ![](img/e8d0be9d5f1da6d4ce9efdc3b4bb66c4_2.png)
 

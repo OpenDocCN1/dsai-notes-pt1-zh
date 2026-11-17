@@ -4,11 +4,9 @@
 
 ---
 
-![](img/b1af2d3d56a1e104d436fe8df5beb585_1.png)
 
 ## 概述
 
-![](img/b1af2d3d56a1e104d436fe8df5beb585_3.png)
 
 ![](img/b1af2d3d56a1e104d436fe8df5beb585_4.png)
 

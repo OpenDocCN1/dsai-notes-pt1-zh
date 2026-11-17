@@ -20,9 +20,7 @@
 
 ## 学习辅助材料
 
-![](img/faa6c4b1387f694d491a4c562edbabde_2.png)
 
-![](img/faa6c4b1387f694d491a4c562edbabde_3.png)
 
 除了社区活动，ZTM还提供了系统的学习辅助工具，帮助你更高效地掌握知识。
 
