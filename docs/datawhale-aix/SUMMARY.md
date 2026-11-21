@@ -4,7 +4,7 @@
 +   [AI+X碰个头：第三十五期：分会场经验分享与技术探讨 🤖](AI+X碰个头·第三十五期-分会场-3.md)
 +   [AI+X碰个头：01：活动工作流的可进化改造 🌐](AI+X碰个头·第三十五期-分会场-4.md)
 +   [Datawhale-AI+X碰个头第三十四期：AI应用全景分享](Datawhale-AI+X碰个头-第三十四期.md)
-+   [Datawhale-AI+X碰个头：33-1](Datawhale-AI+X碰个头·第三十三期-主会场（一）-共享屏幕.md)
++   [Datawhale-AI+X碰个头：33-1](Datawhale-AI+X碰个头·第三十三期-主会场（一）.md)
 +   [Datawhale-AI+X碰个头：33-3：课程概述 🎓](Datawhale-AI+X碰个头·第三十三期-分会场（三）.md)
 +   [Datawhale AI+X碰个头：33-2：模型前沿与递归自我改进🤖](Datawhale-AI+X碰个头·第三十三期-分会场（二）.md)
 +   [Datawhale-AI+X碰个头：33-5：自媒体视频全自动化流程 🎬](Datawhale-AI+X碰个头·第三十三期-分会场（五）.md)
